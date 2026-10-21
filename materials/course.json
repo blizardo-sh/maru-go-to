@@ -31,6 +31,149 @@
         "grammar": "not-applicable",
         "exercises": "not-applicable",
         "audio": "missing"
+      },
+      "video": {
+        "title": "Диалог: Приветствие",
+        "sourceUrl": "https://a1.marugotoweb.jp/en/can-do1.php",
+        "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_01_01.mp4",
+        "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_01_01.xml",
+        "captions": [
+          {
+            "startSeconds": 0.0,
+            "endSeconds": 0.2,
+            "text": null
+          },
+          {
+            "startSeconds": 0.2,
+            "endSeconds": 7.0,
+            "text": null
+          },
+          {
+            "startSeconds": 7.0,
+            "endSeconds": 9.0,
+            "text": "あ、おはようございます。"
+          },
+          {
+            "startSeconds": 9.0,
+            "endSeconds": 11.0,
+            "text": "おはようございます。"
+          },
+          {
+            "startSeconds": 11.0,
+            "endSeconds": 14.0,
+            "text": null
+          },
+          {
+            "startSeconds": 14.0,
+            "endSeconds": 21.7,
+            "text": null
+          },
+          {
+            "startSeconds": 21.7,
+            "endSeconds": 22.7,
+            "text": "こんにちは。"
+          },
+          {
+            "startSeconds": 22.7,
+            "endSeconds": 25.0,
+            "text": "こんにちは。"
+          },
+          {
+            "startSeconds": 25.0,
+            "endSeconds": 28.0,
+            "text": null
+          },
+          {
+            "startSeconds": 28.0,
+            "endSeconds": 36.7,
+            "text": null
+          },
+          {
+            "startSeconds": 36.7,
+            "endSeconds": 38.0,
+            "text": "こんばんは。"
+          },
+          {
+            "startSeconds": 38.0,
+            "endSeconds": 40.0,
+            "text": "こんばんは。"
+          },
+          {
+            "startSeconds": 40.0,
+            "endSeconds": 44.0,
+            "text": null
+          },
+          {
+            "startSeconds": 44.0,
+            "endSeconds": 49.7,
+            "text": null
+          },
+          {
+            "startSeconds": 49.7,
+            "endSeconds": 51.2,
+            "text": "こんばんは。"
+          },
+          {
+            "startSeconds": 51.2,
+            "endSeconds": 53.0,
+            "text": "こんばんは。"
+          },
+          {
+            "startSeconds": 53.0,
+            "endSeconds": 57.0,
+            "text": null
+          },
+          {
+            "startSeconds": 57.0,
+            "endSeconds": 60.0,
+            "text": null
+          },
+          {
+            "startSeconds": 60.0,
+            "endSeconds": 66.0,
+            "text": null
+          },
+          {
+            "startSeconds": 66.0,
+            "endSeconds": 86.0,
+            "text": null
+          },
+          {
+            "startSeconds": 86.0,
+            "endSeconds": 89.9,
+            "text": "せんせい、ありがとうございました。さようなら。"
+          },
+          {
+            "startSeconds": 89.9,
+            "endSeconds": 92.0,
+            "text": "はい、さようなら。"
+          },
+          {
+            "startSeconds": 92.0,
+            "endSeconds": 97.0,
+            "text": null
+          },
+          {
+            "startSeconds": 97.0,
+            "endSeconds": 108.5,
+            "text": null
+          },
+          {
+            "startSeconds": 108.5,
+            "endSeconds": 113.7,
+            "text": "おさきに　しつれいします。"
+          },
+          {
+            "startSeconds": 113.7,
+            "endSeconds": 116.0,
+            "text": "おつかれさまでした。"
+          },
+          {
+            "startSeconds": 116.0,
+            "endSeconds": null,
+            "text": null
+          }
+        ]
       }
     },
     {
@@ -61,6 +204,45 @@
         "grammar": "not-applicable",
         "exercises": "not-applicable",
         "audio": "missing"
+      },
+      "video": {
+        "title": "Диалог: На занятии",
+        "sourceUrl": "https://a1.marugotoweb.jp/en/can-do3.php",
+        "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_03_01.mp4",
+        "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_03_01.xml",
+        "captionNote": "Для первой быстрой реплики (5,5–9 с) в исходных субтитрах нет японского текста. Далее реплики синхронизированы с видео.",
+        "captions": [
+          {
+            "startSeconds": 0.0,
+            "endSeconds": 0.2,
+            "text": null
+          },
+          {
+            "startSeconds": 0.2,
+            "endSeconds": 5.5,
+            "text": null
+          },
+          {
+            "startSeconds": 5.5,
+            "endSeconds": 9.0,
+            "text": null
+          },
+          {
+            "startSeconds": 9.0,
+            "endSeconds": 13.5,
+            "text": "すみません。もうすこし　ゆっくり　いって　ください。"
+          },
+          {
+            "startSeconds": 13.5,
+            "endSeconds": 20.0,
+            "text": "はい。CDを　きいて　ください。"
+          },
+          {
+            "startSeconds": 20.0,
+            "endSeconds": null,
+            "text": null
+          }
+        ]
       }
     },
     {
@@ -91,6 +273,74 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
+      },
+      "video": {
+        "title": "Диалог: О себе",
+        "sourceUrl": "https://a1.marugotoweb.jp/en/can-do5.php",
+        "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_05_01.mp4",
+        "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_05_01.xml",
+        "captions": [
+          {
+            "startSeconds": 0.0,
+            "endSeconds": 0.2,
+            "text": null
+          },
+          {
+            "startSeconds": 0.2,
+            "endSeconds": 5.0,
+            "text": null
+          },
+          {
+            "startSeconds": 5.0,
+            "endSeconds": 7.0,
+            "text": null
+          },
+          {
+            "startSeconds": 7.0,
+            "endSeconds": 11.9,
+            "text": "はじめまして。まつもとです。あのう、おなまえは?"
+          },
+          {
+            "startSeconds": 11.9,
+            "endSeconds": 13.0,
+            "text": "サラです。"
+          },
+          {
+            "startSeconds": 13.0,
+            "endSeconds": 14.0,
+            "text": "どちらから?"
+          },
+          {
+            "startSeconds": 14.0,
+            "endSeconds": 15.2,
+            "text": "フランスです。"
+          },
+          {
+            "startSeconds": 15.2,
+            "endSeconds": 17.7,
+            "text": "そうですか。おしごとは?"
+          },
+          {
+            "startSeconds": 17.7,
+            "endSeconds": 19.0,
+            "text": "かいしゃいんです。"
+          },
+          {
+            "startSeconds": 19.0,
+            "endSeconds": 22.0,
+            "text": "そうですか。どうぞ　よろしく。"
+          },
+          {
+            "startSeconds": 22.0,
+            "endSeconds": 23.9,
+            "text": "どうぞ　よろしく　おねがいします。"
+          },
+          {
+            "startSeconds": 23.9,
+            "endSeconds": null,
+            "text": null
+          }
+        ]
       }
     },
     {
@@ -121,6 +371,59 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
+      },
+      "video": {
+        "title": "Диалог: Семья",
+        "sourceUrl": "https://a1.marugotoweb.jp/en/can-do7.php",
+        "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_07_01.mp4",
+        "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_07_01.xml",
+        "captions": [
+          {
+            "startSeconds": 0.0,
+            "endSeconds": 0.2,
+            "text": null
+          },
+          {
+            "startSeconds": 0.2,
+            "endSeconds": 5.6,
+            "text": null
+          },
+          {
+            "startSeconds": 5.6,
+            "endSeconds": 9.0,
+            "text": "きむらさんの　ごかぞくは　なんにんですか。"
+          },
+          {
+            "startSeconds": 9.0,
+            "endSeconds": 14.5,
+            "text": "5にんです。ちちと　つまと　こども　ふたりと　わたしです。"
+          },
+          {
+            "startSeconds": 14.5,
+            "endSeconds": 17.0,
+            "text": "おくさんの　おしごとは?"
+          },
+          {
+            "startSeconds": 17.0,
+            "endSeconds": 19.6,
+            "text": "つまは　かいしゃいんです。"
+          },
+          {
+            "startSeconds": 19.6,
+            "endSeconds": 22.2,
+            "text": "おこさんは　おいくつですか。"
+          },
+          {
+            "startSeconds": 22.2,
+            "endSeconds": 26.0,
+            "text": "17さいと　11さいです。"
+          },
+          {
+            "startSeconds": 26.0,
+            "endSeconds": null,
+            "text": null
+          }
+        ]
       }
     },
     {
