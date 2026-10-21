@@ -11,7 +11,7 @@ const base = 'http://127.0.0.1:5173';
 const fixtureIp = nextFixtureIp();
 const database = connectDatabase(databaseUrl);
 const app = createApp({ database, course: loadCourse(), config: { DATABASE_URL: databaseUrl, BETTER_AUTH_SECRET: 'auth-browser-fixture-secret-more-than-32-characters', APP_URL: base, PORT: 3000, HOST: '127.0.0.1' } });
-const server = Bun.serve({ hostname: '127.0.0.1', port: 0, fetch: app.fetch });
+const server = Bun.serve({ hostname: '127.0.0.1', port: 3000, fetch: app.fetch });
 const email = `onboarding-${crypto.randomUUID()}@example.test`;
 const expiredEmail = `expired-${crypto.randomUUID()}@example.test`;
 const password = 'Isolated-auth-browser-fixture-only!';
@@ -24,10 +24,6 @@ let browser;
 try {
   browser = await chromium.launch({ channel: 'chrome', headless: true });
   const context = await browser.newContext({ extraHTTPHeaders: { 'x-forwarded-for': fixtureIp } });
-  await context.route('**/api/**', async route => {
-    const target = new URL(route.request().url()); target.host = `127.0.0.1:${server.port}`;
-    const response = await route.fetch({ url: target.href }); await route.fulfill({ response });
-  });
   const page = await context.newPage();
   const acceptedRequests: { keys: string[]; name: string; emailSubmitted: boolean }[] = [];
   let signInRequests = 0;
@@ -86,15 +82,10 @@ try {
   await page.getByRole('button', { name: 'Войти', exact: true }).click();
   expect((await relogin).status()).toBe(200);
   await expect(page.getByRole('navigation', { name: 'Разделы' }).getByRole('button', { name: 'Учебник', exact: true })).toBeVisible();
-  await context.unrouteAll({ behavior: 'wait' });
   await context.close();
 
   for (const [kind, token] of [['used',link.token], ['expired',expired.token], ['invalid',invalidToken]]) {
     const rejected = await browser.newContext({ extraHTTPHeaders: { 'x-forwarded-for': fixtureIp } });
-    await rejected.route('**/api/**', async route => {
-      const target = new URL(route.request().url()); target.host = `127.0.0.1:${server.port}`;
-      const response = await route.fetch({ url: target.href }); await route.fulfill({ response });
-    });
     const invalidPage = await rejected.newPage();
     const details = invalidPage.waitForResponse(response => new URL(response.url()).pathname === '/api/invitations/details');
     await invalidPage.goto(`${base}/invite#token=${token}`);
@@ -102,7 +93,6 @@ try {
     await expect(invalidPage.getByRole('alert')).toContainText(/недействительна|использована|истекла/);
     await expect(invalidPage.getByRole('button', { name: 'Создать аккаунт', exact: true })).toBeDisabled();
     console.info(`PASS ${kind} invitation is rejected before signup`);
-    await rejected.unrouteAll({ behavior: 'wait' });
     await rejected.close();
   }
   console.info(JSON.stringify({ browser: browser.version(), readonlyBoundEmail: true, separateDisplayName: true, signupSuccessCopy: 'account-created', invalidEmailRequests: 0, signInAndReloginStatus: 200, rejectedInvitations: 3 }));
