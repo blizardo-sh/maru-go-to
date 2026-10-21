@@ -1,0 +1,20 @@
+{
+  "root": "dist",
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 640,
+      "sha256": "b00d0528fcf8470e5cd9a6df4f900fd1f5c1b88e182668f46cc6216e982fcbbe"
+    },
+    {
+      "path": "assets/index-AwQ9P7xW.js",
+      "bytes": 296759,
+      "sha256": "6b91532362dfe8c2b6ed03c49826090235cf34b39f9e0003088907c404e4318d"
+    },
+    {
+      "path": "assets/index-BqJZ90U2.css",
+      "bytes": 39957,
+      "sha256": "7bade82cd2f6845deefe28a97cdd9ef232ced804bd1430aecd7695ca022bbe81"
+    }
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "complete": true,
+  "scope": "geometry",
+  "browser": "145.0.7632.160",
+  "results": [
+    {
+      "layouts": [
+        {
+          "width": 390,
+          "firstButton": {
+            "x": 42.1875,
+            "y": 481.828125,
+            "width": 136.21875,
+            "height": 44,
+            "top": 481.828125,
+            "right": 178.40625,
+            "bottom": 525.828125,
+            "left": 42.1875
+          }
+        },
+        {
+          "width": 320,
+          "firstButton": {
+            "x": 39.78125,
+            "y": 561.1875,
+            "width": 103.625,
+            "height": 44,
+            "top": 561.1875,
+            "right": 143.40625,
+            "bottom": 605.1875,
+            "left": 39.78125
+          }
+        }
+      ],
+      "emptyRepeat": {
+        "width": 1024,
+        "textOverlaps": [],
+        "buttons": [
+          {
+            "height": 44,
+            "overlaps": false
+          }
+        ]
+      },
+      "wide": {
+        "fonts": {
+          "cyrillic": true,
+          "loaded": [
+            {
+              "family": "Neucha",
+              "unicodeRange": "U+301, U+400-45F, U+490-491, U+4B0-4B1, U+2116"
+            },
+            {
+              "family": "Neucha",
+              "unicodeRange": "U+0-FF, U+131, U+152-153, U+2BB-2BC, U+2C6, U+2DA, U+2DC, U+304, U+308, U+329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD"
+            }
+          ],
+          "resources": [
+            "http://127.0.0.1:5173/fonts/neucha-cyrillic.woff2",
+            "http://127.0.0.1:5173/fonts/neucha-latin.woff2"
+          ]
+        },
+        "checks": [
+          {
+            "viewport": 2663,
+            "overflow": 0,
+            "boardCenterOffset": 0,
+            "boardRatio": 0.8651896357491551,
+            "catTextOverlaps": [],
+            "props": 4,
+            "inventory": 4,
+            "catOverlaps": false,
+            "minJapanese": 42,
+            "minControl": 44
+          },
+          {
+            "viewport": 1920,
+            "overflow": 0,
+            "boardCenterOffset": 0,
+            "boardRatio": 0.9,
+            "catTextOverlaps": [],
+            "props": 4,
+            "inventory": 4,
+            "catOverlaps": false,
+            "minJapanese": 42,
+            "minControl": 44
+          },
+          {
+            "viewport": 1280,
+            "overflow": 0,
+            "boardCenterOffset": 0,
+            "boardRatio": 0.9,
+            "catTextOverlaps": [],
+            "props": 3,
+            "inventory": 4,
+            "catOverlaps": false,
+            "minJapanese": 28.16,
+            "minControl": 44
+          },
+          {
+            "viewport": 1024,
+            "overflow": 0,
+            "boardCenterOffset": 0,
+            "boardRatio": 0.899993896484375,
+            "catTextOverlaps": [],
+            "props": 2,
+            "inventory": 4,
+            "catOverlaps": false,
+            "minJapanese": 24,
+            "minControl": 44
+          },
+          {
+            "viewport": 768,
+            "overflow": 0,
+            "boardCenterOffset": 0,
+            "boardRatio": 0.96875,
+            "catTextOverlaps": [],
+            "props": 2,
+            "inventory": 4,
+            "catOverlaps": false,
+            "minJapanese": 22,
+            "minControl": 44
+          },
+          {
+            "viewport": 390,
+            "overflow": 0,
+            "boardCenterOffset": 0,
+            "boardRatio": 0.9794871794871794,
+            "catTextOverlaps": [],
+            "props": 2,
+            "inventory": 4,
+            "catOverlaps": false,
+            "minJapanese": 22,
+            "minControl": 44
+          },
+          {
+            "viewport": 320,
+            "overflow": 0,
+            "boardCenterOffset": 0,
+            "boardRatio": 0.975,
+            "catTextOverlaps": [],
+            "props": 2,
+            "inventory": 4,
+            "catOverlaps": false,
+            "minJapanese": 22,
+            "minControl": 44
+          }
+        ]
+      },
+      "kana": [
+        {
+          "script": "Хирагана",
+          "width": 320,
+          "glyphs": 114,
+          "allGlyphsFitCellsOnOneLine": true,
+          "minimumSize": 22
+        },
+        {
+          "script": "Хирагана",
+          "width": 390,
+          "glyphs": 114,
+          "allGlyphsFitCellsOnOneLine": true,
+          "minimumSize": 22
+        },
+        {
+          "script": "Катакана",
+          "width": 320,
+          "glyphs": 114,
+          "allGlyphsFitCellsOnOneLine": true,
+          "minimumSize": 22
+        },
+        {
+          "script": "Катакана",
+          "width": 390,
+          "glyphs": 114,
+          "allGlyphsFitCellsOnOneLine": true,
+          "minimumSize": 22
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "externalAIRequests": 0,
+  "humanAccountUsed": false
+}

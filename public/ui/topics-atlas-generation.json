@@ -1,0 +1,24 @@
+{
+  "generator": "built-in image_gen",
+  "source": "imagegen-artifacts/01a15b1b-ce1c-7b23-8337-4c43385f34ba/exec-60ade0cc-bfa9-4316-a30d-8ed5d14af85b.png",
+  "reference": "User supplied approved room/game reference, style only. No UI or character copied.",
+  "prompt": "One equal 3x3 transparent hand-painted gouache atlas, no text/UI: school notebook/board; self/family portrait; food bowl; home room; schedule clock; hobbies guitar/book/brush; red train/town; shopping/gift; travel bag/postcard. Exact topic reading order matches course topics1–9.",
+  "src": "/ui/topics-atlas-v1.webp",
+  "width": 960,
+  "height": 640,
+  "bytes": 229334,
+  "columns": 3,
+  "rows": 3,
+  "topicOrder": [
+    "Занятия",
+    "О себе и семье",
+    "Еда",
+    "Дом",
+    "Распорядок",
+    "Хобби",
+    "Транспорт и город",
+    "Покупки",
+    "Путешествия"
+  ],
+  "conversion": "Ordinary downsampling to960x640 and WebP quality80/method6 only; native generated alpha preserved. Fully transparent hidden RGB may be discarded by encoder."
+}

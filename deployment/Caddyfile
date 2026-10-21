@@ -1,0 +1,19 @@
+{$SITE_ADDRESS} {
+  encode zstd gzip
+  header {
+    X-Content-Type-Options nosniff
+    Referrer-Policy no-referrer
+  }
+  handle /api/* {
+    reverse_proxy api:3000 {
+      transport http {
+        response_header_timeout 35s
+      }
+    }
+  }
+  handle {
+    root * /srv
+    try_files {path} /index.html
+    file_server
+  }
+}

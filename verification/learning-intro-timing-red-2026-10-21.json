@@ -1,0 +1,11 @@
+{
+  "scope": "intro-observer-under-large-run",
+  "passed": false,
+  "observedIntroMs": 12305,
+  "requiredUpperMs": 4500,
+  "runnerExitCode": 1,
+  "sourceChangedForTiming": false,
+  "causeEstablished": false,
+  "note": "The large scene/audio run exceeded the intro timing guard. A separate tiny run without intermediate CDP/animation inspection measured 3008ms; this does not establish the earlier delay cause.",
+  "fullOldAudioPassClaimed": false
+}

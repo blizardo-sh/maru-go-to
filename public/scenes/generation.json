@@ -1,0 +1,38 @@
+{
+  "method": "built-in image_gen",
+  "createdFor": "Japanese learning indie game backgrounds",
+  "inputReferences": "Two previously approved cozy room and garden concept illustrations, used only for painted style and mood.",
+  "sharedPrompt": "Use case: stylized-concept. Asset type: production BACKGROUND PLATE for a cozy Japanese learning indie game. The two supplied pictures are STYLE/MOOD REFERENCES ONLY, not edit targets. Paint a new empty environment; remove ALL their interface/mascot elements from consideration.\nStyle: refined hand-painted 2D animation background, soft gouache texture, warm wood, delicate real material detail, sage green, cream and honey amber. Rich atmospheric environment, carefully drawn Japanese architecture, gentle painterly linework, appealing lived-in coziness. Not photorealism, not 3D render, not flat vector.\nComposition: wide 16:9 landscape, 1920x1080 desired. Eye-level camera looking over a broad empty wooden working table, with believable shallow perspective. The table starts at approximately 63% image height and fills the bottom third edge to edge; horizontal back edge. Central 60% of the image must stay visually calm and low-contrast so a separately rendered real DOM card can occupy the middle. Top 15% relatively quiet under a separately rendered navigation HUD. The central 45% vertical crop must remain a coherent scene with tabletop visible and no vital side details lost, for mobile. Important illustration details clustered in outer edges, softly distant through the middle. Fill the image fully, no border.\nCritical: BACKGROUND ONLY. NO cards, no whiteboard, no blank rectangular board, no menus, no HUD, no buttons, no labels, no writing or characters on any object, no Japanese lettering or Russian text, no logos, no watermark. NO cat, animal mascot, people, human figures, hands. Do not paint UI at all. Empty center of desk, only small natural environment props at far edges. Opaque image. ",
+  "scenes": [
+    {
+      "id": "room",
+      "scenePrompt": "Scene: peaceful rural Japanese reading room in afternoon. Shoji window at left with soft garden sunlight, warm wooden posts, ceiling beams at outer top, floor cushions barely at far edges, a small ceramic teacup and tiny leafy vase at far bottom left; bookcase of unlettered clothbound books and a soft paper lamp at far right. Quiet cream plaster and muted distant garden shapes behind the central working space. Broad honey-colored wood table lower third, perfectly empty in center. Sophisticated sunlight and leafy shadow only at table corners. Warm neutral midtones, avoid bright blown highlights."
+    },
+    {
+      "id": "garden",
+      "scenePrompt": "Scene: open engawa veranda overlooking a beautiful Japanese garden in spring daylight. Cherry blossom branches along far top left, mossy garden rocks and pond with small koi shapes at far left edge only, gently curved distant bridge toward far left, clipped shrubs and layered sage foliage; traditional wooden veranda post and partly visible shoji sliding door along far right. Broad honey-colored wooden working table across lower third, empty in center. Distant softly painted foliage quiet in center behind where card will be. Airy fresh mood, dappled sunlight, tiny fallen sakura petals only along far desk corners. Same palette/material finish as rural room."
+    },
+    {
+      "id": "mountains",
+      "scenePrompt": "Scene: a tranquil wooden mountain cabin lookout in Japan on a clear soft morning. Layered hazy blue-green Japanese peaks, faraway ridgeline and a graceful distant snow-capped mountain toward center, wisps of clouds, cedar trees at outer edges. Warm timber roof eave at upper outer edges and cabin post at far right, little unlettered ceramic mug and smooth stones at far bottom left. Broad warm wooden working table spans lower third, empty center. Quiet softly distant sky and mountain haze through center, nuanced depth, warm indoor wood contrasts cool atmospheric peaks. No alpine chalet or urban elements."
+    },
+    {
+      "id": "river",
+      "scenePrompt": "Scene: a peaceful Japanese riverside cottage veranda at late afternoon. Clear shallow river gently curving through center-left background, pale river stones visible beneath water, a low little weathered footbridge far in the distance, lush green grasses and a willow on the far left, golden reed light at far right. Warm Japanese wooden roof eave along upper right corner and a veranda post at outer right, tasteful small ceramic teapot on far bottom left. Broad empty honey-colored wood working table across lower third, horizontal back edge. Very soft peaceful sage riverbank and water in center behind future card; intimate low riverside viewpoint, calm summer warmth."
+    },
+    {
+      "id": "tokyo",
+      "scenePrompt": "Scene: a small inviting contemporary Tokyo apartment at blue hour, clearly distinct from the rural scenes. Large apartment window across background looking out on dense distant Tokyo buildings with softly glowing window lights, atmospheric indigo dusk sky, tiny Tokyo tower silhouette far to left, no signage anywhere. Interior is cozy warm lamplit amber, honey wooden desk spans lower third empty in center. Potted houseplant and unlettered closed books at far left, low warm paper lantern and small sofa with sage cushion at far right. Quiet broad soft blue sky/window middle behind future DOM card. Delicate reflections in glass, rich painterly cozy urban evening, no city signage, all window marks are simple light rectangles without writing. No shoji garden or traditional rural porch."
+    }
+  ],
+  "cleanup": "room and tokyo received one targeted built-in image edit: remove all text-like book-spine markings, preserve scene and replace with plain cloth/floral decorations.",
+  "conversion": "Pillow only performs ordinary RGB conversion, downsampling, WebP compression and manual focal portrait crop; no redraw or artistic editing. Desktop 1600x900, portrait 540x960; quality83 WebP, method6.",
+  "mobileCropCenterFractions": {
+    "room": 0.63,
+    "garden": 0.5,
+    "mountains": 0.54,
+    "river": 0.46,
+    "tokyo": 0.36
+  },
+  "semantics": "Environment plates only. Navigation, progress, cards, tokens, cat and feedback are live DOM components. Load only the active scene. Decorative background must not carry learning content."
+}

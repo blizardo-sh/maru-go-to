@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-21",
+  "scope": "approved learning model, Reference and wide composition",
+  "humanAccountUsed": false,
+  "externalAIRequests": 0,
+  "gate": {
+    "bunTests": 77,
+    "expectCalls": 1646,
+    "testFiles": 14,
+    "failures": 0,
+    "skips": 0,
+    "bunExitCode": 0,
+    "typecheckExitCode": 0,
+    "buildExitCode": 0,
+    "buildCount": 1,
+    "buildIdentity": "learning-build-identity-2026-10-21.json"
+  },
+  "browserEvidence": {
+    "functional": {
+      "file": "learning-functional-2026-10-21.json",
+      "exitCode": 0,
+      "afterReferenceIntegration": true
+    },
+    "geometry": {
+      "file": "learning-geometry-2026-10-21.json",
+      "exitCode": 0,
+      "beforeFinalInlineKanaNoteOnly": true
+    },
+    "ownerRaces": {
+      "red": "learning-owner-red-2026-10-21.json",
+      "green": "learning-owner-green-2026-10-21.json",
+      "greenExitCode": 0,
+      "beforeReferenceIntegration": true,
+      "repeatedAfterReference": false
+    },
+    "mouse": {
+      "exitCode": 0,
+      "adjacentBothDirections": true,
+      "nonAdjacentBothDirections": true,
+      "clickEditor": true,
+      "reviewWrites": 0
+    },
+    "nativeTransportAndReducedFallback": {
+      "file": "learning-scene-audio-transport-2026-10-21.json",
+      "exitCode": 0,
+      "introMs": 3008
+    },
+    "propsMotion": {
+      "file": "wide-props-motion-audit.json",
+      "owner": "design_refresh"
+    },
+    "kanaNoteScreenshot": {
+      "file": "learning-reference-kana-note-390.png",
+      "exitCode": 0,
+      "screenshotOnly": true
+    }
+  },
+  "audioProvenance": {
+    "singleFullOldRunnerExitZero": false,
+    "earlierQ7Baseline": "Actual duck, ACK retry, gains and navigation passed before an obsolete expected completion heading stopped the runner; no full PASS is claimed. Prior unchanged audio-specific proofs are archived in motion-audio-functional-2026-10-21.json.",
+    "largeRunTimingRed": "learning-intro-timing-red-2026-10-21.json",
+    "largeRunIntroMs": 12305,
+    "delayCauseEstablished": false,
+    "tinyProbeMs": 3008,
+    "sourceTimingFixMade": false
+  },
+  "readiness": {
+    "frontend5173": 200,
+    "api3000Ready": 200,
+    "checkedOutsideSandbox": true,
+    "restartedForFinalCheck": false
+  },
+  "cleanup": {
+    "ownUuidFixtureUsersRemaining": 0,
+    "isolatedDatabase": "japanese_app_test",
+    "testBrowsersAndServersClosed": true,
+    "previewAndPgPreserved": true
+  },
+  "limits": [
+    "No new cold production performance lab;3296ms is the previous edition measurement, not this build.",
+    "No acoustic audition or physical device check.",
+    "No new external AI evaluation; prior OpenRouter smoke returned429.",
+    "No VPS deploy/load/backup restore verification.",
+    "Large-run intro timing delay cause remains unestablished."
+  ],
+  "screenshots": {
+    "textbook390": "local-verification-artifacts/learning-textbook-390.png",
+    "constructor1280": "local-verification-artifacts/learning-train-1280.png",
+    "kana390": "local-verification-artifacts/learning-reference-kana-note-390.png"
+  }
+}

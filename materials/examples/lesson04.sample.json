@@ -1,0 +1,440 @@
+{
+  "course_id": "marugoto.starter-a1",
+  "lesson_id": "marugoto.starter-a1.lesson.04",
+  "status": "worked-example-not-complete-lesson",
+  "production_ready": false,
+  "authorship": "Original Russian explanations and example prompts prepared for this project; primary notes validate the grammar patterns, not every application of every lexical item.",
+  "lexical_curriculum_mapping_complete": false,
+  "not_covered": [
+    "age_counters",
+    "people_counters",
+    "full_lesson_vocabulary",
+    "exhaustive_valid_answer_variants",
+    "independent_linguistic_review"
+  ],
+  "forms": [
+    {
+      "id": "sample.l4.father",
+      "surface": "父",
+      "kana": "ちち",
+      "meaning_ru": "мой отец",
+      "pos": "noun",
+      "segments": [
+        {
+          "surface": "父",
+          "reading": "ちち"
+        }
+      ]
+    },
+    {
+      "id": "sample.l4.mother",
+      "surface": "母",
+      "kana": "はは",
+      "meaning_ru": "моя мать",
+      "pos": "noun",
+      "segments": [
+        {
+          "surface": "母",
+          "reading": "はは"
+        }
+      ]
+    },
+    {
+      "id": "sample.l4.elder_brother",
+      "surface": "兄",
+      "kana": "あに",
+      "meaning_ru": "мой старший брат",
+      "pos": "noun",
+      "segments": [
+        {
+          "surface": "兄",
+          "reading": "あに"
+        }
+      ]
+    },
+    {
+      "id": "sample.l4.elder_sister",
+      "surface": "姉",
+      "kana": "あね",
+      "meaning_ru": "моя старшая сестра",
+      "pos": "noun",
+      "segments": [
+        {
+          "surface": "姉",
+          "reading": "あね"
+        }
+      ]
+    },
+    {
+      "id": "sample.l4.wife",
+      "surface": "妻",
+      "kana": "つま",
+      "meaning_ru": "жена",
+      "pos": "noun",
+      "segments": [
+        {
+          "surface": "妻",
+          "reading": "つま"
+        }
+      ]
+    },
+    {
+      "id": "sample.l4.japan",
+      "surface": "日本",
+      "kana": "にほん",
+      "meaning_ru": "Япония",
+      "pos": "noun",
+      "segments": [
+        {
+          "surface": "日本",
+          "reading": "にほん"
+        }
+      ]
+    },
+    {
+      "id": "sample.l4.to",
+      "surface": "と",
+      "kana": "と",
+      "meaning_ru": "и; перечисление существительных",
+      "pos": "particle",
+      "segments": [
+        {
+          "surface": "と"
+        }
+      ]
+    },
+    {
+      "id": "sample.l4.no",
+      "surface": "の",
+      "kana": "の",
+      "meaning_ru": "связь двух существительных",
+      "pos": "particle",
+      "segments": [
+        {
+          "surface": "の"
+        }
+      ]
+    },
+    {
+      "id": "sample.l4.ni",
+      "surface": "に",
+      "kana": "に",
+      "meaning_ru": "место проживания в данном образце",
+      "pos": "particle",
+      "segments": [
+        {
+          "surface": "に"
+        }
+      ]
+    },
+    {
+      "id": "sample.l4.wa",
+      "surface": "は",
+      "kana": "は",
+      "meaning_ru": "тема высказывания",
+      "pos": "particle",
+      "segments": [
+        {
+          "surface": "は"
+        }
+      ]
+    },
+    {
+      "id": "sample.l4.desu",
+      "surface": "です",
+      "kana": "です",
+      "meaning_ru": "вежливое завершение именного высказывания",
+      "pos": "copula",
+      "segments": [
+        {
+          "surface": "です"
+        }
+      ]
+    },
+    {
+      "id": "sample.l4.reside_polite",
+      "surface": "住んでいます",
+      "kana": "すんでいます",
+      "meaning_ru": "живёт; проживает",
+      "pos": "verb_form",
+      "segments": [
+        {
+          "surface": "住",
+          "reading": "す"
+        },
+        {
+          "surface": "んでいます"
+        }
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": "marugoto.starter-a1.skill.to_noun_list",
+      "source_url": "https://a1.marugotoweb.jp/en/note_2_4_1.php",
+      "explanation_ru": "В перечислении と соединяет существительные: N1とN2. В задании с двумя родственниками допускается поменять их местами, если требуется назвать ту же пару. Здесь проверяется функция перечисления, а не все употребления частицы と."
+    },
+    {
+      "id": "marugoto.starter-a1.skill.ni_residence",
+      "source_url": "https://a1.marugotoweb.jp/en/note_2_4_2.php",
+      "explanation_ru": "В образце с すんでいます место проживания отмечается частицей に. Частица связывается с местом, а лицо, о котором сообщают, может быть темой с は. Навык относится к этому значению に; знание знака частицы само по себе не означает освоение её остальных функций."
+    },
+    {
+      "id": "marugoto.starter-a1.skill.no_relation",
+      "source_url": "https://a1.marugotoweb.jp/en/note_2_4_3.php",
+      "explanation_ru": "В сочетании N1のN2 первое существительное уточняет второе. В семейном контексте это помогает назвать связь между людьми. Порядок важен: あにのつま — жена старшего брата, а つまのあに — старший брат жены; обе фразы построены по образцу, но сообщают разное."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "sample.l4.exercise.parents",
+      "skill_id": "marugoto.starter-a1.skill.to_noun_list",
+      "can_do_ids": [
+        7
+      ],
+      "prompt_ru": "Назови двух людей: мой отец и моя мать.",
+      "context_ru": "Ученик рассказывает о своей семье; для названий людей используется собственная семейная фотография.",
+      "tokens": [
+        {
+          "instance_id": "t1",
+          "form_id": "sample.l4.father"
+        },
+        {
+          "instance_id": "t2",
+          "form_id": "sample.l4.to"
+        },
+        {
+          "instance_id": "t3",
+          "form_id": "sample.l4.mother"
+        },
+        {
+          "instance_id": "t4",
+          "form_id": "sample.l4.desu"
+        }
+      ],
+      "accepted_orders": [
+        [
+          "t1",
+          "t2",
+          "t3",
+          "t4"
+        ],
+        [
+          "t3",
+          "t2",
+          "t1",
+          "t4"
+        ]
+      ],
+      "sentence_end": "。",
+      "answer_review_status": "source-checked-draft",
+      "accepted_variants_complete": false
+    },
+    {
+      "id": "sample.l4.exercise.siblings",
+      "skill_id": "marugoto.starter-a1.skill.to_noun_list",
+      "can_do_ids": [
+        7
+      ],
+      "prompt_ru": "Назови двух людей: мой старший брат и моя старшая сестра.",
+      "context_ru": "Ученик рассказывает о своей семье; для названий людей используется собственная семейная фотография.",
+      "tokens": [
+        {
+          "instance_id": "t1",
+          "form_id": "sample.l4.elder_brother"
+        },
+        {
+          "instance_id": "t2",
+          "form_id": "sample.l4.to"
+        },
+        {
+          "instance_id": "t3",
+          "form_id": "sample.l4.elder_sister"
+        },
+        {
+          "instance_id": "t4",
+          "form_id": "sample.l4.desu"
+        }
+      ],
+      "accepted_orders": [
+        [
+          "t1",
+          "t2",
+          "t3",
+          "t4"
+        ],
+        [
+          "t3",
+          "t2",
+          "t1",
+          "t4"
+        ]
+      ],
+      "sentence_end": "。",
+      "answer_review_status": "source-checked-draft",
+      "accepted_variants_complete": false
+    },
+    {
+      "id": "sample.l4.exercise.mother_residence",
+      "skill_id": "marugoto.starter-a1.skill.ni_residence",
+      "can_do_ids": [
+        8
+      ],
+      "prompt_ru": "Сообщи: моя мать живёт в Японии.",
+      "context_ru": "Ученик рассказывает о своей семье; для названий людей используется собственная семейная фотография.",
+      "tokens": [
+        {
+          "instance_id": "t1",
+          "form_id": "sample.l4.mother"
+        },
+        {
+          "instance_id": "t2",
+          "form_id": "sample.l4.wa"
+        },
+        {
+          "instance_id": "t3",
+          "form_id": "sample.l4.japan"
+        },
+        {
+          "instance_id": "t4",
+          "form_id": "sample.l4.ni"
+        },
+        {
+          "instance_id": "t5",
+          "form_id": "sample.l4.reside_polite"
+        }
+      ],
+      "accepted_orders": [
+        [
+          "t1",
+          "t2",
+          "t3",
+          "t4",
+          "t5"
+        ]
+      ],
+      "sentence_end": "。",
+      "answer_review_status": "source-checked-draft",
+      "accepted_variants_complete": false
+    },
+    {
+      "id": "sample.l4.exercise.sister_residence",
+      "skill_id": "marugoto.starter-a1.skill.ni_residence",
+      "can_do_ids": [
+        8
+      ],
+      "prompt_ru": "Сообщи: моя старшая сестра живёт в Японии.",
+      "context_ru": "Ученик рассказывает о своей семье; для названий людей используется собственная семейная фотография.",
+      "tokens": [
+        {
+          "instance_id": "t1",
+          "form_id": "sample.l4.elder_sister"
+        },
+        {
+          "instance_id": "t2",
+          "form_id": "sample.l4.wa"
+        },
+        {
+          "instance_id": "t3",
+          "form_id": "sample.l4.japan"
+        },
+        {
+          "instance_id": "t4",
+          "form_id": "sample.l4.ni"
+        },
+        {
+          "instance_id": "t5",
+          "form_id": "sample.l4.reside_polite"
+        }
+      ],
+      "accepted_orders": [
+        [
+          "t1",
+          "t2",
+          "t3",
+          "t4",
+          "t5"
+        ]
+      ],
+      "sentence_end": "。",
+      "answer_review_status": "source-checked-draft",
+      "accepted_variants_complete": false
+    },
+    {
+      "id": "sample.l4.exercise.mothers_sister",
+      "skill_id": "marugoto.starter-a1.skill.no_relation",
+      "can_do_ids": [
+        8
+      ],
+      "prompt_ru": "Назови человека: старшая сестра моей матери.",
+      "context_ru": "Ученик рассказывает о своей семье; для названий людей используется собственная семейная фотография.",
+      "tokens": [
+        {
+          "instance_id": "t1",
+          "form_id": "sample.l4.mother"
+        },
+        {
+          "instance_id": "t2",
+          "form_id": "sample.l4.no"
+        },
+        {
+          "instance_id": "t3",
+          "form_id": "sample.l4.elder_sister"
+        },
+        {
+          "instance_id": "t4",
+          "form_id": "sample.l4.desu"
+        }
+      ],
+      "accepted_orders": [
+        [
+          "t1",
+          "t2",
+          "t3",
+          "t4"
+        ]
+      ],
+      "sentence_end": "。",
+      "answer_review_status": "source-checked-draft",
+      "accepted_variants_complete": false
+    },
+    {
+      "id": "sample.l4.exercise.brothers_wife",
+      "skill_id": "marugoto.starter-a1.skill.no_relation",
+      "can_do_ids": [
+        8
+      ],
+      "prompt_ru": "Назови человека: жена моего старшего брата.",
+      "context_ru": "Ученик рассказывает о своей семье; для названий людей используется собственная семейная фотография.",
+      "tokens": [
+        {
+          "instance_id": "t1",
+          "form_id": "sample.l4.elder_brother"
+        },
+        {
+          "instance_id": "t2",
+          "form_id": "sample.l4.no"
+        },
+        {
+          "instance_id": "t3",
+          "form_id": "sample.l4.wife"
+        },
+        {
+          "instance_id": "t4",
+          "form_id": "sample.l4.desu"
+        }
+      ],
+      "accepted_orders": [
+        [
+          "t1",
+          "t2",
+          "t3",
+          "t4"
+        ]
+      ],
+      "sentence_end": "。",
+      "answer_review_status": "source-checked-draft",
+      "accepted_variants_complete": false
+    }
+  ]
+}

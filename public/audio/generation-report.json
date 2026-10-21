@@ -1,0 +1,16 @@
+{
+  "source": "macOS speech synthesis",
+  "voice": "Kyoko",
+  "rate": 150,
+  "words": 813,
+  "audioWords": 809,
+  "distinctReadings": 775,
+  "missingWordIds": [
+    "marugoto.starter-a1.word.9148989aa6fc8021",
+    "marugoto.starter-a1.word.6206f3c0ca0ee870",
+    "marugoto.starter-a1.word.d6bbec85a6b40fa4",
+    "marugoto.starter-a1.word.23f1417336b4ad34"
+  ],
+  "errors": [],
+  "pronunciationReview": "not-human-reviewed"
+}

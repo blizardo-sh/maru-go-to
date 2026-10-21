@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "createdAt": "2026-10-21T08:42:27.412874+00:00",
+  "generator": "built-in image_gen.imagegen",
+  "reference": {
+    "path": "local-reference-artifacts/codex-clipboard-47b69889-4116-4359-a766-7cd033e1a885.png",
+    "sha256": "8b6d5678a36244f84e32ecc6cb28345b15f7a2d330a4a4f69548f0c4234c6b13",
+    "role": "style reference only"
+  },
+  "scope": "Three reusable UI materials; native DOM supplies all text and controls.",
+  "overwritePolicy": "New versioned files only; assert all destinations absent, then exclusive creation.",
+  "derivatives": "Pillow crop (frame padding only), LANCZOS resize, lossy WebP with generated alpha preserved. No painted mask or redrawn material.",
+  "visualInspection": {
+    "allAssets": "Viewed generated outputs; no embedded text, controls, icons, cats or flowers.",
+    "frame": "Straight orthographic sides, mitered corners, transparent central opening; generated residual alpha <=2/255 inside calm center.",
+    "paper": "Fine warm ivory fibers with low contrast and no stains or edge decoration.",
+    "woodPlank": "Horizontal grain with evenly lit warm honey tone and no panel outline."
+  },
+  "assets": [
+    {
+      "file": "wood-frame-v1.webp",
+      "prompt": "Use case: stylized-concept.\nAsset type: production transparent 9-slice wooden frame rim for a responsive Japanese study game.\nInput image 1 is a STYLE REFERENCE ONLY. Match the warm honey and chestnut hand-painted wood material, natural brush strokes, restrained grain and softly modeled edges of the large wooden study-board frame in that image. Do not reproduce its scene, UI, paper, cat or writing.\nCreate ONLY ONE isolated square wooden frame, FRONT-FACING ORTHOGRAPHIC VIEW, 1024 by 1024 composition. The frame must form a true square ring with perfectly straight parallel horizontal and vertical sides, each of equal visual thickness, about 70 pixels thick, with softly rounded outer corners and tidy square/mitered joinery. Outer wooden contour about 24 pixels from all image edges; inner opening begins about 100 pixels from each edge. Use low-relief beveled edges and warm painterly highlights and a small soft translucent contact shadow. The four side spans are straight and regular so a 9-slice border can stretch them, and all corner ornament fits inside the outer 150-pixel corner areas.\nMaterial: tactile warm honey/chestnut timber, flowing subtle wood grain, beautiful authentic painterly animation background craftsmanship, fine imperfect brushwork, pleasing gentle depth. Keep lighting balanced around the ring; no plastic gloss.\nCRITICAL: everything inside the large central square opening is truly transparent alpha, with NO paper, NO board, NO fill or white background. Everything outside the wood and its very small translucent shadow is transparent alpha. This is an isolated cutout asset, not a mockup.\nAvoid absolutely: perspective or trapezoid, scene or room, text or letters or numbers, icons, flowers, leaves, cat, hardware, buttons, UI, watermark, drop shadow extending far outside frame.",
+      "transparentBackgroundRequested": true,
+      "source": {
+        "path": "imagegen-artifacts/01a15d9a-e862-7750-a746-01e09d11bee0/exec-ecc9d8a5-cf92-4884-84ed-91bc3f420243.png",
+        "sha256": "baef9f0939acf217dbb373fdca65b12a717693da5dcff04a5cca2d3b0ce43a0b",
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA"
+      },
+      "crop": [
+        60,
+        58,
+        1194,
+        1174
+      ],
+      "dimensions": [
+        1024,
+        1008
+      ],
+      "mode": "RGBA",
+      "bytes": 77088,
+      "budgetBytes": 80000,
+      "sha256": "20960dabee2354ee08cb8a21f1758ea3cacd57d559c51a8352732cbdfb7cbb79",
+      "webpQuality": 80,
+      "alpha": {
+        "extrema": [
+          0,
+          255
+        ],
+        "centerExtrema": [
+          0,
+          1
+        ],
+        "cornerPixels": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "file": "paper-v1.webp",
+      "prompt": "Use case: stylized-concept.\nAsset type: production seamless warm ivory washi paper texture for a Japanese study-game surface with live dark text over it.\nInput image 1 is a STYLE REFERENCE ONLY. Match the softly luminous warm ivory paper inside the large study board of the image. Do not reproduce any UI, objects, lettering or border from the reference.\nGenerate ONLY a square edge-to-edge paper material swatch, 768 by 768 composition. Warm natural ivory washi paper with delicate fine fibers, subtle tactile grain, very soft creamy color variation, a calm evenly readable center. This is a painterly storybook background material with natural handmade character.\nLighting is soft, diffuse, uniform and flat. Keep contrast very low throughout so dark native HTML text can remain easy to read. Make the pattern seamlessly tileable at all four edges, no vignette, no change of brightness at edges.\nAvoid absolutely: frame, border, torn edge, aged dark corners, stains, dirty brown blotches, strong texture, folds, creases, flowers, leaves, illustration, objects, shadows, gradients, writing, letters, numbers, symbols, text, watermark. The entire image is just clean warm ivory paper texture.",
+      "transparentBackgroundRequested": false,
+      "source": {
+        "path": "imagegen-artifacts/01a15d9a-e862-7750-a746-01e09d11bee0/exec-5614296f-4c0f-4485-a132-a0068946a8e1.png",
+        "sha256": "035863fe29fa7f753617c30fff82b0965a26c12bfcc3cdd0bde5fe1eee048ad3",
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "mode": "RGB"
+      },
+      "crop": null,
+      "dimensions": [
+        768,
+        768
+      ],
+      "mode": "RGB",
+      "bytes": 8400,
+      "budgetBytes": 40000,
+      "sha256": "cab48c008bef5dfb88a17978a9ce9c6f5d63bf00080c4659138eb81b972c29b0",
+      "webpQuality": 72,
+      "alpha": null
+    },
+    {
+      "file": "wood-plank-v1.webp",
+      "prompt": "Use case: stylized-concept.\nAsset type: production horizontal honey-wood texture for the top navigation HUD of a Japanese study game.\nInput image 1 is a STYLE REFERENCE ONLY. Match the warm tactile hand-painted honey/chestnut wooden material of the long top navigation bar in the image. Do not reproduce the navigation bar, its shape, icons or writing.\nGenerate ONLY an edge-to-edge rectangular wood material swatch, 1536 pixels wide by 512 pixels tall composition. All visible wood grain flows in the HORIZONTAL direction. The surface is flat front-facing orthographic, uniformly lit, medium warm honey/chestnut timber with soft natural brushwork and restrained fine low-contrast wood grain. A lovely painterly animation background material, tactile rather than glossy. Make the left and right edges tile together unobtrusively for repeat-x; keep brightness even across the width. No obvious central knot or landmark. Text will be placed over it in native HTML, so avoid busy dark streaks and strong contrasts.\nThere is no physical plank outline: the texture fills every pixel to the edge. No border, bevel, outer shadow, panel or frame geometry.\nAvoid absolutely: perspective, objects, knots with high contrast, cracks, metal, handles, hardware, signage, writing, letters, numbers, symbols, buttons, UI, cat, flowers, leaves, paper, glossy plastic, watermark. Only the horizontal warm painted wood material.",
+      "transparentBackgroundRequested": false,
+      "source": {
+        "path": "imagegen-artifacts/01a15d9a-e862-7750-a746-01e09d11bee0/exec-36bb6e1c-ac58-4635-a88c-b9d5e717af44.png",
+        "sha256": "5359107fd8b9d17daebc5e83e8ce647960165c904a98dea7f82d916a0d94a931",
+        "dimensions": [
+          2172,
+          724
+        ],
+        "mode": "RGB"
+      },
+      "crop": null,
+      "dimensions": [
+        1024,
+        341
+      ],
+      "mode": "RGB",
+      "bytes": 11632,
+      "budgetBytes": 50000,
+      "sha256": "9e7db466cc704f836406e3a8189824217fc27e60e6ab78f8d9325aa7522c5a36",
+      "webpQuality": 78,
+      "alpha": null
+    }
+  ],
+  "css": {
+    "woodFrame": {
+      "borderImageSlice": 150,
+      "borderImageRepeat": "stretch",
+      "suggestedBorderWidthPx": {
+        "desktop": [
+          18,
+          28
+        ],
+        "mobile": [
+          10,
+          16
+        ]
+      },
+      "notes": "150 source pixels safely include all mitered corner detail; do not use fill. Paper should be a separate background below the alpha frame."
+    },
+    "paper": {
+      "backgroundRepeat": "repeat",
+      "suggestedBackgroundSizePx": [
+        512,
+        512
+      ]
+    },
+    "woodPlank": {
+      "backgroundRepeat": "repeat-x",
+      "suggestedBackgroundSize": "auto 100%"
+    }
+  },
+  "unchecked": [
+    "Seamless tiling is prompt-guided and visually low-contrast, not mathematically exact.",
+    "Responsive browser rendering and final text contrast belong to the consuming CSS verification."
+  ]
+}

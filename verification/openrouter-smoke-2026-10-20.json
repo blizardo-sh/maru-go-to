@@ -1,0 +1,22 @@
+{
+  "model": "google/gemma-4-26b-a4b-it:free",
+  "attemptedRequests": 1,
+  "validResponses": 0,
+  "draftGrammarMatches": 0,
+  "p95AttemptMs": 539,
+  "rubricStatus": "draft-not-teacher-reviewed",
+  "manualTranslationAndExplanationReviewRequired": true,
+  "note": "Direct provider calls; no prepared lookups, retries or paid fallbacks. This smoke test does not establish 95% linguistic quality. Shared account traffic may also consume quota.",
+  "rows": [
+    {
+      "id": "correct",
+      "text": "わたしは学生です。",
+      "category": "correct",
+      "expected": [
+        "correct"
+      ],
+      "elapsedMs": 539,
+      "status": "http-429"
+    }
+  ]
+}

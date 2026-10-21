@@ -1,0 +1,474 @@
+{
+  "version": 1,
+  "checkedAt": "2026-10-21",
+  "auditionStatus": "Not auditioned: this agent has no audio input. Source descriptions and objective measurements are not a substitute for human listening.",
+  "loopImplementation": "Music/ambience support progressive HTMLAudio playback through WebAudio gain: moov precedes mdat in every M4A. Files have prepared end/start crossfade. AAC roundtrip through macOS AudioToolbox removes encoder priming/padding and matches prepared PCM duration to one sample. Actual browser loop/start latency still needs browser QA.",
+  "recordingLocations": "Environmental recordings are illustrative sound design, not recordings made in Japan. Joseph SARDIN sources were recorded in France; the urban recording is Paris by Night.",
+  "assets": [
+    {
+      "id": "ambience-house",
+      "filename": "ambience-house.m4a",
+      "kind": "ambience",
+      "title": "Inside a House",
+      "author": "Joseph SARDIN",
+      "source": "https://bigsoundbank.com/inside-a-house-s0750.html",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceRangeSeconds": [
+        44.0,
+        78.0
+      ],
+      "modifications": "Selected quieter 34-second passage; 65 Hz high-pass, 6.5 kHz low-pass, DC removal, equal-power 2-second end/start crossfade, gentle level normalization; AAC 96 kbps.",
+      "gainDb": 6.436457757849504,
+      "pcmSeconds": 32.0,
+      "loopStart": 0,
+      "loopEnd": 32.0,
+      "sourceSha256": "600897faf1e63eeba987e027ea48b5b35592187ac00258bb5625c77214ed8e28",
+      "src": "/audio/game/ambience-house.m4a",
+      "bytes": 384416,
+      "sha256": "ed243688ab2dd814c4a21f730f029058a89a9fdc073fa7b8a9bf36fb74b3cfc3",
+      "duration": 32.0,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peakDbfs": -17.481,
+      "rmsDbfs": -36.738,
+      "maxAbsDc": 1.11e-06,
+      "mimeType": "audio/mp4",
+      "loopBoundaryMaxStep": 0.00769043,
+      "adjacentStep99Percentile": 0.008850098,
+      "mp4Atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "bytes": 28
+        },
+        {
+          "type": "moov",
+          "offset": 28,
+          "bytes": 6602
+        },
+        {
+          "type": "free",
+          "offset": 6630,
+          "bytes": 1554
+        },
+        {
+          "type": "mdat",
+          "offset": 8184,
+          "bytes": 376232
+        }
+      ],
+      "progressiveStreamingReady": true
+    },
+    {
+      "id": "ambience-birds",
+      "filename": "ambience-birds.m4a",
+      "kind": "ambience",
+      "title": "Countryside",
+      "author": "Joseph SARDIN",
+      "source": "https://bigsoundbank.com/countryside-s0097.html",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceRangeSeconds": [
+        36.0,
+        70.0
+      ],
+      "modifications": "Selected quieter 34-second passage; 65 Hz high-pass, 6.5 kHz low-pass, DC removal, equal-power 2-second end/start crossfade, gentle level normalization; AAC 96 kbps.",
+      "gainDb": 3.570390703170936,
+      "pcmSeconds": 32.0,
+      "loopStart": 0,
+      "loopEnd": 32.0,
+      "sourceSha256": "6b28d6a896620e37ea62c6bfc9248dd31f7363692f63970ad8cd0dbf64a278d0",
+      "src": "/audio/game/ambience-birds.m4a",
+      "bytes": 397978,
+      "sha256": "e5c2393b0f95c590c4e84e9524625364ab3792cf0d581f60308a4a497fbe146c",
+      "duration": 32.0,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peakDbfs": -17.249,
+      "rmsDbfs": -41.051,
+      "maxAbsDc": 1.731e-06,
+      "mimeType": "audio/mp4",
+      "loopBoundaryMaxStep": 0.001068115,
+      "adjacentStep99Percentile": 0.005584717,
+      "mp4Atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "bytes": 28
+        },
+        {
+          "type": "moov",
+          "offset": 28,
+          "bytes": 6602
+        },
+        {
+          "type": "free",
+          "offset": 6630,
+          "bytes": 1554
+        },
+        {
+          "type": "mdat",
+          "offset": 8184,
+          "bytes": 389794
+        }
+      ],
+      "progressiveStreamingReady": true
+    },
+    {
+      "id": "ambience-wind",
+      "filename": "ambience-wind.m4a",
+      "kind": "ambience",
+      "title": "Wind in the Trees",
+      "author": "Joseph SARDIN",
+      "source": "https://bigsoundbank.com/forest-wind-in-the-trees-s0904.html",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceRangeSeconds": [
+        128.0,
+        162.0
+      ],
+      "modifications": "Selected quieter 34-second passage; 65 Hz high-pass, 6.5 kHz low-pass, DC removal, equal-power 2-second end/start crossfade, gentle level normalization; AAC 96 kbps.",
+      "gainDb": 17.45441167861059,
+      "pcmSeconds": 32.0,
+      "loopStart": 0,
+      "loopEnd": 32.0,
+      "sourceSha256": "25f907ab068df5836b28af2c923468b97d2b75afbc56cce27834d3526ac7b3c0",
+      "src": "/audio/game/ambience-wind.m4a",
+      "bytes": 386169,
+      "sha256": "07f9eff86d7cdb3b6126772c86f975797f4cce8cb523b240786f708a5c0cfd40",
+      "duration": 32.0,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peakDbfs": -17.478,
+      "rmsDbfs": -34.075,
+      "maxAbsDc": 1.577e-06,
+      "mimeType": "audio/mp4",
+      "loopBoundaryMaxStep": 0.009216309,
+      "adjacentStep99Percentile": 0.024688721,
+      "mp4Atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "bytes": 28
+        },
+        {
+          "type": "moov",
+          "offset": 28,
+          "bytes": 6602
+        },
+        {
+          "type": "free",
+          "offset": 6630,
+          "bytes": 1554
+        },
+        {
+          "type": "mdat",
+          "offset": 8184,
+          "bytes": 377985
+        }
+      ],
+      "progressiveStreamingReady": true
+    },
+    {
+      "id": "ambience-river",
+      "filename": "ambience-river.m4a",
+      "kind": "ambience",
+      "title": "Small Stream",
+      "author": "Joseph SARDIN",
+      "source": "https://bigsoundbank.com/small-stream-s0823.html",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceRangeSeconds": [
+        50.0,
+        84.0
+      ],
+      "modifications": "Selected quieter 34-second passage; 65 Hz high-pass, 6.5 kHz low-pass, DC removal, equal-power 2-second end/start crossfade, gentle level normalization; AAC 96 kbps.",
+      "gainDb": -12.570795596236257,
+      "pcmSeconds": 32.0,
+      "loopStart": 0,
+      "loopEnd": 32.0,
+      "sourceSha256": "d32083bb18dd27661c77a6b17f5b7ae3db40a7860ff1089cd9281f1148d04e6d",
+      "src": "/audio/game/ambience-river.m4a",
+      "bytes": 384259,
+      "sha256": "dc852c9949af6f38320e48c940b59869bcbea5038418a85995bd13028db24810",
+      "duration": 32.0,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peakDbfs": -15.916,
+      "rmsDbfs": -38.057,
+      "maxAbsDc": 1.92e-07,
+      "mimeType": "audio/mp4",
+      "loopBoundaryMaxStep": 0.003814697,
+      "adjacentStep99Percentile": 0.013214722,
+      "mp4Atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "bytes": 28
+        },
+        {
+          "type": "moov",
+          "offset": 28,
+          "bytes": 6602
+        },
+        {
+          "type": "free",
+          "offset": 6630,
+          "bytes": 1554
+        },
+        {
+          "type": "mdat",
+          "offset": 8184,
+          "bytes": 376075
+        }
+      ],
+      "progressiveStreamingReady": true
+    },
+    {
+      "id": "ambience-city",
+      "filename": "ambience-city.m4a",
+      "kind": "ambience",
+      "title": "Paris by Night",
+      "author": "Joseph SARDIN",
+      "source": "https://bigsoundbank.com/paris-by-night-s0680.html",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceRangeSeconds": [
+        30.0,
+        64.0
+      ],
+      "modifications": "Selected quieter 34-second passage; 65 Hz high-pass, 6.5 kHz low-pass, DC removal, equal-power 2-second end/start crossfade, gentle level normalization; AAC 96 kbps.",
+      "gainDb": -1.0793645265881942,
+      "pcmSeconds": 32.0,
+      "loopStart": 0,
+      "loopEnd": 32.0,
+      "sourceSha256": "3acef3f248c8a8af23c6fef1b31d18000fcd77a14ca952f35ff2d233ac7c307c",
+      "src": "/audio/game/ambience-city.m4a",
+      "bytes": 388756,
+      "sha256": "53eaaa902087f3ebcc06b689beefe3840b644dd524cf4121fdb72140ba2c213c",
+      "duration": 32.0,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peakDbfs": -17.287,
+      "rmsDbfs": -36.127,
+      "maxAbsDc": 1.943e-06,
+      "mimeType": "audio/mp4",
+      "loopBoundaryMaxStep": 0.001403809,
+      "adjacentStep99Percentile": 0.00491333,
+      "mp4Atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "bytes": 28
+        },
+        {
+          "type": "moov",
+          "offset": 28,
+          "bytes": 6602
+        },
+        {
+          "type": "free",
+          "offset": 6630,
+          "bytes": 1554
+        },
+        {
+          "type": "mdat",
+          "offset": 8184,
+          "bytes": 380572
+        }
+      ],
+      "progressiveStreamingReady": true
+    },
+    {
+      "id": "music-cozy",
+      "filename": "music-cozy.m4a",
+      "kind": "music",
+      "title": "Hot Springs Town",
+      "author": "Kistol",
+      "source": "https://opengameart.org/content/hot-springs-town",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceRangeSeconds": [
+        0.0,
+        160.0
+      ],
+      "modifications": "Trimmed encoder silence; DC removal; 0.6-second equal-power end/start crossfade; gentle level normalization; AAC 96 kbps.",
+      "gainDb": -6.962355973223065,
+      "pcmSeconds": 159.4,
+      "loopStart": 0,
+      "loopEnd": 159.4,
+      "sourceSha256": "da33a9f057c759f35b19c5cd737cc59ce44d9b272b1b6c8ada4605fa1ece2a69",
+      "src": "/audio/game/music-cozy.m4a",
+      "bytes": 1908191,
+      "sha256": "e9ed24d254e9fca78ad63baa2a8a3c6a536fc7aca7b3562face2b92260936bd0",
+      "duration": 159.4,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peakDbfs": -8.822,
+      "rmsDbfs": -25.02,
+      "maxAbsDc": 5.482e-06,
+      "mimeType": "audio/mp4",
+      "loopBoundaryMaxStep": 0.003479004,
+      "adjacentStep99Percentile": 0.017913818,
+      "mp4Atoms": [
+        {
+          "type": "ftyp",
+          "offset": 0,
+          "bytes": 28
+        },
+        {
+          "type": "moov",
+          "offset": 28,
+          "bytes": 29546
+        },
+        {
+          "type": "free",
+          "offset": 29574,
+          "bytes": 3186
+        },
+        {
+          "type": "mdat",
+          "offset": 32760,
+          "bytes": 1875431
+        }
+      ],
+      "progressiveStreamingReady": true
+    },
+    {
+      "id": "sfx-reveal",
+      "filename": "sfx-reveal.wav",
+      "kind": "sfx",
+      "title": "Casino Audio: card-slide-5",
+      "author": "Kenney Vleugels (Kenney.nl)",
+      "source": "https://kenney.nl/assets/casino-audio",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceRangeSeconds": [
+        0.0,
+        0.5993650793650793
+      ],
+      "modifications": "Trimmed silence; 8 ms edge fades; DC removal; conservative level normalization; lossless 16-bit PCM WAV.",
+      "gainDb": -10.13876102983738,
+      "pcmSeconds": 0.5993650793650793,
+      "src": "/audio/game/sfx-reveal.wav",
+      "bytes": 105772,
+      "sha256": "452fcb10c4cb045eae28cc52d8ed97fbcaec1115dfd6385e53975a11fd5293b5",
+      "duration": 0.5993650793650793,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peakDbfs": -12.0,
+      "rmsDbfs": -40.796,
+      "maxAbsDc": 4.5e-08,
+      "mimeType": "audio/wav"
+    },
+    {
+      "id": "sfx-move",
+      "filename": "sfx-move.wav",
+      "kind": "sfx",
+      "title": "Casino Audio: card-place-2",
+      "author": "Kenney Vleugels (Kenney.nl)",
+      "source": "https://kenney.nl/assets/casino-audio",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceRangeSeconds": [
+        0.0,
+        0.45648526077097507
+      ],
+      "modifications": "Trimmed silence; 8 ms edge fades; DC removal; conservative level normalization; lossless 16-bit PCM WAV.",
+      "gainDb": -10.208529101713143,
+      "pcmSeconds": 0.45648526077097507,
+      "src": "/audio/game/sfx-move.wav",
+      "bytes": 80568,
+      "sha256": "16f176b6b59a17e4d5917b719529f6526c8a3f49b122cf1126b8f6aa32acd709",
+      "duration": 0.45648526077097507,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peakDbfs": -12.0,
+      "rmsDbfs": -41.914,
+      "maxAbsDc": 1.15e-07,
+      "mimeType": "audio/wav"
+    },
+    {
+      "id": "sfx-good",
+      "filename": "sfx-good.wav",
+      "kind": "sfx",
+      "title": "Interface Sounds: confirmation_002",
+      "author": "Kenney Vleugels (Kenney.nl)",
+      "source": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceRangeSeconds": [
+        0.0,
+        0.5390022675736962
+      ],
+      "modifications": "Trimmed silence; 8 ms edge fades; DC removal; conservative level normalization; lossless 16-bit PCM WAV.",
+      "gainDb": -10.31719196520311,
+      "pcmSeconds": 0.5390022675736962,
+      "src": "/audio/game/sfx-good.wav",
+      "bytes": 47584,
+      "sha256": "fc1a3670dd49b528bf2109839d8c5e789dfad671bc8cc9f29c2361f7bb215831",
+      "duration": 0.5390022675736962,
+      "sampleRate": 44100,
+      "channels": 1,
+      "peakDbfs": -12.706,
+      "rmsDbfs": -26.0,
+      "maxAbsDc": 3.3e-08,
+      "mimeType": "audio/wav"
+    },
+    {
+      "id": "sfx-again",
+      "filename": "sfx-again.wav",
+      "kind": "sfx",
+      "title": "Interface Sounds: pluck_001",
+      "author": "Kenney Vleugels (Kenney.nl)",
+      "source": "https://kenney.nl/assets/interface-sounds",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceRangeSeconds": [
+        0.0,
+        0.09952380952380953
+      ],
+      "modifications": "Trimmed silence; 8 ms edge fades; DC removal; conservative level normalization; lossless 16-bit PCM WAV.",
+      "gainDb": 0.8332057164078002,
+      "pcmSeconds": 0.09952380952380953,
+      "src": "/audio/game/sfx-again.wav",
+      "bytes": 17600,
+      "sha256": "1c672174a8df71d70035d6da01711122b5e2c336847f24a278ee15945ecbf055",
+      "duration": 0.09952380952380953,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peakDbfs": -12.0,
+      "rmsDbfs": -29.235,
+      "maxAbsDc": 7e-08,
+      "mimeType": "audio/wav"
+    },
+    {
+      "id": "sfx-complete",
+      "filename": "sfx-complete.wav",
+      "kind": "sfx",
+      "title": "Music Jingles: jingles_PIZZI01",
+      "author": "Kenney Vleugels (Kenney.nl)",
+      "source": "https://kenney.nl/assets/music-jingles",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceRangeSeconds": [
+        0.004013605442176871,
+        1.002358276643991
+      ],
+      "modifications": "Trimmed silence; 8 ms edge fades; DC removal; conservative level normalization; lossless 16-bit PCM WAV.",
+      "gainDb": -10.8885891717175,
+      "pcmSeconds": 0.998344671201814,
+      "src": "/audio/game/sfx-complete.wav",
+      "bytes": 176152,
+      "sha256": "2930be2b4d44e82b1fe89ca1b04b672f64310b750bd40b78a2142df1324c0ecf",
+      "duration": 0.998344671201814,
+      "sampleRate": 44100,
+      "channels": 2,
+      "peakDbfs": -15.979,
+      "rmsDbfs": -26.0,
+      "maxAbsDc": 4.2e-08,
+      "mimeType": "audio/wav"
+    }
+  ]
+}

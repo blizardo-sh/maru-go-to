@@ -1,0 +1,22 @@
+{
+  "family": "Neucha",
+  "designer": "Jovanny Lemonad",
+  "weight": 400,
+  "license": "SIL Open Font License 1.1",
+  "upstream": "https://github.com/google/fonts/tree/main/ofl/neucha",
+  "cssSource": "https://fonts.googleapis.com/css2?family=Neucha&display=swap",
+  "files": [
+    {
+      "path": "neucha-cyrillic.woff2",
+      "source": "https://fonts.gstatic.com/s/neucha/v18/q5uGsou0JOdh94bfuQltKRZUgbxR.woff2",
+      "bytes": 8776,
+      "sha256": "1cd915e9dd864efe9dcc3658585857029464e3f583d4b1a86c9e76fa3031e5b8"
+    },
+    {
+      "path": "neucha-latin.woff2",
+      "source": "https://fonts.gstatic.com/s/neucha/v18/q5uGsou0JOdh94bfvQltKRZUgQ.woff2",
+      "bytes": 11888,
+      "sha256": "02a1dbb6327c2600459b1769bac979d5644300645746b9021a2fcfb361cba577"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "green": false,
+  "replay": {
+    "posts": [
+      {
+        "owner": "A",
+        "attemptId": "d0291f5e-5a3e-477f-a094-9017196ab69c"
+      },
+      {
+        "owner": "B",
+        "attemptId": "6b364736-bc00-4bd2-ba27-bd43434cfd9f"
+      }
+    ],
+    "secondAttemptRetainedForA": false,
+    "bOutbox": 0,
+    "crossedOwner": true
+  },
+  "settings": {
+    "enabledAtBLogin": false,
+    "pressedAtBLogin": "true",
+    "pressedAfterStaleAResponse": "false",
+    "transientSoundStates": [
+      "false"
+    ]
+  },
+  "errors": [],
+  "isolatedFixtures": true,
+  "humanAccountUsed": false
+}

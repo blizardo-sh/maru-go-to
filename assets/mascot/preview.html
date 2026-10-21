@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Кот-помощник — позы и эмоции</title>
+<style>
+:root{color-scheme:light;font:16px/1.5 system-ui,sans-serif;color:#453b34;background:#faf4ea}
+*{box-sizing:border-box}body{margin:0;padding:clamp(20px,5vw,56px)}main{max-width:1020px;margin:auto}
+h1{font-size:clamp(27px,4vw,42px);line-height:1.15;margin:8px 0 12px;letter-spacing:-.035em}p{margin:0;color:#75675c}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8b6852;font-weight:650}
+.layout{display:grid;grid-template-columns:minmax(280px,1.05fr) 1fr;gap:32px;margin-top:28px;align-items:center}
+.frame{border-radius:32px;background:radial-gradient(ellipse at 50% 78%,#ebddc6,transparent 63%),#fffaf2;border:1px solid #e8dac7;padding:24px}
+#stage{width:100%;aspect-ratio:1;position:relative;transform-origin:50% 100%}
+.pose{width:100%;height:100%;position:absolute;inset:0;object-fit:contain;object-position:center bottom;opacity:0;transition:opacity .18s;pointer-events:none}
+.pose.active{opacity:1}#stage[data-state=blink] .pose,#stage[data-state=neutral] .pose{transition:none}
+body[data-motion=on] #stage[data-state=neutral]{animation:breathe 4s ease-in-out infinite}
+body[data-motion=on] #stage[data-state=thinking]{animation:ponder 3s ease-in-out infinite}
+body[data-motion=on] #stage[data-state=success]{animation:celebrate .6s ease-out 1}
+body[data-motion=on] #stage[data-state=wave]{animation:greet .8s ease-in-out 1}
+@keyframes breathe{50%{transform:translateY(-2px) scale(1.006)}}
+@keyframes ponder{50%{transform:rotate(.5deg) translateY(-1px)}}
+@keyframes celebrate{35%{transform:translateY(-7px) rotate(-1deg)}70%{transform:translateY(-2px) rotate(.6deg)}}
+@keyframes greet{30%{transform:rotate(-1deg)}65%{transform:rotate(1deg)}}
+.caption{text-align:center;margin:16px 0 0;min-height:48px}.caption strong{display:block;color:#453b34;font-size:20px}.caption span{font-size:13px}
+.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}button{font:inherit;color:inherit;cursor:pointer;border:1px solid #e3d6c4;background:#fffaf2;border-radius:15px;padding:12px;text-align:left;min-height:48px}
+button:hover{background:#f2e8d8}button[aria-pressed=true]{background:#e2e7d9;border-color:#7c8a70}button:focus-visible,input:focus-visible{outline:3px solid #567050;outline-offset:3px}
+.options{display:flex;flex-wrap:wrap;gap:18px;margin:22px 0 0}label{display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px}input{width:18px;height:18px;accent-color:#6b805e}
+.note{font-size:13px;margin-top:20px;max-width:42ch}footer{margin-top:32px;font-size:12px;color:#8a7d70}
+@media(max-width:700px){.layout{grid-template-columns:1fr;gap:22px}.frame{max-width:430px;width:100%;margin:auto;padding:18px}.choices{grid-template-columns:repeat(3,minmax(0,1fr))}button{font-size:13px;padding:10px 8px}.note{max-width:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+<main>
+<p class="eyebrow">Учим понемногу</p>
+<h1>Кот-помощник</h1>
+<p>Позы, эмоции и немного движения для уютных занятий.</p>
+<div class="layout">
+<section class="frame" aria-label="Предпросмотр маскота">
+<div id="stage" data-state="neutral" role="img" aria-label="Кот в спокойной позе">
+<img class="pose active" data-state="neutral" src="mascot-neutral-v1.png" alt="">
+<img class="pose" data-state="blink" src="mascot-blink-v1.png" alt="">
+<img class="pose" data-state="wave" src="mascot-wave-v1.png" alt="">
+<img class="pose" data-state="thinking" src="mascot-thinking-v1.png" alt="">
+<img class="pose" data-state="success" src="mascot-success-v1.png" alt="">
+<img class="pose" data-state="encourage" src="mascot-encourage-v1.png" alt="">
+<img class="pose" data-state="explain" src="mascot-explain-v1.png" alt="">
+<img class="pose" data-state="standing" src="mascot-standing-v1.png" alt="">
+<img class="pose" data-state="rest" src="mascot-rest-v1.png" alt="">
+</div>
+<p class="caption" aria-live="polite"><strong id="state-label">Спокойный</strong><span id="state-usage">Ожидание и обычная практика</span></p>
+</section>
+<section aria-label="Выбор позы">
+<div class="choices">
+<button data-state="neutral" data-usage="Ожидание и обычная практика" aria-pressed="true">Спокойный</button>
+<button data-state="blink" data-usage="Короткое моргание" aria-pressed="false">Моргание</button>
+<button data-state="wave" data-usage="Приветствие в начале занятия" aria-pressed="false">Приветствие</button>
+<button data-state="thinking" data-usage="Обдумываем предложение" aria-pressed="false">Размышление</button>
+<button data-state="success" data-usage="Получилось!" aria-pressed="false">Радость</button>
+<button data-state="encourage" data-usage="Попробуем ещё раз" aria-pressed="false">Поддержка</button>
+<button data-state="explain" data-usage="Разбираемся вместе" aria-pressed="false">Объяснение</button>
+<button data-state="standing" data-usage="Готов к следующему шагу" aria-pressed="false">Стоя</button>
+<button data-state="rest" data-usage="Можно немного отдохнуть" aria-pressed="false">Отдых</button>
+</div>
+<div class="options"><label><input id="motion" type="checkbox">Движение</label><label><input id="demo" type="checkbox">Показ по кругу</label></div>
+<p class="note">Выбирай настроение кота. В спокойном состоянии он иногда моргает, а радость и приветствие сопровождаются коротким движением.</p>
+</section>
+</div>
+<footer>Оригинальный маскот · 9 состояний · прозрачные PNG</footer>
+</main>
+<script>
+const stage=document.querySelector('#stage');
+const buttons=[...document.querySelectorAll('button[data-state]')];
+const poses=[...stage.querySelectorAll('.pose')];
+const motion=document.querySelector('#motion');
+const demo=document.querySelector('#demo');
+const reduced=matchMedia('(prefers-reduced-motion: reduce)');
+let selected='neutral';
+let blinkTimer;
+function render(state){
+  stage.dataset.state=state;
+  poses.forEach(image=>image.classList.toggle('active',image.dataset.state===state));
+}
+function select(state){
+  const button=buttons.find(item=>item.dataset.state===state);
+  if(!button)return;
+  clearTimeout(blinkTimer);
+  selected=state;
+  render(state);
+  buttons.forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
+  document.querySelector('#state-label').textContent=button.textContent;
+  document.querySelector('#state-usage').textContent=button.dataset.usage;
+  stage.setAttribute('aria-label','Кот: '+button.textContent);
+}
+function updateMotion(){
+  document.body.dataset.motion=motion.checked&&!reduced.matches?'on':'off';
+  if(document.body.dataset.motion==='off'){
+    clearTimeout(blinkTimer);
+    render(selected);
+    demo.checked=false;
+  }
+}
+motion.checked=!reduced.matches;
+updateMotion();
+motion.addEventListener('change',updateMotion);
+reduced.addEventListener('change',()=>{motion.checked=!reduced.matches;updateMotion();});
+buttons.forEach(button=>button.addEventListener('click',()=>{demo.checked=false;select(button.dataset.state);}));
+demo.addEventListener('change',()=>{
+  if(demo.checked&&reduced.matches){demo.checked=false;return;}
+  if(demo.checked){motion.checked=true;updateMotion();}
+});
+setInterval(()=>{
+  if(document.hidden||document.body.dataset.motion!=='on')return;
+  if(demo.checked){
+    const index=buttons.findIndex(button=>button.dataset.state===selected);
+    select(buttons[(index+1)%buttons.length].dataset.state);
+  }else if(selected==='neutral'){
+    render('blink');
+    blinkTimer=setTimeout(()=>{if(selected==='neutral')render('neutral');},160);
+  }
+},4500);
+document.addEventListener('visibilitychange',()=>{if(document.hidden){clearTimeout(blinkTimer);render(selected);}});
+poses.forEach(image=>image.addEventListener('error',()=>{document.querySelector('#state-usage').textContent='Не удалось загрузить рисунок: '+image.getAttribute('src');}));
+</script>
+</html>

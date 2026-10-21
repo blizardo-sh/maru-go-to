@@ -1,0 +1,10 @@
+import { readConfig } from './config';
+import { connectDatabase } from './db';
+import { loadCourse } from './course';
+import { createApp } from './app';
+const config=readConfig();const database=connectDatabase(config.DATABASE_URL);const course=loadCourse();
+const app=createApp({database,config,course});
+const server=Bun.serve({hostname:config.HOST,port:config.PORT,idleTimeout:30,fetch:app.fetch});
+console.info(`Japanese learning API listening on ${server.url.origin}`);
+let stopping=false;
+for(const signal of ['SIGTERM','SIGINT'] as const)process.on(signal,async()=>{if(stopping)return;stopping=true;const timer=setTimeout(()=>{server.stop(true);database.sql.close({timeout:1});process.exit(1);},20000);try{await server.stop();await database.sql.close();clearTimeout(timer);process.exit(0);}catch{clearTimeout(timer);process.exit(1);}});

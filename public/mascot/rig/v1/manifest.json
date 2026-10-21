@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "canvas": {
+    "width": 720,
+    "height": 720
+  },
+  "layerOrder": [
+    "tail",
+    "body",
+    "head"
+  ],
+  "layers": {
+    "tail": {
+      "src": "/mascot/rig/v1/tail.webp",
+      "pivot": {
+        "x": 0.3277777777777778,
+        "y": 0.8611111111111112
+      }
+    },
+    "body": {
+      "src": "/mascot/rig/v1/body.webp",
+      "pivot": {
+        "x": 0.55,
+        "y": 0.975
+      }
+    },
+    "head": {
+      "src": "/mascot/rig/v1/head.webp",
+      "pivot": {
+        "x": 0.5486111111111112,
+        "y": 0.5680555555555555
+      }
+    }
+  },
+  "maxRotationDegrees": {
+    "head": 2,
+    "tail": 6
+  },
+  "referencePose": "neutral",
+  "fallback": "/mascot/neutral.png"
+}

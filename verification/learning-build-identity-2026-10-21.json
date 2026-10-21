@@ -1,0 +1,34 @@
+{
+  "root": "dist",
+  "generatedAt": "2026-10-21",
+  "gate": {
+    "bun": {
+      "tests": 77,
+      "assertions": 1646,
+      "failed": 0,
+      "skipped": 0,
+      "files": 14,
+      "exitCode": 0
+    },
+    "typecheckExitCode": 0,
+    "buildExitCode": 0,
+    "productionBuildCount": 1
+  },
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 640,
+      "sha256": "a8e2cb7b0047bbdfd91bdde69e6442776d8bf4997c7921bc1ebc74e09b704985"
+    },
+    {
+      "path": "assets/index-D9P9Ttwh.css",
+      "bytes": 47944,
+      "sha256": "618033cba978f69450f3fdb422d3587dbb03601a2b339a070ae7600da754bc38"
+    },
+    {
+      "path": "assets/index-Zrki0ubI.js",
+      "bytes": 305238,
+      "sha256": "6573f42b6b5ce4347699cdb5947c1221b44df98a66e6847f2883e20959161b0f"
+    }
+  ]
+}
