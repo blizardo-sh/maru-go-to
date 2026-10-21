@@ -1,6 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 for file in deployment/*.sh; do bash -n "$file"; done
+python3 -m py_compile deployment/verify-public.py
+for origin in 'http://example.com' 'https://user:password@example.com' 'https://example.com/private?token=fixture'; do
+    if python3 deployment/verify-public.py "$origin" >/dev/null 2>&1; then exit 1; fi
+done
 for command in '' 'deploy main' 'deploy ../main' 'deploy 123;id' 'sh' 'deploy aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa extra'; do
     if SSH_ORIGINAL_COMMAND="$command" bash deployment/ssh-command.sh >/dev/null 2>&1; then
         echo 'Unexpected SSH command accepted' >&2

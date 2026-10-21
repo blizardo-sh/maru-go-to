@@ -55,7 +55,7 @@ else
     created=yes
     compose exec -T db pg_restore -U japanese_admin --exit-on-error --no-owner --no-acl -d "$database" < "$dump"
     test "$(compose exec -T db psql -U japanese_admin -d "$database" -Atc "select to_regclass('users') is not null and to_regclass('review_states') is not null and to_regclass('review_attempts') is not null")" = t
-    compose exec -T db psql -U japanese_admin -d "$database" -c 'select (select count(*) from users) as users, (select count(*) from review_states) as review_states, (select count(*) from review_attempts) as review_attempts'
+    compose exec -T db psql -U japanese_admin -d "$database" -c 'select (select count(*) from users) as users, (select count(*) from review_states) as review_states, (select count(*) from review_attempts) as review_attempts, (select count(*) from access_links) as access_links'
     date -u +%FT%TZ > "$state/last-restore"
     echo "OFFSITE_RESTORE_OK seconds=$((SECONDS-started))"
 fi
