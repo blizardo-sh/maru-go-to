@@ -41,6 +41,8 @@ jobs:
       - run: bunx playwright install --with-deps chrome
       - name: Browser guided learning route
         run: bun tests/helpers/run-guided-browser.ts
+      - name: Browser stable study scene
+        run: bun tests/helpers/run-guided-browser.ts tests/integration.study-layout.browser.ts
       - name: Browser invitation, login and logout
         run: |
           bun --bun vite preview --host 127.0.0.1 --port 5173 &
