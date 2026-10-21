@@ -16,6 +16,7 @@ import { sourceKey } from './learning';
 type Page = 'review' | 'course' | 'words' | 'settings' | 'admin';
 const navigation: [Page, string][] = [['course', 'Учебник'], ['review', 'Повторение'], ['words', 'Справочник']];
 const errorText = (error: unknown) => error instanceof Error ? error.message : 'Не удалось выполнить запрос. Повторите попытку.';
+const pauseLessonVideos = () => document.querySelectorAll<HTMLVideoElement>('.lesson-video video').forEach(video => video.pause());
 
 function Notice({ children, error = false }: { children: React.ReactNode; error?: boolean }) { return <div className={`notice${error ? ' error' : ''}`} role={error ? 'alert' : 'status'}>{children}</div>; }
 function PageHead({ title, children }: { title: string; children?: React.ReactNode }) { return <header className="pagehead"><h1>{title}</h1>{children}</header>; }
@@ -102,6 +103,7 @@ export function App() {
   if (user === undefined) return <main className="auth">{error ? <Notice error><p>{error}</p><button onClick={() => { setError(''); void loadUser(); }}>Повторить загрузку</button></Notice> : <p role="status">Проверяем вход…</p>}</main>;
   if (!user || location.pathname === '/invite' || location.pathname === '/recover') return <Auth onLogin={() => { void loadUser(); }} />;
   function startOrResume(source: StudySource) {
+    pauseLessonVideos();
     if (!sessionSource || sourceKey(sessionSource) !== sourceKey(source)) {
       const chosen = chooseScene(); sound.unlock(chosen); setSelectedScene(chosen); setDecor(selectSceneDecor(chosen)); setEntryId(current => current + 1); setEntryPhase(motionEnabled ? 'loading' : 'ready'); setSessionSource(source);
     } else sound.unlock(selectedScene);
@@ -109,6 +111,7 @@ export function App() {
   }
   function closeSession(toCourse = false) { setStudy(false); setSessionSource(null); finishEntry(); if (toCourse) setPage('course'); }
   function navigate(value: Page) {
+    pauseLessonVideos();
     const resumeReview = value === 'review' && sessionSource?.kind === 'review';
     if (resumeReview) sound.unlock(selectedScene); else finishEntry();
     setPage(value); setStudy(resumeReview);

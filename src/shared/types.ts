@@ -20,6 +20,21 @@ export interface Segment {
   reading?: string;
 }
 
+export interface VideoCaption {
+  startSeconds: number;
+  endSeconds: number | null;
+  text: string | null;
+}
+
+export interface LessonVideo {
+  title: string;
+  sourceUrl: string;
+  mediaUrl: string;
+  captionsSourceUrl: string;
+  captionNote?: string;
+  captions: VideoCaption[];
+}
+
 export interface Lesson {
   id: string;
   number: number;
@@ -27,6 +42,7 @@ export interface Lesson {
   topic: string;
   canDoIds: number[];
   sourceRefs: SourceRef[];
+  video?: LessonVideo;
   readiness: {
     vocabulary: ContentStatus;
     grammar: ContentStatus | "not-applicable";
