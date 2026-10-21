@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import type { LessonVideo as VideoMaterial } from '../shared/types';
 import { captionAt } from './videoCaptions';
 
-export function LessonVideo({ material }: { material: VideoMaterial }) {
+export function LessonVideo({ material, active = true, onPlayingChange }: { material: VideoMaterial; active?: boolean; onPlayingChange?: (playing: boolean) => void }) {
   const video = useRef<HTMLVideoElement>(null);
   const [activeCaption, setActiveCaption] = useState(-1);
   const [failed, setFailed] = useState(false);
@@ -10,13 +10,14 @@ export function LessonVideo({ material }: { material: VideoMaterial }) {
     const media = video.current;
     const pauseWhenHidden = () => { if (document.hidden) media?.pause(); };
     document.addEventListener('visibilitychange', pauseWhenHidden);
-    return () => { document.removeEventListener('visibilitychange', pauseWhenHidden); media?.pause(); };
-  }, []);
+    return () => { document.removeEventListener('visibilitychange', pauseWhenHidden); media?.pause(); onPlayingChange?.(false); };
+  }, [onPlayingChange]);
+  useEffect(() => { if (!active) video.current?.pause(); }, [active]);
   const sync = () => { const media = video.current; if (media) setActiveCaption(media.ended || media.error ? -1 : captionAt(material.captions, media.currentTime)); };
   const caption = material.captions[activeCaption];
   return <section className="lesson-video" aria-label={material.title}>
     <header><small>Marugoto Plus · видеодиалог</small><h3>{material.title}</h3><p className="muted">Необязательный материал урока. Просмотр не меняет повторения.</p></header>
-    <video ref={video} src={material.mediaUrl} controls controlsList="nodownload" playsInline preload="none" aria-label={material.title} onTimeUpdate={sync} onSeeking={sync} onSeeked={sync} onLoadedMetadata={sync} onPlay={() => { setFailed(false); sync(); }} onPause={sync} onEnded={() => setActiveCaption(-1)} onError={() => { setFailed(true); setActiveCaption(-1); }} />
+    <video ref={video} src={material.mediaUrl} controls controlsList="nodownload" playsInline preload="none" aria-label={material.title} onTimeUpdate={sync} onSeeking={sync} onSeeked={sync} onLoadedMetadata={sync} onPlay={() => { setFailed(false); sync(); }} onPlaying={() => { if (!active || document.hidden) video.current?.pause(); else onPlayingChange?.(true); }} onPause={() => { onPlayingChange?.(false); sync(); }} onEnded={() => { onPlayingChange?.(false); setActiveCaption(-1); }} onError={() => { onPlayingChange?.(false); setFailed(true); setActiveCaption(-1); }} />
     <div className="lesson-video-caption" data-cue={activeCaption} role="group" aria-label="Японский текст сцены">
       {caption?.text && <p key={activeCaption} className="jp" lang="ja">{caption.text}</p>}
     </div>

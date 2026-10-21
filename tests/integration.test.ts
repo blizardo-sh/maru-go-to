@@ -6,7 +6,7 @@ import { connectDatabase } from '../src/server/db';
 import { defaultSettings } from '../src/server/material';
 import { nextFixtureIp } from './helpers/fixture-ip';
 import { reviewId } from '../src/server/reviews';
-import type { Course, LearnerSettings, ReviewItem, ReviewQueue, ReviewSubmission, WordList } from '../src/shared/types';
+import type { Course, LearnerSettings, Progress, ReviewItem, ReviewQueue, ReviewSubmission, WordList } from '../src/shared/types';
 
 const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
 const suite = databaseUrl ? describe : describe.skip;
@@ -198,19 +198,27 @@ suite('application HTTP integration with disposable PostgreSQL', () => {
     expect(count).toBe(0);
   });
   test('meaning-changing forms are exploratory and cannot grade the original prepared prompt', async () => {
-    const present = course.forms.find(form => form.kana === 'たべます' && form.surface === '食べます')!;
-    expect(present).toBeDefined();
-    for (const expectedKana of ['たべません', 'たべました']) {
-      const exercise = course.exercises.find(candidate => candidate.tokens.some(token => course.forms.find(form => form.id === token.formId)?.kana === expectedKana))!;
+    const normalizeProgress = (progress: Progress): Progress => ({ ...progress, introducedWordIds: [...progress.introducedWordIds].sort(), introducedSkillIds: [...progress.introducedSkillIds].sort() });
+    for (const [exerciseId, expectedKana] of [
+      ['marugoto.starter-a1.example.frequency.l11.2', 'みません'],
+      ['marugoto.starter-a1.example.verb_past.l15.1', 'かいました'],
+    ]) {
+      const exercise = course.exercises.find(candidate => candidate.id === exerciseId)!;
+      expect(exercise.reviewStatus).not.toBe('draft');
+      expect(exercise.tokens.every(token => course.forms.find(form => form.id === token.formId)?.reviewStatus !== 'draft')).toBe(true);
       const token = exercise.tokens.find(candidate => course.forms.find(form => form.id === candidate.formId)?.kana === expectedKana)!;
       const expectedForm = course.forms.find(form => form.id === token.formId)!;
+      const word = course.words.find(word => word.id === expectedForm.wordId)!;
+      const present = course.forms.find(form => form.wordId === word.id && form.surface === word.surface && form.kana === word.kana)!;
+      expect(present).toBeDefined();
       expect(expectedForm.wordId).toBe(present.wordId);
       const submission: ReviewSubmission = { attemptId: crypto.randomUUID(), reviewId: reviewId('grammar', exercise.skillId, exercise.id), version: 0, mode: 'grammar', tokenIds: exercise.acceptedOrders[0]!, tokenForms: { [token.id]: present.id }, revealed: false };
-      const before = await (await request('/api/progress', learners[0]!.cookie)).json();
+      const before: Progress = await (await request('/api/progress', learners[0]!.cookie)).json();
       const wrong = await request('/api/reviews', learners[0]!.cookie, submission);
       expect(wrong.status).toBe(409);
       expect((await wrong.json()).error.code).toBe('EXPLORATION_NOT_SCHEDULED');
-      expect(await (await request('/api/progress', learners[0]!.cookie)).json()).toEqual(before);
+      const after: Progress = await (await request('/api/progress', learners[0]!.cookie)).json();
+      expect(normalizeProgress(after)).toEqual(normalizeProgress(before));
       const correction = await request('/api/reviews', learners[0]!.cookie, { ...submission, attemptId: crypto.randomUUID(), tokenForms: { [token.id]: expectedForm.id } });
       expect(correction.status).toBe(200);
       expect(await correction.json()).toMatchObject({ correct: true, status: 'scheduled', version: 1 });

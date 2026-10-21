@@ -1,3 +1,4 @@
+import type { GuidedLesson } from './learning';
 export type ContentStatus = "missing" | "draft" | "source-checked" | "reviewed";
 export type ReviewStatus = Exclude<ContentStatus, "missing">;
 export type Orthography = "kana" | "furigana" | "kanji";
@@ -110,6 +111,7 @@ export interface Course {
   forms: WordForm[];
   skills: Skill[];
   exercises: Exercise[];
+  learning?: GuidedLesson[];
 }
 
 export interface LearnerSettings {

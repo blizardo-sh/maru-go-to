@@ -1,6 +1,6 @@
 # Выпуск и восстановление
 
-Пользователь принял 21 октября 2026: `https://outboundserver.freemyip.com/`, CI для PR и автоматический выпуск из `main`, RPO ≤ 1 час и RTO ≤ 4 часа после обнаружения аварии. [ADR-0006](adr/0006-share-https-with-existing-vpn.md), [ADR-0007](adr/0007-hourly-offsite-recovery.md).
+Пользователь принял 21 октября 2026: `https://outboundserver.freemyip.com/`, CI для PR, публикацию образов из `main`, RPO ≤ 1 час и RTO ≤ 4 часа после обнаружения аварии. Для отдельной передачи новой версии развёртывание запускается вручную после слияния. [ADR-0006](adr/0006-share-https-with-existing-vpn.md), [ADR-0007](adr/0007-hourly-offsite-recovery.md).
 
 ## Топология и защита
 
@@ -16,12 +16,12 @@ Nginx завершает TLS существующим сертификатом �
 
 [Delivery](../.github/workflows/delivery.yml):
 
-1. PR: frozen install Bun 1.4.3, typecheck, dependency audit, миграции и все тесты на одноразовой PostgreSQL 18.6, Vite build, проверка подготовительных файлов, browser-проверка приглашения/входа/выхода, проверка SSH-команды. Секрет деплоя PR не передаётся.
-2. После merge в `main`: сборка Linux/amd64 API и web, публикация в `ghcr.io/blizardo-sh/maru-go-to-{api,web}:<commit>`.
-3. SSH с закреплённым host key и отдельным `DEPLOY_KEY`. Учётная запись `japanese-deploy` не имеет shell, forwarding, PTY или Docker-доступа; разрешена только команда `deploy <полный SHA>` через root-owned wrapper.
+1. PR: frozen install Bun 1.4.3, typecheck, dependency audit, миграции и все тесты на одноразовой PostgreSQL 18.6, Vite build, проверка подготовительных файлов, browser-проверки учебного маршрута и приглашения/входа/выхода, проверка SSH-команды. Секрет деплоя PR не передаётся.
+2. После push или merge в `main`: проверки, сборка Linux/amd64 API и web, публикация в `ghcr.io/blizardo-sh/maru-go-to-{api,web}:<полный SHA>`. SSH-развёртывание и публичные production-проверки при push не запускаются.
+3. Для развёртывания текущей `main` откройте **Actions → Delivery → Run workflow**, выберите `main`, либо выполните `gh workflow run delivery.yml --ref main`. Этот ручной `workflow_dispatch` повторяет проверки и публикацию образов, затем запускает SSH с закреплённым host key и отдельным `DEPLOY_KEY`. Учётная запись `japanese-deploy` не имеет shell, forwarding, PTY или Docker-доступа; разрешена только команда `deploy <полный SHA>` через root-owned wrapper.
 4. Временный `GITHUB_TOKEN` передаётся по stdin для чтения GHCR, конфигурация registry удаляется сразу после загрузки. SHA проверяется также в OCI label, на сервере сохраняются digest обоих образов.
 5. Перед миграцией — успешная внешняя копия. Затем миграция отдельной командой, `compose up --wait`, readiness, новая внешняя копия и проверка восстановления в отдельную БД. Неуспешный выпуск возвращает предыдущие образы; схема автоматически назад не откатывается.
-6. Workflow дополнительно выполняет `deployment/verify-public.py`: проверяет TLS и защитные заголовки, закрытые API/регистрацию, запрет чужого Origin, отсутствие раскрытых `.env`/Git-файлов и лимит входа при поддельных IP-заголовках. Повторный ручной выпуск доступен через `workflow_dispatch` на `main`; параллельные выпуски сериализованы.
+6. Только ручной выпуск дополнительно выполняет `deployment/verify-public.py`: проверяет TLS и защитные заголовки, закрытые API/регистрацию, запрет чужого Origin, отсутствие раскрытых `.env`/Git-файлов и лимит входа при поддельных IP-заголовках. Оба шага — SSH и публичная проверка — ограничены событием `workflow_dispatch`; параллельные workflow одного ref сериализованы.
 
 Сборки не получают production-пароли. Адрес SSH и закреплённые host keys находятся в Actions secrets `DEPLOY_HOST` и `DEPLOY_KNOWN_HOSTS`, адреса серверов не включаются в исходники; закрытый `/etc/japanese-learning/host.env` содержит параметры хоста и внешних копий. Action SHA и базовые Docker digest закреплены. Обновление этих pins — отдельное проверяемое изменение. Начальная конфигурация хоста устанавливается вручную из `deployment/provision.sh`; изменения host-side скриптов и Compose требуют повторной установки конкретных файлов администратором, workflow обновляет образы приложения.
 

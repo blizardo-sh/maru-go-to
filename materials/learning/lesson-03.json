@@ -1,0 +1,1413 @@
+{
+  "lessonId": "marugoto.starter-a1.lesson.03",
+  "version": "2026-10-21.1",
+  "titleRu": "О себе",
+  "goals": [
+    {
+      "id": "l03-introduce",
+      "titleRu": "Представиться и рассказать о языках",
+      "canDoIds": [
+        5
+      ],
+      "parts": [
+        {
+          "id": "l03-introduce-01",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.be25e6ec541a983a",
+              "explanationRu": "Говорят при самой первой встрече, перед коротким рассказом о себе.",
+              "example": {
+                "surface": "はじめまして。イワンです。",
+                "kana": "はじめまして。イワンです。",
+                "meaningRu": "Рад познакомиться. Я Иван.",
+                "segments": [
+                  {
+                    "surface": "はじめまして。イワンです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson03-word-7f0c6888da65.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.72484669620e4adc",
+              "explanationRu": "Вежливая заключительная реплика знакомства; буквальный русский перевод здесь не помогает.",
+              "example": {
+                "surface": "イワンです。どうぞよろしくおねがいします。",
+                "kana": "イワンです。どうぞよろしくおねがいします。",
+                "meaningRu": "Я Иван. Очень приятно познакомиться.",
+                "segments": [
+                  {
+                    "surface": "イワンです。どうぞよろしくおねがいします。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson03-word-004f4cacf37a.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.58e595c1fa37474d",
+              "explanationRu": "Нейтральное «я». Когда собеседнику ясно, о ком речь, слово часто опускают.",
+              "example": {
+                "surface": "わたしはがくせいです。",
+                "kana": "わたしはがくせいです。",
+                "meaningRu": "Я студент.",
+                "segments": [
+                  {
+                    "surface": "わたしはがくせいです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson03-word-48c4e90c01bf.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.559067766abda333",
+              "explanationRu": "Учащийся, студент; не обозначает профессию преподавателя.",
+              "example": {
+                "surface": "がくせいです。よろしくおねがいします。",
+                "kana": "がくせいです。よろしくおねがいします。",
+                "meaningRu": "Я студент. Приятно познакомиться.",
+                "segments": [
+                  {
+                    "surface": "がくせいです。よろしくおねがいします。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson03-word-8fe8cf9f95b8.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.b26ab0f21a82d32b",
+              "explanationRu": "Инженер. Сохраните отдельную носовую мору ン: エ・ン・ジ・ニ・ア. Долгой гласной в начале нет.",
+              "example": {
+                "surface": "わたしはエンジニアです。",
+                "kana": "わたしはエンジニアです。",
+                "meaningRu": "Я инженер.",
+                "segments": [
+                  {
+                    "surface": "わたしはエンジニアです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson03-word-e0b71673ce3f.m4a"
+              }
+            }
+          ],
+          "construction": {
+            "exerciseId": "marugoto.starter-a1.example.wa_identity.l03.1",
+            "explanationRu": "Чтобы назвать себя, профессию или национальность, используйте N1 は N2 です. は здесь читается «ва» и выделяет тему, です делает высказывание вежливым. Если тема уже ясна, её можно опустить.",
+            "example": {
+              "surface": "わたしはがくせいです。",
+              "kana": "わたしはがくせいです。",
+              "meaningRu": "Я студент.",
+              "segments": [
+                {
+                  "surface": "わたし"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "がくせい"
+                },
+                {
+                  "surface": "です"
+                },
+                {
+                  "surface": "。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson03-construction-wa-identity.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "わたし",
+                "explanationRu": "я"
+              },
+              {
+                "text": "は",
+                "explanationRu": "Тема высказывания; здесь произносится «ва»."
+              },
+              {
+                "text": "がくせい",
+                "explanationRu": "студент"
+              },
+              {
+                "text": "です",
+                "explanationRu": "Вежливое завершение именной фразы."
+              }
+            ]
+          }
+        },
+        {
+          "id": "l03-introduce-02",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.8217225960a91885",
+              "explanationRu": "Японский язык: название страны にほん + ご «язык».",
+              "example": {
+                "surface": "にほんごがすこしできます。",
+                "kana": "にほんごがすこしできます。",
+                "meaningRu": "Я немного говорю по-японски.",
+                "segments": [
+                  {
+                    "surface": "にほんごがすこしできます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson03-word-cfb6c85dfbd2.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.0375e09aad13f1e2",
+              "explanationRu": "Английский язык; в живой речи えい часто звучит как долгий э.",
+              "example": {
+                "surface": "えいごができます。",
+                "kana": "えいごができます。",
+                "meaningRu": "Я говорю по-английски.",
+                "segments": [
+                  {
+                    "surface": "えいごができます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson03-word-129f1310a383.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.abf51c53069fc220",
+              "explanationRu": "Здесь — уметь говорить на языке. Объект умения отмечается が.",
+              "example": {
+                "surface": "わたしはにほんごができます。",
+                "kana": "わたしはにほんごができます。",
+                "meaningRu": "Я могу говорить по-японски.",
+                "segments": [
+                  {
+                    "surface": "わたしはにほんごができます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson03-word-c22930496292.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.9b473beed948c0b3",
+              "explanationRu": "Вежливый краткий вопрос о том, откуда собеседник.",
+              "example": {
+                "surface": "どちらからですか。",
+                "kana": "どちらからですか。",
+                "meaningRu": "Вы откуда?",
+                "segments": [
+                  {
+                    "surface": "どちらからですか。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson03-word-f29181a15427.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.ec82a6a9bdbd0924",
+              "explanationRu": "Немного: удобно уточнить, что язык пока знаете в небольшой степени.",
+              "example": {
+                "surface": "にほんごがすこしできます。",
+                "kana": "にほんごがすこしできます。",
+                "meaningRu": "Я немного говорю по-японски.",
+                "segments": [
+                  {
+                    "surface": "にほんごがすこしできます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson03-word-dce5349220a1.m4a"
+              }
+            }
+          ],
+          "construction": {
+            "exerciseId": "marugoto.starter-a1.example.ga_ability.l03.1",
+            "explanationRu": "Чтобы сказать, на каком языке вы говорите, используйте название языка с が и できます. Эта форма обозначает умение; для отрицания — できません. Тему わたしは можно опустить, когда ясно, что речь о вас.",
+            "example": {
+              "surface": "わたしはにほんごができます。",
+              "kana": "わたしはにほんごができます。",
+              "meaningRu": "Я могу говорить по-японски.",
+              "segments": [
+                {
+                  "surface": "わたし"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "にほんご"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "できます"
+                },
+                {
+                  "surface": "。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson03-construction-ga-ability.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "わたし",
+                "explanationRu": "я"
+              },
+              {
+                "text": "は",
+                "explanationRu": "Тема высказывания; здесь произносится «ва»."
+              },
+              {
+                "text": "にほんご",
+                "explanationRu": "японский язык"
+              },
+              {
+                "text": "が",
+                "explanationRu": "Отмечает предмет умения, симпатии или то, что существует, в зависимости от модели."
+              },
+              {
+                "text": "できます",
+                "explanationRu": "мочь"
+              }
+            ]
+          }
+        },
+        {
+          "id": "l03-introduce-03",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.a149298ff8f2e16e",
+              "explanationRu": "Сотрудник компании; не название конкретной должности.",
+              "example": {
+                "surface": "わたしはかいしゃいんです。",
+                "kana": "わたしはかいしゃいんです。",
+                "meaningRu": "Я сотрудник компании.",
+                "segments": [
+                  {
+                    "surface": "わたしはかいしゃいんです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson03-word-2a4144a17ec9.m4a"
+              }
+            }
+          ],
+          "construction": {
+            "exerciseId": "marugoto.starter-a1.example.mo_addition.l03.1",
+            "explanationRu": "も означает «тоже»: когда профессия или другое свойство совпадает с уже названным, も занимает место は или が. Нужен контекст сравнения: собеседник уже сообщил то же о себе.",
+            "example": {
+              "surface": "わたしもがくせいです。",
+              "kana": "わたしもがくせいです。",
+              "meaningRu": "Я тоже студент.",
+              "segments": [
+                {
+                  "surface": "わたし"
+                },
+                {
+                  "surface": "も"
+                },
+                {
+                  "surface": "がくせい"
+                },
+                {
+                  "surface": "です"
+                },
+                {
+                  "surface": "。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson03-construction-mo-addition.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "わたし",
+                "explanationRu": "я"
+              },
+              {
+                "text": "も",
+                "explanationRu": "Тоже: добавляет совпадение с уже известным."
+              },
+              {
+                "text": "がくせい",
+                "explanationRu": "студент"
+              },
+              {
+                "text": "です",
+                "explanationRu": "Вежливое завершение именной фразы."
+              }
+            ]
+          }
+        }
+      ],
+      "videoIds": [
+        "marugoto.starter-a1.lesson.03"
+      ]
+    },
+    {
+      "id": "l03-business-card",
+      "titleRu": "Узнать информацию на визитке",
+      "canDoIds": [
+        6
+      ],
+      "parts": [
+        {
+          "id": "l03-business-card-01",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.f30b2e71086b8f6b",
+              "explanationRu": "Визитная карточка: ищите на ней имя, компанию и контактные данные.",
+              "example": {
+                "surface": "これはわたしのめいしです。",
+                "kana": "これはわたしのめいしです。",
+                "meaningRu": "Это моя визитка.",
+                "segments": [
+                  {
+                    "surface": "これはわたしのめいしです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson03-word-f55f170e124f.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.c4ae772a6dc8e374",
+              "explanationRu": "Вежливое слово для имени собеседника; своё имя обычно называют без お.",
+              "example": {
+                "surface": "おなまえはなんですか。",
+                "kana": "おなまえはなんですか。",
+                "meaningRu": "Как вас зовут?",
+                "segments": [
+                  {
+                    "surface": "おなまえはなんですか。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson03-word-f4b48dae9ddd.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.71622e15e5c20c28",
+              "explanationRu": "Вежливый вопрос о работе собеседника, а не о сегодняшней задаче.",
+              "example": {
+                "surface": "おしごとはなんですか。",
+                "kana": "おしごとはなんですか。",
+                "meaningRu": "Кем вы работаете?",
+                "segments": [
+                  {
+                    "surface": "おしごとはなんですか。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson03-word-fd9fb35e9d06.m4a"
+              }
+            }
+          ]
+        }
+      ],
+      "introductionRu": "Учебный образец визитки: さくら会社 / 田中ゆき / エンジニア / でんわ 03-1234-5678. Найдите имя, профессию и телефон по расположению и знакомым словам. Имена и номер здесь вымышлены. Не нужно уметь прочитать каждый иероглиф; сопоставьте вид записи. Обмениваясь визиткой, поверните её к собеседнику."
+    }
+  ],
+  "authored": {
+    "words": [
+      {
+        "id": "marugoto.starter-a1.word.be25e6ec541a983a",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "はじめまして",
+        "kana": "はじめまして",
+        "meaningRu": "рад(а) познакомиться (первая встреча)",
+        "segments": [
+          {
+            "surface": "はじめまして"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 44,
+            "entry": "はじめまして",
+            "label": "Указатель фраз · урок 3 · русский перевод подготовлен для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+            "page": 1,
+            "row": 33,
+            "entry": "はじめまして",
+            "label": "Указатель фраз · урок 3 · русский перевод подготовлен для приложения"
+          }
+        ],
+        "audioUrl": "/audio/748db34058878c329d7b.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.72484669620e4adc",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "どうぞよろしくおねがいします",
+        "kana": "どうぞよろしくおねがいします",
+        "meaningRu": "приятно познакомиться (вежливо)",
+        "segments": [
+          {
+            "surface": "どうぞよろしくおねがいします"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 36,
+            "entry": "どうぞ よろしくおねがいします",
+            "label": "Указатель фраз · урок 3 · русский перевод подготовлен для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+            "page": 1,
+            "row": 29,
+            "entry": "どうぞ よろしく （おねがいします）",
+            "label": "Указатель фраз · урок 3 · русский перевод подготовлен для приложения"
+          }
+        ],
+        "audioUrl": "/audio/4fb3420ff2138450d930.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.58e595c1fa37474d",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.17"
+        ],
+        "surface": "わたし",
+        "kana": "わたし",
+        "meaningRu": "я",
+        "segments": [
+          {
+            "surface": "わたし"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 22,
+            "entry": "わたし",
+            "label": "Словарь · урок 3"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 54,
+            "entry": "わたし",
+            "label": "Словарь · урок 3"
+          }
+        ],
+        "audioUrl": "/audio/1fc2d4cb902d7f3e517b.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.559067766abda333",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "がくせい",
+        "kana": "がくせい",
+        "meaningRu": "студент",
+        "segments": [
+          {
+            "surface": "がくせい"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 3,
+            "entry": "がくせい",
+            "label": "Словарь · урок 3"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 30,
+            "entry": "がくせい",
+            "label": "Словарь · урок 3"
+          }
+        ],
+        "audioUrl": "/audio/ff5b7bf06ff55aea1c63.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.b26ab0f21a82d32b",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "エンジニア",
+        "kana": "エンジニア",
+        "meaningRu": "инженер",
+        "segments": [
+          {
+            "surface": "エンジニア"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 47,
+            "entry": "エンジニア",
+            "label": "Словарь · урок 3"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 26,
+            "entry": "エンジニア",
+            "label": "Словарь · урок 3"
+          }
+        ],
+        "audioUrl": "/audio/7df67988b591dd2b0fe4.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.8217225960a91885",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01",
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "にほんご",
+        "kana": "にほんご",
+        "meaningRu": "японский язык",
+        "segments": [
+          {
+            "surface": "にほんご"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 12,
+            "entry": "にほんご",
+            "label": "Словарь · урок 1"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 18,
+            "entry": "にほんご",
+            "label": "Словарь · урок 1"
+          }
+        ],
+        "audioUrl": "/audio/cbcada9e8ae8a92252bf.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.0375e09aad13f1e2",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.02",
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "えいご",
+        "kana": "えいご",
+        "meaningRu": "английский язык",
+        "segments": [
+          {
+            "surface": "えいご"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 19,
+            "entry": "えいご",
+            "label": "Словарь · урок 2"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 25,
+            "entry": "えいご",
+            "label": "Словарь · урок 3"
+          }
+        ],
+        "audioUrl": "/audio/6a8a24ad372d06dd4179.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.abf51c53069fc220",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.11"
+        ],
+        "surface": "できます",
+        "kana": "できます",
+        "meaningRu": "мочь",
+        "segments": [
+          {
+            "surface": "できます"
+          }
+        ],
+        "kind": "word",
+        "pos": "verb",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 16,
+            "entry": "できます",
+            "label": "Словарь · урок 3"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 45,
+            "entry": "できます",
+            "label": "Словарь · урок 3"
+          }
+        ],
+        "audioUrl": "/audio/e762586e43f506c1f078.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.9b473beed948c0b3",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "どちらから？",
+        "kana": "どちらから？",
+        "meaningRu": "вы откуда? (вежливо)",
+        "segments": [
+          {
+            "surface": "どちらから？"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 41,
+            "entry": "どちらから？",
+            "label": "Указатель фраз · урок 3 · русский перевод подготовлен для приложения"
+          }
+        ],
+        "audioUrl": "/audio/1345bc912bf2fde9726d.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.ec82a6a9bdbd0924",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.02",
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "すこし",
+        "kana": "すこし",
+        "meaningRu": "немного",
+        "segments": [
+          {
+            "surface": "すこし"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 27,
+            "entry": "すこし",
+            "label": "Словарь · урок 2"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 40,
+            "entry": "すこし",
+            "label": "Словарь · урок 3"
+          }
+        ],
+        "audioUrl": "/audio/9cdfefd9bcf2f67e974b.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.a149298ff8f2e16e",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "かいしゃいん",
+        "kana": "かいしゃいん",
+        "meaningRu": "работник фирмы",
+        "segments": [
+          {
+            "surface": "かいしゃいん"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 1,
+            "entry": "かいしゃいん",
+            "label": "Словарь · урок 3"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 29,
+            "entry": "かいしゃいん",
+            "label": "Словарь · урок 3"
+          }
+        ],
+        "audioUrl": "/audio/b98ae243081691cbfc6c.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.b5a68b9529221562",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "は",
+        "kana": "は",
+        "meaningRu": "тема высказывания",
+        "segments": [
+          {
+            "surface": "は"
+          }
+        ],
+        "kind": "word",
+        "pos": "particle",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioText": "わ",
+        "audioUrl": "/audio/05a500e6c3c55f8e321c.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.cfb8df642175a27c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "です",
+        "kana": "です",
+        "meaningRu": "вежливая именная связка",
+        "segments": [
+          {
+            "surface": "です"
+          }
+        ],
+        "kind": "word",
+        "pos": "copula",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/52ab9944db0989691e54.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.0eb035161c7df5bb",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "が",
+        "kana": "が",
+        "meaningRu": "подлежащее; объект предпочтения или умения",
+        "segments": [
+          {
+            "surface": "が"
+          }
+        ],
+        "kind": "word",
+        "pos": "particle",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/717abcb4b4de603bbb30.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.3964e00a185e5dd0",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.17"
+        ],
+        "surface": "も",
+        "kana": "も",
+        "meaningRu": "тоже; также",
+        "segments": [
+          {
+            "surface": "も"
+          }
+        ],
+        "kind": "word",
+        "pos": "particle",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/5cc2c08de07d1cc795a1.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.f30b2e71086b8f6b",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "めいし",
+        "kana": "めいし",
+        "meaningRu": "визитка",
+        "segments": [
+          {
+            "surface": "めいし"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 21,
+            "entry": "めいし",
+            "label": "Словарь · урок 3"
+          }
+        ],
+        "audioUrl": "/audio/84aa45ede4214bcafce9.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.c4ae772a6dc8e374",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "おなまえ",
+        "kana": "おなまえ",
+        "meaningRu": "имя",
+        "segments": [
+          {
+            "surface": "おなまえ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 50,
+            "entry": "おなまえ（なまえ）",
+            "label": "Словарь · урок 3"
+          }
+        ],
+        "audioUrl": "/audio/7e5349db15b1f67db9af.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.71622e15e5c20c28",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "おしごと",
+        "kana": "おしごと",
+        "meaningRu": "работа",
+        "segments": [
+          {
+            "surface": "おしごと"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 49,
+            "entry": "おしごと（しごと）",
+            "label": "Словарь · урок 3"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 28,
+            "entry": "おしごと（しごと）",
+            "label": "Словарь · урок 3"
+          }
+        ],
+        "audioUrl": "/audio/d0a2eafb810bf16ba467.m4a"
+      }
+    ],
+    "forms": [
+      {
+        "id": "marugoto.starter-a1.form.16d1822e7b230753",
+        "wordId": "marugoto.starter-a1.word.be25e6ec541a983a",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "はじめまして",
+        "kana": "はじめまして",
+        "segments": [
+          {
+            "surface": "はじめまして"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 44,
+            "entry": "はじめまして",
+            "label": "Указатель фраз · урок 3 · русский перевод подготовлен для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.6bd275f2275caf1e",
+        "wordId": "marugoto.starter-a1.word.72484669620e4adc",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "どうぞよろしくおねがいします",
+        "kana": "どうぞよろしくおねがいします",
+        "segments": [
+          {
+            "surface": "どうぞよろしくおねがいします"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 36,
+            "entry": "どうぞ よろしくおねがいします",
+            "label": "Указатель фраз · урок 3 · русский перевод подготовлен для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.2ea41badd9ed7437",
+        "wordId": "marugoto.starter-a1.word.9b473beed948c0b3",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "どちらから？",
+        "kana": "どちらから？",
+        "segments": [
+          {
+            "surface": "どちらから？"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 41,
+            "entry": "どちらから？",
+            "label": "Указатель фраз · урок 3 · русский перевод подготовлен для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.ff44f890fca56e70",
+        "wordId": "marugoto.starter-a1.word.b5a68b9529221562",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "は",
+        "kana": "は",
+        "segments": [
+          {
+            "surface": "は"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.dfb1a0ad90bfab45",
+        "wordId": "marugoto.starter-a1.word.cfb8df642175a27c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16"
+        ],
+        "surface": "です",
+        "kana": "です",
+        "segments": [
+          {
+            "surface": "です"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.a0bd4b52e58a66fe",
+        "wordId": "marugoto.starter-a1.word.0eb035161c7df5bb",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "が",
+        "kana": "が",
+        "segments": [
+          {
+            "surface": "が"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.fa44ea83fc996c89",
+        "wordId": "marugoto.starter-a1.word.3964e00a185e5dd0",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.17"
+        ],
+        "surface": "も",
+        "kana": "も",
+        "segments": [
+          {
+            "surface": "も"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "id": "marugoto.starter-a1.skill.wa_identity",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "canDoIds": [
+          5,
+          6
+        ],
+        "title": "N1 は N2 です",
+        "explanationRu": "は выделяет тему; です завершает вежливое именное высказывание. Для отрицания используется じゃないです, для вопроса добавляется か.",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.skill.ga_ability",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.11"
+        ],
+        "canDoIds": [
+          5,
+          6,
+          28,
+          29
+        ],
+        "title": "N が できます: умение",
+        "explanationRu": "Язык, на котором человек может говорить, отмечается が перед できます. Отрицательная форма — できません. Название освоенного занятия, инструмента или языка отмечается が перед できます. Это сообщение об умении, не о предпочтении.",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_11_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.skill.mo_addition",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "canDoIds": [
+          5,
+          6
+        ],
+        "title": "も: тоже",
+        "explanationRu": "も заменяет は или が и добавляет ещё одного участника с тем же признаком. Контекст должен сообщать, с кем или с чем проводится сравнение.",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      }
+    ],
+    "exercises": [
+      {
+        "id": "marugoto.starter-a1.example.wa_identity.l03.1",
+        "lessonId": "marugoto.starter-a1.lesson.03",
+        "skillId": "marugoto.starter-a1.skill.wa_identity",
+        "promptRu": "Я студент.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.8f4403a1ef1a7014"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.054f78e2ef4a7e72"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я студент."
+      },
+      {
+        "id": "marugoto.starter-a1.example.ga_ability.l03.1",
+        "lessonId": "marugoto.starter-a1.lesson.03",
+        "skillId": "marugoto.starter-a1.skill.ga_ability",
+        "promptRu": "Я могу говорить по-японски.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.8f4403a1ef1a7014"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.6ecc473aef7087a0"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.a0bd4b52e58a66fe"
+          },
+          {
+            "id": "t5",
+            "formId": "marugoto.starter-a1.form.8f463561a7e1f247"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5"
+          ],
+          [
+            "t3",
+            "t4",
+            "t5"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я могу говорить по-японски.",
+        "contextRu": "Вы рассказываете о себе; собеседник уже знает, что речь о вас. Тему «わたしは» можно назвать или целиком опустить. Остальной смысл и целевая конструкция должны сохраниться."
+      },
+      {
+        "id": "marugoto.starter-a1.example.mo_addition.l03.1",
+        "lessonId": "marugoto.starter-a1.lesson.03",
+        "skillId": "marugoto.starter-a1.skill.mo_addition",
+        "promptRu": "Я тоже студент (собеседник уже сказал, что он студент).",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.8f4403a1ef1a7014"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.fa44ea83fc996c89"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.054f78e2ef4a7e72"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я тоже студент."
+      }
+    ]
+  }
+}

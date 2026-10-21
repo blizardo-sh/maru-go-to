@@ -5,17 +5,18 @@ import { editorWordIds, sourceKey, trainingContext } from './learning';
 import type { SceneSound } from './sceneSound';
 import type { CardActivity, SavedFeedback } from './companion';
 import { matchesPreparedAnswer } from '../shared/answers';
-import { api, json } from './api';
+import { api, json, type submitReview } from './api';
 import { GestureCard } from './GestureCard';
 import { DisplayControl, Japanese } from './Japanese';
 import { isCurrentAnalysis, shuffledTokens } from './study';
 import { useReviewSave } from './useReviewSave';
+import { learningHeaders } from './guidedApi';
 
 type Token = { id: string; wordId: string; formId: string | null };
 type Editor = { kind: 'token'; id: string } | { kind: 'add'; afterId?: string } | { kind: 'manual' } | null;
 
 
-export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved, saveSettings, settingsBusy, active = true, onActivity, sound }: { item: Extract<ReviewItem, { mode: 'grammar' }>; data: Snapshot; source: StudySource; userId: string; onNext: (reaction?: SavedFeedback) => void; onSaved: () => void; saveSettings: (value: LearnerSettings) => Promise<void>; settingsBusy: boolean; active?: boolean; onActivity: (value: CardActivity) => void; sound: SceneSound }) {
+export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved, saveSettings, settingsBusy, active = true, onActivity, sound, sendReview, requiredPractice = false }: { item: Extract<ReviewItem, { mode: 'grammar' }>; data: Snapshot; source: StudySource; userId: string; onNext: (reaction?: SavedFeedback) => void; onSaved: () => void; saveSettings: (value: LearnerSettings) => Promise<void>; settingsBusy: boolean; active?: boolean; onActivity: (value: CardActivity) => void; sound: SceneSound; sendReview?: typeof submitReview; requiredPractice?: boolean }) {
   const { exercise, skill } = item;
   const formMap = new Map(data.course.forms.map(form => [form.id, form]));
   const wordMap = new Map([...data.course.words, ...data.lists.flatMap(list => list.words)].map(word => [word.id, word]));
@@ -28,7 +29,7 @@ export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved,
   const [editor, setEditor] = useState<Editor>(null); const [search, setSearch] = useState('');
   const [evaluation, setEvaluation] = useState<TargetEvaluationResult | null>(null); const [analysis, setAnalysis] = useState<AnalysisResult | null>(null); const [loading, setLoading] = useState(true); const [error, setError] = useState(''); const [retryRevision, setRetryRevision] = useState(0);
   const revision = useRef(0); const dialog = useRef<HTMLDialogElement>(null); const analysisDetails = useRef<HTMLDetailsElement>(null);
-  const saving = useReviewSave(userId, onSaved, (submission, result) => { const kind = result.correct && submission.mode === 'grammar' && submission.rating !== 1 && !submission.revealed ? 'good' : 'again'; sound.cue(kind, result.attemptId); onNext({ attemptId: result.attemptId, kind }); });
+  const saving = useReviewSave(userId, onSaved, (submission, result) => { const kind = result.correct && submission.mode === 'grammar' && submission.rating !== 1 && !submission.revealed ? 'good' : 'again'; sound.cue(kind, result.attemptId); onNext({ attemptId: result.attemptId, kind }); }, sendReview);
   const locked = !active || saving.busy || saving.pending;
   function valueFor(token: Token) { return token.formId ? formMap.get(token.formId)! : wordMap.get(token.wordId)!; }
   const text = manualText ?? tokens.map(token => valueFor(token).surface).join('') + (tokens.length ? exercise.sentenceEnd : '');
@@ -59,12 +60,12 @@ export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved,
         try {
           const request: TargetEvaluationRequest = { reviewId: item.id, version: item.version, revision: current, tokenIds: tokens.map(token => token.id), tokenForms, exploring };
           const unmapped = manualText !== null || tokens.some(token => token.formId === null);
-          const target = unmapped ? { revision: current, outcome: 'exploration' as const, feedback: 'Исследование фразы: исходное задание не оценивается.' } : await api<TargetEvaluationResult>('/api/reviews/evaluate', { ...json('POST', request), signal: controller.signal });
+          const target = unmapped ? { revision: current, outcome: 'exploration' as const, feedback: 'Исследование фразы: исходное задание не оценивается.' } : await api<TargetEvaluationResult>('/api/reviews/evaluate', { ...json('POST', request), headers: requiredPractice ? learningHeaders(userId) : undefined, signal: controller.signal });
           if (current !== revision.current || target.revision !== current) return;
           setEvaluation(target);
           if (text.trim() && target.outcome !== 'incomplete') {
             const ids = manualText !== null ? availableWords.filter(word => text.includes(word.surface) || text.includes(word.kana)).map(word => word.id) : wordIds;
-            const result = await api<AnalysisResult>('/api/analyze', { ...json('POST', { text, wordIds: ids, revision: current, ...trainingContext(source), exerciseId: exercise.id }), signal: controller.signal });
+            const result = await api<AnalysisResult>('/api/analyze', { ...json('POST', { text, wordIds: ids, revision: current, ...trainingContext(source), exerciseId: exercise.id }), headers: requiredPractice ? learningHeaders(userId) : undefined, signal: controller.signal });
             if (isCurrentAnalysis(result, revision.current, text)) setAnalysis(result);
           }
         } catch (failure) { if (!controller.signal.aborted && current === revision.current) setError(failure instanceof Error ? failure.message : 'Разбор не загрузился. Повторите попытку.'); }
@@ -97,7 +98,7 @@ export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved,
   function reset() { if (locked) return; invalidate(); setTokens([]); setManualText(null); setExploring(false); closeEditor(); }
   function advance(rating: 1 | 3) {
     if (loading || !evaluation || locked || composing || editor) return;
-    if (evaluation.outcome === 'incomplete' || evaluation.outcome === 'exploration') { onNext(); return; }
+    if (evaluation.outcome === 'incomplete' || evaluation.outcome === 'exploration') { if (!requiredPractice) onNext(); return; }
     void saving.save({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, mode: 'grammar', tokenIds: tokens.map(token => token.id), tokenForms, revealed: false, exploring, rating });
   }
   const targetVerdict = evaluation && (evaluation.outcome === 'correct' || evaluation.outcome === 'incorrect') ? evaluation : null;
@@ -108,7 +109,7 @@ export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved,
   const activeToken = editor?.kind === 'token' ? tokens.find(token => token.id === editor.id) : undefined;
   const activeWord = activeToken ? wordMap.get(activeToken.wordId) : undefined;
   const matches = availableWords.filter(word => !search || `${word.surface} ${word.kana} ${word.meaningRu}`.toLowerCase().includes(search.toLowerCase())).slice(0, 45);
-  return <GestureCard active={active} enabled={!loading && !!evaluation && !locked && !editor && !composing} onAdvance={advance} mode="grammar" reviewId={item.id} actions={<><DisplayControl mode={data.settings.orthography} onChange={orthography => { void saveSettings({ ...data.settings, orthography }); }} disabled={settingsBusy || locked} /><button disabled={locked} onClick={reset}>К исходному заданию</button><button disabled={locked} onClick={() => openEditor({ kind: 'manual' })}>Ввести фразу</button></>}>
+  return <GestureCard active={active} enabled={!loading && !!evaluation && (!requiredPractice || evaluation.outcome === 'correct' || evaluation.outcome === 'incorrect') && !locked && !editor && !composing} onAdvance={advance} mode="grammar" reviewId={item.id} actions={<><DisplayControl mode={data.settings.orthography} onChange={orthography => { void saveSettings({ ...data.settings, orthography }); }} disabled={settingsBusy || locked} /><button disabled={locked} onClick={reset}>К исходному заданию</button><button disabled={locked} onClick={() => openEditor({ kind: 'manual' })}>Ввести фразу</button></>}>
     <header className="workspace-heading"><small>Конструкция · {skill.title}</small><h2>{exercise.promptRu}</h2>{exercise.contextRu && <p className="muted">{exercise.contextRu}</p>}</header>
     <p className="muted">Добавляйте элементы снизу и перетаскивайте их. Нажмите на слово, чтобы изменить его.</p>
     {manualText !== null ? <button className="manual-phrase" onClick={() => openEditor({ kind: 'manual' })}><span lang="ja" className="jp">{manualText || 'Введите фразу'}</span></button> : <>

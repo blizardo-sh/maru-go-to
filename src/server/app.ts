@@ -1,3 +1,5 @@
+import { advanceLearning, learningOverview, learningState } from './learning';
+import { learningAdvanceSchema } from './validation';
 import { OpenAPIHono } from '@hono/zod-openapi';
 import { registerContract } from './openapi';
 import { bodyLimit } from 'hono/body-limit';
@@ -32,7 +34,7 @@ export function createApp({database,config,course}:{database:Database;config:Con
  app.post('/api/invitations/details',async c=>{const body=invitationDetailsSchema.parse(await c.req.json());const details=await invitationDetails(database,body.token);return details?c.json(details):fail(c,'INVALID_LINK','Ссылка недействительна, использована или истекла.',400);});
  app.post('/api/invitations/accept',async c=>{const body=invitationSchema.parse(await c.req.json());const details=await invitationDetails(database,body.token);if(!details)return fail(c,'INVALID_LINK','Ссылка недействительна, использована или истекла.',400);const ok=await consumeLink(database,'invite',body.token,body.password,body.name);return ok?c.json({ok:true,email:details.email}):fail(c,'INVALID_LINK','Ссылка недействительна, использована или истекла.',400);});
  app.post('/api/recovery/complete',async c=>{const body=recoverySchema.parse(await c.req.json());const ok=await consumeLink(database,'recovery',body.token,body.password);return ok?c.json({ok:true}):fail(c,'INVALID_LINK','Ссылка недействительна, использована или истекла.',400);});
- app.use('/api/*',async(c,next)=>{const session=await auth.api.getSession({headers:c.req.raw.headers});if(!session)return fail(c,'UNAUTHENTICATED','Войдите в приложение.',401);const [actor]=await database.sql`select id,name,email,is_admin from users where id=${session.user.id}`;if(!actor)return fail(c,'UNAUTHENTICATED','Войдите в приложение.',401);c.set('actor',{id:actor.id,name:actor.name,email:actor.email,isAdmin:actor.is_admin});await next();});
+ app.use('/api/*',async(c,next)=>{const session=await auth.api.getSession({headers:c.req.raw.headers});if(!session)return fail(c,'UNAUTHENTICATED','Войдите в приложение.',401);const [actor]=await database.sql`select id,name,email,is_admin from users where id=${session.user.id}`;if(!actor)return fail(c,'UNAUTHENTICATED','Войдите в приложение.',401);const expectedLearner=c.req.header('X-Learning-Learner-Id');if(expectedLearner!==undefined&&expectedLearner!==actor.id)return fail(c,'OWNER_CHANGED','Учётная запись изменилась в другой вкладке. Обновите страницу и войдите в нужную учётную запись.',409);c.set('actor',{id:actor.id,name:actor.name,email:actor.email,isAdmin:actor.is_admin});await next();});
  const routes=app
  .get('/api/me',c=>c.json(c.get('actor')))
  .get('/api/course',async c=>{const words=await allWords(database,c.get('actor').id,course);return c.json(withPersonalPractice(course,words));})
@@ -40,6 +42,9 @@ export function createApp({database,config,course}:{database:Database;config:Con
  .put('/api/settings',async c=>{const body=settingsSchema.parse(await c.req.json());const listRows=await database.sql`select id from word_lists where user_id=${c.get('actor').id}`;if(body.enabledListIds.some(id=>!listRows.some((r:any)=>r.id===id)))return fail(c,'UNKNOWN_LIST','Личный список недоступен.',403);await database.sql`insert into preferences(user_id,settings) values(${c.get('actor').id},${body}) on conflict(user_id) do update set settings=excluded.settings,updated_at=now()`;return c.json(body);})
  .get('/api/progress',async c=>c.json(await progressFor(database,c.get('actor').id,course)))
  .get('/api/reviews',async c=>{const mode=z.enum(['ja-ru','ru-ja','listening','grammar','mixed']).parse(c.req.query('mode')??'ja-ru') as ReviewMode|'mixed';return c.json(await reviewQueue(database,c.get('actor').id,course,mode));})
+ .get('/api/learning',async c=>c.json(await learningOverview(database,c.get('actor').id,course)))
+ .get('/api/learning/:lessonId',async c=>c.json(await learningState(database,c.get('actor').id,course,c.req.param('lessonId'))))
+ .post('/api/learning/:lessonId/advance',async c=>c.json(await advanceLearning(database,c.get('actor').id,course,c.req.param('lessonId'),learningAdvanceSchema.parse(await c.req.json()))))
  .get('/api/training',async c=>c.json(await trainingQueue(database,c.get('actor').id,course,trainingContextSchema.parse(c.req.query()))))
  .post('/api/reviews/evaluate',async c=>c.json(await evaluateReview(database,c.get('actor').id,course,targetEvaluationSchema.parse(await c.req.json()))))
  .post('/api/reviews',async c=>c.json(await submitReview(database,c.get('actor').id,course,submissionSchema.parse(await c.req.json()))))
