@@ -419,6 +419,14 @@ button.primary.start-session { color: var(--color-ink); background: var(--color-
 .lesson-card:has(> .lesson-material[open]) .lesson-topic-image { width: 80px; }
 .lesson-card:has(> .lesson-material[open]) .lesson-disclosure { margin: 0; transform: rotate(180deg); }
 .lesson-card-body { display: grid; gap: .75rem; padding: 1rem; border-block-start: 1px solid #d1b58c; font-size: .875rem; }
+.lesson-video { display: grid; gap: .75rem; width: min(100%, 48rem); margin-inline: auto; padding: clamp(.5rem, 2vw, 1rem); border: 1px solid #c49b68; border-radius: .65rem; background: #f6e7c9; }
+.lesson-video video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: .4rem; background: #342b22; }
+.lesson-video-caption { display: grid; place-items: center; min-height: 7rem; padding: .75rem; border: 1px solid #b6bd9a; border-radius: .4rem; background: #eef0df; text-align: center; }
+.lesson-video-caption .jp { margin: 0; color: #344626; font-size: clamp(1.375rem, 2.2vw, 1.75rem); animation: video-caption-in .18s ease-out; }
+.lesson-video-source { display: grid; gap: .35rem; margin: 0; }
+.lesson-video-source a { width: fit-content; min-height: 44px; display: inline-flex; align-items: center; }
+.lesson-video-source small { line-height: 1.5; }
+@keyframes video-caption-in { from { opacity: .4; transform: translateY(3px); } to { opacity: 1; transform: translateY(0); } }
 .lesson-card .lesson-controls { display: grid; grid-template-columns: minmax(0, 1fr); gap: .7rem; }
 .lesson-card .lesson-controls label { width: auto; font-size: .875rem; }
 .lesson-card .lesson-controls select { padding: .45rem .6rem; }

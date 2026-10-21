@@ -49,6 +49,24 @@ export function validateCourse(value: Course): void {
     ensure(exercise.acceptedOrders.some((order) => order.length === tokenIds.size), `missing full answer ${exercise.id}`);
   }
   for (const lesson of value.lessons) {
+    if (lesson.video) {
+      const video = lesson.video;
+      const source = video.sourceUrl.match(/^https:\/\/a1\.marugotoweb\.jp\/(en|ja)\/can-do(\d+)\.php$/);
+      ensure(source && lesson.canDoIds.includes(Number(source[2])), `video source lesson ${lesson.number}`);
+      ensure(typeof video.title === "string" && video.title.trim().length > 0 && video.title.length <= 300, `video title lesson ${lesson.number}`);
+      const media = video.mediaUrl.match(/^https:\/\/a1\.marugotoweb\.jp\/(en|ja)\/assets\/movies\/topics\/cando_(\d{2})_\d{2}\.mp4$/);
+      ensure(media && Number(media[2]) === Number(source?.[2]), `video media lesson ${lesson.number}`);
+      ensure(video.captionsSourceUrl === video.mediaUrl.replace('/movies/', '/data/').replace(/\.mp4$/, '.xml'), `video captions source lesson ${lesson.number}`);
+      ensure(video.captionNote === undefined || typeof video.captionNote === "string" && video.captionNote.trim().length > 0 && video.captionNote.length <= 500, `video caption note lesson ${lesson.number}`);
+      ensure(Array.isArray(video.captions) && video.captions.length > 0 && video.captions.length <= 500, `video captions lesson ${lesson.number}`);
+      for (const [index, caption] of video.captions.entries()) {
+        const previous = video.captions[index - 1];
+        ensure(Number.isFinite(caption.startSeconds) && caption.startSeconds >= 0, `video caption start lesson ${lesson.number}`);
+        ensure(caption.endSeconds === null ? index === video.captions.length - 1 && caption.text === null : Number.isFinite(caption.endSeconds) && caption.endSeconds > caption.startSeconds, `video caption end lesson ${lesson.number}`);
+        ensure(!previous || previous.endSeconds !== null && caption.startSeconds >= previous.endSeconds, `video caption order lesson ${lesson.number}`);
+        ensure(caption.text === null || typeof caption.text === "string" && caption.text.trim().length > 0 && caption.text.length <= 1000, `video caption text lesson ${lesson.number}`);
+      }
+    }
     for (const part of ["katsudoo", "rikai"]) {
       ensure(value.words.some((word) => word.lessonIds.includes(lesson.id) && word.sourceRefs.some((ref) => ref.part === part && ref.url.includes("VocabularyIndex"))), `missing ${part} vocabulary lesson ${lesson.number}`);
     }
