@@ -81,6 +81,7 @@ jobs:
             docker push "$image"
           done
       - name: Deploy through restricted SSH command
+        if: github.event_name == 'workflow_dispatch'
         env:
           DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
           DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
@@ -95,4 +96,5 @@ jobs:
           printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > "$hosts"
           printf '%s\n' "$REGISTRY_TOKEN" | ssh -p 5555 -i "$key" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$hosts" "japanese-deploy@$DEPLOY_HOST" "deploy $GITHUB_SHA"
       - name: Verify public release
+        if: github.event_name == 'workflow_dispatch'
         run: python3 deployment/verify-public.py https://outboundserver.freemyip.com
