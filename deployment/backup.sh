@@ -30,7 +30,7 @@ if [[ $1 == backup ]]; then
     mv "$stage/database.dump.partial" "$stage/database.dump"
     tar -C / -czf "$stage/configuration.tar.gz" \
         opt/japanese-learning/.env opt/japanese-learning/release.env opt/japanese-learning/compose.yaml opt/japanese-learning/init-db.sh \
-        etc/nginx etc/japanese-learning/host.env etc/systemd/system/japanese-backup.service etc/systemd/system/japanese-backup.timer \
+        etc/nginx root/.acme.sh root/cert etc/japanese-learning/host.env etc/systemd/system/japanese-backup.service etc/systemd/system/japanese-backup.timer \
         etc/systemd/system/japanese-backup-verify.service etc/systemd/system/japanese-backup-verify.timer \
         usr/local/sbin/japanese-release usr/local/sbin/japanese-backup usr/local/sbin/japanese-ssh
     restic backup --tag japanese "$stage"

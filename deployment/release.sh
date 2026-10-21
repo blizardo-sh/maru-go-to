@@ -50,4 +50,17 @@ curl --fail --silent --show-error --max-time 10 http://127.0.0.1:8081/ready
 systemctl enable --now japanese-backup.timer japanese-backup-verify.timer
 printf '%s\n' "$sha" > deployed-commit
 trap - ERR
+# Retain the running and previous release without pruning images belonging to other apps.
+for target in api web; do
+    field=${target^^}_IMAGE
+    current=$(docker image inspect --format '{{.Id}}' "$(sed -n "s/^$field=//p" release.env)")
+    prior=''
+    if [[ -f previous.env ]]; then prior=$(docker image inspect --format '{{.Id}}' "$(sed -n "s/^$field=//p" previous.env)"); fi
+    while read -r id tag; do
+        if [[ $id != "$current" && $id != "$prior" && $tag =~ ^[0-9a-f]{40}$ ]]; then
+            docker image rm "$registry-$target:$tag" || true
+        fi
+    done < <(docker image ls --no-trunc --format '{{.ID}} {{.Tag}}' "$registry-$target")
+done
+docker image prune -f --filter 'label=org.opencontainers.image.source=https://github.com/blizardo-sh/maru-go-to' || true
 echo "DEPLOYED $sha"
