@@ -2,11 +2,12 @@ import { afterEach, beforeEach, expect, spyOn, test } from 'bun:test';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { currentLearningState, pendingLearning, submitLearning, type PendingLearning } from '../src/client/guidedApi';
+import { pendingReviews, submitReview } from '../src/client/api';
 import { Textbook } from '../src/client/Textbook';
 import { sourceKey, trainingContext } from '../src/client/learning';
 import { defaultSettings } from '../src/server/material';
 import type { LearningState } from '../src/shared/learning';
-import type { Progress } from '../src/shared/types';
+import type { Progress, ReviewSubmission } from '../src/shared/types';
 import { learningFixture } from './helpers/learning-fixture';
 
 class MemoryStorage implements Storage {
@@ -58,6 +59,23 @@ test('only an explicit not-applied learning conflict discards an obsolete attemp
   fetchSpy.mockResolvedValue(Response.json({ error: { code: 'ATTEMPT_CONFLICT', message: 'Attempt identity changed' } }, { status: 409 }));
   await expect(submitLearning('learner-a', stale)).rejects.toMatchObject({ status: 409, code: 'ATTEMPT_CONFLICT' });
   expect(pendingLearning('learner-a')).toEqual([unrelated, stale]);
+});
+
+test('ordinary repeat retry sends its expected learner and preserves the exact outbox when another learner owns the cookie', async () => {
+  const answer: ReviewSubmission = { attemptId: crypto.randomUUID(), reviewId: 'word-a:ja-ru', version: 0, mode: 'ja-ru', rating: 3 };
+  const saved = JSON.stringify([answer]);
+  localStorage.setItem('japanese-pending-reviews:learner-a', saved);
+  fetchSpy.mockImplementation(Object.assign(async (url: RequestInfo | URL, init?: RequestInit) => {
+    expect(url).toBe('/api/reviews');
+    expect(new Headers(init?.headers).get('X-Learning-Learner-Id')).toBe('learner-a');
+    expect(JSON.parse(String(init?.body))).toEqual(answer);
+    return Response.json({ error: { code: 'OWNER_CHANGED', message: 'Account changed' } }, { status: 409 });
+  }, { preconnect() {} }));
+  await expect(submitReview('learner-a', pendingReviews('learner-a')[0]!)).rejects.toMatchObject({ status: 409, code: 'OWNER_CHANGED' });
+  expect(localStorage.getItem('japanese-pending-reviews:learner-a')).toBe(saved);
+  expect(pendingReviews('learner-a')).toEqual([answer]);
+  expect(localStorage.getItem('japanese-pending-reviews:learner-b')).toBeNull();
+  expect(fetchSpy).toHaveBeenCalledTimes(1);
 });
 
 test('a stale ACK cannot move a newer route backward or cross lesson/content versions', () => {
