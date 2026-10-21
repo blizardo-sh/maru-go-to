@@ -1,0 +1,908 @@
+{
+  "lessonId": "marugoto.starter-a1.lesson.01",
+  "version": "2026-10-21.1",
+  "titleRu": "Приветствие",
+  "goals": [
+    {
+      "id": "l01-greetings",
+      "titleRu": "Поздороваться и попрощаться",
+      "canDoIds": [
+        1
+      ],
+      "parts": [
+        {
+          "id": "l01-greetings-01",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.1891ac7acda83001",
+              "explanationRu": "Вежливое приветствие утром; подходит преподавателю и малознакомому человеку.",
+              "example": {
+                "surface": "おはようございます、せんせい。",
+                "kana": "おはようございます、せんせい。",
+                "meaningRu": "Доброе утро, учитель.",
+                "segments": [
+                  {
+                    "surface": "おはようございます、せんせい。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson01-word-c75917f5793c.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.d72a7d1cea4c824c",
+              "explanationRu": "Дневное приветствие. Последняя は в этом выражении читается «ва».",
+              "example": {
+                "surface": "こんにちは、たなかさん。",
+                "kana": "こんにちは、たなかさん。",
+                "meaningRu": "Здравствуйте, Танака.",
+                "segments": [
+                  {
+                    "surface": "こんにちは、たなかさん。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson01-word-39b279309976.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.63ca7f78f8de3602",
+              "explanationRu": "Вечернее приветствие. Конечная は читается «ва», как в こんにちは.",
+              "example": {
+                "surface": "こんばんは、やまださん。",
+                "kana": "こんばんは、やまださん。",
+                "meaningRu": "Добрый вечер, Ямада.",
+                "segments": [
+                  {
+                    "surface": "こんばんは、やまださん。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson01-word-65800ab1bbe0.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.e340b3d7c3ca8be4",
+              "explanationRu": "Прощание, например в конце занятия; для короткой дружеской встречи есть じゃあ、また.",
+              "example": {
+                "surface": "せんせい、さようなら。",
+                "kana": "せんせい、さようなら。",
+                "meaningRu": "До свидания, учитель.",
+                "segments": [
+                  {
+                    "surface": "せんせい、さようなら。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson01-word-c31a6ea8b9ec.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.9f6170caede38d09",
+              "explanationRu": "Вежливая благодарность за помощь или услугу.",
+              "example": {
+                "surface": "ありがとうございます。たすかりました。",
+                "kana": "ありがとうございます。たすかりました。",
+                "meaningRu": "Большое спасибо. Вы мне помогли.",
+                "segments": [
+                  {
+                    "surface": "ありがとうございます。たすかりました。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson01-word-89dbf6bc300d.m4a"
+              }
+            }
+          ]
+        },
+        {
+          "id": "l01-greetings-02",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.dcf9a051f08ee19a",
+              "explanationRu": "Так извиняются или вежливо привлекают внимание; иногда выражают благодарность за неудобство.",
+              "example": {
+                "surface": "すみません、せんせい。",
+                "kana": "すみません、せんせい。",
+                "meaningRu": "Извините, учитель.",
+                "segments": [
+                  {
+                    "surface": "すみません、せんせい。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson01-word-948c34487370.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.4e6fdd1397c6f470",
+              "explanationRu": "Говорит тот, кто уходит с работы раньше остальных. Запоминайте как целую реплику.",
+              "example": {
+                "surface": "では、おさきにしつれいします。",
+                "kana": "では、おさきにしつれいします。",
+                "meaningRu": "Ну что ж, я ухожу раньше вас.",
+                "segments": [
+                  {
+                    "surface": "では、おさきにしつれいします。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson01-word-46ccf72910bc.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.98a4a29c72e134bc",
+              "explanationRu": "Поддерживающее прощание после совместной работы; ответ уходящему коллеге.",
+              "example": {
+                "surface": "きょうもおつかれさまでした。",
+                "kana": "きょうもおつかれさまでした。",
+                "meaningRu": "Спасибо за вашу работу сегодня.",
+                "segments": [
+                  {
+                    "surface": "きょうもおつかれさまでした。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson01-word-70d843a7aebe.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.df68477eb87855a3",
+              "explanationRu": "Неформальное «до встречи» знакомому; не такое официальное, как прощание с преподавателем.",
+              "example": {
+                "surface": "じゃあ、またあした。",
+                "kana": "じゃあ、またあした。",
+                "meaningRu": "Ну, до завтра.",
+                "segments": [
+                  {
+                    "surface": "じゃあ、またあした。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson01-word-63afa8ba7f3b.m4a"
+              }
+            }
+          ]
+        }
+      ],
+      "videoIds": [
+        "marugoto.starter-a1.lesson.01"
+      ]
+    },
+    {
+      "id": "l01-scripts",
+      "titleRu": "Узнать японские письменности",
+      "canDoIds": [
+        2
+      ],
+      "parts": [
+        {
+          "id": "l01-scripts-01",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.71ec1b1beab1477b",
+              "explanationRu": "Округлая слоговая азбука: あ・い・う. Используется в японских словах и грамматических окончаниях.",
+              "example": {
+                "surface": "これはひらがなの「あ」です。",
+                "kana": "これはひらがなの「あ」です。",
+                "meaningRu": "Это «а», написанное хираганой.",
+                "segments": [
+                  {
+                    "surface": "これはひらがなの「あ」です。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson01-word-b4863d9eccd9.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.5806ccc1a4aa0772",
+              "explanationRu": "Слоговая азбука с более угловатыми знаками: ア・イ・ウ. Часто записывает заимствования.",
+              "example": {
+                "surface": "これはカタカナの「ア」です。",
+                "kana": "これはカタカナの「ア」です。",
+                "meaningRu": "Это «а», написанное катаканой.",
+                "segments": [
+                  {
+                    "surface": "これはカタカナの「ア」です。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson01-word-d750e874526b.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.6f82e7260f603aaa",
+              "explanationRu": "Иероглифы связывают форму со значением; у знака бывает несколько чтений.",
+              "example": {
+                "surface": "これはかんじの「山」です。",
+                "kana": "これはかんじの「やま」です。",
+                "meaningRu": "Это иероглиф «гора».",
+                "segments": [
+                  {
+                    "surface": "これはかんじの「"
+                  },
+                  {
+                    "surface": "山",
+                    "reading": "やま"
+                  },
+                  {
+                    "surface": "」です。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson01-word-6c9ef048b679.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.a21b200861a67992",
+              "explanationRu": "Запись японских звуков латинскими буквами, например a или ka. Это подсказка чтения, а не кана.",
+              "example": {
+                "surface": "ローマじでかきます。",
+                "kana": "ローマじでかきます。",
+                "meaningRu": "Пишу латинскими буквами.",
+                "segments": [
+                  {
+                    "surface": "ローマじでかきます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson01-word-b3f238e96023.m4a"
+              }
+            }
+          ]
+        }
+      ],
+      "introductionRu": "Сравните: あ — хирагана, ア — катакана, 山 — кандзи. В записи 東京のホテル смешаны кандзи 東京, хирагана の и катакана ホテル. Найдите три вида знаков глазами; переводить всю строку пока не требуется. Названия письменностей ниже — слова для обсуждения этого наблюдения, а не проверка знания всех знаков."
+    }
+  ],
+  "authored": {
+    "words": [
+      {
+        "id": "marugoto.starter-a1.word.1891ac7acda83001",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "おはようございます",
+        "kana": "おはようございます",
+        "meaningRu": "доброе утро (вежливо)",
+        "segments": [
+          {
+            "surface": "おはようございます"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 14,
+            "entry": "おはようございます",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+            "page": 1,
+            "row": 15,
+            "entry": "おはようございます",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ],
+        "audioUrl": "/audio/ad7f191b45cc05840e96.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.d72a7d1cea4c824c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "こんにちは",
+        "kana": "こんにちは",
+        "meaningRu": "добрый день",
+        "segments": [
+          {
+            "surface": "こんにちは"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 23,
+            "entry": "こんにちは",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+            "page": 1,
+            "row": 19,
+            "entry": "こんにちは",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ],
+        "audioUrl": "/audio/fd699f07202018e0c9ac.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.63ca7f78f8de3602",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "こんばんは",
+        "kana": "こんばんは",
+        "meaningRu": "добрый вечер",
+        "segments": [
+          {
+            "surface": "こんばんは"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 24,
+            "entry": "こんばんは",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+            "page": 1,
+            "row": 20,
+            "entry": "こんばんは",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ],
+        "audioUrl": "/audio/863c033d7bb94c8b8fe3.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.e340b3d7c3ca8be4",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "さようなら",
+        "kana": "さようなら",
+        "meaningRu": "до свидания",
+        "segments": [
+          {
+            "surface": "さようなら"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 25,
+            "entry": "さようなら",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+            "page": 1,
+            "row": 21,
+            "entry": "さようなら",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ],
+        "audioUrl": "/audio/899c67b1c863eeb0c84b.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.9f6170caede38d09",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "ありがとうございます",
+        "kana": "ありがとうございます",
+        "meaningRu": "большое спасибо (вежливо)",
+        "segments": [
+          {
+            "surface": "ありがとうございます"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 1,
+            "entry": "ありがとう（ございます）",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+            "page": 1,
+            "row": 2,
+            "entry": "ありがとう（ございます）",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ],
+        "audioUrl": "/audio/e13ccc995a5f7c0776e5.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.dcf9a051f08ee19a",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "すみません",
+        "kana": "すみません",
+        "meaningRu": "извините; простите",
+        "segments": [
+          {
+            "surface": "すみません"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 28,
+            "entry": "すみません",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+            "page": 1,
+            "row": 23,
+            "entry": "すみません",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ],
+        "audioUrl": "/audio/e5b9010d0e5e9c2f7831.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.4e6fdd1397c6f470",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "おさきにしつれいします",
+        "kana": "おさきにしつれいします",
+        "meaningRu": "извините, я ухожу раньше вас",
+        "segments": [
+          {
+            "surface": "おさきにしつれいします"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 10,
+            "entry": "おさきに    しつれいします",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ],
+        "audioUrl": "/audio/09f9d9009f79aae0dc16.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.98a4a29c72e134bc",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "おつかれさまでした",
+        "kana": "おつかれさまでした",
+        "meaningRu": "спасибо за работу; вы хорошо потрудились",
+        "segments": [
+          {
+            "surface": "おつかれさまでした"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 12,
+            "entry": "おつかれさまでした",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ],
+        "audioUrl": "/audio/146c387e6eed9f0334f2.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.df68477eb87855a3",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "じゃあ、また",
+        "kana": "じゃあ、また",
+        "meaningRu": "ну, до встречи",
+        "segments": [
+          {
+            "surface": "じゃあ、また"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 27,
+            "entry": "じゃあ、また",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ],
+        "audioUrl": "/audio/b6a3cb7f259781c48246.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.71ec1b1beab1477b",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "ひらがな",
+        "kana": "ひらがな",
+        "meaningRu": "хирагана (японская слоговая азбука для написания японских слов)",
+        "segments": [
+          {
+            "surface": "ひらがな"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 14,
+            "entry": "ひらがな",
+            "label": "Словарь · урок 1"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 21,
+            "entry": "ひらがな",
+            "label": "Словарь · урок 1"
+          }
+        ],
+        "audioUrl": "/audio/491fe897b0d3ba623785.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.5806ccc1a4aa0772",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01",
+          "marugoto.starter-a1.lesson.02"
+        ],
+        "surface": "カタカナ",
+        "kana": "カタカナ",
+        "meaningRu": "катакана (японская слоговая азбука для написания заимствованных слов, а также выделения какого-то слова)",
+        "segments": [
+          {
+            "surface": "カタカナ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 3,
+            "entry": "カタカナ",
+            "label": "Словарь · урок 1"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 37,
+            "entry": "カタカナ",
+            "label": "Словарь · урок 2"
+          }
+        ],
+        "audioUrl": "/audio/13902ac1413a79f56c69.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.6f82e7260f603aaa",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "かんじ",
+        "kana": "かんじ",
+        "meaningRu": "иероглифы",
+        "segments": [
+          {
+            "surface": "かんじ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 4,
+            "entry": "かんじ",
+            "label": "Словарь · урок 1"
+          }
+        ],
+        "audioUrl": "/audio/d39c7ed0bf3e0a2bb7ec.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.a21b200861a67992",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "ローマじ",
+        "kana": "ローマじ",
+        "meaningRu": "латинские буквы",
+        "segments": [
+          {
+            "surface": "ローマじ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 15,
+            "entry": "ローマじ",
+            "label": "Словарь · урок 1"
+          }
+        ],
+        "audioUrl": "/audio/7bf65c9634208589288c.m4a"
+      }
+    ],
+    "forms": [
+      {
+        "id": "marugoto.starter-a1.form.742339b587b2999c",
+        "wordId": "marugoto.starter-a1.word.1891ac7acda83001",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "おはようございます",
+        "kana": "おはようございます",
+        "segments": [
+          {
+            "surface": "おはようございます"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 14,
+            "entry": "おはようございます",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.b8fd60e00b8017a9",
+        "wordId": "marugoto.starter-a1.word.d72a7d1cea4c824c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "こんにちは",
+        "kana": "こんにちは",
+        "segments": [
+          {
+            "surface": "こんにちは"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 23,
+            "entry": "こんにちは",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.6286cd289c144506",
+        "wordId": "marugoto.starter-a1.word.63ca7f78f8de3602",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "こんばんは",
+        "kana": "こんばんは",
+        "segments": [
+          {
+            "surface": "こんばんは"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 24,
+            "entry": "こんばんは",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.6bc6ac2767420026",
+        "wordId": "marugoto.starter-a1.word.e340b3d7c3ca8be4",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "さようなら",
+        "kana": "さようなら",
+        "segments": [
+          {
+            "surface": "さようなら"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 25,
+            "entry": "さようなら",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.19c770f59e419bbe",
+        "wordId": "marugoto.starter-a1.word.9f6170caede38d09",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "ありがとうございます",
+        "kana": "ありがとうございます",
+        "segments": [
+          {
+            "surface": "ありがとうございます"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 1,
+            "entry": "ありがとう（ございます）",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.66a8eeb4c30ef616",
+        "wordId": "marugoto.starter-a1.word.dcf9a051f08ee19a",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "すみません",
+        "kana": "すみません",
+        "segments": [
+          {
+            "surface": "すみません"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 28,
+            "entry": "すみません",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.cdf1e4603abf7b6e",
+        "wordId": "marugoto.starter-a1.word.4e6fdd1397c6f470",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "おさきにしつれいします",
+        "kana": "おさきにしつれいします",
+        "segments": [
+          {
+            "surface": "おさきにしつれいします"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 10,
+            "entry": "おさきに    しつれいします",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.3d27145f22083052",
+        "wordId": "marugoto.starter-a1.word.98a4a29c72e134bc",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "おつかれさまでした",
+        "kana": "おつかれさまでした",
+        "segments": [
+          {
+            "surface": "おつかれさまでした"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 12,
+            "entry": "おつかれさまでした",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.d90ef57411c538a1",
+        "wordId": "marugoto.starter-a1.word.df68477eb87855a3",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "じゃあ、また",
+        "kana": "じゃあ、また",
+        "segments": [
+          {
+            "surface": "じゃあ、また"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 27,
+            "entry": "じゃあ、また",
+            "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+          }
+        ]
+      }
+    ],
+    "skills": [],
+    "exercises": []
+  }
+}

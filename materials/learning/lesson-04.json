@@ -1,0 +1,2267 @@
+{
+  "lessonId": "marugoto.starter-a1.lesson.04",
+  "version": "2026-10-21.1",
+  "titleRu": "Семья",
+  "goals": [
+    {
+      "id": "l04-family",
+      "titleRu": "Коротко рассказать о своей семье",
+      "canDoIds": [
+        7
+      ],
+      "parts": [
+        {
+          "id": "l04-family-01",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.f304a39b5e728680",
+              "explanationRu": "Семья как группа; после は можно назвать её состав или количество человек.",
+              "example": {
+                "surface": "わたしのかぞくはさんにんです。",
+                "kana": "わたしのかぞくはさんにんです。",
+                "meaningRu": "В моей семье три человека.",
+                "segments": [
+                  {
+                    "surface": "わたしのかぞくはさんにんです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-d5cef97a2714.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.2d31dd8d68a3ada0",
+              "explanationRu": "Своя мать и свой отец вне семьи называются はは и ちち; здесь именно свой отец.",
+              "example": {
+                "surface": "ちちはにほんにすんでいます。",
+                "kana": "ちちはにほんにすんでいます。",
+                "meaningRu": "Мой отец живёт в Японии.",
+                "segments": [
+                  {
+                    "surface": "ちちはにほんにすんでいます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-c1aec345362b.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.07ab7fc730f6f2bb",
+              "explanationRu": "Так говорят о своей матери собеседнику; о чужой обычно おかあさん.",
+              "example": {
+                "surface": "はははとうきょうにすんでいます。",
+                "kana": "はははとうきょうにすんでいます。",
+                "meaningRu": "Моя мать живёт в Токио.",
+                "segments": [
+                  {
+                    "surface": "はははとうきょうにすんでいます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-cd8dd18e09af.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.5898af218a8efa80",
+              "explanationRu": "Свой старший брат; возраст относительно говорящего важен для выбора слова.",
+              "example": {
+                "surface": "あにはかいしゃいんです。",
+                "kana": "あにはかいしゃいんです。",
+                "meaningRu": "Мой старший брат — сотрудник компании.",
+                "segments": [
+                  {
+                    "surface": "あにはかいしゃいんです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-b5aff342a857.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.f11bf70db3c7b278",
+              "explanationRu": "Своя старшая сестра; не младшая сестра, которая называется いもうと.",
+              "example": {
+                "surface": "あねはおおさかにすんでいます。",
+                "kana": "あねはおおさかにすんでいます。",
+                "meaningRu": "Моя старшая сестра живёт в Осаке.",
+                "segments": [
+                  {
+                    "surface": "あねはおおさかにすんでいます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-bb5cd3499339.m4a"
+              }
+            }
+          ],
+          "construction": {
+            "exerciseId": "marugoto.starter-a1.example.to_noun_list.l04.1",
+            "explanationRu": "Частица と соединяет названные существительные: «отец и мать». Здесь это перечисление, а не действие вместе с кем-то. Короткий список с です — естественный ответ на вопрос, кто входит в семью.",
+            "example": {
+              "surface": "ちちとははです。",
+              "kana": "ちちとははです。",
+              "meaningRu": "Это мой отец и моя мать.",
+              "segments": [
+                {
+                  "surface": "ちち"
+                },
+                {
+                  "surface": "と"
+                },
+                {
+                  "surface": "はは"
+                },
+                {
+                  "surface": "です"
+                },
+                {
+                  "surface": "。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson04-construction-to-noun-list.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "ちち",
+                "explanationRu": "(мой) отец"
+              },
+              {
+                "text": "と",
+                "explanationRu": "Связывает имена: «и»; в модели проживания — «вместе с»."
+              },
+              {
+                "text": "はは",
+                "explanationRu": "(моя) мать"
+              },
+              {
+                "text": "です",
+                "explanationRu": "Вежливое завершение именной фразы."
+              }
+            ]
+          }
+        },
+        {
+          "id": "l04-family-02",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.085bb1515278ae01",
+              "explanationRu": "Один человек: особая форма счёта людей, не いちにん.",
+              "example": {
+                "surface": "こどもはひとりです。",
+                "kana": "こどもはひとりです。",
+                "meaningRu": "Ребёнок один.",
+                "segments": [
+                  {
+                    "surface": "こどもはひとりです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-2d68e1badd88.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.b46d8ae7ed1a2508",
+              "explanationRu": "Два человека: особая форма, не ににん.",
+              "example": {
+                "surface": "かぞくはふたりです。",
+                "kana": "かぞくはふたりです。",
+                "meaningRu": "В семье два человека.",
+                "segments": [
+                  {
+                    "surface": "かぞくはふたりです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-e015bed65d44.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.3c2a23fa6dbf95e5",
+              "explanationRu": "Три человека; после первых двух особых форм используется число и にん.",
+              "example": {
+                "surface": "かぞくはさんにんです。",
+                "kana": "かぞくはさんにんです。",
+                "meaningRu": "В семье три человека.",
+                "segments": [
+                  {
+                    "surface": "かぞくはさんにんです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-a277edb45a8f.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.147ac3dedeb8f421",
+              "explanationRu": "Четыре человека; здесь よ, а не よん и не し.",
+              "example": {
+                "surface": "わたしのかぞくはよにんです。",
+                "kana": "わたしのかぞくはよにんです。",
+                "meaningRu": "В моей семье четыре человека.",
+                "segments": [
+                  {
+                    "surface": "わたしのかぞくはよにんです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-097e8cf9cb52.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.9af71ce04d34fc49",
+              "explanationRu": "Ребёнок или дети: само слово не сообщает количество.",
+              "example": {
+                "surface": "こどもはふたりです。",
+                "kana": "こどもはふたりです。",
+                "meaningRu": "У меня двое детей.",
+                "segments": [
+                  {
+                    "surface": "こどもはふたりです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-542e5cef240c.m4a"
+              }
+            }
+          ],
+          "construction": {
+            "exerciseId": "marugoto.starter-a1.example.people_count.l04.1",
+            "explanationRu": "Для количества людей используются специальные формы: ひとり, ふたり, затем さんにん, よにん. В かぞくはさんにんです говорится, сколько человек в семье; не заменяйте счёт людей счётом вещей на つ.",
+            "example": {
+              "surface": "かぞくはさんにんです。",
+              "kana": "かぞくはさんにんです。",
+              "meaningRu": "В моей семье три человека.",
+              "segments": [
+                {
+                  "surface": "かぞく"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "さんにん"
+                },
+                {
+                  "surface": "です"
+                },
+                {
+                  "surface": "。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson04-construction-people-count.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "かぞく",
+                "explanationRu": "семья"
+              },
+              {
+                "text": "は",
+                "explanationRu": "Тема высказывания; здесь произносится «ва»."
+              },
+              {
+                "text": "さんにん",
+                "explanationRu": "три человека"
+              },
+              {
+                "text": "です",
+                "explanationRu": "Вежливое завершение именной фразы."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "l04-family-photo",
+      "titleRu": "Назвать человека на фото, возраст и место проживания",
+      "canDoIds": [
+        8
+      ],
+      "parts": [
+        {
+          "id": "l04-family-photo-01",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.712e62ba4142b3c5",
+              "explanationRu": "«Этот» перед существительным: このひと. Самостоятельно вместо существительного не употребляется.",
+              "example": {
+                "surface": "このひとはあねです。",
+                "kana": "このひとはあねです。",
+                "meaningRu": "Этот человек — моя старшая сестра.",
+                "segments": [
+                  {
+                    "surface": "このひとはあねです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-224259ffee2d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.a5e32b90deb17e6c",
+              "explanationRu": "Кто: вопрос о человеке, а не о предмете.",
+              "example": {
+                "surface": "このひとはだれですか。",
+                "kana": "このひとはだれですか。",
+                "meaningRu": "Кто этот человек?",
+                "segments": [
+                  {
+                    "surface": "このひとはだれですか。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-baacd8737636.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.1c638292e212a5ce",
+              "explanationRu": "Так говорят о своей жене; для жены собеседника употребляют おくさん.",
+              "example": {
+                "surface": "つまはエンジニアです。",
+                "kana": "つまはエンジニアです。",
+                "meaningRu": "Моя жена — инженер.",
+                "segments": [
+                  {
+                    "surface": "つまはエンジニアです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-b3aa67581b0c.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8b3d3b511e59fff3",
+              "explanationRu": "Свой муж; маленькая っ обозначает паузу перед следующим согласным.",
+              "example": {
+                "surface": "おっとはかいしゃいんです。",
+                "kana": "おっとはかいしゃいんです。",
+                "meaningRu": "Мой муж — сотрудник компании.",
+                "segments": [
+                  {
+                    "surface": "おっとはかいしゃいんです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-2c91229a6c8f.m4a"
+              }
+            }
+          ],
+          "construction": {
+            "exerciseId": "marugoto.starter-a1.example.no_relation.l04.1",
+            "explanationRu": "の связывает два существительных: первое уточняет второе. В あにのつま речь о жене старшего брата; важен последний элемент, つま. Для краткого ответа о человеке на фотографии достаточно этой группы с です.",
+            "example": {
+              "surface": "あにのつまです。",
+              "kana": "あにのつまです。",
+              "meaningRu": "Это жена моего старшего брата.",
+              "segments": [
+                {
+                  "surface": "あに"
+                },
+                {
+                  "surface": "の"
+                },
+                {
+                  "surface": "つま"
+                },
+                {
+                  "surface": "です"
+                },
+                {
+                  "surface": "。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson04-construction-no-relation.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "あに",
+                "explanationRu": "(мой) старший брат"
+              },
+              {
+                "text": "の",
+                "explanationRu": "Связь существительных: первое уточняет второе."
+              },
+              {
+                "text": "つま",
+                "explanationRu": "Жена; здесь — жена старшего брата."
+              },
+              {
+                "text": "です",
+                "explanationRu": "Вежливое завершение именной фразы."
+              }
+            ]
+          }
+        },
+        {
+          "id": "l04-family-photo-02",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.e7e3a07da5f84228",
+              "explanationRu": "Жить, проживать. В описании места проживания в этом уроке используется форма すんでいます.",
+              "example": {
+                "surface": "とうきょうにすんでいます。",
+                "kana": "とうきょうにすんでいます。",
+                "meaningRu": "Я живу в Токио.",
+                "segments": [
+                  {
+                    "surface": "とうきょうにすんでいます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-2aa5827b4748.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.e9eb89c01e577f0b",
+              "explanationRu": "Токио; долгие гласные とう и きょう важны для звучания названия.",
+              "example": {
+                "surface": "はははとうきょうにすんでいます。",
+                "kana": "はははとうきょうにすんでいます。",
+                "meaningRu": "Моя мать живёт в Токио.",
+                "segments": [
+                  {
+                    "surface": "はははとうきょうにすんでいます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-5681802aa118.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.cbfa9f0083aa4a40",
+              "explanationRu": "Япония; в примере место проживания отмечается に.",
+              "example": {
+                "surface": "はははにほんにすんでいます。",
+                "kana": "はははにほんにすんでいます。",
+                "meaningRu": "Моя мать живёт в Японии.",
+                "segments": [
+                  {
+                    "surface": "はははにほんにすんでいます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-ddabf05df471.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.75bd1f06a73a31f0",
+              "explanationRu": "Где: вопрос о месте. Для проживания — どこにすんでいますか.",
+              "example": {
+                "surface": "どこにすんでいますか。",
+                "kana": "どこにすんでいますか。",
+                "meaningRu": "Где вы живёте?",
+                "segments": [
+                  {
+                    "surface": "どこにすんでいますか。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-7769ef5285dd.m4a"
+              }
+            }
+          ],
+          "construction": {
+            "exerciseId": "marugoto.starter-a1.example.ni_residence.l04.1",
+            "explanationRu": "Место проживания отмечается に, затем следует すんでいます — «живёт». Человека можно назвать через は. Пока запоминайте すんでいます целиком: правило образования формы на て здесь не требуется.",
+            "example": {
+              "surface": "はははにほんにすんでいます。",
+              "kana": "はははにほんにすんでいます。",
+              "meaningRu": "Моя мать живёт в Японии.",
+              "segments": [
+                {
+                  "surface": "はは"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "にほん"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "すんでいます"
+                },
+                {
+                  "surface": "。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson04-construction-ni-residence.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "はは",
+                "explanationRu": "(моя) мать"
+              },
+              {
+                "text": "は",
+                "explanationRu": "Тема высказывания; здесь произносится «ва»."
+              },
+              {
+                "text": "にほん",
+                "explanationRu": "Япония"
+              },
+              {
+                "text": "に",
+                "explanationRu": "Отмечает место нахождения/проживания или точное время в данной модели."
+              },
+              {
+                "text": "すんでいます",
+                "explanationRu": "Живёт: форма для места или совместного проживания."
+              }
+            ]
+          }
+        },
+        {
+          "id": "l04-family-photo-03",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.1e60231f1cffb868",
+              "explanationRu": "Три года: возраст, а не длительность в три года.",
+              "example": {
+                "surface": "こどもはさんさいです。",
+                "kana": "こどもはさんさいです。",
+                "meaningRu": "Моему ребёнку три года.",
+                "segments": [
+                  {
+                    "surface": "こどもはさんさいです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-4aef6e4e82fd.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.387ec4418a1b7b2c",
+              "explanationRu": "Четыре года; для возраста используется よん.",
+              "example": {
+                "surface": "こどもはよんさいです。",
+                "kana": "こどもはよんさいです。",
+                "meaningRu": "Моему ребёнку четыре года.",
+                "segments": [
+                  {
+                    "surface": "こどもはよんさいです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-985499e53004.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.24a335e09a8a32ba",
+              "explanationRu": "Вежливый вопрос о возрасте. Учитывайте ситуацию: не всякому взрослому уместно его задавать.",
+              "example": {
+                "surface": "おこさんはおいくつですか。",
+                "kana": "おこさんはおいくつですか。",
+                "meaningRu": "Сколько лет вашему ребёнку?",
+                "segments": [
+                  {
+                    "surface": "おこさんはおいくつですか。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-1f5c1602ecaa.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.93b1f9e7fc222764",
+              "explanationRu": "Сколько лет: вопросительное слово для возраста, чаще в разговоре о детях.",
+              "example": {
+                "surface": "こどもはなんさいですか。",
+                "kana": "こどもはなんさいですか。",
+                "meaningRu": "Сколько лет ребёнку?",
+                "segments": [
+                  {
+                    "surface": "こどもはなんさいですか。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson04-word-efde830a07d2.m4a"
+              }
+            }
+          ],
+          "construction": {
+            "exerciseId": "marugoto.starter-a1.example.age_count.l04.1",
+            "explanationRu": "Возраст обозначается числом с さい и です: さんさいです — «три года». は показывает, чей возраст мы называем. Вопрос о возрасте — なんさいですか; вежливый вариант — おいくつですか.",
+            "example": {
+              "surface": "こどもはさんさいです。",
+              "kana": "こどもはさんさいです。",
+              "meaningRu": "Моему ребёнку три года.",
+              "segments": [
+                {
+                  "surface": "こども"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "さんさい"
+                },
+                {
+                  "surface": "です"
+                },
+                {
+                  "surface": "。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson04-construction-age-count.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "こども",
+                "explanationRu": "ребенок"
+              },
+              {
+                "text": "は",
+                "explanationRu": "Тема высказывания; здесь произносится «ва»."
+              },
+              {
+                "text": "さんさい",
+                "explanationRu": "три года (возраст)"
+              },
+              {
+                "text": "です",
+                "explanationRu": "Вежливое завершение именной фразы."
+              }
+            ]
+          }
+        }
+      ],
+      "introductionRu": "Представьте семейную фотографию: слева ваш старший брат, рядом его жена, перед ними ребёнок. В примерах этой части вы называете людей на таком фото, их возраст и место проживания. Фразы あにのつまです и こどもはさんさいです получают смысл из этой ситуации; они не проверяют сведения о вашей настоящей семье.",
+      "videoIds": [
+        "marugoto.starter-a1.lesson.04"
+      ]
+    }
+  ],
+  "authored": {
+    "words": [
+      {
+        "id": "marugoto.starter-a1.word.f304a39b5e728680",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.01",
+          "marugoto.starter-a1.lesson.07"
+        ],
+        "surface": "かぞく",
+        "kana": "かぞく",
+        "meaningRu": "семья",
+        "segments": [
+          {
+            "surface": "かぞく"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 31,
+            "entry": "かぞく",
+            "label": "Словарь · урок 4"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 8,
+            "entry": "かぞく",
+            "label": "Словарь · урок 1"
+          }
+        ],
+        "audioUrl": "/audio/f85d7b995ae23e0415fe.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.2d31dd8d68a3ada0",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "ちち",
+        "kana": "ちち",
+        "meaningRu": "(мой) отец",
+        "segments": [
+          {
+            "surface": "ちち"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 44,
+            "entry": "ちち",
+            "label": "Словарь · урок 4"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 25,
+            "entry": "ちち",
+            "label": "Словарь · урок 4"
+          }
+        ],
+        "audioUrl": "/audio/666d4b3626a3a5ce1570.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.07ab7fc730f6f2bb",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "はは",
+        "kana": "はは",
+        "meaningRu": "(моя) мать",
+        "segments": [
+          {
+            "surface": "はは"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 51,
+            "entry": "はは",
+            "label": "Словарь · урок 4"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 31,
+            "entry": "はは",
+            "label": "Словарь · урок 4"
+          }
+        ],
+        "audioUrl": "/audio/810563a6277a5555268e.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.5898af218a8efa80",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "あに",
+        "kana": "あに",
+        "meaningRu": "(мой) старший брат",
+        "segments": [
+          {
+            "surface": "あに"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 23,
+            "entry": "あに",
+            "label": "Словарь · урок 4"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 55,
+            "entry": "あに",
+            "label": "Словарь · урок 4"
+          }
+        ],
+        "audioUrl": "/audio/0330bd8f8a1b529609bb.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.f11bf70db3c7b278",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "あね",
+        "kana": "あね",
+        "meaningRu": "(моя) старшая сестра",
+        "segments": [
+          {
+            "surface": "あね"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 24,
+            "entry": "あね",
+            "label": "Словарь · урок 4"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 56,
+            "entry": "あね",
+            "label": "Словарь · урок 4"
+          }
+        ],
+        "audioUrl": "/audio/c1b6337ba14afa830fde.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.085bb1515278ae01",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.07"
+        ],
+        "surface": "ひとり",
+        "kana": "ひとり",
+        "meaningRu": "один человек",
+        "segments": [
+          {
+            "surface": "ひとり"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 54,
+            "entry": "ひとり",
+            "label": "Словарь · урок 4"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 32,
+            "entry": "ひとり",
+            "label": "Словарь · урок 4"
+          }
+        ],
+        "audioUrl": "/audio/a44ccb280d4ff2727068.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.b46d8ae7ed1a2508",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "ふたり",
+        "kana": "ふたり",
+        "meaningRu": "двое (два человека)",
+        "segments": [
+          {
+            "surface": "ふたり"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 55,
+            "entry": "ふたり",
+            "label": "Словарь · урок 4"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 50,
+            "entry": "ふたり",
+            "label": "Словарь · урок 3"
+          }
+        ],
+        "audioUrl": "/audio/5b054594b9c06fc0d52a.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.3c2a23fa6dbf95e5",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "さんにん",
+        "kana": "さんにん",
+        "meaningRu": "три человека",
+        "segments": [
+          {
+            "surface": "さんにん"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/0efa7a56f05f42206262.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.147ac3dedeb8f421",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "よにん",
+        "kana": "よにん",
+        "meaningRu": "четыре человека",
+        "segments": [
+          {
+            "surface": "よにん"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/ab47074ceec2ec5458a0.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.9af71ce04d34fc49",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.07"
+        ],
+        "surface": "こども",
+        "kana": "こども",
+        "meaningRu": "ребенок",
+        "segments": [
+          {
+            "surface": "こども"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 37,
+            "entry": "こども",
+            "label": "Словарь · урок 4"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 20,
+            "entry": "こども",
+            "label": "Словарь · урок 4"
+          }
+        ],
+        "audioUrl": "/audio/ff6f7b2b5ed5f35717a8.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.dd104b2956d30829",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.07"
+        ],
+        "surface": "と",
+        "kana": "と",
+        "meaningRu": "и; вместе с (по конструкции)",
+        "segments": [
+          {
+            "surface": "と"
+          }
+        ],
+        "kind": "word",
+        "pos": "particle",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/d01be83751ed3799fac8.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.cfb8df642175a27c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "です",
+        "kana": "です",
+        "meaningRu": "вежливая именная связка",
+        "segments": [
+          {
+            "surface": "です"
+          }
+        ],
+        "kind": "word",
+        "pos": "copula",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/52ab9944db0989691e54.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.b5a68b9529221562",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "は",
+        "kana": "は",
+        "meaningRu": "тема высказывания",
+        "segments": [
+          {
+            "surface": "は"
+          }
+        ],
+        "kind": "word",
+        "pos": "particle",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioText": "わ",
+        "audioUrl": "/audio/05a500e6c3c55f8e321c.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.712e62ba4142b3c5",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.16"
+        ],
+        "surface": "この",
+        "kana": "この",
+        "meaningRu": "этот",
+        "segments": [
+          {
+            "surface": "この"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 38,
+            "entry": "この",
+            "label": "Словарь · урок 4"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 21,
+            "entry": "この",
+            "label": "Словарь · урок 4"
+          }
+        ],
+        "audioUrl": "/audio/d0ed3f94f7767c054cf0.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.a5e32b90deb17e6c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "だれ",
+        "kana": "だれ",
+        "meaningRu": "кто",
+        "segments": [
+          {
+            "surface": "だれ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 43,
+            "entry": "だれ",
+            "label": "Словарь · урок 4"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 24,
+            "entry": "だれ",
+            "label": "Словарь · урок 4"
+          }
+        ],
+        "audioUrl": "/audio/835473f8136e5959077f.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.1c638292e212a5ce",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "つま",
+        "kana": "つま",
+        "meaningRu": "(моя) жена",
+        "segments": [
+          {
+            "surface": "つま"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 45,
+            "entry": "つま",
+            "label": "Словарь · урок 4"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 26,
+            "entry": "つま",
+            "label": "Словарь · урок 4"
+          }
+        ],
+        "audioUrl": "/audio/d65a999480b214e45a6b.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.8b3d3b511e59fff3",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "おっと",
+        "kana": "おっと",
+        "meaningRu": "(мой) муж",
+        "segments": [
+          {
+            "surface": "おっと"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 28,
+            "entry": "おっと",
+            "label": "Словарь · урок 4"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 7,
+            "entry": "おっと",
+            "label": "Словарь · урок 4"
+          }
+        ],
+        "audioUrl": "/audio/6c7096e6eac5bbc41424.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.e7e3a07da5f84228",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.07"
+        ],
+        "surface": "すみます",
+        "kana": "すみます",
+        "meaningRu": "жить, проживать",
+        "segments": [
+          {
+            "surface": "すみます"
+          }
+        ],
+        "kind": "word",
+        "pos": "verb",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 41,
+            "entry": "すみます",
+            "label": "Словарь · урок 4"
+          }
+        ],
+        "audioUrl": "/audio/6dd230cd2b0612482f1d.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.e9eb89c01e577f0b",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.01",
+          "marugoto.starter-a1.lesson.12"
+        ],
+        "surface": "東京",
+        "kana": "とうきょう",
+        "meaningRu": "Токио",
+        "segments": [
+          {
+            "surface": "東京",
+            "reading": "とうきょう"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 46,
+            "entry": "とうきょう",
+            "label": "Словарь · урок 4"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 16,
+            "entry": "とうきょう／東京",
+            "label": "Словарь · урок 1"
+          }
+        ],
+        "audioUrl": "/audio/470e377396c042e46dc7.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.cbfa9f0083aa4a40",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.02",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "日本",
+        "kana": "にほん",
+        "meaningRu": "Япония",
+        "segments": [
+          {
+            "surface": "日本",
+            "reading": "にほん"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 7,
+            "row": 22,
+            "entry": "にほん",
+            "label": "Словарь · урок 12"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 5,
+            "entry": "にほん／にっぽん／日本",
+            "label": "Словарь · урок 2"
+          }
+        ],
+        "audioUrl": "/audio/560f70bbfdf28f048d5b.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.75bd1f06a73a31f0",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.17"
+        ],
+        "surface": "どこ",
+        "kana": "どこ",
+        "meaningRu": "где",
+        "segments": [
+          {
+            "surface": "どこ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 47,
+            "entry": "どこ",
+            "label": "Словарь · урок 4"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 27,
+            "entry": "どこ",
+            "label": "Словарь · урок 4"
+          }
+        ],
+        "audioUrl": "/audio/743172e5df59e641555f.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.1e60231f1cffb868",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "さんさい",
+        "kana": "さんさい",
+        "meaningRu": "три года (возраст)",
+        "segments": [
+          {
+            "surface": "さんさい"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/baa15c42afba1fce7c1b.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.387ec4418a1b7b2c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "よんさい",
+        "kana": "よんさい",
+        "meaningRu": "четыре года (возраст)",
+        "segments": [
+          {
+            "surface": "よんさい"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/900fc90247a0ba7d2e6f.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.24a335e09a8a32ba",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "おいくつですか",
+        "kana": "おいくつですか",
+        "meaningRu": "сколько вам лет? (вежливо)",
+        "segments": [
+          {
+            "surface": "おいくつですか"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 9,
+            "entry": "おいくつですか",
+            "label": "Указатель фраз · урок 4 · русский перевод подготовлен для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+            "page": 1,
+            "row": 9,
+            "entry": "おいくつですか",
+            "label": "Указатель фраз · урок 4 · русский перевод подготовлен для приложения"
+          }
+        ],
+        "audioUrl": "/audio/8510ed306efdcc701f4b.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.93b1f9e7fc222764",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "なんさい",
+        "kana": "なんさい",
+        "meaningRu": "сколько лет",
+        "segments": [
+          {
+            "surface": "なんさい"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 28,
+            "entry": "なんさい",
+            "label": "Словарь · урок 4"
+          }
+        ],
+        "audioUrl": "/audio/2a9052dc988129b822e0.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.91d21e3136b161da",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.14"
+        ],
+        "surface": "の",
+        "kana": "の",
+        "meaningRu": "связь существительных",
+        "segments": [
+          {
+            "surface": "の"
+          }
+        ],
+        "kind": "word",
+        "pos": "particle",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/cffb7479a8067402dc4b.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.a296622c50317ab9",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "に",
+        "kana": "に",
+        "meaningRu": "место, время или цель (по конструкции)",
+        "segments": [
+          {
+            "surface": "に"
+          }
+        ],
+        "kind": "word",
+        "pos": "particle",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_4_7_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_4_7_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_5_9_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_5.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_13_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_14_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_14_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_17_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_17_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_18_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/37df2fd1e99c2b76dcf1.m4a"
+      }
+    ],
+    "forms": [
+      {
+        "id": "marugoto.starter-a1.form.834e43b586efc198",
+        "wordId": "marugoto.starter-a1.word.3c2a23fa6dbf95e5",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "さんにん",
+        "kana": "さんにん",
+        "segments": [
+          {
+            "surface": "さんにん"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.db29e77d942a355e",
+        "wordId": "marugoto.starter-a1.word.147ac3dedeb8f421",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "よにん",
+        "kana": "よにん",
+        "segments": [
+          {
+            "surface": "よにん"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.5d09bb7313a5efb2",
+        "wordId": "marugoto.starter-a1.word.dd104b2956d30829",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.07"
+        ],
+        "surface": "と",
+        "kana": "と",
+        "segments": [
+          {
+            "surface": "と"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.dfb1a0ad90bfab45",
+        "wordId": "marugoto.starter-a1.word.cfb8df642175a27c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16"
+        ],
+        "surface": "です",
+        "kana": "です",
+        "segments": [
+          {
+            "surface": "です"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.ff44f890fca56e70",
+        "wordId": "marugoto.starter-a1.word.b5a68b9529221562",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "は",
+        "kana": "は",
+        "segments": [
+          {
+            "surface": "は"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.7b40dbe863dc5ff9",
+        "wordId": "marugoto.starter-a1.word.1e60231f1cffb868",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "さんさい",
+        "kana": "さんさい",
+        "segments": [
+          {
+            "surface": "さんさい"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.8628d4534d4105c3",
+        "wordId": "marugoto.starter-a1.word.387ec4418a1b7b2c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "よんさい",
+        "kana": "よんさい",
+        "segments": [
+          {
+            "surface": "よんさい"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.d5ab638f1338811b",
+        "wordId": "marugoto.starter-a1.word.24a335e09a8a32ba",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "おいくつですか",
+        "kana": "おいくつですか",
+        "segments": [
+          {
+            "surface": "おいくつですか"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 9,
+            "entry": "おいくつですか",
+            "label": "Указатель фраз · урок 4 · русский перевод подготовлен для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.15c8a8838fb8dd61",
+        "wordId": "marugoto.starter-a1.word.91d21e3136b161da",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.14"
+        ],
+        "surface": "の",
+        "kana": "の",
+        "segments": [
+          {
+            "surface": "の"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.cb51ac50f7e689f5",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "に",
+        "kana": "に",
+        "segments": [
+          {
+            "surface": "に"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_4_7_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_4_7_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_5_9_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_5.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_13_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_14_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_14_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_17_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_17_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_18_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "wordId": "marugoto.starter-a1.word.a296622c50317ab9"
+      },
+      {
+        "id": "marugoto.starter-a1.form.c8e97f45f10a82c0",
+        "wordId": "marugoto.starter-a1.word.e7e3a07da5f84228",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.07"
+        ],
+        "surface": "すんでいます",
+        "kana": "すんでいます",
+        "segments": [
+          {
+            "surface": "すんでいます"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "id": "marugoto.starter-a1.skill.to_noun_list",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "canDoIds": [
+          7,
+          8
+        ],
+        "title": "と: перечисление существительных",
+        "explanationRu": "と соединяет существительные. В перечислении без заданного порядка отец и мать можно поменять местами, сохранив смысл.",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.skill.people_count",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "canDoIds": [
+          7,
+          8
+        ],
+        "title": "Счёт людей: ～人",
+        "explanationRu": "Для количества людей используется ～にん. Исключения: ひとり — один человек, ふたり — двое; четыре человека — よにん.",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "label": "Лексика урока 4; авторская отработка счёта, требует языковой проверки"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.skill.no_relation",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "canDoIds": [
+          7,
+          8
+        ],
+        "title": "の: связь существительных",
+        "explanationRu": "В N1のN2 первое существительное уточняет второе. Порядок меняет смысл: あにのつま — жена старшего брата.",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.skill.ni_residence",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "canDoIds": [
+          7,
+          8
+        ],
+        "title": "Место проживания: に 住んでいます",
+        "explanationRu": "に указывает место проживания перед すんでいます. Человека можно обозначить темой с は; здесь に не означает направление движения.",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.skill.age_count",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "canDoIds": [
+          7,
+          8
+        ],
+        "title": "Возраст: ～歳",
+        "explanationRu": "Возраст указывается числительным и ～さい. В этих заданиях используются さんさい и よんさい; чтения подготовлены явно.",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "label": "Лексика урока 4; авторская отработка счёта, требует языковой проверки"
+          }
+        ]
+      }
+    ],
+    "exercises": [
+      {
+        "id": "marugoto.starter-a1.example.to_noun_list.l04.1",
+        "lessonId": "marugoto.starter-a1.lesson.04",
+        "skillId": "marugoto.starter-a1.skill.to_noun_list",
+        "promptRu": "Назовите двух людей: мой отец и моя мать.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.ba11224717e66ca5"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.5d09bb7313a5efb2"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.e0de0f4cb997ad32"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4"
+          ],
+          [
+            "t3",
+            "t2",
+            "t1",
+            "t4"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Это мой отец и моя мать."
+      },
+      {
+        "id": "marugoto.starter-a1.example.people_count.l04.1",
+        "lessonId": "marugoto.starter-a1.lesson.04",
+        "skillId": "marugoto.starter-a1.skill.people_count",
+        "promptRu": "В моей семье три человека.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.b1a934c058326c46"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.834e43b586efc198"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "В моей семье три человека."
+      },
+      {
+        "id": "marugoto.starter-a1.example.no_relation.l04.1",
+        "lessonId": "marugoto.starter-a1.lesson.04",
+        "skillId": "marugoto.starter-a1.skill.no_relation",
+        "promptRu": "Это жена моего старшего брата. Назовите человека.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.b8692c26c972b16f"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.15c8a8838fb8dd61"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.3f6080ea6c4375ab"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Это жена моего старшего брата."
+      },
+      {
+        "id": "marugoto.starter-a1.example.ni_residence.l04.1",
+        "lessonId": "marugoto.starter-a1.lesson.04",
+        "skillId": "marugoto.starter-a1.skill.ni_residence",
+        "promptRu": "Моя мать живёт в Японии.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.e0de0f4cb997ad32"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.c4f1ebd5b525c95c"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.cb51ac50f7e689f5"
+          },
+          {
+            "id": "t5",
+            "formId": "marugoto.starter-a1.form.c8e97f45f10a82c0"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Моя мать живёт в Японии."
+      },
+      {
+        "id": "marugoto.starter-a1.example.age_count.l04.1",
+        "lessonId": "marugoto.starter-a1.lesson.04",
+        "skillId": "marugoto.starter-a1.skill.age_count",
+        "promptRu": "Моему ребёнку три года.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.fda91890b35d523f"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.7b40dbe863dc5ff9"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Моему ребёнку три года."
+      }
+    ]
+  }
+}

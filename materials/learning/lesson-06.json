@@ -1,0 +1,1976 @@
+{
+  "lessonId": "marugoto.starter-a1.lesson.06",
+  "version": "2026-10-21.1",
+  "titleRu": "Обед и заказ",
+  "goals": [
+    {
+      "id": "l06-favourite-dish",
+      "titleRu": "Назвать любимое блюдо",
+      "canDoIds": [
+        12
+      ],
+      "parts": [
+        {
+          "id": "l06-favourite-dish-01",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.c4497f9f1747667f",
+              "explanationRu": "Блюдо или приготовленная еда; также приготовление пищи, в зависимости от контекста.",
+              "example": {
+                "surface": "すきなりょうりはすしです。",
+                "kana": "すきなりょうりはすしです。",
+                "meaningRu": "Моё любимое блюдо — суши.",
+                "segments": [
+                  {
+                    "surface": "すきなりょうりはすしです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-38f8b3b8649e.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.5343e984cfbec64d",
+              "explanationRu": "Суши; в японском первый согласный обычный с, а не русское ш.",
+              "example": {
+                "surface": "すしがすきです。",
+                "kana": "すしがすきです。",
+                "meaningRu": "Я люблю суши.",
+                "segments": [
+                  {
+                    "surface": "すしがすきです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-771fc8831a8b.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8b8b91054442dafc",
+              "explanationRu": "Японское карри, обычно с рисом; долгий последний звук エー.",
+              "example": {
+                "surface": "きょうはカレーをたべます。",
+                "kana": "きょうはカレーをたべます。",
+                "meaningRu": "Сегодня я ем карри.",
+                "segments": [
+                  {
+                    "surface": "きょうはカレーをたべます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-2488f23b3bbb.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.438d22493425aa34",
+              "explanationRu": "Толстая пшеничная лапша удон, а не гречневая そば.",
+              "example": {
+                "surface": "うどんをたべます。",
+                "kana": "うどんをたべます。",
+                "meaningRu": "Я ем удон.",
+                "segments": [
+                  {
+                    "surface": "うどんをたべます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-0be4ffac3367.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.c8739ae88ae1bc97",
+              "explanationRu": "Лапша рамэн; долгий ラー важен для звучания названия.",
+              "example": {
+                "surface": "すきなりょうりはラーメンです。",
+                "kana": "すきなりょうりはラーメンです。",
+                "meaningRu": "Моё любимое блюдо — рамэн.",
+                "segments": [
+                  {
+                    "surface": "すきなりょうりはラーメンです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-dc69067ce3d8.m4a"
+              }
+            }
+          ],
+          "construction": {
+            "exerciseId": "marugoto.starter-a1.example.favourite_category.l06.1",
+            "explanationRu": "Чтобы назвать любимое блюдо внутри категории, используйте すきな + категория + は + конкретный предмет + です. な связывает すき с существительным: すきなりょうり — «любимое блюдо».",
+            "example": {
+              "surface": "すきなりょうりはすしです。",
+              "kana": "すきなりょうりはすしです。",
+              "meaningRu": "Моё любимое блюдо — суши.",
+              "segments": [
+                {
+                  "surface": "すきな"
+                },
+                {
+                  "surface": "りょうり"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "すし"
+                },
+                {
+                  "surface": "です"
+                },
+                {
+                  "surface": "。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson06-construction-favourite-category.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "すきな",
+                "explanationRu": "«Любимый» перед названием категории; な связывает слова."
+              },
+              {
+                "text": "りょうり",
+                "explanationRu": "еда, блюда"
+              },
+              {
+                "text": "は",
+                "explanationRu": "Тема высказывания; здесь произносится «ва»."
+              },
+              {
+                "text": "すし",
+                "explanationRu": "суси"
+              },
+              {
+                "text": "です",
+                "explanationRu": "Вежливое завершение именной фразы."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "l06-choose-place",
+      "titleRu": "Выбрать, где пообедать",
+      "canDoIds": [
+        13
+      ],
+      "parts": [
+        {
+          "id": "l06-choose-place-01",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.01d367a193e3f9ce",
+              "explanationRu": "Ресторан как место еды; ставьте で, когда сообщаете, где едите.",
+              "example": {
+                "surface": "レストランですしをたべます。",
+                "kana": "レストランですしをたべます。",
+                "meaningRu": "Я ем суши в ресторане.",
+                "segments": [
+                  {
+                    "surface": "レストランですしをたべます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-47028b54eba5.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.56fbeb32dadec92f",
+              "explanationRu": "Магазин или заведение; в этой ситуации — место, где можно поесть.",
+              "example": {
+                "surface": "あのみせでたべます。",
+                "kana": "あのみせでたべます。",
+                "meaningRu": "Поем в том заведении.",
+                "segments": [
+                  {
+                    "surface": "あのみせでたべます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-44bab59d2208.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.b80dea52ca8142e5",
+              "explanationRu": "Вкусный; можно сказать о блюде и о заведении, подразумевая его еду.",
+              "example": {
+                "surface": "このラーメンはおいしいです。",
+                "kana": "このラーメンはおいしいです。",
+                "meaningRu": "Этот рамэн вкусный.",
+                "segments": [
+                  {
+                    "surface": "このラーメンはおいしいです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-26d6dd995a98.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.1d5588c067e5d530",
+              "explanationRu": "Недорогой; положительная характеристика места для быстрого обеда.",
+              "example": {
+                "surface": "このレストランはやすいです。",
+                "kana": "このレストランはやすいです。",
+                "meaningRu": "Этот ресторан недорогой.",
+                "segments": [
+                  {
+                    "surface": "このレストランはやすいです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-d0fd82cb3d67.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.b18d9b8dfc53e29a",
+              "explanationRu": "Обед: ひる «день» и ごはん «еда».",
+              "example": {
+                "surface": "どこでひるごはんをたべますか。",
+                "kana": "どこでひるごはんをたべますか。",
+                "meaningRu": "Где пообедаем?",
+                "segments": [
+                  {
+                    "surface": "どこでひるごはんをたべますか。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-d3eec2abad2f.m4a"
+              }
+            }
+          ],
+          "construction": {
+            "exerciseId": "marugoto.starter-a1.example.de_activity_place.l06.1",
+            "explanationRu": "Место, где происходит действие, отмечается で. В レストランですしをたべます ресторан — место действия, а суши — его объект с を. Для нахождения предмета без действия позже используется другая модель с に.",
+            "example": {
+              "surface": "レストランですしをたべます。",
+              "kana": "レストランですしをたべます。",
+              "meaningRu": "Я ем суши в ресторане.",
+              "segments": [
+                {
+                  "surface": "レストラン"
+                },
+                {
+                  "surface": "で"
+                },
+                {
+                  "surface": "すし"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "たべます"
+                },
+                {
+                  "surface": "。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson06-construction-de-activity-place.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "レストラン",
+                "explanationRu": "ресторан"
+              },
+              {
+                "text": "で",
+                "explanationRu": "Место действия; в ひとりで — «в одиночестве»."
+              },
+              {
+                "text": "すし",
+                "explanationRu": "суси"
+              },
+              {
+                "text": "を",
+                "explanationRu": "Объект действия; произносится «о»."
+              },
+              {
+                "text": "たべます",
+                "explanationRu": "есть, кушать"
+              }
+            ]
+          }
+        },
+        {
+          "id": "l06-choose-place-02",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.712e62ba4142b3c5",
+              "explanationRu": "Этот перед названием предмета или заведения, близкого говорящему.",
+              "example": {
+                "surface": "このレストランはやすいです。",
+                "kana": "このレストランはやすいです。",
+                "meaningRu": "Этот ресторан недорогой.",
+                "segments": [
+                  {
+                    "surface": "このレストランはやすいです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-224259ffee2d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.dd939a30954ac6cf",
+              "explanationRu": "Тот, в отдалении от обоих собеседников; здесь не междометие «э-э».",
+              "example": {
+                "surface": "あのみせはおいしいです。",
+                "kana": "あのみせはおいしいです。",
+                "meaningRu": "В том заведении вкусно.",
+                "segments": [
+                  {
+                    "surface": "あのみせはおいしいです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-bd8ab29a519e.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.a59e656f959afe1c",
+              "explanationRu": "Быстрый: при выборе места речь может идти о быстром обслуживании.",
+              "example": {
+                "surface": "あのみせははやいです。",
+                "kana": "あのみせははやいです。",
+                "meaningRu": "В том заведении обслуживают быстро.",
+                "segments": [
+                  {
+                    "surface": "あのみせははやいです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-90a2a7448eff.m4a"
+              }
+            }
+          ],
+          "construction": {
+            "exerciseId": "marugoto.starter-a1.example.adjective_predicate.l06.1",
+            "explanationRu": "У い-прилагательного сохраняется окончание い перед です: やすいです, ちいさいです. Оно описывает свойство предмета, отмеченного は. Отрицание: окончание い заменяется на くないです.",
+            "example": {
+              "surface": "このレストランはやすいです。",
+              "kana": "このレストランはやすいです。",
+              "meaningRu": "Этот ресторан дешёвый.",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "レストラン"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "やすい"
+                },
+                {
+                  "surface": "です"
+                },
+                {
+                  "surface": "。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson06-construction-adjective-predicate.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "этот"
+              },
+              {
+                "text": "レストラン",
+                "explanationRu": "ресторан"
+              },
+              {
+                "text": "は",
+                "explanationRu": "Тема высказывания; здесь произносится «ва»."
+              },
+              {
+                "text": "やすい",
+                "explanationRu": "дешевый"
+              },
+              {
+                "text": "です",
+                "explanationRu": "Вежливое завершение именной фразы."
+              }
+            ]
+          }
+        }
+      ],
+      "introductionRu": "Вы с другом выбираете место для обеда. Сравните: やすい — недорого, おいしい — вкусно, はやい — быстро. Указание この/あの относится к месту, на которое вы смотрите; «быстро» здесь описывает обслуживание, а не скорость еды."
+    },
+    {
+      "id": "l06-menu",
+      "titleRu": "Узнать блюда в меню",
+      "canDoIds": [
+        14
+      ],
+      "parts": [
+        {
+          "id": "l06-menu-01",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.fae33f214d42d61d",
+              "explanationRu": "Меню; долгий ニュー сохраняется и в японском слове.",
+              "example": {
+                "surface": "メニューをみます。",
+                "kana": "メニューをみます。",
+                "meaningRu": "Смотрю меню.",
+                "segments": [
+                  {
+                    "surface": "メニューをみます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-50d3eabd4124.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.4aa328773b5e52a1",
+              "explanationRu": "Гамбургер; не путайте с ハンバーグ — мясной котлетой без булки.",
+              "example": {
+                "surface": "ハンバーガーをひとつください。",
+                "kana": "ハンバーガーをひとつください。",
+                "meaningRu": "Один гамбургер, пожалуйста.",
+                "segments": [
+                  {
+                    "surface": "ハンバーガーをひとつください。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-4414c0f79c04.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.6c20aeea1ceca7cf",
+              "explanationRu": "Чизбургер; в меню отличается от обычного гамбургера словом チーズ.",
+              "example": {
+                "surface": "チーズバーガーをふたつください。",
+                "kana": "チーズバーガーをふたつください。",
+                "meaningRu": "Два чизбургера, пожалуйста.",
+                "segments": [
+                  {
+                    "surface": "チーズバーガーをふたつください。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-e668ad059e53.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.1f426eb67e8215d7",
+              "explanationRu": "Картофель фри; это название блюда, не число картофелин.",
+              "example": {
+                "surface": "フライドポテトもください。",
+                "kana": "フライドポテトもください。",
+                "meaningRu": "Ещё картофель фри, пожалуйста.",
+                "segments": [
+                  {
+                    "surface": "フライドポテトもください。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-9bf57c400032.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8b22ea0abfa76d86",
+              "explanationRu": "Кола; долгий コー.",
+              "example": {
+                "surface": "コーラをひとつください。",
+                "kana": "コーラをひとつください。",
+                "meaningRu": "Одну колу, пожалуйста.",
+                "segments": [
+                  {
+                    "surface": "コーラをひとつください。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-57beae3bafb4.m4a"
+              }
+            }
+          ]
+        }
+      ],
+      "introductionRu": "Учебное меню: ハンバーガー 300円 / チーズバーガー 350円 / フライドポテト 200円 / コーラ 150円. Найдите напиток и два варианта бургера по знакомым частям слова. Цены в примере условные; они помогают ориентироваться в меню, а не проверяют чтение всех чисел."
+    },
+    {
+      "id": "l06-order",
+      "titleRu": "Заказать еду и поблагодарить",
+      "canDoIds": [
+        15
+      ],
+      "parts": [
+        {
+          "id": "l06-order-01",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.af86aade27c18742",
+              "explanationRu": "В заказе существительное с количеством + ください означает «дайте, пожалуйста».",
+              "example": {
+                "surface": "ハンバーガーをひとつください。",
+                "kana": "ハンバーガーをひとつください。",
+                "meaningRu": "Один гамбургер, пожалуйста.",
+                "segments": [
+                  {
+                    "surface": "ハンバーガーをひとつください。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-7bdcade25b9d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.dab1b377ee04ec7e",
+              "explanationRu": "Один предмет или одна порция; особое чтение ひとつ.",
+              "example": {
+                "surface": "コーラをひとつください。",
+                "kana": "コーラをひとつください。",
+                "meaningRu": "Одну колу, пожалуйста.",
+                "segments": [
+                  {
+                    "surface": "コーラをひとつください。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-707a7260b71b.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.d5a93be57f6f1496",
+              "explanationRu": "Два предмета или две порции; читается ふたつ.",
+              "example": {
+                "surface": "ハンバーガーをふたつください。",
+                "kana": "ハンバーガーをふたつください。",
+                "meaningRu": "Два гамбургера, пожалуйста.",
+                "segments": [
+                  {
+                    "surface": "ハンバーガーをふたつください。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-5e368bd47109.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.ab3af1f7aa053d50",
+              "explanationRu": "Приветствие сотрудника магазина или ресторана клиенту; клиент его не повторяет в ответ.",
+              "example": {
+                "surface": "いらっしゃいませ。どうぞ。",
+                "kana": "いらっしゃいませ。どうぞ。",
+                "meaningRu": "Добро пожаловать. Прошу.",
+                "segments": [
+                  {
+                    "surface": "いらっしゃいませ。どうぞ。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-586fe7aec501.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.fb7eec9a7d80c0f0",
+              "explanationRu": "Усиленная вежливая благодарность после покупки или помощи.",
+              "example": {
+                "surface": "どうもありがとうございます。",
+                "kana": "どうもありがとうございます。",
+                "meaningRu": "Большое вам спасибо.",
+                "segments": [
+                  {
+                    "surface": "どうもありがとうございます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson06-word-aff7e8cb47e2.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "authored": {
+    "words": [
+      {
+        "id": "marugoto.starter-a1.word.c4497f9f1747667f",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06"
+        ],
+        "surface": "りょうり",
+        "kana": "りょうり",
+        "meaningRu": "еда, блюда",
+        "segments": [
+          {
+            "surface": "りょうり"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 57,
+            "entry": "りょうり",
+            "label": "Словарь · урок 6"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 26,
+            "entry": "りょうり",
+            "label": "Словарь · урок 6"
+          }
+        ],
+        "audioUrl": "/audio/0aea4e679130af1a226a.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.5343e984cfbec64d",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "すし",
+        "kana": "すし",
+        "meaningRu": "суси",
+        "segments": [
+          {
+            "surface": "すし"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 39,
+            "entry": "すし",
+            "label": "Словарь · урок 6"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 14,
+            "entry": "すし",
+            "label": "Словарь · урок 6"
+          }
+        ],
+        "audioUrl": "/audio/c1b150655084d7896867.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.8b8b91054442dafc",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06"
+        ],
+        "surface": "カレー",
+        "kana": "カレー",
+        "meaningRu": "карри",
+        "segments": [
+          {
+            "surface": "カレー"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 36,
+            "entry": "カレー",
+            "label": "Словарь · урок 6"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 7,
+            "entry": "カレー",
+            "label": "Словарь · урок 6"
+          }
+        ],
+        "audioUrl": "/audio/40f5ebd2d5f24f2ca260.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.438d22493425aa34",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06"
+        ],
+        "surface": "うどん",
+        "kana": "うどん",
+        "meaningRu": "лапша удон (из пшеничной муки)",
+        "segments": [
+          {
+            "surface": "うどん"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 32,
+            "entry": "うどん",
+            "label": "Словарь · урок 6"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 1,
+            "entry": "うどん",
+            "label": "Словарь · урок 6"
+          }
+        ],
+        "audioUrl": "/audio/e7d655b8d3ef5e8768dc.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.c8739ae88ae1bc97",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06"
+        ],
+        "surface": "ラーメン",
+        "kana": "ラーメン",
+        "meaningRu": "лапша рамэн (из пшеничной муки)",
+        "segments": [
+          {
+            "surface": "ラーメン"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 56,
+            "entry": "ラーメン",
+            "label": "Словарь · урок 6"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 25,
+            "entry": "ラーメン",
+            "label": "Словарь · урок 6"
+          }
+        ],
+        "audioUrl": "/audio/9389df2f0653b8d7e750.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.b5a68b9529221562",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "は",
+        "kana": "は",
+        "meaningRu": "тема высказывания",
+        "segments": [
+          {
+            "surface": "は"
+          }
+        ],
+        "kind": "word",
+        "pos": "particle",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioText": "わ",
+        "audioUrl": "/audio/05a500e6c3c55f8e321c.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.cfb8df642175a27c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "です",
+        "kana": "です",
+        "meaningRu": "вежливая именная связка",
+        "segments": [
+          {
+            "surface": "です"
+          }
+        ],
+        "kind": "word",
+        "pos": "copula",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/52ab9944db0989691e54.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.01d367a193e3f9ce",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.02",
+          "marugoto.starter-a1.lesson.06"
+        ],
+        "surface": "レストラン",
+        "kana": "レストラン",
+        "meaningRu": "ресторан",
+        "segments": [
+          {
+            "surface": "レストラン"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 32,
+            "entry": "レストラン",
+            "label": "Словарь · урок 7"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 21,
+            "entry": "レストラン",
+            "label": "Словарь · урок 2"
+          }
+        ],
+        "audioUrl": "/audio/2c1ee5785ad220e8194f.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.56fbeb32dadec92f",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.14"
+        ],
+        "surface": "みせ",
+        "kana": "みせ",
+        "meaningRu": "ресторан, лавка, магазин",
+        "segments": [
+          {
+            "surface": "みせ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 52,
+            "entry": "みせ",
+            "label": "Словарь · урок 6"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 2,
+            "entry": "みせ",
+            "label": "Словарь · урок 14"
+          }
+        ],
+        "audioUrl": "/audio/96a6158b7b2abe7bed29.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.b80dea52ca8142e5",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "おいしい",
+        "kana": "おいしい",
+        "meaningRu": "вкусный",
+        "segments": [
+          {
+            "surface": "おいしい"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 34,
+            "entry": "おいしい",
+            "label": "Словарь · урок 6"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 2,
+            "entry": "おいしい",
+            "label": "Словарь · урок 6"
+          }
+        ],
+        "audioUrl": "/audio/019b5a44177c430575da.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.1d5588c067e5d530",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06"
+        ],
+        "surface": "やすい",
+        "kana": "やすい",
+        "meaningRu": "дешевый",
+        "segments": [
+          {
+            "surface": "やすい"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 55,
+            "entry": "やすい",
+            "label": "Словарь · урок 6"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 24,
+            "entry": "やすい",
+            "label": "Словарь · урок 6"
+          }
+        ],
+        "audioUrl": "/audio/6aae86ba58376e3a8e28.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.b18d9b8dfc53e29a",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.06"
+        ],
+        "surface": "ひるごはん",
+        "kana": "ひるごはん",
+        "meaningRu": "обед",
+        "segments": [
+          {
+            "surface": "ひるごはん"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 31,
+            "entry": "ひるごはん",
+            "label": "Словарь · урок 9"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 21,
+            "entry": "ひるごはん",
+            "label": "Словарь · урок 6"
+          }
+        ],
+        "audioUrl": "/audio/2716a29be3d3294cf12a.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.712e62ba4142b3c5",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.16"
+        ],
+        "surface": "この",
+        "kana": "この",
+        "meaningRu": "этот",
+        "segments": [
+          {
+            "surface": "この"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 38,
+            "entry": "この",
+            "label": "Словарь · урок 4"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 21,
+            "entry": "この",
+            "label": "Словарь · урок 4"
+          }
+        ],
+        "audioUrl": "/audio/d0ed3f94f7767c054cf0.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.dd939a30954ac6cf",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.16"
+        ],
+        "surface": "あの",
+        "kana": "あの",
+        "meaningRu": "тот",
+        "segments": [
+          {
+            "surface": "あの"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 30,
+            "entry": "あの",
+            "label": "Словарь · урок 6"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 40,
+            "entry": "あの",
+            "label": "Словарь · урок 16"
+          }
+        ],
+        "audioUrl": "/audio/fb7ce921759e6c18193d.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.a59e656f959afe1c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.13"
+        ],
+        "surface": "はやい",
+        "kana": "はやい",
+        "meaningRu": "быстрый",
+        "segments": [
+          {
+            "surface": "はやい"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 43,
+            "entry": "はやい",
+            "label": "Словарь · урок 6"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 18,
+            "entry": "はやい",
+            "label": "Словарь · урок 6"
+          }
+        ],
+        "audioUrl": "/audio/3c8b96e39abcc435ba8c.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.c6e719357faf7b27",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "で",
+        "kana": "で",
+        "meaningRu": "место действия; средство",
+        "segments": [
+          {
+            "surface": "で"
+          }
+        ],
+        "kind": "word",
+        "pos": "particle",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_3_6_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/4d0410b5405efb2b55d6.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.f73be1567b3b6c4f",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "を",
+        "kana": "を",
+        "meaningRu": "объект действия",
+        "segments": [
+          {
+            "surface": "を"
+          }
+        ],
+        "kind": "word",
+        "pos": "particle",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_3_5_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioText": "お",
+        "audioUrl": "/audio/5e24c68b014c81fd8ab7.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.fae33f214d42d61d",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06"
+        ],
+        "surface": "メニュー",
+        "kana": "メニュー",
+        "meaningRu": "меню",
+        "segments": [
+          {
+            "surface": "メニュー"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 54,
+            "entry": "メニュー",
+            "label": "Словарь · урок 6"
+          }
+        ],
+        "audioUrl": "/audio/90eb15a82e31a78810e0.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.4aa328773b5e52a1",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06"
+        ],
+        "surface": "ハンバーガー",
+        "kana": "ハンバーガー",
+        "meaningRu": "гамбургер",
+        "segments": [
+          {
+            "surface": "ハンバーガー"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 44,
+            "entry": "ハンバーガー",
+            "label": "Словарь · урок 6"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 19,
+            "entry": "ハンバーガー",
+            "label": "Словарь · урок 6"
+          }
+        ],
+        "audioUrl": "/audio/e23a02fc94523f091aa4.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.6c20aeea1ceca7cf",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06"
+        ],
+        "surface": "チーズバーガー",
+        "kana": "チーズバーガー",
+        "meaningRu": "чизбургер",
+        "segments": [
+          {
+            "surface": "チーズバーガー"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 41,
+            "entry": "チーズバーガー",
+            "label": "Словарь · урок 6"
+          }
+        ],
+        "audioUrl": "/audio/37dbc05fb379857bc604.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.1f426eb67e8215d7",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06"
+        ],
+        "surface": "フライドポテト",
+        "kana": "フライドポテト",
+        "meaningRu": "картофель фри",
+        "segments": [
+          {
+            "surface": "フライドポテト"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 49,
+            "entry": "フライドポテト",
+            "label": "Словарь · урок 6"
+          }
+        ],
+        "audioUrl": "/audio/b95f7cc4d2dbc82fcd83.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.8b22ea0abfa76d86",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06"
+        ],
+        "surface": "コーラ",
+        "kana": "コーラ",
+        "meaningRu": "кола",
+        "segments": [
+          {
+            "surface": "コーラ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 38,
+            "entry": "コーラ",
+            "label": "Словарь · урок 6"
+          }
+        ],
+        "audioUrl": "/audio/91234dc01c0df18c94f1.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.af86aade27c18742",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.16"
+        ],
+        "surface": "ください",
+        "kana": "ください",
+        "meaningRu": "дайте, пожалуйста",
+        "segments": [
+          {
+            "surface": "ください"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 18,
+            "entry": "ください",
+            "label": "Указатель фраз · урок 6 · русский перевод подготовлен для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+            "page": 1,
+            "row": 17,
+            "entry": "ください",
+            "label": "Указатель фраз · урок 16 · русский перевод подготовлен для приложения"
+          }
+        ],
+        "audioUrl": "/audio/fca8cd7a7fe9b2bbbb5e.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.dab1b377ee04ec7e",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07"
+        ],
+        "surface": "一つ",
+        "kana": "ひとつ",
+        "meaningRu": "один",
+        "segments": [
+          {
+            "surface": "一",
+            "reading": "ひと"
+          },
+          {
+            "surface": "つ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 46,
+            "entry": "ひとつ／１つ",
+            "label": "Словарь · урок 6"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 47,
+            "entry": "ひとつ(１つ／一つ)",
+            "label": "Словарь · урок 7"
+          }
+        ],
+        "audioUrl": "/audio/ff44a453ded3e58b34ba.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.d5a93be57f6f1496",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07"
+        ],
+        "surface": "二つ",
+        "kana": "ふたつ",
+        "meaningRu": "два",
+        "segments": [
+          {
+            "surface": "二",
+            "reading": "ふた"
+          },
+          {
+            "surface": "つ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 3,
+            "row": 48,
+            "entry": "ふたつ／２つ",
+            "label": "Словарь · урок 6"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 49,
+            "entry": "ふたつ(２つ／二つ)",
+            "label": "Словарь · урок 7"
+          }
+        ],
+        "audioUrl": "/audio/b6d481b856634c766f0d.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.ab3af1f7aa053d50",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.16"
+        ],
+        "surface": "いらっしゃいませ",
+        "kana": "いらっしゃいませ",
+        "meaningRu": "добро пожаловать (клиенту)",
+        "segments": [
+          {
+            "surface": "いらっしゃいませ"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 8,
+            "entry": "いらっしゃいませ",
+            "label": "Указатель фраз · урок 6 · русский перевод подготовлен для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+            "page": 1,
+            "row": 8,
+            "entry": "いらっしゃいませ",
+            "label": "Указатель фраз · урок 16 · русский перевод подготовлен для приложения"
+          }
+        ],
+        "audioUrl": "/audio/f372e07a74d73d2514b2.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.fb7eec9a7d80c0f0",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.13"
+        ],
+        "surface": "どうもありがとうございます",
+        "kana": "どうもありがとうございます",
+        "meaningRu": "большое вам спасибо",
+        "segments": [
+          {
+            "surface": "どうもありがとうございます"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 39,
+            "entry": "どうも    ありがとうございます",
+            "label": "Указатель фраз · урок 6 · русский перевод подготовлен для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+            "page": 1,
+            "row": 30,
+            "entry": "どうも    ありがとうございます",
+            "label": "Указатель фраз · урок 13 · русский перевод подготовлен для приложения"
+          }
+        ],
+        "audioUrl": "/audio/68223a7bfe6b4c1eba7c.m4a"
+      }
+    ],
+    "forms": [
+      {
+        "id": "marugoto.starter-a1.form.2c8a1db4e55746cb",
+        "wordId": "marugoto.starter-a1.word.9de12b00cf2e4035",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06"
+        ],
+        "surface": "すきな",
+        "kana": "すきな",
+        "segments": [
+          {
+            "surface": "すきな"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_3_6_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.ff44f890fca56e70",
+        "wordId": "marugoto.starter-a1.word.b5a68b9529221562",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "は",
+        "kana": "は",
+        "segments": [
+          {
+            "surface": "は"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.dfb1a0ad90bfab45",
+        "wordId": "marugoto.starter-a1.word.cfb8df642175a27c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16"
+        ],
+        "surface": "です",
+        "kana": "です",
+        "segments": [
+          {
+            "surface": "です"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.fa84ecb3584df956",
+        "wordId": "marugoto.starter-a1.word.c6e719357faf7b27",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "で",
+        "kana": "で",
+        "segments": [
+          {
+            "surface": "で"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_3_6_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.47dc4888725c4031",
+        "wordId": "marugoto.starter-a1.word.f73be1567b3b6c4f",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "を",
+        "kana": "を",
+        "segments": [
+          {
+            "surface": "を"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_3_5_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.3e043d511ff1e169",
+        "wordId": "marugoto.starter-a1.word.af86aade27c18742",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.16"
+        ],
+        "surface": "ください",
+        "kana": "ください",
+        "segments": [
+          {
+            "surface": "ください"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 18,
+            "entry": "ください",
+            "label": "Указатель фраз · урок 6 · русский перевод подготовлен для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.11084272a7bd0f61",
+        "wordId": "marugoto.starter-a1.word.ab3af1f7aa053d50",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.16"
+        ],
+        "surface": "いらっしゃいませ",
+        "kana": "いらっしゃいませ",
+        "segments": [
+          {
+            "surface": "いらっしゃいませ"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 8,
+            "entry": "いらっしゃいませ",
+            "label": "Указатель фраз · урок 6 · русский перевод подготовлен для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.4212c6d04eb22592",
+        "wordId": "marugoto.starter-a1.word.fb7eec9a7d80c0f0",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.13"
+        ],
+        "surface": "どうもありがとうございます",
+        "kana": "どうもありがとうございます",
+        "segments": [
+          {
+            "surface": "どうもありがとうございます"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+            "page": 1,
+            "row": 39,
+            "entry": "どうも    ありがとうございます",
+            "label": "Указатель фраз · урок 6 · русский перевод подготовлен для приложения"
+          }
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "id": "marugoto.starter-a1.skill.favourite_category",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06"
+        ],
+        "canDoIds": [
+          12,
+          13,
+          14,
+          15
+        ],
+        "title": "好きな N は: любимое в категории",
+        "explanationRu": "すきな уточняет существительное: すきなりょうり — любимое блюдо. Через は затем называется конкретный вариант.",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_3_6_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.skill.de_activity_place",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.11"
+        ],
+        "canDoIds": [
+          12,
+          13,
+          14,
+          15,
+          28,
+          29
+        ],
+        "title": "で: место действия",
+        "explanationRu": "Место, где едят или пьют, отмечается で. Это функция места действия, отдельная от に в сообщении о наличии предмета. Место выполнения действия отмечается で. Объект действия по-прежнему отмечается を.",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_3_6_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_11_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.skill.adjective_predicate",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07"
+        ],
+        "canDoIds": [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "title": "い-прилагательное в сказуемом",
+        "explanationRu": "い-прилагательное сохраняет い перед です. В отрицании い меняется на くない: おいしい → おいしくないです. После темы с は ставится характеристика и вежливое です. В сочетании わたしのいえ частица の уточняет владельца.",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_3_6_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_4_7_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      }
+    ],
+    "exercises": [
+      {
+        "id": "marugoto.starter-a1.example.favourite_category.l06.1",
+        "lessonId": "marugoto.starter-a1.lesson.06",
+        "skillId": "marugoto.starter-a1.skill.favourite_category",
+        "promptRu": "Моё любимое блюдо — суши.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.2c8a1db4e55746cb"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.3a1f55622f0deb8f"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.0ad4f44fdfa349c0"
+          },
+          {
+            "id": "t5",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Моё любимое блюдо — суши."
+      },
+      {
+        "id": "marugoto.starter-a1.example.de_activity_place.l06.1",
+        "lessonId": "marugoto.starter-a1.lesson.06",
+        "skillId": "marugoto.starter-a1.skill.de_activity_place",
+        "promptRu": "Я ем суши в ресторане.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.c09b04139ff47658"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.fa84ecb3584df956"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.0ad4f44fdfa349c0"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.47dc4888725c4031"
+          },
+          {
+            "id": "t5",
+            "formId": "marugoto.starter-a1.form.44a15745d48235c1"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5"
+          ],
+          [
+            "t3",
+            "t4",
+            "t1",
+            "t2",
+            "t5"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я ем суши в ресторане."
+      },
+      {
+        "id": "marugoto.starter-a1.example.adjective_predicate.l06.1",
+        "lessonId": "marugoto.starter-a1.lesson.06",
+        "skillId": "marugoto.starter-a1.skill.adjective_predicate",
+        "promptRu": "Этот ресторан дешёвый.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.dc13767a7bc0c227"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.c09b04139ff47658"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.0ae7b47c062cab10"
+          },
+          {
+            "id": "t5",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Этот ресторан дешёвый."
+      }
+    ]
+  }
+}

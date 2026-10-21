@@ -1,0 +1,2445 @@
+{
+  "lessonId": "marugoto.starter-a1.lesson.15",
+  "version": "2026-10-21.1",
+  "titleRu": "Покупки и подарки",
+  "goals": [
+    {
+      "id": "l15-goal-01",
+      "titleRu": "Выбрать вещь и подарок",
+      "introductionRu": "Сначала скажем, какую вещь хотим. Затем различим направление подарка: あげます — от меня другому, もらいます — я получаю от другого.",
+      "canDoIds": [
+        39
+      ],
+      "parts": [
+        {
+          "id": "l15-g01-p01",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.9deb08458c80d241",
+              "explanationRu": "Желание получить вещь: вещь + がほしいです.",
+              "example": {
+                "surface": "バッグがほしいです。",
+                "kana": "バッグがほしいです。",
+                "meaningRu": "Я хочу сумку.",
+                "segments": [
+                  {
+                    "surface": "バッグがほしいです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson15-04e7c2f3137130791507.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.7c47a81c2bf9fdc3",
+              "explanationRu": "Сумка; маленькая ッ даёт паузу перед グ.",
+              "example": {
+                "surface": "このバッグがほしいです。",
+                "kana": "このバッグがほしいです。",
+                "meaningRu": "Я хочу эту сумку.",
+                "segments": [
+                  {
+                    "surface": "このバッグがほしいです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson15-688a54e0d09cf80d7478.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.193a58a8d7eee5bf",
+              "explanationRu": "Часы как вещь, а не «час» как единица длительности.",
+              "example": {
+                "surface": "とけいをかいました。",
+                "kana": "とけいをかいました。",
+                "meaningRu": "Я купил(а) часы.",
+                "segments": [
+                  {
+                    "surface": "とけいをかいました。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson15-2a180e9178119b074e08.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.93fda2bc90cf6464",
+              "explanationRu": "Сувенир или подарок из поездки.",
+              "example": {
+                "surface": "おみやげをかいます。",
+                "kana": "おみやげをかいます。",
+                "meaningRu": "Я покупаю сувенир.",
+                "segments": [
+                  {
+                    "surface": "おみやげをかいます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson15-5c77ffb6496fe3308acc.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.517cc65dc6f41c2a",
+              "explanationRu": "Носовой платок; здесь — возможный подарок.",
+              "example": {
+                "surface": "ははにハンカチをあげます。",
+                "kana": "ははにハンカチをあげます。",
+                "meaningRu": "Я подарю маме платок.",
+                "segments": [
+                  {
+                    "surface": "ははにハンカチをあげます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson15-537780e7426987a09e63.m4a"
+              }
+            }
+          ],
+          "construction": {
+            "exerciseId": "marugoto.starter-a1.example.ga_desire.l15.1",
+            "explanationRu": "Желаемая вещь отмечается が перед ほしいです. Говорим о желании самого говорящего; для чужого желания вежливо задаём вопрос. Для желания совершить действие позже понадобится ～たいです.",
+            "example": {
+              "surface": "わたしはバッグがほしいです。",
+              "kana": "わたしはバッグがほしいです。",
+              "meaningRu": "Я хочу сумку.",
+              "segments": [
+                {
+                  "surface": "わたし"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "バッグ"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "ほしい"
+                },
+                {
+                  "surface": "です"
+                },
+                {
+                  "surface": "。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson15-8f2461a4e4700aba2ac8.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "わたしは",
+                "explanationRu": "Я — говорящий."
+              },
+              {
+                "text": "バッグが",
+                "explanationRu": "Сумка — желаемая вещь."
+              },
+              {
+                "text": "ほしいです",
+                "explanationRu": "Хочу получить или купить."
+              }
+            ]
+          }
+        },
+        {
+          "id": "l15-g01-p02",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.08051cc0797ce038",
+              "explanationRu": "Давать или дарить другому человеку; получатель в этой модели — не говорящий.",
+              "example": {
+                "surface": "ともだちにほんをあげます。",
+                "kana": "ともだちにほんをあげます。",
+                "meaningRu": "Я подарю другу книгу.",
+                "segments": [
+                  {
+                    "surface": "ともだちにほんをあげます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson15-779f74b6c69f8e3441f4.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.9f45ae8bffaed132",
+              "explanationRu": "Получать от другого человека; точка зрения получателя.",
+              "example": {
+                "surface": "ともだちにチョコレートをもらいました。",
+                "kana": "ともだちにチョコレートをもらいました。",
+                "meaningRu": "Я получил(а) от друга шоколад.",
+                "segments": [
+                  {
+                    "surface": "ともだちにチョコレートをもらいました。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson15-6efb349673306ed41352.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8cb6220866085fe7",
+              "explanationRu": "Шоколад; подходит для небольшого подарка.",
+              "example": {
+                "surface": "チョコレートをあげます。",
+                "kana": "チョコレートをあげます。",
+                "meaningRu": "Я подарю шоколад.",
+                "segments": [
+                  {
+                    "surface": "チョコレートをあげます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson15-3fd5ab3e6c2b8f77593a.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.1cdc745f3d8d5c03",
+              "explanationRu": "Подарок; это существительное.",
+              "example": {
+                "surface": "たんじょうびのプレゼントです。",
+                "kana": "たんじょうびのプレゼントです。",
+                "meaningRu": "Это подарок на день рождения.",
+                "segments": [
+                  {
+                    "surface": "たんじょうびのプレゼントです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson15-1e67c8c8fda870259423.m4a"
+              }
+            }
+          ],
+          "construction": {
+            "exerciseId": "marugoto.starter-a1.example.ageru.l15.1",
+            "explanationRu": "Кому + に, что + を, あげます — дать или подарить другому человеку. Получателем в этой модели не может быть сам говорящий.",
+            "example": {
+              "surface": "わたしはともだちにほんをあげます。",
+              "kana": "わたしはともだちにほんをあげます。",
+              "meaningRu": "Я подарю другу книгу.",
+              "segments": [
+                {
+                  "surface": "わたし"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "ともだち"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "ほん"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "あげます"
+                },
+                {
+                  "surface": "。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson15-41f89d5437d5cfe16548.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "わたしは",
+                "explanationRu": "Я — даритель."
+              },
+              {
+                "text": "ともだちに",
+                "explanationRu": "Другу — получатель."
+              },
+              {
+                "text": "ほんを",
+                "explanationRu": "Книгу — подарок."
+              },
+              {
+                "text": "あげます",
+                "explanationRu": "Подарю, дам."
+              }
+            ]
+          }
+        },
+        {
+          "id": "l15-g01-p03",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.starter-a1.example.morau.l15.1",
+            "explanationRu": "Кто получил + は, от кого + に, что + を, もらいます. В примере もらいました — уже получил(а). В отличие от あげます, смотрим со стороны получателя.",
+            "example": {
+              "surface": "わたしはともだちにチョコレートをもらいました。",
+              "kana": "わたしはともだちにチョコレートをもらいました。",
+              "meaningRu": "Я получил(а) от друга шоколад.",
+              "segments": [
+                {
+                  "surface": "わたし"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "ともだち"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "チョコレート"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "もらいました"
+                },
+                {
+                  "surface": "。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson15-107fd346a5b758767bbd.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "わたしは",
+                "explanationRu": "Я — получатель."
+              },
+              {
+                "text": "ともだちに",
+                "explanationRu": "От друга — источник подарка."
+              },
+              {
+                "text": "チョコレートを",
+                "explanationRu": "Шоколад — подарок."
+              },
+              {
+                "text": "もらいました",
+                "explanationRu": "Получил(а) в прошлом."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "l15-goal-02",
+      "titleRu": "Обсудить покупку и место",
+      "introductionRu": "Для покупки важны сама вещь и место. かえます означает «можно купить», а かいました — «купил(а)». Вспомним поездку и скажем, где приобрели подарок.",
+      "canDoIds": [
+        40
+      ],
+      "parts": [
+        {
+          "id": "l15-g02-p01",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.1cc5d26feef7ab36",
+              "explanationRu": "Покупать; в прошедшем — かいました.",
+              "example": {
+                "surface": "にほんでとけいをかいました。",
+                "kana": "にほんでとけいをかいました。",
+                "meaningRu": "Я купил(а) часы в Японии.",
+                "segments": [
+                  {
+                    "surface": "にほんでとけいをかいました。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson15-2b2adfd96ca1ca415280.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.5e5b656bfb3ccae8",
+              "explanationRu": "Могу купить, можно приобрести: не «менять».",
+              "example": {
+                "surface": "ここでおみやげがかえます。",
+                "kana": "ここでおみやげがかえます。",
+                "meaningRu": "Здесь можно купить сувениры.",
+                "segments": [
+                  {
+                    "surface": "ここでおみやげがかえます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson15-411e42b992d7c35ef3d3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.bb5b8febd333744b",
+              "explanationRu": "Стильный, классный: оценка внешнего вида.",
+              "example": {
+                "surface": "かっこいいバッグですね。",
+                "kana": "かっこいいバッグですね。",
+                "meaningRu": "Какая стильная сумка!",
+                "segments": [
+                  {
+                    "surface": "かっこいいバッグですね。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson15-b94112f7cfd22ee192cc.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.998ffe69389e9eb3",
+              "explanationRu": "Характерно японский; перед существительным — にほんてきな.",
+              "example": {
+                "surface": "にほんてきなおみやげです。",
+                "kana": "にほんてきなおみやげです。",
+                "meaningRu": "Это сувенир в японском стиле.",
+                "segments": [
+                  {
+                    "surface": "にほんてきなおみやげです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson15-bec69e5fcd62f0116321.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.5b16d27aef9d945c",
+              "explanationRu": "Палочки для еды; здесь речь о сувенире, не о мосте.",
+              "example": {
+                "surface": "はしをかいます。",
+                "kana": "はしをかいます。",
+                "meaningRu": "Я покупаю палочки для еды.",
+                "segments": [
+                  {
+                    "surface": "はしをかいます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson15-856b619f1d8ed705baf8.m4a"
+              }
+            }
+          ],
+          "construction": {
+            "exerciseId": "marugoto.starter-a1.example.verb_past.l15.1",
+            "explanationRu": "Вежливое прошлое: ます заменяется на ました. Отрицательное прошлое — ませんでした. Место покупки отмечается で, направление поездки — に.",
+            "example": {
+              "surface": "きょねんにほんでとけいを買いました。",
+              "kana": "きょねんにほんでとけいをかいました。",
+              "meaningRu": "В прошлом году я купил(а) часы в Японии.",
+              "segments": [
+                {
+                  "surface": "きょねん"
+                },
+                {
+                  "surface": "にほん"
+                },
+                {
+                  "surface": "で"
+                },
+                {
+                  "surface": "とけい"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "買",
+                  "reading": "か"
+                },
+                {
+                  "surface": "いました"
+                },
+                {
+                  "surface": "。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson15-20fb95746ca8b9dc53db.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "きょねん",
+                "explanationRu": "В прошлом году."
+              },
+              {
+                "text": "にほんで",
+                "explanationRu": "В Японии — место покупки."
+              },
+              {
+                "text": "とけいを",
+                "explanationRu": "Часы — объект."
+              },
+              {
+                "text": "買いました",
+                "explanationRu": "Купил(а): かいます → かいました."
+              }
+            ]
+          }
+        },
+        {
+          "id": "l15-g02-p02",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.c9c5336534a241e1",
+              "explanationRu": "Прошлый год; обычно без временной частицы に.",
+              "example": {
+                "surface": "きょねんにほんにいきました。",
+                "kana": "きょねんにほんにいきました。",
+                "meaningRu": "В прошлом году я ездил(а) в Японию.",
+                "segments": [
+                  {
+                    "surface": "きょねんにほんにいきました。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson15-62317e0c23bff85488ff.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "authored": {
+    "words": [
+      {
+        "id": "marugoto.starter-a1.word.9deb08458c80d241",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "ほしい",
+        "kana": "ほしい",
+        "meaningRu": "хотеть",
+        "segments": [
+          {
+            "surface": "ほしい"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 5,
+            "entry": "ほしい",
+            "label": "Словарь · урок 15"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 32,
+            "entry": "ほしい",
+            "label": "Словарь · урок 15"
+          }
+        ],
+        "audioUrl": "/audio/4e7aa16ffe49818095aa.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.7c47a81c2bf9fdc3",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "バッグ",
+        "kana": "バッグ",
+        "meaningRu": "сумка",
+        "segments": [
+          {
+            "surface": "バッグ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 38,
+            "entry": "バッグ",
+            "label": "Словарь · урок 16"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 25,
+            "entry": "バッグ",
+            "label": "Словарь · урок 15"
+          }
+        ],
+        "audioUrl": "/audio/daa4119b8d1abd075b46.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.193a58a8d7eee5bf",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.01",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "とけい",
+        "kana": "とけい",
+        "meaningRu": "часы",
+        "segments": [
+          {
+            "surface": "とけい"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 47,
+            "entry": "とけい",
+            "label": "Словарь · урок 8"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 17,
+            "entry": "とけい",
+            "label": "Словарь · урок 1"
+          }
+        ],
+        "audioUrl": "/audio/a5225bdfd8e8d82846c9.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.93fda2bc90cf6464",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "おみやげ",
+        "kana": "おみやげ",
+        "meaningRu": "сувенир",
+        "segments": [
+          {
+            "surface": "おみやげ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 8,
+            "row": 37,
+            "entry": "おみやげ（みやげ）",
+            "label": "Словарь · урок 15"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 10,
+            "entry": "おみやげ（みやげ）",
+            "label": "Словарь · урок 15"
+          }
+        ],
+        "audioUrl": "/audio/659213e7cee35ba87e30.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.517cc65dc6f41c2a",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "ハンカチ",
+        "kana": "ハンカチ",
+        "meaningRu": "носовой платок",
+        "segments": [
+          {
+            "surface": "ハンカチ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 1,
+            "entry": "ハンカチ",
+            "label": "Словарь · урок 15"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 27,
+            "entry": "ハンカチ",
+            "label": "Словарь · урок 15"
+          }
+        ],
+        "audioUrl": "/audio/232f422f4f4ef0bf240f.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.b5a68b9529221562",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "は",
+        "kana": "は",
+        "meaningRu": "тема высказывания",
+        "segments": [
+          {
+            "surface": "は"
+          }
+        ],
+        "kind": "word",
+        "pos": "particle",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioText": "わ",
+        "audioUrl": "/audio/05a500e6c3c55f8e321c.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.0eb035161c7df5bb",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "が",
+        "kana": "が",
+        "meaningRu": "подлежащее; объект предпочтения или умения",
+        "segments": [
+          {
+            "surface": "が"
+          }
+        ],
+        "kind": "word",
+        "pos": "particle",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/717abcb4b4de603bbb30.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.cfb8df642175a27c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "です",
+        "kana": "です",
+        "meaningRu": "вежливая именная связка",
+        "segments": [
+          {
+            "surface": "です"
+          }
+        ],
+        "kind": "word",
+        "pos": "copula",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/52ab9944db0989691e54.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.08051cc0797ce038",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "あげます",
+        "kana": "あげます",
+        "meaningRu": "давать, дарить",
+        "segments": [
+          {
+            "surface": "あげます"
+          }
+        ],
+        "kind": "word",
+        "pos": "verb",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 8,
+            "row": 32,
+            "entry": "あげます",
+            "label": "Словарь · урок 15"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 6,
+            "entry": "あげます",
+            "label": "Словарь · урок 15"
+          }
+        ],
+        "audioUrl": "/audio/6b95b46ea298a457e941.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.9f45ae8bffaed132",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "もらいます",
+        "kana": "もらいます",
+        "meaningRu": "получать",
+        "segments": [
+          {
+            "surface": "もらいます"
+          }
+        ],
+        "kind": "word",
+        "pos": "verb",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 35,
+            "entry": "もらいます",
+            "label": "Словарь · урок 15"
+          }
+        ],
+        "audioUrl": "/audio/d6670b684c4617dd0203.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.8cb6220866085fe7",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "チョコレート",
+        "kana": "チョコレート",
+        "meaningRu": "шоколад",
+        "segments": [
+          {
+            "surface": "チョコレート"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 19,
+            "entry": "チョコレート",
+            "label": "Словарь · урок 15 · только аудиоскрипт"
+          }
+        ],
+        "audioUrl": "/audio/90247a60157c6681efa8.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.1cdc745f3d8d5c03",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "プレゼント",
+        "kana": "プレゼント",
+        "meaningRu": "подарок",
+        "segments": [
+          {
+            "surface": "プレゼント"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 30,
+            "entry": "プレゼント",
+            "label": "Словарь · урок 15"
+          }
+        ],
+        "audioUrl": "/audio/b1e82f89e6dcabe705e4.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.a296622c50317ab9",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "に",
+        "kana": "に",
+        "meaningRu": "место, время или цель (по конструкции)",
+        "segments": [
+          {
+            "surface": "に"
+          }
+        ],
+        "kind": "word",
+        "pos": "particle",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_4_7_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_4_7_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_5_9_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_5.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_13_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_14_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_14_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_17_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_17_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_18_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/37df2fd1e99c2b76dcf1.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.f73be1567b3b6c4f",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "を",
+        "kana": "を",
+        "meaningRu": "объект действия",
+        "segments": [
+          {
+            "surface": "を"
+          }
+        ],
+        "kind": "word",
+        "pos": "particle",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_3_5_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioText": "お",
+        "audioUrl": "/audio/5e24c68b014c81fd8ab7.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.1cc5d26feef7ab36",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "買います",
+        "kana": "かいます",
+        "meaningRu": "покупать",
+        "segments": [
+          {
+            "surface": "買",
+            "reading": "か"
+          },
+          {
+            "surface": "います"
+          }
+        ],
+        "kind": "word",
+        "pos": "verb",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 8,
+            "row": 39,
+            "entry": "かいます",
+            "label": "Словарь · урок 15"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 7,
+            "row": 22,
+            "entry": "かいます／買います",
+            "label": "Словарь · урок 12"
+          }
+        ],
+        "audioUrl": "/audio/c1b9441e8b1bc57b1808.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.5e5b656bfb3ccae8",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "かえます",
+        "kana": "かえます",
+        "meaningRu": "можно купить",
+        "segments": [
+          {
+            "surface": "かえます"
+          }
+        ],
+        "kind": "word",
+        "pos": "verb",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 8,
+            "row": 40,
+            "entry": "かえます（かいます）",
+            "label": "Словарь · урок 15"
+          }
+        ],
+        "audioUrl": "/audio/2b9efb1e3d60eaac7aaa.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.bb5b8febd333744b",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "かっこいい",
+        "kana": "かっこいい",
+        "meaningRu": "классный, стильный",
+        "segments": [
+          {
+            "surface": "かっこいい"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 32,
+            "entry": "かっこいい",
+            "label": "Словарь · урок 4"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 12,
+            "entry": "かっこいい",
+            "label": "Словарь · урок 15"
+          }
+        ],
+        "audioUrl": "/audio/a134d2200ad20db38c09.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.998ffe69389e9eb3",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "にほんてき",
+        "kana": "にほんてき",
+        "meaningRu": "в японском стиле",
+        "segments": [
+          {
+            "surface": "にほんてき"
+          }
+        ],
+        "kind": "word",
+        "pos": "na-adjective",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 8,
+            "row": 51,
+            "entry": "にほんてき（な）",
+            "label": "Словарь · урок 15"
+          }
+        ],
+        "audioUrl": "/audio/3b56737cbf79f09d8369.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.5b16d27aef9d945c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "はし",
+        "kana": "はし",
+        "meaningRu": "палочки для еды",
+        "segments": [
+          {
+            "surface": "はし"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 8,
+            "row": 53,
+            "entry": "はし",
+            "label": "Словарь · урок 15 · только аудиоскрипт"
+          }
+        ],
+        "audioUrl": "/audio/7ef67d55a7b12da3b589.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.c6e719357faf7b27",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "で",
+        "kana": "で",
+        "meaningRu": "место действия; средство",
+        "segments": [
+          {
+            "surface": "で"
+          }
+        ],
+        "kind": "word",
+        "pos": "particle",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_3_6_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/4d0410b5405efb2b55d6.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.c9c5336534a241e1",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.18",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "きょねん",
+        "kana": "きょねん",
+        "meaningRu": "прошлый год",
+        "segments": [
+          {
+            "surface": "きょねん"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 10,
+            "row": 22,
+            "entry": "きょねん",
+            "label": "Словарь · урок 18"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 7,
+            "row": 25,
+            "entry": "きょねん",
+            "label": "Словарь · урок 12"
+          }
+        ],
+        "audioUrl": "/audio/872cce5bfb828d9d0006.m4a"
+      }
+    ],
+    "forms": [
+      {
+        "id": "marugoto.starter-a1.form.ff7cc8272aba2c70",
+        "wordId": "marugoto.starter-a1.word.9deb08458c80d241",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "ほしい",
+        "kana": "ほしい",
+        "segments": [
+          {
+            "surface": "ほしい"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 5,
+            "entry": "ほしい",
+            "label": "Словарь · урок 15"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.b557f502e24e8a95",
+        "wordId": "marugoto.starter-a1.word.7c47a81c2bf9fdc3",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "バッグ",
+        "kana": "バッグ",
+        "segments": [
+          {
+            "surface": "バッグ"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 38,
+            "entry": "バッグ",
+            "label": "Словарь · урок 16"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.4c518feaafbf7aa1",
+        "wordId": "marugoto.starter-a1.word.193a58a8d7eee5bf",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.01",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "とけい",
+        "kana": "とけい",
+        "segments": [
+          {
+            "surface": "とけい"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 47,
+            "entry": "とけい",
+            "label": "Словарь · урок 8"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.3c9f80b86a1819ef",
+        "wordId": "marugoto.starter-a1.word.93fda2bc90cf6464",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "おみやげ",
+        "kana": "おみやげ",
+        "segments": [
+          {
+            "surface": "おみやげ"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 8,
+            "row": 37,
+            "entry": "おみやげ（みやげ）",
+            "label": "Словарь · урок 15"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.2a43be08885dabfa",
+        "wordId": "marugoto.starter-a1.word.517cc65dc6f41c2a",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "ハンカチ",
+        "kana": "ハンカチ",
+        "segments": [
+          {
+            "surface": "ハンカチ"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 1,
+            "entry": "ハンカチ",
+            "label": "Словарь · урок 15"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.8f4403a1ef1a7014",
+        "wordId": "marugoto.starter-a1.word.58e595c1fa37474d",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.17"
+        ],
+        "surface": "わたし",
+        "kana": "わたし",
+        "segments": [
+          {
+            "surface": "わたし"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 22,
+            "entry": "わたし",
+            "label": "Словарь · урок 3"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.ff44f890fca56e70",
+        "wordId": "marugoto.starter-a1.word.b5a68b9529221562",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "は",
+        "kana": "は",
+        "segments": [
+          {
+            "surface": "は"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.a0bd4b52e58a66fe",
+        "wordId": "marugoto.starter-a1.word.0eb035161c7df5bb",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "が",
+        "kana": "が",
+        "segments": [
+          {
+            "surface": "が"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.dfb1a0ad90bfab45",
+        "wordId": "marugoto.starter-a1.word.cfb8df642175a27c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16"
+        ],
+        "surface": "です",
+        "kana": "です",
+        "segments": [
+          {
+            "surface": "です"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.179412ddd9ded0b9",
+        "wordId": "marugoto.starter-a1.word.08051cc0797ce038",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "あげます",
+        "kana": "あげます",
+        "segments": [
+          {
+            "surface": "あげます"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 8,
+            "row": 32,
+            "entry": "あげます",
+            "label": "Словарь · урок 15"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.b6e272551e0b13b8",
+        "wordId": "marugoto.starter-a1.word.9f45ae8bffaed132",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "もらいます",
+        "kana": "もらいます",
+        "segments": [
+          {
+            "surface": "もらいます"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 35,
+            "entry": "もらいます",
+            "label": "Словарь · урок 15"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.e1bda145e7bd4541",
+        "wordId": "marugoto.starter-a1.word.8cb6220866085fe7",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "チョコレート",
+        "kana": "チョコレート",
+        "segments": [
+          {
+            "surface": "チョコレート"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 19,
+            "entry": "チョコレート",
+            "label": "Словарь · урок 15 · только аудиоскрипт"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.0f826c9003bfd0da",
+        "wordId": "marugoto.starter-a1.word.1cdc745f3d8d5c03",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "プレゼント",
+        "kana": "プレゼント",
+        "segments": [
+          {
+            "surface": "プレゼント"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 30,
+            "entry": "プレゼント",
+            "label": "Словарь · урок 15"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.a2a353cd7d51633b",
+        "wordId": "marugoto.starter-a1.word.7905be9b72b867a7",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "ともだち",
+        "kana": "ともだち",
+        "segments": [
+          {
+            "surface": "ともだち"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 48,
+            "entry": "ともだち",
+            "label": "Словарь · урок 4"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.cb51ac50f7e689f5",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "に",
+        "kana": "に",
+        "segments": [
+          {
+            "surface": "に"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_4_7_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_4_7_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_5_9_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_5.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_13_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_14_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_14_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_17_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_17_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_18_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "wordId": "marugoto.starter-a1.word.a296622c50317ab9"
+      },
+      {
+        "id": "marugoto.starter-a1.form.5d130af85192802b",
+        "wordId": "marugoto.starter-a1.word.e08d579635c5469e",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.01",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "ほん",
+        "kana": "ほん",
+        "segments": [
+          {
+            "surface": "ほん"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 52,
+            "entry": "ほん",
+            "label": "Словарь · урок 8"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.47dc4888725c4031",
+        "wordId": "marugoto.starter-a1.word.f73be1567b3b6c4f",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "を",
+        "kana": "を",
+        "segments": [
+          {
+            "surface": "を"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_3_5_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.76fdc7442ac786f2",
+        "wordId": "marugoto.starter-a1.word.9f45ae8bffaed132",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "もらいました",
+        "kana": "もらいました",
+        "segments": [
+          {
+            "surface": "もらいました"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.09524eafea3b58dd",
+        "wordId": "marugoto.starter-a1.word.5e5b656bfb3ccae8",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "かえます",
+        "kana": "かえます",
+        "segments": [
+          {
+            "surface": "かえます"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 8,
+            "row": 40,
+            "entry": "かえます（かいます）",
+            "label": "Словарь · урок 15"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.8129ee45e939b7df",
+        "wordId": "marugoto.starter-a1.word.bb5b8febd333744b",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "かっこいい",
+        "kana": "かっこいい",
+        "segments": [
+          {
+            "surface": "かっこいい"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 32,
+            "entry": "かっこいい",
+            "label": "Словарь · урок 4"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.b5efdb494981ea58",
+        "wordId": "marugoto.starter-a1.word.998ffe69389e9eb3",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "にほんてき",
+        "kana": "にほんてき",
+        "segments": [
+          {
+            "surface": "にほんてき"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 8,
+            "row": 51,
+            "entry": "にほんてき（な）",
+            "label": "Словарь · урок 15"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.5dab76855535c031",
+        "wordId": "marugoto.starter-a1.word.5b16d27aef9d945c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "はし",
+        "kana": "はし",
+        "segments": [
+          {
+            "surface": "はし"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 8,
+            "row": 53,
+            "entry": "はし",
+            "label": "Словарь · урок 15 · только аудиоскрипт"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.b536ddf20d2f8c3e",
+        "wordId": "marugoto.starter-a1.word.c9c5336534a241e1",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.18",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "きょねん",
+        "kana": "きょねん",
+        "segments": [
+          {
+            "surface": "きょねん"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 10,
+            "row": 22,
+            "entry": "きょねん",
+            "label": "Словарь · урок 18"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.c4f1ebd5b525c95c",
+        "wordId": "marugoto.starter-a1.word.cbfa9f0083aa4a40",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "にほん",
+        "kana": "にほん",
+        "segments": [
+          {
+            "surface": "にほん"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 7,
+            "row": 22,
+            "entry": "にほん",
+            "label": "Словарь · урок 12"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.fa84ecb3584df956",
+        "wordId": "marugoto.starter-a1.word.c6e719357faf7b27",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "で",
+        "kana": "で",
+        "segments": [
+          {
+            "surface": "で"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_3_6_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.c22cacb32ec9712a",
+        "wordId": "marugoto.starter-a1.word.1cc5d26feef7ab36",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "買いました",
+        "kana": "かいました",
+        "segments": [
+          {
+            "surface": "買",
+            "reading": "か"
+          },
+          {
+            "surface": "いました"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "id": "marugoto.starter-a1.skill.ga_desire",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "canDoIds": [
+          39,
+          40
+        ],
+        "title": "が ほしいです: хочу вещь",
+        "explanationRu": "ほしいです выражает собственное желание иметь вещь; желаемый предмет отмечается が. ほしい изменяется как い-прилагательное.",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.skill.ageru",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "canDoIds": [
+          39,
+          40
+        ],
+        "title": "に あげます: дарить",
+        "explanationRu": "При あげます даритель — тема с は, получатель — с に, подарок — с を. В этих образцах даритель — я; себя получателем не называют.",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.skill.morau",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "canDoIds": [
+          39,
+          40
+        ],
+        "title": "に もらいました: получить",
+        "explanationRu": "При もらいました получатель — тема с は, источник подарка — с に, подарок — с を. В этих примерах подарки получил говорящий.",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.skill.verb_past",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.17"
+        ],
+        "canDoIds": [
+          39,
+          40,
+          44,
+          45,
+          46,
+          47
+        ],
+        "title": "～ました: прошедшее действие",
+        "explanationRu": "Вежливое прошедшее утверждение оканчивается на ました; отрицание — на ませんでした. Место совершённой покупки отмечается で. Прошедшее вежливое действие выражается формой ～ました. Отрицательное прошедшее — ～ませんでした.",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_17_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      }
+    ],
+    "exercises": [
+      {
+        "id": "marugoto.starter-a1.example.ga_desire.l15.1",
+        "lessonId": "marugoto.starter-a1.lesson.15",
+        "skillId": "marugoto.starter-a1.skill.ga_desire",
+        "promptRu": "Я хочу сумку.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.8f4403a1ef1a7014"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.b557f502e24e8a95"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.a0bd4b52e58a66fe"
+          },
+          {
+            "id": "t5",
+            "formId": "marugoto.starter-a1.form.ff7cc8272aba2c70"
+          },
+          {
+            "id": "t6",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5",
+            "t6"
+          ],
+          [
+            "t3",
+            "t4",
+            "t5",
+            "t6"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я хочу сумку.",
+        "contextRu": "Вы рассказываете о себе; собеседник уже знает, что речь о вас. Тему «わたしは» можно назвать или целиком опустить. Остальной смысл и целевая конструкция должны сохраниться."
+      },
+      {
+        "id": "marugoto.starter-a1.example.ageru.l15.1",
+        "lessonId": "marugoto.starter-a1.lesson.15",
+        "skillId": "marugoto.starter-a1.skill.ageru",
+        "promptRu": "Я подарю другу книгу.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.8f4403a1ef1a7014"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.a2a353cd7d51633b"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.cb51ac50f7e689f5"
+          },
+          {
+            "id": "t5",
+            "formId": "marugoto.starter-a1.form.5d130af85192802b"
+          },
+          {
+            "id": "t6",
+            "formId": "marugoto.starter-a1.form.47dc4888725c4031"
+          },
+          {
+            "id": "t7",
+            "formId": "marugoto.starter-a1.form.179412ddd9ded0b9"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5",
+            "t6",
+            "t7"
+          ],
+          [
+            "t1",
+            "t2",
+            "t5",
+            "t6",
+            "t3",
+            "t4",
+            "t7"
+          ],
+          [
+            "t3",
+            "t4",
+            "t5",
+            "t6",
+            "t7"
+          ],
+          [
+            "t5",
+            "t6",
+            "t3",
+            "t4",
+            "t7"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я подарю другу книгу.",
+        "contextRu": "Вы рассказываете о себе; собеседник уже знает, что речь о вас. Тему «わたしは» можно назвать или целиком опустить. Остальной смысл и целевая конструкция должны сохраниться."
+      },
+      {
+        "id": "marugoto.starter-a1.example.morau.l15.1",
+        "lessonId": "marugoto.starter-a1.lesson.15",
+        "skillId": "marugoto.starter-a1.skill.morau",
+        "promptRu": "Я получил(а) от друга шоколад.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.8f4403a1ef1a7014"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.a2a353cd7d51633b"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.cb51ac50f7e689f5"
+          },
+          {
+            "id": "t5",
+            "formId": "marugoto.starter-a1.form.e1bda145e7bd4541"
+          },
+          {
+            "id": "t6",
+            "formId": "marugoto.starter-a1.form.47dc4888725c4031"
+          },
+          {
+            "id": "t7",
+            "formId": "marugoto.starter-a1.form.76fdc7442ac786f2"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5",
+            "t6",
+            "t7"
+          ],
+          [
+            "t1",
+            "t2",
+            "t5",
+            "t6",
+            "t3",
+            "t4",
+            "t7"
+          ],
+          [
+            "t3",
+            "t4",
+            "t5",
+            "t6",
+            "t7"
+          ],
+          [
+            "t5",
+            "t6",
+            "t3",
+            "t4",
+            "t7"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я получил(а) от друга шоколад.",
+        "contextRu": "Вы рассказываете о себе; собеседник уже знает, что речь о вас. Тему «わたしは» можно назвать или целиком опустить. Остальной смысл и целевая конструкция должны сохраниться."
+      },
+      {
+        "id": "marugoto.starter-a1.example.verb_past.l15.1",
+        "lessonId": "marugoto.starter-a1.lesson.15",
+        "skillId": "marugoto.starter-a1.skill.verb_past",
+        "promptRu": "В прошлом году я купил(а) часы в Японии.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.b536ddf20d2f8c3e"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.c4f1ebd5b525c95c"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.fa84ecb3584df956"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.4c518feaafbf7aa1"
+          },
+          {
+            "id": "t5",
+            "formId": "marugoto.starter-a1.form.47dc4888725c4031"
+          },
+          {
+            "id": "t6",
+            "formId": "marugoto.starter-a1.form.c22cacb32ec9712a"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5",
+            "t6"
+          ],
+          [
+            "t1",
+            "t4",
+            "t5",
+            "t2",
+            "t3",
+            "t6"
+          ],
+          [
+            "t2",
+            "t3",
+            "t1",
+            "t4",
+            "t5",
+            "t6"
+          ],
+          [
+            "t2",
+            "t3",
+            "t4",
+            "t5",
+            "t1",
+            "t6"
+          ],
+          [
+            "t4",
+            "t5",
+            "t1",
+            "t2",
+            "t3",
+            "t6"
+          ],
+          [
+            "t4",
+            "t5",
+            "t2",
+            "t3",
+            "t1",
+            "t6"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "В прошлом году я купил(а) часы в Японии."
+      }
+    ]
+  }
+}

@@ -19,7 +19,7 @@ export function Session({ user, data, source, onExit, onCourse, onSaved, saveSet
   const [soundSessionId] = useState(() => crypto.randomUUID());
   const [portion, setPortion] = useState(0); const [loadingQueue, setLoadingQueue] = useState(true); const request = useRef(0);
   const contextKey = sourceKey(source); const training = source.kind !== 'review';
-  const sourceTitle = source.kind === 'lesson' ? `Урок ${data.course.lessons.find(lesson => lesson.id === source.lessonId)?.number ?? ''}` : source.kind === 'list' ? data.lists.find(list => list.id === source.listId)?.name ?? 'Личный список' : 'Повторение';
+  const sourceTitle = source.kind === 'lesson' ? `Дополнительный словарь · урок ${data.course.lessons.find(lesson => lesson.id === source.lessonId)?.number ?? ''}` : source.kind === 'list' ? data.lists.find(list => list.id === source.listId)?.name ?? 'Личный список' : 'Повторение';
   const [activity, setActivity] = useState<CardActivity | null>(null); const [companionFeedback, setCompanionFeedback] = useState<SavedFeedback | null>(null);
   const load = useCallback(async () => {
     const current = ++request.current; setError(''); setLoadingQueue(true);
@@ -27,7 +27,7 @@ export function Session({ user, data, source, onExit, onCourse, onSaved, saveSet
     try {
       const nextQueue = await api<ReviewQueue>(source.kind === 'review' ? '/api/reviews?mode=mixed' : `/api/training?${query}`);
       if (request.current !== current) return;
-      setQueue(nextQueue); setCompleted(0); setFeedback(null); setActivity(null); setCompanionFeedback(null); setPortion(value => value + 1);
+      setQueue(source.kind === 'lesson' ? { ...nextQueue, items: nextQueue.items.filter(item => item.mode !== 'grammar') } : nextQueue); setCompleted(0); setFeedback(null); setActivity(null); setCompanionFeedback(null); setPortion(value => value + 1);
     } catch (failure) { if (request.current === current) setError(messages(failure)); }
     finally { if (request.current === current) setLoadingQueue(false); }
   }, [contextKey]);

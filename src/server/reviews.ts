@@ -17,7 +17,7 @@ export function gradeGrammar(course:Course,submission:Extract<ReviewSubmission,{
  const evaluation=evaluateTarget(course,exerciseId,{...submission,revision:0});const correct=evaluation.outcome==='correct';
  return {correct,rating:correct&&!submission.revealed&&submission.rating!==1?3 as const:1 as const,feedback:correct?(submission.revealed?'Верно после раскрытия. Навык нужно повторить.':'Верно: смысл и целевая конструкция сохранены.'):evaluation.feedback};
 }
-async function snapshot(database:Database,userId:string,course:Course){
+async function snapshot(database:Pick<Database,'sql'>,userId:string,course:Course){
  const words=await allWords(database,userId,course);
  const states=await database.sql`select item_id,mode,version,card,due,introduced_at from review_states where user_id=${userId}`;
  const [{words_today,skills_today}]=await database.sql`select count(*) filter(where grammar=false)::int as words_today,count(*) filter(where grammar=true)::int as skills_today from (select item_id,(mode='grammar') as grammar,min(introduced_at) as first_at from review_states where user_id=${userId} group by item_id,(mode='grammar')) introductions where first_at>=date_trunc('day',now() at time zone 'UTC') at time zone 'UTC'`;
@@ -29,7 +29,13 @@ type Snapshot=Awaited<ReturnType<typeof snapshot>>;
 function introduced(snap:Snapshot,grammar=false){return new Set<string>(snap.states.filter((state:any)=>(state.mode==='grammar')===grammar).map((state:any)=>state.item_id));}
 function exercisesFor(course:Course,words:Word[],personalIds?:Set<string>){
  const preparedIds=new Set(course.words.filter(word=>word.lessonIds.length).map(word=>word.id));const wordMap=new Map(words.filter(word=>validSegments(word)&&(preparedIds.has(word.id)||word.reviewStatus!=='draft'&&(!personalIds||personalIds.has(word.id)))).map(word=>[word.id,word]));const formMap=new Map(course.forms.map(form=>[form.id,form]));
- return course.exercises.filter(exercise=>course.skills.some(skill=>skill.id===exercise.skillId)&&exercise.tokens.every(token=>wordMap.has(formMap.get(token.formId)?.wordId??'')));
+ return course.exercises.filter(exercise=>{
+  const skill=course.skills.find(item=>item.id===exercise.skillId);
+  const personal=exercise.tokens.some(token=>!preparedIds.has(formMap.get(token.formId)?.wordId??''));
+  // Publishing a guided skill must not expose its unreviewed sibling examples in repeat sessions.
+  const checked=!course.learning||personal||exercise.reviewStatus!=='draft'&&skill?.reviewStatus!=='draft'&&exercise.tokens.every(token=>formMap.get(token.formId)?.reviewStatus!=='draft');
+  return !!skill&&checked&&exercise.tokens.every(token=>wordMap.has(formMap.get(token.formId)?.wordId??''));
+ });
 }
 export function reviewPriority(state:{due:Date|string;introduced_at:Date|string;card?:{difficulty?:number}},now=new Date()){
  const days=86400000;const overdue=Math.max(0,now.getTime()-new Date(state.due).getTime())/days;const age=Math.max(0,now.getTime()-new Date(state.introduced_at).getTime())/days;
@@ -81,6 +87,12 @@ export async function trainingQueue(database:Database,userId:string,course:Cours
  const grammar=skills.slice(0,2).map(id=>itemFor(course,snap,'grammar',id,now,exercises));
  return {items:interleaveReviews([wordItems,grammar]),remainingNew:freshWords.length+skills.filter(id=>!skillIds.has(id)).length,remainingDue:modes.flatMap(mode=>dueItems(course,snap,mode,now)).filter(item=>item.mode==='grammar'?skills.includes(item.targetId):words.some(word=>word.id===item.targetId)).length};
 }
+export async function learningReviewItem(sql:Database['sql'],userId:string,course:Course,mode:ReviewMode,targetId:string,exerciseId?:string):Promise<ReviewItem>{
+ const snap=await snapshot({sql},userId,course);
+ const item=itemFor(course,snap,mode,targetId,new Date());
+ if(mode==='grammar'&&exerciseId&&item.mode==='grammar')return {...item,id:reviewId(mode,targetId,exerciseId),exercise:course.exercises.find(exercise=>exercise.id===exerciseId)!};
+ return item;
+}
 export function evaluateTarget(course:Course,exerciseId:string,input:Pick<TargetEvaluationRequest,'tokenIds'|'tokenForms'|'revision'|'exploring'>):TargetEvaluationResult{
  const result=(outcome:TargetEvaluationResult['outcome'],feedback:string):TargetEvaluationResult=>({revision:input.revision,outcome,feedback});
  const exercise=course.exercises.find(item=>item.id===exerciseId);if(!exercise)throw new ReviewError('NOT_FOUND','Упражнение не найдено.',404);
@@ -108,14 +120,19 @@ export async function evaluateReview(database:Database,userId:string,course:Cour
  return evaluateTarget(exerciseCourse,exerciseId,input);
 }
 export async function submitReview(database:Database,userId:string,course:Course,input:ReviewSubmission):Promise<ReviewResult>{
+ return database.sql.begin(async tx=>{
+  await tx`select pg_advisory_xact_lock(hashtext(${userId}))`;
+  return submitReviewLocked(tx,userId,course,input);
+ });
+}
+// The caller owns the user lock and transaction so guided progress and its grade commit together.
+export async function submitReviewLocked(tx:Database['sql'],userId:string,course:Course,input:ReviewSubmission):Promise<ReviewResult>{
  const [mode,targetId,exerciseId]=decodeReview(input.reviewId);if(mode!==input.mode)throw new ReviewError('INVALID_REVIEW','Режим карточки не совпадает.',400);
- const snap=await snapshot(database,userId,course);
+ const snap=await snapshot({sql:tx},userId,course);
  const exerciseCourse=withPersonalPractice(course,snap.words);
  const exercise=mode==='grammar'?exercisesFor(exerciseCourse,snap.words).find(e=>e.id===exerciseId&&e.skillId===targetId):undefined;
  const word=mode!=='grammar'?snap.words.find(w=>w.id===targetId&&w.reviewStatus!=='draft'&&validSegments(w)):undefined;
  const payload=JSON.stringify(input);
- return database.sql.begin(async tx=>{
-  await tx`select pg_advisory_xact_lock(hashtext(${userId}))`;
   const [prior]=await tx`select user_id,payload,result from review_attempts where attempt_id=${input.attemptId}`;
   if(prior){if(prior.user_id!==userId||!isDeepStrictEqual(prior.payload,JSON.parse(payload)))throw new ReviewError('ATTEMPT_CONFLICT','Идентификатор попытки уже использован.',409);return prior.result as ReviewResult;}
   if(mode==='grammar'?!exercise:!word||(mode==='listening'&&!word.audioUrl))throw new ReviewError('MATERIAL_UNAVAILABLE','Материал недоступен.',403);
@@ -137,7 +154,7 @@ export async function submitReview(database:Database,userId:string,course:Course
   if(scheduled)await tx`insert into review_states(user_id,item_id,mode,version,card,due) values(${userId},${targetId},${mode},${result.version},${card},${card.due}) on conflict(user_id,item_id,mode) do update set version=excluded.version,card=excluded.card,due=excluded.due,updated_at=now()`;
   await tx`insert into review_attempts(attempt_id,user_id,item_id,mode,expected_version,payload,result,scheduled) values(${input.attemptId},${userId},${targetId},${mode},${input.version},${input},${result},${scheduled})`;
   return result;
- });
+
 }
 export async function progressFor(database:Database,userId:string,course:Course):Promise<Progress>{
  const snap=await snapshot(database,userId,course);const rows=await database.sql`select mode,count(*)::int as reviewed from review_attempts where user_id=${userId} and scheduled=true and created_at>=date_trunc('day',now() at time zone 'UTC') at time zone 'UTC' group by mode`;

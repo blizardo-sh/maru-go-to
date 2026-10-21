@@ -3,13 +3,13 @@ import type { ReviewResult, ReviewSubmission } from '../shared/types';
 import { submitReview } from './api';
 const messages = (error: unknown) => error instanceof Error ? error.message : 'Не удалось сохранить ответ. Повторите попытку.';
 
-export function useReviewSave(userId: string, onSaved: () => void, onNext: (submission: ReviewSubmission, result: ReviewResult) => void) {
+export function useReviewSave(userId: string, onSaved: () => void, onNext: (submission: ReviewSubmission, result: ReviewResult) => void, send: typeof submitReview = submitReview) {
   const [busy, setBusy] = useState(false); const [error, setError] = useState('');
   const pending = useRef<ReviewSubmission | null>(null); const lock = useRef(false);
   async function save(value: ReviewSubmission) {
     if (lock.current) return;
     const submission = pending.current ?? value; pending.current = submission; lock.current = true; setBusy(true); setError('');
-    try { const result = await submitReview(userId, submission); pending.current = null; onSaved(); onNext(submission, result); }
+    try { const result = await send(userId, submission); pending.current = null; onSaved(); onNext(submission, result); }
     catch (failure) { setError(`${messages(failure)} Ответ остаётся на этом устройстве до подтверждения.`); }
     finally { lock.current = false; setBusy(false); }
   }
