@@ -51,6 +51,13 @@ jobs:
           bun tests/auth-onboarding.browser.ts
       - name: Validate release command boundaries
         run: bash deployment/check.sh
+      - name: Validate Linux release images before merge
+        if: github.event_name == 'pull_request'
+        run: |
+          docker build --platform linux/amd64 --target api -t japanese-api:check .
+          docker build --platform linux/amd64 --target web -t japanese-web:check .
+          docker run --rm japanese-api:check bun -e 'import {loadCourse} from "./src/server/course.ts"; import {createApp} from "./src/server/app.ts"; if(loadCourse().lessons.length!==18||typeof createApp!=="function")throw new Error("Invalid production API");'
+          docker run --rm japanese-web:check caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
   publish:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: check

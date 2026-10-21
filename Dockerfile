@@ -4,7 +4,7 @@ COPY package.json bun.lock bunfig.toml ./
 RUN bun install --frozen-lockfile
 
 FROM dependencies AS build
-COPY index.html tsconfig.json vite.config.ts ./
+COPY index.html tsconfig.json vite.config.ts tokens.css ./
 COPY src ./src
 COPY public ./public
 COPY materials/course.json ./materials/course.json
