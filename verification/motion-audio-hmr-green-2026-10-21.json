@@ -1,0 +1,286 @@
+{
+  "isolatedFastRefreshOnly": true,
+  "noSourceWriteOrHmrBroadcast": true,
+  "refreshResult": "queued",
+  "before": {
+    "sources": [
+      {
+        "url": "http://127.0.0.1:5173/audio/game/music-cozy.m4a",
+        "loop": true,
+        "started": 1,
+        "startedAt": 1792574097135,
+        "stopped": 0,
+        "gain": [
+          0.18000000715255737,
+          0.15240876376628876,
+          1
+        ]
+      },
+      {
+        "url": "http://127.0.0.1:5173/audio/game/ambience-house.m4a",
+        "loop": true,
+        "started": 1,
+        "startedAt": 1792574097137,
+        "stopped": 0,
+        "gain": [
+          0.11999999731779099,
+          0.15240876376628876,
+          1
+        ]
+      }
+    ],
+    "states": [
+      "running"
+    ],
+    "mediaPaused": false,
+    "jpPlaying": 1,
+    "jpPaused": false,
+    "targets": [
+      0.18,
+      0.12,
+      0.25,
+      1,
+      1,
+      0.18,
+      0.12,
+      0.25,
+      1,
+      1,
+      0.18,
+      0.12,
+      0.25,
+      0.15,
+      1
+    ]
+  },
+  "afterRefresh": {
+    "sources": [
+      {
+        "url": "",
+        "loop": true,
+        "started": 1,
+        "startedAt": 1792574097135,
+        "stopped": 0,
+        "gain": [
+          0.18000000715255737,
+          0.15123671293258667,
+          1
+        ]
+      },
+      {
+        "url": "",
+        "loop": true,
+        "started": 1,
+        "startedAt": 1792574097137,
+        "stopped": 0,
+        "gain": [
+          0.11999999731779099,
+          0.15123671293258667,
+          1
+        ]
+      },
+      {
+        "url": "http://127.0.0.1:5173/audio/game/ambience-house.m4a",
+        "loop": true,
+        "started": 1,
+        "startedAt": 1792574097454,
+        "stopped": 0,
+        "gain": [
+          0.12007306516170502,
+          1,
+          1
+        ]
+      },
+      {
+        "url": "http://127.0.0.1:5173/audio/game/music-cozy.m4a",
+        "loop": true,
+        "started": 1,
+        "startedAt": 1792574097455,
+        "stopped": 0,
+        "gain": [
+          0.18006815016269684,
+          1,
+          1
+        ]
+      }
+    ],
+    "states": [
+      "closed",
+      "running"
+    ],
+    "mediaPaused": false,
+    "jpPlaying": 1,
+    "jpPaused": true,
+    "targets": [
+      0.18,
+      0.12,
+      0.25,
+      1,
+      1,
+      0.18,
+      0.12,
+      0.25,
+      1,
+      1,
+      0.18,
+      0.12,
+      0.25,
+      0.15,
+      1,
+      0.18,
+      0.12,
+      0.25,
+      1,
+      1,
+      0.18,
+      0.12,
+      0.25,
+      1,
+      1,
+      0.18,
+      0.12,
+      0.25,
+      1,
+      1,
+      0.18,
+      0.12,
+      0.25,
+      1,
+      1
+    ],
+    "ui": "playing"
+  },
+  "afterGesture": {
+    "sources": [
+      {
+        "url": "",
+        "loop": true,
+        "started": 1,
+        "startedAt": 1792574097135,
+        "stopped": 0,
+        "gain": [
+          0.18000000715255737,
+          0.15123671293258667,
+          1
+        ]
+      },
+      {
+        "url": "",
+        "loop": true,
+        "started": 1,
+        "startedAt": 1792574097137,
+        "stopped": 0,
+        "gain": [
+          0.11999999731779099,
+          0.15123671293258667,
+          1
+        ]
+      },
+      {
+        "url": "http://127.0.0.1:5173/audio/game/ambience-house.m4a",
+        "loop": true,
+        "started": 2,
+        "startedAt": 1792574097454,
+        "stopped": 1,
+        "gain": [
+          0.11999999731779099,
+          1,
+          1
+        ]
+      },
+      {
+        "url": "http://127.0.0.1:5173/audio/game/music-cozy.m4a",
+        "loop": true,
+        "started": 2,
+        "startedAt": 1792574097455,
+        "stopped": 1,
+        "gain": [
+          0.18000000715255737,
+          1,
+          1
+        ]
+      }
+    ],
+    "states": [
+      "closed",
+      "running"
+    ],
+    "mediaPaused": false,
+    "jpPlaying": 1,
+    "jpPaused": true,
+    "targets": [
+      0.18,
+      0.12,
+      0.25,
+      1,
+      1,
+      0.18,
+      0.12,
+      0.25,
+      1,
+      1,
+      0.18,
+      0.12,
+      0.25,
+      0.15,
+      1,
+      0.18,
+      0.12,
+      0.25,
+      1,
+      1,
+      0.18,
+      0.12,
+      0.25,
+      1,
+      1,
+      0.18,
+      0.12,
+      0.25,
+      1,
+      1,
+      0.18,
+      0.12,
+      0.25,
+      1,
+      1,
+      0.18,
+      0.12,
+      0.25,
+      1,
+      0,
+      0.18,
+      0.12,
+      0.25,
+      1,
+      0,
+      0.18,
+      0.12,
+      0.25,
+      1,
+      1,
+      0.18,
+      0.12,
+      0.25,
+      1,
+      1
+    ],
+    "ui": "playing"
+  },
+  "duckRestored": true,
+  "planBefore": {
+    "review": "WyJsaXN0ZW5pbmciLCJtYXJ1Z290by5zdGFydGVyLWExLndvcmQuY2FmZjdlN2Y3ZTJlODc5YiIsIiJd",
+    "scene": "room",
+    "progress": "Пройдено 0 из 5 заданий (0%)",
+    "queueGets": 1
+  },
+  "planAfter": {
+    "review": "WyJsaXN0ZW5pbmciLCJtYXJ1Z290by5zdGFydGVyLWExLndvcmQuY2FmZjdlN2Y3ZTJlODc5YiIsIiJd",
+    "scene": "room",
+    "progress": "Пройдено 0 из 5 заданий (0%)",
+    "queueGets": 1
+  },
+  "reviewWrites": 0,
+  "green": true,
+  "errors": []
+}

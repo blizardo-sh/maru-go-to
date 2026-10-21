@@ -1,0 +1,38 @@
+{
+  "generator": "built-in image_gen",
+  "purpose": "Separate new foreground branches; original painted trees stay static. No cutout is duplicated over its original silhouette.",
+  "references": [
+    "/scenes/room-v1.webp",
+    "/scenes/river-v1.webp",
+    "/scenes/garden-v1.webp"
+  ],
+  "prompt": "Transparent hand-painted foreground branch in the same gouache style. Green maple-like branch anchored beyond top-right; sakura anchored beyond top-left. Natural coherent stem, corner composition, branch/blossoms only; no scenery/UI/text/cat/glow.",
+  "cleanupPrompt": "Background-extraction edit: preserve plant identity, shape and corner attachment; remove all glow/backdrop and all pixels outside the actual botanical silhouette, including interior gaps. Preserve transparent alpha, no fringe.",
+  "conversion": "RGBA preserved; ordinary Lanczos downsampling to width640 and WebP quality83/method6/exact alpha. No artistic redraw, segmentation or manual alpha modification.",
+  "assets": [
+    {
+      "id": "foliage",
+      "src": "/scenes/layers/foliage-v1.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 85850,
+      "source": "imagegen-artifacts/01a15b1b-ce1c-7b23-8337-4c43385f34ba/exec-1c2637eb-431f-47f6-9257-a71a0bbc1d42.png",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "sakura",
+      "src": "/scenes/layers/sakura-v1.webp",
+      "width": 640,
+      "height": 427,
+      "bytes": 80340,
+      "source": "imagegen-artifacts/01a15b1b-ce1c-7b23-8337-4c43385f34ba/exec-c76d1789-838d-4e29-b695-40de04ee9102.png",
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    }
+  ]
+}

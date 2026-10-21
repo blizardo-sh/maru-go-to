@@ -1,0 +1,9 @@
+[Unit]
+Description=Keep offsite Japanese progress within the one-hour recovery target
+[Timer]
+# Two attempts per hour leave time for a transient failure or slow transfer.
+OnCalendar=*-*-* *:00,30:00
+Persistent=true
+RandomizedDelaySec=0
+[Install]
+WantedBy=timers.target

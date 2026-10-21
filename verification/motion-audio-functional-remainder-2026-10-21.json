@@ -1,0 +1,167 @@
+{
+  "complete": true,
+  "scope": "final-textbook-and-native-autoplay-denial",
+  "browser": "145.0.7632.160",
+  "results": [
+    {
+      "textbookFinal": true,
+      "nativeKeyboardOpenCollapseReopen": true,
+      "pointerControlsAndNeighborHitTest": true,
+      "bodyBox": {
+        "x": 142.59375,
+        "y": 727.296875,
+        "width": 994.796875,
+        "height": 196.234375
+      },
+      "cardBox": {
+        "x": 141.59375,
+        "y": 615.328125,
+        "width": 996.796875,
+        "height": 309.203125
+      },
+      "desktopTiles": [
+        {
+          "x": 141.59375,
+          "y": 391.171875,
+          "width": 323.203125,
+          "height": 210.5625,
+          "top": 391.171875,
+          "right": 464.796875,
+          "bottom": 601.734375,
+          "left": 141.59375
+        },
+        {
+          "x": 478.390625,
+          "y": 391.171875,
+          "width": 323.203125,
+          "height": 210.5625,
+          "top": 391.171875,
+          "right": 801.59375,
+          "bottom": 601.734375,
+          "left": 478.390625
+        },
+        {
+          "x": 815.1875,
+          "y": 391.171875,
+          "width": 323.203125,
+          "height": 210.5625,
+          "top": 391.171875,
+          "right": 1138.390625,
+          "bottom": 601.734375,
+          "left": 815.1875
+        },
+        {
+          "x": 141.59375,
+          "y": 615.328125,
+          "width": 323.203125,
+          "height": 210.5625,
+          "top": 615.328125,
+          "right": 464.796875,
+          "bottom": 825.890625,
+          "left": 141.59375
+        }
+      ],
+      "tiles": [
+        {
+          "width": 390,
+          "maxTileHeight": 214.640625,
+          "firstRow": [
+            {
+              "x": 30.796875,
+              "y": 409.1875,
+              "width": 159,
+              "height": 194.484375,
+              "top": 409.1875,
+              "right": 189.796875,
+              "bottom": 603.671875,
+              "left": 30.796875
+            },
+            {
+              "x": 200.1875,
+              "y": 409.1875,
+              "width": 159.015625,
+              "height": 194.484375,
+              "top": 409.1875,
+              "right": 359.203125,
+              "bottom": 603.671875,
+              "left": 200.1875
+            }
+          ]
+        },
+        {
+          "width": 320,
+          "maxTileHeight": 216.15625,
+          "firstRow": [
+            {
+              "x": 28.390625,
+              "y": 481.1875,
+              "width": 126.40625,
+              "height": 187,
+              "top": 481.1875,
+              "right": 154.796875,
+              "bottom": 668.1875,
+              "left": 28.390625
+            },
+            {
+              "x": 165.1875,
+              "y": 481.1875,
+              "width": 126.421875,
+              "height": 187,
+              "top": 481.1875,
+              "right": 291.609375,
+              "bottom": 668.1875,
+              "left": 165.1875
+            }
+          ]
+        }
+      ],
+      "statusFocusCanDoSaveResetPersist": true,
+      "keepalivePlan": {
+        "reviewId": "WyJsaXN0ZW5pbmciLCJtYXJ1Z290by5zdGFydGVyLWExLndvcmQuY2FmZjdlN2Y3ZTJlODc5YiIsIiJd",
+        "progress": "Пройдено 0 из 5 заданий (0%)",
+        "queueGets": 1
+      },
+      "reviewWrites": 0,
+      "errors": []
+    },
+    {
+      "reducedMotion": false,
+      "animations": [
+        "none",
+        "none",
+        "none"
+      ],
+      "failedSceneAudio": false,
+      "blockedAudio": true,
+      "noIntroWait": true,
+      "rig": {
+        "reduced": true,
+        "layers": [
+          {
+            "loaded": true,
+            "name": "none",
+            "time": 0
+          },
+          {
+            "loaded": true,
+            "name": "none",
+            "time": 0
+          },
+          {
+            "loaded": true,
+            "name": "none",
+            "time": 0
+          }
+        ],
+        "frame": {
+          "x": 978.578125,
+          "y": 534.34375,
+          "width": 279,
+          "height": 279
+        }
+      },
+      "jpIndependentOfSceneMute": true,
+      "errors": []
+    }
+  ]
+}

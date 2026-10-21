@@ -1,0 +1,34 @@
+{
+  "purpose": "Illustrative word-form data for three display variants; not a verified course vocabulary pack.",
+  "status": "illustrative",
+  "examples": [
+    {
+      "id": "example.family",
+      "meaning_ru": "семья",
+      "surface": "家族",
+      "kana": "かぞく",
+      "segments": [
+        { "surface": "家族", "reading": "かぞく" }
+      ]
+    },
+    {
+      "id": "example.coffee",
+      "meaning_ru": "кофе",
+      "surface": "コーヒー",
+      "kana": "コーヒー",
+      "segments": [
+        { "surface": "コーヒー" }
+      ]
+    },
+    {
+      "id": "example.eat.polite",
+      "meaning_ru": "есть; ем / ест / буду есть (вежливая форма, по контексту)",
+      "surface": "食べます",
+      "kana": "たべます",
+      "segments": [
+        { "surface": "食", "reading": "た" },
+        { "surface": "べます" }
+      ]
+    }
+  ]
+}

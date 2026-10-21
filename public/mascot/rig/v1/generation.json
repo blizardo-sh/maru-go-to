@@ -1,0 +1,181 @@
+{
+  "version": 1,
+  "generator": "built-in image_gen.imagegen",
+  "mode": "three individual transparent isolation edits",
+  "originalApprovedArtwork": {
+    "path": "/Users/ivsh/source/own_server/japanese-learning/assets/mascot/mascot-neutral-v1.png",
+    "sha256": "4ddcb8c9ac1d1dd24d749eb818555d5039f2bf86fb16f532774ae657d3459228",
+    "dimensions": [
+      1261,
+      1247
+    ],
+    "mode": "RGBA"
+  },
+  "registeredReference": {
+    "path": "/Users/ivsh/Documents/ChatGPT/Japanese learning/output/cat-rig-input/neutral-reference-720.png",
+    "sha256": "900238a52f197970623fef0288904c569d93219bbac01ef72569115928f3b119",
+    "dimensions": [
+      720,
+      720
+    ],
+    "mode": "RGBA"
+  },
+  "referenceNormalization": "Original1261×1247 ->720×712, placed at0,8 on transparent720square, bottom aligned.",
+  "layers": {
+    "tail": {
+      "source": {
+        "path": "/Users/ivsh/.codex/generated_images/01a15d9a-e862-7750-a746-01e09d11bee0/exec-9062542a-e0f2-4f32-8f53-07ab9ecd9cb2.png",
+        "sha256": "0647de87d6471e734e2d0f4f6120e5e425c9992d14c96d7004327af8b4def01b",
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA"
+      },
+      "prompt": "Use case: precise-object-edit.\nAsset type: TAIL BACK layer for a three-part 2D idle character rig.\nImage 1 is the exact approved kitten artwork and alignment reference on a transparent 720×720 canvas. EDIT BY ISOLATION ONLY. Preserve ONLY the kitten's original fluffy curled tail on the LEFT: its cream/golden fur, curved shape, fluffy pointed hairs, delicate painterly shading, original size and exact position.\nRemove the entire kitten head, green scarf, torso, paws, feet, blank card and every other part to genuine transparency. Do not draw a whole cat, face, extra tail or new shape.\nKeep the original tail on the SAME FULL SQUARE 720×720 CANVAS, around x≈70..245, y≈420..662, with large transparent space on the right and above. Do not center, zoom, enlarge or tightly crop. The original tail tip curls upward at the left of the kitten's torso; the root joins behind the left hip near x≈232,y≈624.\nComplete ONLY a short hidden continuation of the tail root under the future torso: extend the cream fur of the tail root toward x≈265,y≈625, so it naturally overlaps behind the separate body. This root overlap must be at least 25px long and thick enough to prevent a gap while rotating the tail ±6 degrees about x≈236,y≈620. Keep all added root fur hidden underneath where the original hip used to be.\nThe finished image is one detached fluffy curled tail at original position with a short hidden root continuation. Real transparent alpha background, no flat white/black rectangle, no whole body, no ears, face or paws, no shadow, no UI, no writing or watermark. Preserve the original surviving artwork as closely as possible.",
+      "derivative": {
+        "resize": [
+          720,
+          720
+        ]
+      },
+      "output": {
+        "file": "tail.webp",
+        "bytes": 15554,
+        "sha256": "336004411ba2f92f8fd70a0061ac49af6d2a04c3958c1c0dfcbd7d80b951f3ee",
+        "dimensions": [
+          720,
+          720
+        ],
+        "webpQuality": 90
+      },
+      "alphaBounds": [
+        67,
+        419,
+        294,
+        664
+      ]
+    },
+    "body": {
+      "source": {
+        "path": "/Users/ivsh/.codex/generated_images/01a15d9a-e862-7750-a746-01e09d11bee0/exec-666e749f-b82d-46b4-b5a4-d651cc9f498f.png",
+        "sha256": "a578564a3f7f6f1a156d67e625cad5e8510f6ef3f5048eb38a04e4f3d49e9c1c",
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA"
+      },
+      "prompt": "Use case: precise-object-edit.\nAsset type: BODY MIDDLE layer for a three-part 2D idle character rig.\nImage 1 is the exact approved kitten artwork and alignment reference on a transparent 720×720 canvas. EDIT BY ISOLATION ONLY: preserve the kitten's ORIGINAL SEATED BODY, both forepaws holding the same blank ivory card, both lower feet with pink pads, warm cream fluffy belly and original sage-green neck scarf. Preserve the original position, anatomy, pose, palette and fine painterly linework. Do not redesign the character or objects.\nREMOVE THE ENTIRE HEAD including ears, eyes, cheeks, whiskers and face. REMOVE THE WHOLE CURLING TAIL on the left. Keep only the lower seated body, paws, card and scarf. The removed head and tail areas must be genuinely transparent, not cream blobs.\nKeep the body at exactly the same size and registered location on the SAME FULL SQUARE 720×720 CANVAS: it lies approximately x=220..582, y=375..704 with the feet ending just above the bottom margin. Do not recenter, zoom or tightly crop this body.\nWhere the removed head originally met the scarf, extend the scarf/cream neck upward behind the future head by about 24px as a soft rounded neck overlap stub, occupying only x≈285..490, y≈367..425. This hidden overlap must prevent a gap when a separate head layer in FRONT rotates ±2 degrees around x≈395,y≈409. Where the tail joined the lower left side of the torso, keep a solid cream furry hip overlap down to the left foot, so the separate tail can sit BEHIND the body with no opening.\nThe finished visible object is a headless, tailless seated kitten torso with its original green scarf, paws, card and feet. Transparent background, no head or tail left, no face on the body, no white square background, no new objects, no labels, writing, UI, shadow or watermark. Preserve the original surviving artwork as closely as possible.",
+      "derivative": {
+        "resize": [
+          720,
+          720
+        ]
+      },
+      "output": {
+        "file": "body.webp",
+        "bytes": 31012,
+        "sha256": "a0f43a72dbd175956d91a8ca5ba0f60fcccff29b56348477bed5c608c4b2ee12",
+        "dimensions": [
+          720,
+          720
+        ],
+        "webpQuality": 90
+      },
+      "alphaBounds": [
+        223,
+        360,
+        581,
+        700
+      ]
+    },
+    "head": {
+      "source": {
+        "path": "/Users/ivsh/.codex/generated_images/01a15d9a-e862-7750-a746-01e09d11bee0/exec-feb483e8-8c27-4ccb-81a3-f587ccf43c6b.png",
+        "sha256": "210eec1b7ec855bd7cc1c98eb95e65c7ae4cad58e0aada5774f51c4c50a1828d",
+        "dimensions": [
+          1254,
+          1254
+        ],
+        "mode": "RGBA"
+      },
+      "prompt": "Use case: precise-object-edit.\nAsset type: HEAD FRONT layer for a three-part 2D idle character rig.\nImage 1 is the exact approved kitten artwork and alignment reference on a transparent 720×720 canvas. EDIT BY ISOLATION ONLY: preserve the kitten's ORIGINAL HEAD, facial identity, exact warm cream fur colors, original wide brown eyes with highlights, pink nose, open smiling mouth and tongue, ears, forehead tufts, blush, whiskers and original delicate painterly linework. Do not redesign, re-pose, change the smile, change the eyes, or restyle anything.\nRemove everything except the complete head: erase the green scarf, torso, paws, feet, card and tail to genuine transparency. Keep the original head at exactly the same scale, tilt and registered position on the SAME FULL SQUARE CANVAS. DO NOT zoom, center, crop tightly, or enlarge the isolated head. The head occupies approximately x=120..600, y=22..420 on a 720×720 reference canvas, with large transparent empty bottom area. Retain the whole original furry chin/cheek silhouette; a little soft fur behind the chin is allowed as an overlap but no scarf.\nThis head will rotate only ±2 degrees about neck pivot x≈395,y≈409 and render IN FRONT of a separate green-scarf body layer. The neck seam must be soft fur and remain naturally overlapped with the body. Transparent background and empty rest of canvas, no white background, no new drawing elsewhere, no shadows, no labels, text, marks, UI, watermark. Preserve the original artwork pixels as closely as possible.",
+      "derivative": {
+        "crop": [
+          144,
+          34,
+          1151,
+          889
+        ],
+        "placement": {
+          "x": 120,
+          "y": 22,
+          "width": 480,
+          "height": 400
+        }
+      },
+      "output": {
+        "file": "head.webp",
+        "bytes": 35512,
+        "sha256": "3cca9a2fcebf9bf83347cb4729199dc20086b1d77de72485fcb87e7f45fedb0e",
+        "dimensions": [
+          720,
+          720
+        ],
+        "webpQuality": 90
+      },
+      "alphaBounds": [
+        122,
+        24,
+        598,
+        420
+      ]
+    }
+  },
+  "registrationChecks": [
+    {
+      "headDegrees": 0,
+      "tailDegrees": 0,
+      "neckOverlapOpaquePixels": 5765,
+      "tailRootOverlapOpaquePixels": 3760
+    },
+    {
+      "headDegrees": -2,
+      "tailDegrees": -6,
+      "neckOverlapOpaquePixels": 5644,
+      "tailRootOverlapOpaquePixels": 4303
+    },
+    {
+      "headDegrees": 2,
+      "tailDegrees": 6,
+      "neckOverlapOpaquePixels": 5889,
+      "tailRootOverlapOpaquePixels": 3673
+    },
+    {
+      "headDegrees": -2,
+      "tailDegrees": 6,
+      "neckOverlapOpaquePixels": 5644,
+      "tailRootOverlapOpaquePixels": 3673
+    },
+    {
+      "headDegrees": 2,
+      "tailDegrees": -6,
+      "neckOverlapOpaquePixels": 5889,
+      "tailRootOverlapOpaquePixels": 4303
+    }
+  ],
+  "visualInspection": "Reviewed original reference plus static composite and all four ±2-degree head / ±6-degree tail combinations on actual registered 720×720 canvases. No visible neck gaps, tail-root detachment, double outline or clipping; overlapping cream neck remains covered by head. Tiny generated smile/eye/linework changes are disclosed.",
+  "knownLimits": [
+    "Generative extraction preserves the character and palette but is not pixel-identical: tiny smile/eye/linework changes.",
+    "Basic idle rig only; original nine PNG poses retained by caller as reaction/failure fallback."
+  ],
+  "overwritePolicy": "All destination files asserted absent; exclusive create only.",
+  "verification": {
+    "decode": "PASS all three RGBA WebP 720×720",
+    "alpha": "PASS extrema0..255 and four transparent corner pixels per layer",
+    "registration": "PASS neck overlap>=5644 and tail-root overlap>=3673 opaque pixels for all five checked combinations",
+    "previewPath": "/Users/ivsh/Documents/ChatGPT/Japanese learning/output/cat-rig-registration-review.png",
+    "browserMotion": "Not checked here; consuming component must respect max rotations and reduced motion."
+  }
+}

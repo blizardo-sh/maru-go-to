@@ -1,0 +1,16 @@
+node_modules
+dist/
+.env
+.env.*
+!.env.example
+*.log
+playwright-report/
+test-results/
+.DS_Store
+__pycache__/
+*.pyc
+.hallmark/
+ARCHIVE-MANIFEST.json
+/verification/*.json
+/docs/discovery.md
+/deployment/server-profile.json

@@ -1,0 +1,245 @@
+{
+  "version": 1,
+  "src": "/scenes/props/atlas-v1.webp",
+  "atlas": {
+    "width": 1536,
+    "height": 768,
+    "columns": 4,
+    "rows": 2,
+    "cellSize": 384
+  },
+  "tiles": [
+    {
+      "id": "brushes",
+      "row": 0,
+      "column": 0,
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 384,
+        "height": 384
+      },
+      "bounds": {
+        "x": 0.0,
+        "y": 0.0,
+        "width": 0.25,
+        "height": 0.5
+      },
+      "contentBounds": {
+        "x": 0.052083333333333336,
+        "y": 0.5,
+        "width": 0.8958333333333334,
+        "height": 0.4375
+      },
+      "sourceCellCrop": [
+        18,
+        151,
+        443,
+        358
+      ]
+    },
+    {
+      "id": "inkstone",
+      "row": 0,
+      "column": 1,
+      "rect": {
+        "x": 384,
+        "y": 0,
+        "width": 384,
+        "height": 384
+      },
+      "bounds": {
+        "x": 0.25,
+        "y": 0.0,
+        "width": 0.25,
+        "height": 0.5
+      },
+      "contentBounds": {
+        "x": 0.052083333333333336,
+        "y": 0.3072916666666667,
+        "width": 0.8958333333333334,
+        "height": 0.6302083333333334
+      },
+      "sourceCellCrop": [
+        43,
+        117,
+        428,
+        388
+      ]
+    },
+    {
+      "id": "tea",
+      "row": 0,
+      "column": 2,
+      "rect": {
+        "x": 768,
+        "y": 0,
+        "width": 384,
+        "height": 384
+      },
+      "bounds": {
+        "x": 0.5,
+        "y": 0.0,
+        "width": 0.25,
+        "height": 0.5
+      },
+      "contentBounds": {
+        "x": 0.052083333333333336,
+        "y": 0.049479166666666664,
+        "width": 0.8958333333333334,
+        "height": 0.8880208333333334
+      },
+      "sourceCellCrop": [
+        58,
+        92,
+        363,
+        394
+      ]
+    },
+    {
+      "id": "teapot",
+      "row": 0,
+      "column": 3,
+      "rect": {
+        "x": 1152,
+        "y": 0,
+        "width": 384,
+        "height": 384
+      },
+      "bounds": {
+        "x": 0.75,
+        "y": 0.0,
+        "width": 0.25,
+        "height": 0.5
+      },
+      "contentBounds": {
+        "x": 0.052083333333333336,
+        "y": 0.296875,
+        "width": 0.8958333333333334,
+        "height": 0.640625
+      },
+      "sourceCellCrop": [
+        17,
+        93,
+        433,
+        391
+      ]
+    },
+    {
+      "id": "dango",
+      "row": 1,
+      "column": 0,
+      "rect": {
+        "x": 0,
+        "y": 384,
+        "width": 384,
+        "height": 384
+      },
+      "bounds": {
+        "x": 0.0,
+        "y": 0.5,
+        "width": 0.25,
+        "height": 0.5
+      },
+      "contentBounds": {
+        "x": 0.052083333333333336,
+        "y": 0.3307291666666667,
+        "width": 0.8958333333333334,
+        "height": 0.6067708333333334
+      },
+      "sourceCellCrop": [
+        18,
+        82,
+        432,
+        362
+      ]
+    },
+    {
+      "id": "sakura-mochi",
+      "row": 1,
+      "column": 1,
+      "rect": {
+        "x": 384,
+        "y": 384,
+        "width": 384,
+        "height": 384
+      },
+      "bounds": {
+        "x": 0.25,
+        "y": 0.5,
+        "width": 0.25,
+        "height": 0.5
+      },
+      "contentBounds": {
+        "x": 0.052083333333333336,
+        "y": 0.296875,
+        "width": 0.8958333333333334,
+        "height": 0.640625
+      },
+      "sourceCellCrop": [
+        31,
+        75,
+        430,
+        360
+      ]
+    },
+    {
+      "id": "dorayaki",
+      "row": 1,
+      "column": 2,
+      "rect": {
+        "x": 768,
+        "y": 384,
+        "width": 384,
+        "height": 384
+      },
+      "bounds": {
+        "x": 0.5,
+        "y": 0.5,
+        "width": 0.25,
+        "height": 0.5
+      },
+      "contentBounds": {
+        "x": 0.052083333333333336,
+        "y": 0.3255208333333333,
+        "width": 0.8958333333333334,
+        "height": 0.6119791666666666
+      },
+      "sourceCellCrop": [
+        0,
+        70,
+        443,
+        372
+      ]
+    },
+    {
+      "id": "linen",
+      "row": 1,
+      "column": 3,
+      "rect": {
+        "x": 1152,
+        "y": 384,
+        "width": 384,
+        "height": 384
+      },
+      "bounds": {
+        "x": 0.75,
+        "y": 0.5,
+        "width": 0.25,
+        "height": 0.5
+      },
+      "contentBounds": {
+        "x": 0.052083333333333336,
+        "y": 0.28125,
+        "width": 0.8958333333333334,
+        "height": 0.65625
+      },
+      "sourceCellCrop": [
+        15,
+        68,
+        435,
+        376
+      ]
+    }
+  ]
+}

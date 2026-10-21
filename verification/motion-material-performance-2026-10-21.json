@@ -1,0 +1,241 @@
+{
+  "browser": "145.0.7632.160",
+  "method": "Final motion/material production dist provided by combined QA after joint source freeze. One fresh cold-mobile Today load, followed by Start/reveal and a 1200ms observation window. Post-start Resource Timing lists completed entries only, not total streaming bytes or first-music onset. Isolated Bun local server with gzip (like configured Caddy), real test API/DB, no interception or OpenRouter. Cold browser caches. Lab observations only; observed event duration is not field INP. No Lighthouse, actual mobile device or sustained FPS measured.",
+  "records": [
+    {
+      "courseRequests": 1,
+      "page": "today",
+      "fixtureSettings": {
+        "lessonStatuses": "all18studying",
+        "focusLessonIds": [],
+        "focusCanDoIds": [],
+        "focusSkillIds": [
+          "marugoto.starter-a1.skill.frequency"
+        ],
+        "enabledListIds": [],
+        "freeLessonIds": [],
+        "freeScopes": {
+          "words": "studied",
+          "particles": "studied",
+          "constructions": "studied",
+          "forms": "studied"
+        },
+        "orthography": "furigana",
+        "newWordsPerDay": 5,
+        "newSkillsPerDay": 2,
+        "animations": true,
+        "sceneSoundEnabled": true,
+        "musicVolume": 0.18,
+        "ambienceVolume": 0.12,
+        "sfxVolume": 0.25,
+        "speechVolume": 1
+      },
+      "initialSound": {
+        "state": "paused",
+        "enabled": "true"
+      },
+      "homeScreenshot": "local-verification-artifacts/motion-material-home-defaultsound-390.png",
+      "build": {
+        "js": "index-AwQ9P7xW.js",
+        "css": "index-BqJZ90U2.css"
+      },
+      "initialScenery": [
+        {
+          "path": "/scenes/room-mobile-v1.webp",
+          "transferSize": 53844,
+          "encodedBodySize": 53544,
+          "decodedBodySize": 53544,
+          "duration": 594.7999999523163
+        },
+        {
+          "path": "/scenes/props/atlas-v1.webp",
+          "transferSize": 247622,
+          "encodedBodySize": 247322,
+          "decodedBodySize": 247322,
+          "duration": 3715.9000000953674
+        },
+        {
+          "path": "/mascot/wave.png",
+          "transferSize": 137868,
+          "encodedBodySize": 137568,
+          "decodedBodySize": 137568,
+          "duration": 2177.5
+        },
+        {
+          "path": "/mascot/rig/v1/manifest.json",
+          "transferSize": 594,
+          "encodedBodySize": 294,
+          "decodedBodySize": 706,
+          "duration": 170.70000004768372
+        },
+        {
+          "path": "/mascot/rig/v1/tail.webp",
+          "transferSize": 15854,
+          "encodedBodySize": 15554,
+          "decodedBodySize": 15554,
+          "duration": 544.0999999046326
+        },
+        {
+          "path": "/mascot/rig/v1/body.webp",
+          "transferSize": 31312,
+          "encodedBodySize": 31012,
+          "decodedBodySize": 31012,
+          "duration": 852.5
+        },
+        {
+          "path": "/mascot/rig/v1/head.webp",
+          "transferSize": 35812,
+          "encodedBodySize": 35512,
+          "decodedBodySize": 35512,
+          "duration": 927.5
+        },
+        {
+          "path": "/mascot/rig/v1/tail.webp",
+          "transferSize": 15854,
+          "encodedBodySize": 15554,
+          "decodedBodySize": 15554,
+          "duration": 541.5999999046326
+        },
+        {
+          "path": "/mascot/rig/v1/body.webp",
+          "transferSize": 31312,
+          "encodedBodySize": 31012,
+          "decodedBodySize": 31012,
+          "duration": 841.5
+        },
+        {
+          "path": "/mascot/rig/v1/head.webp",
+          "transferSize": 35812,
+          "encodedBodySize": 35512,
+          "decodedBodySize": 35512,
+          "duration": 892.5999999046326
+        }
+      ],
+      "sceneryAfterStartAndReveal": {
+        "scene": "garden",
+        "resources": [
+          {
+            "path": "/scenes/room-mobile-v1.webp",
+            "transferSize": 53844,
+            "encodedBodySize": 53544
+          },
+          {
+            "path": "/scenes/props/atlas-v1.webp",
+            "transferSize": 247622,
+            "encodedBodySize": 247322
+          },
+          {
+            "path": "/mascot/wave.png",
+            "transferSize": 137868,
+            "encodedBodySize": 137568
+          },
+          {
+            "path": "/mascot/rig/v1/manifest.json",
+            "transferSize": 594,
+            "encodedBodySize": 294
+          },
+          {
+            "path": "/mascot/rig/v1/tail.webp",
+            "transferSize": 15854,
+            "encodedBodySize": 15554
+          },
+          {
+            "path": "/mascot/rig/v1/body.webp",
+            "transferSize": 31312,
+            "encodedBodySize": 31012
+          },
+          {
+            "path": "/mascot/rig/v1/head.webp",
+            "transferSize": 35812,
+            "encodedBodySize": 35512
+          },
+          {
+            "path": "/mascot/rig/v1/tail.webp",
+            "transferSize": 15854,
+            "encodedBodySize": 15554
+          },
+          {
+            "path": "/mascot/rig/v1/body.webp",
+            "transferSize": 31312,
+            "encodedBodySize": 31012
+          },
+          {
+            "path": "/mascot/rig/v1/head.webp",
+            "transferSize": 35812,
+            "encodedBodySize": 35512
+          },
+          {
+            "path": "/mascot/rig/v1/tail.webp",
+            "transferSize": 15854,
+            "encodedBodySize": 15554
+          },
+          {
+            "path": "/mascot/rig/v1/body.webp",
+            "transferSize": 31312,
+            "encodedBodySize": 31012
+          },
+          {
+            "path": "/mascot/rig/v1/head.webp",
+            "transferSize": 35812,
+            "encodedBodySize": 35512
+          }
+        ]
+      },
+      "viewport": "390x844",
+      "cpuThrottle": 4,
+      "network": "150ms latency; 1.6Mbps down; 750Kbps up",
+      "lcpMs": 3296,
+      "lcpElement": {
+        "tag": "SECTION",
+        "className": "today work-board",
+        "url": "http://127.0.0.1:57928/ui/materials/paper-v1.webp",
+        "size": 185652
+      },
+      "mainVisibleMs": 3064,
+      "cls": 0.02843601895734597,
+      "maxObservedEventDurationMs": 280,
+      "longTasks": [],
+      "transferBytes": 930004,
+      "requests": 23,
+      "largest": [
+        {
+          "path": "/scenes/props/atlas-v1.webp",
+          "transferSize": 247622,
+          "encodedBodySize": 247322,
+          "decodedBodySize": 247322,
+          "duration": 3715.9000000953674
+        },
+        {
+          "path": "/mascot/wave.png",
+          "transferSize": 137868,
+          "encodedBodySize": 137568,
+          "decodedBodySize": 137568,
+          "duration": 2177.5
+        },
+        {
+          "path": "/api/course",
+          "transferSize": 122038,
+          "encodedBodySize": 121738,
+          "decodedBodySize": 1178767,
+          "duration": 1914.7999999523163
+        },
+        {
+          "path": "/assets/index-AwQ9P7xW.js",
+          "transferSize": 90737,
+          "encodedBodySize": 90437,
+          "decodedBodySize": 296759,
+          "duration": 666.5
+        },
+        {
+          "path": "/ui/materials/wood-frame-v1.webp",
+          "transferSize": 77388,
+          "encodedBodySize": 77088,
+          "decodedBodySize": 77088,
+          "duration": 1436.4000000953674
+        }
+      ],
+      "errors": [],
+      "badResponses": []
+    }
+  ]
+}

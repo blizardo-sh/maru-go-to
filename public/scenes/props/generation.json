@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "generator": "built-in image_gen.imagegen",
+  "mode": "one transparent atlas call",
+  "reference": {
+    "path": "local-reference-artifacts/codex-clipboard-47b69889-4116-4359-a766-7cd033e1a885.png",
+    "sha256": "8b6d5678a36244f84e32ecc6cb28345b15f7a2d330a4a4f69548f0c4234c6b13",
+    "dimensions": [
+      1672,
+      941
+    ],
+    "mode": "RGB"
+  },
+  "source": {
+    "path": "imagegen-artifacts/01a15d9a-e862-7750-a746-01e09d11bee0/exec-dbf37369-b589-4855-9847-4c91c4f16e68.png",
+    "sha256": "649627ed3594d29eed24dca7ee48e9e176cc0d68c190552de517e71acc18d8d9",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "mode": "RGBA"
+  },
+  "prompt": "Use case: stylized-concept.\nAsset type: production TRANSPARENT prop sprite atlas for a Japanese study game.\nInput image 1 is a STYLE REFERENCE ONLY: match its beautiful warm hand-painted animation-background craftsmanship, tactile natural materials, fine brush texture, warm soft light and gentle tabletop perspective. Do not reproduce the scene, UI, words or cat.\nCreate exactly EIGHT separate illustrated tabletop objects on one transparent image arranged in a PERFECT 4-COLUMN by 2-ROW regular grid of EIGHT EQUAL SQUARE CELLS. Wide 2:1 canvas, intended 2048×1024, each cell 512×512. No drawn grid, divider, label or boundary. Each object must be centered inside its own cell with a generous clear transparent margin at least 48px on every side and no part spilling into another cell. Natural slightly elevated three-quarter view on an implied horizontal tabletop, consistent viewpoint and medium scale, subtle small translucent contact shadow only under each object. No actual tabletop or scene.\nREADING ORDER, left to right:\nTOP ROW: (1) two elegant Japanese calligraphy brushes resting horizontally on a small wooden brush rest; (2) a shallow black inkstone with a little glossy ink, no brush; (3) one handmade pale ceramic tea bowl with warm green tea; (4) one small honey-cream ceramic Japanese teapot with lid and short spout.\nBOTTOM ROW: (5) small pale ceramic plate holding a pair of three-color hanami dango skewers; (6) one pink sakura-mochi wrapped in a green cherry leaf on a tiny plate; (7) a small plate with two golden-brown dorayaki pancakes and visible dark sweet filling at one edge; (8) one neatly folded ivory linen napkin with subtle woven fibers.\nThe eight cells must all contain their specified object, exactly once. Each object fully visible and isolated. Matte handcrafted watercolor/gouache anime background illustration style, low-to-medium contrast, refined edges, warmly readable at small size.\nCRITICAL: use actual TRANSPARENT ALPHA everywhere outside objects and their subtle contact shadow. Avoid text, letters, numbers, labels, UI, icons, cat, flowers, unrelated objects, wooden background, solid background, checkerboard painted into image, watermark.",
+  "derivatives": "Crop each grid cell to generated object bounds with 4px padding; proportional resize; repack into 4×2 equal transparent cells with >=20px horizontal and 24px bottom padding. Original generated alpha preserved; no painted masks.",
+  "output": {
+    "file": "atlas-v1.webp",
+    "bytes": 247322,
+    "sha256": "8e09bec5335940d45a86088184f2ce035564e77b6bc51f778a77be9eaf5d0160",
+    "dimensions": [
+      1536,
+      768
+    ],
+    "webpQuality": 84
+  },
+  "visualInspection": "All eight requested objects appear once, correct reading order, consistent tabletop perspective, no baked words or UI.",
+  "overwritePolicy": "All destination files asserted absent; exclusive create only.",
+  "verification": {
+    "decode": "PASS RGBA WebP1536×768",
+    "alpha": "PASS extrema0..255; transparent outer corners",
+    "tiles": "PASS 8 equal384square cells, every alpha>5 object bound has >=19px horizontal padding and >=15px vertical padding; no bleed across cells",
+    "browserPlacement": "Not checked here; local-time selection is owned by consuming UI."
+  }
+}

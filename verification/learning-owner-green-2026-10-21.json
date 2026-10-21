@@ -1,0 +1,23 @@
+{
+  "green": true,
+  "replay": {
+    "posts": [
+      {
+        "owner": "A",
+        "attemptId": "fc80a43d-5fe7-4e27-87c5-c5bd4c83874c"
+      }
+    ],
+    "secondAttemptRetainedForA": true,
+    "bOutbox": 0,
+    "crossedOwner": false
+  },
+  "settings": {
+    "enabledAtBLogin": true,
+    "pressedAtBLogin": "true",
+    "pressedAfterStaleAResponse": "true",
+    "transientSoundStates": []
+  },
+  "errors": [],
+  "isolatedFixtures": true,
+  "humanAccountUsed": false
+}

@@ -1,0 +1,476 @@
+{
+  "status": "source-inventory-not-teaching-corpus",
+  "checked_on": "2026-10-20",
+  "grammar_index_url": "https://a1.marugotoweb.jp/en/grammar_top.php",
+  "notes": [
+    {
+      "source_id": "marugoto-plus.note.2_3_1",
+      "lesson_number": 3,
+      "topic_number": 2,
+      "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.2_3_2",
+      "lesson_number": 3,
+      "topic_number": 2,
+      "url": "https://a1.marugotoweb.jp/en/note_2_3_2.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.2_3_3",
+      "lesson_number": 3,
+      "topic_number": 2,
+      "url": "https://a1.marugotoweb.jp/en/note_2_3_3.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.2_4_1",
+      "lesson_number": 4,
+      "topic_number": 2,
+      "url": "https://a1.marugotoweb.jp/en/note_2_4_1.php",
+      "link_observed_in_index": true,
+      "content_read": true
+    },
+    {
+      "source_id": "marugoto-plus.note.2_4_2",
+      "lesson_number": 4,
+      "topic_number": 2,
+      "url": "https://a1.marugotoweb.jp/en/note_2_4_2.php",
+      "link_observed_in_index": true,
+      "content_read": true
+    },
+    {
+      "source_id": "marugoto-plus.note.2_4_3",
+      "lesson_number": 4,
+      "topic_number": 2,
+      "url": "https://a1.marugotoweb.jp/en/note_2_4_3.php",
+      "link_observed_in_index": true,
+      "content_read": true
+    },
+    {
+      "source_id": "marugoto-plus.note.3_5_1",
+      "lesson_number": 5,
+      "topic_number": 3,
+      "url": "https://a1.marugotoweb.jp/en/note_3_5_1.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.3_5_2",
+      "lesson_number": 5,
+      "topic_number": 3,
+      "url": "https://a1.marugotoweb.jp/en/note_3_5_2.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.3_5_3",
+      "lesson_number": 5,
+      "topic_number": 3,
+      "url": "https://a1.marugotoweb.jp/en/note_3_5_3.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.3_6_1",
+      "lesson_number": 6,
+      "topic_number": 3,
+      "url": "https://a1.marugotoweb.jp/en/note_3_6_1.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.3_6_2",
+      "lesson_number": 6,
+      "topic_number": 3,
+      "url": "https://a1.marugotoweb.jp/en/note_3_6_2.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.3_6_3",
+      "lesson_number": 6,
+      "topic_number": 3,
+      "url": "https://a1.marugotoweb.jp/en/note_3_6_3.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.4_7_1",
+      "lesson_number": 7,
+      "topic_number": 4,
+      "url": "https://a1.marugotoweb.jp/en/note_4_7_1.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.4_7_2",
+      "lesson_number": 7,
+      "topic_number": 4,
+      "url": "https://a1.marugotoweb.jp/en/note_4_7_2.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.4_7_3",
+      "lesson_number": 7,
+      "topic_number": 4,
+      "url": "https://a1.marugotoweb.jp/en/note_4_7_3.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.4_7_4",
+      "lesson_number": 7,
+      "topic_number": 4,
+      "url": "https://a1.marugotoweb.jp/en/note_4_7_4.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.4_7_5",
+      "lesson_number": 7,
+      "topic_number": 4,
+      "url": "https://a1.marugotoweb.jp/en/note_4_7_5.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.4_8_1",
+      "lesson_number": 8,
+      "topic_number": 4,
+      "url": "https://a1.marugotoweb.jp/en/note_4_8_1.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.5_9_1",
+      "lesson_number": 9,
+      "topic_number": 5,
+      "url": "https://a1.marugotoweb.jp/en/note_5_9_1.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.5_9_2",
+      "lesson_number": 9,
+      "topic_number": 5,
+      "url": "https://a1.marugotoweb.jp/en/note_5_9_2.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.5_10_1",
+      "lesson_number": 10,
+      "topic_number": 5,
+      "url": "https://a1.marugotoweb.jp/en/note_5_10_1.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.5_10_2",
+      "lesson_number": 10,
+      "topic_number": 5,
+      "url": "https://a1.marugotoweb.jp/en/note_5_10_2.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.5_10_3",
+      "lesson_number": 10,
+      "topic_number": 5,
+      "url": "https://a1.marugotoweb.jp/en/note_5_10_3.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.6_11_1",
+      "lesson_number": 11,
+      "topic_number": 6,
+      "url": "https://a1.marugotoweb.jp/en/note_6_11_1.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.6_11_2",
+      "lesson_number": 11,
+      "topic_number": 6,
+      "url": "https://a1.marugotoweb.jp/en/note_6_11_2.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.6_11_3",
+      "lesson_number": 11,
+      "topic_number": 6,
+      "url": "https://a1.marugotoweb.jp/en/note_6_11_3.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.6_11_4",
+      "lesson_number": 11,
+      "topic_number": 6,
+      "url": "https://a1.marugotoweb.jp/en/note_6_11_4.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.6_12_1",
+      "lesson_number": 12,
+      "topic_number": 6,
+      "url": "https://a1.marugotoweb.jp/en/note_6_12_1.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.6_12_2",
+      "lesson_number": 12,
+      "topic_number": 6,
+      "url": "https://a1.marugotoweb.jp/en/note_6_12_2.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.6_12_3",
+      "lesson_number": 12,
+      "topic_number": 6,
+      "url": "https://a1.marugotoweb.jp/en/note_6_12_3.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.6_12_4",
+      "lesson_number": 12,
+      "topic_number": 6,
+      "url": "https://a1.marugotoweb.jp/en/note_6_12_4.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.6_12_5",
+      "lesson_number": 12,
+      "topic_number": 6,
+      "url": "https://a1.marugotoweb.jp/en/note_6_12_5.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.7_13_1",
+      "lesson_number": 13,
+      "topic_number": 7,
+      "url": "https://a1.marugotoweb.jp/en/note_7_13_1.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.7_13_2",
+      "lesson_number": 13,
+      "topic_number": 7,
+      "url": "https://a1.marugotoweb.jp/en/note_7_13_2.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.7_13_3",
+      "lesson_number": 13,
+      "topic_number": 7,
+      "url": "https://a1.marugotoweb.jp/en/note_7_13_3.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.7_13_4",
+      "lesson_number": 13,
+      "topic_number": 7,
+      "url": "https://a1.marugotoweb.jp/en/note_7_13_4.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.7_14_1",
+      "lesson_number": 14,
+      "topic_number": 7,
+      "url": "https://a1.marugotoweb.jp/en/note_7_14_1.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.7_14_2",
+      "lesson_number": 14,
+      "topic_number": 7,
+      "url": "https://a1.marugotoweb.jp/en/note_7_14_2.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.7_14_3",
+      "lesson_number": 14,
+      "topic_number": 7,
+      "url": "https://a1.marugotoweb.jp/en/note_7_14_3.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.7_14_4",
+      "lesson_number": 14,
+      "topic_number": 7,
+      "url": "https://a1.marugotoweb.jp/en/note_7_14_4.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.8_15_1",
+      "lesson_number": 15,
+      "topic_number": 8,
+      "url": "https://a1.marugotoweb.jp/en/note_8_15_1.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.8_15_2",
+      "lesson_number": 15,
+      "topic_number": 8,
+      "url": "https://a1.marugotoweb.jp/en/note_8_15_2.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.8_15_3",
+      "lesson_number": 15,
+      "topic_number": 8,
+      "url": "https://a1.marugotoweb.jp/en/note_8_15_3.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.8_15_4",
+      "lesson_number": 15,
+      "topic_number": 8,
+      "url": "https://a1.marugotoweb.jp/en/note_8_15_4.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.8_16_1",
+      "lesson_number": 16,
+      "topic_number": 8,
+      "url": "https://a1.marugotoweb.jp/en/note_8_16_1.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.8_16_2",
+      "lesson_number": 16,
+      "topic_number": 8,
+      "url": "https://a1.marugotoweb.jp/en/note_8_16_2.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.9_17_1",
+      "lesson_number": 17,
+      "topic_number": 9,
+      "url": "https://a1.marugotoweb.jp/en/note_9_17_1.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.9_17_2",
+      "lesson_number": 17,
+      "topic_number": 9,
+      "url": "https://a1.marugotoweb.jp/en/note_9_17_2.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.9_17_3",
+      "lesson_number": 17,
+      "topic_number": 9,
+      "url": "https://a1.marugotoweb.jp/en/note_9_17_3.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.9_18_1",
+      "lesson_number": 18,
+      "topic_number": 9,
+      "url": "https://a1.marugotoweb.jp/en/note_9_18_1.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "source_id": "marugoto-plus.note.9_18_2",
+      "lesson_number": 18,
+      "topic_number": 9,
+      "url": "https://a1.marugotoweb.jp/en/note_9_18_2.php",
+      "link_observed_in_index": true,
+      "content_read": true
+    },
+    {
+      "source_id": "marugoto-plus.note.9_18_3",
+      "lesson_number": 18,
+      "topic_number": 9,
+      "url": "https://a1.marugotoweb.jp/en/note_9_18_3.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    }
+  ],
+  "practice_pages_observed_in_index": 16,
+  "directly_checked_practice": [
+    {
+      "lesson_number": 4,
+      "url": "https://a1.marugotoweb.jp/en/grammar_topic2_4.php"
+    }
+  ],
+  "appendices": [
+    {
+      "url": "https://a1.marugotoweb.jp/en/appendix_01.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "url": "https://a1.marugotoweb.jp/en/appendix_02.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "url": "https://a1.marugotoweb.jp/en/appendix_03.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "url": "https://a1.marugotoweb.jp/en/appendix_04.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "url": "https://a1.marugotoweb.jp/en/appendix_05.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    },
+    {
+      "url": "https://a1.marugotoweb.jp/en/appendix_06.php",
+      "link_observed_in_index": true,
+      "content_read": false
+    }
+  ],
+  "vocabulary": {
+    "description_url": "https://words.marugotoweb.jp/static_contents/sp/about/about.php?lang=en",
+    "list_entry_url": "https://words.marugotoweb.jp/sp/top.php?lang=en#mylist",
+    "can_do_entry_url": "https://words.marugotoweb.jp/sp/cando.php?lang=en",
+    "russian_wordbook_url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterWordbook_RU.pdf",
+    "per_lesson_api_verified": false,
+    "complete_import_prepared": false
+  },
+  "warnings": [
+    "Index links were observed; not every linked page was opened.",
+    "A source note can cover multiple functions and is not identical to one review skill.",
+    "Do not treat hidden appendices on a lesson page as material introduced in that lesson.",
+    "Use primary sources to verify original explanations and exercises; full publication/reuse conditions still need checking."
+  ]
+}

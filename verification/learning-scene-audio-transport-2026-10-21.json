@@ -1,0 +1,73 @@
+{
+  "complete": true,
+  "scope": "final-native-intro-media-and-reduced-missing-media",
+  "browser": "145.0.7632.160",
+  "results": [
+    {
+      "introMs": 3008,
+      "phases": [
+        {
+          "phase": "loading",
+          "at": 1792582554637,
+          "jpPlaying": 0,
+          "cameraFrames": []
+        },
+        {
+          "phase": "entering",
+          "at": 1792582554642,
+          "jpPlaying": 0,
+          "cameraFrames": []
+        },
+        {
+          "phase": "ready",
+          "at": 1792582557650,
+          "jpPlaying": 0,
+          "cameraFrames": []
+        }
+      ],
+      "loopsStarted": 2,
+      "jpPlayingEvents": 1,
+      "reviewWrites": 0,
+      "errors": []
+    },
+    {
+      "reducedMotion": true,
+      "animations": [
+        "none",
+        "none",
+        "none"
+      ],
+      "failedSceneAudio": true,
+      "blockedAudio": false,
+      "noIntroWait": true,
+      "rig": {
+        "reduced": true,
+        "layers": [
+          {
+            "loaded": true,
+            "name": "none",
+            "time": 0
+          },
+          {
+            "loaded": true,
+            "name": "none",
+            "time": 0
+          },
+          {
+            "loaded": true,
+            "name": "none",
+            "time": 0
+          }
+        ],
+        "frame": {
+          "x": 988,
+          "y": 649.34375,
+          "width": 260,
+          "height": 260
+        }
+      },
+      "jpIndependentOfSceneMute": true,
+      "errors": []
+    }
+  ]
+}

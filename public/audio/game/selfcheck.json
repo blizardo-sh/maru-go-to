@@ -1,0 +1,13 @@
+{
+  "assets": 11,
+  "mediaBytes": 4277445,
+  "checks": [
+    "11 files decode; duration matches preparation to one sample",
+    "No clipping; max absolute DC below .001",
+    "Every loop boundary step <= 99th percentile natural adjacent step",
+    "All files have CC0 author/source/license/modifications",
+    "One shared music URL; five scene ambience paths; five SFX paths",
+    "Every AAC M4A has moov before mdat for progressive streaming"
+  ],
+  "listeningCheck": "NOT PERFORMED: audio input is unavailable to this agent"
+}

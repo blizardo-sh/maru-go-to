@@ -1,0 +1,61 @@
+{
+  "browser": "145.0.7632.160",
+  "sampleIntervalMs": 250,
+  "first": {
+    "motion": "true",
+    "steam": {
+      "name": "tea-steam",
+      "transform": "matrix(0.99762, 0.0689459, -0.0689459, 0.99762, 0, -4.21508)",
+      "opacity": "0.58459",
+      "state": "running"
+    },
+    "glint": {
+      "name": "desk-glint",
+      "opacity": "0.0850836",
+      "state": "running"
+    }
+  },
+  "second": {
+    "motion": "true",
+    "steam": {
+      "name": "tea-steam",
+      "transform": "matrix(0.998717, 0.0506381, -0.0506381, 0.998717, 0, -3.42694)",
+      "opacity": "0.518912",
+      "state": "running"
+    },
+    "glint": {
+      "name": "desk-glint",
+      "opacity": "0.10045",
+      "state": "running"
+    }
+  },
+  "reduced": {
+    "motion": "true",
+    "steam": {
+      "name": "none",
+      "transform": "none",
+      "opacity": "0.55",
+      "state": "running"
+    },
+    "glint": {
+      "name": "none",
+      "opacity": "0.1",
+      "state": "running"
+    }
+  },
+  "manualOff": {
+    "motion": "false",
+    "steam": {
+      "name": "none",
+      "transform": "none",
+      "opacity": "0.55",
+      "state": "running"
+    },
+    "glint": {
+      "name": "none",
+      "opacity": "0.1",
+      "state": "running"
+    }
+  },
+  "errors": []
+}

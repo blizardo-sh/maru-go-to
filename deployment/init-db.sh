@@ -1,0 +1,11 @@
+#!/bin/bash
+set -euo pipefail
+psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<'SQL'
+\getenv app_password APP_DATABASE_PASSWORD
+CREATE ROLE japanese LOGIN PASSWORD :'app_password';
+REVOKE CREATE ON SCHEMA public FROM PUBLIC;
+GRANT CONNECT ON DATABASE japanese_learning TO japanese;
+GRANT USAGE ON SCHEMA public TO japanese;
+ALTER DEFAULT PRIVILEGES FOR ROLE japanese_admin IN SCHEMA public GRANT SELECT, INSERT, UPDATE, DELETE ON TABLES TO japanese;
+ALTER DEFAULT PRIVILEGES FOR ROLE japanese_admin IN SCHEMA public GRANT USAGE, SELECT ON SEQUENCES TO japanese;
+SQL

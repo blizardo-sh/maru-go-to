@@ -1,0 +1,10 @@
+[Unit]
+Description=Restore encrypted offsite Japanese backup into an isolated database
+Requires=docker.service
+After=docker.service network-online.target
+Wants=network-online.target
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/japanese-backup verify
+TimeoutStartSec=1h
+Nice=10

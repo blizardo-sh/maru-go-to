@@ -1,0 +1,16 @@
+{
+  "criterion": "Music actually starts before the three-second intro ends and before its complete HTTP response is delivered.",
+  "rateBitsPerSecond": 1598439,
+  "atIntroEnd": {
+    "elapsedMs": 8337,
+    "state": "loading",
+    "actualMusicStarts": 0,
+    "deliveredBytes": 507904,
+    "totalBytes": 1908191
+  },
+  "firstObservedMusicMs": 19916,
+  "fullResponseMs": 15942,
+  "green": false,
+  "errors": [],
+  "timingCaveat": "Initial RED used a pre-click timestamp including locator actionability wait. Compare the missing music at end of entering, not absolute milliseconds, against GREEN."
+}

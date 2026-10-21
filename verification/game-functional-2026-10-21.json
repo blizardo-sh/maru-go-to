@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-21",
+  "browser": "145.0.7632.160",
+  "fixture": "Isolated japanese_app_test on local PostgreSQL 18.4; no preview user",
+  "runner": "tests/integration.feedback.browser.ts",
+  "checks": {
+    "allTenSceneVariantsDecode": true,
+    "actualSelectedSceneRequested": true,
+    "stableSceneAcrossDraftAckSettingsAndNavigation": true,
+    "hiddenSessionAudioPaused": true,
+    "offViewKeyboardDoesNotGrade": true,
+    "resumedSamePlanTokensAndProgress": true,
+    "newSessionRequestsNewQueue": true,
+    "secondLearnerDoesNotInheritSessionOrProgress": true,
+    "catUsesRealAudioRevealEditAnalysisAckAndCompletionEvents": true,
+    "hiddenAudioAnswerAcrossSessionAria": true,
+    "nativeAnalysisCollapsePersistsUntilNewResponse": true,
+    "nativeAnalysisScrollKeyboardDoesNotGrade": true,
+    "sameAttemptLostAckRetry": true,
+    "reducedMotionStaticFeedback": true,
+    "noMicrophone": true,
+    "externalAiRequests": 0,
+    "pageErrors": 0
+  },
+  "results": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "touch": false,
+      "reducedMotion": false,
+      "scene": "river",
+      "stableTotal": 5,
+      "finalPercent": 100,
+      "gradedAdvances": 3,
+      "ungradedSkips": 2,
+      "compactLayout": {
+        "width": 320,
+        "cardTop": 174.125,
+        "boardWidthRatio": 0.975,
+        "remainingFirstViewport": 0.7936907582938388,
+        "japaneseMinFont": 22
+      },
+      "boardGeometry": {
+        "widthRatio": 0.85999755859375,
+        "controlsMinHeight": 44,
+        "japaneseMinFont": 24,
+        "catOverlaps": false
+      },
+      "analysisViewport": {
+        "height": 307,
+        "scrollHeight": 307,
+        "maxHeight": "324px",
+        "overflow": "auto",
+        "viewport": 900
+      }
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "touch": true,
+      "reducedMotion": true,
+      "scene": "mountains",
+      "stableTotal": 5,
+      "finalPercent": 100,
+      "gradedAdvances": 3,
+      "ungradedSkips": 2,
+      "compactLayout": {
+        "width": 390,
+        "cardTop": 174.125,
+        "boardWidthRatio": 0.9794871794871794,
+        "remainingFirstViewport": 0.7936907582938388,
+        "japaneseMinFont": 22
+      },
+      "boardGeometry": {
+        "widthRatio": 0.9794871794871794,
+        "controlsMinHeight": 44,
+        "japaneseMinFont": 22,
+        "catOverlaps": false
+      },
+      "analysisViewport": {
+        "height": 303,
+        "scrollHeight": 470,
+        "maxHeight": "303.84px",
+        "overflow": "auto",
+        "viewport": 844
+      }
+    }
+  ],
+  "realMouse": {
+    "runner": "tests/client-drag.browser.ts",
+    "adjacentBothDirections": true,
+    "nonAdjacentBothDirections": true,
+    "clickStillEdits": true,
+    "reviewWrites": 0
+  },
+  "orderedChecks": {
+    "typeScript": "PASS",
+    "bunVersion": "1.4.3",
+    "tests": 66,
+    "assertions": 1406,
+    "failed": 0,
+    "skipped": 0,
+    "files": 12,
+    "productionBuild": "PASS",
+    "javascript": {
+      "file": "index-DRNRzmil.js",
+      "kB": 275.88,
+      "gzipKB": 84.5
+    },
+    "css": {
+      "file": "index-C6XL1kwn.css",
+      "kB": 22.66,
+      "gzipKB": 5.48
+    }
+  },
+  "limitations": [
+    "Browser phone emulation, not physical devices.",
+    "The prior unexplained paper-iteration touch return was not reproduced here; its cause is not claimed fixed.",
+    "This is functional QA, not linguistic approval, external-model quality, VPS validation, or a cold-load performance report.",
+    "QA intentionally decoded all scene variants after the audio-pause check; performance measurements must use a separate cold profile."
+  ]
+}

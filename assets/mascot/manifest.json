@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "reference": "mascot-neutral-v1.png",
+  "format": "PNG RGBA",
+  "generated_with": "ImageGen",
+  "created": "2026-10-20",
+  "alignment": "bottom center; contain in a reserved square frame",
+  "states": [
+    {
+      "id": "neutral",
+      "label": "Спокойный",
+      "usage": "Ожидание и обычная практика",
+      "filename": "mascot-neutral-v1.png",
+      "width": 1261,
+      "height": 1247
+    },
+    {
+      "id": "blink",
+      "label": "Моргание",
+      "usage": "Короткое моргание в спокойном состоянии",
+      "filename": "mascot-blink-v1.png",
+      "width": 1261,
+      "height": 1247
+    },
+    {
+      "id": "wave",
+      "label": "Приветствие",
+      "usage": "Начало занятия",
+      "filename": "mascot-wave-v1.png",
+      "width": 1261,
+      "height": 1247
+    },
+    {
+      "id": "thinking",
+      "label": "Размышление",
+      "usage": "Ожидание разбора предложения",
+      "filename": "mascot-thinking-v1.png",
+      "width": 1261,
+      "height": 1247
+    },
+    {
+      "id": "success",
+      "label": "Радость",
+      "usage": "Правильный ответ или завершение упражнения",
+      "filename": "mascot-success-v1.png",
+      "width": 1261,
+      "height": 1247
+    },
+    {
+      "id": "encourage",
+      "label": "Поддержка",
+      "usage": "Мягкая поддержка при ошибке и повторной попытке",
+      "filename": "mascot-encourage-v1.png",
+      "width": 1261,
+      "height": 1247
+    },
+    {
+      "id": "explain",
+      "label": "Объяснение",
+      "usage": "Показ подсказки или объяснения",
+      "filename": "mascot-explain-v1.png",
+      "width": 1261,
+      "height": 1247
+    },
+    {
+      "id": "standing",
+      "label": "Стоя",
+      "usage": "Начало занятия или переход между разделами",
+      "filename": "mascot-standing-v1.png",
+      "width": 1261,
+      "height": 1247
+    },
+    {
+      "id": "rest",
+      "label": "Отдых",
+      "usage": "Пауза или спокойное завершение занятия",
+      "filename": "mascot-rest-v1.png",
+      "width": 1538,
+      "height": 1022
+    }
+  ]
+}

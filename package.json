@@ -1,0 +1,41 @@
+{
+  "name": "japanese-learning",
+  "private": true,
+  "type": "module",
+  "packageManager": "bun@1.4.3",
+  "scripts": {
+    "dev": "bun --watch src/server/index.ts",
+    "dev:client": "bun --bun vite --host 127.0.0.1",
+    "start": "bun src/server/index.ts",
+    "typecheck": "bun --bun node_modules/typescript/bin/tsc --noEmit -p tsconfig.json",
+    "test": "bun test tests --timeout 20000",
+    "build": "bun --bun vite build",
+    "db:generate": "bun --bun drizzle-kit generate",
+    "db:migrate": "bun src/server/migrate.ts",
+    "admin": "bun src/server/admin.ts"
+  },
+  "dependencies": {
+    "@dnd-kit/react": "0.5.1",
+    "@hono/zod-openapi": "1.6.3",
+    "@tanstack/react-query": "5.104.5",
+    "better-auth": "1.7.11",
+    "drizzle-orm": "0.45.4",
+    "hono": "4.13.13",
+    "pino": "10.4.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-router": "8.5.0",
+    "ts-fsrs": "5.4.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "@types/bun": "1.4.3",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "drizzle-kit": "0.31.11",
+    "typescript": "7.0.2",
+    "vite": "8.3.4"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "scenes": {
+    "room": {
+      "music": "/audio/game/music-cozy.m4a",
+      "ambience": "/audio/game/ambience-house.m4a"
+    },
+    "garden": {
+      "music": "/audio/game/music-cozy.m4a",
+      "ambience": "/audio/game/ambience-birds.m4a"
+    },
+    "mountains": {
+      "music": "/audio/game/music-cozy.m4a",
+      "ambience": "/audio/game/ambience-wind.m4a"
+    },
+    "river": {
+      "music": "/audio/game/music-cozy.m4a",
+      "ambience": "/audio/game/ambience-river.m4a"
+    },
+    "tokyo": {
+      "music": "/audio/game/music-cozy.m4a",
+      "ambience": "/audio/game/ambience-city.m4a"
+    }
+  },
+  "sfx": {
+    "reveal": "/audio/game/sfx-reveal.wav",
+    "move": "/audio/game/sfx-move.wav",
+    "good": "/audio/game/sfx-good.wav",
+    "again": "/audio/game/sfx-again.wav",
+    "complete": "/audio/game/sfx-complete.wav"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "complete": true,
+  "scope": "functional",
+  "browser": "145.0.7632.160",
+  "results": [
+    {
+      "reference": {
+        "learnedWords": 10,
+        "learnedSkills": 1,
+        "kana": [
+          {
+            "section": "hiragana",
+            "basic": 46,
+            "voiced": 25,
+            "yoon": 33,
+            "small": 10
+          },
+          {
+            "section": "katakana",
+            "basic": 46,
+            "voiced": 25,
+            "yoon": 33,
+            "small": 10
+          }
+        ],
+        "lookupLanguagePosts": 0
+      },
+      "freshLegacyFlagsRepeatEmpty": true,
+      "layouts": [
+        {
+          "width": 1280,
+          "firstButton": {
+            "x": 127.390625,
+            "y": 517.921875,
+            "width": 317.484375,
+            "height": 44,
+            "top": 517.921875,
+            "right": 444.875,
+            "bottom": 561.921875,
+            "left": 127.390625
+          }
+        }
+      ],
+      "portionWords": 10,
+      "portionSkills": 2,
+      "againEnrolsAndAllModesAvailable": true,
+      "sameAttemptRetryAndNavigation": true,
+      "grammarOriginalWordsNotImplicitlyLearned": true,
+      "freeExperimentNotEnrolled": "marugoto.starter-a1.skill.age_count",
+      "continueSameSceneNoIntro": true,
+      "confirmedProgressSurvivesExit": true,
+      "errors": []
+    },
+    {
+      "historicalSparseStateSurvivesClosedFilters": true,
+      "grammarRepeatOriginalTokensAvailable": true,
+      "personalNativeTrain": true,
+      "personalWordAudioOptional": true,
+      "fullyIntroducedLesson": {
+        "available": 37,
+        "raw": 46,
+        "progressText": "Изучено 37 из 37"
+      },
+      "isolatedLearnerAndListAuthorization": true,
+      "errors": []
+    }
+  ],
+  "externalAIRequests": 0,
+  "humanAccountUsed": false
+}

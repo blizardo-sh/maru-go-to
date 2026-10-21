@@ -1,0 +1,581 @@
+{
+  "course_id": "marugoto.starter-a1",
+  "version": "0.1.0-outline",
+  "status": "verified-structure-only",
+  "checked_on": "2026-10-20",
+  "locale": "ru",
+  "lesson_count": 18,
+  "topic_count": 9,
+  "can_do_count": 50,
+  "notes": [
+    "Russian topic labels are original brief paraphrases, not original lesson titles.",
+    "Grammar-function seeds are proposed technical names, not official Marugoto IDs or a complete skills inventory.",
+    "Printed page numbers refer to the start of the paired topic, not the first page of each individual lesson.",
+    "Katsudoo and Rikai lessons 1 and 2 have different immediate content.",
+    "This outline is not a publishable complete content pack."
+  ],
+  "readiness": {
+    "structural_mapping": "verified",
+    "vocabulary": "not_prepared",
+    "grammar_explanations": "not_prepared",
+    "exercises": "not_prepared",
+    "linguistic_review": "pending"
+  },
+  "parts": [
+    {
+      "id": "katsudoo",
+      "isbn": "978-4-384-05752-2",
+      "contents_url": "https://marugoto.jpf.go.jp/en/assets/docs/about/starter_activities_contents_en.pdf",
+      "contents_pdf_page": 1
+    },
+    {
+      "id": "rikai",
+      "isbn": "978-4-384-05753-9",
+      "contents_url": "https://marugoto.jpf.go.jp/en/assets/docs/about/starter_competences_contents_en.pdf",
+      "contents_pdf_page": 1
+    }
+  ],
+  "can_do_check_url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesCan-doCheck_RU.pdf",
+  "lessons": [
+    {
+      "id": "marugoto.starter-a1.lesson.01",
+      "number": 1,
+      "topic_number": 1,
+      "label_ru": "Приветствие",
+      "katsudoo_can_do_ids": [
+        1,
+        2
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 21
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 21
+        }
+      ],
+      "grammar_function_seeds": [],
+      "reference_focus": [
+        "greeting_formulas",
+        "hiragana_reference"
+      ],
+      "content_ready": false
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.02",
+      "number": 2,
+      "topic_number": 1,
+      "label_ru": "На занятии",
+      "katsudoo_can_do_ids": [
+        3,
+        4
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 21
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 21
+        }
+      ],
+      "grammar_function_seeds": [],
+      "reference_focus": [
+        "classroom_formulas",
+        "katakana_reference"
+      ],
+      "content_ready": false
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.03",
+      "number": 3,
+      "topic_number": 2,
+      "label_ru": "О себе",
+      "katsudoo_can_do_ids": [
+        5,
+        6
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 31
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 35
+        }
+      ],
+      "grammar_function_seeds": [
+        "wa_identity",
+        "ga_ability",
+        "mo_addition"
+      ],
+      "reference_focus": [],
+      "content_ready": false
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.04",
+      "number": 4,
+      "topic_number": 2,
+      "label_ru": "Семья",
+      "katsudoo_can_do_ids": [
+        7,
+        8
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 31
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 35
+        }
+      ],
+      "grammar_function_seeds": [
+        "to_noun_list",
+        "no_relation",
+        "ni_residence",
+        "people_age_counters"
+      ],
+      "reference_focus": [],
+      "content_ready": false
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.05",
+      "number": 5,
+      "topic_number": 3,
+      "label_ru": "Еда и предпочтения",
+      "katsudoo_can_do_ids": [
+        9,
+        10,
+        11
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 41
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 51
+        }
+      ],
+      "grammar_function_seeds": [
+        "ga_liking",
+        "liking_negative",
+        "o_object",
+        "frequency"
+      ],
+      "reference_focus": [],
+      "content_ready": false
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.06",
+      "number": 6,
+      "topic_number": 3,
+      "label_ru": "Обед и заказ",
+      "katsudoo_can_do_ids": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 41
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 51
+        }
+      ],
+      "grammar_function_seeds": [
+        "de_activity_place",
+        "adjective_predicate",
+        "order_request"
+      ],
+      "reference_focus": [],
+      "content_ready": false
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.07",
+      "number": 7,
+      "topic_number": 4,
+      "label_ru": "Жильё и вещи",
+      "katsudoo_can_do_ids": [
+        16,
+        17,
+        18
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 51
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 67
+        }
+      ],
+      "grammar_function_seeds": [
+        "ni_existence_place",
+        "ga_existence",
+        "arimasu_imasu",
+        "object_count"
+      ],
+      "reference_focus": [],
+      "content_ready": false
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.08",
+      "number": 8,
+      "topic_number": 4,
+      "label_ru": "Расположение вещей",
+      "katsudoo_can_do_ids": [
+        19,
+        20,
+        21,
+        22
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 51
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 67
+        }
+      ],
+      "grammar_function_seeds": [
+        "no_spatial_relation",
+        "location_predication"
+      ],
+      "reference_focus": [],
+      "content_ready": false
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.09",
+      "number": 9,
+      "topic_number": 5,
+      "label_ru": "Распорядок дня",
+      "katsudoo_can_do_ids": [
+        23,
+        24
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 61
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 83
+        }
+      ],
+      "grammar_function_seeds": [
+        "clock_time",
+        "ni_action_time"
+      ],
+      "reference_focus": [],
+      "content_ready": false
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.10",
+      "number": 10,
+      "topic_number": 5,
+      "label_ru": "График и встречи",
+      "katsudoo_can_do_ids": [
+        25,
+        26,
+        27
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 61
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 83
+        }
+      ],
+      "grammar_function_seeds": [
+        "kara_made_time",
+        "duration",
+        "date_suitability"
+      ],
+      "reference_focus": [],
+      "content_ready": false
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.11",
+      "number": 11,
+      "topic_number": 6,
+      "label_ru": "Хобби",
+      "katsudoo_can_do_ids": [
+        28,
+        29
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 73
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 101
+        }
+      ],
+      "grammar_function_seeds": [
+        "ga_liking",
+        "ga_ability",
+        "de_activity_place",
+        "frequency"
+      ],
+      "reference_focus": [],
+      "content_ready": false
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.12",
+      "number": 12,
+      "topic_number": 6,
+      "label_ru": "События и приглашения",
+      "katsudoo_can_do_ids": [
+        30,
+        31,
+        32
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 73
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 101
+        }
+      ],
+      "grammar_function_seeds": [
+        "ni_event_time",
+        "de_event_place",
+        "ni_purpose",
+        "masenka",
+        "mashou"
+      ],
+      "reference_focus": [],
+      "content_ready": false
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.13",
+      "number": 13,
+      "topic_number": 7,
+      "label_ru": "Транспорт и маршрут",
+      "katsudoo_can_do_ids": [
+        33,
+        34,
+        35
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 83
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 117
+        }
+      ],
+      "grammar_function_seeds": [
+        "kara_made_route",
+        "de_transport",
+        "ni_boarding",
+        "kara_reason"
+      ],
+      "reference_focus": [],
+      "content_ready": false
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.14",
+      "number": 14,
+      "topic_number": 7,
+      "label_ru": "Ориентирование в городе",
+      "katsudoo_can_do_ids": [
+        36,
+        37,
+        38
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 83
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 117
+        }
+      ],
+      "grammar_function_seeds": [
+        "adjective_noun_modifier",
+        "ni_existence_place",
+        "no_spatial_relation"
+      ],
+      "reference_focus": [],
+      "content_ready": false
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.15",
+      "number": 15,
+      "topic_number": 8,
+      "label_ru": "Покупки и подарки",
+      "katsudoo_can_do_ids": [
+        39,
+        40
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 93
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 133
+        }
+      ],
+      "grammar_function_seeds": [
+        "ga_desire",
+        "ageru_morau",
+        "ni_recipient_source",
+        "past_purchase"
+      ],
+      "reference_focus": [],
+      "content_ready": false
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.16",
+      "number": 16,
+      "topic_number": 8,
+      "label_ru": "Одежда и цена",
+      "katsudoo_can_do_ids": [
+        41,
+        42,
+        43
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 93
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 133
+        }
+      ],
+      "grammar_function_seeds": [
+        "price_question",
+        "noun_o_kudasai"
+      ],
+      "reference_focus": [],
+      "content_ready": false
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.17",
+      "number": 17,
+      "topic_number": 9,
+      "label_ru": "Прошедший отдых",
+      "katsudoo_can_do_ids": [
+        44,
+        45,
+        46,
+        47
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 103
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 149
+        }
+      ],
+      "grammar_function_seeds": [
+        "verb_past",
+        "adjective_past",
+        "negative_past"
+      ],
+      "reference_focus": [],
+      "content_ready": false
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.18",
+      "number": 18,
+      "topic_number": 9,
+      "label_ru": "Путешествия и желания",
+      "katsudoo_can_do_ids": [
+        48,
+        49,
+        50
+      ],
+      "source_refs": [
+        {
+          "part_id": "katsudoo",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 103
+        },
+        {
+          "part_id": "rikai",
+          "contents_pdf_page": 1,
+          "printed_topic_start_page": 149
+        }
+      ],
+      "grammar_function_seeds": [
+        "sorekara_sequence",
+        "demo_contrast",
+        "soshite_addition",
+        "tai_desire"
+      ],
+      "reference_focus": [],
+      "content_ready": false
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "criterion": "Music actually starts before the three-second intro ends and before its complete HTTP response is delivered.",
+  "rateBitsPerSecond": 1598439,
+  "atIntroEnd": {
+    "elapsedMs": 5038,
+    "state": "playing",
+    "actualMusicStarts": 1,
+    "deliveredBytes": 606208,
+    "totalBytes": 1908191
+  },
+  "actualMusicStartMs": 2334,
+  "fullResponseMs": null,
+  "green": true,
+  "errors": []
+}
