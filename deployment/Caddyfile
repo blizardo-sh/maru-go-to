@@ -1,14 +1,21 @@
-{$SITE_ADDRESS} {
+{
+  auto_https off
+}
+:8080 {
   encode zstd gzip
   header {
     X-Content-Type-Options nosniff
     Referrer-Policy no-referrer
   }
-  handle /api/* {
+  @backend path /api/* /health /ready
+  handle @backend {
     reverse_proxy api:3000 {
       transport http {
         response_header_timeout 35s
       }
+      # nginx overwrites this header; never trust a client-supplied forwarding chain.
+      header_up X-Forwarded-For {http.request.header.X-Real-IP}
+      header_up X-Forwarded-Proto https
     }
   }
   handle {

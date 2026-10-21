@@ -1,0 +1,7 @@
+[Unit]
+Description=Verify Japanese learning recovery daily
+[Timer]
+OnCalendar=*-*-* 04:15:00 UTC
+Persistent=true
+[Install]
+WantedBy=timers.target

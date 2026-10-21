@@ -1,0 +1,91 @@
+name: Delivery
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: delivery-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    services:
+      postgres:
+        image: postgres:18.6-bookworm@sha256:bbf83594798e144bff365a9c191c5d779f181fb3135902064ab8ff11918020fc
+        env:
+          POSTGRES_USER: japanese
+          POSTGRES_DB: japanese_app_test
+          POSTGRES_PASSWORD: ci-disposable-only
+        ports: ['5432:5432']
+        options: --health-cmd "pg_isready -U japanese -d japanese_app_test" --health-interval 2s --health-timeout 3s --health-retries 30
+    env:
+      DATABASE_URL: postgres://japanese:ci-disposable-only@127.0.0.1:5432/japanese_app_test
+      TEST_DATABASE_URL: postgres://japanese:ci-disposable-only@127.0.0.1:5432/japanese_app_test
+      JAPANESE_INTEGRATION_DATABASE_URL: postgres://japanese:ci-disposable-only@127.0.0.1:5432/japanese_app_test
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with:
+          bun-version: 1.4.3
+      - run: bun install --frozen-lockfile
+      - run: bun run typecheck
+      - run: bun audit --audit-level high
+      - run: bun run db:migrate
+      - run: bun test tests --timeout 20000
+      - run: bun run build
+      - run: python3 scripts/verify_preparation.py
+      - run: bunx playwright install --with-deps chrome
+      - name: Browser invitation, login and logout
+        run: |
+          bun --bun vite preview --host 127.0.0.1 --port 5173 &
+          preview=$!
+          trap 'kill "$preview"' EXIT
+          for attempt in {1..30}; do
+            if curl -fsS http://127.0.0.1:5173/ >/dev/null; then break; fi
+            sleep 1
+          done
+          bun tests/auth-onboarding.browser.ts
+      - name: Validate release command boundaries
+        run: bash deployment/check.sh
+  publish:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: check
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Build and publish immutable release
+        env:
+          REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          printf '%s' "$REGISTRY_TOKEN" | docker login ghcr.io -u "$GITHUB_ACTOR" --password-stdin
+          for target in api web; do
+            image=ghcr.io/blizardo-sh/maru-go-to-$target:$GITHUB_SHA
+            docker build --platform linux/amd64 --target "$target" --label org.opencontainers.image.revision="$GITHUB_SHA" --label org.opencontainers.image.source="https://github.com/$GITHUB_REPOSITORY" -t "$image" .
+            docker push "$image"
+          done
+      - name: Deploy through restricted SSH command
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+          REGISTRY_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          key=$(mktemp)
+          hosts=$(mktemp)
+          trap 'rm -f "$key" "$hosts"; docker logout ghcr.io >/dev/null' EXIT
+          chmod 600 "$key"
+          printf '%s\n' "$DEPLOY_KEY" > "$key"
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > "$hosts"
+          printf '%s\n' "$REGISTRY_TOKEN" | ssh -p 5555 -i "$key" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$hosts" "japanese-deploy@$DEPLOY_HOST" "deploy $GITHUB_SHA"
+      - name: Verify public release
+        run: |
+          curl --fail --silent --show-error --retry 3 https://outboundserver.freemyip.com/health
+          test "$(curl --silent --output /dev/null --write-out '%{http_code}' https://outboundserver.freemyip.com/api/me)" = 401
