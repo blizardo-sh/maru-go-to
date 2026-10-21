@@ -24,9 +24,11 @@ done
 rm -rf "$auth"
 compose() { docker compose --env-file .env --env-file release.env -f compose.yaml "$@"; }
 previous=no
-if [[ -f release.env ]]; then
+if [[ -f release.env && -f deployed-commit ]]; then
     cp release.env previous.env
     previous=yes
+else
+    rm -f previous.env
 fi
 cp "$candidate" release.env
 rollback() {

@@ -30,5 +30,6 @@ EXPOSE 3000
 CMD ["bun", "src/server/index.ts"]
 
 FROM caddy:2.11.7-alpine@sha256:d8542f48d34a9cf4e4c11a478865229840e87e4c96ea3f439101f31a5d35f75f AS web
+RUN setcap -r /usr/bin/caddy
 COPY deployment/Caddyfile /etc/caddy/Caddyfile
 COPY --from=build /app/dist /srv
