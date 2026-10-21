@@ -93,6 +93,4 @@ jobs:
           printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > "$hosts"
           printf '%s\n' "$REGISTRY_TOKEN" | ssh -p 5555 -i "$key" -o IdentitiesOnly=yes -o BatchMode=yes -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$hosts" "japanese-deploy@$DEPLOY_HOST" "deploy $GITHUB_SHA"
       - name: Verify public release
-        run: |
-          curl --fail --silent --show-error --retry 3 https://outboundserver.freemyip.com/health
-          test "$(curl --silent --output /dev/null --write-out '%{http_code}' https://outboundserver.freemyip.com/api/me)" = 401
+        run: python3 deployment/verify-public.py https://outboundserver.freemyip.com

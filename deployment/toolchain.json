@@ -11,7 +11,10 @@
     "persistent_mount": "/var/lib/postgresql",
     "pgdata": "/var/lib/postgresql/18/docker"
   },
-  "caddy": { "version": "2.11.7", "image": "caddy:2.11.7-alpine" },
+  "caddy": {
+    "version": "2.11.7",
+    "image": "caddy:2.11.7-alpine"
+  },
   "bun_image": "oven/bun:1.4.3-slim",
   "docker_engine": "29.9.1",
   "docker_compose": "5.6.0",
@@ -19,16 +22,25 @@
     "runner": "ubuntu-24.04",
     "node_for_browser_tools": "24.22.0",
     "actions": {
-      "actions/checkout": { "version": "v7.0.1", "commit": "3d3c42e5aac5ba805825da76410c181273ba90b1" },
-      "actions/setup-node": { "version": "v7.1.0", "commit": "949feb2413d6458794dcd2491c4babbbce0c15c1" },
-      "oven-sh/setup-bun": { "version": "v2.2.0", "commit": "0c5077e51419868618aeaa5fe8019c62421857d6" }
+      "actions/checkout": {
+        "version": "v7.0.1",
+        "commit": "3d3c42e5aac5ba805825da76410c181273ba90b1"
+      },
+      "actions/setup-node": {
+        "version": "v7.1.0",
+        "commit": "949feb2413d6458794dcd2491c4babbbce0c15c1"
+      },
+      "oven-sh/setup-bun": {
+        "version": "v2.2.0",
+        "commit": "0c5077e51419868618aeaa5fe8019c62421857d6"
+      }
     },
     "example": "../verification/stack/ci.example.yaml",
-    "executed": false
+    "executed": true
   },
   "broker": null,
   "local_llm": null,
-  "linux_container_verified": false,
+  "linux_container_verified": true,
   "vps_load_verified": false,
-  "production_image_digests": "Resolve and record for the actual release and target architecture."
+  "production_image_digests": "Pinned per release in server release.env; current/previous successful releases are retained."
 }
