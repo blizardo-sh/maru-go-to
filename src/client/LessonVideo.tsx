@@ -16,7 +16,7 @@ export function LessonVideo({ material }: { material: VideoMaterial }) {
   const caption = material.captions[activeCaption];
   return <section className="lesson-video" aria-label={material.title}>
     <header><small>Marugoto Plus · видеодиалог</small><h3>{material.title}</h3><p className="muted">Необязательный материал урока. Просмотр не меняет повторения.</p></header>
-    <video ref={video} src={material.mediaUrl} controls playsInline preload="none" aria-label={material.title} onTimeUpdate={sync} onSeeking={sync} onSeeked={sync} onLoadedMetadata={sync} onPlay={() => { setFailed(false); sync(); }} onPause={sync} onEnded={() => setActiveCaption(-1)} onError={() => { setFailed(true); setActiveCaption(-1); }} />
+    <video ref={video} src={material.mediaUrl} controls controlsList="nodownload" playsInline preload="none" aria-label={material.title} onTimeUpdate={sync} onSeeking={sync} onSeeked={sync} onLoadedMetadata={sync} onPlay={() => { setFailed(false); sync(); }} onPause={sync} onEnded={() => setActiveCaption(-1)} onError={() => { setFailed(true); setActiveCaption(-1); }} />
     <div className="lesson-video-caption" data-cue={activeCaption} role="group" aria-label="Японский текст сцены">
       {caption?.text && <p key={activeCaption} className="jp" lang="ja">{caption.text}</p>}
     </div>
