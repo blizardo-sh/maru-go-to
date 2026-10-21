@@ -44,6 +44,7 @@ RESTIC_REPOSITORY=sftp:vpnbackup@$BACKUP_HOST:/repo/japanese-learning RESTIC_PAS
 
 # Preserve a consistent panel snapshot and an automatic rollback before changing listeners.
 tar -C / -czf /var/lib/japanese-provision/nginx-before.tar.gz etc/nginx
+cp /root/.acme.sh/"$DOMAIN"_ecc/"$DOMAIN".conf /var/lib/japanese-provision/acme-before.conf
 python3 - <<'PY'
 import sqlite3,json
 from pathlib import Path
@@ -60,6 +61,8 @@ set -euo pipefail
 systemctl stop nginx
 rm -f /etc/nginx/sites-enabled/japanese-learning /etc/nginx/sites-available/japanese-learning /etc/nginx/streams-enabled/japanese-learning.conf
 tar -C / -xzf /var/lib/japanese-provision/nginx-before.tar.gz
+source /etc/japanese-learning/host.env
+cp /var/lib/japanese-provision/acme-before.conf /root/.acme.sh/"$DOMAIN"_ecc/"$DOMAIN".conf
 python3 - <<'PY'
 import sqlite3,json
 from pathlib import Path
@@ -79,6 +82,14 @@ chmod 644 /etc/nginx/sites-available/japanese-learning
 ln -s /etc/nginx/sites-available/japanese-learning /etc/nginx/sites-enabled/japanese-learning
 sed -e "s/__DOMAIN__/$DOMAIN/g" -e "s/__PUBLIC_IPV4__/$PUBLIC_IPV4/g" nginx-stream.conf > /etc/nginx/streams-enabled/japanese-learning.conf
 chmod 644 /etc/nginx/streams-enabled/japanese-learning.conf
+install -d -m 755 /var/lib/japanese-acme/.well-known/acme-challenge
+DOMAIN="$DOMAIN" python3 - <<'PY'
+from pathlib import Path
+import os,re
+d=os.environ['DOMAIN'];p=Path('/root/.acme.sh')/(d+'_ecc')/(d+'.conf')
+s=p.read_text();s,count=re.subn(r'^Le_Webroot=.*$',"Le_Webroot='/var/lib/japanese-acme'",s,flags=re.M)
+assert count==1;p.write_text(s)
+PY
 printf '\ninclude /etc/nginx/streams-enabled/*.conf;\n' >> /etc/nginx/nginx.conf
 nginx -t
 python3 - <<'PY'
@@ -91,6 +102,11 @@ PY
 systemctl restart x-ui
 systemctl reload nginx
 bash ./verify-vpn.sh
+challenge=$(cat /proc/sys/kernel/random/uuid)
+printf '%s' "$challenge" > /var/lib/japanese-acme/.well-known/acme-challenge/deployment-check
+chmod 644 /var/lib/japanese-acme/.well-known/acme-challenge/deployment-check
+test "$(curl --fail --silent --show-error --max-time 15 "http://$DOMAIN/.well-known/acme-challenge/deployment-check")" = "$challenge"
+rm /var/lib/japanese-acme/.well-known/acme-challenge/deployment-check
 curl --silent --show-error --max-time 15 "https://$DOMAIN/" -o /dev/null
 curl --fail --silent --show-error --max-time 15 "https://$DOMAIN:8443/api/health"
 systemctl stop japanese-network-rollback.timer

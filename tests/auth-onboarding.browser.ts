@@ -86,6 +86,7 @@ try {
   await page.getByRole('button', { name: 'Войти', exact: true }).click();
   expect((await relogin).status()).toBe(200);
   await expect(page.getByRole('navigation', { name: 'Разделы' }).getByRole('button', { name: 'Учебник', exact: true })).toBeVisible();
+  await context.unrouteAll({ behavior: 'wait' });
   await context.close();
 
   for (const [kind, token] of [['used',link.token], ['expired',expired.token], ['invalid',invalidToken]]) {
@@ -101,6 +102,7 @@ try {
     await expect(invalidPage.getByRole('alert')).toContainText(/недействительна|использована|истекла/);
     await expect(invalidPage.getByRole('button', { name: 'Создать аккаунт', exact: true })).toBeDisabled();
     console.info(`PASS ${kind} invitation is rejected before signup`);
+    await rejected.unrouteAll({ behavior: 'wait' });
     await rejected.close();
   }
   console.info(JSON.stringify({ browser: browser.version(), readonlyBoundEmail: true, separateDisplayName: true, signupSuccessCopy: 'account-created', invalidEmailRequests: 0, signInAndReloginStatus: 200, rejectedInvitations: 3 }));
