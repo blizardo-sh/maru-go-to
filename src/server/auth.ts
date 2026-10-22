@@ -10,7 +10,7 @@ import type { InvitationDetails } from '../shared/types';
 export const tokenHash = (token:string) => createHash('sha256').update(token).digest('hex');
 export function createAuth(database:Database,config:Config) {
   return betterAuth({ baseURL:config.APP_URL,secret:config.BETTER_AUTH_SECRET,database:drizzleAdapter(database.db,{provider:'pg',schema}),trustedOrigins:[config.APP_URL],
-    emailAndPassword:{enabled:true,disableSignUp:true,minPasswordLength:12,maxPasswordLength:128},
+    emailAndPassword:{enabled:true,disableSignUp:true,minPasswordLength:8,maxPasswordLength:128},
     rateLimit:{enabled:true,window:60,max:100,customRules:{'/sign-in/email':{window:60,max:5}}},
     advanced:{useSecureCookies:new URL(config.APP_URL).protocol==='https:'},
     session:{expiresIn:60*60*24*30,updateAge:60*60*24},

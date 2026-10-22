@@ -16,7 +16,7 @@ export const analysisSchema=z.object({exerciseId:z.string().min(1).max(300).opti
 export const segmentSchema=z.object({surface:z.string().min(1).max(100),reading:z.string().min(1).max(100).optional()});
 export const wordUpdateSchema=z.object({surface:z.string().trim().min(1).max(100).optional(),kana:z.string().trim().max(200).optional(),meaningRu:z.string().trim().min(1).max(500).optional(),segments:z.array(segmentSchema).max(100).optional(),pos:z.string().trim().max(100).optional()}).strict().refine(v=>Object.keys(v).length>0);
 export const listSchema=z.object({name:z.string().trim().min(1).max(100),text:z.string().trim().min(1).max(50000)}).strict();
-export const invitationSchema=z.object({token:z.string().min(20).max(200),name:z.string().trim().min(1).max(100),password:z.string().min(12).max(128)}).strict();
-export const recoverySchema=z.object({token:z.string().min(20).max(200),password:z.string().min(12).max(128)}).strict();
+export const invitationSchema=z.object({token:z.string().min(20).max(200),name:z.string().trim().min(1).max(100),password:z.string().min(8).max(128)}).strict();
+export const recoverySchema=z.object({token:z.string().min(20).max(200),password:z.string().min(8).max(128)}).strict();
 export const adminLinkSchema=z.object({kind:z.enum(['invite','recovery']),email:emailSchema}).strict();
 export const learningAdvanceSchema=z.object({attemptId:z.uuid(),routeVersion:z.string().min(1).max(100),stateVersion:z.number().int().nonnegative(),stepId:z.string().min(1).max(1000),action:z.enum(['continue','remember','again','skip']),tokenIds:z.array(z.string().min(1).max(300)).max(100).optional(),tokenForms:z.record(z.string(),z.string().min(1).max(300)).optional(),revealed:z.boolean().optional(),exploring:z.boolean().optional()}).strict();
