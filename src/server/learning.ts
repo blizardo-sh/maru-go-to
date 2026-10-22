@@ -3,6 +3,7 @@ import { advanceLearningState, currentLearningStep, initialLearningState, learni
 import type { Course, ReviewSubmission } from '../shared/types';
 import type { Database } from './db';
 import { learningReviewItem, ReviewError, submitReviewLocked } from './reviews';
+import { learningWordChoices } from '../shared/learningChoices';
 
 function routeFor(course: Course, lessonId: string): GuidedLesson {
   const route = course.learning?.find(lesson => lesson.lessonId === lessonId);
@@ -17,7 +18,10 @@ async function stateFor(sql: Database['sql'], userId: string, course: Course, ro
   const step = currentLearningStep(route, state);
   const parts = learningParts(route);
   const result: LearningState = { lessonId: route.lessonId, routeVersion: route.version, version, partIndex: state.partIndex, totalParts: parts.length, completedSteps: state.completedStepIds.length, totalSteps: parts.flat().length, completed: state.partIndex >= parts.length, step };
-  if (hydrate && step?.kind === 'word-practice') result.reviewItem = await learningReviewItem(sql, userId, course, step.mode, step.wordId);
+  if (hydrate && step?.kind === 'word-practice') {
+    result.reviewItem = await learningReviewItem(sql, userId, course, step.mode, step.wordId);
+    result.wordChoices = learningWordChoices(course, route, step);
+  }
   if (hydrate && step?.kind === 'construction-practice') {
     const exercise = course.exercises.find(item => item.id === step.exerciseId)!;
     result.reviewItem = await learningReviewItem(sql, userId, course, 'grammar', exercise.skillId, exercise.id);
@@ -39,7 +43,9 @@ export async function learningState(database: Database, userId: string, course: 
 }
 function validateAction(step: LearningStep, input: LearningAdvance): void {
   const practice = step.kind === 'word-practice' || step.kind === 'construction-practice';
-  if (practice ? !['remember', 'again'].includes(input.action) : step.kind === 'video' ? !['continue', 'skip'].includes(input.action) : input.action !== 'continue') throw new ReviewError('INVALID_ACTION', 'Действие не соответствует текущему шагу.');
+  const allowed = step.kind === 'word-practice' ? ['remember', 'again', 'choose'] : practice ? ['remember', 'again'] : step.kind === 'word-intro' ? ['continue', 'start-practice'] : step.kind === 'video' ? ['continue', 'skip'] : ['continue'];
+  if (!allowed.includes(input.action)) throw new ReviewError('INVALID_ACTION', 'Действие не соответствует текущему шагу.');
+  if (input.action === 'choose' ? !input.choiceWordId : input.choiceWordId !== undefined) throw new ReviewError('INVALID_ACTION', 'Выбор ответа не относится к текущему шагу.');
   const assembly = step.kind === 'construction-practice' && step.mode === 'grammar';
   if (!assembly && (input.tokenIds !== undefined || input.tokenForms !== undefined || input.revealed !== undefined || input.exploring !== undefined)) throw new ReviewError('INVALID_ACTION', 'Ответ конструктора не относится к текущему шагу.');
   if (assembly && !input.tokenIds) throw new ReviewError('INVALID_ACTION', 'Нужно собрать фразу.');
@@ -60,7 +66,12 @@ export async function advanceLearning(database: Database, userId: string, course
     const step = currentLearningStep(route, state);
     if (!step || step.id !== input.stepId) throw new ReviewError('LEARNING_CONFLICT', 'Этот учебный шаг уже изменился.', 409);
     validateAction(step, input);
+    if (step.kind === 'word-practice' && state.wordQuiz && input.action !== 'choose') throw new ReviewError('INVALID_ACTION', 'Выберите один из четырёх ответов.');
     let action = input.action;
+    if (step.kind === 'word-practice' && action === 'choose') {
+      if (!learningWordChoices(course, route, step).includes(input.choiceWordId!)) throw new ReviewError('INVALID_CHOICE', 'Вариант не относится к этому вопросу.');
+      action = input.choiceWordId === step.wordId ? 'remember' : 'again';
+    }
     let reviewResult: LearningAdvanceResult['reviewResult'];
     if (step.kind === 'word-practice' || step.kind === 'construction-practice') {
       const item = step.kind === 'word-practice'
@@ -70,9 +81,11 @@ export async function advanceLearning(database: Database, userId: string, course
         ? { attemptId: input.attemptId, reviewId: item.id, version: item.version, mode: item.mode, rating: action === 'again' ? 1 : 3 }
         : { attemptId: input.attemptId, reviewId: item.id, version: item.version, mode: 'grammar', tokenIds: step.kind === 'construction-practice' && step.mode === 'grammar' ? input.tokenIds! : item.exercise.acceptedOrders[0]!, ...(input.tokenForms ? { tokenForms: input.tokenForms } : {}), revealed: input.revealed ?? false, ...(input.exploring !== undefined ? { exploring: input.exploring } : {}), rating: action === 'again' ? 1 : 3 };
       reviewResult = await submitReviewLocked(tx, userId, course, submission);
+      if (step.kind === 'word-practice' && input.action === 'choose') reviewResult = { ...reviewResult, correct: action === 'remember' };
       if (item.mode === 'grammar' && (reviewResult.correct === false || submission.mode === 'grammar' && submission.revealed)) action = 'again';
     }
     const next = advanceLearningState(route, state, action);
+    if (step.kind === 'word-practice' && input.action === 'choose') next.wordQuiz = true;
     const version = (row?.version ?? 0) + 1;
     await tx`insert into learning_states(user_id,lesson_id,route_version,version,state) values(${userId},${lessonId},${route.version},${version},${next}) on conflict(user_id,lesson_id) do update set route_version=excluded.route_version,version=excluded.version,state=excluded.state,updated_at=now()`;
     const result: LearningAdvanceResult = { attemptId: input.attemptId, state: await stateFor(tx, userId, course, route, next, version, true), ...(reviewResult ? { reviewResult } : {}) };

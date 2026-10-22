@@ -99,7 +99,7 @@ export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved,
   function advance(rating: 1 | 3) {
     if (loading || !evaluation || locked || composing || editor) return;
     if (evaluation.outcome === 'incomplete' || evaluation.outcome === 'exploration') { if (!requiredPractice) onNext(); return; }
-    void saving.save({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, mode: 'grammar', tokenIds: tokens.map(token => token.id), tokenForms, revealed: false, exploring, rating });
+    return saving.save({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, mode: 'grammar', tokenIds: tokens.map(token => token.id), tokenForms, revealed: false, exploring, rating });
   }
   const targetVerdict = evaluation && (evaluation.outcome === 'correct' || evaluation.outcome === 'incorrect') ? evaluation : null;
   const answerFeedback = !locked && !loading && !error && analysis?.status === 'ok' ? evaluation?.outcome === 'correct' ? 'good' : evaluation?.outcome === 'incorrect' ? 'again' : 'neutral' : 'neutral';

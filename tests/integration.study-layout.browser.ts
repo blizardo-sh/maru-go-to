@@ -15,7 +15,9 @@ const database = connectDatabase(databaseUrl); const course = loadCourse();
 const email = `study-layout-${crypto.randomUUID()}@example.test`; const password = 'Study-layout-disposable-fixture-only-2026!'; let owner = '';
 const browser = await chromium.launch({ channel: 'chrome', headless: true });
 const context = await browser.newContext({ reducedMotion: 'reduce', hasTouch: true, extraHTTPHeaders: { 'x-forwarded-for': `198.18.${crypto.getRandomValues(new Uint8Array(2)).join('.')}` } });
-const page = await context.newPage(); const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
+// Freeze only the dedicated source preview's dev transport; built-app CI has no HMR.
+if(new URL(base!).port==='5298')await context.routeWebSocket(url=>['localhost','127.0.0.1'].includes(url.hostname)&&url.port==='5298',socket=>socket.close());
+const page = await context.newPage(); page.setDefaultTimeout(15000); const errors: string[] = []; page.on('pageerror', error => errors.push(error.message));
 type Rect = { x: number; y: number; width: number; height: number };
 const records: { label: string; viewport: { width: number; height: number } | null; board: Rect; cat: Rect }[] = [];
 let expected: { board: Rect; cat: Rect } | undefined;
@@ -27,6 +29,7 @@ async function capture(label: string) {
   const board = await page.locator('.session-board').boundingBox(); const cat = await page.getByTestId('scene-companion').boundingBox();
   if (!board || !cat) throw new Error('Missing study frame.');
   const viewport = page.viewportSize()!;
+  const next = { board, cat }; records.push({ label, viewport: page.viewportSize(), ...next });
   for (const [name, rect] of Object.entries({ board, cat })) {
     expect(rect.x, `${label}: ${name} left outside viewport`).toBeGreaterThanOrEqual(0);
     expect(rect.y, `${label}: ${name} above viewport`).toBeGreaterThanOrEqual(0);
@@ -42,11 +45,15 @@ async function capture(label: string) {
       if (word && box) expect(Math.abs(box.x + box.width / 2 - word.x - word.width / 2), `${label}: ${selector} is off the word centreline`).toBeLessThanOrEqual(2);
     }
   }
+  const group=page.getByTestId('learning-word-group');
+  if(await group.count()){
+    const tiles=group.locator('.word-introduction');expect(await tiles.count()).toBeGreaterThan(0);expect(await tiles.count()).toBeLessThanOrEqual(5);
+    for(const tile of await tiles.all()){const id=await tile.getAttribute('data-word-id');const word=course.words.find(word=>word.id===id)!;await expect(tile.locator('h3.jp')).toHaveText(word.kana);await expect(tile.locator('.word-meaning')).toHaveText(word.meaningRu);}
+  }
   const usefulHeight = await page.locator('.session-scroll').evaluate(element => element.clientHeight);
   expect(usefulHeight, `${label}: study content has too little usable height`).toBeGreaterThanOrEqual(112);
   const hud = await page.locator('.game-hud').boundingBox(); if (hud) expect(cat.y, `${label}: cat overlaps navigation`).toBeGreaterThanOrEqual(hud.y + hud.height - 1);
   const exit = page.locator('.session-header > button'); const exitBox = await exit.boundingBox(); if (exitBox) { expect(exitBox.height).toBeGreaterThanOrEqual(44); expect(exitBox.width).toBeGreaterThanOrEqual(44); }
-  const next = { board, cat }; records.push({ label, viewport: page.viewportSize(), ...next });
   if (expected) for (const part of ['board', 'cat'] as const) for (const coordinate of ['x', 'y', 'width', 'height'] as const) expect(Math.abs(next[part][coordinate] - expected[part][coordinate]), `${label}: ${part}.${coordinate} moved`).toBeLessThanOrEqual(1);
   else expected = next;
   const goal = page.locator('.session-goal'); const progress = page.locator('.session-progress progress');
@@ -56,10 +63,16 @@ async function capture(label: string) {
 
   expect(await page.evaluate(() => scrollY), `${label}: outer page scrolled`).toBe(0);
 }
-async function changed(version: string | null) { await expect(guided()).not.toHaveAttribute('data-state-version', String(version)); await expect(page.getByText('Сохраняем шаг…', { exact: true })).toHaveCount(0); }
-async function next() { const version = await guided().getAttribute('data-state-version'); await page.getByRole('button', { name: 'Дальше', exact: true }).click(); await changed(version); }
+async function changed(version: string | null) { await expect(guided()).not.toHaveAttribute('data-state-version', String(version)); await expect(page.getByText('Сохраняем шаг…', { exact: true })).toHaveCount(0); await expect(page.locator('[data-testid=learning-word-quiz][data-feedback=good], [data-testid=learning-word-quiz][data-feedback=again]')).toHaveCount(0); }
+async function next() { const version = await guided().getAttribute('data-state-version'); if (await page.getByTestId('learning-word-group').isVisible()) await page.getByTestId('start-learning-practice').click(); else await page.getByRole('button', { name: 'Дальше', exact: true }).click(); await changed(version); }
 async function recall() {
-  const version = await guided().getAttribute('data-state-version'); const gesture = page.getByTestId('review-gesture');
+  const version = await guided().getAttribute('data-state-version');
+  const quiz=page.getByTestId('learning-word-quiz');
+  if(await quiz.isVisible()){
+    const mode=await quiz.getAttribute('data-mode');if(mode==='listening'&&!await page.locator('[data-choice-word-id]').first().isEnabled()){const listen=page.getByRole('button',{name:'Прослушать слово',exact:true});await expect(listen).toBeEnabled();await listen.click();}
+    const response=await context.request.get(`${api}/api/learning/${await guided().getAttribute('data-lesson-id')}`,{headers:headers()});const canonical:LearningState=await response.json();if(canonical.step?.kind!=='word-practice')throw new Error('Missing word question');const choice=page.locator(`[data-choice-word-id="${canonical.step.wordId}"]`);await expect(choice).toBeEnabled();await choice.click();await expect(quiz).toHaveAttribute('data-feedback','good');await capture(`${mode}-choice-feedback`);await changed(version);expect(await page.locator('.session-scroll').evaluate(element=>element.scrollTop)).toBe(0);return;
+  }
+  const gesture = page.getByTestId('review-gesture');
   if (await gesture.getAttribute('data-mode') === 'listening') await expect.poll(() => gesture.locator('audio').evaluate((audio: HTMLAudioElement) => audio.currentTime), { timeout: 10000 }).toBeGreaterThan(.02);
   await page.getByTestId('card-face').click(); await capture(`${await gesture.getAttribute('data-mode')}-revealed`);
   await gesture.press('ArrowRight'); await changed(version);
@@ -104,7 +117,7 @@ try {
     for (let mode = 0; mode < 3; mode++) { await capture('word-practice-hidden'); await recall(); }
     const core2 = new Set(course.learning!.find(route => route.lessonId.endsWith('02'))!.goals.flatMap(goal => goal.parts.flatMap(part => part.words.map(word => word.wordId))));
     const distinct = course.words.find(word => core2.has(word.id) && word.surface !== word.kana)!;
-    await seed(2, step => step.kind === 'word-intro' && step.wordId === distinct.id); await expect(page.locator('.guided-reading')).toHaveText(distinct.kana); await capture('distinct-reading-preserved');
+    await seed(2, step => step.kind === 'word-intro' && step.wordId === distinct.id); const tile=page.locator(`.word-introduction[data-word-id="${distinct.id}"]`); await expect(tile.locator('h3.jp')).toHaveText(distinct.kana); if(/\p{Script=Han}/u.test(distinct.surface)) await expect(tile.locator('.word-kanji')).toHaveText(distinct.surface); await capture('verified-kana-and-kanji-preserved');
     await seed(1, step => step.goalId === 'l01-scripts' && step.kind === 'word-intro'); await capture('goal-with-context'); await page.screenshot({ path: `${output}/study-layout-hiragana-${viewport.width}x${viewport.height}.png`, fullPage: true }); await page.screenshot({ path: `${output}/study-layout-context-${viewport.width}.png`, fullPage: true });
     while (await guided().getAttribute('data-step-kind') === 'word-intro') await next(); await capture('goal-without-context');
     await seed(4, step => step.goalId === 'l04-family-photo' && step.kind === 'word-intro'); await capture('longest-goal'); await page.screenshot({ path: `${output}/study-layout-long-goal-${viewport.width}.png`, fullPage: true });
@@ -122,7 +135,7 @@ try {
     await seed(1, step => step.kind === 'word-intro');
     let received: () => void = () => {}; const arrived = new Promise<void>(resolve => { received = resolve; }); const held = new Promise<void>(resolve => { release = resolve; });
     await context.route('**/api/learning/**/advance', async route => { received(); await held; await route.abort(); });
-    await page.getByRole('button', { name: 'Дальше', exact: true }).click(); await arrived; await capture('saving-status'); release?.();
+    await page.getByTestId('start-learning-practice').click(); await arrived; await capture('saving-status'); release?.();
     await expect(page.getByRole('button', { name: 'Повторить сохранение', exact: true })).toBeVisible(); await capture('save-error');
     await page.evaluate(() => dispatchEvent(new Event('focus'))); await expect(page.locator('.page-notices > .notice').last()).toContainText('На этом устройстве');
     await expect(page.locator('.page-notices > .notice.error')).toBeVisible();
@@ -145,7 +158,7 @@ try {
       const gesture = page.getByTestId('review-gesture'); const id = await gesture.getAttribute('data-review-id'); const item = queue.items.find(item => item.id === id)!;
       await capture(`repeat-${item.mode}-hidden`);
       if (item.mode === 'grammar') { for (const tokenId of item.exercise.acceptedOrders[0]!) await page.locator(`.bank [data-token-id="${tokenId}"]`).click(); await expect(page.locator('[data-outcome="correct"]').first()).toBeVisible(); }
-      else { if (item.mode === 'listening') await expect(page.getByTestId('card-face')).toContainText('Нажмите, чтобы раскрыть смысл', { timeout: 10000 }); await page.getByTestId('card-face').click(); }
+      else { if (item.mode === 'listening') await expect(page.getByTestId('card-face')).toContainText('Что прозвучало?', { timeout: 10000 }); await page.getByTestId('card-face').click(); }
       await capture(`repeat-${item.mode}-answer`); await gesture.press('ArrowRight');
       if (index < queue.items.length - 1) await expect(page.getByTestId('review-gesture')).not.toHaveAttribute('data-review-id', id!); else await expect(page.getByTestId('portion-complete')).toBeVisible();
     }
@@ -155,5 +168,5 @@ try {
     await page.screenshot({ path: `${output}/study-layout-${viewport.width}.png`, fullPage: true });
   }
   expect(errors).toEqual([]); await Bun.write(`${output}/study-layout-green.json`, JSON.stringify({ green: true, reducedMotion: true, isolatedFixture: true, records }, null, 2)); console.info(`Study layout: ${records.length} stable frame/cat measurements across short, wide and mobile viewports.`);
-} catch (error) { await Bun.write(`${output}/study-layout-red.json`, JSON.stringify({ green: false, failure: String(error), records }, null, 2)); throw error; }
+} catch (error) { await page.screenshot({path:`${output}/study-layout-failure.png`,fullPage:true}).catch(()=>{}); await Bun.write(`${output}/study-layout-red.json`, JSON.stringify({ green: false, failure: String(error), records }, null, 2)); throw error; }
 finally { release?.(); await context.close(); await browser.close(); await database.sql`delete from access_links where email=${email}`; if (owner) await database.sql`delete from users where id=${owner}`; await database.sql.close(); }

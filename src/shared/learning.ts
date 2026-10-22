@@ -51,6 +51,7 @@ export interface LearningRouteState {
   partIndex: number;
   pendingStepIds: string[];
   completedStepIds: string[];
+  wordQuiz?: boolean;
 }
 export interface LearningState {
   lessonId: string;
@@ -63,13 +64,15 @@ export interface LearningState {
   completed: boolean;
   step: LearningStep | null;
   reviewItem?: ReviewItem;
+  wordChoices?: string[];
 }
 export interface LearningAdvance {
   attemptId: string;
   routeVersion: string;
   stateVersion: number;
   stepId: string;
-  action: 'continue' | 'remember' | 'again' | 'skip';
+  action: 'continue' | 'remember' | 'again' | 'skip' | 'start-practice' | 'choose';
+  choiceWordId?: string;
   tokenIds?: string[];
   tokenForms?: Record<string, string>;
   revealed?: boolean;
@@ -102,6 +105,30 @@ export function learningParts(lesson: GuidedLesson): LearningStep[][] {
 export function initialLearningState(lesson: GuidedLesson): LearningRouteState {
   return { partIndex: 0, pendingStepIds: learningParts(lesson)[0]!.map(step => step.id), completedStepIds: [] };
 }
+// Definitions/IDs stay unchanged: only a newly started group's pending order changes.
+export function mixedWordPractice(steps: LearningStep[]): LearningStep[] {
+  const words = [...new Set(steps.filter(step => step.kind === 'word-practice').map(step => step.wordId))];
+  const result: LearningStep[] = [];
+  for (let round = 0; round < 3; round++) for (const [index, wordId] of words.entries()) {
+    const mode = (['ja-ru', 'listening', 'ru-ja'] as const)[(index + round) % 3]!;
+    const step = steps.find(item => item.kind === 'word-practice' && item.wordId === wordId && item.mode === mode);
+    if (step) result.push(step);
+  }
+  return result;
+}
+export function startLearningPractice(lesson: GuidedLesson, state: LearningRouteState): LearningRouteState {
+  const definitions = learningParts(lesson)[state.partIndex]!;
+  if (currentLearningStep(lesson, state)?.kind !== 'word-intro') throw new Error('Group introduction is not current.');
+  const next = structuredClone(state);
+  while (definitions.find(step => step.id === next.pendingStepIds[0])?.kind === 'word-intro') {
+    const id = next.pendingStepIds.shift()!;
+    if (!next.completedStepIds.includes(id)) next.completedStepIds.push(id);
+  }
+  const practices = definitions.filter(step => step.kind === 'word-practice' && next.pendingStepIds.includes(step.id));
+  next.pendingStepIds = [...mixedWordPractice(practices).map(step => step.id), ...next.pendingStepIds.filter(id => !practices.some(step => step.id === id))];
+  next.wordQuiz = true;
+  return next;
+}
 export function currentLearningStep(lesson: GuidedLesson, state: LearningRouteState): LearningStep | null {
   return learningParts(lesson)[state.partIndex]?.find(step => step.id === state.pendingStepIds[0]) ?? null;
 }
@@ -126,6 +153,7 @@ export function reconcileOptionalVideos(lesson: GuidedLesson, state: LearningRou
   return next;
 }
 export function advanceLearningState(lesson: GuidedLesson, state: LearningRouteState, action: LearningAdvance['action']): LearningRouteState {
+  if (action === 'start-practice') return startLearningPractice(lesson, state);
   const step = currentLearningStep(lesson, state);
   if (!step) throw new Error('Learning route is complete.');
   const practice = step.kind === 'word-practice' || step.kind === 'construction-practice';
@@ -141,6 +169,7 @@ export function advanceLearningState(lesson: GuidedLesson, state: LearningRouteS
   if (step.kind === 'part-complete') {
     next.partIndex++;
     next.pendingStepIds = learningParts(lesson)[next.partIndex]?.map(item => item.id) ?? [];
+    delete next.wordQuiz;
   }
   return next;
 }

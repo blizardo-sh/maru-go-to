@@ -27,7 +27,7 @@ const learningStep=z.discriminatedUnion('kind',[
  learningStepBase.extend({kind:z.literal('video'),videoId:z.string()}),
  learningStepBase.extend({kind:z.literal('part-complete')})
 ]);
-const learningState=z.object({lessonId:z.string(),routeVersion:z.string(),version:z.number().int(),partIndex:z.number().int(),totalParts:z.number().int(),completedSteps:z.number().int(),totalSteps:z.number().int(),completed:z.boolean(),step:learningStep.nullable(),reviewItem:reviewItem.optional()});
+const learningState=z.object({lessonId:z.string(),routeVersion:z.string(),version:z.number().int(),partIndex:z.number().int(),totalParts:z.number().int(),completedSteps:z.number().int(),totalSteps:z.number().int(),completed:z.boolean(),step:learningStep.nullable(),reviewItem:reviewItem.optional(),wordChoices:z.array(z.string()).length(4).optional()});
 const learningAdvanceResult=z.object({attemptId:z.string(),state:learningState,reviewResult:reviewResult.optional()});
 const list=z.object({id:z.string(),name:z.string(),words:z.array(word)});
 const counts=z.object({due:z.number(),learned:z.number(),reviewedToday:z.number()});
