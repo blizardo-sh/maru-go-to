@@ -9,11 +9,11 @@ import pino from 'pino';
 import type { Config } from './config';
 import type { Database } from './db';
 import type { Course, ReviewMode } from '../shared/types';
-import { createAuth, consumeLink, createLink, invitationDetails } from './auth';
+import { createAuth, consumeLink, createLink, invitationDetails, consumeRegistrationLink, createRegistrationLink, registrationLinksFor, revokeRegistrationLink } from './auth';
 import { allWords, introducedMaterial, settingsFor } from './material';
 import { introducedExerciseAvailable, evaluateReview, progressFor, ReviewError, reviewQueue, submitReview, trainingQueue } from './reviews';
 import { addList, listsFor, updateWord } from './words';
-import { adminLinkSchema, analysisSchema, emailSchema, invitationDetailsSchema, invitationSchema, listSchema, recoverySchema, settingsSchema, submissionSchema, targetEvaluationSchema, trainingContextSchema, wordUpdateSchema } from './validation';
+import { adminLinkSchema, analysisSchema, emailSchema, invitationDetailsSchema, invitationSchema, listSchema, recoverySchema, registrationLinkIdSchema, registrationLinkSchema, settingsSchema, submissionSchema, targetEvaluationSchema, trainingContextSchema, wordUpdateSchema } from './validation';
 import { createAnalyzer } from './analysis';
 import { withPersonalPractice } from './personal-practice';
 type Actor={id:string;name:string;email:string;isAdmin:boolean};
@@ -32,7 +32,24 @@ export function createApp({database,config,course}:{database:Database;config:Con
  app.get('/ready',async c=>{await database.sql`select 1 from review_states limit 1`;return c.json({ok:true,courseVersion:course.version});});
  app.on(['GET','POST'],'/api/auth/*',async c=>{const path=c.req.path.slice('/api/auth'.length);if(!['/get-session','/sign-in/email','/sign-out'].includes(path))return fail(c,'INVITATION_REQUIRED','Регистрация доступна по приглашению.',403);if(path==='/sign-in/email'&&c.req.method==='POST'){const body=await c.req.json();const email=emailSchema.parse(body?.email);const headers=new Headers(c.req.raw.headers);headers.delete('content-length');return auth.handler(new Request(c.req.raw.url,{method:'POST',headers,body:JSON.stringify({...body,email}),signal:c.req.raw.signal}));}return auth.handler(c.req.raw);});
  app.post('/api/invitations/details',async c=>{const body=invitationDetailsSchema.parse(await c.req.json());const details=await invitationDetails(database,body.token);return details?c.json(details):fail(c,'INVALID_LINK','Ссылка недействительна, использована или истекла.',400);});
- app.post('/api/invitations/accept',async c=>{const body=invitationSchema.parse(await c.req.json());const details=await invitationDetails(database,body.token);if(!details)return fail(c,'INVALID_LINK','Ссылка недействительна, использована или истекла.',400);const ok=await consumeLink(database,'invite',body.token,body.password,body.name);return ok?c.json({ok:true,email:details.email}):fail(c,'INVALID_LINK','Ссылка недействительна, использована или истекла.',400);});
+ app.post('/api/invitations/accept',async c=>{
+  const body=invitationSchema.parse(await c.req.json());const details=await invitationDetails(database,body.token);
+  if(!details)return fail(c,'INVALID_LINK','Ссылка недействительна, использована, отозвана или истекла.',400);
+  if(details.kind==='invite'){
+   if(body.email!==undefined&&body.email!==details.email)return fail(c,'VALIDATION','Email должен совпадать с персональным приглашением.',400);
+   const ok=await consumeLink(database,'invite',body.token,body.password,body.name);
+   return ok?c.json({ok:true,email:details.email,authenticated:false}):fail(c,'INVALID_LINK','Ссылка недействительна, использована или истекла.',400);
+  }
+  const email=emailSchema.parse(body.email);
+  const result=await consumeRegistrationLink(database,{...body,email});
+  if(!result.ok)return result.reason==='EMAIL_EXISTS'?fail(c,'EMAIL_EXISTS','Учётная запись с этим email уже существует. Войдите с вашим паролем или попросите администратора восстановить доступ.',409):fail(c,'INVALID_LINK','Ссылка недействительна, отозвана, исчерпана или истекла.',400);
+  // The account is committed. A session failure must not invite another registration attempt.
+  try{
+   const signedIn=await auth.api.signInEmail({body:{email:result.email,password:body.password},headers:c.req.raw.headers,asResponse:true});
+   if(signedIn.ok){for(const cookie of signedIn.headers.getSetCookie())c.header('set-cookie',cookie,{append:true});return c.json({ok:true,email:result.email,authenticated:true});}
+  }catch{log.warn({requestId:c.get('requestId')},'Account created; automatic sign-in unavailable');}
+  return c.json({ok:true,email:result.email,authenticated:false});
+ });
  app.post('/api/recovery/complete',async c=>{const body=recoverySchema.parse(await c.req.json());const ok=await consumeLink(database,'recovery',body.token,body.password);return ok?c.json({ok:true}):fail(c,'INVALID_LINK','Ссылка недействительна, использована или истекла.',400);});
  app.use('/api/*',async(c,next)=>{const session=await auth.api.getSession({headers:c.req.raw.headers});if(!session)return fail(c,'UNAUTHENTICATED','Войдите в приложение.',401);const [actor]=await database.sql`select id,name,email,is_admin from users where id=${session.user.id}`;if(!actor)return fail(c,'UNAUTHENTICATED','Войдите в приложение.',401);const expectedLearner=c.req.header('X-Learning-Learner-Id');if(expectedLearner!==undefined&&expectedLearner!==actor.id)return fail(c,'OWNER_CHANGED','Учётная запись изменилась в другой вкладке. Обновите страницу и войдите в нужную учётную запись.',409);c.set('actor',{id:actor.id,name:actor.name,email:actor.email,isAdmin:actor.is_admin});await next();});
  const routes=app
@@ -63,7 +80,10 @@ export function createApp({database,config,course}:{database:Database;config:Con
   return c.json(await analyze(userId,extended,words,access,input,c.req.raw.signal));})
  .use('/api/admin/*',async(c,next)=>{if(!c.get('actor').isAdmin)return fail(c,'FORBIDDEN','Требуются права администратора.',403);await next();})
  .get('/api/admin/users',async c=>{const users=await database.sql`select id,name,email from users order by created_at`;return c.json({users:Array.from(users)});})
- .post('/api/admin/links',async c=>{const body=adminLinkSchema.parse(await c.req.json());if(body.kind==='recovery'){const [user]=await database.sql`select id from users where email=${body.email}`;if(!user)return fail(c,'NOT_FOUND','Учётная запись не найдена.',404);}const result=await createLink(database,body.kind,body.email,c.get('actor').id);return c.json({url:`${config.APP_URL}/${body.kind==='invite'?'invite':'recover'}#token=${result.token}`,expiresAt:result.expiresAt});});
+ .post('/api/admin/links',async c=>{const body=adminLinkSchema.parse(await c.req.json());if(body.kind==='recovery'){const [user]=await database.sql`select id from users where email=${body.email}`;if(!user)return fail(c,'NOT_FOUND','Учётная запись не найдена.',404);}const result=await createLink(database,body.kind,body.email,c.get('actor').id);return c.json({url:`${config.APP_URL}/${body.kind==='invite'?'invite':'recover'}#token=${result.token}`,expiresAt:result.expiresAt});})
+ .get('/api/admin/registration-links',async c=>c.json({links:await registrationLinksFor(database)}))
+ .post('/api/admin/registration-links',async c=>{const body=registrationLinkSchema.parse(await c.req.json());const result=await createRegistrationLink(database,body,c.get('actor').id);return c.json({url:`${config.APP_URL}/invite#token=${result.token}`,link:result.link});})
+ .post('/api/admin/registration-links/:linkId/revoke',async c=>{z.object({}).strict().parse(await c.req.json());const id=registrationLinkIdSchema.parse(c.req.param('linkId'));const link=await revokeRegistrationLink(database,id);return link?c.json({link}):fail(c,'NOT_FOUND','Регистрационная ссылка не найдена.',404);});
  registerContract(app,new URL(config.APP_URL).protocol==='https:');
  app.notFound(c=>fail(c,'NOT_FOUND','Маршрут не найден.',404));
  return routes;
