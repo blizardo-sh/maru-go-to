@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useRef, useState, type FormEvent } from 'react';
-import type { Course, InvitationDetails, LearnerSettings, Progress, WordList } from '../shared/types';
+import type { Course, LearnerSettings, Progress, WordList } from '../shared/types';
 import { api, ApiRequestError, json, pendingReviews, submitReview } from './api';
 import { Session } from './Session';
+import { Auth } from './Auth';
+import { RegistrationLinks } from './RegistrationLinks';
 import { GuidedLearning } from './GuidedLearning';
 import { currentLearningState, learningConflict, learningHeaders, pendingLearning, submitLearning } from './guidedApi';
 import type { LearningState } from '../shared/learning';
@@ -24,33 +26,6 @@ const pauseLessonMedia = () => document.querySelectorAll<HTMLMediaElement>('.les
 function Notice({ children, error = false }: { children: React.ReactNode; error?: boolean }) { return <div className={`notice${error ? ' error' : ''}`} role={error ? 'alert' : 'status'}>{children}</div>; }
 function PageHead({ title, children }: { title: string; children?: React.ReactNode }) { return <header className="pagehead"><h1>{title}</h1>{children}</header>; }
 
-function Auth({ onLogin }: { onLogin: () => void }) {
-  const [token] = useState(() => new URLSearchParams(location.hash.slice(1)).get('token'));
-  const [flow, setFlow] = useState<'invite' | 'recover' | 'login'>(() => location.pathname === '/invite' ? 'invite' : location.pathname === '/recover' ? 'recover' : 'login');
-  const [email, setEmail] = useState(''); const [name, setName] = useState(''); const [password, setPassword] = useState('');
-  const [busy, setBusy] = useState(false); const [message, setMessage] = useState(''); const [complete, setComplete] = useState(false);
-  const [invitation, setInvitation] = useState<InvitationDetails | null>(null); const [inviteLoading, setInviteLoading] = useState(flow === 'invite' && !!token); const [inviteError, setInviteError] = useState(''); const [inviteRetry, setInviteRetry] = useState(0);
-  useEffect(() => {
-    if (flow !== 'invite' || !token) return;
-    const controller = new AbortController(); setInviteLoading(true); setInviteError(''); setInvitation(null);
-    void api<InvitationDetails>('/api/invitations/details', { ...json('POST', { token }), signal: controller.signal }).then(details => {
-      setInvitation(details); setEmail(details.email);
-    }).catch(error => { if (!controller.signal.aborted) setInviteError(errorText(error)); }).finally(() => { if (!controller.signal.aborted) setInviteLoading(false); });
-    return () => controller.abort();
-  }, [flow, token, inviteRetry]);
-  async function submit(event: FormEvent) {
-    event.preventDefault();
-    if (flow === 'invite' && !invitation) { setMessage('Сначала дождитесь проверки приглашения или повторите её.'); return; }
-    setBusy(true); setMessage('');
-    try {
-      if (flow === 'invite') { const result = await api<{ ok: true; email: string }>('/api/invitations/accept', json('POST', { token, name, password })); setEmail(result.email); }
-      else if (flow === 'recover') await api('/api/recovery/complete', json('POST', { token, password }));
-      else { await api('/api/auth/sign-in/email', json('POST', { email: email.trim().toLowerCase(), password })); onLogin(); return; }
-      history.replaceState(null, '', '/'); setComplete(true); setPassword('');
-    } catch (error) { setMessage(errorText(error)); } finally { setBusy(false); }
-  }
-  return <main className="auth"><header className="auth-intro"><p className="eyebrow">MARUGOTO · STARTER A1</p><h1>Японский к занятию</h1><p className="muted">Слова, конструкции и практика на слух. Понемногу, каждый день.</p><div className="cat-frame"><img src="/mascot/wave.png" width="360" height="360" alt="Кот-помощник приветствует вас" decoding="async" /></div></header>{complete ? <div className="stack"><Notice>{flow === 'invite' ? <p>Аккаунт создан. Ваш email для входа: <strong>{email}</strong>. Используйте этот адрес и ваш пароль.</p> : 'Пароль изменён. Войдите с новым паролем.'}</Notice><button onClick={() => { setFlow('login'); setComplete(false); setMessage(''); }}>Перейти ко входу</button></div> : <form onSubmit={submit} className="sheet stack"><h2>{flow === 'invite' ? 'Принять приглашение' : flow === 'recover' ? 'Новый пароль' : 'Войти'}</h2>{flow === 'login' && <label><span>Email</span><input type="email" required autoComplete="username" autoCapitalize="none" spellCheck={false} value={email} onInvalid={event => { const text = 'Укажите email, например name@example.com. Имя в приложении для входа не подходит.'; event.currentTarget.setCustomValidity(text); setMessage(text); }} onChange={event => { event.currentTarget.setCustomValidity(''); setEmail(event.target.value); setMessage(''); }} /></label>}{flow === 'invite' && <><label><span>Email для входа</span><input type="email" readOnly autoComplete="username" value={email} aria-describedby="invite-email-help" /></label><div id="invite-email-help" className="status muted" role="status">{inviteLoading ? 'Проверяем приглашение…' : invitation ? 'Этот адрес указан в приглашении. Для входа используйте его, а не имя.' : 'Адрес появится после проверки приглашения.'}</div>{inviteError && <Notice error><p>{inviteError}</p><button type="button" disabled={inviteLoading} onClick={() => setInviteRetry(current => current + 1)}>Повторить проверку</button></Notice>}<label><span>Имя в приложении</span><input required autoComplete="nickname" value={name} maxLength={120} onChange={event => setName(event.target.value)} /></label></>}<label><span>Пароль</span><input type="password" required minLength={flow === 'login' ? 1 : 8} autoComplete={flow === 'login' ? 'current-password' : 'new-password'} value={password} onChange={event => setPassword(event.target.value)} aria-describedby="auth-help" /></label><div id="auth-help" className="status muted">{flow === 'login' ? 'Для регистрации или восстановления доступа попросите администратора выдать ссылку.' : 'Не менее 8 символов. Ссылка действует один раз.'}</div>{message && <Notice error>{message}</Notice>}{flow !== 'login' && !token ? <Notice error>В ссылке нет токена. Попросите администратора выдать новую ссылку.</Notice> : <button className="primary" disabled={busy || flow === 'invite' && (inviteLoading || !invitation)}>{busy ? 'Сохраняем…' : flow === 'login' ? 'Войти' : flow === 'invite' ? 'Создать аккаунт' : 'Сохранить пароль'}</button>}</form>}</main>;
-}
 
 export function App() {
   const [user, setUser] = useState<User | null | undefined>(undefined); const [data, setData] = useState<Snapshot | null>(null);
@@ -71,9 +46,15 @@ export function App() {
       if (userRef.current?.id === current.id) { setData({ course, settings, progress, lists: result.lists, learning: learning.lessons }); setError(''); }
     } catch (failure) { if (userRef.current?.id === current.id) setError(errorText(failure)); }
   }, []);
-  const loadUser = useCallback(async () => {
-    try { const current = await api<User>('/api/me'); userRef.current = current; setUser(current); }
-    catch (failure) { if (failure instanceof ApiRequestError && failure.status === 401) { userRef.current = null; setUser(null); } else setError(errorText(failure)); }
+  const loadUser = useCallback(async (home = false, expectedEmail?: string) => {
+    try {
+      const current = await api<User>('/api/me');
+      if (expectedEmail && current.email.trim().toLowerCase() !== expectedEmail.trim().toLowerCase()) return false;
+      if (userRef.current?.id !== current.id) { setData(null); setStudy(false); setSessionSource(null); setPage('course'); setEntryPhase('ready'); setSaving(false); setOutboxCount(0); setError(''); }
+      if (home) history.replaceState(null, '', '/');
+      userRef.current = current; setUser(current); return true;
+    }
+    catch (failure) { if (failure instanceof ApiRequestError && failure.status === 401) { userRef.current = null; setUser(null); } else setError(errorText(failure)); return false; }
   }, []);
   useEffect(() => { void loadUser(); }, [loadUser]);
   useEffect(() => { if (user) void refresh(); }, [user, refresh]);
@@ -126,7 +107,7 @@ export function App() {
     void refresh();
   }
   if (user === undefined) return <main className="auth">{error ? <Notice error><p>{error}</p><button onClick={() => { setError(''); void loadUser(); }}>Повторить загрузку</button></Notice> : <p role="status">Проверяем вход…</p>}</main>;
-  if (!user || location.pathname === '/invite' || location.pathname === '/recover') return <Auth onLogin={() => { void loadUser(); }} />;
+  if (!user || location.pathname === '/invite' || location.pathname === '/recover') return <Auth onLogin={email => loadUser(true, email)} />;
   function startOrResume(source: StudySource) {
     pauseLessonMedia();
     if (!sessionSource || sourceKey(sessionSource) !== sourceKey(source)) {
@@ -155,5 +136,5 @@ function Repeat({ data, onStudy, onCourse }: { data: Snapshot; onStudy: () => vo
 function Admin() {
   const [kind, setKind] = useState<'invite' | 'recovery'>('invite'); const [email, setEmail] = useState(''); const [link, setLink] = useState(''); const [expires, setExpires] = useState(''); const [busy, setBusy] = useState(false); const [error, setError] = useState(''); const [copied, setCopied] = useState(false);
   async function create(event: FormEvent) { event.preventDefault(); setBusy(true); setError(''); setLink(''); setCopied(false); try { const result = await api<{ url: string; expiresAt: string }>('/api/admin/links', json('POST', { kind, email })); setLink(new URL(result.url, location.origin).href); setExpires(result.expiresAt); } catch (failure) { setError(errorText(failure)); } finally { setBusy(false); } }
-  return <><PageHead title="Доступ учеников"><p className="muted">Создайте одноразовую ссылку и передайте ученику лично.</p></PageHead><form className="sheet stack" onSubmit={create}><label><span>Действие</span><select value={kind} onChange={event => setKind(event.target.value as 'invite' | 'recovery')}><option value="invite">Приглашение</option><option value="recovery">Восстановление пароля</option></select></label><label><span>Email ученика</span><input type="email" required value={email} onChange={event => setEmail(event.target.value)} /></label><div><button className="primary" disabled={busy}>{busy ? 'Создаём…' : 'Создать ссылку'}</button></div>{error && <Notice error>{error}</Notice>}{link && <div className="stack"><label><span>Одноразовая ссылка</span><input readOnly value={link} onFocus={event => event.target.select()} /></label><small>Действует до {new Date(expires).toLocaleString('ru-RU')}.</small><div><button type="button" onClick={() => { void navigator.clipboard.writeText(link).then(() => setCopied(true)).catch(() => setError('Не удалось скопировать. Выделите ссылку и скопируйте вручную.')); }}>{copied ? '✓ Скопировано' : 'Скопировать'}</button></div></div>}</form></>;
+  return <><PageHead title="Доступ учеников"><p className="muted">Выдавайте общие регистрационные или личные одноразовые ссылки.</p></PageHead><RegistrationLinks /><section className="stack head-actions"><h2>Персональное приглашение или восстановление</h2><form className="sheet stack" onSubmit={create}><label><span>Действие</span><select value={kind} onChange={event => setKind(event.target.value as 'invite' | 'recovery')}><option value="invite">Приглашение</option><option value="recovery">Восстановление пароля</option></select></label><label><span>Email ученика</span><input type="email" required value={email} onChange={event => setEmail(event.target.value)} /></label><div><button className="primary" disabled={busy}>{busy ? 'Создаём…' : 'Создать ссылку'}</button></div>{error && <Notice error>{error}</Notice>}{link && <div className="stack"><label><span>Одноразовая ссылка</span><input readOnly value={link} onFocus={event => event.target.select()} /></label><small>Действует до {new Date(expires).toLocaleString('ru-RU')}.</small><div><button type="button" onClick={() => { void navigator.clipboard.writeText(link).then(() => setCopied(true)).catch(() => setError('Не удалось скопировать. Выделите ссылку и скопируйте вручную.')); }}>{copied ? '✓ Скопировано' : 'Скопировать'}</button></div></div>}</form></section></>;
 }

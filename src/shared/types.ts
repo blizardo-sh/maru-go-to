@@ -226,9 +226,35 @@ export interface ApiError {
   error: { code: string; message: string };
 }
 
-export interface InvitationDetails {
+export type InvitationDetails =
+  | { kind: "invite"; email: string; expiresAt: string }
+  | { kind: "registration"; email: null; expiresAt: string | null; remainingRegistrations: number | null };
+
+export interface InvitationAcceptResult {
+  ok: true;
   email: string;
-  expiresAt: string;
+  authenticated: boolean;
+}
+
+export interface RegistrationLinkInput {
+  registrationLimit?: number | null;
+  expiresAt?: string | null;
+}
+
+export interface RegistrationLink {
+  id: string;
+  registrationLimit: number | null;
+  registrationsCount: number;
+  remainingRegistrations: number | null;
+  expiresAt: string | null;
+  revokedAt: string | null;
+  createdAt: string;
+  status: "active" | "exhausted" | "expired" | "revoked";
+}
+
+export interface RegistrationLinkCreateResult {
+  url: string;
+  link: RegistrationLink;
 }
 
 export interface TargetEvaluationRequest {

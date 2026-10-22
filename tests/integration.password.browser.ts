@@ -25,7 +25,7 @@ try {
   await page.getByLabel('Имя в приложении', { exact: true }).fill('Password browser fixture');
   const password = page.getByLabel('Пароль', { exact: true });
   await expect(password).toHaveAttribute('minlength', '8');
-  await expect(page.locator('#auth-help')).toContainText('Не менее 8 символов');
+  await expect(page.locator('#auth-help')).toContainText('От 8 до 128 символов');
   await password.pressSequentially('Short77');
   await page.getByRole('button', { name: 'Создать аккаунт', exact: true }).click();
   expect(await password.evaluate((input: HTMLInputElement) => input.validity.tooShort)).toBe(true);
@@ -47,7 +47,7 @@ try {
   await page.goto(`${base}/recover#token=${recovery.token}`);
   await expect(page.getByRole('heading', { name: 'Новый пароль', exact: true })).toBeVisible();
   await expect(password).toHaveAttribute('minlength', '8');
-  await expect(page.locator('#auth-help')).toContainText('Не менее 8 символов');
+  await expect(page.locator('#auth-help')).toContainText('От 8 до 128 символов');
   await password.pressSequentially('Short77');
   await page.getByRole('button', { name: 'Сохранить пароль', exact: true }).click();
   expect(await password.evaluate((input: HTMLInputElement) => input.validity.tooShort)).toBe(true);

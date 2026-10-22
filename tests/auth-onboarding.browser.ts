@@ -1,17 +1,15 @@
 import { chromium, expect } from '@playwright/test';
-import { createApp } from '../src/server/app';
 import { connectDatabase } from '../src/server/db';
 import { createLink, tokenHash } from '../src/server/auth';
-import { loadCourse } from '../src/server/course';
 import { nextFixtureIp } from './helpers/fixture-ip';
 
 const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
 if (!databaseUrl || new URL(databaseUrl).hostname !== '127.0.0.1' || new URL(databaseUrl).pathname !== '/japanese_app_test') throw new Error('Use only disposable localhost japanese_app_test.');
-const base = 'http://127.0.0.1:5173';
+const base = process.env.GUIDED_BROWSER_URL;
+const api = process.env.GUIDED_BROWSER_API_URL;
+if (!base || !api || new URL(base).hostname !== 'localhost' || new URL(api).hostname !== 'localhost') throw new Error('Use the isolated dynamic browser launcher only.');
 const fixtureIp = nextFixtureIp();
 const database = connectDatabase(databaseUrl);
-const app = createApp({ database, course: loadCourse(), config: { DATABASE_URL: databaseUrl, BETTER_AUTH_SECRET: 'auth-browser-fixture-secret-more-than-32-characters', APP_URL: base, PORT: 3000, HOST: '127.0.0.1' } });
-const server = Bun.serve({ hostname: '127.0.0.1', port: 3000, fetch: app.fetch });
 const email = `onboarding-${crypto.randomUUID()}@example.test`;
 const expiredEmail = `expired-${crypto.randomUUID()}@example.test`;
 const password = 'Isolated-auth-browser-fixture-only!';
@@ -49,7 +47,7 @@ try {
   await page.getByRole('button', { name: 'Создать аккаунт', exact: true }).click();
   const accepted = await acceptance;
   expect(accepted.status()).toBe(200);
-  expect(await accepted.json()).toEqual({ ok: true, email });
+  expect(await accepted.json()).toEqual({ ok: true, email, authenticated: false });
   expect(acceptedRequests).toEqual([{ keys: ['name','password','token'], name: 'ivan', emailSubmitted: false }]);
   const success = page.getByRole('status');
   await expect(success).toContainText('Аккаунт создан');
@@ -90,7 +88,7 @@ try {
     const details = invalidPage.waitForResponse(response => new URL(response.url()).pathname === '/api/invitations/details');
     await invalidPage.goto(`${base}/invite#token=${token}`);
     expect((await details).status()).toBe(400);
-    await expect(invalidPage.getByRole('alert')).toContainText(/недействительна|использована|истекла/);
+    await expect(invalidPage.getByRole('alert')).toContainText(/недействительна|использована|истекла|недоступна/);
     await expect(invalidPage.getByRole('button', { name: 'Создать аккаунт', exact: true })).toBeDisabled();
     console.info(`PASS ${kind} invitation is rejected before signup`);
     await rejected.close();
@@ -102,7 +100,7 @@ try {
   console.error(message);
   process.exitCode = 1;
 } finally {
-  await browser?.close(); server.stop(true);
+  await browser?.close();
   for (const fixtureEmail of [email, expiredEmail]) {
     await database.sql`delete from access_links where email=${fixtureEmail}`;
     await database.sql`delete from users where email=${fixtureEmail}`;

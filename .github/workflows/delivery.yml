@@ -45,16 +45,10 @@ jobs:
         run: bun tests/helpers/run-guided-browser.ts tests/integration.study-layout.browser.ts
       - name: Browser eight-character passwords
         run: bun tests/helpers/run-guided-browser.ts tests/integration.password.browser.ts
+      - name: Browser registration link administration and signup
+        run: bun tests/helpers/run-guided-browser.ts tests/integration.registration.browser.ts
       - name: Browser invitation, login and logout
-        run: |
-          bun --bun vite preview --host 127.0.0.1 --port 5173 &
-          preview=$!
-          trap 'kill "$preview"' EXIT
-          for attempt in {1..30}; do
-            if curl -fsS http://127.0.0.1:5173/ >/dev/null; then break; fi
-            sleep 1
-          done
-          bun tests/auth-onboarding.browser.ts
+        run: bun tests/helpers/run-guided-browser.ts tests/auth-onboarding.browser.ts
       - name: Validate release command boundaries
         run: bash deployment/check.sh
       - name: Validate Linux release images before merge

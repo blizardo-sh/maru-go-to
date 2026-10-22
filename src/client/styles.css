@@ -619,3 +619,16 @@ h1, .nav > button, .workspace-heading h2, .lesson-summary-title, button.primary.
 }
 
 @media (min-width: 56rem) and (max-width: 74.99rem) { .today-heading .companion { inset-block-end: calc(var(--cat-size) * -.45); } }
+
+/* Registration-link administration; learning-board layout stays unchanged. */
+.registration-links { margin-block-end: var(--space-xl); }
+.registration-links .form-grid > .stack { gap: .6rem; min-width: 0; }
+.registration-link-list { display: grid; gap: .75rem; padding: 0; list-style: none; }
+.registration-link-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .75rem; padding: .85rem; border: 1px solid var(--color-rule); border-radius: var(--radius-sm); background: var(--color-surface); }
+.registration-link-row > .stack { min-width: 0; gap: .35rem; overflow-wrap: anywhere; }
+.registration-link-row > button { flex: 0 0 auto; }
+.registration-link-status { align-self: flex-start; font-size: .875rem; }
+.registration-link-status[data-status='active'] { color: var(--color-accent-ink); }
+.registration-links input[readonly] { min-width: 0; width: 100%; }
+/* Keep the public form's paper above its fixed scenic backdrop. */
+.auth::after { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--color-paper); border-radius: inherit; pointer-events: none; }
