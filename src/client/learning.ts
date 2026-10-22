@@ -2,11 +2,11 @@ import type { TrainingContext, Word } from '../shared/types';
 import type { Snapshot, StudySource } from './types';
 
 export function sourceKey(source: StudySource): string {
-  return source.kind === 'lesson' ? `lesson:${source.lessonId}` : source.kind === 'list' ? `list:${source.listId}` : source.kind;
+  return source.kind === 'lesson' || source.kind === 'guided' ? `${source.kind}:${source.lessonId}` : source.kind === 'list' ? `list:${source.listId}` : source.kind;
 }
 
 export function trainingContext(source: StudySource): TrainingContext {
-  return source.kind === 'lesson' ? { lessonId: source.lessonId } : source.kind === 'list' ? { listId: source.listId } : source.kind === 'counters' ? { counters: true } : {};
+  return source.kind === 'lesson' || source.kind === 'guided' ? { lessonId: source.lessonId } : source.kind === 'list' ? { listId: source.listId } : source.kind === 'counters' ? { counters: true } : {};
 }
 
 export function studyWord(word: Word): boolean {
@@ -15,7 +15,7 @@ export function studyWord(word: Word): boolean {
 
 export function editorWordIds(data: Snapshot, source: StudySource): Set<string> {
   const ids = new Set(data.progress.introducedWordIds);
-  if (source.kind === 'lesson') for (const word of data.course.words) { if (word.lessonIds.includes(source.lessonId)) ids.add(word.id); }
+  if (source.kind === 'lesson' || source.kind === 'guided') for (const word of data.course.words) { if (word.lessonIds.includes(source.lessonId)) ids.add(word.id); }
   if (source.kind === 'list') for (const word of data.lists.find(list => list.id === source.listId)?.words ?? []) { if (studyWord(word)) ids.add(word.id); }
   return ids;
 }

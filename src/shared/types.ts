@@ -1,3 +1,4 @@
+import type { GuidedLesson } from './learning';
 export type ContentStatus = "missing" | "draft" | "source-checked" | "reviewed";
 export type ReviewStatus = Exclude<ContentStatus, "missing">;
 export type Orthography = "kana" | "furigana" | "kanji";
@@ -20,6 +21,24 @@ export interface Segment {
   reading?: string;
 }
 
+export interface VideoCaption {
+  startSeconds: number;
+  endSeconds: number | null;
+  text: string | null;
+}
+
+export interface LessonVideo {
+  id: string;
+  canDoId: number;
+  variant: "practice" | "challenge";
+  title: string;
+  sourceUrl: string;
+  mediaUrl: string;
+  captionsSourceUrl: string;
+  captionNote?: string;
+  captions: VideoCaption[];
+}
+
 export interface Lesson {
   id: string;
   number: number;
@@ -27,6 +46,7 @@ export interface Lesson {
   topic: string;
   canDoIds: number[];
   sourceRefs: SourceRef[];
+  videos?: LessonVideo[];
   readiness: {
     vocabulary: ContentStatus;
     grammar: ContentStatus | "not-applicable";
@@ -94,6 +114,7 @@ export interface Course {
   forms: WordForm[];
   skills: Skill[];
   exercises: Exercise[];
+  learning?: GuidedLesson[];
 }
 
 export interface LearnerSettings {
@@ -212,9 +233,35 @@ export interface ApiError {
   error: { code: string; message: string };
 }
 
-export interface InvitationDetails {
+export type InvitationDetails =
+  | { kind: "invite"; email: string; expiresAt: string }
+  | { kind: "registration"; email: null; expiresAt: string | null; remainingRegistrations: number | null };
+
+export interface InvitationAcceptResult {
+  ok: true;
   email: string;
-  expiresAt: string;
+  authenticated: boolean;
+}
+
+export interface RegistrationLinkInput {
+  registrationLimit?: number | null;
+  expiresAt?: string | null;
+}
+
+export interface RegistrationLink {
+  id: string;
+  registrationLimit: number | null;
+  registrationsCount: number;
+  remainingRegistrations: number | null;
+  expiresAt: string | null;
+  revokedAt: string | null;
+  createdAt: string;
+  status: "active" | "exhausted" | "expired" | "revoked";
+}
+
+export interface RegistrationLinkCreateResult {
+  url: string;
+  link: RegistrationLink;
 }
 
 export interface TargetEvaluationRequest {

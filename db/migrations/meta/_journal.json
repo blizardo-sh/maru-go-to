@@ -12,8 +12,22 @@
     {
       "idx": 1,
       "version": "7",
-      "when": 1792694728646,
-      "tag": "0001_counter_progress",
+      "when": 1792600156046,
+      "tag": "0001_guided_learning",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792653043623,
+      "tag": "0002_registration_links",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1792698146812,
+      "tag": "0003_counter_progress",
       "breakpoints": true
     }
   ]

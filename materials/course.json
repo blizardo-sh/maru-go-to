@@ -31,7 +31,354 @@
         "grammar": "not-applicable",
         "exercises": "not-applicable",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.lesson.01",
+          "canDoId": 1,
+          "variant": "practice",
+          "title": "Диалог: Приветствие",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do1.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_01_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_01_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 7.0,
+              "text": null
+            },
+            {
+              "startSeconds": 7.0,
+              "endSeconds": 9.0,
+              "text": "あ、おはようございます。"
+            },
+            {
+              "startSeconds": 9.0,
+              "endSeconds": 11.0,
+              "text": "おはようございます。"
+            },
+            {
+              "startSeconds": 11.0,
+              "endSeconds": 14.0,
+              "text": null
+            },
+            {
+              "startSeconds": 14.0,
+              "endSeconds": 21.7,
+              "text": null
+            },
+            {
+              "startSeconds": 21.7,
+              "endSeconds": 22.7,
+              "text": "こんにちは。"
+            },
+            {
+              "startSeconds": 22.7,
+              "endSeconds": 25.0,
+              "text": "こんにちは。"
+            },
+            {
+              "startSeconds": 25.0,
+              "endSeconds": 28.0,
+              "text": null
+            },
+            {
+              "startSeconds": 28.0,
+              "endSeconds": 36.7,
+              "text": null
+            },
+            {
+              "startSeconds": 36.7,
+              "endSeconds": 38.0,
+              "text": "こんばんは。"
+            },
+            {
+              "startSeconds": 38.0,
+              "endSeconds": 40.0,
+              "text": "こんばんは。"
+            },
+            {
+              "startSeconds": 40.0,
+              "endSeconds": 44.0,
+              "text": null
+            },
+            {
+              "startSeconds": 44.0,
+              "endSeconds": 49.7,
+              "text": null
+            },
+            {
+              "startSeconds": 49.7,
+              "endSeconds": 51.2,
+              "text": "こんばんは。"
+            },
+            {
+              "startSeconds": 51.2,
+              "endSeconds": 53.0,
+              "text": "こんばんは。"
+            },
+            {
+              "startSeconds": 53.0,
+              "endSeconds": 57.0,
+              "text": null
+            },
+            {
+              "startSeconds": 57.0,
+              "endSeconds": 60.0,
+              "text": null
+            },
+            {
+              "startSeconds": 60.0,
+              "endSeconds": 66.0,
+              "text": null
+            },
+            {
+              "startSeconds": 66.0,
+              "endSeconds": 86.0,
+              "text": null
+            },
+            {
+              "startSeconds": 86.0,
+              "endSeconds": 89.9,
+              "text": "せんせい、ありがとうございました。さようなら。"
+            },
+            {
+              "startSeconds": 89.9,
+              "endSeconds": 92.0,
+              "text": "はい、さようなら。"
+            },
+            {
+              "startSeconds": 92.0,
+              "endSeconds": 97.0,
+              "text": null
+            },
+            {
+              "startSeconds": 97.0,
+              "endSeconds": 108.5,
+              "text": null
+            },
+            {
+              "startSeconds": 108.5,
+              "endSeconds": 113.7,
+              "text": "おさきに　しつれいします。"
+            },
+            {
+              "startSeconds": 113.7,
+              "endSeconds": 116.0,
+              "text": "おつかれさまでした。"
+            },
+            {
+              "startSeconds": 116.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_01_02",
+          "canDoId": 1,
+          "variant": "practice",
+          "title": "Поздороваться и попрощаться · диалог 2",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do1.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_01_02.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_01_02.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 7.8,
+              "text": null
+            },
+            {
+              "startSeconds": 7.8,
+              "endSeconds": 10.0,
+              "text": "かわさきせんせい、どうぞ。"
+            },
+            {
+              "startSeconds": 10.0,
+              "endSeconds": 12.5,
+              "text": "あ、ありがとう。"
+            },
+            {
+              "startSeconds": 12.5,
+              "endSeconds": 999.0,
+              "text": "いいえ。"
+            },
+            {
+              "startSeconds": 999.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_01_03",
+          "canDoId": 1,
+          "variant": "practice",
+          "title": "Поздороваться и попрощаться · диалог 3",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do1.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_01_03.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_01_03.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 8.0,
+              "text": null
+            },
+            {
+              "startSeconds": 8.0,
+              "endSeconds": 9.0,
+              "text": "あのう…"
+            },
+            {
+              "startSeconds": 9.0,
+              "endSeconds": 11.0,
+              "text": "はい。"
+            },
+            {
+              "startSeconds": 11.0,
+              "endSeconds": 14.0,
+              "text": "ハンカチ、おとしましたよ。"
+            },
+            {
+              "startSeconds": 14.0,
+              "endSeconds": 15.0,
+              "text": "すみません。"
+            },
+            {
+              "startSeconds": 15.0,
+              "endSeconds": 17.0,
+              "text": "いいえ。"
+            },
+            {
+              "startSeconds": 17.0,
+              "endSeconds": 18.0,
+              "text": null
+            },
+            {
+              "startSeconds": 18.0,
+              "endSeconds": 28.4,
+              "text": null
+            },
+            {
+              "startSeconds": 28.4,
+              "endSeconds": 30.5,
+              "text": "あ、すみません。"
+            },
+            {
+              "startSeconds": 30.5,
+              "endSeconds": 34.0,
+              "text": "すみません。"
+            },
+            {
+              "startSeconds": 34.0,
+              "endSeconds": 38.0,
+              "text": null
+            },
+            {
+              "startSeconds": 38.0,
+              "endSeconds": 44.0,
+              "text": null
+            },
+            {
+              "startSeconds": 44.0,
+              "endSeconds": 47.0,
+              "text": null
+            },
+            {
+              "startSeconds": 47.0,
+              "endSeconds": 48.6,
+              "text": "すみません。"
+            },
+            {
+              "startSeconds": 48.6,
+              "endSeconds": 49.5,
+              "text": "はい。"
+            },
+            {
+              "startSeconds": 49.5,
+              "endSeconds": 53.0,
+              "text": "きょうしつは…?"
+            },
+            {
+              "startSeconds": 53.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge01",
+          "canDoId": 1,
+          "variant": "challenge",
+          "title": "Поздороваться и попрощаться · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do1.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 10.0,
+              "text": "にほんごの　クラスに　いきます。せんせいや　ともだちに　あいさつを　しましょう。"
+            },
+            {
+              "startSeconds": 10.0,
+              "endSeconds": 14.8,
+              "text": null
+            },
+            {
+              "startSeconds": 14.8,
+              "endSeconds": 17.5,
+              "text": "おはようございます。"
+            },
+            {
+              "startSeconds": 17.5,
+              "endSeconds": 23.0,
+              "text": "おはようございます。"
+            },
+            {
+              "startSeconds": 23.0,
+              "endSeconds": 36.0,
+              "text": null
+            },
+            {
+              "startSeconds": 36.0,
+              "endSeconds": 38.0,
+              "text": "おはよう。"
+            },
+            {
+              "startSeconds": 38.0,
+              "endSeconds": 42.0,
+              "text": "おはよう(ございます)。"
+            },
+            {
+              "startSeconds": 42.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        }
+      ]
     },
     {
       "id": "marugoto.starter-a1.lesson.02",
@@ -61,7 +408,199 @@
         "grammar": "not-applicable",
         "exercises": "not-applicable",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.lesson.02",
+          "canDoId": 3,
+          "variant": "practice",
+          "title": "Диалог: На занятии",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do3.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_03_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_03_01.xml",
+          "captionNote": "Для первой быстрой реплики (5,5–9 с) в исходных субтитрах нет японского текста. Далее реплики синхронизированы с видео.",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.5,
+              "text": null
+            },
+            {
+              "startSeconds": 5.5,
+              "endSeconds": 9.0,
+              "text": null
+            },
+            {
+              "startSeconds": 9.0,
+              "endSeconds": 13.5,
+              "text": "すみません。もうすこし　ゆっくり　いって　ください。"
+            },
+            {
+              "startSeconds": 13.5,
+              "endSeconds": 20.0,
+              "text": "はい。CDを　きいて　ください。"
+            },
+            {
+              "startSeconds": 20.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_03_02",
+          "canDoId": 3,
+          "variant": "practice",
+          "title": "Понять преподавателя и попросить повторить · диалог 2",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do3.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_03_02.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_03_02.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 3.9,
+              "text": null
+            },
+            {
+              "startSeconds": 3.9,
+              "endSeconds": 4.0,
+              "text": null
+            },
+            {
+              "startSeconds": 4.0,
+              "endSeconds": 9.0,
+              "text": null
+            },
+            {
+              "startSeconds": 9.0,
+              "endSeconds": 15.0,
+              "text": null
+            },
+            {
+              "startSeconds": 15.0,
+              "endSeconds": 17.0,
+              "text": "せんせい。"
+            },
+            {
+              "startSeconds": 17.0,
+              "endSeconds": 21.0,
+              "text": null
+            },
+            {
+              "startSeconds": 21.0,
+              "endSeconds": 24.5,
+              "text": "やすみます。すみません。"
+            },
+            {
+              "startSeconds": 24.5,
+              "endSeconds": 27.0,
+              "text": "わかりました。"
+            },
+            {
+              "startSeconds": 27.0,
+              "endSeconds": 29.0,
+              "text": "さよならー。"
+            },
+            {
+              "startSeconds": 29.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge03",
+          "canDoId": 3,
+          "variant": "challenge",
+          "title": "Понять преподавателя и попросить повторить · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do3.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge03.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge03.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 8.0,
+              "text": "クラスでは　にほんごを　はなしましょう。"
+            },
+            {
+              "startSeconds": 8.0,
+              "endSeconds": 12.8,
+              "text": null
+            },
+            {
+              "startSeconds": 12.8,
+              "endSeconds": 18.0,
+              "text": "みなさん、おはようございます。"
+            },
+            {
+              "startSeconds": 18.0,
+              "endSeconds": 21.0,
+              "text": "いいですか。きいて　ください。"
+            },
+            {
+              "startSeconds": 21.0,
+              "endSeconds": 25.0,
+              "text": "ここに　なまえと　くにを　かいて　ください。"
+            },
+            {
+              "startSeconds": 25.0,
+              "endSeconds": 70.0,
+              "text": null
+            },
+            {
+              "startSeconds": 70.0,
+              "endSeconds": 75.0,
+              "text": null
+            },
+            {
+              "startSeconds": 75.0,
+              "endSeconds": 76.0,
+              "text": null
+            },
+            {
+              "startSeconds": 76.0,
+              "endSeconds": 81.0,
+              "text": "もうすこし　ゆっくり　いって　もらいましょう。"
+            },
+            {
+              "startSeconds": 81.0,
+              "endSeconds": 89.0,
+              "text": "すみません、もうすこし　ゆっくり　いって　ください。"
+            },
+            {
+              "startSeconds": 89.0,
+              "endSeconds": 91.0,
+              "text": "はい。　わかりました。"
+            },
+            {
+              "startSeconds": 91.0,
+              "endSeconds": 97.0,
+              "text": "4ページを　あけて　ください。"
+            },
+            {
+              "startSeconds": 97.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео. Одна из реплик намеренно скрыта в исходных субтитрах; её текст не восстановлен."
+        }
+      ]
     },
     {
       "id": "marugoto.starter-a1.lesson.03",
@@ -91,7 +630,168 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.lesson.03",
+          "canDoId": 5,
+          "variant": "practice",
+          "title": "Диалог: О себе",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do5.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_05_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_05_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.0,
+              "text": null
+            },
+            {
+              "startSeconds": 5.0,
+              "endSeconds": 7.0,
+              "text": null
+            },
+            {
+              "startSeconds": 7.0,
+              "endSeconds": 11.9,
+              "text": "はじめまして。まつもとです。あのう、おなまえは?"
+            },
+            {
+              "startSeconds": 11.9,
+              "endSeconds": 13.0,
+              "text": "サラです。"
+            },
+            {
+              "startSeconds": 13.0,
+              "endSeconds": 14.0,
+              "text": "どちらから?"
+            },
+            {
+              "startSeconds": 14.0,
+              "endSeconds": 15.2,
+              "text": "フランスです。"
+            },
+            {
+              "startSeconds": 15.2,
+              "endSeconds": 17.7,
+              "text": "そうですか。おしごとは?"
+            },
+            {
+              "startSeconds": 17.7,
+              "endSeconds": 19.0,
+              "text": "かいしゃいんです。"
+            },
+            {
+              "startSeconds": 19.0,
+              "endSeconds": 22.0,
+              "text": "そうですか。どうぞ　よろしく。"
+            },
+            {
+              "startSeconds": 22.0,
+              "endSeconds": 23.9,
+              "text": "どうぞ　よろしく　おねがいします。"
+            },
+            {
+              "startSeconds": 23.9,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_05_02",
+          "canDoId": 5,
+          "variant": "practice",
+          "title": "Представиться и рассказать о языках · диалог 2",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do5.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_05_02.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_05_02.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.1,
+              "text": null
+            },
+            {
+              "startSeconds": 5.1,
+              "endSeconds": 7.6,
+              "text": "せんせいは　フランスごが　できますか。"
+            },
+            {
+              "startSeconds": 7.6,
+              "endSeconds": 10.2,
+              "text": "はい、すこし　できます。"
+            },
+            {
+              "startSeconds": 10.2,
+              "endSeconds": 12.9,
+              "text": "へぇ、そうですか。"
+            },
+            {
+              "startSeconds": 12.9,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge05",
+          "canDoId": 5,
+          "variant": "challenge",
+          "title": "Представиться и рассказать о языках · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do5.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge05.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge05.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 10.0,
+              "text": "はじめて　ホストファミリーに　あいます。じこしょうかいを　しましょう。"
+            },
+            {
+              "startSeconds": 10.0,
+              "endSeconds": 12.7,
+              "text": null
+            },
+            {
+              "startSeconds": 12.7,
+              "endSeconds": 19.0,
+              "text": "はじめまして。きむらまいです。"
+            },
+            {
+              "startSeconds": 19.0,
+              "endSeconds": 24.0,
+              "text": "はじめまして。(なまえ) です。どうぞ　よろしく。"
+            },
+            {
+              "startSeconds": 24.0,
+              "endSeconds": 25.5,
+              "text": "どうぞ　よろしく。"
+            },
+            {
+              "startSeconds": 25.5,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        }
+      ]
     },
     {
       "id": "marugoto.starter-a1.lesson.04",
@@ -121,7 +821,306 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.lesson.04",
+          "canDoId": 7,
+          "variant": "practice",
+          "title": "Диалог: Семья",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do7.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_07_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_07_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.6,
+              "text": null
+            },
+            {
+              "startSeconds": 5.6,
+              "endSeconds": 9.0,
+              "text": "きむらさんの　ごかぞくは　なんにんですか。"
+            },
+            {
+              "startSeconds": 9.0,
+              "endSeconds": 14.5,
+              "text": "5にんです。ちちと　つまと　こども　ふたりと　わたしです。"
+            },
+            {
+              "startSeconds": 14.5,
+              "endSeconds": 17.0,
+              "text": "おくさんの　おしごとは?"
+            },
+            {
+              "startSeconds": 17.0,
+              "endSeconds": 19.6,
+              "text": "つまは　かいしゃいんです。"
+            },
+            {
+              "startSeconds": 19.6,
+              "endSeconds": 22.2,
+              "text": "おこさんは　おいくつですか。"
+            },
+            {
+              "startSeconds": 22.2,
+              "endSeconds": 26.0,
+              "text": "17さいと　11さいです。"
+            },
+            {
+              "startSeconds": 26.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_07_02",
+          "canDoId": 7,
+          "variant": "practice",
+          "title": "Коротко рассказать о своей семье · диалог 2",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do7.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_07_02.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_07_02.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.2,
+              "text": null
+            },
+            {
+              "startSeconds": 5.2,
+              "endSeconds": 9.0,
+              "text": "ダンさん、かぞくは　なんにんですか。"
+            },
+            {
+              "startSeconds": 9.0,
+              "endSeconds": 11.0,
+              "text": "4にんかぞくです。"
+            },
+            {
+              "startSeconds": 11.0,
+              "endSeconds": 15.5,
+              "text": "ちちは　スウェーデンじん、ははは　にほんじんです。いもうとも　います。"
+            },
+            {
+              "startSeconds": 15.5,
+              "endSeconds": 19.0,
+              "text": "へえ、どこに　すんで　いますか。"
+            },
+            {
+              "startSeconds": 19.0,
+              "endSeconds": 20.8,
+              "text": "ならです。"
+            },
+            {
+              "startSeconds": 20.8,
+              "endSeconds": 23.2,
+              "text": "いもうとさんは　がくせいですか。"
+            },
+            {
+              "startSeconds": 23.2,
+              "endSeconds": 25.9,
+              "text": "はい、そうです。"
+            },
+            {
+              "startSeconds": 25.9,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge07",
+          "canDoId": 7,
+          "variant": "challenge",
+          "title": "Коротко рассказать о своей семье · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do7.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge07.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge07.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 7.7,
+              "text": "まいさんと　かぞくについて　はなしましょう。"
+            },
+            {
+              "startSeconds": 7.7,
+              "endSeconds": 11.5,
+              "text": "ごかぞくは　なんにんですか。"
+            },
+            {
+              "startSeconds": 11.5,
+              "endSeconds": 20.0,
+              "text": "れい: 4にんです。ちちと　ははと　いもうとと　わたしです。"
+            },
+            {
+              "startSeconds": 20.0,
+              "endSeconds": 24.5,
+              "text": "そうですか。どこに　すんで　いますか。"
+            },
+            {
+              "startSeconds": 24.5,
+              "endSeconds": 30.5,
+              "text": "れい: ケルンに　すんで　います。"
+            },
+            {
+              "startSeconds": 30.5,
+              "endSeconds": 32.0,
+              "text": "へえ。"
+            },
+            {
+              "startSeconds": 32.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_08_01",
+          "canDoId": 8,
+          "variant": "practice",
+          "title": "Назвать человека на фото, возраст и место проживания · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do8.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_08_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_08_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.0,
+              "text": null
+            },
+            {
+              "startSeconds": 5.0,
+              "endSeconds": 10.5,
+              "text": "わたしの　かぞくは　4にんです。しゃしんを　みて　ください。"
+            },
+            {
+              "startSeconds": 10.5,
+              "endSeconds": 12.5,
+              "text": "ちちと　ははです。"
+            },
+            {
+              "startSeconds": 12.5,
+              "endSeconds": 16.6,
+              "text": "わかいですね ! おいくつですか。"
+            },
+            {
+              "startSeconds": 16.6,
+              "endSeconds": 21.4,
+              "text": "ちちは　53さいです。ははは　54さいです。"
+            },
+            {
+              "startSeconds": 21.4,
+              "endSeconds": 24.2,
+              "text": "ふーん。おしごとは?"
+            },
+            {
+              "startSeconds": 24.2,
+              "endSeconds": 28.1,
+              "text": "ちちは　きょうしです。ははは　ほいくしです。"
+            },
+            {
+              "startSeconds": 28.1,
+              "endSeconds": 34.5,
+              "text": "はー。この　ひとは　おねえさんですか、いもうとさんですか。"
+            },
+            {
+              "startSeconds": 34.5,
+              "endSeconds": 35.8,
+              "text": "いもうとです。"
+            },
+            {
+              "startSeconds": 35.8,
+              "endSeconds": 38.0,
+              "text": "はは。かわいいですね。"
+            },
+            {
+              "startSeconds": 38.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge08",
+          "canDoId": 8,
+          "variant": "challenge",
+          "title": "Назвать человека на фото, возраст и место проживания · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do8.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge08.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge08.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 9.0,
+              "text": "しゃしんを　みながら、まいさんと　はなしましょう。"
+            },
+            {
+              "startSeconds": 9.0,
+              "endSeconds": 14.0,
+              "text": "だれ?"
+            },
+            {
+              "startSeconds": 14.0,
+              "endSeconds": 20.0,
+              "text": "(この　こは)だれですか。"
+            },
+            {
+              "startSeconds": 20.0,
+              "endSeconds": 23.0,
+              "text": "おとうとです。11さいです。"
+            },
+            {
+              "startSeconds": 23.0,
+              "endSeconds": 26.0,
+              "text": null
+            },
+            {
+              "startSeconds": 26.0,
+              "endSeconds": 30.8,
+              "text": "コメントしましょう。"
+            },
+            {
+              "startSeconds": 30.8,
+              "endSeconds": 35.0,
+              "text": "れい: かわいいですね。/ かっこいいですね。"
+            },
+            {
+              "startSeconds": 35.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        }
+      ]
     },
     {
       "id": "marugoto.starter-a1.lesson.05",
@@ -152,7 +1151,369 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.video.cando_09_01",
+          "canDoId": 9,
+          "variant": "practice",
+          "title": "Рассказать, какая еда нравится · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do9.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_09_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_09_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.7,
+              "text": null
+            },
+            {
+              "startSeconds": 5.7,
+              "endSeconds": 7.6,
+              "text": "なにが　すきですか。"
+            },
+            {
+              "startSeconds": 7.6,
+              "endSeconds": 8.9,
+              "text": "やさいが　すきです。"
+            },
+            {
+              "startSeconds": 8.9,
+              "endSeconds": 10.2,
+              "text": "肉は?"
+            },
+            {
+              "startSeconds": 10.2,
+              "endSeconds": 13.5,
+              "text": "肉は　すきじゃないです。あまり　食べません。"
+            },
+            {
+              "startSeconds": 13.5,
+              "endSeconds": 17.0,
+              "text": "へえー。わたしは　魚が　すきです。"
+            },
+            {
+              "startSeconds": 17.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge09",
+          "canDoId": 9,
+          "variant": "challenge",
+          "title": "Рассказать, какая еда нравится · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do9.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge09.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge09.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 10.2,
+              "text": "あさごはんを　食べて　います。すきな　たべものについて　はなしましょう。"
+            },
+            {
+              "startSeconds": 10.2,
+              "endSeconds": 15.2,
+              "text": "すきな　りょうりは　なんですか。"
+            },
+            {
+              "startSeconds": 15.2,
+              "endSeconds": 20.7,
+              "text": "れい: カレーが　すきです。"
+            },
+            {
+              "startSeconds": 20.7,
+              "endSeconds": 25.0,
+              "text": "へぇ。じゃ、よる、食べましょう。"
+            },
+            {
+              "startSeconds": 25.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_10_01",
+          "canDoId": 10,
+          "variant": "practice",
+          "title": "Предложить напиток и ответить на предложение · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do10.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_10_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_10_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 10.0,
+              "text": null
+            },
+            {
+              "startSeconds": 10.0,
+              "endSeconds": 12.2,
+              "text": "コーヒー、飲みますか。"
+            },
+            {
+              "startSeconds": 12.2,
+              "endSeconds": 15.0,
+              "text": "はい、おねがいします。"
+            },
+            {
+              "startSeconds": 15.0,
+              "endSeconds": 21.2,
+              "text": null
+            },
+            {
+              "startSeconds": 21.2,
+              "endSeconds": 23.1,
+              "text": "はい、どうぞ。"
+            },
+            {
+              "startSeconds": 23.1,
+              "endSeconds": 25.0,
+              "text": "すみません。"
+            },
+            {
+              "startSeconds": 25.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_10_02",
+          "canDoId": 10,
+          "variant": "practice",
+          "title": "Предложить напиток и ответить на предложение · диалог 2",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do10.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_10_02.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_10_02.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 8.7,
+              "text": null
+            },
+            {
+              "startSeconds": 8.7,
+              "endSeconds": 10.6,
+              "text": "コーヒー、飲みますか。"
+            },
+            {
+              "startSeconds": 10.6,
+              "endSeconds": 16.0,
+              "text": "いいえ、けっこうです。わたしは　こうちゃを　飲みます。"
+            },
+            {
+              "startSeconds": 16.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge10",
+          "canDoId": 10,
+          "variant": "challenge",
+          "title": "Предложить напиток и ответить на предложение · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do10.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge10.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge10.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 6.0,
+              "text": "きむらさんの　いえの　あさごはんです。"
+            },
+            {
+              "startSeconds": 6.0,
+              "endSeconds": 9.5,
+              "text": null
+            },
+            {
+              "startSeconds": 9.5,
+              "endSeconds": 10.8,
+              "text": "おはよう。"
+            },
+            {
+              "startSeconds": 10.8,
+              "endSeconds": 11.8,
+              "text": "おはようございます。"
+            },
+            {
+              "startSeconds": 11.8,
+              "endSeconds": 13.5,
+              "text": "おはようございます。"
+            },
+            {
+              "startSeconds": 13.5,
+              "endSeconds": 18.0,
+              "text": "おはようございます。"
+            },
+            {
+              "startSeconds": 18.0,
+              "endSeconds": 19.0,
+              "text": null
+            },
+            {
+              "startSeconds": 19.0,
+              "endSeconds": 26.0,
+              "text": "おはよう。コーヒー、飲みますか。"
+            },
+            {
+              "startSeconds": 26.0,
+              "endSeconds": 31.7,
+              "text": "コーヒーを　もらいましょう。"
+            },
+            {
+              "startSeconds": 31.7,
+              "endSeconds": 36.5,
+              "text": "はい、おねがいします。"
+            },
+            {
+              "startSeconds": 36.5,
+              "endSeconds": 41.0,
+              "text": "はい、どうぞ。"
+            },
+            {
+              "startSeconds": 41.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_11_01",
+          "canDoId": 11,
+          "variant": "practice",
+          "title": "Рассказать о завтраке и частоте привычек · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do11.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_11_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_11_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 6.0,
+              "text": null
+            },
+            {
+              "startSeconds": 6.0,
+              "endSeconds": 9.6,
+              "text": "まいさん、まいにち　あさごはんを　食べますか。"
+            },
+            {
+              "startSeconds": 9.6,
+              "endSeconds": 12.5,
+              "text": "はい、もちろん　食べます。"
+            },
+            {
+              "startSeconds": 12.5,
+              "endSeconds": 16.0,
+              "text": "そうですか。なにを　食べますか。"
+            },
+            {
+              "startSeconds": 16.0,
+              "endSeconds": 25.6,
+              "text": "うーん、そうですね。パン、やさい…。それから　卵を　いつも　食べます。"
+            },
+            {
+              "startSeconds": 25.6,
+              "endSeconds": 27.5,
+              "text": "なにを　飲みますか。"
+            },
+            {
+              "startSeconds": 27.5,
+              "endSeconds": 30.0,
+              "text": "こうちゃを　飲みます。"
+            },
+            {
+              "startSeconds": 30.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge11",
+          "canDoId": 11,
+          "variant": "challenge",
+          "title": "Рассказать о завтраке и частоте привычек · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do11.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge11.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge11.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 11.0,
+              "text": "きむらさんの　いえの　あさです。あさごはんについて　はなしましょう。"
+            },
+            {
+              "startSeconds": 11.0,
+              "endSeconds": 14.7,
+              "text": "いつも　あさごはんを　食べますか。"
+            },
+            {
+              "startSeconds": 14.7,
+              "endSeconds": 24.0,
+              "text": "れい: はい、食べます。パンを　食べます。 / いいえ、あまり　食べません。"
+            },
+            {
+              "startSeconds": 24.0,
+              "endSeconds": 25.0,
+              "text": "そうですか。"
+            },
+            {
+              "startSeconds": 25.0,
+              "endSeconds": 30.0,
+              "text": "わたしは　コーヒーを　飲みます。なにも　食べません。"
+            },
+            {
+              "startSeconds": 30.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        }
+      ]
     },
     {
       "id": "marugoto.starter-a1.lesson.06",
@@ -184,7 +1545,358 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.video.cando_12_01",
+          "canDoId": 12,
+          "variant": "practice",
+          "title": "Назвать любимое блюдо · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do12.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_12_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_12_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.0,
+              "text": null
+            },
+            {
+              "startSeconds": 5.0,
+              "endSeconds": 9.0,
+              "text": "さとうさん、すきな　りょうりは　なんですか。"
+            },
+            {
+              "startSeconds": 9.0,
+              "endSeconds": 13.0,
+              "text": "そうですね、うどんが　すきです。"
+            },
+            {
+              "startSeconds": 13.0,
+              "endSeconds": 14.0,
+              "text": "そばは?"
+            },
+            {
+              "startSeconds": 14.0,
+              "endSeconds": 18.8,
+              "text": "はい、そばも　すきです。ラーメンも　すきですよ。"
+            },
+            {
+              "startSeconds": 18.8,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge12",
+          "canDoId": 12,
+          "variant": "challenge",
+          "title": "Назвать любимое блюдо · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do12.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge12.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge12.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 10.2,
+              "text": "あさごはんを　食べて　います。すきな　りょうりについて　はなしましょう。"
+            },
+            {
+              "startSeconds": 10.2,
+              "endSeconds": 15.2,
+              "text": "すきな　りょうりは　なんですか。"
+            },
+            {
+              "startSeconds": 15.2,
+              "endSeconds": 20.7,
+              "text": "れい: カレーが　すきです。"
+            },
+            {
+              "startSeconds": 20.7,
+              "endSeconds": 25.0,
+              "text": "へぇ。じゃ、よる、食べましょう。"
+            },
+            {
+              "startSeconds": 25.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_13_01",
+          "canDoId": 13,
+          "variant": "practice",
+          "title": "Выбрать, где пообедать · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do13.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_13_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_13_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.0,
+              "text": null
+            },
+            {
+              "startSeconds": 5.0,
+              "endSeconds": 7.6,
+              "text": "きょうは　どこで　食べますか。"
+            },
+            {
+              "startSeconds": 7.6,
+              "endSeconds": 12.8,
+              "text": "そうですね…。あの　みせで　食べましょう。"
+            },
+            {
+              "startSeconds": 12.8,
+              "endSeconds": 14.0,
+              "text": "ラーメンですか。"
+            },
+            {
+              "startSeconds": 14.0,
+              "endSeconds": 17.0,
+              "text": "はい。あの　みせは　おいしいですよ。"
+            },
+            {
+              "startSeconds": 17.0,
+              "endSeconds": 20.0,
+              "text": "じゃ、そうしましょう。"
+            },
+            {
+              "startSeconds": 20.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge13",
+          "canDoId": 13,
+          "variant": "challenge",
+          "title": "Выбрать, где пообедать · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do13.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge13.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge13.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 11.0,
+              "text": "まいさんと　ひるごはんを　食べます。どこで　食べるか　きめましょう。"
+            },
+            {
+              "startSeconds": 11.0,
+              "endSeconds": 12.0,
+              "text": null
+            },
+            {
+              "startSeconds": 12.0,
+              "endSeconds": 16.0,
+              "text": "おひるですね。"
+            },
+            {
+              "startSeconds": 16.0,
+              "endSeconds": 21.0,
+              "text": "どこで　食べるか　はなしましょう。"
+            },
+            {
+              "startSeconds": 21.0,
+              "endSeconds": 27.0,
+              "text": "(きょうは) どこで　食べますか。"
+            },
+            {
+              "startSeconds": 27.0,
+              "endSeconds": 32.0,
+              "text": "この　みせに　しましょう。おいしいですよ。"
+            },
+            {
+              "startSeconds": 32.0,
+              "endSeconds": 41.0,
+              "text": null
+            },
+            {
+              "startSeconds": 41.0,
+              "endSeconds": 46.0,
+              "text": "この　みせで　食べましょう。"
+            },
+            {
+              "startSeconds": 46.0,
+              "endSeconds": 50.0,
+              "text": "じゃ、そうしましょう。"
+            },
+            {
+              "startSeconds": 50.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_15_01",
+          "canDoId": 15,
+          "variant": "practice",
+          "title": "Заказать еду и поблагодарить · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do15.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_15_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_15_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 6.2,
+              "text": null
+            },
+            {
+              "startSeconds": 6.2,
+              "endSeconds": 8.7,
+              "text": "いらっしゃいませ。"
+            },
+            {
+              "startSeconds": 8.7,
+              "endSeconds": 10.3,
+              "text": null
+            },
+            {
+              "startSeconds": 10.3,
+              "endSeconds": 14.0,
+              "text": "チーズバーガー　ひとつと　オレンジジュース　ひとつ　ください。"
+            },
+            {
+              "startSeconds": 14.0,
+              "endSeconds": 19.0,
+              "text": null
+            },
+            {
+              "startSeconds": 19.0,
+              "endSeconds": 21.0,
+              "text": "630えんです。"
+            },
+            {
+              "startSeconds": 21.0,
+              "endSeconds": 25.2,
+              "text": null
+            },
+            {
+              "startSeconds": 25.2,
+              "endSeconds": 28.0,
+              "text": "ありがとうございます。"
+            },
+            {
+              "startSeconds": 28.0,
+              "endSeconds": 37.0,
+              "text": null
+            },
+            {
+              "startSeconds": 37.0,
+              "endSeconds": 40.0,
+              "text": "どうも　ありがとうございます。"
+            },
+            {
+              "startSeconds": 40.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge15",
+          "canDoId": 15,
+          "variant": "challenge",
+          "title": "Заказать еду и поблагодарить · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do15.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge15.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge15.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 8.0,
+              "text": "ファーストフードてんで　ちゅうもんしましょう。"
+            },
+            {
+              "startSeconds": 8.0,
+              "endSeconds": 11.0,
+              "text": "いらっしゃいませ。"
+            },
+            {
+              "startSeconds": 11.0,
+              "endSeconds": 18.0,
+              "text": "なにを　食べますか。この　みせは　チーズバーガーが　おいしいですよ。"
+            },
+            {
+              "startSeconds": 18.0,
+              "endSeconds": 23.0,
+              "text": null
+            },
+            {
+              "startSeconds": 23.0,
+              "endSeconds": 28.0,
+              "text": "ごちゅうもんは?"
+            },
+            {
+              "startSeconds": 28.0,
+              "endSeconds": 33.0,
+              "text": "ちゅうもんしましょう。チーズバーガーx1、オレンジジュースx1"
+            },
+            {
+              "startSeconds": 33.0,
+              "endSeconds": 40.0,
+              "text": "チーズバーガー　ひとつと、オレンジジュース　ひとつ　ください。"
+            },
+            {
+              "startSeconds": 40.0,
+              "endSeconds": 47.0,
+              "text": "チーズバーガー　ひとつと、オレンジジュース　ひとつ　ですね。630えんです。"
+            },
+            {
+              "startSeconds": 47.0,
+              "endSeconds": 55.0,
+              "text": null
+            },
+            {
+              "startSeconds": 55.0,
+              "endSeconds": 63.0,
+              "text": "ありがとうございます。"
+            },
+            {
+              "startSeconds": 63.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        }
+      ]
     },
     {
       "id": "marugoto.starter-a1.lesson.07",
@@ -215,7 +1927,200 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.video.cando_16_01",
+          "canDoId": 16,
+          "variant": "practice",
+          "title": "Описать жильё и с кем вы живёте · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do16.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_16_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_16_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.7,
+              "text": null
+            },
+            {
+              "startSeconds": 5.7,
+              "endSeconds": 9.0,
+              "text": "うえださんは　どこに　すんで　いますか。"
+            },
+            {
+              "startSeconds": 9.0,
+              "endSeconds": 11.5,
+              "text": "おおさかに　すんで　います。"
+            },
+            {
+              "startSeconds": 11.5,
+              "endSeconds": 15.0,
+              "text": "そうですか。いっこだてですか。"
+            },
+            {
+              "startSeconds": 15.0,
+              "endSeconds": 17.5,
+              "text": "はい、いっこだてです。"
+            },
+            {
+              "startSeconds": 17.5,
+              "endSeconds": 20.7,
+              "text": "うえださんの　いえは　新しいですか。"
+            },
+            {
+              "startSeconds": 20.7,
+              "endSeconds": 25.5,
+              "text": "いいえ、古いです。でも、あかるいです。"
+            },
+            {
+              "startSeconds": 25.5,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge16",
+          "canDoId": 16,
+          "variant": "challenge",
+          "title": "Описать жильё и с кем вы живёте · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do16.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge16.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge16.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 10.5,
+              "text": "まいさん、たいちくんに　あなたの　いえについて　はなしましょう。"
+            },
+            {
+              "startSeconds": 10.5,
+              "endSeconds": 16.0,
+              "text": "くにでは　どんな　いえに　すんで　いますか。"
+            },
+            {
+              "startSeconds": 16.0,
+              "endSeconds": 25.0,
+              "text": "れい: マンションに　すんで　います。あたらしいです。大きい　テレビが　あります。"
+            },
+            {
+              "startSeconds": 25.0,
+              "endSeconds": 29.0,
+              "text": "へぇ、そうですか。"
+            },
+            {
+              "startSeconds": 29.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_17_01",
+          "canDoId": 17,
+          "variant": "practice",
+          "title": "Сказать, что есть дома и сколько · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do17.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_17_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_17_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.8,
+              "text": null
+            },
+            {
+              "startSeconds": 5.8,
+              "endSeconds": 8.9,
+              "text": "きむらさんの　いえに　なにが　ありますか。"
+            },
+            {
+              "startSeconds": 8.9,
+              "endSeconds": 12.4,
+              "text": "わたしの　いえには　へやが　5つ　あります。"
+            },
+            {
+              "startSeconds": 12.4,
+              "endSeconds": 17.4,
+              "text": "へぇ、ひろいですね。へやに　なにが　ありますか。"
+            },
+            {
+              "startSeconds": 17.4,
+              "endSeconds": 23.6,
+              "text": "えーと、ソファと　テレビが　あります。おおきい　テーブルも　ありますよ。"
+            },
+            {
+              "startSeconds": 23.6,
+              "endSeconds": 27.0,
+              "text": "わぁ、いいですね。"
+            },
+            {
+              "startSeconds": 27.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge17",
+          "canDoId": 17,
+          "variant": "challenge",
+          "title": "Сказать, что есть дома и сколько · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do17.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge17.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge17.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 10.5,
+              "text": "まいさん、たいちくんに　あなたの　いえについて　はなしましょう。"
+            },
+            {
+              "startSeconds": 10.5,
+              "endSeconds": 16.0,
+              "text": "くにでは　どんな　いえに　すんで　いますか。"
+            },
+            {
+              "startSeconds": 16.0,
+              "endSeconds": 25.0,
+              "text": "れい: マンションに　すんで　います。あたらしいです。大きい　テレビが　あります。"
+            },
+            {
+              "startSeconds": 25.0,
+              "endSeconds": 29.0,
+              "text": "へぇ、そうですか。"
+            },
+            {
+              "startSeconds": 29.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        }
+      ]
     },
     {
       "id": "marugoto.starter-a1.lesson.08",
@@ -247,7 +2152,403 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.video.cando_19_01",
+          "canDoId": 19,
+          "variant": "practice",
+          "title": "Сказать, куда поставить вещи · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do19.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_19_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_19_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 8.0,
+              "text": null
+            },
+            {
+              "startSeconds": 8.0,
+              "endSeconds": 12.0,
+              "text": "かわさきせんせい、この　ファイルは　どこですか。"
+            },
+            {
+              "startSeconds": 12.0,
+              "endSeconds": 14.3,
+              "text": "この　たなの　なかに　おねがいします。"
+            },
+            {
+              "startSeconds": 14.3,
+              "endSeconds": 16.5,
+              "text": "ここですね。"
+            },
+            {
+              "startSeconds": 16.5,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge19",
+          "canDoId": 19,
+          "variant": "challenge",
+          "title": "Сказать, куда поставить вещи · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do19.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge19.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge19.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 6.0,
+              "text": "まいさんに　てつだって　もらいましょう。"
+            },
+            {
+              "startSeconds": 6.0,
+              "endSeconds": 9.5,
+              "text": null
+            },
+            {
+              "startSeconds": 9.5,
+              "endSeconds": 13.0,
+              "text": "この　カップは　どこですか。"
+            },
+            {
+              "startSeconds": 13.0,
+              "endSeconds": 18.5,
+              "text": "たなの　うえに　おいて　もらいましょう。"
+            },
+            {
+              "startSeconds": 18.5,
+              "endSeconds": 25.0,
+              "text": "たなの　うえに　おねがいします。"
+            },
+            {
+              "startSeconds": 25.0,
+              "endSeconds": 30.0,
+              "text": "はい。"
+            },
+            {
+              "startSeconds": 30.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_20_01",
+          "canDoId": 20,
+          "variant": "practice",
+          "title": "Прийти в гости и встретить гостя · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do20.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_20_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_20_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 9.6,
+              "text": null
+            },
+            {
+              "startSeconds": 9.6,
+              "endSeconds": 10.2,
+              "text": "はい。"
+            },
+            {
+              "startSeconds": 10.2,
+              "endSeconds": 12.1,
+              "text": "こんにちは、サラです。"
+            },
+            {
+              "startSeconds": 12.1,
+              "endSeconds": 14.7,
+              "text": "ああ、はーい。"
+            },
+            {
+              "startSeconds": 14.7,
+              "endSeconds": 15.0,
+              "text": null
+            },
+            {
+              "startSeconds": 15.0,
+              "endSeconds": 17.1,
+              "text": "いらっしゃい。どうぞ　あがって　ください。"
+            },
+            {
+              "startSeconds": 17.1,
+              "endSeconds": 18.6,
+              "text": "おじゃまします。"
+            },
+            {
+              "startSeconds": 18.6,
+              "endSeconds": 20.5,
+              "text": "この　スリッパ、どうぞ。"
+            },
+            {
+              "startSeconds": 20.5,
+              "endSeconds": 23.0,
+              "text": "ありがとうございます。"
+            },
+            {
+              "startSeconds": 23.0,
+              "endSeconds": 27.5,
+              "text": null
+            },
+            {
+              "startSeconds": 27.5,
+              "endSeconds": 29.1,
+              "text": "どうぞ。"
+            },
+            {
+              "startSeconds": 29.1,
+              "endSeconds": 33.0,
+              "text": "わぁ、きれいな　いえですね。"
+            },
+            {
+              "startSeconds": 33.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge20",
+          "canDoId": 20,
+          "variant": "challenge",
+          "title": "Прийти в гости и встретить гостя · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do20.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge20.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge20.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 6.0,
+              "text": "きむらさんの　いえに　いきましょう。"
+            },
+            {
+              "startSeconds": 6.0,
+              "endSeconds": 13.5,
+              "text": null
+            },
+            {
+              "startSeconds": 13.5,
+              "endSeconds": 17.0,
+              "text": "はい。"
+            },
+            {
+              "startSeconds": 17.0,
+              "endSeconds": 21.8,
+              "text": "いらっしゃい。どうぞ　あがって　ください。"
+            },
+            {
+              "startSeconds": 21.8,
+              "endSeconds": 26.0,
+              "text": "おじゃまします。"
+            },
+            {
+              "startSeconds": 26.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_21_01",
+          "canDoId": 21,
+          "variant": "practice",
+          "title": "Показать комнаты и узнать подпись на табличке · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do21.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_21_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_21_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 7.0,
+              "text": null
+            },
+            {
+              "startSeconds": 7.0,
+              "endSeconds": 9.0,
+              "text": "どうぞ。"
+            },
+            {
+              "startSeconds": 9.0,
+              "endSeconds": 11.3,
+              "text": null
+            },
+            {
+              "startSeconds": 11.3,
+              "endSeconds": 13.9,
+              "text": "ひろい　いえですね。"
+            },
+            {
+              "startSeconds": 13.9,
+              "endSeconds": 15.1,
+              "text": "ちょっと　みますか。"
+            },
+            {
+              "startSeconds": 15.1,
+              "endSeconds": 17.8,
+              "text": "はい。"
+            },
+            {
+              "startSeconds": 17.8,
+              "endSeconds": 21.0,
+              "text": "ここは　だいどころです。"
+            },
+            {
+              "startSeconds": 21.0,
+              "endSeconds": 23.0,
+              "text": null
+            },
+            {
+              "startSeconds": 23.0,
+              "endSeconds": 26.0,
+              "text": "ここは　トイレです。"
+            },
+            {
+              "startSeconds": 26.0,
+              "endSeconds": 28.8,
+              "text": null
+            },
+            {
+              "startSeconds": 28.8,
+              "endSeconds": 30.6,
+              "text": "ここは　おしいれです。"
+            },
+            {
+              "startSeconds": 30.6,
+              "endSeconds": 32.5,
+              "text": "へぇー。"
+            },
+            {
+              "startSeconds": 32.5,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge21",
+          "canDoId": 21,
+          "variant": "challenge",
+          "title": "Показать комнаты и узнать подпись на табличке · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do21.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge21.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge21.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 10.0,
+              "text": "まいさん、たいちくんが　あなたの　いえに　きました。へやを　あんないしましょう。"
+            },
+            {
+              "startSeconds": 10.0,
+              "endSeconds": 18.8,
+              "text": null
+            },
+            {
+              "startSeconds": 18.8,
+              "endSeconds": 24.6,
+              "text": "いらっしゃい。どうぞ　あがって　ください。"
+            },
+            {
+              "startSeconds": 24.6,
+              "endSeconds": 27.0,
+              "text": "おじゃまします。"
+            },
+            {
+              "startSeconds": 27.0,
+              "endSeconds": 41.0,
+              "text": null
+            },
+            {
+              "startSeconds": 41.0,
+              "endSeconds": 46.0,
+              "text": "いえを　あんないしましょう。"
+            },
+            {
+              "startSeconds": 46.0,
+              "endSeconds": 51.0,
+              "text": null
+            },
+            {
+              "startSeconds": 51.0,
+              "endSeconds": 56.5,
+              "text": "ここは…"
+            },
+            {
+              "startSeconds": 56.5,
+              "endSeconds": 63.3,
+              "text": "ここは　トイレです。"
+            },
+            {
+              "startSeconds": 63.3,
+              "endSeconds": 66.0,
+              "text": "ちょっと　いいですか。"
+            },
+            {
+              "startSeconds": 66.0,
+              "endSeconds": 70.7,
+              "text": null
+            },
+            {
+              "startSeconds": 70.7,
+              "endSeconds": 76.3,
+              "text": "ここは…"
+            },
+            {
+              "startSeconds": 76.3,
+              "endSeconds": 81.0,
+              "text": "ここは　おふろです。"
+            },
+            {
+              "startSeconds": 81.0,
+              "endSeconds": 83.5,
+              "text": "きれいな　へやですね。"
+            },
+            {
+              "startSeconds": 83.5,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        }
+      ]
     },
     {
       "id": "marugoto.starter-a1.lesson.09",
@@ -277,7 +2578,285 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.video.cando_23_01",
+          "canDoId": 23,
+          "variant": "practice",
+          "title": "Назвать время действия · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do23.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_23_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_23_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.5,
+              "text": null
+            },
+            {
+              "startSeconds": 5.5,
+              "endSeconds": 8.0,
+              "text": null
+            },
+            {
+              "startSeconds": 8.0,
+              "endSeconds": 9.0,
+              "text": "おはよう。"
+            },
+            {
+              "startSeconds": 9.0,
+              "endSeconds": 11.0,
+              "text": "おはよう。"
+            },
+            {
+              "startSeconds": 11.0,
+              "endSeconds": 13.5,
+              "text": "まいにち　なんじに　おきますか。"
+            },
+            {
+              "startSeconds": 13.5,
+              "endSeconds": 15.2,
+              "text": "4時に　おきます。"
+            },
+            {
+              "startSeconds": 15.2,
+              "endSeconds": 20.3,
+              "text": "えー、はやいですね。じゃ、なんじに　ねますか。"
+            },
+            {
+              "startSeconds": 20.3,
+              "endSeconds": 23.0,
+              "text": "9時ごろ　ねます。"
+            },
+            {
+              "startSeconds": 23.0,
+              "endSeconds": 26.0,
+              "text": "そうですか。はやいですね。"
+            },
+            {
+              "startSeconds": 26.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge23",
+          "canDoId": 23,
+          "variant": "challenge",
+          "title": "Назвать время действия · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do23.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge23.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge23.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 10.0,
+              "text": "かずおさんは　はやく　ねます。あなたが　なんじに　なにを　するか　はなしましょう。"
+            },
+            {
+              "startSeconds": 10.0,
+              "endSeconds": 14.0,
+              "text": null
+            },
+            {
+              "startSeconds": 14.0,
+              "endSeconds": 16.5,
+              "text": "さて、ちょっと　しつれい。"
+            },
+            {
+              "startSeconds": 16.5,
+              "endSeconds": 19.0,
+              "text": null
+            },
+            {
+              "startSeconds": 19.0,
+              "endSeconds": 22.0,
+              "text": "ちちは　まいにち　4時に　おきます。"
+            },
+            {
+              "startSeconds": 22.0,
+              "endSeconds": 24.5,
+              "text": "はやいですね。"
+            },
+            {
+              "startSeconds": 24.5,
+              "endSeconds": 28.4,
+              "text": "まいにち　なんじに　おきますか。"
+            },
+            {
+              "startSeconds": 28.4,
+              "endSeconds": 34.1,
+              "text": "れい: 7時に　おきます。"
+            },
+            {
+              "startSeconds": 34.1,
+              "endSeconds": 40.0,
+              "text": "そうですか。じゃあ、なんじに　ねますか。"
+            },
+            {
+              "startSeconds": 40.0,
+              "endSeconds": 45.2,
+              "text": "れい: 11時に　ねます。"
+            },
+            {
+              "startSeconds": 45.2,
+              "endSeconds": 47.0,
+              "text": "そうですか。"
+            },
+            {
+              "startSeconds": 47.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_24_01",
+          "canDoId": 24,
+          "variant": "practice",
+          "title": "Коротко рассказать о своём дне · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do24.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_24_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_24_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.0,
+              "text": null
+            },
+            {
+              "startSeconds": 5.0,
+              "endSeconds": 8.8,
+              "text": "まいさん、まいにち　なんじに　おきますか。"
+            },
+            {
+              "startSeconds": 8.8,
+              "endSeconds": 12.1,
+              "text": "まいにち　7時に　おきます。"
+            },
+            {
+              "startSeconds": 12.1,
+              "endSeconds": 16.3,
+              "text": "そうですか。それから　なにを　しますか。"
+            },
+            {
+              "startSeconds": 16.3,
+              "endSeconds": 22.3,
+              "text": "8時に　がっこうに　いきます。5時ごろ　うちに　かえります。"
+            },
+            {
+              "startSeconds": 22.3,
+              "endSeconds": 25.0,
+              "text": "よるは　なにを　しますか。"
+            },
+            {
+              "startSeconds": 25.0,
+              "endSeconds": 29.5,
+              "text": "べんきょうします。ときどきですけど…"
+            },
+            {
+              "startSeconds": 29.5,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge24",
+          "canDoId": 24,
+          "variant": "challenge",
+          "title": "Коротко рассказать о своём дне · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do24.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge24.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge24.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 10.0,
+              "text": "かずおさんは　はやく　ねます。あなたの　1日を　はなしましょう。"
+            },
+            {
+              "startSeconds": 10.0,
+              "endSeconds": 14.0,
+              "text": null
+            },
+            {
+              "startSeconds": 14.0,
+              "endSeconds": 16.5,
+              "text": "さて、ちょっと　しつれい。"
+            },
+            {
+              "startSeconds": 16.5,
+              "endSeconds": 19.0,
+              "text": null
+            },
+            {
+              "startSeconds": 19.0,
+              "endSeconds": 22.0,
+              "text": "ちちは　まいにち　4時に　おきます。"
+            },
+            {
+              "startSeconds": 22.0,
+              "endSeconds": 24.5,
+              "text": "はやいですね。"
+            },
+            {
+              "startSeconds": 24.5,
+              "endSeconds": 28.4,
+              "text": "まいにち　なんじに　おきますか。"
+            },
+            {
+              "startSeconds": 28.4,
+              "endSeconds": 34.1,
+              "text": "れい: 7時に　おきます。"
+            },
+            {
+              "startSeconds": 34.1,
+              "endSeconds": 40.0,
+              "text": "そうですか。じゃあ、なんじに　ねますか。"
+            },
+            {
+              "startSeconds": 40.0,
+              "endSeconds": 45.2,
+              "text": "れい: 11時に　ねます。"
+            },
+            {
+              "startSeconds": 45.2,
+              "endSeconds": 47.0,
+              "text": "そうですか。"
+            },
+            {
+              "startSeconds": 47.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        }
+      ]
     },
     {
       "id": "marugoto.starter-a1.lesson.10",
@@ -308,7 +2887,350 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.video.cando_25_01",
+          "canDoId": 25,
+          "variant": "practice",
+          "title": "Рассказать о рабочей неделе · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do25.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_25_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_25_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.0,
+              "text": null
+            },
+            {
+              "startSeconds": 5.0,
+              "endSeconds": 9.6,
+              "text": "きむらさん、こんしゅうは　いそがしいですか。"
+            },
+            {
+              "startSeconds": 9.6,
+              "endSeconds": 9.8,
+              "text": null
+            },
+            {
+              "startSeconds": 9.8,
+              "endSeconds": 13.3,
+              "text": "えーと、火よう日は　ざんぎょうします。"
+            },
+            {
+              "startSeconds": 13.3,
+              "endSeconds": 13.5,
+              "text": null
+            },
+            {
+              "startSeconds": 13.5,
+              "endSeconds": 17.6,
+              "text": "それから、水よう日から　金よう日まで　ソウルに　いきます。"
+            },
+            {
+              "startSeconds": 17.6,
+              "endSeconds": 20.7,
+              "text": "ソウルですか。おしごとですか。"
+            },
+            {
+              "startSeconds": 20.7,
+              "endSeconds": 22.8,
+              "text": "はい、しごとです。"
+            },
+            {
+              "startSeconds": 22.8,
+              "endSeconds": 25.0,
+              "text": "そうですか。"
+            },
+            {
+              "startSeconds": 25.0,
+              "endSeconds": 27.7,
+              "text": "日よう日は　つまと　テニスを　します。"
+            },
+            {
+              "startSeconds": 27.7,
+              "endSeconds": 28.0,
+              "text": null
+            },
+            {
+              "startSeconds": 28.0,
+              "endSeconds": 32.5,
+              "text": "それから、かぞくと　レストランで　しょくじを　します。"
+            },
+            {
+              "startSeconds": 32.5,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge25",
+          "canDoId": 25,
+          "variant": "challenge",
+          "title": "Рассказать о рабочей неделе · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do25.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge25.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge25.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 10.5,
+              "text": "パーティーの　ひを　きめます。まいさんと　スケジュールを　あわせましょう。"
+            },
+            {
+              "startSeconds": 10.5,
+              "endSeconds": 18.0,
+              "text": "らいしゅう　たいちの　バースデーパーティーを　します。スケジュールは　どうですか。"
+            },
+            {
+              "startSeconds": 18.0,
+              "endSeconds": 20.6,
+              "text": null
+            },
+            {
+              "startSeconds": 20.6,
+              "endSeconds": 23.8,
+              "text": "月よう日は?"
+            },
+            {
+              "startSeconds": 23.8,
+              "endSeconds": 29.8,
+              "text": "月よう日は　8時から　えいごを　べんきょうします。"
+            },
+            {
+              "startSeconds": 29.8,
+              "endSeconds": 33.3,
+              "text": "水よう日は?"
+            },
+            {
+              "startSeconds": 33.3,
+              "endSeconds": 38.8,
+              "text": "水よう日は　6時半から　かいものに　いきます。"
+            },
+            {
+              "startSeconds": 38.8,
+              "endSeconds": 41.8,
+              "text": "金よう日は?"
+            },
+            {
+              "startSeconds": 41.8,
+              "endSeconds": 46.0,
+              "text": "金よう日は　7時から　ともだちと　しょくじに　いきます。"
+            },
+            {
+              "startSeconds": 46.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_26_01",
+          "canDoId": 26,
+          "variant": "practice",
+          "title": "Договориться о встрече · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do26.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_26_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_26_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.0,
+              "text": null
+            },
+            {
+              "startSeconds": 5.0,
+              "endSeconds": 9.7,
+              "text": "らいしゅう　アントンさんの　バースデーパーティーを　します。"
+            },
+            {
+              "startSeconds": 9.7,
+              "endSeconds": 10.0,
+              "text": null
+            },
+            {
+              "startSeconds": 10.0,
+              "endSeconds": 17.0,
+              "text": "わたしは　土よう日と　日よう日が　だいじょうぶです。かわさきせんせいは?"
+            },
+            {
+              "startSeconds": 17.0,
+              "endSeconds": 20.0,
+              "text": "日よう日は　だめです。すみません。"
+            },
+            {
+              "startSeconds": 20.0,
+              "endSeconds": 22.5,
+              "text": "じゃあ、土よう日が　いいですね。"
+            },
+            {
+              "startSeconds": 22.5,
+              "endSeconds": 24.5,
+              "text": "はい。"
+            },
+            {
+              "startSeconds": 24.5,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge26",
+          "canDoId": 26,
+          "variant": "challenge",
+          "title": "Договориться о встрече · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do26.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge26.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge26.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 10.5,
+              "text": "パーティーの　ひを　きめます。ともだちに　よていを　ききましょう。"
+            },
+            {
+              "startSeconds": 10.5,
+              "endSeconds": 18.0,
+              "text": "らいしゅう　たいちの　バースデーパーティーを　します。スケジュールは　どうですか。"
+            },
+            {
+              "startSeconds": 18.0,
+              "endSeconds": 20.6,
+              "text": null
+            },
+            {
+              "startSeconds": 20.6,
+              "endSeconds": 23.8,
+              "text": "月よう日は?"
+            },
+            {
+              "startSeconds": 23.8,
+              "endSeconds": 29.8,
+              "text": "月よう日は　8時から　えいごを　べんきょうします。"
+            },
+            {
+              "startSeconds": 29.8,
+              "endSeconds": 33.3,
+              "text": "水よう日は?"
+            },
+            {
+              "startSeconds": 33.3,
+              "endSeconds": 38.8,
+              "text": "水よう日は　6時半から　かいものに　いきます。"
+            },
+            {
+              "startSeconds": 38.8,
+              "endSeconds": 41.8,
+              "text": "金よう日は?"
+            },
+            {
+              "startSeconds": 41.8,
+              "endSeconds": 45.0,
+              "text": "金よう日は　7時から　ともだちと　しょくじに　いきます。"
+            },
+            {
+              "startSeconds": 45.0,
+              "endSeconds": 50.5,
+              "text": null
+            },
+            {
+              "startSeconds": 50.5,
+              "endSeconds": 57.0,
+              "text": "そうですか。じゃ、土よう日か　日よう日に　しましょう。"
+            },
+            {
+              "startSeconds": 57.0,
+              "endSeconds": 64.3,
+              "text": "あ、エマさんの　スケジュールは　どうでしょうか。でんわして　ください。"
+            },
+            {
+              "startSeconds": 64.3,
+              "endSeconds": 71.0,
+              "text": null
+            },
+            {
+              "startSeconds": 71.0,
+              "endSeconds": 74.0,
+              "text": "もしもし。"
+            },
+            {
+              "startSeconds": 74.0,
+              "endSeconds": 79.1,
+              "text": "あなたの　なまえを　いいましょう。"
+            },
+            {
+              "startSeconds": 79.1,
+              "endSeconds": 85.0,
+              "text": "もしもし、 (なまえ) です。"
+            },
+            {
+              "startSeconds": 85.0,
+              "endSeconds": 89.3,
+              "text": "こんにちは。"
+            },
+            {
+              "startSeconds": 89.3,
+              "endSeconds": 94.7,
+              "text": "ようけんを　はなしましょう。"
+            },
+            {
+              "startSeconds": 94.7,
+              "endSeconds": 105.1,
+              "text": "らいしゅう　たいちくんの　バースデーパーティーを　します。いつが　いいですか。"
+            },
+            {
+              "startSeconds": 105.1,
+              "endSeconds": 108.8,
+              "text": "土よう日が　いいです。"
+            },
+            {
+              "startSeconds": 108.8,
+              "endSeconds": 113.8,
+              "text": "パーティーは　いつが　いいですか。"
+            },
+            {
+              "startSeconds": 113.8,
+              "endSeconds": 120.0,
+              "text": "土よう日が　いいです。"
+            },
+            {
+              "startSeconds": 120.0,
+              "endSeconds": 122.0,
+              "text": "そうしましょう!"
+            },
+            {
+              "startSeconds": 122.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        }
+      ]
     },
     {
       "id": "marugoto.starter-a1.lesson.11",
@@ -338,7 +3260,265 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.video.cando_28_01",
+          "canDoId": 28,
+          "variant": "practice",
+          "title": "Рассказать о своём хобби · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do28.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_28_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_28_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.0,
+              "text": null
+            },
+            {
+              "startSeconds": 5.0,
+              "endSeconds": 7.6,
+              "text": "おー。"
+            },
+            {
+              "startSeconds": 7.6,
+              "endSeconds": 10.8,
+              "text": "はい。わたしは　どくしょが　すきです。"
+            },
+            {
+              "startSeconds": 10.8,
+              "endSeconds": 11.0,
+              "text": null
+            },
+            {
+              "startSeconds": 11.0,
+              "endSeconds": 14.0,
+              "text": "やまざきさんの　しゅみは　なんですか。"
+            },
+            {
+              "startSeconds": 14.0,
+              "endSeconds": 15.0,
+              "text": "おんがくです。"
+            },
+            {
+              "startSeconds": 15.0,
+              "endSeconds": 18.0,
+              "text": "どんな　おんがくが　すきですか。"
+            },
+            {
+              "startSeconds": 18.0,
+              "endSeconds": 19.8,
+              "text": "ジャズが　すきです。"
+            },
+            {
+              "startSeconds": 19.8,
+              "endSeconds": 22.5,
+              "text": "そうですか。"
+            },
+            {
+              "startSeconds": 22.5,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge28",
+          "canDoId": 28,
+          "variant": "challenge",
+          "title": "Рассказать о своём хобби · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do28.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge28.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge28.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 6.0,
+              "text": "しゅみの　はなしを　しましょう。"
+            },
+            {
+              "startSeconds": 6.0,
+              "endSeconds": 8.0,
+              "text": null
+            },
+            {
+              "startSeconds": 8.0,
+              "endSeconds": 15.0,
+              "text": "あ、これですか?　わたしは　どくしょが　だいすきです。"
+            },
+            {
+              "startSeconds": 15.0,
+              "endSeconds": 19.5,
+              "text": "しゅみは　なんですか。"
+            },
+            {
+              "startSeconds": 19.5,
+              "endSeconds": 25.0,
+              "text": "れい: スポーツが　すきです。 / サッカーが　すきです。 / えいがです。"
+            },
+            {
+              "startSeconds": 25.0,
+              "endSeconds": 28.0,
+              "text": "そうですか。"
+            },
+            {
+              "startSeconds": 28.0,
+              "endSeconds": 33.0,
+              "text": "これ　どうぞ。"
+            },
+            {
+              "startSeconds": 33.0,
+              "endSeconds": 38.0,
+              "text": "まいさんの　しゅみを　聞きましょう。"
+            },
+            {
+              "startSeconds": 38.0,
+              "endSeconds": 43.0,
+              "text": "まいさんの　しゅみは　なんですか。"
+            },
+            {
+              "startSeconds": 43.0,
+              "endSeconds": 51.7,
+              "text": "わたし?　えーと、えいがが　すきです。"
+            },
+            {
+              "startSeconds": 51.7,
+              "endSeconds": 55.5,
+              "text": "どんな　えいがが　すきか　聞きましょう。"
+            },
+            {
+              "startSeconds": 55.5,
+              "endSeconds": 61.5,
+              "text": "どんな　えいがが　すきですか。"
+            },
+            {
+              "startSeconds": 61.5,
+              "endSeconds": 64.0,
+              "text": "コメディが　すきです。"
+            },
+            {
+              "startSeconds": 64.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_29_01",
+          "canDoId": 29,
+          "variant": "practice",
+          "title": "Рассказать о выходном дне · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do29.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_29_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_29_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.0,
+              "text": null
+            },
+            {
+              "startSeconds": 5.0,
+              "endSeconds": 9.8,
+              "text": "うえださん、やすみの　ひに　なにを　しますか。"
+            },
+            {
+              "startSeconds": 9.8,
+              "endSeconds": 16.9,
+              "text": "やすみの　ひですか。やすみの　ひは、よく　ともだちと　でかけます。"
+            },
+            {
+              "startSeconds": 16.9,
+              "endSeconds": 17.0,
+              "text": null
+            },
+            {
+              "startSeconds": 17.0,
+              "endSeconds": 18.8,
+              "text": "おてらを　見に　いきます。"
+            },
+            {
+              "startSeconds": 18.8,
+              "endSeconds": 21.0,
+              "text": "いいですね。"
+            },
+            {
+              "startSeconds": 21.0,
+              "endSeconds": 25.0,
+              "text": "わたしは　古い　おてらが　だいすきです。"
+            },
+            {
+              "startSeconds": 25.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge29",
+          "canDoId": 29,
+          "variant": "challenge",
+          "title": "Рассказать о выходном дне · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do29.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge29.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge29.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 6.0,
+              "text": "やすみの　ひは　どう　すごすか　話しましょう。"
+            },
+            {
+              "startSeconds": 6.0,
+              "endSeconds": 8.8,
+              "text": null
+            },
+            {
+              "startSeconds": 8.8,
+              "endSeconds": 14.0,
+              "text": "やすみの　ひに　なにを　しますか。"
+            },
+            {
+              "startSeconds": 14.0,
+              "endSeconds": 20.0,
+              "text": "れい: ときどき　サッカーを　します。 / うちで　ゆっくり　します。"
+            },
+            {
+              "startSeconds": 20.0,
+              "endSeconds": 25.0,
+              "text": "そうですか。わたしは　よく　テニスを　します。"
+            },
+            {
+              "startSeconds": 25.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        }
+      ]
     },
     {
       "id": "marugoto.starter-a1.lesson.12",
@@ -369,7 +3549,321 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.video.cando_31_01",
+          "canDoId": 31,
+          "variant": "practice",
+          "title": "Сказать, куда и зачем пойдём · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do31.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_31_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_31_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.0,
+              "text": null
+            },
+            {
+              "startSeconds": 5.0,
+              "endSeconds": 10.2,
+              "text": "あ、金よう日、いけばなコンテストが　ありますよ。"
+            },
+            {
+              "startSeconds": 10.2,
+              "endSeconds": 13.6,
+              "text": "あーいいですね。せんせいは　見に　いきますか。"
+            },
+            {
+              "startSeconds": 13.6,
+              "endSeconds": 17.9,
+              "text": "はい、いつも　いきます。ことしも　たぶん　見に　いきます。"
+            },
+            {
+              "startSeconds": 17.9,
+              "endSeconds": 19.5,
+              "text": "だれと　いきますか。"
+            },
+            {
+              "startSeconds": 19.5,
+              "endSeconds": 21.5,
+              "text": "ともだちとです。"
+            },
+            {
+              "startSeconds": 21.5,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge31",
+          "canDoId": 31,
+          "variant": "challenge",
+          "title": "Сказать, куда и зачем пойдём · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do31.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge31.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge31.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 6.0,
+              "text": "としこさん、まいさんと　でかける　やくそくを　しましょう。"
+            },
+            {
+              "startSeconds": 6.0,
+              "endSeconds": 8.0,
+              "text": "そういえば…"
+            },
+            {
+              "startSeconds": 8.0,
+              "endSeconds": 13.5,
+              "text": "これこれ。こんど　きものショーが　あります。"
+            },
+            {
+              "startSeconds": 13.5,
+              "endSeconds": 17.0,
+              "text": "いっしょに　いきませんか。"
+            },
+            {
+              "startSeconds": 17.0,
+              "endSeconds": 22.5,
+              "text": "いつ?"
+            },
+            {
+              "startSeconds": 22.5,
+              "endSeconds": 28.2,
+              "text": "いつですか。"
+            },
+            {
+              "startSeconds": 28.2,
+              "endSeconds": 31.0,
+              "text": "5月3日です。"
+            },
+            {
+              "startSeconds": 31.0,
+              "endSeconds": 40.0,
+              "text": "わたしは　まいと　見に　いきます。いっしょに　いきませんか。"
+            },
+            {
+              "startSeconds": 40.0,
+              "endSeconds": 45.5,
+              "text": "いきましょう。"
+            },
+            {
+              "startSeconds": 45.5,
+              "endSeconds": 51.0,
+              "text": "いいですね。いきましょう。"
+            },
+            {
+              "startSeconds": 51.0,
+              "endSeconds": 54.0,
+              "text": "たのしみですね!"
+            },
+            {
+              "startSeconds": 54.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_32_01",
+          "canDoId": 32,
+          "variant": "practice",
+          "title": "Пригласить друга и ответить · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do32.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_32_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_32_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.8,
+              "text": null
+            },
+            {
+              "startSeconds": 5.8,
+              "endSeconds": 9.9,
+              "text": "アントンさん、8月31日に　けんどうが　ありますよ。"
+            },
+            {
+              "startSeconds": 9.9,
+              "endSeconds": 12.7,
+              "text": "へえ、けんどうですか。"
+            },
+            {
+              "startSeconds": 12.7,
+              "endSeconds": 14.5,
+              "text": "いっしょに　見に　いきませんか。"
+            },
+            {
+              "startSeconds": 14.5,
+              "endSeconds": 16.6,
+              "text": "いいですね。いきましょう。"
+            },
+            {
+              "startSeconds": 16.6,
+              "endSeconds": 18.5,
+              "text": "たのしみですね。"
+            },
+            {
+              "startSeconds": 18.5,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_32_02",
+          "canDoId": 32,
+          "variant": "practice",
+          "title": "Пригласить друга и ответить · диалог 2",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do32.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_32_02.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_32_02.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 7.0,
+              "text": null
+            },
+            {
+              "startSeconds": 7.0,
+              "endSeconds": 10.3,
+              "text": "あ、まつもとせんせい!"
+            },
+            {
+              "startSeconds": 10.3,
+              "endSeconds": 13.3,
+              "text": "8月31日に　けんどうを　見に　いきます。"
+            },
+            {
+              "startSeconds": 13.3,
+              "endSeconds": 15.8,
+              "text": "いっしょに　見に　いきませんか。"
+            },
+            {
+              "startSeconds": 15.8,
+              "endSeconds": 21.0,
+              "text": "31日ですか。31日は　ちょっと…。すみません。"
+            },
+            {
+              "startSeconds": 21.0,
+              "endSeconds": 24.1,
+              "text": "そうですか。じゃあ、また　こんど。"
+            },
+            {
+              "startSeconds": 24.1,
+              "endSeconds": 26.0,
+              "text": "はい、また。"
+            },
+            {
+              "startSeconds": 26.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge32",
+          "canDoId": 32,
+          "variant": "challenge",
+          "title": "Пригласить друга и ответить · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do32.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge32.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge32.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 6.0,
+              "text": "としこさん、まいさんと　でかける　やくそくを　しましょう。"
+            },
+            {
+              "startSeconds": 6.0,
+              "endSeconds": 8.0,
+              "text": "そういえば…"
+            },
+            {
+              "startSeconds": 8.0,
+              "endSeconds": 13.5,
+              "text": "これこれ。こんど　きものショーが　あります。"
+            },
+            {
+              "startSeconds": 13.5,
+              "endSeconds": 17.0,
+              "text": "いっしょに　いきませんか。"
+            },
+            {
+              "startSeconds": 17.0,
+              "endSeconds": 22.5,
+              "text": "いつ?"
+            },
+            {
+              "startSeconds": 22.5,
+              "endSeconds": 28.2,
+              "text": "いつですか。"
+            },
+            {
+              "startSeconds": 28.2,
+              "endSeconds": 31.0,
+              "text": "5月3日です。"
+            },
+            {
+              "startSeconds": 31.0,
+              "endSeconds": 40.0,
+              "text": "わたしは　まいと　見に　いきます。いっしょに　いきませんか。"
+            },
+            {
+              "startSeconds": 40.0,
+              "endSeconds": 45.5,
+              "text": "いきましょう。"
+            },
+            {
+              "startSeconds": 45.5,
+              "endSeconds": 51.0,
+              "text": "いいですね。いきましょう。"
+            },
+            {
+              "startSeconds": 51.0,
+              "endSeconds": 54.0,
+              "text": "たのしみですね!"
+            },
+            {
+              "startSeconds": 54.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        }
+      ]
     },
     {
       "id": "marugoto.starter-a1.lesson.13",
@@ -400,7 +3894,325 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.video.cando_34_01",
+          "canDoId": 34,
+          "variant": "practice",
+          "title": "Назвать водителю пункт назначения · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do34.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_34_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_34_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 11.0,
+              "text": null
+            },
+            {
+              "startSeconds": 11.0,
+              "endSeconds": 12.0,
+              "text": "はい、どうぞ。"
+            },
+            {
+              "startSeconds": 12.0,
+              "endSeconds": 14.5,
+              "text": "すみません、にもつ、おねがいします。"
+            },
+            {
+              "startSeconds": 14.5,
+              "endSeconds": 16.0,
+              "text": "わかりました。"
+            },
+            {
+              "startSeconds": 16.0,
+              "endSeconds": 36.0,
+              "text": null
+            },
+            {
+              "startSeconds": 36.0,
+              "endSeconds": 37.5,
+              "text": "どちらまでですか。"
+            },
+            {
+              "startSeconds": 37.5,
+              "endSeconds": 39.6,
+              "text": "さくらえきまで　おねがいします。"
+            },
+            {
+              "startSeconds": 39.6,
+              "endSeconds": 42.0,
+              "text": "はい、わかりました。"
+            },
+            {
+              "startSeconds": 42.0,
+              "endSeconds": 44.0,
+              "text": "あのう、とおいですか。"
+            },
+            {
+              "startSeconds": 44.0,
+              "endSeconds": 49.0,
+              "text": "ううん、そうですね。たぶん　20分ぐらいです。"
+            },
+            {
+              "startSeconds": 49.0,
+              "endSeconds": 76.8,
+              "text": null
+            },
+            {
+              "startSeconds": 76.8,
+              "endSeconds": 78.5,
+              "text": "ここで　いいです。"
+            },
+            {
+              "startSeconds": 78.5,
+              "endSeconds": 82.0,
+              "text": "はい。3000えんです。"
+            },
+            {
+              "startSeconds": 82.0,
+              "endSeconds": 85.8,
+              "text": null
+            },
+            {
+              "startSeconds": 85.8,
+              "endSeconds": 90.0,
+              "text": "どうも　ありがとうございました。きを　つけて。"
+            },
+            {
+              "startSeconds": 90.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge34",
+          "canDoId": 34,
+          "variant": "challenge",
+          "title": "Назвать водителю пункт назначения · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do34.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge34.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge34.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 6.0,
+              "text": "タクシーに　のりましょう。"
+            },
+            {
+              "startSeconds": 6.0,
+              "endSeconds": 11.0,
+              "text": null
+            },
+            {
+              "startSeconds": 11.0,
+              "endSeconds": 15.5,
+              "text": "はい、どうぞ。"
+            },
+            {
+              "startSeconds": 15.5,
+              "endSeconds": 20.5,
+              "text": "どちらまでですか。"
+            },
+            {
+              "startSeconds": 20.5,
+              "endSeconds": 25.5,
+              "text": "「みなとホール」まで　いきましょう。"
+            },
+            {
+              "startSeconds": 25.5,
+              "endSeconds": 30.0,
+              "text": "みなとホールまで　おねがいします。"
+            },
+            {
+              "startSeconds": 30.0,
+              "endSeconds": 31.5,
+              "text": null
+            },
+            {
+              "startSeconds": 31.5,
+              "endSeconds": 37.0,
+              "text": "はい、わかりました。"
+            },
+            {
+              "startSeconds": 37.0,
+              "endSeconds": 41.5,
+              "text": "どのくらい　かかるか　聞きましょう。"
+            },
+            {
+              "startSeconds": 41.5,
+              "endSeconds": 49.0,
+              "text": "あのう、とおいですか。"
+            },
+            {
+              "startSeconds": 49.0,
+              "endSeconds": 53.0,
+              "text": "そうですね。たぶん　10分ぐらいです。"
+            },
+            {
+              "startSeconds": 53.0,
+              "endSeconds": 75.0,
+              "text": null
+            },
+            {
+              "startSeconds": 75.0,
+              "endSeconds": 79.2,
+              "text": "おきゃくさん、つきましたよ。1000えんです。"
+            },
+            {
+              "startSeconds": 79.2,
+              "endSeconds": 83.0,
+              "text": null
+            },
+            {
+              "startSeconds": 83.0,
+              "endSeconds": 86.5,
+              "text": "ありがとうございます。きを　つけて。"
+            },
+            {
+              "startSeconds": 86.5,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_35_01",
+          "canDoId": 35,
+          "variant": "practice",
+          "title": "Объяснить маршрут и выбор транспорта · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do35.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_35_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_35_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 7.0,
+              "text": null
+            },
+            {
+              "startSeconds": 7.0,
+              "endSeconds": 9.1,
+              "text": "あ、かわさきせんせい!"
+            },
+            {
+              "startSeconds": 9.1,
+              "endSeconds": 10.0,
+              "text": "はい。"
+            },
+            {
+              "startSeconds": 10.0,
+              "endSeconds": 13.8,
+              "text": "JFスポーツセンターは　どこに　ありますか。"
+            },
+            {
+              "startSeconds": 13.8,
+              "endSeconds": 15.7,
+              "text": "みさきえきの　ちかくです。"
+            },
+            {
+              "startSeconds": 15.7,
+              "endSeconds": 20.0,
+              "text": "そうですか。みさきえきまで　どうやって　いきますか。"
+            },
+            {
+              "startSeconds": 20.0,
+              "endSeconds": 23.5,
+              "text": "ダンさんの　うちは　いずみえきの　ちかくですね。"
+            },
+            {
+              "startSeconds": 23.5,
+              "endSeconds": 24.7,
+              "text": "はい。"
+            },
+            {
+              "startSeconds": 24.7,
+              "endSeconds": 28.5,
+              "text": "いずみえきから　でんしゃが　いいですよ。べんりですから。"
+            },
+            {
+              "startSeconds": 28.5,
+              "endSeconds": 31.5,
+              "text": "そうですか。わかりました。"
+            },
+            {
+              "startSeconds": 31.5,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge35",
+          "canDoId": 35,
+          "variant": "challenge",
+          "title": "Объяснить маршрут и выбор транспорта · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do35.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge35.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge35.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 10.0,
+              "text": "みなとホールへの　いきかたが　わかりません。おしえて　もらいましょう。"
+            },
+            {
+              "startSeconds": 10.0,
+              "endSeconds": 17.5,
+              "text": "きものショーは　みなとホールで　あります。"
+            },
+            {
+              "startSeconds": 17.5,
+              "endSeconds": 22.7,
+              "text": "どうやって　いくか　聞きましょう。"
+            },
+            {
+              "startSeconds": 22.7,
+              "endSeconds": 27.5,
+              "text": "みなとホールまで　どうやって　いきますか。"
+            },
+            {
+              "startSeconds": 27.5,
+              "endSeconds": 34.5,
+              "text": "タクシーが　いいですよ。べんりですから。"
+            },
+            {
+              "startSeconds": 34.5,
+              "endSeconds": 42.0,
+              "text": "タクシー、みなとホールまで…はい。"
+            },
+            {
+              "startSeconds": 42.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        }
+      ]
     },
     {
       "id": "marugoto.starter-a1.lesson.14",
@@ -431,7 +4243,320 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.video.cando_36_01",
+          "canDoId": 36,
+          "variant": "practice",
+          "title": "Описать ориентиры и путь по городу · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do36.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_36_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_36_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 10.3,
+              "text": null
+            },
+            {
+              "startSeconds": 10.3,
+              "endSeconds": 14.0,
+              "text": "すみません、ちかくに　ゆうびんきょくは　ありますか。"
+            },
+            {
+              "startSeconds": 14.0,
+              "endSeconds": 16.0,
+              "text": "ゆうびんきょくですか。ありますよ。"
+            },
+            {
+              "startSeconds": 16.0,
+              "endSeconds": 18.0,
+              "text": "どこですか。"
+            },
+            {
+              "startSeconds": 18.0,
+              "endSeconds": 22.5,
+              "text": "わたしたちは　いま　ここです。ゆうびんきょくは　ここです。"
+            },
+            {
+              "startSeconds": 22.5,
+              "endSeconds": 22.8,
+              "text": null
+            },
+            {
+              "startSeconds": 22.8,
+              "endSeconds": 26.8,
+              "text": "まっすぐ　いきます。そして、みぎに　いきます。"
+            },
+            {
+              "startSeconds": 26.8,
+              "endSeconds": 30.0,
+              "text": "わかりました。ありがとうございます。"
+            },
+            {
+              "startSeconds": 30.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge36",
+          "canDoId": 36,
+          "variant": "challenge",
+          "title": "Описать ориентиры и путь по городу · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do36.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge36.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge36.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 6.0,
+              "text": "みちに　まよったら、だれかに　おしえて　もらいましょう。"
+            },
+            {
+              "startSeconds": 6.0,
+              "endSeconds": 8.0,
+              "text": "あ、そうだ。"
+            },
+            {
+              "startSeconds": 8.0,
+              "endSeconds": 12.5,
+              "text": "ちかくに　おいしい　レストランが　あります。いきましょう。"
+            },
+            {
+              "startSeconds": 12.5,
+              "endSeconds": 21.0,
+              "text": null
+            },
+            {
+              "startSeconds": 21.0,
+              "endSeconds": 23.0,
+              "text": "あれ?"
+            },
+            {
+              "startSeconds": 23.0,
+              "endSeconds": 25.0,
+              "text": "うーん。"
+            },
+            {
+              "startSeconds": 25.0,
+              "endSeconds": 34.5,
+              "text": null
+            },
+            {
+              "startSeconds": 34.5,
+              "endSeconds": 39.0,
+              "text": "この　ひとに　聞きましょう。"
+            },
+            {
+              "startSeconds": 39.0,
+              "endSeconds": 44.0,
+              "text": "すみません、この　レストランは　どこですか。"
+            },
+            {
+              "startSeconds": 44.0,
+              "endSeconds": 50.0,
+              "text": null
+            },
+            {
+              "startSeconds": 50.0,
+              "endSeconds": 58.0,
+              "text": "わたしたちは　いま　ここです。レストランは　ここです。"
+            },
+            {
+              "startSeconds": 58.0,
+              "endSeconds": 64.0,
+              "text": "まっすぐ　いきます。そして、ひだりに　いきます。"
+            },
+            {
+              "startSeconds": 64.0,
+              "endSeconds": 67.0,
+              "text": null
+            },
+            {
+              "startSeconds": 67.0,
+              "endSeconds": 71.0,
+              "text": "どうも　ありがとうございます。"
+            },
+            {
+              "startSeconds": 71.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_37_01",
+          "canDoId": 37,
+          "variant": "practice",
+          "title": "Сказать по телефону, где находишься · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do37.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_37_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_37_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 8.2,
+              "text": null
+            },
+            {
+              "startSeconds": 8.2,
+              "endSeconds": 12.0,
+              "text": "やまださん、おそいですね。"
+            },
+            {
+              "startSeconds": 12.0,
+              "endSeconds": 16.4,
+              "text": null
+            },
+            {
+              "startSeconds": 16.4,
+              "endSeconds": 18.0,
+              "text": "はい、もしもし。"
+            },
+            {
+              "startSeconds": 18.0,
+              "endSeconds": 24.0,
+              "text": "あ、やまざきさん。すみません、いま　どこですか。"
+            },
+            {
+              "startSeconds": 24.0,
+              "endSeconds": 29.2,
+              "text": "えきの　南に　きっさてんが　ありますね。"
+            },
+            {
+              "startSeconds": 29.2,
+              "endSeconds": 29.5,
+              "text": null
+            },
+            {
+              "startSeconds": 29.5,
+              "endSeconds": 30.9,
+              "text": "きっさてんに　います。"
+            },
+            {
+              "startSeconds": 30.9,
+              "endSeconds": 36.5,
+              "text": "あ、わかりました。いま　いきます。"
+            },
+            {
+              "startSeconds": 36.5,
+              "endSeconds": 39.3,
+              "text": "はい、きを　つけて。"
+            },
+            {
+              "startSeconds": 39.3,
+              "endSeconds": 39.6,
+              "text": null
+            },
+            {
+              "startSeconds": 39.6,
+              "endSeconds": 42.7,
+              "text": "もうすぐ　きますよ。"
+            },
+            {
+              "startSeconds": 42.7,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge37",
+          "canDoId": 37,
+          "variant": "challenge",
+          "title": "Сказать по телефону, где находишься · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do37.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge37.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge37.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 10.0,
+              "text": "まちあわせの　ばしょに　きました。でも、まいさんたちが　いません。"
+            },
+            {
+              "startSeconds": 10.0,
+              "endSeconds": 12.0,
+              "text": null
+            },
+            {
+              "startSeconds": 12.0,
+              "endSeconds": 16.5,
+              "text": "おそいですねぇ。"
+            },
+            {
+              "startSeconds": 16.5,
+              "endSeconds": 20.5,
+              "text": "あ、まいです。いま　どこですか。"
+            },
+            {
+              "startSeconds": 20.5,
+              "endSeconds": 23.0,
+              "text": null
+            },
+            {
+              "startSeconds": 23.0,
+              "endSeconds": 28.5,
+              "text": "ホールの　まえに　つきました。"
+            },
+            {
+              "startSeconds": 28.5,
+              "endSeconds": 34.5,
+              "text": "ホールの　まえに　います。"
+            },
+            {
+              "startSeconds": 34.5,
+              "endSeconds": 38.3,
+              "text": "わかりました。いま　いきます。"
+            },
+            {
+              "startSeconds": 38.3,
+              "endSeconds": 43.0,
+              "text": "おねがいします。"
+            },
+            {
+              "startSeconds": 43.0,
+              "endSeconds": 48.0,
+              "text": null
+            },
+            {
+              "startSeconds": 48.0,
+              "endSeconds": 51.0,
+              "text": "じゃ、いきましょう。"
+            },
+            {
+              "startSeconds": 51.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        }
+      ]
     },
     {
       "id": "marugoto.starter-a1.lesson.15",
@@ -461,7 +4586,215 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.video.cando_39_01",
+          "canDoId": 39,
+          "variant": "practice",
+          "title": "Выбрать вещь и подарок · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do39.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_39_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_39_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.0,
+              "text": null
+            },
+            {
+              "startSeconds": 5.0,
+              "endSeconds": 7.8,
+              "text": "あ、おみやげ、ほしいです。"
+            },
+            {
+              "startSeconds": 7.8,
+              "endSeconds": 9.0,
+              "text": "だれに　あげますか。"
+            },
+            {
+              "startSeconds": 9.0,
+              "endSeconds": 10.7,
+              "text": "いもうとに　あげます。"
+            },
+            {
+              "startSeconds": 10.7,
+              "endSeconds": 12.1,
+              "text": "なにを　あげますか。"
+            },
+            {
+              "startSeconds": 12.1,
+              "endSeconds": 14.0,
+              "text": "おおさかの　おみやげ、あげます。"
+            },
+            {
+              "startSeconds": 14.0,
+              "endSeconds": 16.5,
+              "text": "じゃあ、ここが　いいですよ。"
+            },
+            {
+              "startSeconds": 16.5,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge39",
+          "canDoId": 39,
+          "variant": "challenge",
+          "title": "Выбрать вещь и подарок · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do39.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge39.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge39.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 6.0,
+              "text": "まいさんと　買いものに　きました。シャツが　ほしいです。"
+            },
+            {
+              "startSeconds": 6.0,
+              "endSeconds": 15.0,
+              "text": null
+            },
+            {
+              "startSeconds": 15.0,
+              "endSeconds": 18.0,
+              "text": "なにが　ほしいですか。"
+            },
+            {
+              "startSeconds": 18.0,
+              "endSeconds": 22.5,
+              "text": "シャツが　ほしいです。"
+            },
+            {
+              "startSeconds": 22.5,
+              "endSeconds": 26.0,
+              "text": "シャツ…"
+            },
+            {
+              "startSeconds": 26.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_40_01",
+          "canDoId": 40,
+          "variant": "practice",
+          "title": "Обсудить покупку и место · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do40.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_40_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_40_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 10.7,
+              "text": null
+            },
+            {
+              "startSeconds": 10.7,
+              "endSeconds": 12.6,
+              "text": "じかんは　だいじょうぶですか。"
+            },
+            {
+              "startSeconds": 12.6,
+              "endSeconds": 13.5,
+              "text": "はい。"
+            },
+            {
+              "startSeconds": 13.5,
+              "endSeconds": 16.6,
+              "text": "じゃあ、いっしょに　かいものに　いきませんか。"
+            },
+            {
+              "startSeconds": 16.6,
+              "endSeconds": 21.6,
+              "text": "あ、ぼく、新しい　かばんが　ほしいです。どこで　買えますか。"
+            },
+            {
+              "startSeconds": 21.6,
+              "endSeconds": 25.3,
+              "text": "かばんですか。じゃあ、デパートに　いきましょう。"
+            },
+            {
+              "startSeconds": 25.3,
+              "endSeconds": 27.0,
+              "text": "はい!"
+            },
+            {
+              "startSeconds": 27.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge40",
+          "canDoId": 40,
+          "variant": "challenge",
+          "title": "Обсудить покупку и место · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do40.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge40.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge40.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 10.0,
+              "text": "シャツは　どこで　買えるでしょうか。まいさんに　聞いて　みましょう。"
+            },
+            {
+              "startSeconds": 10.0,
+              "endSeconds": 13.0,
+              "text": "シャツ…"
+            },
+            {
+              "startSeconds": 13.0,
+              "endSeconds": 17.8,
+              "text": "どこで　買えるか　聞きましょう。"
+            },
+            {
+              "startSeconds": 17.8,
+              "endSeconds": 24.8,
+              "text": "どこで　買えますか。"
+            },
+            {
+              "startSeconds": 24.8,
+              "endSeconds": 27.0,
+              "text": "あの　みせが　いいですよ。"
+            },
+            {
+              "startSeconds": 27.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        }
+      ]
     },
     {
       "id": "marugoto.starter-a1.lesson.16",
@@ -492,7 +4825,376 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.video.cando_41_01",
+          "canDoId": 41,
+          "variant": "practice",
+          "title": "Оценить и выбрать одежду · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do41.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_41_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_41_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 7.5,
+              "text": null
+            },
+            {
+              "startSeconds": 7.5,
+              "endSeconds": 11.3,
+              "text": "わー、きれいですね。だれに　あげますか。"
+            },
+            {
+              "startSeconds": 11.3,
+              "endSeconds": 14.0,
+              "text": "えっ、ともだちですよ。"
+            },
+            {
+              "startSeconds": 14.0,
+              "endSeconds": 17.0,
+              "text": "へえー。"
+            },
+            {
+              "startSeconds": 17.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge41",
+          "canDoId": 41,
+          "variant": "challenge",
+          "title": "Оценить и выбрать одежду · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do41.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge41.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge41.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 6.0,
+              "text": "まいさんの　おすすめの　シャツです。どうですか。"
+            },
+            {
+              "startSeconds": 6.0,
+              "endSeconds": 12.8,
+              "text": null
+            },
+            {
+              "startSeconds": 12.8,
+              "endSeconds": 15.0,
+              "text": "あ、これ、いいですね。"
+            },
+            {
+              "startSeconds": 15.0,
+              "endSeconds": 28.0,
+              "text": null
+            },
+            {
+              "startSeconds": 28.0,
+              "endSeconds": 30.7,
+              "text": "どうですか。"
+            },
+            {
+              "startSeconds": 30.7,
+              "endSeconds": 35.0,
+              "text": "れい: かわいいですね。 / ほしいな。 / たかいですね。"
+            },
+            {
+              "startSeconds": 35.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_43_01",
+          "canDoId": 43,
+          "variant": "practice",
+          "title": "Попросить товар и завершить покупку · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do43.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_43_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_43_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.0,
+              "text": null
+            },
+            {
+              "startSeconds": 5.0,
+              "endSeconds": 14.2,
+              "text": null
+            },
+            {
+              "startSeconds": 14.2,
+              "endSeconds": 17.7,
+              "text": "いらっしゃいませ。いかがですか。"
+            },
+            {
+              "startSeconds": 17.7,
+              "endSeconds": 21.2,
+              "text": "すみません。Sサイズ　ありますか。"
+            },
+            {
+              "startSeconds": 21.2,
+              "endSeconds": 27.4,
+              "text": "はい、あります。こちらです。"
+            },
+            {
+              "startSeconds": 27.4,
+              "endSeconds": 29.5,
+              "text": "きて　みても　いいですか。"
+            },
+            {
+              "startSeconds": 29.5,
+              "endSeconds": 33.0,
+              "text": "はい、どうぞ。"
+            },
+            {
+              "startSeconds": 33.0,
+              "endSeconds": 52.2,
+              "text": null
+            },
+            {
+              "startSeconds": 52.2,
+              "endSeconds": 55.0,
+              "text": "いかがですか。"
+            },
+            {
+              "startSeconds": 55.0,
+              "endSeconds": 55.9,
+              "text": null
+            },
+            {
+              "startSeconds": 55.9,
+              "endSeconds": 59.2,
+              "text": "わー、よく　にあいますよ。"
+            },
+            {
+              "startSeconds": 59.2,
+              "endSeconds": 62.1,
+              "text": "じゃあ、これ、ください。"
+            },
+            {
+              "startSeconds": 62.1,
+              "endSeconds": 65.0,
+              "text": "はい。ありがとうございます。"
+            },
+            {
+              "startSeconds": 65.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_43_02",
+          "canDoId": 43,
+          "variant": "practice",
+          "title": "Попросить товар и завершить покупку · диалог 2",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do43.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_43_02.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_43_02.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 7.0,
+              "text": null
+            },
+            {
+              "startSeconds": 7.0,
+              "endSeconds": 10.2,
+              "text": "いらっしゃいませ。いかがですか。"
+            },
+            {
+              "startSeconds": 10.2,
+              "endSeconds": 13.8,
+              "text": "すみません。ほかの　いろ、ありますか。"
+            },
+            {
+              "startSeconds": 13.8,
+              "endSeconds": 17.5,
+              "text": "はい、あかが　あります。"
+            },
+            {
+              "startSeconds": 17.5,
+              "endSeconds": 22.0,
+              "text": null
+            },
+            {
+              "startSeconds": 22.0,
+              "endSeconds": 24.5,
+              "text": "じゃあ、これ、ください。"
+            },
+            {
+              "startSeconds": 24.5,
+              "endSeconds": 27.5,
+              "text": "はい。ありがとうございます。"
+            },
+            {
+              "startSeconds": 27.5,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge43",
+          "canDoId": 43,
+          "variant": "challenge",
+          "title": "Попросить товар и завершить покупку · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do43.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge43.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge43.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 6.0,
+              "text": "ようふくを　買いましょう。"
+            },
+            {
+              "startSeconds": 6.0,
+              "endSeconds": 7.5,
+              "text": null
+            },
+            {
+              "startSeconds": 7.5,
+              "endSeconds": 11.0,
+              "text": "いらっしゃいませ。"
+            },
+            {
+              "startSeconds": 11.0,
+              "endSeconds": 20.5,
+              "text": "S?　M?　L?　あなたの　サイズが　あるか　聞きましょう。"
+            },
+            {
+              "startSeconds": 20.5,
+              "endSeconds": 27.5,
+              "text": "れい: Sサイズ、ありますか。"
+            },
+            {
+              "startSeconds": 27.5,
+              "endSeconds": 32.5,
+              "text": "はい、あります。こちらです。"
+            },
+            {
+              "startSeconds": 32.5,
+              "endSeconds": 35.5,
+              "text": null
+            },
+            {
+              "startSeconds": 35.5,
+              "endSeconds": 41.0,
+              "text": "きて　みましょう。"
+            },
+            {
+              "startSeconds": 41.0,
+              "endSeconds": 46.5,
+              "text": "きて　みても　いいですか。"
+            },
+            {
+              "startSeconds": 46.5,
+              "endSeconds": 49.0,
+              "text": "はい、どうぞ。"
+            },
+            {
+              "startSeconds": 49.0,
+              "endSeconds": 51.5,
+              "text": null
+            },
+            {
+              "startSeconds": 51.5,
+              "endSeconds": 54.5,
+              "text": "わぁ、いいですね。"
+            },
+            {
+              "startSeconds": 54.5,
+              "endSeconds": 59.5,
+              "text": "よく　にあいますよ。どうですか。"
+            },
+            {
+              "startSeconds": 59.5,
+              "endSeconds": 64.9,
+              "text": "買いましょう。"
+            },
+            {
+              "startSeconds": 64.9,
+              "endSeconds": 70.3,
+              "text": "じゃあ、これ、ください。"
+            },
+            {
+              "startSeconds": 70.3,
+              "endSeconds": 76.0,
+              "text": "はい。ありがとうございます。"
+            },
+            {
+              "startSeconds": 76.0,
+              "endSeconds": 81.5,
+              "text": null
+            },
+            {
+              "startSeconds": 81.5,
+              "endSeconds": 83.5,
+              "text": "4200円です。"
+            },
+            {
+              "startSeconds": 83.5,
+              "endSeconds": 93.0,
+              "text": null
+            },
+            {
+              "startSeconds": 93.0,
+              "endSeconds": 96.0,
+              "text": "しょうしょう　おまちください。"
+            },
+            {
+              "startSeconds": 96.0,
+              "endSeconds": 97.4,
+              "text": null
+            },
+            {
+              "startSeconds": 97.4,
+              "endSeconds": 106.0,
+              "text": "おまたせいたしました。ありがとうございました。"
+            },
+            {
+              "startSeconds": 106.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        }
+      ]
     },
     {
       "id": "marugoto.starter-a1.lesson.17",
@@ -524,7 +5226,205 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.video.cando_45_01",
+          "canDoId": 45,
+          "variant": "practice",
+          "title": "Рассказать, что делали и чего не делали · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do45.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_45_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_45_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.0,
+              "text": null
+            },
+            {
+              "startSeconds": 5.0,
+              "endSeconds": 8.0,
+              "text": "サラさん、休みは　どうでしたか。"
+            },
+            {
+              "startSeconds": 8.0,
+              "endSeconds": 11.9,
+              "text": "たのしかったです。くにから　かぞくが　来ました。"
+            },
+            {
+              "startSeconds": 11.9,
+              "endSeconds": 14.6,
+              "text": "へえ、どこに　行きましたか。"
+            },
+            {
+              "startSeconds": 14.6,
+              "endSeconds": 19.1,
+              "text": "きょうとに　行きました。たくさん　しゃしんを　とりました。"
+            },
+            {
+              "startSeconds": 19.1,
+              "endSeconds": 20.6,
+              "text": "よかったですね。"
+            },
+            {
+              "startSeconds": 20.6,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge45",
+          "canDoId": 45,
+          "variant": "challenge",
+          "title": "Рассказать, что делали и чего не делали · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do45.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge45.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge45.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 10.5,
+              "text": "まえの　休みに　ならに　行きました。きむらさんと　話しましょう。"
+            },
+            {
+              "startSeconds": 10.5,
+              "endSeconds": 16.0,
+              "text": "休みに　なにを　しましたか。"
+            },
+            {
+              "startSeconds": 16.0,
+              "endSeconds": 21.5,
+              "text": "どこに　行ったか　言いましょう。"
+            },
+            {
+              "startSeconds": 21.5,
+              "endSeconds": 25.0,
+              "text": "ならに　行きました。"
+            },
+            {
+              "startSeconds": 25.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_46_01",
+          "canDoId": 46,
+          "variant": "practice",
+          "title": "Поделиться впечатлением · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do46.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_46_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_46_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.5,
+              "text": null
+            },
+            {
+              "startSeconds": 5.5,
+              "endSeconds": 8.2,
+              "text": "休みは　どうでしたか。"
+            },
+            {
+              "startSeconds": 8.2,
+              "endSeconds": 11.8,
+              "text": "土よう日、ともだちと　はなびたいかいに　行きました。"
+            },
+            {
+              "startSeconds": 11.8,
+              "endSeconds": 12.0,
+              "text": null
+            },
+            {
+              "startSeconds": 12.0,
+              "endSeconds": 13.8,
+              "text": "とても　きれいでした。"
+            },
+            {
+              "startSeconds": 13.8,
+              "endSeconds": 14.0,
+              "text": null
+            },
+            {
+              "startSeconds": 14.0,
+              "endSeconds": 18.3,
+              "text": "でも、ひとが　おおかったです。ちょっと　つかれました。"
+            },
+            {
+              "startSeconds": 18.3,
+              "endSeconds": 20.6,
+              "text": "らいねんも　行きますか。"
+            },
+            {
+              "startSeconds": 20.6,
+              "endSeconds": 26.0,
+              "text": "はい、また　行きたいです。はなびが　だいすきですから。"
+            },
+            {
+              "startSeconds": 26.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge46",
+          "canDoId": 46,
+          "variant": "challenge",
+          "title": "Поделиться впечатлением · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do46.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge46.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge46.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 10.5,
+              "text": "まえの　休みに　ならに　行きました。りょこうは　どうだったか　話しましょう。"
+            },
+            {
+              "startSeconds": 10.5,
+              "endSeconds": 13.0,
+              "text": "どうでしたか。"
+            },
+            {
+              "startSeconds": 13.0,
+              "endSeconds": 21.0,
+              "text": "れい: たのしかったです。 / すばらしかったです。 / つかれました。 / まあまあでした。"
+            },
+            {
+              "startSeconds": 21.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        }
+      ]
     },
     {
       "id": "marugoto.starter-a1.lesson.18",
@@ -555,7 +5455,245 @@
         "grammar": "draft",
         "exercises": "draft",
         "audio": "missing"
-      }
+      },
+      "videos": [
+        {
+          "id": "marugoto.starter-a1.video.cando_49_01",
+          "canDoId": 49,
+          "variant": "practice",
+          "title": "Рассказать о событиях и впечатлениях · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do49.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_49_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_49_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 5.0,
+              "text": null
+            },
+            {
+              "startSeconds": 5.0,
+              "endSeconds": 8.6,
+              "text": "せんせい、休みに　きょうとに　行きました。"
+            },
+            {
+              "startSeconds": 8.6,
+              "endSeconds": 8.8,
+              "text": null
+            },
+            {
+              "startSeconds": 8.8,
+              "endSeconds": 11.3,
+              "text": "これ、おみやげです。どうぞ。"
+            },
+            {
+              "startSeconds": 11.3,
+              "endSeconds": 13.8,
+              "text": "ありがとうございます。"
+            },
+            {
+              "startSeconds": 13.8,
+              "endSeconds": 14.0,
+              "text": null
+            },
+            {
+              "startSeconds": 14.0,
+              "endSeconds": 15.1,
+              "text": "きょうとで　なにを　しましたか。"
+            },
+            {
+              "startSeconds": 15.1,
+              "endSeconds": 17.3,
+              "text": "たくさん　おてらを　見ました。"
+            },
+            {
+              "startSeconds": 17.3,
+              "endSeconds": 19.3,
+              "text": "へえ、どうでしたか。"
+            },
+            {
+              "startSeconds": 19.3,
+              "endSeconds": 20.7,
+              "text": "すばらしかったです。"
+            },
+            {
+              "startSeconds": 20.7,
+              "endSeconds": 23.5,
+              "text": "そうですか。よかったですね。"
+            },
+            {
+              "startSeconds": 23.5,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge49",
+          "canDoId": 49,
+          "variant": "challenge",
+          "title": "Рассказать о событиях и впечатлениях · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do49.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge49.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge49.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 10.5,
+              "text": "まえの　休みに　ならに　行きました。きむらさんと　話しましょう。"
+            },
+            {
+              "startSeconds": 10.5,
+              "endSeconds": 16.0,
+              "text": "休みに　なにを　しましたか。"
+            },
+            {
+              "startSeconds": 16.0,
+              "endSeconds": 21.5,
+              "text": "どこに　行ったか　言いましょう。"
+            },
+            {
+              "startSeconds": 21.5,
+              "endSeconds": 25.5,
+              "text": "ならに　行きました。"
+            },
+            {
+              "startSeconds": 25.5,
+              "endSeconds": 29.0,
+              "text": null
+            },
+            {
+              "startSeconds": 29.0,
+              "endSeconds": 35.5,
+              "text": "どうも　ありがとう。ならで　なにを　しましたか。"
+            },
+            {
+              "startSeconds": 35.5,
+              "endSeconds": 38.0,
+              "text": "れい: しかせんべいを　買いました。しかに　おかしを　あげました。"
+            },
+            {
+              "startSeconds": 38.0,
+              "endSeconds": 43.0,
+              "text": "れい: おみやげを　買いました。 / おてらを　見ました。"
+            },
+            {
+              "startSeconds": 43.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        },
+        {
+          "id": "marugoto.starter-a1.video.cando_50_01",
+          "canDoId": 50,
+          "variant": "practice",
+          "title": "Сказать о следующем путешествии · диалог 1",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do50.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_50_01.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_50_01.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 0.2,
+              "text": null
+            },
+            {
+              "startSeconds": 0.2,
+              "endSeconds": 4.6,
+              "text": null
+            },
+            {
+              "startSeconds": 4.6,
+              "endSeconds": 8.2,
+              "text": "つぎの　りょこうは　どこに　行きたいですか。"
+            },
+            {
+              "startSeconds": 8.2,
+              "endSeconds": 12.3,
+              "text": "そうですね。つぎは　おきなわに　行きたいです。"
+            },
+            {
+              "startSeconds": 12.3,
+              "endSeconds": 15.8,
+              "text": "そうですか。おきなわは　きれいですよ。"
+            },
+            {
+              "startSeconds": 15.8,
+              "endSeconds": 16.0,
+              "text": null
+            },
+            {
+              "startSeconds": 16.0,
+              "endSeconds": 18.5,
+              "text": "きょねん　行きました。とても　よかったです。"
+            },
+            {
+              "startSeconds": 18.5,
+              "endSeconds": 20.5,
+              "text": "へえー。"
+            },
+            {
+              "startSeconds": 20.5,
+              "endSeconds": null,
+              "text": null
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.video.challenge50",
+          "canDoId": 50,
+          "variant": "challenge",
+          "title": "Сказать о следующем путешествии · сценка с заданием",
+          "sourceUrl": "https://a1.marugotoweb.jp/en/can-do50.php",
+          "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/challenge50.mp4",
+          "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/challenge50.xml",
+          "captions": [
+            {
+              "startSeconds": 0.0,
+              "endSeconds": 1.0,
+              "text": null
+            },
+            {
+              "startSeconds": 1.0,
+              "endSeconds": 10.5,
+              "text": "まえの　休みは　ならに　行きました。つぎは　どこに　行きたいですか。"
+            },
+            {
+              "startSeconds": 10.5,
+              "endSeconds": 14.8,
+              "text": "つぎは　どこに　行きたいですか。"
+            },
+            {
+              "startSeconds": 14.8,
+              "endSeconds": 20.0,
+              "text": "れい: きょうとに　行きたいです。"
+            },
+            {
+              "startSeconds": 20.0,
+              "endSeconds": 25.0,
+              "text": "そうですか。つぎは　わたしも　行きたいです。"
+            },
+            {
+              "startSeconds": 25.0,
+              "endSeconds": null,
+              "text": null
+            }
+          ],
+          "captionNote": "Официальный текст включает инструкции и образцы ответов; не все строки произносятся в видео."
+        }
+      ]
     }
   ],
   "words": [

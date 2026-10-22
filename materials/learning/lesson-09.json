@@ -1,0 +1,1550 @@
+{
+  "lessonId": "marugoto.starter-a1.lesson.09",
+  "version": "2026-10-21.1",
+  "titleRu": "Распорядок дня",
+  "goals": [
+    {
+      "id": "l09-time",
+      "titleRu": "Назвать время действия",
+      "canDoIds": [
+        23
+      ],
+      "parts": [
+        {
+          "id": "l09-time-01",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.bbe0ecab21ce5807",
+              "explanationRu": "Сейчас: задаёт момент, о котором вы называете время.",
+              "example": {
+                "surface": "いましちじです。",
+                "kana": "いましちじです。",
+                "meaningRu": "Сейчас семь часов.",
+                "segments": [
+                  {
+                    "surface": "いましちじです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-122b1a5472cc.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.f1477eb97998c581",
+              "explanationRu": "Который час, во сколько: вопрос о времени в часах.",
+              "example": {
+                "surface": "いまなんじですか。",
+                "kana": "いまなんじですか。",
+                "meaningRu": "Который сейчас час?",
+                "segments": [
+                  {
+                    "surface": "いまなんじですか。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-a3460d6fc44b.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.14f32b11b4d60e2d",
+              "explanationRu": "Семь часов; особое чтение しち, а не только знакомое なな.",
+              "example": {
+                "surface": "しちじにおきます。",
+                "kana": "しちじにおきます。",
+                "meaningRu": "Я встаю в семь часов.",
+                "segments": [
+                  {
+                    "surface": "しちじにおきます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-6f0209c2b8d4.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.4eccc66e29b5c0a2",
+              "explanationRu": "Девять часов: чтение くじ, не きゅうじ.",
+              "example": {
+                "surface": "いまくじです。",
+                "kana": "いまくじです。",
+                "meaningRu": "Сейчас девять часов.",
+                "segments": [
+                  {
+                    "surface": "いまくじです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-5b043b8f1b43.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.f6c03ba63a12dd32",
+              "explanationRu": "Половина часа после названного часа: くじはん — девять тридцать.",
+              "example": {
+                "surface": "くじはんです。",
+                "kana": "くじはんです。",
+                "meaningRu": "Девять тридцать.",
+                "segments": [
+                  {
+                    "surface": "くじはんです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-1d3e6500192e.m4a"
+              }
+            }
+          ],
+          "construction": {
+            "exerciseId": "marugoto.starter-a1.example.clock_time.l09.1",
+            "explanationRu": "Часы называются числом с じ и です. Важны особые чтения: しちじ — семь, くじ — девять, よじ — четыре. 半 читается はん и обозначает половину часа после названного часа.",
+            "example": {
+              "surface": "いましちじです。",
+              "kana": "いましちじです。",
+              "meaningRu": "Сейчас семь часов.",
+              "segments": [
+                {
+                  "surface": "いま"
+                },
+                {
+                  "surface": "しちじ"
+                },
+                {
+                  "surface": "です"
+                },
+                {
+                  "surface": "。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson09-construction-clock-time.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "いま",
+                "explanationRu": "сейчас"
+              },
+              {
+                "text": "しちじ",
+                "explanationRu": "семь часов"
+              },
+              {
+                "text": "です",
+                "explanationRu": "Вежливое завершение именной фразы."
+              }
+            ]
+          }
+        },
+        {
+          "id": "l09-time-02",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.eb80a55f89ca80f0",
+              "explanationRu": "Вставать, просыпаться; в распорядке дня — время подъёма.",
+              "example": {
+                "surface": "まいにちしちじにおきます。",
+                "kana": "まいにちしちじにおきます。",
+                "meaningRu": "Каждый день я встаю в семь.",
+                "segments": [
+                  {
+                    "surface": "まいにちしちじにおきます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-f6ec213defb8.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.714c013e5d94c750",
+              "explanationRu": "Ложиться спать или спать; с точным временем обычно сообщает время отхода ко сну.",
+              "example": {
+                "surface": "じゅういちじにねます。",
+                "kana": "じゅういちじにねます。",
+                "meaningRu": "Я ложусь в одиннадцать.",
+                "segments": [
+                  {
+                    "surface": "じゅういちじにねます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-c1e747d6bfad.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.9eb0ceb2fed37241",
+              "explanationRu": "Одиннадцать часов: число じゅういち и суффикс じ.",
+              "example": {
+                "surface": "じゅういちじごろねます。",
+                "kana": "じゅういちじごろねます。",
+                "meaningRu": "Я ложусь примерно в одиннадцать.",
+                "segments": [
+                  {
+                    "surface": "じゅういちじごろねます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-89576f17a6a0.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.9a65a58244cf0f00",
+              "explanationRu": "Около, примерно: ставится после времени и обычно без に.",
+              "example": {
+                "surface": "しちじごろおきます。",
+                "kana": "しちじごろおきます。",
+                "meaningRu": "Я встаю около семи.",
+                "segments": [
+                  {
+                    "surface": "しちじごろおきます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-abde8ed8cff4.m4a"
+              }
+            }
+          ],
+          "construction": {
+            "exerciseId": "marugoto.starter-a1.example.ni_action_time.l09.1",
+            "explanationRu": "Точное время действия отмечается に: しちじにおきます. Для приблизительного времени употребляется ごろ: じゅういちじごろねます, обычно без に. Глагол показывает, что происходит в это время.",
+            "example": {
+              "surface": "しちじにおきます。",
+              "kana": "しちじにおきます。",
+              "meaningRu": "Я встаю в семь часов.",
+              "segments": [
+                {
+                  "surface": "しちじ"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "おきます"
+                },
+                {
+                  "surface": "。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson09-construction-ni-action-time.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "しちじ",
+                "explanationRu": "семь часов"
+              },
+              {
+                "text": "に",
+                "explanationRu": "Отмечает место нахождения/проживания или точное время в данной модели."
+              },
+              {
+                "text": "おきます",
+                "explanationRu": "просыпаться"
+              }
+            ]
+          }
+        }
+      ],
+      "videoIds": [
+        "marugoto.starter-a1.video.cando_23_01",
+        "marugoto.starter-a1.video.challenge23"
+      ]
+    },
+    {
+      "id": "l09-routine",
+      "titleRu": "Коротко рассказать о своём дне",
+      "canDoIds": [
+        24
+      ],
+      "parts": [
+        {
+          "id": "l09-routine-01",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.a96f4fc5ed416761",
+              "explanationRu": "Утро; без конкретного часа часто используется само, без に.",
+              "example": {
+                "surface": "あさ、しちじにおきます。",
+                "kana": "あさ、しちじにおきます。",
+                "meaningRu": "Утром я встаю в семь.",
+                "segments": [
+                  {
+                    "surface": "あさ、しちじにおきます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-f72aa9a38f12.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8b9e7b30b9f17cbb",
+              "explanationRu": "Вечер или ночь в зависимости от ситуации; период после дневных дел.",
+              "example": {
+                "surface": "よる、にほんごをべんきょうします。",
+                "kana": "よる、にほんごをべんきょうします。",
+                "meaningRu": "Вечером я занимаюсь японским.",
+                "segments": [
+                  {
+                    "surface": "よる、にほんごをべんきょうします。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-387ba2aa0436.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.75d4b30fe277278b",
+              "explanationRu": "Каждый день; передаёт регулярную привычку.",
+              "example": {
+                "surface": "まいにちコーヒーをのみます。",
+                "kana": "まいにちコーヒーをのみます。",
+                "meaningRu": "Я каждый день пью кофе.",
+                "segments": [
+                  {
+                    "surface": "まいにちコーヒーをのみます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-d0952b0fe7fc.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.e31c09b8c9a8be31",
+              "explanationRu": "Работа как занятие или дела, не обязательно название профессии.",
+              "example": {
+                "surface": "くじからしごとです。",
+                "kana": "くじからしごとです。",
+                "meaningRu": "Работа начинается в девять.",
+                "segments": [
+                  {
+                    "surface": "くじからしごとです。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-04cbc731e9b3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.d5ae99ccb1d812da",
+              "explanationRu": "Учиться, заниматься; предмет обучения можно поставить перед を.",
+              "example": {
+                "surface": "よる、にほんごをべんきょうします。",
+                "kana": "よる、にほんごをべんきょうします。",
+                "meaningRu": "Вечером я учу японский.",
+                "segments": [
+                  {
+                    "surface": "よる、にほんごをべんきょうします。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-bef22fddd0e4.m4a"
+              }
+            }
+          ]
+        },
+        {
+          "id": "l09-routine-02",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.b18d9b8dfc53e29a",
+              "explanationRu": "Обед; позволяет выделить дневной приём пищи в рассказе о распорядке.",
+              "example": {
+                "surface": "じゅうにじにひるごはんをたべます。",
+                "kana": "じゅうにじにひるごはんをたべます。",
+                "meaningRu": "В двенадцать я обедаю.",
+                "segments": [
+                  {
+                    "surface": "じゅうにじにひるごはんをたべます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-d3eec2abad2f.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.c43cdc0715cc265c",
+              "explanationRu": "Ужин; не то же самое, что よる «вечер».",
+              "example": {
+                "surface": "しちじにばんごはんをたべます。",
+                "kana": "しちじにばんごはんをたべます。",
+                "meaningRu": "В семь я ужинаю.",
+                "segments": [
+                  {
+                    "surface": "しちじにばんごはんをたべます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-8bd9c27b8594.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.f9972f9d838de1ef",
+              "explanationRu": "Возвращаться; домой — うちにかえります.",
+              "example": {
+                "surface": "ろくじにうちにかえります。",
+                "kana": "ろくじにうちにかえります。",
+                "meaningRu": "В шесть я возвращаюсь домой.",
+                "segments": [
+                  {
+                    "surface": "ろくじにうちにかえります。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-d1e67334c1bd.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.f9f2e4ca0f705faf",
+              "explanationRu": "Слушать; объект, например музыку, отмечают を.",
+              "example": {
+                "surface": "よる、おんがくをききます。",
+                "kana": "よる、おんがくをききます。",
+                "meaningRu": "Вечером я слушаю музыку.",
+                "segments": [
+                  {
+                    "surface": "よる、おんがくをききます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-1a845989ef24.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.502d73c9b7d70da6",
+              "explanationRu": "Смотреть; здесь речь о телевизоре или другом видимом объекте.",
+              "example": {
+                "surface": "ばんごはんのあと、テレビをみます。",
+                "kana": "ばんごはんのあと、テレビをみます。",
+                "meaningRu": "После ужина я смотрю телевизор.",
+                "segments": [
+                  {
+                    "surface": "ばんごはんのあと、テレビをみます。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/lesson09-word-749cf3040a77.m4a"
+              }
+            }
+          ]
+        }
+      ],
+      "introductionRu": "Образец дня: しちじにおきます。くじからしごとです。じゅうにじにひるごはんをたべます。ろくじにうちにかえります。じゅういちじごろねます。 Сначала найдите время и действие в каждой фразе. После практики расскажите о своём дне по этому образцу; часы в нём — пример, а не единственно правильный распорядок.",
+      "videoIds": [
+        "marugoto.starter-a1.video.cando_24_01",
+        "marugoto.starter-a1.video.challenge24"
+      ]
+    }
+  ],
+  "authored": {
+    "words": [
+      {
+        "id": "marugoto.starter-a1.word.bbe0ecab21ce5807",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "surface": "いま",
+        "kana": "いま",
+        "meaningRu": "сейчас",
+        "segments": [
+          {
+            "surface": "いま"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 8,
+            "row": 6,
+            "entry": "いま",
+            "label": "Словарь · урок 14"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 22,
+            "entry": "いま",
+            "label": "Словарь · урок 9"
+          }
+        ],
+        "audioUrl": "/audio/c07432c4c716f547c787.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.f1477eb97998c581",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "surface": "なんじ",
+        "kana": "なんじ",
+        "meaningRu": "во сколько, в котором часу",
+        "segments": [
+          {
+            "surface": "なんじ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 21,
+            "entry": "なんじ",
+            "label": "Словарь · урок 9"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 47,
+            "entry": "なんじ",
+            "label": "Словарь · урок 9"
+          }
+        ],
+        "audioUrl": "/audio/2111f7e8d2b196c5f0aa.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.14f32b11b4d60e2d",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "surface": "しちじ",
+        "kana": "しちじ",
+        "meaningRu": "семь часов",
+        "segments": [
+          {
+            "surface": "しちじ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_5_9_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/4ae5f8dc4a8b9761f361.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.4eccc66e29b5c0a2",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.10"
+        ],
+        "surface": "くじ",
+        "kana": "くじ",
+        "meaningRu": "девять часов",
+        "segments": [
+          {
+            "surface": "くじ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_5_9_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/78d1d9d50b03951bbccc.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.f6c03ba63a12dd32",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "surface": "半",
+        "kana": "はん",
+        "meaningRu": "половина",
+        "segments": [
+          {
+            "surface": "半",
+            "reading": "はん"
+          }
+        ],
+        "kind": "word",
+        "pos": "suffix",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 28,
+            "entry": "はん／～はん",
+            "label": "Словарь · урок 9"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 56,
+            "entry": "はん／～半",
+            "label": "Словарь · урок 9"
+          }
+        ],
+        "audioUrl": "/audio/7ff255f71d2af4f58de4.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.eb80a55f89ca80f0",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "surface": "おきます",
+        "kana": "おきます",
+        "meaningRu": "просыпаться",
+        "segments": [
+          {
+            "surface": "おきます"
+          }
+        ],
+        "kind": "word",
+        "pos": "verb",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 4,
+            "entry": "おきます",
+            "label": "Словарь · урок 9"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 26,
+            "entry": "おきます",
+            "label": "Словарь · урок 9"
+          }
+        ],
+        "audioUrl": "/audio/871b0c6d9609d3df7999.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.714c013e5d94c750",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "surface": "ねます",
+        "kana": "ねます",
+        "meaningRu": "ложиться спать, спать",
+        "segments": [
+          {
+            "surface": "ねます"
+          }
+        ],
+        "kind": "word",
+        "pos": "verb",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 23,
+            "entry": "ねます",
+            "label": "Словарь · урок 9"
+          }
+        ],
+        "audioUrl": "/audio/6ae980ec7a3522705614.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.9eb0ceb2fed37241",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "surface": "じゅういちじ",
+        "kana": "じゅういちじ",
+        "meaningRu": "одиннадцать часов",
+        "segments": [
+          {
+            "surface": "じゅういちじ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_5_9_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/32e40dddb8da70730155.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.9a65a58244cf0f00",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "surface": "ごろ",
+        "kana": "ごろ",
+        "meaningRu": "примерно, около",
+        "segments": [
+          {
+            "surface": "ごろ"
+          }
+        ],
+        "kind": "word",
+        "pos": "suffix",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 14,
+            "entry": "ごろ／～ごろ",
+            "label": "Словарь · урок 9"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 37,
+            "entry": "ごろ／～ごろ",
+            "label": "Словарь · урок 9"
+          }
+        ],
+        "audioUrl": "/audio/f54adb26c5120c3e0adf.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.cfb8df642175a27c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "です",
+        "kana": "です",
+        "meaningRu": "вежливая именная связка",
+        "segments": [
+          {
+            "surface": "です"
+          }
+        ],
+        "kind": "word",
+        "pos": "copula",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/52ab9944db0989691e54.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.a296622c50317ab9",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "に",
+        "kana": "に",
+        "meaningRu": "место, время или цель (по конструкции)",
+        "segments": [
+          {
+            "surface": "に"
+          }
+        ],
+        "kind": "word",
+        "pos": "particle",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_4_7_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_4_7_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_5_9_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_5.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_13_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_14_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_14_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_17_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_17_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_18_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "audioUrl": "/audio/37df2fd1e99c2b76dcf1.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.a96f4fc5ed416761",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "あさ",
+        "kana": "あさ",
+        "meaningRu": "утро",
+        "segments": [
+          {
+            "surface": "あさ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 54,
+            "entry": "あさ",
+            "label": "Словарь · урок 9"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 1,
+            "entry": "あさ",
+            "label": "Словарь · урок 1"
+          }
+        ],
+        "audioUrl": "/audio/7a66a0d73a169f01728e.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.8b9e7b30b9f17cbb",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.01"
+        ],
+        "surface": "よる",
+        "kana": "よる",
+        "meaningRu": "ночь",
+        "segments": [
+          {
+            "surface": "よる"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 35,
+            "entry": "よる",
+            "label": "Словарь · урок 9"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 1,
+            "row": 27,
+            "entry": "よる",
+            "label": "Словарь · урок 1"
+          }
+        ],
+        "audioUrl": "/audio/b3608c4b2899cb9f1a6a.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.75d4b30fe277278b",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "surface": "まいにち",
+        "kana": "まいにち",
+        "meaningRu": "каждый день",
+        "segments": [
+          {
+            "surface": "まいにち"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 33,
+            "entry": "まいにち",
+            "label": "Словарь · урок 9"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 60,
+            "entry": "まいにち",
+            "label": "Словарь · урок 9"
+          }
+        ],
+        "audioUrl": "/audio/89db6da846a6768bb0fd.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.e31c09b8c9a8be31",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.10"
+        ],
+        "surface": "しごと",
+        "kana": "しごと",
+        "meaningRu": "работа",
+        "segments": [
+          {
+            "surface": "しごと"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 16,
+            "entry": "しごと",
+            "label": "Словарь · урок 9"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 40,
+            "entry": "しごと",
+            "label": "Словарь · урок 9"
+          }
+        ],
+        "audioUrl": "/audio/3c87c66c6206dd09a81b.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.d5ae99ccb1d812da",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "surface": "べんきょうします",
+        "kana": "べんきょうします",
+        "meaningRu": "учить(ся), заниматься",
+        "segments": [
+          {
+            "surface": "べんきょうします"
+          }
+        ],
+        "kind": "word",
+        "pos": "verb",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 6,
+            "row": 51,
+            "entry": "べんきょうします",
+            "label": "Словарь · урок 11"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 59,
+            "entry": "べんきょうします",
+            "label": "Словарь · урок 9"
+          }
+        ],
+        "audioUrl": "/audio/42857c93afc56f427a89.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.b18d9b8dfc53e29a",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.06"
+        ],
+        "surface": "ひるごはん",
+        "kana": "ひるごはん",
+        "meaningRu": "обед",
+        "segments": [
+          {
+            "surface": "ひるごはん"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 31,
+            "entry": "ひるごはん",
+            "label": "Словарь · урок 9"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 21,
+            "entry": "ひるごはん",
+            "label": "Словарь · урок 6"
+          }
+        ],
+        "audioUrl": "/audio/2716a29be3d3294cf12a.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.c43cdc0715cc265c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "surface": "ばんごはん",
+        "kana": "ばんごはん",
+        "meaningRu": "ужин",
+        "segments": [
+          {
+            "surface": "ばんごはん"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 29,
+            "entry": "ばんごはん",
+            "label": "Словарь · урок 9"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 57,
+            "entry": "ばんごはん",
+            "label": "Словарь · урок 9"
+          }
+        ],
+        "audioUrl": "/audio/256c9467b59822068759.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.f9972f9d838de1ef",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "surface": "かえります",
+        "kana": "かえります",
+        "meaningRu": "возвращаться",
+        "segments": [
+          {
+            "surface": "かえります"
+          }
+        ],
+        "kind": "word",
+        "pos": "verb",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 7,
+            "entry": "かえります",
+            "label": "Словарь · урок 9"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 29,
+            "entry": "かえります",
+            "label": "Словарь · урок 9"
+          }
+        ],
+        "audioUrl": "/audio/9b81a262d6dde37c2002.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.f9f2e4ca0f705faf",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "surface": "聞きます",
+        "kana": "ききます",
+        "meaningRu": "слушать",
+        "segments": [
+          {
+            "surface": "聞",
+            "reading": "き"
+          },
+          {
+            "surface": "きます"
+          }
+        ],
+        "kind": "word",
+        "pos": "verb",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 6,
+            "row": 20,
+            "entry": "ききます",
+            "label": "Словарь · урок 11"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 33,
+            "entry": "ききます／聞きます",
+            "label": "Словарь · урок 9"
+          }
+        ],
+        "audioUrl": "/audio/00f5f27815056cb7c6ab.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.502d73c9b7d70da6",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "見ます",
+        "kana": "みます",
+        "meaningRu": "смотреть",
+        "segments": [
+          {
+            "surface": "見",
+            "reading": "み"
+          },
+          {
+            "surface": "ます"
+          }
+        ],
+        "kind": "word",
+        "pos": "verb",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 7,
+            "row": 1,
+            "entry": "みます",
+            "label": "Словарь · урок 11"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 6,
+            "row": 2,
+            "entry": "みます／見ます",
+            "label": "Словарь · урок 9"
+          }
+        ],
+        "audioUrl": "/audio/70c776550ac9828eb7f7.m4a"
+      }
+    ],
+    "forms": [
+      {
+        "id": "marugoto.starter-a1.form.b933fb65d6cfe491",
+        "wordId": "marugoto.starter-a1.word.14f32b11b4d60e2d",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "surface": "しちじ",
+        "kana": "しちじ",
+        "segments": [
+          {
+            "surface": "しちじ"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_5_9_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.e196bd28cada9593",
+        "wordId": "marugoto.starter-a1.word.4eccc66e29b5c0a2",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.10"
+        ],
+        "surface": "くじ",
+        "kana": "くじ",
+        "segments": [
+          {
+            "surface": "くじ"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_5_9_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.3c81d8a04d98e9a0",
+        "wordId": "marugoto.starter-a1.word.9eb0ceb2fed37241",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "surface": "じゅういちじ",
+        "kana": "じゅういちじ",
+        "segments": [
+          {
+            "surface": "じゅういちじ"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_5_9_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.dfb1a0ad90bfab45",
+        "wordId": "marugoto.starter-a1.word.cfb8df642175a27c",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03",
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.05",
+          "marugoto.starter-a1.lesson.06",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.08",
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.10",
+          "marugoto.starter-a1.lesson.11",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.16"
+        ],
+        "surface": "です",
+        "kana": "です",
+        "segments": [
+          {
+            "surface": "です"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_3_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.cb51ac50f7e689f5",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.09",
+          "marugoto.starter-a1.lesson.12",
+          "marugoto.starter-a1.lesson.13",
+          "marugoto.starter-a1.lesson.14",
+          "marugoto.starter-a1.lesson.15",
+          "marugoto.starter-a1.lesson.17",
+          "marugoto.starter-a1.lesson.18"
+        ],
+        "surface": "に",
+        "kana": "に",
+        "segments": [
+          {
+            "surface": "に"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_4_7_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_4_7_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_5_9_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_6_12_5.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_13_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_14_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_7_14_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_8_15_4.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_17_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_17_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_9_18_3.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ],
+        "wordId": "marugoto.starter-a1.word.a296622c50317ab9"
+      }
+    ],
+    "skills": [
+      {
+        "id": "marugoto.starter-a1.skill.clock_time",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "canDoIds": [
+          23,
+          24
+        ],
+        "title": "Время: ～時です",
+        "explanationRu": "～じ указывает час на циферблате. Для половины часа можно использовать はん. Чтения числительных подготовлены в формах.",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_5_9_1.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.skill.ni_action_time",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "canDoIds": [
+          23,
+          24
+        ],
+        "title": "に: точное время действия",
+        "explanationRu": "に ставится после точного времени. ごろ означает приблизительное время; в образце этого урока после ごろ に не добавляется.",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_5_9_2.php",
+            "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      }
+    ],
+    "exercises": [
+      {
+        "id": "marugoto.starter-a1.example.clock_time.l09.1",
+        "lessonId": "marugoto.starter-a1.lesson.09",
+        "skillId": "marugoto.starter-a1.skill.clock_time",
+        "promptRu": "Сейчас семь часов.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.c2738f7d2c137aa3"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.b933fb65d6cfe491"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Сейчас семь часов."
+      },
+      {
+        "id": "marugoto.starter-a1.example.ni_action_time.l09.1",
+        "lessonId": "marugoto.starter-a1.lesson.09",
+        "skillId": "marugoto.starter-a1.skill.ni_action_time",
+        "promptRu": "Я встаю в семь часов.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.b933fb65d6cfe491"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.cb51ac50f7e689f5"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.cab492b97e045f0d"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я встаю в семь часов."
+      }
+    ]
+  }
+}

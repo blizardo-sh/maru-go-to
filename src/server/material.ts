@@ -7,7 +7,7 @@ export async function settingsFor(database:Database,userId:string):Promise<Learn
  const [row]=await database.sql`select settings from preferences where user_id=${userId}`;
  return row?settingsSchema.parse(row.settings):structuredClone(defaultSettings);
 }
-export async function allWords(database:Database,userId:string,course:Course):Promise<Word[]>{
+export async function allWords(database:Pick<Database,'sql'>,userId:string,course:Course):Promise<Word[]>{
  const rows=await database.sql`select p.data from personal_words p join word_lists l on l.id=p.list_id where p.user_id=${userId} and l.user_id=${userId} order by p.created_at,p.id`;
  return [...course.words,...rows.map((r:any)=>r.data as Word)];
 }

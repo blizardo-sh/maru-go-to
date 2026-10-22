@@ -1,5 +1,5 @@
 {
-  "id": "45d84343-918a-4302-847d-cebdd9e861db",
+  "id": "fbc0c74d-b2e4-4b92-a874-7c071ecdcb45",
   "prevId": "5fc21fba-dafb-42e4-a056-a93f3b258f4d",
   "version": "7",
   "dialect": "postgresql",
@@ -215,8 +215,72 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.counter_progress": {
-      "name": "counter_progress",
+    "public.learning_attempts": {
+      "name": "learning_attempts",
+      "schema": "",
+      "columns": {
+        "attempt_id": {
+          "name": "attempt_id",
+          "type": "text",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "user_id": {
+          "name": "user_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "lesson_id": {
+          "name": "lesson_id",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "payload": {
+          "name": "payload",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "result": {
+          "name": "result",
+          "type": "jsonb",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp with time zone",
+          "primaryKey": false,
+          "notNull": true,
+          "default": "now()"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "learning_attempts_user_id_users_id_fk": {
+          "name": "learning_attempts_user_id_users_id_fk",
+          "tableFrom": "learning_attempts",
+          "tableTo": "users",
+          "columnsFrom": [
+            "user_id"
+          ],
+          "columnsTo": [
+            "id"
+          ],
+          "onDelete": "cascade",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {},
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.learning_states": {
+      "name": "learning_states",
       "schema": "",
       "columns": {
         "user_id": {
@@ -225,25 +289,30 @@
           "primaryKey": false,
           "notNull": true
         },
-        "counter_id": {
-          "name": "counter_id",
+        "lesson_id": {
+          "name": "lesson_id",
           "type": "text",
           "primaryKey": false,
           "notNull": true
         },
-        "level": {
-          "name": "level",
+        "route_version": {
+          "name": "route_version",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "version": {
+          "name": "version",
           "type": "integer",
           "primaryKey": false,
           "notNull": true,
           "default": 0
         },
-        "history": {
-          "name": "history",
+        "state": {
+          "name": "state",
           "type": "jsonb",
           "primaryKey": false,
-          "notNull": true,
-          "default": "'[]'::jsonb"
+          "notNull": true
         },
         "created_at": {
           "name": "created_at",
@@ -262,9 +331,9 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "counter_progress_user_id_users_id_fk": {
-          "name": "counter_progress_user_id_users_id_fk",
-          "tableFrom": "counter_progress",
+        "learning_states_user_id_users_id_fk": {
+          "name": "learning_states_user_id_users_id_fk",
+          "tableFrom": "learning_states",
           "tableTo": "users",
           "columnsFrom": [
             "user_id"
@@ -277,11 +346,11 @@
         }
       },
       "compositePrimaryKeys": {
-        "counter_progress_user_id_counter_id_pk": {
-          "name": "counter_progress_user_id_counter_id_pk",
+        "learning_states_user_id_lesson_id_pk": {
+          "name": "learning_states_user_id_lesson_id_pk",
           "columns": [
             "user_id",
-            "counter_id"
+            "lesson_id"
           ]
         }
       },

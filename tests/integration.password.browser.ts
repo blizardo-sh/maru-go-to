@@ -1,0 +1,76 @@
+import { chromium, expect, type Browser, type BrowserContext } from '@playwright/test';
+import { connectDatabase } from '../src/server/db';
+import { createLink } from '../src/server/auth';
+import { nextFixtureIp } from './helpers/fixture-ip';
+import { output } from './helpers/artifact-output';
+
+const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
+const base = process.env.GUIDED_BROWSER_URL; const api = process.env.GUIDED_BROWSER_API_URL;
+if (!databaseUrl || new URL(databaseUrl).hostname !== '127.0.0.1' || new URL(databaseUrl).pathname !== '/japanese_app_test' || !base || !api || new URL(base).hostname !== 'localhost' || new URL(api).hostname !== 'localhost') throw new Error('Use isolated localhost preview/API and disposable japanese_app_test only.');
+const database = connectDatabase(databaseUrl);
+const email = `password-browser-${crypto.randomUUID()}@example.test`;
+const invitePassword = 'Eight123'; const recoveryPassword = 'Reset888';
+const sensitive = [invitePassword, recoveryPassword];
+let browser: Browser | undefined; let context: BrowserContext | undefined;
+const report: Record<string, unknown> = { isolatedFixture: true, humanAccountUsed: false };
+try {
+  const invitation = await createLink(database, 'invite', email, null); sensitive.push(invitation.token);
+  browser = await chromium.launch({ channel: 'chrome', headless: true });
+  context = await browser.newContext({ extraHTTPHeaders: { 'x-forwarded-for': nextFixtureIp() } });
+  const page = await context.newPage(); const errors: string[] = []; const posts = new Map<string, number>();
+  page.on('pageerror', error => errors.push(error.message));
+  page.on('request', request => { if (request.method() === 'POST') { const path = new URL(request.url()).pathname; posts.set(path, (posts.get(path) ?? 0) + 1); } });
+  await page.goto(`${base}/invite#token=${invitation.token}`);
+  await expect(page.getByRole('button', { name: 'Создать аккаунт', exact: true })).toBeEnabled();
+  await page.getByLabel('Имя в приложении', { exact: true }).fill('Password browser fixture');
+  const password = page.getByLabel('Пароль', { exact: true });
+  await expect(password).toHaveAttribute('minlength', '8');
+  await expect(page.locator('#auth-help')).toContainText('От 8 до 128 символов');
+  await password.pressSequentially('Short77');
+  await page.getByRole('button', { name: 'Создать аккаунт', exact: true }).click();
+  expect(await password.evaluate((input: HTMLInputElement) => input.validity.tooShort)).toBe(true);
+  expect(posts.get('/api/invitations/accept') ?? 0).toBe(0);
+  await password.fill(invitePassword);
+  const accepted = page.waitForResponse(response => new URL(response.url()).pathname === '/api/invitations/accept' && response.request().method() === 'POST');
+  await page.getByRole('button', { name: 'Создать аккаунт', exact: true }).click();
+  expect((await accepted).status()).toBe(200); await expect(page.getByRole('status')).toContainText('Аккаунт создан');
+  await page.getByRole('button', { name: 'Перейти ко входу', exact: true }).click();
+  await expect(password).toHaveAttribute('minlength', '1');
+  await password.fill(invitePassword);
+  const signedIn = page.waitForResponse(response => new URL(response.url()).pathname === '/api/auth/sign-in/email' && response.request().method() === 'POST');
+  await page.getByRole('button', { name: 'Войти', exact: true }).click(); expect((await signedIn).status()).toBe(200);
+  await expect(page.getByRole('navigation', { name: 'Разделы' })).toBeVisible();
+  report.invitation = { minimumHint: 8, sevenCharactersBlockedWithoutPost: true, eightCharactersAccepted: true, signInMinimumUnchanged: 1, signInStatus: 200 };
+
+  const recovery = await createLink(database, 'recovery', email, null); sensitive.push(recovery.token);
+  expect((await context.request.post(`${api}/api/auth/sign-out`, { headers: { origin: base }, data: {} })).status()).toBe(200);
+  await page.goto(`${base}/recover#token=${recovery.token}`);
+  await expect(page.getByRole('heading', { name: 'Новый пароль', exact: true })).toBeVisible();
+  await expect(password).toHaveAttribute('minlength', '8');
+  await expect(page.locator('#auth-help')).toContainText('От 8 до 128 символов');
+  await password.pressSequentially('Short77');
+  await page.getByRole('button', { name: 'Сохранить пароль', exact: true }).click();
+  expect(await password.evaluate((input: HTMLInputElement) => input.validity.tooShort)).toBe(true);
+  expect(posts.get('/api/recovery/complete') ?? 0).toBe(0);
+  await password.fill(recoveryPassword);
+  const recovered = page.waitForResponse(response => new URL(response.url()).pathname === '/api/recovery/complete' && response.request().method() === 'POST');
+  await page.getByRole('button', { name: 'Сохранить пароль', exact: true }).click();
+  expect((await recovered).status()).toBe(200); await expect(page.getByRole('status')).toContainText('Пароль изменён');
+  await page.getByRole('button', { name: 'Перейти ко входу', exact: true }).click();
+  await expect(password).toHaveAttribute('minlength', '1');
+  await page.getByLabel('Email', { exact: true }).fill(email); await password.fill(recoveryPassword);
+  const relogin = page.waitForResponse(response => new URL(response.url()).pathname === '/api/auth/sign-in/email' && response.request().method() === 'POST');
+  await page.getByRole('button', { name: 'Войти', exact: true }).click(); expect((await relogin).status()).toBe(200);
+  await expect(page.getByRole('navigation', { name: 'Разделы' })).toBeVisible();
+  report.recovery = { minimumHint: 8, sevenCharactersBlockedWithoutPost: true, eightCharactersAccepted: true, signInMinimumUnchanged: 1, signInStatus: 200 };
+  expect(errors).toEqual([]); report.green = true; report.errors = errors;
+  await Bun.write(`${output}/password-browser-green.json`, JSON.stringify(report, null, 2)); console.info(JSON.stringify(report));
+} catch (error) {
+  let failure = error instanceof Error ? error.message : String(error);
+  for (const value of sensitive) failure = failure.replaceAll(value, '<REDACTED>');
+  await Bun.write(`${output}/password-browser-red.json`, JSON.stringify({ ...report, green: false, failure }, null, 2)); console.error(failure); process.exitCode = 1;
+} finally {
+  await context?.close(); await browser?.close();
+  await database.sql`delete from access_links where email=${email}`; await database.sql`delete from users where email=${email}`;
+  await database.sql.close();
+}

@@ -1,7 +1,7 @@
 import type { ReviewSubmission, ReviewResult } from '../shared/types';
 
 export class ApiRequestError extends Error {
-  constructor(message: string, public status: number) { super(message); }
+  constructor(message: string, public status: number, public code?: string) { super(message); }
 }
 
 export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
@@ -11,7 +11,7 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
     headers: { ...(init.body ? { 'Content-Type': 'application/json' } : {}), ...init.headers },
   });
   const data = await response.json().catch(() => null);
-  if (!response.ok) throw new ApiRequestError(data?.error?.message ?? data?.message ?? `Запрос не выполнен (${response.status}). Попробуйте ещё раз.`, response.status);
+  if (!response.ok) throw new ApiRequestError(data?.error?.message ?? data?.message ?? `Запрос не выполнен (${response.status}). Попробуйте ещё раз.`, response.status, data?.error?.code);
   return data as T;
 }
 
@@ -35,7 +35,7 @@ export async function submitReview(userId: string, submission: ReviewSubmission)
   if (!pending.some(item => item.attemptId === submission.attemptId)) pending.push(submission);
   // Only unacknowledged attempts live here; schedules and user data always belong to the server.
   localStorage.setItem(outboxKey(userId), JSON.stringify(pending));
-  const result = await api<ReviewResult>('/api/reviews', json('POST', submission));
+  const result = await api<ReviewResult>('/api/reviews', { ...json('POST', submission), headers: { 'X-Learning-Learner-Id': userId } });
   localStorage.setItem(outboxKey(userId), JSON.stringify(pendingReviews(userId).filter(item => item.attemptId !== submission.attemptId)));
   return result;
 }

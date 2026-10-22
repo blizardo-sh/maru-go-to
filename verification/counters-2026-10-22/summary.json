@@ -7,11 +7,11 @@
     "database": "disposable japanese_app_test on localhost:55449"
   },
   "tests": {
-    "passed": 90,
+    "passed": 146,
     "failed": 0,
     "skipped": 0,
-    "assertions": 3425,
-    "files": 16
+    "assertions": 24936,
+    "files": 28
   },
   "typecheck": "pass",
   "build": "pass",
@@ -31,14 +31,14 @@
   },
   "assets": [
     {
-      "file": "assets/index-Cs5_hAp_.js",
-      "bytes": 323279,
-      "sha256": "214d34be498817c094398727bf20ddfdd65ef554505cc5f5cb0feb4acbb2c3fa"
+      "file": "assets/index-CZs5bfJb.css",
+      "bytes": 55179,
+      "sha256": "95b036c336a1d7c25466b00f1424b8a0bc16b1776eaeb528dba8be4d441dbdc4"
     },
     {
-      "file": "assets/index-D57g_x0P.css",
-      "bytes": 51881,
-      "sha256": "1424490a71396ba4c9c8f2dd3a6e63ad62d7509c4a9676f43e9293b31395bc04"
+      "file": "assets/index-CfHlHIiU.js",
+      "bytes": 437508,
+      "sha256": "e61c19ed65412cf92defb68c62d3737f2fb51c0340acc1ffe575515120a2451b"
     }
   ],
   "notChecked": [
@@ -50,5 +50,8 @@
   "cleanup": {
     "remainingFixtureUsers": 0,
     "temporaryDatabaseStopped": true
-  }
+  },
+  "mergedMain": "54f3384e69215226e2c40370ffdaffb53c28be8e",
+  "migration": "0003_counter_progress.sql",
+  "albumBrowserReport": "album.json"
 }

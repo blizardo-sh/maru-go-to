@@ -38,7 +38,7 @@ export function CounterCard({ item, data, userId, onNext, onSaved, saveSettings,
   }
   function grade(rating: 1 | 3) {
     if (!enabled || !revealed) return;
-    void saving.save({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, mode: 'counter', rating: correct === false || helped ? 1 : rating, choice, helped });
+    return saving.save({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, mode: 'counter', rating: correct === false || helped ? 1 : rating, choice, helped });
   }
   const title = { 'image-counter': 'Какое счётное слово подходит?', 'counter-image': 'Что считают этим суффиксом?', 'reading-choice': 'Выберите чтение количества', 'listening-image': 'Послушайте и выберите количество', recall: 'Вспомните количество по-японски' }[card.kind];
   const picture = <CounterPicture object={card.object} quantity={card.quantity ?? (age ? 7 : 1)} label={card.word.meaningRu} age={age} />;

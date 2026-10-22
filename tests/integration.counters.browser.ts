@@ -72,7 +72,7 @@ try {
   const first = queue!.items[0]!; if (first.mode !== 'counter') throw new Error('Expected counter');
   await expect(page.getByTestId('counter-introduction')).toBeVisible();
   await page.screenshot({ path: `${output}/counters-introduction-1280.png`, fullPage: true });
-  await reveal(page, first, true); await page.waitForTimeout(450);
+  await reveal(page, first, true); await page.waitForTimeout(450); await expect(page.locator('.deck-summary')).toBeInViewport();
   await page.screenshot({ path: `${output}/counters-flip-1280.png`, fullPage: true });
   await page.getByRole('navigation', { name: 'Разделы', exact: true }).getByRole('button', { name: 'Учебник', exact: true }).click();
   await page.keyboard.press('ArrowRight'); expect(submissions).toHaveLength(0);
@@ -97,7 +97,7 @@ try {
   }
   await expect(page.getByTestId('portion-complete')).toBeVisible(); expect(corrected).toBe(true); expect(formats.size).toBe(5); expect(turns).toBe(20);
   expect(await page.evaluate(() => (window as any).__counterAudio.playing)).toBeGreaterThan(0);
-  await page.getByRole('button', { name: 'К учебнику', exact: true }).click(); await page.getByRole('button', { name: 'Тренировать урок 4', exact: true }).click();
+  await page.getByRole('button', { name: 'К учебнику', exact: true }).click(); await page.locator('[data-lesson-id="marugoto.starter-a1.lesson.04"] > .lesson-material > summary').click(); await page.locator('article[data-lesson-id="marugoto.starter-a1.lesson.04"]').getByText('Дополнительный словарь и конструкции', { exact: true }).click(); await page.locator('[data-testid="train-lesson"][data-lesson-id="marugoto.starter-a1.lesson.04"]').click();
   const gesture = page.getByTestId('review-gesture'); await expect(page.getByTestId('card-face')).toBeVisible();
   const oldId = await gesture.getAttribute('data-review-id'); await page.getByTestId('card-face').click();
   if (await page.locator('.flip-card').getAttribute('data-revealed') !== 'true') { await page.waitForTimeout(500); await page.getByTestId('card-face').click(); }
