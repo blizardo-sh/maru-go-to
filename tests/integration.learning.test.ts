@@ -5,6 +5,7 @@ import { createLink, consumeLink } from '../src/server/auth';
 import { learningFixture } from './helpers/learning-fixture';
 import { nextFixtureIp } from './helpers/fixture-ip';
 import type { LearningAdvance, LearningAdvanceResult, LearningState } from '../src/shared/learning';
+import { advanceLearningState, currentLearningStep, initialLearningState, learningParts } from '../src/shared/learning';
 import { reviewId, submitReview } from '../src/server/reviews';
 
 const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
@@ -32,7 +33,7 @@ suite('guided learning HTTP with disposable PostgreSQL', () => {
     if (!['localhost', '127.0.0.1'].includes(url.hostname) || url.pathname !== '/japanese_app_test') throw new Error('Disposable localhost /japanese_app_test required.');
     database = connectDatabase(databaseUrl!);
     app = createApp({ database, course, config: { DATABASE_URL: databaseUrl!, BETTER_AUTH_SECRET: 'guided-fixture-only-auth-secret-more-than-32-characters', APP_URL: origin, PORT: 3000, HOST: '127.0.0.1' } });
-    for (let owner = 0; owner < 2; owner++) {
+    for (let owner = 0; owner < 3; owner++) {
       const email = `guided-${crypto.randomUUID()}@example.test`; const ip = nextFixtureIp();
       const link = await createLink(database, 'invite', email, null); expect(await consumeLink(database, 'invite', link.token, password, 'Guided fixture')).toBe(true);
       const response = await app.request(origin + '/api/auth/sign-in/email', { method: 'POST', headers: { origin, 'content-type': 'application/json', 'x-forwarded-for': ip }, body: JSON.stringify({ email, password }) });
@@ -168,5 +169,39 @@ suite('guided learning HTTP with disposable PostgreSQL', () => {
     const openapi = await (await request('/api/openapi.json')).json();
     expect(openapi.paths['/api/learning/{lessonId}/advance'].post.requestBody.content['application/json'].schema.properties.stateVersion).toBeDefined();
     expect(openapi.paths['/api/learning/{lessonId}/advance'].post.parameters.some((parameter: { name: string; in: string }) => parameter.in === 'header' && parameter.name === 'X-Learning-Learner-Id')).toBe(true);
+  });
+
+  test('a stored pilot route survives optional clips: read-only resume, exact current/retry IDs, ACK replay, stale CAS and completed history',async()=>{
+    const oldRoute=structuredClone(course.learning[0]!);let old=initialLearningState(oldRoute);
+    old=advanceLearningState(oldRoute,old,'continue');old=advanceLearningState(oldRoute,old,'continue');
+    const retryId=currentLearningStep(oldRoute,old)!.id;old=advanceLearningState(oldRoute,old,'again');
+    const expectedStep=currentLearningStep(oldRoute,old)!;
+    await database.sql`insert into learning_states(user_id,lesson_id,route_version,version,state) values(${users[2]!.id},${lessonId},${oldRoute.version},7,${old})`;
+    const lesson=course.lessons.find(item=>item.id===lessonId)!;
+    lesson.videos!.push({...lesson.videos![0]!,id:'fixture-added-video',mediaUrl:'https://a1.marugotoweb.jp/en/assets/movies/topics/cando_05_02.mp4',captionsSourceUrl:'https://a1.marugotoweb.jp/en/assets/data/topics/cando_05_02.xml'});
+    course.learning[0]!.goals[0]!.videoIds!.push('fixture-added-video');
+    const row=async()=>(await database.sql`select route_version,version,state from learning_states where user_id=${users[2]!.id} and lesson_id=${lessonId}`)[0]!;
+    const before=await row();const resumed=await state(2);
+    expect(resumed).toMatchObject({routeVersion:oldRoute.version,version:7,completedSteps:old.completedStepIds.length,step:expectedStep});expect(resumed.totalSteps).toBe(learningParts(oldRoute).flat().length+1);
+    expect(await row()).toEqual(before);
+    const input=payload(resumed,'remember');const response=await request('/api/learning/'+lessonId+'/advance',2,input);expect(response.status).toBe(200);const saved=await response.json();
+    expect(await (await request('/api/learning/'+lessonId+'/advance',2,input)).json()).toEqual(saved);
+    const stale=await request('/api/learning/'+lessonId+'/advance',2,{...input,attemptId:crypto.randomUUID()});expect(stale.status).toBe(409);expect((await stale.json()).error.code).toBe('LEARNING_CONFLICT');
+    expect((await row()).state.pendingStepIds).toContain(retryId);expect(await database.sql`select 1 from review_attempts where user_id=${users[2]!.id}`).toHaveLength(1);
+    // An already pending pilot video retains its exact identity; both optional steps skip without grading.
+    let atVideo=old;
+    while(currentLearningStep(oldRoute,atVideo)?.kind!=='video'){const step=currentLearningStep(oldRoute,atVideo)!;atVideo=advanceLearningState(oldRoute,atVideo,step.kind.endsWith('practice')?'remember':'continue');}
+    await database.sql`update learning_states set version=9,state=${atVideo} where user_id=${users[2]!.id} and lesson_id=${lessonId}`;
+    const reviewsBefore=await database.sql`select * from review_states where user_id=${users[2]!.id}`;const attemptsBefore=await database.sql`select * from review_attempts where user_id=${users[2]!.id}`;
+    const pilot=await state(2);expect(pilot.step).toEqual(currentLearningStep(oldRoute,atVideo));
+    const firstSkip=await advance(pilot,'skip',{},2);expect(firstSkip.reviewResult).toBeUndefined();expect(firstSkip.state.step).toMatchObject({kind:'video',videoId:'fixture-added-video'});
+    const secondSkip=await advance(firstSkip.state,'skip',{},2);expect(secondSkip.reviewResult).toBeUndefined();expect(secondSkip.state.step?.kind).toBe('part-complete');
+    expect(await database.sql`select * from review_states where user_id=${users[2]!.id}`).toEqual(reviewsBefore);expect(await database.sql`select * from review_attempts where user_id=${users[2]!.id}`).toEqual(attemptsBefore);
+    let complete=initialLearningState(oldRoute);
+    while(currentLearningStep(oldRoute,complete)){const step=currentLearningStep(oldRoute,complete)!;complete=advanceLearningState(oldRoute,complete,step.kind.endsWith('practice')?'remember':step.kind==='video'?'skip':'continue');}
+    await database.sql`update learning_states set version=12,state=${complete} where user_id=${users[2]!.id} and lesson_id=${lessonId}`;
+    const completedRow=await row();const done=await state(2);expect(done).toMatchObject({version:12,completed:true,step:null});expect(done.completedSteps).toBe(done.totalSteps);expect(await row()).toEqual(completedRow);
+    expect(await database.sql`select * from review_states where user_id=${users[2]!.id}`).toEqual(reviewsBefore);
+    const overview=await (await request('/api/learning',2)).json();expect(overview.lessons[0]).toMatchObject({completed:true,completedSteps:done.totalSteps,totalSteps:done.totalSteps});
   });
 });

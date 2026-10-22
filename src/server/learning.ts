@@ -1,5 +1,5 @@
 import { isDeepStrictEqual } from 'node:util';
-import { advanceLearningState, currentLearningStep, initialLearningState, learningParts, type GuidedLesson, type LearningAdvance, type LearningAdvanceResult, type LearningRouteState, type LearningState, type LearningStep } from '../shared/learning';
+import { advanceLearningState, currentLearningStep, initialLearningState, learningParts, reconcileOptionalVideos, type GuidedLesson, type LearningAdvance, type LearningAdvanceResult, type LearningRouteState, type LearningState, type LearningStep } from '../shared/learning';
 import type { Course, ReviewSubmission } from '../shared/types';
 import type { Database } from './db';
 import { learningReviewItem, ReviewError, submitReviewLocked } from './reviews';
@@ -11,7 +11,7 @@ function routeFor(course: Course, lessonId: string): GuidedLesson {
 }
 function storedState(route: GuidedLesson, row?: { route_version: string; state: LearningRouteState }): LearningRouteState {
   if (row && row.route_version !== route.version) throw new ReviewError('ROUTE_CHANGED', 'Учебный маршрут обновился. Обратитесь к преподавателю для переноса прогресса.', 409);
-  return row?.state ?? initialLearningState(route);
+  return row ? reconcileOptionalVideos(route, row.state) : initialLearningState(route);
 }
 async function stateFor(sql: Database['sql'], userId: string, course: Course, route: GuidedLesson, state: LearningRouteState, version: number, hydrate: boolean): Promise<LearningState> {
   const step = currentLearningStep(route, state);

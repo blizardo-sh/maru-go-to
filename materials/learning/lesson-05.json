@@ -135,6 +135,10 @@
             ]
           }
         }
+      ],
+      "videoIds": [
+        "marugoto.starter-a1.video.cando_09_01",
+        "marugoto.starter-a1.video.challenge09"
       ]
     },
     {
@@ -298,7 +302,12 @@
           ]
         }
       ],
-      "introductionRu": "За завтраком один человек предлагает другому напиток. コーヒー、のみますか здесь значит «Будете кофе?». Ответ はい принимает предложение, けっこうです вежливо отказывается. Это не опрос о том, пьёт ли человек кофе вообще."
+      "introductionRu": "За завтраком один человек предлагает другому напиток. コーヒー、のみますか здесь значит «Будете кофе?». Ответ はい принимает предложение, けっこうです вежливо отказывается. Это не опрос о том, пьёт ли человек кофе вообще.",
+      "videoIds": [
+        "marugoto.starter-a1.video.cando_10_01",
+        "marugoto.starter-a1.video.cando_10_02",
+        "marugoto.starter-a1.video.challenge10"
+      ]
     },
     {
       "id": "l05-breakfast",
@@ -497,6 +506,10 @@
             }
           ]
         }
+      ],
+      "videoIds": [
+        "marugoto.starter-a1.video.cando_11_01",
+        "marugoto.starter-a1.video.challenge11"
       ]
     }
   ],

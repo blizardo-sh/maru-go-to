@@ -1,5 +1,5 @@
 import { expect, test } from 'bun:test';
-import { advanceLearningState, currentLearningStep, initialLearningState, learningParts, validateLearning } from '../src/shared/learning';
+import { advanceLearningState, currentLearningStep, initialLearningState, learningParts, reconcileOptionalVideos, validateLearning } from '../src/shared/learning';
 import { withLearningMaterial } from '../src/server/course';
 import { learningFixture } from './helpers/learning-fixture';
 
@@ -75,4 +75,31 @@ test('authored overlays preserve stable identities and cannot remove existing sh
   expect(merged.words.find(item => item.id === word.id)?.reviewStatus).toBe('reviewed');
   route.authored.words[0]!.lessonIds = ['another-lesson'];
   expect(() => withLearningMaterial(course, [route])).toThrow('scope');
+});
+
+test('optional video additions preserve the exact current word, retry queue and old video step without changing the route version',()=>{
+ const route=learningFixture().learning[0]!;let state=initialLearningState(route);
+ state=advanceLearningState(route,state,'continue');state=advanceLearningState(route,state,'continue');
+ state=advanceLearningState(route,state,'again');
+ const old=structuredClone(state);const current=currentLearningStep(route,state)!;const oldIds=learningParts(route).flat().map(step=>step.id);
+ const expanded=structuredClone(route);expanded.goals[0]!.videoIds!.push('new.optional.clip');
+ const reconciled=reconcileOptionalVideos(expanded,state);
+ expect(state).toEqual(old);expect(currentLearningStep(expanded,reconciled)).toEqual(current);expect(expanded.version).toBe(route.version);
+ expect(reconciled.pendingStepIds.filter(id=>oldIds.includes(id))).toEqual(old.pendingStepIds);
+ expect(reconciled.pendingStepIds.at(-2)).toBe('fixture-part-1:video:new.optional.clip');
+ expect(reconciled.completedStepIds).toEqual(old.completedStepIds);expect(reconcileOptionalVideos(expanded,reconciled)).toEqual(reconciled);
+ while(currentLearningStep(route,state)?.kind!=='video'){const step=currentLearningStep(route,state)!;state=advanceLearningState(route,state,step.kind.endsWith('practice')?'remember':'continue');}
+ expect(currentLearningStep(expanded,reconcileOptionalVideos(expanded,state))).toEqual(currentLearningStep(route,state));
+});
+
+test('new optional clips do not reopen summaries, past parts or completed routes, whose progress stays complete',()=>{
+ const route=learningFixture().learning[0]!;let state=initialLearningState(route);
+ const next=()=>{const step=currentLearningStep(route,state)!;state=advanceLearningState(route,state,step.kind.endsWith('practice')?'remember':step.kind==='video'?'skip':'continue');};
+ while(currentLearningStep(route,state)?.kind!=='part-complete')next();
+ const expanded=structuredClone(route);expanded.goals[0]!.videoIds!.push('new.past.clip');expanded.goals[1]!.videoIds=['new.future.clip'];
+ const summary=reconcileOptionalVideos(expanded,state);expect(currentLearningStep(expanded,summary)).toEqual(currentLearningStep(route,state));expect(summary.completedStepIds).toContain('fixture-part-1:video:new.past.clip');
+ next();const midway=reconcileOptionalVideos(expanded,state);expect(currentLearningStep(expanded,midway)).toEqual(currentLearningStep(route,state));expect(midway.completedStepIds).toContain('fixture-part-1:video:new.past.clip');
+ while(currentLearningStep(route,state))next();
+ const complete=reconcileOptionalVideos(expanded,state);expect(complete.partIndex).toBe(state.partIndex);expect(complete.pendingStepIds).toEqual([]);expect(currentLearningStep(expanded,complete)).toBeNull();
+ expect(complete.completedStepIds).toHaveLength(learningParts(expanded).flat().length);expect(complete.completedStepIds.filter(id=>!id.includes(':video:'))).toEqual(state.completedStepIds.filter(id=>!id.includes(':video:')));
 });

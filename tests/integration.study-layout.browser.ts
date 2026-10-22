@@ -117,7 +117,8 @@ try {
     await expect(page.locator('[data-outcome="correct"]').first()).toBeVisible(); await capture('construction-analysis');
     await seed(1, step => step.kind === 'video'); await capture('video');
     await page.locator('.guided-video video').evaluate((video: HTMLVideoElement) => video.play().catch(() => {})); await expect(page.getByText('Не удалось воспроизвести видео.', { exact: false })).toBeVisible(); await capture('video-error');
-    await continuePart(); await capture('part-summary');
+    while (await guided().getAttribute('data-step-kind') === 'video') await continuePart();
+    await expect(guided()).toHaveAttribute('data-step-kind', 'part-complete'); await capture('part-summary');
     await seed(1, step => step.kind === 'word-intro');
     let received: () => void = () => {}; const arrived = new Promise<void>(resolve => { received = resolve; }); const held = new Promise<void>(resolve => { release = resolve; });
     await context.route('**/api/learning/**/advance', async route => { received(); await held; await route.abort(); });
