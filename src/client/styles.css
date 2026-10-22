@@ -416,12 +416,17 @@ button.primary.start-session { color: var(--color-ink); background: var(--color-
 .lesson-card-body { display: grid; gap: .75rem; padding: 1rem; border-block-start: 1px solid #d1b58c; font-size: .875rem; }
 .lesson-goals { margin: .6rem 0 1rem; padding-inline-start: 1.25rem; }
 .lesson-goals li + li { margin-block-start: .4rem; }
-.guided-intro { text-align: center; }
-.guided-intro h2 { margin: .25rem 0; font-size: clamp(1.75rem, 4vw, 3rem); }
+.guided-intro { text-align: center; gap: var(--space-md); }
+.guided-headword { display: grid; justify-items: center; gap: var(--space-xs); }
+.guided-intro h2 { margin: 0; font-size: clamp(1.75rem, 4vw, 3rem); }
 .guided-reading { margin: 0; font: 400 1.375rem/1.6 var(--font-japanese); }
-.guided-example { padding: 1rem; border: 1px solid #cba678; border-radius: .6rem; background: #fff3d9b3; }
+.guided-explanation, .guided-example, .guided-breakdown { width: min(100%, 68ch); margin-inline: auto; text-align: start; }
+.guided-intro > button { align-self: center; max-width: 100%; min-width: min(100%, 12rem); }
+.guided-example { display: grid; gap: var(--space-sm); padding: var(--space-md); border: 1px solid #cba678; border-radius: .6rem; background: #fff3d9b3; }
+.guided-example > p { width: 100%; max-width: none; }
+.guided-example > button { justify-self: start; }
 .guided-example .jp { font-size: clamp(1.375rem, 2.4vw, 1.75rem); }
-.guided-breakdown { display: grid; gap: .5rem; margin: 0; text-align: start; }
+.guided-breakdown { display: grid; gap: .5rem; margin: 0 auto; text-align: start; }
 .guided-breakdown > div { display: grid; grid-template-columns: minmax(4rem, auto) minmax(0, 1fr); align-items: baseline; gap: .75rem; padding-block: .4rem; border-block-end: 1px solid #d1b58c; }
 .guided-breakdown .jp { font-size: 1.375rem; }
 .guided-breakdown dd { margin: 0; }
@@ -596,6 +601,21 @@ h1, .nav > button, .workspace-heading h2, .lesson-summary-title, button.primary.
   .session-board { padding-inline-end: calc(var(--cat-size) * .6); }
   .scene-companion { inset-inline-end: calc(var(--cat-size) * -.12); inset-block-end: -8px; width: var(--cat-size); height: var(--cat-size); }
 }
-.guided-goal-context { width: min(100%, 75ch); margin-inline: auto; padding: .75rem; border-block-end: 1px solid #cba678; font-size: .875rem; }
+.guided-goal-context { width: min(100%, 75ch); margin-inline: auto; padding: .75rem; border-block-end: 1px solid #cba678; font-size: 1rem; }
+
+@media (max-width: 22.5rem) { .study-session { --study-header-size: 136px; } }
+
+/* Short windows spend their space on the paper, while text and targets keep their size. */
+@media (max-height: 30rem) {
+  .game-shell:has(.study-session[data-active='true']) { padding-block: 0 max(4px, env(safe-area-inset-bottom)); }
+  .game-shell:has(.study-session[data-active='true']) > .game-hud { margin-block-start: 0; padding: 2px; border-width: 4px; }
+  .game-shell:has(.study-session[data-active='true']) > main { padding-block-start: 4px; }
+  .study-session { --study-header-size: 96px; row-gap: 4px; }
+  .session-header { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) auto; grid-template-rows: minmax(0, 1fr); padding: 4px 8px; }
+  .session-heading { grid-column: 1; grid-row: 1; }
+  .session-header > button { grid-column: 3; grid-row: 1; }
+  .session-progress { grid-column: 2; grid-row: 1; }
+  .session-board { border-width: 8px; padding: 6px 8px; padding-inline-end: max(8px, calc(var(--cat-size, 0px) * .6)); }
+}
 
 @media (min-width: 56rem) and (max-width: 74.99rem) { .today-heading .companion { inset-block-end: calc(var(--cat-size) * -.45); } }

@@ -26,6 +26,26 @@ async function capture(label: string) {
   await page.evaluate(() => document.fonts.ready);
   const board = await page.locator('.session-board').boundingBox(); const cat = await page.getByTestId('scene-companion').boundingBox();
   if (!board || !cat) throw new Error('Missing study frame.');
+  const viewport = page.viewportSize()!;
+  for (const [name, rect] of Object.entries({ board, cat })) {
+    expect(rect.x, `${label}: ${name} left outside viewport`).toBeGreaterThanOrEqual(0);
+    expect(rect.y, `${label}: ${name} above viewport`).toBeGreaterThanOrEqual(0);
+    expect(rect.x + rect.width, `${label}: ${name} right outside viewport`).toBeLessThanOrEqual(viewport.width);
+    expect(rect.y + rect.height, `${label}: ${name} below viewport`).toBeLessThanOrEqual(viewport.height);
+  }
+  const intro = page.getByTestId('learning-intro');
+  if (await intro.count()) {
+    if (label === 'word-intro') await page.screenshot({ path: `${output}/study-layout-current-${viewport.width}x${viewport.height}.png`, fullPage: true });
+    const word = await intro.locator('h2').boundingBox();
+    for (const selector of ['.guided-reading', 'h3', ':scope > p:not(.guided-reading):not(.notice)']) {
+      const block = intro.locator(selector).first(); if (!await block.count()) continue; const box = await block.boundingBox();
+      if (word && box) expect(Math.abs(box.x + box.width / 2 - word.x - word.width / 2), `${label}: ${selector} is off the word centreline`).toBeLessThanOrEqual(2);
+    }
+  }
+  const usefulHeight = await page.locator('.session-scroll').evaluate(element => element.clientHeight);
+  expect(usefulHeight, `${label}: study content has too little usable height`).toBeGreaterThanOrEqual(112);
+  const hud = await page.locator('.game-hud').boundingBox(); if (hud) expect(cat.y, `${label}: cat overlaps navigation`).toBeGreaterThanOrEqual(hud.y + hud.height - 1);
+  const exit = page.locator('.session-header > button'); const exitBox = await exit.boundingBox(); if (exitBox) { expect(exitBox.height).toBeGreaterThanOrEqual(44); expect(exitBox.width).toBeGreaterThanOrEqual(44); }
   const next = { board, cat }; records.push({ label, viewport: page.viewportSize(), ...next });
   if (expected) for (const part of ['board', 'cat'] as const) for (const coordinate of ['x', 'y', 'width', 'height'] as const) expect(Math.abs(next[part][coordinate] - expected[part][coordinate]), `${label}: ${part}.${coordinate} moved`).toBeLessThanOrEqual(1);
   else expected = next;
@@ -62,9 +82,9 @@ try {
   expect((await context.request.post(`${api}/api/auth/sign-in/email`, { headers: { origin: base }, data: { email, password } })).status()).toBe(200);
   expect((await context.request.put(`${api}/api/settings`, { headers: { origin: base, ...headers() }, data: { ...defaultSettings, animations: false, sceneSoundEnabled: false } })).status()).toBe(200);
   await context.route('https://a1.marugotoweb.jp/**', route => route.abort());
-  for (const viewport of [{ width: 1280, height: 800 }, { width: 1920, height: 1080 }, { width: 3000, height: 1446 }, { width: 390, height: 844 }]) {
+  for (const viewport of [{ width: 320, height: 568 }, { width: 640, height: 312 }, { width: 768, height: 390 }, { width: 1280, height: 624 }, { width: 1440, height: 700 }, { width: 1920, height: 936 }, { width: 3000, height: 1446 }, { width: 390, height: 844 }]) {
     await page.setViewportSize(viewport); expected = undefined;
-    await seed(1, step => step.kind === 'word-intro'); await capture('word-intro');
+    await seed(1, step => step.kind === 'word-intro'); await capture('word-intro'); await expect(page.locator('.guided-reading')).toHaveCount(0);
     await page.screenshot({ path: `${output}/study-layout-intro-${viewport.width}.png`, fullPage: true });
     const scroll = page.locator('.session-scroll');
     const canScroll = await scroll.evaluate(element => element.scrollHeight > element.clientHeight);
@@ -82,7 +102,10 @@ try {
 
     while (await guided().getAttribute('data-step-kind') === 'word-intro') { await next(); await capture('next-intro-or-practice'); }
     for (let mode = 0; mode < 3; mode++) { await capture('word-practice-hidden'); await recall(); }
-    await seed(1, step => step.goalId === 'l01-scripts' && step.kind === 'word-intro'); await capture('goal-with-context'); await page.screenshot({ path: `${output}/study-layout-context-${viewport.width}.png`, fullPage: true });
+    const core2 = new Set(course.learning!.find(route => route.lessonId.endsWith('02'))!.goals.flatMap(goal => goal.parts.flatMap(part => part.words.map(word => word.wordId))));
+    const distinct = course.words.find(word => core2.has(word.id) && word.surface !== word.kana)!;
+    await seed(2, step => step.kind === 'word-intro' && step.wordId === distinct.id); await expect(page.locator('.guided-reading')).toHaveText(distinct.kana); await capture('distinct-reading-preserved');
+    await seed(1, step => step.goalId === 'l01-scripts' && step.kind === 'word-intro'); await capture('goal-with-context'); await page.screenshot({ path: `${output}/study-layout-hiragana-${viewport.width}x${viewport.height}.png`, fullPage: true }); await page.screenshot({ path: `${output}/study-layout-context-${viewport.width}.png`, fullPage: true });
     while (await guided().getAttribute('data-step-kind') === 'word-intro') await next(); await capture('goal-without-context');
     await seed(4, step => step.goalId === 'l04-family-photo' && step.kind === 'word-intro'); await capture('longest-goal'); await page.screenshot({ path: `${output}/study-layout-long-goal-${viewport.width}.png`, fullPage: true });
 
@@ -130,6 +153,6 @@ try {
     expect(expected!.board.y + expected!.board.height).toBeLessThanOrEqual(viewport.height);
     await page.screenshot({ path: `${output}/study-layout-${viewport.width}.png`, fullPage: true });
   }
-  expect(errors).toEqual([]); await Bun.write(`${output}/study-layout-green.json`, JSON.stringify({ green: true, reducedMotion: true, isolatedFixture: true, records }, null, 2)); console.info(`Study layout: ${records.length} stable frame/cat measurements across four viewports.`);
+  expect(errors).toEqual([]); await Bun.write(`${output}/study-layout-green.json`, JSON.stringify({ green: true, reducedMotion: true, isolatedFixture: true, records }, null, 2)); console.info(`Study layout: ${records.length} stable frame/cat measurements across short, wide and mobile viewports.`);
 } catch (error) { await Bun.write(`${output}/study-layout-red.json`, JSON.stringify({ green: false, failure: String(error), records }, null, 2)); throw error; }
 finally { release?.(); await context.close(); await browser.close(); await database.sql`delete from access_links where email=${email}`; if (owner) await database.sql`delete from users where id=${owner}`; await database.sql.close(); }

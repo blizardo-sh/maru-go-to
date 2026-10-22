@@ -47,11 +47,13 @@ function useStepSpeech(active: boolean, volume: number, sound: SceneSound, onAct
 
 function Intro({ value, reading, explanation, example, breakdown, active, busy, sound, onActivity, stepId, data, onContinue }: { value: LearningExample; reading?: string; explanation: string; example?: LearningExample; breakdown?: { text: string; explanationRu: string }[]; active: boolean; busy: boolean; sound: SceneSound; onActivity: (value: CardActivity) => void; stepId: string; data: Snapshot; onContinue: () => void }) {
   const speech = useStepSpeech(active, data.settings.speechVolume, sound, onActivity, stepId);
+  const pronunciation = reading ?? value.kana; const displayed = data.settings.orthography === 'kana' ? value.kana : value.surface;
   return <article className="guided-intro work-board stack" data-testid="learning-intro">
     <audio ref={speech.audio} preload="none" hidden />
     <small>{breakdown ? 'Как устроена фраза' : 'Знакомимся со словом или фразой'}</small>
-    <h2><Japanese value={value} mode={data.settings.orthography} /></h2>
-    <p className="guided-reading" lang="ja">{reading ?? value.kana}</p><h3>{value.meaningRu}</h3><p>{explanation}</p>
+    <div className="guided-headword"><h2><Japanese value={value} mode={data.settings.orthography} /></h2>
+      {pronunciation !== displayed && <p className="guided-reading" lang="ja">{pronunciation}</p>}<h3>{value.meaningRu}</h3></div>
+    <p className="guided-explanation">{explanation}</p>
     <button className="quiet" disabled={!active || busy || speech.playing} onClick={() => { void speech.play(value.audioUrl); }}>▶ Прослушать{breakdown ? ' фразу целиком' : ''}</button>
     {breakdown && <dl className="guided-breakdown">{breakdown.map((piece, index) => <div key={index}><dt className="jp" lang="ja">{piece.text}</dt><dd>{piece.explanationRu}</dd></div>)}</dl>}
     {example && <div className="guided-example"><small>Короткий пример</small><p><Japanese value={example} mode={data.settings.orthography} /></p><p>{example.meaningRu}</p><button className="quiet" disabled={!active || busy || speech.playing} onClick={() => { void speech.play(example.audioUrl); }}>▶ Послушать пример</button></div>}

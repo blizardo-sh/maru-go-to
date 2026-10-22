@@ -47,6 +47,40 @@ suite('invitation registration and login identity',()=>{
   const details=await request('/api/invitations/details',{token:link.token});expect(details.status).toBe(200);expect((await details.json()).email).toBe(email);
   expect((await request('/api/invitations/accept',{token:link.token,name:'Another learner',password})).status).toBe(200);expect((await request('/api/auth/sign-in/email',{email:raw,password})).status).toBe(200);
  });
+ test('invitation rejects seven and 129 characters without consuming the link, then accepts an eight-character password',async()=>{
+  const email=`password-invite-${crypto.randomUUID()}@example.test`;fixtureEmails.push(email);const link=await createLink(database,'invite',email,null);fixtureTokens.push(link.token);
+  for(const candidate of ['x'.repeat(7),'x'.repeat(129)]){
+   expect((await request('/api/invitations/accept',{token:link.token,name:'Password boundary fixture',password:candidate})).status).toBe(400);
+   const [available]=await database.sql`select used_at from access_links where token_hash=${tokenHash(link.token)}`;expect(available.used_at).toBeNull();
+   expect(await database.sql`select id from users where email=${email}`).toHaveLength(0);
+  }
+  const minimum='Eight123';
+  expect((await request('/api/invitations/accept',{token:link.token,name:'Password boundary fixture',password:minimum})).status).toBe(200);
+  expect((await request('/api/auth/sign-in/email',{email,password:minimum})).status).toBe(200);
+ });
+ test('recovery accepts eight literal characters, preserves the 128 maximum and invalidates only after a valid reset',async()=>{
+  const email=`password-recovery-${crypto.randomUUID()}@example.test`;fixtureEmails.push(email);const invite=await createLink(database,'invite',email,null);fixtureTokens.push(invite.token);
+  const maximum='M'.repeat(128);
+  expect((await request('/api/invitations/accept',{token:invite.token,name:'Password recovery fixture',password:maximum})).status).toBe(200);
+  const signedIn=await request('/api/auth/sign-in/email',{email,password:maximum});expect(signedIn.status).toBe(200);const cookie=cookieFrom(signedIn);
+  const recovery=await createLink(database,'recovery',email,null);fixtureTokens.push(recovery.token);
+  for(const candidate of ['x'.repeat(7),'x'.repeat(129)]){
+   expect((await request('/api/recovery/complete',{token:recovery.token,password:candidate})).status).toBe(400);
+   const [available]=await database.sql`select used_at from access_links where token_hash=${tokenHash(recovery.token)}`;expect(available.used_at).toBeNull();
+   expect((await app.request(origin+'/api/me',{headers:{cookie}})).status).toBe(200);
+  }
+  const minimum=' abcd12 ';
+  expect((await request('/api/recovery/complete',{token:recovery.token,password:minimum})).status).toBe(200);
+  expect((await app.request(origin+'/api/me',{headers:{cookie}})).status).toBe(401);
+  expect((await request('/api/auth/sign-in/email',{email,password:maximum})).status).toBe(401);
+  expect((await request('/api/auth/sign-in/email',{email,password:minimum.trim()})).status).toBe(401);
+  const newLogin=await request('/api/auth/sign-in/email',{email,password:minimum});expect(newLogin.status).toBe(200);
+  expect((await request('/api/recovery/complete',{token:recovery.token,password:'Another8'})).status).toBe(400);
+  const contract=await app.request(origin+'/api/openapi.json',{headers:{cookie:cookieFrom(newLogin)}});expect(contract.status).toBe(200);const document=await contract.json();
+  for(const path of ['/api/invitations/accept','/api/recovery/complete']){
+   expect(document.paths[path].post.requestBody.content['application/json'].schema.properties.password).toMatchObject({minLength:8,maxLength:128});
+  }
+ });
  test('shared invitation creation rejects invalid email ivan before storing a link',async()=>{
   const [{count:before}]=await database.sql`select count(*)::int as count from access_links where email='ivan'`;let createdToken:string|undefined;const creating=createLink(database,'invite','ivan',null).then(result=>{createdToken=result.token;fixtureTokens.push(result.token);return result;});
   await expect(creating).rejects.toThrow();expect(createdToken).toBeUndefined();const [{count:after}]=await database.sql`select count(*)::int as count from access_links where email='ivan'`;expect(after).toBe(before);
