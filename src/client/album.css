@@ -88,3 +88,6 @@
 @media (max-height: 480px) and (min-width: 541px) { .session-header { height: 92px; } .session-scroll { padding-inline-end: 112px; } }
 /* A departing sheet is clipped by the fixed board, never a horizontal scroll lane. */
 .session-scroll { overflow-x: hidden; }
+
+/* The full textbook is a document; the study stage retains its fixed frame. */
+.section-board.textbook-board { height: auto; min-height: 0; overflow: visible; scrollbar-gutter: auto; }

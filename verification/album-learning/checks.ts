@@ -2,6 +2,22 @@ import { expect, type Page } from '@playwright/test';
 import propsManifest from '../../public/scenes/props/manifest.json';
 import type { Course } from '../../src/shared/types';
 
+/** The textbook scrolls as one document; starting its last lesson restores the fixed study stage. */
+export async function checkTextbookDocument(page:Page,base:string,output:string){
+  const cases:unknown[]=[];
+  for(const viewport of [{width:1280,height:720},{width:390,height:844}]){
+    await page.setViewportSize(viewport);await page.goto(base);await expect(page.getByTestId('learn-lesson')).toHaveCount(18);await page.evaluate(()=>document.fonts.ready);
+    const book=page.locator('.textbook-board');await expect(book).toBeVisible();const initial=await book.evaluate(element=>({overflowY:getComputedStyle(element).overflowY,clientHeight:element.clientHeight,scrollHeight:element.scrollHeight,scrollTop:element.scrollTop,documentHeight:document.documentElement.scrollHeight}));
+    expect(initial.overflowY).toBe('visible');expect(initial.scrollHeight).toBeLessThanOrEqual(initial.clientHeight+1);expect(initial.documentHeight).toBeGreaterThan(viewport.height);
+    await page.mouse.move(viewport.width/2,Math.min(viewport.height-80,400));await page.mouse.wheel(0,600);await expect.poll(()=>page.evaluate(()=>scrollY)).toBeGreaterThan(0);expect(await book.evaluate(element=>element.scrollTop)).toBe(0);
+    const last=page.getByTestId('learn-lesson').last();await last.scrollIntoViewIfNeeded();await expect(last).toBeInViewport();const scrollY=await page.evaluate(()=>window.scrollY);expect(scrollY).toBeGreaterThan(0);await page.screenshot({path:`${output}/textbook-last-${viewport.width}.png`,fullPage:false});await last.click();
+    const skip=page.getByRole('button',{name:/Перейти к занятию/});if(await skip.isVisible())await skip.click();await expect(page.getByTestId('guided-learning')).toHaveAttribute('data-step-kind',/./);
+    const board=page.locator('.session-board'),before=await board.boundingBox();if(!before)throw new Error('Missing study board');expect(before.y).toBeGreaterThanOrEqual(0);expect(before.y+before.height).toBeLessThanOrEqual(viewport.height);expect(await page.evaluate(()=>window.scrollY)).toBeLessThanOrEqual(1);
+    await page.locator('.session-scroll').hover();await page.mouse.wheel(0,300);expect(await board.boundingBox()).toEqual(before);cases.push({viewport,lessons:18,naturalDocumentHeight:initial.documentHeight,documentScrollY:scrollY,innerScrollTop:0,lastLessonReachable:true,fixedStudyBoard:true});
+  }
+  return{cases};
+}
+
 /** Actual lesson-four DOM, native input and painted sprite bounds; no test-only app state bridge. */
 export async function checkAlbumOverview(page:Page,course:Course,output:string,propsOnly=false){
   const tiles = page.locator('.word-introduction[data-word-id]'); expect(await tiles.count()).toBeGreaterThan(0);

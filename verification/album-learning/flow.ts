@@ -1,7 +1,7 @@
 import { mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { output as artifacts } from '../../tests/helpers/artifact-output';
-import { checkAlbumOverview } from './checks';
+import { checkAlbumOverview, checkTextbookDocument } from './checks';
 import type { Course } from '../../src/shared/types';
 import { chromium, expect, type BrowserContext, type Page } from '@playwright/test';
 import { connectDatabase } from '../../src/server/db';
@@ -34,6 +34,8 @@ async function holdNext(){let arrived:()=>void=()=>{},finished:()=>void=()=>{};c
 try {
   const a=await actor(),b=await actor(); await login(a);
   expect((await context.request.put(base+'/api/settings',{headers:{origin:base,'X-Learning-Learner-Id':owner},data:{...defaultSettings,animations:false,musicVolume:0,ambienceVolume:0}})).status()).toBe(200);
+  report.textbook=await checkTextbookDocument(page,base,output);
+  if(process.env.ALBUM_BOOK_ONLY!=='true'){
   const course:Course=await(await context.request.get(base+'/api/course')).json();await page.setViewportSize({width:390,height:844});await open('marugoto.starter-a1.lesson.04');await expect(page.getByTestId('learning-word-group')).toBeVisible();report.overview=await checkAlbumOverview(page,course,output);await page.setViewportSize({width:1280,height:900});
   await open();await page.getByTestId('start-learning-practice').click();await readyChoice();
   const quizGeometry:unknown[]=[];
@@ -83,6 +85,7 @@ try {
   await login(b);await open();await page.getByTestId('start-learning-practice').click();await readyChoice();current=await state();const logoutStep=current.step!;if(logoutStep.kind!=='word-practice')throw new Error('Missing word');const pendingLogout=await holdNext();await page.locator(`[data-choice-word-id="${logoutStep.wordId}"]`).click();await pendingLogout.reached;
   await page.getByLabel('Настройки и аккаунт',{exact:true}).click();await page.locator('.hud-menu').getByRole('button',{name:'Выйти',exact:true}).click();await expect(page.getByRole('button',{name:'Войти',exact:true})).toBeVisible();const cuesAtLogout=await nativeSfx();await pendingLogout.release();await page.waitForTimeout(900);await expect(page.getByRole('button',{name:'Войти',exact:true})).toBeVisible();expect(await nativeSfx()).toBe(cuesAtLogout);await expect(page.getByTestId('guided-learning')).toHaveCount(0);
   await login(b);await open();await expect(session()).not.toHaveAttribute('data-step-id',logoutStep.id);const[logoutRows]=await database.sql`select count(*)::int as count from review_attempts where attempt_id=${pendingLogout.submission.attemptId}`;expect(logoutRows.count).toBe(1);report.logoutPendingAck={noLateScreenOrCue:true,savedCanonicalResumes:true,oneSrsWrite:true};
-  expect(errors).toEqual([]);report.errors=errors;report.green=true;await Bun.write(`${output}/flow-green.json`,JSON.stringify(report,null,2));console.info(JSON.stringify(report,null,2));
+  }
+  expect(errors).toEqual([]);report.errors=errors;report.green=true;await Bun.write(`${output}/${process.env.ALBUM_BOOK_ONLY==='true'?'book':'flow'}-green.json`,JSON.stringify(report,null,2));console.info(JSON.stringify(report,null,2));
 } catch(error){report.green=false;report.error=error instanceof Error?error.message:String(error);report.errors=errors;await page.screenshot({path:`${output}/flow-red.png`,fullPage:true}).catch(()=>{});await Bun.write(`${output}/flow-red.json`,JSON.stringify(report,null,2));throw error;}
 finally{release?.();await context.close();await browser.close();for(const actor of actors){await database.sql`delete from access_links where email=${actor.email}`;await database.sql`delete from users where id=${actor.id}`;}await database.sql.close();}

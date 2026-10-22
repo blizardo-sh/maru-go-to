@@ -1,5 +1,7 @@
 # Album acceptance
 
+The flow runner also checks natural document scrolling through all 18 textbook lessons on desktop/mobile, then starts the last lesson and verifies the fixed study board. For only this focused check, prefix its launcher command with `ALBUM_BOOK_ONLY=true`; default CI runs the complete flow.
+
 These checks use real React UI, the HTTP API and a disposable PostgreSQL database. They create UUID learners and delete only their own fixtures. No database reset, schema migration, production account or external AI call is involved.
 
 Use Bun 1.4.3 on `PATH`, existing dependencies and an already migrated `japanese_app_test` database on `127.0.0.1`. Set both `TEST_DATABASE_URL` and `JAPANESE_INTEGRATION_DATABASE_URL` to that disposable database for integration tests. Finish database suites before starting browser fixtures.
