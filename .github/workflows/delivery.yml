@@ -55,6 +55,8 @@ jobs:
         run: bun tests/helpers/run-guided-browser.ts tests/integration.registration.browser.ts
       - name: Browser invitation, login and logout
         run: bun tests/helpers/run-guided-browser.ts tests/auth-onboarding.browser.ts
+      - name: Browser counter flashcard decks
+        run: bun tests/integration.counters.browser.ts
       - name: Validate release command boundaries
         run: bash deployment/check.sh
       - name: Validate Linux release images before merge

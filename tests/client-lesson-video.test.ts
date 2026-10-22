@@ -57,8 +57,8 @@ test('lesson video validates its official lesson source, bounded intervals and b
 });
 
 test('all official dialogue entries are listed in the textbook without eager media elements', () => {
-  const snapshot: Snapshot = { course, settings: defaultSettings, lists: [], learning: [], progress: { introducedWordIds: [], introducedSkillIds: [], completedLessons: 0, totalLessons: 18, wordsIntroducedToday: 0, skillsIntroducedToday: 0, byMode: { 'ja-ru': {due:0,learned:0,reviewedToday:0}, 'ru-ja': {due:0,learned:0,reviewedToday:0}, listening: {due:0,learned:0,reviewedToday:0}, grammar: {due:0,learned:0,reviewedToday:0} } } };
-  const html = renderToStaticMarkup(createElement(Textbook, { data: snapshot, onLearn() {}, onTrain() {} }));
+  const snapshot: Snapshot = { course, settings: defaultSettings, lists: [], learning: [], progress: { counters: [], introducedWordIds: [], introducedSkillIds: [], completedLessons: 0, totalLessons: 18, wordsIntroducedToday: 0, skillsIntroducedToday: 0, byMode: { 'ja-ru': {due:0,learned:0,reviewedToday:0}, 'ru-ja': {due:0,learned:0,reviewedToday:0}, listening: {due:0,learned:0,reviewedToday:0}, grammar: {due:0,learned:0,reviewedToday:0}, counter: {due:0,learned:0,reviewedToday:0} } } };
+  const html = renderToStaticMarkup(createElement(Textbook, { data: snapshot, onLearn() {}, onTrain() {}, onCounters() {} }));
   const videos = course.lessons.flatMap(lesson => lesson.videos ?? []);
   expect(course.lessons.every(lesson => (lesson.videos?.length ?? 0) > 1)).toBe(true);
   expect(videos).toHaveLength(80);

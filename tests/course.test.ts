@@ -106,6 +106,15 @@ describe("published full-course material", () => {
     expect(() => validateCourse(invalidAudio)).toThrow("audio pronunciation");
   });
 
+  test("prepares context-specific speech without replacing lexical は or Japanese spelling", () => {
+    for (const [kana, speech] of [['こんにちは', 'こんにちわ'], ['こんばんは', 'こんばんわ'], ['おくには？', 'おくにわ'], ['おしごとは？', 'おしごとわ'], ['きをつけて', 'きおつけて'], ['〜はちょっと…', 'わちょっと']]) {
+      const phrase = course.words.find(word => word.kana === kana)!;
+      expect(phrase.audioText).toBe(speech);
+      expect(course.forms.find(form => form.wordId === phrase.id && form.kana === kana)).toBeDefined();
+    }
+    for (const kana of ['はなします', 'はは', 'あさごはん']) expect(course.words.filter(word => word.kana === kana).every(word => word.audioText === undefined)).toBe(true);
+  });
+
   test("keeps prepared sentence meanings separate from exercise instructions", () => {
     expect(course.exercises).toHaveLength(108);
     for (const exercise of course.exercises) {

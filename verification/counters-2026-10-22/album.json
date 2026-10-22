@@ -1,0 +1,1033 @@
+{
+  "isolated": true,
+  "noDatabaseReset": true,
+  "textbook": {
+    "cases": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "lessons": 18,
+        "naturalDocumentHeight": 2929,
+        "documentScrollY": 2209,
+        "innerScrollTop": 0,
+        "lastLessonReachable": true,
+        "fixedStudyBoard": true
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "lessons": 18,
+        "naturalDocumentHeight": 5351,
+        "documentScrollY": 4507,
+        "innerScrollTop": 0,
+        "lastLessonReachable": true,
+        "fixedStudyBoard": true
+      }
+    ]
+  },
+  "overview": {
+    "tiles": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "wordId": "marugoto.starter-a1.word.f304a39b5e728680",
+        "geometry": {
+          "width": 301.65625,
+          "height": 239.75,
+          "gridHeight": 491.5,
+          "scrollHeight": 652,
+          "documentWidth": 1280
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "wordId": "marugoto.starter-a1.word.2d31dd8d68a3ada0",
+        "geometry": {
+          "width": 301.671875,
+          "height": 239.75,
+          "gridHeight": 491.5,
+          "scrollHeight": 652,
+          "documentWidth": 1280
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "wordId": "marugoto.starter-a1.word.07ab7fc730f6f2bb",
+        "geometry": {
+          "width": 301.65625,
+          "height": 239.75,
+          "gridHeight": 491.5,
+          "scrollHeight": 652,
+          "documentWidth": 1280
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "wordId": "marugoto.starter-a1.word.5898af218a8efa80",
+        "geometry": {
+          "width": 301.65625,
+          "height": 239.75,
+          "gridHeight": 491.5,
+          "scrollHeight": 652,
+          "documentWidth": 1280
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "wordId": "marugoto.starter-a1.word.f11bf70db3c7b278",
+        "geometry": {
+          "width": 301.671875,
+          "height": 239.75,
+          "gridHeight": 491.5,
+          "scrollHeight": 652,
+          "documentWidth": 1280
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "wordId": "marugoto.starter-a1.word.f304a39b5e728680",
+        "geometry": {
+          "width": 304.328125,
+          "height": 239.75,
+          "gridHeight": 489.125,
+          "scrollHeight": 649,
+          "documentWidth": 1280
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "wordId": "marugoto.starter-a1.word.2d31dd8d68a3ada0",
+        "geometry": {
+          "width": 304.328125,
+          "height": 239.75,
+          "gridHeight": 489.125,
+          "scrollHeight": 649,
+          "documentWidth": 1280
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "wordId": "marugoto.starter-a1.word.07ab7fc730f6f2bb",
+        "geometry": {
+          "width": 304.34375,
+          "height": 239.75,
+          "gridHeight": 489.125,
+          "scrollHeight": 649,
+          "documentWidth": 1280
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "wordId": "marugoto.starter-a1.word.5898af218a8efa80",
+        "geometry": {
+          "width": 304.328125,
+          "height": 237.375,
+          "gridHeight": 489.125,
+          "scrollHeight": 649,
+          "documentWidth": 1280
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "wordId": "marugoto.starter-a1.word.f11bf70db3c7b278",
+        "geometry": {
+          "width": 304.328125,
+          "height": 237.375,
+          "gridHeight": 489.125,
+          "scrollHeight": 649,
+          "documentWidth": 1280
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "wordId": "marugoto.starter-a1.word.f304a39b5e728680",
+        "geometry": {
+          "width": 328,
+          "height": 247.75,
+          "gridHeight": 1248.40625,
+          "scrollHeight": 1484,
+          "documentWidth": 390
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "wordId": "marugoto.starter-a1.word.2d31dd8d68a3ada0",
+        "geometry": {
+          "width": 328,
+          "height": 233.375,
+          "gridHeight": 1248.40625,
+          "scrollHeight": 1484,
+          "documentWidth": 390
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "wordId": "marugoto.starter-a1.word.07ab7fc730f6f2bb",
+        "geometry": {
+          "width": 328,
+          "height": 247.75,
+          "gridHeight": 1248.40625,
+          "scrollHeight": 1484,
+          "documentWidth": 390
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "wordId": "marugoto.starter-a1.word.5898af218a8efa80",
+        "geometry": {
+          "width": 328,
+          "height": 245.375,
+          "gridHeight": 1248.40625,
+          "scrollHeight": 1484,
+          "documentWidth": 390
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "wordId": "marugoto.starter-a1.word.f11bf70db3c7b278",
+        "geometry": {
+          "width": 328,
+          "height": 226.15625,
+          "gridHeight": 1248.40625,
+          "scrollHeight": 1484,
+          "documentWidth": 390
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "wordId": "marugoto.starter-a1.word.f304a39b5e728680",
+        "geometry": {
+          "width": 266,
+          "height": 247.75,
+          "gridHeight": 1286.75,
+          "scrollHeight": 1535,
+          "documentWidth": 320
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "wordId": "marugoto.starter-a1.word.2d31dd8d68a3ada0",
+        "geometry": {
+          "width": 266,
+          "height": 247.75,
+          "gridHeight": 1286.75,
+          "scrollHeight": 1535,
+          "documentWidth": 320
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "wordId": "marugoto.starter-a1.word.07ab7fc730f6f2bb",
+        "geometry": {
+          "width": 266,
+          "height": 247.75,
+          "gridHeight": 1286.75,
+          "scrollHeight": 1535,
+          "documentWidth": 320
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "wordId": "marugoto.starter-a1.word.5898af218a8efa80",
+        "geometry": {
+          "width": 266,
+          "height": 247.75,
+          "gridHeight": 1286.75,
+          "scrollHeight": 1535,
+          "documentWidth": 320
+        },
+        "clickAndEnterNoGrowth": true
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "wordId": "marugoto.starter-a1.word.f11bf70db3c7b278",
+        "geometry": {
+          "width": 266,
+          "height": 247.75,
+          "gridHeight": 1286.75,
+          "scrollHeight": 1535,
+          "documentWidth": 320
+        },
+        "clickAndEnterNoGrowth": true
+      }
+    ],
+    "props": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "props": [
+          {
+            "id": "teapot",
+            "visible": true,
+            "left": 31.995279947916668,
+            "right": 247.98909505208334,
+            "top": 713.532470703125,
+            "bottom": 867.9931640625,
+            "width": 215.99381510416669,
+            "intrinsicVisibleWidth": 215.99347916666667
+          },
+          {
+            "id": "dorayaki",
+            "visible": true,
+            "left": 263.99560546875,
+            "right": 461.98876953125,
+            "top": 732.7264404296875,
+            "bottom": 867.9833984375,
+            "width": 197.9931640625,
+            "intrinsicVisibleWidth": 197.9935
+          },
+          {
+            "id": "tea",
+            "visible": true,
+            "left": 853.99658203125,
+            "right": 997.98779296875,
+            "top": 725.2498779296875,
+            "bottom": 867.9853515625,
+            "width": 143.9912109375,
+            "intrinsicVisibleWidth": 143.99087500000002
+          },
+          {
+            "id": "linen",
+            "visible": true,
+            "left": 1013.9949544270834,
+            "right": 1247.9894205729167,
+            "top": 696.57275390625,
+            "bottom": 867.9873046875,
+            "width": 233.99446614583334,
+            "intrinsicVisibleWidth": 233.99435416666665
+          }
+        ],
+        "teapotCupVisibleWidthRatio": 1.5000486050354818,
+        "commonSetScaleRatio": 1.5000497716724526
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "props": [
+          {
+            "id": "teapot",
+            "visible": true,
+            "left": 20.557779947916668,
+            "right": 236.55159505208334,
+            "top": 533.532470703125,
+            "bottom": 687.9931640625,
+            "width": 215.99381510416669,
+            "intrinsicVisibleWidth": 215.99347916666667
+          },
+          {
+            "id": "dorayaki",
+            "visible": false,
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "bottom": 0,
+            "width": 0,
+            "intrinsicVisibleWidth": 197.99977083333334
+          },
+          {
+            "id": "tea",
+            "visible": true,
+            "left": 1119.62158203125,
+            "right": 1263.61279296875,
+            "top": 545.2498779296875,
+            "bottom": 687.9853515625,
+            "width": 143.9912109375,
+            "intrinsicVisibleWidth": 143.99087500000002
+          },
+          {
+            "id": "linen",
+            "visible": false,
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "bottom": 0,
+            "width": 0,
+            "intrinsicVisibleWidth": 233.99972916666667
+          }
+        ],
+        "teapotCupVisibleWidthRatio": 1.5000486050354818,
+        "commonSetScaleRatio": 1.5000497716724526
+      },
+      {
+        "viewport": {
+          "width": 1539,
+          "height": 1466
+        },
+        "props": [
+          {
+            "id": "teapot",
+            "visible": true,
+            "left": 38.467610677083336,
+            "right": 314.4542643229167,
+            "top": 1146.257568359375,
+            "bottom": 1343.6201171875,
+            "width": 275.98665364583337,
+            "intrinsicVisibleWidth": 275.98654166666665
+          },
+          {
+            "id": "dorayaki",
+            "visible": true,
+            "left": 330.4742838541667,
+            "right": 583.4632161458334,
+            "top": 1170.8041178385417,
+            "bottom": 1343.630859375,
+            "width": 252.98893229166669,
+            "intrinsicVisibleWidth": 252.98870833333334
+          },
+          {
+            "id": "tea",
+            "visible": true,
+            "left": 1001.5099283854166,
+            "right": 1185.5056966145833,
+            "top": 1161.2406819661458,
+            "bottom": 1343.6318359375,
+            "width": 183.99576822916669,
+            "intrinsicVisibleWidth": 183.99610416666667
+          },
+          {
+            "id": "linen",
+            "visible": true,
+            "left": 1201.5242513020833,
+            "right": 1500.5226236979167,
+            "top": 1124.60595703125,
+            "bottom": 1343.6396484375,
+            "width": 298.99837239583337,
+            "intrinsicVisibleWidth": 298.99870833333335
+          }
+        ],
+        "teapotCupVisibleWidthRatio": 1.499961962723469,
+        "commonSetScaleRatio": 1.4999586155186935
+      },
+      {
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "props": [
+          {
+            "id": "teapot",
+            "visible": true,
+            "left": 47.99267578125,
+            "right": 407.99169921875006,
+            "top": 790.552001953125,
+            "bottom": 1047.9931640625,
+            "width": 359.9990234375,
+            "intrinsicVisibleWidth": 359.9986875
+          },
+          {
+            "id": "dorayaki",
+            "visible": true,
+            "left": 423.9978841145833,
+            "right": 753.9864908854167,
+            "top": 822.5492757161459,
+            "bottom": 1047.9775390625,
+            "width": 329.98860677083337,
+            "intrinsicVisibleWidth": 329.98827083333333
+          },
+          {
+            "id": "tea",
+            "visible": true,
+            "left": 1225.9847005208333,
+            "right": 1465.9840494791667,
+            "top": 810.0839029947916,
+            "bottom": 1047.990234375,
+            "width": 239.99934895833334,
+            "intrinsicVisibleWidth": 239.99912500000002
+          },
+          {
+            "id": "linen",
+            "visible": true,
+            "left": 1481.9866536458333,
+            "right": 1871.9820963541667,
+            "top": 762.2998046875,
+            "bottom": 1047.994140625,
+            "width": 389.99544270833337,
+            "intrinsicVisibleWidth": 389.9956666666667
+          }
+        ],
+        "teapotCupVisibleWidthRatio": 1.5,
+        "commonSetScaleRatio": 1.5
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "props": [
+          {
+            "id": "teapot",
+            "visible": true,
+            "left": 14.697591145833334,
+            "right": 129.89615885416669,
+            "top": 737.61376953125,
+            "bottom": 819.994140625,
+            "width": 115.19856770833334,
+            "intrinsicVisibleWidth": 115.19879166666666
+          },
+          {
+            "id": "dorayaki",
+            "visible": true,
+            "left": 131.18619791666666,
+            "right": 236.78255208333334,
+            "top": 747.8551432291666,
+            "bottom": 819.9921875,
+            "width": 105.59635416666667,
+            "intrinsicVisibleWidth": 105.59635416666667
+          },
+          {
+            "id": "tea",
+            "visible": false,
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "bottom": 0,
+            "width": 0,
+            "intrinsicVisibleWidth": 76.79997083333333
+          },
+          {
+            "id": "linen",
+            "visible": false,
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "bottom": 0,
+            "width": 0,
+            "intrinsicVisibleWidth": 124.80033333333336
+          }
+        ],
+        "teapotCupVisibleWidthRatio": null,
+        "commonSetScaleRatio": 1.499984836148755
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "props": [
+          {
+            "id": "teapot",
+            "visible": true,
+            "left": 14.697591145833334,
+            "right": 129.89615885416669,
+            "top": 633.61376953125,
+            "bottom": 715.994140625,
+            "width": 115.19856770833334,
+            "intrinsicVisibleWidth": 115.19879166666666
+          },
+          {
+            "id": "dorayaki",
+            "visible": true,
+            "left": 131.18619791666666,
+            "right": 236.78255208333334,
+            "top": 643.8551432291666,
+            "bottom": 715.9921875,
+            "width": 105.59635416666667,
+            "intrinsicVisibleWidth": 105.59635416666667
+          },
+          {
+            "id": "tea",
+            "visible": false,
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "bottom": 0,
+            "width": 0,
+            "intrinsicVisibleWidth": 76.79997083333333
+          },
+          {
+            "id": "linen",
+            "visible": false,
+            "left": 0,
+            "right": 0,
+            "top": 0,
+            "bottom": 0,
+            "width": 0,
+            "intrinsicVisibleWidth": 124.80033333333336
+          }
+        ],
+        "teapotCupVisibleWidthRatio": null,
+        "commonSetScaleRatio": 1.499984836148755
+      }
+    ],
+    "propCollisions": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "a": "teapot",
+        "b": "dorayaki",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "a": "teapot",
+        "b": "tea",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "a": "teapot",
+        "b": "linen",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "a": "dorayaki",
+        "b": "tea",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "a": "dorayaki",
+        "b": "linen",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "a": "tea",
+        "b": "linen",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "a": "teapot",
+        "b": "tea",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1539,
+          "height": 1466
+        },
+        "a": "teapot",
+        "b": "dorayaki",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1539,
+          "height": 1466
+        },
+        "a": "teapot",
+        "b": "tea",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1539,
+          "height": 1466
+        },
+        "a": "teapot",
+        "b": "linen",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1539,
+          "height": 1466
+        },
+        "a": "dorayaki",
+        "b": "tea",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1539,
+          "height": 1466
+        },
+        "a": "dorayaki",
+        "b": "linen",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1539,
+          "height": 1466
+        },
+        "a": "tea",
+        "b": "linen",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "a": "teapot",
+        "b": "dorayaki",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "a": "teapot",
+        "b": "tea",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "a": "teapot",
+        "b": "linen",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "a": "dorayaki",
+        "b": "tea",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "a": "dorayaki",
+        "b": "linen",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 1920,
+          "height": 1080
+        },
+        "a": "tea",
+        "b": "linen",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "a": "teapot",
+        "b": "dorayaki",
+        "overlapOfSmaller": 0
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "a": "teapot",
+        "b": "dorayaki",
+        "overlapOfSmaller": 0
+      }
+    ],
+    "exampleAudioChecked": true
+  },
+  "quizGeometry": {
+    "cases": [
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "width": 384,
+        "height": 56,
+        "visible": true,
+        "uncovered": true
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "width": 384,
+        "height": 56,
+        "visible": true,
+        "uncovered": true
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "width": 384,
+        "height": 56,
+        "visible": true,
+        "uncovered": true
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 900
+        },
+        "width": 384,
+        "height": 56,
+        "visible": true,
+        "uncovered": true
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "width": 384,
+        "height": 48,
+        "visible": true,
+        "uncovered": true
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "width": 384,
+        "height": 48,
+        "visible": true,
+        "uncovered": true
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "width": 384,
+        "height": 48,
+        "visible": true,
+        "uncovered": true
+      },
+      {
+        "viewport": {
+          "width": 1280,
+          "height": 720
+        },
+        "width": 384,
+        "height": 48,
+        "visible": true,
+        "uncovered": true
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "width": 328,
+        "height": 48,
+        "visible": true,
+        "uncovered": true
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "width": 328,
+        "height": 48,
+        "visible": true,
+        "uncovered": true
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "width": 328,
+        "height": 48,
+        "visible": true,
+        "uncovered": true
+      },
+      {
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "width": 328,
+        "height": 48,
+        "visible": true,
+        "uncovered": true
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "width": 129,
+        "height": 64,
+        "visible": true,
+        "uncovered": true
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "width": 129,
+        "height": 64,
+        "visible": true,
+        "uncovered": true
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "width": 129,
+        "height": 64,
+        "visible": true,
+        "uncovered": true
+      },
+      {
+        "viewport": {
+          "width": 320,
+          "height": 740
+        },
+        "width": 129,
+        "height": 64,
+        "visible": true,
+        "uncovered": true
+      }
+    ],
+    "noPreAnswerImage": true
+  },
+  "reloadStableChoices": true,
+  "delayedAck": {
+    "heldMs": 1850,
+    "localFeedbackBeforeAck": true,
+    "canonicalAdvanceAfterAck": true,
+    "noExtraFullDelay": true,
+    "oneNativeSfx": true,
+    "keyboardChoice": true
+  },
+  "ambiguousFailure": {
+    "samePayloadAndAttempt": true,
+    "heldQuestionAndResult": true,
+    "oneNativeSfx": true,
+    "oneLearningAndSrsWrite": true
+  },
+  "hiddenBeforeAck": {
+    "simulatedVisibility": true,
+    "selectionHeldUntilAck": true,
+    "canonicalUnseenStepReady": true,
+    "noHiddenAutoAdvance": true
+  },
+  "hiddenAfterAck": true,
+  "ownerSwap": {
+    "noForeignWrite": true,
+    "oldOutboxRetained": true,
+    "newLearnerFresh": true
+  },
+  "failedLogout": {
+    "screenAndOwnerPreserved": true,
+    "retrySignsOut": true
+  },
+  "logoutPendingAck": {
+    "noLateScreenOrCue": true,
+    "savedCanonicalResumes": true,
+    "oneSrsWrite": true
+  },
+  "errors": [],
+  "green": true
+}

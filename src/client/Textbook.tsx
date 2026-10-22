@@ -1,14 +1,24 @@
 import type { Snapshot } from './types';
 import { Japanese } from './Japanese';
 import { studyWord } from './learning';
+import { counterDefinitions, counterWords, numbersFor, objectFor } from '../shared/counters';
 import { LessonVideoLibrary } from './LessonVideo';
 
-export function Textbook({ data, onLearn, onTrain }: { data: Snapshot; onLearn: (lessonId: string) => void; onTrain: (lessonId: string) => void }) {
+export function Textbook({ data, onLearn, onTrain, onCounters }: { data: Snapshot; onCounters: () => void; onLearn: (lessonId: string) => void; onTrain: (lessonId: string) => void }) {
   const { course, settings, progress } = data;
   const introducedWords = new Set(progress.introducedWordIds);
   const introducedSkills = new Set(progress.introducedSkillIds);
   return <>
     <header className="pagehead"><h1>Учебник</h1><p>Marugoto Starter A1 · 18 уроков · 9 тем</p><p className="muted">Сначала знакомимся с основным материалом, затем практикуем его в обе стороны и на слух. Можно выйти в любой момент: точный шаг сохранится для вас.</p></header>
+    <section className="counter-course sheet" aria-labelledby="counter-course-title">
+      <div className="spread"><div><small lang="ja">ひとつ、ふたつ、みっつ…</small><h2 id="counter-course-title">Счётные суффиксы</h2><p>Картинки, чтения и аудио · по 20 карточек · от одного до миллионов.</p></div><button className="primary" onClick={onCounters}>Тренировать счёт</button></div>
+      <div className="counter-levels">{counterDefinitions.map(counter => {
+        const available = counterWords(course.words, introducedWords).some(word => objectFor(word)?.counters.includes(counter.id));
+        const state = progress.counters?.find(state => state.counterId === counter.id); const numbers = numbersFor(counter, state?.level ?? 0);
+        return <div key={counter.id} data-counter-id={counter.id} data-counter-level={state?.level ?? 0} data-available={available}><strong lang="ja">{counter.surface}</strong><span>{counter.title}<small>{available ? `1–${Math.max(...numbers).toLocaleString('ru-RU')}` : 'После знакомства со словом'}</small></span></div>;
+      })}</div>
+      <small>Новые суффиксы открываются вместе с пройденными словами учебника. При недостатке материала колода короче.</small>
+    </section>
     <div className="lesson-grid" onPlayCapture={event => { event.currentTarget.querySelectorAll('video').forEach(media => { if (media !== event.target) media.pause(); }); }}>{course.lessons.map(lesson => {
       const route = course.learning?.find(route => route.lessonId === lesson.id);
       const learning = data.learning?.find(state => state.lessonId === lesson.id);

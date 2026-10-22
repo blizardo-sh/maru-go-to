@@ -90,8 +90,8 @@ test('a stale ACK cannot move a newer route backward or cross lesson/content ver
 test('textbook primary route progress is separate from legacy SRS and vocabulary practice is explicitly supplementary', () => {
   const course = learningFixture(); const lesson = course.learning[0]!;
   const counts = { due: 0, learned: 0, reviewedToday: 0 };
-  const progress: Progress = { introducedWordIds: course.words.map(word => word.id), introducedSkillIds: course.skills.map(skill => skill.id), completedLessons: 18, totalLessons: 18, wordsIntroducedToday: 0, skillsIntroducedToday: 0, byMode: { 'ja-ru': counts, 'ru-ja': counts, listening: counts, grammar: counts } };
-  const html = renderToStaticMarkup(createElement(Textbook, { data: { course, settings: defaultSettings, progress, lists: [], learning: [{ ...state, lessonId: lesson.lessonId, routeVersion: lesson.version }] }, onLearn() {}, onTrain() {} }));
+  const progress: Progress = { counters: [], introducedWordIds: course.words.map(word => word.id), introducedSkillIds: course.skills.map(skill => skill.id), completedLessons: 18, totalLessons: 18, wordsIntroducedToday: 0, skillsIntroducedToday: 0, byMode: { 'ja-ru': counts, 'ru-ja': counts, listening: counts, grammar: counts, counter: counts } };
+  const html = renderToStaticMarkup(createElement(Textbook, { data: { course, settings: defaultSettings, progress, lists: [], learning: [{ ...state, lessonId: lesson.lessonId, routeVersion: lesson.version }] }, onLearn() {}, onTrain() {}, onCounters() {} }));
   const card = [...html.matchAll(/<article[^>]+data-lesson-id="([^"]+)"[\s\S]*?<\/article>/g)].find(match => match[1] === lesson.lessonId)?.[0];
   expect(card).toBeDefined(); expect(card).toContain('Учебный маршрут: 0%'); expect(card).toContain('Начать урок'); expect(card).toContain('Дополнительный словарь и конструкции'); expect(card).toContain('Практиковать словарь'); expect(card).not.toContain('Урок пройден');
 });

@@ -36,9 +36,15 @@ suite('application HTTP integration with disposable PostgreSQL', () => {
     const response = await request('/api/training?lessonId=' + lesson.id, learners[0]!.cookie);
     expect(response.status).toBe(200);
     const queue:ReviewQueue=await response.json();
-    return {...queue,items:queue.items.filter(item=>mode==='grammar'?item.mode==='grammar':item.mode!=='grammar'&&(mode!=='listening'||!!item.word.audioUrl)).map(item=>item.mode==='grammar'?item:{...item,id:reviewId(mode as 'ja-ru'|'ru-ja'|'listening',item.targetId),mode:mode as 'ja-ru'|'ru-ja'|'listening'})};
+    const items:ReviewItem[]=[];
+    for(const item of queue.items){
+      if(mode==='grammar'){if(item.mode==='grammar')items.push(item);continue;}
+      if(item.mode==='grammar'||item.mode==='counter'||mode==='listening'&&!item.word.audioUrl)continue;
+      items.push({...item,id:reviewId(mode as 'ja-ru'|'ru-ja'|'listening',item.targetId),mode:mode as 'ja-ru'|'ru-ja'|'listening'});
+    }
+    return {...queue,items};
   };
-  const answer = (item: ReviewItem, extra: object = {}): ReviewSubmission => item.mode === 'grammar'
+  const answer = (item: ReviewItem, extra: object = {}): ReviewSubmission => item.mode === 'counter' ? {attemptId:crypto.randomUUID(),reviewId:item.id,version:item.version,mode:'counter',rating:3,choice:item.counter.acceptedKeys[0],helped:false,...extra} : item.mode === 'grammar'
     ? { attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, mode: item.mode, tokenIds: item.exercise.acceptedOrders[0]!, revealed: false, ...extra }
     : { attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, mode: item.mode, rating: 3, ...extra };
 
@@ -143,7 +149,7 @@ suite('application HTTP integration with disposable PostgreSQL', () => {
     expect(original.items.length).toBeGreaterThan(0);
     for (const item of original.items) {
       expect(item.mode).not.toBe('grammar');
-      if (item.mode !== 'grammar') expect(item.word.lessonIds).toContain(course.lessons.find(lesson=>lesson.number===3)!.id);
+      if (item.mode !== 'grammar' && item.mode !== 'counter') expect(item.word.lessonIds).toContain(course.lessons.find(lesson=>lesson.number===3)!.id);
     }
     expect((await request('/api/settings', learners[0]!.cookie, { ...selected, orthography: 'kana' }, 'PUT')).status).toBe(200);
     const changed = await queue('ja-ru');

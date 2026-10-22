@@ -185,11 +185,11 @@ def reimport(course, rows):
     for word in result["words"]:
         if any("VocabularyIndex" in ref["url"] for ref in word["sourceRefs"]):
             assert any(form["wordId"] == word["id"] and form["surface"] == word["surface"] and form["kana"] == word["kana"] for form in result["forms"]), word["id"]
-    # Keep standard particle spelling; only isolated speech uses the prepared pronunciation.
-    pronunciations = {"は": "わ", "を": "お"}
+    # Pronunciation overrides are authored by expression, not a replacement of every は.
+    pronunciations = {"は": "わ", "を": "お", "こんにちは": "こんにちわ", "こんばんは": "こんばんわ", "おくには？": "おくにわ", "おしごとは？": "おしごとわ", "〜はちょっと…": "わちょっと", "きをつけて": "きおつけて"}
     for word in result["words"]:
-        if word["pos"] == "particle" and word["surface"] in pronunciations:
-            word["audioText"] = pronunciations[word["surface"]]
+        if word["kana"] in pronunciations and (word["pos"] == "particle" or word["kind"] == "phrase"):
+            word["audioText"] = pronunciations[word["kana"]]
     assert len(rows) == 1113
     return result
 

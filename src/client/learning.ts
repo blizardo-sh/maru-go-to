@@ -2,11 +2,11 @@ import type { TrainingContext, Word } from '../shared/types';
 import type { Snapshot, StudySource } from './types';
 
 export function sourceKey(source: StudySource): string {
-  return source.kind === 'lesson' || source.kind === 'guided' ? `${source.kind}:${source.lessonId}` : source.kind === 'list' ? `list:${source.listId}` : 'review';
+  return source.kind === 'lesson' || source.kind === 'guided' ? `${source.kind}:${source.lessonId}` : source.kind === 'list' ? `list:${source.listId}` : source.kind;
 }
 
 export function trainingContext(source: StudySource): TrainingContext {
-  return source.kind === 'lesson' || source.kind === 'guided' ? { lessonId: source.lessonId } : source.kind === 'list' ? { listId: source.listId } : {};
+  return source.kind === 'lesson' || source.kind === 'guided' ? { lessonId: source.lessonId } : source.kind === 'list' ? { listId: source.listId } : source.kind === 'counters' ? { counters: true } : {};
 }
 
 export function studyWord(word: Word): boolean {

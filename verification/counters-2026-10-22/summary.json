@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-22",
+  "status": "local-verification",
+  "runtime": {
+    "bun": "1.4.3",
+    "postgres": "18.4",
+    "database": "disposable japanese_app_test on localhost:55449"
+  },
+  "tests": {
+    "passed": 146,
+    "failed": 0,
+    "skipped": 0,
+    "assertions": 24936,
+    "files": 28
+  },
+  "typecheck": "pass",
+  "build": "pass",
+  "preparationCheck": "pass",
+  "browserReport": "browser.json",
+  "screenshots": [
+    "desktop.png",
+    "mobile.png"
+  ],
+  "speech": {
+    "counterEntries": 734,
+    "voice": "Kyoko",
+    "rate": 150,
+    "generationErrors": [],
+    "correctedContextPhrases": 6,
+    "humanAcousticReview": false
+  },
+  "assets": [
+    {
+      "file": "assets/index-CZs5bfJb.css",
+      "bytes": 55179,
+      "sha256": "95b036c336a1d7c25466b00f1424b8a0bc16b1776eaeb528dba8be4d441dbdc4"
+    },
+    {
+      "file": "assets/index-BZ3EiTcC.js",
+      "bytes": 437482,
+      "sha256": "00967b9a514974b69a2d0cf0fb884333717690a1500f674a9d354bff0dfc63fa"
+    }
+  ],
+  "notChecked": [
+    "full human linguistic/acoustic review",
+    "physical devices",
+    "new performance/load lab",
+    "remote VPS deployment"
+  ],
+  "cleanup": {
+    "remainingFixtureUsers": 0,
+    "temporaryDatabaseStopped": true
+  },
+  "mergedMain": "54f3384e69215226e2c40370ffdaffb53c28be8e",
+  "migration": "0003_counter_progress.sql",
+  "albumBrowserReport": "album.json",
+  "stableStudyLayout": "study-layout.json",
+  "stableFrameMeasurements": 271
+}
