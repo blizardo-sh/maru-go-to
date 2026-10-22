@@ -36,9 +36,9 @@
       "sha256": "95b036c336a1d7c25466b00f1424b8a0bc16b1776eaeb528dba8be4d441dbdc4"
     },
     {
-      "file": "assets/index-CfHlHIiU.js",
-      "bytes": 437508,
-      "sha256": "e61c19ed65412cf92defb68c62d3737f2fb51c0340acc1ffe575515120a2451b"
+      "file": "assets/index-BZ3EiTcC.js",
+      "bytes": 437482,
+      "sha256": "00967b9a514974b69a2d0cf0fb884333717690a1500f674a9d354bff0dfc63fa"
     }
   ],
   "notChecked": [
@@ -53,5 +53,7 @@
   },
   "mergedMain": "54f3384e69215226e2c40370ffdaffb53c28be8e",
   "migration": "0003_counter_progress.sql",
-  "albumBrowserReport": "album.json"
+  "albumBrowserReport": "album.json",
+  "stableStudyLayout": "study-layout.json",
+  "stableFrameMeasurements": 271
 }
