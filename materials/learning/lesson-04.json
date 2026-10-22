@@ -260,6 +260,10 @@
             ]
           }
         }
+      ],
+      "videoIds": [
+        "marugoto.starter-a1.video.cando_07_02",
+        "marugoto.starter-a1.video.challenge07"
       ]
     },
     {
@@ -609,7 +613,9 @@
       ],
       "introductionRu": "Представьте семейную фотографию: слева ваш старший брат, рядом его жена, перед ними ребёнок. В примерах этой части вы называете людей на таком фото, их возраст и место проживания. Фразы あにのつまです и こどもはさんさいです получают смысл из этой ситуации; они не проверяют сведения о вашей настоящей семье.",
       "videoIds": [
-        "marugoto.starter-a1.lesson.04"
+        "marugoto.starter-a1.lesson.04",
+        "marugoto.starter-a1.video.cando_08_01",
+        "marugoto.starter-a1.video.challenge08"
       ]
     }
   ],

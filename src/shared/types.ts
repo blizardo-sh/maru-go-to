@@ -28,6 +28,9 @@ export interface VideoCaption {
 }
 
 export interface LessonVideo {
+  id: string;
+  canDoId: number;
+  variant: "practice" | "challenge";
   title: string;
   sourceUrl: string;
   mediaUrl: string;
@@ -43,7 +46,7 @@ export interface Lesson {
   topic: string;
   canDoIds: number[];
   sourceRefs: SourceRef[];
-  video?: LessonVideo;
+  videos?: LessonVideo[];
   readiness: {
     vocabulary: ContentStatus;
     grammar: ContentStatus | "not-applicable";

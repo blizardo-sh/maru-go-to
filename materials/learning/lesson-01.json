@@ -157,7 +157,10 @@
         }
       ],
       "videoIds": [
-        "marugoto.starter-a1.lesson.01"
+        "marugoto.starter-a1.lesson.01",
+        "marugoto.starter-a1.video.cando_01_02",
+        "marugoto.starter-a1.video.cando_01_03",
+        "marugoto.starter-a1.video.challenge01"
       ]
     },
     {

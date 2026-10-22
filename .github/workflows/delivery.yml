@@ -43,6 +43,8 @@ jobs:
         run: bun tests/helpers/run-guided-browser.ts
       - name: Browser stable study scene
         run: bun tests/helpers/run-guided-browser.ts tests/integration.study-layout.browser.ts
+      - name: Browser lesson video library
+        run: bun tests/helpers/run-guided-browser.ts tests/integration.video-library.browser.ts
       - name: Browser eight-character passwords
         run: bun tests/helpers/run-guided-browser.ts tests/integration.password.browser.ts
       - name: Browser registration link administration and signup

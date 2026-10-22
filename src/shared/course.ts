@@ -48,14 +48,25 @@ export function validateCourse(value: Course): void {
     }
     ensure(exercise.acceptedOrders.some((order) => order.length === tokenIds.size), `missing full answer ${exercise.id}`);
   }
+  const videoIds = new Set<string>();
+  const videoClips = new Set<string>();
   for (const lesson of value.lessons) {
-    if (lesson.video) {
-      const video = lesson.video;
+    ensure(lesson.videos === undefined || Array.isArray(lesson.videos), `video list lesson ${lesson.number}`);
+    for (const video of lesson.videos ?? []) {
+      ensure(typeof video.id === 'string' && /^[a-z0-9][a-z0-9._:-]{0,299}$/i.test(video.id) && !videoIds.has(video.id), `video id lesson ${lesson.number}`);
+      videoIds.add(video.id);
+      ensure(Number.isInteger(video.canDoId) && lesson.canDoIds.includes(video.canDoId), `video Can-do lesson ${lesson.number}`);
+      ensure(video.variant === 'practice' || video.variant === 'challenge', `video variant lesson ${lesson.number}`);
       const source = video.sourceUrl.match(/^https:\/\/a1\.marugotoweb\.jp\/(en|ja)\/can-do(\d+)\.php$/);
-      ensure(source && lesson.canDoIds.includes(Number(source[2])), `video source lesson ${lesson.number}`);
+      ensure(source && Number(source[2]) === video.canDoId, `video source lesson ${lesson.number}`);
       ensure(typeof video.title === "string" && video.title.trim().length > 0 && video.title.length <= 300, `video title lesson ${lesson.number}`);
-      const media = video.mediaUrl.match(/^https:\/\/a1\.marugotoweb\.jp\/(en|ja)\/assets\/movies\/topics\/cando_(\d{2})_\d{2}\.mp4$/);
-      ensure(media && Number(media[2]) === Number(source?.[2]), `video media lesson ${lesson.number}`);
+      const media = video.variant === 'practice'
+        ? video.mediaUrl.match(/^https:\/\/a1\.marugotoweb\.jp\/(en|ja)\/assets\/movies\/topics\/(cando_(\d{2})_(\d{2}))\.mp4$/)
+        : video.mediaUrl.match(/^https:\/\/a1\.marugotoweb\.jp\/(en|ja)\/assets\/movies\/topics\/(challenge(\d{2}))\.mp4$/);
+      ensure(media && Number(media[3]) === video.canDoId && (video.variant !== 'practice' || Number(media[4]) > 0), `video media lesson ${lesson.number}`);
+      // Locale wrappers must not count the same official clip twice.
+      ensure(media && !videoClips.has(media[2]!), `duplicate video clip lesson ${lesson.number}`);
+      videoClips.add(media![2]!);
       ensure(video.captionsSourceUrl === video.mediaUrl.replace('/movies/', '/data/').replace(/\.mp4$/, '.xml'), `video captions source lesson ${lesson.number}`);
       ensure(video.captionNote === undefined || typeof video.captionNote === "string" && video.captionNote.trim().length > 0 && video.captionNote.length <= 500, `video caption note lesson ${lesson.number}`);
       ensure(Array.isArray(video.captions) && video.captions.length > 0 && video.captions.length <= 500, `video captions lesson ${lesson.number}`);

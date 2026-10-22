@@ -298,6 +298,10 @@
             ]
           }
         }
+      ],
+      "videoIds": [
+        "marugoto.starter-a1.video.cando_36_01",
+        "marugoto.starter-a1.video.challenge36"
       ]
     },
     {
@@ -462,6 +466,10 @@
             ]
           }
         }
+      ],
+      "videoIds": [
+        "marugoto.starter-a1.video.cando_37_01",
+        "marugoto.starter-a1.video.challenge37"
       ]
     },
     {

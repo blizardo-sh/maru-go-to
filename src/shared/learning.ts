@@ -105,6 +105,26 @@ export function initialLearningState(lesson: GuidedLesson): LearningRouteState {
 export function currentLearningStep(lesson: GuidedLesson, state: LearningRouteState): LearningStep | null {
   return learningParts(lesson)[state.partIndex]?.find(step => step.id === state.pendingStepIds[0]) ?? null;
 }
+// Video-only additions do not reopen past parts or move an already pending answer.
+// Completing an optional video means continuing OR skipping it, not proof of watching.
+export function reconcileOptionalVideos(lesson: GuidedLesson, state: LearningRouteState): LearningRouteState {
+  const parts = learningParts(lesson);
+  const next = structuredClone(state);
+  const skipAdded = (steps: LearningStep[]) => {
+    for (const step of steps) if (step.kind === 'video' && !next.completedStepIds.includes(step.id)) next.completedStepIds.push(step.id);
+  };
+  for (const part of parts.slice(0, state.partIndex)) skipAdded(part);
+  const current = parts[state.partIndex];
+  if (!current) return next;
+  const step = current.find(item => item.id === state.pendingStepIds[0]);
+  const additions = current.filter(item => item.kind === 'video' && !next.pendingStepIds.includes(item.id) && !next.completedStepIds.includes(item.id));
+  if (step?.kind === 'part-complete') skipAdded(additions);
+  else {
+    const boundary = next.pendingStepIds.findIndex(id => current.some(item => item.id === id && item.kind === 'part-complete'));
+    if (boundary >= 0) next.pendingStepIds.splice(boundary, 0, ...additions.map(item => item.id));
+  }
+  return next;
+}
 export function advanceLearningState(lesson: GuidedLesson, state: LearningRouteState, action: LearningAdvance['action']): LearningRouteState {
   const step = currentLearningStep(lesson, state);
   if (!step) throw new Error('Learning route is complete.');
@@ -171,7 +191,12 @@ export function validateLearning(course: Course, lessons: GuidedLesson[], comple
           ensure(exercise!.tokens.every(token => formMap.get(token.formId)?.reviewStatus !== 'draft'), `construction forms readiness ${construction.exerciseId}`);
         }
       }
-      for (const id of goal.videoIds ?? []) { ensure(id === route.lessonId && lesson?.video && !videos.has(id), `video scope ${id}`); videos.add(id); }
+      for (const id of goal.videoIds ?? []) {
+        const video = lesson?.videos?.find(item => item.id === id);
+        // Preserve the real L4 video step's saved part-prefixed ID from the pilot.
+        const legacyFamilyVideo = route.lessonId === 'marugoto.starter-a1.lesson.04' && goal.id === 'l04-family-photo' && id === route.lessonId && video?.canDoId === 7 && video.variant === 'practice' && video.sourceUrl === 'https://a1.marugotoweb.jp/en/can-do7.php' && video.mediaUrl === 'https://a1.marugotoweb.jp/en/assets/movies/topics/cando_07_01.mp4';
+        ensure(video && (goal.canDoIds.includes(video.canDoId) || legacyFamilyVideo) && !videos.has(id), `video scope ${id}`); videos.add(id);
+      }
     }
     for (const [kind, entries] of Object.entries(route.authored ?? {})) for (const entry of entries) {
       ensure(entry.reviewStatus !== 'draft', `authored readiness ${entry.id}`);
