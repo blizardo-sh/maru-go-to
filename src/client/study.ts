@@ -1,3 +1,13 @@
+import type { ReviewItem, ReviewResult } from '../shared/types';
+
+export function advanceDeck(items: ReviewItem[], repeat: boolean, result?: ReviewResult): ReviewItem[] {
+  const [current, ...rest] = items;
+  if (repeat && current && current.mode !== 'grammar') {
+    rest.splice(Math.min(3, rest.length), 0, { ...current, ...(result ? { version: result.version, due: result.nextDue, isNew: false } : {}) });
+  }
+  return rest;
+}
+
 export function isCurrentAnalysis(result: { revision: number; text: string }, revision: number, text: string): boolean {
   return result.revision === revision && result.text === text;
 }

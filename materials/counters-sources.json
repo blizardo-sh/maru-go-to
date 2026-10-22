@@ -1,0 +1,19 @@
+{
+  "reviewDate": "2026-10-22",
+  "scope": "Seven counter categories from the Marugoto Starter A1 appendix; prepared number samples extend their numerical range.",
+  "sources": [
+    {
+      "url": "https://a1.marugotoweb.jp/ja/appendix_01.php",
+      "scope": "Categories, object examples, counters 1–10 and variants."
+    },
+    {
+      "url": "https://www.irodori.jpf.go.jp/assets/data/starter/pdf/X_L16.pdf",
+      "scope": "Number construction: hundreds, thousands and ten-thousands; source PDF OCR must not be treated as a reading authority without checking the original."
+    },
+    {
+      "url": "https://www.nhk.or.jp/bunken/research/kotoba/pdf/20160901_5.pdf",
+      "scope": "Counter sound changes and accepted ji/ju alternatives for multiples of ten."
+    }
+  ],
+  "pronunciationReview": "Prepared kana and automated checks; no claim of human acoustic review."
+}

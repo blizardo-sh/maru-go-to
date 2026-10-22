@@ -1,0 +1,30 @@
+{
+  "results": [
+    {
+      "viewport": 1280,
+      "realTwentyCardDeck": true,
+      "fiveFormats": true,
+      "lostAckRetriedSameAttempt": true,
+      "failedCardReturned": true,
+      "navigationPreservesRevealedCard": true,
+      "keyboardGrade": true,
+      "ordinaryWordSwipeAgainDoesNotComplete": true,
+      "ordinaryAudioFlipHidesAnswer": true,
+      "realSpeechPlaying": 22
+    },
+    {
+      "viewport": [
+        390,
+        320
+      ],
+      "controlledEdgeFixture": true,
+      "maximum": 9999999,
+      "age": 120,
+      "ageUsesOnePerson": true,
+      "overflow": false,
+      "reducedMotion": true
+    }
+  ],
+  "pageErrors": [],
+  "acousticReview": "not-performed"
+}

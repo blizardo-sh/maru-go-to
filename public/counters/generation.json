@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-22",
+  "method": "built-in image_gen",
+  "file": "objects-atlas.png",
+  "width": 1254,
+  "height": 1254,
+  "transparentBackground": true,
+  "layout": "5 columns × 5 rows, row-major order; SVG view boxes select objects without modifying the raster",
+  "prompt": "Use case: scientific-educational. Create ONE square sprite atlas for an existing cozy Japanese learning app, exactly 5 columns by 5 rows, 25 equally sized cells, no borders. Each cell contains exactly ONE complete isolated object centered with ample transparent padding. Warm hand-painted gouache, tactile paper brushwork, muted terracotta, cream, sage and blue, soft gentle light, clean recognizable silhouettes, friendly Japanese indie game look. TRANSPARENT background throughout, no checkerboard painted into image, no labels, no letters, no numbers, no shadows outside own cell. Strict row-major order: row 1: one friendly standing student person, one closed hardcover book, one spiral notebook, one closed umbrella, one pencil. Row 2: one glass bottle, one egg, one banana, one apple, one slice of cake. Row 3: one sandwich, one triangular onigiri rice ball, one orange fruit, one tote bag, one small cardboard box. Row 4: one sheet of paper, one T-shirt, one ceramic plate, one compact disc, one folded handkerchief. Row 5: one wooden chair, one wooden table, one empty teacup, one thick dictionary book, one magazine. All cells same scale and visual weight. No extra props or scenery, all objects completely inside their own cell. Output high-resolution 2048x2048 if possible.",
+  "webExport": {
+    "file": "objects-atlas.webp",
+    "format": "WebP",
+    "quality": 90,
+    "alphaPreserved": true,
+    "sourceBytes": 1818241,
+    "exportBytes": 457614
+  }
+}

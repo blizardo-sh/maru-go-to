@@ -39,7 +39,7 @@ jobs:
       - run: bun run build
       - run: python3 scripts/verify_preparation.py
       - run: bunx playwright install --with-deps chrome
-      - name: Browser invitation, login and logout
+      - name: Browser onboarding and flashcard decks
         run: |
           bun --bun vite preview --host 127.0.0.1 --port 5173 &
           preview=$!
@@ -49,6 +49,7 @@ jobs:
             sleep 1
           done
           bun tests/auth-onboarding.browser.ts
+          bun tests/integration.counters.browser.ts
       - name: Validate release command boundaries
         run: bash deployment/check.sh
       - name: Validate Linux release images before merge

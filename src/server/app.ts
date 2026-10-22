@@ -39,7 +39,7 @@ export function createApp({database,config,course}:{database:Database;config:Con
  .get('/api/settings',async c=>c.json(await settingsFor(database,c.get('actor').id)))
  .put('/api/settings',async c=>{const body=settingsSchema.parse(await c.req.json());const listRows=await database.sql`select id from word_lists where user_id=${c.get('actor').id}`;if(body.enabledListIds.some(id=>!listRows.some((r:any)=>r.id===id)))return fail(c,'UNKNOWN_LIST','Личный список недоступен.',403);await database.sql`insert into preferences(user_id,settings) values(${c.get('actor').id},${body}) on conflict(user_id) do update set settings=excluded.settings,updated_at=now()`;return c.json(body);})
  .get('/api/progress',async c=>c.json(await progressFor(database,c.get('actor').id,course)))
- .get('/api/reviews',async c=>{const mode=z.enum(['ja-ru','ru-ja','listening','grammar','mixed']).parse(c.req.query('mode')??'ja-ru') as ReviewMode|'mixed';return c.json(await reviewQueue(database,c.get('actor').id,course,mode));})
+ .get('/api/reviews',async c=>{const mode=z.enum(['ja-ru','ru-ja','listening','grammar','counter','mixed']).parse(c.req.query('mode')??'ja-ru') as ReviewMode|'mixed';return c.json(await reviewQueue(database,c.get('actor').id,course,mode));})
  .get('/api/training',async c=>c.json(await trainingQueue(database,c.get('actor').id,course,trainingContextSchema.parse(c.req.query()))))
  .post('/api/reviews/evaluate',async c=>c.json(await evaluateReview(database,c.get('actor').id,course,targetEvaluationSchema.parse(await c.req.json()))))
  .post('/api/reviews',async c=>c.json(await submitReview(database,c.get('actor').id,course,submissionSchema.parse(await c.req.json()))))

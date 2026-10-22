@@ -5,6 +5,8 @@ import type { Course, Progress, TrainingContext, ReviewItem, ReviewMode, ReviewQ
 import type { Database } from './db';
 import { allWords, normalizeSentence, sentenceFor, validSegments } from './material';
 import { withPersonalPractice } from './personal-practice';
+import { advanceCounter, counterDefinitions, counterKinds, counterTarget, counterWords, levelFor, makeCounterCard, numbersFor, objectFor, parseCounterTarget, type CounterCard, type CounterProgress } from '../shared/counters';
+import { counterAudio } from './counter-audio';
 const scheduler=fsrs({enable_fuzz:false});
 export function nextCard(card:Card|null,rating:1|2|3|4,now=new Date()):Card {return scheduler.next(card??createEmptyCard(now),now,rating).card;}
 function restoreCard(data:any):Card {return {...data,due:new Date(data.due),...(data.last_review?{last_review:new Date(data.last_review)}:{})};}
@@ -20,13 +22,47 @@ export function gradeGrammar(course:Course,submission:Extract<ReviewSubmission,{
 async function snapshot(database:Database,userId:string,course:Course){
  const words=await allWords(database,userId,course);
  const states=await database.sql`select item_id,mode,version,card,due,introduced_at from review_states where user_id=${userId}`;
- const [{words_today,skills_today}]=await database.sql`select count(*) filter(where grammar=false)::int as words_today,count(*) filter(where grammar=true)::int as skills_today from (select item_id,(mode='grammar') as grammar,min(introduced_at) as first_at from review_states where user_id=${userId} group by item_id,(mode='grammar')) introductions where first_at>=date_trunc('day',now() at time zone 'UTC') at time zone 'UTC'`;
- return {words,states,wordsToday:words_today as number,skillsToday:skills_today as number};
+ const [{words_today,skills_today}]=await database.sql`select count(*) filter(where grammar=false)::int as words_today,count(*) filter(where grammar=true)::int as skills_today from (select item_id,(mode='grammar') as grammar,min(introduced_at) as first_at from review_states where user_id=${userId} and mode<>'counter' group by item_id,(mode='grammar')) introductions where first_at>=date_trunc('day',now() at time zone 'UTC') at time zone 'UTC'`;
+ const counterRows=await database.sql`select counter_id,level,history from counter_progress where user_id=${userId}`;
+ const counters:CounterProgress[]=counterRows.map((row:any)=>({counterId:row.counter_id,level:row.level,history:row.history}));
+ return {words,states,counters,wordsToday:words_today as number,skillsToday:skills_today as number};
 }
-const modes=['ja-ru','ru-ja','listening','grammar'] as const;
+const modes=['ja-ru','ru-ja','listening','grammar','counter'] as const;
 const wordModes=['ja-ru','ru-ja','listening'] as const;
 type Snapshot=Awaited<ReturnType<typeof snapshot>>;
-function introduced(snap:Snapshot,grammar=false){return new Set<string>(snap.states.filter((state:any)=>(state.mode==='grammar')===grammar).map((state:any)=>state.item_id));}
+function introduced(snap:Snapshot,grammar=false){return new Set<string>(snap.states.filter((state:any)=>state.mode!=='counter'&&(state.mode==='grammar')===grammar).map((state:any)=>state.item_id));}
+function availableCounterWords(snap:Snapshot){return counterWords(snap.words,introduced(snap));}
+function counterItemFor(snap:Snapshot,targetId:string,now:Date):ReviewItem|undefined{
+ const parsed=parseCounterTarget(targetId);if(!parsed)return;
+ const progress=snap.counters.find(progress=>progress.counterId===parsed.definition.id);
+ if(parsed.quantity!==null&&levelFor(parsed.quantity)>(progress?.level??0))return;
+ const words=availableCounterWords(snap),eligible=words.filter(word=>objectFor(word)?.counters.includes(parsed.definition.id));if(!eligible.length)return;
+ const state=snap.states.find((state:any)=>state.mode==='counter'&&state.item_id===targetId);
+ const word=eligible[(state?.version??0)%eligible.length]!,seed=crypto.randomUUID();
+ const counter=makeCounterCard(targetId,word.id,words,seed,!progress);if(!counter)return;
+ counter.audioUrl=counterAudio(counter.definition,counter.quantity);
+ counter.examples.forEach((example,index)=>{example.audioUrl=counterAudio(counter.definition,[1,3,8][index]!);});
+ if(counter.kind==='listening-image'&&!counter.audioUrl)return;
+ return {id:reviewId('counter',targetId,`${word.id}|${seed}`),targetId,mode:'counter',version:state?.version??0,due:new Date(state?.due??now).toISOString(),isNew:!state,counter};
+}
+function counterTrainingQueue(snap:Snapshot,now:Date):ReviewQueue{
+ const words=availableCounterWords(snap);const buckets=counterKinds.map(kind=>{
+  const targets=counterDefinitions.filter(counter=>words.some(word=>objectFor(word)?.counters.includes(counter.id))).flatMap(counter=>{
+   const level=snap.counters.find(progress=>progress.counterId===counter.id)?.level??0;
+   return kind==='image-counter'||kind==='counter-image'?[counterTarget(counter.id,kind,null)]:Array.from({length:level+1},(_,index)=>numbersFor(counter,index)).flat().map(n=>counterTarget(counter.id,kind,n));
+  });
+  return targets.map(target=>counterItemFor(snap,target,now)).filter((item):item is ReviewItem=>!!item).map(item=>({item,key:Math.random()})).sort((a,b)=>Number(b.item.isNew)-Number(a.item.isNew)||a.key-b.key).map(entry=>entry.item);
+ });
+ const all=buckets.flat();return {items:interleaveReviews(buckets).slice(0,20),remainingNew:all.filter(item=>item.isNew).length,remainingDue:all.filter(item=>!item.isNew&&new Date(item.due)<=now).length};
+}
+function submittedCounter(snap:Snapshot,targetId:string,challenge:string):CounterCard{
+ const [wordId,seed,extra]=challenge.split('|');const parsed=parseCounterTarget(targetId);
+ if(!parsed||!seed||!wordId||extra!==undefined||!/^[a-f0-9-]{36}$/i.test(seed))throw new ReviewError('INVALID_REVIEW','Неверное счётное задание.');
+ const level=snap.counters.find(progress=>progress.counterId===parsed.definition.id)?.level??0;
+ if(parsed.quantity!==null&&(levelFor(parsed.quantity)>level||!numbersFor(parsed.definition,levelFor(parsed.quantity)).includes(parsed.quantity)))throw new ReviewError('MATERIAL_UNAVAILABLE','Эта числовая ступень ещё не открыта.',403);
+ const card=makeCounterCard(targetId,wordId,availableCounterWords(snap),seed);if(!card||card.kind==='listening-image'&&!counterAudio(card.definition,card.quantity))throw new ReviewError('MATERIAL_UNAVAILABLE','Счётное задание недоступно.',403);
+ return card;
+}
 function exercisesFor(course:Course,words:Word[],personalIds?:Set<string>){
  const preparedIds=new Set(course.words.filter(word=>word.lessonIds.length).map(word=>word.id));const wordMap=new Map(words.filter(word=>validSegments(word)&&(preparedIds.has(word.id)||word.reviewStatus!=='draft'&&(!personalIds||personalIds.has(word.id)))).map(word=>[word.id,word]));const formMap=new Map(course.forms.map(form=>[form.id,form]));
  return course.exercises.filter(exercise=>course.skills.some(skill=>skill.id===exercise.skillId)&&exercise.tokens.every(token=>wordMap.has(formMap.get(token.formId)?.wordId??'')));
@@ -37,13 +73,14 @@ export function reviewPriority(state:{due:Date|string;introduced_at:Date|string;
 }
 // One exponential draw per item gives weighted ordering without replacement.
 export function reviewDrawKey(priority:number,draw=Math.random()){return -Math.log(1-draw)/(1+priority);}
-function itemFor(course:Course,snap:Snapshot,mode:ReviewMode,targetId:string,now:Date,options=exercisesFor(withPersonalPractice(course,snap.words),snap.words)):ReviewItem{
+function itemFor(course:Course,snap:Snapshot,mode:Exclude<ReviewMode,'counter'>,targetId:string,now:Date,options=exercisesFor(withPersonalPractice(course,snap.words),snap.words)):ReviewItem{
  const state=snap.states.find((candidate:any)=>candidate.mode===mode&&candidate.item_id===targetId);const first=snap.states.filter((candidate:any)=>candidate.item_id===targetId&&(candidate.mode==='grammar')===(mode==='grammar')).sort((a:any,b:any)=>new Date(a.introduced_at).getTime()-new Date(b.introduced_at).getTime())[0];
  const base={id:'',targetId,version:state?.version??0,due:new Date(state?.due??first?.introduced_at??now).toISOString(),isNew:!first};
  if(mode==='grammar'){const exercises=options.filter(exercise=>exercise.skillId===targetId);const exercise=exercises[base.version%exercises.length]!;return {...base,id:reviewId(mode,targetId,exercise.id),mode,exercise,skill:course.skills.find(skill=>skill.id===targetId)!};}
  return {...base,id:reviewId(mode,targetId),mode,word:snap.words.find(word=>word.id===targetId)!};
 }
 function dueItems(course:Course,snap:Snapshot,mode:ReviewMode,now:Date):ReviewItem[]{
+ if(mode==='counter')return snap.states.filter((state:any)=>state.mode==='counter'&&new Date(state.due)<=now).map((state:any)=>counterItemFor(snap,state.item_id,now)).filter((item:ReviewItem|undefined):item is ReviewItem=>!!item).sort((a:ReviewItem,b:ReviewItem)=>new Date(a.due).getTime()-new Date(b.due).getTime());
  const learned=introduced(snap,mode==='grammar');const exercises=exercisesFor(withPersonalPractice(course,snap.words),snap.words,introduced(snap));
  const ids=mode==='grammar'?[...new Set(exercises.map(exercise=>exercise.skillId))]:snap.words.filter(word=>word.reviewStatus!=='draft'&&validSegments(word)&&(mode!=='listening'||!!word.audioUrl)).map(word=>word.id);
  const items=ids.filter(id=>learned.has(id)).map(id=>itemFor(course,snap,mode,id,now,exercises)).filter(item=>new Date(item.due)<=now);
@@ -70,6 +107,7 @@ export async function introducedExerciseAvailable(database:Database,userId:strin
 }
 export async function trainingQueue(database:Database,userId:string,course:Course,context:TrainingContext):Promise<ReviewQueue>{
  const snap=await snapshot(database,userId,course);const now=new Date();let words:Word[];
+ if(context.counters)return counterTrainingQueue(snap,now);
  if(context.lessonId){if(!course.lessons.some(lesson=>lesson.id===context.lessonId))throw new ReviewError('NOT_FOUND','Урок не найден.',404);words=snap.words.filter(word=>word.lessonIds.includes(context.lessonId!));}
  else {const [list]=await database.sql`select id from word_lists where id=${context.listId!} and user_id=${userId}`;if(!list)throw new ReviewError('NOT_FOUND','Личный список не найден.',404);const rows=await database.sql`select id from personal_words where list_id=${context.listId!} and user_id=${userId}`;const ids=new Set(rows.map((row:any)=>row.id));words=snap.words.filter(word=>ids.has(word.id));}
  words=words.filter(word=>word.reviewStatus!=='draft'&&validSegments(word));const wordIds=introduced(snap);const skillIds=introduced(snap,true);const freshWords=words.filter(word=>!wordIds.has(word.id));
@@ -112,13 +150,14 @@ export async function submitReview(database:Database,userId:string,course:Course
  const snap=await snapshot(database,userId,course);
  const exerciseCourse=withPersonalPractice(course,snap.words);
  const exercise=mode==='grammar'?exercisesFor(exerciseCourse,snap.words).find(e=>e.id===exerciseId&&e.skillId===targetId):undefined;
- const word=mode!=='grammar'?snap.words.find(w=>w.id===targetId&&w.reviewStatus!=='draft'&&validSegments(w)):undefined;
+ const word=mode!=='grammar'&&mode!=='counter'?snap.words.find(w=>w.id===targetId&&w.reviewStatus!=='draft'&&validSegments(w)):undefined;
  const payload=JSON.stringify(input);
  return database.sql.begin(async tx=>{
   await tx`select pg_advisory_xact_lock(hashtext(${userId}))`;
   const [prior]=await tx`select user_id,payload,result from review_attempts where attempt_id=${input.attemptId}`;
   if(prior){if(prior.user_id!==userId||!isDeepStrictEqual(prior.payload,JSON.parse(payload)))throw new ReviewError('ATTEMPT_CONFLICT','Идентификатор попытки уже использован.',409);return prior.result as ReviewResult;}
-  if(mode==='grammar'?!exercise:!word||(mode==='listening'&&!word.audioUrl))throw new ReviewError('MATERIAL_UNAVAILABLE','Материал недоступен.',403);
+  const counter=mode==='counter'?submittedCounter(snap,targetId,exerciseId):null;
+  if(mode==='grammar'?!exercise:mode==='counter'?!counter:!word||(mode==='listening'&&!word.audioUrl))throw new ReviewError('MATERIAL_UNAVAILABLE','Материал недоступен.',403);
   if(input.mode==='grammar'){
    const evaluation=evaluateTarget(exerciseCourse,exerciseId,{...input,revision:0});
    if(evaluation.outcome==='exploration')throw new ReviewError('EXPLORATION_NOT_SCHEDULED','Исследование другой фразы не оценивает исходный навык.',409);
@@ -130,18 +169,29 @@ export async function submitReview(database:Database,userId:string,course:Course
   const [existing]=await tx`select version,card,due from review_states where user_id=${userId} and item_id=${targetId} and mode=${mode} for update`;
   const currentVersion=existing?.version??0;if(input.version>currentVersion)throw new ReviewError('VERSION_CONFLICT','Версия карточки опережает сервер.',409);
   const now=new Date();let scheduled=input.version===currentVersion&&(!existing||new Date(existing.due)<=now);
-  const grade=input.mode==='grammar'?gradeGrammar(exerciseCourse,input,exerciseId):null;
+  if(input.mode==='counter'&&counter!.kind!=='recall'&&!input.choice)throw new ReviewError('INCOMPLETE_NOT_SCHEDULED','Сначала выберите ответ.',409);
+  const correct=counter&&input.mode==='counter'?(counter.kind==='recall'?input.rating===3:counter.acceptedKeys.includes(input.choice??'')):false;
+  const grade=input.mode==='grammar'?gradeGrammar(exerciseCourse,input,exerciseId):input.mode==='counter'?{correct,rating:correct&&!input.helped&&input.rating===3?3 as const:1 as const,feedback:correct?'Верно. Вспомнили уверенно — уберите карточку, иначе повторите.':'Повторим: '+counter!.answer.kana}:null;
   const rating=grade?.rating??(input as Extract<ReviewSubmission,{rating:number}>).rating;
   const card=scheduled?nextCard(existing?restoreCard(existing.card):null,rating,now):restoreCard(existing.card);
   const result:ReviewResult={attemptId:input.attemptId,status:scheduled?'scheduled':'additional-practice',version:scheduled?currentVersion+1:currentVersion,nextDue:card.due.toISOString(),...(grade?{correct:grade.correct,feedback:grade.feedback}:{})};
   if(scheduled)await tx`insert into review_states(user_id,item_id,mode,version,card,due) values(${userId},${targetId},${mode},${result.version},${card},${card.due}) on conflict(user_id,item_id,mode) do update set version=excluded.version,card=excluded.card,due=excluded.due,updated_at=now()`;
+  if(counter&&input.mode==='counter'){
+   await tx`insert into counter_progress(user_id,counter_id) values(${userId},${counter.definition.id}) on conflict do nothing`;
+   const [previous]=await tx`select attempt_id from review_attempts where user_id=${userId} and mode='counter' and payload->>'reviewId'=${input.reviewId} limit 1`;
+   if(!previous&&counter.quantity!==null){
+    const [row]=await tx`select level,history from counter_progress where user_id=${userId} and counter_id=${counter.definition.id} for update`;
+    const next=advanceCounter({counterId:counter.definition.id,level:row.level,history:row.history},{quantity:counter.quantity,kind:counter.kind,confident:grade!.rating===3});
+    await tx`update counter_progress set level=${next.level},history=${next.history},updated_at=now() where user_id=${userId} and counter_id=${counter.definition.id}`;
+   }
+  }
   await tx`insert into review_attempts(attempt_id,user_id,item_id,mode,expected_version,payload,result,scheduled) values(${input.attemptId},${userId},${targetId},${mode},${input.version},${input},${result},${scheduled})`;
   return result;
  });
 }
 export async function progressFor(database:Database,userId:string,course:Course):Promise<Progress>{
  const snap=await snapshot(database,userId,course);const rows=await database.sql`select mode,count(*)::int as reviewed from review_attempts where user_id=${userId} and scheduled=true and created_at>=date_trunc('day',now() at time zone 'UTC') at time zone 'UTC' group by mode`;
- const byMode={} as Progress['byMode'];for(const mode of ['ja-ru','ru-ja','listening','grammar'] as const){const queue=await reviewQueue(database,userId,course,mode);byMode[mode]={due:queue.remainingDue,learned:snap.states.filter((s:any)=>s.mode===mode).length,reviewedToday:rows.find((r:any)=>r.mode===mode)?.reviewed??0};}
+ const byMode={} as Progress['byMode'];for(const mode of modes){const queue=await reviewQueue(database,userId,course,mode);byMode[mode]={due:queue.remainingDue,learned:snap.states.filter((s:any)=>s.mode===mode).length,reviewedToday:rows.find((r:any)=>r.mode===mode)?.reviewed??0};}
  const introducedWordIds=[...introduced(snap)];const introducedSkillIds=[...introduced(snap,true)];
- return {introducedWordIds,introducedSkillIds,completedLessons:course.lessons.filter(lesson=>course.words.filter(word=>word.lessonIds.includes(lesson.id)&&word.reviewStatus!=='draft'&&validSegments(word)).every(word=>introducedWordIds.includes(word.id))&&course.skills.filter(skill=>skill.lessonIds.includes(lesson.id)).every(skill=>introducedSkillIds.includes(skill.id))).length,totalLessons:course.lessons.length,wordsIntroducedToday:snap.wordsToday,skillsIntroducedToday:snap.skillsToday,byMode};
+ return {counters:snap.counters,introducedWordIds,introducedSkillIds,completedLessons:course.lessons.filter(lesson=>course.words.filter(word=>word.lessonIds.includes(lesson.id)&&word.reviewStatus!=='draft'&&validSegments(word)).every(word=>introducedWordIds.includes(word.id))&&course.skills.filter(skill=>skill.lessonIds.includes(lesson.id)).every(skill=>introducedSkillIds.includes(skill.id))).length,totalLessons:course.lessons.length,wordsIntroducedToday:snap.wordsToday,skillsIntroducedToday:snap.skillsToday,byMode};
 }

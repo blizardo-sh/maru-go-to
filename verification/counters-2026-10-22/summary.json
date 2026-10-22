@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-22",
+  "status": "local-verification",
+  "runtime": {
+    "bun": "1.4.3",
+    "postgres": "18.4",
+    "database": "disposable japanese_app_test on localhost:55449"
+  },
+  "tests": {
+    "passed": 90,
+    "failed": 0,
+    "skipped": 0,
+    "assertions": 3425,
+    "files": 16
+  },
+  "typecheck": "pass",
+  "build": "pass",
+  "preparationCheck": "pass",
+  "browserReport": "browser.json",
+  "screenshots": [
+    "desktop.png",
+    "mobile.png"
+  ],
+  "speech": {
+    "counterEntries": 734,
+    "voice": "Kyoko",
+    "rate": 150,
+    "generationErrors": [],
+    "correctedContextPhrases": 6,
+    "humanAcousticReview": false
+  },
+  "assets": [
+    {
+      "file": "assets/index-Cs5_hAp_.js",
+      "bytes": 323279,
+      "sha256": "214d34be498817c094398727bf20ddfdd65ef554505cc5f5cb0feb4acbb2c3fa"
+    },
+    {
+      "file": "assets/index-D57g_x0P.css",
+      "bytes": 51881,
+      "sha256": "1424490a71396ba4c9c8f2dd3a6e63ad62d7509c4a9676f43e9293b31395bc04"
+    }
+  ],
+  "notChecked": [
+    "full human linguistic/acoustic review",
+    "physical devices",
+    "new performance/load lab",
+    "remote VPS deployment"
+  ],
+  "cleanup": {
+    "remainingFixtureUsers": 0,
+    "temporaryDatabaseStopped": true
+  }
+}

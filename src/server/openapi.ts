@@ -1,5 +1,6 @@
 import { OpenAPIHono, z } from '@hono/zod-openapi';
 import { adminLinkSchema, analysisSchema, invitationDetailsSchema, invitationSchema, listSchema, recoverySchema, settingsSchema, submissionSchema, targetEvaluationSchema, trainingContextSchema, wordUpdateSchema } from './validation';
+import { counterKinds } from '../shared/counters';
 const segment=z.object({surface:z.string(),reading:z.string().optional()});
 const source=z.object({part:z.enum(['katsudoo','rikai']),url:z.string(),label:z.string().optional(),page:z.number().optional(),row:z.number().optional(),entry:z.string().optional()});
 const status=z.enum(['draft','source-checked','reviewed']);
@@ -10,11 +11,14 @@ const exercise=z.object({id:z.string(),lessonId:z.string(),skillId:z.string(),pr
 const contentStatus=z.enum(['missing','draft','source-checked','reviewed']);
 const course=z.object({id:z.string(),version:z.string(),title:z.string(),lessons:z.array(z.object({id:z.string(),number:z.number(),title:z.string(),topic:z.string(),canDoIds:z.array(z.number()),sourceRefs:z.array(source),readiness:z.object({vocabulary:contentStatus,grammar:z.union([contentStatus,z.literal('not-applicable')]),exercises:z.union([contentStatus,z.literal('not-applicable')]),audio:contentStatus})})),words:z.array(word),forms:z.array(form),skills:z.array(skill),exercises:z.array(exercise)});
 const reviewBase=z.object({id:z.string(),targetId:z.string(),version:z.number().int(),due:z.string(),isNew:z.boolean()});
-const reviewItem=z.union([reviewBase.extend({mode:z.enum(['ja-ru','ru-ja','listening']),word}),reviewBase.extend({mode:z.literal('grammar'),exercise,skill})]);
+const counterDefinition=z.object({id:z.enum(['mai','hon','satsu','ko','tsu','nin','sai']),surface:z.string(),kana:z.string(),title:z.string(),explanation:z.string(),maximum:z.number()});
+const counterObject=z.object({id:z.string(),tile:z.number(),kanas:z.array(z.string()),counters:z.array(counterDefinition.shape.id)});
+const counterCard=z.object({definition:counterDefinition,kind:z.enum(counterKinds),quantity:z.number().nullable(),level:z.number(),word,object:counterObject,answer:z.object({surface:z.string(),kana:z.string(),segments:z.array(segment)}),examples:z.array(z.object({surface:z.string(),kana:z.string(),segments:z.array(segment),audioUrl:z.string().optional()})),options:z.array(z.object({key:z.string(),label:z.string(),object:counterObject.optional(),word:word.optional(),quantity:z.number().optional(),age:z.boolean().optional()})),acceptedKeys:z.array(z.string()),introduction:z.boolean(),audioUrl:z.string().optional()});
+const reviewItem=z.union([reviewBase.extend({mode:z.enum(['ja-ru','ru-ja','listening']),word}),reviewBase.extend({mode:z.literal('grammar'),exercise,skill}),reviewBase.extend({mode:z.literal('counter'),counter:counterCard})]);
 const reviewResult=z.object({attemptId:z.string(),status:z.enum(['scheduled','additional-practice']),version:z.number().int(),nextDue:z.string(),correct:z.boolean().optional(),feedback:z.string().optional()});
 const list=z.object({id:z.string(),name:z.string(),words:z.array(word)});
 const counts=z.object({due:z.number(),learned:z.number(),reviewedToday:z.number()});
-const progress=z.object({introducedWordIds:z.array(z.string()),introducedSkillIds:z.array(z.string()),completedLessons:z.number(),totalLessons:z.number(),wordsIntroducedToday:z.number(),skillsIntroducedToday:z.number(),byMode:z.object({'ja-ru':counts,'ru-ja':counts,listening:counts,grammar:counts})});
+const progress=z.object({counters:z.array(z.object({counterId:counterDefinition.shape.id,level:z.number(),history:z.array(z.object({quantity:z.number(),kind:z.enum(counterKinds),confident:z.boolean()}))})),introducedWordIds:z.array(z.string()),introducedSkillIds:z.array(z.string()),completedLessons:z.number(),totalLessons:z.number(),wordsIntroducedToday:z.number(),skillsIntroducedToday:z.number(),byMode:z.object({'ja-ru':counts,'ru-ja':counts,listening:counts,grammar:counts,counter:counts})});
 const analysis=z.union([z.object({status:z.literal('ok'),revision:z.number(),text:z.string(),translationRu:z.string(),grammar:z.enum(['correct','incorrect','uncertain','incomplete']),naturalness:z.enum(['natural','awkward','uncertain']),explanationRu:z.string(),materialViolations:z.array(z.string()),warnings:z.array(z.string())}),z.object({status:z.literal('unavailable'),revision:z.number(),text:z.string(),reason:z.string()})]);
 const apiError=z.object({error:z.object({code:z.string(),message:z.string()})});
 export function registerContract(app:OpenAPIHono<any>,secure:boolean){
@@ -27,7 +31,7 @@ export function registerContract(app:OpenAPIHono<any>,secure:boolean){
   for(const code of [400,401,403,404,409,413,415,500])responses[code]={description:'API error',content:{'application/json':{schema:apiError}}};
   const request:any=input?{body:{required:true,content:{'application/json':{schema:input}}}}:{};
   if(path.includes('{listId}'))request.params=z.object({listId:z.string(),wordId:z.string()});
-  if(path==='/api/reviews'&&method==='get')request.query=z.object({mode:z.enum(['ja-ru','ru-ja','listening','grammar','mixed']).optional()});
+  if(path==='/api/reviews'&&method==='get')request.query=z.object({mode:z.enum(['ja-ru','ru-ja','listening','grammar','counter','mixed']).optional()});
   if(path==='/api/training')request.query=trainingContextSchema;
   app.openAPIRegistry.registerPath({path,method,security:path.startsWith('/api/invitations')||path.startsWith('/api/recovery')?[]:[{sessionCookie:[]}],request,responses});
  }

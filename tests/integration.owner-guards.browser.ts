@@ -33,7 +33,7 @@ try {
     } catch { throw new Error(`Owner fixture transport failed: ${request.method()} ${target.pathname}`); }
   });
   await page.goto(base); await login(a.email, 'A'); const lesson = course.lessons.find(lesson => lesson.number === 4)!;
-  const queueResponse = await context.request.get(`${api}/api/training?lessonId=${lesson.id}`); expect(queueResponse.status()).toBe(200); const queue: ReviewQueue = await queueResponse.json(); const words = queue.items.filter(item => item.mode !== 'grammar').slice(0, 2); expect(words).toHaveLength(2);
+  const queueResponse = await context.request.get(`${api}/api/training?lessonId=${lesson.id}`); expect(queueResponse.status()).toBe(200); const queue: ReviewQueue = await queueResponse.json(); const words = queue.items.filter(item => item.mode !== 'grammar' && item.mode !== 'counter').slice(0, 2); expect(words).toHaveLength(2);
   const pending: ReviewSubmission[] = words.map(item => ({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, mode: item.mode, rating: 3 }));
   await page.evaluate(({ userId, pending }) => { localStorage.setItem(`japanese-pending-reviews:${userId}`, JSON.stringify(pending)); window.dispatchEvent(new Event('online')); }, { userId: a.id, pending });
   await expect.poll(() => heldReview).toBe(true); await logout(); await login(b.email, 'B'); releaseReview?.(); await page.waitForTimeout(250);

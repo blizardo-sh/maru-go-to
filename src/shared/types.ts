@@ -3,7 +3,7 @@ export type ReviewStatus = Exclude<ContentStatus, "missing">;
 export type Orthography = "kana" | "furigana" | "kanji";
 export type LessonStatus = "closed" | "studying" | "completed";
 export type MaterialScope = "studied" | "selected" | "all";
-export type ReviewMode = "ja-ru" | "ru-ja" | "listening" | "grammar";
+export type ReviewMode = "ja-ru" | "ru-ja" | "listening" | "grammar" | "counter";
 export type Rating = 1 | 2 | 3 | 4;
 
 export interface SourceRef {
@@ -126,6 +126,7 @@ interface ReviewBase {
 export type ReviewItem = ReviewBase & (
   | { mode: "ja-ru" | "ru-ja" | "listening"; word: Word }
   | { mode: "grammar"; exercise: Exercise; skill: Skill }
+  | { mode: "counter"; counter: import('./counters').CounterCard }
 );
 
 export interface ReviewQueue {
@@ -143,6 +144,7 @@ interface SubmissionBase {
 export type ReviewSubmission = SubmissionBase & (
   | { mode: "ja-ru" | "ru-ja" | "listening"; rating: Rating }
   | { mode: "grammar"; tokenIds: string[]; tokenForms?: Record<string, string>; revealed: boolean; rating?: 1 | 3; exploring?: boolean }
+  | { mode: "counter"; rating: 1 | 3; choice?: string; helped: boolean }
 );
 
 export interface ReviewResult {
@@ -155,6 +157,7 @@ export interface ReviewResult {
 }
 
 export interface Progress {
+  counters: import('./counters').CounterProgress[];
   introducedWordIds: string[];
   introducedSkillIds: string[];
   completedLessons: number;
@@ -181,6 +184,7 @@ export interface WordUpdate {
 export interface TrainingContext {
   lessonId?: string;
   listId?: string;
+  counters?: boolean;
 }
 
 export interface AnalysisRequest extends TrainingContext {
