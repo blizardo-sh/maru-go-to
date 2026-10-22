@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import type { CatPose, CompanionState } from './companion';
+import { useReducedMotion } from './SceneStage';
 
 type Pivot = { x: number; y: number };
 type CatRig = { canvas: { width: number; height: number }; layers: Record<'tail' | 'body' | 'head', { src: string; pivot?: Pivot }> };
@@ -18,25 +19,47 @@ function loadRig() {
   }).catch(error => { rigRequest = null; throw error; });
   return rigRequest;
 }
+// Alpha margins of the existing poses, expressed against their common 360px width.
+const footGap: Record<CatPose, number> = { neutral: .028, blink: .0306, wave: .0278, standing: .0139, thinking: .0333, explain: .0278, encourage: .0278, success: .0361, rest: .0361 };
+let poseRequest: Promise<Set<CatPose>> | undefined;
+function loadPoses() { return poseRequest ??= Promise.all((Object.keys(footGap) as CatPose[]).map(async pose => { const image = new Image(); image.src = `/mascot/${pose}.png`; try { await image.decode(); return pose; } catch { return null; } })).then(poses => new Set(poses.filter((pose): pose is CatPose => pose !== null))); }
 
-export function Cat({ pose = 'neutral', text, activity = 'idle', reactionKey, welcome = false }: { pose?: CatPose; text?: string; activity?: CompanionState['activity']; reactionKey?: string; welcome?: boolean }) {
+export function Cat({ pose = 'neutral', text, activity = 'idle', reactionKey, welcome = false, playful = false }: { pose?: CatPose; text?: string; activity?: CompanionState['activity']; reactionKey?: string; welcome?: boolean; playful?: boolean }) {
   const [rig, setRig] = useState<CatRig | null>(null); const [failed, setFailed] = useState(false); const [visible, setVisible] = useState(() => !document.hidden);
-  const [blink, setBlink] = useState(false);
-  useEffect(() => { if (pose !== 'neutral' && !welcome) return; let current = true; void loadRig().then(value => { if (current) setRig(value); }).catch(() => {}); return () => { current = false; }; }, [pose, welcome]);
-  useEffect(() => { const update = () => setVisible(!document.hidden); document.addEventListener('visibilitychange', update); return () => document.removeEventListener('visibilitychange', update); }, []);
+  const [ready, setReady] = useState<Set<CatPose>>(() => new Set(['neutral']));
+  const [blink, setBlink] = useState(false); const [petting, setPetting] = useState(false);
+  const [reaction, setReaction] = useState<{ pose: CatPose; key?: string } | null>(null);
+  const [wave, setWave] = useState(false); const [previous, setPrevious] = useState<CatPose | null>(null);
+  const reactionTimers = useRef<number[]>([]); const reacted = useRef('');
+  const last = useRef<CatPose>('neutral'); const petTimer = useRef<number | undefined>(undefined);
+  const reduced = useReducedMotion();
+  useEffect(() => { let current = true; void loadRig().then(value => { if (current) setRig(value); }).catch(() => {}); void loadPoses().then(value => { if (current) setReady(value); }); return () => { current = false; }; }, []);
+  useEffect(() => { const update = () => { setVisible(!document.hidden); if (document.hidden) { setPetting(false); setBlink(false); setReaction(null); reactionTimers.current.forEach(window.clearTimeout); window.clearTimeout(petTimer.current); } }; document.addEventListener('visibilitychange', update); return () => { document.removeEventListener('visibilitychange', update); window.clearTimeout(petTimer.current); reactionTimers.current.forEach(window.clearTimeout); }; }, []);
   useEffect(() => {
-    if (pose !== 'neutral' || rig && !failed) return;
-    let timer: number | undefined; let closeTimer: number | undefined;
-    function stop() { window.clearTimeout(timer); window.clearTimeout(closeTimer); setBlink(false); }
-    function schedule() { stop(); if (document.hidden) return; timer = window.setTimeout(() => { if (!document.hidden && !matchMedia('(prefers-reduced-motion: reduce)').matches && document.querySelector('[data-motion]')?.getAttribute('data-motion') !== 'false') { setBlink(true); closeTimer = window.setTimeout(() => setBlink(false), 160); } timer = window.setTimeout(schedule, 5200); }, 5200); }
-    schedule(); document.addEventListener('visibilitychange', schedule);
-    return () => { stop(); document.removeEventListener('visibilitychange', schedule); };
-  }, [pose, rig, failed]);
-  const useRig = !!rig && !failed && (pose === 'neutral' || welcome);
-  return <aside className="companion" data-pose={pose} data-activity={activity} data-event-key={reactionKey} data-visible={visible} data-welcome={welcome} data-rig-ready={useRig}><div className="cat-frame">
-    {useRig && rig ? <div key={reactionKey ?? pose} className="cat-rig" aria-hidden="true" style={{ position: 'relative', width: '100%', height: '100%' }}>{(['tail', 'body', 'head'] as const).map(layer => {
-      const source = rig.layers[layer]; const pivot = source.pivot ?? { x: .5, y: 1 };
-      return <img key={layer} className={`cat-layer cat-${layer}`} src={source.src} width={rig.canvas.width} height={rig.canvas.height} alt="" decoding="async" onError={() => setFailed(true)} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', transformOrigin: `${pivot.x * 100}% ${pivot.y * 100}%` }} />;
-    })}</div> : <img key={reactionKey ?? pose} src={`/mascot/${blink && pose === 'neutral' ? 'blink' : pose}.png`} width="360" height="360" alt="" decoding="async" />}
-  </div>{text && <p>{text}</p>}</aside>;
+    if (!visible || !reactionKey || reacted.current === reactionKey || !['saved-good', 'saved-again', 'complete'].includes(activity)) return;
+    reacted.current = reactionKey; reactionTimers.current.forEach(window.clearTimeout);
+    setReaction({ pose: activity === 'complete' ? 'wave' : pose, key: reactionKey }); setWave(false);
+    const waveTimer = activity === 'saved-good' ? window.setTimeout(() => setWave(true), 220) : undefined;
+    const end = window.setTimeout(() => setReaction(null), activity === 'complete' ? 1400 : 950);
+    reactionTimers.current = waveTimer ? [waveTimer, end] : [end];
+  }, [reactionKey, activity === 'saved-good' || activity === 'saved-again' || activity === 'complete', visible]);
+  useEffect(() => {
+    if (!visible || reduced || pose !== 'neutral' || reaction) return;
+    let close: number | undefined;
+    const timer = window.setInterval(() => { setBlink(true); close = window.setTimeout(() => setBlink(false), 160); }, 4400);
+    return () => { window.clearInterval(timer); window.clearTimeout(close); setBlink(false); };
+  }, [visible, reduced, pose, !!reaction]);
+  const reactionPose = reaction?.pose === 'success' && wave ? 'wave' : reaction?.pose;
+  const actual: CatPose = reactionPose ?? (petting ? 'wave' : blink && pose === 'neutral' ? 'blink' : activity === 'complete' ? 'wave' : pose);
+  const shown = ready.has(actual) ? actual : 'neutral';
+  useEffect(() => { setPrevious(last.current); last.current = shown; const timer = window.setTimeout(() => setPrevious(null), 180); return () => window.clearTimeout(timer); }, [shown]);
+  const pet = () => { if (!visible) return; setPetting(true); window.clearTimeout(petTimer.current); petTimer.current = window.setTimeout(() => setPetting(false), 900); };
+  const useRig = !!rig && !failed;
+  const picture = (value: CatPose, outgoing = false) => <img key={`${outgoing ? 'old' : 'new'}:${value}`} className={`cat-pose${outgoing ? ' cat-pose-outgoing' : ''}`} src={`/mascot/${value}.png`} width="360" height="360" alt="" decoding="async" style={{ '--cat-foot-gap': `${footGap[value] * 100}%` } as CSSProperties} />;
+  const frame = <div className="cat-frame"><span className="cat-shadow" aria-hidden="true" /><span className="cat-motion" key={reaction?.key ?? reactionKey ?? 'idle'} aria-hidden="true"><span className="cat-base" data-hidden={shown !== 'neutral'}>
+    {useRig && rig ? <span className="cat-rig">{(['tail', 'body', 'head'] as const).map(layer => { const source = rig.layers[layer]; const pivot = source.pivot ?? { x: .5, y: 1 }; return <img key={layer} className={`cat-layer cat-${layer}`} src={source.src} width={rig.canvas.width} height={rig.canvas.height} alt="" decoding="async" onError={() => setFailed(true)} style={{ transformOrigin: `${pivot.x * 100}% ${pivot.y * 100}%` }} />; })}</span> : picture('neutral')}
+  </span>{previous && previous !== 'neutral' && previous !== shown && picture(previous, true)}{shown !== 'neutral' && picture(shown)}</span></div>;
+  return <aside className="companion" data-pose={actual} data-activity={activity} data-event-key={reaction?.key ?? reactionKey} data-visible={visible} data-welcome={welcome} data-playful={playful} data-rig-ready={useRig} data-reaction={reaction?.pose === 'success' ? 'good' : reaction?.pose === 'encourage' ? 'again' : activity === 'complete' ? 'complete' : 'idle'}>
+    {frame}{playful && <button className="cat-pet" aria-label="Погладить кота" onClick={pet} onPointerEnter={() => { if (pose === 'neutral') pet(); }} />}{text && <p>{text}</p>}
+  </aside>;
 }

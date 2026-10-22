@@ -41,6 +41,10 @@ jobs:
       - run: bunx playwright install --with-deps chrome
       - name: Browser guided learning route
         run: bun tests/helpers/run-guided-browser.ts
+      - name: Browser Album overview and saved quiz feedback
+        run: bun tests/helpers/run-guided-browser.ts verification/album-learning/flow.ts
+      - name: Browser paper flight and saved retry
+        run: bun tests/helpers/run-guided-browser.ts verification/album-learning/flight.ts
       - name: Browser stable study scene
         run: bun tests/helpers/run-guided-browser.ts tests/integration.study-layout.browser.ts
       - name: Browser lesson video library
