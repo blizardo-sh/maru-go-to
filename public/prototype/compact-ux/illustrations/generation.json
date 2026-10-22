@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "purpose": "Three word-memory illustration samples for the compact UX prototype; not a complete course asset collection.",
+  "toolMode": "built-in",
+  "tool": "image_gen.imagegen",
+  "intent": "generate",
+  "transparentBackground": true,
+  "generationCalls": 3,
+  "visualCheck": "Each output inspected for subject, coherent family style, readable silhouette, absence of text or background; PNG alpha channel confirmed.",
+  "limitations": [
+    "Prototype samples only for three lesson-04 nouns; other words have no illustration in this prototype.",
+    "Illustrations support recognition at introduction and after answering, and must be hidden while testing recall.",
+    "AI-generated people illustrate a family concept rather than any real individual."
+  ],
+  "assets": [
+    {
+      "path": "public/prototype/compact-ux/illustrations/father.png",
+      "wordId": "marugoto.starter-a1.word.2d31dd8d68a3ada0",
+      "lessonId": "marugoto.starter-a1.lesson.04",
+      "surface": "ちち",
+      "meaningRu": "отец",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1753385,
+      "transparent": true,
+      "references": [
+        {
+          "path": "public/scenes/room-v1.webp",
+          "role": "style and palette only"
+        }
+      ],
+      "prompt": "Use case: scientific-educational, illustration-story.\nAsset type: one compact transparent word-memory illustration for a Japanese-learning indie game.\nPrimary request: teach the concept FATHER through a warm human parent-child interaction. No words or labels.\nInput images: image 1 is STYLE AND PALETTE REFERENCE ONLY — warm hand-painted Japanese room. Create an entirely new foreground illustration, do not reproduce that room.\nSubject: a friendly Japanese father around 35, short dark brown hair, rolled-up cream shirt and muted sage vest, kneeling at a child's level, smiling warmly and gently resting his hand on the child's shoulder. One small child in ochre clothes looks up at him. Father occupies the clear visual emphasis; he must look like an adult father, not a grandfather or businessman. Human people, no cats.\nStyle: polished hand-painted storybook game sprite, subtle ink edges, soft gouache brushwork, tactile but clean, warm cream/ochre/sage colors, gentle expressive faces. Cohesive with the reference room.\nComposition: compact near-square isolated group, large simple silhouette readable as a 64–120 px thumbnail, father and child fully visible, no cutoff body parts. Centered with narrow clear breathing room.\nBackground: genuinely transparent alpha everywhere outside the people. No paper rectangle, no card, no frame, no floor, no environment, no extra props, no checkerboard or painted fake transparency.\nConstraints: no typography, letters, numbers, captions, logos, watermarks or decorative labels. Do not render a room. One finished asset, no contact sheet."
+    },
+    {
+      "path": "public/prototype/compact-ux/illustrations/mother.png",
+      "wordId": "marugoto.starter-a1.word.07ab7fc730f6f2bb",
+      "lessonId": "marugoto.starter-a1.lesson.04",
+      "surface": "はは",
+      "meaningRu": "мать",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2018031,
+      "transparent": true,
+      "references": [
+        {
+          "path": "public/prototype/compact-ux/illustrations/father.png",
+          "role": "style and family character reference only"
+        }
+      ],
+      "prompt": "Use case: scientific-educational, illustration-story.\nAsset type: one compact transparent word-memory illustration for a Japanese-learning indie game.\nPrimary request: teach MOTHER through a warm human mother-child interaction. No words or labels.\nInput image is STYLE AND FAMILY REFERENCE ONLY: an existing newly illustrated father and child in sage, cream and ochre hand-painted storybook style. Create a distinct illustration of the mother, without the father. Match the style and child identity.\nSubject: a friendly Japanese mother around 35, warm dark brown shoulder-length hair loosely tied back, sage-green simple cardigan over a cream blouse and muted terracotta long skirt. She kneels beside the same young child in ochre clothes, gently helping straighten the child's collar and exchanging warm smiles. Mother is clearly primary and looks like an adult parent; no old woman or teenager. Humans, no cats.\nStyle: same polished hand-painted Japanese indie-game storybook sprite, subtle ink outlines, soft gouache brushwork, warm cream/ochre/sage palette, gentle expressive faces.\nComposition: compact near-square isolated group with clear readable silhouette at 64–120 px; fully show mother and child with all hair, fingers and feet inside canvas and small breathing margin. Not a rectangular portrait.\nBackground: genuinely transparent alpha everywhere outside the people. No paper rectangle, card, frame, floor, environment or additional props. No checkerboard or painted fake transparency.\nConstraints: no typography, letters, numbers, labels, logos or watermarks. One finished asset, no contact sheet."
+    },
+    {
+      "path": "public/prototype/compact-ux/illustrations/family.png",
+      "wordId": "marugoto.starter-a1.word.f304a39b5e728680",
+      "lessonId": "marugoto.starter-a1.lesson.04",
+      "surface": "かぞく",
+      "meaningRu": "семья",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 2419752,
+      "transparent": true,
+      "references": [
+        {
+          "path": "public/prototype/compact-ux/illustrations/father.png",
+          "role": "style and father/child character reference only"
+        },
+        {
+          "path": "public/prototype/compact-ux/illustrations/mother.png",
+          "role": "style and mother/child character reference only"
+        }
+      ],
+      "prompt": "Use case: scientific-educational, illustration-story.\nAsset type: one compact transparent word-memory illustration for a Japanese-learning indie game.\nPrimary request: teach FAMILY as a warm compact group of four human family members, no labels or words.\nInput images: image 1 and image 2 are STYLE AND CHARACTER REFERENCES ONLY, not edit targets. Match their father, mother and young child identities, clothing colors and warm gouache/ink rendering. Make a new composition, not a collage.\nSubject: the same friendly adult father with short tousled dark brown hair, cream shirt and sage vest; same adult mother with loosely tied dark brown hair, sage cardigan and terracotta skirt; their young boy in ochre clothes and a second slightly younger daughter in a muted cream and rose dress. The two adults kneel close behind the two smiling children, arms gently around shoulders so all four visibly belong to one family.\nComposition: compact near-square family portrait group with all four people fully visible, simple readable silhouette at 64–120 px. Two clearly adult parents and two clearly young children, everyone close, no isolated detached persons, no extra people, no cats. Leave a small transparent margin around every hair and foot.\nStyle: same polished hand-painted Japanese indie game storybook sprite, delicate warm ink edges, soft gouache brushwork, cream/ochre/sage/terracotta palette, gentle expressive faces.\nBackground: genuinely transparent alpha everywhere outside the people. No room, floor, props, card, border, paper rectangle, decorative frame, checkerboard or fake transparency.\nConstraints: no typography, letters, numbers, captions, logos or watermarks. One finished asset, no contact sheet."
+    }
+  ]
+}
