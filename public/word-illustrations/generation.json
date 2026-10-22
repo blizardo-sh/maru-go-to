@@ -1,0 +1,396 @@
+{
+  "version": 1,
+  "newAtlasCalls": 20,
+  "toolMode": "built-in",
+  "newDependencies": false,
+  "notes": "Twenty 3x3 educational atlases, not 180 separate generations. Originals preserved outside production public/Git; published files are local optimized WebP. Exact cell-word mapping and conscious exclusions live in manifest.json.",
+  "assets": [
+    {
+      "id": "greetings",
+      "src": "/word-illustrations/greetings-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-78df684f-4d08-4ae5-9f8d-ae096e39a442.png",
+      "sourceSha256": "f2618638bd6d7c5e2c6eb8a6cb3d7da198650b5e5c1519783e283aa89d7dee4e",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp",
+        "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-89313bca-849d-4e16-b44b-bacb351f7784.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: Two friendly adults bow slightly to greet each other in the MORNING, a tiny window with rising sun behind them.\nrow 1, column 2: The same two friendly adults greeting with a small hand wave in bright MIDDAY, small high sun.\nrow 1, column 3: The same adults greeting politely at EVENING, a lit lantern and crescent moon.\nrow 2, column 1: One adult respectfully waving a departing friend goodbye as the friend walks away with a bag.\nrow 2, column 2: One adult gratefully bowing toward another who has just helped them pick up a dropped notebook; warm smile.\nrow 2, column 3: One adult accidentally bumps another, apologetically bowing with a remorseful expression and one hand to chest; no injury.\nrow 3, column 1: An office worker quietly bows at an office doorway while leaving with bag, two colleagues still working at desks.\nrow 3, column 2: Two colleagues have just finished work, one warmly thanks the other with a little bow, closed laptops and a small sunset window.\nrow 3, column 3: Two young friends casually wave to one another while parting, cheerful relaxed gesture, a little garden path.\nExactly nine independent illustrative vignettes. Use compact 2–3-person scenes rather than close-up faces alone. No textual speech balloons or decorative repeated panels. Match the human character style of reference two.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "classroom",
+      "src": "/word-illustrations/classroom-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-2adf5bca-d8cb-4eb8-832a-82faeb958b52.png",
+      "sourceSha256": "0d4e79928dd4a5b3b1fe5c91ca0916d46f3b9bc69f417bdbee78b67337036567",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp",
+        "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-89313bca-849d-4e16-b44b-bacb351f7784.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: A Japanese language student clearly nods with an understanding smile while a teacher points to an open book.\nrow 1, column 2: A student looks puzzled and scratches their head while teacher explains using an open book; no question-mark text.\nrow 1, column 3: A student politely cups their hand behind their ear and asks the teacher to say it once again; two faint empty speech loops, no symbols or text.\nrow 2, column 1: A student politely raises an open palm to ask the teacher to speak more slowly; teacher responds with a measured calm hand gesture; no tortoise.\nrow 2, column 2: A young student visibly listening carefully with hand cupped by ear, a teacher facing them and speaking.\nrow 2, column 3: One friendly adult teacher standing beside a small completely blank classroom board, holding a pointer and a book.\nrow 3, column 1: An open book with one page being turned, the PAGE is primary; page has no text or invented glyphs.\nrow 3, column 2: A small realistic globe with a few small plain country flags around it, conveying COUNTRIES, no names or letters.\nrow 3, column 3: One small Russian national flag: exact three horizontal stripes white TOP, blue MIDDLE, red BOTTOM, on a pole beside a tiny Saint Basil cathedral silhouette; no text.\nExactly nine independent illustrative vignettes. Use compact 2–3-person scenes rather than close-up faces alone. No textual speech balloons or decorative repeated panels. Match the human character style of reference two.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "people",
+      "src": "/word-illustrations/people-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-e1389854-99a5-4d3f-a04e-55d2f0e58070.png",
+      "sourceSha256": "dd7e91ecaad29661a65f56b718aa857cb082c3ad2f8b22e273a4beaf44d8c0d7",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp",
+        "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-89313bca-849d-4e16-b44b-bacb351f7784.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: A small Japanese national flag, white rectangle with plain red disk in the center, beside a tiny Mount Fuji and torii vignette, representing JAPAN.\nrow 1, column 2: One young adult clearly pointing to THEIR OWN chest with an open friendly expression, representing SELF / I.\nrow 1, column 3: One university student with satchel, notebook and pencil, seated studying; young adult not a child.\nrow 2, column 1: One practical engineer in simple work clothes examining a precise mechanical gear and blueprint with only abstract non-text lines.\nrow 2, column 2: One company office employee in neat clothes working at a desk with laptop, document and a little office plant.\nrow 2, column 3: Two adults politely exchanging a single small BUSINESS CARD with two hands; card has a tiny portrait mark and blank lines but NO letters or numbers.\nrow 3, column 1: A TEENAGE OLDER BROTHER age16 with his younger brother age7, boy teen visibly primary, teen hair/clothes distinct from the adult father; sibling affectionate hand on shoulder.\nrow 3, column 2: A TEENAGE OLDER SISTER age16 with younger sister age7, teen girl visibly primary, gentle shared smile, older girl's posture/clothes clearly teen not a mother.\nrow 3, column 3: One young child age6 in ochre clothes standing happily, whole body, no adult.\nExactly nine independent sprites, no extra illustrations. Humans match the warm adult/child family style of the second reference, no anthropomorphic animals. Their relative ages and person counts are important.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "family-counts",
+      "src": "/word-illustrations/family-counts-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-70d7ee14-937a-46c4-b120-d44ed30189a6.png",
+      "sourceSha256": "5c9fafd127d35d3539c1277e87f6a456e509adc5d58e1acc337050defd3accdd",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp",
+        "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-89313bca-849d-4e16-b44b-bacb351f7784.png"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: Exactly ONE human person, one young adult standing alone, no other faces or reflections.\nrow 1, column 2: Exactly TWO human people standing side by side, clearly separated heads and bodies, no third person.\nrow 1, column 3: Exactly THREE human people standing side by side, no fourth person.\nrow 2, column 1: Exactly FOUR human people standing side by side, no fifth person.\nrow 2, column 2: A married couple with matching simple wedding rings: WIFE visually primary in front, adult husband slightly behind, gently holding hands; no children, no bouquet.\nrow 2, column 3: A married couple with matching simple wedding rings: HUSBAND visually primary in front, adult wife slightly behind, gently holding hands; no children, no bouquet.\nrow 3, column 1: A person comfortably LIVING at home, watering a little plant inside a cutaway home by a sofa and slippers; not moving house.\nrow 3, column 2: Recognizable TOKYO skyline with the red-and-white Tokyo Tower and compact city buildings, no labels.\nrow 3, column 3: A small public PARK, trees, green grass, park bench and path, no buildings or shrine.\nExactly nine independent sprites, no extra illustrations. Humans match the warm adult/child family style of the second reference, no anthropomorphic animals. Their relative ages and person counts are important.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "pantry",
+      "src": "/word-illustrations/pantry-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-9cbc9fa8-3fc5-4627-a1ec-682a84c3ca0e.png",
+      "sourceSha256": "72b04da77648f460128613a86d8a77427e477699200fe67c624e41a93347f85f",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow1 col1: one whole fresh silver fish on a small plain ceramic plate, clearly fish rather than cooked meat\nrow1 col2: two uncooked red meat slices with clear white marbling on a small plate, not fish\nrow1 col3: a small basket of fresh vegetables, carrot, cabbage and tomato, no fruits\nrow2 col1: a small basket of fruit, apple, pear and orange, no vegetables\nrow2 col2: a Japanese ceramic yunomi cup visibly holding translucent GREEN TEA, a few tea leaves beside it; no teapot\nrow2 col3: a coffee cup and saucer with dark brown coffee and a few brown coffee beans\nrow3 col1: a clear glass visibly full of plain clear cold water, a subtle blue reflection and no ice or fruit\nrow3 col2: a clear glass of orange fruit juice beside one cut orange\nrow3 col3: a simple sliced loaf of bread with golden crust\nThe nine specified subjects are all required, in exactly this order. One coherent final atlas, not nine separate files.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "meals",
+      "src": "/word-illustrations/meals-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-fd81bb8d-a3dc-4136-8818-2bc1e660f779.png",
+      "sourceSha256": "096e72fb59b2a38aa636b85e5e8c99c848f681ceca549e7fb08ed42af57dd0e0",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: A small ceramic bowl of plain cooked white RICE, rice grains clearly visible, no sushi or noodles.\nrow 1, column 2: Japanese BREAKFAST tray of rice, miso and egg with small morning rising-sun window behind it.\nrow 1, column 3: A modest LUNCH bento meal with small bright midday sun behind it, no morning or moon.\nrow 2, column 1: A warm DINNER meal of rice and vegetables on a table with tiny evening window and crescent moon.\nrow 2, column 2: One person actively DRINKING water from a glass held to their lips, no food.\nrow 2, column 3: One person actively EATING rice with chopsticks, bringing a bite to their mouth, no drinking glass.\nrow 3, column 1: A person fondly choosing their FAVORITE food from two plates, delighted affectionate face and one tiny soft heart, no text.\nrow 3, column 2: A person tastes a spoonful of soup and closes eyes in clear delight, conveying DELICIOUS, food and pleased face primary.\nrow 3, column 3: A small attractive spread of three different prepared DISHES, soup, vegetables and fish, conveying cooked cuisine generally, not ingredients.\nFood accuracy is essential: udon thick white noodles versus ramen thin yellow noodles, hamburger has no cheese, cheeseburger clearly has cheese. Do not add any labels.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "restaurant",
+      "src": "/word-illustrations/restaurant-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-c8420be9-a721-44cb-a99b-47c289407582.png",
+      "sourceSha256": "7898eec3519d67f5b55aecffc891a0c40934ee2d819956113ff48beda9ea7a3e",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: A small wooden plate with recognizable nigiri SUSHI, rice topped with fish, a few neat rolls, no noodles.\nrow 1, column 2: A Japanese CURRY rice plate with brown curry sauce, vegetables and white rice clearly divided, no pasta.\nrow 1, column 3: A ceramic bowl of UDON: visibly THICK white wheat noodles in clear broth, sliced scallion, no yellow ramen noodles.\nrow 2, column 1: A ceramic bowl of RAMEN: visibly THIN yellow curled noodles in broth, egg half and pork slice, no thick udon.\nrow 2, column 2: A cozy full-service RESTAURANT interior with dining tables, chairs and waiter carrying a tray; no signs or text.\nrow 2, column 3: A small neighborhood SHOP storefront with display of goods, awning and counter, no restaurant tables or signs.\nrow 3, column 1: An open picture MENU on a tabletop: several tiny dish illustrations in separate panels, absolutely no letters or numbers.\nrow 3, column 2: A classic HAMBURGER in bun with beef patty, lettuce and tomato, clearly NO cheese.\nrow 3, column 3: A CHEESEBURGER in bun with beef patty and clearly visible melted yellow CHEESE slice, no fries.\nFood accuracy is essential: udon thick white noodles versus ramen thin yellow noodles, hamburger has no cheese, cheeseburger clearly has cheese. Do not add any labels.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "service",
+      "src": "/word-illustrations/service-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-ee965b66-8717-40bd-8276-756b2af9e86b.png",
+      "sourceSha256": "016a2057efd79b41aa60ff4c55e39f4d4a160102b6390239f253ad2d8e442dc3",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: A small serving of golden FRENCH FRIES in plain unbranded paper carton, no text.\nrow 1, column 2: A clear glass of dark COLA with bubbles and a straw, no branded bottle or logo.\nrow 1, column 3: A blue cup for sale beside only a FEW coins, contrasted to a secondary beige cup with a larger pile of coins, conveying cheap; no price numerals.\nrow 2, column 1: A running person moving FAST with coat and hair swept back and subtle motion strokes, no tortoise or vehicles.\nrow 2, column 2: Exactly ONE plain red apple on a small plate, no other apples, no digits.\nrow 2, column 3: Exactly TWO plain red apples on a small plate, no other apples, no digits.\nrow 3, column 1: Exactly THREE plain red apples on a small plate, no other apples, no digits.\nrow 3, column 2: A host OFFERING a visitor a cup of tea with both open hands, inviting generous gesture.\nrow 3, column 3: A guest politely DECLINING an offered cup of tea with a calm smile and raised open palm, not distressed or angry.\nAccuracy is essential: exact object counts; above/below/inside/beside must be visually unambiguous and never swapped. Isolated subjects, no cell labels.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "home",
+      "src": "/word-illustrations/home-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-813946f1-ef62-4471-9f2b-78ad722c6628.png",
+      "sourceSha256": "4b0d2a6a6b421b51c82f49c70be61bee3c54a8c189cdd1709b4beae8c71ef888",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow1 col1: one complete small Japanese detached house with roof, door and windows\nrow1 col2: cutaway of one simple furnished room, with wall, window and low table; a room, not an entire house\nrow1 col3: two cups side by side: the SMALL blue cup is brightly colored and primary, a larger neutral beige cup provides size comparison; no symbols\nrow2 col1: a noticeably spacious uncluttered room with wide floor and windows, furniture tiny relative to the floor\nrow2 col2: one modest two-storey Japanese apartment building with repeated front doors and balconies\nrow2 col3: one standalone television with dark screen, no broadcast image or letters\nrow3 col1: one recognizable wall-mounted split air-conditioning unit with vent open, no remote control or letters\nrow3 col2: one soft sage-green sofa viewed three-quarter, no person or cat\nrow3 col3: one simple wooden chair, clearly a chair rather than armchair\nThe nine specified subjects are all required, in exactly this order. One coherent final atlas, not nine separate files.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "rooms",
+      "src": "/word-illustrations/rooms-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-16300c9d-2c1e-416e-8c08-040036065f47.png",
+      "sourceSha256": "98edea27df419fc36f1eaff41c159eb1c7266d261ce3d5ae5b83306a7f289d7c",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: A small private Japanese house GARDEN with plants, flowers and path, fence and a little house wall, not a public park.\nrow 1, column 2: One neatly made BED with cream pillow and sage blanket, clearly mattress and bed frame.\nrow 1, column 3: A red ball ABOVE a wooden box, resting on its top lid; box and ball clearly visible.\nrow 2, column 1: A red ball BELOW a small wooden table, ball wholly underneath the tabletop and between its legs.\nrow 2, column 2: A red ball INSIDE an open wooden box, half visible above the rim, no other ball.\nrow 2, column 3: A red ball BESIDE a wooden box on the same level, clearly to its side, not on or in it.\nrow 3, column 1: A standalone wooden SHELF with two tiers and a couple of small plain objects, no books.\nrow 3, column 2: One closed clothbound BOOK and one partly open book showing blank pages, no letters or glyphs.\nrow 3, column 3: One simple empty open cardboard BOX, no ball or other content.\nAccuracy is essential: exact object counts; above/below/inside/beside must be visually unambiguous and never swapped. Isolated subjects, no cell labels.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "belongings",
+      "src": "/word-illustrations/belongings-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-ec0cae1e-1072-4f3c-bc06-dbd9be6799dc.png",
+      "sourceSha256": "95c3f36780abfb859a404e693f70914e28c3541501f6a9b5d841fe7dd3e49b73",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: A small human-shaped cloth DOLL in simple Japanese dress, clearly a toy rather than living child.\nrow 1, column 2: One round wooden analog CLOCK with simple tick marks, no numbers, showing approximately ten past ten.\nrow 1, column 3: A Japanese ENTRYWAY / genkan with recessed shoe floor, pair of shoes, small step up and neatly placed slippers; not bathroom.\nrow 2, column 1: A compact KITCHEN corner with sink, stove, countertop and saucepan, no toilet.\nrow 2, column 2: A Japanese BATHROOM with deep bathtub, shower and washing stool, no toilet.\nrow 2, column 3: A clean recognizable TOILET fixture in a tiny plain room corner, no bathtub.\nrow 3, column 1: A small bundle of Japanese travel SOUVENIRS: regional craft, wrapped sweet and tiny decorative charm, no logos or labels.\nrow 3, column 2: One wrapped PRESENT gift box with cloth ribbon and bow, no souvenir objects or person.\nrow 3, column 3: A pair of wooden CHOPSTICKS resting diagonally on a small ceramic chopstick rest, no pen or brush.\nThe clocks' hand directions must be EXACT, not a generic ten-past-ten decoration. Do not put text on objects. Every subject has its own isolated square cell.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "routine",
+      "src": "/word-illustrations/routine-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-38415f7e-cf87-406b-ae7a-eae7cfe6abdc.png",
+      "sourceSha256": "add2db9d53031f176d8ee0b3a810ab8a18984cf7eb90c50d5083708ba2282238",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: A single clear analog clock face, no numerals, exactly 7:00: long minute hand points STRAIGHT UP to12, short hour hand points DOWN-LEFT to7.\nrow 1, column 2: A single clear analog clock face, no numerals, exactly 9:00: long minute hand points STRAIGHT UP to12, short hour hand points STRAIGHT LEFT to9.\nrow 1, column 3: A single clear analog clock face, no numerals, exactly 11:00: long minute hand points STRAIGHT UP to12, short hour hand points UP-LEFT to11.\nrow 2, column 1: A person WAKING UP and stretching upright in bed, sunrise window beside them, eyes opening.\nrow 2, column 2: A person SLEEPING peacefully lying in bed with head on pillow, moon at small window.\nrow 2, column 3: A small peaceful MORNING landscape with rising sun low on horizon and gentle warm dew, no people.\nrow 3, column 1: A small peaceful NIGHT landscape with dark indigo sky, crescent moon and stars above treetops, no sun.\nrow 3, column 2: A student actively STUDYING at a desk with open book and pencil, no readable text.\nrow 3, column 3: A person RETURNING HOME, coming through their house door with bag while family greets them from inside.\nThe clocks' hand directions must be EXACT, not a generic ten-past-ten decoration. Do not put text on objects. Every subject has its own isolated square cell.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "hobbies",
+      "src": "/word-illustrations/hobbies-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-fb608d8f-bb3e-49df-8f3c-5ffecc527b0d.png",
+      "sourceSha256": "691ff97617e23bb43aea9a118f93dab123e8186746d472452b324dc4867cbd3d",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: A lively small PARTY with three friends, bunting and food on table, no birthday cake.\nrow 1, column 2: A BIRTHDAY cake with several plain candles and small wrapped gift, no numbers.\nrow 1, column 3: Two friends warmly CONGRATULATING a happy person with flowers and small confetti; no text.\nrow 2, column 1: A person READING a book intently in an armchair, book has no text.\nrow 2, column 2: A small gramophone and musical instrument with flowing abstract sound ribbons, representing MUSIC, no notation or letters.\nrow 2, column 3: One acoustic GUITAR standing at a slight angle, whole instrument, no person.\nrow 3, column 1: A traditional movie projector and small blank cinema screen, conveying a FILM, no text or title.\nrow 3, column 2: A compact group of sports equipment: football, tennis racket and running shoes, conveying SPORT, no labels.\nrow 3, column 3: A person taking a relaxed WALK along a short leafy path in ordinary shoes, no jogging or hiking gear.\nAll scenes must remain visually different and compact: reading vs looking vs listening, live concert vs cinema, party vs birthday. No actual words or symbols on screens/books/calendar.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "leisure",
+      "src": "/word-illustrations/leisure-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-ee5e85e2-69e4-4b24-9f17-08cf1cd9778c.png",
+      "sourceSha256": "8b78352ff69e1f565c3afd2800a0203caee6ef18c86878fe1fb60b2dc49e3589",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: A person happily choosing between hobby objects, sketchbook, guitar and book, conveying HOBBIES, no text.\nrow 1, column 2: A person SHOPPING, carrying two shopping bags and selecting a plain item at a shop counter, no printed brands.\nrow 1, column 3: A small live CONCERT: singer and guitarist on low stage with a few audience silhouettes, no logos or letters.\nrow 2, column 1: A desktop CALENDAR with neat blank grid of days, no numerals, weekday letters or glyphs.\nrow 2, column 2: A small public EVENT with festival tent, notice board with only blank colored rectangles and several visitors, no text.\nrow 2, column 3: A concert HALL interior: rows of seats and a stage, no people or text.\nrow 3, column 1: Two friends doing something TOGETHER, happily walking side by side with linked relaxed gestures, neither alone.\nrow 3, column 2: A person LISTENING to sound through headphones, eyes attentive, hand near ear, no visible written words.\nrow 3, column 3: A person LOOKING carefully at a small display in front of them, eyes directed toward it; not reading a book or listening with headphones.\nAll scenes must remain visually different and compact: reading vs looking vs listening, live concert vs cinema, party vs birthday. No actual words or symbols on screens/books/calendar.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "transit",
+      "src": "/word-illustrations/transit-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-4f82b13c-9230-4736-8731-40acbbdb10ce.png",
+      "sourceSha256": "f35ad687bef5a66967b122da0a9d6c20b38e1aa7abbd5c70a354cca933dd507f",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: A small Japanese railway STATION building with track and platform entrance, no signs, letters or logos.\nrow 1, column 2: A public transport BOARDING AREA / platform with bus shelter, curb and a few waiting passengers, no timetable lettering.\nrow 1, column 3: One recognizable Japanese TAXI with plain roof light, no writing, logos or number plate.\nrow 2, column 1: A HOTEL building with entrance, luggage trolley and a traveler with suitcase, no signage.\nrow 2, column 2: A modern AIRPORT terminal with control tower and distant aircraft on runway, no text.\nrow 2, column 3: One city BUS viewed three-quarter, no lettering, route numbers or logos.\nrow 3, column 1: One Japanese commuter TRAIN above ground on visible rails, no letters or route numbers.\nrow 3, column 2: A person BOARDING a bus, facing inward and stepping UP through its open door, outside behind them.\nrow 3, column 3: A person GETTING OFF a bus, facing outward and stepping DOWN onto pavement, bus behind them.\nAccuracy matters: boarding steps inward/up versus alighting outward/down; underground subway versus above-ground commuter train; large blue cup must stay LARGE. No logos, typography, numerals or pseudo-letter signs.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "city",
+      "src": "/word-illustrations/city-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-c0840766-6034-4df3-bc5b-74d180740b19.png",
+      "sourceSha256": "24efa0d48414eccdb1edea4429961a4de79af03f02cbdb0f23e2ac52311cf352",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: A SUBWAY train inside an underground tunnel with platform and arched ceiling, clearly underground, no signs or numbers.\nrow 1, column 2: A compact TOWN streetscape with several modest buildings and crossroad, no labels.\nrow 1, column 3: A SHINTO SHRINE with a clear red torii gate and shrine roof, no Buddha statue or Buddhist pagoda.\nrow 2, column 1: An OLD weathered wooden house, worn timber, faded plaster and mossy roof, no text.\nrow 2, column 2: Two cups: LARGE blue cup is primary and brightly colored, a much smaller neutral beige cup provides size comparison; do not make blue cup small.\nrow 2, column 3: A BANK building with sober columns and discreet coin/safe motif, no words, bank logo or currency lettering.\nrow 3, column 1: A cozy CAFÉ storefront with a tiny coffee cup sign pictogram and outdoor café table, no written sign.\nrow 3, column 2: An open personal PLANNER book with neatly organized blank calendar blocks, several colored planned appointments and a pen, no readable words or numerals.\nrow 3, column 3: One perforated event TICKET stub with a tiny stage pictogram and blank fields, no letters, numerals or logo.\nAccuracy matters: boarding steps inward/up versus alighting outward/down; underground subway versus above-ground commuter train; large blue cup must stay LARGE. No logos, typography, numerals or pseudo-letter signs.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "orientation",
+      "src": "/word-illustrations/orientation-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-659a32df-a936-4b86-b23c-7e4dcbed6ae2.png",
+      "sourceSha256": "b95c1d0e4195001f8a7cc484d59682db50e95b7a252824b4613b91a218566f63",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: A red ball IN FRONT OF a wooden box, ball visibly occludes bottom center of the box, both rest on same plane.\nrow 1, column 2: A small path makes a clear RIGHT turn from viewer's forward direction, a single broad painted arrow points RIGHT, no labels.\nrow 1, column 3: A small path makes a clear LEFT turn from viewer's forward direction, a single broad painted arrow points LEFT, no labels.\nrow 2, column 1: A small path runs STRAIGHT away from viewer with one broad painted arrow pointing directly FORWARD, no turn or text.\nrow 2, column 2: One attractive simple everyday leather BAG with handles, no logo.\nrow 2, column 3: One neatly folded cloth HANDKERCHIEF with a tiny floral corner, no tissue box.\nrow 3, column 1: A partially unwrapped bar of dark CHOCOLATE with visible squares and plain wrapping, no lettering.\nrow 3, column 2: An adult GIVING a wrapped gift to a child: adult's hands extending outward with the gift, giver visually primary, child reaching to receive.\nrow 3, column 3: A child RECEIVING a wrapped gift from an adult: child's hands holding the newly received box close to chest, receiver visually primary, adult's hands withdrawing.\nDirectional and transactional accuracy is essential: arrows must point right/left/straight as specified; giving and receiving have different primary people; expensive blue cup has MANY coins, not few. No text, numerals or clothing labels.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "shopping",
+      "src": "/word-illustrations/shopping-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-5a76046f-823d-4108-aacc-efa97e004a45.png",
+      "sourceSha256": "180ec52e5ce3a94b6abe8f5b57812b31cc851fa36a8b86f7e686a4e3d84f125c",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: A person clearly WANTING an attractive bag in a display, leaning toward it with delighted desire, hand reaching gently; no thought text.\nrow 1, column 2: A shopper BUYING an item at counter, one hand passes coins to cashier, other receives a wrapped purchase.\nrow 1, column 3: One plain cream T-SHIRT spread flat, short sleeves obvious, no logo or print.\nrow 2, column 1: Several fabric COLOR swatches, clearly distinct red, blue, yellow, sage and cream, no text.\nrow 2, column 2: The same T-shirt shown in three visibly different SIZES from small to large, plain cloth, no S/M/L or numerals.\nrow 2, column 3: A blue cup for sale beside a LARGE PILE of coins, contrasted with a secondary beige cup beside only a few coins, conveying EXPENSIVE, no price numerals.\nrow 3, column 1: A neat pair of everyday SHOES, whole shoes, no logo.\nrow 3, column 2: A shopper TRYING ON a plain jacket in front of a full-length fitting-room mirror, clearly checking the garment, no letters.\nrow 3, column 3: A person admiring how a well-fitting shirt SUITS them in a mirror, pleased expression, garment fits naturally, no thumbs-up symbols or words.\nDirectional and transactional accuracy is essential: arrows must point right/left/straight as specified; giving and receiving have different primary people; expensive blue cup has MANY coins, not few. No text, numerals or clothing labels.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "holiday",
+      "src": "/word-illustrations/holiday-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-ad2d14c0-bac0-4bcf-b49f-c5597d17e478.png",
+      "sourceSha256": "f7f0f60691ff69757b8ee074eedbbfab18ba6d4422996674102d4313e0565b9f",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: A large multistory DEPARTMENT STORE with display windows, escalator entrance and shoppers with bags, no written signage.\nrow 1, column 2: A beautiful colorful FIREWORK burst against a small dark night-sky vignette, no letters.\nrow 1, column 3: Friends visibly having FUN playing a light outdoor ball game, joyful laughing faces, no text.\nrow 2, column 1: A person CLEANING the floor with broom and dustpan, practical visible action.\nrow 2, column 2: A BUSTLING lively small shopping street full of several people walking and chatting, warm lights, no signs or letters.\nrow 2, column 3: Two friends singing KARAOKE with microphones beside a small monitor displaying ONLY abstract colored sound bars, no words or lyrics.\nrow 3, column 1: A visibly TIRED person seated with drooping shoulders, head resting on hand, work bag beside them, no symbols.\nrow 3, column 2: A person finding a book or small museum object INTERESTING, leaning in with engaged eyes and delighted curiosity, no text.\nrow 3, column 3: A person carrying several heavy boxes with visible effort, sweaty and burdened but safe, conveying HARD/TIRING work, no injury.\nCulture accuracy matters: Buddhist temple includes Buddhist architecture/Buddha, not Shinto torii; Kyoto's Kinkaku-ji golden pavilion is recognizable; kabuki is an actor with kumadori makeup, not a geisha. No text, ticket labels, logos, license numbers or pseudo-glyphs.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "travel",
+      "src": "/word-illustrations/travel-v1.webp",
+      "tool": "image_gen.imagegen",
+      "mode": "built-in",
+      "intent": "generate",
+      "source": "imagegen-artifacts/01a163b5-96d7-7ed3-bd1d-22f0f908f0e9/exec-20ce500d-a527-4d35-a0f5-bd0de78ce505.png",
+      "sourceSha256": "fc476bd829774ba6cdaf1b84b6b98d3412daa82a6c1f3fb02984ebe019895b64",
+      "styleReferences": [
+        "public/ui/topics-atlas-v1.webp"
+      ],
+      "transparentBackground": true,
+      "prompt": "Use case: scientific-educational, illustration-story. One production word-memory sprite atlas for the warm Japanese-learning indie game.\nReference image: style, palette and soft hand-painted materials ONLY, not an edit target. Match the gentle family sprites / warm cream, ochre, sage and terracotta gouache with fine warm ink outlines.\nLayout is CRITICAL: one SQUARE transparent image, exactly THREE equal columns and THREE equal rows, nine independent centered mini-illustrations. Cell centers at x/y one-sixth, one-half, five-sixths of the full canvas. Each subject remains completely inside the central 76% of its own square cell, with generous transparent gaps. No borders/gridlines, labels, cell numbers, paper backgrounds, checkerboards or unrequested objects. Rendered text, numbers, letters, logos and watermarks are forbidden. Actual transparent alpha background.\nEach illustration must read clearly at 96–120px, with a compact silhouette and only the detail needed for the concept. Separate subjects do not connect or overlap across cells.\nExact cell order, reading left to right across rows:\nrow 1, column 1: A traveler with rolling suitcase, passport with plain blank cover, and compact landscape vignette, representing a TRIP.\nrow 1, column 2: A Japanese BUDDHIST TEMPLE with tiled gate, subtle Buddha statue and small pagoda, clearly no Shinto torii.\nrow 1, column 3: A recognizably traditional KABUKI actor in ornate kimono and distinctive red-white kumadori makeup, a tiny stage curtain, no letters.\nrow 2, column 1: The golden Kinkaku-ji pavilion beside its reflecting pond with a maple branch, representing KYOTO, no labels.\nrow 2, column 2: A sleek white-and-blue Japanese SHINKANSEN bullet train with long pointed nose on rails, no logos or numbers.\nrow 2, column 3: One civilian passenger AIRPLANE seen three-quarter in flight, no airline logos or letters.\nrow 3, column 1: A traveler STAYING OVERNIGHT in a modest hotel room, suitcase beside bed, moon at the window, person resting.\nrow 3, column 2: A person GOING somewhere along a path toward a distant destination, carrying a light bag, clear forward step.\nrow 3, column 3: A small language CLASS in progress, teacher at blank board with three seated students and books, no writing or letters.\nCulture accuracy matters: Buddhist temple includes Buddhist architecture/Buddha, not Shinto torii; Kyoto's Kinkaku-ji golden pavilion is recognizable; kabuki is an actor with kumadori makeup, not a geisha. No text, ticket labels, logos, license numbers or pseudo-glyphs.",
+      "conversion": "Ordinary proportional downsampling to 960x960 and WebP quality82/84 method6; generated alpha retained. No creative pixel edits. Authored viewport bounds do not alter artwork.",
+      "visualReview": "All nine cells checked against their exact word meanings, layout/crops and no rendered labels."
+    },
+    {
+      "id": "father",
+      "src": "/word-illustrations/father-v1.webp",
+      "mode": "reuse",
+      "source": "approved prototype family sample",
+      "conversion": "Ordinary proportional downsampling to 320x320 and WebP quality84 method6; original generated alpha retained.",
+      "visualReview": "Relationship/subject checked; visible alpha bounds authored to remove excess canvas.",
+      "tool": "image_gen.imagegen",
+      "originalToolMode": "built-in",
+      "prompt": "Use case: scientific-educational, illustration-story.\nAsset type: one compact transparent word-memory illustration for a Japanese-learning indie game.\nPrimary request: teach the concept FATHER through a warm human parent-child interaction. No words or labels.\nInput images: image 1 is STYLE AND PALETTE REFERENCE ONLY — warm hand-painted Japanese room. Create an entirely new foreground illustration, do not reproduce that room.\nSubject: a friendly Japanese father around 35, short dark brown hair, rolled-up cream shirt and muted sage vest, kneeling at a child's level, smiling warmly and gently resting his hand on the child's shoulder. One small child in ochre clothes looks up at him. Father occupies the clear visual emphasis; he must look like an adult father, not a grandfather or businessman. Human people, no cats.\nStyle: polished hand-painted storybook game sprite, subtle ink edges, soft gouache brushwork, tactile but clean, warm cream/ochre/sage colors, gentle expressive faces. Cohesive with the reference room.\nComposition: compact near-square isolated group, large simple silhouette readable as a 64–120 px thumbnail, father and child fully visible, no cutoff body parts. Centered with narrow clear breathing room.\nBackground: genuinely transparent alpha everywhere outside the people. No paper rectangle, no card, no frame, no floor, no environment, no extra props, no checkerboard or painted fake transparency.\nConstraints: no typography, letters, numbers, captions, logos, watermarks or decorative labels. Do not render a room. One finished asset, no contact sheet.",
+      "styleReferences": [
+        {
+          "path": "public/scenes/room-v1.webp",
+          "role": "style and palette only"
+        }
+      ]
+    },
+    {
+      "id": "mother",
+      "src": "/word-illustrations/mother-v1.webp",
+      "mode": "reuse",
+      "source": "approved prototype family sample",
+      "conversion": "Ordinary proportional downsampling to 320x320 and WebP quality84 method6; original generated alpha retained.",
+      "visualReview": "Relationship/subject checked; visible alpha bounds authored to remove excess canvas.",
+      "tool": "image_gen.imagegen",
+      "originalToolMode": "built-in",
+      "prompt": "Use case: scientific-educational, illustration-story.\nAsset type: one compact transparent word-memory illustration for a Japanese-learning indie game.\nPrimary request: teach MOTHER through a warm human mother-child interaction. No words or labels.\nInput image is STYLE AND FAMILY REFERENCE ONLY: an existing newly illustrated father and child in sage, cream and ochre hand-painted storybook style. Create a distinct illustration of the mother, without the father. Match the style and child identity.\nSubject: a friendly Japanese mother around 35, warm dark brown shoulder-length hair loosely tied back, sage-green simple cardigan over a cream blouse and muted terracotta long skirt. She kneels beside the same young child in ochre clothes, gently helping straighten the child's collar and exchanging warm smiles. Mother is clearly primary and looks like an adult parent; no old woman or teenager. Humans, no cats.\nStyle: same polished hand-painted Japanese indie-game storybook sprite, subtle ink outlines, soft gouache brushwork, warm cream/ochre/sage palette, gentle expressive faces.\nComposition: compact near-square isolated group with clear readable silhouette at 64–120 px; fully show mother and child with all hair, fingers and feet inside canvas and small breathing margin. Not a rectangular portrait.\nBackground: genuinely transparent alpha everywhere outside the people. No paper rectangle, card, frame, floor, environment or additional props. No checkerboard or painted fake transparency.\nConstraints: no typography, letters, numbers, labels, logos or watermarks. One finished asset, no contact sheet.",
+      "styleReferences": [
+        {
+          "path": "public/prototype/compact-ux/illustrations/father.png",
+          "role": "style and family character reference only"
+        }
+      ]
+    },
+    {
+      "id": "family",
+      "src": "/word-illustrations/family-v1.webp",
+      "mode": "reuse",
+      "source": "approved prototype family sample",
+      "conversion": "Ordinary proportional downsampling to 320x320 and WebP quality84 method6; original generated alpha retained.",
+      "visualReview": "Relationship/subject checked; visible alpha bounds authored to remove excess canvas.",
+      "tool": "image_gen.imagegen",
+      "originalToolMode": "built-in",
+      "prompt": "Use case: scientific-educational, illustration-story.\nAsset type: one compact transparent word-memory illustration for a Japanese-learning indie game.\nPrimary request: teach FAMILY as a warm compact group of four human family members, no labels or words.\nInput images: image 1 and image 2 are STYLE AND CHARACTER REFERENCES ONLY, not edit targets. Match their father, mother and young child identities, clothing colors and warm gouache/ink rendering. Make a new composition, not a collage.\nSubject: the same friendly adult father with short tousled dark brown hair, cream shirt and sage vest; same adult mother with loosely tied dark brown hair, sage cardigan and terracotta skirt; their young boy in ochre clothes and a second slightly younger daughter in a muted cream and rose dress. The two adults kneel close behind the two smiling children, arms gently around shoulders so all four visibly belong to one family.\nComposition: compact near-square family portrait group with all four people fully visible, simple readable silhouette at 64–120 px. Two clearly adult parents and two clearly young children, everyone close, no isolated detached persons, no extra people, no cats. Leave a small transparent margin around every hair and foot.\nStyle: same polished hand-painted Japanese indie game storybook sprite, delicate warm ink edges, soft gouache brushwork, cream/ochre/sage/terracotta palette, gentle expressive faces.\nBackground: genuinely transparent alpha everywhere outside the people. No room, floor, props, card, border, paper rectangle, decorative frame, checkerboard or fake transparency.\nConstraints: no typography, letters, numbers, captions, logos or watermarks. One finished asset, no contact sheet.",
+      "styleReferences": [
+        {
+          "path": "public/prototype/compact-ux/illustrations/father.png",
+          "role": "style and father/child character reference only"
+        },
+        {
+          "path": "public/prototype/compact-ux/illustrations/mother.png",
+          "role": "style and mother/child character reference only"
+        }
+      ]
+    },
+    {
+      "id": "cat",
+      "src": "/mascot/neutral.png",
+      "mode": "reuse",
+      "source": "public/mascot/neutral.png",
+      "conversion": "Existing original unchanged.",
+      "visualReview": "Relationship/subject checked; visible alpha bounds authored to remove excess canvas."
+    }
+  ]
+}

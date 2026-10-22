@@ -1,0 +1,4828 @@
+{
+  "version": 1,
+  "scope": "unique core guided-learning words from all 18 lessons",
+  "coreUnique": 279,
+  "illustratedCore": 190,
+  "notIllustratedCore": 89,
+  "assets": [
+    {
+      "id": "greetings",
+      "src": "/word-illustrations/greetings-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "おはようございます"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.1891ac7acda83001"
+          ],
+          "meaningsRu": [
+            "доброе утро (вежливо)"
+          ],
+          "bounds": [
+            8,
+            15,
+            314,
+            296
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "こんにちは"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.d72a7d1cea4c824c"
+          ],
+          "meaningsRu": [
+            "добрый день"
+          ],
+          "bounds": [
+            327,
+            27,
+            303,
+            279
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "こんばんは"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.63ca7f78f8de3602"
+          ],
+          "meaningsRu": [
+            "добрый вечер"
+          ],
+          "bounds": [
+            642,
+            22,
+            307,
+            282
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "さようなら"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.e340b3d7c3ca8be4"
+          ],
+          "meaningsRu": [
+            "до свидания"
+          ],
+          "bounds": [
+            7,
+            329,
+            315,
+            287
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "ありがとうございます",
+            "どうもありがとうございます"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.9f6170caede38d09",
+            "marugoto.starter-a1.word.fb7eec9a7d80c0f0"
+          ],
+          "meaningsRu": [
+            "большое спасибо (вежливо)",
+            "большое вам спасибо"
+          ],
+          "bounds": [
+            322,
+            328,
+            317,
+            289
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "すみません"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.dcf9a051f08ee19a"
+          ],
+          "meaningsRu": [
+            "извините; простите"
+          ],
+          "bounds": [
+            639,
+            337,
+            310,
+            279
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "おさきにしつれいします"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.4e6fdd1397c6f470"
+          ],
+          "meaningsRu": [
+            "извините, я ухожу раньше вас"
+          ],
+          "bounds": [
+            13,
+            641,
+            303,
+            285
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "おつかれさまでした"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.98a4a29c72e134bc"
+          ],
+          "meaningsRu": [
+            "спасибо за работу; вы хорошо потрудились"
+          ],
+          "bounds": [
+            325,
+            637,
+            311,
+            290
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "じゃあ、また"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.df68477eb87855a3"
+          ],
+          "meaningsRu": [
+            "ну, до встречи"
+          ],
+          "bounds": [
+            640,
+            634,
+            312,
+            295
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 331276,
+      "review": "visually-checked"
+    },
+    {
+      "id": "classroom",
+      "src": "/word-illustrations/classroom-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "わかりました"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.4d24fbc80ace520a"
+          ],
+          "meaningsRu": [
+            "понял(а)"
+          ],
+          "bounds": [
+            11,
+            69,
+            313,
+            270
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "わかりません"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.5f0067ce30621f2b"
+          ],
+          "meaningsRu": [
+            "не понимаю"
+          ],
+          "bounds": [
+            329,
+            67,
+            308,
+            264
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "もういちどおねがいします。"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.learning.l02.repeat-request"
+          ],
+          "meaningsRu": [
+            "Повторите, пожалуйста."
+          ],
+          "bounds": [
+            644,
+            66,
+            309,
+            257
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "もうすこしゆっくりいってください。"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.learning.l02.slow-request"
+          ],
+          "meaningsRu": [
+            "Скажите немного медленнее, пожалуйста."
+          ],
+          "bounds": [
+            19,
+            355,
+            306,
+            263
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "きいてください。"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.learning.l02.listen-request"
+          ],
+          "meaningsRu": [
+            "Послушайте, пожалуйста."
+          ],
+          "bounds": [
+            329,
+            350,
+            314,
+            266
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "せんせい"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.3289b4c0bfa92493"
+          ],
+          "meaningsRu": [
+            "учитель"
+          ],
+          "bounds": [
+            643,
+            363,
+            308,
+            253
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "ページ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.222e46673cd124b4"
+          ],
+          "meaningsRu": [
+            "страница"
+          ],
+          "bounds": [
+            18,
+            652,
+            307,
+            250
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "くに"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.4dce91f5ba175348"
+          ],
+          "meaningsRu": [
+            "страна"
+          ],
+          "bounds": [
+            335,
+            632,
+            308,
+            267
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "ロシア"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.0d40d9e0706cfb38"
+          ],
+          "meaningsRu": [
+            "Россия"
+          ],
+          "bounds": [
+            651,
+            632,
+            299,
+            268
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 281726,
+      "review": "visually-checked"
+    },
+    {
+      "id": "people",
+      "src": "/word-illustrations/people-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "日本"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.cbfa9f0083aa4a40"
+          ],
+          "meaningsRu": [
+            "Япония"
+          ],
+          "bounds": [
+            20,
+            71,
+            296,
+            241
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "わたし"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.58e595c1fa37474d"
+          ],
+          "meaningsRu": [
+            "я"
+          ],
+          "bounds": [
+            335,
+            31,
+            276,
+            284
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "がくせい"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.559067766abda333"
+          ],
+          "meaningsRu": [
+            "студент"
+          ],
+          "bounds": [
+            642,
+            31,
+            312,
+            286
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "エンジニア"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.b26ab0f21a82d32b"
+          ],
+          "meaningsRu": [
+            "инженер"
+          ],
+          "bounds": [
+            6,
+            325,
+            312,
+            299
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "かいしゃいん",
+            "しごと",
+            "おしごと"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.a149298ff8f2e16e",
+            "marugoto.starter-a1.word.e31c09b8c9a8be31",
+            "marugoto.starter-a1.word.71622e15e5c20c28"
+          ],
+          "meaningsRu": [
+            "работник фирмы",
+            "работа",
+            "работа"
+          ],
+          "bounds": [
+            328,
+            331,
+            307,
+            292
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "めいし"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.f30b2e71086b8f6b"
+          ],
+          "meaningsRu": [
+            "визитка"
+          ],
+          "bounds": [
+            642,
+            338,
+            312,
+            286
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "あに",
+            "おにいさん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.5898af218a8efa80",
+            "marugoto.starter-a1.word.2e1687c1c11fe383"
+          ],
+          "meaningsRu": [
+            "(мой) старший брат",
+            "(ваш, чей-то) старший брат"
+          ],
+          "bounds": [
+            18,
+            625,
+            294,
+            301
+          ],
+          "aliasNotes": [
+            {
+              "wordId": "marugoto.starter-a1.word.2e1687c1c11fe383",
+              "reason": "Same family relationship; politeness/ownership differs in text, not the depicted person. No younger/older role substitution."
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "あね",
+            "おねえさん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.f11bf70db3c7b278",
+            "marugoto.starter-a1.word.3133e45120ff9f46"
+          ],
+          "meaningsRu": [
+            "(моя) старшая сестра",
+            "(ваша, чья-то) старшая сестра"
+          ],
+          "bounds": [
+            325,
+            626,
+            299,
+            294
+          ],
+          "aliasNotes": [
+            {
+              "wordId": "marugoto.starter-a1.word.3133e45120ff9f46",
+              "reason": "Same family relationship; politeness/ownership differs in text, not the depicted person. No younger/older role substitution."
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "こども",
+            "こ",
+            "おこさん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.9af71ce04d34fc49",
+            "marugoto.starter-a1.word.a3759aa9767ff749",
+            "marugoto.starter-a1.word.8d94b37b564c52db"
+          ],
+          "meaningsRu": [
+            "ребенок",
+            "ребенок",
+            "(ваш, чей-то) ребенок"
+          ],
+          "bounds": [
+            698,
+            624,
+            208,
+            310
+          ],
+          "aliasNotes": [
+            {
+              "wordId": "marugoto.starter-a1.word.a3759aa9767ff749",
+              "reason": "Same family relationship; politeness/ownership differs in text, not the depicted person. No younger/older role substitution."
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8d94b37b564c52db",
+              "reason": "Same family relationship; politeness/ownership differs in text, not the depicted person. No younger/older role substitution."
+            }
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 277016,
+      "review": "visually-checked"
+    },
+    {
+      "id": "family-counts",
+      "src": "/word-illustrations/family-counts-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "ひとり"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.085bb1515278ae01"
+          ],
+          "meaningsRu": [
+            "один человек"
+          ],
+          "bounds": [
+            87,
+            5,
+            151,
+            324
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "ふたり"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.b46d8ae7ed1a2508"
+          ],
+          "meaningsRu": [
+            "двое (два человека)"
+          ],
+          "bounds": [
+            381,
+            13,
+            217,
+            320
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "さんにん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.3c2a23fa6dbf95e5"
+          ],
+          "meaningsRu": [
+            "три человека"
+          ],
+          "bounds": [
+            666,
+            19,
+            258,
+            306
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "よにん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.147ac3dedeb8f421"
+          ],
+          "meaningsRu": [
+            "четыре человека"
+          ],
+          "bounds": [
+            20,
+            344,
+            309,
+            291
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "つま",
+            "おくさん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.1c638292e212a5ce",
+            "marugoto.starter-a1.word.e466ab0e50508b66"
+          ],
+          "meaningsRu": [
+            "(моя) жена",
+            "(ваша, чья-то) жена"
+          ],
+          "bounds": [
+            353,
+            333,
+            273,
+            310
+          ],
+          "aliasNotes": [
+            {
+              "wordId": "marugoto.starter-a1.word.e466ab0e50508b66",
+              "reason": "Same family relationship; politeness/ownership differs in text, not the depicted person. No younger/older role substitution."
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "おっと",
+            "ごしゅじん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.8b3d3b511e59fff3",
+            "marugoto.starter-a1.word.7c84bcd7743a6785"
+          ],
+          "meaningsRu": [
+            "(мой) муж",
+            "(ваш, чей-то) муж"
+          ],
+          "bounds": [
+            655,
+            333,
+            290,
+            312
+          ],
+          "aliasNotes": [
+            {
+              "wordId": "marugoto.starter-a1.word.7c84bcd7743a6785",
+              "reason": "Same family relationship; politeness/ownership differs in text, not the depicted person. No younger/older role substitution."
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "すみます"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.e7e3a07da5f84228"
+          ],
+          "meaningsRu": [
+            "жить, проживать"
+          ],
+          "bounds": [
+            4,
+            648,
+            329,
+            300
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "東京"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.e9eb89c01e577f0b"
+          ],
+          "meaningsRu": [
+            "Токио"
+          ],
+          "bounds": [
+            337,
+            645,
+            295,
+            307
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "こうえん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.cc70e5aef62ca0fe"
+          ],
+          "meaningsRu": [
+            "парк"
+          ],
+          "bounds": [
+            639,
+            645,
+            317,
+            307
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 318070,
+      "review": "visually-checked"
+    },
+    {
+      "id": "pantry",
+      "src": "/word-illustrations/pantry-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "魚"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.d3bb981e73f63ffd"
+          ],
+          "meaningsRu": [
+            "рыба"
+          ],
+          "bounds": [
+            26,
+            93,
+            311,
+            214
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "肉"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.b601ce9a7a769129"
+          ],
+          "meaningsRu": [
+            "мясо"
+          ],
+          "bounds": [
+            341,
+            104,
+            289,
+            202
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "やさい"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.424fbc85b0e0108c"
+          ],
+          "meaningsRu": [
+            "овощи"
+          ],
+          "bounds": [
+            645,
+            51,
+            290,
+            264
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "くだもの"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.7082518c85391bb7"
+          ],
+          "meaningsRu": [
+            "фрукты"
+          ],
+          "bounds": [
+            33,
+            360,
+            288,
+            239
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "おちゃ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.4e928f19a0c80be0"
+          ],
+          "meaningsRu": [
+            "зеленый чай"
+          ],
+          "bounds": [
+            340,
+            369,
+            282,
+            231
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "コーヒー"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.07c1f92fbb843473"
+          ],
+          "meaningsRu": [
+            "кофе"
+          ],
+          "bounds": [
+            637,
+            384,
+            291,
+            220
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "みず"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.c2a7107fc9dd36ba"
+          ],
+          "meaningsRu": [
+            "вода (холодная)"
+          ],
+          "bounds": [
+            75,
+            652,
+            182,
+            237
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "ジュース"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.70da620652ef233e"
+          ],
+          "meaningsRu": [
+            "сок"
+          ],
+          "bounds": [
+            330,
+            640,
+            251,
+            249
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "パン"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.3a212fcb6cc5d10d"
+          ],
+          "meaningsRu": [
+            "хлеб"
+          ],
+          "bounds": [
+            644,
+            654,
+            294,
+            238
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 231164,
+      "review": "visually-checked"
+    },
+    {
+      "id": "meals",
+      "src": "/word-illustrations/meals-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "ごはん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.c1c197116f1aee6c"
+          ],
+          "meaningsRu": [
+            "вареный рис"
+          ],
+          "bounds": [
+            16,
+            27,
+            296,
+            254
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "あさごはん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.d62e1fb87f2ea95f"
+          ],
+          "meaningsRu": [
+            "завтрак"
+          ],
+          "bounds": [
+            321,
+            28,
+            325,
+            282
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "ひるごはん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.b18d9b8dfc53e29a"
+          ],
+          "meaningsRu": [
+            "обед"
+          ],
+          "bounds": [
+            661,
+            39,
+            282,
+            279
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "ばんごはん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.c43cdc0715cc265c"
+          ],
+          "meaningsRu": [
+            "ужин"
+          ],
+          "bounds": [
+            12,
+            343,
+            308,
+            280
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "飲みます"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.67154e2e75f5ba6a"
+          ],
+          "meaningsRu": [
+            "пить"
+          ],
+          "bounds": [
+            335,
+            341,
+            309,
+            280
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "食べます"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.3c0f92c17efac2d9"
+          ],
+          "meaningsRu": [
+            "есть, кушать"
+          ],
+          "bounds": [
+            660,
+            341,
+            291,
+            280
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "すき"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.9de12b00cf2e4035"
+          ],
+          "meaningsRu": [
+            "любимый"
+          ],
+          "bounds": [
+            18,
+            644,
+            301,
+            279
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "おいしい"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.b80dea52ca8142e5"
+          ],
+          "meaningsRu": [
+            "вкусный"
+          ],
+          "bounds": [
+            332,
+            631,
+            303,
+            294
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "りょうり"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.c4497f9f1747667f"
+          ],
+          "meaningsRu": [
+            "еда, блюда"
+          ],
+          "bounds": [
+            651,
+            662,
+            294,
+            266
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 311560,
+      "review": "visually-checked"
+    },
+    {
+      "id": "restaurant",
+      "src": "/word-illustrations/restaurant-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "すし"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.5343e984cfbec64d"
+          ],
+          "meaningsRu": [
+            "суси"
+          ],
+          "bounds": [
+            10,
+            54,
+            327,
+            265
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "カレー"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.8b8b91054442dafc"
+          ],
+          "meaningsRu": [
+            "карри"
+          ],
+          "bounds": [
+            337,
+            43,
+            302,
+            256
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "うどん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.438d22493425aa34"
+          ],
+          "meaningsRu": [
+            "лапша удон (из пшеничной муки)"
+          ],
+          "bounds": [
+            664,
+            59,
+            284,
+            256
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "ラーメン"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.c8739ae88ae1bc97"
+          ],
+          "meaningsRu": [
+            "лапша рамэн (из пшеничной муки)"
+          ],
+          "bounds": [
+            27,
+            347,
+            293,
+            271
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "レストラン"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.01d367a193e3f9ce"
+          ],
+          "meaningsRu": [
+            "ресторан"
+          ],
+          "bounds": [
+            337,
+            336,
+            290,
+            287
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "みせ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.56fbeb32dadec92f"
+          ],
+          "meaningsRu": [
+            "ресторан, лавка, магазин"
+          ],
+          "bounds": [
+            643,
+            329,
+            311,
+            295
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "メニュー"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.fae33f214d42d61d"
+          ],
+          "meaningsRu": [
+            "меню"
+          ],
+          "bounds": [
+            7,
+            633,
+            337,
+            284
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "ハンバーガー"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.4aa328773b5e52a1"
+          ],
+          "meaningsRu": [
+            "гамбургер"
+          ],
+          "bounds": [
+            344,
+            675,
+            295,
+            233
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "チーズバーガー"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.6c20aeea1ceca7cf"
+          ],
+          "meaningsRu": [
+            "чизбургер"
+          ],
+          "bounds": [
+            648,
+            665,
+            305,
+            252
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 278594,
+      "review": "visually-checked"
+    },
+    {
+      "id": "service",
+      "src": "/word-illustrations/service-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "フライドポテト"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.1f426eb67e8215d7"
+          ],
+          "meaningsRu": [
+            "картофель фри"
+          ],
+          "bounds": [
+            27,
+            49,
+            292,
+            250
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "コーラ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.8b22ea0abfa76d86"
+          ],
+          "meaningsRu": [
+            "кола"
+          ],
+          "bounds": [
+            367,
+            24,
+            232,
+            271
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "やすい"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.1d5588c067e5d530"
+          ],
+          "meaningsRu": [
+            "дешевый"
+          ],
+          "bounds": [
+            641,
+            81,
+            305,
+            215
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "はやい"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.a59e656f959afe1c"
+          ],
+          "meaningsRu": [
+            "быстрый"
+          ],
+          "bounds": [
+            18,
+            330,
+            303,
+            270
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "一つ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.dab1b377ee04ec7e"
+          ],
+          "meaningsRu": [
+            "один"
+          ],
+          "bounds": [
+            349,
+            366,
+            278,
+            216
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "二つ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.d5a93be57f6f1496"
+          ],
+          "meaningsRu": [
+            "два"
+          ],
+          "bounds": [
+            651,
+            379,
+            297,
+            208
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "三つ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.9d5fcd4b125306bf"
+          ],
+          "meaningsRu": [
+            "три"
+          ],
+          "bounds": [
+            16,
+            667,
+            303,
+            232
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "どうぞ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.121e758731b7e7e8"
+          ],
+          "meaningsRu": [
+            "пожалуйста; прошу (предлагая)"
+          ],
+          "bounds": [
+            335,
+            618,
+            287,
+            305
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "けっこうです"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.6d481d8b8e83372a"
+          ],
+          "meaningsRu": [
+            "спасибо, не нужно"
+          ],
+          "bounds": [
+            643,
+            623,
+            307,
+            303
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 264772,
+      "review": "visually-checked"
+    },
+    {
+      "id": "home",
+      "src": "/word-illustrations/home-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "いえ",
+            "うち"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.312f86dfe9da479c",
+            "marugoto.starter-a1.word.c30dea93f585802c"
+          ],
+          "meaningsRu": [
+            "дом",
+            "дом"
+          ],
+          "bounds": [
+            21,
+            54,
+            301,
+            277
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "へや"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.b569ab0369d576c6"
+          ],
+          "meaningsRu": [
+            "комната"
+          ],
+          "bounds": [
+            343,
+            59,
+            287,
+            281
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "小さい"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.78a467265c9a061b"
+          ],
+          "meaningsRu": [
+            "маленький"
+          ],
+          "bounds": [
+            668,
+            138,
+            273,
+            186
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "ひろい"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.4523d64bdb8f0705"
+          ],
+          "meaningsRu": [
+            "широкий, просторный"
+          ],
+          "bounds": [
+            15,
+            394,
+            314,
+            250
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "アパート"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.86806880f2f20a03"
+          ],
+          "meaningsRu": [
+            "квартира (как правило, съемная), многоквартирный дом"
+          ],
+          "bounds": [
+            329,
+            400,
+            332,
+            252
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "テレビ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.d79c8d6267fb4cc3"
+          ],
+          "meaningsRu": [
+            "телевизор"
+          ],
+          "bounds": [
+            667,
+            413,
+            280,
+            235
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "エアコン"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.b3e402ff1d083093"
+          ],
+          "meaningsRu": [
+            "кондиционер"
+          ],
+          "bounds": [
+            24,
+            705,
+            307,
+            176
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "ソファ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.0679e9bb275c5f97"
+          ],
+          "meaningsRu": [
+            "диван"
+          ],
+          "bounds": [
+            347,
+            705,
+            322,
+            214
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "いす"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.99828615afa07b85"
+          ],
+          "meaningsRu": [
+            "стул"
+          ],
+          "bounds": [
+            719,
+            670,
+            176,
+            256
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 217548,
+      "review": "visually-checked"
+    },
+    {
+      "id": "rooms",
+      "src": "/word-illustrations/rooms-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "にわ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.d11df0d6e4fe534e"
+          ],
+          "meaningsRu": [
+            "сад, двор"
+          ],
+          "bounds": [
+            16,
+            24,
+            298,
+            288
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "ベッド"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.e3fad7e8a518eb86"
+          ],
+          "meaningsRu": [
+            "кровать"
+          ],
+          "bounds": [
+            338,
+            82,
+            283,
+            222
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "うえ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.9d7b3a8f2cca7cad"
+          ],
+          "meaningsRu": [
+            "на, вверху"
+          ],
+          "bounds": [
+            708,
+            77,
+            205,
+            215
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "した"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.5c23767c56d85027"
+          ],
+          "meaningsRu": [
+            "под, внизу"
+          ],
+          "bounds": [
+            37,
+            402,
+            263,
+            161
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "なか"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.8278a384774abeb7"
+          ],
+          "meaningsRu": [
+            "внутри"
+          ],
+          "bounds": [
+            375,
+            363,
+            229,
+            227
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "よこ",
+            "となり"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.02140c01ffb2a44c",
+            "marugoto.starter-a1.word.441e163e64772424"
+          ],
+          "meaningsRu": [
+            "сбоку",
+            "рядом, по соседству"
+          ],
+          "bounds": [
+            666,
+            416,
+            279,
+            157
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "たな"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.d8ffafd344cd225a"
+          ],
+          "meaningsRu": [
+            "полка"
+          ],
+          "bounds": [
+            34,
+            628,
+            268,
+            285
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "ほん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.e08d579635c5469e"
+          ],
+          "meaningsRu": [
+            "книга"
+          ],
+          "bounds": [
+            350,
+            682,
+            282,
+            222
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "はこ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.e90975f1dd71bf8d"
+          ],
+          "meaningsRu": [
+            "коробка"
+          ],
+          "bounds": [
+            654,
+            661,
+            298,
+            241
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 174368,
+      "review": "visually-checked"
+    },
+    {
+      "id": "belongings",
+      "src": "/word-illustrations/belongings-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "にんぎょう"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.4c9284e901dc771e"
+          ],
+          "meaningsRu": [
+            "кукла"
+          ],
+          "bounds": [
+            51,
+            34,
+            215,
+            273
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "とけい"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.193a58a8d7eee5bf"
+          ],
+          "meaningsRu": [
+            "часы"
+          ],
+          "bounds": [
+            329,
+            50,
+            305,
+            239
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "げんかん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.88121d92f170ba02"
+          ],
+          "meaningsRu": [
+            "прохожая"
+          ],
+          "bounds": [
+            666,
+            39,
+            266,
+            261
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "だいどころ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.2ae30fe4f5fc7d13"
+          ],
+          "meaningsRu": [
+            "кухня"
+          ],
+          "bounds": [
+            27,
+            343,
+            271,
+            281
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "おふろ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.da2a4cce03d19ace"
+          ],
+          "meaningsRu": [
+            "ванная"
+          ],
+          "bounds": [
+            343,
+            344,
+            272,
+            281
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "トイレ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.f137285478586fc4"
+          ],
+          "meaningsRu": [
+            "туалет"
+          ],
+          "bounds": [
+            667,
+            344,
+            266,
+            280
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "おみやげ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.93fda2bc90cf6464"
+          ],
+          "meaningsRu": [
+            "сувенир"
+          ],
+          "bounds": [
+            21,
+            664,
+            308,
+            260
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "プレゼント"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.1cdc745f3d8d5c03"
+          ],
+          "meaningsRu": [
+            "подарок"
+          ],
+          "bounds": [
+            357,
+            672,
+            251,
+            238
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "はし"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.5b16d27aef9d945c"
+          ],
+          "meaningsRu": [
+            "палочки для еды"
+          ],
+          "bounds": [
+            643,
+            705,
+            300,
+            188
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 214958,
+      "review": "visually-checked"
+    },
+    {
+      "id": "routine",
+      "src": "/word-illustrations/routine-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "しちじ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.14f32b11b4d60e2d"
+          ],
+          "meaningsRu": [
+            "семь часов"
+          ],
+          "bounds": [
+            26,
+            49,
+            286,
+            236
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "くじ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.4eccc66e29b5c0a2"
+          ],
+          "meaningsRu": [
+            "девять часов"
+          ],
+          "bounds": [
+            338,
+            49,
+            286,
+            237
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "じゅういちじ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.9eb0ceb2fed37241"
+          ],
+          "meaningsRu": [
+            "одиннадцать часов"
+          ],
+          "bounds": [
+            650,
+            49,
+            286,
+            240
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "おきます"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.eb80a55f89ca80f0"
+          ],
+          "meaningsRu": [
+            "просыпаться"
+          ],
+          "bounds": [
+            11,
+            332,
+            307,
+            287
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "ねます"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.714c013e5d94c750"
+          ],
+          "meaningsRu": [
+            "ложиться спать, спать"
+          ],
+          "bounds": [
+            338,
+            341,
+            285,
+            277
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "あさ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.a96f4fc5ed416761"
+          ],
+          "meaningsRu": [
+            "утро"
+          ],
+          "bounds": [
+            645,
+            333,
+            300,
+            286
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "よる"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.8b9e7b30b9f17cbb"
+          ],
+          "meaningsRu": [
+            "ночь"
+          ],
+          "bounds": [
+            13,
+            642,
+            305,
+            277
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "べんきょうします"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.d5ae99ccb1d812da"
+          ],
+          "meaningsRu": [
+            "учить(ся), заниматься"
+          ],
+          "bounds": [
+            333,
+            653,
+            309,
+            261
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "かえります"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.f9972f9d838de1ef"
+          ],
+          "meaningsRu": [
+            "возвращаться"
+          ],
+          "bounds": [
+            645,
+            642,
+            305,
+            275
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 243876,
+      "review": "visually-checked"
+    },
+    {
+      "id": "hobbies",
+      "src": "/word-illustrations/hobbies-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "パーティー"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.109424231b67c7a1"
+          ],
+          "meaningsRu": [
+            "вечеринка"
+          ],
+          "bounds": [
+            11,
+            42,
+            313,
+            272
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "たんじょう日"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.b229c31605dc6520"
+          ],
+          "meaningsRu": [
+            "день рождения"
+          ],
+          "bounds": [
+            340,
+            58,
+            285,
+            252
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "おめでとう"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.45ed9eb43d92618c"
+          ],
+          "meaningsRu": [
+            "поздравляю!"
+          ],
+          "bounds": [
+            647,
+            55,
+            303,
+            270
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "読書"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.f04fbc5aa2f012fc"
+          ],
+          "meaningsRu": [
+            "чтение"
+          ],
+          "bounds": [
+            15,
+            341,
+            314,
+            279
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "おんがく"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.32f91f95f187231c"
+          ],
+          "meaningsRu": [
+            "музыка"
+          ],
+          "bounds": [
+            341,
+            340,
+            329,
+            284
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "ギター"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.22add853d557e533"
+          ],
+          "meaningsRu": [
+            "гитара"
+          ],
+          "bounds": [
+            686,
+            325,
+            244,
+            302
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "えいが"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.e26daebf329f7c48"
+          ],
+          "meaningsRu": [
+            "фильм"
+          ],
+          "bounds": [
+            10,
+            653,
+            315,
+            257
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "スポーツ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.3d01d6cc8302e0b4"
+          ],
+          "meaningsRu": [
+            "спорт"
+          ],
+          "bounds": [
+            325,
+            644,
+            313,
+            278
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "さんぽ",
+            "あるいて"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.659b8f2709c0ede5",
+            "marugoto.starter-a1.word.0d387f5f793f1e8a"
+          ],
+          "meaningsRu": [
+            "прогулка",
+            "пешком"
+          ],
+          "bounds": [
+            647,
+            641,
+            302,
+            292
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 351074,
+      "review": "visually-checked"
+    },
+    {
+      "id": "leisure",
+      "src": "/word-illustrations/leisure-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "しゅみ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.3f346ec8618fc3b8"
+          ],
+          "meaningsRu": [
+            "хобби"
+          ],
+          "bounds": [
+            22,
+            35,
+            300,
+            280
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "買いもの"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.c6d5b4f5b6ee1e7f"
+          ],
+          "meaningsRu": [
+            "покупки"
+          ],
+          "bounds": [
+            322,
+            28,
+            314,
+            288
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "コンサート"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.12514bf00ecdf875"
+          ],
+          "meaningsRu": [
+            "концерт"
+          ],
+          "bounds": [
+            646,
+            47,
+            306,
+            269
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "カレンダー"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.f87a1c28a68bdc13"
+          ],
+          "meaningsRu": [
+            "календарь"
+          ],
+          "bounds": [
+            17,
+            362,
+            302,
+            243
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "イベント"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.501c6d8ae28020dd"
+          ],
+          "meaningsRu": [
+            "событие, мероприятие"
+          ],
+          "bounds": [
+            323,
+            333,
+            312,
+            283
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "ホール"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.9d9b9a953567fc8b"
+          ],
+          "meaningsRu": [
+            "холл"
+          ],
+          "bounds": [
+            648,
+            341,
+            299,
+            268
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "いっしょに"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.b0dae9a896a2ab8b"
+          ],
+          "meaningsRu": [
+            "вместе"
+          ],
+          "bounds": [
+            18,
+            634,
+            315,
+            297
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "聞きます"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.f9f2e4ca0f705faf"
+          ],
+          "meaningsRu": [
+            "слушать"
+          ],
+          "bounds": [
+            333,
+            636,
+            303,
+            280
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "見ます"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.502d73c9b7d70da6"
+          ],
+          "meaningsRu": [
+            "смотреть"
+          ],
+          "bounds": [
+            645,
+            648,
+            306,
+            274
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 288772,
+      "review": "visually-checked"
+    },
+    {
+      "id": "transit",
+      "src": "/word-illustrations/transit-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "えき"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.771306a760edcf9e"
+          ],
+          "meaningsRu": [
+            "станция, вокзал"
+          ],
+          "bounds": [
+            10,
+            53,
+            322,
+            276
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "のりば"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.286e697348230249"
+          ],
+          "meaningsRu": [
+            "место посадки (в транспорт)"
+          ],
+          "bounds": [
+            339,
+            37,
+            283,
+            299
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "タクシー"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.8cf486c4034810f8"
+          ],
+          "meaningsRu": [
+            "такси"
+          ],
+          "bounds": [
+            633,
+            103,
+            313,
+            206
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "ホテル"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.b8ad50d44836b7a9"
+          ],
+          "meaningsRu": [
+            "отель"
+          ],
+          "bounds": [
+            14,
+            345,
+            319,
+            281
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "くうこう"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.1abd85b7989277d4"
+          ],
+          "meaningsRu": [
+            "аэропорт"
+          ],
+          "bounds": [
+            337,
+            356,
+            289,
+            275
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "バス"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.a62e32c1c9351d47"
+          ],
+          "meaningsRu": [
+            "автобус"
+          ],
+          "bounds": [
+            637,
+            393,
+            310,
+            223
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "でんしゃ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.7fcfa571a8e518a5"
+          ],
+          "meaningsRu": [
+            "электричка, поезд"
+          ],
+          "bounds": [
+            12,
+            650,
+            325,
+            276
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "のります"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.856540333d733483"
+          ],
+          "meaningsRu": [
+            "садиться в транспорт"
+          ],
+          "bounds": [
+            337,
+            636,
+            271,
+            285
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "おります"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.70b8e0dbddf35b15"
+          ],
+          "meaningsRu": [
+            "выходить (из транспорта)"
+          ],
+          "bounds": [
+            651,
+            638,
+            279,
+            285
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 303662,
+      "review": "visually-checked"
+    },
+    {
+      "id": "city",
+      "src": "/word-illustrations/city-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "ちかてつ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.0161b7a89868ff12"
+          ],
+          "meaningsRu": [
+            "метро"
+          ],
+          "bounds": [
+            20,
+            50,
+            290,
+            274
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "まち"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.1818945b1c2d9aaa"
+          ],
+          "meaningsRu": [
+            "город"
+          ],
+          "bounds": [
+            322,
+            65,
+            302,
+            258
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "じんじゃ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.30ae0366d14591f7"
+          ],
+          "meaningsRu": [
+            "синтоистский храм"
+          ],
+          "bounds": [
+            640,
+            38,
+            305,
+            287
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "古い"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.03421cd05b0c6632"
+          ],
+          "meaningsRu": [
+            "старый"
+          ],
+          "bounds": [
+            10,
+            350,
+            312,
+            273
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "大きい"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.e290e549d40d7986"
+          ],
+          "meaningsRu": [
+            "большой"
+          ],
+          "bounds": [
+            336,
+            393,
+            304,
+            216
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "ぎんこう"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.6e9ec02e939b2a69"
+          ],
+          "meaningsRu": [
+            "банк"
+          ],
+          "bounds": [
+            639,
+            344,
+            313,
+            275
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "きっさてん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.a6239508c5cf0e21"
+          ],
+          "meaningsRu": [
+            "кафе"
+          ],
+          "bounds": [
+            14,
+            630,
+            299,
+            288
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "よてい"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.799f1e3b714a6037"
+          ],
+          "meaningsRu": [
+            "планы"
+          ],
+          "bounds": [
+            327,
+            635,
+            312,
+            263
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "チケット"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.9511fae672269ef3"
+          ],
+          "meaningsRu": [
+            "билет"
+          ],
+          "bounds": [
+            645,
+            662,
+            304,
+            212
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 318228,
+      "review": "visually-checked"
+    },
+    {
+      "id": "orientation",
+      "src": "/word-illustrations/orientation-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "まえ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.2eabfab66df7124d"
+          ],
+          "meaningsRu": [
+            "перед"
+          ],
+          "bounds": [
+            10,
+            93,
+            324,
+            229
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "みぎ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.fbc9b9c8522e11a7"
+          ],
+          "meaningsRu": [
+            "право"
+          ],
+          "bounds": [
+            351,
+            41,
+            281,
+            268
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "ひだり"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.1348fdc7ea12c682"
+          ],
+          "meaningsRu": [
+            "лево"
+          ],
+          "bounds": [
+            659,
+            49,
+            291,
+            260
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "まっすぐ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.f384043b0fc1bf45"
+          ],
+          "meaningsRu": [
+            "прямо"
+          ],
+          "bounds": [
+            17,
+            367,
+            304,
+            242
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "バッグ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.7c47a81c2bf9fdc3"
+          ],
+          "meaningsRu": [
+            "сумка"
+          ],
+          "bounds": [
+            334,
+            345,
+            310,
+            265
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "ハンカチ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.517cc65dc6f41c2a"
+          ],
+          "meaningsRu": [
+            "носовой платок"
+          ],
+          "bounds": [
+            663,
+            378,
+            287,
+            247
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "チョコレート"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.8cb6220866085fe7"
+          ],
+          "meaningsRu": [
+            "шоколад"
+          ],
+          "bounds": [
+            8,
+            671,
+            307,
+            252
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "あげます"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.08051cc0797ce038"
+          ],
+          "meaningsRu": [
+            "давать, дарить"
+          ],
+          "bounds": [
+            338,
+            632,
+            312,
+            306
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "もらいます"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.9f45ae8bffaed132"
+          ],
+          "meaningsRu": [
+            "получать"
+          ],
+          "bounds": [
+            651,
+            684,
+            302,
+            240
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 258264,
+      "review": "visually-checked"
+    },
+    {
+      "id": "shopping",
+      "src": "/word-illustrations/shopping-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "ほしい"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.9deb08458c80d241"
+          ],
+          "meaningsRu": [
+            "хотеть"
+          ],
+          "bounds": [
+            16,
+            43,
+            316,
+            268
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "買います"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.1cc5d26feef7ab36"
+          ],
+          "meaningsRu": [
+            "покупать"
+          ],
+          "bounds": [
+            333,
+            45,
+            314,
+            265
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "ティーシャツ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.23030e1fe00b7427"
+          ],
+          "meaningsRu": [
+            "футболка"
+          ],
+          "bounds": [
+            661,
+            61,
+            282,
+            236
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "いろ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.317180b83a7c70dd"
+          ],
+          "meaningsRu": [
+            "цвет"
+          ],
+          "bounds": [
+            18,
+            351,
+            301,
+            262
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "サイズ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.6ba8b38e5f024059"
+          ],
+          "meaningsRu": [
+            "размер"
+          ],
+          "bounds": [
+            328,
+            393,
+            315,
+            175
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "たかい"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.00dc822860607642"
+          ],
+          "meaningsRu": [
+            "дорогой"
+          ],
+          "bounds": [
+            643,
+            361,
+            305,
+            228
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "くつ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.10f02fb3ede1ec9b"
+          ],
+          "meaningsRu": [
+            "туфли, обувь"
+          ],
+          "bounds": [
+            11,
+            676,
+            308,
+            220
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "きてみてもいいですか"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.ddfa9b1ea86fcc75"
+          ],
+          "meaningsRu": [
+            "можно примерить? (одежду)"
+          ],
+          "bounds": [
+            327,
+            628,
+            305,
+            292
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "にあいます"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.69b62ec3ec19997a"
+          ],
+          "meaningsRu": [
+            "быть подходящим, быть к лицу"
+          ],
+          "bounds": [
+            644,
+            645,
+            302,
+            279
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 237830,
+      "review": "visually-checked"
+    },
+    {
+      "id": "holiday",
+      "src": "/word-illustrations/holiday-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "デパート"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.b602d954925a2748"
+          ],
+          "meaningsRu": [
+            "универмаг"
+          ],
+          "bounds": [
+            9,
+            26,
+            327,
+            326
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "はなび"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.82b0d6d0f69f6fd0"
+          ],
+          "meaningsRu": [
+            "фейерверк"
+          ],
+          "bounds": [
+            346,
+            43,
+            292,
+            306
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "たのしい"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.34252b85ea08c483"
+          ],
+          "meaningsRu": [
+            "веселый"
+          ],
+          "bounds": [
+            653,
+            55,
+            299,
+            297
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "そうじ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.85dfbea6784113fa"
+          ],
+          "meaningsRu": [
+            "уборка"
+          ],
+          "bounds": [
+            8,
+            352,
+            282,
+            295
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "にぎやか"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.6e01ec7fffcdd8f3"
+          ],
+          "meaningsRu": [
+            "шумный, оживлённый"
+          ],
+          "bounds": [
+            327,
+            358,
+            321,
+            283
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "カラオケ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.35c49942fe825cc0"
+          ],
+          "meaningsRu": [
+            "караоке"
+          ],
+          "bounds": [
+            661,
+            352,
+            295,
+            290
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "つかれます"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.9450e19f83958ce3"
+          ],
+          "meaningsRu": [
+            "уставать"
+          ],
+          "bounds": [
+            32,
+            658,
+            284,
+            270
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "おもしろい"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.022843aea8256893"
+          ],
+          "meaningsRu": [
+            "интересный"
+          ],
+          "bounds": [
+            340,
+            664,
+            296,
+            255
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "たいへん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.7aa6241385b98f7f"
+          ],
+          "meaningsRu": [
+            "тяжелый, утомительный"
+          ],
+          "bounds": [
+            691,
+            650,
+            231,
+            288
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 297408,
+      "review": "visually-checked"
+    },
+    {
+      "id": "travel",
+      "src": "/word-illustrations/travel-v1.webp",
+      "columns": 3,
+      "rows": 3,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "りょこう"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.524ae9140ffa7c6c"
+          ],
+          "meaningsRu": [
+            "путешествие"
+          ],
+          "bounds": [
+            11,
+            11,
+            301,
+            304
+          ]
+        },
+        {
+          "index": 1,
+          "row": 0,
+          "column": 1,
+          "surfaces": [
+            "おてら"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.138fe16b579a5543"
+          ],
+          "meaningsRu": [
+            "буддийский храм"
+          ],
+          "bounds": [
+            322,
+            25,
+            313,
+            284
+          ]
+        },
+        {
+          "index": 2,
+          "row": 0,
+          "column": 2,
+          "surfaces": [
+            "かぶき"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.bb8d5c70669f319c"
+          ],
+          "meaningsRu": [
+            "театр Кабуки"
+          ],
+          "bounds": [
+            644,
+            18,
+            311,
+            296
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 0,
+          "surfaces": [
+            "きょうと"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.664365934cc12812"
+          ],
+          "meaningsRu": [
+            "город Киото"
+          ],
+          "bounds": [
+            8,
+            335,
+            323,
+            293
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 1,
+          "surfaces": [
+            "しんかんせん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.8acf18a91f1f21d2"
+          ],
+          "meaningsRu": [
+            "синкансэн (высокоскоростной поезд)"
+          ],
+          "bounds": [
+            331,
+            364,
+            309,
+            249
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 2,
+          "surfaces": [
+            "ひこうき"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.e1020c3c24385d44"
+          ],
+          "meaningsRu": [
+            "самолет"
+          ],
+          "bounds": [
+            643,
+            386,
+            308,
+            217
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 0,
+          "surfaces": [
+            "とまります"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.d34037f2733d7791"
+          ],
+          "meaningsRu": [
+            "останавливаться"
+          ],
+          "bounds": [
+            5,
+            655,
+            308,
+            282
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 1,
+          "surfaces": [
+            "行きます"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.10d2007bc30b98ad"
+          ],
+          "meaningsRu": [
+            "идти"
+          ],
+          "bounds": [
+            325,
+            638,
+            309,
+            306
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 2,
+          "surfaces": [
+            "じゅぎょう"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.5a892d947dc6fe6c"
+          ],
+          "meaningsRu": [
+            "занятие"
+          ],
+          "bounds": [
+            641,
+            646,
+            311,
+            287
+          ]
+        }
+      ],
+      "width": 960,
+      "height": 960,
+      "bytes": 353332,
+      "review": "visually-checked"
+    },
+    {
+      "id": "father",
+      "src": "/word-illustrations/father-v1.webp",
+      "columns": 1,
+      "rows": 1,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "ちち",
+            "おとうさん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.2d31dd8d68a3ada0",
+            "marugoto.starter-a1.word.fa352771e8199249"
+          ],
+          "meaningsRu": [
+            "(мой) отец",
+            "(ваш, чей-то) отец"
+          ],
+          "bounds": [
+            58,
+            0,
+            229,
+            317
+          ],
+          "aliasNotes": [
+            {
+              "wordId": "marugoto.starter-a1.word.fa352771e8199249",
+              "reason": "Same family relationship; politeness/ownership differs in text, not the depicted person. No younger/older role substitution."
+            }
+          ]
+        }
+      ],
+      "width": 320,
+      "height": 320,
+      "bytes": 27158,
+      "review": "visually-checked"
+    },
+    {
+      "id": "mother",
+      "src": "/word-illustrations/mother-v1.webp",
+      "columns": 1,
+      "rows": 1,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "はは",
+            "おかあさん"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.07ab7fc730f6f2bb",
+            "marugoto.starter-a1.word.24948b79aebe026a"
+          ],
+          "meaningsRu": [
+            "(моя) мать",
+            "(ваша, чья-то) мать"
+          ],
+          "bounds": [
+            53,
+            0,
+            250,
+            318
+          ],
+          "aliasNotes": [
+            {
+              "wordId": "marugoto.starter-a1.word.24948b79aebe026a",
+              "reason": "Same family relationship; politeness/ownership differs in text, not the depicted person. No younger/older role substitution."
+            }
+          ]
+        }
+      ],
+      "width": 320,
+      "height": 320,
+      "bytes": 32134,
+      "review": "visually-checked"
+    },
+    {
+      "id": "family",
+      "src": "/word-illustrations/family-v1.webp",
+      "columns": 1,
+      "rows": 1,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "かぞく"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.f304a39b5e728680"
+          ],
+          "meaningsRu": [
+            "семья"
+          ],
+          "bounds": [
+            6,
+            1,
+            314,
+            311
+          ]
+        }
+      ],
+      "width": 320,
+      "height": 320,
+      "bytes": 36600,
+      "review": "visually-checked"
+    },
+    {
+      "id": "cat",
+      "src": "/mascot/neutral.png",
+      "columns": 1,
+      "rows": 1,
+      "cells": [
+        {
+          "index": 0,
+          "row": 0,
+          "column": 0,
+          "surfaces": [
+            "ねこ"
+          ],
+          "wordIds": [
+            "marugoto.starter-a1.word.b7ae744d56261150"
+          ],
+          "meaningsRu": [
+            "кошка"
+          ],
+          "bounds": [
+            33,
+            6,
+            267,
+            342
+          ]
+        }
+      ],
+      "width": 360,
+      "height": 356,
+      "bytes": 127510,
+      "review": "visually-checked"
+    }
+  ],
+  "notIllustrated": [
+    {
+      "wordId": "marugoto.starter-a1.word.76a39fbbbbbf2bd5",
+      "surface": "あそびにきてください",
+      "meaningRu": "приходите в гости",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.dd939a30954ac6cf",
+      "surface": "あの",
+      "meaningRu": "тот",
+      "reason": "Deictic, question or connective meaning depends on the surrounding utterance; an isolated object would falsely narrow the meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ad61d9e2e4881d67",
+      "surface": "あまり",
+      "meaningRu": "не очень, не особо",
+      "reason": "Frequency, degree, approximation, existence or ability is grammatical/contextual; no literal standalone picture distinguishes the required meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.58c25037d1022b83",
+      "surface": "あります",
+      "meaningRu": "находиться, быть (о неодушевленных предметах)",
+      "reason": "Frequency, degree, approximation, existence or ability is grammatical/contextual; no literal standalone picture distinguishes the required meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.05f8abdabb17ecf1",
+      "surface": "いいですね",
+      "meaningRu": "как хорошо!",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.e9a5a2af495d3355",
+      "surface": "いくら",
+      "meaningRu": "сколько (стоит)",
+      "reason": "Abstract judgement, emotion, negation, cost question or directional label cannot be illustrated precisely without adding an unsupported context or textual label."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.5f28f2f0fa798edf",
+      "surface": "いただきます",
+      "meaningRu": "приятного аппетита (перед едой)",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.e4d0eadebaf3cf69",
+      "surface": "いつ",
+      "meaningRu": "когда",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.0230b64f5a08e06c",
+      "surface": "いつでもいいです",
+      "meaningRu": "подойдёт любое время",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c6170ed6dc5a4bed",
+      "surface": "いつも",
+      "meaningRu": "всегда",
+      "reason": "Frequency, degree, approximation, existence or ability is grammatical/contextual; no literal standalone picture distinguishes the required meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.bbe0ecab21ce5807",
+      "surface": "いま",
+      "meaningRu": "сейчас",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.e27c10e325cc5bbf",
+      "surface": "います",
+      "meaningRu": "быть, существовать (об одушевленных предметах)",
+      "reason": "Frequency, degree, approximation, existence or ability is grammatical/contextual; no literal standalone picture distinguishes the required meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.7ecfd810551b23b8",
+      "surface": "いらっしゃい",
+      "meaningRu": "добро пожаловать (дома, неформально)",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ab3af1f7aa053d50",
+      "surface": "いらっしゃいませ",
+      "meaningRu": "добро пожаловать (клиенту)",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.4e527366e16b068f",
+      "surface": "えいぎょうじかん",
+      "meaningRu": "время работы",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.0375e09aad13f1e2",
+      "surface": "えいご",
+      "meaningRu": "английский язык",
+      "reason": "Written language, personal labels or language names require real textual examples; a generic book or national flag would teach a different concept."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.24a335e09a8a32ba",
+      "surface": "おいくつですか",
+      "meaningRu": "сколько вам лет? (вежливо)",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c64b0f48f16dd137",
+      "surface": "おじゃまします",
+      "meaningRu": "извините за вторжение (входя в чужой дом)",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c4ae772a6dc8e374",
+      "surface": "おなまえ",
+      "meaningRu": "имя",
+      "reason": "Written language, personal labels or language names require real textual examples; a generic book or national flag would teach a different concept."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.a26707ecb864f89f",
+      "surface": "おねがいします",
+      "meaningRu": "прошу вас; пожалуйста",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.5e5b656bfb3ccae8",
+      "surface": "かえます",
+      "meaningRu": "можно купить",
+      "reason": "Frequency, degree, approximation, existence or ability is grammatical/contextual; no literal standalone picture distinguishes the required meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.bb5b8febd333744b",
+      "surface": "かっこいい",
+      "meaningRu": "классный, стильный",
+      "reason": "Abstract judgement, emotion, negation, cost question or directional label cannot be illustrated precisely without adding an unsupported context or textual label."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.6f82e7260f603aaa",
+      "surface": "かんじ",
+      "meaningRu": "иероглифы",
+      "reason": "Written language, personal labels or language names require real textual examples; a generic book or national flag would teach a different concept."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ab1ac226c8935f03",
+      "surface": "きのう",
+      "meaningRu": "вчера",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c9c5336534a241e1",
+      "surface": "きょねん",
+      "meaningRu": "прошлый год",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.af86aade27c18742",
+      "surface": "ください",
+      "meaningRu": "дайте, пожалуйста",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.78af54c50020cd53",
+      "surface": "ぐらい",
+      "meaningRu": "примерно",
+      "reason": "Frequency, degree, approximation, existence or ability is grammatical/contextual; no literal standalone picture distinguishes the required meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.8505f761b2760b88",
+      "surface": "ここ",
+      "meaningRu": "здесь",
+      "reason": "Deictic, question or connective meaning depends on the surrounding utterance; an isolated object would falsely narrow the meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ee97d4a0eb7337aa",
+      "surface": "こちら",
+      "meaningRu": "здесь, вот",
+      "reason": "Deictic, question or connective meaning depends on the surrounding utterance; an isolated object would falsely narrow the meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.0946ce3f0a2bf77e",
+      "surface": "ことし",
+      "meaningRu": "этот год",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.712e62ba4142b3c5",
+      "surface": "この",
+      "meaningRu": "этот",
+      "reason": "Deictic, question or connective meaning depends on the surrounding utterance; an isolated object would falsely narrow the meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c400b0b75e58f362",
+      "surface": "これ",
+      "meaningRu": "это",
+      "reason": "Deictic, question or connective meaning depends on the surrounding utterance; an isolated object would falsely narrow the meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.46213dc44c74037a",
+      "surface": "ごちそうさま",
+      "meaningRu": "спасибо за еду (после еды)",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.49f22d753f12adf3",
+      "surface": "ごめんください",
+      "meaningRu": "разрешите войти? (у входа в дом)",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.9a65a58244cf0f00",
+      "surface": "ごろ",
+      "meaningRu": "примерно, около",
+      "reason": "Frequency, degree, approximation, existence or ability is grammatical/contextual; no literal standalone picture distinguishes the required meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.1e60231f1cffb868",
+      "surface": "さんさい",
+      "meaningRu": "три года (возраст)",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c28da1d758237561",
+      "surface": "ざんねん",
+      "meaningRu": "досадный, жаль",
+      "reason": "Abstract judgement, emotion, negation, cost question or directional label cannot be illustrated precisely without adding an unsupported context or textual label."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.2e19a1c3a04d0a1a",
+      "surface": "しつれいします",
+      "meaningRu": "извините (при входе, уходе или прерывании)",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ac27fe7815e02c97",
+      "surface": "じゃあ、いいです",
+      "meaningRu": "тогда не нужно, спасибо",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ec82a6a9bdbd0924",
+      "surface": "すこし",
+      "meaningRu": "немного",
+      "reason": "Frequency, degree, approximation, existence or ability is grammatical/contextual; no literal standalone picture distinguishes the required meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.b7de0b625129941e",
+      "surface": "すてき",
+      "meaningRu": "великолепный",
+      "reason": "Abstract judgement, emotion, negation, cost question or directional label cannot be illustrated precisely without adding an unsupported context or textual label."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.8b39f8835ae96172",
+      "surface": "ぜんぜん",
+      "meaningRu": "совсем",
+      "reason": "Frequency, degree, approximation, existence or ability is grammatical/contextual; no literal standalone picture distinguishes the required meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c9d4d4653b20a5a8",
+      "surface": "そして",
+      "meaningRu": "затем, потом",
+      "reason": "Deictic, question or connective meaning depends on the surrounding utterance; an isolated object would falsely narrow the meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.8b81caae96902369",
+      "surface": "それから",
+      "meaningRu": "затем, потом",
+      "reason": "Deictic, question or connective meaning depends on the surrounding utterance; an isolated object would falsely narrow the meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.d5d74eda862dd3bd",
+      "surface": "たのしみです",
+      "meaningRu": "жду с нетерпением",
+      "reason": "Abstract judgement, emotion, negation, cost question or directional label cannot be illustrated precisely without adding an unsupported context or textual label."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.8a2f3aca86b3f833",
+      "surface": "だいじょうぶ",
+      "meaningRu": "в порядке, нормально",
+      "reason": "Abstract judgement, emotion, negation, cost question or directional label cannot be illustrated precisely without adding an unsupported context or textual label."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.3a2e2056efd95e55",
+      "surface": "だめ",
+      "meaningRu": "нельзя; негодный, неподходящий",
+      "reason": "Abstract judgement, emotion, negation, cost question or directional label cannot be illustrated precisely without adding an unsupported context or textual label."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.a5e32b90deb17e6c",
+      "surface": "だれ",
+      "meaningRu": "кто",
+      "reason": "Deictic, question or connective meaning depends on the surrounding utterance; an isolated object would falsely narrow the meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.8c2ef79881372ad2",
+      "surface": "ちかく",
+      "meaningRu": "около, поблизости",
+      "reason": "Abstract judgement, emotion, negation, cost question or directional label cannot be illustrated precisely without adding an unsupported context or textual label."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.a2f47076bf55ae71",
+      "surface": "つぎ",
+      "meaningRu": "следующий, в следующий раз",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.6b63da587ec482ef",
+      "surface": "ていきゅうび",
+      "meaningRu": "фиксированный выходной день",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.abf51c53069fc220",
+      "surface": "できます",
+      "meaningRu": "мочь",
+      "reason": "Frequency, degree, approximation, existence or ability is grammatical/contextual; no literal standalone picture distinguishes the required meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.e1e711718a9d2ed2",
+      "surface": "でも",
+      "meaningRu": "но, однако, хотя",
+      "reason": "Deictic, question or connective meaning depends on the surrounding utterance; an isolated object would falsely narrow the meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.969daa7d4e04a4dc",
+      "surface": "ときどき",
+      "meaningRu": "иногда",
+      "reason": "Frequency, degree, approximation, existence or ability is grammatical/contextual; no literal standalone picture distinguishes the required meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.65c68edf39e03c27",
+      "surface": "どうぞあがってください",
+      "meaningRu": "проходите, пожалуйста (в дом)",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.72484669620e4adc",
+      "surface": "どうぞよろしくおねがいします",
+      "meaningRu": "приятно познакомиться (вежливо)",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.9854d45d73d2b57d",
+      "surface": "どうでしたか",
+      "meaningRu": "как прошло?",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.75bd1f06a73a31f0",
+      "surface": "どこ",
+      "meaningRu": "где",
+      "reason": "Deictic, question or connective meaning depends on the surrounding utterance; an isolated object would falsely narrow the meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.6e8b394cc38bdc7b",
+      "surface": "どこにもいきませんでした",
+      "meaningRu": "никуда не ходил(а)",
+      "reason": "Abstract judgement, emotion, negation, cost question or directional label cannot be illustrated precisely without adding an unsupported context or textual label."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.9b473beed948c0b3",
+      "surface": "どちらから？",
+      "meaningRu": "вы откуда? (вежливо)",
+      "reason": "Deictic, question or connective meaning depends on the surrounding utterance; an isolated object would falsely narrow the meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.34a8edcf5193ce4f",
+      "surface": "どんな",
+      "meaningRu": "какой",
+      "reason": "Deictic, question or connective meaning depends on the surrounding utterance; an isolated object would falsely narrow the meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.2b17f4b4c6f5c2da",
+      "surface": "なにもしませんでした",
+      "meaningRu": "ничего не делал(а)",
+      "reason": "Abstract judgement, emotion, negation, cost question or directional label cannot be illustrated precisely without adding an unsupported context or textual label."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.1df755ae0451c875",
+      "surface": "なまえ",
+      "meaningRu": "имя",
+      "reason": "Written language, personal labels or language names require real textual examples; a generic book or national flag would teach a different concept."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.93b1f9e7fc222764",
+      "surface": "なんさい",
+      "meaningRu": "сколько лет",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.f1477eb97998c581",
+      "surface": "なんじ",
+      "meaningRu": "во сколько, в котором часу",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.42a4fb49e10c3f52",
+      "surface": "なんじかん",
+      "meaningRu": "сколько по времени/часов",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.8217225960a91885",
+      "surface": "にほんご",
+      "meaningRu": "японский язык",
+      "reason": "Written language, personal labels or language names require real textual examples; a generic book or national flag would teach a different concept."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.998ffe69389e9eb3",
+      "surface": "にほんてき",
+      "meaningRu": "в японском стиле",
+      "reason": "Abstract judgement, emotion, negation, cost question or directional label cannot be illustrated precisely without adding an unsupported context or textual label."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.e5e293418afabe00",
+      "surface": "ねんじゅうむきゅう",
+      "meaningRu": "без выходных",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.be25e6ec541a983a",
+      "surface": "はじめまして",
+      "meaningRu": "рад(а) познакомиться (первая встреча)",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.71ec1b1beab1477b",
+      "surface": "ひらがな",
+      "meaningRu": "хирагана (японская слоговая азбука для написания японских слов)",
+      "reason": "Written language, personal labels or language names require real textual examples; a generic book or national flag would teach a different concept."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.4332fcbf78cc8bee",
+      "surface": "べんり",
+      "meaningRu": "удобный",
+      "reason": "Abstract judgement, emotion, negation, cost question or directional label cannot be illustrated precisely without adding an unsupported context or textual label."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.75d4b30fe277278b",
+      "surface": "まいにち",
+      "meaningRu": "каждый день",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.1caa9ddec56aeb9c",
+      "surface": "またこんど",
+      "meaningRu": "в другой раз",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.f32e42466121ccd5",
+      "surface": "むりょう",
+      "meaningRu": "бесплатно",
+      "reason": "Abstract judgement, emotion, negation, cost question or directional label cannot be illustrated precisely without adding an unsupported context or textual label."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.71566e10b4d200c4",
+      "surface": "ゆうめい",
+      "meaningRu": "известный",
+      "reason": "Abstract judgement, emotion, negation, cost question or directional label cannot be illustrated precisely without adding an unsupported context or textual label."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.7e98cdcc762dce6e",
+      "surface": "よかったですね",
+      "meaningRu": "как хорошо! (о случившемся)",
+      "reason": "Polite formula, response or request has a specific social use; a generic greeting, food, doorway or hand gesture would not distinguish this phrase."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.3bdf1f8a19d27583",
+      "surface": "よく",
+      "meaningRu": "часто",
+      "reason": "Frequency, degree, approximation, existence or ability is grammatical/contextual; no literal standalone picture distinguishes the required meaning."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.387ec4418a1b7b2c",
+      "surface": "よんさい",
+      "meaningRu": "четыре года (возраст)",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.5806ccc1a4aa0772",
+      "surface": "カタカナ",
+      "meaningRu": "катакана (японская слоговая азбука для написания заимствованных слов, а также выделения какого-то слова)",
+      "reason": "Written language, personal labels or language names require real textual examples; a generic book or national flag would teach a different concept."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.a21b200861a67992",
+      "surface": "ローマじ",
+      "meaningRu": "латинские буквы",
+      "reason": "Written language, personal labels or language names require real textual examples; a generic book or national flag would teach a different concept."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.9e6599eb0379626e",
+      "surface": "北口",
+      "meaningRu": "северный выход",
+      "reason": "Abstract judgement, emotion, negation, cost question or directional label cannot be illustrated precisely without adding an unsupported context or textual label."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ebf60570cf224104",
+      "surface": "千",
+      "meaningRu": "тысяча",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.f6c03ba63a12dd32",
+      "surface": "半",
+      "meaningRu": "половина",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.3b9ec3e5c4cbf3fd",
+      "surface": "南口",
+      "meaningRu": "южный выход",
+      "reason": "Abstract judgement, emotion, negation, cost question or directional label cannot be illustrated precisely without adding an unsupported context or textual label."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ded492faba84985d",
+      "surface": "土よう日",
+      "meaningRu": "суббота",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c23b225b7aa5061d",
+      "surface": "日よう日",
+      "meaningRu": "воскресенье",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.9d8eac6ff03abb24",
+      "surface": "来月",
+      "meaningRu": "следующий месяц",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.8a6c9047f6bb74ab",
+      "surface": "金よう日",
+      "meaningRu": "пятница",
+      "reason": "Exact numeric, relative-time or schedule meaning needs contextual text rather than a guessed age, clock, calendar date or quantity."
+    }
+  ],
+  "coverage": [
+    {
+      "lesson": 1,
+      "total": 13,
+      "illustrated": 9,
+      "notIllustrated": [
+        "カタカナ",
+        "かんじ",
+        "ひらがな",
+        "ローマじ"
+      ]
+    },
+    {
+      "lesson": 2,
+      "total": 13,
+      "illustrated": 10,
+      "notIllustrated": [
+        "なまえ",
+        "しつれいします",
+        "カタカナ"
+      ]
+    },
+    {
+      "lesson": 3,
+      "total": 14,
+      "illustrated": 6,
+      "notIllustrated": [
+        "えいご",
+        "どうぞよろしくおねがいします",
+        "にほんご",
+        "どちらから？",
+        "できます",
+        "はじめまして",
+        "おなまえ",
+        "すこし"
+      ]
+    },
+    {
+      "lesson": 4,
+      "total": 22,
+      "illustrated": 15,
+      "notIllustrated": [
+        "さんさい",
+        "おいくつですか",
+        "よんさい",
+        "この",
+        "どこ",
+        "なんさい",
+        "だれ"
+      ]
+    },
+    {
+      "lesson": 5,
+      "total": 21,
+      "illustrated": 16,
+      "notIllustrated": [
+        "よく",
+        "ごちそうさま",
+        "いただきます",
+        "あまり",
+        "いつも"
+      ]
+    },
+    {
+      "lesson": 6,
+      "total": 23,
+      "illustrated": 19,
+      "notIllustrated": [
+        "この",
+        "いらっしゃいませ",
+        "ください",
+        "あの"
+      ]
+    },
+    {
+      "lesson": 7,
+      "total": 24,
+      "illustrated": 20,
+      "notIllustrated": [
+        "あります",
+        "あそびにきてください",
+        "ちかく",
+        "います"
+      ]
+    },
+    {
+      "lesson": 8,
+      "total": 21,
+      "illustrated": 13,
+      "notIllustrated": [
+        "ごめんください",
+        "いただきます",
+        "どうぞあがってください",
+        "いらっしゃい",
+        "ここ",
+        "これ",
+        "おじゃまします",
+        "こちら"
+      ]
+    },
+    {
+      "lesson": 9,
+      "total": 19,
+      "illustrated": 14,
+      "notIllustrated": [
+        "まいにち",
+        "ごろ",
+        "いま",
+        "なんじ",
+        "半"
+      ]
+    },
+    {
+      "lesson": 10,
+      "total": 15,
+      "illustrated": 6,
+      "notIllustrated": [
+        "いつでもいいです",
+        "だめ",
+        "なんじかん",
+        "ぐらい",
+        "だいじょうぶ",
+        "金よう日",
+        "日よう日",
+        "土よう日",
+        "いつ"
+      ]
+    },
+    {
+      "lesson": 11,
+      "total": 15,
+      "illustrated": 11,
+      "notIllustrated": [
+        "どんな",
+        "ぜんぜん",
+        "ときどき",
+        "できます"
+      ]
+    },
+    {
+      "lesson": 12,
+      "total": 15,
+      "illustrated": 9,
+      "notIllustrated": [
+        "いいですね",
+        "またこんど",
+        "来月",
+        "ざんねん",
+        "たのしみです",
+        "むりょう"
+      ]
+    },
+    {
+      "lesson": 13,
+      "total": 16,
+      "illustrated": 12,
+      "notIllustrated": [
+        "南口",
+        "べんり",
+        "北口",
+        "おねがいします"
+      ]
+    },
+    {
+      "lesson": 14,
+      "total": 15,
+      "illustrated": 11,
+      "notIllustrated": [
+        "えいぎょうじかん",
+        "ていきゅうび",
+        "ゆうめい",
+        "ねんじゅうむきゅう"
+      ]
+    },
+    {
+      "lesson": 15,
+      "total": 15,
+      "illustrated": 11,
+      "notIllustrated": [
+        "かえます",
+        "にほんてき",
+        "かっこいい",
+        "きょねん"
+      ]
+    },
+    {
+      "lesson": 16,
+      "total": 15,
+      "illustrated": 7,
+      "notIllustrated": [
+        "この",
+        "いらっしゃいませ",
+        "じゃあ、いいです",
+        "ください",
+        "すてき",
+        "これ",
+        "いくら",
+        "千"
+      ]
+    },
+    {
+      "lesson": 17,
+      "total": 14,
+      "illustrated": 9,
+      "notIllustrated": [
+        "なにもしませんでした",
+        "どこにもいきませんでした",
+        "よかったですね",
+        "どうでしたか",
+        "きのう"
+      ]
+    },
+    {
+      "lesson": 18,
+      "total": 15,
+      "illustrated": 9,
+      "notIllustrated": [
+        "ことし",
+        "それから",
+        "つぎ",
+        "きょねん",
+        "そして",
+        "でも"
+      ]
+    }
+  ],
+  "displayPolicy": "Only introduction, after answering and reference. Do not mount the raster, URL or answer-bearing accessible text during a quiz/listening question. Images are supplementary/decorative; true written translations/readings remain text."
+}

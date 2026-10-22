@@ -1975,6 +1975,134 @@
             "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
           }
         ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.af90b4bf62755cc8",
+        "wordId": "marugoto.starter-a1.word.f304a39b5e728680",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.01",
+          "marugoto.starter-a1.lesson.07"
+        ],
+        "surface": "家族",
+        "kana": "かぞく",
+        "segments": [
+          {
+            "surface": "家族",
+            "reading": "かぞく"
+          }
+        ],
+        "reviewStatus": "reviewed",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/intermediate2/MarugotoIntermediate2KanjiList.pdf",
+            "page": 3,
+            "entry": "236 家族 かぞく",
+            "label": "Marugoto · сводный Kanji Word List · №236"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.9417bd388ad9a18e",
+        "wordId": "marugoto.starter-a1.word.2d31dd8d68a3ada0",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "父",
+        "kana": "ちち",
+        "segments": [
+          {
+            "surface": "父",
+            "reading": "ちち"
+          }
+        ],
+        "reviewStatus": "reviewed",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/intermediate2/MarugotoIntermediate2KanjiList.pdf",
+            "page": 1,
+            "entry": "67 父 ちち",
+            "label": "Marugoto · сводный Kanji Word List · №67"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.8ce8c115c561cd75",
+        "wordId": "marugoto.starter-a1.word.07ab7fc730f6f2bb",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "母",
+        "kana": "はは",
+        "segments": [
+          {
+            "surface": "母",
+            "reading": "はは"
+          }
+        ],
+        "reviewStatus": "reviewed",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/intermediate2/MarugotoIntermediate2KanjiList.pdf",
+            "page": 1,
+            "entry": "68 母 はは",
+            "label": "Marugoto · сводный Kanji Word List · №68"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.7bd7a3ff113a84c3",
+        "wordId": "marugoto.starter-a1.word.5898af218a8efa80",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "兄",
+        "kana": "あに",
+        "segments": [
+          {
+            "surface": "兄",
+            "reading": "あに"
+          }
+        ],
+        "reviewStatus": "reviewed",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/intermediate2/MarugotoIntermediate2KanjiList.pdf",
+            "page": 3,
+            "entry": "230 兄 あに",
+            "label": "Marugoto · сводный Kanji Word List · №230"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.706bcbc2bf08bff7",
+        "wordId": "marugoto.starter-a1.word.f11bf70db3c7b278",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04",
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "姉",
+        "kana": "あね",
+        "segments": [
+          {
+            "surface": "姉",
+            "reading": "あね"
+          }
+        ],
+        "reviewStatus": "reviewed",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/intermediate2/MarugotoIntermediate2KanjiList.pdf",
+            "page": 3,
+            "entry": "232 姉 あね",
+            "label": "Marugoto · сводный Kanji Word List · №232"
+          }
+        ]
       }
     ],
     "skills": [
