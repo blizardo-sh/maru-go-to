@@ -6,8 +6,17 @@ import type { Course, WordForm } from '../../../shared/types';
 import type { GuidedLesson } from '../../../shared/learning';
 import wordAudio from '../../../../public/audio/manifest.json';
 
-// Throwaway A/B: compare information hierarchy on the unified 96ff337 source.
-export const course: Course = { ...corpus as Course, words: corpus.words.map(word => ({ ...word, audioUrl: (wordAudio as Record<string, string>)[word.id] })) as Course['words'], forms: [...corpus.forms as WordForm[], ...lesson04.authored.forms as WordForm[]] };
+// Read-only fixtures use the same authored lesson overlays as the real course loader.
+const lessons = Object.values(import.meta.glob('../../../../materials/learning/lesson-*.json', { eager: true, import: 'default' })) as GuidedLesson[];
+const words = [...new Map([...corpus.words as Course['words'], ...lessons.flatMap(lesson => lesson.authored?.words ?? [])].map(value => [value.id, value])).values()];
+export const course: Course = {
+  ...corpus as Course,
+  words: words.map(word => ({ ...word, audioUrl: (wordAudio as Record<string, string>)[word.id] ?? word.audioUrl })),
+  forms: [...new Map([...corpus.forms as WordForm[], ...lessons.flatMap(lesson => lesson.authored?.forms ?? [])].map(value => [value.id, value])).values()],
+  skills: [...new Map([...corpus.skills as Course['skills'], ...lessons.flatMap(lesson => lesson.authored?.skills ?? [])].map(value => [value.id, value])).values()],
+  exercises: [...new Map([...corpus.exercises as Course['exercises'], ...lessons.flatMap(lesson => lesson.authored?.exercises ?? [])].map(value => [value.id, value])).values()],
+  learning: lessons.sort((a, b) => a.lessonId.localeCompare(b.lessonId)),
+};
 export const group = lesson04.goals[0]!.parts[0]!;
 export const family = group.words.map(introduction => ({ ...introduction, word: course.words.find(word => word.id === introduction.wordId)! }));
 const abstractWord = (lesson01 as GuidedLesson).goals.flatMap(goal => goal.parts.flatMap(part => part.words)).find(value => value.wordId === 'marugoto.starter-a1.word.5806ccc1a4aa0772')!;
@@ -49,6 +58,8 @@ export const screens: Screen[] = [
   { id: 'reference-particles', section: 'Справочник', name: 'Справочник · частицы', family: 'reference', states: read },
   { id: 'reference-hiragana', section: 'Справочник', name: 'Справочник · хирагана', family: 'kana', states: ['initial', 'long'] },
   { id: 'reference-katakana', section: 'Справочник', name: 'Справочник · катакана', family: 'kana', states: ['initial', 'long'] },
+  { id: 'kana-trainer', section: 'Справочник', name: 'Тренажёр каны · выбор рядов / практика', family: 'kana-drill', states: ['initial', 'answer', 'wrong', 'empty'] },
+  { id: 'construction-trainer', section: 'Справочник', name: 'Тренажёр изученных конструкций', family: 'construction-drill', states: ['initial', 'answer', 'wrong', 'empty'] },
   { id: 'lists', section: 'Справочник', name: 'Личные списки · импорт / редактор', family: 'form', states: ['initial', 'answer', 'empty', 'saving', 'error', 'long'] },
   { id: 'settings', section: 'Аккаунт', name: 'Настройки · звук / написание', family: 'form', states: ['initial', 'saving', 'error'] },
   { id: 'admin', section: 'Аккаунт', name: 'Администратор · приглашения', family: 'form', states: ['initial', 'answer', 'empty', 'saving', 'error', 'long'] },
