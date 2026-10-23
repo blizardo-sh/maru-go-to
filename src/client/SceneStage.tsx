@@ -37,6 +37,10 @@ export function SceneStage({ scene, decor, entryId, phase, active, onReady, layo
       const catSize = height <= 480 ? 100 : mobile ? width <= 360 ? 104 : 120 : width >= 1700 ? 320 : width >= 1400 ? 270 : 220;
       const catLeft = mobile ? width - catSize - 8 : Math.min(width - catSize - 12, rect.right - catSize * .35);
       root.style.setProperty('--scene-cat-size', `${catSize}px`); root.style.setProperty('--scene-cat-left', `${catLeft}px`); root.style.setProperty('--scene-cat-top', `${baseline - catSize}px`);
+      // Reserve the cat's actual overlap, so fixed scenery cannot cover study controls.
+      const studyScroll = root.querySelector<HTMLElement>('.study-session[data-active="true"] .session-scroll')?.getBoundingClientRect();
+      const overlap = studyScroll && baseline - catSize < studyScroll.bottom && baseline > studyScroll.top ? Math.max(0, studyScroll.right - catLeft + 12) : 0;
+      root.style.setProperty('--scene-content-safe-inline', `${mobile ? 0 : overlap}px`);
       const propBase = Math.min(safeBottom, Math.max(baseline + 100, tableTop + (safeBottom - tableTop) * .8));
       const widths: Record<string, number> = { tea: 160, teapot: 240, brushes: 270, inkstone: 200, dango: 210, 'sakura-mochi': 210, dorayaki: 220, linen: 260 };
       const props = [...root.querySelectorAll<HTMLElement>('.desk-prop')];

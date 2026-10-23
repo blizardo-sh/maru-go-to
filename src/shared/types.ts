@@ -1,4 +1,4 @@
-import type { GuidedLesson } from './learning';
+import type { GuidedLesson, LearningConstruction } from './learning';
 export type ContentStatus = "missing" | "draft" | "source-checked" | "reviewed";
 export type ReviewStatus = Exclude<ContentStatus, "missing">;
 export type Orthography = "kana" | "furigana" | "kanji";
@@ -6,6 +6,9 @@ export type LessonStatus = "closed" | "studying" | "completed";
 export type MaterialScope = "studied" | "selected" | "all";
 export type ReviewMode = "ja-ru" | "ru-ja" | "listening" | "grammar" | "counter";
 export type Rating = 1 | 2 | 3 | 4;
+export const repeatTypes = ['words', 'counters', 'constructions'] as const;
+export type RepeatType = typeof repeatTypes[number];
+export type ConstructionMode = 'ja-ru' | 'listening' | 'grammar';
 
 export interface SourceRef {
   part: "katsudoo" | "rikai";
@@ -129,6 +132,7 @@ export interface LearnerSettings {
   newWordsPerDay: number;
   newSkillsPerDay: number;
   animations: boolean;
+  repeatTypes: RepeatType[];
   sceneSoundEnabled: boolean;
   musicVolume: number;
   ambienceVolume: number;
@@ -146,7 +150,7 @@ interface ReviewBase {
 
 export type ReviewItem = ReviewBase & (
   | { mode: "ja-ru" | "ru-ja" | "listening"; word: Word }
-  | { mode: "grammar"; exercise: Exercise; skill: Skill }
+  | { mode: "grammar"; exercise: Exercise; skill: Skill; construction?: LearningConstruction & { mode: ConstructionMode } }
   | { mode: "counter"; counter: import('./counters').CounterCard }
 );
 
@@ -206,6 +210,8 @@ export interface TrainingContext {
   lessonId?: string;
   listId?: string;
   counters?: boolean;
+  skillId?: string;
+  constructionMode?: ConstructionMode;
 }
 
 export interface AnalysisRequest extends TrainingContext {

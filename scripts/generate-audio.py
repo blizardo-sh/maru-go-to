@@ -37,8 +37,8 @@ def generate(course_path, output, voice, rate, jobs, limit):
             with tempfile.TemporaryDirectory(prefix='marugoto-audio-') as temporary:
                 aiff = Path(temporary) / 'speech.aiff'
                 m4a = Path(temporary) / 'speech.m4a'
-                subprocess.run(['/usr/bin/say', '-v', voice, '-r', str(rate), '-o', str(aiff), text], check=True, capture_output=True)
-                subprocess.run(['/usr/bin/afconvert', '-f', 'm4af', '-d', 'aac ', '-b', '48000', str(aiff), str(m4a)], check=True, capture_output=True)
+                subprocess.run(['/usr/bin/say', '-v', voice, '-r', str(rate), '-o', str(aiff), text], check=True, capture_output=True, timeout=30)
+                subprocess.run(['/usr/bin/afconvert', '-f', 'm4af', '-d', 'aac ', '-b', '48000', str(aiff), str(m4a)], check=True, capture_output=True, timeout=30)
                 info = subprocess.run(['/usr/bin/afinfo', str(m4a)], check=True, capture_output=True, text=True).stdout
                 duration = re.search(r'estimated duration:\s+([0-9.]+)', info)
                 if m4a.stat().st_size <= 100 or not duration or float(duration.group(1)) <= 0:
@@ -47,7 +47,7 @@ def generate(course_path, output, voice, rate, jobs, limit):
                 staged.write_bytes(m4a.read_bytes())
                 staged.replace(destination)
             return text
-        except (subprocess.CalledProcessError, OSError, ValueError) as error:
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired, OSError, ValueError) as error:
             errors.append({'reading': text, 'error': str(error)})
             return None
 

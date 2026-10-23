@@ -39,11 +39,12 @@ async function capture(label: string) {
   const intro = page.getByTestId('learning-intro');
   if (await intro.count()) {
     if (label === 'word-intro') await page.screenshot({ path: `${output}/study-layout-current-${viewport.width}x${viewport.height}.png`, fullPage: true });
-    const word = await intro.locator('h2').boundingBox();
-    for (const selector of ['.guided-reading', 'h3', ':scope > p:not(.guided-reading):not(.notice)']) {
-      const block = intro.locator(selector).first(); if (!await block.count()) continue; const box = await block.boundingBox();
-      if (word && box) expect(Math.abs(box.x + box.width / 2 - word.x - word.width / 2), `${label}: ${selector} is off the word centreline`).toBeLessThanOrEqual(2);
-    }
+    const art = await intro.locator('.card-art').boundingBox(), information = await intro.locator('.card-information').boundingBox();
+    if (!art || !information) throw new Error('Missing illustrated intro columns.');
+    if (viewport.width <= 540) expect(art.y + art.height, `${label}: phone illustration must precede text`).toBeLessThanOrEqual(information.y + 1);
+    else expect(art.x + art.width, `${label}: desktop illustration must be left of text`).toBeLessThanOrEqual(information.x + 1);
+    await expect(intro.locator('.card-art h2 .jp')).toBeVisible();await expect(intro.locator('.card-information > h2')).toBeVisible();
+    expect(await intro.locator('.guided-explanation').evaluate(element=>parseFloat(getComputedStyle(element).fontSize))).toBeGreaterThanOrEqual(16);
   }
   const group=page.getByTestId('learning-word-group');
   if(await group.count()){
@@ -117,12 +118,12 @@ try {
     for (let mode = 0; mode < 3; mode++) { await capture('word-practice-hidden'); await recall(); }
     const core2 = new Set(course.learning!.find(route => route.lessonId.endsWith('02'))!.goals.flatMap(goal => goal.parts.flatMap(part => part.words.map(word => word.wordId))));
     const distinct = course.words.find(word => core2.has(word.id) && word.surface !== word.kana)!;
-    await seed(2, step => step.kind === 'word-intro' && step.wordId === distinct.id); const tile=page.locator(`.word-introduction[data-word-id="${distinct.id}"]`); await expect(tile.locator('h3.jp')).toHaveText(distinct.kana); if(/\p{Script=Han}/u.test(distinct.surface)) await expect(tile.locator('.word-kanji')).toHaveText(distinct.surface); await capture('verified-kana-and-kanji-preserved');
+    await seed(2, step => step.kind === 'word-intro' && step.wordId === distinct.id); const tile=page.locator(`.word-introduction[data-word-id="${distinct.id}"]`); await expect(tile.locator('h3.jp')).toHaveText(distinct.kana); if(/\p{Script=Han}/u.test(distinct.surface)){expect(await tile.locator('.word-kanji').evaluate(element=>{const copy=element.cloneNode(true) as Element;copy.querySelectorAll('rt').forEach(reading=>reading.remove());return copy.textContent;})).toBe(distinct.surface);expect(await tile.locator('.word-kanji rt').evaluateAll(elements=>elements.map(element=>element.textContent).join(''))).toBe(distinct.kana);} await capture('verified-kana-and-kanji-preserved');
     await seed(1, step => step.goalId === 'l01-scripts' && step.kind === 'word-intro'); await capture('goal-with-context'); await page.screenshot({ path: `${output}/study-layout-hiragana-${viewport.width}x${viewport.height}.png`, fullPage: true }); await page.screenshot({ path: `${output}/study-layout-context-${viewport.width}.png`, fullPage: true });
     while (await guided().getAttribute('data-step-kind') === 'word-intro') await next(); await capture('goal-without-context');
     await seed(4, step => step.goalId === 'l04-family-photo' && step.kind === 'word-intro'); await capture('longest-goal'); await page.screenshot({ path: `${output}/study-layout-long-goal-${viewport.width}.png`, fullPage: true });
 
-    await seed(3, step => step.kind === 'construction-intro'); await capture('construction-intro'); await page.screenshot({ path: `${output}/study-layout-construction-${viewport.width}.png`, fullPage: true }); await next();
+    await seed(3, step => step.kind === 'construction-intro'); await capture('construction-intro'); await page.screenshot({ path: `${output}/study-layout-construction-${viewport.width}.png`, fullPage: true });await page.locator('.guided-rule > summary').click();await expect(page.locator('.guided-breakdown')).toBeVisible();await capture('construction-rule-on-demand');await page.locator('.guided-rule > summary').click(); await next();
     await recall(); await recall(); await capture('construction-empty');
     const current = await context.request.get(`${api}/api/learning/marugoto.starter-a1.lesson.03`, { headers: headers() }); const state: LearningState = await current.json();
     if (state.reviewItem?.mode !== 'grammar') throw new Error('Missing construction.');

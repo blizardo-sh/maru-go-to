@@ -1,5 +1,4 @@
 @import '../../tokens.css';
-@import './album.css';
 /* cyrillic */
 @font-face {
   font-family: 'Neucha';
@@ -306,55 +305,3 @@ rt { font-size: .54em; line-height: 1; }
 .registration-links input[readonly] { min-width: 0; width: 100%; }
 /* Keep the public form's paper above its fixed scenic backdrop. */
 .auth::after { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--color-paper); border-radius: inherit; pointer-events: none; }
-
-.counter-course { margin-block: 1rem 1.5rem; }
-.counter-course h2 { font-family: var(--font-display); margin-block: .2rem; }
-.counter-course > .spread { gap: 1rem; flex-wrap: wrap; }
-.counter-course p { font-size: .9rem; }
-.counter-levels { display: grid; grid-template-columns: repeat(auto-fit, minmax(155px, 1fr)); gap: .6rem; margin-block: 1rem; }
-.counter-levels > div { display: flex; gap: .6rem; align-items: center; padding: .65rem; background: #e8d3ad66; border: 1px solid #c4a072; border-radius: .65rem; }
-.counter-levels > div[data-available='false'] { opacity: .65; }
-.counter-levels strong { font-size: 1.6rem; color: var(--color-accent-ink); }
-.counter-levels span { font-size: .8rem; }
-.counter-levels small { display: block; font-size: .7rem; }
-.card-deck { min-width: 0; padding-block-end: 1.4rem; }
-.deck-summary { position: sticky; top: 0; z-index: 2; background: var(--color-paper); display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin: 0 .6rem .65rem; font-size: .8rem; color: var(--color-ink); }
-.deck-summary > * { background: var(--color-paper); border: 1px solid #b38a59; border-radius: 1rem; padding: .2rem .6rem; }
-.deck-stack { position: relative; isolation: isolate; }
-.deck-stack > .gesture-card { z-index: 1; }
-.deck-layer { position: absolute; inset: 0 .25rem; z-index: -1; border: 2px solid #a77849; border-radius: 1rem; background: var(--color-paper) var(--paper-grain) center / 512px; box-shadow: 0 2px 2px #52280833; transition: transform .25s ease-out; }
-.flip-card { perspective: 1400px; min-width: 0; }
-.flip-inner { display: grid; grid-template-columns: minmax(0, 1fr); transform-style: preserve-3d; transition: transform .42s cubic-bezier(.25,.65,.25,1); }
-.flip-card[data-revealed='true'] .flip-inner { transform: rotateY(180deg); }
-.flip-side { grid-area: 1 / 1; min-width: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; border-radius: .65rem; background: var(--color-paper) var(--paper-grain) center / 512px; }
-.flip-back { transform: rotateY(180deg); }
-.flip-back[hidden] { display: none; }
-.flip-side .study-card { padding-inline: .5rem; }
-.counter-card { align-items: center; text-align: center; gap: .9rem; }
-.counter-card .prompt { width: 100%; max-width: 100%; overflow-wrap: anywhere; }
-/* A whole counted expression may need several lines of furigana on a phone. */
-.counter-card .prompt .jp { display: block; max-width: 100%; }
-.counter-card .prompt ruby { display: flex; flex-direction: column-reverse; align-items: center; max-width: 100%; }
-.counter-card .prompt rt { text-align: center; display: block; align-self: stretch; max-width: 100%; white-space: normal; word-break: break-all; line-height: 1.5; }
-.counter-card p { max-width: 48ch; font-size: .9rem; }
-.counter-picture { display: grid; justify-items: center; gap: .5rem; width: 100%; }
-.counter-picture-objects { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); width: min(100%, 18rem); gap: .25rem; align-items: center; justify-content: center; }
-.counter-picture-objects:has(> :only-child) { grid-template-columns: 1fr; width: 8rem; }
-.counter-object { display: block; width: 100%; aspect-ratio: 1; overflow: hidden; }
-.counter-quantity { font-size: clamp(1.4rem, 5vw, 2.5rem); font-variant-numeric: tabular-nums; }
-.counter-quantity small { display: block; font-size: .75rem; font-weight: 400; }
-.counter-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .6rem; width: 100%; }
-.counter-options > button { flex-direction: column; white-space: normal; padding: .75rem .4rem; min-height: 48px; border: 1px solid #b38a59; border-radius: .8rem; background: #f5e7cd; box-shadow: 0 3px 0 #c6a376; }
-.counter-options > button > span[lang='ja'] { font-size: clamp(1rem, 2vw, 1.4rem); overflow-wrap: anywhere; }
-.counter-options .counter-picture-objects { width: min(100%, 10rem); }
-.counter-options .counter-picture-objects:has(> :only-child) { width: 5rem; }
-.counter-options .counter-quantity { font-size: 1.25rem; }
-.counter-options small { font-size: .75rem; }
-.counter-ratings, .card-ratings { justify-content: center; }
-.counter-ratings > button, .card-ratings > button { flex: 1; min-height: 48px; }
-.counter-introduction { text-align: center; align-items: center; padding: 1rem 0; }
-.counter-introduction h2 { font-size: clamp(1.4rem, 4vw, 2rem); }
-.counter-examples { display: grid; gap: .6rem; width: min(100%, 30rem); }
-.counter-examples > div { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .5rem; }
-.counter-examples audio { width: min(100%, 240px); height: 36px; }
-.counter-listen { min-height: 64px; width: 100%; }

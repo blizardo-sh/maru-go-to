@@ -1,6 +1,7 @@
 import type { Orthography, Segment, Word, WordForm } from '../shared/types';
 
-export function Japanese({ value, mode }: { value: { surface: string; kana: string; segments: Segment[] }; mode: Orthography }) {
+export function Japanese({ value, mode, forms = [] }: { value: { id?: string; surface: string; kana: string; segments: Segment[] }; mode: Orthography; forms?: WordForm[] }) {
+  value = mode === 'kana' || /\p{Script=Han}/u.test(value.surface) ? value : forms.find(form => form.wordId === value.id && form.kana === value.kana && form.reviewStatus !== 'draft' && /\p{Script=Han}/u.test(form.surface)) ?? value;
   return <span lang="ja" className="jp">{mode === 'kana' ? value.kana : mode === 'kanji' ? value.surface : value.segments.length ? value.segments.map((segment, index) => segment.reading && segment.reading !== segment.surface ? <ruby key={index}>{segment.surface}<rt>{segment.reading}</rt></ruby> : <span key={index}>{segment.surface}</span>) : value.surface}</span>;
 }
 
