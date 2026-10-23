@@ -3,6 +3,7 @@ import { api, ApiRequestError, json } from './api';
 
 export type PendingLearning = { lessonId: string; submission: LearningAdvance };
 export const learningConflict = (error: unknown): error is ApiRequestError => error instanceof ApiRequestError && error.status === 409 && error.code === 'LEARNING_CONFLICT';
+export const invalidLearningChoice = (error: unknown): error is ApiRequestError => error instanceof ApiRequestError && error.status === 400 && error.code === 'INVALID_CHOICE';
 export const learningHeaders = (userId: string) => ({ 'X-Learning-Learner-Id': userId });
 const key = (userId: string) => `japanese-pending-learning:${userId}`;
 const object = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value);
@@ -32,7 +33,7 @@ export async function submitLearning(userId: string, pending: PendingLearning): 
   try { result = await api<LearningAdvanceResult>(`/api/learning/${encodeURIComponent(pending.lessonId)}/advance`, { ...json('POST', pending.submission), headers: learningHeaders(userId) }); }
   catch (error) {
     // This response guarantees the obsolete action was not applied; ambiguous failures remain queued.
-    if (learningConflict(error)) localStorage.setItem(key(userId), JSON.stringify(pendingLearning(userId).filter(item => item.submission.attemptId !== pending.submission.attemptId)));
+    if (learningConflict(error) || invalidLearningChoice(error)) localStorage.setItem(key(userId), JSON.stringify(pendingLearning(userId).filter(item => item.submission.attemptId !== pending.submission.attemptId)));
     throw error;
   }
   if (result.attemptId !== pending.submission.attemptId || result.state.lessonId !== pending.lessonId) throw new Error('Сервер не подтвердил этот шаг. Ответ сохранён на устройстве.');

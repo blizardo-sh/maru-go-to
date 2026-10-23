@@ -39,6 +39,8 @@ jobs:
       - run: bun run build
       - run: python3 scripts/verify_preparation.py
       - run: bunx playwright install --with-deps chrome
+      - name: Browser learner feedback interactions
+        run: bun tests/integration.learner-interaction.browser.ts
       - name: Browser guided learning route
         run: bun tests/helpers/run-guided-browser.ts
       - name: Browser Album overview and saved quiz feedback

@@ -100,7 +100,7 @@ try {
   await expect(page.locator('.bank')).toBeVisible();
   for (const id of exercise.acceptedOrders[0]!) await page.locator(`.bank [data-token-id="${id}"]`).click();
   await expect(page.locator('[data-outcome="correct"]').first()).toBeVisible();
-  await page.getByTestId('review-gesture').press('ArrowRight');
+  await page.locator('.workspace-next').click();
   await expect(page.getByRole('heading', { name: /Порция пройдена|Колода пройдена/ })).toBeVisible();
   expect(await database.sql`select * from learning_states where user_id=${userId}`).toEqual(lessonBefore);
   expect([...await database.sql`select mode,version from review_states where user_id=${userId} and item_id=${exercise.skillId}`]).toEqual([{ mode: 'grammar', version: 2 }]);

@@ -56,7 +56,8 @@
                     "surface": "カレンダーをみます。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson12-1d1355976fe7207172ab.m4a"
+                "audioUrl": "/audio/learning/f320fd0fdd1c93ed3343.m4a",
+                "audioText": "カレンダーおみます。"
               }
             },
             {
@@ -86,7 +87,8 @@
                     "surface": "コンサートはむりょうです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson12-cc8d97d13c5b79783d79.m4a"
+                "audioUrl": "/audio/learning/882ed3c7957659513fe4.m4a",
+                "audioText": "コンサートわむりょうです。"
               }
             }
           ],
@@ -180,7 +182,8 @@
                     "surface": "チケットをかいます。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson12-08218086423a870316be.m4a"
+                "audioUrl": "/audio/learning/aaf8f5d42b4709858412.m4a",
+                "audioText": "チケットおかいます。"
               }
             }
           ],
@@ -269,7 +272,8 @@
                     "surface": "えいがをみにいきます。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson12-706d2d482bc2cc186d1d.m4a"
+                "audioUrl": "/audio/learning/e559c1ec6b217b3f8b2f.m4a",
+                "audioText": "えいがおみにいきます。"
               }
             }
           ],
@@ -349,7 +353,8 @@
                   "surface": "。"
                 }
               ],
-              "audioUrl": "/audio/learning/lesson12-706d2d482bc2cc186d1d.m4a"
+              "audioUrl": "/audio/learning/e559c1ec6b217b3f8b2f.m4a",
+              "audioText": "えいがおみにいきます。"
             },
             "breakdown": [
               {
@@ -923,7 +928,7 @@
         ],
         "surface": "ホール",
         "kana": "ホール",
-        "meaningRu": "холл",
+        "meaningRu": "зал (для мероприятий)",
         "segments": [
           {
             "surface": "ホール"
@@ -1332,6 +1337,31 @@
           }
         ],
         "audioUrl": "/audio/fb86c5a5151ab7f4ac17.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.supplement-paid",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.12"
+        ],
+        "surface": "ゆうりょう",
+        "kana": "ゆうりょう",
+        "meaningRu": "платный; платно",
+        "segments": [
+          {
+            "surface": "ゆうりょう"
+          }
+        ],
+        "kind": "word",
+        "pos": "noun",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/intermediate2/MarugotoIntermediate2VocabularyList_EN.pdf",
+            "entry": "ゆうりょう",
+            "label": "Marugoto Intermediate2 Vocabulary List EN · стр.28 · 有料（ゆうりょう）: pay / fee-charging"
+          }
+        ]
       }
     ],
     "forms": [
@@ -2114,6 +2144,29 @@
             "part": "rikai",
             "url": "https://a1.marugotoweb.jp/en/note_6_12_5.php",
             "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.supplement-paid",
+        "wordId": "marugoto.starter-a1.word.supplement-paid",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.12"
+        ],
+        "surface": "ゆうりょう",
+        "kana": "ゆうりょう",
+        "segments": [
+          {
+            "surface": "ゆうりょう"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/intermediate2/MarugotoIntermediate2VocabularyList_EN.pdf",
+            "entry": "ゆうりょう",
+            "label": "Marugoto Intermediate2 Vocabulary List EN · стр.28 · 有料（ゆうりょう）: pay / fee-charging"
           }
         ]
       }

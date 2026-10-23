@@ -55,7 +55,8 @@
                     "surface": "わたしはがくせいです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson03-word-48c4e90c01bf.m4a"
+                "audioUrl": "/audio/learning/2c52a3a52f618f207dcf.m4a",
+                "audioText": "わたしわがくせいです。"
               }
             },
             {
@@ -85,7 +86,8 @@
                     "surface": "わたしはエンジニアです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson03-word-e0b71673ce3f.m4a"
+                "audioUrl": "/audio/learning/ff77f7f690c4adbc9c22.m4a",
+                "audioText": "わたしわエンジニアです。"
               }
             }
           ],
@@ -113,7 +115,8 @@
                   "surface": "。"
                 }
               ],
-              "audioUrl": "/audio/learning/lesson03-construction-wa-identity.m4a"
+              "audioUrl": "/audio/learning/2c52a3a52f618f207dcf.m4a",
+              "audioText": "わたしわがくせいです。"
             },
             "breakdown": [
               {
@@ -180,7 +183,8 @@
                     "surface": "わたしはにほんごができます。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson03-word-c22930496292.m4a"
+                "audioUrl": "/audio/learning/0823991f88b3383f2f29.m4a",
+                "audioText": "わたしわにほんごができます。"
               }
             },
             {
@@ -241,7 +245,8 @@
                   "surface": "。"
                 }
               ],
-              "audioUrl": "/audio/learning/lesson03-construction-ga-ability.m4a"
+              "audioUrl": "/audio/learning/0823991f88b3383f2f29.m4a",
+              "audioText": "わたしわにほんごができます。"
             },
             "breakdown": [
               {
@@ -282,7 +287,8 @@
                     "surface": "わたしはかいしゃいんです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson03-word-2a4144a17ec9.m4a"
+                "audioUrl": "/audio/learning/92e541016cdc132fbdf8.m4a",
+                "audioText": "わたしわかいしゃいんです。"
               }
             }
           ],
@@ -361,7 +367,8 @@
                     "surface": "これはわたしのめいしです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson03-word-f55f170e124f.m4a"
+                "audioUrl": "/audio/learning/213fa029ba73ead26087.m4a",
+                "audioText": "これわわたしのめいしです。"
               }
             },
             {
@@ -376,7 +383,8 @@
                     "surface": "おなまえはなんですか。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson03-word-f4b48dae9ddd.m4a"
+                "audioUrl": "/audio/learning/3dca020d9c4e74fcb0dc.m4a",
+                "audioText": "おなまえわなんですか。"
               }
             },
             {
@@ -391,7 +399,8 @@
                     "surface": "おしごとはなんですか。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson03-word-fd9fb35e9d06.m4a"
+                "audioUrl": "/audio/learning/57f2f854e34da521db9a.m4a",
+                "audioText": "おしごとわなんですか。"
               }
             }
           ]
@@ -1024,6 +1033,56 @@
           }
         ],
         "audioUrl": "/audio/d0a2eafb810bf16ba467.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.pronoun-anata",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "あなた",
+        "kana": "あなた",
+        "meaningRu": "вы / ты",
+        "segments": [
+          {
+            "surface": "あなた"
+          }
+        ],
+        "kind": "word",
+        "pos": "pronoun",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterWordbook_EN.pdf",
+            "entry": "あなた",
+            "label": "Marugoto Starter Wordbook EN · печатная стр.12 · あなた (you)"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.word.pronoun-kare",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "かれ",
+        "kana": "かれ",
+        "meaningRu": "он",
+        "segments": [
+          {
+            "surface": "かれ"
+          }
+        ],
+        "kind": "word",
+        "pos": "pronoun",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterWordbook_EN.pdf",
+            "entry": "かれ",
+            "label": "Marugoto Starter Wordbook EN · печатная стр.12 · かれ (he)"
+          }
+        ]
       }
     ],
     "forms": [
@@ -1219,6 +1278,52 @@
             "part": "rikai",
             "url": "https://a1.marugotoweb.jp/en/note_2_3_3.php",
             "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.pronoun-anata",
+        "wordId": "marugoto.starter-a1.word.pronoun-anata",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "あなた",
+        "kana": "あなた",
+        "segments": [
+          {
+            "surface": "あなた"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterWordbook_EN.pdf",
+            "entry": "あなた",
+            "label": "Marugoto Starter Wordbook EN · печатная стр.12 · あなた (you)"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.pronoun-kare",
+        "wordId": "marugoto.starter-a1.word.pronoun-kare",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "surface": "かれ",
+        "kana": "かれ",
+        "segments": [
+          {
+            "surface": "かれ"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterWordbook_EN.pdf",
+            "entry": "かれ",
+            "label": "Marugoto Starter Wordbook EN · печатная стр.12 · かれ (he)"
           }
         ]
       }

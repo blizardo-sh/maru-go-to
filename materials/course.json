@@ -12534,7 +12534,7 @@
       ],
       "surface": "げんかん",
       "kana": "げんかん",
-      "meaningRu": "прохожая",
+      "meaningRu": "прихожая",
       "segments": [
         {
           "surface": "げんかん"
@@ -19541,7 +19541,7 @@
       ],
       "surface": "そして",
       "kana": "そして",
-      "meaningRu": "затем, потом",
+      "meaningRu": "и, а также; затем, потом",
       "segments": [
         {
           "surface": "そして"
@@ -20661,7 +20661,7 @@
       ],
       "surface": "どれ",
       "kana": "どれ",
-      "meaningRu": "который (из двух)",
+      "meaningRu": "который / какой из нескольких (обычно трёх и более)",
       "segments": [
         {
           "surface": "どれ"
@@ -26773,7 +26773,7 @@
       ],
       "surface": "ホール",
       "kana": "ホール",
-      "meaningRu": "холл",
+      "meaningRu": "зал (для мероприятий)",
       "segments": [
         {
           "surface": "ホール"
@@ -28217,7 +28217,7 @@
       ],
       "surface": "どれ",
       "kana": "どれ",
-      "meaningRu": "который (из 2-х)",
+      "meaningRu": "который / какой из нескольких (обычно трёх и более)",
       "segments": [
         {
           "surface": "どれ"
@@ -28772,7 +28772,7 @@
           "surface": "あるいて"
         }
       ],
-      "kind": "phrase",
+      "kind": "word",
       "pos": "expression",
       "reviewStatus": "draft",
       "sourceRefs": [
@@ -31439,6 +31439,256 @@
           "part": "rikai",
           "url": "https://a1.marugotoweb.jp/en/note_9_18_3.php",
           "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.age-issai",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "surface": "いっさい",
+      "kana": "いっさい",
+      "meaningRu": "один год (возраст)",
+      "segments": [
+        {
+          "surface": "いっさい"
+        }
+      ],
+      "kind": "word",
+      "pos": "counter-expression",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://a1.marugotoweb.jp/en/appendix_01.php",
+          "entry": "いっさい",
+          "label": "Marugoto · Counters · ～さい: 1 = いっさい"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.age-nisai",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "surface": "にさい",
+      "kana": "にさい",
+      "meaningRu": "два года (возраст)",
+      "segments": [
+        {
+          "surface": "にさい"
+        }
+      ],
+      "kind": "word",
+      "pos": "counter-expression",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://a1.marugotoweb.jp/en/appendix_01.php",
+          "entry": "にさい",
+          "label": "Marugoto · Counters · ～さい: 2 = にさい"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.pronoun-anata",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "surface": "あなた",
+      "kana": "あなた",
+      "meaningRu": "вы / ты",
+      "segments": [
+        {
+          "surface": "あなた"
+        }
+      ],
+      "kind": "word",
+      "pos": "pronoun",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterWordbook_EN.pdf",
+          "entry": "あなた",
+          "label": "Marugoto Starter Wordbook EN · печатная стр.12 · あなた (you)"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.pronoun-kare",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "surface": "かれ",
+      "kana": "かれ",
+      "meaningRu": "он",
+      "segments": [
+        {
+          "surface": "かれ"
+        }
+      ],
+      "kind": "word",
+      "pos": "pronoun",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterWordbook_EN.pdf",
+          "entry": "かれ",
+          "label": "Marugoto Starter Wordbook EN · печатная стр.12 · かれ (he)"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.supplement-shape",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.16"
+      ],
+      "surface": "かたち",
+      "kana": "かたち",
+      "meaningRu": "форма (внешний вид предмета)",
+      "segments": [
+        {
+          "surface": "かたち"
+        }
+      ],
+      "kind": "word",
+      "pos": "noun",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateVocabularyIndex2_EN.pdf",
+          "entry": "かたち",
+          "label": "Marugoto Pre-Intermediate Vocabulary Index EN · стр.1 · 形（かたち）: form"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.supplement-price",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.16"
+      ],
+      "surface": "ねだん",
+      "kana": "ねだん",
+      "meaningRu": "цена",
+      "segments": [
+        {
+          "surface": "ねだん"
+        }
+      ],
+      "kind": "word",
+      "pos": "noun",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_c/MarugotoElementary2CompetencesVocabularyIndex_EN.pdf",
+          "entry": "ねだん",
+          "label": "Marugoto Elementary2 Competences Vocabulary Index EN · ねだん: price"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.supplement-alone",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.07"
+      ],
+      "surface": "ひとりで",
+      "kana": "ひとりで",
+      "meaningRu": "один / самостоятельно",
+      "segments": [
+        {
+          "surface": "ひとりで"
+        }
+      ],
+      "kind": "word",
+      "pos": "expression",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://a1.marugotoweb.jp/en/note_4_7_5.php",
+          "entry": "ひとりで",
+          "label": "Marugoto · ひとりで: alone, не ひとりと"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.supplement-paid",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.12"
+      ],
+      "surface": "ゆうりょう",
+      "kana": "ゆうりょう",
+      "meaningRu": "платный; платно",
+      "segments": [
+        {
+          "surface": "ゆうりょう"
+        }
+      ],
+      "kind": "word",
+      "pos": "noun",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/intermediate2/MarugotoIntermediate2VocabularyList_EN.pdf",
+          "entry": "ゆうりょう",
+          "label": "Marugoto Intermediate2 Vocabulary List EN · стр.28 · 有料（ゆうりょう）: pay / fee-charging"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.supplement-evening",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.09"
+      ],
+      "surface": "ゆうがた",
+      "kana": "ゆうがた",
+      "meaningRu": "ранний вечер (перед наступлением ночи)",
+      "segments": [
+        {
+          "surface": "ゆうがた"
+        }
+      ],
+      "kind": "word",
+      "pos": "noun",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://www.irodori.jpf.go.jp/assets/data/wordlist_Y.pdf",
+          "entry": "ゆうがた",
+          "label": "Дополнительный вариант ответа · Japan Foundation · Irodori 初級1 · L2–2 · 夕方（ゆうがた）: early evening"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.supplement-snack",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.05"
+      ],
+      "surface": "おやつ",
+      "kana": "おやつ",
+      "meaningRu": "перекус (между основными приёмами пищи)",
+      "segments": [
+        {
+          "surface": "おやつ"
+        }
+      ],
+      "kind": "word",
+      "pos": "noun",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://www.hirogaru-nihongo.jpf.go.jp/en/sweets/article-en/taiyakinomise/",
+          "entry": "おやつ",
+          "label": "Дополнительный вариант ответа · Japan Foundation · Hirogaru · たい焼きの店 · おやつ: snack"
         }
       ]
     }
@@ -55099,6 +55349,236 @@
         }
       ],
       "wordId": "marugoto.starter-a1.word.a296622c50317ab9"
+    },
+    {
+      "id": "marugoto.starter-a1.form.age-issai",
+      "wordId": "marugoto.starter-a1.word.age-issai",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "surface": "いっさい",
+      "kana": "いっさい",
+      "segments": [
+        {
+          "surface": "いっさい"
+        }
+      ],
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://a1.marugotoweb.jp/en/appendix_01.php",
+          "entry": "いっさい",
+          "label": "Marugoto · Counters · ～さい: 1 = いっさい"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.form.age-nisai",
+      "wordId": "marugoto.starter-a1.word.age-nisai",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "surface": "にさい",
+      "kana": "にさい",
+      "segments": [
+        {
+          "surface": "にさい"
+        }
+      ],
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://a1.marugotoweb.jp/en/appendix_01.php",
+          "entry": "にさい",
+          "label": "Marugoto · Counters · ～さい: 2 = にさい"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.form.pronoun-anata",
+      "wordId": "marugoto.starter-a1.word.pronoun-anata",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "surface": "あなた",
+      "kana": "あなた",
+      "segments": [
+        {
+          "surface": "あなた"
+        }
+      ],
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterWordbook_EN.pdf",
+          "entry": "あなた",
+          "label": "Marugoto Starter Wordbook EN · печатная стр.12 · あなた (you)"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.form.pronoun-kare",
+      "wordId": "marugoto.starter-a1.word.pronoun-kare",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "surface": "かれ",
+      "kana": "かれ",
+      "segments": [
+        {
+          "surface": "かれ"
+        }
+      ],
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterWordbook_EN.pdf",
+          "entry": "かれ",
+          "label": "Marugoto Starter Wordbook EN · печатная стр.12 · かれ (he)"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.form.supplement-shape",
+      "wordId": "marugoto.starter-a1.word.supplement-shape",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.16"
+      ],
+      "surface": "かたち",
+      "kana": "かたち",
+      "segments": [
+        {
+          "surface": "かたち"
+        }
+      ],
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateVocabularyIndex2_EN.pdf",
+          "entry": "かたち",
+          "label": "Marugoto Pre-Intermediate Vocabulary Index EN · стр.1 · 形（かたち）: form"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.form.supplement-price",
+      "wordId": "marugoto.starter-a1.word.supplement-price",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.16"
+      ],
+      "surface": "ねだん",
+      "kana": "ねだん",
+      "segments": [
+        {
+          "surface": "ねだん"
+        }
+      ],
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_c/MarugotoElementary2CompetencesVocabularyIndex_EN.pdf",
+          "entry": "ねだん",
+          "label": "Marugoto Elementary2 Competences Vocabulary Index EN · ねだん: price"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.form.supplement-alone",
+      "wordId": "marugoto.starter-a1.word.supplement-alone",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.07"
+      ],
+      "surface": "ひとりで",
+      "kana": "ひとりで",
+      "segments": [
+        {
+          "surface": "ひとりで"
+        }
+      ],
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://a1.marugotoweb.jp/en/note_4_7_5.php",
+          "entry": "ひとりで",
+          "label": "Marugoto · ひとりで: alone, не ひとりと"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.form.supplement-paid",
+      "wordId": "marugoto.starter-a1.word.supplement-paid",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.12"
+      ],
+      "surface": "ゆうりょう",
+      "kana": "ゆうりょう",
+      "segments": [
+        {
+          "surface": "ゆうりょう"
+        }
+      ],
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/intermediate2/MarugotoIntermediate2VocabularyList_EN.pdf",
+          "entry": "ゆうりょう",
+          "label": "Marugoto Intermediate2 Vocabulary List EN · стр.28 · 有料（ゆうりょう）: pay / fee-charging"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.form.supplement-evening",
+      "wordId": "marugoto.starter-a1.word.supplement-evening",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.09"
+      ],
+      "surface": "ゆうがた",
+      "kana": "ゆうがた",
+      "segments": [
+        {
+          "surface": "ゆうがた"
+        }
+      ],
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://www.irodori.jpf.go.jp/assets/data/wordlist_Y.pdf",
+          "entry": "ゆうがた",
+          "label": "Дополнительный вариант ответа · Japan Foundation · Irodori 初級1 · L2–2 · 夕方（ゆうがた）: early evening"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.form.supplement-snack",
+      "wordId": "marugoto.starter-a1.word.supplement-snack",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.05"
+      ],
+      "surface": "おやつ",
+      "kana": "おやつ",
+      "segments": [
+        {
+          "surface": "おやつ"
+        }
+      ],
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "rikai",
+          "url": "https://www.hirogaru-nihongo.jpf.go.jp/en/sweets/article-en/taiyakinomise/",
+          "entry": "おやつ",
+          "label": "Дополнительный вариант ответа · Japan Foundation · Hirogaru · たい焼きの店 · おやつ: snack"
+        }
+      ]
     }
   ],
   "skills": [
@@ -55220,13 +55700,18 @@
         8
       ],
       "title": "の: связь существительных",
-      "explanationRu": "В N1のN2 первое существительное уточняет второе. Порядок меняет смысл: あにのつま — жена старшего брата.",
+      "explanationRu": "В N1のN2 первое существительное уточняет второе. В あねのこども последнее слово называет ребёнка, а あねの уточняет: ребёнок моей старшей сестры.",
       "reviewStatus": "draft",
       "sourceRefs": [
         {
           "part": "rikai",
           "url": "https://a1.marugotoweb.jp/en/note_2_4_3.php",
           "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+        },
+        {
+          "part": "rikai",
+          "url": "https://a1.marugotoweb.jp/en/grammar_topic2_4.php",
+          "label": "Официальный пример Interrogatives: あねのこどもです; русский контекст написан для приложения"
         }
       ]
     },
@@ -56428,7 +56913,8 @@
       ],
       "sentenceEnd": "。",
       "reviewStatus": "draft",
-      "translationRu": "Это мой отец и моя мать."
+      "translationRu": "Это мой отец и моя мать.",
+      "contextRu": "Собеседник спрашивает, кто на фотографии с вашими родителями. Назовите двух изображённых людей, а не полный состав вашей семьи."
     },
     {
       "id": "marugoto.starter-a1.example.to_noun_list.l04.2",
@@ -56555,11 +57041,11 @@
       "id": "marugoto.starter-a1.example.no_relation.l04.1",
       "lessonId": "marugoto.starter-a1.lesson.04",
       "skillId": "marugoto.starter-a1.skill.no_relation",
-      "promptRu": "Это жена моего старшего брата. Назовите человека.",
+      "promptRu": "На фотографии ребёнок моей старшей сестры. Назовите человека.",
       "tokens": [
         {
           "id": "t1",
-          "formId": "marugoto.starter-a1.form.b8692c26c972b16f"
+          "formId": "marugoto.starter-a1.form.47cdd36adfbdeb2a"
         },
         {
           "id": "t2",
@@ -56567,7 +57053,7 @@
         },
         {
           "id": "t3",
-          "formId": "marugoto.starter-a1.form.3f6080ea6c4375ab"
+          "formId": "marugoto.starter-a1.form.fda91890b35d523f"
         },
         {
           "id": "t4",
@@ -56584,7 +57070,8 @@
       ],
       "sentenceEnd": "。",
       "reviewStatus": "draft",
-      "translationRu": "Это жена моего старшего брата."
+      "translationRu": "Это ребёнок моей старшей сестры.",
+      "contextRu": "Вы показываете фотографию своей старшей сестры и её ребёнка. Собеседник спрашивает о ребёнке."
     },
     {
       "id": "marugoto.starter-a1.example.no_relation.l04.2",
@@ -59742,7 +60229,7 @@
       "sentenceEnd": "。",
       "reviewStatus": "draft",
       "translationRu": "Я подарю старшей сестре цветы.",
-      "contextRu": "Вы рассказываете о себе; собеседник уже знает, что речь о вас. Тему «わたしは» можно назвать или целиком опустить. Остальной смысл и целевая конструкция должны сохраниться."
+      "contextRu": "Вы рассказываете постороннему о себе: подарите своей старшей сестре (あね) цветы. Тему «わたしは» можно назвать или целиком опустить; смысл и целевая конструкция сохраняются."
     },
     {
       "id": "marugoto.starter-a1.example.morau.l15.1",
@@ -59890,7 +60377,7 @@
       "sentenceEnd": "。",
       "reviewStatus": "draft",
       "translationRu": "Я получил(а) от старшей сестры книгу.",
-      "contextRu": "Вы рассказываете о себе; собеседник уже знает, что речь о вас. Тему «わたしは» можно назвать или целиком опустить. Остальной смысл и целевая конструкция должны сохраниться."
+      "contextRu": "Вы рассказываете постороннему о себе: получили книгу от своей старшей сестры (あね). Тему «わたしは» можно назвать или целиком опустить; смысл и целевая конструкция сохраняются."
     },
     {
       "id": "marugoto.starter-a1.example.verb_past.l15.1",
@@ -60786,7 +61273,8 @@
       ],
       "sentenceEnd": "。",
       "reviewStatus": "draft",
-      "translationRu": "Моему ребёнку три года."
+      "translationRu": "Моему ребёнку три года.",
+      "contextRu": "Вы рассказываете собеседнику о возрасте своего ребёнка. Это отдельная учебная ситуация."
     },
     {
       "id": "marugoto.starter-a1.example.age_count.l04.2",
@@ -60821,7 +61309,8 @@
       ],
       "sentenceEnd": "。",
       "reviewStatus": "draft",
-      "translationRu": "Моему ребёнку четыре года."
+      "translationRu": "Моему ребёнку четыре года.",
+      "contextRu": "Вы рассказываете собеседнику о возрасте своего ребёнка. Это отдельная учебная ситуация."
     }
   ],
   "sourceImports": {

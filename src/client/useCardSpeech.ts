@@ -5,7 +5,7 @@ export function useCardSpeech(url: string | undefined, autoPlay: boolean, active
   const audio = useRef<HTMLAudioElement | null>(null), activeRef = useRef(active); activeRef.current = active;
   const [played, setPlayed] = useState(false), [playing, setPlaying] = useState(false), [error, setError] = useState('');
   const play = useCallback(async () => {
-    const current = audio.current; if (!current || !activeRef.current) return;
+    const current = audio.current; if (!current || !activeRef.current || document.hidden) return;
     setError('');
     try { current.currentTime = 0; await current.play(); }
     catch (failure) { setPlaying(false); sound.setSpeechPlaying(false); if (activeRef.current && !(failure instanceof DOMException && ['NotAllowedError', 'AbortError'].includes(failure.name))) setError('Запись не загрузилась. Проверьте соединение и повторите прослушивание.'); }
@@ -14,7 +14,7 @@ export function useCardSpeech(url: string | undefined, autoPlay: boolean, active
     setPlayed(false); setError('');
     if (!url) return;
     const current = new Audio(url); audio.current = current;
-    current.onplaying = () => { if (activeRef.current) { setPlaying(true); setPlayed(true); sound.setSpeechPlaying(true); } else current.pause(); };
+    current.onplaying = () => { if (activeRef.current && !document.hidden) { setPlaying(true); setPlayed(true); sound.setSpeechPlaying(true); } else current.pause(); };
     current.onpause = () => { setPlaying(false); sound.setSpeechPlaying(false); }; current.onended = current.onpause;
     current.onerror = () => { setPlaying(false); sound.setSpeechPlaying(false); setError('Запись недоступна. Аудиозадание не будет оценено.'); };
     const pauseHidden = () => { if (document.hidden) current.pause(); }; document.addEventListener('visibilitychange', pauseHidden);

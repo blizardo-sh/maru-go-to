@@ -78,6 +78,18 @@ test('ordinary repeat retry sends its expected learner and preserves the exact o
   expect(fetchSpy).toHaveBeenCalledTimes(1);
 });
 
+test('only explicit INVALID_CHOICE discards a rejected choice; other learner and ambiguous failures remain queued', async () => {
+  const stale: PendingLearning = { ...attempt(), submission: { ...attempt().submission, action: 'choose', choiceWordId: 'old-choice' } }, unrelated = attempt(), other = attempt();
+  localStorage.setItem('japanese-pending-learning:learner-a', JSON.stringify([unrelated]));
+  localStorage.setItem('japanese-pending-learning:learner-b', JSON.stringify([other]));
+  fetchSpy.mockResolvedValue(Response.json({ error: { code: 'INVALID_CHOICE', message: 'Choices changed' } }, { status: 400 }));
+  await expect(submitLearning('learner-a', stale)).rejects.toMatchObject({ status: 400, code: 'INVALID_CHOICE' });
+  expect(pendingLearning('learner-a')).toEqual([unrelated]); expect(pendingLearning('learner-b')).toEqual([other]);
+  fetchSpy.mockResolvedValue(Response.json({ error: { code: 'INVALID_CHOICE', message: 'Ambiguous failure' } }, { status: 503 }));
+  await expect(submitLearning('learner-a', stale)).rejects.toMatchObject({ status: 503 });
+  expect(pendingLearning('learner-a')).toEqual([unrelated, stale]);
+});
+
 test('a stale ACK cannot move a newer route backward or cross lesson/content versions', () => {
   expect(currentLearningState({ ...state, version: 2 }, state.lessonId, 'v1', { ...state, version: 3 })).toBe(false);
   expect(currentLearningState({ ...state, lessonId: 'other' }, state.lessonId, 'v1', null)).toBe(false);

@@ -26,7 +26,8 @@
                     "surface": "このティーシャツはすてきですね。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson16-e98b4611c757861fc9d4.m4a"
+                "audioUrl": "/audio/learning/f46cbad2ebbeec76e346.m4a",
+                "audioText": "このティーシャツわすてきですね。"
               }
             },
             {
@@ -56,7 +57,8 @@
                     "surface": "サイズはエムです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson16-c23e49c4d2c0a3fd378b.m4a"
+                "audioUrl": "/audio/learning/4ad62d3d691823bd2fe1.m4a",
+                "audioText": "サイズわエムです。"
               }
             },
             {
@@ -86,7 +88,8 @@
                     "surface": "このバッグはたかいです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson16-bd6f9c3ef2fcd036decc.m4a"
+                "audioUrl": "/audio/learning/97afffcb634fb5f21606.m4a",
+                "audioText": "このバッグわたかいです。"
               }
             }
           ]
@@ -120,7 +123,8 @@
                     "surface": "これはいくらですか。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson16-61e8669edf0449322ed1.m4a"
+                "audioUrl": "/audio/learning/812d5f0df20e62aa3e8d.m4a",
+                "audioText": "これわいくらですか。"
               }
             },
             {
@@ -135,7 +139,8 @@
                     "surface": "これをください。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson16-60cebdaf3d50e5ccf658.m4a"
+                "audioUrl": "/audio/learning/f022937252472e7e7ef0.m4a",
+                "audioText": "これおください。"
               }
             },
             {
@@ -150,7 +155,8 @@
                     "surface": "このバッグをください。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson16-59af4d4a1c7a994c1910.m4a"
+                "audioUrl": "/audio/learning/d30bce1ab5c7f7702522.m4a",
+                "audioText": "このバッグおください。"
               }
             },
             {
@@ -196,7 +202,8 @@
                   "surface": "。"
                 }
               ],
-              "audioUrl": "/audio/learning/lesson16-61e8669edf0449322ed1.m4a"
+              "audioUrl": "/audio/learning/812d5f0df20e62aa3e8d.m4a",
+              "audioText": "これわいくらですか。"
             },
             "breakdown": [
               {
@@ -250,7 +257,8 @@
                     "surface": "このティーシャツをください。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson16-d3262b4483c72a79a860.m4a"
+                "audioUrl": "/audio/learning/222bd136f0694cf44560.m4a",
+                "audioText": "このティーシャツおください。"
               }
             },
             {
@@ -295,7 +303,8 @@
                     "surface": "このくつをください。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson16-6be69d06e9381d0b5067.m4a"
+                "audioUrl": "/audio/learning/0df56b6fac08b51f74e8.m4a",
+                "audioText": "このくつおください。"
               }
             }
           ],
@@ -323,7 +332,8 @@
                   "surface": "。"
                 }
               ],
-              "audioUrl": "/audio/learning/lesson16-d3262b4483c72a79a860.m4a"
+              "audioUrl": "/audio/learning/222bd136f0694cf44560.m4a",
+              "audioText": "このティーシャツおください。"
             },
             "breakdown": [
               {
@@ -1032,6 +1042,56 @@
           }
         ],
         "audioUrl": "/audio/85ba29e6ba172d8e1334.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.supplement-shape",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.16"
+        ],
+        "surface": "かたち",
+        "kana": "かたち",
+        "meaningRu": "форма (внешний вид предмета)",
+        "segments": [
+          {
+            "surface": "かたち"
+          }
+        ],
+        "kind": "word",
+        "pos": "noun",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateVocabularyIndex2_EN.pdf",
+            "entry": "かたち",
+            "label": "Marugoto Pre-Intermediate Vocabulary Index EN · стр.1 · 形（かたち）: form"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.word.supplement-price",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.16"
+        ],
+        "surface": "ねだん",
+        "kana": "ねだん",
+        "meaningRu": "цена",
+        "segments": [
+          {
+            "surface": "ねだん"
+          }
+        ],
+        "kind": "word",
+        "pos": "noun",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_c/MarugotoElementary2CompetencesVocabularyIndex_EN.pdf",
+            "entry": "ねだん",
+            "label": "Marugoto Elementary2 Competences Vocabulary Index EN · ねだん: price"
+          }
+        ]
       }
     ],
     "forms": [
@@ -1513,6 +1573,52 @@
             "row": 37,
             "entry": "にあいます",
             "label": "Словарь · урок 16"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.supplement-shape",
+        "wordId": "marugoto.starter-a1.word.supplement-shape",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.16"
+        ],
+        "surface": "かたち",
+        "kana": "かたち",
+        "segments": [
+          {
+            "surface": "かたち"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateVocabularyIndex2_EN.pdf",
+            "entry": "かたち",
+            "label": "Marugoto Pre-Intermediate Vocabulary Index EN · стр.1 · 形（かたち）: form"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.supplement-price",
+        "wordId": "marugoto.starter-a1.word.supplement-price",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.16"
+        ],
+        "surface": "ねだん",
+        "kana": "ねだん",
+        "segments": [
+          {
+            "surface": "ねだん"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_c/MarugotoElementary2CompetencesVocabularyIndex_EN.pdf",
+            "entry": "ねだん",
+            "label": "Marugoto Elementary2 Competences Vocabulary Index EN · ねだん: price"
           }
         ]
       }

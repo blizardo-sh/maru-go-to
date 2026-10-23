@@ -5,12 +5,13 @@ import { connectDatabase } from '../src/server/db';
 import { advanceLearningState, currentLearningStep, initialLearningState, type LearningAdvance, type LearningAdvanceResult, type LearningState } from '../src/shared/learning';
 import { learningFixture } from './helpers/learning-fixture';
 import { nextFixtureIp } from './helpers/fixture-ip';
+import { learningWordChoices } from '../src/shared/learningChoices';
 
 const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
 (databaseUrl ? describe : describe.skip)('group introduction and server-graded word choices', () => {
   const origin = 'http://127.0.0.1:5173'; const course = learningFixture(); const route = course.learning[0]!;
   const part = route.goals[0]!.parts[0]!;
-  const extraWords = course.words.filter(word => word.lessonIds.includes(route.lessonId) && word.reviewStatus !== 'draft').slice(3, 6);
+  const extraWords = ['せんせい', 'がくせい', 'エンジニア'].map(kana => course.words.find(word => word.kana === kana && word.lessonIds.includes(route.lessonId))!);
   for (const word of extraWords) { word.audioUrl = '/audio/fixture.m4a'; part.words.push({ ...part.words[0]!, wordId: word.id }); }
   const users: { id: string; email: string; cookie: string; ip: string }[] = [];
   let database: ReturnType<typeof connectDatabase>; let app: ReturnType<typeof createApp>;
@@ -28,7 +29,7 @@ const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
     const url = new URL(databaseUrl!);
     if (!['localhost', '127.0.0.1'].includes(url.hostname) || url.pathname !== '/japanese_app_test') throw new Error('Disposable local test database required.');
     database = connectDatabase(databaseUrl!); app = createApp({ database, course, config });
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
       const email = `quiz-${crypto.randomUUID()}@example.test`; const ip = nextFixtureIp(); const password = 'Quiz-fixture-password-2026!';
       const link = await createLink(database, 'invite', email, null); expect(await consumeLink(database, 'invite', link.token, password, 'Quiz fixture')).toBe(true);
       const response = await app.request(origin + '/api/auth/sign-in/email', { method: 'POST', headers: { origin, 'content-type': 'application/json', 'x-forwarded-for': ip }, body: JSON.stringify({ email, password }) });
@@ -98,5 +99,29 @@ const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
     const resumed = await state(2); expect(resumed.version).toBeGreaterThan(gradeAck.state.version);
     expect((await request(2, input(resumed, 'remember'))).status).toBe(400);
     expect(currentLearningStep(route, row)?.id).toBe(next.step.id);
+  });
+
+  test('an unsent old anchor is rejected without a grade, while a saved ACK predates new choice validation', async () => {
+    const current = (await submit(3, input(await state(3), 'start-practice'))).state;
+    if (current.step?.kind !== 'word-practice') throw new Error('Missing language question.');
+    const step = current.step;
+    const oldAnchor = course.words.find(word => word.kana === 'がくせい')!.id;
+    expect(current.wordChoices).not.toContain(oldAnchor);
+    const before = await counts(3);
+    const rejected = await request(3, input(current, 'choose', oldAnchor));
+    expect(rejected.status).toBe(400); expect((await rejected.json()).error.code).toBe('INVALID_CHOICE');
+    expect(await counts(3)).toEqual(before); expect(stableState(await state(3))).toEqual(stableState(current));
+    const wrong = current.wordChoices!.find(id => id !== step.wordId)!;
+    const attempt = input(current, 'choose', wrong); const ack = await submit(3, attempt);
+    expect(ack.reviewResult?.correct).toBe(false);
+    expect(await database.sql`select item_id from review_states where user_id=${users[3]!.id}`).toEqual([{ item_id: step.wordId }]);
+    const saved = await counts(3); const removed = course.words.find(word => word.id === wrong)!; const status = removed.reviewStatus;
+    try {
+      // A deployment may withdraw a distractor; the previously committed result is still authoritative.
+      removed.reviewStatus = 'draft';
+      expect(() => learningWordChoices(course, route, step)).toThrow();
+      expect(await submit(3, attempt)).toEqual(ack);
+      expect(await counts(3)).toEqual(saved);
+    } finally { removed.reviewStatus = status; }
   });
 });
