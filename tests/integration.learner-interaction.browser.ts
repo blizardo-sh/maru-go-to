@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import { chromium, expect, type Page } from '@playwright/test';
 import { learningFixture } from './helpers/learning-fixture';
 import { defaultSettings } from '../src/server/material';
+import { defaultCatalog } from '../src/shared/catalog';
 import { counterTarget, makeCounterCard } from '../src/shared/counters';
 import { counterAudio } from '../src/server/counter-audio';
 import type { ReviewItem, ReviewSubmission } from '../src/shared/types';
@@ -128,6 +129,45 @@ try {
       await expect(session).toHaveAttribute('data-step-id', 'guided-second'); expect(submissions).toHaveLength(name === 'guided-invalid-choice' ? 2 : 1); checks.push(name); console.info(`PASS ${name}`);
     } finally { release?.(); await context.close(); }
   }
+  for (const name of ['guided-publication-word', 'guided-publication-counter'].filter(selected)) {
+    const context = await browser.newContext({ viewport: { width: 1280, height: 900 } }), page = await context.newPage();
+    const publicationA = 'a'.repeat(64), publicationB = 'b'.repeat(64), lessonRoute = course.learning[0]!, goal = lessonRoute.goals[0]!, part = goal.parts[0]!, wordIds = course.words.filter(word => word.lessonIds.includes(lessonRoute.lessonId)).slice(0, 4).map(word => word.id);
+    const first: LearningState = { lessonId: lessonRoute.lessonId, publicationId: publicationA, routeVersion: lessonRoute.version, version: 0, completedSteps: 0, totalSteps: 12, partIndex: 0, totalParts: 2, completed: false, step: name.endsWith('counter') ? { kind: 'counter-practice', id: 'publication-first', goalId: goal.id, partId: part.id, counterId: 'nin', quantity: 1, wordId: words[0]!.id } : { kind: 'word-practice', id: 'publication-first', goalId: goal.id, partId: part.id, wordId: wordIds[0]!, mode: 'ja-ru' }, ...(name.endsWith('counter') ? { reviewItem: { ...items[0]!, publicationId: publicationA } } : { wordChoices: wordIds }) };
+    const next: LearningState = { ...first, publicationId: publicationB, routeVersion: 'published-route-b', version: 1, completedSteps: 1, step: { kind: 'word-intro', id: 'publication-next', goalId: goal.id, partId: part.id, wordId: wordIds[0]! } };
+    const newer = structuredClone(course); newer.publicationId = publicationB; newer.learning[0]!.version = next.routeVersion; newer.learning[0]!.titleRu = 'Новая публикация'; const target = newer.words.find(word => word.id === wordIds[0])!; target.meaningRu = 'Новое значение публикации';
+    let release: (() => void) | undefined, input: LearningAdvance | undefined, postHeader: string | undefined, bootstrapB = 0;
+    await context.route('**/api/bootstrap', route => { const publication = route.request().headers()['x-content-publication']; if (publication === publicationB) bootstrapB++; return route.fulfill({ json: { course: publication === publicationB ? newer : { ...course, publicationId: publicationA }, settings: { ...defaultSettings, animations: false }, lists: [], progress: { counters: [], introducedWordIds: [], introducedSkillIds: [], byMode: {} } } }); });
+    await context.route('**/api/learning/**', async route => { if (route.request().method() === 'GET') { await route.fulfill({ json: first }); return; } input = route.request().postDataJSON() as LearningAdvance; postHeader = route.request().headers()['x-content-publication']; await new Promise<void>(resolve => { release = resolve; }); await route.fulfill({ json: { attemptId: input.attemptId, state: next, reviewResult: { publicationId: publicationA, attemptId: input.attemptId, status: 'scheduled', version: 1, nextDue: '2026-10-24T00:00:00Z', correct: true } } }); });
+    try {
+      await page.goto(`http://127.0.0.1:${address.port}/interaction?guided`); const session = page.getByTestId('guided-learning'); await expect(session).toHaveAttribute('data-step-id', first.step!.id);
+      if (name.endsWith('counter')) await page.locator('[data-choice="nin"]').click(); else await page.locator(`[data-choice-word-id=${JSON.stringify(wordIds[0])}]`).click();
+      await expect.poll(() => !!input).toBe(true); expect(input!.publicationId).toBe(publicationA); expect(postHeader).toBe(publicationA); await expect(session).toHaveAttribute('data-step-id', first.step!.id); expect(bootstrapB).toBe(0);
+      if (name.endsWith('counter')) await expect(page.getByTestId('counter-answer')).toBeHidden();
+      release?.(); await expect.poll(() => bootstrapB).toBe(1); await expect(session).toHaveAttribute('data-step-id', first.step!.id); await expect(page.getByText('Новая публикация', { exact: true })).toHaveCount(0);
+      if (name.endsWith('counter')) await expect(page.getByTestId('counter-confirmed')).toBeVisible(); else await expect(page.getByTestId('learning-word-quiz')).toHaveAttribute('data-feedback', 'good');
+      await expect(session).toHaveAttribute('data-step-id', next.step!.id); await expect(page.getByRole('heading', { name: 'Новая публикация', exact: true })).toBeVisible(); await expect(page.locator('.word-meaning').filter({ hasText: 'Новое значение публикации' })).toBeVisible();
+      checks.push(name); console.info(`PASS ${name}`);
+    } finally { release?.(); await context.close(); }
+  }
+  if (selected('session-publication')) {
+    const context = await browser.newContext({ viewport: { width: 1280, height: 900 } }), page = await context.newPage(), publicationA = 'a'.repeat(64), publicationB = 'b'.repeat(64);
+    const courseA = { ...structuredClone(course), publicationId: publicationA, catalog: structuredClone(defaultCatalog) }, courseB = { ...structuredClone(course), publicationId: publicationB, catalog: structuredClone(defaultCatalog) };
+    courseA.catalog.counterAtlas!.src = '/content/a/atlas.webp'; courseB.catalog.counterAtlas!.src = '/content/b/atlas.webp';
+    const snapshot = (course: typeof courseA) => ({ course, settings: { ...defaultSettings, animations: false }, lists: [], progress: { counters: [], introducedWordIds: words.map(word => word.id), introducedSkillIds: [], byMode: {} } });
+    let active = courseA, release: (() => void) | undefined, submissions: ReviewSubmission[] = [];
+    await context.route('**/__interaction-data', route => route.fulfill({ json: snapshot(courseA) }));
+    await context.route('**/__next-publication-data', route => route.fulfill({ json: snapshot(courseB) }));
+    await context.route('**/api/bootstrap', route => route.fulfill({ json: snapshot(active) }));
+    await context.route('**/api/training?counters=true', route => { expect(route.request().headers()['x-content-publication']).toBe(active.publicationId); return route.fulfill({ json: { items: [{ ...items[0]!, publicationId: active.publicationId }], remainingDue: 0, remainingNew: 0 } }); });
+    await context.route('**/api/reviews', async route => { const input = route.request().postDataJSON() as ReviewSubmission; submissions.push(input); expect(input.publicationId).toBe(submissions.length === 1 ? publicationA : publicationB); expect(route.request().headers()['x-content-publication']).toBe(input.publicationId); if (submissions.length === 1) await new Promise<void>(resolve => { release = resolve; }); await route.fulfill({ json: { attemptId: input.attemptId, status: 'scheduled', version: 1, correct: true, nextDue: '2026-10-24T00:00:00Z' } }); });
+    try {
+      page.setDefaultTimeout(6000); await page.goto(`http://127.0.0.1:${address.port}/interaction`);
+      await expect(page.locator('.counter-picture image').first()).toHaveAttribute('href', '/content/a/atlas.webp'); await page.locator('[data-choice="nin"]').click(); await expect.poll(() => submissions.length).toBe(1);
+      active = courseB; await page.getByRole('button', { name: 'Refresh publication', exact: true }).click(); await expect(page.locator('.counter-picture image').first()).toHaveAttribute('href', '/content/a/atlas.webp'); release?.();
+      await expect(page.getByTestId('portion-complete')).toBeVisible(); await page.getByRole('button', { name: 'Продолжить', exact: true }).click(); await expect(page.locator('.counter-picture image').first()).toHaveAttribute('href', '/content/b/atlas.webp');
+      await page.locator('[data-choice="nin"]').click(); await expect(page.getByTestId('portion-complete')).toBeVisible(); expect(submissions).toHaveLength(2); checks.push('session-publication'); console.info('PASS session-publication');
+    } finally { release?.(); await context.close(); }
+  }
   for (const event of ['online', 'focus'].filter(event => selected(`app-replay-${event}`))) {
     const context = await browser.newContext({ viewport: { width: 1280, height: 900 } }), page = await context.newPage(), submissions: LearningAdvance[] = [], errors: string[] = [];
     page.on('pageerror', error => errors.push(error.message));
@@ -138,9 +178,10 @@ try {
     await context.route('**/api/**', async request => {
       const path = new URL(request.request().url()).pathname;
       if (path.endsWith('/advance')) { const input = request.request().postDataJSON() as LearningAdvance; submissions.push(input); if (input.attemptId === stale.submission.attemptId) await request.fulfill({ status: 400, json: { error: { code: 'INVALID_CHOICE', message: 'Choices changed' } } }); else await request.fulfill({ json: { attemptId: input.attemptId, state: { lessonId: route.lessonId, routeVersion: route.version, version: 1 } } }); return; }
-      if (path === '/api/course') courseGets++;
+      if (path === '/api/bootstrap') courseGets++;
       const counts = { due: 0, learned: 0, reviewedToday: 0 };
-      await request.fulfill({ json: path === '/api/me' ? user : path === '/api/course' ? course : path === '/api/settings' ? { ...defaultSettings, sceneSoundEnabled: false } : path === '/api/progress' ? { counters: [], introducedWordIds: [], introducedSkillIds: [], completedLessons: 0, totalLessons: 18, wordsIntroducedToday: 0, skillsIntroducedToday: 0, byMode: { 'ja-ru': counts, 'ru-ja': counts, listening: counts, grammar: counts, counter: counts } } : path === '/api/lists' ? { lists: [] } : { lessons: [] } });
+      const progress = { counters: [], introducedWordIds: [], introducedSkillIds: [], completedLessons: 0, totalLessons: 18, wordsIntroducedToday: 0, skillsIntroducedToday: 0, byMode: { 'ja-ru': counts, 'ru-ja': counts, listening: counts, grammar: counts, counter: counts } };
+      await request.fulfill({ json: path === '/api/bootstrap' ? { course, settings: { ...defaultSettings, sceneSoundEnabled: false }, progress, lists: [], learning: [] } : path === '/api/me' ? user : path === '/api/course' ? course : path === '/api/settings' ? { ...defaultSettings, sceneSoundEnabled: false } : path === '/api/progress' ? { counters: [], introducedWordIds: [], introducedSkillIds: [], completedLessons: 0, totalLessons: 18, wordsIntroducedToday: 0, skillsIntroducedToday: 0, byMode: { 'ja-ru': counts, 'ru-ja': counts, listening: counts, grammar: counts, counter: counts } } : path === '/api/lists' ? { lists: [] } : { lessons: [] } });
     });
     try {
       await page.goto(`http://127.0.0.1:${address.port}/interaction?app`); await expect(page.getByRole('heading', { name: 'Учебник', exact: true })).toBeVisible(); const before = courseGets;

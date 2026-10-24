@@ -186,7 +186,7 @@ def reimport(course, rows):
         if any("VocabularyIndex" in ref["url"] for ref in word["sourceRefs"]):
             assert any(form["wordId"] == word["id"] and form["surface"] == word["surface"] and form["kana"] == word["kana"] for form in result["forms"]), word["id"]
     # Pronunciation overrides are authored by expression, not a replacement of every は.
-    pronunciations = {"は": "わ", "を": "お", "こんにちは": "こんにちわ", "こんばんは": "こんばんわ", "おくには？": "おくにわ", "おしごとは？": "おしごとわ", "〜はちょっと…": "わちょっと", "きをつけて": "きおつけて"}
+    pronunciations = json.loads((Path(__file__).resolve().parents[1] / 'materials/catalog.json').read_text())['pronunciationOverrides']
     for word in result["words"]:
         if word["kana"] in pronunciations and (word["pos"] == "particle" or word["kind"] == "phrase"):
             word["audioText"] = pronunciations[word["kana"]]

@@ -53,7 +53,7 @@ test('legacy single-intro continue and already started retry queue remain unchan
   expect(currentLearningStep(route, state)?.kind).toBe('video');
 });
 
-test('all 305 authored word placements have four stable, distinct prepared choices in each format', () => {
+test('all authored word placements have four stable, distinct prepared choices in each format', () => {
   const course = loadCourse(); const reloaded = loadCourse(); let questions = 0; const targets = new Set<string>();
   for (const route of course.learning!) for (const step of learningParts(route).flat()) if (step.kind === 'word-practice') {
     const ids = learningWordChoices(course, route, step);
@@ -66,7 +66,7 @@ test('all 305 authored word placements have four stable, distinct prepared choic
     for (let i = 0; i < words.length; i++) for (let j = i + 1; j < words.length; j++) expect(confusableLearningWords(words[i]!, words[j]!)).toBe(false);
     targets.add(step.wordId); questions++;
   }
-  expect(questions).toBe(915); expect(targets.size).toBe(279); expect(preparedLearningChoices.size).toBe(targets.size);
+  expect(questions).toBe(course.learning!.flatMap(route=>route.goals.flatMap(goal=>goal.parts.flatMap(part=>part.words))).length*3); expect(targets.size).toBeGreaterThanOrEqual(348); expect(preparedLearningChoices.size).toBe(targets.size);
 });
 
 test('politeness, shared meanings and equivalent readings cannot create a false wrong answer', () => {

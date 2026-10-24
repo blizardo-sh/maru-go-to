@@ -1,6 +1,7 @@
+import { catalogFor } from '../shared/catalog';
 import type { Snapshot } from './types';
 import { studyWord } from './learning';
-import { counterDefinitions, counterWords, numbersFor, objectFor, counterObjects } from '../shared/counters';
+import { counterWords, numbersFor, objectFor } from '../shared/counters';
 import { Japanese } from './Japanese';
 import { CounterPicture } from './CounterPicture';
 import { JapaneseText } from './JapaneseText';
@@ -9,17 +10,18 @@ import { LessonVideoLibrary } from './LessonVideo';
 
 export function Textbook({ data, onLearn, onTrain, onCounters }: { data: Snapshot; onCounters: () => void; onLearn: (lessonId: string) => void; onTrain: (lessonId: string) => void }) {
   const { course, settings, progress } = data;
+  const catalog = catalogFor(course); const { definitions: counterDefinitions, objects: counterObjects } = catalog.counters;
   const introducedWords = new Set(progress.introducedWordIds);
   const introducedSkills = new Set(progress.introducedSkillIds);
-  const availableCounters = counterDefinitions.filter(counter => counterWords(course.words, introducedWords).some(word => objectFor(word)?.counters.includes(counter.id))).length;
+  const availableCounters = counterDefinitions.filter(counter => counterWords(course.words, introducedWords, catalog).some(word => objectFor(word, catalog)?.counters.includes(counter.id))).length;
   return <>
     <header className="pagehead"><h1>Учебник</h1><p>Marugoto Starter A1 · 18 уроков · 9 тем</p><p className="muted">Сначала знакомимся с основным материалом, затем практикуем его в обе стороны и на слух. Можно выйти в любой момент: точный шаг сохранится для вас.</p></header>
     <section className="counter-course sheet" aria-labelledby="counter-course-title">
-      <div className="counter-course-entry"><CounterPicture object={counterObjects[1]!} quantity={3} label="Книги" showQuantity /><div><h2 id="counter-course-title">Счётные суффиксы</h2><p>Картинки, чтения и аудио · колода до 20 карточек.</p></div><button className="primary" onClick={onCounters}>Тренировать счёт</button></div>
+      <div className="counter-course-entry">{counterObjects[0] && <CounterPicture catalog={catalog} object={counterObjects[0]} quantity={3} label="Счётные предметы" showQuantity />}<div><h2 id="counter-course-title">Счётные суффиксы</h2><p>Картинки, чтения и аудио · колода до 20 карточек.</p></div><button className="primary" onClick={onCounters}>Тренировать счёт</button></div>
       <details className="counter-course-details"><summary>Типы счёта · доступно {availableCounters} из {counterDefinitions.length}</summary><div className="counter-levels">{counterDefinitions.map(counter => {
-        const available = counterWords(course.words, introducedWords).some(word => objectFor(word)?.counters.includes(counter.id));
+        const available = counterWords(course.words, introducedWords, catalog).some(word => objectFor(word, catalog)?.counters.includes(counter.id));
         const state = progress.counters?.find(state => state.counterId === counter.id); const numbers = numbersFor(counter, state?.level ?? 0);
-        return <div key={counter.id} data-counter-id={counter.id} data-counter-level={state?.level ?? 0} data-available={available}><strong><Japanese value={counterAnswer(counter, null)} mode={data.settings.orthography} /></strong><span>{counter.title}<small>{available ? `1–${Math.max(...numbers).toLocaleString('ru-RU')}` : 'После знакомства со словом'}</small></span></div>;
+        return <div key={counter.id} data-counter-id={counter.id} data-counter-level={state?.level ?? 0} data-available={available}><strong><Japanese value={counterAnswer(counter, null, catalog)} mode={data.settings.orthography} /></strong><span>{counter.title}<small>{available ? `1–${Math.max(...numbers).toLocaleString('ru-RU')}` : 'После знакомства со словом'}</small></span></div>;
       })}</div>
       <small>Новые суффиксы открываются вместе с пройденными словами учебника. При недостатке материала колода короче.</small></details>
     </section>

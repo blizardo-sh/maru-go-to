@@ -29,6 +29,13 @@
       "when": 1792698146812,
       "tag": "0003_counter_progress",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1792828800000,
+      "tag": "0004_content_publications",
+      "breakpoints": true
     }
   ]
 }

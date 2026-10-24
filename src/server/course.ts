@@ -1,11 +1,17 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import { isDeepStrictEqual } from 'node:util';
+import { defaultCatalog } from '../shared/catalog';
 import type { Course } from '../shared/types';
 import { validateLearning, type GuidedLesson } from '../shared/learning';
 import { validateCourse } from '../shared/course';
 export function withLearningMaterial(course:Course,lessons:GuidedLesson[]):Course {
  const result=structuredClone(course);
+ const authored = new Map<string,unknown>();
  for(const lesson of lessons)for(const kind of ['words','forms','skills','exercises'] as const){
   for(const entry of lesson.authored?.[kind]??[]){
+   const key=kind+':'+entry.id;
+   if(authored.has(key)&&!isDeepStrictEqual(authored.get(key),entry))throw new Error(`Conflicting authored records: ${entry.id}`);
+   authored.set(key,entry);
    if(kind==='exercises'?(entry as Course['exercises'][number]).lessonId!==lesson.lessonId:!(entry as Course['words'][number]).lessonIds.includes(lesson.lessonId))throw new Error(`Invalid learning authored scope: ${entry.id}`);
    const entries=result[kind] as {id:string;lessonIds?:string[]}[];const index=entries.findIndex(item=>item.id===entry.id);
    if(index>=0&&entries[index]!.lessonIds?.some(id=>!(entry as Course['words'][number]).lessonIds.includes(id)))throw new Error(`Learning material removes existing lesson membership: ${entry.id}`);
@@ -24,6 +30,7 @@ export function loadCourse():Course {
   const lessons=readdirSync(learningDirectory).filter(name=>/^lesson-\d{2}\.json$/.test(name)).sort().map(name=>JSON.parse(readFileSync(new URL(name,learningDirectory),'utf8')) as GuidedLesson);
   course=withLearningMaterial(course,lessons);
  }
+ course.catalog=structuredClone(defaultCatalog);
  const audioPath=new URL('../../public/audio/manifest.json',import.meta.url);
  if(existsSync(audioPath)){
   const manifest=JSON.parse(readFileSync(audioPath,'utf8')) as Record<string,string>;

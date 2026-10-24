@@ -32,6 +32,7 @@ test('large quantities preserve number joins and semantic limits', () => {
   expect(() => counterReading('tsu', 11)).toThrow(); expect(() => counterReading('sai', 121)).toThrow();
   for (const n of [0, -1, 1.5, NaN, Infinity, 10_000_000]) expect(() => numberReading(n)).toThrow();
   for (const counter of counterDefinitions) for (let level = 0; level < 7; level++) for (const n of numbersFor(counter, level)) expect(counterReading(counter.id, n)).toMatch(/^[ぁ-ゖ]+$/u);
+  expect(numbersFor({...counterDefinitions.find(counter => counter.id === 'sai')!,maximum:105},2)).toEqual([100,101,102,103,104,105]);
 });
 
 test('only introduced textbook objects unlock practice; lexical homophones remain separate', () => {
@@ -64,16 +65,16 @@ test('whole-expression audio is packaged for every authored number, suffix and i
 test('a tier needs all four thresholds and failed retries do not replace its first answers', () => {
   const initial: CounterProgress = { counterId: 'hon', level: 0, history: [] };
   const attempts: CounterHistory[] = Array.from({ length: 20 }, (_, index) => ({ quantity: index % 10 + 1, kind: index < 3 ? 'recall' : 'reading-choice', confident: index >= 2 }));
-  const apply = (list: CounterHistory[]) => list.reduce(advanceCounter, initial);
+  const apply = (list: CounterHistory[]) => list.reduce((progress, attempt) => advanceCounter(progress, attempt), initial);
   expect(apply(attempts)).toMatchObject({ level: 1, history: [] });
   expect(apply(attempts.slice(0, 19)).level).toBe(0);
   expect(apply(attempts.map((item, index) => index === 2 ? { ...item, confident: false } : item)).level).toBe(0);
   expect(apply(attempts.map(item => ({ ...item, quantity: item.quantity === 10 ? 9 : item.quantity }))).level).toBe(0);
   expect(apply(attempts.map((item, index) => index === 2 ? { ...item, kind: 'reading-choice' } : item)).level).toBe(0);
   expect(advanceCounter(initial, { quantity: 11, kind: 'recall', confident: true })).toBe(initial);
-  expect(attempts.reduce(advanceCounter, { ...initial, counterId: 'tsu' as const }).level).toBe(0);
+  expect(attempts.reduce<CounterProgress>((progress, attempt) => advanceCounter(progress, attempt), { ...initial, counterId: 'tsu' }).level).toBe(0);
   const age: CounterProgress = { counterId: 'sai', level: 2, history: [] };
-  expect(attempts.map(item => ({ ...item, quantity: 100 + item.quantity })).reduce(advanceCounter, age).level).toBe(2);
+  expect(attempts.map(item => ({ ...item, quantity: 100 + item.quantity })).reduce((progress, attempt) => advanceCounter(progress, attempt), age).level).toBe(2);
 });
 
 test('qualifying samples reach millions gradually and stop at the final tier', () => {

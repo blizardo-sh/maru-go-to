@@ -2,13 +2,13 @@
   "voice": "Kyoko",
   "rate": 150,
   "pronunciationReview": "not-human-reviewed",
-  "selectedExamples": 205,
-  "distinctReadings": 177,
-  "generatedReadings": 177,
-  "cachedReadings": 0,
-  "decodedFiles": 177,
-  "bytes": 3170437,
-  "minDurationSeconds": 1.224535,
+  "selectedExamples": 278,
+  "distinctReadings": 247,
+  "generatedReadings": 70,
+  "cachedReadings": 177,
+  "decodedFiles": 247,
+  "bytes": 4406248,
+  "minDurationSeconds": 0.879864,
   "maxDurationSeconds": 3.917415,
   "files": [
     {
@@ -129,6 +129,258 @@
       "bytes": 15934,
       "durationSeconds": 1.739365,
       "sha256": "d575fb13d0e9f78ee62d147e5681fdffb0facc3b321fd961d65bb5fba82832c5"
+    },
+    {
+      "audioUrl": "/audio/learning/78d6139877b2c5eedd61.m4a",
+      "spokenText": "かんこくからきました。",
+      "bytes": 16673,
+      "durationSeconds": 1.839229,
+      "sha256": "d2d5b87dc7026f54b43a56bb9f947b359b60bb82724b25ba2edd41ff393a490e"
+    },
+    {
+      "audioUrl": "/audio/learning/0f1a93a55d22f588dfa3.m4a",
+      "spokenText": "ちゅうごくからきました。",
+      "bytes": 15717,
+      "durationSeconds": 1.737687,
+      "sha256": "ccc48b09860d765f377938dbd9643b5b49e805b91b107002125fb85388f59496"
+    },
+    {
+      "audioUrl": "/audio/learning/00480e0259d6c8598d29.m4a",
+      "spokenText": "エジプトからきました。",
+      "bytes": 15575,
+      "durationSeconds": 1.693696,
+      "sha256": "2f2007c5d86899f75f2d01a5a07d8484c52700711377fb8a1423e91e1adc03c0"
+    },
+    {
+      "audioUrl": "/audio/learning/e95547c61f8eb7d2dcf3.m4a",
+      "spokenText": "ドイツからきました。",
+      "bytes": 14754,
+      "durationSeconds": 1.567574,
+      "sha256": "62642a4d02166b5dcfa3284583786042b55be28c3179fad15a5eb1d26f55c3ec"
+    },
+    {
+      "audioUrl": "/audio/learning/a4165c1b5fdfdddf2cbc.m4a",
+      "spokenText": "かんこくごができます。",
+      "bytes": 17092,
+      "durationSeconds": 1.897279,
+      "sha256": "af6dd0e652cb829efcfbe9b5bd721659814dd3af967c3076ec313b61bf32b05d"
+    },
+    {
+      "audioUrl": "/audio/learning/5030fe048a62198a6a1c.m4a",
+      "spokenText": "ちゅうごくごができます。",
+      "bytes": 17037,
+      "durationSeconds": 1.9239,
+      "sha256": "d12eae71cebcc1369f4640af89ee336439a956b6e7799c03f1ee0aaa2505c56d"
+    },
+    {
+      "audioUrl": "/audio/learning/9ecb1475263316d65ca2.m4a",
+      "spokenText": "アラビアごができます。",
+      "bytes": 15713,
+      "durationSeconds": 1.706032,
+      "sha256": "3b4b5b78562bd24cb895fe6f3443dfba39b1d4feec3e544fa42493691584e419"
+    },
+    {
+      "audioUrl": "/audio/learning/5385974c715db300b065.m4a",
+      "spokenText": "ドイツごができます。",
+      "bytes": 15116,
+      "durationSeconds": 1.648844,
+      "sha256": "4404499ce7ff8dbae01263fa7093a05c6c064aa9ad13718036fc151dc5366900"
+    },
+    {
+      "audioUrl": "/audio/learning/7860cbddac06d8223d39.m4a",
+      "spokenText": "フランスごができます。",
+      "bytes": 16215,
+      "durationSeconds": 1.789342,
+      "sha256": "cecfe76dfc2b7a4f3c1508b1a4fa4f4773be39a712625b31e029be3dacf6d8b1"
+    },
+    {
+      "audioUrl": "/audio/learning/5dc5990aa1af4d20f045.m4a",
+      "spokenText": "わたしわかんこくじんです。",
+      "bytes": 18447,
+      "durationSeconds": 2.181361,
+      "sha256": "ac5f4d4746ada613d022a51948b48bb24bf52ac80dff3a2e44bbc99b5db56ca6"
+    },
+    {
+      "audioUrl": "/audio/learning/e82062d719bd2454a9ff.m4a",
+      "spokenText": "わたしわちゅうごくじんです。",
+      "bytes": 18356,
+      "durationSeconds": 2.192971,
+      "sha256": "8fc73582ed0e1b8d2405a6ae052185da2312565fbc73cf12dd42a5641f5dbe8c"
+    },
+    {
+      "audioUrl": "/audio/learning/881efdf332f1f9fb11c4.m4a",
+      "spokenText": "わたしわにほんじんです。",
+      "bytes": 17360,
+      "durationSeconds": 1.995601,
+      "sha256": "03de6e69cf2cdab6642ff53b32f713c4cf9c2c403b16187263a7ae134f30ee1f"
+    },
+    {
+      "audioUrl": "/audio/learning/9297bf13ac2f29317830.m4a",
+      "spokenText": "わたしわフランスじんです。",
+      "bytes": 18274,
+      "durationSeconds": 2.169751,
+      "sha256": "e33a25966abe7b1fcc08698390791a728679b6c79873d7c740da7e047e4c8820"
+    },
+    {
+      "audioUrl": "/audio/learning/37b5fc2ed472495e9b75.m4a",
+      "spokenText": "わたしわマレーシアじんです。",
+      "bytes": 18676,
+      "durationSeconds": 2.28585,
+      "sha256": "e3239a7d50a175d4c46f83076504fb6804caadb79aeef0d6e8910de94b05f33a"
+    },
+    {
+      "audioUrl": "/audio/learning/ce20b216bcae78ab2db2.m4a",
+      "spokenText": "わたしわきょうしです。",
+      "bytes": 16178,
+      "durationSeconds": 1.786621,
+      "sha256": "c67ba341da44887cdd7a842604e5d9cfe4fc8cd87ac8f17be9f1b677bbe6b580"
+    },
+    {
+      "audioUrl": "/audio/learning/a473fd8586eae4621b0e.m4a",
+      "spokenText": "わたしわこうむいんです。",
+      "bytes": 16895,
+      "durationSeconds": 1.937551,
+      "sha256": "ff043a01e5d7bb4de9ff9f0701cf4e0813fb6961e167909eb50e31337e94cc8c"
+    },
+    {
+      "audioUrl": "/audio/learning/4e3c21b12b6f2ab5253f.m4a",
+      "spokenText": "わたしわしゅふです。",
+      "bytes": 14675,
+      "durationSeconds": 1.566032,
+      "sha256": "8aecf9b468b2b8e3791082b385b22bae2cb13d300acdc23972bfdde6b2f5b02d"
+    },
+    {
+      "audioUrl": "/audio/learning/02cf5f99e832fa8c25c2.m4a",
+      "spokenText": "たなかせんせい、おはようございます。",
+      "bytes": 23858,
+      "durationSeconds": 3.005896,
+      "sha256": "a3b08d98071fd0008b99e6e240ff8024f285d9e83900ba1c1a731b91d1fae584"
+    },
+    {
+      "audioUrl": "/audio/learning/b87f0d5c51227a63bcd5.m4a",
+      "spokenText": "たなかさん、こんにちわ。",
+      "bytes": 18567,
+      "durationSeconds": 2.193197,
+      "sha256": "11a352126f25048e0bf84221852fae12f5c561be443ad1ae8109fa169098ec06"
+    },
+    {
+      "audioUrl": "/audio/learning/213607a869bef96af632.m4a",
+      "spokenText": "あのう、おなまえわ？",
+      "bytes": 15056,
+      "durationSeconds": 1.613515,
+      "sha256": "0f0befe8f83dbac6da6d392639936262408daf70a8a271c00e503174786d7f94"
+    },
+    {
+      "audioUrl": "/audio/learning/05205b3483ba9c573899.m4a",
+      "spokenText": "えっ、がくせいですか。",
+      "bytes": 15422,
+      "durationSeconds": 1.64254,
+      "sha256": "27febb721f8d63a73d16d8aec6b0890747b986823766de2debe097178e8b76f9"
+    },
+    {
+      "audioUrl": "/audio/learning/811fa64b438fcee25758.m4a",
+      "spokenText": "そうですか。わたしもがくせいです。",
+      "bytes": 22841,
+      "durationSeconds": 2.802222,
+      "sha256": "b8bfefb66711ce5042d4e54dfad84dd16b62679c72698ba28e7a2a985d05f861"
+    },
+    {
+      "audioUrl": "/audio/learning/6642385ddcd1f1bc7b88.m4a",
+      "spokenText": "にほんごができますか。すごいですね。",
+      "bytes": 23578,
+      "durationSeconds": 2.931791,
+      "sha256": "f8ed9dd33588a69535ce4ffe293805d458714a3ed4b3de3acfb4cdd820a2b1cb"
+    },
+    {
+      "audioUrl": "/audio/learning/4a5959b6efc9183d08c4.m4a",
+      "spokenText": "にほんごわべんきょうちゅうです。",
+      "bytes": 19154,
+      "durationSeconds": 2.258413,
+      "sha256": "b6ea09d5df78dcbceb2e13f9231c9a9e360c0979b6e42b362d7ade084e1a06a3"
+    },
+    {
+      "audioUrl": "/audio/learning/2560286584621ac578dd.m4a",
+      "spokenText": "イワンともうします。どうぞよろしく。",
+      "bytes": 22905,
+      "durationSeconds": 2.924943,
+      "sha256": "caefd3f16301b87e56655ef2ea3e200275f7414e1d1aac1c0a8ace986a81400c"
+    },
+    {
+      "audioUrl": "/audio/learning/43cd7d797390a4639058.m4a",
+      "spokenText": "じこしょうかいをします。",
+      "bytes": 16652,
+      "durationSeconds": 1.896372,
+      "sha256": "73d5910a66049a8336b6fadc67dfd47ef1a5740c8d53a3c2927d7997354bcc5e"
+    },
+    {
+      "audioUrl": "/audio/learning/94cd25e4e9b12addb5b5.m4a",
+      "spokenText": "にほんじんです。",
+      "bytes": 12716,
+      "durationSeconds": 1.283039,
+      "sha256": "0a5f318a15038d1067009e77effd0894a9030a692fd7f20ca41c3d7dc7a2ebfb"
+    },
+    {
+      "audioUrl": "/audio/learning/5061ebab0a40b4eb6942.m4a",
+      "spokenText": "なにごができますか。",
+      "bytes": 15452,
+      "durationSeconds": 1.65424,
+      "sha256": "7b8a22636acacc1a217bdfed1ae9b8c211c117b727aba8c16fde88555959604b"
+    },
+    {
+      "audioUrl": "/audio/learning/53098d2d172b89c24874.m4a",
+      "spokenText": "がくせいわふたりです。",
+      "bytes": 15822,
+      "durationSeconds": 1.717234,
+      "sha256": "f2ef71a52407db4600408f33990fa395dad2066d67cb32018143a1c102be2aca"
+    },
+    {
+      "audioUrl": "/audio/learning/86dd2568212573f5e515.m4a",
+      "spokenText": "イワンです。どうぞよろしく。",
+      "bytes": 19212,
+      "durationSeconds": 2.332653,
+      "sha256": "be475b80fb9c4ac839025424a7d0070aa5c212f5c29d2ab89c343fbfb8c13d0e"
+    },
+    {
+      "audioUrl": "/audio/learning/ea8c24857ed3fada1ab1.m4a",
+      "spokenText": "これからじこしょうかいします。",
+      "bytes": 19773,
+      "durationSeconds": 2.385488,
+      "sha256": "4076cafed11fbd3675be4ee3d62b9a9c8f706b0e7a673f211f411dc913fa7849"
+    },
+    {
+      "audioUrl": "/audio/learning/5a123522807af02ecef8.m4a",
+      "spokenText": "おしごとわ？",
+      "bytes": 11413,
+      "durationSeconds": 1.067166,
+      "sha256": "89850c85c440085dd15731eb5e5436ac582226b248f1707daec48442dfe96a00"
+    },
+    {
+      "audioUrl": "/audio/learning/258fb0e7292a9c25b057.m4a",
+      "spokenText": "おなまえわ？",
+      "bytes": 10987,
+      "durationSeconds": 0.997596,
+      "sha256": "ef97de0973af36f8fad7aea2cc65109e24cbd7ae1b0d2bad1a7a813e76461b08"
+    },
+    {
+      "audioUrl": "/audio/learning/f5580701c8ecfc93d514.m4a",
+      "spokenText": "おくにわ？",
+      "bytes": 9798,
+      "durationSeconds": 0.879864,
+      "sha256": "026ab254edf2ba4dd40c7b720635799b1bb25efc2f0061b283c1ac2e6071e632"
+    },
+    {
+      "audioUrl": "/audio/learning/f9c693093e28b9f0b7d3.m4a",
+      "spokenText": "これわなんですか。",
+      "bytes": 13941,
+      "durationSeconds": 1.50254,
+      "sha256": "931fe205e5a180a509c165c50a8099f40e129b905a6fe594d207b007ea20065e"
+    },
+    {
+      "audioUrl": "/audio/learning/6184c21cdefb22ad45bf.m4a",
+      "spokenText": "このことばわなんですか。",
+      "bytes": 17621,
+      "durationSeconds": 2.013923,
+      "sha256": "a19894ffa03026ad2c97db612e48a48ede1e1c75c1a4aaac22db07df7f9519cf"
     },
     {
       "audioUrl": "/audio/learning/b08bd0295f014b2e22b5.m4a",
@@ -269,6 +521,244 @@
       "bytes": 17342,
       "durationSeconds": 1.967528,
       "sha256": "1716251e9aab64fb40d764d227d319eceeec6eeeb55aa1343c64260b3da1dd3e"
+    },
+    {
+      "audioUrl": "/audio/learning/20da41ccb39f7e5bfa84.m4a",
+      "spokenText": "いもうとわがくせいです。",
+      "bytes": 16944,
+      "durationSeconds": 1.913379,
+      "sha256": "41823e6f97a63bd278d5466d30bab63d8370d04f8fc68c6c6076ba7ef0e87fa5"
+    },
+    {
+      "audioUrl": "/audio/learning/3ad7ff69430af605bd7a.m4a",
+      "spokenText": "おとうとわがくせいです。",
+      "bytes": 17014,
+      "durationSeconds": 1.937279,
+      "sha256": "052a550f0df8bee3bcb1c0c6a3abde9cac9c36a4bd2ec7ceb5a0cffd74a4665b"
+    },
+    {
+      "audioUrl": "/audio/learning/db34a58ae63a3772762c.m4a",
+      "spokenText": "あねのこです。",
+      "bytes": 11668,
+      "durationSeconds": 1.101995,
+      "sha256": "24493a5f23d258e0e932571813763023378975bd0ef84b4b8b6120f38b7a36d2"
+    },
+    {
+      "audioUrl": "/audio/learning/e8a745d24b72581e6ab9.m4a",
+      "spokenText": "このひとわともだちです。",
+      "bytes": 18925,
+      "durationSeconds": 2.187574,
+      "sha256": "9ae0f72cee45e2cb4276854a1595d3d394091161cb3bb81b0e06fe106e1229c8"
+    },
+    {
+      "audioUrl": "/audio/learning/aa57fefb4dc9f4b00dc9.m4a",
+      "spokenText": "このひとわせんせいです。",
+      "bytes": 17505,
+      "durationSeconds": 2.002358,
+      "sha256": "381208515a3c6e23a806add42046e404642697f15eedee562b465dfce10baa63"
+    },
+    {
+      "audioUrl": "/audio/learning/9e3bc660c9872fc73176.m4a",
+      "spokenText": "おかあさんわおげんきですか。",
+      "bytes": 19982,
+      "durationSeconds": 2.320408,
+      "sha256": "b94f24b2b7b044a9ca9e3e9cd9b3686dfa01931a85c755e07eb187cd40ab380c"
+    },
+    {
+      "audioUrl": "/audio/learning/895f7da21fb9cafd329d.m4a",
+      "spokenText": "おとうさんわどこにすんでいますか。",
+      "bytes": 23244,
+      "durationSeconds": 2.888753,
+      "sha256": "91d6eb9c14804123ba2c2e5063964fae86ad5c3cfd307f54077138a6df97ff7d"
+    },
+    {
+      "audioUrl": "/audio/learning/28edce2a8500709d8779.m4a",
+      "spokenText": "おにいさんわどこにすんでいますか。",
+      "bytes": 22984,
+      "durationSeconds": 2.889297,
+      "sha256": "a4ab49f11bbc7807bd2351edce58a155ee58dfe0d4b0925bd9793be7c47cb9b6"
+    },
+    {
+      "audioUrl": "/audio/learning/808ba7d0e5dd6070cff6.m4a",
+      "spokenText": "おねえさんわどこにすんでいますか。",
+      "bytes": 22836,
+      "durationSeconds": 2.853923,
+      "sha256": "a9b877d749ad700b6029aaa31f410b3e8d71556557af7ba067de19025db53cc2"
+    },
+    {
+      "audioUrl": "/audio/learning/9b99cb0be7b79e481bdf.m4a",
+      "spokenText": "おとうとさんわがくせいですか。",
+      "bytes": 20096,
+      "durationSeconds": 2.390068,
+      "sha256": "319e94ea0d76daa50e023b8f6277b221c1e6322ad443fff34733a91dee3919e0"
+    },
+    {
+      "audioUrl": "/audio/learning/175382bbaae895d7a36b.m4a",
+      "spokenText": "いもうとさんわがくせいですか。",
+      "bytes": 19997,
+      "durationSeconds": 2.366213,
+      "sha256": "90d9a097c489b78aad2c2914d38e82a54b937c1a5717483db63c8aaa6e533f32"
+    },
+    {
+      "audioUrl": "/audio/learning/41700f26077e942280b3.m4a",
+      "spokenText": "おくさんわおいくつですか。",
+      "bytes": 18749,
+      "durationSeconds": 2.134195,
+      "sha256": "cb1acc9c9314174db6e311bbe34f8a8310b69dda716346ba033c0858db00fa85"
+    },
+    {
+      "audioUrl": "/audio/learning/8f7e32228f6756cbaf08.m4a",
+      "spokenText": "おこさんわなんさいですか。",
+      "bytes": 18296,
+      "durationSeconds": 2.064444,
+      "sha256": "38cf651e6c86f862f4b1ceb6c50be746949f56574172b66404d794360f9df0ae"
+    },
+    {
+      "audioUrl": "/audio/learning/64242754a0de8f2476a1.m4a",
+      "spokenText": "ごしゅじんわおげんきですか。",
+      "bytes": 19811,
+      "durationSeconds": 2.263537,
+      "sha256": "bfa2192bfb50f54054c041335f105af64db9f2d680c52fd3464a4c15075ef27f"
+    },
+    {
+      "audioUrl": "/audio/learning/5b21b89381fd306ca9b4.m4a",
+      "spokenText": "わたしたちわがくせいです。",
+      "bytes": 18327,
+      "durationSeconds": 2.146531,
+      "sha256": "9006ca2665e34157130dbf589bbd78e96f7f07a8f68aadfb2d45c150c6d854c6"
+    },
+    {
+      "audioUrl": "/audio/learning/17e0ac6d7a19c3f391fc.m4a",
+      "spokenText": "かぞくわごにんです。",
+      "bytes": 15938,
+      "durationSeconds": 1.734739,
+      "sha256": "bc9901aba8d40138627b8e7d9a3f65306db90d999b4890c712983e07f5cbbff4"
+    },
+    {
+      "audioUrl": "/audio/learning/28c04facbe09954fe95d.m4a",
+      "spokenText": "かぞくわなんにんですか。",
+      "bytes": 17220,
+      "durationSeconds": 1.920499,
+      "sha256": "4cc75d96f29f1de2ac12d8cbcf7fa20df94bfcfa04e88fbcdf3efaae4bc8fbb9"
+    },
+    {
+      "audioUrl": "/audio/learning/ba7a986c2f65d8935efb.m4a",
+      "spokenText": "あにわかっこいいです。",
+      "bytes": 15733,
+      "durationSeconds": 1.704626,
+      "sha256": "48d20c914c7222746de16d1159670d2d400193ffd456e76b8f79b3f0e206a0b1"
+    },
+    {
+      "audioUrl": "/audio/learning/647c10103b6db1b151aa.m4a",
+      "spokenText": "こどもわかわいいです。",
+      "bytes": 15531,
+      "durationSeconds": 1.770159,
+      "sha256": "898fa59dc56f5e95de3d722fe4e3ad9cd8d5f4c841daf3fb077b7af88f5c5d24"
+    },
+    {
+      "audioUrl": "/audio/learning/1f24aceae5fdcf75992a.m4a",
+      "spokenText": "きれいなひとですね。",
+      "bytes": 14883,
+      "durationSeconds": 1.59542,
+      "sha256": "a31e82969a777b366056b2031b2d0cbc29b242723ca0b452aeb37b10363efdbe"
+    },
+    {
+      "audioUrl": "/audio/learning/f5b60aa65d7c1e68d536.m4a",
+      "spokenText": "ははわわかいです。",
+      "bytes": 14277,
+      "durationSeconds": 1.496463,
+      "sha256": "a8280567ec7b553288ddca2600b74a8b58c365996bc3fd9e907ead973dcdb3b3"
+    },
+    {
+      "audioUrl": "/audio/learning/db9bf7a704e54afa544d.m4a",
+      "spokenText": "このひとわおとこです。",
+      "bytes": 15609,
+      "durationSeconds": 1.770159,
+      "sha256": "5fe139c3aaa1068bdd03a93331e36a61a05671074fbd8fd9353efbe9616d7f6a"
+    },
+    {
+      "audioUrl": "/audio/learning/61bd88cde13be75b6397.m4a",
+      "spokenText": "あのおとこのひとわせんせいです。",
+      "bytes": 20792,
+      "durationSeconds": 2.50712,
+      "sha256": "c01a64fea5af53a4e4f21bf904b9fac7e6f108b78a4988da23925c72e61887b9"
+    },
+    {
+      "audioUrl": "/audio/learning/b7b2d99d48c9d48c3140.m4a",
+      "spokenText": "このひとわおんなです。",
+      "bytes": 15461,
+      "durationSeconds": 1.723719,
+      "sha256": "d6eb4ea83aeb851de08108c24f34ed97a0df9f9ad313cca29da5b2f87e813af2"
+    },
+    {
+      "audioUrl": "/audio/learning/8c4bb1c1ee21effe8aa1.m4a",
+      "spokenText": "あのおんなのひとわせんせいです。",
+      "bytes": 20449,
+      "durationSeconds": 2.41424,
+      "sha256": "3f7a79a3b0f013096d110cca45a05d4a33604e816d84efef26aaecabe5497440"
+    },
+    {
+      "audioUrl": "/audio/learning/452e8dca11a3bbec3960.m4a",
+      "spokenText": "このこわおとこのこです。",
+      "bytes": 17662,
+      "durationSeconds": 2.025578,
+      "sha256": "698e275676d0817dd25784c74edf4baef00a3753c919ddb301185859da4f3a64"
+    },
+    {
+      "audioUrl": "/audio/learning/d04e99eb5b005ed26f8b.m4a",
+      "spokenText": "このこわおんなのこです。",
+      "bytes": 16945,
+      "durationSeconds": 1.955918,
+      "sha256": "a7ba5b443b61d24dfaa79892b08e42b981bdde8ab1e62dbbc9ba75098e437053"
+    },
+    {
+      "audioUrl": "/audio/learning/c078f279a9bd2c4db2f5.m4a",
+      "spokenText": "ちちわほっかいどうにすんでいます。",
+      "bytes": 21186,
+      "durationSeconds": 2.567302,
+      "sha256": "da8247fe95e7bbec5b47b44bfd799f03c2adf076dc929a476fff73c02c57b9ef"
+    },
+    {
+      "audioUrl": "/audio/learning/30ced9711fc394734370.m4a",
+      "spokenText": "ともだちわソウルにすんでいます。",
+      "bytes": 22316,
+      "durationSeconds": 2.715646,
+      "sha256": "3d8fb81098f6f13def34172cf658b036430722c85688273b8cba8663efac2897"
+    },
+    {
+      "audioUrl": "/audio/learning/434ccaa3914bcde6d6ba.m4a",
+      "spokenText": "あにわパリにすんでいます。",
+      "bytes": 19528,
+      "durationSeconds": 2.285805,
+      "sha256": "71f9554aada1d9628fa09a05b6ae258c6a16c88999bce09b08aec55b49d90ba4"
+    },
+    {
+      "audioUrl": "/audio/learning/5af36457fc8bec50f95e.m4a",
+      "spokenText": "あねわおきなわにすんでいます。",
+      "bytes": 20840,
+      "durationSeconds": 2.553741,
+      "sha256": "9d48682c2b1ea563df2a007fa96e3400fd3b341e276e6b71e12c483a34d614b0"
+    },
+    {
+      "audioUrl": "/audio/learning/c4dbda2618e7c7c39687.m4a",
+      "spokenText": "とうきょうにすんでいます。",
+      "bytes": 17448,
+      "durationSeconds": 2.019048,
+      "sha256": "fc3a288ee75c4f1e193862f21ac5a234750637cea2d45f9569372333f1a7e429"
+    },
+    {
+      "audioUrl": "/audio/learning/9f81fe99048704652f4a.m4a",
+      "spokenText": "ここにちちがいます。",
+      "bytes": 16244,
+      "durationSeconds": 1.908934,
+      "sha256": "a2c1b0baa2622a6891add01725f688b7f86e43290684fd7e55d763257bea22f1"
+    },
+    {
+      "audioUrl": "/audio/learning/d34608e1876527ba7e8d.m4a",
+      "spokenText": "ともだちわひろしまにすんでいます。",
+      "bytes": 23850,
+      "durationSeconds": 2.947846,
+      "sha256": "4ce335d5cb267b2cf728193f5b212992c6e2d51dbff79f5145ee363a0079228a"
     },
     {
       "audioUrl": "/audio/learning/80e4c15526be4db192be.m4a",

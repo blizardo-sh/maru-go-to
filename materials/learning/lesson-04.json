@@ -1,6 +1,6 @@
 {
   "lessonId": "marugoto.starter-a1.lesson.04",
-  "version": "2026-10-21.1",
+  "version": "2026-10-24.1",
   "titleRu": "Семья",
   "goals": [
     {
@@ -641,6 +641,673 @@
         "marugoto.starter-a1.lesson.04",
         "marugoto.starter-a1.video.cando_08_01",
         "marugoto.starter-a1.video.challenge08"
+      ]
+    },
+    {
+      "id": "l04-family-more",
+      "titleRu": "Родственники и число людей",
+      "canDoIds": [
+        7
+      ],
+      "parts": [
+        {
+          "id": "l04-family-more-01",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.e2c5c1b293069cce",
+              "explanationRu": "Своя младшая сестра. О младшей сестре собеседника вежливо говорят いもうとさん.",
+              "example": {
+                "surface": "いもうとはがくせいです。",
+                "kana": "いもうとはがくせいです。",
+                "meaningRu": "Моя младшая сестра — студентка.",
+                "segments": [
+                  {
+                    "surface": "いもうとはがくせいです。"
+                  }
+                ],
+                "audioText": "いもうとわがくせいです。",
+                "audioUrl": "/audio/learning/20da41ccb39f7e5bfa84.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.ab938f825a16029d",
+              "explanationRu": "Свой младший брат. Для младшего брата собеседника используется おとうとさん.",
+              "example": {
+                "surface": "おとうとはがくせいです。",
+                "kana": "おとうとはがくせいです。",
+                "meaningRu": "Мой младший брат — студент.",
+                "segments": [
+                  {
+                    "surface": "おとうとはがくせいです。"
+                  }
+                ],
+                "audioText": "おとうとわがくせいです。",
+                "audioUrl": "/audio/learning/3ad7ff69430af605bd7a.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.a3759aa9767ff749",
+              "explanationRu": "Ребёнок; в сочетании あねのこ — «ребёнок моей старшей сестры». Это существительное, не счётный суффикс 個.",
+              "example": {
+                "surface": "あねのこです。",
+                "kana": "あねのこです。",
+                "meaningRu": "Это ребёнок моей старшей сестры.",
+                "segments": [
+                  {
+                    "surface": "あねのこです。"
+                  }
+                ],
+                "audioText": "あねのこです。",
+                "audioUrl": "/audio/learning/db34a58ae63a3772762c.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.7905be9b72b867a7",
+              "explanationRu": "Друг; в японском само слово не всегда указывает число. В примере речь об одном человеке на фотографии.",
+              "example": {
+                "surface": "このひとはともだちです。",
+                "kana": "このひとはともだちです。",
+                "meaningRu": "Этот человек — мой друг.",
+                "segments": [
+                  {
+                    "surface": "このひとはともだちです。"
+                  }
+                ],
+                "audioText": "このひとわともだちです。",
+                "audioUrl": "/audio/learning/e8a745d24b72581e6ab9.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.f40471510c8f6d47",
+              "explanationRu": "Человек; чтение ひと. Не путайте с にん — чтением счётного 人 после числительных.",
+              "example": {
+                "surface": "このひとはせんせいです。",
+                "kana": "このひとはせんせいです。",
+                "meaningRu": "Этот человек — учитель.",
+                "segments": [
+                  {
+                    "surface": "このひとはせんせいです。"
+                  }
+                ],
+                "audioText": "このひとわせんせいです。",
+                "audioUrl": "/audio/learning/aa57fefb4dc9f4b00dc9.m4a"
+              }
+            }
+          ]
+        },
+        {
+          "id": "l04-family-more-02",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.24948b79aebe026a",
+              "explanationRu": "Вежливо о матери собеседника или как обращение «мама». Рассказывая посторонним о своей матери, используют はは.",
+              "example": {
+                "surface": "おかあさんはおげんきですか。",
+                "kana": "おかあさんはおげんきですか。",
+                "meaningRu": "Как поживает ваша мама?",
+                "segments": [
+                  {
+                    "surface": "おかあさんはおげんきですか。"
+                  }
+                ],
+                "audioText": "おかあさんわおげんきですか。",
+                "audioUrl": "/audio/learning/9e3bc660c9872fc73176.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.fa352771e8199249",
+              "explanationRu": "Вежливо об отце собеседника или как обращение «папа». О своём отце перед посторонними обычно говорят ちち.",
+              "example": {
+                "surface": "おとうさんはどこにすんでいますか。",
+                "kana": "おとうさんはどこにすんでいますか。",
+                "meaningRu": "Где живёт ваш отец?",
+                "segments": [
+                  {
+                    "surface": "おとうさんはどこにすんでいますか。"
+                  }
+                ],
+                "audioText": "おとうさんわどこにすんでいますか。",
+                "audioUrl": "/audio/learning/895f7da21fb9cafd329d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.2e1687c1c11fe383",
+              "explanationRu": "Вежливо о старшем брате другого человека; о своём брате перед посторонними — あに.",
+              "example": {
+                "surface": "おにいさんはどこにすんでいますか。",
+                "kana": "おにいさんはどこにすんでいますか。",
+                "meaningRu": "Где живёт ваш старший брат?",
+                "segments": [
+                  {
+                    "surface": "おにいさんはどこにすんでいますか。"
+                  }
+                ],
+                "audioText": "おにいさんわどこにすんでいますか。",
+                "audioUrl": "/audio/learning/28edce2a8500709d8779.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.3133e45120ff9f46",
+              "explanationRu": "Вежливо о старшей сестре другого человека; о своей сестре — あね.",
+              "example": {
+                "surface": "おねえさんはどこにすんでいますか。",
+                "kana": "おねえさんはどこにすんでいますか。",
+                "meaningRu": "Где живёт ваша старшая сестра?",
+                "segments": [
+                  {
+                    "surface": "おねえさんはどこにすんでいますか。"
+                  }
+                ],
+                "audioText": "おねえさんわどこにすんでいますか。",
+                "audioUrl": "/audio/learning/808ba7d0e5dd6070cff6.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8ab2440d4ba09cb0",
+              "explanationRu": "Вежливо о младшем брате собеседника или другого человека. О своём младшем брате — おとうと.",
+              "example": {
+                "surface": "おとうとさんはがくせいですか。",
+                "kana": "おとうとさんはがくせいですか。",
+                "meaningRu": "Ваш младший брат — студент?",
+                "segments": [
+                  {
+                    "surface": "おとうとさんはがくせいですか。"
+                  }
+                ],
+                "audioText": "おとうとさんわがくせいですか。",
+                "audioUrl": "/audio/learning/9b99cb0be7b79e481bdf.m4a"
+              }
+            }
+          ]
+        },
+        {
+          "id": "l04-family-more-03",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.7a2329236a8c0d4c",
+              "explanationRu": "Вежливо о младшей сестре собеседника или другого человека. О своей сестре обычно говорят いもうと.",
+              "example": {
+                "surface": "いもうとさんはがくせいですか。",
+                "kana": "いもうとさんはがくせいですか。",
+                "meaningRu": "Ваша младшая сестра — студентка?",
+                "segments": [
+                  {
+                    "surface": "いもうとさんはがくせいですか。"
+                  }
+                ],
+                "audioText": "いもうとさんわがくせいですか。",
+                "audioUrl": "/audio/learning/175382bbaae895d7a36b.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.e466ab0e50508b66",
+              "explanationRu": "Вежливо о жене другого человека; о собственной жене — つま.",
+              "example": {
+                "surface": "おくさんはおいくつですか。",
+                "kana": "おくさんはおいくつですか。",
+                "meaningRu": "Сколько лет вашей жене?",
+                "segments": [
+                  {
+                    "surface": "おくさんはおいくつですか。"
+                  }
+                ],
+                "audioText": "おくさんわおいくつですか。",
+                "audioUrl": "/audio/learning/41700f26077e942280b3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8d94b37b564c52db",
+              "explanationRu": "Вежливо о ребёнке собеседника или другого человека. О своём ребёнке можно сказать こども.",
+              "example": {
+                "surface": "おこさんはなんさいですか。",
+                "kana": "おこさんはなんさいですか。",
+                "meaningRu": "Сколько лет вашему ребёнку?",
+                "segments": [
+                  {
+                    "surface": "おこさんはなんさいですか。"
+                  }
+                ],
+                "audioText": "おこさんわなんさいですか。",
+                "audioUrl": "/audio/learning/8f7e32228f6756cbaf08.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.7c84bcd7743a6785",
+              "explanationRu": "Вежливо о муже другого человека. О своём муже перед посторонними обычно говорят おっと.",
+              "example": {
+                "surface": "ごしゅじんはおげんきですか。",
+                "kana": "ごしゅじんはおげんきですか。",
+                "meaningRu": "Как поживает ваш муж?",
+                "segments": [
+                  {
+                    "surface": "ごしゅじんはおげんきですか。"
+                  }
+                ],
+                "audioText": "ごしゅじんわおげんきですか。",
+                "audioUrl": "/audio/learning/64242754a0de8f2476a1.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.549dc1bbc07042e8",
+              "explanationRu": "Мы — говорящий и ещё один или несколько человек. Это не уважительная форма слова わたし.",
+              "example": {
+                "surface": "わたしたちはがくせいです。",
+                "kana": "わたしたちはがくせいです。",
+                "meaningRu": "Мы студенты.",
+                "segments": [
+                  {
+                    "surface": "わたしたちはがくせいです。"
+                  }
+                ],
+                "audioText": "わたしたちわがくせいです。",
+                "audioUrl": "/audio/learning/5b21b89381fd306ca9b4.m4a"
+              }
+            }
+          ]
+        },
+        {
+          "id": "l04-family-more-04",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.ab84e14613cf9cf5",
+              "explanationRu": "Счётный суффикс возраста после числа. Сам さい не называет возраст; например, さんさい — три года.",
+              "example": {
+                "surface": "こどもはさんさいです。",
+                "kana": "こどもはさんさいです。",
+                "meaningRu": "Ребёнку три года.",
+                "segments": [
+                  {
+                    "surface": "こどもはさんさいです。"
+                  }
+                ],
+                "audioText": "こどもわさんさいです。",
+                "audioUrl": "/audio/learning/c855c461e8e789c7aa8c.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.042257bf0025e2ff",
+              "explanationRu": "Счётный суффикс людей. Трое — さんにん, пятеро — ごにん, шестеро — ろくにん; для одного и двух есть особые чтения.",
+              "example": {
+                "surface": "かぞくはごにんです。",
+                "kana": "かぞくはごにんです。",
+                "meaningRu": "В семье пять человек.",
+                "segments": [
+                  {
+                    "surface": "かぞくはごにんです。"
+                  }
+                ],
+                "audioText": "かぞくわごにんです。",
+                "audioUrl": "/audio/learning/17e0ac6d7a19c3f391fc.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8b06574d40c677ba",
+              "explanationRu": "Вопрос о числе людей: «сколько человек?». Для возраста нужен другой вопрос — なんさい.",
+              "example": {
+                "surface": "かぞくはなんにんですか。",
+                "kana": "かぞくはなんにんですか。",
+                "meaningRu": "Сколько человек в семье?",
+                "segments": [
+                  {
+                    "surface": "かぞくはなんにんですか。"
+                  }
+                ],
+                "audioText": "かぞくわなんにんですか。",
+                "audioUrl": "/audio/learning/28c04facbe09954fe95d.m4a"
+              }
+            }
+          ]
+        },
+        {
+          "id": "l04-family-count-01",
+          "words": [],
+          "counterPractice": {
+            "counterId": "nin",
+            "quantities": [
+              5,
+              6
+            ],
+            "wordId": "marugoto.starter-a1.word.f40471510c8f6d47"
+          }
+        }
+      ]
+    },
+    {
+      "id": "l04-family-photo-more",
+      "titleRu": "Подробности о людях на фотографии",
+      "canDoIds": [
+        8
+      ],
+      "parts": [
+        {
+          "id": "l04-family-photo-more-01",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.bb5b8febd333744b",
+              "explanationRu": "Классный, эффектный, стильный. В описании человека часто ближе к «круто выглядит», чем к «милый».",
+              "example": {
+                "surface": "あにはかっこいいです。",
+                "kana": "あにはかっこいいです。",
+                "meaningRu": "Мой старший брат классно выглядит.",
+                "segments": [
+                  {
+                    "surface": "あにはかっこいいです。"
+                  }
+                ],
+                "audioText": "あにわかっこいいです。",
+                "audioUrl": "/audio/learning/ba7a986c2f65d8935efb.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.50867557b70d8314",
+              "explanationRu": "Милый, очаровательный: впечатление от внешнего вида или поведения. Это не то же самое, что わかい «молодой».",
+              "example": {
+                "surface": "こどもはかわいいです。",
+                "kana": "こどもはかわいいです。",
+                "meaningRu": "Ребёнок милый.",
+                "segments": [
+                  {
+                    "surface": "こどもはかわいいです。"
+                  }
+                ],
+                "audioText": "こどもわかわいいです。",
+                "audioUrl": "/audio/learning/647c10103b6db1b151aa.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.182cd34e277df271",
+              "explanationRu": "Красивый; также «чистый» по контексту. Это な-прилагательное: перед существительным きれいな, перед です — きれいです.",
+              "example": {
+                "surface": "きれいなひとですね。",
+                "kana": "きれいなひとですね。",
+                "meaningRu": "Какой красивый человек.",
+                "segments": [
+                  {
+                    "surface": "きれいなひとですね。"
+                  }
+                ],
+                "audioText": "きれいなひとですね。",
+                "audioUrl": "/audio/learning/1f24aceae5fdcf75992a.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.51ff5fb63a7d9b66",
+              "explanationRu": "Молодой по возрасту. Не используется вместо «новый» при описании вещи.",
+              "example": {
+                "surface": "はははわかいです。",
+                "kana": "はははわかいです。",
+                "meaningRu": "Моя мать молода.",
+                "segments": [
+                  {
+                    "surface": "はははわかいです。"
+                  }
+                ],
+                "audioText": "ははわわかいです。",
+                "audioUrl": "/audio/learning/f5b60aa65d7c1e68d536.m4a"
+              }
+            }
+          ]
+        },
+        {
+          "id": "l04-family-photo-more-02",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.cdba4d6f7e72fefc",
+              "explanationRu": "Мужчина; нейтральное словарное обозначение пола. О человеке в разговоре мягче сказать おとこのひと.",
+              "example": {
+                "surface": "このひとはおとこです。",
+                "kana": "このひとはおとこです。",
+                "meaningRu": "Этот человек — мужчина.",
+                "segments": [
+                  {
+                    "surface": "このひとはおとこです。"
+                  }
+                ],
+                "audioText": "このひとわおとこです。",
+                "audioUrl": "/audio/learning/db9bf7a704e54afa544d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.bccad138b115fee4",
+              "explanationRu": "Мужчина, буквально «человек мужского пола». По смыслу мягче, чем называть человека просто おとこ.",
+              "example": {
+                "surface": "あのおとこのひとはせんせいです。",
+                "kana": "あのおとこのひとはせんせいです。",
+                "meaningRu": "Тот мужчина — учитель.",
+                "segments": [
+                  {
+                    "surface": "あのおとこのひとはせんせいです。"
+                  }
+                ],
+                "audioText": "あのおとこのひとわせんせいです。",
+                "audioUrl": "/audio/learning/61bd88cde13be75b6397.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.cff93023f5821587",
+              "explanationRu": "Женщина; словарное обозначение пола. При разговоре о человеке мягче использовать おんなのひと.",
+              "example": {
+                "surface": "このひとはおんなです。",
+                "kana": "このひとはおんなです。",
+                "meaningRu": "Этот человек — женщина.",
+                "segments": [
+                  {
+                    "surface": "このひとはおんなです。"
+                  }
+                ],
+                "audioText": "このひとわおんなです。",
+                "audioUrl": "/audio/learning/b7b2d99d48c9d48c3140.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.0395fedc3b783941",
+              "explanationRu": "Женщина, буквально «человек женского пола»; нейтральное описание человека в разговоре.",
+              "example": {
+                "surface": "あのおんなのひとはせんせいです。",
+                "kana": "あのおんなのひとはせんせいです。",
+                "meaningRu": "Та женщина — учитель.",
+                "segments": [
+                  {
+                    "surface": "あのおんなのひとはせんせいです。"
+                  }
+                ],
+                "audioText": "あのおんなのひとわせんせいです。",
+                "audioUrl": "/audio/learning/8c4bb1c1ee21effe8aa1.m4a"
+              }
+            }
+          ]
+        },
+        {
+          "id": "l04-family-photo-more-03",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.91eba862978ea458",
+              "explanationRu": "Мальчик: おとこ + の + こ. Слово относится к ребёнку, а не ко взрослому мужчине.",
+              "example": {
+                "surface": "このこはおとこのこです。",
+                "kana": "このこはおとこのこです。",
+                "meaningRu": "Этот ребёнок — мальчик.",
+                "segments": [
+                  {
+                    "surface": "このこはおとこのこです。"
+                  }
+                ],
+                "audioText": "このこわおとこのこです。",
+                "audioUrl": "/audio/learning/452e8dca11a3bbec3960.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.231aa76065182f08",
+              "explanationRu": "Девочка: おんな + の + こ. Для взрослой женщины — おんなのひと.",
+              "example": {
+                "surface": "このこはおんなのこです。",
+                "kana": "このこはおんなのこです。",
+                "meaningRu": "Этот ребёнок — девочка.",
+                "segments": [
+                  {
+                    "surface": "このこはおんなのこです。"
+                  }
+                ],
+                "audioText": "このこわおんなのこです。",
+                "audioUrl": "/audio/learning/d04e99eb5b005ed26f8b.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.learning.l04.who-question",
+              "explanationRu": "Целый вопрос «кто это?». Для человека используется だれ, а не なん.",
+              "example": {
+                "surface": "このひとはだれですか。",
+                "kana": "このひとはだれですか。",
+                "meaningRu": "Кто этот человек?",
+                "segments": [
+                  {
+                    "surface": "このひとはだれですか。"
+                  }
+                ],
+                "audioText": "このひとわだれですか。",
+                "audioUrl": "/audio/learning/f84a9aeae9f87d6f69f2.m4a"
+              }
+            }
+          ]
+        },
+        {
+          "id": "l04-family-photo-more-04",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.d4d63d4653ee4566",
+              "explanationRu": "Город Осака. В сообщении о проживании место отмечается に.",
+              "example": {
+                "surface": "あねはおおさかにすんでいます。",
+                "kana": "あねはおおさかにすんでいます。",
+                "meaningRu": "Моя старшая сестра живёт в Осаке.",
+                "segments": [
+                  {
+                    "surface": "あねはおおさかにすんでいます。"
+                  }
+                ],
+                "audioText": "あねわおおさかにすんでいます。",
+                "audioUrl": "/audio/learning/97b5f467927a16247687.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.f15790a46a9479bf",
+              "explanationRu": "Остров Хоккайдо. Долгая гласная どう сохраняется в чтении ほっかいどう.",
+              "example": {
+                "surface": "ちちはほっかいどうにすんでいます。",
+                "kana": "ちちはほっかいどうにすんでいます。",
+                "meaningRu": "Мой отец живёт на Хоккайдо.",
+                "segments": [
+                  {
+                    "surface": "ちちはほっかいどうにすんでいます。"
+                  }
+                ],
+                "audioText": "ちちわほっかいどうにすんでいます。",
+                "audioUrl": "/audio/learning/c078f279a9bd2c4db2f5.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.983a594dd4da786f",
+              "explanationRu": "Сеул, столица Южной Кореи. Название пишется катаканой.",
+              "example": {
+                "surface": "ともだちはソウルにすんでいます。",
+                "kana": "ともだちはソウルにすんでいます。",
+                "meaningRu": "Мой друг живёт в Сеуле.",
+                "segments": [
+                  {
+                    "surface": "ともだちはソウルにすんでいます。"
+                  }
+                ],
+                "audioText": "ともだちわソウルにすんでいます。",
+                "audioUrl": "/audio/learning/30ced9711fc394734370.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.d3545b3ce755d5a0",
+              "explanationRu": "Париж. При названии места проживания после города ставится に.",
+              "example": {
+                "surface": "あにはパリにすんでいます。",
+                "kana": "あにはパリにすんでいます。",
+                "meaningRu": "Мой старший брат живёт в Париже.",
+                "segments": [
+                  {
+                    "surface": "あにはパリにすんでいます。"
+                  }
+                ],
+                "audioText": "あにわパリにすんでいます。",
+                "audioUrl": "/audio/learning/434ccaa3914bcde6d6ba.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.04978338498ae0d7",
+              "explanationRu": "Окинава. Это название места; после него для проживания используется に.",
+              "example": {
+                "surface": "あねはおきなわにすんでいます。",
+                "kana": "あねはおきなわにすんでいます。",
+                "meaningRu": "Моя старшая сестра живёт на Окинаве.",
+                "segments": [
+                  {
+                    "surface": "あねはおきなわにすんでいます。"
+                  }
+                ],
+                "audioText": "あねわおきなわにすんでいます。",
+                "audioUrl": "/audio/learning/5af36457fc8bec50f95e.m4a"
+              }
+            }
+          ]
+        },
+        {
+          "id": "l04-family-photo-more-05",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.23f1417336b4ad34",
+              "explanationRu": "Вместо 〜 подставьте место. Полная форма すんでいます сообщает, где человек живёт; на записи — пример с Токио.",
+              "example": {
+                "surface": "とうきょうにすんでいます。",
+                "kana": "とうきょうにすんでいます。",
+                "meaningRu": "Я живу в Токио.",
+                "segments": [
+                  {
+                    "surface": "とうきょうにすんでいます。"
+                  }
+                ],
+                "audioText": "とうきょうにすんでいます。",
+                "audioUrl": "/audio/learning/c4dbda2618e7c7c39687.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.e27c10e325cc5bbf",
+              "explanationRu": "Быть, находиться — о людях и животных. Это не глагол проживания すんでいます.",
+              "example": {
+                "surface": "ここにちちがいます。",
+                "kana": "ここにちちがいます。",
+                "meaningRu": "Здесь находится мой отец.",
+                "segments": [
+                  {
+                    "surface": "ここにちちがいます。"
+                  }
+                ],
+                "audioText": "ここにちちがいます。",
+                "audioUrl": "/audio/learning/9f81fe99048704652f4a.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.22d18d5b7c33ad75",
+              "explanationRu": "Город Хиросима. Сохраняйте все четыре моры: ひ・ろ・し・ま.",
+              "example": {
+                "surface": "ともだちはひろしまにすんでいます。",
+                "kana": "ともだちはひろしまにすんでいます。",
+                "meaningRu": "Мой друг живёт в Хиросиме.",
+                "segments": [
+                  {
+                    "surface": "ともだちはひろしまにすんでいます。"
+                  }
+                ],
+                "audioText": "ともだちわひろしまにすんでいます。",
+                "audioUrl": "/audio/learning/d34608e1876527ba7e8d.m4a"
+              }
+            }
+          ]
+        }
       ]
     }
   ],
@@ -1687,6 +2354,114 @@
             "label": "Marugoto · Counters · ～さい: 2 = にさい"
           }
         ]
+      },
+      {
+        "id": "marugoto.starter-a1.word.learning.l04.who-question",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "だれですか",
+        "kana": "だれですか",
+        "meaningRu": "кто это?",
+        "segments": [
+          {
+            "surface": "だれですか"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_1.php",
+            "label": "Пользовательский PDF L4; самостоятельная запись и русский перевод подготовлены для маршрута"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.word.cdba4d6f7e72fefc",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "おとこ",
+        "kana": "おとこ",
+        "meaningRu": "мужчина",
+        "segments": [
+          {
+            "surface": "おとこ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 34,
+            "entry": "おとこ",
+            "label": "Словарь · урок 7 · только аудиоскрипт"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.word.cff93023f5821587",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "おんな",
+        "kana": "おんな",
+        "meaningRu": "женщина",
+        "segments": [
+          {
+            "surface": "おんな"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 35,
+            "entry": "おんな",
+            "label": "Словарь · урок 7 · только аудиоскрипт"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.word.23f1417336b4ad34",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "〜にすんでいます",
+        "kana": "〜にすんでいます",
+        "meaningRu": "живу в …",
+        "segments": [
+          {
+            "surface": "〜にすんでいます"
+          }
+        ],
+        "kind": "phrase",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+            "page": 1,
+            "row": 32,
+            "entry": "〜に    すんで（い）ます",
+            "label": "Указатель фраз · урок 4 · русский перевод подготовлен для приложения"
+          }
+        ],
+        "audioText": "とうきょうにすんでいます"
       }
     ],
     "forms": [
@@ -2222,6 +2997,138 @@
             "url": "https://a1.marugotoweb.jp/en/appendix_01.php",
             "entry": "にさい",
             "label": "Marugoto · Counters · ～さい: 2 = にさい"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.learning.l04.who-question",
+        "wordId": "marugoto.starter-a1.word.learning.l04.who-question",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "だれですか",
+        "kana": "だれですか",
+        "segments": [
+          {
+            "surface": "だれですか"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_2_4_1.php",
+            "label": "Пользовательский PDF L4; самостоятельная запись и русский перевод подготовлены для маршрута"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.d6ae13fe7fc88b7c",
+        "wordId": "marugoto.starter-a1.word.cdba4d6f7e72fefc",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "おとこ",
+        "kana": "おとこ",
+        "segments": [
+          {
+            "surface": "おとこ"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 34,
+            "entry": "おとこ",
+            "label": "Словарь · урок 7 · только аудиоскрипт"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.3b2a7f2df9441073",
+        "wordId": "marugoto.starter-a1.word.cff93023f5821587",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.07",
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "おんな",
+        "kana": "おんな",
+        "segments": [
+          {
+            "surface": "おんな"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 4,
+            "row": 35,
+            "entry": "おんな",
+            "label": "Словарь · урок 7 · только аудиоскрипт"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.4e473a5eecb6ed7a",
+        "wordId": "marugoto.starter-a1.word.23f1417336b4ad34",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "〜にすんでいます",
+        "kana": "〜にすんでいます",
+        "segments": [
+          {
+            "surface": "〜にすんでいます"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+            "page": 1,
+            "row": 32,
+            "entry": "〜に    すんで（い）ます",
+            "label": "Указатель фраз · урок 4 · русский перевод подготовлен для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.learning.l04.kirei-na",
+        "wordId": "marugoto.starter-a1.word.182cd34e277df271",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "きれいな",
+        "kana": "きれいな",
+        "segments": [
+          {
+            "surface": "きれいな"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 2,
+            "row": 34,
+            "entry": "きれい（な）",
+            "label": "Словарь · урок 4"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 5,
+            "row": 3,
+            "entry": "きれい（な）",
+            "label": "Словарь · урок 8"
           }
         ]
       }

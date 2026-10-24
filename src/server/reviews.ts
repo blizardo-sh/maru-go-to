@@ -1,3 +1,4 @@
+import { catalogFor } from '../shared/catalog';
 import { isDeepStrictEqual } from 'node:util';
 import { matchesPreparedAnswer } from '../shared/answers';
 import { createEmptyCard, fsrs, type Card } from 'ts-fsrs';
@@ -5,7 +6,7 @@ import type { Course, Progress, TrainingContext, ReviewItem, ReviewMode, ReviewQ
 import type { Database } from './db';
 import { allWords, normalizeSentence, sentenceFor, settingsFor, validSegments } from './material';
 import { withPersonalPractice } from './personal-practice';
-import { advanceCounter, counterDefinitions, counterKinds, counterTarget, counterWords, levelFor, makeCounterCard, numbersFor, objectFor, parseCounterTarget, type CounterCard, type CounterProgress } from '../shared/counters';
+import { advanceCounter, counterKinds, counterTarget, counterWords, levelFor, makeCounterCard, numbersFor, objectFor, parseCounterTarget, type CounterCard, type CounterProgress } from '../shared/counters';
 import { counterAudio } from './counter-audio';
 const scheduler=fsrs({enable_fuzz:false});
 export function nextCard(card:Card|null,rating:1|2|3|4,now=new Date()):Card {return scheduler.next(card??createEmptyCard(now),now,rating).card;}
@@ -25,29 +26,29 @@ async function snapshot(database:Pick<Database,'sql'>,userId:string,course:Cours
  const [{words_today,skills_today}]=await database.sql`select count(*) filter(where grammar=false)::int as words_today,count(*) filter(where grammar=true)::int as skills_today from (select item_id,(mode='grammar') as grammar,min(introduced_at) as first_at from review_states where user_id=${userId} and mode<>'counter' group by item_id,(mode='grammar')) introductions where first_at>=date_trunc('day',now() at time zone 'UTC') at time zone 'UTC'`;
  const counterRows=await database.sql`select counter_id,level,history from counter_progress where user_id=${userId}`;
  const counters:CounterProgress[]=counterRows.map((row:any)=>({counterId:row.counter_id,level:row.level,history:row.history}));
- return {words,states,counters,wordsToday:words_today as number,skillsToday:skills_today as number};
+ return {words,states,counters,catalog:catalogFor(course),media:course.media,publicationId:course.publicationId,wordsToday:words_today as number,skillsToday:skills_today as number};
 }
 const modes=['ja-ru','ru-ja','listening','grammar','counter'] as const;
 const wordModes=['ja-ru','ru-ja','listening'] as const;
 type Snapshot=Awaited<ReturnType<typeof snapshot>>;
 function introduced(snap:Snapshot,grammar=false){return new Set<string>(snap.states.filter((state:any)=>state.mode!=='counter'&&(state.mode==='grammar')===grammar).map((state:any)=>state.item_id));}
-function availableCounterWords(snap:Snapshot){return counterWords(snap.words,introduced(snap));}
+function availableCounterWords(snap:Snapshot){return counterWords(snap.words,introduced(snap),snap.catalog);}
 function counterItemFor(snap:Snapshot,targetId:string,now:Date):ReviewItem|undefined{
- const parsed=parseCounterTarget(targetId);if(!parsed)return;
+ const parsed=parseCounterTarget(targetId,snap.catalog);if(!parsed)return;
  const progress=snap.counters.find(progress=>progress.counterId===parsed.definition.id);
  if(parsed.quantity!==null&&levelFor(parsed.quantity)>(progress?.level??0))return;
- const words=availableCounterWords(snap),eligible=words.filter(word=>objectFor(word)?.counters.includes(parsed.definition.id));if(!eligible.length)return;
+ const words=availableCounterWords(snap),eligible=words.filter(word=>objectFor(word,snap.catalog)?.counters.includes(parsed.definition.id));if(!eligible.length)return;
  const state=snap.states.find((state:any)=>state.mode==='counter'&&state.item_id===targetId);
  const word=eligible[(state?.version??0)%eligible.length]!,seed=crypto.randomUUID();
- const counter=makeCounterCard(targetId,word.id,words,seed,!progress);if(!counter)return;
- counter.audioUrl=counterAudio(counter.definition,counter.quantity);
- counter.examples.forEach((example,index)=>{example.audioUrl=counterAudio(counter.definition,[1,3,8][index]!);});
+ const counter=makeCounterCard(targetId,word.id,words,seed,!progress,snap.catalog);if(!counter)return;
+ counter.audioUrl=counterAudio(counter.definition,counter.quantity,snap.catalog,snap.media);
+ counter.examples.forEach((example,index)=>{example.audioUrl=counterAudio(counter.definition,[1,3,8][index]!,snap.catalog,snap.media);});
  if(counter.kind==='listening-image'&&!counter.audioUrl)return;
- return {id:reviewId('counter',targetId,`${word.id}|${seed}`),targetId,mode:'counter',version:state?.version??0,due:new Date(state?.due??now).toISOString(),isNew:!state,counter};
+ return {...(snap.publicationId?{publicationId:snap.publicationId}:{}),id:reviewId('counter',targetId,`${word.id}|${seed}`),targetId,mode:'counter',version:state?.version??0,due:new Date(state?.due??now).toISOString(),isNew:!state,counter};
 }
 function counterTrainingQueue(snap:Snapshot,now:Date):ReviewQueue{
  const words=availableCounterWords(snap);const buckets=counterKinds.map(kind=>{
-  const targets=counterDefinitions.filter(counter=>words.some(word=>objectFor(word)?.counters.includes(counter.id))).flatMap(counter=>{
+  const targets=snap.catalog.counters.definitions.filter(counter=>words.some(word=>objectFor(word,snap.catalog)?.counters.includes(counter.id))).flatMap(counter=>{
    const level=snap.counters.find(progress=>progress.counterId===counter.id)?.level??0;
    return kind==='image-counter'||kind==='counter-image'?[counterTarget(counter.id,kind,null)]:Array.from({length:level+1},(_,index)=>numbersFor(counter,index)).flat().map(n=>counterTarget(counter.id,kind,n));
   });
@@ -56,11 +57,11 @@ function counterTrainingQueue(snap:Snapshot,now:Date):ReviewQueue{
  const all=buckets.flat();return {items:interleaveReviews(buckets).slice(0,20),remainingNew:all.filter(item=>item.isNew).length,remainingDue:all.filter(item=>!item.isNew&&new Date(item.due)<=now).length};
 }
 function submittedCounter(snap:Snapshot,targetId:string,challenge:string):CounterCard{
- const [wordId,seed,extra]=challenge.split('|');const parsed=parseCounterTarget(targetId);
+ const [wordId,seed,extra]=challenge.split('|');const parsed=parseCounterTarget(targetId,snap.catalog);
  if(!parsed||!seed||!wordId||extra!==undefined||!/^[a-f0-9-]{36}$/i.test(seed))throw new ReviewError('INVALID_REVIEW','Неверное счётное задание.');
  const level=snap.counters.find(progress=>progress.counterId===parsed.definition.id)?.level??0;
  if(parsed.quantity!==null&&(levelFor(parsed.quantity)>level||!numbersFor(parsed.definition,levelFor(parsed.quantity)).includes(parsed.quantity)))throw new ReviewError('MATERIAL_UNAVAILABLE','Эта числовая ступень ещё не открыта.',403);
- const card=makeCounterCard(targetId,wordId,availableCounterWords(snap),seed);if(!card||card.kind==='listening-image'&&!counterAudio(card.definition,card.quantity))throw new ReviewError('MATERIAL_UNAVAILABLE','Счётное задание недоступно.',403);
+ const card=makeCounterCard(targetId,wordId,availableCounterWords(snap),seed,false,snap.catalog);if(!card||card.kind==='listening-image'&&!counterAudio(card.definition,card.quantity,snap.catalog,snap.media))throw new ReviewError('MATERIAL_UNAVAILABLE','Счётное задание недоступно.',403);
  return card;
 }
 function exercisesFor(course:Course,words:Word[],personalIds?:Set<string>){
@@ -81,7 +82,7 @@ export function reviewPriority(state:{due:Date|string;introduced_at:Date|string;
 export function reviewDrawKey(priority:number,draw=Math.random()){return -Math.log(1-draw)/(1+priority);}
 function itemFor(course:Course,snap:Snapshot,mode:Exclude<ReviewMode,'counter'>,targetId:string,now:Date,options=exercisesFor(withPersonalPractice(course,snap.words),snap.words)):Exclude<ReviewItem,{mode:'counter'}>{
  const state=snap.states.find((candidate:any)=>candidate.mode===mode&&candidate.item_id===targetId);const first=snap.states.filter((candidate:any)=>candidate.item_id===targetId&&(candidate.mode==='grammar')===(mode==='grammar')).sort((a:any,b:any)=>new Date(a.introduced_at).getTime()-new Date(b.introduced_at).getTime())[0];
- const base={id:'',targetId,version:state?.version??0,due:new Date(state?.due??first?.introduced_at??now).toISOString(),isNew:!first};
+ const base={...(course.publicationId?{publicationId:course.publicationId}:{}),id:'',targetId,version:state?.version??0,due:new Date(state?.due??first?.introduced_at??now).toISOString(),isNew:!first};
  if(mode==='grammar'){const exercises=options.filter(exercise=>exercise.skillId===targetId);const exercise=exercises[base.version%exercises.length]!;return {...base,id:reviewId(mode,targetId,exercise.id),mode,exercise,skill:course.skills.find(skill=>skill.id===targetId)!};}
  return {...base,id:reviewId(mode,targetId),mode,word:snap.words.find(word=>word.id===targetId)!};
 }
@@ -211,14 +212,14 @@ export async function submitReviewLocked(tx:Database['sql'],userId:string,course
   const grade=input.mode==='grammar'?gradeGrammar(exerciseCourse,input,exerciseId):input.mode==='counter'?{correct,rating:correct&&!input.helped&&input.rating===3?3 as const:1 as const,feedback:correct?'Верно. Вспомнили уверенно — уберите карточку, иначе повторите.':'Повторим: '+counter!.answer.kana}:null;
   const rating=grade?.rating??(input as Extract<ReviewSubmission,{rating:number}>).rating;
   const card=scheduled?nextCard(existing?restoreCard(existing.card):null,rating,now):restoreCard(existing.card);
-  const result:ReviewResult={attemptId:input.attemptId,status:scheduled?'scheduled':'additional-practice',version:scheduled?currentVersion+1:currentVersion,nextDue:card.due.toISOString(),...(grade?{correct:grade.correct,feedback:grade.feedback}:{})};
+  const result:ReviewResult={...(course.publicationId?{publicationId:course.publicationId}:{}),attemptId:input.attemptId,status:scheduled?'scheduled':'additional-practice',version:scheduled?currentVersion+1:currentVersion,nextDue:card.due.toISOString(),...(grade?{correct:grade.correct,feedback:grade.feedback}:{})};
   if(scheduled)await tx`insert into review_states(user_id,item_id,mode,version,card,due) values(${userId},${targetId},${mode},${result.version},${card},${card.due}) on conflict(user_id,item_id,mode) do update set version=excluded.version,card=excluded.card,due=excluded.due,updated_at=now()`;
   if(counter&&input.mode==='counter'){
    await tx`insert into counter_progress(user_id,counter_id) values(${userId},${counter.definition.id}) on conflict do nothing`;
    const [previous]=await tx`select attempt_id from review_attempts where user_id=${userId} and mode='counter' and payload->>'reviewId'=${input.reviewId} limit 1`;
    if(!previous&&counter.quantity!==null){
     const [row]=await tx`select level,history from counter_progress where user_id=${userId} and counter_id=${counter.definition.id} for update`;
-    const next=advanceCounter({counterId:counter.definition.id,level:row.level,history:row.history},{quantity:counter.quantity,kind:counter.kind,confident:grade!.rating===3});
+    const next=advanceCounter({counterId:counter.definition.id,level:row.level,history:row.history},{quantity:counter.quantity,kind:counter.kind,confident:grade!.rating===3},snap.catalog);
     await tx`update counter_progress set level=${next.level},history=${next.history},updated_at=now() where user_id=${userId} and counter_id=${counter.definition.id}`;
    }
   }

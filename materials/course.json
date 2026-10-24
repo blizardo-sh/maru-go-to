@@ -32812,12 +32812,11 @@
       "lessonIds": [
         "marugoto.starter-a1.lesson.03"
       ],
-      "surface": "え",
+      "surface": "えっ",
       "kana": "えっ",
       "segments": [
         {
-          "surface": "え",
-          "reading": "えっ"
+          "surface": "えっ"
         }
       ],
       "reviewStatus": "source-checked",
@@ -55221,11 +55220,10 @@
         "marugoto.starter-a1.lesson.03"
       ],
       "surface": "こうむいん",
-      "kana": "こうむいんことば",
+      "kana": "こうむいん",
       "segments": [
         {
-          "surface": "こうむいん",
-          "reading": "こうむいんことば"
+          "surface": "こうむいん"
         }
       ],
       "reviewStatus": "source-checked",
