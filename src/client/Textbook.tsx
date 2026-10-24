@@ -1,32 +1,16 @@
-import { trainingSections, stagedLearning } from '../shared/training';
-import { catalogFor } from '../shared/catalog';
+import { stagedLearning } from '../shared/training';
 import type { Snapshot } from './types';
 import { studyWord } from './learning';
-import { counterWords, numbersFor, objectFor } from '../shared/counters';
 import { Japanese } from './Japanese';
-import { CounterPicture } from './CounterPicture';
 import { JapaneseText } from './JapaneseText';
-import { counterAnswer } from '../shared/counters';
 import { LessonVideoLibrary } from './LessonVideo';
 
-export function Textbook({ data, onLearn, onTrain, onCounters, onTopic }: { data: Snapshot; onTopic: (topicId: 'questions' | 'time', sectionId: string) => void; onCounters: () => void; onLearn: (lessonId: string) => void; onTrain: (lessonId: string) => void }) {
+export function Textbook({ data, onLearn, onTrain }: { data: Snapshot; onLearn: (lessonId: string) => void; onTrain: (lessonId: string) => void }) {
   const { course, settings, progress } = data;
-  const catalog = catalogFor(course); const { definitions: counterDefinitions, objects: counterObjects } = catalog.counters;
   const introducedWords = new Set(progress.introducedWordIds);
   const introducedSkills = new Set(progress.introducedSkillIds);
-  const availableCounters = counterDefinitions.filter(counter => counterWords(course.words, introducedWords, catalog).some(word => objectFor(word, catalog)?.counters.includes(counter.id))).length;
   return <>
     <header className="pagehead"><h1>Учебник</h1><p>Marugoto Starter A1 · 18 уроков · 9 тем</p><p className="muted">Сначала знакомимся с основным материалом, затем практикуем его в обе стороны и на слух. Можно выйти в любой момент: точный шаг сохранится для вас.</p></header>
-    <section className="counter-course sheet" aria-labelledby="counter-course-title">
-      <div className="counter-course-entry">{counterObjects[0] && <CounterPicture catalog={catalog} object={counterObjects[0]} quantity={3} label="Счётные предметы" showQuantity />}<div><h2 id="counter-course-title">Счётные суффиксы</h2><p>Картинки, чтения и аудио · колода до 20 карточек.</p></div><button className="primary" onClick={onCounters}>Тренировать счёт</button></div>
-      <details className="counter-course-details"><summary>Типы счёта · доступно {availableCounters} из {counterDefinitions.length}</summary><div className="counter-levels">{counterDefinitions.map(counter => {
-        const available = counterWords(course.words, introducedWords, catalog).some(word => objectFor(word, catalog)?.counters.includes(counter.id));
-        const state = progress.counters?.find(state => state.counterId === counter.id); const numbers = numbersFor(counter, state?.level ?? 0);
-        return <div key={counter.id} data-counter-id={counter.id} data-counter-level={state?.level ?? 0} data-available={available}><strong><Japanese value={counterAnswer(counter, null, catalog)} mode={data.settings.orthography} /></strong><span>{counter.title}<small>{available ? `1–${Math.max(...numbers).toLocaleString('ru-RU')}` : 'После знакомства со словом'}</small></span></div>;
-      })}</div>
-      <small>Новые суффиксы открываются вместе с пройденными словами учебника. При недостатке материала колода короче.</small></details>
-    </section>
-    {trainingSections(course).length > 0 && <section className="sheet thematic-course" aria-labelledby="thematic-title"><h2 id="thematic-title">Тематические тренировки</h2><p>Справка → знакомство с группой → практика. Доступны сразу, прогресс общий с уроками.</p><div className="thematic-sections">{trainingSections(course).map(section => <article key={section.id}><small>{section.topic === 'questions' ? 'Вопросы' : 'Время и календарь'}</small><h3>{section.title}</h3><p>{section.variable ? 'Небольшие подборки циферблатов и записей. Сначала правила чтения часов и минут.' : `${section.wordIds.length} выражений · части до 5`}</p><button className="primary" onClick={() => onTopic(section.topic, section.id)}>Изучать</button></article>)}</div></section>}
     <div className="lesson-grid" onPlayCapture={event => { event.currentTarget.querySelectorAll('video').forEach(media => { if (media !== event.target) media.pause(); }); }}>{course.lessons.map(lesson => {
       const route = course.learning?.find(route => route.lessonId === lesson.id);
       const learning = data.learning?.find(state => state.lessonId === lesson.id);
