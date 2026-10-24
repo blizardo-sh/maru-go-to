@@ -2,6 +2,7 @@ import hashlib
 import importlib.util
 import io
 import json
+import os
 from pathlib import Path
 import tarfile
 import tempfile
@@ -68,6 +69,28 @@ class ContentPackageTests(unittest.TestCase):
         received = self.root / 'received.tar'
         digest = package.receive(io.BytesIO(other.read_bytes()), received)
         self.assertEqual(digest, hashlib.sha256(other.read_bytes()).hexdigest())
+
+    def test_public_directories_ignore_private_umask_and_repair_existing_modes(self):
+        (self.media / 'audio/learning').mkdir()
+        (self.media / 'audio/one.m4a').rename(self.media / 'audio/learning/one.m4a')
+        self.bundle['assets'][0]['path'] = '/audio/learning/one.m4a'
+        self.bundle_path.write_text(json.dumps(self.bundle))
+        package.pack(self.bundle_path, self.media, self.archive)
+        stage, target = self.root / 'stage', self.root / 'published'
+        package.unpack(self.archive, stage)
+        directories = [target, target / 'audio', target / 'audio/learning']
+        for retry in range(2):
+            if retry:
+                for directory in directories:
+                    directory.chmod(0o700)
+            previous = os.umask(0o077)
+            try:
+                package.install(stage, target)
+            finally:
+                os.umask(previous)
+            for directory in directories:
+                self.assertEqual(directory.stat().st_mode & 0o777, 0o755)
+            self.assertEqual((target / 'audio/learning/one.m4a').stat().st_mode & 0o777, 0o644)
 
     def test_traversal_links_duplicates_and_unlisted_files_are_rejected(self):
         for entry in [('../escape', b'x', tarfile.REGTYPE), ('/absolute', b'x', tarfile.REGTYPE),
