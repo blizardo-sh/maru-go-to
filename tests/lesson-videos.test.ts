@@ -62,7 +62,7 @@ test('all 18 lessons publish the 80 source-linked dialogue clips, while the four
  for(const lesson of published.lessons){
   expect(lesson.videos!.length).toBeGreaterThanOrEqual(2);
   const route=published.learning!.find(item=>item.lessonId===lesson.id)!;
-  expect(route.version).toBe([3,4].includes(lesson.number)?'2026-10-24.1':'2026-10-21.1');
+  expect(route.version).toBe(([3,4].includes(lesson.number)?'2026-10-24.1':'2026-10-21.1')+'-staged');
   expect(new Set(route.goals.flatMap(goal=>goal.videoIds??[]))).toEqual(new Set(lesson.videos!.map(item=>item.id)));
  }
  const pilotParts=['l01-greetings-02','l02-classroom-02','l03-introduce-03','l04-family-photo-03'];

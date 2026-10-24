@@ -30,6 +30,7 @@ export async function updateWord(database:Database,userId:string,listId:string,w
  const [row]=await tx`select data from personal_words where id=${wordId} and list_id=${listId} and user_id=${userId} for update`;
  if(!row)return null;
  const word:Word={...row.data,...update};
+ if(word.surface!==row.data.surface||word.kana!==row.data.kana){delete word.audioUrl;delete word.audioText;}
  if(update.surface!==undefined||update.kana!==undefined){if(!update.segments)word.segments=[{surface:word.surface,...(word.kana!==word.surface&&word.kana?{reading:word.kana}:{})}];}
  if(!validSegments(word))throw new Error('Подтвердите чтение и разметку: фрагменты должны точно совпадать с написанием и каной.');
  word.reviewStatus='reviewed';

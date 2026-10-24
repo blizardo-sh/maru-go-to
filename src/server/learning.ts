@@ -1,3 +1,5 @@
+import { studyPreparations, studySpec, introduceStudy } from './study';
+import { stagedLearning } from '../shared/training';
 import { createHash } from 'node:crypto';
 import { isDeepStrictEqual } from 'node:util';
 import { advanceLearningState, currentLearningStep, initialLearningState, learningParts, reconcileOptionalVideos, reconcileLearningRoute, type GuidedLesson, type LearningAdvance, type LearningAdvanceResult, type LearningRouteState, type LearningState, type LearningStep } from '../shared/learning';
@@ -42,14 +44,16 @@ async function previousContext(database:Database,course:Course,route:GuidedLesso
   return {course:previous,route:oldRoute,state:oldState};
 }
 async function counterReview(sql:Database['sql'],userId:string,course:Course,step:Extract<LearningStep,{kind:'counter-practice'}>,learningVersion:number):Promise<Extract<ReviewItem,{mode:'counter'}>> {
-  const targetId=counterTarget(step.counterId,'reading-choice',step.quantity);
+  const targetId=counterTarget(step.counterId,step.format??'reading-choice',step.quantity);
   const [saved]=await sql`select version,due from review_states where user_id=${userId} and item_id=${targetId} and mode='counter'`;
   const hash=createHash('sha256').update(`${userId}:${course.publicationId??course.version}:${step.id}:${learningVersion}`).digest('hex');
   const seed=`${hash.slice(0,8)}-${hash.slice(8,12)}-${hash.slice(12,16)}-${hash.slice(16,20)}-${hash.slice(20,32)}`;
   const counter=makeCounterCard(targetId,step.wordId,course.words,seed,false,course.catalog);
+  if(stagedLearning(course)&&counter)counter.introduction=true;
   if(!counter)throw new ReviewError('MATERIAL_UNAVAILABLE','Счётное задание недоступно.',403);
   counter.audioUrl=counterAudio(counter.definition,counter.quantity,course.catalog,course.media);
-  return {id:reviewId('counter',targetId,`${step.wordId}|${seed}`),targetId,mode:'counter',version:saved?.version??0,due:new Date(saved?.due??Date.now()).toISOString(),isNew:!saved,counter,...(course.publicationId?{publicationId:course.publicationId}:{})};
+  const item:Extract<ReviewItem,{mode:'counter'}> = {id:reviewId('counter',targetId,`${step.wordId}|${seed}`),targetId,mode:'counter',version:saved?.version??0,due:new Date(saved?.due??Date.now()).toISOString(),isNew:!saved,counter,...(course.publicationId?{publicationId:course.publicationId}:{})};
+  return (await studyPreparations(sql,userId,course,[item]))[0] as typeof item;
 }
 export async function learningOverview(database: Database, userId: string, course: Course): Promise<{ lessons: LearningState[] }> {
   return {lessons:await Promise.all((course.learning??[]).map(route=>learningState(database,userId,course,route.lessonId,false)))};
@@ -65,10 +69,10 @@ export async function learningState(database: Database, userId: string, course: 
 }
 function validateAction(step: LearningStep, input: LearningAdvance): void {
   const practice = step.kind === 'word-practice' || step.kind === 'construction-practice' || step.kind === 'counter-practice';
-  const allowed = step.kind === 'counter-practice' ? ['choose'] : step.kind === 'word-practice' ? ['remember', 'again', 'choose'] : practice ? ['remember', 'again'] : step.kind === 'word-intro' ? ['continue', 'start-practice'] : step.kind === 'video' ? ['continue', 'skip'] : ['continue'];
+  const allowed = step.kind === 'counter-practice' ? step.format === 'recall' ? ['remember','again'] : ['choose'] : step.kind === 'word-practice' ? ['remember', 'again', 'choose'] : practice ? ['remember', 'again'] : step.kind === 'word-intro' ? ['continue', 'start-practice'] : step.kind === 'video' ? ['continue', 'skip'] : ['continue'];
   if (!allowed.includes(input.action)) throw new ReviewError('INVALID_ACTION', 'Действие не соответствует текущему шагу.');
   if (step.kind !== 'counter-practice' && (input.action === 'choose' ? !input.choiceWordId : input.choiceWordId !== undefined)) throw new ReviewError('INVALID_ACTION', 'Выбор ответа не относится к текущему шагу.');
-  if(step.kind==='counter-practice'?!input.counterChoice||input.choiceWordId!==undefined:input.counterChoice!==undefined||input.helped!==undefined)throw new ReviewError('INVALID_ACTION','Выбор не относится к счётному заданию.');
+  if(step.kind==='counter-practice'?(step.format!=='recall'&&!input.counterChoice)||input.choiceWordId!==undefined:input.counterChoice!==undefined||input.helped!==undefined)throw new ReviewError('INVALID_ACTION','Выбор не относится к счётному заданию.');
   const assembly = step.kind === 'construction-practice' && step.mode === 'grammar';
   if (!assembly && (input.tokenIds !== undefined || input.tokenForms !== undefined || input.revealed !== undefined || input.exploring !== undefined)) throw new ReviewError('INVALID_ACTION', 'Ответ конструктора не относится к текущему шагу.');
   if (assembly && !input.tokenIds) throw new ReviewError('INVALID_ACTION', 'Нужно собрать фразу.');
@@ -97,18 +101,28 @@ export async function advanceLearning(database: Database, userId: string, course
       if (!learningWordChoices(course, route, step).includes(input.choiceWordId!)) throw new ReviewError('INVALID_CHOICE', 'Вариант не относится к этому вопросу.');
       action = input.choiceWordId === step.wordId ? 'remember' : 'again';
     }
+    if(stagedLearning(course)&&(step.kind==='word-intro'||step.kind==='construction-intro')){
+      const parts=learningParts(route)[state.partIndex]!;
+      const introductions=input.action==='start-practice'?parts.filter(value=>value.kind==='word-intro'&&state.pendingStepIds.includes(value.id)):[step];
+      for(const introduction of introductions){
+        const item=introduction.kind==='word-intro'?await learningReviewItem(tx,userId,course,'ja-ru',introduction.wordId):introduction.kind==='construction-intro'?await learningReviewItem(tx,userId,course,'grammar',course.exercises.find(value=>value.id===introduction.exerciseId)!.skillId,introduction.exerciseId):undefined;
+        if(item)await introduceStudy(tx,userId,studySpec(course,item),'learning');
+      }
+    }
     let reviewResult: LearningAdvanceResult['reviewResult'];
     if (step.kind === 'word-practice' || step.kind === 'construction-practice' || step.kind === 'counter-practice') {
       const item = step.kind === 'counter-practice' ? await counterReview(tx,userId,course,step,input.stateVersion) : step.kind === 'word-practice'
         ? await learningReviewItem(tx, userId, course, step.mode, step.wordId)
         : await learningReviewItem(tx, userId, course, 'grammar', course.exercises.find(exercise => exercise.id === step.exerciseId)!.skillId, step.exerciseId);
-      if(step.kind==='counter-practice'&&item.mode==='counter'){if(!item.counter.options.some(option=>option.key===input.counterChoice))throw new ReviewError('INVALID_CHOICE','Вариант не относится к этому вопросу.');action=item.counter.acceptedKeys.includes(input.counterChoice!)&&!input.helped?'remember':'again';}
+      if(stagedLearning(course)&&(step.kind==='word-practice'||step.kind==='construction-practice')){const introId=`${step.partId}:intro:${step.kind==='word-practice'?step.wordId:step.exerciseId}`;if(state.completedStepIds.includes(introId))await introduceStudy(tx,userId,studySpec(course,item),'learning');}
+      if(step.kind==='counter-practice'&&step.format!=='recall'&&item.mode==='counter'){if(!item.counter.options.some(option=>option.key===input.counterChoice))throw new ReviewError('INVALID_CHOICE','Вариант не относится к этому вопросу.');action=item.counter.acceptedKeys.includes(input.counterChoice!)&&!input.helped?'remember':'again';}
       const submission: ReviewSubmission = item.mode === 'counter' ? {attemptId:input.attemptId,reviewId:item.id,version:item.version,mode:'counter',rating:action==='remember'?3:1,choice:input.counterChoice,helped:input.helped??false,...(course.publicationId?{publicationId:course.publicationId}:{})} : item.mode !== 'grammar'
         ? { attemptId: input.attemptId, reviewId: item.id, version: item.version, mode: item.mode, rating: action === 'again' ? 1 : 3 }
         : { attemptId: input.attemptId, reviewId: item.id, version: item.version, mode: 'grammar', tokenIds: step.kind === 'construction-practice' && step.mode === 'grammar' ? input.tokenIds! : item.exercise.acceptedOrders[0]!, ...(input.tokenForms ? { tokenForms: input.tokenForms } : {}), revealed: input.revealed ?? false, ...(input.exploring !== undefined ? { exploring: input.exploring } : {}), rating: action === 'again' ? 1 : 3 };
+      if(step.kind==='construction-practice')submission.practiceFormat=step.mode;
       reviewResult = await submitReviewLocked(tx, userId, course, submission);
       if (step.kind === 'word-practice' && input.action === 'choose') reviewResult = { ...reviewResult, correct: action === 'remember' };
-      if (item.mode === 'grammar' && (reviewResult.correct === false || submission.mode === 'grammar' && submission.revealed)) action = 'again';
+      if ((item.mode === 'grammar' || item.mode === 'counter') && (reviewResult.correct === false || submission.mode === 'grammar' && submission.revealed)) action = 'again';
     }
     let next = advanceLearningState(route, state, action);
     const nextRoute=routeFor(nextCourse,lessonId);

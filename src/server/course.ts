@@ -4,6 +4,7 @@ import { defaultCatalog } from '../shared/catalog';
 import type { Course } from '../shared/types';
 import { validateLearning, type GuidedLesson } from '../shared/learning';
 import { validateCourse } from '../shared/course';
+import type { ThematicMaterial } from '../shared/training';
 export function withLearningMaterial(course:Course,lessons:GuidedLesson[]):Course {
  const result=structuredClone(course);
  const authored = new Map<string,unknown>();
@@ -31,6 +32,16 @@ export function loadCourse():Course {
   course=withLearningMaterial(course,lessons);
  }
  course.catalog=structuredClone(defaultCatalog);
+ const thematicPath=new URL('../../materials/thematic-training.json',import.meta.url);
+ if(existsSync(thematicPath)){
+  const thematic=JSON.parse(readFileSync(thematicPath,'utf8')) as ThematicMaterial;
+  for(const word of thematic.words){if(course.words.some(item=>item.id===word.id))throw new Error(`Duplicate thematic word: ${word.id}`);course.words.push(word);}
+  course.forms.push(...thematic.forms);
+  const {words:thematicWords,forms:thematicForms,...metadata}=thematic;
+  course.catalog.thematic=metadata;course.catalog.learningPolicy='master-before-repeat';
+  for(const route of course.learning??[]) { route.version += '-staged'; for(const goal of route.goals)for(const part of goal.parts)if(part.counterPractice)part.counterPractice.formats=['reading-choice','listening-image','recall']; }
+  validateCourse(course);
+ }
  const audioPath=new URL('../../public/audio/manifest.json',import.meta.url);
  if(existsSync(audioPath)){
   const manifest=JSON.parse(readFileSync(audioPath,'utf8')) as Record<string,string>;

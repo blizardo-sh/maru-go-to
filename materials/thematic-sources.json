@@ -1,0 +1,3546 @@
+{
+  "researchedAt": "2026-10-24",
+  "scope": "Official JF/Marugoto/Irodori fact check for A1 question/time trainers. Facts only; no production edits.",
+  "sourcePolicy": "Canonical readings follow exact Marugoto collection tables. Only source-attested alternatives are listed; all compound minute forms are labelled as derived rather than falsely claimed as a complete printed table. Russian glosses and usage summaries are authored paraphrases.",
+  "sources": {
+    "calendar": {
+      "url": "https://words.marugotoweb.jp/static_contents/sp/collection/calendar.php?lang=en",
+      "title": "Marugoto Words: Calendar",
+      "evidence": "Complete exact kana tables: months1–12, dates1–31, weekdays, last/this/next year/month/week, days -2..+2 and recurrence. HTML used instead of OCR-corrupted PDF."
+    },
+    "calendar-pdf": {
+      "url": "https://words.marugotoweb.jp/static_contents/pdf/collection/calendar_en.pdf",
+      "title": "Marugoto Words Calendar PDF",
+      "pages": [
+        1,
+        2
+      ],
+      "evidence": "Same calendar tables; PDF OCR has errors in some months/year readings, corrected against primary HTML."
+    },
+    "time": {
+      "url": "https://words.marugotoweb.jp/static_contents/sp/collection/time.php?lang=en",
+      "title": "Marugoto Words: Time",
+      "evidence": "All hours1–12; minutes1–10 and30; 8分 はっぷん/はちふん; AM/PM; morning/daytime-noon/evening-night; 半, ごろ and duration questions."
+    },
+    "minutes": {
+      "url": "https://www.irodori.jpf.go.jp/assets/data/starter/pdf/X_L13.pdf",
+      "title": "Irodori Starter L13",
+      "pages": [
+        8
+      ],
+      "evidence": "Minutes1–9 plus10/20/30/40/50; explicitly 4分 よんふん/よんぷん and8分 はちふん/はっぷん. PDF OCR confuses smallっ in tens; normalized using Marugoto Time."
+    },
+    "madrid": {
+      "url": "https://md.jpf.go.jp/userfiles/file/2018/Lengua%20Japonesa/Gramatica/A1-ES_rev.pdf",
+      "title": "Fundación Japón Madrid: Marugoto Gramática A1, revised2018",
+      "pdfPages": [
+        43,
+        44
+      ],
+      "printedPages": [
+        37,
+        38
+      ],
+      "evidence": "Hour7 canonicalしちじ; special disambiguating spokenななじ;10minuteじっぷん andじゅっぷん; minute construction by final numeral syllable;30minutes=半 in clock expressions; midnight午前0時 and noon午後0時."
+    },
+    "interrogatives": {
+      "url": "https://a1.marugotoweb.jp/en/assets/pdf/grammar/A1_appendix_04_en.pdf",
+      "title": "Marugoto A1 Grammar Appendix: Interrogatives",
+      "evidence": "Question categories: person, thing, appearance, time, duration, place, means, quantities; supports nan-gatsu/nan-nichi and nan-jikan versus nan-ji."
+    },
+    "demonstratives": {
+      "url": "https://a1.marugotoweb.jp/en/assets/pdf/grammar/A1_appendix_03_en.pdf",
+      "title": "Marugoto A1 Grammar Appendix: Demonstratives",
+      "evidence": "どこ location;どれ object choice;どちら direction;どの+N modifies noun; direct examples for location, which coffee, price, what-is-that."
+    },
+    "nan-nani": {
+      "url": "https://www.irodori.jpf.go.jp/assets/data/starter/pdf/X_L11.pdf",
+      "title": "Irodori Starter L11, grammar notes",
+      "pages": [
+        19
+      ],
+      "evidence": "何:なん withですか and counters/calendar questions;なに before を/が in examples. Explicitなんようび,なんがつ,なんにち,なんじ,なんぷん readings.どんな must precede a noun."
+    },
+    "weekday-clock": {
+      "url": "https://www.irodori.jpf.go.jp/assets/data/starter/pdf/X_L09.pdf",
+      "title": "Irodori Starter L9",
+      "evidence": "Question何曜日ですか with complete weekday table;今何時ですか;何時に起きますか;曜日/日時+がいいです andいつがいいですか; clock AM/PM examples."
+    },
+    "origin": {
+      "url": "https://www.irodori.jpf.go.jp/assets/data/starter/pdf/X_L03.pdf",
+      "title": "Irodori Starter L3, introduction dialog",
+      "evidence": "どちら is polite where;ベトナムの、どちらからですか asks hometown within Vietnam, answeredフエです. Distinct from present location."
+    },
+    "activity-phrases": {
+      "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+      "title": "Marugoto Starter Activities Phrase Index",
+      "evidence": "Listsどちらから?L3;おいくつですかL4;いくらですかL13;どうですかL16;どうでしたかL17;〜ってどういういみですかL2."
+    },
+    "rikai-phrases": {
+      "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+      "title": "Marugoto Starter Competences Phrase Index",
+      "evidence": "どちらまでですかL13 destination question; other fixed A1 expressions."
+    },
+    "calendar-question": {
+      "url": "https://www.kyozai.jpf.go.jp/kyozai/material/KTS00125/ja/render.do",
+      "title": "JF Minna no Kyozai:5-1何月何日ですか",
+      "evidence": "Birthday date question何月何日ですか; holiday date questionいつですか; month/day answer1月2日です. References complete1–12month and1–31date tables."
+    },
+    "time-ni": {
+      "url": "https://a1.marugotoweb.jp/ja/note_5_9_2.php",
+      "title": "Marugoto A1 L9 time of action",
+      "evidence": "Exact hour+に+verb;なんじに asks hour of action;いつ asks when;ごろ gives approximate time and the presented A1 pattern omitsに afterごろ."
+    },
+    "calendar-ni": {
+      "url": "https://a1.marugotoweb.jp/en/note_6_12_1.php",
+      "title": "Marugoto A1 L12 calendar time",
+      "evidence": "Month/date/weekday/hour+に for action time; examples omitに afterいま/きのう/きょう/あした/らいしゅう/らいげつ/らいねん and questionいつ."
+    },
+    "evening": {
+      "url": "https://www.irodori.jpf.go.jp/assets/data/elementary01/pdf/Y_L02.pdf",
+      "title": "Irodori Elementary1 L2",
+      "pages": [
+        5
+      ],
+      "evidence": "夕方ゆうがた is early evening; meaning distinct from broad night/eveningよる. This supporting source is A2, while the word already exists as A1 supplement in local corpus."
+    },
+    "rikai-vocabulary": {
+      "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+      "title": "Marugoto Starter Competences Vocabulary Index2 RU",
+      "pages": [
+        2
+      ],
+      "evidence": "Independently read official PDF page2:なにご—какой язык;なに/なん—что. Page3 also confirmsだれ/どこ/なんさい/なんにん."
+    }
+  },
+  "months": [
+    {
+      "value": 1,
+      "surface": "1月",
+      "kana": "いちがつ",
+      "readings": [
+        "いちがつ"
+      ],
+      "meaningRu": "январь",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "months",
+      "lessonNumber": 12,
+      "choiceGroup": "months",
+      "exampleKana": "たんじょうびはいちがつです。",
+      "exampleMeaningRu": "День рождения — в январе.",
+      "exampleAudioText": "たんじょうびわいちがつです。",
+      "explanationRu": "январь. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение месяца, отмеченного на календаре.",
+      "wordId": "marugoto.starter-a1.word.e19779081d5fc28e"
+    },
+    {
+      "value": 2,
+      "surface": "2月",
+      "kana": "にがつ",
+      "readings": [
+        "にがつ"
+      ],
+      "meaningRu": "февраль",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "months",
+      "lessonNumber": 12,
+      "choiceGroup": "months",
+      "exampleKana": "たんじょうびはにがつです。",
+      "exampleMeaningRu": "День рождения — в феврале.",
+      "exampleAudioText": "たんじょうびわにがつです。",
+      "explanationRu": "февраль. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение месяца, отмеченного на календаре."
+    },
+    {
+      "value": 3,
+      "surface": "3月",
+      "kana": "さんがつ",
+      "readings": [
+        "さんがつ"
+      ],
+      "meaningRu": "март",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "months",
+      "lessonNumber": 12,
+      "choiceGroup": "months",
+      "exampleKana": "たんじょうびはさんがつです。",
+      "exampleMeaningRu": "День рождения — в марте.",
+      "exampleAudioText": "たんじょうびわさんがつです。",
+      "explanationRu": "март. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение месяца, отмеченного на календаре."
+    },
+    {
+      "value": 4,
+      "surface": "4月",
+      "kana": "しがつ",
+      "readings": [
+        "しがつ"
+      ],
+      "meaningRu": "апрель",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "months",
+      "lessonNumber": 12,
+      "choiceGroup": "months",
+      "exampleKana": "たんじょうびはしがつです。",
+      "exampleMeaningRu": "День рождения — в апреле.",
+      "exampleAudioText": "たんじょうびわしがつです。",
+      "explanationRu": "апрель. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение месяца, отмеченного на календаре."
+    },
+    {
+      "value": 5,
+      "surface": "5月",
+      "kana": "ごがつ",
+      "readings": [
+        "ごがつ"
+      ],
+      "meaningRu": "май",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "months",
+      "lessonNumber": 12,
+      "choiceGroup": "months",
+      "exampleKana": "たんじょうびはごがつです。",
+      "exampleMeaningRu": "День рождения — в мае.",
+      "exampleAudioText": "たんじょうびわごがつです。",
+      "explanationRu": "май. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение месяца, отмеченного на календаре."
+    },
+    {
+      "value": 6,
+      "surface": "6月",
+      "kana": "ろくがつ",
+      "readings": [
+        "ろくがつ"
+      ],
+      "meaningRu": "июнь",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "months",
+      "lessonNumber": 12,
+      "choiceGroup": "months",
+      "exampleKana": "たんじょうびはろくがつです。",
+      "exampleMeaningRu": "День рождения — в июне.",
+      "exampleAudioText": "たんじょうびわろくがつです。",
+      "explanationRu": "июнь. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение месяца, отмеченного на календаре."
+    },
+    {
+      "value": 7,
+      "surface": "7月",
+      "kana": "しちがつ",
+      "readings": [
+        "しちがつ"
+      ],
+      "meaningRu": "июль",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "months",
+      "lessonNumber": 12,
+      "choiceGroup": "months",
+      "exampleKana": "たんじょうびはしちがつです。",
+      "exampleMeaningRu": "День рождения — в июле.",
+      "exampleAudioText": "たんじょうびわしちがつです。",
+      "explanationRu": "июль. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение месяца, отмеченного на календаре."
+    },
+    {
+      "value": 8,
+      "surface": "8月",
+      "kana": "はちがつ",
+      "readings": [
+        "はちがつ"
+      ],
+      "meaningRu": "август",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "months",
+      "lessonNumber": 12,
+      "choiceGroup": "months",
+      "exampleKana": "たんじょうびははちがつです。",
+      "exampleMeaningRu": "День рождения — в августе.",
+      "exampleAudioText": "たんじょうびわはちがつです。",
+      "explanationRu": "август. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение месяца, отмеченного на календаре."
+    },
+    {
+      "value": 9,
+      "surface": "9月",
+      "kana": "くがつ",
+      "readings": [
+        "くがつ"
+      ],
+      "meaningRu": "сентябрь",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "months",
+      "lessonNumber": 12,
+      "choiceGroup": "months",
+      "exampleKana": "たんじょうびはくがつです。",
+      "exampleMeaningRu": "День рождения — в сентябре.",
+      "exampleAudioText": "たんじょうびわくがつです。",
+      "explanationRu": "сентябрь. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение месяца, отмеченного на календаре."
+    },
+    {
+      "value": 10,
+      "surface": "10月",
+      "kana": "じゅうがつ",
+      "readings": [
+        "じゅうがつ"
+      ],
+      "meaningRu": "октябрь",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "months",
+      "lessonNumber": 12,
+      "choiceGroup": "months",
+      "exampleKana": "たんじょうびはじゅうがつです。",
+      "exampleMeaningRu": "День рождения — в октябре.",
+      "exampleAudioText": "たんじょうびわじゅうがつです。",
+      "explanationRu": "октябрь. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение месяца, отмеченного на календаре."
+    },
+    {
+      "value": 11,
+      "surface": "11月",
+      "kana": "じゅういちがつ",
+      "readings": [
+        "じゅういちがつ"
+      ],
+      "meaningRu": "ноябрь",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "months",
+      "lessonNumber": 12,
+      "choiceGroup": "months",
+      "exampleKana": "たんじょうびはじゅういちがつです。",
+      "exampleMeaningRu": "День рождения — в ноябре.",
+      "exampleAudioText": "たんじょうびわじゅういちがつです。",
+      "explanationRu": "ноябрь. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение месяца, отмеченного на календаре."
+    },
+    {
+      "value": 12,
+      "surface": "12月",
+      "kana": "じゅうにがつ",
+      "readings": [
+        "じゅうにがつ"
+      ],
+      "meaningRu": "декабрь",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "months",
+      "lessonNumber": 12,
+      "choiceGroup": "months",
+      "exampleKana": "たんじょうびはじゅうにがつです。",
+      "exampleMeaningRu": "День рождения — в декабре.",
+      "exampleAudioText": "たんじょうびわじゅうにがつです。",
+      "explanationRu": "декабрь. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение месяца, отмеченного на календаре."
+    }
+  ],
+  "calendarDates": [
+    {
+      "value": 1,
+      "surface": "1日",
+      "kana": "ついたち",
+      "readings": [
+        "ついたち"
+      ],
+      "meaningRu": "1-е число месяца",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはついたちです。",
+      "exampleMeaningRu": "День рождения — 1-го числа.",
+      "exampleAudioText": "たんじょうびわついたちです。",
+      "explanationRu": "1-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца.",
+      "wordId": "marugoto.starter-a1.word.f1b6383fc5f015a7"
+    },
+    {
+      "value": 2,
+      "surface": "2日",
+      "kana": "ふつか",
+      "readings": [
+        "ふつか"
+      ],
+      "meaningRu": "2-е число месяца",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはふつかです。",
+      "exampleMeaningRu": "День рождения — 2-го числа.",
+      "exampleAudioText": "たんじょうびわふつかです。",
+      "explanationRu": "2-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца.",
+      "wordId": "marugoto.starter-a1.word.ca8288a0af5c0817"
+    },
+    {
+      "value": 3,
+      "surface": "3日",
+      "kana": "みっか",
+      "readings": [
+        "みっか"
+      ],
+      "meaningRu": "3-е число месяца",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはみっかです。",
+      "exampleMeaningRu": "День рождения — 3-го числа.",
+      "exampleAudioText": "たんじょうびわみっかです。",
+      "explanationRu": "3-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца.",
+      "wordId": "marugoto.starter-a1.word.b78b23b11c72a080"
+    },
+    {
+      "value": 4,
+      "surface": "4日",
+      "kana": "よっか",
+      "readings": [
+        "よっか"
+      ],
+      "meaningRu": "4-е число месяца",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはよっかです。",
+      "exampleMeaningRu": "День рождения — 4-го числа.",
+      "exampleAudioText": "たんじょうびわよっかです。",
+      "explanationRu": "4-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца.",
+      "wordId": "marugoto.starter-a1.word.512aea6be5669444"
+    },
+    {
+      "value": 5,
+      "surface": "5日",
+      "kana": "いつか",
+      "readings": [
+        "いつか"
+      ],
+      "meaningRu": "5-е число месяца",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはいつかです。",
+      "exampleMeaningRu": "День рождения — 5-го числа.",
+      "exampleAudioText": "たんじょうびわいつかです。",
+      "explanationRu": "5-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца.",
+      "wordId": "marugoto.starter-a1.word.9692b9ba75abfe51"
+    },
+    {
+      "value": 6,
+      "surface": "6日",
+      "kana": "むいか",
+      "readings": [
+        "むいか"
+      ],
+      "meaningRu": "6-е число месяца",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはむいかです。",
+      "exampleMeaningRu": "День рождения — 6-го числа.",
+      "exampleAudioText": "たんじょうびわむいかです。",
+      "explanationRu": "6-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца.",
+      "wordId": "marugoto.starter-a1.word.05bd371f80e0c12c"
+    },
+    {
+      "value": 7,
+      "surface": "7日",
+      "kana": "なのか",
+      "readings": [
+        "なのか"
+      ],
+      "meaningRu": "7-е число месяца",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはなのかです。",
+      "exampleMeaningRu": "День рождения — 7-го числа.",
+      "exampleAudioText": "たんじょうびわなのかです。",
+      "explanationRu": "7-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца.",
+      "wordId": "marugoto.starter-a1.word.97f1314d1d4fb79c"
+    },
+    {
+      "value": 8,
+      "surface": "8日",
+      "kana": "ようか",
+      "readings": [
+        "ようか"
+      ],
+      "meaningRu": "8-е число месяца",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはようかです。",
+      "exampleMeaningRu": "День рождения — 8-го числа.",
+      "exampleAudioText": "たんじょうびわようかです。",
+      "explanationRu": "8-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца.",
+      "wordId": "marugoto.starter-a1.word.784140247b41a844"
+    },
+    {
+      "value": 9,
+      "surface": "9日",
+      "kana": "ここのか",
+      "readings": [
+        "ここのか"
+      ],
+      "meaningRu": "9-е число месяца",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはここのかです。",
+      "exampleMeaningRu": "День рождения — 9-го числа.",
+      "exampleAudioText": "たんじょうびわここのかです。",
+      "explanationRu": "9-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 10,
+      "surface": "10日",
+      "kana": "とおか",
+      "readings": [
+        "とおか"
+      ],
+      "meaningRu": "10-е число месяца",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはとおかです。",
+      "exampleMeaningRu": "День рождения — 10-го числа.",
+      "exampleAudioText": "たんじょうびわとおかです。",
+      "explanationRu": "10-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца.",
+      "wordId": "marugoto.starter-a1.word.c09ad75aec78863f"
+    },
+    {
+      "value": 11,
+      "surface": "11日",
+      "kana": "じゅういちにち",
+      "readings": [
+        "じゅういちにち"
+      ],
+      "meaningRu": "11-е число месяца",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはじゅういちにちです。",
+      "exampleMeaningRu": "День рождения — 11-го числа.",
+      "exampleAudioText": "たんじょうびわじゅういちにちです。",
+      "explanationRu": "11-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 12,
+      "surface": "12日",
+      "kana": "じゅうににち",
+      "readings": [
+        "じゅうににち"
+      ],
+      "meaningRu": "12-е число месяца",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはじゅうににちです。",
+      "exampleMeaningRu": "День рождения — 12-го числа.",
+      "exampleAudioText": "たんじょうびわじゅうににちです。",
+      "explanationRu": "12-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 13,
+      "surface": "13日",
+      "kana": "じゅうさんにち",
+      "readings": [
+        "じゅうさんにち"
+      ],
+      "meaningRu": "13-е число месяца",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはじゅうさんにちです。",
+      "exampleMeaningRu": "День рождения — 13-го числа.",
+      "exampleAudioText": "たんじょうびわじゅうさんにちです。",
+      "explanationRu": "13-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 14,
+      "surface": "14日",
+      "kana": "じゅうよっか",
+      "readings": [
+        "じゅうよっか"
+      ],
+      "meaningRu": "14-е число месяца",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはじゅうよっかです。",
+      "exampleMeaningRu": "День рождения — 14-го числа.",
+      "exampleAudioText": "たんじょうびわじゅうよっかです。",
+      "explanationRu": "14-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 15,
+      "surface": "15日",
+      "kana": "じゅうごにち",
+      "readings": [
+        "じゅうごにち"
+      ],
+      "meaningRu": "15-е число месяца",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはじゅうごにちです。",
+      "exampleMeaningRu": "День рождения — 15-го числа.",
+      "exampleAudioText": "たんじょうびわじゅうごにちです。",
+      "explanationRu": "15-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 16,
+      "surface": "16日",
+      "kana": "じゅうろくにち",
+      "readings": [
+        "じゅうろくにち"
+      ],
+      "meaningRu": "16-е число месяца",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはじゅうろくにちです。",
+      "exampleMeaningRu": "День рождения — 16-го числа.",
+      "exampleAudioText": "たんじょうびわじゅうろくにちです。",
+      "explanationRu": "16-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 17,
+      "surface": "17日",
+      "kana": "じゅうしちにち",
+      "readings": [
+        "じゅうしちにち"
+      ],
+      "meaningRu": "17-е число месяца",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはじゅうしちにちです。",
+      "exampleMeaningRu": "День рождения — 17-го числа.",
+      "exampleAudioText": "たんじょうびわじゅうしちにちです。",
+      "explanationRu": "17-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 18,
+      "surface": "18日",
+      "kana": "じゅうはちにち",
+      "readings": [
+        "じゅうはちにち"
+      ],
+      "meaningRu": "18-е число месяца",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはじゅうはちにちです。",
+      "exampleMeaningRu": "День рождения — 18-го числа.",
+      "exampleAudioText": "たんじょうびわじゅうはちにちです。",
+      "explanationRu": "18-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 19,
+      "surface": "19日",
+      "kana": "じゅうくにち",
+      "readings": [
+        "じゅうくにち"
+      ],
+      "meaningRu": "19-е число месяца",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはじゅうくにちです。",
+      "exampleMeaningRu": "День рождения — 19-го числа.",
+      "exampleAudioText": "たんじょうびわじゅうくにちです。",
+      "explanationRu": "19-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 20,
+      "surface": "20日",
+      "kana": "はつか",
+      "readings": [
+        "はつか"
+      ],
+      "meaningRu": "20-е число месяца",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびははつかです。",
+      "exampleMeaningRu": "День рождения — 20-го числа.",
+      "exampleAudioText": "たんじょうびわはつかです。",
+      "explanationRu": "20-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца.",
+      "wordId": "marugoto.starter-a1.word.00fc8a331164ffe4"
+    },
+    {
+      "value": 21,
+      "surface": "21日",
+      "kana": "にじゅういちにち",
+      "readings": [
+        "にじゅういちにち"
+      ],
+      "meaningRu": "21-е число месяца",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはにじゅういちにちです。",
+      "exampleMeaningRu": "День рождения — 21-го числа.",
+      "exampleAudioText": "たんじょうびわにじゅういちにちです。",
+      "explanationRu": "21-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 22,
+      "surface": "22日",
+      "kana": "にじゅうににち",
+      "readings": [
+        "にじゅうににち"
+      ],
+      "meaningRu": "22-е число месяца",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはにじゅうににちです。",
+      "exampleMeaningRu": "День рождения — 22-го числа.",
+      "exampleAudioText": "たんじょうびわにじゅうににちです。",
+      "explanationRu": "22-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 23,
+      "surface": "23日",
+      "kana": "にじゅうさんにち",
+      "readings": [
+        "にじゅうさんにち"
+      ],
+      "meaningRu": "23-е число месяца",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはにじゅうさんにちです。",
+      "exampleMeaningRu": "День рождения — 23-го числа.",
+      "exampleAudioText": "たんじょうびわにじゅうさんにちです。",
+      "explanationRu": "23-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 24,
+      "surface": "24日",
+      "kana": "にじゅうよっか",
+      "readings": [
+        "にじゅうよっか"
+      ],
+      "meaningRu": "24-е число месяца",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはにじゅうよっかです。",
+      "exampleMeaningRu": "День рождения — 24-го числа.",
+      "exampleAudioText": "たんじょうびわにじゅうよっかです。",
+      "explanationRu": "24-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца.",
+      "wordId": "marugoto.starter-a1.word.5c6fef2382bd925f"
+    },
+    {
+      "value": 25,
+      "surface": "25日",
+      "kana": "にじゅうごにち",
+      "readings": [
+        "にじゅうごにち"
+      ],
+      "meaningRu": "25-е число месяца",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはにじゅうごにちです。",
+      "exampleMeaningRu": "День рождения — 25-го числа.",
+      "exampleAudioText": "たんじょうびわにじゅうごにちです。",
+      "explanationRu": "25-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 26,
+      "surface": "26日",
+      "kana": "にじゅうろくにち",
+      "readings": [
+        "にじゅうろくにち"
+      ],
+      "meaningRu": "26-е число месяца",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはにじゅうろくにちです。",
+      "exampleMeaningRu": "День рождения — 26-го числа.",
+      "exampleAudioText": "たんじょうびわにじゅうろくにちです。",
+      "explanationRu": "26-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 27,
+      "surface": "27日",
+      "kana": "にじゅうしちにち",
+      "readings": [
+        "にじゅうしちにち"
+      ],
+      "meaningRu": "27-е число месяца",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはにじゅうしちにちです。",
+      "exampleMeaningRu": "День рождения — 27-го числа.",
+      "exampleAudioText": "たんじょうびわにじゅうしちにちです。",
+      "explanationRu": "27-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 28,
+      "surface": "28日",
+      "kana": "にじゅうはちにち",
+      "readings": [
+        "にじゅうはちにち"
+      ],
+      "meaningRu": "28-е число месяца",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはにじゅうはちにちです。",
+      "exampleMeaningRu": "День рождения — 28-го числа.",
+      "exampleAudioText": "たんじょうびわにじゅうはちにちです。",
+      "explanationRu": "28-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 29,
+      "surface": "29日",
+      "kana": "にじゅうくにち",
+      "readings": [
+        "にじゅうくにち"
+      ],
+      "meaningRu": "29-е число месяца",
+      "irregular": true,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはにじゅうくにちです。",
+      "exampleMeaningRu": "День рождения — 29-го числа.",
+      "exampleAudioText": "たんじょうびわにじゅうくにちです。",
+      "explanationRu": "29-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 30,
+      "surface": "30日",
+      "kana": "さんじゅうにち",
+      "readings": [
+        "さんじゅうにち"
+      ],
+      "meaningRu": "30-е число месяца",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはさんじゅうにちです。",
+      "exampleMeaningRu": "День рождения — 30-го числа.",
+      "exampleAudioText": "たんじょうびわさんじゅうにちです。",
+      "explanationRu": "30-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    },
+    {
+      "value": 31,
+      "surface": "31日",
+      "kana": "さんじゅういちにち",
+      "readings": [
+        "さんじゅういちにち"
+      ],
+      "meaningRu": "31-е число месяца",
+      "irregular": false,
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "dates",
+      "lessonNumber": 12,
+      "choiceGroup": "dates",
+      "exampleKana": "たんじょうびはさんじゅういちにちです。",
+      "exampleMeaningRu": "День рождения — 31-го числа.",
+      "exampleAudioText": "たんじょうびわさんじゅういちにちです。",
+      "explanationRu": "31-е число месяца. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите чтение выделенного числа календарного месяца."
+    }
+  ],
+  "hours": [
+    {
+      "value": 1,
+      "surface": "1時",
+      "kana": "いちじ",
+      "readings": [
+        "いちじ"
+      ],
+      "variantNotes": "",
+      "irregular": false,
+      "sources": [
+        "time"
+      ]
+    },
+    {
+      "value": 2,
+      "surface": "2時",
+      "kana": "にじ",
+      "readings": [
+        "にじ"
+      ],
+      "variantNotes": "",
+      "irregular": false,
+      "sources": [
+        "time"
+      ]
+    },
+    {
+      "value": 3,
+      "surface": "3時",
+      "kana": "さんじ",
+      "readings": [
+        "さんじ"
+      ],
+      "variantNotes": "",
+      "irregular": false,
+      "sources": [
+        "time"
+      ]
+    },
+    {
+      "value": 4,
+      "surface": "4時",
+      "kana": "よじ",
+      "readings": [
+        "よじ"
+      ],
+      "variantNotes": "",
+      "irregular": true,
+      "sources": [
+        "time"
+      ]
+    },
+    {
+      "value": 5,
+      "surface": "5時",
+      "kana": "ごじ",
+      "readings": [
+        "ごじ"
+      ],
+      "variantNotes": "",
+      "irregular": false,
+      "sources": [
+        "time"
+      ]
+    },
+    {
+      "value": 6,
+      "surface": "6時",
+      "kana": "ろくじ",
+      "readings": [
+        "ろくじ"
+      ],
+      "variantNotes": "",
+      "irregular": false,
+      "sources": [
+        "time"
+      ]
+    },
+    {
+      "value": 7,
+      "surface": "7時",
+      "kana": "しちじ",
+      "readings": [
+        "しちじ",
+        "ななじ"
+      ],
+      "variantNotes": "ななじ: source-attested special spoken disambiguation in radio/telephone; teachしちじ as normal canonical reading.",
+      "irregular": true,
+      "sources": [
+        "time",
+        "madrid"
+      ]
+    },
+    {
+      "value": 8,
+      "surface": "8時",
+      "kana": "はちじ",
+      "readings": [
+        "はちじ"
+      ],
+      "variantNotes": "",
+      "irregular": false,
+      "sources": [
+        "time"
+      ]
+    },
+    {
+      "value": 9,
+      "surface": "9時",
+      "kana": "くじ",
+      "readings": [
+        "くじ"
+      ],
+      "variantNotes": "",
+      "irregular": true,
+      "sources": [
+        "time"
+      ]
+    },
+    {
+      "value": 10,
+      "surface": "10時",
+      "kana": "じゅうじ",
+      "readings": [
+        "じゅうじ"
+      ],
+      "variantNotes": "",
+      "irregular": false,
+      "sources": [
+        "time"
+      ]
+    },
+    {
+      "value": 11,
+      "surface": "11時",
+      "kana": "じゅういちじ",
+      "readings": [
+        "じゅういちじ"
+      ],
+      "variantNotes": "",
+      "irregular": false,
+      "sources": [
+        "time"
+      ]
+    },
+    {
+      "value": 12,
+      "surface": "12時",
+      "kana": "じゅうにじ",
+      "readings": [
+        "じゅうにじ"
+      ],
+      "variantNotes": "",
+      "irregular": false,
+      "sources": [
+        "time"
+      ]
+    }
+  ],
+  "minutes": [
+    {
+      "value": 0,
+      "surface": "0分",
+      "kana": "",
+      "readings": [
+        ""
+      ],
+      "sources": [
+        "time",
+        "madrid"
+      ],
+      "derivation": "Clock-component omission: full exact-hour reading is hour+じ; no spoken minute component. No standaloneれいふん/ぜろふん reading verified.",
+      "standaloneReadingVerified": false
+    },
+    {
+      "value": 1,
+      "surface": "1分",
+      "kana": "いっぷん",
+      "readings": [
+        "いっぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "direct base table"
+    },
+    {
+      "value": 2,
+      "surface": "2分",
+      "kana": "にふん",
+      "readings": [
+        "にふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "direct base table"
+    },
+    {
+      "value": 3,
+      "surface": "3分",
+      "kana": "さんぷん",
+      "readings": [
+        "さんぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "direct base table"
+    },
+    {
+      "value": 4,
+      "surface": "4分",
+      "kana": "よんぷん",
+      "readings": [
+        "よんぷん",
+        "よんふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "direct base table"
+    },
+    {
+      "value": 5,
+      "surface": "5分",
+      "kana": "ごふん",
+      "readings": [
+        "ごふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "direct base table"
+    },
+    {
+      "value": 6,
+      "surface": "6分",
+      "kana": "ろっぷん",
+      "readings": [
+        "ろっぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "direct base table"
+    },
+    {
+      "value": 7,
+      "surface": "7分",
+      "kana": "ななふん",
+      "readings": [
+        "ななふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "direct base table"
+    },
+    {
+      "value": 8,
+      "surface": "8分",
+      "kana": "はっぷん",
+      "readings": [
+        "はっぷん",
+        "はちふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "direct base table"
+    },
+    {
+      "value": 9,
+      "surface": "9分",
+      "kana": "きゅうふん",
+      "readings": [
+        "きゅうふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "direct base table"
+    },
+    {
+      "value": 10,
+      "surface": "10分",
+      "kana": "じゅっぷん",
+      "readings": [
+        "じゅっぷん",
+        "じっぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "direct tens;じっぷん alternative applied compositionally"
+    },
+    {
+      "value": 11,
+      "surface": "11分",
+      "kana": "じゅういっぷん",
+      "readings": [
+        "じゅういっぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 12,
+      "surface": "12分",
+      "kana": "じゅうにふん",
+      "readings": [
+        "じゅうにふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 13,
+      "surface": "13分",
+      "kana": "じゅうさんぷん",
+      "readings": [
+        "じゅうさんぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 14,
+      "surface": "14分",
+      "kana": "じゅうよんぷん",
+      "readings": [
+        "じゅうよんぷん",
+        "じゅうよんふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 15,
+      "surface": "15分",
+      "kana": "じゅうごふん",
+      "readings": [
+        "じゅうごふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 16,
+      "surface": "16分",
+      "kana": "じゅうろっぷん",
+      "readings": [
+        "じゅうろっぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 17,
+      "surface": "17分",
+      "kana": "じゅうななふん",
+      "readings": [
+        "じゅうななふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 18,
+      "surface": "18分",
+      "kana": "じゅうはっぷん",
+      "readings": [
+        "じゅうはっぷん",
+        "じゅうはちふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 19,
+      "surface": "19分",
+      "kana": "じゅうきゅうふん",
+      "readings": [
+        "じゅうきゅうふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 20,
+      "surface": "20分",
+      "kana": "にじゅっぷん",
+      "readings": [
+        "にじゅっぷん",
+        "にじっぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "direct tens;じっぷん alternative applied compositionally"
+    },
+    {
+      "value": 21,
+      "surface": "21分",
+      "kana": "にじゅういっぷん",
+      "readings": [
+        "にじゅういっぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 22,
+      "surface": "22分",
+      "kana": "にじゅうにふん",
+      "readings": [
+        "にじゅうにふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 23,
+      "surface": "23分",
+      "kana": "にじゅうさんぷん",
+      "readings": [
+        "にじゅうさんぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 24,
+      "surface": "24分",
+      "kana": "にじゅうよんぷん",
+      "readings": [
+        "にじゅうよんぷん",
+        "にじゅうよんふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 25,
+      "surface": "25分",
+      "kana": "にじゅうごふん",
+      "readings": [
+        "にじゅうごふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 26,
+      "surface": "26分",
+      "kana": "にじゅうろっぷん",
+      "readings": [
+        "にじゅうろっぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 27,
+      "surface": "27分",
+      "kana": "にじゅうななふん",
+      "readings": [
+        "にじゅうななふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 28,
+      "surface": "28分",
+      "kana": "にじゅうはっぷん",
+      "readings": [
+        "にじゅうはっぷん",
+        "にじゅうはちふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 29,
+      "surface": "29分",
+      "kana": "にじゅうきゅうふん",
+      "readings": [
+        "にじゅうきゅうふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 30,
+      "surface": "30分",
+      "kana": "さんじゅっぷん",
+      "readings": [
+        "さんじゅっぷん",
+        "さんじっぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "direct tens;じっぷん alternative applied compositionally"
+    },
+    {
+      "value": 31,
+      "surface": "31分",
+      "kana": "さんじゅういっぷん",
+      "readings": [
+        "さんじゅういっぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 32,
+      "surface": "32分",
+      "kana": "さんじゅうにふん",
+      "readings": [
+        "さんじゅうにふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 33,
+      "surface": "33分",
+      "kana": "さんじゅうさんぷん",
+      "readings": [
+        "さんじゅうさんぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 34,
+      "surface": "34分",
+      "kana": "さんじゅうよんぷん",
+      "readings": [
+        "さんじゅうよんぷん",
+        "さんじゅうよんふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 35,
+      "surface": "35分",
+      "kana": "さんじゅうごふん",
+      "readings": [
+        "さんじゅうごふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 36,
+      "surface": "36分",
+      "kana": "さんじゅうろっぷん",
+      "readings": [
+        "さんじゅうろっぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 37,
+      "surface": "37分",
+      "kana": "さんじゅうななふん",
+      "readings": [
+        "さんじゅうななふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 38,
+      "surface": "38分",
+      "kana": "さんじゅうはっぷん",
+      "readings": [
+        "さんじゅうはっぷん",
+        "さんじゅうはちふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 39,
+      "surface": "39分",
+      "kana": "さんじゅうきゅうふん",
+      "readings": [
+        "さんじゅうきゅうふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 40,
+      "surface": "40分",
+      "kana": "よんじゅっぷん",
+      "readings": [
+        "よんじゅっぷん",
+        "よんじっぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "direct tens;じっぷん alternative applied compositionally"
+    },
+    {
+      "value": 41,
+      "surface": "41分",
+      "kana": "よんじゅういっぷん",
+      "readings": [
+        "よんじゅういっぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 42,
+      "surface": "42分",
+      "kana": "よんじゅうにふん",
+      "readings": [
+        "よんじゅうにふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 43,
+      "surface": "43分",
+      "kana": "よんじゅうさんぷん",
+      "readings": [
+        "よんじゅうさんぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 44,
+      "surface": "44分",
+      "kana": "よんじゅうよんぷん",
+      "readings": [
+        "よんじゅうよんぷん",
+        "よんじゅうよんふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 45,
+      "surface": "45分",
+      "kana": "よんじゅうごふん",
+      "readings": [
+        "よんじゅうごふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 46,
+      "surface": "46分",
+      "kana": "よんじゅうろっぷん",
+      "readings": [
+        "よんじゅうろっぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 47,
+      "surface": "47分",
+      "kana": "よんじゅうななふん",
+      "readings": [
+        "よんじゅうななふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 48,
+      "surface": "48分",
+      "kana": "よんじゅうはっぷん",
+      "readings": [
+        "よんじゅうはっぷん",
+        "よんじゅうはちふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 49,
+      "surface": "49分",
+      "kana": "よんじゅうきゅうふん",
+      "readings": [
+        "よんじゅうきゅうふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 50,
+      "surface": "50分",
+      "kana": "ごじゅっぷん",
+      "readings": [
+        "ごじゅっぷん",
+        "ごじっぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "direct tens;じっぷん alternative applied compositionally"
+    },
+    {
+      "value": 51,
+      "surface": "51分",
+      "kana": "ごじゅういっぷん",
+      "readings": [
+        "ごじゅういっぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 52,
+      "surface": "52分",
+      "kana": "ごじゅうにふん",
+      "readings": [
+        "ごじゅうにふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 53,
+      "surface": "53分",
+      "kana": "ごじゅうさんぷん",
+      "readings": [
+        "ごじゅうさんぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 54,
+      "surface": "54分",
+      "kana": "ごじゅうよんぷん",
+      "readings": [
+        "ごじゅうよんぷん",
+        "ごじゅうよんふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 55,
+      "surface": "55分",
+      "kana": "ごじゅうごふん",
+      "readings": [
+        "ごじゅうごふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 56,
+      "surface": "56分",
+      "kana": "ごじゅうろっぷん",
+      "readings": [
+        "ごじゅうろっぷん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 57,
+      "surface": "57分",
+      "kana": "ごじゅうななふん",
+      "readings": [
+        "ごじゅうななふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 58,
+      "surface": "58分",
+      "kana": "ごじゅうはっぷん",
+      "readings": [
+        "ごじゅうはっぷん",
+        "ごじゅうはちふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    },
+    {
+      "value": 59,
+      "surface": "59分",
+      "kana": "ごじゅうきゅうふん",
+      "readings": [
+        "ごじゅうきゅうふん"
+      ],
+      "sources": [
+        "time",
+        "minutes",
+        "madrid"
+      ],
+      "derivation": "composed from tens numeral prefix + attested terminal minute reading; not separately enumerated by source"
+    }
+  ],
+  "weekdays": [
+    {
+      "isoDay": 1,
+      "surface": "月曜日",
+      "kana": "げつようび",
+      "readings": [
+        "げつようび"
+      ],
+      "meaningRu": "понедельник",
+      "sources": [
+        "calendar",
+        "weekday-clock"
+      ],
+      "sectionId": "weekdays",
+      "lessonNumber": 10,
+      "choiceGroup": "weekdays",
+      "exampleKana": "やすみはげつようびです。",
+      "exampleMeaningRu": "Выходной — понедельник.",
+      "exampleAudioText": "やすみわげつようびです。",
+      "explanationRu": "понедельник. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «понедельник».",
+      "id": "monday",
+      "wordId": "marugoto.starter-a1.word.f73159606ab21a01"
+    },
+    {
+      "isoDay": 2,
+      "surface": "火曜日",
+      "kana": "かようび",
+      "readings": [
+        "かようび"
+      ],
+      "meaningRu": "вторник",
+      "sources": [
+        "calendar",
+        "weekday-clock"
+      ],
+      "sectionId": "weekdays",
+      "lessonNumber": 10,
+      "choiceGroup": "weekdays",
+      "exampleKana": "やすみはかようびです。",
+      "exampleMeaningRu": "Выходной — вторник.",
+      "exampleAudioText": "やすみわかようびです。",
+      "explanationRu": "вторник. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «вторник».",
+      "id": "tuesday",
+      "wordId": "marugoto.starter-a1.word.1713bd57d5c80da2"
+    },
+    {
+      "isoDay": 3,
+      "surface": "水曜日",
+      "kana": "すいようび",
+      "readings": [
+        "すいようび"
+      ],
+      "meaningRu": "среда",
+      "sources": [
+        "calendar",
+        "weekday-clock"
+      ],
+      "sectionId": "weekdays",
+      "lessonNumber": 10,
+      "choiceGroup": "weekdays",
+      "exampleKana": "やすみはすいようびです。",
+      "exampleMeaningRu": "Выходной — среда.",
+      "exampleAudioText": "やすみわすいようびです。",
+      "explanationRu": "среда. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «среда».",
+      "id": "wednesday",
+      "wordId": "marugoto.starter-a1.word.1097378b94f04fa6"
+    },
+    {
+      "isoDay": 4,
+      "surface": "木曜日",
+      "kana": "もくようび",
+      "readings": [
+        "もくようび"
+      ],
+      "meaningRu": "четверг",
+      "sources": [
+        "calendar",
+        "weekday-clock"
+      ],
+      "sectionId": "weekdays",
+      "lessonNumber": 10,
+      "choiceGroup": "weekdays",
+      "exampleKana": "やすみはもくようびです。",
+      "exampleMeaningRu": "Выходной — четверг.",
+      "exampleAudioText": "やすみわもくようびです。",
+      "explanationRu": "четверг. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «четверг».",
+      "id": "thursday",
+      "wordId": "marugoto.starter-a1.word.15275644be5d1ac6"
+    },
+    {
+      "isoDay": 5,
+      "surface": "金曜日",
+      "kana": "きんようび",
+      "readings": [
+        "きんようび"
+      ],
+      "meaningRu": "пятница",
+      "sources": [
+        "calendar",
+        "weekday-clock"
+      ],
+      "sectionId": "weekdays",
+      "lessonNumber": 10,
+      "choiceGroup": "weekdays",
+      "exampleKana": "やすみはきんようびです。",
+      "exampleMeaningRu": "Выходной — пятница.",
+      "exampleAudioText": "やすみわきんようびです。",
+      "explanationRu": "пятница. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «пятница».",
+      "id": "friday",
+      "wordId": "marugoto.starter-a1.word.8a6c9047f6bb74ab"
+    },
+    {
+      "isoDay": 6,
+      "surface": "土曜日",
+      "kana": "どようび",
+      "readings": [
+        "どようび"
+      ],
+      "meaningRu": "суббота",
+      "sources": [
+        "calendar",
+        "weekday-clock"
+      ],
+      "sectionId": "weekdays",
+      "lessonNumber": 10,
+      "choiceGroup": "weekdays",
+      "exampleKana": "やすみはどようびです。",
+      "exampleMeaningRu": "Выходной — суббота.",
+      "exampleAudioText": "やすみわどようびです。",
+      "explanationRu": "суббота. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «суббота».",
+      "id": "saturday",
+      "wordId": "marugoto.starter-a1.word.ded492faba84985d"
+    },
+    {
+      "isoDay": 7,
+      "surface": "日曜日",
+      "kana": "にちようび",
+      "readings": [
+        "にちようび"
+      ],
+      "meaningRu": "воскресенье",
+      "sources": [
+        "calendar",
+        "weekday-clock"
+      ],
+      "sectionId": "weekdays",
+      "lessonNumber": 10,
+      "choiceGroup": "weekdays",
+      "exampleKana": "やすみはにちようびです。",
+      "exampleMeaningRu": "Выходной — воскресенье.",
+      "exampleAudioText": "やすみわにちようびです。",
+      "explanationRu": "воскресенье. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «воскресенье».",
+      "id": "sunday",
+      "wordId": "marugoto.starter-a1.word.c23b225b7aa5061d"
+    }
+  ],
+  "relativeTime": [
+    {
+      "unit": "day",
+      "offset": -2,
+      "surface": "一昨日",
+      "kana": "おととい",
+      "readings": [
+        "おととい"
+      ],
+      "meaningRu": "позавчера",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:day",
+      "exampleKana": "しけんはおとといでした。",
+      "exampleMeaningRu": "Экзамен был позавчера.",
+      "exampleAudioText": "しけんわおとといでした。",
+      "explanationRu": "позавчера. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "В условии исходная точка — 10 число месяца. Нужна точка 8. Выберите относительное выражение.",
+      "id": "day-before-yesterday"
+    },
+    {
+      "unit": "day",
+      "offset": -1,
+      "surface": "昨日",
+      "kana": "きのう",
+      "readings": [
+        "きのう"
+      ],
+      "meaningRu": "вчера",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:day",
+      "exampleKana": "しけんはきのうでした。",
+      "exampleMeaningRu": "Экзамен был вчера.",
+      "exampleAudioText": "しけんわきのうでした。",
+      "explanationRu": "вчера. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "В условии исходная точка — 10 число месяца. Нужна точка 9. Выберите относительное выражение.",
+      "id": "yesterday",
+      "wordId": "marugoto.starter-a1.word.ab1ac226c8935f03"
+    },
+    {
+      "unit": "day",
+      "offset": 0,
+      "surface": "今日",
+      "kana": "きょう",
+      "readings": [
+        "きょう"
+      ],
+      "meaningRu": "сегодня",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:day",
+      "exampleKana": "しけんはきょうです。",
+      "exampleMeaningRu": "Экзамен — сегодня.",
+      "exampleAudioText": "しけんわきょうです。",
+      "explanationRu": "сегодня. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "В условии исходная точка — 10 число месяца. Нужна точка 10. Выберите относительное выражение.",
+      "id": "today",
+      "wordId": "marugoto.starter-a1.word.631d36f4d12065ba"
+    },
+    {
+      "unit": "day",
+      "offset": 1,
+      "surface": "明日",
+      "kana": "あした",
+      "readings": [
+        "あした"
+      ],
+      "meaningRu": "завтра",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:day",
+      "exampleKana": "しけんはあしたです。",
+      "exampleMeaningRu": "Экзамен — завтра.",
+      "exampleAudioText": "しけんわあしたです。",
+      "explanationRu": "завтра. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "В условии исходная точка — 10 число месяца. Нужна точка 11. Выберите относительное выражение.",
+      "id": "tomorrow",
+      "wordId": "marugoto.starter-a1.word.90a2f4a7c12860d3"
+    },
+    {
+      "unit": "day",
+      "offset": 2,
+      "surface": "明後日",
+      "kana": "あさって",
+      "readings": [
+        "あさって"
+      ],
+      "meaningRu": "послезавтра",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:day",
+      "exampleKana": "しけんはあさってです。",
+      "exampleMeaningRu": "Экзамен — послезавтра.",
+      "exampleAudioText": "しけんわあさってです。",
+      "explanationRu": "послезавтра. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "В условии исходная точка — 10 число месяца. Нужна точка 12. Выберите относительное выражение.",
+      "id": "day-after-tomorrow"
+    },
+    {
+      "unit": "week",
+      "offset": -1,
+      "surface": "先週",
+      "kana": "せんしゅう",
+      "readings": [
+        "せんしゅう"
+      ],
+      "meaningRu": "прошлая неделя",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:week",
+      "exampleKana": "しけんはせんしゅうでした。",
+      "exampleMeaningRu": "Экзамен был на прошлой неделе.",
+      "exampleAudioText": "しけんわせんしゅうでした。",
+      "explanationRu": "прошлая неделя. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "В условии исходная точка — 2 неделя. Нужна точка 1. Выберите относительное выражение.",
+      "id": "last-week",
+      "wordId": "marugoto.starter-a1.word.28b76414c5f7c291"
+    },
+    {
+      "unit": "week",
+      "offset": 0,
+      "surface": "今週",
+      "kana": "こんしゅう",
+      "readings": [
+        "こんしゅう"
+      ],
+      "meaningRu": "эта неделя",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:week",
+      "exampleKana": "しけんはこんしゅうです。",
+      "exampleMeaningRu": "Экзамен — на этой неделе.",
+      "exampleAudioText": "しけんわこんしゅうです。",
+      "explanationRu": "эта неделя. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "В условии исходная точка — 2 неделя. Нужна точка 2. Выберите относительное выражение.",
+      "id": "this-week",
+      "wordId": "marugoto.starter-a1.word.70655a2a9235f86b"
+    },
+    {
+      "unit": "week",
+      "offset": 1,
+      "surface": "来週",
+      "kana": "らいしゅう",
+      "readings": [
+        "らいしゅう"
+      ],
+      "meaningRu": "следующая неделя",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:week",
+      "exampleKana": "しけんはらいしゅうです。",
+      "exampleMeaningRu": "Экзамен — на следующей неделе.",
+      "exampleAudioText": "しけんわらいしゅうです。",
+      "explanationRu": "следующая неделя. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "В условии исходная точка — 2 неделя. Нужна точка 3. Выберите относительное выражение.",
+      "id": "next-week",
+      "wordId": "marugoto.starter-a1.word.a75012c6a32a8a4c"
+    },
+    {
+      "unit": "month",
+      "offset": -1,
+      "surface": "先月",
+      "kana": "せんげつ",
+      "readings": [
+        "せんげつ"
+      ],
+      "meaningRu": "прошлый месяц",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:month",
+      "exampleKana": "しけんはせんげつでした。",
+      "exampleMeaningRu": "Экзамен был в прошлом месяце.",
+      "exampleAudioText": "しけんわせんげつでした。",
+      "explanationRu": "прошлый месяц. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "В условии исходная точка — 6 месяц. Нужна точка 5. Выберите относительное выражение.",
+      "id": "last-month",
+      "wordId": "marugoto.starter-a1.word.2b2d59bf202f3379"
+    },
+    {
+      "unit": "month",
+      "offset": 0,
+      "surface": "今月",
+      "kana": "こんげつ",
+      "readings": [
+        "こんげつ"
+      ],
+      "meaningRu": "этот месяц",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:month",
+      "exampleKana": "しけんはこんげつです。",
+      "exampleMeaningRu": "Экзамен — в этом месяце.",
+      "exampleAudioText": "しけんわこんげつです。",
+      "explanationRu": "этот месяц. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "В условии исходная точка — 6 месяц. Нужна точка 6. Выберите относительное выражение.",
+      "id": "this-month",
+      "wordId": "marugoto.starter-a1.word.b8093f3c786fdd0b"
+    },
+    {
+      "unit": "month",
+      "offset": 1,
+      "surface": "来月",
+      "kana": "らいげつ",
+      "readings": [
+        "らいげつ"
+      ],
+      "meaningRu": "следующий месяц",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:month",
+      "exampleKana": "しけんはらいげつです。",
+      "exampleMeaningRu": "Экзамен — в следующем месяце.",
+      "exampleAudioText": "しけんわらいげつです。",
+      "explanationRu": "следующий месяц. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "В условии исходная точка — 6 месяц. Нужна точка 7. Выберите относительное выражение.",
+      "id": "next-month",
+      "wordId": "marugoto.starter-a1.word.9d8eac6ff03abb24"
+    },
+    {
+      "unit": "year",
+      "offset": -1,
+      "surface": "去年",
+      "kana": "きょねん",
+      "readings": [
+        "きょねん"
+      ],
+      "meaningRu": "прошлый год",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:year",
+      "exampleKana": "しけんはきょねんでした。",
+      "exampleMeaningRu": "Экзамен был в прошлом году.",
+      "exampleAudioText": "しけんわきょねんでした。",
+      "explanationRu": "прошлый год. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "В условии исходная точка — 2026 год. Нужна точка 2025. Выберите относительное выражение.",
+      "id": "last-year",
+      "wordId": "marugoto.starter-a1.word.c9c5336534a241e1"
+    },
+    {
+      "unit": "year",
+      "offset": 0,
+      "surface": "今年",
+      "kana": "ことし",
+      "readings": [
+        "ことし"
+      ],
+      "meaningRu": "этот год",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:year",
+      "exampleKana": "しけんはことしです。",
+      "exampleMeaningRu": "Экзамен — в этом году.",
+      "exampleAudioText": "しけんわことしです。",
+      "explanationRu": "этот год. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "В условии исходная точка — 2026 год. Нужна точка 2026. Выберите относительное выражение.",
+      "id": "this-year",
+      "wordId": "marugoto.starter-a1.word.0946ce3f0a2bf77e"
+    },
+    {
+      "unit": "year",
+      "offset": 1,
+      "surface": "来年",
+      "kana": "らいねん",
+      "readings": [
+        "らいねん"
+      ],
+      "meaningRu": "следующий год",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:year",
+      "exampleKana": "しけんはらいねんです。",
+      "exampleMeaningRu": "Экзамен — в следующем году.",
+      "exampleAudioText": "しけんわらいねんです。",
+      "explanationRu": "следующий год. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "В условии исходная точка — 2026 год. Нужна точка 2027. Выберите относительное выражение.",
+      "id": "next-year",
+      "wordId": "marugoto.starter-a1.word.965aa8b8379a4b1c"
+    }
+  ],
+  "recurrence": [
+    {
+      "surface": "毎日",
+      "kana": "まいにち",
+      "readings": [
+        "まいにち"
+      ],
+      "meaningRu": "каждый день",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:day",
+      "exampleKana": "まいにちべんきょうします。",
+      "exampleMeaningRu": "Занимаюсь каждый день.",
+      "exampleAudioText": "まいにちべんきょうします。",
+      "explanationRu": "каждый день. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «каждый день».",
+      "id": "daily",
+      "wordId": "marugoto.starter-a1.word.75d4b30fe277278b"
+    },
+    {
+      "surface": "毎週",
+      "kana": "まいしゅう",
+      "readings": [
+        "まいしゅう"
+      ],
+      "meaningRu": "каждую неделю",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:week",
+      "exampleKana": "まいしゅうべんきょうします。",
+      "exampleMeaningRu": "Занимаюсь каждую неделю.",
+      "exampleAudioText": "まいしゅうべんきょうします。",
+      "explanationRu": "каждую неделю. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «каждую неделю».",
+      "id": "weekly"
+    },
+    {
+      "surface": "毎月",
+      "kana": "まいつき",
+      "readings": [
+        "まいつき"
+      ],
+      "meaningRu": "каждый месяц",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:month",
+      "exampleKana": "まいつきべんきょうします。",
+      "exampleMeaningRu": "Занимаюсь каждый месяц.",
+      "exampleAudioText": "まいつきべんきょうします。",
+      "explanationRu": "каждый месяц. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «каждый месяц».",
+      "id": "monthly"
+    },
+    {
+      "surface": "毎年",
+      "kana": "まいとし",
+      "readings": [
+        "まいとし"
+      ],
+      "meaningRu": "каждый год",
+      "sources": [
+        "calendar"
+      ],
+      "sectionId": "relative",
+      "lessonNumber": 10,
+      "choiceGroup": "relative:year",
+      "exampleKana": "まいとしべんきょうします。",
+      "exampleMeaningRu": "Занимаюсь каждый год.",
+      "exampleAudioText": "まいとしべんきょうします。",
+      "explanationRu": "каждый год. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «каждый год».",
+      "id": "yearly",
+      "wordId": "marugoto.starter-a1.word.aa6ae4accadeb7f1"
+    }
+  ],
+  "partsOfDay": [
+    {
+      "surface": "今",
+      "kana": "いま",
+      "readings": [
+        "いま"
+      ],
+      "meaningRu": "сейчас",
+      "sources": [
+        "time"
+      ],
+      "sectionId": "periods",
+      "lessonNumber": 9,
+      "choiceGroup": "periods",
+      "exampleKana": "かいぎはいまです。",
+      "exampleMeaningRu": "Встреча — сейчас.",
+      "exampleAudioText": "かいぎわいまです。",
+      "explanationRu": "сейчас. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «сейчас».",
+      "id": "now",
+      "wordId": "marugoto.starter-a1.word.bbe0ecab21ce5807"
+    },
+    {
+      "surface": "朝",
+      "kana": "あさ",
+      "readings": [
+        "あさ"
+      ],
+      "meaningRu": "утро",
+      "sources": [
+        "time"
+      ],
+      "sectionId": "periods",
+      "lessonNumber": 9,
+      "choiceGroup": "periods",
+      "exampleKana": "かいぎはあさです。",
+      "exampleMeaningRu": "Встреча — утром.",
+      "exampleAudioText": "かいぎわあさです。",
+      "explanationRu": "утро. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «утро».",
+      "id": "morning",
+      "wordId": "marugoto.starter-a1.word.a96f4fc5ed416761"
+    },
+    {
+      "surface": "昼",
+      "kana": "ひる",
+      "readings": [
+        "ひる"
+      ],
+      "meaningRu": "дневное время; полдень по контексту",
+      "sources": [
+        "time"
+      ],
+      "sectionId": "periods",
+      "lessonNumber": 9,
+      "choiceGroup": "periods",
+      "exampleKana": "かいぎはひるです。",
+      "exampleMeaningRu": "Встреча — днём.",
+      "exampleAudioText": "かいぎわひるです。",
+      "explanationRu": "дневное время; полдень по контексту. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «дневное время; полдень по контексту».",
+      "id": "daytime",
+      "wordId": "marugoto.starter-a1.word.d39ce14d472a03c4"
+    },
+    {
+      "surface": "夕方",
+      "kana": "ゆうがた",
+      "readings": [
+        "ゆうがた"
+      ],
+      "meaningRu": "ранний вечер, перед ночью",
+      "sources": [
+        "evening"
+      ],
+      "sectionId": "periods",
+      "lessonNumber": 9,
+      "choiceGroup": "periods",
+      "exampleKana": "かいぎはゆうがたです。",
+      "exampleMeaningRu": "Встреча — ранним вечером.",
+      "exampleAudioText": "かいぎわゆうがたです。",
+      "explanationRu": "ранний вечер, перед ночью. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «ранний вечер, перед ночью».",
+      "id": "evening",
+      "wordId": "marugoto.starter-a1.word.supplement-evening"
+    },
+    {
+      "surface": "夜",
+      "kana": "よる",
+      "readings": [
+        "よる"
+      ],
+      "meaningRu": "вечер/ночь",
+      "sources": [
+        "time"
+      ],
+      "sectionId": "periods",
+      "lessonNumber": 9,
+      "choiceGroup": "periods",
+      "exampleKana": "かいぎはよるです。",
+      "exampleMeaningRu": "Встреча — вечером или ночью.",
+      "exampleAudioText": "かいぎわよるです。",
+      "explanationRu": "вечер/ночь. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «вечер/ночь».",
+      "id": "night",
+      "wordId": "marugoto.starter-a1.word.8b9e7b30b9f17cbb"
+    }
+  ],
+  "amPm": [
+    {
+      "id": "am",
+      "surface": "午前",
+      "kana": "ごぜん",
+      "meaningRu": "до полудня, AM",
+      "sources": [
+        "time",
+        "madrid"
+      ],
+      "sectionId": "periods",
+      "lessonNumber": 9,
+      "choiceGroup": "periods",
+      "exampleKana": "かいぎはごぜんです。",
+      "exampleMeaningRu": "Встреча — до полудня.",
+      "exampleAudioText": "かいぎわごぜんです。",
+      "explanationRu": "до полудня, AM. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «до полудня, AM».",
+      "wordId": "marugoto.starter-a1.word.a882862ce00928c7"
+    },
+    {
+      "id": "pm",
+      "surface": "午後",
+      "kana": "ごご",
+      "meaningRu": "после полудня, PM",
+      "sources": [
+        "time",
+        "madrid"
+      ],
+      "sectionId": "periods",
+      "lessonNumber": 9,
+      "choiceGroup": "periods",
+      "exampleKana": "かいぎはごごです。",
+      "exampleMeaningRu": "Встреча — после полудня.",
+      "exampleAudioText": "かいぎわごごです。",
+      "explanationRu": "после полудня, PM. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+      "applicationPromptRu": "Выберите японское выражение для календарного значения: «после полудня, PM».",
+      "wordId": "marugoto.starter-a1.word.0f980d8a7fbcaf59"
+    }
+  ],
+  "questions": [
+    {
+      "id": "doko",
+      "kana": "どこ",
+      "meaningRu": "где / куда по конструкции",
+      "usageRu": "Место: статическоеどこですか; место действияどこで; направлениеどこに.",
+      "sources": [
+        "demonstratives",
+        "interrogatives"
+      ],
+      "exampleKana": "トイレはどこですか。",
+      "exampleStatus": "official-normalized",
+      "exampleMeaningRu": "Где туалет?",
+      "scenarioRu": "Вы ищете туалет. Выберите вопрос о его местонахождении.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Место: статическоеどこですか; место действияどこで; направлениеどこに.",
+      "applicationPromptRu": "Вы ищете туалет. Выберите вопрос о его местонахождении.",
+      "applicationLabel": "トイレはどこですか。",
+      "exampleAudioText": "トイレわどこですか。",
+      "wordId": "marugoto.starter-a1.word.75bd1f06a73a31f0"
+    },
+    {
+      "id": "dochira",
+      "kana": "どちら",
+      "meaningRu": "где / куда (вежливо); направление",
+      "usageRu": "Для происхождения нуженから; самоどちら не означает «откуда» во всех контекстах.",
+      "sources": [
+        "demonstratives",
+        "origin"
+      ],
+      "exampleKana": "うけつけはどちらですか。",
+      "exampleStatus": "author-adapted",
+      "exampleMeaningRu": "Где находится приёмная? (вежливо)",
+      "scenarioRu": "Вам нужно вежливо узнать местонахождение приёмной.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Для происхождения нуженから; самоどちら не означает «откуда» во всех контекстах.",
+      "applicationPromptRu": "Вам нужно вежливо узнать местонахождение приёмной.",
+      "applicationLabel": "うけつけはどちらですか。",
+      "exampleAudioText": "うけつけわどちらですか。",
+      "wordId": "marugoto.starter-a1.word.041f397dd31a3214"
+    },
+    {
+      "id": "origin",
+      "kana": "どちらから",
+      "meaningRu": "откуда вы?",
+      "usageRu": "Знакомство: страна или родной город. Не вопрос о нынешнем местонахождении.",
+      "sources": [
+        "origin",
+        "activity-phrases"
+      ],
+      "exampleKana": "どちらからですか。",
+      "exampleStatus": "official-normalized",
+      "exampleMeaningRu": "Откуда вы?",
+      "scenarioRu": "Вы знакомитесь с человеком и хотите узнать, откуда он приехал.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Знакомство: страна или родной город. Не вопрос о нынешнем местонахождении.",
+      "applicationPromptRu": "Вы знакомитесь с человеком и хотите узнать, откуда он приехал.",
+      "applicationLabel": "どちらからですか。",
+      "exampleAudioText": "どちらからですか。",
+      "wordId": "marugoto.starter-a1.word.9b473beed948c0b3"
+    },
+    {
+      "id": "destination",
+      "kana": "どちらまでですか",
+      "meaningRu": "до какого места едете?",
+      "usageRu": "Вопрос о пункте назначения, например в такси. Не вопрос о происхождении.",
+      "sources": [
+        "rikai-phrases"
+      ],
+      "exampleKana": "どちらまでですか。",
+      "exampleStatus": "official-normalized",
+      "exampleMeaningRu": "До какого места вы едете?",
+      "scenarioRu": "Вы водитель такси. Узнайте конечный пункт поездки.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Вопрос о пункте назначения, например в такси. Не вопрос о происхождении.",
+      "applicationPromptRu": "Вы водитель такси. Узнайте конечный пункт поездки.",
+      "applicationLabel": "どちらまでですか。",
+      "exampleAudioText": "どちらまでですか。",
+      "wordId": "marugoto.starter-a1.word.f66df4a04f4ec266"
+    },
+    {
+      "id": "who",
+      "kana": "だれ",
+      "meaningRu": "кто",
+      "usageRu": "Человек: имя или отношение к говорящему.",
+      "sources": [
+        "interrogatives"
+      ],
+      "exampleKana": "このおんなのこはだれですか。",
+      "exampleStatus": "official-normalized",
+      "exampleMeaningRu": "Кто эта девочка?",
+      "scenarioRu": "На фотографии незнакомая девочка. Узнайте, кто это.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Человек: имя или отношение к говорящему.",
+      "applicationPromptRu": "На фотографии незнакомая девочка. Узнайте, кто это.",
+      "applicationLabel": "このおんなのこはだれですか。",
+      "exampleAudioText": "このおんなのこわだれですか。",
+      "wordId": "marugoto.starter-a1.word.a5e32b90deb17e6c"
+    },
+    {
+      "id": "what-nani",
+      "kana": "なに",
+      "meaningRu": "что",
+      "usageRu": "В приведённых A1 вопросах передを/が:なにを食べますか/なにが好きですか.",
+      "sources": [
+        "nan-nani"
+      ],
+      "exampleKana": "なにをたべますか。",
+      "exampleStatus": "official-normalized",
+      "exampleMeaningRu": "Что будете есть?",
+      "scenarioRu": "Вы обсуждаете еду. Узнайте, что человек будет есть.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "В приведённых A1 вопросах передを/が:なにを食べますか/なにが好きですか.",
+      "applicationPromptRu": "Вы обсуждаете еду. Узнайте, что человек будет есть.",
+      "applicationLabel": "なにをたべますか。",
+      "exampleAudioText": "なにおたべますか。",
+      "wordId": "marugoto.starter-a1.word.23f4af490e18bd63"
+    },
+    {
+      "id": "what-nan",
+      "kana": "なん",
+      "meaningRu": "что (контекстная форма何)",
+      "usageRu": "Сですか; также часть何月/何日/何時/何歳 и других счётных вопросов. Не свободная заменаなに в любом окружении.",
+      "sources": [
+        "nan-nani",
+        "demonstratives"
+      ],
+      "exampleKana": "それはなんですか。",
+      "exampleStatus": "official-normalized",
+      "exampleMeaningRu": "Что это?",
+      "scenarioRu": "Вы видите незнакомый предмет. Узнайте, что это.",
+      "mergeWith": "what-nani",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Сですか; также часть何月/何日/何時/何歳 и других счётных вопросов. Не свободная заменаなに в любом окружении.",
+      "applicationPromptRu": "Вы видите незнакомый предмет. Узнайте, что это.",
+      "applicationLabel": "それはなんですか。",
+      "exampleAudioText": "それわなんですか。"
+    },
+    {
+      "id": "what-language",
+      "kana": "なにご",
+      "meaningRu": "какой язык",
+      "usageRu": "ЛексемаA1 подтверждена официальным русским словарём; пример ниже авторский, не цитата.",
+      "sources": [
+        "rikai-vocabulary"
+      ],
+      "exampleKana": "これはなにごですか。",
+      "exampleStatus": "author-adapted",
+      "exampleMeaningRu": "На каком это языке?",
+      "scenarioRu": "Перед вами текст. Узнайте, на каком он языке.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "ЛексемаA1 подтверждена официальным русским словарём; пример ниже авторский, не цитата.",
+      "applicationPromptRu": "Перед вами текст. Узнайте, на каком он языке.",
+      "applicationLabel": "これはなにごですか。",
+      "exampleAudioText": "これわなにごですか。",
+      "wordId": "marugoto.starter-a1.word.26f199d991d81947"
+    },
+    {
+      "id": "how-many-general",
+      "kana": "いくつ",
+      "meaningRu": "сколько предметов",
+      "usageRu": "Количество вещей с общим счётом; возрастная вежливая фразаおいくつですか имеет отдельный контекст.",
+      "sources": [
+        "interrogatives"
+      ],
+      "exampleKana": "りんごはいくつありますか。",
+      "exampleStatus": "author-adapted",
+      "exampleMeaningRu": "Сколько яблок?",
+      "scenarioRu": "На столе яблоки. Спросите количество вещей.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Количество вещей с общим счётом; возрастная вежливая фразаおいくつですか имеет отдельный контекст.",
+      "applicationPromptRu": "На столе яблоки. Спросите количество вещей.",
+      "applicationLabel": "りんごはいくつありますか。",
+      "exampleAudioText": "りんごわいくつありますか。",
+      "wordId": "marugoto.starter-a1.word.cc661301211e3aab"
+    },
+    {
+      "id": "age",
+      "kana": "なんさい",
+      "meaningRu": "сколько лет",
+      "usageRu": "Вопрос о возрасте; в примере источник спрашивает возраст ребёнка на фотографии.",
+      "sources": [
+        "interrogatives"
+      ],
+      "exampleKana": "なんさいですか。",
+      "exampleStatus": "official-normalized",
+      "exampleMeaningRu": "Сколько лет?",
+      "scenarioRu": "На фотографии ребёнок. Спросите его возраст.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Вопрос о возрасте; в примере источник спрашивает возраст ребёнка на фотографии.",
+      "applicationPromptRu": "На фотографии ребёнок. Спросите его возраст.",
+      "applicationLabel": "なんさいですか。",
+      "exampleAudioText": "なんさいですか。",
+      "wordId": "marugoto.starter-a1.word.93b1f9e7fc222764"
+    },
+    {
+      "id": "age-polite",
+      "kana": "おいくつですか",
+      "meaningRu": "сколько вам лет? (вежливо)",
+      "usageRu": "Вежливый вопрос о возрасте; не глобальный синоним количественногоいくつ.",
+      "sources": [
+        "activity-phrases"
+      ],
+      "exampleKana": "おいくつですか。",
+      "exampleStatus": "official-normalized",
+      "exampleMeaningRu": "Сколько вам лет? (вежливо)",
+      "scenarioRu": "Спросите возраст собеседника вежливо.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Вежливый вопрос о возрасте; не глобальный синоним количественногоいくつ.",
+      "applicationPromptRu": "Спросите возраст собеседника вежливо.",
+      "applicationLabel": "おいくつですか。",
+      "exampleAudioText": "おいくつですか。",
+      "wordId": "marugoto.starter-a1.word.24a335e09a8a32ba"
+    },
+    {
+      "id": "people-count",
+      "kana": "なんにん",
+      "meaningRu": "сколько человек",
+      "usageRu": "Счёт людей, не возраст.",
+      "sources": [
+        "interrogatives"
+      ],
+      "exampleKana": "かぞくはなんにんですか。",
+      "exampleStatus": "author-adapted",
+      "exampleMeaningRu": "Сколько человек в семье?",
+      "scenarioRu": "Собеседник говорит о семье. Спросите количество людей.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Счёт людей, не возраст.",
+      "applicationPromptRu": "Собеседник говорит о семье. Спросите количество людей.",
+      "applicationLabel": "かぞくはなんにんですか。",
+      "exampleAudioText": "かぞくわなんにんですか。",
+      "wordId": "marugoto.starter-a1.word.8b06574d40c677ba"
+    },
+    {
+      "id": "which-object",
+      "kana": "どれ",
+      "meaningRu": "который предмет из показанных",
+      "usageRu": "Самостоятельное указательное вопросительное слово, в отличие отどの+существительное.",
+      "sources": [
+        "demonstratives",
+        "interrogatives"
+      ],
+      "exampleKana": "あなたのかさはどれですか。",
+      "exampleStatus": "author-adapted",
+      "exampleMeaningRu": "Который зонтик ваш?",
+      "scenarioRu": "Показано несколько зонтиков. Узнайте, который принадлежит собеседнику.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Самостоятельное указательное вопросительное слово, в отличие отどの+существительное.",
+      "applicationPromptRu": "Показано несколько зонтиков. Узнайте, который принадлежит собеседнику.",
+      "applicationLabel": "あなたのかさはどれですか。",
+      "exampleAudioText": "あなたのかさわどれですか。",
+      "wordId": "marugoto.starter-a1.word.610ff8cd8119e844"
+    },
+    {
+      "id": "which-noun",
+      "kana": "どの",
+      "meaningRu": "какой именно + существительное",
+      "usageRu": "Требует существительного; выбирает конкретный объект.",
+      "sources": [
+        "demonstratives"
+      ],
+      "exampleKana": "どのコーヒーですか。",
+      "exampleStatus": "official-normalized",
+      "exampleMeaningRu": "Какой именно кофе?",
+      "scenarioRu": "Предложено несколько видов кофе. Уточните конкретный напиток.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Требует существительного; выбирает конкретный объект.",
+      "applicationPromptRu": "Предложено несколько видов кофе. Уточните конкретный напиток.",
+      "applicationLabel": "どのコーヒーですか。",
+      "exampleAudioText": "どのコーヒーですか。"
+    },
+    {
+      "id": "what-kind",
+      "kana": "どんな",
+      "meaningRu": "какой / какого рода + существительное",
+      "usageRu": "Требует существительного; просит описание/тип, не только выбор конкретного предмета.",
+      "sources": [
+        "interrogatives",
+        "nan-nani"
+      ],
+      "exampleKana": "どんなまちですか。",
+      "exampleStatus": "official-shortened",
+      "exampleMeaningRu": "Какой это город?",
+      "scenarioRu": "Собеседник описывает город. Спросите, какого он типа.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Требует существительного; просит описание/тип, не только выбор конкретного предмета.",
+      "applicationPromptRu": "Собеседник описывает город. Спросите, какого он типа.",
+      "applicationLabel": "どんなまちですか。",
+      "exampleAudioText": "どんなまちですか。",
+      "wordId": "marugoto.starter-a1.word.34a8edcf5193ce4f"
+    },
+    {
+      "id": "price",
+      "kana": "いくら",
+      "meaningRu": "сколько стоит",
+      "usageRu": "Деньги/цена в данном тренажёре; не число людей и не количество предметов.",
+      "sources": [
+        "demonstratives",
+        "activity-phrases"
+      ],
+      "exampleKana": "これはいくらですか。",
+      "exampleStatus": "official-normalized",
+      "exampleMeaningRu": "Сколько это стоит?",
+      "scenarioRu": "Вы покупаете вещь. Узнайте её цену.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Деньги/цена в данном тренажёре; не число людей и не количество предметов.",
+      "applicationPromptRu": "Вы покупаете вещь. Узнайте её цену.",
+      "applicationLabel": "これはいくらですか。",
+      "exampleAudioText": "これわいくらですか。",
+      "wordId": "marugoto.starter-a1.word.e9a5a2af495d3355"
+    },
+    {
+      "id": "how",
+      "kana": "どう",
+      "meaningRu": "как / каково",
+      "usageRu": "Оценка состояния или впечатления; не задаёт способ передвижения без контекста.",
+      "sources": [
+        "interrogatives",
+        "activity-phrases"
+      ],
+      "exampleKana": "どうですか。",
+      "exampleStatus": "official-normalized",
+      "exampleMeaningRu": "Как вам?",
+      "scenarioRu": "Собеседник пробует еду. Узнайте его впечатление.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Оценка состояния или впечатления; не задаёт способ передвижения без контекста.",
+      "applicationPromptRu": "Собеседник пробует еду. Узнайте его впечатление.",
+      "applicationLabel": "どうですか。",
+      "exampleAudioText": "どうですか。",
+      "wordId": "marugoto.starter-a1.word.d04c1cf4283fcc0a"
+    },
+    {
+      "id": "how-was",
+      "kana": "どうでしたか",
+      "meaningRu": "как прошло? / как было?",
+      "usageRu": "Впечатление о завершённом событии.",
+      "sources": [
+        "activity-phrases"
+      ],
+      "exampleKana": "どうでしたか。",
+      "exampleStatus": "official-normalized",
+      "exampleMeaningRu": "Как всё прошло?",
+      "scenarioRu": "Поездка уже завершилась. Узнайте, как она прошла.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Впечатление о завершённом событии.",
+      "applicationPromptRu": "Поездка уже завершилась. Узнайте, как она прошла.",
+      "applicationLabel": "どうでしたか。",
+      "exampleAudioText": "どうでしたか。",
+      "wordId": "marugoto.starter-a1.word.9854d45d73d2b57d"
+    },
+    {
+      "id": "how-method",
+      "kana": "どうやって",
+      "meaningRu": "как / каким способом",
+      "usageRu": "Способ/средство, вA1 часто транспорт.",
+      "sources": [
+        "interrogatives"
+      ],
+      "exampleKana": "とうきょうからおおさかまでどうやっていきますか。",
+      "exampleStatus": "official-normalized",
+      "exampleMeaningRu": "Как добраться из Токио в Осаку?",
+      "scenarioRu": "Узнайте способ добраться из Токио в Осаку.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Способ/средство, вA1 часто транспорт.",
+      "applicationPromptRu": "Узнайте способ добраться из Токио в Осаку.",
+      "applicationLabel": "とうきょうからおおさかまでどうやっていきますか。",
+      "exampleAudioText": "とうきょうからおおさかまでどうやっていきますか。",
+      "wordId": "marugoto.starter-a1.word.532aa5fe849df67a"
+    },
+    {
+      "id": "when",
+      "kana": "いつ",
+      "meaningRu": "когда",
+      "usageRu": "Широкий вопрос о времени; календарный ответ или относительное время. В этом образце передглаголом нетに.",
+      "sources": [
+        "interrogatives",
+        "calendar-ni"
+      ],
+      "exampleKana": "いつとうきょうにいきますか。",
+      "exampleStatus": "official-normalized",
+      "exampleMeaningRu": "Когда поедете в Токио?",
+      "scenarioRu": "Узнайте, когда человек поедет в Токио, без требования точного часа.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Широкий вопрос о времени; календарный ответ или относительное время. В этом образце передглаголом нетに.",
+      "applicationPromptRu": "Узнайте, когда человек поедет в Токио, без требования точного часа.",
+      "applicationLabel": "いつとうきょうにいきますか。",
+      "exampleAudioText": "いつとうきょうにいきますか。",
+      "wordId": "marugoto.starter-a1.word.e4d0eadebaf3cf69"
+    },
+    {
+      "id": "what-hour",
+      "kana": "なんじ",
+      "meaningRu": "который час / во сколько",
+      "usageRu": "Сейчас:いまなんじですか; время действия:なんじに+глагол.",
+      "sources": [
+        "time",
+        "time-ni"
+      ],
+      "exampleKana": "いまなんじですか。",
+      "exampleStatus": "official-normalized",
+      "exampleMeaningRu": "Который сейчас час?",
+      "scenarioRu": "Вы смотрите на часы. Спросите текущее время.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Сейчас:いまなんじですか; время действия:なんじに+глагол.",
+      "applicationPromptRu": "Вы смотрите на часы. Спросите текущее время.",
+      "applicationLabel": "いまなんじですか。",
+      "exampleAudioText": "いまなんじですか。",
+      "wordId": "marugoto.starter-a1.word.f1477eb97998c581"
+    },
+    {
+      "id": "how-many-hours",
+      "kana": "なんじかん",
+      "meaningRu": "сколько часов длится",
+      "usageRu": "Длительность, не положение стрелок на часах. После длительности в исходном образце нетに.",
+      "sources": [
+        "interrogatives"
+      ],
+      "exampleKana": "なんじかんしごとをしますか。",
+      "exampleStatus": "author-adapted",
+      "exampleMeaningRu": "Сколько часов вы работаете?",
+      "scenarioRu": "Узнайте длительность рабочего дня в часах.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Длительность, не положение стрелок на часах. После длительности в исходном образце нетに.",
+      "applicationPromptRu": "Узнайте длительность рабочего дня в часах.",
+      "applicationLabel": "なんじかんしごとをしますか。",
+      "exampleAudioText": "なんじかんしごとおしますか。",
+      "wordId": "marugoto.starter-a1.word.42a4fb49e10c3f52"
+    },
+    {
+      "id": "what-minute",
+      "kana": "なんぷん",
+      "meaningRu": "сколько минут / какая минута по контексту",
+      "usageRu": "Нужен явный контекст: длительность или минутная часть времени. Не эквивалентなんじ.",
+      "sources": [
+        "nan-nani"
+      ],
+      "exampleKana": "なんぷんかかりますか。",
+      "exampleStatus": "author-adapted",
+      "exampleMeaningRu": "Сколько минут занимает дорога?",
+      "scenarioRu": "Узнайте длительность дороги в минутах.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Нужен явный контекст: длительность или минутная часть времени. Не эквивалентなんじ.",
+      "applicationPromptRu": "Узнайте длительность дороги в минутах.",
+      "applicationLabel": "なんぷんかかりますか。",
+      "exampleAudioText": "なんぷんかかりますか。"
+    },
+    {
+      "id": "weekday",
+      "kana": "なんようび",
+      "meaningRu": "какой день недели",
+      "usageRu": "Ответ:понедельник…воскресенье; не число месяца.",
+      "sources": [
+        "weekday-clock",
+        "nan-nani"
+      ],
+      "exampleKana": "なんようびですか。",
+      "exampleStatus": "official-normalized",
+      "exampleMeaningRu": "Какой день недели?",
+      "scenarioRu": "Уточните день недели, а не число месяца.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Ответ:понедельник…воскресенье; не число месяца.",
+      "applicationPromptRu": "Уточните день недели, а не число месяца.",
+      "applicationLabel": "なんようびですか。",
+      "exampleAudioText": "なんようびですか。"
+    },
+    {
+      "id": "month",
+      "kana": "なんがつ",
+      "meaningRu": "какой месяц (номер/название)",
+      "usageRu": "Календарный месяц; длительность в месяцах —なんかげつ.",
+      "sources": [
+        "interrogatives",
+        "nan-nani"
+      ],
+      "exampleKana": "たんじょうびはなんがつですか。",
+      "exampleStatus": "author-adapted",
+      "exampleMeaningRu": "В каком месяце ваш день рождения?",
+      "scenarioRu": "Узнайте месяц дня рождения, без числа.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Календарный месяц; длительность в месяцах —なんかげつ.",
+      "applicationPromptRu": "Узнайте месяц дня рождения, без числа.",
+      "applicationLabel": "たんじょうびはなんがつですか。",
+      "exampleAudioText": "たんじょうびわなんがつですか。"
+    },
+    {
+      "id": "date",
+      "kana": "なんにち",
+      "meaningRu": "какое число месяца",
+      "usageRu": "С явным календарным контекстом. То же чтение может спрашивать число дней длительности; не объединять смыслы в одном вопросе.",
+      "sources": [
+        "interrogatives",
+        "nan-nani"
+      ],
+      "exampleKana": "きょうはなんにちですか。",
+      "exampleStatus": "author-adapted",
+      "exampleMeaningRu": "Какое сегодня число?",
+      "scenarioRu": "Узнайте сегодняшнее число месяца, без месяца.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "С явным календарным контекстом. То же чтение может спрашивать число дней длительности; не объединять смыслы в одном вопросе.",
+      "applicationPromptRu": "Узнайте сегодняшнее число месяца, без месяца.",
+      "applicationLabel": "きょうはなんにちですか。",
+      "exampleAudioText": "きょうわなんにちですか。"
+    },
+    {
+      "id": "month-day",
+      "kana": "なんがつなんにち",
+      "meaningRu": "какого месяца и числа",
+      "usageRu": "Дата события/дня рождения.",
+      "sources": [
+        "calendar-question"
+      ],
+      "exampleKana": "たんじょうびはなんがつなんにちですか。",
+      "exampleStatus": "official-shortened",
+      "exampleMeaningRu": "Какого месяца и числа ваш день рождения?",
+      "scenarioRu": "Узнайте полную календарную дату дня рождения: месяц и число.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Дата события/дня рождения.",
+      "applicationPromptRu": "Узнайте полную календарную дату дня рождения: месяц и число.",
+      "applicationLabel": "たんじょうびはなんがつなんにちですか。",
+      "exampleAudioText": "たんじょうびわなんがつなんにちですか。"
+    },
+    {
+      "id": "year",
+      "kana": "なんねん",
+      "meaningRu": "какой год / сколько лет по контексту",
+      "usageRu": "Календарный год или длительность; возраст человека —なんさい.",
+      "sources": [
+        "interrogatives",
+        "nan-nani"
+      ],
+      "exampleKana": "ことしはなんねんですか。",
+      "exampleStatus": "author-adapted",
+      "exampleMeaningRu": "Какой сейчас год?",
+      "scenarioRu": "В условии назван календарный год. Сформулируйте вопрос о годе, не о возрасте.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Календарный год или длительность; возраст человека —なんさい.",
+      "applicationPromptRu": "В условии назван календарный год. Сформулируйте вопрос о годе, не о возрасте.",
+      "applicationLabel": "ことしはなんねんですか。",
+      "exampleAudioText": "ことしわなんねんですか。"
+    },
+    {
+      "id": "name",
+      "kana": "おなまえは",
+      "meaningRu": "как вас зовут?",
+      "usageRu": "Знакомство: эллиптический вежливый вопрос об имени с вопросительной интонацией.",
+      "sources": [
+        "origin"
+      ],
+      "exampleKana": "おなまえは？",
+      "exampleStatus": "official-normalized",
+      "exampleMeaningRu": "Как вас зовут?",
+      "scenarioRu": "Вы знакомитесь. Узнайте имя собеседника.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Знакомство: эллиптический вежливый вопрос об имени с вопросительной интонацией.",
+      "applicationPromptRu": "Вы знакомитесь. Узнайте имя собеседника.",
+      "applicationLabel": "おなまえは？",
+      "exampleAudioText": "おなまえわ？",
+      "wordId": "marugoto.starter-a1.word.learning.l03.name-question"
+    },
+    {
+      "id": "meaning",
+      "kana": "〜ってどういういみですか",
+      "meaningRu": "что значит «…»?",
+      "usageRu": "Вопрос о значении уже произнесённого слова или выражения.",
+      "sources": [
+        "activity-phrases"
+      ],
+      "exampleKana": "ねこってどういういみですか。",
+      "exampleStatus": "author-adapted",
+      "exampleMeaningRu": "Что значит «нэко»?",
+      "scenarioRu": "Вы услышали слово «нэко» и хотите узнать его значение.",
+      "sectionId": "questions",
+      "choiceGroup": "questions",
+      "lessonNumber": 3,
+      "explanationRu": "Вопрос о значении уже произнесённого слова или выражения.",
+      "applicationPromptRu": "Вы услышали слово «нэко» и хотите узнать его значение.",
+      "applicationLabel": "ねこってどういういみですか。",
+      "exampleAudioText": "ねこってどういういみですか。",
+      "wordId": "marugoto.starter-a1.word.9148989aa6fc8021"
+    }
+  ],
+  "constraints": [
+    {
+      "topic": "minute zero",
+      "note": "For a complete clock with00minutes, omit the minute component:1:00→いちじ. Separate0分 reading remains unverified; do not claimれいふん/ぜろふん as verified.",
+      "sources": [
+        "time",
+        "madrid"
+      ]
+    },
+    {
+      "topic": "half past",
+      "note": "In clock context30minutes can beさんじゅっぷん/さんじっぷん orはん after the hour;はん is not a standalone numeric-minute reading for every context.",
+      "sources": [
+        "time",
+        "madrid"
+      ]
+    },
+    {
+      "topic": "noon/midnight boundaries",
+      "note": "JF Madrid explicitly gives midnightごぜんれいじ and noonごごれいじ. Avoid treating12AM/12PM readings as unambiguous without explicit noon/midnight context; the1–12 table alone does not resolve this boundary.",
+      "sources": [
+        "madrid"
+      ]
+    },
+    {
+      "topic": "dates versus durations",
+      "note": "Calendar1日 isついたち; duration1day isいちにち. Calendarmonth usesがつ; durationmonth usesかげつ. Hours on a clock useじ; durations useじかん.",
+      "sources": [
+        "calendar",
+        "time",
+        "interrogatives"
+      ]
+    },
+    {
+      "topic": "relative day grammar",
+      "note": "Use explicit calendar/date/hour+に for action time. CurrentA1 model omitsに afterいま/きのう/きょう/あした and relative nextweek/month/year, and afterいつ.",
+      "sources": [
+        "calendar-ni"
+      ]
+    },
+    {
+      "topic": "variants policy",
+      "note": "No source-attested alternative month or calendar-date readings were found in the selected tables. Do not infer from general numeral4/7/9 variants. Date17/27 canonicalしち;19/29 canonicalく.",
+      "sources": [
+        "calendar"
+      ]
+    },
+    {
+      "topic": "distractor ambiguity",
+      "note": "どこ is place;どちらから is origin;どちらまで is destination;なんじ is clock;なんじかん is duration;いくつ generic count;おいくつですか polite age. These are not globally interchangeable answer keys.",
+      "sources": [
+        "interrogatives",
+        "origin",
+        "rikai-phrases",
+        "activity-phrases"
+      ]
+    },
+    {
+      "topic": "source limits",
+      "note": "All month/date/hour and calendar-relative tables were read. Question examples markedauthor-adapted are authored applications of sourced grammar, not quotations. All listed question lemmas have primary-source lexical or grammar support.",
+      "sources": [
+        "rikai-vocabulary"
+      ]
+    }
+  ],
+  "version": "2026-10-24.1",
+  "templates": {
+    "clockMeaning": "{time} ({period})",
+    "clockExplanation": "На циферблате указано {meaning}. Сначала назовите часть суток, затем часы и минуты. При нуле минут минутная часть не произносится.",
+    "clockScenario": "Выберите японское чтение времени на циферблате.",
+    "wordExplanation": "{meaning}. Запомните чтение в этом календарном значении; одинаковое написание в другом контексте может читаться иначе.",
+    "wordScenario": "Выберите японское выражение для календарного значения: «{meaning}».",
+    "calendarExample": "{kana}です。",
+    "calendarMeaning": "Это {meaning}.",
+    "relativeExample": "{kana}です。",
+    "relativeMeaning": "Это {meaning}.",
+    "questionReference": "Вопросительное выражение выбирают по тому, какие сведения нужны: место, человек, возраст, цена, количество, время или описание. В примере смотрите и на целое предложение: なに и なん употребляются в разных окружениях; どの и どんな требуют существительного. Вежливые выражения с одинаковым смыслом не являются неверными ответами друг для друга.",
+    "dayReference": "День, неделя, месяц и год задают отдельные точки отсчёта. В календарных заданиях исходная дата указана в условии; она не меняется во время ответа. Сегодня, вчера и завтра не следует смешивать с прошедшей/следующей неделей.",
+    "periodReference": "Части суток обозначают периоды дня. 午前 и 午後 указывают до или после полудня; это уточнение особенно важно рядом с часами.",
+    "weekdayReference": "В неделе семь дней. Общая часть названий — ようび. Вопрос о дне недели: なんようびですか。 Число месяца спрашивают иначе: なんにちですか。",
+    "monthReference": "Календарные месяцы: номер + がつ. Особые чтения: 4月 — しがつ, 7月 — しちがつ, 9月 — くがつ. Вопрос о месяце: なんがつですか。 Длительность в месяцах выражают иначе.",
+    "dateReference": "Это числа календарного месяца, а не длительность. 1日 — ついたち; 2–10日 имеют особые чтения. 14日 и 24日 оканчиваются на よっか, 20日 — はつか. 17日/27日 используют しち, 19日/29日 — く. Для одного дня длительности 1日 читается いちにち.",
+    "clockReference": "Время на часах: часы с じ, затем минуты с ふん/ぷん. 4時 — よじ, 7時 — しちじ, 9時 — くじ. 1分 — いっぷん, 3分 — さんぷん, 6分 — ろっぷん, 10分 — じゅっぷん. В источниках допустимы よんぷん/よんふん, はっぷん/はちふん и じゅっぷん/じっぷん. При :00 минутная часть опускается. В этих заданиях полночь называется 午前0時, полдень — 午後0時; 12-часовой циферблат сопровождается явным указанием части суток. Все сочетания подряд проходить не требуется.\n\nЧасы: 1時 — いちじ · 2時 — にじ · 3時 — さんじ · 4時 — よじ · 5時 — ごじ · 6時 — ろくじ · 7時 — しちじ · 8時 — はちじ · 9時 — くじ · 10時 — じゅうじ · 11時 — じゅういちじ · 12時 — じゅうにじ.\nМинуты: 1分 — いっぷん · 2分 — にふん · 3分 — さんぷん · 4分 — よんぷん · 5分 — ごふん · 6分 — ろっぷん · 7分 — ななふん · 8分 — はっぷん · 9分 — きゅうふん · 10分 — じゅっぷん · 20分 — にじゅっぷん · 30分 — さんじゅっぷん · 40分 — よんじゅっぷん · 50分 — ごじゅっぷん. Остальные минуты составляются из десятков и последней цифры: например, 21分 — にじゅういっぷん. 30分 также можно назвать はん — половина.",
+    "clockZero": {
+      "surface": "0時",
+      "kana": "れいじ"
+    }
+  },
+  "periodLabels": {
+    "am": "до полудня",
+    "pm": "после полудня"
+  },
+  "sections": [
+    {
+      "id": "questions",
+      "topic": "questions",
+      "title": "Вопросительные выражения",
+      "referenceKey": "questionReference"
+    },
+    {
+      "id": "relative",
+      "topic": "time",
+      "title": "Дни, недели, месяцы и годы",
+      "referenceKey": "dayReference"
+    },
+    {
+      "id": "periods",
+      "topic": "time",
+      "title": "Сейчас и части суток",
+      "referenceKey": "periodReference"
+    },
+    {
+      "id": "weekdays",
+      "topic": "time",
+      "title": "Дни недели",
+      "referenceKey": "weekdayReference"
+    },
+    {
+      "id": "months",
+      "topic": "time",
+      "title": "Месяцы",
+      "referenceKey": "monthReference"
+    },
+    {
+      "id": "dates",
+      "topic": "time",
+      "title": "Числа месяца",
+      "referenceKey": "dateReference"
+    },
+    {
+      "id": "clock",
+      "topic": "time",
+      "title": "Часы и минуты",
+      "referenceKey": "clockReference",
+      "variable": true
+    }
+  ]
+}

@@ -1,3 +1,6 @@
+import { repeatTypes } from '../shared/types';
+import { studySpec, studyPreparations, introduceStudy, passStudy, studyFormat, enrollmentTargets } from './study';
+import { stagedLearning, trainingSections, trainingEntry, preparedChoices, itemRepeatTypes, wordRepeatTypes } from '../shared/training';
 import { catalogFor } from '../shared/catalog';
 import { isDeepStrictEqual } from 'node:util';
 import { matchesPreparedAnswer } from '../shared/answers';
@@ -12,8 +15,8 @@ const scheduler=fsrs({enable_fuzz:false});
 export function nextCard(card:Card|null,rating:1|2|3|4,now=new Date()):Card {return scheduler.next(card??createEmptyCard(now),now,rating).card;}
 function restoreCard(data:any):Card {return {...data,due:new Date(data.due),...(data.last_review?{last_review:new Date(data.last_review)}:{})};}
 export const reviewId=(mode:ReviewMode,targetId:string,exerciseId='')=>Buffer.from(JSON.stringify([mode,targetId,exerciseId])).toString('base64url');
-function decodeReview(id:string):[ReviewMode,string,string]{
- try {const data=JSON.parse(Buffer.from(id,'base64url').toString('utf8'));if(!Array.isArray(data)||data.length!==3||data.some(v=>typeof v!=='string'))throw 0;return data as [ReviewMode,string,string];}catch{throw new ReviewError('INVALID_REVIEW','Неверная карточка.',400);}
+export function decodeReview(id:string):[ReviewMode,string,string]{
+ try {const data=JSON.parse(Buffer.from(id,'base64url').toString('utf8'));if(!Array.isArray(data)||data.length!==3||data.some(v=>typeof v!=='string')||!['ja-ru','ru-ja','listening','grammar','counter'].includes(data[0])||!data[1])throw 0;return data as [ReviewMode,string,string];}catch{throw new ReviewError('INVALID_REVIEW','Неверная карточка.',400);}
 }
 export class ReviewError extends Error {constructor(public code:string,message:string,public status:400|403|404|409=400){super(message);}}
 export function gradeGrammar(course:Course,submission:Extract<ReviewSubmission,{mode:'grammar'}>,exerciseId:string){
@@ -26,7 +29,8 @@ async function snapshot(database:Pick<Database,'sql'>,userId:string,course:Cours
  const [{words_today,skills_today}]=await database.sql`select count(*) filter(where grammar=false)::int as words_today,count(*) filter(where grammar=true)::int as skills_today from (select item_id,(mode='grammar') as grammar,min(introduced_at) as first_at from review_states where user_id=${userId} and mode<>'counter' group by item_id,(mode='grammar')) introductions where first_at>=date_trunc('day',now() at time zone 'UTC') at time zone 'UTC'`;
  const counterRows=await database.sql`select counter_id,level,history from counter_progress where user_id=${userId}`;
  const counters:CounterProgress[]=counterRows.map((row:any)=>({counterId:row.counter_id,level:row.level,history:row.history}));
- return {words,states,counters,catalog:catalogFor(course),media:course.media,publicationId:course.publicationId,wordsToday:words_today as number,skillsToday:skills_today as number};
+ const studies=stagedLearning(course)?await database.sql`select kind,item_id,introductions,passed from study_progress where user_id=${userId}`:[];
+ return {words,states,counters,studies,catalog:catalogFor(course),media:course.media,publicationId:course.publicationId,wordsToday:words_today as number,skillsToday:skills_today as number};
 }
 const modes=['ja-ru','ru-ja','listening','grammar','counter'] as const;
 const wordModes=['ja-ru','ru-ja','listening'] as const;
@@ -54,7 +58,9 @@ function counterTrainingQueue(snap:Snapshot,now:Date):ReviewQueue{
   });
   return targets.map(target=>counterItemFor(snap,target,now)).filter((item):item is ReviewItem=>!!item).map(item=>({item,key:Math.random()})).sort((a,b)=>Number(b.item.isNew)-Number(a.item.isNew)||a.key-b.key).map(entry=>entry.item);
  });
- const all=buckets.flat();return {items:interleaveReviews(buckets).slice(0,20),remainingNew:all.filter(item=>item.isNew).length,remainingDue:all.filter(item=>!item.isNew&&new Date(item.due)<=now).length};
+ const all=buckets.flat();let chosen=interleaveReviews(buckets).slice(0,20);
+ if(snap.catalog.learningPolicy){const groups=new Map<string,ReviewItem[]>();for(const item of all){if(item.mode!=='counter')continue;const key=item.counter.definition.id+'/'+(item.counter.quantity??'type');groups.set(key,[...(groups.get(key)??[]),item]);}const score=(key:string)=>{const row=snap.studies.find((row:any)=>row.kind==='counter'&&row.item_id===key);const required=studySpec({catalog:snap.catalog,media:snap.media} as Course,groups.get(key)![0]!).required;const complete=!!row&&required.every(format=>row.passed.includes(format));return complete?0:row?.passed.length||row?.introductions.length?2:1;};const keys=[...groups.keys()].filter(key=>studySpec({catalog:snap.catalog,media:snap.media} as Course,groups.get(key)![0]!).required.every(format=>groups.get(key)!.some(item=>item.mode==='counter'&&item.counter.kind===format))).sort((a,b)=>score(b)-score(a));const selected=keys.slice(0,5).map(key=>groups.get(key)!);chosen=[];for(let round=0;round<3;round++)for(const [index,group]of selected.entries())if(round<group.length)chosen.push(group[(index+round)%group.length]!);}
+ return {items:chosen,remainingNew:all.filter(item=>item.isNew).length,remainingDue:all.filter(item=>!item.isNew&&new Date(item.due)<=now).length};
 }
 function submittedCounter(snap:Snapshot,targetId:string,challenge:string):CounterCard{
  const [wordId,seed,extra]=challenge.split('|');const parsed=parseCounterTarget(targetId,snap.catalog);
@@ -84,7 +90,9 @@ function itemFor(course:Course,snap:Snapshot,mode:Exclude<ReviewMode,'counter'>,
  const state=snap.states.find((candidate:any)=>candidate.mode===mode&&candidate.item_id===targetId);const first=snap.states.filter((candidate:any)=>candidate.item_id===targetId&&(candidate.mode==='grammar')===(mode==='grammar')).sort((a:any,b:any)=>new Date(a.introduced_at).getTime()-new Date(b.introduced_at).getTime())[0];
  const base={...(course.publicationId?{publicationId:course.publicationId}:{}),id:'',targetId,version:state?.version??0,due:new Date(state?.due??first?.introduced_at??now).toISOString(),isNew:!first};
  if(mode==='grammar'){const exercises=options.filter(exercise=>exercise.skillId===targetId);const exercise=exercises[base.version%exercises.length]!;return {...base,id:reviewId(mode,targetId,exercise.id),mode,exercise,skill:course.skills.find(skill=>skill.id===targetId)!};}
- return {...base,id:reviewId(mode,targetId),mode,word:snap.words.find(word=>word.id===targetId)!};
+ const word=snap.words.find(word=>word.id===targetId)!,entry=trainingEntry(course,targetId);
+ const applied=mode==='ru-ja'&&base.version%2===1&&!!entry?.application&&!!snap.studies.find((row:any)=>row.kind==='word'&&row.item_id===targetId)?.passed.includes('application');
+ return {...base,id:reviewId(mode,targetId,applied?'application:'+targetId:''),mode,word,...(applied?{application:entry!.application,choices:preparedChoices(course,targetId,true),visual:entry?.visual}:{})};
 }
 function dueItems(course:Course,snap:Snapshot,mode:ReviewMode,now:Date):ReviewItem[]{
  if(mode==='counter')return snap.states.filter((state:any)=>state.mode==='counter'&&new Date(state.due)<=now).map((state:any)=>counterItemFor(snap,state.item_id,now)).filter((item:ReviewItem|undefined):item is ReviewItem=>!!item).sort((a:ReviewItem,b:ReviewItem)=>new Date(a.due).getTime()-new Date(b.due).getTime());
@@ -108,26 +116,68 @@ export function interleaveReviews(buckets:ReviewItem[][],lastWordId?:string):Rev
 export async function reviewQueue(database:Database,userId:string,course:Course,mode:ReviewMode|'mixed'):Promise<ReviewQueue>{
  const snap=await snapshot(database,userId,course);const now=new Date();
  const selected=mode==='mixed'?(await settingsFor(database,userId)).repeatTypes:[];
- const items=mode==='mixed'?interleaveReviews(modes.filter(itemMode=>selected.includes(itemMode==='grammar'?'constructions':itemMode==='counter'?'counters':'words')).map(itemMode=>dueItems(course,snap,itemMode,now))):dueItems(course,snap,mode,now);
+ const items=mode==='mixed'?interleaveReviews(modes.map(itemMode=>dueItems(course,snap,itemMode,now).filter(item=>itemRepeatTypes(course,item).some(type=>selected.includes(type))))):dueItems(course,snap,mode,now);
  return {items:items.slice(0,30),remainingDue:items.length,remainingNew:0};
 }
 export async function introducedExerciseAvailable(database:Database,userId:string,course:Course,exerciseId:string):Promise<boolean>{
  const snap=await snapshot(database,userId,course);const exercise=exercisesFor(withPersonalPractice(course,snap.words),snap.words,introduced(snap)).find(item=>item.id===exerciseId);return !!exercise&&introduced(snap,true).has(exercise.skillId);
 }
+function topicWordItem(course:Course,snap:Snapshot,mode:'ja-ru'|'ru-ja'|'listening',id:string,topic:string,now:Date,application=false):ReviewItem {
+ const item=itemFor(course,snap,mode,id,now);if(item.mode==='grammar')throw new Error('Expected a word');
+ const entry=trainingEntry(course,id);
+ return {...item,id:reviewId(mode,id,`training:${topic}${application?'|application':''}`),choices:preparedChoices(course,id,application),application:application?entry?.application:undefined,...(entry?.visual?{visual:entry.visual}:{})};
+}
 export async function trainingQueue(database:Database,userId:string,course:Course,context:TrainingContext):Promise<ReviewQueue>{
+ const result=await rawTrainingQueue(database,userId,course,context);
+ const decorated=await studyPreparations(database.sql,userId,course,result.items);
+ const items=decorated.filter(item=>{const p=item.preparation;if(!p||p.required.every(format=>p.passed.includes(format)))return true;const format=item.mode==='grammar'?item.construction?.mode??'grammar':item.mode==='counter'?item.counter.kind:item.application?'application':item.mode;return !p.passed.includes(format);});
+ return {...result,items,...(stagedLearning(course)&&!result.reference?{reference:{title:context.counters?'Счётные суффиксы':context.skillId?'Языковая конструкция':context.listId?'Личный список':'Словарь урока',text:'Сначала ознакомьтесь с правилом, чтением и примерами. Затем изучите небольшую группу и отработайте её в доступных форматах. В повторения новый материал попадёт после успешного учебного цикла.'}}:{})};
+}
+export async function introduceTraining(database:Database,userId:string,course:Course,ids:string[],stage:'reference'|'learning'){
+ if(!stagedLearning(course))return {ok:true};
+ return database.sql.begin(async tx=>{
+  await tx`select pg_advisory_xact_lock(hashtext(${userId}))`;
+  const snap=await snapshot({sql:tx},userId,course),extended=withPersonalPractice(course,snap.words);
+  const items=ids.map(id=>{
+   const [mode,target,challenge]=decodeReview(id);
+   if(mode==='counter'){const counter=submittedCounter(snap,target,challenge);return {id,targetId:target,mode,version:0,due:new Date().toISOString(),isNew:true,counter} as ReviewItem;}
+   if(mode==='grammar'){
+    const exercise=exercisesFor(extended,snap.words).find(exercise=>exercise.id===challenge&&exercise.skillId===target);
+    if(!exercise)throw new ReviewError('MATERIAL_UNAVAILABLE','Материал обучения недоступен.',403);
+    return {...itemFor(extended,snap,mode,target,new Date(),[exercise]),id};
+   }
+   if(!snap.words.some(word=>word.id===target&&word.reviewStatus!=='draft'&&validSegments(word)))throw new ReviewError('MATERIAL_UNAVAILABLE','Слово недоступно.',403);
+   if(challenge.startsWith('training:')){const topic=challenge.split('|')[0]!.slice(9);if(!trainingSections(course,topic).some(section=>section.wordIds.includes(target)))throw new ReviewError('MATERIAL_UNAVAILABLE','Слово не относится к теме.',403);}
+   return {...itemFor(course,snap,mode,target,new Date()),id};
+  });
+  for(const item of items)await introduceStudy(tx,userId,studySpec(course,item),stage);
+  return {ok:true};
+ });
+}
+async function rawTrainingQueue(database:Database,userId:string,course:Course,context:TrainingContext):Promise<ReviewQueue>{
  const snap=await snapshot(database,userId,course);const now=new Date();let words:Word[];
+ if(context.topicId){
+  const sections=trainingSections(course,context.topicId).filter(section=>!context.sectionId||section.id===context.sectionId);if(!sections.length)throw new ReviewError('NOT_FOUND','Тема тренировки не найдена.',404);
+  const ids=new Set(sections.flatMap(section=>section.wordIds));const targets=snap.words.filter(word=>ids.has(word.id)&&word.reviewStatus!=='draft');
+  const complete=(word:Word)=>{const row=snap.studies.find((row:any)=>row.kind==='word'&&row.item_id===word.id);return !!row&&['ja-ru','ru-ja',...(word.audioUrl?['listening']:[]),...(trainingEntry(course,word.id)?.application?['application']:[])].every(format=>row.passed.includes(format));};
+  const incomplete=targets.filter(word=>!complete(word));const pool=incomplete.length?incomplete:targets;
+  const selected=pool.map(word=>({word,key:Math.random(),started:!!snap.studies.find((row:any)=>row.kind==='word'&&row.item_id===word.id)?.introductions.length})).sort((a,b)=>Number(b.started)-Number(a.started)||(sections.some(section=>section.variable)?a.key-b.key:0)).slice(0,5).map(entry=>entry.word);
+  const items=selected.flatMap(word=>[...wordModes.filter(mode=>mode!=='listening'||word.audioUrl).map(mode=>topicWordItem(course,snap,mode,word.id,context.topicId!,now)),...(trainingEntry(course,word.id)?.application?[topicWordItem(course,snap,'ru-ja',word.id,context.topicId!,now,true)]:[])]);
+  const mixed=interleaveReviews(wordModes.map(mode=>items.filter(item=>item.mode===mode&&!('application'in item&&item.application))));mixed.push(...items.filter(item=>'application'in item&&item.application));
+  return {items:mixed,remainingNew:incomplete.length,remainingDue:0,reference:{title:sections.map(section=>section.title).join(' · '),text:sections.map(section=>section.referenceRu).join('\n\n')}};
+ }
  if(context.skillId)return constructionTrainingQueue(course,snap,context,now);
  if(context.counters)return counterTrainingQueue(snap,now);
- if(context.lessonId){if(!course.lessons.some(lesson=>lesson.id===context.lessonId))throw new ReviewError('NOT_FOUND','Урок не найден.',404);words=snap.words.filter(word=>word.lessonIds.includes(context.lessonId!));}
+ if(context.lessonId){if(!course.lessons.some(lesson=>lesson.id===context.lessonId))throw new ReviewError('NOT_FOUND','Урок не найден.',404);words=snap.words.filter(word=>!word.trainingOnly&&word.lessonIds.includes(context.lessonId!));}
  else {const [list]=await database.sql`select id from word_lists where id=${context.listId!} and user_id=${userId}`;if(!list)throw new ReviewError('NOT_FOUND','Личный список не найден.',404);const rows=await database.sql`select id from personal_words where list_id=${context.listId!} and user_id=${userId}`;const ids=new Set(rows.map((row:any)=>row.id));words=snap.words.filter(word=>ids.has(word.id));}
  words=words.filter(word=>word.reviewStatus!=='draft'&&validSegments(word));const wordIds=introduced(snap);const skillIds=introduced(snap,true);const freshWords=words.filter(word=>!wordIds.has(word.id));
  const priority=(id:string,grammar=false)=>Math.max(0,...snap.states.filter((state:any)=>state.item_id===id&&(state.mode==='grammar')===grammar).map((state:any)=>reviewPriority(state,now)));
- const selected=(freshWords.length?freshWords:words.map(word=>({word,key:reviewDrawKey(priority(word.id))})).sort((a,b)=>a.key-b.key).map(entry=>entry.word)).slice(0,10);
- const wordItems=selected.map((word,index)=>{const available=wordModes.filter(mode=>mode!=='listening'||word.audioUrl);const count=snap.states.filter((state:any)=>state.item_id===word.id&&state.mode!=='grammar').reduce((sum:number,state:any)=>sum+state.version,0);const mode=available[(count||(wordIds.size+index))%available.length]!;return itemFor(course,snap,mode,word.id,now);});
+ const selected=(freshWords.length?freshWords:words.map(word=>({word,key:reviewDrawKey(priority(word.id))})).sort((a,b)=>a.key-b.key).map(entry=>entry.word)).slice(0,stagedLearning(course)?5:10);
+ const wordItems=selected.flatMap((word,index)=>{const available=wordModes.filter(mode=>mode!=='listening'||word.audioUrl);const count=snap.states.filter((state:any)=>state.item_id===word.id&&state.mode!=='grammar').reduce((sum:number,state:any)=>sum+state.version,0);const mode=available[(count||(wordIds.size+index))%available.length]!;return stagedLearning(course)?available.map(mode=>itemFor(course,snap,mode,word.id,now)):[itemFor(course,snap,mode,word.id,now)];});
  const extended=withPersonalPractice(course,snap.words);const exercises=exercisesFor(extended,snap.words,context.listId?new Set(words.map(word=>word.id)):wordIds).filter(exercise=>context.lessonId?exercise.lessonId===context.lessonId:exercise.tokens.some(token=>extended.forms.some(form=>form.id===token.formId&&words.some(word=>word.id===form.wordId))));
  const skills=[...new Set(exercises.map(exercise=>exercise.skillId))].map(id=>({id,key:reviewDrawKey(priority(id,true))})).sort((a,b)=>Number(skillIds.has(a.id))-Number(skillIds.has(b.id))||a.key-b.key).map(entry=>entry.id);
- const grammar=skills.slice(0,2).map(id=>itemFor(course,snap,'grammar',id,now,exercises));
- return {items:interleaveReviews([wordItems,grammar]),remainingNew:freshWords.length+skills.filter(id=>!skillIds.has(id)).length,remainingDue:modes.flatMap(mode=>dueItems(course,snap,mode,now)).filter(item=>item.mode==='grammar'?skills.includes(item.targetId):words.some(word=>word.id===item.targetId)).length};
+ const grammar=skills.slice(0,stagedLearning(course)?1:2).flatMap(id=>{const item=itemFor(course,snap,'grammar',id,now,exercises);if(!stagedLearning(course)||item.mode!=='grammar')return [item];const original=course.learning?.flatMap(route=>route.goals.flatMap(goal=>goal.parts.flatMap(part=>part.construction?[part.construction]:[]))).find(value=>value.exerciseId===item.exercise.id);const example=original?.example??{surface:sentenceFor(extended,item.exercise,item.exercise.acceptedOrders[0]!),kana:item.exercise.acceptedOrders[0]!.map(tokenId=>extended.forms.find(form=>form.id===item.exercise.tokens.find(token=>token.id===tokenId)!.formId)!.kana).join('')+item.exercise.sentenceEnd,segments:item.exercise.acceptedOrders[0]!.flatMap(tokenId=>extended.forms.find(form=>form.id===item.exercise.tokens.find(token=>token.id===tokenId)!.formId)!.segments).concat(item.exercise.sentenceEnd?[{surface:item.exercise.sentenceEnd}]:[]),meaningRu:item.exercise.translationRu??item.exercise.promptRu,audioUrl:''};return (['ja-ru',...(example.audioUrl?['listening' as const]:[]),'grammar'] as const).map(mode=>({...item,construction:{...(original??{exerciseId:item.exercise.id,explanationRu:item.skill.explanationRu,breakdown:[],example}),mode}}));});
+ return {items:stagedLearning(course)?[...interleaveReviews(wordModes.map(mode=>wordItems.filter(item=>item.mode===mode))),...grammar]:interleaveReviews([wordItems,grammar]),remainingNew:freshWords.length+skills.filter(id=>!skillIds.has(id)).length,remainingDue:modes.flatMap(mode=>dueItems(course,snap,mode,now)).filter(item=>item.mode==='grammar'?skills.includes(item.targetId):words.some(word=>word.id===item.targetId)).length};
 }
 function constructionTrainingQueue(course:Course,snap:Snapshot,context:TrainingContext,now:Date):ReviewQueue{
  const skill=course.skills.find(skill=>skill.id===context.skillId);
@@ -210,10 +260,42 @@ export async function submitReviewLocked(tx:Database['sql'],userId:string,course
   if(input.mode==='counter'&&counter!.kind!=='recall'&&!input.choice)throw new ReviewError('INCOMPLETE_NOT_SCHEDULED','Сначала выберите ответ.',409);
   const correct=counter&&input.mode==='counter'?(counter.kind==='recall'?input.rating===3:counter.acceptedKeys.includes(input.choice??'')):false;
   const grade=input.mode==='grammar'?gradeGrammar(exerciseCourse,input,exerciseId):input.mode==='counter'?{correct,rating:correct&&!input.helped&&input.rating===3?3 as const:1 as const,feedback:correct?'Верно. Вспомнили уверенно — уберите карточку, иначе повторите.':'Повторим: '+counter!.answer.kana}:null;
-  const rating=grade?.rating??(input as Extract<ReviewSubmission,{rating:number}>).rating;
-  const card=scheduled?nextCard(existing?restoreCard(existing.card):null,rating,now):restoreCard(existing.card);
-  const result:ReviewResult={...(course.publicationId?{publicationId:course.publicationId}:{}),attemptId:input.attemptId,status:scheduled?'scheduled':'additional-practice',version:scheduled?currentVersion+1:currentVersion,nextDue:card.due.toISOString(),...(grade?{correct:grade.correct,feedback:grade.feedback}:{})};
+  let rating=grade?.rating??(input as Extract<ReviewSubmission,{rating:number}>).rating;
+  let studyItem:ReviewItem=mode==='counter'?{id:input.reviewId,targetId,mode,version:currentVersion,due:now.toISOString(),isNew:!existing,counter:counter!}:mode==='grammar'?{...itemFor(exerciseCourse,snap,'grammar',targetId,now,[exercise!]),id:input.reviewId}:itemFor(course,snap,mode,targetId,now);
+  if(mode!=='grammar'&&mode!=='counter'){
+   if(exerciseId){
+    if(!exerciseId.startsWith('training:')&&!exerciseId.startsWith('application:'))throw new ReviewError('INVALID_REVIEW','Неизвестный формат слова.');
+    const topic=exerciseId.startsWith('training:')?exerciseId.split('|')[0]!.slice(9):undefined;
+    if(topic&&!trainingSections(course,topic).some(section=>section.wordIds.includes(targetId)))throw new ReviewError('MATERIAL_UNAVAILABLE','Слово не относится к теме.',403);
+    const applied=exerciseId.endsWith('|application')||exerciseId.startsWith('application:');
+    if(applied&&mode!=='ru-ja')throw new ReviewError('INVALID_REVIEW','Неверное направление применения.');
+    studyItem={...studyItem,mode,word:word!,id:input.reviewId,choices:preparedChoices(course,targetId,applied),application:applied?trainingEntry(course,targetId)?.application:undefined};
+   }
+   if(input.mode!=='grammar'&&input.mode!=='counter'&&input.choiceWordId!==undefined){
+    const options='choices'in studyItem?studyItem.choices:undefined;if(!options?.includes(input.choiceWordId))throw new ReviewError('INVALID_CHOICE','Вариант не относится к заданию.');
+    rating=input.choiceWordId===targetId&&!input.helped?3:1;
+   }
+   if('application'in studyItem&&studyItem.application&&input.mode!=='grammar'&&input.mode!=='counter'&&!input.choiceWordId)throw new ReviewError('INVALID_CHOICE','Сначала выберите вариант.');
+  }
+  let learning=false,newlyReady=false;let preparation:ReviewItem['preparation'];
+  if(stagedLearning(course)){
+   const decorated=(await studyPreparations(tx,userId,course,[studyItem],snap.states))[0]!;preparation=decorated.preparation!;
+   const format=studyFormat(studyItem,input),ready=preparation.required.every(value=>preparation!.passed.includes(value));
+   if(!ready){
+    if(!preparation.introduced)throw new ReviewError('LEARN_FIRST','Сначала завершите знакомство с материалом.',409);
+    if(!preparation.required.includes(format))throw new ReviewError('INVALID_FORMAT','Формат не относится к учебному циклу.');
+    newlyReady=await passStudy(tx,userId,preparation,format,rating>=3);
+    learning=!newlyReady;if(learning)scheduled=false;
+   }
+  }
+  const card=scheduled?nextCard(existing?restoreCard(existing.card):null,rating,now):existing?restoreCard(existing.card):nextCard(null,rating,now);
+  const result:ReviewResult={...(course.publicationId?{publicationId:course.publicationId}:{}),attemptId:input.attemptId,status:learning?'learning':scheduled?'scheduled':'additional-practice',version:scheduled?currentVersion+1:currentVersion,nextDue:learning&&!existing?now.toISOString():card.due.toISOString(),...(stagedLearning(course)?{correct:rating>=3}:{}),...(grade?{correct:grade.correct&&(!stagedLearning(course)||rating>=3),feedback:grade.feedback}:{})};
   if(scheduled)await tx`insert into review_states(user_id,item_id,mode,version,card,due) values(${userId},${targetId},${mode},${result.version},${card},${card.due}) on conflict(user_id,item_id,mode) do update set version=excluded.version,card=excluded.card,due=excluded.due,updated_at=now()`;
+  if(newlyReady&&preparation){
+   const targets=enrollmentTargets(preparation);
+   const hadSchedule=snap.states.some((row:any)=>targets.some(target=>target.id===row.item_id&&target.mode===row.mode));
+   if(!hadSchedule)for(const target of targets){if(target.id===targetId&&target.mode===mode)continue;const first=nextCard(null,3,now);await tx`insert into review_states(user_id,item_id,mode,version,card,due) values(${userId},${target.id},${target.mode},1,${first},${first.due}) on conflict do nothing`;}
+  }
   if(counter&&input.mode==='counter'){
    await tx`insert into counter_progress(user_id,counter_id) values(${userId},${counter.definition.id}) on conflict do nothing`;
    const [previous]=await tx`select attempt_id from review_attempts where user_id=${userId} and mode='counter' and payload->>'reviewId'=${input.reviewId} limit 1`;
@@ -229,7 +311,13 @@ export async function submitReviewLocked(tx:Database['sql'],userId:string,course
 }
 export async function progressFor(database:Database,userId:string,course:Course):Promise<Progress>{
  const snap=await snapshot(database,userId,course);const rows=await database.sql`select mode,count(*)::int as reviewed from review_attempts where user_id=${userId} and scheduled=true and created_at>=date_trunc('day',now() at time zone 'UTC') at time zone 'UTC' group by mode`;
- const byMode={} as Progress['byMode'];for(const mode of modes){const queue=await reviewQueue(database,userId,course,mode);byMode[mode]={due:queue.remainingDue,learned:snap.states.filter((s:any)=>s.mode===mode).length,reviewedToday:rows.find((r:any)=>r.mode===mode)?.reviewed??0};}
+ const byType=Object.fromEntries(repeatTypes.map(type=>[type,{due:0,learned:0,reviewedToday:0}])) as NonNullable<Progress['byType']>;const dueKeys=new Map<string,ReviewItem>();
+ const byMode={} as Progress['byMode'];for(const mode of modes){const due=dueItems(course,snap,mode,new Date());byMode[mode]={due:due.length,learned:snap.states.filter((s:any)=>s.mode===mode).length,reviewedToday:rows.find((r:any)=>r.mode===mode)?.reviewed??0};for(const item of due){dueKeys.set(item.mode+':'+item.targetId,item);for(const type of itemRepeatTypes(course,item))byType[type].due++;}}
+ const attempts=await database.sql`select item_id,mode,count(*)::int as count from review_attempts where user_id=${userId} and scheduled=true and created_at>=date_trunc('day',now() at time zone 'UTC') at time zone 'UTC' group by item_id,mode`;
+ const types=(mode:string,id:string)=>mode==='grammar'?['constructions' as const]:mode==='counter'?['counters' as const]:wordRepeatTypes(course,id);
+ for(const row of snap.states)for(const type of types(row.mode,row.item_id))byType[type].learned++;
+ for(const row of attempts)for(const type of types(row.mode,row.item_id))byType[type].reviewedToday+=row.count;
  const introducedWordIds=[...introduced(snap)];const introducedSkillIds=[...introduced(snap,true)];
- return {counters:snap.counters,introducedWordIds,introducedSkillIds,completedLessons:course.lessons.filter(lesson=>course.words.filter(word=>word.lessonIds.includes(lesson.id)&&word.reviewStatus!=='draft'&&validSegments(word)).every(word=>introducedWordIds.includes(word.id))&&course.skills.filter(skill=>skill.lessonIds.includes(lesson.id)).every(skill=>introducedSkillIds.includes(skill.id))).length,totalLessons:course.lessons.length,wordsIntroducedToday:snap.wordsToday,skillsIntroducedToday:snap.skillsToday,byMode};
+ const selected=(await settingsFor(database,userId)).repeatTypes;const repeatDue=[...dueKeys.values()].filter(item=>itemRepeatTypes(course,item).some(type=>selected.includes(type))).length;
+ return {byType,repeatDue,counters:snap.counters,introducedWordIds,introducedSkillIds,completedLessons:course.lessons.filter(lesson=>course.words.filter(word=>!word.trainingOnly&&word.lessonIds.includes(lesson.id)&&word.reviewStatus!=='draft'&&validSegments(word)).every(word=>introducedWordIds.includes(word.id))&&course.skills.filter(skill=>skill.lessonIds.includes(lesson.id)).every(skill=>introducedSkillIds.includes(skill.id))).length,totalLessons:course.lessons.length,wordsIntroducedToday:snap.wordsToday,skillsIntroducedToday:snap.skillsToday,byMode};
 }

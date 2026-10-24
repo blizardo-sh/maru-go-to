@@ -23,3 +23,5 @@ export const learningAttempts = pgTable('learning_attempts',{attemptId:text('att
 
 export const contentPublications = pgTable('content_publications',{id:text('id').primaryKey(),formatVersion:integer('format_version').notNull(),bundle:jsonb('bundle').notNull(),legacy:boolean('legacy').notNull().default(false),bundled:boolean('bundled').notNull().default(false),createdAt:timestamp('created_at',{withTimezone:true}).notNull().defaultNow()});
 export const contentActive = pgTable('content_active',{singleton:integer('singleton').primaryKey().default(1),publicationId:text('publication_id').notNull().references(()=>contentPublications.id),updatedAt:timestamp('updated_at',{withTimezone:true}).notNull().defaultNow()});
+
+export const studyProgress=pgTable('study_progress',{userId:text('user_id').notNull().references(()=>user.id,{onDelete:'cascade'}),kind:text('kind').notNull(),itemId:text('item_id').notNull(),introductions:jsonb('introductions').notNull().default([]),passed:jsonb('passed').notNull().default([]),updatedAt:timestamp('updated_at',{withTimezone:true}).notNull().defaultNow()},t=>[primaryKey({columns:[t.userId,t.kind,t.itemId]})]);

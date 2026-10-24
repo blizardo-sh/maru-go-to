@@ -25,7 +25,7 @@ test('all 103 supplied PDF positions are explicit guided targets, not substring 
   expect(coverage.sources.map(source => source.sha256)).toEqual(audit.sources.filter(source => source.path.startsWith('user-provided/')).map(source => source.sha256));
   for (const [lessonNumber, count] of [[3, 46], [4, 57]] as const) {
     const route = course.learning!.find(route => route.lessonId === prefix + `lesson.0${lessonNumber}`)!;
-    expect(route.version).toBe(coverage.version);
+    expect(route.version).toBe(coverage.version+'-staged');
     expect(coverage.positions.filter(row => row.lessonNumber === lessonNumber).map(row => row.position).sort((a, b) => a - b)).toEqual(Array.from({ length: count }, (_, i) => i + 1));
     for (const goal of route.goals) for (const part of goal.parts) expect(part.words.length).toBeLessThanOrEqual(5);
   }

@@ -42,11 +42,11 @@ const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
   afterAll(async () => { if (!database) return; for (const learner of learners) { await database.sql`delete from access_links where email=${learner.email}`; await database.sql`delete from users where id=${learner.id}`; } await database.sql.close(); });
 
   test('old settings default to all types without a write; selections persist per owner and reject invented SRS types', async () => {
-    expect((await settings()).repeatTypes).toEqual(['words', 'counters', 'constructions']);
+    expect((await settings()).repeatTypes).toEqual(['words', 'counters', 'constructions', 'questions', 'time']);
     expect(await database.sql`select 1 from preferences where user_id=${user.id}`).toHaveLength(0);
     const { repeatTypes: ignored, ...legacy } = structuredClone(defaultSettings);
     await database.sql`insert into preferences(user_id,settings) values(${user.id},${legacy})`;
-    expect((await settings()).repeatTypes).toEqual(['words', 'counters', 'constructions']);
+    expect((await settings()).repeatTypes).toEqual(['words', 'counters', 'constructions', 'questions', 'time']);
     expect((await database.sql`select settings from preferences where user_id=${user.id}`)[0]!.settings).toEqual(legacy);
     const saved = { ...await settings(), repeatTypes: ['constructions'] };
     expect((await request('/api/settings', saved, 'PUT')).status).toBe(200); expect((await settings()).repeatTypes).toEqual(['constructions']);
@@ -71,7 +71,7 @@ const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
       expect(batch.remainingDue).toBe(expected); expect(batch.items).toHaveLength(Math.min(30, expected));
     }
     expect((await queue('/api/reviews?mode=mixed')).items).toEqual([]); expect(await rows()).toEqual(before);
-    expect(await (await request('/api/progress')).json()).toEqual(progress);
+    expect(await (await request('/api/progress')).json()).toEqual({...progress, repeatDue:0});
     expect((await settings()).repeatTypes).toEqual([]);
     await database.sql`update review_states set due=now()+interval '2 days' where user_id=${user.id}`;
     expect((await request('/api/settings', { ...await settings(), repeatTypes: ['words', 'counters', 'constructions'] }, 'PUT')).status).toBe(200);

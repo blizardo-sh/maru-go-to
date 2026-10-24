@@ -12,9 +12,9 @@ import type { Database } from './db';
 import type { Course, ReviewMode } from '../shared/types';
 import { createAuth, consumeLink, createLink, invitationDetails, consumeRegistrationLink, createRegistrationLink, registrationLinksFor, revokeRegistrationLink } from './auth';
 import { allWords, introducedMaterial, settingsFor } from './material';
-import { introducedExerciseAvailable, evaluateReview, progressFor, ReviewError, reviewQueue, submitReview, trainingQueue } from './reviews';
+import { introduceTraining, introducedExerciseAvailable, evaluateReview, progressFor, ReviewError, reviewQueue, submitReview, trainingQueue } from './reviews';
 import { addList, listsFor, updateWord } from './words';
-import { adminLinkSchema, analysisSchema, emailSchema, invitationDetailsSchema, invitationSchema, listSchema, recoverySchema, registrationLinkIdSchema, registrationLinkSchema, settingsSchema, submissionSchema, targetEvaluationSchema, trainingContextSchema, wordUpdateSchema } from './validation';
+import { adminLinkSchema, studyIntroductionSchema, analysisSchema, emailSchema, invitationDetailsSchema, invitationSchema, listSchema, recoverySchema, registrationLinkIdSchema, registrationLinkSchema, settingsSchema, submissionSchema, targetEvaluationSchema, trainingContextSchema, wordUpdateSchema } from './validation';
 import { createAnalyzer } from './analysis';
 import { withPersonalPractice } from './personal-practice';
 type Actor={id:string;name:string;email:string;isAdmin:boolean};
@@ -76,6 +76,7 @@ export function createApp({database,config,course,publications}:{database:Databa
  .get('/api/learning/:lessonId',async c=>{const course=c.get('course');return c.json(await learningState(database,c.get('actor').id,course,c.req.param('lessonId')));})
  .post('/api/learning/:lessonId/advance',async c=>{const course=c.get('course');return c.json(await advanceLearning(database,c.get('actor').id,course,c.req.param('lessonId'),learningAdvanceSchema.parse(await c.req.json()),publications?await publications():course));})
  .get('/api/training',async c=>{const course=c.get('course');return c.json(await trainingQueue(database,c.get('actor').id,course,trainingContextSchema.parse(c.req.query())));})
+ .post('/api/training/introduce',async c=>{const course=c.get('course'),input=studyIntroductionSchema.parse(await c.req.json());return c.json(await introduceTraining(database,c.get('actor').id,course,input.reviewIds,input.stage));})
  .post('/api/reviews/evaluate',async c=>{const course=c.get('course');return c.json(await evaluateReview(database,c.get('actor').id,course,targetEvaluationSchema.parse(await c.req.json())));})
  .post('/api/reviews',async c=>{const course=c.get('course');return c.json(await submitReview(database,c.get('actor').id,course,submissionSchema.parse(await c.req.json())));})
  .get('/api/lists',async c=>c.json({lists:await listsFor(database,c.get('actor').id)}))

@@ -1,4 +1,5 @@
 import { chromium, expect, type Page } from '@playwright/test';
+import { seedAcceptedHistory } from './helpers/introduced-browser-fixture';
 import { createLink, consumeLink } from '../src/server/auth';
 import { connectDatabase } from '../src/server/db';
 import { loadCourse } from '../src/server/course';
@@ -32,8 +33,7 @@ try {
   const response = await context.request.post(base + '/api/auth/sign-in/email', { headers: { origin: base }, data: { email, password } }); expect(response.status()).toBe(200); userId = (await response.json()).user.id;
   expect((await context.request.put(base + '/api/settings', { headers: headers(), data: { ...defaultSettings, animations: false, sceneSoundEnabled: false } })).status()).toBe(200);
   const ids = new Set(exercise.tokens.map(token => course.forms.find(form => form.id === token.formId)!.wordId));
-  for (const id of ids) if (course.words.find(word => word.id === id)!.reviewStatus !== 'draft') expect((await context.request.post(base + '/api/reviews', { headers: headers(), data: { attemptId: crypto.randomUUID(), reviewId: reviewId('ja-ru', id), version: 0, mode: 'ja-ru', rating: 3 } })).status()).toBe(200);
-  expect((await context.request.post(base + '/api/reviews', { headers: headers(), data: { attemptId: crypto.randomUUID(), reviewId: reviewId('grammar', exercise.skillId, exercise.id), version: 0, mode: 'grammar', tokenIds: exercise.acceptedOrders[0], revealed: false, rating: 3 } })).status()).toBe(200);
+  await seedAcceptedHistory(database, course, email, [...ids].filter(id => course.words.find(word => word.id === id)!.reviewStatus !== 'draft'), [exercise.skillId]);
   await database.sql`update review_states set due=now()-interval '1 day' where user_id=${userId}`;
   await page.addInitScript(() => {
     (window as any).__referencePlayed = [];
@@ -47,14 +47,14 @@ try {
     const saved = await route.fetch(); if (loseGradeAck) { loseGradeAck = false; await route.abort('failed'); } else await route.fulfill({ response: saved });
   });
   await page.goto(base); await expect(page.getByTestId('learn-lesson')).toHaveCount(18);
-  await navigate('Повторение'); const types = page.getByTestId('repeat-types'); await expect(types.getByRole('checkbox')).toHaveCount(3);
+  await navigate('Повторение'); const types = page.getByTestId('repeat-types'); await expect(types.getByRole('checkbox')).toHaveCount(5);
   for (const checkbox of await types.getByRole('checkbox').all()) await expect(checkbox).toBeChecked();
   failSettings = true; await types.getByRole('checkbox', { name: /Счётные суффиксы/ }).uncheck();
   await expect(page.getByRole('button', { name: 'Повторить сохранение выбора', exact: true })).toBeVisible();
   await expect(page.getByRole('button', { name: /Начать повторение/ })).toBeDisabled(); expect((await settings()).repeatTypes).toContain('counters');
   await page.getByRole('button', { name: 'Повторить сохранение выбора', exact: true }).click(); await expect.poll(async () => (await settings()).repeatTypes.includes('counters')).toBe(false);
   await page.reload(); await navigate('Повторение'); await expect(types.getByRole('checkbox', { name: /Счётные суффиксы/ })).not.toBeChecked();
-  for (const label of [/Слова/, /Конструкции/]) { await types.getByRole('checkbox', { name: label }).uncheck(); await expect(types.getByRole('checkbox', { name: label })).toBeEnabled(); }
+  for (const label of [/Слова/, /Конструкции/, /Вопросы/, /Время и календарь/]) { await types.getByRole('checkbox', { name: label }).uncheck(); await expect(types.getByRole('checkbox', { name: label })).toBeEnabled(); }
   await expect(page.getByText('Выберите хотя бы один тип материала.', { exact: true })).toBeVisible(); expect((await settings()).repeatTypes).toEqual([]);
   expect((await (await context.request.get(base + '/api/reviews?mode=mixed')).json()).items).toEqual([]); report.repeatSaveFailureAndPersistence = true;
 
@@ -64,6 +64,7 @@ try {
   const beforeKana = await cards(), beforePosts = submissions.length;
   const manifest: KanaAudioManifest = await (await context.request.get(base + '/audio/kana-manifest.json')).json();
   await trainer.getByRole('button', { name: /Начать колоду/ }).click();
+  await trainer.getByRole('button', { name: 'Начать практику', exact: true }).click();
   const formats = new Set<string>(); let solved = 0;
   while (solved < 10) {
     const question = trainer.getByTestId('kana-question'); await expect(question).toBeVisible(); const format = (await question.getAttribute('data-format'))!; formats.add(format);
@@ -85,6 +86,7 @@ try {
   await trainer.getByRole('button', { name: 'Закрыть', exact: true }).click();
   await page.getByRole('button', { name: 'Изученные конструкции', exact: true }).click();
   const skill = page.locator(`[data-skill-id="${exercise.skillId}"]`); await skill.locator('summary').click();
+  const skillVersionBefore = Number((await database.sql`select version from review_states where user_id=${userId} and item_id=${exercise.skillId} and mode='grammar'`)[0]!.version);
   const lessonBefore = await database.sql`select * from learning_states where user_id=${userId}`;
   await skill.getByTestId('train-construction').click();
   const skip = page.getByRole('button', { name: /Перейти к занятию/ }); if (await skip.isVisible()) await skip.click();
@@ -103,7 +105,7 @@ try {
   await page.locator('.workspace-next').click();
   await expect(page.getByRole('heading', { name: /Порция пройдена|Колода пройдена/ })).toBeVisible();
   expect(await database.sql`select * from learning_states where user_id=${userId}`).toEqual(lessonBefore);
-  expect([...await database.sql`select mode,version from review_states where user_id=${userId} and item_id=${exercise.skillId}`]).toEqual([{ mode: 'grammar', version: 2 }]);
+  expect([...await database.sql`select mode,version from review_states where user_id=${userId} and item_id=${exercise.skillId}`]).toEqual([{ mode: 'grammar', version: skillVersionBefore + 1 }]);
   report.construction = { formats: ['ja-ru', 'listening', 'grammar'], ambiguousAckReplay: true, oneSharedSchedule: true, lessonStateUnchanged: true };
   for (const viewport of [{ width: 1280, height: 720 }, { width: 390, height: 844 }, { width: 320, height: 568 }]) { await page.setViewportSize(viewport); await reachable(page); }
   expect(errors).toEqual([]); report.green = true; report.errors = errors;

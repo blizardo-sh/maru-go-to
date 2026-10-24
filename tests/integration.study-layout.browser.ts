@@ -1,3 +1,4 @@
+import { seedAcceptedHistory } from './helpers/introduced-browser-fixture';
 import { chromium, expect } from '@playwright/test';
 import { connectDatabase } from '../src/server/db';
 import { createLink, consumeLink } from '../src/server/auth';
@@ -150,8 +151,7 @@ try {
     const wordId = course.learning![0]!.goals[0]!.parts[0]!.words[0]!.wordId;
     const construction = course.learning!.find(route => route.lessonId.endsWith('03'))!.goals.flatMap(goal => goal.parts).find(part => part.construction)!.construction!;
     const exercise = course.exercises.find(item => item.id === construction.exerciseId)!;
-    await submitReview(database, owner, course, { attemptId: crypto.randomUUID(), reviewId: reviewId('ja-ru', wordId), version: 0, mode: 'ja-ru', rating: 1 });
-    await submitReview(database, owner, course, { attemptId: crypto.randomUUID(), reviewId: reviewId('grammar', exercise.skillId, exercise.id), version: 0, mode: 'grammar', tokenIds: exercise.acceptedOrders[0]!, revealed: false });
+    await seedAcceptedHistory(database, course, email, [wordId], [exercise.skillId]);
     await database.sql`update review_states set due=now()-interval '1 minute' where user_id=${owner}`;
     const response = await context.request.get(`${api}/api/reviews?mode=mixed`, { headers: headers() }); const queue: ReviewQueue = await response.json();
     await page.goto(base); await page.getByRole('button', { name: 'Повторение', exact: true }).click(); await page.getByRole('button', { name: 'Начать повторение', exact: false }).click();

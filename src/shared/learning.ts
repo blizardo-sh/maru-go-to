@@ -22,7 +22,7 @@ export interface LearningConstruction {
   breakdown: { text: string; explanationRu: string }[];
 }
 export interface LearningPart {
-  counterPractice?: { counterId: import("./counters").CounterId; quantities: number[]; wordId: string };
+  counterPractice?: { counterId: import("./counters").CounterId; quantities: number[]; wordId: string; formats?: ('reading-choice'|'listening-image'|'recall')[] };
   id: string;
   words: LearningWord[];
   construction?: LearningConstruction;
@@ -48,7 +48,7 @@ export type LearningStep = StepBase & (
   | { kind: 'word-practice'; wordId: string; mode: 'ja-ru' | 'listening' | 'ru-ja' }
   | { kind: 'construction-intro'; exerciseId: string }
   | { kind: 'construction-practice'; exerciseId: string; mode: 'ja-ru' | 'listening' | 'grammar' }
-  | { kind: 'counter-practice'; counterId: import('./counters').CounterId; quantity: number; wordId: string }
+  | { kind: 'counter-practice'; counterId: import('./counters').CounterId; quantity: number; wordId: string; format?: 'reading-choice'|'listening-image'|'recall' }
   | { kind: 'video'; videoId: string }
   | { kind: 'part-complete' }
 );
@@ -108,7 +108,7 @@ export function learningParts(lesson: GuidedLesson): LearningStep[][] {
       steps.push({ ...base, id: `${part.id}:intro:${exerciseId}`, kind: 'construction-intro', exerciseId });
       for (const mode of ['ja-ru', 'listening', 'grammar'] as const) steps.push({ ...base, id: `${part.id}:${mode}:${exerciseId}`, kind: 'construction-practice', exerciseId, mode });
     }
-    if (part.counterPractice) for (const quantity of part.counterPractice.quantities) steps.push({ ...base, id: `${part.id}:counter:${part.counterPractice.counterId}:${quantity}`, kind: 'counter-practice', counterId: part.counterPractice.counterId, quantity, wordId: part.counterPractice.wordId });
+    if (part.counterPractice) for (const quantity of part.counterPractice.quantities) for (const format of part.counterPractice.formats ?? ['reading-choice']) steps.push({ ...base, id: `${part.id}:counter:${part.counterPractice.counterId}:${quantity}${format === 'reading-choice' ? '' : ':'+format}`, kind: 'counter-practice', counterId: part.counterPractice.counterId, quantity, wordId: part.counterPractice.wordId, format });
     if (index === goal.parts.length - 1) for (const videoId of goal.videoIds ?? []) steps.push({ ...base, id: `${part.id}:video:${videoId}`, kind: 'video', videoId });
     steps.push({ ...base, id: `${part.id}:complete`, kind: 'part-complete' });
     return steps;
@@ -214,6 +214,7 @@ export function validateLearning(course: Course, lessons: GuidedLesson[], comple
         ensure(text(part.id) && !partIds.has(part.id) && part.words.length <= 5 && (part.words.length || part.construction || part.counterPractice), `part ${part.id}`); partIds.add(part.id);
         if (part.counterPractice) {
           const training = part.counterPractice;
+          ensure(training.formats === undefined || Array.isArray(training.formats) && training.formats.length > 0 && new Set(training.formats).size === training.formats.length && training.formats.every(format => ['reading-choice','listening-image','recall'].includes(format)), 'counter formats');
           const definition = course.catalog?.counters.definitions.find(item => item.id === training.counterId);
           ensure(definition && training.quantities.length > 0 && training.quantities.length <= 20 && new Set(training.quantities).size === training.quantities.length && training.quantities.every(n => Number.isSafeInteger(n) && n >= 1 && n <= definition.maximum), `counter quantities ${part.id}`);
           ensure(course.words.some(word => word.id === training.wordId && word.lessonIds.includes(route.lessonId) && word.reviewStatus !== 'draft'), `counter word ${part.id}`);
@@ -257,7 +258,7 @@ export function validateLearning(course: Course, lessons: GuidedLesson[], comple
 // Match learning meaning across authored part moves; SRS IDs and completed formats do not change.
 export function reconcileLearningRoute(previous: GuidedLesson, current: GuidedLesson, state: LearningRouteState): LearningRouteState {
   const before = learningParts(previous).flat(), parts = learningParts(current);
-  const key = (step: LearningStep): string => step.kind === 'word-intro' || step.kind === 'word-practice' ? `${step.kind}:${step.wordId}:${'mode' in step ? step.mode : ''}` : step.kind === 'construction-intro' || step.kind === 'construction-practice' ? `${step.kind}:${step.exerciseId}:${'mode' in step ? step.mode : ''}` : step.kind === 'counter-practice' ? `${step.kind}:${step.counterId}:${step.quantity}:${step.wordId}` : step.kind === 'video' ? `video:${step.videoId}` : `complete:${step.partId}`;
+  const key = (step: LearningStep): string => step.kind === 'word-intro' || step.kind === 'word-practice' ? `${step.kind}:${step.wordId}:${'mode' in step ? step.mode : ''}` : step.kind === 'construction-intro' || step.kind === 'construction-practice' ? `${step.kind}:${step.exerciseId}:${'mode' in step ? step.mode : ''}` : step.kind === 'counter-practice' ? `${step.kind}:${step.counterId}:${step.quantity}:${step.wordId}:${step.format ?? 'reading-choice'}` : step.kind === 'video' ? `video:${step.videoId}` : `complete:${step.partId}`;
   const done = new Set([...(state.completedKeys??[]),...state.completedStepIds.flatMap(id => { const step = before.find(item => item.id === id); return step ? [key(step)] : []; })]);
   const completed = new Set(parts.flat().filter(step => step.kind !== 'part-complete' && done.has(key(step))).map(step => step.id));
   for (const part of parts) {

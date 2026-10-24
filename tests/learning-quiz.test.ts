@@ -24,7 +24,7 @@ test('group start acknowledges only remaining intros, mixes every word/format on
   expect(startLearningPractice(route, saved)).toEqual(next);
   expect(() => startLearningPractice(route, next)).toThrow('introduction');
   expect(currentLearningStep(route, saved)?.id).toBe(saved.pendingStepIds[0]!);
-  expect(route.version).toBe('2026-10-21.1');
+  expect(route.version).toBe('2026-10-21.1-staged');
 });
 
 test('legacy single-intro continue and already started retry queue remain unchanged; new quiz state uses the existing retry rule', () => {

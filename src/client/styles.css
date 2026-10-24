@@ -305,3 +305,33 @@ rt { font-size: .54em; line-height: 1; }
 .registration-links input[readonly] { min-width: 0; width: 100%; }
 /* Keep the public form's paper above its fixed scenic backdrop. */
 .auth::after { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--color-paper); border-radius: inherit; pointer-events: none; }
+
+.thematic-course { margin-block: 1rem 1.5rem; }
+.thematic-sections, .kana-learning-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,15rem),1fr)); gap: 1rem; }
+.thematic-sections article { display: flex; flex-direction: column; gap: .5rem; padding: 1rem; border: 1px solid var(--color-rule); border-radius: var(--radius-sm); }
+.thematic-sections h3, .thematic-sections p { margin: 0; }
+.thematic-sections button { margin-block-start: auto; }
+.training-preparation { min-width: 0; }
+.training-preparation .word-introduction { min-width: 0; }
+.training-reference { max-width: 72ch; }
+.preserve-lines { white-space: pre-line; }
+.training-clock { width: min(100%,10rem); color: var(--color-ink); text-align: center; margin: .5rem auto; }
+.training-clock svg { width: 100%; height: auto; display: block; }
+.training-clock small { display: block; margin-block-start: .4rem; }
+.training-calendar { width: 6rem; margin: .5rem auto; border: 1px solid var(--color-rule); border-radius: .4rem; overflow: hidden; text-align: center; }
+.training-calendar small { display: block; padding: .3rem; background: var(--color-accent); color: var(--color-paper); font-size: .75rem; }
+.training-calendar strong { display: block; font-size: 2.5rem; line-height: 1.5; }
+.kana-learning-grid article { text-align: center; }
+.kana-learning-grid .kana-glyph { font-size: 3rem; }
+@media (max-width: 540px) {
+  .word-quiz:has(.training-clock) .quiz-prompt { display: grid; grid-template-columns: 96px minmax(0,1fr); gap: 6px 12px; align-items: center; }
+  .word-quiz:has(.training-clock) .quiz-prompt > small { grid-column: 1/-1; }
+  .word-quiz .quiz-prompt > .training-clock { width: 96px; margin: 0; }
+  .word-quiz:has(.training-clock) .quiz-word { margin: 0; font-size: 18px; line-height: 1.35; }
+  .word-quiz .training-clock small { font-size: 11px; }
+  .word-quiz:has(.training-clock) .quiz-choices { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 8px; }
+  .word-quiz:has(.training-clock) .quiz-choices > button { min-width: 0; gap: 4px; padding: 8px; }
+  .word-quiz:has(.training-clock) .quiz-choices .jp { font-size: 18px; }
+  .word-quiz:has(.training-clock) .choice-number { width: 12px; font-size: 13px; }
+  .word-quiz:has(.training-clock) .quiz-feedback { min-height: 44px; padding: 0; font-size: 13px; }
+}
