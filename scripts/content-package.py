@@ -194,11 +194,17 @@ def install(stage, media_root):
         if regular_path(media_root, name).exists():
             verified_file(media_root, name, item)
     media_root.mkdir(parents=True, exist_ok=True, mode=0o755)
+    media_root.chmod(0o755)
     for name, item in assets.items():
         target = regular_path(media_root, name)
+        target.parent.mkdir(parents=True, exist_ok=True, mode=0o755)
+        # The publisher's private umask must not hide public media from non-root containers.
+        directory = target.parent
+        while directory != media_root:
+            directory.chmod(0o755)
+            directory = directory.parent
         if target.exists():
             continue
-        target.parent.mkdir(parents=True, exist_ok=True, mode=0o755)
         descriptor, temporary = tempfile.mkstemp(prefix='.incoming-', dir=target.parent)
         try:
             with os.fdopen(descriptor, 'wb') as output, (stage / 'media' / name).open('rb') as source:
