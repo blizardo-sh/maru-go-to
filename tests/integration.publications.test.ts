@@ -9,7 +9,7 @@ import { connectDatabase } from '../src/server/db';
 import { createApp } from '../src/server/app';
 import { createLink, consumeLink } from '../src/server/auth';
 import { loadCourse } from '../src/server/course';
-import { activatePublication, currentPublication, ensureInitialPublications, getPublication, legacyPublication, packContent, publishContent } from '../src/server/publications';
+import { activatePublication, currentPublication, ensureInitialPublications, getPublication, legacyPublication, packContent, publishContent, validatePublicationMedia } from '../src/server/publications';
 import { nextFixtureIp } from './helpers/fixture-ip';
 
 const url=process.env.JAPANESE_INTEGRATION_DATABASE_URL;
@@ -24,6 +24,11 @@ const url=process.env.JAPANESE_INTEGRATION_DATABASE_URL;
     const a=structuredClone(archived), b=structuredClone(initial);
     a.course.title+=' '+crypto.randomUUID(); b.course.title+=' '+crypto.randomUUID();
     const pubA=(await publishContent(db,a,{mediaRoot:root})).id; created.push(pubA);
+    // An empty content mount still has to preserve URLs already served from the app image.
+    const replaced=structuredClone(b);replaced.assets[0]!.sha256='0'.repeat(64);
+    await expect(validatePublicationMedia(db.sql,replaced)).rejects.toThrow('Content asset URL is immutable');
+    await expect(validatePublicationMedia(db.sql,b)).resolves.toBeUndefined();
+    expect((await currentPublication(db)).publicationId).toBe(pubA);
     const courseA=await getPublication(db,pubA);
     const app=createApp({database:db,course:courseA,config:{DATABASE_URL:url!,BETTER_AUTH_SECRET:'publication-test-secret-more-than-32-characters',APP_URL:origin,PORT:3000,HOST:'127.0.0.1'},publications:(id,old)=>id?getPublication(db,id):old?legacyPublication(db):currentPublication(db)});
     const invite=await createLink(db,'invite',email,null); expect(await consumeLink(db,'invite',invite.token,password,'Publication test')).toBe(true);

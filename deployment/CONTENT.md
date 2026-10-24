@@ -21,7 +21,7 @@ ssh [existing pinned options] japanese-deploy@HOST 'rollback-content PUBLICATION
 
 Both arguments are exactly 64 lowercase hexadecimal characters. The archive checksum is a transport checksum, not the publication ID returned by the database CLI. No shell, SFTP, SCP, destination path, upload HTTP endpoint or new credential is enabled. The existing `deploy <40-hex commit>` protocol is unchanged.
 
-The host serializes content commands with app deployment using the same lock. It bounds lock acquisition, input reception and one-off API commands. Reception stages only public data, then runs the currently installed API image's `verify-media` against the complete staged media. Existing media with different bytes are rejected. Installation only adds immutable files; publication activation runs last in the DB transaction. A failed validation leaves the active publication unchanged. Unused files left by a failed DB publication are harmless and are retained.
+The host serializes content commands with app deployment using the same lock. It bounds lock acquisition, input reception and one-off API commands. Reception stages only public data, then runs the currently installed API image's `verify-publication` against the complete staged media and historical publication hashes, including bundled media absent from the content mount. Reusing a published URL with different bytes is rejected before installation; activation repeats this check in its transaction. Installation only adds immutable files; publication activation runs last in the DB transaction. A failed validation leaves the active publication unchanged. Unused files left by a failed DB publication are harmless and are retained.
 
 ## Host prerequisites
 

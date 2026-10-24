@@ -24,7 +24,7 @@ timeout 180 python3 /usr/local/sbin/japanese-content-package.py receive "$2" "$s
 # The archive contains public content only; the non-root read-only API must read its bind mount.
 chmod -R go=rX "$stage/package"
 timeout 90 docker compose --env-file .env --env-file release.env -f compose.yaml run --rm -T --no-deps --name "$container" \
-    -v "$stage/package:/package:ro" -e CONTENT_MEDIA_ROOT=/package/media api bun scripts/content.ts verify-media /package/bundle.json
+    -v "$stage/package:/package:ro" -e CONTENT_MEDIA_ROOT=/package/media api bun scripts/content.ts verify-publication /package/bundle.json
 timeout 90 python3 /usr/local/sbin/japanese-content-package.py install "$stage/package" /var/lib/japanese-content/media
 install -d -m 755 /var/lib/japanese-content/bundles
 saved_bundle=/var/lib/japanese-content/bundles/$2.json

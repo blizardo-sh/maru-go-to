@@ -32,6 +32,7 @@ test('large quantities preserve number joins and semantic limits', () => {
   expect(() => counterReading('tsu', 11)).toThrow(); expect(() => counterReading('sai', 121)).toThrow();
   for (const n of [0, -1, 1.5, NaN, Infinity, 10_000_000]) expect(() => numberReading(n)).toThrow();
   for (const counter of counterDefinitions) for (let level = 0; level < 7; level++) for (const n of numbersFor(counter, level)) expect(counterReading(counter.id, n)).toMatch(/^[ぁ-ゖ]+$/u);
+  expect(numbersFor({...counterDefinitions.find(counter => counter.id === 'sai')!,maximum:105},2)).toEqual([100,101,102,103,104,105]);
 });
 
 test('only introduced textbook objects unlock practice; lexical homophones remain separate', () => {

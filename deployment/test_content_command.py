@@ -48,7 +48,7 @@ class ContentCommandTests(unittest.TestCase):
 import json,os,sys
 args=sys.argv[1:]
 with open(os.environ['COMMAND_LOG'],'a') as out:out.write(json.dumps(args)+'\\n')
-if 'verify-media' in args and os.environ.get('FAIL_VERIFY')=='1':sys.exit(65)
+if 'verify-publication' in args and os.environ.get('FAIL_VERIFY')=='1':sys.exit(65)
 '''} .items():
             path = tools / name
             path.write_text(value)
@@ -67,7 +67,7 @@ if 'verify-media' in args and os.environ.get('FAIL_VERIFY')=='1':sys.exit(65)
         self.assertEqual(result.returncode, 0, result.stderr.decode())
         self.assertEqual((self.published / 'media/audio/test.m4a').read_bytes(), b'fixture')
         self.assertTrue((self.published / ('bundles/' + self.digest + '.json')).is_file())
-        verify = next(i for i, command in enumerate(commands) if 'verify-media' in command)
+        verify = next(i for i, command in enumerate(commands) if 'verify-publication' in command)
         publish = next(i for i, command in enumerate(commands) if 'publish' in command)
         self.assertLess(verify, publish)
         self.assertIn('CONTENT_MEDIA_ROOT=/package/media', commands[verify])
@@ -85,7 +85,7 @@ if 'verify-media' in args and os.environ.get('FAIL_VERIFY')=='1':sys.exit(65)
         result, commands = self.run_publish()
         self.assertNotEqual(result.returncode, 0)
         self.assertFalse(self.published.exists())
-        self.assertFalse(any('verify-media' in command or 'publish' in command for command in commands))
+        self.assertFalse(any('verify-publication' in command or 'publish' in command for command in commands))
 
     def test_immutable_conflict_never_activates(self):
         target = self.published / 'media/audio/test.m4a'

@@ -8,6 +8,7 @@ import { validateCatalog } from '../shared/catalog';
 import { learningWordChoices } from '../shared/learningChoices';
 import type { Database } from './db';
 import { ReviewError } from './reviews';
+import { counterTarget, makeCounterCard } from '../shared/counters';
 
 export interface ContentAsset { path: string; sha256: string; bytes: number }
 export interface ContentBundle { formatVersion: 1; course: Course; assets: ContentAsset[] }
@@ -23,7 +24,10 @@ export function validateContentBundle(value: unknown, mediaRoot?: string): asser
  const bundle = value as ContentBundle;
  if (!bundle || bundle.formatVersion !== 1 || !bundle.course || !Array.isArray(bundle.assets) || bundle.assets.length > 20000 || bundle.course.publicationId !== undefined || !Array.isArray(bundle.course.words) || bundle.course.words.some(word => !word.lessonIds.length)) throw new Error('Invalid content bundle.');
  validateCourse(bundle.course); validateLearning(bundle.course, bundle.course.learning ?? [], true); validateCatalog(bundle.course);
- for (const route of bundle.course.learning ?? []) for (const step of learningParts(route).flat()) if (step.kind === 'word-practice') learningWordChoices(bundle.course, route, step);
+ for (const route of bundle.course.learning ?? []) for (const step of learningParts(route).flat()) {
+  if (step.kind === 'word-practice') learningWordChoices(bundle.course, route, step);
+  if (step.kind === 'counter-practice' && !makeCounterCard(counterTarget(step.counterId,'reading-choice',step.quantity),step.wordId,bundle.course.words,'publication-validation',false,bundle.course.catalog)) throw new Error(`Invalid counter practice: ${step.id}`);
+ }
  const paths = new Set<string>(); let total = 0;
  for (const asset of bundle.assets) {
   if (!asset || typeof asset.path !== 'string' || !safePath(asset.path) || paths.has(asset.path) || !idPattern.test(asset.sha256) || !Number.isSafeInteger(asset.bytes) || asset.bytes < 1 || asset.bytes > 100 * 1024 * 1024) throw new Error('Invalid content asset.');
@@ -86,9 +90,18 @@ export async function publishContent(database: Database, bundle: ContentBundle, 
  validateContentBundle(bundle, options.mediaRoot); const id = contentId(bundle);
  await database.sql.begin(async tx => {
   await tx`select pg_advisory_xact_lock(hashtext('content-publication'))`;
+  await validatePublicationMedia(tx, bundle);
   await tx`insert into content_publications(id,format_version,bundle) values(${id},1,${bundle}) on conflict(id) do nothing`;
   if (options.activate !== false) await tx`insert into content_active(singleton,publication_id) values(1,${id}) on conflict(singleton) do update set publication_id=excluded.publication_id,updated_at=now()`;
  }); return { id };
+}
+export async function validatePublicationMedia(sql: Database['sql'], bundle: ContentBundle): Promise<void> {
+ const incoming = new Map(bundle.assets.map(asset => [asset.path,asset]));
+ const rows = await sql`select jsonb_array_elements(bundle->'assets') as asset from content_publications`;
+ for (const {asset} of rows) {
+  const next = incoming.get(asset.path);
+  if (next && (next.sha256 !== asset.sha256 || next.bytes !== asset.bytes)) throw new Error(`Content asset URL is immutable: ${asset.path}`);
+ }
 }
 export async function activatePublication(database: Database, id: string, mediaRoot=defaultMediaRoot()): Promise<void> {
  await getPublication(database, id);

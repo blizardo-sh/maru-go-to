@@ -28,7 +28,7 @@ const samples = [
   [1000000, 1000001, 1000004, 1000008, 1000010, 1000100, 1001000, 1010000, 1100000, 1234567, 2000000, 3000000, 3600000, 4000000, 5000000, 6000000, 7000000, 8000000, 9000000, 9999999],
 ];
 export function numbersFor(counter: CounterDefinition, level: number): number[] {
-  if (counter.id === 'sai' && level === 2) return Array.from({ length: 21 }, (_, i) => 100 + i);
+  if (counter.id === 'sai' && level === 2) return Array.from({ length: 21 }, (_, i) => 100 + i).filter(n => n <= counter.maximum);
   return (samples[level] ?? []).filter(n => n <= counter.maximum);
 }
 export function levelFor(n: number): number { return numberRanges.findIndex(([low, high]) => n >= low && n <= high); }

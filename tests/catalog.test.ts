@@ -15,6 +15,7 @@ test('publication rejects broken authored references before learners see the cat
   reject(course => { course.catalog!.quiz.choices[course.words[0]!.id] = ['missing', 'missing', 'missing']; });
   reject(course => { course.catalog!.quiz.equivalent = [['only one']]; });
   reject(course => { course.catalog!.counters.objects[0]!.counters = ['unknown' as 'nin']; });
+  for (const [id,maximum] of [['nin',6],['hon',1],['tsu',11],['sai',121]] as const) reject(course => { course.catalog!.counters.definitions.find(counter => counter.id === id)!.maximum = maximum; });
   reject(course => { course.catalog!.counterAtlas!.cells[course.catalog!.counters.objects[0]!.id] = [0, 0, 999999, 2]; });
   reject(course => { course.catalog!.illustrations.assets[0]!.width = Infinity; });
   reject(course => { delete course.catalog!.kanaAudio!.entries[course.catalog!.kana.basic[0]!.cells[0]!.kana]; });

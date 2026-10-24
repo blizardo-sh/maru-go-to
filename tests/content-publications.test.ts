@@ -20,6 +20,11 @@ test('content identity survives JSONB key ordering; bundle rejects broken refere
   reject(value => { value.course.words[0]!.lessonIds = []; });
   reject(value => { value.course.publicationId = 'a'.repeat(64); });
   reject(value => { value.course.catalog!.quiz.choices[value.course.words[0]!.id] = ['missing','a','b']; });
+  reject(value => {
+    const route = value.course.learning!.find(route => route.goals.some(goal => goal.parts.some(part => part.counterPractice)))!;
+    const part = route.goals.flatMap(goal => goal.parts).find(part => part.counterPractice)!;
+    part.counterPractice!.wordId = value.course.words.find(word => word.lessonIds.includes(route.lessonId) && word.pos === 'particle')!.id;
+  });
   const directory = mkdtempSync(join(tmpdir(),'maru-asset-check-'));
   try {
     mkdirSync(join(directory,'audio'));

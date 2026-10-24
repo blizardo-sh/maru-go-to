@@ -37,7 +37,7 @@ export function validateCatalog(course: Course): void {
   ensure(record(c.counters) && Array.isArray(c.counters.definitions) && c.counters.definitions.length > 0 && Array.isArray(c.counters.objects), 'counters');
   const ids = new Set<string>();
   for (const definition of c.counters.definitions) {
-    ensure(definition && defaultCatalog.counters.definitions.some(supported => supported.id === definition.id) && !ids.has(definition.id) && [definition.surface,definition.kana,definition.title,definition.explanation].every(text) && Number.isSafeInteger(definition.maximum) && definition.maximum > 0 && definition.maximum <= 9_999_999, 'counter definition'); ids.add(definition.id);
+    ensure(definition && defaultCatalog.counters.definitions.some(supported => supported.id === definition.id) && !ids.has(definition.id) && [definition.surface,definition.kana,definition.title,definition.explanation].every(text) && Number.isSafeInteger(definition.maximum) && definition.maximum >= 8 && definition.maximum <= (definition.id === 'tsu' ? 10 : definition.id === 'sai' ? 120 : 9_999_999), 'counter definition'); ids.add(definition.id);
   }
   const objects = new Set<string>();
   for (const object of c.counters.objects) { ensure(object && text(object.id) && !objects.has(object.id) && Array.isArray(object.kanas) && object.kanas.length > 0 && object.kanas.every(text) && Array.isArray(object.counters) && object.counters.length > 0 && object.counters.every(id => ids.has(id)) && Number.isSafeInteger(object.tile) && object.tile >= 0, 'counter object'); objects.add(object.id); }
