@@ -3,10 +3,11 @@ import type { LearnerSettings, ReviewResult, ReviewSubmission } from '../shared/
 import type { LearningAdvance, LearningAdvanceResult, LearningExample, LearningState, LearningPart } from '../shared/learning';
 import type { Snapshot, User } from './types';
 import { api } from './api';
-import { currentLearningState, learningConflict, learningHeaders, pendingLearning, submitLearning, type PendingLearning } from './guidedApi';
+import { currentLearningState, invalidLearningChoice, learningConflict, learningHeaders, pendingLearning, submitLearning, type PendingLearning } from './guidedApi';
 import { ExampleLine } from './ExampleLine';
 import { WordIllustration } from './WordIllustration';
 import { GestureCard } from './GestureCard';
+import { FlipCard } from './FlipCard';
 import { JapaneseText } from './JapaneseText';
 import { Japanese, verifiedKanji } from './Japanese';
 import { SentenceWorkspace } from './SentenceWorkspace';
@@ -70,17 +71,17 @@ function GroupIntro({ part, data, active, busy, sound, onActivity, stepId, onSta
   })}</div>{speech.error && <p className="notice" role="status">{speech.error}</p>}<footer className="album-footer"><button className="primary" data-testid="start-learning-practice" disabled={!active || busy} onClick={() => { speech.stop(); onStart(); }}>Начать практику <span aria-hidden="true">→</span></button></footer></article>;
 }
 
-type QuizSnapshot = { state: LearningState; choice: string; started: number; attemptId: string; confirmed?: boolean; correct: boolean };
+type QuizSnapshot = { state: LearningState; choice: string; attemptId: string; confirmed?: boolean; correct: boolean };
 function WordQuiz({ value, mode, choices, wordId, data, active, busy, sound, onActivity, stepId, selection, choose }: { value: LearningExample; mode: 'ja-ru' | 'listening' | 'ru-ja'; choices: string[]; wordId: string; data: Snapshot; active: boolean; busy: boolean; sound: SceneSound; onActivity: (value: CardActivity) => void; stepId: string; selection: QuizSnapshot | null; choose: (id: string) => void }) {
   const speech = useStepSpeech(active && !selection?.confirmed, data.settings.speechVolume, sound, onActivity, stepId);
   const attemptedAudio = useRef(false);
   useEffect(() => { if (active && mode === 'listening' && !attemptedAudio.current) { attemptedAudio.current = true; void speech.play(value.audioUrl); } }, [active, mode, value.audioUrl]);
   const confirmed = selection?.confirmed;
   const label = mode === 'ja-ru' ? 'Выберите русский перевод' : mode === 'ru-ja' ? 'Выберите японское слово' : 'Что прозвучало?';
-  return <article className="word-quiz" data-testid="learning-word-quiz" data-mode={mode} data-feedback={selection ? selection.correct ? 'good' : 'again' : 'neutral'}>
+  return <article className="word-quiz" data-testid="learning-word-quiz" data-mode={mode} data-feedback={confirmed ? selection.correct ? 'good' : 'again' : 'neutral'}>
     <audio ref={speech.audio} preload="none" hidden /><div className="quiz-prompt"><small>{label}</small>{mode === 'listening' ? <button className="quiz-listen" aria-label="Прослушать слово" disabled={!active || !!selection || speech.playing} onClick={() => { void speech.play(value.audioUrl); }}><span aria-hidden="true">♪</span>{speech.playing ? 'Слушаем…' : 'Прослушать'}</button> : <h2 className="quiz-word">{mode === 'ru-ja' ? value.meaningRu : <Japanese value={value} forms={data.course.forms} mode={data.settings.orthography} />}</h2>}<p className="muted">{selection && !confirmed ? 'Сохраняем выбранный ответ…' : 'Один правильный ответ'}</p></div>
-    <div className="quiz-choices" role="group" aria-label="Варианты ответа">{choices.map((id, index) => { const candidate = data.course.words.find(word => word.id === id); if (!candidate) return null; const result = selection && id === wordId ? 'correct' : selection && id === selection.choice ? 'incorrect' : undefined; return <button key={id} data-choice-word-id={id} data-result={result} aria-pressed={selection?.choice === id} disabled={!active || busy || !!selection || mode === 'listening' && speech.played !== value.audioUrl} onClick={() => { speech.stop(); choose(id); }}><span className="choice-number" aria-hidden="true">{index + 1}</span><span>{mode === 'ru-ja' ? <Japanese value={candidate} forms={data.course.forms} mode={data.settings.orthography} /> : candidate.meaningRu}</span>{result && <span aria-hidden="true">{result === 'correct' ? '✓' : '↻'}</span>}</button>; })}</div>
-    <div className="quiz-feedback" role="status" aria-live="polite">{selection ? <><WordIllustration wordId={wordId} /><div><strong>{selection.correct ? 'Верно!' : 'Запомним и попробуем ещё'}</strong><p><Japanese value={value} forms={data.course.forms} mode={data.settings.orthography} /> — {value.meaningRu}</p>{!confirmed && <small>Сохраняем ответ…</small>}</div></> : <p className="muted">{selection ? 'Следующий вопрос появится после подтверждения.' : 'Вспомните значение и выберите вариант.'}</p>}</div>{speech.error && <p className="notice" role="status">{speech.error}</p>}
+    <div className="quiz-choices" role="group" aria-label="Варианты ответа">{choices.map((id, index) => { const candidate = data.course.words.find(word => word.id === id); if (!candidate) return null; const result = confirmed && id === wordId ? 'correct' : confirmed && id === selection?.choice ? 'incorrect' : undefined; return <button key={id} data-choice-word-id={id} data-result={result} aria-pressed={selection?.choice === id} disabled={!active || busy || !!selection || mode === 'listening' && (speech.played !== value.audioUrl || !!speech.error)} onClick={() => { speech.stop(); choose(id); }}><span className="choice-number" aria-hidden="true">{index + 1}</span><span>{mode === 'ru-ja' ? <Japanese value={candidate} forms={data.course.forms} mode={data.settings.orthography} /> : candidate.meaningRu}</span>{result && <span aria-hidden="true">{result === 'correct' ? '✓' : '↻'}</span>}</button>; })}</div>
+    <div className="quiz-feedback" role="status" aria-live="polite">{confirmed ? <><WordIllustration wordId={wordId} /><div><strong>{selection.correct ? 'Верно!' : 'Запомним и попробуем ещё'}</strong><p><Japanese value={value} forms={data.course.forms} mode={data.settings.orthography} /> — {value.meaningRu}</p></div></> : <p className="muted">{selection ? 'Сохраняем выбранный ответ…' : 'Вспомните значение и выберите вариант.'}</p>}</div>{speech.error && <p className="notice" role="status">{speech.error}</p>}
   </article>;
 }
 
@@ -92,14 +93,13 @@ export function Recall({ value, mode, active, busy, sound, onActivity, stepId, d
   const played = speech.played === value.audioUrl;
   useEffect(() => { onActivity({ reviewId: stepId, activity: speech.playing ? 'listening' : revealed ? 'revealed' : 'idle', key: `${stepId}:${speech.playing ? 'listening' : revealed ? 'revealed' : 'idle'}` }); }, [speech.playing, revealed, stepId, onActivity]);
   const label = mode === 'listening' ? 'Вспомните смысл услышанного' : mode === 'ja-ru' ? 'Вспомните русский смысл' : 'Вспомните по-японски';
-  function reveal() { if (!active || busy) return; if (mode === 'listening' && !played) { void speech.play(value.audioUrl); return; } if (!revealed) sound.cue('reveal', stepId); setRevealed(true); }
-  return <GestureCard active={active} enabled={revealed && !busy && (mode !== 'listening' || played)} mode={mode} reviewId={stepId} onAdvance={rating => { speech.stop(); return grade(rating); }}>
+  function reveal() { if (!active || document.hidden || busy) return; if (mode === 'listening' && (!played || speech.error)) { void speech.play(value.audioUrl); return; } if (!revealed) sound.cue('reveal', stepId); setRevealed(true); }
+  return <GestureCard active={active} phase={revealed ? 'answer' : 'question'} enabled={revealed && !busy && !speech.error && (mode !== 'listening' || played)} mode={mode} reviewId={stepId} onAdvance={rating => { speech.stop(); return grade(rating); }}>
     <audio ref={speech.audio} preload="none" hidden />
-    <button className="study-card word-card" data-card-face data-testid="card-face" disabled={!active || busy} onClick={reveal}>
-      <small>{label}</small><span className="prompt">{mode === 'listening' ? speech.playing ? 'Слушаем…' : revealed ? 'Сравните ответ' : played ? 'Что прозвучало?' : 'Прослушайте фразу' : mode === 'ru-ja' ? value.meaningRu : <Japanese value={value} forms={data.course.forms} mode={data.settings.orthography} />}</span>
-      {revealed ? <span className="answer">{mode !== 'ja-ru' && <Japanese value={value} forms={data.course.forms} mode={data.settings.orthography} />}{mode !== 'ru-ja' && <span>{value.meaningRu}</span>}</span> : mode !== 'listening' && <small>Нажмите на карточку, чтобы раскрыть ответ</small>}
-    </button>
-    {mode === 'listening' && <button className="quiet" disabled={!active || busy || speech.playing} onClick={() => { void speech.play(value.audioUrl); }}>↻ Прослушать ещё раз</button>}
+    <FlipCard revealed={revealed} front={<button className="study-card word-card" data-card-face data-testid={!revealed ? "card-face" : undefined} disabled={!active || busy} onClick={reveal}>
+      <small>{label}</small><span className="prompt">{mode === 'listening' ? speech.playing ? 'Слушаем…' : played ? 'Что прозвучало?' : 'Прослушайте фразу' : mode === 'ru-ja' ? value.meaningRu : <Japanese value={value} forms={data.course.forms} mode={data.settings.orthography} />}</span>
+    </button>} back={<div className="study-card word-card" data-testid={revealed ? "card-face" : undefined}><small>Сверьте свой ответ</small><span className="prompt"><Japanese value={value} forms={data.course.forms} mode={data.settings.orthography} /></span><span className="answer">{value.meaningRu}</span></div>} />
+    {mode === 'listening' && <button className="quiet inline-audio" disabled={!active || busy || speech.playing} onClick={() => { void speech.play(value.audioUrl); }}>↻ Прослушать ещё раз</button>}
     {speech.error && <p className="notice" role="status">{speech.error}</p>}
   </GestureCard>;
 }
@@ -115,7 +115,17 @@ export function GuidedLearning({ lessonId, user, data, active, sound, scene, onE
   const pending = useRef<PendingLearning | null>(null); const lock = useRef(false); const request = useRef(0); const mounted = useRef(true); const stateRef = useRef(state); stateRef.current = state;
   const owner = useRef(user.id); owner.current = user.id; const callbacks = useRef({ active, onSaved, sound }); callbacks.current = { active, onSaved, sound };
   useEffect(() => { mounted.current = true; return () => { mounted.current = false; request.current++; }; }, [user.id, lessonId]);
-  useEffect(() => { const clear = () => { window.clearTimeout(transition.current); setQuiz(current => current?.confirmed ? null : current); }; if (!active) clear(); const hidden = () => { if (document.hidden) clear(); }; document.addEventListener('visibilitychange', hidden); return () => { window.clearTimeout(transition.current); document.removeEventListener('visibilitychange', hidden); }; }, [active, user.id, lessonId]);
+  useEffect(() => {
+    function resume() {
+      window.clearTimeout(transition.current);
+      const current = quizRef.current;
+      if (!active || document.hidden || !current?.confirmed) return;
+      if (!reacted.current.has(current.attemptId)) { reacted.current.add(current.attemptId); const kind = current.correct ? 'good' : 'again'; setFeedback({ attemptId: current.attemptId, kind }); callbacks.current.sound.cue(kind, current.attemptId); }
+      transition.current = window.setTimeout(() => { if (mounted.current && owner.current === user.id && callbacks.current.active && !document.hidden && quizRef.current?.attemptId === current.attemptId) { quizRef.current = null; setQuiz(null); } }, current.correct ? 800 : 1600);
+    }
+    resume(); document.addEventListener('visibilitychange', resume);
+    return () => { window.clearTimeout(transition.current); document.removeEventListener('visibilitychange', resume); };
+  }, [active, user.id, lessonId, quiz?.confirmed, quiz?.attemptId]);
   const isOwner = () => mounted.current && owner.current === user.id;
   const updateActivity = useCallback((value: CardActivity) => setActivity({ ...value, reviewId: stateRef.current?.step?.id ?? value.reviewId }), []);
   function accept(next: LearningState) { if (isOwner() && route && currentLearningState(next, lessonId, route.version, stateRef.current)) { stateRef.current = next; setState(next); } }
@@ -127,7 +137,7 @@ export function GuidedLearning({ lessonId, user, data, active, sound, scene, onE
       const attempts = pendingLearning(user.id).filter(item => item.lessonId === lessonId); persisted = attempts.length > 0; setHasPending(persisted);
       for (const item of attempts) {
         if (!mounted.current || owner.current !== user.id || current !== request.current) return;
-        await submitLearning(user.id, item);
+        try { await submitLearning(user.id, item); } catch (failure) { if (!invalidLearningChoice(failure)) throw failure; }
       }
       if (!mounted.current || owner.current !== user.id || current !== request.current) return;
       pending.current = null; setHasPending(false);
@@ -142,20 +152,18 @@ export function GuidedLearning({ lessonId, user, data, active, sound, scene, onE
 
   async function advance(action: LearningAdvance['action'], details: Partial<LearningAdvance> = {}, attemptId: string = crypto.randomUUID()): Promise<LearningAdvanceResult> {
     const current = stateRef.current;
-    if (!current?.step || !isOwner() || !callbacks.current.active || lock.current) throw new Error('Шаг сейчас недоступен.');
+    if (!current?.step || !isOwner() || !callbacks.current.active || document.hidden || lock.current) throw new Error('Шаг сейчас недоступен.');
     const item = pending.current ?? { lessonId, submission: { ...details, attemptId, routeVersion: current.routeVersion, stateVersion: current.version, stepId: current.step.id, action } };
     pending.current = item; lock.current = true; setHasPending(true); setBusy(true); setError(''); setConflict(false);
+    let refreshChoices = false;
     try {
       const result = await submitLearning(user.id, item);
       if (isOwner()) {
         pending.current = null; setHasPending(false); accept(result.state); callbacks.current.onSaved(result.state, !!result.reviewResult);
-        if (item.submission.action === 'choose' && result.reviewResult && callbacks.current.active && !document.hidden) {
-          const snapshot = quizRef.current ?? { state: current, choice: item.submission.choiceWordId!, started: performance.now(), attemptId: item.submission.attemptId, correct: result.reviewResult.correct === true };
+        if (item.submission.action === 'choose' && result.reviewResult) {
+          const snapshot = quizRef.current ?? { state: current, choice: item.submission.choiceWordId!, attemptId: item.submission.attemptId, correct: result.reviewResult.correct === true };
           setQuiz({ ...snapshot, confirmed: true, correct: result.reviewResult.correct === true });
-          window.clearTimeout(transition.current);
-          transition.current = window.setTimeout(() => { if (isOwner()) setQuiz(null); }, Math.max(0, (result.reviewResult.correct ? 800 : 1600) - (performance.now() - snapshot.started)));
         }
-        if (item.submission.action === 'choose' && (!callbacks.current.active || document.hidden)) setQuiz(null);
         if (result.reviewResult && callbacks.current.active && !document.hidden && !reacted.current.has(result.attemptId)) {
           reacted.current.add(result.attemptId);
           const kind = item.submission.action === 'again' || result.reviewResult.correct === false || item.submission.revealed ? 'again' : 'good';
@@ -164,8 +172,8 @@ export function GuidedLearning({ lessonId, user, data, active, sound, scene, onE
         if (result.state.completed) callbacks.current.sound.cue('complete', `learning:${user.id}:${lessonId}:${result.state.routeVersion}`);
       }
       return result;
-    } catch (failure) { if (isOwner()) { if (learningConflict(failure)) { setQuiz(null); pending.current = null; setHasPending(false); setConflict(true); setError('Этот ответ не применён: шаг уже изменился на другом устройстве. Загрузите актуальный шаг.'); } else setError(`${message(failure)} Шаг не изменён без подтверждения; ответ сохранён на устройстве.`); } throw failure; }
-    finally { lock.current = false; if (isOwner()) setBusy(false); }
+    } catch (failure) { if (isOwner()) { if (invalidLearningChoice(failure)) { setQuiz(null); pending.current = null; setHasPending(false); refreshChoices = true; } else if (learningConflict(failure)) { setQuiz(null); pending.current = null; setHasPending(false); setConflict(true); setError('Этот ответ не применён: шаг уже изменился на другом устройстве. Загрузите актуальный шаг.'); } else setError(`${message(failure)} Шаг не изменён без подтверждения; ответ сохранён на устройстве.`); } throw failure; }
+    finally { lock.current = false; if (isOwner()) { setBusy(false); if (refreshChoices) void load(); } }
   }
   function go(action: LearningAdvance['action']) { void advance(action).catch(() => {}); }
   async function sendReview(_ownerId: string, submission: ReviewSubmission): Promise<ReviewResult> {
@@ -177,9 +185,8 @@ export function GuidedLearning({ lessonId, user, data, active, sound, scene, onE
   function choose(choiceWordId: string) {
     const current = stateRef.current; if (current?.step?.kind !== 'word-practice' || lock.current || quizRef.current || !active || document.hidden) return;
     const attemptId = crypto.randomUUID(), correct = choiceWordId === current.step.wordId;
-    const snapshot = { state: current, choice: choiceWordId, started: performance.now(), attemptId, correct };
-    quizRef.current = snapshot; setQuiz(snapshot); reacted.current.add(attemptId);
-    const kind = correct ? 'good' : 'again'; setFeedback({ attemptId, kind }); sound.cue(kind, attemptId);
+    const snapshot = { state: current, choice: choiceWordId, attemptId, correct };
+    quizRef.current = snapshot; setQuiz(snapshot);
     void advance('choose', { choiceWordId }, attemptId).catch(() => {});
   }
   const viewState = quiz?.state ?? state;

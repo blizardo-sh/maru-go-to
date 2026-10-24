@@ -98,7 +98,7 @@ export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved,
   }
   function reset() { if (locked) return; invalidate(); setTokens([]); setManualText(null); setExploring(false); closeEditor(); }
   function advance(rating: 1 | 3) {
-    if (loading || !evaluation || locked || composing || editor) return;
+    if (document.hidden || loading || !evaluation || locked || composing || editor) return;
     if (evaluation.outcome === 'incomplete' || evaluation.outcome === 'exploration') { if (!requiredPractice) onNext(); return; }
     return saving.save({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, mode: 'grammar', tokenIds: tokens.map(token => token.id), tokenForms, revealed: false, exploring, rating });
   }
@@ -110,7 +110,7 @@ export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved,
   const activeToken = editor?.kind === 'token' ? tokens.find(token => token.id === editor.id) : undefined;
   const activeWord = activeToken ? wordMap.get(activeToken.wordId) : undefined;
   const matches = availableWords.filter(word => !search || `${word.surface} ${word.kana} ${word.meaningRu}`.toLowerCase().includes(search.toLowerCase())).slice(0, 45);
-  return <GestureCard active={active} enabled={!loading && !!evaluation && (!requiredPractice || evaluation.outcome === 'correct' || evaluation.outcome === 'incorrect') && !locked && !editor && !composing} onAdvance={advance} mode="grammar" reviewId={item.id} actions={<><DisplayControl mode={data.settings.orthography} onChange={orthography => { void saveSettings({ ...data.settings, orthography }); }} disabled={settingsBusy || locked} /><button disabled={locked} onClick={reset}>К исходному заданию</button><button disabled={locked} onClick={() => openEditor({ kind: 'manual' })}>Ввести фразу</button></>}>
+  return <GestureCard active={active} phase="workspace" enabled={false} onAdvance={advance} mode="grammar" reviewId={item.id} actions={<><DisplayControl mode={data.settings.orthography} onChange={orthography => { void saveSettings({ ...data.settings, orthography }); }} disabled={settingsBusy || locked} /><button disabled={locked} onClick={reset}>К исходному заданию</button><button disabled={locked} onClick={() => openEditor({ kind: 'manual' })}>Ввести фразу</button></>}>
     <header className="workspace-heading"><small>Конструкция · <JapaneseText text={skill.title} course={data.course} mode={data.settings.orthography} /></small><h2>{exercise.promptRu}</h2>{exercise.contextRu && <p className="muted">{exercise.contextRu}</p>}</header>
     <p className="muted">Добавляйте элементы снизу и перетаскивайте их. Нажмите на слово, чтобы изменить его.</p>
     {manualText !== null ? <button className="manual-phrase" onClick={() => openEditor({ kind: 'manual' })}>{manualText ? <span lang="ja" className="jp">{manualText}</span> : <span>Введите фразу</span>}</button> : <>
@@ -129,6 +129,7 @@ export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved,
     </details>}
     {error && <div className="notice error" role="alert"><p>{error}</p><button onClick={() => setRetryRevision(value => value + 1)}>Повторить разбор</button></div>}
     {saving.error && <div className="notice error" role="alert"><p>{saving.error}</p><button onClick={saving.retry}>Повторить сохранение</button></div>}
+    <button className="primary workspace-next" disabled={loading || !evaluation || requiredPractice && evaluation.outcome !== 'correct' && evaluation.outcome !== 'incorrect' || locked || !!editor || composing} onClick={() => { void advance(3); }}>Дальше</button>
     <dialog ref={dialog} className="token-dialog" onCancel={closeEditor} onClose={closeEditor} onClick={event => { if (event.target === event.currentTarget) closeEditor(); }} aria-label={editor?.kind === 'token' ? 'Изменить элемент' : editor?.kind === 'manual' ? 'Ввести фразу' : 'Добавить элемент'}>
       <div className="stack"><div className="spread"><h2>{editor?.kind === 'token' ? 'Изменить элемент' : editor?.kind === 'manual' ? 'Ввести фразу' : 'Добавить элемент'}</h2><button className="quiet" onClick={closeEditor} aria-label="Закрыть редактор">×</button></div>
         {editor?.kind === 'manual' ? <><label><span>Ваша фраза</span><textarea autoFocus lang="ja" value={manualText ?? text} maxLength={1000} onCompositionStart={() => setComposing(true)} onCompositionEnd={() => setComposing(false)} onChange={event => { invalidate(); setManualText(event.target.value); setExploring(true); }} /></label><small>Самостоятельный ввод исследует фразу и не меняет расписание исходного задания.</small></> : <>

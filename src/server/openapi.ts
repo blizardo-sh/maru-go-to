@@ -1,6 +1,7 @@
 import { OpenAPIHono, z } from '@hono/zod-openapi';
 import { adminLinkSchema, analysisSchema, learningAdvanceSchema, invitationDetailsSchema, invitationSchema, listSchema, recoverySchema, registrationLinkSchema, settingsSchema, submissionSchema, targetEvaluationSchema, trainingContextSchema, wordUpdateSchema } from './validation';
 import { counterKinds } from '../shared/counters';
+import { learningAudioTextPattern } from '../shared/learning';
 const segment=z.object({surface:z.string(),reading:z.string().optional()});
 const source=z.object({part:z.enum(['katsudoo','rikai']),url:z.string(),label:z.string().optional(),page:z.number().optional(),row:z.number().optional(),entry:z.string().optional()});
 const status=z.enum(['draft','source-checked','reviewed']);
@@ -8,7 +9,7 @@ const word=z.object({id:z.string(),lessonIds:z.array(z.string()),surface:z.strin
 const form=word.omit({meaningRu:true,kind:true,pos:true,audioUrl:true,audioText:true}).extend({wordId:z.string()});
 const skill=z.object({id:z.string(),lessonIds:z.array(z.string()),canDoIds:z.array(z.number()),title:z.string(),explanationRu:z.string(),reviewStatus:status,sourceRefs:z.array(source)});
 const exercise=z.object({id:z.string(),lessonId:z.string(),skillId:z.string(),promptRu:z.string(),translationRu:z.string().optional(),contextRu:z.string().optional(),tokens:z.array(z.object({id:z.string(),formId:z.string()})),acceptedOrders:z.array(z.array(z.string())),sentenceEnd:z.string(),reviewStatus:status});
-const learningExample=z.object({surface:z.string(),kana:z.string(),meaningRu:z.string(),segments:z.array(segment),audioUrl:z.string()});
+const learningExample=z.object({surface:z.string(),kana:z.string(),meaningRu:z.string(),segments:z.array(segment),audioUrl:z.string(),audioText:z.string().min(1).max(300).regex(learningAudioTextPattern).optional()});
 const learningWord=z.object({wordId:z.string(),explanationRu:z.string(),example:learningExample});
 const learningConstruction=z.object({exerciseId:z.string(),explanationRu:z.string(),example:learningExample,breakdown:z.array(z.object({text:z.string(),explanationRu:z.string()}))});
 const learningPart=z.object({id:z.string(),words:z.array(learningWord),construction:learningConstruction.optional()});

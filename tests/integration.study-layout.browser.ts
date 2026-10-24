@@ -76,7 +76,7 @@ async function recall() {
   const gesture = page.getByTestId('review-gesture');
   if (await gesture.getAttribute('data-mode') === 'listening') await expect.poll(() => gesture.locator('audio').evaluate((audio: HTMLAudioElement) => audio.currentTime), { timeout: 10000 }).toBeGreaterThan(.02);
   await page.getByTestId('card-face').click(); await capture(`${await gesture.getAttribute('data-mode')}-revealed`);
-  await gesture.press('ArrowRight'); await changed(version);
+  if(await gesture.getAttribute('data-mode')==='grammar')await page.locator('.workspace-next').click();else await gesture.press('ArrowRight'); await changed(version);
   const scroll = page.locator('.session-scroll'); if (await scroll.count()) expect(await scroll.evaluate(element => element.scrollTop)).toBe(0);
 }
 async function seed(lessonNumber: number, predicate: (step: LearningStep) => boolean) {
@@ -160,7 +160,7 @@ try {
       await capture(`repeat-${item.mode}-hidden`);
       if (item.mode === 'grammar') { for (const tokenId of item.exercise.acceptedOrders[0]!) await page.locator(`.bank [data-token-id="${tokenId}"]`).click(); await expect(page.locator('[data-outcome="correct"]').first()).toBeVisible(); }
       else { if (item.mode === 'listening') await expect(page.getByTestId('card-face')).toContainText('Что прозвучало?', { timeout: 10000 }); await page.getByTestId('card-face').click(); }
-      await capture(`repeat-${item.mode}-answer`); await gesture.press('ArrowRight');
+      await capture(`repeat-${item.mode}-answer`); if(item.mode==='grammar')await page.locator('.workspace-next').click();else await gesture.press('ArrowRight');
       if (index < queue.items.length - 1) await expect(page.getByTestId('review-gesture')).not.toHaveAttribute('data-review-id', id!); else await expect(page.getByTestId('portion-complete')).toBeVisible();
     }
     await capture('repeat-summary');

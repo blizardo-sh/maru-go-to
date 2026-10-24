@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-23",
+  "basePr": 19,
+  "implementationPr": 20,
+  "scope": "Approved learner feedback fixes for all 18 lessons",
+  "choices": {
+    "placements": 305,
+    "targets": 279,
+    "questions": 915,
+    "supplementalWrongOptions": 10,
+    "fallback": false
+  },
+  "localChecks": {
+    "unitHttp": {
+      "tests": 174,
+      "assertions": 29673,
+      "files": 34,
+      "failures": 0,
+      "skipped": 0
+    },
+    "postReviewChoices": {
+      "tests": 6,
+      "assertions": 17554,
+      "failures": 0
+    },
+    "nativeLearnerInteractionScenarios": 25,
+    "additionalGreen": [
+      "counter",
+      "reference-training",
+      "guided",
+      "main-browser",
+      "album",
+      "stable-scene",
+      "paper-flight"
+    ],
+    "typecheck": "pass",
+    "build": "pass",
+    "preparation": "pass",
+    "releaseCommandBoundaries": "pass",
+    "auditHigh": {
+      "atThreshold": 0,
+      "belowThreshold": 1
+    },
+    "stableSceneMeasurements": 281
+  },
+  "audio": {
+    "occurrences": 205,
+    "files": 177,
+    "bytes": 3170437,
+    "decodedFiles": 177,
+    "oldLearningFilesUnchanged": 356,
+    "humanAcousticReview": false
+  },
+  "build": [
+    {
+      "path": "dist/assets/index-ComrKWgE.css",
+      "bytes": 55364,
+      "sha256": "a019fdfe686b6c64b21bf387fa38f1e588b16a70bf325ec5669f59d8d532bb82"
+    },
+    {
+      "path": "dist/assets/index-DHH93XQZ.js",
+      "bytes": 455352,
+      "sha256": "34d6c8f39666eb1bc07c3b570b3fa439568a9d26d56061bcf46b722c6171acc7"
+    }
+  ],
+  "unchanged": [
+    "route versions and IDs",
+    "learner progress",
+    "database schema",
+    "dependencies and lockfile",
+    "primary services"
+  ],
+  "limits": [
+    "No native-speaker acoustic review",
+    "No physical-device or Safari/Firefox run",
+    "Old optional learning/feedback browser runners contain unrelated baseline assumptions; not claimed green",
+    "No deployment"
+  ]
+}

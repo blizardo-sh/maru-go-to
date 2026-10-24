@@ -3,6 +3,7 @@ import { loadCourse } from '../src/server/course';
 import { advanceLearningState, currentLearningStep, initialLearningState, learningParts, startLearningPractice } from '../src/shared/learning';
 import { confusableLearningWords, learningWordChoices } from '../src/shared/learningChoices';
 import { learningFixture } from './helpers/learning-fixture';
+import { preparedLearningChoices } from '../src/shared/preparedLearningChoices';
 
 test('group start acknowledges only remaining intros, mixes every word/format once, and preserves construction/video boundaries', () => {
   const course = loadCourse(); const route = course.learning![0]!;
@@ -52,29 +53,104 @@ test('legacy single-intro continue and already started retry queue remain unchan
   expect(currentLearningStep(route, state)?.kind).toBe('video');
 });
 
-test('all 305 authored word placements have four stable, distinct same-lesson choices in each format', () => {
+test('all 305 authored word placements have four stable, distinct prepared choices in each format', () => {
   const course = loadCourse(); const reloaded = loadCourse(); let questions = 0; const targets = new Set<string>();
   for (const route of course.learning!) for (const step of learningParts(route).flat()) if (step.kind === 'word-practice') {
     const ids = learningWordChoices(course, route, step);
     expect(ids).toHaveLength(4); expect(new Set(ids).size).toBe(4); expect(ids).toContain(step.wordId);
     expect(learningWordChoices(reloaded, reloaded.learning!.find(item => item.lessonId === route.lessonId)!, structuredClone(step))).toEqual(ids);
     const words = ids.map(id => course.words.find(word => word.id === id)!);
-    for (const word of words) { expect(word.lessonIds).toContain(route.lessonId); expect(word.reviewStatus).not.toBe('draft'); }
+    const target = course.words.find(word => word.id === step.wordId)!;
+    expect(target.lessonIds).toContain(route.lessonId);
+    for (const word of words) { expect(word.reviewStatus).not.toBe('draft'); expect(word.kind).toBe(target.kind); }
     for (let i = 0; i < words.length; i++) for (let j = i + 1; j < words.length; j++) expect(confusableLearningWords(words[i]!, words[j]!)).toBe(false);
     targets.add(step.wordId); questions++;
   }
-  expect(questions).toBe(915); expect(targets.size).toBe(279);
+  expect(questions).toBe(915); expect(targets.size).toBe(279); expect(preparedLearningChoices.size).toBe(targets.size);
 });
 
 test('politeness, shared meanings and equivalent readings cannot create a false wrong answer', () => {
   const course = loadCourse(); const bySurface = (surface: string) => course.words.find(word => word.surface === surface)!;
-  for (const [a, b] of [['ちち', 'おとうさん'], ['はは', 'おかあさん'], ['ありがとう', 'ありがとうございます'], ['うち', 'いえ'], ['そして', 'それから'], ['なまえ', 'おなまえ']]) {
+  for (const [a, b] of [['ちち', 'おとうさん'], ['はは', 'おかあさん'], ['ありがとう', 'ありがとうございます'], ['うち', 'いえ'], ['そして', 'それから'], ['なまえ', 'おなまえ'], ['すき', 'だいすき'], ['かっこいい', 'すてき']]) {
     const left = bySurface(a!) ?? { ...bySurface('なまえ'), id: a!, surface: a!, kana: a!, meaningRu: a! };
     const right = bySurface(b!) ?? { ...left, id: b!, surface: b!, kana: b!, meaningRu: b! };
     expect(confusableLearningWords(left, right)).toBe(true);
+    expect(confusableLearningWords(right, left)).toBe(true);
   }
   const word = bySurface('ねこ');
   expect(confusableLearningWords({ ...word, id: 'father', surface: '父', kana: 'ちち', meaningRu: 'мой отец' }, { ...word, id: 'polite-father', surface: 'お父さん', kana: 'おとうさん', meaningRu: 'отец (уважительно)' })).toBe(true);
   expect(confusableLearningWords(word, { ...word, id: 'another', surface: '猫', kana: 'ネコ' })).toBe(true);
   expect(confusableLearningWords(word, { ...word, id: 'another', surface: '違う', kana: 'ちがう', meaningRu: 'кошка' })).toBe(true);
+  const repeat = course.words.find(word => word.kana === 'もういちどおねがいします。')!;
+  const listen = course.words.find(word => word.kana === 'きいてください。')!;
+  expect(confusableLearningWords(repeat, listen)).toBe(false);
+  expect(confusableLearningWords(listen, repeat)).toBe(false);
+  const please = { ...word, id: 'please', surface: 'どうぞ', kana: 'どうぞ', meaningRu: 'пожалуйста' };
+  expect(confusableLearningWords(please, { ...please, id: 'equivalent', surface: 'どうぞお願いします', kana: 'どうぞおねがいします' })).toBe(true);
+  const courtesy = { ...please, id: 'courtesy', surface: '別の表現', kana: 'べつのひょうげん', meaningRu: 'пожалуйста; прошу вас' };
+  expect(confusableLearningWords(please, courtesy)).toBe(true);
+  expect(confusableLearningWords(courtesy, please)).toBe(true);
+  expect(confusableLearningWords({ ...repeat, id: 'duplicate-meaning', surface: '別の表現', kana: 'べつのひょうげん' }, repeat)).toBe(true);
+});
+
+test('prepared choices distinguish people, age, clock time, writing systems and whole requests', () => {
+  const course = loadCourse();
+  const examples = [
+    { lesson: 4, target: 'ふたり', allowed: ['ひとり', 'ふたり', 'さんにん', 'よにん'] },
+    { lesson: 4, target: 'さんさい', allowed: ['いっさい', 'にさい', 'さんさい', 'よんさい'] },
+    { lesson: 9, target: 'しちじ', allowed: ['ごじ', 'しちじ', 'くじ', 'じゅういちじ'] },
+    { lesson: 1, target: 'ひらがな', allowed: ['ひらがな', 'カタカナ', 'かんじ', 'ローマじ'] },
+    { lesson: 4, target: 'こども', allowed: ['かぞく', 'こども', 'ともだち', 'ひと'] },
+    { lesson: 4, target: 'ちち', allowed: ['ちち', 'はは', 'あに', 'あね'] },
+    { lesson: 5, target: 'おちゃ', allowed: ['おちゃ', 'コーヒー', 'みず', 'ジュース'] },
+    { lesson: 6, target: 'ひとつ', allowed: ['ひとつ', 'ふたつ', 'みっつ', 'よっつ'] },
+    { lesson: 8, target: 'うえ', allowed: ['うえ', 'した', 'なか', 'よこ'] },
+    { lesson: 10, target: 'きんようび', allowed: ['きんようび', 'どようび', 'にちようび', 'げつようび'] },
+    { lesson: 11, target: 'ときどき', allowed: ['いつも', 'よく', 'あまり', 'ときどき'] },
+    { lesson: 12, target: 'むりょう', allowed: ['むりょう', 'やすい', 'たかい', 'ゆうりょう'] },
+    { lesson: 13, target: 'バス', allowed: ['タクシー', 'バス', 'でんしゃ', 'ひこうき'] },
+    { lesson: 14, target: 'みぎ', allowed: ['みぎ', 'ひだり', 'まっすぐ', 'うしろ'] },
+    { lesson: 15, target: 'かいます', allowed: ['あげます', 'もらいます', 'かいます', 'つかいます'] },
+    { lesson: 16, target: 'サイズ', allowed: ['いろ', 'サイズ', 'かたち', 'ねだん'] },
+    { lesson: 18, target: 'きょうと', allowed: ['とうきょう', 'きょうと', 'おおさか', 'ソウル'] },
+    // Calendar-month choices need the same unit, not four relative month offsets.
+    { lesson: 12, target: 'らいげつ', allowed: ['らいげつ', 'こんげつ', 'せんげつ', 'いちがつ'] },
+    { lesson: 15, target: 'きょねん', allowed: ['きょねん', 'ことし', 'らいねん', 'まいとし'] },
+    { lesson: 18, target: 'ことし', allowed: ['きょねん', 'ことし', 'らいねん', 'まいとし'] },
+    { lesson: 15, target: 'ほしい', allowed: ['ほしい', 'わかります', 'できます', 'つかれます'] },
+    { lesson: 12, target: 'ざんねん', allowed: ['ざんねん', 'うれしい', 'たいへん', 'だいじょうぶ'] },
+  ];
+  for (const example of examples) {
+    const route = course.learning!.find(route => course.lessons.find(lesson => lesson.id === route.lessonId)!.number === example.lesson)!;
+    const steps = learningParts(route).flat().filter(step => step.kind === 'word-practice' && course.words.find(word => word.id === step.wordId)!.kana === example.target);
+    expect(steps).toHaveLength(3);
+    for (const step of steps) if (step.kind === 'word-practice') {
+      const words = learningWordChoices(course, route, step).map(id => course.words.find(word => word.id === id)!);
+      expect(words.map(word => word.kana).sort()).toEqual([...example.allowed].sort());
+    }
+  }
+  const route = course.learning![1]!;
+  const step = learningParts(route).flat().find(step => step.kind === 'word-practice' && course.words.find(word => word.id === step.wordId)!.kana === 'もういちどおねがいします。')!;
+  if (step.kind !== 'word-practice') throw new Error('Missing prepared request.');
+  const words = learningWordChoices(course, route, step).map(id => course.words.find(word => word.id === id)!);
+  expect(words.map(word => word.kind)).toEqual(['phrase', 'phrase', 'phrase', 'phrase']);
+  expect(words.map(word => word.kana).sort()).toEqual(['もういちどおねがいします。', 'もうすこしゆっくりいってください。', 'きいてください。', 'あそびにきてください'].sort());
+});
+
+test('unprepared, withdrawn and ambiguous choices fail closed instead of using unrelated anchors', () => {
+  const course = loadCourse(); const route = course.learning![0]!;
+  const step = learningParts(route).flat().find(step => step.kind === 'word-practice')!;
+  if (step.kind !== 'word-practice') throw new Error('Missing word practice.');
+  const magazine = course.words.find(word => word.kana === 'ざっし')!;
+  expect(() => learningWordChoices(course, route, { ...step, wordId: magazine.id })).toThrow('Missing prepared quiz choices');
+  const choices = learningWordChoices(course, route, step);
+  const candidateId = choices.find(id => id !== step.wordId)!;
+  for (const change of ['withdrawn', 'meaning', 'kind'] as const) {
+    const modified = structuredClone(course); const candidate = modified.words.find(word => word.id === candidateId)!;
+    if (change === 'withdrawn') candidate.reviewStatus = 'draft';
+    if (change === 'meaning') candidate.meaningRu = modified.words.find(word => word.id === step.wordId)!.meaningRu;
+    if (change === 'kind') candidate.kind = candidate.kind === 'word' ? 'phrase' : 'word';
+    expect(() => learningWordChoices(modified, route, step)).toThrow('Invalid prepared quiz choice');
+  }
+  expect(learningWordChoices(course, route, step)).toEqual(choices);
 });

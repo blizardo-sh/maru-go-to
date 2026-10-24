@@ -6,7 +6,10 @@ export interface LearningExample {
   meaningRu: string;
   segments: Segment[];
   audioUrl: string;
+  /** Reviewed whole-phrase pronunciation for offline recording; display spelling stays unchanged. */
+  audioText?: string;
 }
+export const learningAudioTextPattern = /^[\u3041-\u30ffー\s・、。？！!?…]+$/u;
 export interface LearningWord {
   wordId: string;
   explanationRu: string;
@@ -185,9 +188,10 @@ export function validateLearning(course: Course, lessons: GuidedLesson[], comple
     ensure(value.segments?.map(segment => segment.surface).join('') === value.surface && value.segments.map(segment => segment.reading ?? segment.surface).join('') === value.kana, `example reading ${id}`);
     ensure(/^[ぁ-ゖァ-ヺー・\s。、！？!?「」『』（）()…,.\d]+$/u.test(value.kana), `example Japanese reading ${id}`);
     ensure(audio(value.audioUrl), `example audio ${id}`);
+    ensure(value.audioText === undefined || (typeof value.audioText === 'string' && value.audioText.length > 0 && value.audioText.length <= 300 && value.audioText === value.audioText.trim() && learningAudioTextPattern.test(value.audioText)), `example pronunciation ${id}`);
   };
   const officialSource = (entry: { sourceRefs: Word['sourceRefs'] }) => entry.sourceRefs?.length && entry.sourceRefs.every(source => {
-    try { const url = new URL(source.url); return url.protocol === 'https:' && ['marugoto.jpf.go.jp', 'marugotoweb.jp', 'a1.marugotoweb.jp', 'a2.marugotoweb.jp'].includes(url.hostname); } catch { return false; }
+    try { const url = new URL(source.url); return url.protocol === 'https:' && ['marugoto.jpf.go.jp', 'marugotoweb.jp', 'a1.marugotoweb.jp', 'a2.marugotoweb.jp', 'www.irodori.jpf.go.jp', 'www.hirogaru-nihongo.jpf.go.jp'].includes(url.hostname); } catch { return false; }
   });
   for (const route of lessons) {
     const lesson = course.lessons.find(item => item.id === route.lessonId);

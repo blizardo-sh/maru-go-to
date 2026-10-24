@@ -25,12 +25,13 @@
                     "surface": "わたしのかぞくはさんにんです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-d5cef97a2714.m4a"
+                "audioUrl": "/audio/learning/b08bd0295f014b2e22b5.m4a",
+                "audioText": "わたしのかぞくわさんにんです。"
               }
             },
             {
               "wordId": "marugoto.starter-a1.word.2d31dd8d68a3ada0",
-              "explanationRu": "Своя мать и свой отец вне семьи называются はは и ちち; здесь именно свой отец.",
+              "explanationRu": "В формальном рассказе постороннему о своём отце обычно говорят ちち; о его отце — おとうさん. Неформальное обращение внутри семьи может отличаться.",
               "example": {
                 "surface": "ちちはにほんにすんでいます。",
                 "kana": "ちちはにほんにすんでいます。",
@@ -40,12 +41,13 @@
                     "surface": "ちちはにほんにすんでいます。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-c1aec345362b.m4a"
+                "audioUrl": "/audio/learning/7af055a466ecd7a1b8d2.m4a",
+                "audioText": "ちちわにほんにすんでいます。"
               }
             },
             {
               "wordId": "marugoto.starter-a1.word.07ab7fc730f6f2bb",
-              "explanationRu": "Так говорят о своей матери собеседнику; о чужой обычно おかあさん.",
+              "explanationRu": "В формальном рассказе постороннему о своей матери обычно はは; о его матери — おかあさん. В неформальной речи おかあさん может обозначать и собственную мать.",
               "example": {
                 "surface": "はははとうきょうにすんでいます。",
                 "kana": "はははとうきょうにすんでいます。",
@@ -55,7 +57,8 @@
                     "surface": "はははとうきょうにすんでいます。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-cd8dd18e09af.m4a"
+                "audioUrl": "/audio/learning/f29656e753dc3b4ab402.m4a",
+                "audioText": "ははわとうきょうにすんでいます。"
               }
             },
             {
@@ -70,7 +73,8 @@
                     "surface": "あにはかいしゃいんです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-b5aff342a857.m4a"
+                "audioUrl": "/audio/learning/1a9579818b0741af5069.m4a",
+                "audioText": "あにわかいしゃいんです。"
               }
             },
             {
@@ -85,13 +89,14 @@
                     "surface": "あねはおおさかにすんでいます。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-bb5cd3499339.m4a"
+                "audioUrl": "/audio/learning/97b5f467927a16247687.m4a",
+                "audioText": "あねわおおさかにすんでいます。"
               }
             }
           ],
           "construction": {
             "exerciseId": "marugoto.starter-a1.example.to_noun_list.l04.1",
-            "explanationRu": "Частица と соединяет названные существительные: «отец и мать». Здесь это перечисление, а не действие вместе с кем-то. Короткий список с です — естественный ответ на вопрос, кто входит в семью.",
+            "explanationRu": "Частица と соединяет названные существительные: «отец и мать». Здесь вы отвечаете, кто изображён на фотографии: ちちとははです. Это не полный состав семьи; при его перечислении нужно учитывать и говорящего, как в ちちとははとわたしです.",
             "example": {
               "surface": "ちちとははです。",
               "kana": "ちちとははです。",
@@ -144,13 +149,14 @@
               "example": {
                 "surface": "こどもはひとりです。",
                 "kana": "こどもはひとりです。",
-                "meaningRu": "Ребёнок один.",
+                "meaningRu": "У меня один ребёнок.",
                 "segments": [
                   {
                     "surface": "こどもはひとりです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-2d68e1badd88.m4a"
+                "audioUrl": "/audio/learning/d77b139df0eefae93046.m4a",
+                "audioText": "こどもわひとりです。"
               }
             },
             {
@@ -165,7 +171,8 @@
                     "surface": "かぞくはふたりです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-e015bed65d44.m4a"
+                "audioUrl": "/audio/learning/89471e4d1fcea9c7746a.m4a",
+                "audioText": "かぞくわふたりです。"
               }
             },
             {
@@ -180,7 +187,8 @@
                     "surface": "かぞくはさんにんです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-a277edb45a8f.m4a"
+                "audioUrl": "/audio/learning/17b2fe8cc6fa260aa8b8.m4a",
+                "audioText": "かぞくわさんにんです。"
               }
             },
             {
@@ -195,7 +203,8 @@
                     "surface": "わたしのかぞくはよにんです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-097e8cf9cb52.m4a"
+                "audioUrl": "/audio/learning/5529b436c15a76f1a576.m4a",
+                "audioText": "わたしのかぞくわよにんです。"
               }
             },
             {
@@ -210,7 +219,8 @@
                     "surface": "こどもはふたりです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-542e5cef240c.m4a"
+                "audioUrl": "/audio/learning/8d9fd3cdcf76bc77a122.m4a",
+                "audioText": "こどもわふたりです。"
               }
             }
           ],
@@ -238,7 +248,8 @@
                   "surface": "。"
                 }
               ],
-              "audioUrl": "/audio/learning/lesson04-construction-people-count.m4a"
+              "audioUrl": "/audio/learning/17b2fe8cc6fa260aa8b8.m4a",
+              "audioText": "かぞくわさんにんです。"
             },
             "breakdown": [
               {
@@ -264,7 +275,8 @@
       "videoIds": [
         "marugoto.starter-a1.video.cando_07_02",
         "marugoto.starter-a1.video.challenge07"
-      ]
+      ],
+      "introductionRu": "В формальном рассказе о своих родных обычно используют ちち／はは, о чужих — おとうさん／おかあさん. В неформальной речи, особенно у молодых, последние могут обозначать и своих родителей."
     },
     {
       "id": "l04-family-photo",
@@ -288,7 +300,8 @@
                     "surface": "このひとはあねです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-224259ffee2d.m4a"
+                "audioUrl": "/audio/learning/522b71212814b55d53c5.m4a",
+                "audioText": "このひとわあねです。"
               }
             },
             {
@@ -303,7 +316,8 @@
                     "surface": "このひとはだれですか。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-baacd8737636.m4a"
+                "audioUrl": "/audio/learning/f84a9aeae9f87d6f69f2.m4a",
+                "audioText": "このひとわだれですか。"
               }
             },
             {
@@ -318,7 +332,8 @@
                     "surface": "つまはエンジニアです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-b3aa67581b0c.m4a"
+                "audioUrl": "/audio/learning/d63cb1b92fc8d9b75aa0.m4a",
+                "audioText": "つまわエンジニアです。"
               }
             },
             {
@@ -333,26 +348,27 @@
                     "surface": "おっとはかいしゃいんです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-2c91229a6c8f.m4a"
+                "audioUrl": "/audio/learning/cf0b8c6e6a21492866c5.m4a",
+                "audioText": "おっとわかいしゃいんです。"
               }
             }
           ],
           "construction": {
             "exerciseId": "marugoto.starter-a1.example.no_relation.l04.1",
-            "explanationRu": "の связывает два существительных: первое уточняет второе. В あにのつま речь о жене старшего брата; важен последний элемент, つま. Для краткого ответа о человеке на фотографии достаточно этой группы с です.",
+            "explanationRu": "の связывает два существительных: первое уточняет второе. На фотографии ребёнок вашей старшей сестры: あねのこども. Последнее слово こども называет человека, о котором спрашивают; あねの уточняет родство. Для краткого ответа добавляем です.",
             "example": {
-              "surface": "あにのつまです。",
-              "kana": "あにのつまです。",
-              "meaningRu": "Это жена моего старшего брата.",
+              "surface": "あねのこどもです。",
+              "kana": "あねのこどもです。",
+              "meaningRu": "Это ребёнок моей старшей сестры.",
               "segments": [
                 {
-                  "surface": "あに"
+                  "surface": "あね"
                 },
                 {
                   "surface": "の"
                 },
                 {
-                  "surface": "つま"
+                  "surface": "こども"
                 },
                 {
                   "surface": "です"
@@ -361,20 +377,21 @@
                   "surface": "。"
                 }
               ],
-              "audioUrl": "/audio/learning/lesson04-construction-no-relation.m4a"
+              "audioUrl": "/audio/learning/b1a9c0782c991925e86a.m4a",
+              "audioText": "あねのこどもです。"
             },
             "breakdown": [
               {
-                "text": "あに",
-                "explanationRu": "(мой) старший брат"
+                "text": "あね",
+                "explanationRu": "Моя старшая сестра: формальный рассказ постороннему о своей семье."
               },
               {
                 "text": "の",
-                "explanationRu": "Связь существительных: первое уточняет второе."
+                "explanationRu": "Связывает родственника с ребёнком: чей ребёнок."
               },
               {
-                "text": "つま",
-                "explanationRu": "Жена; здесь — жена старшего брата."
+                "text": "こども",
+                "explanationRu": "Ребёнок — человек, которого называем на фотографии."
               },
               {
                 "text": "です",
@@ -413,7 +430,8 @@
                     "surface": "はははとうきょうにすんでいます。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-5681802aa118.m4a"
+                "audioUrl": "/audio/learning/f29656e753dc3b4ab402.m4a",
+                "audioText": "ははわとうきょうにすんでいます。"
               }
             },
             {
@@ -428,7 +446,8 @@
                     "surface": "はははにほんにすんでいます。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-ddabf05df471.m4a"
+                "audioUrl": "/audio/learning/a6efa999ba6f0bbbfaf2.m4a",
+                "audioText": "ははわにほんにすんでいます。"
               }
             },
             {
@@ -474,7 +493,8 @@
                   "surface": "。"
                 }
               ],
-              "audioUrl": "/audio/learning/lesson04-construction-ni-residence.m4a"
+              "audioUrl": "/audio/learning/a6efa999ba6f0bbbfaf2.m4a",
+              "audioText": "ははわにほんにすんでいます。"
             },
             "breakdown": [
               {
@@ -515,7 +535,8 @@
                     "surface": "こどもはさんさいです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-4aef6e4e82fd.m4a"
+                "audioUrl": "/audio/learning/c855c461e8e789c7aa8c.m4a",
+                "audioText": "こどもわさんさいです。"
               }
             },
             {
@@ -530,7 +551,8 @@
                     "surface": "こどもはよんさいです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-985499e53004.m4a"
+                "audioUrl": "/audio/learning/9080ebf2c2670b9601bc.m4a",
+                "audioText": "こどもわよんさいです。"
               }
             },
             {
@@ -545,7 +567,8 @@
                     "surface": "おこさんはおいくつですか。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-1f5c1602ecaa.m4a"
+                "audioUrl": "/audio/learning/7c65ace4d306ad49c75f.m4a",
+                "audioText": "おこさんわおいくつですか。"
               }
             },
             {
@@ -560,7 +583,8 @@
                     "surface": "こどもはなんさいですか。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson04-word-efde830a07d2.m4a"
+                "audioUrl": "/audio/learning/0d9ff7bb4d623040c4d9.m4a",
+                "audioText": "こどもわなんさいですか。"
               }
             }
           ],
@@ -588,7 +612,8 @@
                   "surface": "。"
                 }
               ],
-              "audioUrl": "/audio/learning/lesson04-construction-age-count.m4a"
+              "audioUrl": "/audio/learning/c855c461e8e789c7aa8c.m4a",
+              "audioText": "こどもわさんさいです。"
             },
             "breakdown": [
               {
@@ -611,7 +636,7 @@
           }
         }
       ],
-      "introductionRu": "Представьте семейную фотографию: слева ваш старший брат, рядом его жена, перед ними ребёнок. В примерах этой части вы называете людей на таком фото, их возраст и место проживания. Фразы あにのつまです и こどもはさんさいです получают смысл из этой ситуации; они не проверяют сведения о вашей настоящей семье.",
+      "introductionRu": "На фотографии — ваша старшая сестра и её ребёнок: あねのこどもです. Другие примеры — отдельные ситуации о супруге, проживании или возрасте собственного ребёнка.",
       "videoIds": [
         "marugoto.starter-a1.lesson.04",
         "marugoto.starter-a1.video.cando_08_01",
@@ -1612,6 +1637,56 @@
           }
         ],
         "audioUrl": "/audio/37df2fd1e99c2b76dcf1.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.age-issai",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "いっさい",
+        "kana": "いっさい",
+        "meaningRu": "один год (возраст)",
+        "segments": [
+          {
+            "surface": "いっさい"
+          }
+        ],
+        "kind": "word",
+        "pos": "counter-expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/appendix_01.php",
+            "entry": "いっさい",
+            "label": "Marugoto · Counters · ～さい: 1 = いっさい"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.word.age-nisai",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "にさい",
+        "kana": "にさい",
+        "meaningRu": "два года (возраст)",
+        "segments": [
+          {
+            "surface": "にさい"
+          }
+        ],
+        "kind": "word",
+        "pos": "counter-expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/appendix_01.php",
+            "entry": "にさい",
+            "label": "Marugoto · Counters · ～さい: 2 = にさい"
+          }
+        ]
       }
     ],
     "forms": [
@@ -2103,6 +2178,52 @@
             "label": "Marugoto · сводный Kanji Word List · №232"
           }
         ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.age-issai",
+        "wordId": "marugoto.starter-a1.word.age-issai",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "いっさい",
+        "kana": "いっさい",
+        "segments": [
+          {
+            "surface": "いっさい"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/appendix_01.php",
+            "entry": "いっさい",
+            "label": "Marugoto · Counters · ～さい: 1 = いっさい"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.age-nisai",
+        "wordId": "marugoto.starter-a1.word.age-nisai",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.04"
+        ],
+        "surface": "にさい",
+        "kana": "にさい",
+        "segments": [
+          {
+            "surface": "にさい"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/appendix_01.php",
+            "entry": "にさい",
+            "label": "Marugoto · Counters · ～さい: 2 = にさい"
+          }
+        ]
       }
     ],
     "skills": [
@@ -2157,13 +2278,18 @@
           8
         ],
         "title": "の: связь существительных",
-        "explanationRu": "В N1のN2 первое существительное уточняет второе. Порядок меняет смысл: あにのつま — жена старшего брата.",
+        "explanationRu": "В N1のN2 первое существительное уточняет второе. В あねのこども последнее слово называет ребёнка, а あねの уточняет: ребёнок моей старшей сестры.",
         "reviewStatus": "source-checked",
         "sourceRefs": [
           {
             "part": "rikai",
             "url": "https://a1.marugotoweb.jp/en/note_2_4_3.php",
             "label": "Грамматическая заметка; объяснение и задания написаны для приложения"
+          },
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/grammar_topic2_4.php",
+            "label": "Официальный пример Interrogatives: あねのこどもです; русский контекст написан для приложения"
           }
         ]
       },
@@ -2249,7 +2375,8 @@
         ],
         "sentenceEnd": "。",
         "reviewStatus": "source-checked",
-        "translationRu": "Это мой отец и моя мать."
+        "translationRu": "Это мой отец и моя мать.",
+        "contextRu": "Собеседник спрашивает, кто на фотографии с вашими родителями. Назовите двух изображённых людей, а не полный состав вашей семьи."
       },
       {
         "id": "marugoto.starter-a1.example.people_count.l04.1",
@@ -2290,11 +2417,11 @@
         "id": "marugoto.starter-a1.example.no_relation.l04.1",
         "lessonId": "marugoto.starter-a1.lesson.04",
         "skillId": "marugoto.starter-a1.skill.no_relation",
-        "promptRu": "Это жена моего старшего брата. Назовите человека.",
+        "promptRu": "На фотографии ребёнок моей старшей сестры. Назовите человека.",
         "tokens": [
           {
             "id": "t1",
-            "formId": "marugoto.starter-a1.form.b8692c26c972b16f"
+            "formId": "marugoto.starter-a1.form.47cdd36adfbdeb2a"
           },
           {
             "id": "t2",
@@ -2302,7 +2429,7 @@
           },
           {
             "id": "t3",
-            "formId": "marugoto.starter-a1.form.3f6080ea6c4375ab"
+            "formId": "marugoto.starter-a1.form.fda91890b35d523f"
           },
           {
             "id": "t4",
@@ -2319,7 +2446,8 @@
         ],
         "sentenceEnd": "。",
         "reviewStatus": "source-checked",
-        "translationRu": "Это жена моего старшего брата."
+        "translationRu": "Это ребёнок моей старшей сестры.",
+        "contextRu": "Вы показываете фотографию своей старшей сестры и её ребёнка. Собеседник спрашивает о ребёнке."
       },
       {
         "id": "marugoto.starter-a1.example.ni_residence.l04.1",
@@ -2394,7 +2522,8 @@
         ],
         "sentenceEnd": "。",
         "reviewStatus": "source-checked",
-        "translationRu": "Моему ребёнку три года."
+        "translationRu": "Моему ребёнку три года.",
+        "contextRu": "Вы рассказываете собеседнику о возрасте своего ребёнка. Это отдельная учебная ситуация."
       }
     ]
   }

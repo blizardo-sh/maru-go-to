@@ -5,7 +5,7 @@ import { Session } from './Session';
 import { Auth } from './Auth';
 import { RegistrationLinks } from './RegistrationLinks';
 import { GuidedLearning } from './GuidedLearning';
-import { currentLearningState, learningConflict, learningHeaders, pendingLearning, submitLearning } from './guidedApi';
+import { currentLearningState, invalidLearningChoice, learningConflict, learningHeaders, pendingLearning, submitLearning } from './guidedApi';
 import type { LearningState } from '../shared/learning';
 import { Cat } from './Cat';
 import { Settings } from './Settings';
@@ -71,7 +71,7 @@ export function App() {
       }
       for (const item of learning) {
         if (userRef.current?.id !== id) return;
-        await submitLearning(id, item);
+        try { await submitLearning(id, item); } catch (failure) { if (!invalidLearningChoice(failure)) throw failure; }
         if (userRef.current?.id !== id) return;
       }
       setOutboxCount(pendingReviews(id).length + pendingLearning(id).length); await refresh();

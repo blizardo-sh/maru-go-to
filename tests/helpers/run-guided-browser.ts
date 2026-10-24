@@ -22,7 +22,7 @@ try {
   if (!address || typeof address === 'string') throw new Error('Missing isolated browser preview port.');
   const base = `http://localhost:${address.port}`;
   app = createApp({ database, course:loadCourse(), config:{ DATABASE_URL:databaseUrl, BETTER_AUTH_SECRET:crypto.randomUUID()+crypto.randomUUID(), APP_URL:base, PORT:3000, HOST:'127.0.0.1', ANALYSIS_PROVIDER:'generic', ANALYSIS_URL:`http://127.0.0.1:${provider.port}/chat/completions`, ANALYSIS_MODEL:'isolated-guided-browser', ANALYSIS_FREE_ONLY:'true' } });
-  child = Bun.spawn([process.execPath, Bun.argv[2] ?? 'tests/integration.guided.browser.ts'], { cwd:root, env:{ ...process.env, GUIDED_BROWSER_URL:base, GUIDED_BROWSER_API_URL:`http://localhost:${api.port}` }, stdout:'inherit', stderr:'inherit' });
+  child = Bun.spawn([process.execPath, Bun.argv[2] ?? 'tests/integration.guided.browser.ts'], { cwd:root, env:{ ...process.env, BROWSER_URL:base.replace('localhost','127.0.0.1'), GUIDED_BROWSER_URL:base, GUIDED_BROWSER_API_URL:`http://localhost:${api.port}` }, stdout:'inherit', stderr:'inherit' });
   process.exitCode = await child.exited;
 } finally {
   process.removeListener('SIGINT', stop);
