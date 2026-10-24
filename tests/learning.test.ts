@@ -103,3 +103,17 @@ test('new optional clips do not reopen summaries, past parts or completed routes
  const complete=reconcileOptionalVideos(expanded,state);expect(complete.partIndex).toBe(state.partIndex);expect(complete.pendingStepIds).toEqual([]);expect(currentLearningStep(expanded,complete)).toBeNull();
  expect(complete.completedStepIds).toHaveLength(learningParts(expanded).flat().length);expect(complete.completedStepIds.filter(id=>!id.includes(':video:'))).toEqual(state.completedStepIds.filter(id=>!id.includes(':video:')));
 });
+
+
+test('shared overlay records ignore JSON key order but reject conflicting authored meanings',()=>{
+ const course=learningFixture(), first=structuredClone(course.learning[0]!), second=structuredClone(first);
+ second.lessonId=course.lessons.find(lesson=>lesson.number===4)!.id;
+ const original=course.words.find(word=>word.id===first.goals[0]!.parts[0]!.words[0]!.wordId)!;
+ const shared={...original,lessonIds:[...new Set([...original.lessonIds,second.lessonId])]};
+ first.authored={words:[shared],forms:[],skills:[],exercises:[]};
+ const {id,...fields}=shared;
+ second.authored={words:[{...fields,id}],forms:[],skills:[],exercises:[]};
+ expect(()=>withLearningMaterial(course,[first,second])).not.toThrow();
+ second.authored.words[0]!.meaningRu+=' другой смысл';
+ expect(()=>withLearningMaterial(course,[first,second])).toThrow('Conflicting authored records');
+});
