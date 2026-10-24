@@ -109,6 +109,9 @@ export interface Exercise {
 }
 
 export interface Course {
+  media?: string[];
+  publicationId?: string;
+  catalog?: import("./catalog").CourseCatalog;
   id: string;
   version: string;
   title: string;
@@ -141,6 +144,7 @@ export interface LearnerSettings {
 }
 
 interface ReviewBase {
+  publicationId?: string;
   id: string;
   targetId: string;
   version: number;
@@ -161,6 +165,7 @@ export interface ReviewQueue {
 }
 
 interface SubmissionBase {
+  publicationId?: string;
   attemptId: string;
   reviewId: string;
   version: number;
@@ -173,6 +178,7 @@ export type ReviewSubmission = SubmissionBase & (
 );
 
 export interface ReviewResult {
+  publicationId?: string;
   attemptId: string;
   status: "scheduled" | "additional-practice";
   version: number;
@@ -271,6 +277,7 @@ export interface RegistrationLinkCreateResult {
 }
 
 export interface TargetEvaluationRequest {
+  publicationId?: string;
   reviewId: string;
   version: number;
   tokenIds: string[];

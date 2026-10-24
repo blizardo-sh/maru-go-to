@@ -1,3 +1,4 @@
+import { catalogFor } from '../shared/catalog';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { LearnerSettings, ReviewResult, ReviewSubmission } from '../shared/types';
 import type { LearningAdvance, LearningAdvanceResult, LearningExample, LearningState, LearningPart } from '../shared/learning';
@@ -10,6 +11,7 @@ import { GestureCard } from './GestureCard';
 import { FlipCard } from './FlipCard';
 import { JapaneseText } from './JapaneseText';
 import { Japanese, verifiedKanji } from './Japanese';
+import { CounterCard } from './CounterCard';
 import { SentenceWorkspace } from './SentenceWorkspace';
 import { LessonVideo } from './LessonVideo';
 import { Cat } from './Cat';
@@ -67,11 +69,12 @@ function GroupIntro({ part, data, active, busy, sound, onActivity, stepId, onSta
     const word = data.course.words.find(word => word.id === introduction.wordId);
     if (!word) return null;
     const kanji = verifiedKanji(word, data.course.forms);
-    return <article className="word-introduction" key={word.id} data-word-id={word.id}><WordIllustration wordId={word.id} /><div className="word-introduction-heading"><h3 className="jp" lang="ja">{word.kana}</h3><button className="quiet word-pronunciation" aria-label={`Прослушать ${word.surface}`} disabled={!active || busy || speech.playing} onClick={() => { void speech.play(word.audioUrl); }}>▶</button></div><p className="word-meaning">{word.meaningRu}</p>{kanji && kanji !== word.kana && data.settings.orthography !== 'kana' && <p className="word-kanji"><Japanese value={word} forms={data.course.forms} mode={data.settings.orthography} /></p>}<p className="word-note">{introduction.explanationRu}</p><ExampleLine example={introduction.example} mode={data.settings.orthography} disabled={!active || busy || speech.playing} play={() => { void speech.play(introduction.example.audioUrl); }} /></article>;
+    return <article className="word-introduction" key={word.id} data-word-id={word.id}><WordIllustration catalog={catalogFor(data.course)} wordId={word.id} /><div className="word-introduction-heading"><h3 className="jp" lang="ja">{word.kana}</h3><button className="quiet word-pronunciation" aria-label={`Прослушать ${word.surface}`} disabled={!active || busy || speech.playing} onClick={() => { void speech.play(word.audioUrl); }}>▶</button></div><p className="word-meaning">{word.meaningRu}</p>{kanji && kanji !== word.kana && data.settings.orthography !== 'kana' && <p className="word-kanji"><Japanese value={word} forms={data.course.forms} mode={data.settings.orthography} /></p>}<p className="word-note">{introduction.explanationRu}</p><ExampleLine example={introduction.example} mode={data.settings.orthography} disabled={!active || busy || speech.playing} play={() => { void speech.play(introduction.example.audioUrl); }} /></article>;
   })}</div>{speech.error && <p className="notice" role="status">{speech.error}</p>}<footer className="album-footer"><button className="primary" data-testid="start-learning-practice" disabled={!active || busy} onClick={() => { speech.stop(); onStart(); }}>Начать практику <span aria-hidden="true">→</span></button></footer></article>;
 }
 
-type QuizSnapshot = { state: LearningState; choice: string; attemptId: string; confirmed?: boolean; correct: boolean };
+type NextStep = { state: LearningState; snapshot: Snapshot };
+type QuizSnapshot = { state: LearningState; choice: string; attemptId: string; confirmed?: boolean; correct: boolean; next?: NextStep };
 function WordQuiz({ value, mode, choices, wordId, data, active, busy, sound, onActivity, stepId, selection, choose }: { value: LearningExample; mode: 'ja-ru' | 'listening' | 'ru-ja'; choices: string[]; wordId: string; data: Snapshot; active: boolean; busy: boolean; sound: SceneSound; onActivity: (value: CardActivity) => void; stepId: string; selection: QuizSnapshot | null; choose: (id: string) => void }) {
   const speech = useStepSpeech(active && !selection?.confirmed, data.settings.speechVolume, sound, onActivity, stepId);
   const attemptedAudio = useRef(false);
@@ -81,7 +84,7 @@ function WordQuiz({ value, mode, choices, wordId, data, active, busy, sound, onA
   return <article className="word-quiz" data-testid="learning-word-quiz" data-mode={mode} data-feedback={confirmed ? selection.correct ? 'good' : 'again' : 'neutral'}>
     <audio ref={speech.audio} preload="none" hidden /><div className="quiz-prompt"><small>{label}</small>{mode === 'listening' ? <button className="quiz-listen" aria-label="Прослушать слово" disabled={!active || !!selection || speech.playing} onClick={() => { void speech.play(value.audioUrl); }}><span aria-hidden="true">♪</span>{speech.playing ? 'Слушаем…' : 'Прослушать'}</button> : <h2 className="quiz-word">{mode === 'ru-ja' ? value.meaningRu : <Japanese value={value} forms={data.course.forms} mode={data.settings.orthography} />}</h2>}<p className="muted">{selection && !confirmed ? 'Сохраняем выбранный ответ…' : 'Один правильный ответ'}</p></div>
     <div className="quiz-choices" role="group" aria-label="Варианты ответа">{choices.map((id, index) => { const candidate = data.course.words.find(word => word.id === id); if (!candidate) return null; const result = confirmed && id === wordId ? 'correct' : confirmed && id === selection?.choice ? 'incorrect' : undefined; return <button key={id} data-choice-word-id={id} data-result={result} aria-pressed={selection?.choice === id} disabled={!active || busy || !!selection || mode === 'listening' && (speech.played !== value.audioUrl || !!speech.error)} onClick={() => { speech.stop(); choose(id); }}><span className="choice-number" aria-hidden="true">{index + 1}</span><span>{mode === 'ru-ja' ? <Japanese value={candidate} forms={data.course.forms} mode={data.settings.orthography} /> : candidate.meaningRu}</span>{result && <span aria-hidden="true">{result === 'correct' ? '✓' : '↻'}</span>}</button>; })}</div>
-    <div className="quiz-feedback" role="status" aria-live="polite">{confirmed ? <><WordIllustration wordId={wordId} /><div><strong>{selection.correct ? 'Верно!' : 'Запомним и попробуем ещё'}</strong><p><Japanese value={value} forms={data.course.forms} mode={data.settings.orthography} /> — {value.meaningRu}</p></div></> : <p className="muted">{selection ? 'Сохраняем выбранный ответ…' : 'Вспомните значение и выберите вариант.'}</p>}</div>{speech.error && <p className="notice" role="status">{speech.error}</p>}
+    <div className="quiz-feedback" role="status" aria-live="polite">{confirmed ? <><WordIllustration catalog={catalogFor(data.course)} wordId={wordId} /><div><strong>{selection.correct ? 'Верно!' : 'Запомним и попробуем ещё'}</strong><p><Japanese value={value} forms={data.course.forms} mode={data.settings.orthography} /> — {value.meaningRu}</p></div></> : <p className="muted">{selection ? 'Сохраняем выбранный ответ…' : 'Вспомните значение и выберите вариант.'}</p>}</div>{speech.error && <p className="notice" role="status">{speech.error}</p>}
   </article>;
 }
 
@@ -104,13 +107,15 @@ export function Recall({ value, mode, active, busy, sound, onActivity, stepId, d
   </GestureCard>;
 }
 
-export function GuidedLearning({ lessonId, user, data, active, sound, scene, onExit, onCourse, onSaved, saveSettings, settingsBusy }: { lessonId: string; user: User; data: Snapshot; active: boolean; sound: SceneSound; scene: SceneId; onExit: () => void; onCourse: () => void; onSaved: (state: LearningState, reviewed: boolean) => void; saveSettings: (value: LearnerSettings) => Promise<void>; settingsBusy: boolean }) {
+export function GuidedLearning({ lessonId, user, data: incomingData, active, sound, scene, onExit, onCourse, onSaved, saveSettings, settingsBusy }: { lessonId: string; user: User; data: Snapshot; active: boolean; sound: SceneSound; scene: SceneId; onExit: () => void; onCourse: () => void; onSaved: (state: LearningState, reviewed: boolean) => void; saveSettings: (value: LearnerSettings) => Promise<void>; settingsBusy: boolean }) {
+  const [material, setMaterial] = useState(incomingData); const materialRef = useRef(material); materialRef.current = material;
+  const data = { ...incomingData, course: material.course };
   const route = data.course.learning?.find(route => route.lessonId === lessonId);
   const lesson = data.course.lessons.find(lesson => lesson.id === lessonId);
   const [state, setState] = useState<LearningState | null>(null); const [loading, setLoading] = useState(true); const [busy, setBusy] = useState(false); const [hasPending, setHasPending] = useState(false); const [error, setError] = useState('');
   const [conflict, setConflict] = useState(false);
   const [quiz, setQuiz] = useState<QuizSnapshot | null>(null); const quizRef = useRef(quiz); quizRef.current = quiz; const transition = useRef<number | undefined>(undefined);
-  const reacted = useRef(new Set<string>());
+  const reacted = useRef(new Set<string>()); const counterNext = useRef<NextStep | null>(null);
   const [activity, setActivity] = useState<CardActivity | null>(null); const [feedback, setFeedback] = useState<SavedFeedback | null>(null);
   const pending = useRef<PendingLearning | null>(null); const lock = useRef(false); const request = useRef(0); const mounted = useRef(true); const stateRef = useRef(state); stateRef.current = state;
   const owner = useRef(user.id); owner.current = user.id; const callbacks = useRef({ active, onSaved, sound }); callbacks.current = { active, onSaved, sound };
@@ -121,16 +126,24 @@ export function GuidedLearning({ lessonId, user, data, active, sound, scene, onE
       const current = quizRef.current;
       if (!active || document.hidden || !current?.confirmed) return;
       if (!reacted.current.has(current.attemptId)) { reacted.current.add(current.attemptId); const kind = current.correct ? 'good' : 'again'; setFeedback({ attemptId: current.attemptId, kind }); callbacks.current.sound.cue(kind, current.attemptId); }
-      transition.current = window.setTimeout(() => { if (mounted.current && owner.current === user.id && callbacks.current.active && !document.hidden && quizRef.current?.attemptId === current.attemptId) { quizRef.current = null; setQuiz(null); } }, current.correct ? 800 : 1600);
+      transition.current = window.setTimeout(() => { if (mounted.current && owner.current === user.id && callbacks.current.active && !document.hidden && quizRef.current?.attemptId === current.attemptId) { quizRef.current = null; setQuiz(null); if (current.next) finish(current.next); } }, current.correct ? 800 : 1600);
     }
     resume(); document.addEventListener('visibilitychange', resume);
     return () => { window.clearTimeout(transition.current); document.removeEventListener('visibilitychange', resume); };
   }, [active, user.id, lessonId, quiz?.confirmed, quiz?.attemptId]);
   const isOwner = () => mounted.current && owner.current === user.id;
   const updateActivity = useCallback((value: CardActivity) => setActivity({ ...value, reviewId: stateRef.current?.step?.id ?? value.reviewId }), []);
-  function accept(next: LearningState) { if (isOwner() && route && currentLearningState(next, lessonId, route.version, stateRef.current)) { stateRef.current = next; setState(next); } }
-  const load = useCallback(async () => {
-    if (!route || lock.current) return;
+  function accept(next: LearningState, snapshot = materialRef.current) {
+    const targetRoute = snapshot.course.learning?.find(route => route.lessonId === lessonId);
+    const previous = stateRef.current?.publicationId === next.publicationId ? stateRef.current : null;
+    if (isOwner() && snapshot.course.publicationId === next.publicationId && targetRoute && currentLearningState(next, lessonId, targetRoute.version, previous)) { materialRef.current = snapshot; setMaterial(snapshot); stateRef.current = next; setState(next); }
+  }
+  function finish(next: NextStep) {
+    accept(next.state, next.snapshot);
+    if (next.state.completed) callbacks.current.sound.cue('complete', `learning:${user.id}:${lessonId}:${next.state.routeVersion}`);
+  }
+  const load = useCallback(async (force = false) => {
+    if (lock.current || quizRef.current || counterNext.current || !force && stateRef.current?.publicationId && stateRef.current.step && !pending.current) return;
     const current = ++request.current; setLoading(true); setError(''); setConflict(false);
     let persisted = false;
     try {
@@ -142,10 +155,11 @@ export function GuidedLearning({ lessonId, user, data, active, sound, scene, onE
       if (!mounted.current || owner.current !== user.id || current !== request.current) return;
       pending.current = null; setHasPending(false);
       const next = await api<LearningState>(`/api/learning/${encodeURIComponent(lessonId)}`, { headers: learningHeaders(user.id) });
-      if (current === request.current && mounted.current && owner.current === user.id) { accept(next); setQuiz(null); }
+      const snapshot = next.publicationId ? await api<Snapshot>('/api/bootstrap', { headers: learningHeaders(user.id, next.publicationId) }) : materialRef.current;
+      if (current === request.current && mounted.current && owner.current === user.id) { accept(next, snapshot); setQuiz(null); }
     } catch (failure) { if (current === request.current && mounted.current && owner.current === user.id) { if (learningConflict(failure)) { setQuiz(null); pending.current = null; setHasPending(false); setConflict(true); setError('Этот ответ не применён: шаг уже изменился на другом устройстве. Загрузите актуальный шаг.'); } else { setError(message(failure)); setHasPending(persisted || !!pending.current); } } }
     finally { if (current === request.current && mounted.current && owner.current === user.id) setLoading(false); }
-  }, [lessonId, route?.version, user.id]);
+  }, [lessonId, user.id]);
   const overviewVersion = data.learning?.find(lesson => lesson.lessonId === lessonId)?.version;
   const wasActive = useRef(false);
   useEffect(() => { const entering = active && !wasActive.current; wasActive.current = active; if (!active) return; const current = stateRef.current; if (entering || !current || current.routeVersion !== route?.version || (overviewVersion ?? 0) > current.version) void load(); const retry = () => { void load(); }; window.addEventListener('online', retry); window.addEventListener('focus', retry); return () => { request.current++; window.removeEventListener('online', retry); window.removeEventListener('focus', retry); }; }, [load, active, overviewVersion]);
@@ -153,32 +167,36 @@ export function GuidedLearning({ lessonId, user, data, active, sound, scene, onE
   async function advance(action: LearningAdvance['action'], details: Partial<LearningAdvance> = {}, attemptId: string = crypto.randomUUID()): Promise<LearningAdvanceResult> {
     const current = stateRef.current;
     if (!current?.step || !isOwner() || !callbacks.current.active || document.hidden || lock.current) throw new Error('Шаг сейчас недоступен.');
-    const item = pending.current ?? { lessonId, submission: { ...details, attemptId, routeVersion: current.routeVersion, stateVersion: current.version, stepId: current.step.id, action } };
+    const item = pending.current ?? { lessonId, submission: { ...details, ...(current.publicationId ? { publicationId: current.publicationId } : {}), attemptId, routeVersion: current.routeVersion, stateVersion: current.version, stepId: current.step.id, action } };
     pending.current = item; lock.current = true; setHasPending(true); setBusy(true); setError(''); setConflict(false);
     let refreshChoices = false;
     try {
       const result = await submitLearning(user.id, item);
+      const snapshot = result.state.publicationId && result.state.publicationId !== materialRef.current.course.publicationId ? await api<Snapshot>('/api/bootstrap', { headers: learningHeaders(user.id, result.state.publicationId) }) : materialRef.current;
+      const nextRoute = snapshot.course.learning?.find(route => route.lessonId === lessonId);
+      if (!nextRoute || snapshot.course.publicationId !== result.state.publicationId || !currentLearningState(result.state, lessonId, nextRoute.version, result.state.publicationId === current.publicationId ? current : null)) throw new Error('Не удалось загрузить материал подтверждённого шага. Повторите сохранение.');
       if (isOwner()) {
-        pending.current = null; setHasPending(false); accept(result.state); callbacks.current.onSaved(result.state, !!result.reviewResult);
-        if (item.submission.action === 'choose' && result.reviewResult) {
+        const next = { state: result.state, snapshot };
+        pending.current = null; setHasPending(false); callbacks.current.onSaved(result.state, !!result.reviewResult);
+        if (current.step.kind === 'word-practice' && item.submission.action === 'choose' && result.reviewResult) {
           const snapshot = quizRef.current ?? { state: current, choice: item.submission.choiceWordId!, attemptId: item.submission.attemptId, correct: result.reviewResult.correct === true };
-          setQuiz({ ...snapshot, confirmed: true, correct: result.reviewResult.correct === true });
-        }
-        if (result.reviewResult && callbacks.current.active && !document.hidden && !reacted.current.has(result.attemptId)) {
+          const confirmed = { ...snapshot, confirmed: true, correct: result.reviewResult.correct === true, next }; quizRef.current = confirmed; setQuiz(confirmed);
+        } else if (current.step.kind === 'counter-practice' && result.reviewResult) counterNext.current = next;
+        else finish(next);
+        if (result.reviewResult && current.step.kind !== 'counter-practice' && callbacks.current.active && !document.hidden && !reacted.current.has(result.attemptId)) {
           reacted.current.add(result.attemptId);
           const kind = item.submission.action === 'again' || result.reviewResult.correct === false || item.submission.revealed ? 'again' : 'good';
           setFeedback({ attemptId: result.attemptId, kind }); callbacks.current.sound.cue(kind, result.attemptId);
         }
-        if (result.state.completed) callbacks.current.sound.cue('complete', `learning:${user.id}:${lessonId}:${result.state.routeVersion}`);
       }
       return result;
-    } catch (failure) { if (isOwner()) { if (invalidLearningChoice(failure)) { setQuiz(null); pending.current = null; setHasPending(false); refreshChoices = true; } else if (learningConflict(failure)) { setQuiz(null); pending.current = null; setHasPending(false); setConflict(true); setError('Этот ответ не применён: шаг уже изменился на другом устройстве. Загрузите актуальный шаг.'); } else setError(`${message(failure)} Шаг не изменён без подтверждения; ответ сохранён на устройстве.`); } throw failure; }
-    finally { lock.current = false; if (isOwner()) { setBusy(false); if (refreshChoices) void load(); } }
+    } catch (failure) { if (isOwner()) { if (invalidLearningChoice(failure)) { quizRef.current = null; setQuiz(null); pending.current = null; setHasPending(false); refreshChoices = true; } else if (learningConflict(failure)) { quizRef.current = null; setQuiz(null); pending.current = null; setHasPending(false); setConflict(true); setError('Этот ответ не применён: шаг уже изменился на другом устройстве. Загрузите актуальный шаг.'); } else setError(`${message(failure)} Шаг не изменён без подтверждения; ответ сохранён на устройстве.`); } throw failure; }
+    finally { lock.current = false; if (isOwner()) { setBusy(false); if (refreshChoices) void load(true); } }
   }
   function go(action: LearningAdvance['action']) { void advance(action).catch(() => {}); }
   async function sendReview(_ownerId: string, submission: ReviewSubmission): Promise<ReviewResult> {
-    const details = submission.mode === 'grammar' ? { tokenIds: submission.tokenIds, tokenForms: submission.tokenForms, revealed: submission.revealed, exploring: submission.exploring } : {};
-    const result = await advance(submission.rating === 1 ? 'again' : 'remember', details, submission.attemptId);
+    const details = submission.mode === 'grammar' ? { tokenIds: submission.tokenIds, tokenForms: submission.tokenForms, revealed: submission.revealed, exploring: submission.exploring } : submission.mode === 'counter' ? { counterChoice: submission.choice, helped: submission.helped } : {};
+    const result = await advance(submission.mode === 'counter' ? 'choose' : submission.rating === 1 ? 'again' : 'remember', details, submission.attemptId);
     if (!result.reviewResult) throw new Error('Сервер не подтвердил учебный ответ.');
     return result.reviewResult;
   }
@@ -205,6 +223,7 @@ export function GuidedLearning({ lessonId, user, data, active, sound, scene, onE
   else if (step?.kind === 'word-practice' && word) board = <Recall key={`${step.id}:${state?.version}`} value={{ ...word, audioUrl: word.audioUrl ?? '' }} mode={step.mode} data={data} active={active} busy={blocked} sound={sound} onActivity={setActivity} stepId={step.id} grade={rating => advance(rating === 3 ? 'remember' : 'again')} />;
   else if (step?.kind === 'construction-intro' && construction) board = <Intro key={`${step.id}:${state?.version}`} value={construction.example} explanation={construction.explanationRu} breakdown={construction.breakdown} data={data} active={active} busy={blocked} sound={sound} onActivity={setActivity} stepId={step.id} onContinue={() => go('continue')} />;
   else if (step?.kind === 'construction-practice' && construction) board = step.mode === 'grammar' && state?.reviewItem?.mode === 'grammar' ? <SentenceWorkspace key={`${step.id}:${state.version}`} item={state.reviewItem} data={data} source={{ kind: 'guided', lessonId }} userId={user.id} onNext={() => {}} onSaved={() => {}} saveSettings={saveSettings} settingsBusy={settingsBusy} active={active && !loading && !conflict} sound={sound} onActivity={updateActivity} sendReview={sendReview} requiredPractice /> : step.mode !== 'grammar' ? <Recall key={`${step.id}:${state?.version}`} value={construction.example} mode={step.mode} data={data} active={active} busy={blocked} sound={sound} onActivity={setActivity} stepId={step.id} grade={rating => advance(rating === 3 ? 'remember' : 'again')} /> : null;
+  else if (step?.kind === 'counter-practice' && viewState?.reviewItem?.mode === 'counter') board = <CounterCard key={`${step.id}:${viewState.version}`} item={viewState.reviewItem} data={data} userId={user.id} active={active && !loading && !conflict} sound={sound} onActivity={updateActivity} onSaved={() => {}} onFeedback={setFeedback} onNext={() => { const next = counterNext.current; if (next) { counterNext.current = null; finish(next); } }} saveSettings={saveSettings} settingsBusy={settingsBusy} cueScope={step.id} introductionSeen onIntroductionRead={() => {}} sendReview={sendReview} />;
   else if (step?.kind === 'video') board = <div className="work-board stack guided-video" key={step.id}>{video ? <LessonVideo key={video.id} material={video} course={data.course} orthography={data.settings.orthography} active={active} onPlayingChange={sound.setSpeechPlaying} /> : <p>Видео сейчас недоступно. Можно продолжить урок.</p>}<p className="muted">Видео необязательно. Продолжайте сразу, если не хотите смотреть.</p><button className="primary" disabled={blocked} onClick={() => { document.querySelector<HTMLVideoElement>('.guided-video video')?.pause(); go('skip'); }}>Продолжить урок</button></div>;
   else if (step?.kind === 'part-complete') board = <div className="work-board stack" data-testid="learning-part-complete"><h2>Часть пройдена</h2><p>{state && state.partIndex === state.totalParts - 1 ? 'Последняя часть пройдена. Сохраните завершение учебного маршрута.' : 'Все её слова и конструкции прошли обязательные форматы. Следующую часть можно начать сразу.'}</p><button className="primary" disabled={blocked} onClick={() => go('continue')}>{state && state.partIndex === state.totalParts - 1 ? 'Завершить урок' : 'Продолжить'}</button></div>;
   return <section className="study-session guided-learning stack" data-testid="guided-learning" data-lesson-id={lessonId} data-step-id={step?.id} data-step-kind={step?.kind} data-state-version={state?.version} data-quiz-pending={!!quiz && !quiz.confirmed} data-active={active} data-scene-id={scene} onPointerDownCapture={() => setFeedback(null)} onKeyDownCapture={() => setFeedback(null)}>
@@ -213,7 +232,7 @@ export function GuidedLearning({ lessonId, user, data, active, sound, scene, onE
       <div className="session-progress"><div className="session-progress-info"><span className="session-goal">{goal?.titleRu ?? 'Учебный маршрут'}</span>{state && <span className="session-count session-part-count"><span>Часть {Math.min(state.partIndex + 1, state.totalParts)}/{state.totalParts}</span><span>{percent}%</span></span>}</div><progress aria-label="Прогресс учебного маршрута" value={state?.completedSteps ?? 0} max={Math.max(1, state?.totalSteps ?? 1)} aria-valuetext={state ? `${state.completedSteps} из ${state.totalSteps} шагов` : 'Загружаем маршрут'} /><div className="session-feedback" role="status">{feedback && <span className="answer-feedback-marker" data-feedback={feedback.kind}>{feedback.kind === 'good' ? '✓ Вспомнил' : '↻ Этот формат вернётся'}</span>}</div></div>
     </header>
     <div className="session-stage"><div className="session-board work-board"><div className="session-scroll" key={`${step?.id}:${viewState?.version}`} tabIndex={0} role="region" aria-label="Материал урока">
-      {error && <div className="notice error session-notice" role="alert"><p>{error}</p><button disabled={!active || busy} onClick={() => { if (pending.current) go(pending.current.submission.action); else void load(); }}>{conflict ? 'Загрузить актуальный шаг' : hasPending ? 'Повторить сохранение' : 'Повторить загрузку'}</button></div>}
+      {error && <div className="notice error session-notice" role="alert"><p>{error}</p><button disabled={!active || busy} onClick={() => { if (pending.current) go(pending.current.submission.action); else void load(true); }}>{conflict ? 'Загрузить актуальный шаг' : hasPending ? 'Повторить сохранение' : 'Повторить загрузку'}</button></div>}
       {busy && !quiz && <p className="session-notice" role="status">Сохраняем шаг…</p>}
       {goal?.introductionRu && (step?.kind === 'construction-intro' || step?.kind === 'video') && <p className="guided-goal-context">{goal.introductionRu}</p>}
       {board ?? <p role="status">{error ? 'Шаг появится после подтверждения.' : 'Готовим учебный маршрут…'}</p>}

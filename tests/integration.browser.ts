@@ -74,7 +74,7 @@ try {
       const request = route.request();
       const target = new URL(request.url()); target.host = `127.0.0.1:${server.port}`;
       const path = target.pathname;
-      if (path === '/api/course' && request.method() === 'GET') courseGets++;
+      if (path === '/api/bootstrap' && request.method() === 'GET') courseGets++;
       if (path === '/api/reviews' && request.method() === 'POST') submissions.push(request.postDataJSON());
       const response = await route.fetch({ url: target.href });
       if (path === '/api/reviews' && request.method() === 'GET' && target.searchParams.get('mode') === 'mixed') {

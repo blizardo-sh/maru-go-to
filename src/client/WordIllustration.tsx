@@ -1,10 +1,11 @@
+import type { CourseCatalog } from '../shared/catalog';
 import { useEffect, useId, useRef, useState } from 'react';
 import { getWordIllustration } from '../shared/word-illustrations';
 
 /** Decorative mnemonic: never mount this component before a quiz answer. */
-export function WordIllustration({ wordId, className = '' }: { wordId: string; className?: string }) {
+export function WordIllustration({ wordId, catalog, className = '' }: { wordId: string; catalog?: CourseCatalog; className?: string }) {
   const clipId = useId();
-  const image = getWordIllustration(wordId);
+  const image = getWordIllustration(wordId, catalog);
   const root = useRef<SVGSVGElement>(null);
   const [visibleWord, setVisibleWord] = useState<string | null>(null);
   useEffect(() => {

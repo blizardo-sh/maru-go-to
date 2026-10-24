@@ -19,6 +19,9 @@ install -m 755 init-db.sh /opt/japanese-learning/init-db.sh
 install -m 755 release.sh /usr/local/sbin/japanese-release
 install -m 755 backup.sh /usr/local/sbin/japanese-backup
 install -m 755 ssh-command.sh /usr/local/sbin/japanese-ssh
+install -m 755 content.sh /usr/local/sbin/japanese-content
+install -m 755 ../scripts/content-package.py /usr/local/sbin/japanese-content-package.py
+install -d -m 755 /var/lib/japanese-content /var/lib/japanese-content/media /var/lib/japanese-content/bundles
 install -m 644 japanese-backup.service japanese-backup.timer japanese-backup-verify.service japanese-backup-verify.timer /etc/systemd/system/
 DOMAIN="$DOMAIN" python3 - <<'PY'
 from pathlib import Path
@@ -35,7 +38,7 @@ chmod 755 /home/japanese-deploy
 install -d -m 755 -o root -g root /home/japanese-deploy/.ssh
 printf 'restrict,command="/usr/local/sbin/japanese-ssh" %s\n' "$(cat "$1")" > /home/japanese-deploy/.ssh/authorized_keys
 chmod 644 /home/japanese-deploy/.ssh/authorized_keys
-printf 'japanese-deploy ALL=(root) NOPASSWD: /usr/local/sbin/japanese-release *\n' > /etc/sudoers.d/japanese-deploy
+printf 'japanese-deploy ALL=(root) NOPASSWD: /usr/local/sbin/japanese-release *, /usr/local/sbin/japanese-content *\n' > /etc/sudoers.d/japanese-deploy
 chmod 440 /etc/sudoers.d/japanese-deploy
 visudo -cf /etc/sudoers.d/japanese-deploy
 systemctl daemon-reload

@@ -64,16 +64,16 @@ test('whole-expression audio is packaged for every authored number, suffix and i
 test('a tier needs all four thresholds and failed retries do not replace its first answers', () => {
   const initial: CounterProgress = { counterId: 'hon', level: 0, history: [] };
   const attempts: CounterHistory[] = Array.from({ length: 20 }, (_, index) => ({ quantity: index % 10 + 1, kind: index < 3 ? 'recall' : 'reading-choice', confident: index >= 2 }));
-  const apply = (list: CounterHistory[]) => list.reduce(advanceCounter, initial);
+  const apply = (list: CounterHistory[]) => list.reduce((progress, attempt) => advanceCounter(progress, attempt), initial);
   expect(apply(attempts)).toMatchObject({ level: 1, history: [] });
   expect(apply(attempts.slice(0, 19)).level).toBe(0);
   expect(apply(attempts.map((item, index) => index === 2 ? { ...item, confident: false } : item)).level).toBe(0);
   expect(apply(attempts.map(item => ({ ...item, quantity: item.quantity === 10 ? 9 : item.quantity }))).level).toBe(0);
   expect(apply(attempts.map((item, index) => index === 2 ? { ...item, kind: 'reading-choice' } : item)).level).toBe(0);
   expect(advanceCounter(initial, { quantity: 11, kind: 'recall', confident: true })).toBe(initial);
-  expect(attempts.reduce(advanceCounter, { ...initial, counterId: 'tsu' as const }).level).toBe(0);
+  expect(attempts.reduce<CounterProgress>((progress, attempt) => advanceCounter(progress, attempt), { ...initial, counterId: 'tsu' }).level).toBe(0);
   const age: CounterProgress = { counterId: 'sai', level: 2, history: [] };
-  expect(attempts.map(item => ({ ...item, quantity: 100 + item.quantity })).reduce(advanceCounter, age).level).toBe(2);
+  expect(attempts.map(item => ({ ...item, quantity: 100 + item.quantity })).reduce((progress, attempt) => advanceCounter(progress, attempt), age).level).toBe(2);
 });
 
 test('qualifying samples reach millions gradually and stop at the final tier', () => {

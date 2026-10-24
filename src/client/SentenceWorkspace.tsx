@@ -59,14 +59,14 @@ export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved,
     const timer = window.setTimeout(() => {
       void (async () => {
         try {
-          const request: TargetEvaluationRequest = { reviewId: item.id, version: item.version, revision: current, tokenIds: tokens.map(token => token.id), tokenForms, exploring };
+          const request: TargetEvaluationRequest = { reviewId: item.id, version: item.version, ...(item.publicationId ? { publicationId: item.publicationId } : {}), revision: current, tokenIds: tokens.map(token => token.id), tokenForms, exploring };
           const unmapped = manualText !== null || tokens.some(token => token.formId === null);
-          const target = unmapped ? { revision: current, outcome: 'exploration' as const, feedback: 'Исследование фразы: исходное задание не оценивается.' } : await api<TargetEvaluationResult>('/api/reviews/evaluate', { ...json('POST', request), headers: requiredPractice ? learningHeaders(userId) : undefined, signal: controller.signal });
+          const target = unmapped ? { revision: current, outcome: 'exploration' as const, feedback: 'Исследование фразы: исходное задание не оценивается.' } : await api<TargetEvaluationResult>('/api/reviews/evaluate', { ...json('POST', request), headers: learningHeaders(userId, item.publicationId), signal: controller.signal });
           if (current !== revision.current || target.revision !== current) return;
           setEvaluation(target);
           if (text.trim() && target.outcome !== 'incomplete') {
             const ids = manualText !== null ? availableWords.filter(word => text.includes(word.surface) || text.includes(word.kana)).map(word => word.id) : wordIds;
-            const result = await api<AnalysisResult>('/api/analyze', { ...json('POST', { text, wordIds: ids, revision: current, ...(source.kind === 'construction' ? {} : trainingContext(source)), exerciseId: exercise.id }), headers: requiredPractice ? learningHeaders(userId) : undefined, signal: controller.signal });
+            const result = await api<AnalysisResult>('/api/analyze', { ...json('POST', { text, wordIds: ids, revision: current, ...(item.publicationId ? { publicationId: item.publicationId } : {}), ...(source.kind === 'construction' ? {} : trainingContext(source)), exerciseId: exercise.id }), headers: learningHeaders(userId, item.publicationId), signal: controller.signal });
             if (isCurrentAnalysis(result, revision.current, text)) setAnalysis(result);
           }
         } catch (failure) { if (!controller.signal.aborted && current === revision.current) setError(failure instanceof Error ? failure.message : 'Разбор не загрузился. Повторите попытку.'); }
@@ -100,7 +100,7 @@ export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved,
   function advance(rating: 1 | 3) {
     if (document.hidden || loading || !evaluation || locked || composing || editor) return;
     if (evaluation.outcome === 'incomplete' || evaluation.outcome === 'exploration') { if (!requiredPractice) onNext(); return; }
-    return saving.save({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, mode: 'grammar', tokenIds: tokens.map(token => token.id), tokenForms, revealed: false, exploring, rating });
+    return saving.save({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, ...(item.publicationId ? { publicationId: item.publicationId } : {}), mode: 'grammar', tokenIds: tokens.map(token => token.id), tokenForms, revealed: false, exploring, rating });
   }
   const targetVerdict = evaluation && (evaluation.outcome === 'correct' || evaluation.outcome === 'incorrect') ? evaluation : null;
   const answerFeedback = !locked && !loading && !error && analysis?.status === 'ok' ? evaluation?.outcome === 'correct' ? 'good' : evaluation?.outcome === 'incorrect' ? 'again' : 'neutral' : 'neutral';

@@ -15,6 +15,8 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
   return data as T;
 }
 
+export const publicationHeaders = (publicationId?: string): Record<string, string> => publicationId ? { 'X-Content-Publication': publicationId } : {};
+
 export const json = (method: string, value: unknown): RequestInit => ({ method, body: JSON.stringify(value) });
 const outboxKey = (userId: string) => `japanese-pending-reviews:${userId}`;
 
@@ -35,7 +37,7 @@ export async function submitReview(userId: string, submission: ReviewSubmission)
   if (!pending.some(item => item.attemptId === submission.attemptId)) pending.push(submission);
   // Only unacknowledged attempts live here; schedules and user data always belong to the server.
   localStorage.setItem(outboxKey(userId), JSON.stringify(pending));
-  const result = await api<ReviewResult>('/api/reviews', { ...json('POST', submission), headers: { 'X-Learning-Learner-Id': userId } });
+  const result = await api<ReviewResult>('/api/reviews', { ...json('POST', submission), headers: { 'X-Learning-Learner-Id': userId, ...publicationHeaders(submission.publicationId) } });
   localStorage.setItem(outboxKey(userId), JSON.stringify(pendingReviews(userId).filter(item => item.attemptId !== submission.attemptId)));
   return result;
 }

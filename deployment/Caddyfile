@@ -18,6 +18,16 @@
       header_up X-Forwarded-Proto https
     }
   }
+  @content path /audio/* /word-illustrations/* /counters/*
+  handle @content {
+    root * /content
+    @legacy not file {path}
+    handle @legacy {
+      root * /srv
+      file_server
+    }
+    file_server
+  }
   handle {
     root * /srv
     try_files {path} /index.html

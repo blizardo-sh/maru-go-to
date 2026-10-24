@@ -3,6 +3,11 @@ on:
   pull_request:
   push:
     branches: [main]
+    paths-ignore:
+      - 'materials/**'
+      - 'public/audio/**'
+      - 'public/counters/**'
+      - 'public/word-illustrations/**'
   workflow_dispatch:
 permissions:
   contents: read
@@ -71,7 +76,9 @@ jobs:
           docker build --platform linux/amd64 --target api -t japanese-api:check .
           docker build --platform linux/amd64 --target web -t japanese-web:check .
           docker run --rm --read-only --cap-drop ALL --security-opt no-new-privileges:true --tmpfs /tmp japanese-api:check bun -e 'import {loadCourse} from "./src/server/course.ts"; import {createApp} from "./src/server/app.ts"; const course=loadCourse(); if(course.lessons.length!==18||course.learning?.length!==18||typeof createApp!=="function"||process.getuid()!==1000)throw new Error("Invalid production API");'
+          docker run --rm --read-only --cap-drop ALL --security-opt no-new-privileges:true --tmpfs /tmp japanese-api:check sh -c 'bun scripts/content.ts pack /tmp/content.json && bun scripts/content.ts verify-media /tmp/content.json'
           docker run --rm --user 1000:1000 --read-only --cap-drop ALL --security-opt no-new-privileges:true --tmpfs /tmp --tmpfs /config --tmpfs /data japanese-web:check caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
+          bash deployment/check-media.sh japanese-web:check
   publish:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: check

@@ -22,6 +22,7 @@ export interface LearningConstruction {
   breakdown: { text: string; explanationRu: string }[];
 }
 export interface LearningPart {
+  counterPractice?: { counterId: import("./counters").CounterId; quantities: number[]; wordId: string };
   id: string;
   words: LearningWord[];
   construction?: LearningConstruction;
@@ -47,6 +48,7 @@ export type LearningStep = StepBase & (
   | { kind: 'word-practice'; wordId: string; mode: 'ja-ru' | 'listening' | 'ru-ja' }
   | { kind: 'construction-intro'; exerciseId: string }
   | { kind: 'construction-practice'; exerciseId: string; mode: 'ja-ru' | 'listening' | 'grammar' }
+  | { kind: 'counter-practice'; counterId: import('./counters').CounterId; quantity: number; wordId: string }
   | { kind: 'video'; videoId: string }
   | { kind: 'part-complete' }
 );
@@ -54,9 +56,11 @@ export interface LearningRouteState {
   partIndex: number;
   pendingStepIds: string[];
   completedStepIds: string[];
+  completedKeys?: string[];
   wordQuiz?: boolean;
 }
 export interface LearningState {
+  publicationId?: string;
   lessonId: string;
   routeVersion: string;
   version: number;
@@ -70,6 +74,9 @@ export interface LearningState {
   wordChoices?: string[];
 }
 export interface LearningAdvance {
+  publicationId?: string;
+  counterChoice?: string;
+  helped?: boolean;
   attemptId: string;
   routeVersion: string;
   stateVersion: number;
@@ -82,6 +89,7 @@ export interface LearningAdvance {
   exploring?: boolean;
 }
 export interface LearningAdvanceResult {
+  publicationId?: string;
   attemptId: string;
   state: LearningState;
   reviewResult?: ReviewResult;
@@ -100,6 +108,7 @@ export function learningParts(lesson: GuidedLesson): LearningStep[][] {
       steps.push({ ...base, id: `${part.id}:intro:${exerciseId}`, kind: 'construction-intro', exerciseId });
       for (const mode of ['ja-ru', 'listening', 'grammar'] as const) steps.push({ ...base, id: `${part.id}:${mode}:${exerciseId}`, kind: 'construction-practice', exerciseId, mode });
     }
+    if (part.counterPractice) for (const quantity of part.counterPractice.quantities) steps.push({ ...base, id: `${part.id}:counter:${part.counterPractice.counterId}:${quantity}`, kind: 'counter-practice', counterId: part.counterPractice.counterId, quantity, wordId: part.counterPractice.wordId });
     if (index === goal.parts.length - 1) for (const videoId of goal.videoIds ?? []) steps.push({ ...base, id: `${part.id}:video:${videoId}`, kind: 'video', videoId });
     steps.push({ ...base, id: `${part.id}:complete`, kind: 'part-complete' });
     return steps;
@@ -159,7 +168,7 @@ export function advanceLearningState(lesson: GuidedLesson, state: LearningRouteS
   if (action === 'start-practice') return startLearningPractice(lesson, state);
   const step = currentLearningStep(lesson, state);
   if (!step) throw new Error('Learning route is complete.');
-  const practice = step.kind === 'word-practice' || step.kind === 'construction-practice';
+  const practice = step.kind === 'word-practice' || step.kind === 'construction-practice' || step.kind === 'counter-practice';
   if (practice ? !['remember', 'again'].includes(action) : step.kind === 'video' ? !['continue', 'skip'].includes(action) : action !== 'continue') throw new Error('Action does not match learning step.');
   const next = structuredClone(state);
   next.pendingStepIds.shift();
@@ -170,8 +179,8 @@ export function advanceLearningState(lesson: GuidedLesson, state: LearningRouteS
     next.pendingStepIds.splice(boundary < 0 ? next.pendingStepIds.length : boundary, 0, step.id);
   } else if (!next.completedStepIds.includes(step.id)) next.completedStepIds.push(step.id);
   if (step.kind === 'part-complete') {
-    next.partIndex++;
-    next.pendingStepIds = learningParts(lesson)[next.partIndex]?.map(item => item.id) ?? [];
+    const parts=learningParts(lesson);
+    do { next.partIndex++; next.pendingStepIds=parts[next.partIndex]?.filter(item=>!next.completedStepIds.includes(item.id)).map(item=>item.id)??[]; } while(next.partIndex<parts.length&&!next.pendingStepIds.length);
     delete next.wordQuiz;
   }
   return next;
@@ -202,7 +211,13 @@ export function validateLearning(course: Course, lessons: GuidedLesson[], comple
       ensure(goal.introductionRu === undefined || text(goal.introductionRu), `goal context ${goal.id}`);
       ensure(goal.canDoIds.length && goal.canDoIds.every(id => lesson!.canDoIds.includes(id)), `goal Can-do ${goal.id}`);
       for (const part of goal.parts) {
-        ensure(text(part.id) && !partIds.has(part.id) && part.words.length <= 5 && (part.words.length || part.construction), `part ${part.id}`); partIds.add(part.id);
+        ensure(text(part.id) && !partIds.has(part.id) && part.words.length <= 5 && (part.words.length || part.construction || part.counterPractice), `part ${part.id}`); partIds.add(part.id);
+        if (part.counterPractice) {
+          const training = part.counterPractice;
+          const definition = course.catalog?.counters.definitions.find(item => item.id === training.counterId);
+          ensure(definition && training.quantities.length > 0 && training.quantities.length <= 20 && new Set(training.quantities).size === training.quantities.length && training.quantities.every(n => Number.isSafeInteger(n) && n >= 1 && n <= definition.maximum), `counter quantities ${part.id}`);
+          ensure(course.words.some(word => word.id === training.wordId && word.lessonIds.includes(route.lessonId) && word.reviewStatus !== 'draft'), `counter word ${part.id}`);
+        }
         for (const introduction of part.words) {
           const word = course.words.find(item => item.id === introduction.wordId);
           ensure(word && word.lessonIds.includes(route.lessonId) && word.reviewStatus !== 'draft' && officialSource(word), `word scope or readiness ${introduction.wordId}`);
@@ -238,4 +253,22 @@ export function validateLearning(course: Course, lessons: GuidedLesson[], comple
     const steps = learningParts(route).flat();
     ensure(new Set(steps.map(step => step.id)).size === steps.length, `step ids ${route.lessonId}`);
   }
+}
+// Match learning meaning across authored part moves; SRS IDs and completed formats do not change.
+export function reconcileLearningRoute(previous: GuidedLesson, current: GuidedLesson, state: LearningRouteState): LearningRouteState {
+  const before = learningParts(previous).flat(), parts = learningParts(current);
+  const key = (step: LearningStep): string => step.kind === 'word-intro' || step.kind === 'word-practice' ? `${step.kind}:${step.wordId}:${'mode' in step ? step.mode : ''}` : step.kind === 'construction-intro' || step.kind === 'construction-practice' ? `${step.kind}:${step.exerciseId}:${'mode' in step ? step.mode : ''}` : step.kind === 'counter-practice' ? `${step.kind}:${step.counterId}:${step.quantity}:${step.wordId}` : step.kind === 'video' ? `video:${step.videoId}` : `complete:${step.partId}`;
+  const done = new Set([...(state.completedKeys??[]),...state.completedStepIds.flatMap(id => { const step = before.find(item => item.id === id); return step ? [key(step)] : []; })]);
+  const completed = new Set(parts.flat().filter(step => step.kind !== 'part-complete' && done.has(key(step))).map(step => step.id));
+  for (const part of parts) {
+    const summary = part.find(step => step.kind === 'part-complete')!;
+    if (part.every(step => step.kind === 'part-complete' || completed.has(step.id)) && (done.has(key(summary)) || !before.some(step => step.partId === summary.partId))) completed.add(summary.id);
+  }
+  const partIndex = parts.findIndex(part => part.some(step => !completed.has(step.id)));
+  if (partIndex < 0) return { partIndex: parts.length, pendingStepIds: [], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}) };
+  const remaining = parts[partIndex]!.filter(step => !completed.has(step.id));
+  const oldOrder = state.pendingStepIds.flatMap(id => { const step = before.find(item => item.id === id); const next = step && remaining.find(item => key(item) === key(step)); return next ? [next.id] : []; });
+  const extras = remaining.filter(step => !oldOrder.includes(step.id));
+  const boundary=(step:LearningStep)=>step.kind==='video'||step.kind==='part-complete';
+  return { partIndex, pendingStepIds: [...extras.filter(step=>step.kind==='word-intro').map(step=>step.id),...oldOrder.filter(id=>!remaining.some(step=>step.id===id&&boundary(step))),...extras.filter(step=>step.kind!=='word-intro'&&!boundary(step)).map(step=>step.id),...remaining.filter(boundary).map(step=>step.id)], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}) };
 }

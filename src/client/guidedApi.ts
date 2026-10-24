@@ -1,10 +1,10 @@
 import type { LearningAdvance, LearningAdvanceResult, LearningState } from '../shared/learning';
-import { api, ApiRequestError, json } from './api';
+import { api, ApiRequestError, json, publicationHeaders } from './api';
 
 export type PendingLearning = { lessonId: string; submission: LearningAdvance };
 export const learningConflict = (error: unknown): error is ApiRequestError => error instanceof ApiRequestError && error.status === 409 && error.code === 'LEARNING_CONFLICT';
 export const invalidLearningChoice = (error: unknown): error is ApiRequestError => error instanceof ApiRequestError && error.status === 400 && error.code === 'INVALID_CHOICE';
-export const learningHeaders = (userId: string) => ({ 'X-Learning-Learner-Id': userId });
+export const learningHeaders = (userId: string, publicationId?: string) => ({ 'X-Learning-Learner-Id': userId, ...publicationHeaders(publicationId) });
 const key = (userId: string) => `japanese-pending-learning:${userId}`;
 const object = (value: unknown): value is Record<string, unknown> => !!value && typeof value === 'object' && !Array.isArray(value);
 const strings = (value: unknown): value is string[] => Array.isArray(value) && value.every(item => typeof item === 'string');
@@ -17,7 +17,7 @@ export function pendingLearning(userId: string): PendingLearning[] {
     if (!Array.isArray(value) || !value.every(item => {
       if (!object(item) || typeof item.lessonId !== 'string' || !object(item.submission)) return false;
       const input = item.submission;
-      return typeof input.attemptId === 'string' && typeof input.routeVersion === 'string' && typeof input.stepId === 'string' && Number.isInteger(input.stateVersion) && Number(input.stateVersion) >= 0 && ['continue', 'remember', 'again', 'skip', 'start-practice', 'choose'].includes(String(input.action)) && (input.choiceWordId === undefined || typeof input.choiceWordId === 'string') && (input.tokenIds === undefined || strings(input.tokenIds)) && (input.tokenForms === undefined || object(input.tokenForms) && Object.values(input.tokenForms).every(form => typeof form === 'string')) && (input.revealed === undefined || typeof input.revealed === 'boolean') && (input.exploring === undefined || typeof input.exploring === 'boolean');
+      return typeof input.attemptId === 'string' && typeof input.routeVersion === 'string' && typeof input.stepId === 'string' && Number.isInteger(input.stateVersion) && Number(input.stateVersion) >= 0 && ['continue', 'remember', 'again', 'skip', 'start-practice', 'choose'].includes(String(input.action)) && (input.publicationId === undefined || typeof input.publicationId === 'string' && /^[a-f0-9]{64}$/.test(input.publicationId)) && (input.counterChoice === undefined || typeof input.counterChoice === 'string') && (input.helped === undefined || typeof input.helped === 'boolean') && (input.choiceWordId === undefined || typeof input.choiceWordId === 'string') && (input.tokenIds === undefined || strings(input.tokenIds)) && (input.tokenForms === undefined || object(input.tokenForms) && Object.values(input.tokenForms).every(form => typeof form === 'string')) && (input.revealed === undefined || typeof input.revealed === 'boolean') && (input.exploring === undefined || typeof input.exploring === 'boolean');
     })) throw new Error();
     return value;
   } catch { throw new Error('Не удалось прочитать несохранённые шаги урока. Не очищайте данные браузера.'); }
@@ -30,7 +30,7 @@ export async function submitLearning(userId: string, pending: PendingLearning): 
   if (!original) queue.push(pending);
   localStorage.setItem(key(userId), JSON.stringify(queue));
   let result: LearningAdvanceResult;
-  try { result = await api<LearningAdvanceResult>(`/api/learning/${encodeURIComponent(pending.lessonId)}/advance`, { ...json('POST', pending.submission), headers: learningHeaders(userId) }); }
+  try { result = await api<LearningAdvanceResult>(`/api/learning/${encodeURIComponent(pending.lessonId)}/advance`, { ...json('POST', pending.submission), headers: learningHeaders(userId, pending.submission.publicationId) }); }
   catch (error) {
     // This response guarantees the obsolete action was not applied; ambiguous failures remain queued.
     if (learningConflict(error) || invalidLearningChoice(error)) localStorage.setItem(key(userId), JSON.stringify(pendingLearning(userId).filter(item => item.submission.attemptId !== pending.submission.attemptId)));

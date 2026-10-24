@@ -7,8 +7,7 @@ FROM dependencies AS build
 COPY index.html tsconfig.json vite.config.ts tokens.css ./
 COPY src ./src
 COPY public ./public
-COPY materials/course.json ./materials/course.json
-COPY materials/learning ./materials/learning
+COPY materials ./materials
 RUN bun run typecheck && bun run build
 
 FROM oven/bun:1.4.3-slim@sha256:14a223fa35747ec728bce300ef85888bc5f7958164d15bbba6a54b22b52a3288 AS production-dependencies
@@ -22,9 +21,9 @@ COPY --from=production-dependencies /app/node_modules ./node_modules
 COPY package.json ./
 COPY src/server ./src/server
 COPY src/shared ./src/shared
-COPY materials/course.json ./materials/course.json
-COPY materials/learning ./materials/learning
-COPY public/audio ./public/audio
+COPY materials ./materials
+COPY public ./public
+COPY scripts/content.ts ./scripts/content.ts
 COPY db ./db
 USER bun
 ENV HOST=0.0.0.0 PORT=3000
