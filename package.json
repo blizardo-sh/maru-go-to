@@ -4,6 +4,7 @@
   "type": "module",
   "packageManager": "bun@1.4.3",
   "scripts": {
+    "prototype:layout": "bun --bun vite --host 127.0.0.1 --port 5301 --strictPort",
     "dev": "bun --watch src/server/index.ts",
     "dev:client": "bun --bun vite --host 127.0.0.1",
     "start": "bun src/server/index.ts",
