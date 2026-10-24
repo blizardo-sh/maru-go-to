@@ -1,0 +1,3969 @@
+{
+  "auditedAtUtc": "2026-10-24T07:21:47.001283+00:00",
+  "scope": "103 PDF positions, manually reviewed semantic Word/form matches against actual loadCourse overlays; no product changes",
+  "definitions": {
+    "lesson_core": "The matched Word ID occurs in this lesson route part.words.",
+    "lesson_supplementary": "Matched Word ID is linked to this lesson through lessonIds but not in its core part.words. This does not imply readiness or a complete lesson route.",
+    "corpus_other_lesson": "An equivalent standalone Word/form exists but is not linked to the PDF lesson.",
+    "no_standalone_record": "No equivalent whole standalone Word/form; examples, counter-generated forms, and partial base-word coverage are recorded separately. This is NOT necessarily complete absence of the concept.",
+    "variant_or_form": "Orthogonal match qualifier; included in its actual lesson availability count. Parenthetical NA, optional phrase/verb, explicit reading/spelling forms are five annotated positions. Template tildes/spacing are reported separately."
+  },
+  "counts": {
+    "3": {
+      "positions": 46,
+      "availability": {
+        "lesson_supplementary": 29,
+        "corpus_other_lesson": 1,
+        "no_standalone_record": 4,
+        "lesson_core": 12
+      },
+      "variant_or_form_positions": 3,
+      "supplementary_draft_positions": [
+        14,
+        21,
+        29,
+        31
+      ],
+      "other_lesson_positions": [
+        3
+      ],
+      "no_standalone_positions": [
+        4,
+        33,
+        35,
+        39
+      ]
+    },
+    "4": {
+      "positions": 57,
+      "availability": {
+        "lesson_core": 18,
+        "lesson_supplementary": 34,
+        "no_standalone_record": 3,
+        "corpus_other_lesson": 2
+      },
+      "variant_or_form_positions": 2,
+      "supplementary_draft_positions": [
+        31
+      ],
+      "other_lesson_positions": [
+        41,
+        46
+      ],
+      "no_standalone_positions": [
+        16,
+        50,
+        56
+      ]
+    },
+    "total": {
+      "positions": 103,
+      "availability": {
+        "lesson_core": 30,
+        "lesson_supplementary": 63,
+        "no_standalone_record": 7,
+        "corpus_other_lesson": 3
+      },
+      "variant_or_form_positions": 5,
+      "supplementary_draft_positions": 5
+    }
+  },
+  "sources": [
+    {
+      "path": "user-provided/downloaded.pdf",
+      "sha256": "a87e6e7d7d5c4a6a97d4e69801567f8abbb7a6f10d083a02b5f45b609c08efd0"
+    },
+    {
+      "path": "user-provided/downloaded (1).pdf",
+      "sha256": "ca731ddadc81e52caf8228a6c722b0402974dc0040bb07d8eba0721d8995378f"
+    },
+    {
+      "path": "materials/course.json",
+      "sha256": "54ee7ffbcb15821ebfdac589c7dc40ce7ee22b2c592b302f6fd43fbc020daf19"
+    },
+    {
+      "path": "materials/learning/lesson-03.json",
+      "sha256": "c9c627cbff2b15178e59ff53dda35fc96680c5cbec11699297b1da8eabd8bebf"
+    },
+    {
+      "path": "materials/learning/lesson-04.json",
+      "sha256": "3075a672cb46c1fb5ecebc771dbbe02617e2180bda438d248c0c333e00be4720"
+    },
+    {
+      "path": "derived/loadCourse.json",
+      "sha256": "1730958407e6ee95872b506585fc876445ff9fcd9b6a42449b180cec72e14d20"
+    }
+  ],
+  "rows": [
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 1,
+      "page": 1,
+      "kana": "あに",
+      "english": "(my) elder brother",
+      "kana_layout_raw": "あに",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.5898af218a8efa80"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.b8692c26c972b16f",
+        "marugoto.starter-a1.form.7bd7a3ff113a84c3"
+      ],
+      "surface": [
+        "あに"
+      ],
+      "canonical_kana": [
+        "あに"
+      ],
+      "meaning_ru": [
+        "(мой) старший брат"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-01"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 2,
+      "page": 1,
+      "kana": "あね",
+      "english": "(my) elder sister",
+      "kana_layout_raw": "あね",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.f11bf70db3c7b278"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.47cdd36adfbdeb2a",
+        "marugoto.starter-a1.form.706bcbc2bf08bff7"
+      ],
+      "surface": [
+        "あね"
+      ],
+      "canonical_kana": [
+        "あね"
+      ],
+      "meaning_ru": [
+        "(моя) старшая сестра"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04",
+        "marugoto.starter-a1.lesson.15"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-01"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 3,
+      "page": 1,
+      "kana": "いもうと",
+      "english": "(my) younger sister",
+      "kana_layout_raw": "いもうと",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.e2c5c1b293069cce"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.01546f4abf1884da"
+      ],
+      "surface": [
+        "いもうと"
+      ],
+      "canonical_kana": [
+        "いもうと"
+      ],
+      "meaning_ru": [
+        "(моя) младшая сестра"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 4,
+      "page": 1,
+      "kana": "おいくつですか",
+      "english": "How old are you?",
+      "kana_layout_raw": "おいくつですか",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.24a335e09a8a32ba"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.d5ab638f1338811b"
+      ],
+      "surface": [
+        "おいくつですか"
+      ],
+      "canonical_kana": [
+        "おいくつですか"
+      ],
+      "meaning_ru": [
+        "сколько вам лет? (вежливо)"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-photo-03"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 5,
+      "page": 1,
+      "kana": "おおさか",
+      "english": "Osaka (name of a place/prefecture in Japan)",
+      "kana_layout_raw": "おおさか",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.d4d63d4653ee4566"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.7a819c790618cb31"
+      ],
+      "surface": [
+        "おおさか"
+      ],
+      "canonical_kana": [
+        "おおさか"
+      ],
+      "meaning_ru": [
+        "город Осака"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 6,
+      "page": 1,
+      "kana": "おっと",
+      "english": "(my) husband",
+      "kana_layout_raw": "おっと",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.8b3d3b511e59fff3"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.c2e61bcf3dfbba37"
+      ],
+      "surface": [
+        "おっと"
+      ],
+      "canonical_kana": [
+        "おっと"
+      ],
+      "meaning_ru": [
+        "(мой) муж"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-photo-01"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 7,
+      "page": 1,
+      "kana": "おとうと",
+      "english": "(my) younger brother",
+      "kana_layout_raw": "おとうと",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.ab938f825a16029d"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.ef83cc1e2a73074f"
+      ],
+      "surface": [
+        "おとうと"
+      ],
+      "canonical_kana": [
+        "おとうと"
+      ],
+      "meaning_ru": [
+        "(мой) младший брат"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 8,
+      "page": 1,
+      "kana": "かぞく",
+      "english": "family",
+      "kana_layout_raw": "かぞく",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.f304a39b5e728680"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.b1a934c058326c46",
+        "marugoto.starter-a1.form.af90b4bf62755cc8"
+      ],
+      "surface": [
+        "かぞく"
+      ],
+      "canonical_kana": [
+        "かぞく"
+      ],
+      "meaning_ru": [
+        "семья"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.01",
+        "marugoto.starter-a1.lesson.04",
+        "marugoto.starter-a1.lesson.07"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-01"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 9,
+      "page": 1,
+      "kana": "かっこいい",
+      "english": "cool/good-looking",
+      "kana_layout_raw": "かっこいい",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.bb5b8febd333744b"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.8129ee45e939b7df"
+      ],
+      "surface": [
+        "かっこいい"
+      ],
+      "canonical_kana": [
+        "かっこいい"
+      ],
+      "meaning_ru": [
+        "классный, стильный"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04",
+        "marugoto.starter-a1.lesson.15"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 10,
+      "page": 1,
+      "kana": "かわいい",
+      "english": "cute",
+      "kana_layout_raw": "かわいい",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.50867557b70d8314"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.05e119dbd1964f48"
+      ],
+      "surface": [
+        "かわいい"
+      ],
+      "canonical_kana": [
+        "かわいい"
+      ],
+      "meaning_ru": [
+        "хорошенький, миленький"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 11,
+      "page": 2,
+      "kana": "きれい（な）",
+      "english": "beautiful",
+      "kana_layout_raw": "きれい（な）",
+      "availability_status": "lesson_supplementary",
+      "match_type": "pdf_optional_adjective_marker",
+      "is_variant_or_form": true,
+      "word_ids": [
+        "marugoto.starter-a1.word.182cd34e277df271"
+      ],
+      "form_ids": [],
+      "surface": [
+        "きれい"
+      ],
+      "canonical_kana": [
+        "きれい"
+      ],
+      "meaning_ru": [
+        "красивый"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04",
+        "marugoto.starter-a1.lesson.08",
+        "marugoto.starter-a1.lesson.18"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "В PDF （な） — грамматическая помета NA-прилагательного; запись きれい, pos=na-adjective. Это не отдельное слово きれいな.",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 12,
+      "page": 2,
+      "kana": "こ",
+      "english": "child",
+      "kana_layout_raw": "こ",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.a3759aa9767ff749"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.8366fbad1eff8663"
+      ],
+      "surface": [
+        "こ"
+      ],
+      "canonical_kana": [
+        "こ"
+      ],
+      "meaning_ru": [
+        "ребенок"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "Выбран смысл «ребёнок». Одноимённый word.8356bb0adcbb58f7 — счётный суффикс небольших предметов — не засчитан.",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 13,
+      "page": 2,
+      "kana": "こども",
+      "english": "child",
+      "kana_layout_raw": "こども",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.9af71ce04d34fc49"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.fda91890b35d523f"
+      ],
+      "surface": [
+        "こども"
+      ],
+      "canonical_kana": [
+        "こども"
+      ],
+      "meaning_ru": [
+        "ребенок"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04",
+        "marugoto.starter-a1.lesson.07"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-02"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 14,
+      "page": 2,
+      "kana": "この",
+      "english": "this [Noun]",
+      "kana_layout_raw": "この",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.712e62ba4142b3c5"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.dc13767a7bc0c227"
+      ],
+      "surface": [
+        "この"
+      ],
+      "canonical_kana": [
+        "この"
+      ],
+      "meaning_ru": [
+        "этот"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04",
+        "marugoto.starter-a1.lesson.06",
+        "marugoto.starter-a1.lesson.16"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-photo-01"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 15,
+      "page": 2,
+      "kana": "だれ",
+      "english": "who",
+      "kana_layout_raw": "だれ",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.a5e32b90deb17e6c"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.faf9c2542487bc25"
+      ],
+      "surface": [
+        "だれ"
+      ],
+      "canonical_kana": [
+        "だれ"
+      ],
+      "meaning_ru": [
+        "кто"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-photo-01"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 16,
+      "page": 2,
+      "kana": "だれですか",
+      "english": "Who is this?",
+      "kana_layout_raw": "だれですか",
+      "availability_status": "no_standalone_record",
+      "match_type": "no_standalone_match",
+      "is_variant_or_form": false,
+      "word_ids": [],
+      "form_ids": [],
+      "surface": [],
+      "canonical_kana": [],
+      "meaning_ru": [],
+      "lesson_ids": [],
+      "review_status": [],
+      "core_parts": [],
+      "notes": "Нет самостоятельной Word/form записи фразы. В core l04-family-photo-01 уже есть このひとはだれですか。 («Кто этот человек?»), пример у word.a5e32b90deb17e6c.",
+      "related_records": [
+        {
+          "id": "marugoto.starter-a1.word.a5e32b90deb17e6c",
+          "surface": "だれ",
+          "kana": "だれ",
+          "meaningRu": "кто",
+          "lessonIds": [
+            "marugoto.starter-a1.lesson.04"
+          ],
+          "coreExamples": [
+            {
+              "lessonId": "marugoto.starter-a1.lesson.04",
+              "goalId": "l04-family-photo",
+              "partId": "l04-family-photo-01",
+              "example": {
+                "surface": "このひとはだれですか。",
+                "kana": "このひとはだれですか。",
+                "meaningRu": "Кто этот человек?",
+                "segments": [
+                  {
+                    "surface": "このひとはだれですか。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/f84a9aeae9f87d6f69f2.m4a",
+                "audioText": "このひとわだれですか。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 17,
+      "page": 2,
+      "kana": "ちち",
+      "english": "(my) father",
+      "kana_layout_raw": "ちち",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.2d31dd8d68a3ada0"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.ba11224717e66ca5",
+        "marugoto.starter-a1.form.9417bd388ad9a18e"
+      ],
+      "surface": [
+        "ちち"
+      ],
+      "canonical_kana": [
+        "ちち"
+      ],
+      "meaning_ru": [
+        "(мой) отец"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-01"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 18,
+      "page": 2,
+      "kana": "つま",
+      "english": "(my) wife",
+      "kana_layout_raw": "つま",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.1c638292e212a5ce"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.3f6080ea6c4375ab"
+      ],
+      "surface": [
+        "つま"
+      ],
+      "canonical_kana": [
+        "つま"
+      ],
+      "meaning_ru": [
+        "(моя) жена"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-photo-01"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 19,
+      "page": 2,
+      "kana": "とうきょう",
+      "english": "Tokyo",
+      "kana_layout_raw": "とうきょう",
+      "availability_status": "lesson_core",
+      "match_type": "explicit_spelling_form",
+      "is_variant_or_form": true,
+      "word_ids": [
+        "marugoto.starter-a1.word.e9eb89c01e577f0b"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.27583ea79d818963",
+        "marugoto.starter-a1.form.3993aff9cffdbc63"
+      ],
+      "surface": [
+        "東京"
+      ],
+      "canonical_kana": [
+        "とうきょう"
+      ],
+      "meaning_ru": [
+        "Токио"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.01",
+        "marugoto.starter-a1.lesson.04",
+        "marugoto.starter-a1.lesson.12"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-photo-02"
+      ],
+      "notes": "Основная запись 東京 с чтением とうきょう; явная form.27583ea79d818963 сохраняет написание PDF とうきょう.",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 20,
+      "page": 2,
+      "kana": "ともだち",
+      "english": "friend",
+      "kana_layout_raw": "ともだち",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.7905be9b72b867a7"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.a2a353cd7d51633b"
+      ],
+      "surface": [
+        "ともだち"
+      ],
+      "canonical_kana": [
+        "ともだち"
+      ],
+      "meaning_ru": [
+        "друг, друзья"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04",
+        "marugoto.starter-a1.lesson.07",
+        "marugoto.starter-a1.lesson.15"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 21,
+      "page": 2,
+      "kana": "どこ",
+      "english": "where",
+      "kana_layout_raw": "どこ",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.75bd1f06a73a31f0"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.001483aa40ecf09d"
+      ],
+      "surface": [
+        "どこ"
+      ],
+      "canonical_kana": [
+        "どこ"
+      ],
+      "meaning_ru": [
+        "где"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04",
+        "marugoto.starter-a1.lesson.17"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-photo-02"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 22,
+      "page": 2,
+      "kana": "はは",
+      "english": "(my) mother",
+      "kana_layout_raw": "はは",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.07ab7fc730f6f2bb"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.e0de0f4cb997ad32",
+        "marugoto.starter-a1.form.8ce8c115c561cd75"
+      ],
+      "surface": [
+        "はは"
+      ],
+      "canonical_kana": [
+        "はは"
+      ],
+      "meaning_ru": [
+        "(моя) мать"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-01"
+      ],
+      "notes": "Выбран смысл «моя мать». word.8d1342d3eadba20a はは («ха-ха», смех) не засчитан.",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 23,
+      "page": 3,
+      "kana": "ひと",
+      "english": "person",
+      "kana_layout_raw": "ひと",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.f40471510c8f6d47"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.28553df5e0965dd0"
+      ],
+      "surface": [
+        "ひと"
+      ],
+      "canonical_kana": [
+        "ひと"
+      ],
+      "meaning_ru": [
+        "человек"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04",
+        "marugoto.starter-a1.lesson.13"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 24,
+      "page": 3,
+      "kana": "ひとり",
+      "english": "one person",
+      "kana_layout_raw": "ひとり",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.085bb1515278ae01"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.50fbbea3488ebb9e"
+      ],
+      "surface": [
+        "ひとり"
+      ],
+      "canonical_kana": [
+        "ひとり"
+      ],
+      "meaning_ru": [
+        "один человек"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04",
+        "marugoto.starter-a1.lesson.07"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-02"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 25,
+      "page": 3,
+      "kana": "ふたり",
+      "english": "two people",
+      "kana_layout_raw": "ふたり",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.b46d8ae7ed1a2508"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.ea0e58a81f93287e"
+      ],
+      "surface": [
+        "ふたり"
+      ],
+      "canonical_kana": [
+        "ふたり"
+      ],
+      "meaning_ru": [
+        "двое (два человека)"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03",
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-02"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 26,
+      "page": 3,
+      "kana": "ほっかいどう",
+      "english": "Hokkaidou (name of a place/prefecture in Japan)",
+      "kana_layout_raw": "ほっかいどう",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.f15790a46a9479bf"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.c591170a442107dc"
+      ],
+      "surface": [
+        "ほっかいどう"
+      ],
+      "canonical_kana": [
+        "ほっかいどう"
+      ],
+      "meaning_ru": [
+        "остров Хоккайдо"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "Название той же местности: PDF даёт place/prefecture, приложение — «остров Хоккайдо»; это не иной лексический смысл.",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 27,
+      "page": 3,
+      "kana": "わかい",
+      "english": "young",
+      "kana_layout_raw": "わかい",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.51ff5fb63a7d9b66"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.8296f8e4e7173af4"
+      ],
+      "surface": [
+        "わかい"
+      ],
+      "canonical_kana": [
+        "わかい"
+      ],
+      "meaning_ru": [
+        "молодой"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 28,
+      "page": 3,
+      "kana": "ソウル",
+      "english": "Seoul",
+      "kana_layout_raw": "ソウル",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.983a594dd4da786f"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.e8e1c8ba52b8be09"
+      ],
+      "surface": [
+        "ソウル"
+      ],
+      "canonical_kana": [
+        "ソウル"
+      ],
+      "meaning_ru": [
+        "город Сеул"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 29,
+      "page": 3,
+      "kana": "パリ",
+      "english": "Paris",
+      "kana_layout_raw": "パリ",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.d3545b3ce755d5a0"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.3d6b6ab790fa2baf"
+      ],
+      "surface": [
+        "パリ"
+      ],
+      "canonical_kana": [
+        "パリ"
+      ],
+      "meaning_ru": [
+        "Париж"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.02",
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 30,
+      "page": 3,
+      "kana": "～さい",
+      "english": "- years old",
+      "kana_layout_raw": "～さい",
+      "availability_status": "lesson_supplementary",
+      "match_type": "template_notation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.ab84e14613cf9cf5"
+      ],
+      "form_ids": [],
+      "surface": [
+        "さい"
+      ],
+      "canonical_kana": [
+        "さい"
+      ],
+      "meaning_ru": [
+        "(счетный суффикс для возраста) ～лет"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "～ — место для числа; в словаре самостоятельный suffix さい. Нормализация шаблонной пометы отмечена явно.",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 31,
+      "page": 3,
+      "kana": "～に すんで います",
+      "english": "(I) live in -.",
+      "kana_layout_raw": "～に       すんで      います",
+      "availability_status": "lesson_supplementary",
+      "match_type": "template_notation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.23f1417336b4ad34"
+      ],
+      "form_ids": [],
+      "surface": [
+        "〜にすんでいます"
+      ],
+      "canonical_kana": [
+        "〜にすんでいます"
+      ],
+      "meaning_ru": [
+        "живу в …"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "draft"
+      ],
+      "core_parts": [],
+      "notes": "Шаблонная запись 〜にすんでいます привязана к L4, но reviewStatus=draft; не core-цель. Связанное すみます и примеры проживания не подменяют её ID.",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 32,
+      "page": 3,
+      "kana": "～にん",
+      "english": "(counter for people)",
+      "kana_layout_raw": "～にん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "template_notation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.042257bf0025e2ff",
+        "marugoto.starter-a1.word.cc313b8c751c1552"
+      ],
+      "form_ids": [],
+      "surface": [
+        "にん",
+        "にん"
+      ],
+      "canonical_kana": [
+        "にん",
+        "にん"
+      ],
+      "meaning_ru": [
+        "～человек (счетный суффикс)",
+        "(счетный суффикс) ～человек"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked",
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "Два отдельных source-checked ID одного счётного суффикса в L4 (Katsudoo и Rikai). Считается одна PDF-позиция, оба ID приведены.",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 33,
+      "page": 3,
+      "kana": "います",
+      "english": "to be (existence)",
+      "kana_layout_raw": "います",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.e27c10e325cc5bbf"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.b02868c89d23fbf7"
+      ],
+      "surface": [
+        "います"
+      ],
+      "canonical_kana": [
+        "います"
+      ],
+      "meaning_ru": [
+        "быть, существовать (об одушевленных предметах)"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.02",
+        "marugoto.starter-a1.lesson.04",
+        "marugoto.starter-a1.lesson.07",
+        "marugoto.starter-a1.lesson.14"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 34,
+      "page": 3,
+      "kana": "いもうとさん",
+      "english": "(someone else's) younger sister",
+      "kana_layout_raw": "いもうとさん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.7a2329236a8c0d4c"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.f7977a3e3d573c12"
+      ],
+      "surface": [
+        "いもうとさん"
+      ],
+      "canonical_kana": [
+        "いもうとさん"
+      ],
+      "meaning_ru": [
+        "(ваша, чья-то) младшая сестра"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 35,
+      "page": 4,
+      "kana": "おかあさん",
+      "english": "(someone else's) mother",
+      "kana_layout_raw": "おかあさん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.24948b79aebe026a"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.aff2ef815b980100"
+      ],
+      "surface": [
+        "おかあさん"
+      ],
+      "canonical_kana": [
+        "おかあさん"
+      ],
+      "meaning_ru": [
+        "(ваша, чья-то) мать"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 36,
+      "page": 4,
+      "kana": "おきなわ",
+      "english": "Okinawa (name of a place/prefecture in Japan)",
+      "kana_layout_raw": "おきなわ",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.04978338498ae0d7"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.4c28bda78a3c3963"
+      ],
+      "surface": [
+        "おきなわ"
+      ],
+      "canonical_kana": [
+        "おきなわ"
+      ],
+      "meaning_ru": [
+        "остров Окинава"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04",
+        "marugoto.starter-a1.lesson.07"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 37,
+      "page": 4,
+      "kana": "おくさん",
+      "english": "(someone else's) wife",
+      "kana_layout_raw": "おくさん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.e466ab0e50508b66"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.c08c06bdd8af5961"
+      ],
+      "surface": [
+        "おくさん"
+      ],
+      "canonical_kana": [
+        "おくさん"
+      ],
+      "meaning_ru": [
+        "(ваша, чья-то) жена"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 38,
+      "page": 4,
+      "kana": "おこさん",
+      "english": "(someone else's) child",
+      "kana_layout_raw": "おこさん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.8d94b37b564c52db"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.4a6e9a08d72cd6aa"
+      ],
+      "surface": [
+        "おこさん"
+      ],
+      "canonical_kana": [
+        "おこさん"
+      ],
+      "meaning_ru": [
+        "(ваш, чей-то) ребенок"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 39,
+      "page": 4,
+      "kana": "おとうさん",
+      "english": "(someone else's) father",
+      "kana_layout_raw": "おとうさん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.fa352771e8199249"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.6834fbeba98e4ffb"
+      ],
+      "surface": [
+        "おとうさん"
+      ],
+      "canonical_kana": [
+        "おとうさん"
+      ],
+      "meaning_ru": [
+        "(ваш, чей-то) отец"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 40,
+      "page": 4,
+      "kana": "おとうとさん",
+      "english": "(someone else's) younger brother",
+      "kana_layout_raw": "おとうとさん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.8ab2440d4ba09cb0"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.33e555f10e2622b8"
+      ],
+      "surface": [
+        "おとうとさん"
+      ],
+      "canonical_kana": [
+        "おとうとさん"
+      ],
+      "meaning_ru": [
+        "(ваш, чей-то) младший брат"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 41,
+      "page": 4,
+      "kana": "おとこ",
+      "english": "man/male",
+      "kana_layout_raw": "おとこ",
+      "availability_status": "corpus_other_lesson",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.cdba4d6f7e72fefc"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.d6ae13fe7fc88b7c"
+      ],
+      "surface": [
+        "おとこ"
+      ],
+      "canonical_kana": [
+        "おとこ"
+      ],
+      "meaning_ru": [
+        "мужчина"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.07"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "Самостоятельная запись есть только в lesson.07, sourceRefs: «только аудиоскрипт». В L4 нет связи Word/Form; おとこのひと — отдельная запись, не автоматическая подмена.",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 42,
+      "page": 4,
+      "kana": "おとこのこ",
+      "english": "boy",
+      "kana_layout_raw": "おとこのこ",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.91eba862978ea458"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.d8352a072c44d605"
+      ],
+      "surface": [
+        "おとこのこ"
+      ],
+      "canonical_kana": [
+        "おとこのこ"
+      ],
+      "meaning_ru": [
+        "мальчик"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 43,
+      "page": 4,
+      "kana": "おとこのひと",
+      "english": "man/male",
+      "kana_layout_raw": "おとこのひと",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.bccad138b115fee4"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.ed7a19695415f2bf"
+      ],
+      "surface": [
+        "おとこのひと"
+      ],
+      "canonical_kana": [
+        "おとこのひと"
+      ],
+      "meaning_ru": [
+        "мужчина (вежливо)"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 44,
+      "page": 4,
+      "kana": "おにいさん",
+      "english": "(someone else's) elder brother",
+      "kana_layout_raw": "おにいさん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.2e1687c1c11fe383"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.f5975b1a97a08629"
+      ],
+      "surface": [
+        "おにいさん"
+      ],
+      "canonical_kana": [
+        "おにいさん"
+      ],
+      "meaning_ru": [
+        "(ваш, чей-то) старший брат"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 45,
+      "page": 4,
+      "kana": "おねえさん",
+      "english": "(someone else's) elder sister",
+      "kana_layout_raw": "おねえさん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.3133e45120ff9f46"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.ab2b9eb370a09765"
+      ],
+      "surface": [
+        "おねえさん"
+      ],
+      "canonical_kana": [
+        "おねえさん"
+      ],
+      "meaning_ru": [
+        "(ваша, чья-то) старшая сестра"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 46,
+      "page": 4,
+      "kana": "おんな",
+      "english": "woman/female",
+      "kana_layout_raw": "おんな",
+      "availability_status": "corpus_other_lesson",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.cff93023f5821587"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.3b2a7f2df9441073"
+      ],
+      "surface": [
+        "おんな"
+      ],
+      "canonical_kana": [
+        "おんな"
+      ],
+      "meaning_ru": [
+        "женщина"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.07"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "Самостоятельная запись есть только в lesson.07, sourceRefs: «только аудиоскрипт». В L4 нет связи Word/Form; おんなのひと — отдельная запись.",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 47,
+      "page": 5,
+      "kana": "おんなのこ",
+      "english": "girl",
+      "kana_layout_raw": "おんなのこ",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.231aa76065182f08"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.bdcf29c35c057583"
+      ],
+      "surface": [
+        "おんなのこ"
+      ],
+      "canonical_kana": [
+        "おんなのこ"
+      ],
+      "meaning_ru": [
+        "девочка"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 48,
+      "page": 5,
+      "kana": "おんなのひと",
+      "english": "woman",
+      "kana_layout_raw": "おんなのひと",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.0395fedc3b783941"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.9b8a7f815dbc1379"
+      ],
+      "surface": [
+        "おんなのひと"
+      ],
+      "canonical_kana": [
+        "おんなのひと"
+      ],
+      "meaning_ru": [
+        "женщина (вежливо)"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 49,
+      "page": 5,
+      "kana": "ごしゅじん",
+      "english": "(someone else's) husband",
+      "kana_layout_raw": "ごしゅじん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.7c84bcd7743a6785"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.ca265c8a8324416c"
+      ],
+      "surface": [
+        "ごしゅじん"
+      ],
+      "canonical_kana": [
+        "ごしゅじん"
+      ],
+      "meaning_ru": [
+        "(ваш, чей-то) муж"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 50,
+      "page": 5,
+      "kana": "ごにん",
+      "english": "five people",
+      "kana_layout_raw": "ごにん",
+      "availability_status": "no_standalone_record",
+      "match_type": "no_standalone_match",
+      "is_variant_or_form": false,
+      "word_ids": [],
+      "form_ids": [],
+      "surface": [],
+      "canonical_kana": [],
+      "meaning_ru": [],
+      "lesson_ids": [],
+      "review_status": [],
+      "core_parts": [],
+      "notes": "Нет самостоятельной Word/form записи. Счётный механизм nin создаёт форму 5 людей; counter.nin.5 имеет статическое аудио. Не считаем это core Word-целью.",
+      "related_records": [],
+      "counter_audio_key": "counter.nin.5",
+      "counter_audio_url": "/audio/057bf9395d33ca70283b.m4a"
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 51,
+      "page": 5,
+      "kana": "さんにん",
+      "english": "three people",
+      "kana_layout_raw": "さんにん",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.3c2a23fa6dbf95e5"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.834e43b586efc198"
+      ],
+      "surface": [
+        "さんにん"
+      ],
+      "canonical_kana": [
+        "さんにん"
+      ],
+      "meaning_ru": [
+        "три человека"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-02"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 52,
+      "page": 5,
+      "kana": "なんさい",
+      "english": "how old",
+      "kana_layout_raw": "なんさい",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.93b1f9e7fc222764"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.b11ce223290e6d47"
+      ],
+      "surface": [
+        "なんさい"
+      ],
+      "canonical_kana": [
+        "なんさい"
+      ],
+      "meaning_ru": [
+        "сколько лет"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-photo-03"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 53,
+      "page": 5,
+      "kana": "なんにん",
+      "english": "how many people",
+      "kana_layout_raw": "なんにん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.8b06574d40c677ba"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.9d041b40e607a631"
+      ],
+      "surface": [
+        "なんにん"
+      ],
+      "canonical_kana": [
+        "なんにん"
+      ],
+      "meaning_ru": [
+        "сколько человек"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 54,
+      "page": 5,
+      "kana": "ひろしま",
+      "english": "Hiroshima (name of a place/prefecture in Japan)",
+      "kana_layout_raw": "ひろしま",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.22d18d5b7c33ad75"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.156a6efa43f44e3a"
+      ],
+      "surface": [
+        "ひろしま"
+      ],
+      "canonical_kana": [
+        "ひろしま"
+      ],
+      "meaning_ru": [
+        "город Хиросима"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04",
+        "marugoto.starter-a1.lesson.18"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 55,
+      "page": 5,
+      "kana": "よにん",
+      "english": "four people",
+      "kana_layout_raw": "よにん",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.147ac3dedeb8f421"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.db29e77d942a355e"
+      ],
+      "surface": [
+        "よにん"
+      ],
+      "canonical_kana": [
+        "よにん"
+      ],
+      "meaning_ru": [
+        "четыре человека"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l04-family-02"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 56,
+      "page": 5,
+      "kana": "ろくにん",
+      "english": "six people",
+      "kana_layout_raw": "ろくにん",
+      "availability_status": "no_standalone_record",
+      "match_type": "no_standalone_match",
+      "is_variant_or_form": false,
+      "word_ids": [],
+      "form_ids": [],
+      "surface": [],
+      "canonical_kana": [],
+      "meaning_ru": [],
+      "lesson_ids": [],
+      "review_status": [],
+      "core_parts": [],
+      "notes": "Нет самостоятельной Word/form записи. Счётный механизм nin создаёт форму 6 людей; counter.nin.6 имеет статическое аудио. Не считаем это core Word-целью.",
+      "related_records": [],
+      "counter_audio_key": "counter.nin.6",
+      "counter_audio_url": "/audio/f313d7b6213129633a7d.m4a"
+    },
+    {
+      "list": 1,
+      "lesson": 4,
+      "position": 57,
+      "page": 5,
+      "kana": "わたしたち",
+      "english": "we/us",
+      "kana_layout_raw": "わたしたち",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.549dc1bbc07042e8"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.8aa889f7290b2bd8"
+      ],
+      "surface": [
+        "わたしたち"
+      ],
+      "canonical_kana": [
+        "わたしたち"
+      ],
+      "meaning_ru": [
+        "мы"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.04",
+        "marugoto.starter-a1.lesson.14"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 1,
+      "page": 1,
+      "kana": "あのう",
+      "english": "ah…/Excuse me/well…",
+      "kana_layout_raw": "あのう",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.7f92d0d5b7eb33b1"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.2d7dc54ae5b2a49c"
+      ],
+      "surface": [
+        "あのう"
+      ],
+      "canonical_kana": [
+        "あのう"
+      ],
+      "meaning_ru": [
+        "междометие (эй, ну)"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "Совпадает речевой заполнитель あのう. Русская подпись уже английского набора оттенков; указательное あの «тот» не засчитывается.",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 2,
+      "page": 1,
+      "kana": "えっ",
+      "english": "What?/Pardon me?/Excuse me?",
+      "kana_layout_raw": "えっ",
+      "availability_status": "lesson_supplementary",
+      "match_type": "explicit_reading_form",
+      "is_variant_or_form": true,
+      "word_ids": [
+        "marugoto.starter-a1.word.6888cb9a96a60f48"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.413b86ccef257c22"
+      ],
+      "surface": [
+        "え"
+      ],
+      "canonical_kana": [
+        "え"
+      ],
+      "meaning_ru": [
+        "междометие \"э!\", выражает удивление"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "Явная form.413b86ccef257c22 задаёт kana=えっ для базовой え; source entry=え／えっ. Совпадает междометие реакции/удивления; весь английский набор Pardon/Excuse не расписан в русском значении.",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 3,
+      "page": 1,
+      "kana": "おしごとは？",
+      "english": "(What's) your job?/What do you do for a living?",
+      "kana_layout_raw": "おしごとは？",
+      "availability_status": "corpus_other_lesson",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.a198bbf90127b45c"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.ca96ba3d9c5960b9"
+      ],
+      "surface": [
+        "おしごとは？"
+      ],
+      "canonical_kana": [
+        "おしごとは？"
+      ],
+      "meaning_ru": [
+        "кем вы работаете?"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.09"
+      ],
+      "review_status": [
+        "draft"
+      ],
+      "core_parts": [],
+      "notes": "Точная фразовая запись привязана только к lesson.09 и остаётся draft. В L3 core-пример おしごとはなんですか。 уже связан с word.71622e15e5c20c28, но это не связь самой короткой фразы с L3.",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 4,
+      "page": 1,
+      "kana": "おなまえは？",
+      "english": "(what's) your name?",
+      "kana_layout_raw": "おなまえは？",
+      "availability_status": "no_standalone_record",
+      "match_type": "no_standalone_match",
+      "is_variant_or_form": false,
+      "word_ids": [],
+      "form_ids": [],
+      "surface": [],
+      "canonical_kana": [],
+      "meaning_ru": [],
+      "lesson_ids": [],
+      "review_status": [],
+      "core_parts": [],
+      "notes": "Нет самостоятельной Word/form записи вопроса. В core l03-business-card-01 есть おなまえはなんですか。 («Как вас зовут?»), пример у word.c4ae772a6dc8e374. Существительное おなまえ не приравнено к целому вопросу.",
+      "related_records": [
+        {
+          "id": "marugoto.starter-a1.word.c4ae772a6dc8e374",
+          "surface": "おなまえ",
+          "kana": "おなまえ",
+          "meaningRu": "имя",
+          "lessonIds": [
+            "marugoto.starter-a1.lesson.03"
+          ],
+          "coreExamples": [
+            {
+              "lessonId": "marugoto.starter-a1.lesson.03",
+              "goalId": "l03-business-card",
+              "partId": "l03-business-card-01",
+              "example": {
+                "surface": "おなまえはなんですか。",
+                "kana": "おなまえはなんですか。",
+                "meaningRu": "Как вас зовут?",
+                "segments": [
+                  {
+                    "surface": "おなまえはなんですか。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/3dca020d9c4e74fcb0dc.m4a",
+                "audioText": "おなまえわなんですか。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 5,
+      "page": 1,
+      "kana": "かいしゃいん",
+      "english": "company employee",
+      "kana_layout_raw": "かいしゃいん",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.a149298ff8f2e16e"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.157e7c7e1903cb6f"
+      ],
+      "surface": [
+        "かいしゃいん"
+      ],
+      "canonical_kana": [
+        "かいしゃいん"
+      ],
+      "meaning_ru": [
+        "работник фирмы"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l03-introduce-03"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 6,
+      "page": 1,
+      "kana": "かんこく",
+      "english": "South Korea",
+      "kana_layout_raw": "かんこく",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.19e7bb501190f7b5"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.32014fef54166f79"
+      ],
+      "surface": [
+        "かんこく"
+      ],
+      "canonical_kana": [
+        "かんこく"
+      ],
+      "meaning_ru": [
+        "Южная Корея"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 7,
+      "page": 1,
+      "kana": "かんこくご",
+      "english": "Korean language",
+      "kana_layout_raw": "かんこくご",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.a1df5e9d56ff2067"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.e9ff0f10876bdb2c"
+      ],
+      "surface": [
+        "かんこくご"
+      ],
+      "canonical_kana": [
+        "かんこくご"
+      ],
+      "meaning_ru": [
+        "корейский язык"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 8,
+      "page": 1,
+      "kana": "かんこくじん",
+      "english": "Korean people",
+      "kana_layout_raw": "かんこくじん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.fbd2d21b1d628944"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.e775ce1209303f45"
+      ],
+      "surface": [
+        "かんこくじん"
+      ],
+      "canonical_kana": [
+        "かんこくじん"
+      ],
+      "meaning_ru": [
+        "кореец"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 9,
+      "page": 1,
+      "kana": "がくせい",
+      "english": "student",
+      "kana_layout_raw": "がくせい",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.559067766abda333"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.054f78e2ef4a7e72"
+      ],
+      "surface": [
+        "がくせい"
+      ],
+      "canonical_kana": [
+        "がくせい"
+      ],
+      "meaning_ru": [
+        "студент"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l03-introduce-01"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 10,
+      "page": 1,
+      "kana": "きょうし",
+      "english": "teacher/instructor",
+      "kana_layout_raw": "きょうし",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.870190aabd2ca4bf"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.d9217dbfb15e097b"
+      ],
+      "surface": [
+        "きょうし"
+      ],
+      "canonical_kana": [
+        "きょうし"
+      ],
+      "meaning_ru": [
+        "учитель"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 11,
+      "page": 2,
+      "kana": "こうむいん",
+      "english": "civil servant",
+      "kana_layout_raw": "こうむいん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.5b4d218b977e5d59"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.d8794c8f4d7e727a",
+        "marugoto.starter-a1.form.72709f1ee2b22e2c"
+      ],
+      "surface": [
+        "こうむいん"
+      ],
+      "canonical_kana": [
+        "こうむいん"
+      ],
+      "meaning_ru": [
+        "государственный служащий"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 12,
+      "page": 2,
+      "kana": "しゅふ",
+      "english": "housewife/homemaker",
+      "kana_layout_raw": "しゅふ",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.71674c6edf020ea9"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.6249ee6aa740a4c8"
+      ],
+      "surface": [
+        "しゅふ"
+      ],
+      "canonical_kana": [
+        "しゅふ"
+      ],
+      "meaning_ru": [
+        "домохозяйка"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 13,
+      "page": 2,
+      "kana": "すこし",
+      "english": "a little/a few",
+      "kana_layout_raw": "すこし",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.ec82a6a9bdbd0924"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.4d376a2c1e3fabf4"
+      ],
+      "surface": [
+        "すこし"
+      ],
+      "canonical_kana": [
+        "すこし"
+      ],
+      "meaning_ru": [
+        "немного"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.02",
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l03-introduce-02"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 14,
+      "page": 2,
+      "kana": "そうですか",
+      "english": "I see./I understand.",
+      "kana_layout_raw": "そうですか",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.a269082034ac2170"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.ccd89d47584e7019"
+      ],
+      "surface": [
+        "そうですか"
+      ],
+      "canonical_kana": [
+        "そうですか"
+      ],
+      "meaning_ru": [
+        "вот как; понятно"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "draft"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 15,
+      "page": 2,
+      "kana": "ちゅうごく",
+      "english": "China",
+      "kana_layout_raw": "ちゅうごく",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.b4b9d057c5b0f68d"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.7642c9d8e34bb662"
+      ],
+      "surface": [
+        "ちゅうごく"
+      ],
+      "canonical_kana": [
+        "ちゅうごく"
+      ],
+      "meaning_ru": [
+        "Китай"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 16,
+      "page": 2,
+      "kana": "ちゅうごくご",
+      "english": "Chinese language",
+      "kana_layout_raw": "ちゅうごくご",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.9b6634b9ac78cb0c"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.5583d5eb7da3733d"
+      ],
+      "surface": [
+        "ちゅうごくご"
+      ],
+      "canonical_kana": [
+        "ちゅうごくご"
+      ],
+      "meaning_ru": [
+        "китайский язык"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 17,
+      "page": 2,
+      "kana": "できます",
+      "english": "(I) can speak （language)",
+      "kana_layout_raw": "できます",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.abf51c53069fc220"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.8f463561a7e1f247"
+      ],
+      "surface": [
+        "できます"
+      ],
+      "canonical_kana": [
+        "できます"
+      ],
+      "meaning_ru": [
+        "мочь"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03",
+        "marugoto.starter-a1.lesson.11"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l03-introduce-02"
+      ],
+      "notes": "Словарное значение — общее «мочь»; core-пример わたしはにほんごができます。 подтверждает именно способность говорить на языке.",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 18,
+      "page": 2,
+      "kana": "どうぞ よろしく （おねがいします）",
+      "english": "Pleased to meet you.",
+      "kana_layout_raw": "どうぞ           よろしく （おねがいします）",
+      "availability_status": "lesson_core",
+      "match_type": "pdf_optional_phrase_variant",
+      "is_variant_or_form": true,
+      "word_ids": [
+        "marugoto.starter-a1.word.72484669620e4adc"
+      ],
+      "form_ids": [],
+      "surface": [
+        "どうぞよろしくおねがいします"
+      ],
+      "canonical_kana": [
+        "どうぞよろしくおねがいします"
+      ],
+      "meaning_ru": [
+        "приятно познакомиться (вежливо)"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l03-introduce-01"
+      ],
+      "notes": "PDF разрешает краткий и полный варианты: полный どうぞよろしくおねがいします — core; короткий word.579b97a4ede59ac6 どうぞよろしく — supplementary draft. Одна PDF-позиция считается core по полному варианту.",
+      "related_records": [],
+      "additional_variant": {
+        "id": "marugoto.starter-a1.word.579b97a4ede59ac6",
+        "surface": "どうぞよろしく",
+        "kana": "どうぞよろしく",
+        "meaningRu": "приятно познакомиться; прошу благосклонности",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.03"
+        ],
+        "reviewStatus": "draft"
+      }
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 19,
+      "page": 2,
+      "kana": "どちらから？",
+      "english": "Where are you from?",
+      "kana_layout_raw": "どちらから？",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.9b473beed948c0b3"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.2ea41badd9ed7437"
+      ],
+      "surface": [
+        "どちらから？"
+      ],
+      "canonical_kana": [
+        "どちらから？"
+      ],
+      "meaning_ru": [
+        "вы откуда? (вежливо)"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l03-introduce-02"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 20,
+      "page": 2,
+      "kana": "はじめまして",
+      "english": "How do you do?/Nice to meet you.",
+      "kana_layout_raw": "はじめまして",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.be25e6ec541a983a"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.16d1822e7b230753"
+      ],
+      "surface": [
+        "はじめまして"
+      ],
+      "canonical_kana": [
+        "はじめまして"
+      ],
+      "meaning_ru": [
+        "рад(а) познакомиться (первая встреча)"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l03-introduce-01"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 21,
+      "page": 2,
+      "kana": "べんきょうちゅう",
+      "english": "in the middle of studying",
+      "kana_layout_raw": "べんきょうちゅう",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.6c1513d2349d25fd"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.baf4bb9e0dd1e364"
+      ],
+      "surface": [
+        "べんきょうちゅう"
+      ],
+      "canonical_kana": [
+        "べんきょうちゅう"
+      ],
+      "meaning_ru": [
+        "в процессе изучения"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "draft"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 22,
+      "page": 2,
+      "kana": "めいし",
+      "english": "business card",
+      "kana_layout_raw": "めいし",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.f30b2e71086b8f6b"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.4794d0b9d379708a"
+      ],
+      "surface": [
+        "めいし"
+      ],
+      "canonical_kana": [
+        "めいし"
+      ],
+      "meaning_ru": [
+        "визитка"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l03-business-card-01"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 23,
+      "page": 3,
+      "kana": "わたし",
+      "english": "I/me",
+      "kana_layout_raw": "わたし",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.58e595c1fa37474d"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.8f4403a1ef1a7014"
+      ],
+      "surface": [
+        "わたし"
+      ],
+      "canonical_kana": [
+        "わたし"
+      ],
+      "meaning_ru": [
+        "я"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03",
+        "marugoto.starter-a1.lesson.07",
+        "marugoto.starter-a1.lesson.14",
+        "marugoto.starter-a1.lesson.15",
+        "marugoto.starter-a1.lesson.17"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l03-introduce-01"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 24,
+      "page": 3,
+      "kana": "アラビアご",
+      "english": "Arabic language",
+      "kana_layout_raw": "アラビアご",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.0ecfc17a772e65d9"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.88fe620c6b4bb14a"
+      ],
+      "surface": [
+        "アラビアご"
+      ],
+      "canonical_kana": [
+        "アラビアご"
+      ],
+      "meaning_ru": [
+        "арабский язык"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 25,
+      "page": 3,
+      "kana": "エジプト",
+      "english": "Egypt",
+      "kana_layout_raw": "エジプト",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.ad4bf8e72fd7465f"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.fbde25ea8a0398b4"
+      ],
+      "surface": [
+        "エジプト"
+      ],
+      "canonical_kana": [
+        "エジプト"
+      ],
+      "meaning_ru": [
+        "Египет"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.02",
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 26,
+      "page": 3,
+      "kana": "エンジニア",
+      "english": "engineer",
+      "kana_layout_raw": "エンジニア",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.b26ab0f21a82d32b"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.2686e079e313b97b"
+      ],
+      "surface": [
+        "エンジニア"
+      ],
+      "canonical_kana": [
+        "エンジニア"
+      ],
+      "meaning_ru": [
+        "инженер"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l03-introduce-01"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 27,
+      "page": 3,
+      "kana": "ドイツ",
+      "english": "Germany",
+      "kana_layout_raw": "ドイツ",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.6dadb09b8210544e"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.72eaab735bf74a19"
+      ],
+      "surface": [
+        "ドイツ"
+      ],
+      "canonical_kana": [
+        "ドイツ"
+      ],
+      "meaning_ru": [
+        "Германия"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.02",
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 28,
+      "page": 3,
+      "kana": "ドイツご",
+      "english": "German language",
+      "kana_layout_raw": "ドイツご",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.ab5204b44a31c701"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.f10236e4b32fc70d"
+      ],
+      "surface": [
+        "ドイツご"
+      ],
+      "canonical_kana": [
+        "ドイツご"
+      ],
+      "meaning_ru": [
+        "немецкий язык"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 29,
+      "page": 3,
+      "kana": "～と もうします",
+      "english": "My name is -./I'm (name).",
+      "kana_layout_raw": "～と         もうします",
+      "availability_status": "lesson_supplementary",
+      "match_type": "template_notation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.6206f3c0ca0ee870"
+      ],
+      "form_ids": [],
+      "surface": [
+        "〜ともうします"
+      ],
+      "canonical_kana": [
+        "〜ともうします"
+      ],
+      "meaning_ru": [
+        "меня зовут … (скромно, вежливо)"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "draft"
+      ],
+      "core_parts": [],
+      "notes": "～ — место имени; самостоятельная шаблонная запись 〜ともうします есть, привязана к L3, но draft.",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 30,
+      "page": 3,
+      "kana": "えいご",
+      "english": "English language",
+      "kana_layout_raw": "えいご",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.0375e09aad13f1e2"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.4f2d94200c1eb0e1"
+      ],
+      "surface": [
+        "えいご"
+      ],
+      "canonical_kana": [
+        "えいご"
+      ],
+      "meaning_ru": [
+        "английский язык"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.02",
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l03-introduce-02"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 31,
+      "page": 3,
+      "kana": "おくには？",
+      "english": "(Where's) your country?",
+      "kana_layout_raw": "おくには？",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.2839da6ecbf6a5fd"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.6cf85e0e80d6f14c"
+      ],
+      "surface": [
+        "おくには？"
+      ],
+      "canonical_kana": [
+        "おくには？"
+      ],
+      "meaning_ru": [
+        "из какой вы страны? (вежливо)"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "draft"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 32,
+      "page": 3,
+      "kana": "おしごと",
+      "english": "job (polite expression)",
+      "kana_layout_raw": "おしごと",
+      "availability_status": "lesson_core",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.71622e15e5c20c28"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.898b376b2660e288"
+      ],
+      "surface": [
+        "おしごと"
+      ],
+      "canonical_kana": [
+        "おしごと"
+      ],
+      "meaning_ru": [
+        "работа"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [
+        "l03-business-card-01"
+      ],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 33,
+      "page": 3,
+      "kana": "ことば",
+      "english": "language/word",
+      "kana_layout_raw": "ことば",
+      "availability_status": "no_standalone_record",
+      "match_type": "no_standalone_match",
+      "is_variant_or_form": false,
+      "word_ids": [],
+      "form_ids": [],
+      "surface": [],
+      "canonical_kana": [],
+      "meaning_ru": [],
+      "lesson_ids": [],
+      "review_status": [],
+      "core_parts": [],
+      "notes": "Самостоятельного слова/формы ことば со значением language/word нет. Случайная подстрока в ошибочном чтении こうむいんことば не является совпадением и не засчитана.",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 34,
+      "page": 3,
+      "kana": "じこしょうかい（します）",
+      "english": "self-introduction (to introduce oneself)",
+      "kana_layout_raw": "じこしょうかい（します）",
+      "availability_status": "lesson_supplementary",
+      "match_type": "pdf_optional_verb_variant",
+      "is_variant_or_form": true,
+      "word_ids": [
+        "marugoto.starter-a1.word.4ebd099ea8478bd7"
+      ],
+      "form_ids": [],
+      "surface": [
+        "じこしょうかい"
+      ],
+      "canonical_kana": [
+        "じこしょうかい"
+      ],
+      "meaning_ru": [
+        "рассказ о себе"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "Существительное じこしょうかい («рассказ о себе») есть; вариант じこしょうかいします не оформлен отдельной Word/form. Существительное допускается самой необязательной пометой PDF （します）.",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 35,
+      "page": 4,
+      "kana": "すごいですね",
+      "english": "That's great.",
+      "kana_layout_raw": "すごいですね",
+      "availability_status": "no_standalone_record",
+      "match_type": "no_standalone_match",
+      "is_variant_or_form": false,
+      "word_ids": [],
+      "form_ids": [],
+      "surface": [],
+      "canonical_kana": [],
+      "meaning_ru": [],
+      "lesson_ids": [],
+      "review_status": [],
+      "core_parts": [],
+      "notes": "Полной фразы すごいですね в Word/form нет. Есть только связанное базовое すごい (word.9c77ef56bdbc1e1d), supplementary L3, «здорово»; это частичное покрытие, не полное совпадение.",
+      "related_records": [
+        {
+          "id": "marugoto.starter-a1.word.9c77ef56bdbc1e1d",
+          "surface": "すごい",
+          "kana": "すごい",
+          "meaningRu": "здорово",
+          "lessonIds": [
+            "marugoto.starter-a1.lesson.03"
+          ],
+          "coreExamples": []
+        }
+      ]
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 36,
+      "page": 4,
+      "kana": "せんせい",
+      "english": "teacher/instructor",
+      "kana_layout_raw": "せんせい",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.3289b4c0bfa92493"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.7afa8931d2ac5cfa"
+      ],
+      "surface": [
+        "せんせい"
+      ],
+      "canonical_kana": [
+        "せんせい"
+      ],
+      "meaning_ru": [
+        "учитель"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.02",
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 37,
+      "page": 4,
+      "kana": "ちゅうごくじん",
+      "english": "Chinese people",
+      "kana_layout_raw": "ちゅうごくじん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.4639bca7886015ec"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.839ddbf4d7400b0f"
+      ],
+      "surface": [
+        "ちゅうごくじん"
+      ],
+      "canonical_kana": [
+        "ちゅうごくじん"
+      ],
+      "meaning_ru": [
+        "китаец"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 38,
+      "page": 4,
+      "kana": "なにご",
+      "english": "what language",
+      "kana_layout_raw": "なにご",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.26f199d991d81947"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.8d7031be98aaabac"
+      ],
+      "surface": [
+        "なにご"
+      ],
+      "canonical_kana": [
+        "なにご"
+      ],
+      "meaning_ru": [
+        "какой язык"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 39,
+      "page": 4,
+      "kana": "なんですか",
+      "english": "What is (it)?",
+      "kana_layout_raw": "なんですか",
+      "availability_status": "no_standalone_record",
+      "match_type": "no_standalone_match",
+      "is_variant_or_form": false,
+      "word_ids": [],
+      "form_ids": [],
+      "surface": [],
+      "canonical_kana": [],
+      "meaning_ru": [],
+      "lesson_ids": [],
+      "review_status": [],
+      "core_parts": [],
+      "notes": "Самостоятельной Word/form записи вопроса нет. Оборот なんですか уже есть в двух core-примерах おなまえはなんですか。 и おしごとはなんですか。; формы です сами по себе не засчитываются за вопрос.",
+      "related_records": [
+        {
+          "id": "marugoto.starter-a1.word.c4ae772a6dc8e374",
+          "surface": "おなまえ",
+          "kana": "おなまえ",
+          "meaningRu": "имя",
+          "lessonIds": [
+            "marugoto.starter-a1.lesson.03"
+          ],
+          "coreExamples": [
+            {
+              "lessonId": "marugoto.starter-a1.lesson.03",
+              "goalId": "l03-business-card",
+              "partId": "l03-business-card-01",
+              "example": {
+                "surface": "おなまえはなんですか。",
+                "kana": "おなまえはなんですか。",
+                "meaningRu": "Как вас зовут?",
+                "segments": [
+                  {
+                    "surface": "おなまえはなんですか。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/3dca020d9c4e74fcb0dc.m4a",
+                "audioText": "おなまえわなんですか。"
+              }
+            }
+          ]
+        },
+        {
+          "id": "marugoto.starter-a1.word.71622e15e5c20c28",
+          "surface": "おしごと",
+          "kana": "おしごと",
+          "meaningRu": "работа",
+          "lessonIds": [
+            "marugoto.starter-a1.lesson.03"
+          ],
+          "coreExamples": [
+            {
+              "lessonId": "marugoto.starter-a1.lesson.03",
+              "goalId": "l03-business-card",
+              "partId": "l03-business-card-01",
+              "example": {
+                "surface": "おしごとはなんですか。",
+                "kana": "おしごとはなんですか。",
+                "meaningRu": "Кем вы работаете?",
+                "segments": [
+                  {
+                    "surface": "おしごとはなんですか。"
+                  }
+                ],
+                "audioUrl": "/audio/learning/57f2f854e34da521db9a.m4a",
+                "audioText": "おしごとわなんですか。"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 40,
+      "page": 4,
+      "kana": "にほんじん",
+      "english": "Japanese people",
+      "kana_layout_raw": "にほんじん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.3c235a881cc674db"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.52e916d7e055a22c"
+      ],
+      "surface": [
+        "にほんじん"
+      ],
+      "canonical_kana": [
+        "にほんじん"
+      ],
+      "meaning_ru": [
+        "японец"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 41,
+      "page": 4,
+      "kana": "ふたり",
+      "english": "two people",
+      "kana_layout_raw": "ふたり",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.b46d8ae7ed1a2508"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.ea0e58a81f93287e"
+      ],
+      "surface": [
+        "ふたり"
+      ],
+      "canonical_kana": [
+        "ふたり"
+      ],
+      "meaning_ru": [
+        "двое (два человека)"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03",
+        "marugoto.starter-a1.lesson.04"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "Тот же word.b46d8ae7ed1a2508 является core в L4, но только supplementary в проверяемом L3.",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 42,
+      "page": 4,
+      "kana": "フランスご",
+      "english": "French language",
+      "kana_layout_raw": "フランスご",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.fd108aa9a25d41ef"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.5df2141d61ac72d7"
+      ],
+      "surface": [
+        "フランスご"
+      ],
+      "canonical_kana": [
+        "フランスご"
+      ],
+      "meaning_ru": [
+        "французский язык"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 43,
+      "page": 4,
+      "kana": "フランスじん",
+      "english": "French people",
+      "kana_layout_raw": "フランスじん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.31ea23c304eb3532"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.746db61f3e55f9fa"
+      ],
+      "surface": [
+        "フランスじん"
+      ],
+      "canonical_kana": [
+        "フランスじん"
+      ],
+      "meaning_ru": [
+        "француз"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 44,
+      "page": 4,
+      "kana": "マレーシアじん",
+      "english": "Malaysian people",
+      "kana_layout_raw": "マレーシアじん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "exact_or_punctuation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.69498dfd42c40969"
+      ],
+      "form_ids": [
+        "marugoto.starter-a1.form.827c25607d0e6c44"
+      ],
+      "surface": [
+        "マレーシアじん"
+      ],
+      "canonical_kana": [
+        "マレーシアじん"
+      ],
+      "meaning_ru": [
+        "малазиец"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 45,
+      "page": 4,
+      "kana": "～さん",
+      "english": "Mr./Ms./Mrs./Miss",
+      "kana_layout_raw": "～さん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "template_notation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.0e48d8d73ac7877d"
+      ],
+      "form_ids": [],
+      "surface": [
+        "さん"
+      ],
+      "canonical_kana": [
+        "さん"
+      ],
+      "meaning_ru": [
+        "(вежливый суффикс) ～сан"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "Выбран уважительный суффикс さん word.0e48d8d73ac7877d, связанный с L3. Дубликат word.7226397edbe4927c связан лишь с L2. Число 三/さん word.04763742e49d9b46 не засчитано.",
+      "related_records": []
+    },
+    {
+      "list": 2,
+      "lesson": 3,
+      "position": 46,
+      "page": 4,
+      "kana": "～じん",
+      "english": "（nationality）",
+      "kana_layout_raw": "～じん",
+      "availability_status": "lesson_supplementary",
+      "match_type": "template_notation",
+      "is_variant_or_form": false,
+      "word_ids": [
+        "marugoto.starter-a1.word.1fcceb7edeff3cc2"
+      ],
+      "form_ids": [],
+      "surface": [
+        "じん"
+      ],
+      "canonical_kana": [
+        "じん"
+      ],
+      "meaning_ru": [
+        "национальность"
+      ],
+      "lesson_ids": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "review_status": [
+        "source-checked"
+      ],
+      "core_parts": [],
+      "notes": "～ — место названия страны; самостоятельный суффикс じん со значением национальности существует.",
+      "related_records": []
+    }
+  ],
+  "all_learning_overlay_sha256": {
+    "lesson-01.json": "7a14a4379c7e2091cbf3b4e2bd581572799de1016c605f5b5b432c25b439707d",
+    "lesson-02.json": "87e304036550d0053acec13636eb3ba3acbfef3bfe81d63ecebfd25777675adc",
+    "lesson-03.json": "c9c627cbff2b15178e59ff53dda35fc96680c5cbec11699297b1da8eabd8bebf",
+    "lesson-04.json": "3075a672cb46c1fb5ecebc771dbbe02617e2180bda438d248c0c333e00be4720",
+    "lesson-05.json": "498ab7b4ab89451b4abee5771d931dbeb8c36c72d51a8bab766af48aed07612d",
+    "lesson-06.json": "cb122cd03b855c3f77cfdda884704c73f4465f2c7f15f0cc78edf3ca5487d045",
+    "lesson-07.json": "63cfbe1000205b9a4dec2125301c78da4cb6cf657143182627fb28e319a7e802",
+    "lesson-08.json": "7a696fd5869921859423ab84c795161e2770c7eb1b6b0f461851aa8708e60d60",
+    "lesson-09.json": "5d0aefc90dbd2863f7b4ec38d3845d758b88750a86ddd4e8a1aaeafe18078a47",
+    "lesson-10.json": "eddbd14206d1bde45bdd6b00384aa61a4fa28ada187382780d4b6b9f813965cd",
+    "lesson-11.json": "e32749a0736a980097dadca11c9f7c2b03a109d976ba9d6004d2178e9d7e72fa",
+    "lesson-12.json": "e9d31158996a7282b4ddbb85e8133dbd5de2e4d659e82020358b726d0abc65c9",
+    "lesson-13.json": "7ba645ebd13a30f57ec14557a793f3f6888f84535c317e0d8dbd126e195fa475",
+    "lesson-14.json": "6e50c25e8d17a7bba3aeee1a8da5a5977d38599cfabeed4571a95db266a50707",
+    "lesson-15.json": "136027218154d75f522c908b2376bc6209b5db5e5b54598c6719b2d3f3f281f2",
+    "lesson-16.json": "0eb7447a9c042448a0f7627f13bd253cdee0509a74285200924f8316da9e4191",
+    "lesson-17.json": "00e6d4553009217e7e21eda6f12dce787d8add4f25136089e82714a5763cb932",
+    "lesson-18.json": "a1cdec5b569f0b0fa4ad46a112e49a70a7cfa9199f92c3cb1ab422b8669fa79f"
+  },
+  "baselineCommit": "88c6353",
+  "additionalFindings": [
+    {
+      "formId": "marugoto.starter-a1.form.72709f1ee2b22e2c",
+      "surface": "こうむいん",
+      "currentKana": "こうむいんことば",
+      "expectedKana": "こうむいん",
+      "evidence": "User PDF Lesson3 page2; canonical Word kana is already correct",
+      "status": "not yet fixed"
+    }
+  ]
+}
