@@ -19,6 +19,10 @@ test('training catalog owns all standalone trainers while textbook starts direct
   for (const title of ['Тренировки', 'Счётные суффиксы', 'Вопросительные выражения', 'Часы и минуты', 'Тренировать хирагану', 'Тренировать катакану', 'Конструкции']) expect(html).toContain(title);
   expect(html).toContain('data-testid="train-construction" disabled');
   expect(html).not.toContain('Личные списки');
+  expect(html).toContain('class="thematic-sections"><article aria-labelledby="counter-course-title"');
+  expect((html.match(/<article/g) ?? [])).toHaveLength(data.course.catalog!.thematic!.sections.length + 1);
+  expect(html).not.toContain('части до 5'); expect(html).not.toContain('выражений ·');
+  expect(html).toContain('Справка по счёту');
   const textbook = renderToStaticMarkup(createElement(Textbook, { data, onLearn() {}, onTrain() {} }));
   expect((textbook.match(/data-testid="learn-lesson"/g) ?? [])).toHaveLength(18);
   expect(textbook).not.toContain('counter-course'); expect(textbook).not.toContain('thematic-sections'); expect(textbook).not.toContain('train-kana');
@@ -32,4 +36,12 @@ test('construction selection is limited to learned skills; reference remains loo
 test('session section mapping moves topics, counters and constructions without moving lessons or personal lists', () => {
   const sources: StudySource[] = [{ kind: 'topic', topicId: 'questions' }, { kind: 'topic', topicId: 'time' }, { kind: 'counters' }, { kind: 'construction', skillId: 'learned', mode: 'ja-ru' }, { kind: 'guided', lessonId: 'lesson' }, { kind: 'lesson', lessonId: 'lesson' }, { kind: 'review' }, { kind: 'list', listId: 'private' }];
   expect(sources.map(inTrainingSection)).toEqual([true, true, true, true, false, false, false, false]);
+});
+
+test('counter training and its reference remain available without thematic course content', () => {
+  const catalog = data.course.catalog!;
+  const html = hub({ ...data, course: { ...data.course, catalog: { ...catalog, thematic: { ...catalog.thematic!, sections: [] } } } });
+  expect(html).toContain('Тренировать счёт'); expect(html).toContain('Справка по счёту');
+  expect(html).toContain('После знакомства со словом');
+  expect((html.match(/<article/g) ?? [])).toHaveLength(1);
 });
