@@ -68,6 +68,7 @@ try {
     submissions.push(route.request().postDataJSON()); const response = await route.fetch();
     if (loseAck) { loseAck = false; await route.abort('failed'); } else await route.fulfill({ response });
   });
+  await page.getByRole('navigation', { name: 'Разделы', exact: true }).getByRole('button', { name: 'Тренировки', exact: true }).click();
   await page.getByRole('button', { name: 'Тренировать счёт', exact: true }).click();
   await expect(page.getByTestId('card-deck')).toHaveAttribute('data-remaining', '20'); expect(queue!.items).toHaveLength(20);
   const first = queue!.items[0]!; if (first.mode !== 'counter') throw new Error('Expected counter');
@@ -77,6 +78,7 @@ try {
   await page.screenshot({ path: `${output}/counters-flip-1280.png`, fullPage: true });
   await page.getByRole('navigation', { name: 'Разделы', exact: true }).getByRole('button', { name: 'Учебник', exact: true }).click();
   await page.keyboard.press('ArrowRight'); expect(submissions).toHaveLength(1);
+  await page.getByRole('navigation', { name: 'Разделы', exact: true }).getByRole('button', { name: 'Тренировки', exact: true }).click();
   await page.getByRole('button', { name: 'Тренировать счёт', exact: true }).click();
   await expect(page.getByTestId('review-gesture')).toHaveAttribute('data-review-id', first.id);
   await expect(page.getByTestId('counter-front')).toBeVisible(); await expect(page.getByTestId('card-deck')).toHaveAttribute('data-remaining', '20');
@@ -96,7 +98,7 @@ try {
   }
   await expect(page.getByTestId('portion-complete')).toBeVisible(); expect(corrected).toBe(true); expect(formats.size).toBe(5); expect(turns).toBe(20);
   expect(await page.evaluate(() => (window as any).__counterAudio.playing)).toBeGreaterThan(0);
-  await page.getByRole('button', { name: 'К учебнику', exact: true }).click(); await page.locator('[data-lesson-id="marugoto.starter-a1.lesson.04"] > .lesson-material > summary').click(); await page.locator('article[data-lesson-id="marugoto.starter-a1.lesson.04"]').getByText('Дополнительный словарь и конструкции', { exact: true }).click(); await page.locator('[data-testid="train-lesson"][data-lesson-id="marugoto.starter-a1.lesson.04"]').click();
+  await page.getByRole('button', { name: 'К тренировкам', exact: true }).click(); await page.getByRole('navigation', { name: 'Разделы', exact: true }).getByRole('button', { name: 'Учебник', exact: true }).click(); await page.locator('[data-lesson-id="marugoto.starter-a1.lesson.04"] > .lesson-material > summary').click(); await page.locator('article[data-lesson-id="marugoto.starter-a1.lesson.04"]').getByText('Дополнительный словарь и конструкции', { exact: true }).click(); await page.locator('[data-testid="train-lesson"][data-lesson-id="marugoto.starter-a1.lesson.04"]').click();
   const gesture = page.getByTestId('review-gesture'); await expect(page.getByTestId('card-face')).toBeVisible();
   const oldId = await gesture.getAttribute('data-review-id'); await page.getByTestId('card-face').click();
   if (await page.locator('.flip-card').getAttribute('data-revealed') !== 'true') { await page.waitForTimeout(500); await page.getByTestId('card-face').click(); }
@@ -132,7 +134,7 @@ try {
   };
   const edgeItems = [makeItem('satsu', 1, 'reading-choice', book.id), makeItem('satsu', 8, 'reading-choice', book.id), makeItem('satsu', 9_999_999, 'reading-choice', book.id), makeItem('sai', 120, 'recall', person.id)];
   await mobile.context.route('**/api/training?counters=true', route => route.fulfill({ json: { items: edgeItems, remainingNew: 4, remainingDue: 0 } }));
-  await mobile.page.getByRole('button', { name: 'Тренировать счёт', exact: true }).click(); await expect(mobile.page.getByTestId('card-deck')).toBeVisible();
+  await mobile.page.getByRole('navigation', { name: 'Разделы', exact: true }).getByRole('button', { name: 'Тренировки', exact: true }).click(); await mobile.page.getByRole('button', { name: 'Тренировать счёт', exact: true }).click(); await expect(mobile.page.getByTestId('card-deck')).toBeVisible();
   const one=mobile.page.locator('.counter-picture[data-count="1"]:visible');await expect(one.locator('.counter-quantity')).toContainText('1');const oneSize=await one.locator('svg').boundingBox();
   if(edgeItems[0]!.mode!=='counter')throw new Error('Expected counter');await reveal(mobile.page,edgeItems[0]!);await expect(mobile.page.getByTestId('card-deck')).toHaveAttribute('data-remaining','3');
   const eight=mobile.page.locator('.counter-picture[data-count="8"]:visible'); await expect(eight).toHaveCount(1); await expect(eight.locator('svg')).toHaveCount(1); await expect(eight.locator('.counter-quantity')).toContainText('8');const eightSize=await eight.locator('svg').boundingBox();expect(oneSize).toBeTruthy();expect(eightSize).toBeTruthy();expect(Math.abs(oneSize!.width-eightSize!.width)).toBeLessThan(1);expect(Math.abs(oneSize!.height-eightSize!.height)).toBeLessThan(1);

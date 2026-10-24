@@ -19,3 +19,7 @@ export function editorWordIds(data: Snapshot, source: StudySource): Set<string> 
   if (source.kind === 'list') for (const word of data.lists.find(list => list.id === source.listId)?.words ?? []) { if (studyWord(word)) ids.add(word.id); }
   return ids;
 }
+
+export function inTrainingSection(source: StudySource): boolean {
+  return source.kind === 'topic' || source.kind === 'counters' || source.kind === 'construction';
+}

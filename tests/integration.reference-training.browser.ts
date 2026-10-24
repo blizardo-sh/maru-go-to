@@ -58,7 +58,7 @@ try {
   await expect(page.getByText('Выберите хотя бы один тип материала.', { exact: true })).toBeVisible(); expect((await settings()).repeatTypes).toEqual([]);
   expect((await (await context.request.get(base + '/api/reviews?mode=mixed')).json()).items).toEqual([]); report.repeatSaveFailureAndPersistence = true;
 
-  await navigate('Справочник'); await page.getByRole('button', { name: 'Хирагана', exact: true }).click(); await page.getByTestId('train-kana').click();
+  await navigate('Справочник'); await page.getByRole('button', { name: 'Хирагана', exact: true }).click(); await expect(page.locator('.kana-reference')).toBeVisible(); await expect(page.getByTestId('train-kana')).toHaveCount(0); await navigate('Тренировки'); await page.getByRole('button', { name: 'Тренировать хирагану', exact: true }).click();
   const trainer = page.getByTestId('kana-trainer'); await trainer.getByRole('checkbox', { name: 'Вся азбука', exact: true }).uncheck();
   await trainer.locator('.kana-row-picker label').filter({ hasText: 'あ行' }).getByRole('checkbox').check();
   const beforeKana = await cards(), beforePosts = submissions.length;
@@ -84,12 +84,12 @@ try {
   await expect(trainer.getByRole('heading', { name: 'Колода пройдена' })).toBeVisible(); expect([...formats].sort()).toEqual(['listening', 'reading']); expect(submissions.length).toBe(beforePosts); expect(await cards()).toEqual(beforeKana);
   report.kana = { formats: [...formats], selectedRow: 'あ行', solved, srsPosts: 0, realPlayback: true };
   await trainer.getByRole('button', { name: 'Закрыть', exact: true }).click();
-  await page.getByRole('button', { name: 'Изученные конструкции', exact: true }).click();
-  const skill = page.locator(`[data-skill-id="${exercise.skillId}"]`); await skill.locator('summary').click();
+  await page.getByLabel('Выберите конструкцию', { exact: true }).selectOption(exercise.skillId);
   const skillVersionBefore = Number((await database.sql`select version from review_states where user_id=${userId} and item_id=${exercise.skillId} and mode='grammar'`)[0]!.version);
   const lessonBefore = await database.sql`select * from learning_states where user_id=${userId}`;
-  await skill.getByTestId('train-construction').click();
+  await page.getByTestId('train-construction').click();
   const skip = page.getByRole('button', { name: /Перейти к занятию/ }); if (await skip.isVisible()) await skip.click();
+  await expect(page.getByRole('navigation', { name: 'Разделы', exact: true }).getByRole('button', { name: 'Тренировки', exact: true })).toHaveAttribute('aria-current','page');
   const drill = page.getByTestId('construction-drill'); await expect(drill).toHaveAttribute('data-format', 'ja-ru');
   await drill.getByTestId('card-face').click(); await expect(drill.locator('.answer')).toBeVisible();
   loseGradeAck = true; await drill.getByTestId('review-gesture').press('ArrowRight');
