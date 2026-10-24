@@ -22,11 +22,12 @@ def safe_reading(text):
     return bool(text and len(text) <= 300 and re.fullmatch(r'[\u3041-\u30ffー\s・、。？！!?…]+', text))
 
 
-def generate(course_path, output, voice, rate, jobs, limit):
+def generate(course_path, output, voice, rate, jobs, limit, examples_path=None):
     course = json.loads(course_path.read_text())
     output.mkdir(parents=True, exist_ok=True)
     words = course['words'][:limit] if limit else course['words']
-    readings = {spoken_text(word) for word in words if safe_reading(spoken_text(word))}
+    examples = [entry['example'] for entry in json.loads(examples_path.read_text())['entries'] if entry.get('example')] if examples_path else []
+    readings = {spoken_text(word) for word in words + examples if safe_reading(spoken_text(word))}
     errors = []
 
     def render(text):
@@ -58,7 +59,7 @@ def generate(course_path, output, voice, rate, jobs, limit):
     temporary_manifest = output / 'manifest.json.tmp'
     temporary_manifest.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n')
     temporary_manifest.replace(manifest_path)
-    report = {'source': 'macOS speech synthesis', 'voice': voice, 'rate': rate, 'words': len(words), 'audioWords': len(manifest), 'distinctReadings': len(complete), 'missingWordIds': [word['id'] for word in words if word['id'] not in manifest], 'errors': errors, 'pronunciationReview': 'not-human-reviewed'}
+    report = {'source': 'macOS speech synthesis', 'voice': voice, 'rate': rate, 'words': len(words), **({'examples': len(examples)} if examples_path else {}), 'audioWords': len(manifest), 'distinctReadings': len(complete), 'missingWordIds': [word['id'] for word in words if word['id'] not in manifest], 'errors': errors, 'pronunciationReview': 'not-human-reviewed'}
     (output / 'generation-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
     print(json.dumps({**{key: value for key, value in report.items() if key not in ('errors', 'missingWordIds')}, 'missingWords': len(report['missingWordIds']), 'errors': errors[:3], 'report': str(output / 'generation-report.json')}, ensure_ascii=False))
     return 1 if errors else 0
@@ -67,6 +68,7 @@ def generate(course_path, output, voice, rate, jobs, limit):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--course', type=Path, default=Path('materials/course.json'))
+    parser.add_argument('--examples', type=Path, help='Prepared thematic entries; render their examples without adding them to the word manifest')
     parser.add_argument('--output', type=Path, default=Path('public/audio'))
     parser.add_argument('--voice', default='Kyoko')
     parser.add_argument('--rate', type=int, default=150)
@@ -75,4 +77,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
     if args.rate < 80 or args.rate > 300 or args.limit < 0:
         parser.error('rate must be 80..300 and limit must be nonnegative')
-    raise SystemExit(generate(args.course, args.output, args.voice, args.rate, args.jobs, args.limit))
+    raise SystemExit(generate(args.course, args.output, args.voice, args.rate, args.jobs, args.limit, args.examples))

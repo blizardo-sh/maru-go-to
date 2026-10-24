@@ -1,3 +1,4 @@
+import { validateThematicMaterial } from './training';
 import data from '../../materials/catalog.json';
 import type { CounterDefinition, CounterObject } from './counters';
 import type { KanaRow, KanaAudioManifest } from './kana';
@@ -5,6 +6,8 @@ import type { Course } from './types';
 
 /** Authored teaching data; algorithms and learner state stay outside the catalog. */
 export interface CourseCatalog {
+  learningPolicy?: 'master-before-repeat';
+  thematic?: Omit<import('./training').ThematicMaterial,'words'|'forms'>;
   schemaVersion: 1;
   quiz: { choices: Record<string, string[]>; equivalent: string[][]; courtesyMarkers: string[] };
   counters: { definitions: CounterDefinition[]; objects: CounterObject[] };
@@ -23,6 +26,7 @@ export const catalogFor = (course?: Pick<Course, 'catalog'>): CourseCatalog => c
 
 /** Validate author files before publishing; this does not certify their Japanese. */
 export function validateCatalog(course: Course): void {
+  validateThematicMaterial(course);
   const c = course.catalog;
   const ensure: (value: unknown, label: string) => asserts value = (value, label) => { if (!value) throw new Error(`Invalid catalog: ${label}`); };
   const text = (value: unknown): value is string => typeof value === 'string' && value.trim().length > 0;

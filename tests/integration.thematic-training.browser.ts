@@ -1,0 +1,44 @@
+import {chromium,expect} from '@playwright/test';
+import {createLink,consumeLink} from '../src/server/auth';
+import {connectDatabase} from '../src/server/db';
+import {loadCourse} from '../src/server/course';
+import {defaultSettings} from '../src/server/material';
+import {seedAcceptedHistory} from './helpers/introduced-browser-fixture';
+import {nextFixtureIp} from './helpers/fixture-ip';
+import {output} from './helpers/artifact-output';
+import type {ReviewSubmission} from '../src/shared/types';
+const base=process.env.GUIDED_BROWSER_URL,url=process.env.JAPANESE_INTEGRATION_DATABASE_URL;
+if(!base||new URL(base).hostname!=='localhost'||!url||new URL(url).hostname!=='127.0.0.1'||new URL(url).pathname!=='/japanese_app_test')throw new Error('Isolated browser launcher and local test DB required');
+const db=connectDatabase(url),course=loadCourse(),email=`thematic-browser-${crypto.randomUUID()}@example.test`,password='Thematic-browser-only!';let owner='';
+const browser=await chromium.launch({channel:'chrome',headless:true}),context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce',extraHTTPHeaders:{'x-forwarded-for':nextFixtureIp()}}),page=await context.newPage();page.setDefaultTimeout(15000);
+const errors:string[]=[],posts:ReviewSubmission[]=[];page.on('pageerror',error=>errors.push(error.message));let loseAck=false;
+const headers=()=>({origin:base,'X-Learning-Learner-Id':owner});
+const states=async()=>[...await db.sql`select item_id,mode,version from review_states where user_id=${owner}`];
+const navigate=async(label:string)=>page.getByRole('navigation',{name:'Разделы',exact:true}).getByRole('button',{name:label,exact:true}).click();
+async function screenshot(name:string){expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1)).toBe(true);await page.screenshot({path:`${output}/thematic-${name}.png`,fullPage:true});}
+async function finishPreparation(){const prep=page.getByTestId('training-preparation');await expect(prep).toHaveAttribute('data-stage','reference');await prep.getByRole('button',{name:'Перейти к знакомству',exact:true}).click();await expect(prep).toHaveAttribute('data-stage','learning');await prep.getByRole('button',{name:'Начать практику',exact:true}).click();}
+try{
+ const link=await createLink(db,'invite',email,null);await consumeLink(db,'invite',link.token,password,'Thematic browser');const signed=await context.request.post(base+'/api/auth/sign-in/email',{headers:{origin:base},data:{email,password}});expect(signed.status()).toBe(200);owner=(await signed.json()).user.id;
+ await context.request.put(base+'/api/settings',{headers:headers(),data:{...defaultSettings,animations:false,sceneSoundEnabled:false}});
+ await context.route(url=>url.pathname==='/api/reviews',async route=>{if(route.request().method()!=='POST')return route.continue();posts.push(route.request().postDataJSON());const response=await route.fetch();if(loseAck){loseAck=false;await route.abort('failed');}else await route.fulfill({response});});
+ await page.goto(base);await page.locator('.thematic-sections article').filter({has:page.getByRole('heading',{name:'Вопросительные выражения',exact:true})}).getByRole('button',{name:'Изучать',exact:true}).click();
+ const prep=page.getByTestId('training-preparation');await expect(prep).toHaveAttribute('data-stage','reference');await screenshot('reference-desktop');expect(await states()).toEqual([]);await prep.getByRole('button',{name:'Перейти к знакомству',exact:true}).click();await expect(prep).toHaveAttribute('data-stage','learning');await screenshot('learning-desktop');
+ for(const viewport of [{width:390,height:844},{width:320,height:568}]){await page.setViewportSize(viewport);await screenshot('learning-'+viewport.width);}
+ await page.setViewportSize({width:1440,height:1000});await prep.getByRole('button',{name:'Начать практику',exact:true}).click();
+ const quiz=page.getByTestId('learning-word-quiz');await expect(quiz).toBeVisible();await screenshot('quiz-desktop');const id=(await quiz.getAttribute('data-target-id'))!;const correct=quiz.locator(`[data-choice-word-id="${id}"]`);await expect(correct).toBeEnabled();loseAck=true;await correct.click();await expect(page.getByRole('button',{name:'Повторить сохранение',exact:true})).toBeVisible();await expect(quiz).toHaveAttribute('data-target-id',id);expect(await states()).toEqual([]);await page.getByRole('button',{name:'Повторить сохранение',exact:true}).click();await expect.poll(()=>posts.length).toBe(2);expect(posts[0]).toEqual(posts[1]);
+ await expect.poll(async()=>Number(await page.locator('.session-count').innerText().then(text=>text.split('/')[0]!.trim()))).toBe(1);
+ let count=1;while(count<20){await expect(quiz).toBeVisible();const target=(await quiz.getAttribute('data-target-id'))!;const before=await page.locator('.session-count').innerText();const answer=quiz.locator(`[data-choice-word-id="${target}"]`);await expect(answer).toBeEnabled();await answer.click();await expect(page.locator('.session-count')).not.toHaveText(before);count++;}
+ await expect(page.getByTestId('portion-complete')).toBeVisible();expect(await states()).toHaveLength(15);
+ await page.getByRole('button',{name:'К учебнику',exact:true}).click();await page.locator('.thematic-sections article').filter({has:page.getByRole('heading',{name:'Часы и минуты',exact:true})}).getByRole('button',{name:'Изучать',exact:true}).click();await finishPreparation();await expect(quiz).toBeVisible();
+ // Application uses the same published targets; reach the clock context without changing learner state.
+ for(let i=0;i<15;i++){const target=(await quiz.getAttribute('data-target-id'))!,before=await page.locator('.session-count').innerText();await quiz.locator(`[data-choice-word-id="${target}"]`).click();await expect(page.locator('.session-count')).not.toHaveText(before);}
+ await expect(quiz).toHaveAttribute('data-application','true');await expect(quiz.locator('.training-clock svg')).toBeVisible();
+ const clockTarget=(await quiz.getAttribute('data-target-id'))!,clock=course.catalog!.thematic!.entries.find(entry=>entry.wordId===clockTarget)!.visual!;
+ if(clock.kind!=='clock')throw new Error('Clock metadata missing');
+ await expect(quiz.locator('.training-clock svg')).toHaveAttribute('aria-label',`Часы: ${clock.hour}:${String(clock.minute).padStart(2,'0')} ${clock.period==='am'?'до полудня':'после полудня'}`);
+ const angles=[(clock.hour%12+clock.minute/60)*30,clock.minute*6];const hands=await quiz.locator('.training-clock line').evaluateAll(lines=>lines.map(line=>{const m=(line as SVGLineElement).getCTM()!;return [m.a/Math.hypot(m.a,m.b),m.b/Math.hypot(m.a,m.b)];}));
+ for(let i=0;i<2;i++){expect(hands[i]![0]).toBeCloseTo(Math.cos(angles[i]!*Math.PI/180),5);expect(hands[i]![1]).toBeCloseTo(Math.sin(angles[i]!*Math.PI/180),5);}
+ await screenshot('clock-desktop');await page.setViewportSize({width:390,height:844});await screenshot('clock-mobile');
+ await navigate('Учебник');const known=['ほん','かさ','たまご','シャツ','ひと','いす'].map(kana=>course.words.find(word=>word.kana===kana&&!/суффикс/.test(word.meaningRu))!.id);await seedAcceptedHistory(db,course,email,known,[]);await page.reload();await page.getByRole('button',{name:'Тренировать счёт',exact:true}).click();await finishPreparation();await expect(page.getByTestId('review-gesture')).toBeVisible();await screenshot('counter-mobile');
+ expect(errors).toEqual([]);console.info(JSON.stringify({green:true,formats:4,questionElements:5,afterCycleSchedules:15,ackReplay:true,clockVisual:true,referenceLearningCounter:true,viewports:[1440,390,320],errors}));
+}catch(error){await page.screenshot({path:`${output}/thematic-red.png`,fullPage:true}).catch(()=>{});throw error;}finally{await context.close();await browser.close();if(owner)await db.sql`delete from users where id=${owner}`;await db.sql`delete from access_links where email=${email}`;await db.sql.close();}

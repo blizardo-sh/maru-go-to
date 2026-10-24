@@ -1,3 +1,4 @@
+import { trainingSections, stagedLearning } from '../shared/training';
 import { catalogFor } from '../shared/catalog';
 import type { Snapshot } from './types';
 import { studyWord } from './learning';
@@ -8,7 +9,7 @@ import { JapaneseText } from './JapaneseText';
 import { counterAnswer } from '../shared/counters';
 import { LessonVideoLibrary } from './LessonVideo';
 
-export function Textbook({ data, onLearn, onTrain, onCounters }: { data: Snapshot; onCounters: () => void; onLearn: (lessonId: string) => void; onTrain: (lessonId: string) => void }) {
+export function Textbook({ data, onLearn, onTrain, onCounters, onTopic }: { data: Snapshot; onTopic: (topicId: 'questions' | 'time', sectionId: string) => void; onCounters: () => void; onLearn: (lessonId: string) => void; onTrain: (lessonId: string) => void }) {
   const { course, settings, progress } = data;
   const catalog = catalogFor(course); const { definitions: counterDefinitions, objects: counterObjects } = catalog.counters;
   const introducedWords = new Set(progress.introducedWordIds);
@@ -25,12 +26,13 @@ export function Textbook({ data, onLearn, onTrain, onCounters }: { data: Snapsho
       })}</div>
       <small>Новые суффиксы открываются вместе с пройденными словами учебника. При недостатке материала колода короче.</small></details>
     </section>
+    {trainingSections(course).length > 0 && <section className="sheet thematic-course" aria-labelledby="thematic-title"><h2 id="thematic-title">Тематические тренировки</h2><p>Справка → знакомство с группой → практика. Доступны сразу, прогресс общий с уроками.</p><div className="thematic-sections">{trainingSections(course).map(section => <article key={section.id}><small>{section.topic === 'questions' ? 'Вопросы' : 'Время и календарь'}</small><h3>{section.title}</h3><p>{section.variable ? 'Небольшие подборки циферблатов и записей. Сначала правила чтения часов и минут.' : `${section.wordIds.length} выражений · части до 5`}</p><button className="primary" onClick={() => onTopic(section.topic, section.id)}>Изучать</button></article>)}</div></section>}
     <div className="lesson-grid" onPlayCapture={event => { event.currentTarget.querySelectorAll('video').forEach(media => { if (media !== event.target) media.pause(); }); }}>{course.lessons.map(lesson => {
       const route = course.learning?.find(route => route.lessonId === lesson.id);
       const learning = data.learning?.find(state => state.lessonId === lesson.id);
       const percent = learning && learning.totalSteps > 0 ? Math.min(100, Math.floor(learning.completedSteps / learning.totalSteps * 100)) : 0;
       const started = (learning?.completedSteps ?? 0) > 0;
-      const words = course.words.filter(word => word.lessonIds.includes(lesson.id) && studyWord(word));
+      const words = course.words.filter(word => !word.trainingOnly && word.lessonIds.includes(lesson.id) && studyWord(word));
       const skills = course.skills.filter(skill => course.exercises.some(exercise => exercise.lessonId === lesson.id && exercise.skillId === skill.id));
       const learnedWords = words.filter(word => introducedWords.has(word.id)).length;
       const learnedSkills = skills.filter(skill => introducedSkills.has(skill.id)).length;
@@ -40,7 +42,7 @@ export function Textbook({ data, onLearn, onTrain, onCounters }: { data: Snapsho
           <div className="lesson-card-body">
             {route ? <section><h3>Чему научимся</h3><ol className="lesson-goals">{route.goals.map(goal => <li key={goal.id}>{goal.titleRu}</li>)}</ol><small className="muted">Части до 5 слов или фраз и одной конструкции. Трудный формат вернётся до «Помню». Прохождение маршрута и интервальные повторения учитываются отдельно.</small></section> : <p className="notice">Учебный маршрут готовится. Дополнительный словарь доступен ниже.</p>}
             <details className="lesson-details"><summary>Дополнительный словарь и конструкции</summary><div className="stack">
-              <p>Полный материал указателя: {words.length} слов и фраз. В повторении уже {learnedWords} слов и {learnedSkills} конструкций.</p><small className="muted">Эта практика не нужна для завершения основного маршрута. Первая оценка, включая «Ещё раз», добавляет материал в личные повторения.</small>
+              <p>Полный материал указателя: {words.length} слов и фраз. В повторении уже {learnedWords} слов и {learnedSkills} конструкций.</p><small className="muted">Эта практика не нужна для завершения основного маршрута. {stagedLearning(course) ? 'Материал попадает в повторения после успешной отработки всех доступных форматов.' : 'Первая оценка добавляет материал в повторения.'}</small>
               <button className="quiet" data-testid="train-lesson" data-lesson-id={lesson.id} aria-label={`Практиковать дополнительный словарь урока ${lesson.number}`} onClick={() => onTrain(lesson.id)}>Практиковать словарь</button>
               {skills.length > 0 && <div><h3>Конструкции</h3>{skills.map(skill => <p key={skill.id}><JapaneseText text={skill.title} course={course} mode={settings.orthography} /></p>)}</div>}
               <div><h3>Слова и фразы</h3>{words.slice(0, 16).map(word => <p key={word.id}><Japanese value={word} forms={course.forms} mode={settings.orthography} /> — {word.meaningRu}</p>)}{words.length > 16 && <small>И ещё {words.length - 16}. Практика предлагает неизученный остаток полного словаря.</small>}</div>

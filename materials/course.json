@@ -29736,7 +29736,7 @@
       ],
       "kind": "phrase",
       "pos": "expression",
-      "reviewStatus": "draft",
+      "reviewStatus": "source-checked",
       "sourceRefs": [
         {
           "part": "katsudoo",
@@ -29745,8 +29745,14 @@
           "row": 32,
           "entry": "〜って どういういみですか",
           "label": "Указатель фраз · урок 2 · русский перевод подготовлен для приложения"
+        },
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+          "label": "Marugoto Starter Activities Phrase Index"
         }
-      ]
+      ],
+      "audioText": "ねこってどういういみですか"
     },
     {
       "id": "marugoto.starter-a1.word.121e758731b7e7e8",
@@ -30555,7 +30561,7 @@
       ],
       "kind": "phrase",
       "pos": "expression",
-      "reviewStatus": "draft",
+      "reviewStatus": "source-checked",
       "sourceRefs": [
         {
           "part": "rikai",
@@ -30564,6 +30570,11 @@
           "row": 31,
           "entry": "どちらまでですか",
           "label": "Указатель фраз · урок 13 · русский перевод подготовлен для приложения"
+        },
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+          "label": "Marugoto Starter Competences Phrase Index"
         }
       ]
     },
@@ -53143,7 +53154,7 @@
           "surface": "〜ってどういういみですか"
         }
       ],
-      "reviewStatus": "draft",
+      "reviewStatus": "source-checked",
       "sourceRefs": [
         {
           "part": "katsudoo",
@@ -53847,7 +53858,7 @@
           "surface": "どちらまでですか"
         }
       ],
-      "reviewStatus": "draft",
+      "reviewStatus": "source-checked",
       "sourceRefs": [
         {
           "part": "rikai",

@@ -3,7 +3,7 @@ import { resolve } from 'node:path';
 import { createApp } from '../src/server/app';
 import { connectDatabase } from '../src/server/db';
 import { createLink, consumeLink } from '../src/server/auth';
-import { loadCourse } from '../src/server/course';
+import { legacyCourseFixture as loadCourse } from './helpers/legacy-course-fixture';
 import { reviewId } from '../src/server/reviews';
 import { counterAudio } from '../src/server/counter-audio';
 import { defaultSettings } from '../src/server/material';

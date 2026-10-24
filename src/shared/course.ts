@@ -28,6 +28,7 @@ export function validateCourse(value: Course): void {
   }
   for (const form of value.forms) ensure(words.has(form.wordId), `form word ${form.id}`);
   for (const word of value.words) {
+    ensure(word.trainingOnly === undefined || typeof word.trainingOnly === "boolean", `training marker ${word.id}`);
     ensure(word.meaningRu.trim(), `missing meaning ${word.id}`);
     ensure(word.audioText === undefined || (typeof word.audioText === "string" && word.audioText.trim().length > 0 && word.audioText.length <= 1000 && /^[ぁ-ゖァ-ヺー・\s]+$/u.test(word.audioText)), `audio pronunciation ${word.id}`);
     ensure(value.forms.some((form) => form.wordId === word.id && form.surface === word.surface && form.kana === word.kana), `default form ${word.id}`);

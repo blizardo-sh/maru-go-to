@@ -2,7 +2,7 @@ import { afterAll, beforeAll, beforeEach, describe, expect, test } from 'bun:tes
 import { createApp } from '../src/server/app';
 import { connectDatabase } from '../src/server/db';
 import { createLink, consumeLink } from '../src/server/auth';
-import { loadCourse } from '../src/server/course';
+import { legacyCourseFixture as loadCourse } from './helpers/legacy-course-fixture';
 import { reviewId } from '../src/server/reviews';
 import { counterReading, counterTarget } from '../src/shared/counters';
 import type { Progress, ReviewItem, ReviewQueue } from '../src/shared/types';

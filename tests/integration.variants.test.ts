@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, describe, expect, test } from 'bun:test';
 import { createApp } from '../src/server/app';
 import { createLink, consumeLink } from '../src/server/auth';
-import { loadCourse } from '../src/server/course';
+import { legacyCourseFixture as loadCourse } from './helpers/legacy-course-fixture';
 import { connectDatabase } from '../src/server/db';
 import { defaultSettings } from '../src/server/material';
 import { reviewId } from '../src/server/reviews';

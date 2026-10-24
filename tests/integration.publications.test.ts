@@ -8,7 +8,7 @@ import { learningParts, type LearningAdvance, type LearningState } from '../src/
 import { connectDatabase } from '../src/server/db';
 import { createApp } from '../src/server/app';
 import { createLink, consumeLink } from '../src/server/auth';
-import { loadCourse } from '../src/server/course';
+import { legacyCourseFixture as loadCourse } from './helpers/legacy-course-fixture';
 import { activatePublication, currentPublication, ensureInitialPublications, getPublication, legacyPublication, packContent, publishContent, validatePublicationMedia } from '../src/server/publications';
 import { nextFixtureIp } from './helpers/fixture-ip';
 
