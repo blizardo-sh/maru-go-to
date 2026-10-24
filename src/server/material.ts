@@ -1,8 +1,9 @@
 import type { Course, LearnerSettings, Word } from '../shared/types';
 import type { Database } from './db';
 import { defaultSoundSettings } from '../shared/sound';
+import { repeatTypes } from '../shared/types';
 import { settingsSchema } from './validation';
-export const defaultSettings: LearnerSettings={lessonStatuses:{},focusLessonIds:[],focusCanDoIds:[],focusSkillIds:[],enabledListIds:[],freeLessonIds:[],freeScopes:{words:'studied',particles:'studied',constructions:'studied',forms:'studied'},orthography:'furigana',newWordsPerDay:5,newSkillsPerDay:2,animations:true,...defaultSoundSettings};
+export const defaultSettings: LearnerSettings={lessonStatuses:{},focusLessonIds:[],focusCanDoIds:[],focusSkillIds:[],enabledListIds:[],freeLessonIds:[],freeScopes:{words:'studied',particles:'studied',constructions:'studied',forms:'studied'},orthography:'furigana',newWordsPerDay:5,newSkillsPerDay:2,animations:true,repeatTypes:[...repeatTypes],...defaultSoundSettings};
 export async function settingsFor(database:Database,userId:string):Promise<LearnerSettings>{
  const [row]=await database.sql`select settings from preferences where user_id=${userId}`;
  return row?settingsSchema.parse(row.settings):structuredClone(defaultSettings);

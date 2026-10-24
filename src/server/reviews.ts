@@ -3,7 +3,7 @@ import { matchesPreparedAnswer } from '../shared/answers';
 import { createEmptyCard, fsrs, type Card } from 'ts-fsrs';
 import type { Course, Progress, TrainingContext, ReviewItem, ReviewMode, ReviewQueue, ReviewResult, ReviewSubmission, TargetEvaluationRequest, TargetEvaluationResult, Word } from '../shared/types';
 import type { Database } from './db';
-import { allWords, normalizeSentence, sentenceFor, validSegments } from './material';
+import { allWords, normalizeSentence, sentenceFor, settingsFor, validSegments } from './material';
 import { withPersonalPractice } from './personal-practice';
 import { advanceCounter, counterDefinitions, counterKinds, counterTarget, counterWords, levelFor, makeCounterCard, numbersFor, objectFor, parseCounterTarget, type CounterCard, type CounterProgress } from '../shared/counters';
 import { counterAudio } from './counter-audio';
@@ -105,7 +105,9 @@ export function interleaveReviews(buckets:ReviewItem[][],lastWordId?:string):Rev
  return result;
 }
 export async function reviewQueue(database:Database,userId:string,course:Course,mode:ReviewMode|'mixed'):Promise<ReviewQueue>{
- const snap=await snapshot(database,userId,course);const now=new Date();const items=mode==='mixed'?interleaveReviews(modes.map(itemMode=>dueItems(course,snap,itemMode,now))):dueItems(course,snap,mode,now);
+ const snap=await snapshot(database,userId,course);const now=new Date();
+ const selected=mode==='mixed'?(await settingsFor(database,userId)).repeatTypes:[];
+ const items=mode==='mixed'?interleaveReviews(modes.filter(itemMode=>selected.includes(itemMode==='grammar'?'constructions':itemMode==='counter'?'counters':'words')).map(itemMode=>dueItems(course,snap,itemMode,now))):dueItems(course,snap,mode,now);
  return {items:items.slice(0,30),remainingDue:items.length,remainingNew:0};
 }
 export async function introducedExerciseAvailable(database:Database,userId:string,course:Course,exerciseId:string):Promise<boolean>{
@@ -113,6 +115,7 @@ export async function introducedExerciseAvailable(database:Database,userId:strin
 }
 export async function trainingQueue(database:Database,userId:string,course:Course,context:TrainingContext):Promise<ReviewQueue>{
  const snap=await snapshot(database,userId,course);const now=new Date();let words:Word[];
+ if(context.skillId)return constructionTrainingQueue(course,snap,context,now);
  if(context.counters)return counterTrainingQueue(snap,now);
  if(context.lessonId){if(!course.lessons.some(lesson=>lesson.id===context.lessonId))throw new ReviewError('NOT_FOUND','Урок не найден.',404);words=snap.words.filter(word=>word.lessonIds.includes(context.lessonId!));}
  else {const [list]=await database.sql`select id from word_lists where id=${context.listId!} and user_id=${userId}`;if(!list)throw new ReviewError('NOT_FOUND','Личный список не найден.',404);const rows=await database.sql`select id from personal_words where list_id=${context.listId!} and user_id=${userId}`;const ids=new Set(rows.map((row:any)=>row.id));words=snap.words.filter(word=>ids.has(word.id));}
@@ -124,6 +127,23 @@ export async function trainingQueue(database:Database,userId:string,course:Cours
  const skills=[...new Set(exercises.map(exercise=>exercise.skillId))].map(id=>({id,key:reviewDrawKey(priority(id,true))})).sort((a,b)=>Number(skillIds.has(a.id))-Number(skillIds.has(b.id))||a.key-b.key).map(entry=>entry.id);
  const grammar=skills.slice(0,2).map(id=>itemFor(course,snap,'grammar',id,now,exercises));
  return {items:interleaveReviews([wordItems,grammar]),remainingNew:freshWords.length+skills.filter(id=>!skillIds.has(id)).length,remainingDue:modes.flatMap(mode=>dueItems(course,snap,mode,now)).filter(item=>item.mode==='grammar'?skills.includes(item.targetId):words.some(word=>word.id===item.targetId)).length};
+}
+function constructionTrainingQueue(course:Course,snap:Snapshot,context:TrainingContext,now:Date):ReviewQueue{
+ const skill=course.skills.find(skill=>skill.id===context.skillId);
+ if(!skill)throw new ReviewError('NOT_FOUND','Конструкция не найдена.',404);
+ if(!introduced(snap,true).has(skill.id))throw new ReviewError('MATERIAL_UNAVAILABLE','Сначала изучите эту конструкцию в уроке.',403);
+ const extended=withPersonalPractice(course,snap.words),mode=context.constructionMode??'ja-ru';
+ const exercises=exercisesFor(extended,snap.words,introduced(snap)).filter(exercise=>exercise.skillId===skill.id);
+ const authored=course.learning?.flatMap(lesson=>lesson.goals.flatMap(goal=>goal.parts.flatMap(part=>part.construction?[part.construction]:[])))??[];
+ const items=exercises.flatMap(exercise=>{
+  const prepared=authored.find(construction=>construction.exerciseId===exercise.id);
+  if(mode==='listening'&&!prepared?.example.audioUrl)return [];
+  const forms=exercise.acceptedOrders[0]!.map(id=>extended.forms.find(form=>form.id===exercise.tokens.find(token=>token.id===id)!.formId)!);
+  const construction=prepared??{exerciseId:exercise.id,explanationRu:skill.explanationRu,breakdown:[],example:{surface:forms.map(form=>form.surface).join('')+exercise.sentenceEnd,kana:forms.map(form=>form.kana).join('')+exercise.sentenceEnd,segments:[...forms.flatMap(form=>form.segments),...(exercise.sentenceEnd?[{surface:exercise.sentenceEnd}]:[])],meaningRu:exercise.translationRu??exercise.promptRu,audioUrl:''}};
+  return [{...itemFor(extended,snap,'grammar',skill.id,now,[exercise]),construction:{...construction,mode}}];
+ });
+ if(!items.length)throw new ReviewError(mode==='listening'?'AUDIO_UNAVAILABLE':'MATERIAL_UNAVAILABLE',mode==='listening'?'Для этой конструкции пока нет записи примера. Выберите чтение или сборку.':'Для этой конструкции пока нет доступного упражнения.',403);
+ return {items:items.slice(0,10),remainingDue:items.filter(item=>new Date(item.due)<=now).length,remainingNew:0};
 }
 export async function learningReviewItem(sql:Database['sql'],userId:string,course:Course,mode:Exclude<ReviewMode,'counter'>,targetId:string,exerciseId?:string):Promise<Exclude<ReviewItem,{mode:'counter'}>>{
  const snap=await snapshot({sql},userId,course);

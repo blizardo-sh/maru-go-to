@@ -1,23 +1,27 @@
 import type { Snapshot } from './types';
-import { Japanese } from './Japanese';
 import { studyWord } from './learning';
-import { counterDefinitions, counterWords, numbersFor, objectFor } from '../shared/counters';
+import { counterDefinitions, counterWords, numbersFor, objectFor, counterObjects } from '../shared/counters';
+import { Japanese } from './Japanese';
+import { CounterPicture } from './CounterPicture';
+import { JapaneseText } from './JapaneseText';
+import { counterAnswer } from '../shared/counters';
 import { LessonVideoLibrary } from './LessonVideo';
 
 export function Textbook({ data, onLearn, onTrain, onCounters }: { data: Snapshot; onCounters: () => void; onLearn: (lessonId: string) => void; onTrain: (lessonId: string) => void }) {
   const { course, settings, progress } = data;
   const introducedWords = new Set(progress.introducedWordIds);
   const introducedSkills = new Set(progress.introducedSkillIds);
+  const availableCounters = counterDefinitions.filter(counter => counterWords(course.words, introducedWords).some(word => objectFor(word)?.counters.includes(counter.id))).length;
   return <>
     <header className="pagehead"><h1>Учебник</h1><p>Marugoto Starter A1 · 18 уроков · 9 тем</p><p className="muted">Сначала знакомимся с основным материалом, затем практикуем его в обе стороны и на слух. Можно выйти в любой момент: точный шаг сохранится для вас.</p></header>
     <section className="counter-course sheet" aria-labelledby="counter-course-title">
-      <div className="spread"><div><small lang="ja">ひとつ、ふたつ、みっつ…</small><h2 id="counter-course-title">Счётные суффиксы</h2><p>Картинки, чтения и аудио · по 20 карточек · от одного до миллионов.</p></div><button className="primary" onClick={onCounters}>Тренировать счёт</button></div>
-      <div className="counter-levels">{counterDefinitions.map(counter => {
+      <div className="counter-course-entry"><CounterPicture object={counterObjects[1]!} quantity={3} label="Книги" showQuantity /><div><h2 id="counter-course-title">Счётные суффиксы</h2><p>Картинки, чтения и аудио · колода до 20 карточек.</p></div><button className="primary" onClick={onCounters}>Тренировать счёт</button></div>
+      <details className="counter-course-details"><summary>Типы счёта · доступно {availableCounters} из {counterDefinitions.length}</summary><div className="counter-levels">{counterDefinitions.map(counter => {
         const available = counterWords(course.words, introducedWords).some(word => objectFor(word)?.counters.includes(counter.id));
         const state = progress.counters?.find(state => state.counterId === counter.id); const numbers = numbersFor(counter, state?.level ?? 0);
-        return <div key={counter.id} data-counter-id={counter.id} data-counter-level={state?.level ?? 0} data-available={available}><strong lang="ja">{counter.surface}</strong><span>{counter.title}<small>{available ? `1–${Math.max(...numbers).toLocaleString('ru-RU')}` : 'После знакомства со словом'}</small></span></div>;
+        return <div key={counter.id} data-counter-id={counter.id} data-counter-level={state?.level ?? 0} data-available={available}><strong><Japanese value={counterAnswer(counter, null)} mode={data.settings.orthography} /></strong><span>{counter.title}<small>{available ? `1–${Math.max(...numbers).toLocaleString('ru-RU')}` : 'После знакомства со словом'}</small></span></div>;
       })}</div>
-      <small>Новые суффиксы открываются вместе с пройденными словами учебника. При недостатке материала колода короче.</small>
+      <small>Новые суффиксы открываются вместе с пройденными словами учебника. При недостатке материала колода короче.</small></details>
     </section>
     <div className="lesson-grid" onPlayCapture={event => { event.currentTarget.querySelectorAll('video').forEach(media => { if (media !== event.target) media.pause(); }); }}>{course.lessons.map(lesson => {
       const route = course.learning?.find(route => route.lessonId === lesson.id);
@@ -36,10 +40,10 @@ export function Textbook({ data, onLearn, onTrain, onCounters }: { data: Snapsho
             <details className="lesson-details"><summary>Дополнительный словарь и конструкции</summary><div className="stack">
               <p>Полный материал указателя: {words.length} слов и фраз. В повторении уже {learnedWords} слов и {learnedSkills} конструкций.</p><small className="muted">Эта практика не нужна для завершения основного маршрута. Первая оценка, включая «Ещё раз», добавляет материал в личные повторения.</small>
               <button className="quiet" data-testid="train-lesson" data-lesson-id={lesson.id} aria-label={`Практиковать дополнительный словарь урока ${lesson.number}`} onClick={() => onTrain(lesson.id)}>Практиковать словарь</button>
-              {skills.length > 0 && <div><h3>Конструкции</h3>{skills.map(skill => <p key={skill.id}>{skill.title}</p>)}</div>}
-              <div><h3>Слова и фразы</h3>{words.slice(0, 16).map(word => <p key={word.id}><Japanese value={word} mode={settings.orthography} /> — {word.meaningRu}</p>)}{words.length > 16 && <small>И ещё {words.length - 16}. Практика предлагает неизученный остаток полного словаря.</small>}</div>
+              {skills.length > 0 && <div><h3>Конструкции</h3>{skills.map(skill => <p key={skill.id}><JapaneseText text={skill.title} course={course} mode={settings.orthography} /></p>)}</div>}
+              <div><h3>Слова и фразы</h3>{words.slice(0, 16).map(word => <p key={word.id}><Japanese value={word} forms={course.forms} mode={settings.orthography} /> — {word.meaningRu}</p>)}{words.length > 16 && <small>И ещё {words.length - 16}. Практика предлагает неизученный остаток полного словаря.</small>}</div>
             </div></details>
-            {lesson.videos && <LessonVideoLibrary materials={lesson.videos} />}
+            {lesson.videos && <LessonVideoLibrary materials={lesson.videos} course={data.course} orthography={data.settings.orthography} />}
           </div>
         </details>
         <button className="primary lesson-train" data-testid="learn-lesson" data-lesson-id={lesson.id} disabled={!route} aria-label={`${learning?.completed ? 'Итог' : started ? 'Продолжить' : 'Начать'} урок ${lesson.number}`} onClick={() => onLearn(lesson.id)}>{learning?.completed ? 'Итог урока' : started ? 'Продолжить урок' : 'Начать урок'}</button>

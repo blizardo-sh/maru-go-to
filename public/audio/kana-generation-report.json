@@ -1,0 +1,14 @@
+{
+  "source": "existing offline macOS speech synthesis pipeline",
+  "voice": "Kyoko",
+  "rate": 150,
+  "pronunciationReview": "not-human-reviewed",
+  "displayedEntries": 228,
+  "audibleEntries": 226,
+  "distinctSounds": 101,
+  "decodedFiles": 101,
+  "minDurationSeconds": 0.320408,
+  "maxDurationSeconds": 0.549932,
+  "canonicalization": "Katakana, small kana and modern homophones share their hiragana reading; small tsu has no isolated audio.",
+  "pronunciationLimits": "Automated file decoding and duration checks do not replace a human Japanese pronunciation review."
+}
