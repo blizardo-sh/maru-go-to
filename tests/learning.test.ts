@@ -1,7 +1,16 @@
 import { expect, test } from 'bun:test';
-import { advanceLearningState, currentLearningStep, initialLearningState, learningParts, reconcileOptionalVideos, validateLearning } from '../src/shared/learning';
+import { advanceLearningState, currentLearningStep, initialLearningState, learningPartProgress, learningParts, reconcileOptionalVideos, validateLearning } from '../src/shared/learning';
 import { withLearningMaterial } from '../src/server/course';
 import { learningFixture } from './helpers/learning-fixture';
+
+test('part progress counts saved steps independently, including completed later parts after a content update', () => {
+  const parts = learningParts(learningFixture().learning[0]!);
+  const progress = learningPartProgress(parts, { completedStepIds: [parts[0]![0]!.id, parts[0]![0]!.id, 'removed-step', ...parts[1]!.map(step => step.id)] });
+  expect(progress).toEqual([
+    { partId: parts[0]![0]!.partId, completedSteps: 1, totalSteps: parts[0]!.length },
+    { partId: parts[1]![0]!.partId, completedSteps: parts[1]!.length, totalSteps: parts[1]!.length },
+  ]);
+});
 
 test('a guided part introduces the whole group then explicitly practices every word and full construction in three formats', () => {
   const course = learningFixture(); const route = course.learning[0]!;

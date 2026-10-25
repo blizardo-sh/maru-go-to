@@ -1,0 +1,559 @@
+{
+  "green": true,
+  "readOnlyFixture": true,
+  "checks": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "cards": [
+        {
+          "lessonId": "marugoto.starter-a1.lesson.01",
+          "parts": 3,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.02",
+          "parts": 3,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.03",
+          "parts": 13,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.04",
+          "parts": 15,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.05",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.06",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.07",
+          "parts": 6,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.08",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.09",
+          "parts": 4,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.10",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.11",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.12",
+          "parts": 6,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.13",
+          "parts": 7,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.14",
+          "parts": 7,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.15",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.16",
+          "parts": 4,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.17",
+          "parts": 7,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.18",
+          "parts": 6,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        }
+      ],
+      "closedMaterialHeadings": 52,
+      "closedMaterialActuallyVisible": false,
+      "keyboardDisclosure": true,
+      "overflow": 0
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "cards": [
+        {
+          "lessonId": "marugoto.starter-a1.lesson.01",
+          "parts": 3,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.02",
+          "parts": 3,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.03",
+          "parts": 13,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.04",
+          "parts": 15,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.05",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.06",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.07",
+          "parts": 6,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.08",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.09",
+          "parts": 4,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.10",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.11",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.12",
+          "parts": 6,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.13",
+          "parts": 7,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.14",
+          "parts": 7,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.15",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.16",
+          "parts": 4,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.17",
+          "parts": 7,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.18",
+          "parts": 6,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        }
+      ],
+      "closedMaterialHeadings": 52,
+      "closedMaterialActuallyVisible": false,
+      "keyboardDisclosure": true,
+      "overflow": 0
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "cards": [
+        {
+          "lessonId": "marugoto.starter-a1.lesson.01",
+          "parts": 3,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.02",
+          "parts": 3,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.03",
+          "parts": 13,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.04",
+          "parts": 15,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.05",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.06",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.07",
+          "parts": 6,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.08",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.09",
+          "parts": 4,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.10",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.11",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.12",
+          "parts": 6,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.13",
+          "parts": 7,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.14",
+          "parts": 7,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.15",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.16",
+          "parts": 4,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.17",
+          "parts": 7,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.18",
+          "parts": 6,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        }
+      ],
+      "closedMaterialHeadings": 52,
+      "closedMaterialActuallyVisible": false,
+      "keyboardDisclosure": true,
+      "overflow": 0
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "cards": [
+        {
+          "lessonId": "marugoto.starter-a1.lesson.01",
+          "parts": 3,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.02",
+          "parts": 3,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.03",
+          "parts": 13,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.04",
+          "parts": 15,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.05",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.06",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.07",
+          "parts": 6,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.08",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.09",
+          "parts": 4,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.10",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.11",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.12",
+          "parts": 6,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.13",
+          "parts": 7,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.14",
+          "parts": 7,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.15",
+          "parts": 5,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.16",
+          "parts": 4,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.17",
+          "parts": 7,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        },
+        {
+          "lessonId": "marugoto.starter-a1.lesson.18",
+          "parts": 6,
+          "imageLeft": true,
+          "textInside": true,
+          "buttonHeight": 44
+        }
+      ],
+      "closedMaterialHeadings": 52,
+      "closedMaterialActuallyVisible": false,
+      "keyboardDisclosure": true,
+      "overflow": 0
+    }
+  ],
+  "errors": []
+}
