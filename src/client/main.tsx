@@ -3,4 +3,7 @@ import { App } from './App';
 import './styles.css';
 import './illustrated.css';
 
-createRoot(document.getElementById('root')!).render(<App />);
+const root = createRoot(document.getElementById('root')!);
+if (import.meta.env.DEV && new URLSearchParams(location.search).get('prototype') === 'layout-system') {
+  void import('./prototype/layoutsystem/LayoutPrototype').then(({ LayoutPrototype }) => root.render(<LayoutPrototype />));
+} else root.render(<App />);
