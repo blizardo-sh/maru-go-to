@@ -307,10 +307,14 @@ rt { font-size: .54em; line-height: 1; }
 .auth::after { content: ''; position: absolute; inset: 0; z-index: -1; background: var(--color-paper); border-radius: inherit; pointer-events: none; }
 
 .thematic-course { margin-block: 1rem 1.5rem; }
-.thematic-sections, .kana-learning-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,15rem),1fr)); gap: 1rem; }
-.thematic-sections article { display: flex; flex-direction: column; gap: .5rem; padding: 1rem; border: 1px solid var(--color-rule); border-radius: var(--radius-sm); }
+.thematic-sections { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; }
+.kana-learning-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,15rem),1fr)); gap: 1rem; }
+.thematic-sections article { min-width: 0; display: flex; flex-direction: column; gap: .5rem; padding: 1rem; border: 1px solid var(--color-rule); border-radius: var(--radius-sm); }
 .thematic-sections h3, .thematic-sections p { margin: 0; }
-.thematic-sections button { margin-block-start: auto; }
+.thematic-sections button { margin-block-start: auto; box-shadow: none; }
+.thematic-course > h2 { margin-bottom: 1rem; }
+.thematic-course > details { margin-top: 1rem; }
+@media (max-width: 540px) { .thematic-sections { grid-template-columns: minmax(0,1fr); } }
 .training-preparation { min-width: 0; }
 .training-preparation .word-introduction { min-width: 0; }
 .training-reference { max-width: 72ch; }

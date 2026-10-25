@@ -1,0 +1,2690 @@
+{
+ "url": "http://127.0.0.1:56031",
+ "at": "2026-10-24T21:07:55.235Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.71,
+    0.7,
+    0.65
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 1860,
+     "screens": 2.1,
+     "words": 207,
+     "img": 1,
+     "video": 0,
+     "canvas": 0,
+     "svg": 1,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 6,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "room-v1.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [
+      "❧",
+      "♫",
+      "⚙"
+     ],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Тренировки",
+     "words": 1,
+     "chars": 10,
+     "lines": 1,
+     "size": 30,
+     "vw": 2.1,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": 0,
+     "leading": 1.25,
+     "top": 135,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Тренировки",
+     "words": 1,
+     "lines": 1,
+     "size": 30,
+     "font": "Neucha"
+    },
+    "headings": [
+     {
+      "text": "Тренировки",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.72,
+      "top": 135,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Счётные суффиксы",
+      "words": 2,
+      "chars": 16,
+      "lines": 1,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.48,
+      "top": 284,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Тематические тренировки",
+      "words": 2,
+      "chars": 23,
+      "lines": 1,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.69,
+      "top": 459,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "つ",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.02,
+      "top": 461,
+      "tag": "strong",
+      "kind": "heading"
+     },
+     {
+      "text": "枚",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.02,
+      "top": 472,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "本",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.02,
+      "top": 472,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "冊",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.02,
+      "top": 472,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "個",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.02,
+      "top": 472,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "人",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.02,
+      "top": 472,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "歳",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.02,
+      "top": 605,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "Азбуки",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.69,
+      "top": 1221,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Конструкции",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.69,
+      "top": 1409,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 12,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "-apple-system",
+       "share": 0.86,
+       "mono": false
+      },
+      {
+       "family": "Neucha",
+       "share": 0.13,
+       "mono": false
+      },
+      {
+       "family": "Hiragino Kaku Gothic ProN",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      14,
+      15,
+      16,
+      17,
+      22,
+      24,
+      26,
+      28,
+      30
+     ],
+     "sizeCount": 9,
+     "notLoaded": [
+      "Hiragino Kaku Gothic ProN"
+     ],
+     "body": {
+      "font": "-apple-system",
+      "size": 17,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 86,
+     "max": {
+      "size": 30,
+      "vw": 2.1,
+      "font": "Neucha",
+      "text": "Тренировки"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.11,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fdf0d8",
+     "bodyBgHsl": {
+      "h": 39,
+      "s": 0.9,
+      "l": 0.92
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#875b34",
+       "top": 0,
+       "hsl": {
+        "h": 28,
+        "s": 0.44,
+        "l": 0.37
+       }
+      },
+      {
+       "color": "#fdf0d8",
+       "top": 94,
+       "hsl": {
+        "h": 39,
+        "s": 0.9,
+        "l": 0.92
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#311f13",
+       "share": 0.55
+      },
+      {
+       "color": "#665443",
+       "share": 0.35
+      },
+      {
+       "color": "#fffbf1",
+       "share": 0.07
+      },
+      {
+       "color": "#445730",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#445730",
+      "hsl": {
+       "h": 89,
+       "s": 0.29,
+       "l": 0.26
+      },
+      "fg": "#fffbf1"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 18,
+     "inHero": 14,
+     "radius": 8,
+     "height": 44,
+     "withShadow": 1,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "К упражнению",
+      "Учебник",
+      "❧ Тренировки",
+      "Повторение",
+      "Справочник"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 2,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "header.game-hud → rgba(55, 34, 12, 0.2) 0px 6px 16px 0px",
+      "section.section-board.work-board → rgba(50, 25, 8, 0.19) 0px 14px 24px 0px"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 18,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 15,
+     "boxRadius": 8,
+     "squareMedia": 6,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 256
+      },
+      {
+       "count": 7,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 545
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.7
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.09
+     }
+    ],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 66,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "neucha"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 1860,
+    "margins": {
+     "left": 205,
+     "right": 160
+    },
+    "sections": [
+     {
+      "sel": "section.counter-course.sheet",
+      "tag": "section",
+      "top": 256,
+      "height": 162,
+      "words": 18,
+      "media": 0,
+      "middle": 310,
+      "heading": {
+       "text": "Счётные суффиксы",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 222,
+      "right": 222,
+      "textLeft": 222,
+      "textRight": 237,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.sheet.thematic-course",
+      "tag": "section",
+      "top": 442,
+      "height": 739,
+      "words": 109,
+      "media": 0,
+      "middle": 35,
+      "heading": {
+       "text": "Тематические тренировки",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 222,
+      "right": 239,
+      "textLeft": 222,
+      "textRight": 316,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.sheet",
+      "tag": "section",
+      "top": 1204,
+      "height": 164,
+      "words": 23,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Азбуки",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 222,
+      "right": 499,
+      "textLeft": 222,
+      "textRight": 499,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.sheet.stack",
+      "tag": "section",
+      "top": 1392,
+      "height": 287,
+      "words": 37,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Конструкции",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 222,
+      "right": 525,
+      "textLeft": 222,
+      "textRight": 525,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Тренировки",
+      "size": 30,
+      "top": 135,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 222,
+      "n": 7
+     },
+     {
+      "x": 239,
+      "n": 4
+     },
+     {
+      "x": 205,
+      "n": 2
+     },
+     {
+      "x": 576,
+      "n": 2
+     },
+     {
+      "x": 914,
+      "n": 2
+     },
+     {
+      "x": 330,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 18,
+    "bodySize": 17,
+    "stage": true,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "dark": false,
+    "ground": "#fdf0d8",
+    "sidebar": null,
+    "topbar": null,
+    "canvas": {
+     "left": 24,
+     "right": 143
+    },
+    "hero": {
+     "text": "Тренировки",
+     "words": 1,
+     "chars": 10,
+     "lines": 1,
+     "size": 30,
+     "vw": 2.1,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": 0,
+     "leading": 1.25,
+     "top": 135,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 1,
+     "firstScreen": 1,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 12,
+     "radii": [
+      [
+       8,
+       7
+      ],
+      [
+       0,
+       5
+      ]
+     ],
+     "heavyBorders": 12,
+     "borderSamples": [
+      "#906137 on #fdf0d8 (4.72:1)",
+      "#c1ae91 on #fdf0d8 (1.91:1)",
+      "#c1ae91 on #fdf0d8 (1.91:1)"
+     ],
+     "heavyShadows": 1,
+     "softShadows": 0,
+     "shadowSamples": [
+      "rgba(50, 25, 8, 0.19) 0px 14px 24px 0px"
+     ],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      14,
+      15,
+      16,
+      17,
+      24,
+      28,
+      30
+     ]
+    },
+    "title": {
+     "text": "Тренировки",
+     "size": 30,
+     "top": 135
+    },
+    "colourShare": 0.238
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.92,
+    0.86,
+    0.79
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 2126,
+     "screens": 2.1,
+     "words": 206,
+     "img": 1,
+     "video": 0,
+     "canvas": 0,
+     "svg": 1,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 7,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "room-mobile-v1.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [
+      "♫",
+      "⚙"
+     ],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Тренировки",
+     "words": 1,
+     "chars": 10,
+     "lines": 1,
+     "size": 30,
+     "vw": 3.9,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": 0,
+     "leading": 1.25,
+     "top": 179,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Тренировки",
+     "words": 1,
+     "lines": 1,
+     "size": 30,
+     "font": "Neucha"
+    },
+    "headings": [
+     {
+      "text": "Тренировки",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.83,
+      "top": 179,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Счётные суффиксы",
+      "words": 2,
+      "chars": 16,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.4,
+      "top": 317,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Тематические тренировки",
+      "words": 2,
+      "chars": 23,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 505,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "枚",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.04,
+      "top": 508,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "本",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.04,
+      "top": 508,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "冊",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.04,
+      "top": 508,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "つ",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.04,
+      "top": 621,
+      "tag": "strong",
+      "kind": "heading"
+     },
+     {
+      "text": "個",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.04,
+      "top": 633,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "人",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.04,
+      "top": 633,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "歳",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.04,
+      "top": 745,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "Азбуки",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 1487,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Конструкции",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 1675,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 12,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "-apple-system",
+       "share": 0.86,
+       "mono": false
+      },
+      {
+       "family": "Neucha",
+       "share": 0.13,
+       "mono": false
+      },
+      {
+       "family": "Hiragino Kaku Gothic ProN",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      14,
+      15,
+      16,
+      17,
+      20,
+      22,
+      24,
+      26,
+      28,
+      30
+     ],
+     "sizeCount": 10,
+     "notLoaded": [
+      "Hiragino Kaku Gothic ProN"
+     ],
+     "body": {
+      "font": "-apple-system",
+      "size": 17,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 71,
+     "max": {
+      "size": 30,
+      "vw": 3.9,
+      "font": "Neucha",
+      "text": "Тренировки"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.11,
+     "smallText": 0
+    },
+    "eyebrows": [
+     {
+      "text": "まい",
+      "above": "Тематические тренировки",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 14,
+      "top": 494
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fdf0d8",
+     "bodyBgHsl": {
+      "h": 39,
+      "s": 0.9,
+      "l": 0.92
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#875b34",
+       "top": 0,
+       "hsl": {
+        "h": 28,
+        "s": 0.44,
+        "l": 0.37
+       }
+      },
+      {
+       "color": "#fdf0d8",
+       "top": 138,
+       "hsl": {
+        "h": 39,
+        "s": 0.9,
+        "l": 0.92
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#311f13",
+       "share": 0.55
+      },
+      {
+       "color": "#665443",
+       "share": 0.36
+      },
+      {
+       "color": "#fffbf1",
+       "share": 0.07
+      },
+      {
+       "color": "#445730",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#445730",
+      "hsl": {
+       "h": 89,
+       "s": 0.29,
+       "l": 0.26
+      },
+      "fg": "#fffbf1"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 18,
+     "inHero": 12,
+     "radius": 8,
+     "height": 44,
+     "withShadow": 1,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "К упражнению",
+      "Учебник",
+      "Тренировки",
+      "Повторение",
+      "Справочник"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 2,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "header.game-hud → rgba(55, 34, 12, 0.2) 0px 6px 16px 0px",
+      "section.section-board.work-board → rgba(50, 25, 8, 0.19) 0px 14px 24px 0px"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 18,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 15,
+     "boxRadius": 8,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 300
+      },
+      {
+       "count": 7,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 591
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.82
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.1
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.09
+     }
+    ],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 110,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "neucha"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 2126,
+    "margins": {
+     "left": 31,
+     "right": 43
+    },
+    "sections": [
+     {
+      "sel": "section.counter-course.sheet",
+      "tag": "section",
+      "top": 300,
+      "height": 164,
+      "words": 18,
+      "media": 0,
+      "middle": 23,
+      "heading": {
+       "text": "Счётные суффиксы",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 82,
+      "right": 82,
+      "textLeft": 82,
+      "textRight": 97,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.sheet.thematic-course",
+      "tag": "section",
+      "top": 488,
+      "height": 959,
+      "words": 109,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Тематические тренировки",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 82,
+      "right": 99,
+      "textLeft": 82,
+      "textRight": 101,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.sheet",
+      "tag": "section",
+      "top": 1470,
+      "height": 164,
+      "words": 23,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Азбуки",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 82,
+      "right": 98,
+      "textLeft": 82,
+      "textRight": 98,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.sheet.stack",
+      "tag": "section",
+      "top": 1658,
+      "height": 287,
+      "words": 37,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Конструкции",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 82,
+      "right": 105,
+      "textLeft": 82,
+      "textRight": 105,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Тренировки",
+      "size": 30,
+      "top": 179,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 82,
+      "n": 7
+     },
+     {
+      "x": 99,
+      "n": 5
+     },
+     {
+      "x": 409,
+      "n": 3
+     },
+     {
+      "x": 65,
+      "n": 2
+     },
+     {
+      "x": 190,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 18,
+    "bodySize": 17,
+    "stage": true,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "dark": false,
+    "ground": "#fdf0d8",
+    "sidebar": null,
+    "topbar": null,
+    "canvas": {
+     "left": 24,
+     "right": 43
+    },
+    "hero": {
+     "text": "Тренировки",
+     "words": 1,
+     "chars": 10,
+     "lines": 1,
+     "size": 30,
+     "vw": 3.9,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": 0,
+     "leading": 1.25,
+     "top": 179,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 2,
+     "firstScreen": 2,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 13,
+     "radii": [
+      [
+       8,
+       7
+      ],
+      [
+       0,
+       6
+      ]
+     ],
+     "heavyBorders": 13,
+     "borderSamples": [
+      "#76502e on #b17a43 (1.94:1)",
+      "#906137 on #fdf0d8 (4.72:1)",
+      "#c1ae91 on #fdf0d8 (1.91:1)"
+     ],
+     "heavyShadows": 2,
+     "softShadows": 0,
+     "shadowSamples": [
+      "rgba(55, 34, 12, 0.2) 0px 6px 16px 0px",
+      "rgba(50, 25, 8, 0.19) 0px 14px 24px 0px"
+     ],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      14,
+      15,
+      16,
+      17,
+      20,
+      24,
+      28,
+      30
+     ]
+    },
+    "title": {
+     "text": "Тренировки",
+     "size": 30,
+     "top": 179
+    },
+    "colourShare": 0.181
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    1,
+    1,
+    1,
+    0.87
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 2954,
+     "screens": 3.5,
+     "words": 206,
+     "img": 1,
+     "video": 0,
+     "canvas": 0,
+     "svg": 1,
+     "sections": 6,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 3,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "room-mobile-v1.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [
+      "♫",
+      "⚙"
+     ],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Тренировки",
+     "words": 1,
+     "chars": 10,
+     "lines": 1,
+     "size": 30,
+     "vw": 7.7,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": 0,
+     "leading": 1.25,
+     "top": 144,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Тренировки",
+     "words": 1,
+     "lines": 1,
+     "size": 30,
+     "font": "Neucha"
+    },
+    "headings": [
+     {
+      "text": "╱",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 25.6,
+      "vw": 6.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.3,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "right",
+      "widthRatio": 0.11,
+      "top": 37,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Тренировки",
+      "words": 1,
+      "chars": 10,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.85,
+      "top": 144,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Счётные суффиксы",
+      "words": 2,
+      "chars": 16,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.56,
+      "top": 333,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "枚",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.07,
+      "top": 560,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "Тематические тренировки",
+      "words": 2,
+      "chars": 23,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 577,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "本",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.07,
+      "top": 644,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "冊",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.07,
+      "top": 729,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "Вопросительные выражения",
+      "words": 2,
+      "chars": 24,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.67,
+      "top": 734,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "個",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.07,
+      "top": 813,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "つ",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.07,
+      "top": 884,
+      "tag": "strong",
+      "kind": "heading"
+     },
+     {
+      "text": "Дни, недели, месяцы и годы",
+      "words": 5,
+      "chars": 26,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.67,
+      "top": 929,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "人",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.07,
+      "top": 977,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "歳",
+      "words": 1,
+      "chars": 1,
+      "lines": 2,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.7,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.07,
+      "top": 1062,
+      "tag": "ruby",
+      "kind": "heading"
+     },
+     {
+      "text": "Сейчас и части суток",
+      "words": 4,
+      "chars": 20,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.67,
+      "top": 1123,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Дни недели",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.67,
+      "top": 1318,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Месяцы",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.67,
+      "top": 1512,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Числа месяца",
+      "words": 2,
+      "chars": 12,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.67,
+      "top": 1707,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Часы и минуты",
+      "words": 3,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.67,
+      "top": 1901,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Азбуки",
+      "words": 1,
+      "chars": 6,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 2168,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Конструкции",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.76,
+      "top": 2459,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 20,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "-apple-system",
+       "share": 0.86,
+       "mono": false
+      },
+      {
+       "family": "Neucha",
+       "share": 0.13,
+       "mono": false
+      },
+      {
+       "family": "Hiragino Kaku Gothic ProN",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      24,
+      26,
+      28,
+      30
+     ],
+     "sizeCount": 10,
+     "notLoaded": [
+      "Hiragino Kaku Gothic ProN"
+     ],
+     "body": {
+      "font": "-apple-system",
+      "size": 17,
+      "leading": 1.5,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 35,
+     "max": {
+      "size": 30,
+      "vw": 7.7,
+      "font": "Neucha",
+      "text": "Тренировки"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.11,
+     "smallText": 0
+    },
+    "eyebrows": [
+     {
+      "text": "まい",
+      "above": "Тематические тренировки",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 14,
+      "top": 546
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fdf0d8",
+     "bodyBgHsl": {
+      "h": 39,
+      "s": 0.9,
+      "l": 0.92
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#875b34",
+       "top": 0,
+       "hsl": {
+        "h": 28,
+        "s": 0.44,
+        "l": 0.37
+       }
+      },
+      {
+       "color": "#fdf0d8",
+       "top": 116,
+       "hsl": {
+        "h": 39,
+        "s": 0.9,
+        "l": 0.92
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#311f13",
+       "share": 0.55
+      },
+      {
+       "color": "#665443",
+       "share": 0.36
+      },
+      {
+       "color": "#fffbf1",
+       "share": 0.07
+      },
+      {
+       "color": "#445730",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#445730",
+      "hsl": {
+       "h": 89,
+       "s": 0.29,
+       "l": 0.26
+      },
+      "fg": "#fffbf1"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 18,
+     "inHero": 9,
+     "radius": 8,
+     "height": 44,
+     "withShadow": 1,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "К упражнению",
+      "Учебник",
+      "Тренировки",
+      "Повторение",
+      "Справочник"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 2,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "header.game-hud → rgba(55, 34, 12, 0.2) 0px 6px 16px 0px",
+      "section.section-board.work-board → rgba(50, 25, 8, 0.19) 0px 14px 24px 0px"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 11,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 8,
+     "boxRadius": 8,
+     "squareMedia": 2,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 4,
+       "iconTopped": false,
+       "rounded": false,
+       "top": 316
+      },
+      {
+       "count": 7,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 688
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.83
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.11
+     }
+    ],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 100,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "neucha"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 2954,
+    "margins": {
+     "left": 14,
+     "right": 26
+    },
+    "sections": [
+     {
+      "sel": "header.pagehead",
+      "tag": "header",
+      "top": 144,
+      "height": 148,
+      "words": 19,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Тренировки",
+       "size": 30,
+       "tag": "h1"
+      },
+      "left": 30,
+      "right": 46,
+      "textLeft": 30,
+      "textRight": 46,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.counter-course.sheet",
+      "tag": "section",
+      "top": 316,
+      "height": 220,
+      "words": 18,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Счётные суффиксы",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 47,
+      "textLeft": 47,
+      "textRight": 53,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.sheet.thematic-course",
+      "tag": "section",
+      "top": 560,
+      "height": 1568,
+      "words": 109,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Тематические тренировки",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 47,
+      "textRight": 49,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.sheet",
+      "tag": "section",
+      "top": 2151,
+      "height": 267,
+      "words": 23,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Азбуки",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 87,
+      "textLeft": 47,
+      "textRight": 87,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "section.sheet.stack",
+      "tag": "section",
+      "top": 2442,
+      "height": 364,
+      "words": 37,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Конструкции",
+       "size": 28,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 51,
+      "textLeft": 47,
+      "textRight": 51,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Тренировки",
+      "size": 30,
+      "top": 144,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 64,
+      "n": 8
+     },
+     {
+      "x": 47,
+      "n": 7
+     },
+     {
+      "x": 30,
+      "n": 2
+     },
+     {
+      "x": 123,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 18,
+    "bodySize": 17,
+    "stage": true,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "dark": false,
+    "ground": "#fdf0d8",
+    "sidebar": null,
+    "topbar": null,
+    "canvas": {
+     "left": 14,
+     "right": 26
+    },
+    "hero": {
+     "text": "Тренировки",
+     "words": 1,
+     "chars": 10,
+     "lines": 1,
+     "size": 30,
+     "vw": 7.7,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": 0,
+     "leading": 1.25,
+     "top": 144,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 2,
+     "firstScreen": 2,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 13,
+     "radii": [
+      [
+       8,
+       7
+      ],
+      [
+       0,
+       6
+      ]
+     ],
+     "heavyBorders": 13,
+     "borderSamples": [
+      "#76502e on #b17a43 (1.94:1)",
+      "#906137 on #fdf0d8 (4.72:1)",
+      "#c1ae91 on #fdf0d8 (1.91:1)"
+     ],
+     "heavyShadows": 2,
+     "softShadows": 0,
+     "shadowSamples": [
+      "rgba(55, 34, 12, 0.2) 0px 6px 16px 0px",
+      "rgba(50, 25, 8, 0.19) 0px 14px 24px 0px"
+     ],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      14,
+      15,
+      16,
+      17,
+      18,
+      24,
+      28,
+      30
+     ]
+    },
+    "title": {
+     "text": "Тренировки",
+     "size": 30,
+     "top": 144
+    },
+    "colourShare": 0.168
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "emoji",
+   "width": 1440,
+   "message": "Emoji in the page: ❧ ♫ ⚙",
+   "fix": "Remove. Use words or real imagery.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "button-fx",
+   "width": 1440,
+   "message": "Buttons with shadow/glow.",
+   "fix": "Flat fill, one colour.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "palette-cream",
+   "width": 1440,
+   "message": "Yellow-cream background (page background #fdf0d8, section #fdf0d8, text #fffbf1).",
+   "fix": "Use the drawn palette. If you want warmth, take a low-chroma stone or bone, not a yellow cream.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "font-fallback",
+   "width": 1440,
+   "message": "Typeface(s) declared but not loaded, so a fallback is rendering: Hiragino Kaku Gothic ProN",
+   "fix": "Fix the font URL / family name, or the screenshots you are judging are not the design.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "heavy-shadow",
+   "width": 1440,
+   "message": "1 panel shadow(s) heavy enough to read as floating: rgba(50, 25, 8, 0.19) 0px 14px 24px 0px",
+   "fix": "Panels sit on the ground: separate them with a fill one step from the ground or a quiet 1px border. A shadow, if any, is under 8% black with a small blur. Real overlays (menus, dialogs, popovers) may float.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "heavy-borders",
+   "width": 1440,
+   "message": "12 panel borders are dark against their ground: #906137 on #fdf0d8 (4.72:1) | #c1ae91 on #fdf0d8 (1.91:1) | #c1ae91 on #fdf0d8 (1.91:1)",
+   "fix": "A panel border is a whisper: about 1.1–1.3:1 against its ground on a light screen (#e5e7eb–#ededed on white), and about 1.2–1.5:1 on a dark one (#1a1a1a on #000, #2e2e2e on #111). Darker lines turn the screen into a grid of boxes; keep the stronger line for controls.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "colour-sprawl",
+   "width": 1440,
+   "message": "24% of the first screen is strongly coloured.",
+   "fix": "Keep the screen neutral and spend colour on data and status: the studied screens sit near 3%, and only tinted styles reach 10–15%, as pale tints rather than saturated fills.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "app-title-size",
+   "width": 390,
+   "message": "The h1 is 30px (\"Тренировки\").",
+   "fix": "An app screen is not a landing page: the title is 18-32px (20-24px on a phone)."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/private/tmp/maru-training-design-review/before/desktop-fold.jpg",
+   "pages": [
+    "/private/tmp/maru-training-design-review/before/desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/private/tmp/maru-training-design-review/before/tablet-fold.jpg",
+   "pages": [
+    "/private/tmp/maru-training-design-review/before/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/private/tmp/maru-training-design-review/before/mobile-fold.jpg",
+   "pages": [
+    "/private/tmp/maru-training-design-review/before/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}
