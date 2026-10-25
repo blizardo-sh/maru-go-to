@@ -66,6 +66,7 @@ export interface LearningState {
   version: number;
   partIndex: number;
   totalParts: number;
+  partProgress?: { partId: string; completedSteps: number; totalSteps: number }[];
   completedSteps: number;
   totalSteps: number;
   completed: boolean;
@@ -113,6 +114,10 @@ export function learningParts(lesson: GuidedLesson): LearningStep[][] {
     steps.push({ ...base, id: `${part.id}:complete`, kind: 'part-complete' });
     return steps;
   }));
+}
+export function learningPartProgress(parts: LearningStep[][], state: Pick<LearningRouteState, 'completedStepIds'>): NonNullable<LearningState['partProgress']> {
+  const completed = new Set(state.completedStepIds);
+  return parts.map(steps => ({ partId: steps[0]!.partId, completedSteps: steps.filter(step => completed.has(step.id)).length, totalSteps: steps.length }));
 }
 export function initialLearningState(lesson: GuidedLesson): LearningRouteState {
   return { partIndex: 0, pendingStepIds: learningParts(lesson)[0]!.map(step => step.id), completedStepIds: [] };

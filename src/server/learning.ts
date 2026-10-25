@@ -2,7 +2,7 @@ import { studyPreparations, studySpec, introduceStudy } from './study';
 import { stagedLearning } from '../shared/training';
 import { createHash } from 'node:crypto';
 import { isDeepStrictEqual } from 'node:util';
-import { advanceLearningState, currentLearningStep, initialLearningState, learningParts, reconcileOptionalVideos, reconcileLearningRoute, type GuidedLesson, type LearningAdvance, type LearningAdvanceResult, type LearningRouteState, type LearningState, type LearningStep } from '../shared/learning';
+import { advanceLearningState, currentLearningStep, initialLearningState, learningParts, learningPartProgress, reconcileOptionalVideos, reconcileLearningRoute, type GuidedLesson, type LearningAdvance, type LearningAdvanceResult, type LearningRouteState, type LearningState, type LearningStep } from '../shared/learning';
 import type { Course, ReviewItem, ReviewSubmission } from '../shared/types';
 import type { Database } from './db';
 import { learningReviewItem, ReviewError, submitReviewLocked } from './reviews';
@@ -24,7 +24,7 @@ function storedState(route: GuidedLesson, row?: { route_version: string; state: 
 async function stateFor(sql: Database['sql'], userId: string, course: Course, route: GuidedLesson, state: LearningRouteState, version: number, hydrate: boolean): Promise<LearningState> {
   const step = currentLearningStep(route, state);
   const parts = learningParts(route);
-  const result: LearningState = { ...(course.publicationId ? { publicationId: course.publicationId } : {}), lessonId: route.lessonId, routeVersion: route.version, version, partIndex: state.partIndex, totalParts: parts.length, completedSteps: state.completedStepIds.length, totalSteps: parts.flat().length, completed: state.partIndex >= parts.length, step };
+  const result: LearningState = { ...(course.publicationId ? { publicationId: course.publicationId } : {}), lessonId: route.lessonId, routeVersion: route.version, version, partIndex: state.partIndex, totalParts: parts.length, partProgress: learningPartProgress(parts, state), completedSteps: state.completedStepIds.length, totalSteps: parts.flat().length, completed: state.partIndex >= parts.length, step };
   if (hydrate && step?.kind === 'word-practice') {
     result.reviewItem = await learningReviewItem(sql, userId, course, step.mode, step.wordId);
     result.wordChoices = learningWordChoices(course, route, step);
