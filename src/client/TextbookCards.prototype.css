@@ -1,0 +1,43 @@
+/* Throwaway styles, scoped to the lesson-card prototype. */
+.pc-shell { padding-bottom: 240px; }
+.pc-shell h3 { font-size: 24px; }
+.pc-heading { display: grid; gap: 4px; min-width: 0; }
+.pc-heading small { color: var(--color-muted); }
+.pc-information { min-width: 0; display: grid; align-content: start; gap: 14px; }
+.pc-art { width: 100%; align-self: center; }
+.pc-card { min-width: 0; padding: 18px; border: 1px solid var(--color-rule); border-radius: 8px; background: var(--color-surface); }
+.pc-card > button { width: 100%; }
+.pc-compact-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 16px; }
+.pc-compact-grid .pc-card { display: grid; align-content: start; gap: 14px; }
+.pc-compact-top { display: grid; grid-template-columns: 88px minmax(0,1fr); align-items: center; gap: 12px; }
+.pc-compact-top h3 { font-size: 22px; }
+.pc-progress { display: grid; gap: 6px; min-width: 0; }
+.pc-progress > small { color: var(--color-muted); font-size: 14px; }
+.pc-parts { display: grid; gap: 2px; width: 100%; height: 9px; }
+.pc-part { background: #dfcba6; min-width: 0; overflow: hidden; }
+.pc-part > span { display: block; height: 100%; background: var(--color-accent); transition: width 250ms ease-out; }
+.pc-part[data-current=true] { outline: 1px solid #8e9e60; outline-offset: 1px; }
+.pc-material { min-width: 0; color: var(--color-muted); font-size: 14px; }
+.pc-material > summary { display: list-item; min-height: 44px; padding-block: 12px; cursor: pointer; }
+.pc-material ul { color: var(--color-ink); margin: 8px 0; padding-left: 18px; }
+.pc-album-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 20px; }
+.pc-album-card { display: grid; grid-template-columns: minmax(120px,.85fr) minmax(0,1.3fr); gap: 20px; padding: 24px; }
+.pc-album-card .pc-art { aspect-ratio: 3/2; }
+.pc-album-card .pc-information > button { width: 100%; }
+.pc-list { display: grid; }
+.pc-list-row { min-width: 0; display: grid; grid-template-columns: 104px minmax(0,1.2fr) minmax(150px,1fr) 180px; align-items: center; gap: 24px; padding: 20px 8px; border-bottom: 1px solid var(--color-rule); }
+.pc-list-actions { display: grid; gap: 2px; }
+.pc-list-actions > button { width: 100%; }
+.pc-list-actions .pc-material { text-align: center; }
+.pc-switcher { position: fixed; z-index: 80; bottom: 12px; left: 50%; transform: translateX(-50%); width: min(900px,calc(100% - 24px)); padding: 10px 14px; background: #344536; color: #fff8e6; border: 1px solid #869272; border-radius: 8px; box-shadow: 0 4px 20px #0004; font-size: 14px; } /* taste-skill-ignore: floating prototype controls, not a resting content panel. */
+.pc-switcher-row { display: grid; grid-template-columns: 44px minmax(0,1fr) 44px minmax(180px,auto); align-items: center; gap: 10px; }
+.pc-switcher strong { font-weight: 500; }
+.pc-switcher button { color: inherit; background: transparent; border-color: #899581; padding: 8px; }
+.pc-switcher label { min-width: 0; }
+.pc-switcher select { padding: 8px; font-size: 14px; color: var(--color-ink); }
+.pc-switcher p { margin: 6px 0 0; max-width: none; font-size: 13px; }
+.pc-visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+@media (max-width: 1100px) { .pc-compact-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }.pc-list-row { grid-template-columns: 86px minmax(0,1fr) minmax(120px,1fr); gap: 16px; }.pc-list-actions { grid-column: 2/-1; grid-template-columns: 1fr 1fr; align-items: start; }.pc-album-card { grid-template-columns: 105px minmax(0,1fr); padding: 18px; gap: 14px; } }
+@media (max-width: 650px) { .pc-compact-grid,.pc-album-grid { grid-template-columns: minmax(0,1fr); }.pc-album-card { grid-template-columns: 100px minmax(0,1fr); }.pc-list-row { grid-template-columns: 80px minmax(0,1fr); gap: 10px 16px; padding-block: 18px; }.pc-list-row > .pc-art { grid-row: 1/3; }.pc-list-row > .pc-progress { grid-column: 2; }.pc-list-actions { grid-column: 2; display: grid; grid-template-columns: 1fr; }.pc-list-actions .pc-material { text-align: start; }.pc-switcher-row { grid-template-columns: 44px minmax(0,1fr) 44px; }.pc-switcher-row label { grid-column: 1/-1; }.pc-switcher p[role=status] { max-height: 40px; overflow: auto; } }
+@media (max-width: 360px) { .pc-card { padding: 12px; }.pc-album-card { grid-template-columns: 72px minmax(0,1fr); gap: 12px; }.pc-compact-top { grid-template-columns: 72px minmax(0,1fr); }.pc-shell h3 { font-size: 22px; } }
+@media (prefers-reduced-motion: reduce) { .pc-part > span { transition: none; } }

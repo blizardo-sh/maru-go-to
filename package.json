@@ -12,7 +12,8 @@
     "build": "bun --bun vite build",
     "db:generate": "bun --bun drizzle-kit generate",
     "db:migrate": "bun src/server/migrate.ts",
-    "admin": "bun src/server/admin.ts"
+    "admin": "bun src/server/admin.ts",
+    "prototype:lesson-cards": "bun verification/lesson-card-prototype/serve.ts"
   },
   "dependencies": {
     "@dnd-kit/react": "0.5.1",
