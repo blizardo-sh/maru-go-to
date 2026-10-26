@@ -3,4 +3,7 @@ import { App } from './App';
 import './styles.css';
 import './illustrated.css';
 
-createRoot(document.getElementById('root')!).render(<App />);
+const root = createRoot(document.getElementById('root')!);
+if (import.meta.env.DEV && new URLSearchParams(location.search).get('prototype') === 'study-cards') {
+  void import('./prototype/study-cards/StudyCardsPrototype').then(({ StudyCardsPrototype }) => root.render(<StudyCardsPrototype />));
+} else root.render(<App />);

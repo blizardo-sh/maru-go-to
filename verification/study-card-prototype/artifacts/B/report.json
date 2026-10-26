@@ -1,0 +1,1408 @@
+{
+ "url": "http://127.0.0.1:59732/?prototype=study-cards&variant=B",
+ "at": "2026-10-26T02:20:24.211Z",
+ "allow": [
+  "heavy-shadow",
+  "button-fx"
+ ],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 1,
+   "filled": [
+    0.55
+   ],
+   "motion": {
+    "elements": 3,
+    "css": 3,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 900,
+     "screens": 1,
+     "words": 67,
+     "img": 3,
+     "video": 0,
+     "canvas": 0,
+     "svg": 4,
+     "sections": 1,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "tail.webp",
+      "body.webp",
+      "head.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Семья",
+     "words": 1,
+     "chars": 5,
+     "lines": 1,
+     "size": 26,
+     "vw": 1.8,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": -0.02,
+     "leading": 1.2,
+     "top": 122,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Семья",
+     "words": 1,
+     "lines": 1,
+     "size": 26,
+     "font": "Neucha"
+    },
+    "headings": [
+     {
+      "text": "いもうと",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 80,
+      "vw": 5.6,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.22,
+      "top": 347,
+      "tag": "p",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 1,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "-apple-system",
+       "share": 0.77,
+       "mono": false
+      },
+      {
+       "family": "Neucha",
+       "share": 0.21,
+       "mono": false
+      },
+      {
+       "family": "Hiragino Kaku Gothic ProN",
+       "share": 0.02,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      12,
+      14,
+      15,
+      17,
+      18,
+      22,
+      24,
+      26,
+      80
+     ],
+     "sizeCount": 9,
+     "notLoaded": [
+      "Hiragino Kaku Gothic ProN"
+     ],
+     "body": null,
+     "measureChars": null,
+     "max": {
+      "size": 80,
+      "vw": 5.6,
+      "font": "Hiragino Kaku Gothic ProN",
+      "text": "いもうと"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.59,
+     "smallText": 1
+    },
+    "eyebrows": [
+     {
+      "text": "Выберите русский перевод",
+      "above": "いもうと",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 17,
+      "top": 308
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fdf0d8",
+     "bodyBgHsl": {
+      "h": 39,
+      "s": 0.9,
+      "l": 0.92
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#fff8e8",
+       "top": 100,
+       "hsl": {
+        "h": 42,
+        "s": 1,
+        "l": 0.95
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#332b22",
+       "share": 0.54
+      },
+      {
+       "color": "#655b4c",
+       "share": 0.21
+      },
+      {
+       "color": "#e0e7dd",
+       "share": 0.15
+      },
+      {
+       "color": "#f5f7f3",
+       "share": 0.09
+      },
+      {
+       "color": "#26342d",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#fffaf0",
+      "hsl": {
+       "h": 40,
+       "s": 1,
+       "l": 0.97
+      },
+      "fg": "#332b22"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 9,
+     "inHero": 9,
+     "radius": 6,
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Учебник",
+      "Тренировки",
+      "Повторение",
+      "Справочник",
+      "К словам"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 2,
+     "hairlineSamples": [
+      "header.sd-context 1036px",
+      "section.sd-question 396px"
+     ],
+     "outlinedBoxes": 1,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 1,
+     "boxRadius": 8,
+     "squareMedia": 1,
+     "roundedMedia": 1,
+     "mediaRadius": 4,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "bg-image",
+      "ratio": 1
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.39
+     }
+    ],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 64,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "neucha"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 900,
+    "margins": {
+     "left": 200,
+     "right": 159
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Семья",
+      "size": 26,
+      "top": 122,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 283,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 1,
+    "bodySize": 16,
+    "stage": true,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "dark": false,
+    "ground": "#fdf0d8",
+    "sidebar": null,
+    "topbar": null,
+    "canvas": {
+     "left": 184,
+     "right": 153
+    },
+    "hero": {
+     "text": "Семья",
+     "words": 1,
+     "chars": 5,
+     "lines": 1,
+     "size": 26,
+     "vw": 1.8,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": -0.02,
+     "leading": 1.2,
+     "top": 122,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 2,
+     "firstScreen": 2,
+     "ragged": [],
+     "voids": [
+      {
+       "gap": 73,
+       "at": 518,
+       "panel": "Урок 4"
+      }
+     ]
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 2,
+     "radii": [
+      [
+       4,
+       1
+      ],
+      [
+       8,
+       1
+      ]
+     ],
+     "heavyBorders": 2,
+     "borderSamples": [
+      "#bdac8b on #fff8e8 (2.1:1)",
+      "#617269 on #26342d (2.56:1)"
+     ],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.09,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      12,
+      14,
+      15,
+      17,
+      18,
+      22,
+      24,
+      26,
+      80
+     ]
+    },
+    "title": {
+     "text": "Семья",
+     "size": 26,
+     "top": 122
+    },
+    "colourShare": 0.419
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 1,
+   "filled": [
+    0.68
+   ],
+   "motion": {
+    "elements": 3,
+    "css": 3,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 1024,
+     "screens": 1,
+     "words": 66,
+     "img": 3,
+     "video": 0,
+     "canvas": 0,
+     "svg": 4,
+     "sections": 1,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "tail.webp",
+      "body.webp",
+      "head.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Семья",
+     "words": 1,
+     "chars": 5,
+     "lines": 1,
+     "size": 26,
+     "vw": 3.4,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": -0.02,
+     "leading": 1.2,
+     "top": 149,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Семья",
+     "words": 1,
+     "lines": 1,
+     "size": 26,
+     "font": "Neucha"
+    },
+    "headings": [
+     {
+      "text": "Семья",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.07,
+      "top": 149,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "いもうと",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 56,
+      "vw": 7.3,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "left",
+      "widthRatio": 0.29,
+      "top": 426,
+      "tag": "p",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 2,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "-apple-system",
+       "share": 0.78,
+       "mono": false
+      },
+      {
+       "family": "Neucha",
+       "share": 0.2,
+       "mono": false
+      },
+      {
+       "family": "Hiragino Kaku Gothic ProN",
+       "share": 0.02,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      12,
+      14,
+      15,
+      17,
+      18,
+      22,
+      26,
+      56
+     ],
+     "sizeCount": 8,
+     "notLoaded": [
+      "Hiragino Kaku Gothic ProN"
+     ],
+     "body": null,
+     "measureChars": null,
+     "max": {
+      "size": 56,
+      "vw": 7.3,
+      "font": "Hiragino Kaku Gothic ProN",
+      "text": "いもうと"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.6,
+     "smallText": 1
+    },
+    "eyebrows": [
+     {
+      "text": "Выберите русский перевод",
+      "above": "いもうと",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 17,
+      "top": 387
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fdf0d8",
+     "bodyBgHsl": {
+      "h": 39,
+      "s": 0.9,
+      "l": 0.92
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#fff8e8",
+       "top": 127,
+       "hsl": {
+        "h": 42,
+        "s": 1,
+        "l": 0.95
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#332b22",
+       "share": 0.53
+      },
+      {
+       "color": "#655b4c",
+       "share": 0.22
+      },
+      {
+       "color": "#e0e7dd",
+       "share": 0.15
+      },
+      {
+       "color": "#f5f7f3",
+       "share": 0.09
+      },
+      {
+       "color": "#26342d",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#fffaf0",
+      "hsl": {
+       "h": 40,
+       "s": 1,
+       "l": 0.97
+      },
+      "fg": "#332b22"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 9,
+     "inHero": 9,
+     "radius": 6,
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Учебник",
+      "Тренировки",
+      "Повторение",
+      "Справочник",
+      "К словам"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 2,
+     "hairlineSamples": [
+      "header.sd-context 724px",
+      "section.sd-question 256px"
+     ],
+     "outlinedBoxes": 1,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 1,
+     "boxRadius": 8,
+     "squareMedia": 1,
+     "roundedMedia": 1,
+     "mediaRadius": 4,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "bg-image",
+      "ratio": 1
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.52
+     }
+    ],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 64,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "neucha"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 1024,
+    "margins": {
+     "left": 44,
+     "right": 19
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Семья",
+      "size": 26,
+      "top": 149,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 103,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 1,
+    "bodySize": 16,
+    "stage": true,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "dark": false,
+    "ground": "#fdf0d8",
+    "sidebar": null,
+    "topbar": null,
+    "canvas": {
+     "left": 28,
+     "right": 10
+    },
+    "hero": {
+     "text": "Семья",
+     "words": 1,
+     "chars": 5,
+     "lines": 1,
+     "size": 26,
+     "vw": 3.4,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": -0.02,
+     "leading": 1.2,
+     "top": 149,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 2,
+     "firstScreen": 2,
+     "ragged": [],
+     "voids": [
+      {
+       "gap": 107,
+       "at": 579,
+       "panel": "Урок 4"
+      }
+     ]
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 2,
+     "radii": [
+      [
+       4,
+       1
+      ],
+      [
+       8,
+       1
+      ]
+     ],
+     "heavyBorders": 2,
+     "borderSamples": [
+      "#bdac8b on #fff8e8 (2.1:1)",
+      "#617269 on #26342d (2.56:1)"
+     ],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.09,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      12,
+      14,
+      15,
+      17,
+      18,
+      22,
+      26,
+      56
+     ]
+    },
+    "title": {
+     "text": "Семья",
+     "size": 26,
+     "top": 149
+    },
+    "colourShare": 0.298
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 1,
+   "filled": [
+    0.81
+   ],
+   "motion": {
+    "elements": 3,
+    "css": 3,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 844,
+     "screens": 1,
+     "words": 62,
+     "img": 3,
+     "video": 0,
+     "canvas": 0,
+     "svg": 4,
+     "sections": 1,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 2,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Семья",
+     "words": 1,
+     "chars": 5,
+     "lines": 1,
+     "size": 24,
+     "vw": 6.2,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": -0.02,
+     "leading": 1.2,
+     "top": 83,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Семья",
+     "words": 1,
+     "lines": 1,
+     "size": 24,
+     "font": "Neucha"
+    },
+    "headings": [
+     {
+      "text": "Семья",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.14,
+      "top": 83,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "いもうと",
+      "words": 1,
+      "chars": 4,
+      "lines": 1,
+      "size": 50,
+      "vw": 12.8,
+      "font": "Hiragino Kaku Gothic ProN",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.51,
+      "top": 264,
+      "tag": "p",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 2,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "-apple-system",
+       "share": 0.78,
+       "mono": false
+      },
+      {
+       "family": "Neucha",
+       "share": 0.2,
+       "mono": false
+      },
+      {
+       "family": "Hiragino Kaku Gothic ProN",
+       "share": 0.02,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      11,
+      13,
+      14,
+      15,
+      16,
+      17,
+      24,
+      50
+     ],
+     "sizeCount": 8,
+     "notLoaded": [
+      "Hiragino Kaku Gothic ProN"
+     ],
+     "body": null,
+     "measureChars": null,
+     "max": {
+      "size": 50,
+      "vw": 12.8,
+      "font": "Hiragino Kaku Gothic ProN",
+      "text": "いもうと"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.61,
+     "smallText": 1
+    },
+    "eyebrows": [
+     {
+      "text": "Выберите русский перевод",
+      "above": "いもうと",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 17,
+      "top": 231
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fdf0d8",
+     "bodyBgHsl": {
+      "h": 39,
+      "s": 0.9,
+      "l": 0.92
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#fff8e8",
+       "top": 68,
+       "hsl": {
+        "h": 42,
+        "s": 1,
+        "l": 0.95
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#332b22",
+       "share": 0.54
+      },
+      {
+       "color": "#655b4c",
+       "share": 0.2
+      },
+      {
+       "color": "#e0e7dd",
+       "share": 0.15
+      },
+      {
+       "color": "#f5f7f3",
+       "share": 0.1
+      },
+      {
+       "color": "#26342d",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#fffaf0",
+      "hsl": {
+       "h": 40,
+       "s": 1,
+       "l": 0.97
+      },
+      "fg": "#332b22"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 9,
+     "inHero": 9,
+     "radius": 6,
+     "height": 44,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Учебник",
+      "Тренировки",
+      "Повторение",
+      "Справочник",
+      "К словам"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 0,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 1,
+     "hairlineSamples": [
+      "header.sd-context 360px"
+     ],
+     "outlinedBoxes": 1,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 1,
+     "boxRadius": 8,
+     "squareMedia": 1,
+     "roundedMedia": 1,
+     "mediaRadius": 4,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "bg-image",
+      "ratio": 1
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.57
+     }
+    ],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 50,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "neucha"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 844,
+    "margins": {
+     "left": 16,
+     "right": 9
+    },
+    "sections": [],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Семья",
+      "size": 24,
+      "top": 83,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 80,
+      "n": 1
+     }
+    ],
+    "leftBlocks": 1,
+    "bodySize": 16,
+    "stage": true,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "dark": false,
+    "ground": "#fdf0d8",
+    "sidebar": null,
+    "topbar": null,
+    "canvas": {
+     "left": 16,
+     "right": 3
+    },
+    "hero": {
+     "text": "Семья",
+     "words": 1,
+     "chars": 5,
+     "lines": 1,
+     "size": 24,
+     "vw": 6.2,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": -0.02,
+     "leading": 1.2,
+     "top": 83,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 2,
+     "firstScreen": 2,
+     "ragged": [],
+     "voids": [
+      {
+       "gap": 76,
+       "at": 156,
+       "panel": "Урок 4"
+      }
+     ]
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 2,
+     "radii": [
+      [
+       4,
+       1
+      ],
+      [
+       8,
+       1
+      ]
+     ],
+     "heavyBorders": 2,
+     "borderSamples": [
+      "#bdac8b on #fff8e8 (2.1:1)",
+      "#617269 on #26342d (2.56:1)"
+     ],
+     "heavyShadows": 0,
+     "softShadows": 0,
+     "shadowSamples": [],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0.46,
+     "tiny": 0,
+     "tinySamples": [],
+     "sizes": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      24,
+      50
+     ]
+    },
+    "title": {
+     "text": "Семья",
+     "size": 24,
+     "top": 83
+    },
+    "colourShare": 0.217
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "palette-cream",
+   "width": 1440,
+   "message": "Yellow-cream background (page background #fdf0d8, section #fff8e8, button #fffaf0).",
+   "fix": "Use the drawn palette. If you want warmth, take a low-chroma stone or bone, not a yellow cream.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "font-count",
+   "width": 1440,
+   "message": "3 typefaces in use (-apple-system, Neucha, Hiragino Kaku Gothic ProN).",
+   "fix": "Two at most.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "font-fallback",
+   "width": 1440,
+   "message": "Typeface(s) declared but not loaded, so a fallback is rendering: Hiragino Kaku Gothic ProN",
+   "fix": "Fix the font URL / family name, or the screenshots you are judging are not the design.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "colour-sprawl",
+   "width": 1440,
+   "message": "42% of the first screen is strongly coloured.",
+   "fix": "Keep the screen neutral and spend colour on data and status: the studied screens sit near 3%, and only tinted styles reach 10–15%, as pale tints rather than saturated fills.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "panel-void",
+   "width": 1440,
+   "message": "1 card(s) hold a blank band inside: 73px in \"Урок 4\".",
+   "fix": "A card stretches to its neighbour only when it has content to fill. Keep a legend or a note directly under its chart (only an action or a total may sit at a stretched card's foot), let a short card keep its own height (align-items: start), and let a filtered block shrink to its rows."
+  },
+  {
+   "level": "WARN",
+   "id": "tiny-text",
+   "width": 390,
+   "message": "46% of the text is under 13px.",
+   "fix": "Data and labels read at 13–14px; keep 11–12px for sublines and axis ticks."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/private/tmp/maru-study-card-design/B/desktop-fold.jpg",
+   "pages": [
+    "/private/tmp/maru-study-card-design/B/desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/private/tmp/maru-study-card-design/B/tablet-fold.jpg",
+   "pages": [
+    "/private/tmp/maru-study-card-design/B/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/private/tmp/maru-study-card-design/B/mobile-fold.jpg",
+   "pages": [
+    "/private/tmp/maru-study-card-design/B/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}
