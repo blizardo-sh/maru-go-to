@@ -1,0 +1,57 @@
+/* C's composition is fixed. The three candidates change only the familiar material and frame. */
+.sd-root[data-variant='C']:not([data-skin='original']) {
+ --sd-ground: #fff8e8; --sd-ink: #332b22; --sd-muted: #655b4c; --sd-line: #d9ccb5; --sd-control: #b99d76; --sd-accent: #405a36;
+ position: relative; isolation: isolate; padding: 18px 28px 128px; gap: 18px; background: transparent;
+}
+body:has(.sd-root[data-variant='C']:not([data-skin='original'])) { background: #fdf0d8; }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-shell {
+ position: static; width: min(100%,1190px); height: 64px; padding: 6px 18px; gap: 24px; flex-direction: row;
+ border: 6px solid #9c6e40; border-image: url('/ui/materials/wood-frame-v1.webp') 150 stretch; background: url('/ui/materials/wood-plank-v1.webp') center/cover;
+}
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-brand { display: block; writing-mode: horizontal-tb; font: 24px/1 var(--font-display); }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-shell nav { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-shell nav button { display: block; padding: 6px 8px; background: transparent; font: 22px/1.2 var(--font-display); }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-shell nav button[aria-current] { background: var(--sd-ground) url('/ui/materials/paper-v1.webp') center/512px; }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-shell nav svg { display: none; }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-shell nav button > span { display: inline; }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-stage { height: min(100%,600px); border: 8px solid transparent; border-radius: 8px; background: var(--sd-ground) url('/ui/materials/paper-v1.webp') center/512px; }
+.sd-root[data-variant='C']:not([data-skin='original']) h1 { font: 26px/1.3 var(--font-display); }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-context { padding: 18px 24px 14px; }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-options button { background: #fffaf0; border-color: #c6ad88; }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-options button[data-result='correct'] { background: #e4edda; color: #294d30; border-color: #63835b; }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-options button[data-result='wrong'] { background: #f3e2d8; color: #793d31; border-color: #b87e6b; }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-result { background: var(--sd-ground) url('/ui/materials/paper-v1.webp') center/512px; }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-cat-window { border: 8px solid #c6ad88; border-radius: 8px; }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-companion > p { background: var(--sd-ground) url('/ui/materials/paper-v1.webp') center/512px; }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-sentence { background: #eee4d1; }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-word { border-color: var(--sd-line); }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-word[data-active='true'] { border-color: #82966e; background: #edf0df; }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-review .gesture-card { background: var(--sd-ground) url('/ui/materials/paper-v1.webp') center/512px; }
+.sd-root[data-variant='C']:not([data-skin='original']) .sd-review .gesture-card[data-card-phase='question'] { background-color: #e7ead8; }
+/* C1 — a warm paper sheet, with the room receding behind it. */
+.sd-root[data-variant='C'][data-skin='paper'] .sd-room { opacity: .38; }
+.sd-root[data-variant='C'][data-skin='paper'] .sd-stage { outline: 1px solid #b99d76; outline-offset: -1px; }
+.sd-root[data-variant='C'][data-skin='paper'] .sd-cat-window { border-color: #d5bf99; }
+/* C2 — the original physical board and full room, with C's working arrangement. */
+.sd-root[data-variant='C'][data-skin='wood'] .sd-room { opacity: 1; }
+.sd-root[data-variant='C'][data-skin='wood'] .sd-stage,.sd-root[data-variant='C'][data-skin='wood'] .sd-cat-window { border-image: url('/ui/materials/wood-frame-v1.webp') 150 stretch; border-radius: 0; }
+/* C3 — light timber and washi, midway between paper and the heavier wooden board. */
+.sd-root[data-variant='C'][data-skin='shoji'] .sd-room { opacity: .66; }
+.sd-root[data-variant='C'][data-skin='shoji'] .sd-stage { border-color: #c4ad85; border-radius: 0; }
+.sd-root[data-variant='C'][data-skin='shoji'] .sd-context { background: #efe5ce; border-color: #c8b793; }
+.sd-root[data-variant='C'][data-skin='shoji'] .sd-cat-window { border-color: #c4ad85; border-radius: 0; }
+@media (max-width: 1100px) {
+ .sd-root[data-variant='C']:not([data-skin='original']) .sd-brand { display: none; }
+ .sd-root[data-variant='C']:not([data-skin='original']) .sd-shell { padding-inline: 8px; }
+}
+@media (min-width: 641px) and (max-width: 900px) { .sd-root[data-variant='C']:not([data-skin='original']) { padding-bottom: 170px; } }
+@media (max-width: 640px) {
+ .sd-root[data-variant='C']:not([data-skin='original']) { padding: 8px 10px 164px; gap: 10px; }
+ .sd-root[data-variant='C']:not([data-skin='original']) .sd-shell { height: 50px; border-width: 4px; padding: 2px; }
+ .sd-root[data-variant='C']:not([data-skin='original']) .sd-shell nav { gap: 0; }
+ .sd-root[data-variant='C']:not([data-skin='original']) .sd-shell nav button { font-size: 16px; padding: 4px 2px; }
+ .sd-root[data-variant='C']:not([data-skin='original']) .sd-stage { height: 100%; }
+ .sd-root[data-variant='C']:not([data-skin='original']) .sd-context { padding: 12px 90px 12px 12px; }
+ .sd-root[data-variant='C']:not([data-skin='original']) h1 { font-size: 24px; }
+}
+@media (max-height: 650px) and (max-width: 640px) { .sd-root[data-variant='C']:not([data-skin='original']) { padding-bottom: 146px; } }

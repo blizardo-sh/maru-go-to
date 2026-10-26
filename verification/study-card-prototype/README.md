@@ -25,3 +25,14 @@ Checks: TypeScript and production build; design-taste lint and 1440/768/390 insp
 Limits visible for selection: A/B keep full explanations, so the introduction needs inner scrolling. C lets the learner select a word for detail on desktop and uses an expanded item on smaller screens. These are candidate layouts; more work on dense introductions may be warranted after selecting the direction.
 
 Decision record: [docs/study-card-directions.md](../../docs/study-card-directions.md). Verdict is pending user review. Preserve this branch as the primary source; production integration belongs in another PR.
+
+## Familiar C materials (26 October)
+
+The user selected C's composition and requested more familiar styling. Three skins are now available on the same route:
+
+- `variant=C&skin=paper` — C1, warm paper.
+- `variant=C&skin=wood` — C2, the classic wooden board and full room.
+- `variant=C&skin=shoji` — C3, a lighter timber frame.
+- `variant=C&skin=original` — C0, the earlier neutral style for comparison.
+
+For C, the bottom arrows cycle these skins; the first selector also chooses them directly. The current screen, example, answer and sentence draft remain in place. Add `screen=workspace`, `screen=intro` or `screen=review` to compare other learning screens. The restored labelled wooden navigation is shared by all three familiar skins. The inner composition is unchanged across those skins; they are visual alternatives, not new learning modes.

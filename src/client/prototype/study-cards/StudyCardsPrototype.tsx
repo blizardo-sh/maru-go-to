@@ -11,9 +11,13 @@ import { ExampleLine } from '../../ExampleLine';
 import { WordQuiz } from '../../GuidedLearning';
 import type { SceneSound } from '../../sceneSound';
 import './study-cards.css';
+import './familiar-c.css';
 
 const variants = ['A', 'B', 'C'] as const;
 type Variant = typeof variants[number];
+const skins = ['paper', 'wood', 'shoji', 'original'] as const;
+type Skin = typeof skins[number];
+const skinNames: Record<Skin, string> = { paper: 'C1 · Тёплая бумага', wood: 'C2 · Классическая доска', shoji: 'C3 · Лёгкая рамка', original: 'C0 · Прежний минимализм' };
 type Screen = 'quiz' | 'listening' | 'intro' | 'review' | 'workspace' | 'baseline';
 type Phase = 'question' | 'correct' | 'wrong' | 'answer';
 const names = { A: 'Фокус на карточке', B: 'Учебный разворот', C: 'Тихая мастерская' };
@@ -28,6 +32,7 @@ export function StudyCardsPrototype() {
 }
 function Comparison({ data }: { data: Snapshot }) {
   const [variant, setVariant] = useState(() => initial('variant', variants, 'A'));
+  const [skin, setSkin] = useState(() => initial('skin', skins, 'original'));
   const [screen, setScreen] = useState<Screen>(() => initial('screen', Object.keys(screenNames) as Screen[], 'quiz'));
   const [tab, setTab] = useState(() => new URLSearchParams(location.search).get('screen') === 'review' ? 'Повторение' : new URLSearchParams(location.search).get('screen') === 'intro' ? 'Учебник' : 'Тренировки');
   const [phase, setPhase] = useState<Phase>(() => initial('state', ['question', 'correct', 'wrong', 'answer'], 'question'));
@@ -54,15 +59,15 @@ function Comparison({ data }: { data: Snapshot }) {
   const context = screen === 'workspace' ? 'Урок 3' : screen === 'review' ? 'Повторение' : 'Урок 4';
   const count = screen === 'intro' ? `Знакомство · ${family.length} слов` : screen === 'workspace' ? 'Конструкция' : `Слово ${index + 1} из ${quizWords.length}`;
   useEffect(() => {
-    const params = new URLSearchParams(location.search); params.set('variant', variant); params.set('screen', screen); params.set('state', phase); params.set('orthography', mode); history.replaceState(null, '', `?${params}`);
-    console.info('STUDY_PROTOTYPE', { variant, screen, phase, orthography: mode, wordId: target.id, selected, tokens, persistence: false });
-  }, [variant, screen, phase, mode, index, selected, tokens]);
+    const params = new URLSearchParams(location.search); params.set('variant', variant); params.set('skin', skin); params.set('screen', screen); params.set('state', phase); params.set('orthography', mode); history.replaceState(null, '', `?${params}`);
+    console.info('STUDY_PROTOTYPE', { variant, skin, screen, phase, orthography: mode, wordId: target.id, selected, tokens, persistence: false });
+  }, [variant, skin, screen, phase, mode, index, selected, tokens]);
   useEffect(() => () => { window.clearTimeout(timer.current); audio.current?.pause(); }, []);
   useEffect(() => { if (rule) dialog.current?.showModal(); }, [rule]);
   useEffect(() => { setHeard(false); setAudioError(''); audio.current?.pause(); }, [screen, index]);
   function stopTimer() { window.clearTimeout(timer.current); }
   function changeVariant(next: Variant) { stopTimer(); setVariant(next); }
-  function cycle(direction: number) { changeVariant(variants[(variants.indexOf(variant) + direction + variants.length) % variants.length]!); }
+  function cycle(direction: number) { stopTimer(); if (variant === 'C') setSkin(skins[(skins.indexOf(skin) + direction + skins.length) % skins.length]!); else changeVariant(variants[(variants.indexOf(variant) + direction + variants.length) % variants.length]!); }
   useEffect(() => {
     const key = (event: KeyboardEvent) => {
       if (event.target instanceof Element && event.target.closest('input,select,textarea,[contenteditable=true],.gesture-card,dialog')) return;
@@ -95,12 +100,12 @@ function Comparison({ data }: { data: Snapshot }) {
   const workspace = <div className="sd-workspace"><section className="sd-task"><h2>Соберите фразу</h2><p>{exercise.promptRu}</p></section><div className="sd-work"><div className="sd-sentence" aria-label="Ваша фраза">{tokens.length ? tokens.map((id, i) => <button key={id} onClick={() => { setTokens(tokens.filter((_, n) => n !== i)); setPhase('question'); }}><Japanese value={tokenValue(id)} forms={course.forms} mode={mode} /></button>) : <p>Нажимайте слова снизу</p>}</div><div className="sd-bank">{[...exercise.tokens].reverse().map(token => <button key={token.id} disabled={tokens.includes(token.id)} onClick={() => { setTokens([...tokens, token.id]); setPhase('question'); }}><Japanese value={tokenValue(token.id)} forms={course.forms} mode={mode} /></button>)}</div><div className="sd-work-actions"><button className="sd-primary" disabled={!tokens.length} onClick={() => setPhase(exercise.acceptedOrders.some(order => order.join('|') === tokens.join('|')) ? 'correct' : 'wrong')}>Проверить фразу</button><button onClick={() => { setTokens([]); setPhase('question'); }}>Сначала</button></div>{answered && <p role="status">{correct ? 'Верно. Можно назвать «わたしは» или опустить тему целиком.' : 'Проверьте порядок: が стоит перед できます.'}</p>}</div><aside className="sd-rule"><h3>Как устроена фраза</h3><p>が обозначает то, что вы умеете.</p><button className="sd-rule-link" onClick={() => setRule(true)}>Полное правило</button></aside></div>;
   const baseline = <div className="game-shell sd-baseline"><div className="page"><div className="study-session stack"><header className="session-header"><div className="session-heading"><small>Урок 4</small><h1>Семья</h1></div><span>Слово {index + 1} из {quizWords.length}</span></header><div className="session-stage work-board"><div className="session-scroll"><WordQuiz value={{ ...target, audioUrl: target.audioUrl! }} mode="ja-ru" choices={choices.map(word => word.id)} wordId={target.id} data={{ ...data, settings: { ...data.settings, orthography: mode } }} active busy={false} sound={silentSound} onActivity={() => {}} stepId={target.id} selection={answered ? { choice: selected ?? target.id, correct, confirmed: true } : null} choose={choose} /></div></div></div></div></div>;
   const content = screen === 'intro' ? introduction : screen === 'review' ? review : screen === 'workspace' ? workspace : quiz;
-  return <div className="sd-root" data-variant={variant} data-screen={screen}>
-    {variant !== 'C' && <div className="sd-room" aria-hidden="true" />}
+  return <div className="sd-root" data-variant={variant} data-skin={skin} data-screen={screen}>
+    {(variant !== 'C' || skin !== 'original') && <div className="sd-room" aria-hidden="true" />}
     <header className="sd-shell"><span className="sd-brand">まるごと</span><nav aria-label="Разделы макета">{([['Учебник', 'intro'], ['Тренировки', 'quiz'], ['Повторение', 'review'], ['Справочник', 'intro']] as const).map(([label, next]) => <button key={label} aria-current={tab === label ? 'page' : undefined} onClick={() => { open(next); setTab(label); }} title={label}><NavIcon kind={label} /><span>{label}</span></button>)}</nav></header>
     <main className="sd-main">{screen === 'baseline' ? baseline : <div className="sd-stage"><header className="sd-context"><div><span>{context}</span><h1>{pageTitle}</h1></div><span>{count}</span><button onClick={() => open('intro')}>К словам</button><progress max={quizWords.length} value={screen === 'intro' ? 0 : index} aria-label="Прогресс демонстрации" /></header><div className="sd-content">{content}</div></div>}<div className="sd-companion"><div className="sd-cat-window" aria-hidden="true" />{cat}{variant === 'C' && <p>{answered ? correct ? 'Получилось!' : 'Давай ещё попробуем' : playing ? 'Слушаем внимательно' : 'Я рядом'}</p>}</div></main>
     {rule && <dialog ref={dialog} className="sd-rule-dialog" onClose={() => setRule(false)} aria-label="Правило конструкции"><h2>{skill.title}</h2><p>{construction.explanationRu}</p><ExampleLine example={construction.example} mode={mode} play={() => { void play(construction.example.audioUrl); }} /><button className="sd-primary" onClick={() => setRule(false)}>Понятно</button></dialog>}
-    <aside className="sd-switcher" aria-label="Управление прототипом"><div className="sd-switch-variants"><button aria-label="Предыдущий вариант" onClick={() => cycle(-1)}>←</button><strong>{variant} · {names[variant]}</strong><button aria-label="Следующий вариант" onClick={() => cycle(1)}>→</button></div><label><span className="sr-only">Экран</span><select value={screen} onChange={event => open(event.target.value as Screen)}>{Object.entries(screenNames).map(([value, name]) => <option key={value} value={value}>{name}</option>)}</select></label><label><span className="sr-only">Состояние</span><select value={phase} onChange={event => phasePreview(event.target.value as Phase)}><option value="question">До ответа</option>{screen !== 'intro' && (screen === 'review' ? <option value="answer">Ответ открыт</option> : <><option value="correct">Верно</option><option value="wrong">Ошибка</option></>)}</select></label><label><span className="sr-only">Написание</span><select value={mode} onChange={event => setMode(event.target.value as Orthography)}><option value="furigana">С фуриганой</option><option value="kana">Кана</option><option value="kanji">Кандзи</option></select></label><small>Прототип · данные не сохраняются</small></aside>
+    <aside className="sd-switcher" aria-label="Управление прототипом"><div className="sd-switch-variants"><button aria-label="Предыдущий вариант" onClick={() => cycle(-1)}>←</button>{variant === 'C' ? <select aria-label="Оформление варианта C" value={skin} onChange={event => { stopTimer(); setSkin(event.target.value as Skin); }}>{skins.map(value => <option key={value} value={value}>{skinNames[value]}</option>)}</select> : <strong>{variant} · {names[variant]}</strong>}<button aria-label="Следующий вариант" onClick={() => cycle(1)}>→</button></div><label><span className="sr-only">Экран</span><select value={screen} onChange={event => open(event.target.value as Screen)}>{Object.entries(screenNames).map(([value, name]) => <option key={value} value={value}>{name}</option>)}</select></label><label><span className="sr-only">Состояние</span><select value={phase} onChange={event => phasePreview(event.target.value as Phase)}><option value="question">До ответа</option>{screen !== 'intro' && (screen === 'review' ? <option value="answer">Ответ открыт</option> : <><option value="correct">Верно</option><option value="wrong">Ошибка</option></>)}</select></label><label><span className="sr-only">Написание</span><select value={mode} onChange={event => setMode(event.target.value as Orthography)}><option value="furigana">С фуриганой</option><option value="kana">Кана</option><option value="kanji">Кандзи</option></select></label><small>Прототип · данные не сохраняются</small></aside>
   </div>;
 }
 function Play() { return <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4L21 12L7 20Z" fill="currentColor" /></svg>; }
