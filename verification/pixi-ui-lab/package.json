@@ -7,7 +7,8 @@
     "typecheck": "node ../../node_modules/typescript/bin/tsc --noEmit -p tsconfig.json",
     "serve": "node serve.mjs",
     "start": "npm run build && npm run serve",
-    "check": "node check.mjs"
+    "check": "node check.mjs",
+    "check:paper": "node paper-check.mjs"
   },
   "dependencies": { "pixi.js": "8.22.0" }
 }

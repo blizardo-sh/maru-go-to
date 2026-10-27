@@ -14,4 +14,7 @@ figcaption { min-height: 116px; padding-bottom: 16px; }
 figcaption p { font-size: 14px; }
 img { display: block; width: 100%; height: auto; }
 footer { font-size: 14px; }
+.group { grid-column: 1 / -1; padding: 24px 0 0; scroll-margin-top: 16px; }
+.task-gallery figure { padding-bottom: 24px; }
 @media (max-width: 750px) { main { display: block; padding: 0; } figcaption { min-height: auto; padding: 24px 16px 12px; } }
+@media (max-width: 750px) { .group { padding: 24px 16px 0; } }

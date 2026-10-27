@@ -9,7 +9,7 @@ if (!csp) throw new Error('Production CSP not found');
 const dist = resolve(root, 'dist');
 const assets = resolve(root, '../../public');
 const studies = resolve(root, 'art-direction');
-const types = { '.html':'text/html; charset=utf-8', '.js':'application/javascript; charset=utf-8', '.css':'text/css', '.json':'application/json', '.webp':'image/webp', '.png':'image/png', '.woff2':'font/woff2', '.m4a':'audio/mp4', '.mp4':'video/mp4' };
+const types = { '.html':'text/html; charset=utf-8', '.js':'application/javascript; charset=utf-8', '.css':'text/css', '.json':'application/json', '.webp':'image/webp', '.png':'image/png', '.jpg':'image/jpeg', '.ttf':'font/ttf', '.woff2':'font/woff2', '.m4a':'audio/mp4', '.mp4':'video/mp4' };
 
 createServer(async (req, res) => {
   res.setHeader('Content-Security-Policy', csp);
@@ -24,7 +24,7 @@ createServer(async (req, res) => {
       res.end(JSON.stringify({ csp, mode: 'production-build', persistence: false })); return;
     }
     const isStudy = pathname.startsWith('/studies/');
-    const base = isStudy ? studies : pathname === '/' || pathname.startsWith('/assets/') ? dist : assets;
+    const base = isStudy ? studies : pathname === '/' || pathname === '/paper.html' || pathname.startsWith('/assets/') ? dist : assets;
     const relative = isStudy ? pathname.slice('/studies'.length) : pathname;
     const file = resolve(base, '.' + (relative === '/' ? '/index.html' : relative));
     if (!file.startsWith(base + sep) || !(await stat(file)).isFile()) { res.writeHead(404).end(); return; }

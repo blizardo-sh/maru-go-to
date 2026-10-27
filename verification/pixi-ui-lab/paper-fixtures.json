@@ -1,0 +1,3249 @@
+{
+  "source": "loadCourse() + makeCounterCard() + existing counterAudio() paths; read-only snapshot",
+  "courseSha256": "0cac86dd84d82e394c54a81c7d99db4f82cec10300f48ffb5f31bc2f9801dafb",
+  "words": [
+    {
+      "id": "marugoto.starter-a1.word.d3bb981e73f63ffd",
+      "surface": "魚",
+      "kana": "さかな",
+      "segments": [
+        {
+          "surface": "魚",
+          "reading": "さかな"
+        }
+      ],
+      "meaningRu": "рыба",
+      "audioUrl": "/audio/cf51b54ece5c2348795e.m4a",
+      "introduction": {
+        "wordId": "marugoto.starter-a1.word.d3bb981e73f63ffd",
+        "explanationRu": "Рыба как продукт или блюдо. В этом уроке обсуждаем предпочтения в еде.",
+        "example": {
+          "surface": "さかながすきです。",
+          "kana": "さかながすきです。",
+          "meaningRu": "Мне нравится рыба.",
+          "segments": [
+            {
+              "surface": "さかながすきです。"
+            }
+          ],
+          "audioUrl": "/audio/learning/lesson05-word-81e07550e786.m4a"
+        }
+      },
+      "illustration": {
+        "src": "/word-illustrations/pantry-v1.webp",
+        "bounds": [
+          26,
+          93,
+          311,
+          214
+        ]
+      }
+    },
+    {
+      "id": "marugoto.starter-a1.word.e9eb89c01e577f0b",
+      "surface": "東京",
+      "kana": "とうきょう",
+      "segments": [
+        {
+          "surface": "東京",
+          "reading": "とうきょう"
+        }
+      ],
+      "meaningRu": "Токио",
+      "audioUrl": "/audio/470e377396c042e46dc7.m4a",
+      "introduction": {
+        "wordId": "marugoto.starter-a1.word.e9eb89c01e577f0b",
+        "explanationRu": "Токио; долгие гласные とう и きょう важны для звучания названия.",
+        "example": {
+          "surface": "はははとうきょうにすんでいます。",
+          "kana": "はははとうきょうにすんでいます。",
+          "meaningRu": "Моя мать живёт в Токио.",
+          "segments": [
+            {
+              "surface": "はははとうきょうにすんでいます。"
+            }
+          ],
+          "audioUrl": "/audio/learning/lesson04-word-5681802aa118.m4a"
+        }
+      },
+      "illustration": {
+        "src": "/word-illustrations/family-counts-v1.webp",
+        "bounds": [
+          337,
+          645,
+          295,
+          307
+        ]
+      }
+    },
+    {
+      "id": "marugoto.starter-a1.word.b601ce9a7a769129",
+      "surface": "肉",
+      "kana": "にく",
+      "segments": [
+        {
+          "surface": "肉",
+          "reading": "にく"
+        }
+      ],
+      "meaningRu": "мясо",
+      "audioUrl": "/audio/86cc1192f0961928aaaa.m4a",
+      "introduction": {
+        "wordId": "marugoto.starter-a1.word.b601ce9a7a769129",
+        "explanationRu": "Мясо; обычно говорят にく, не уточняя вид мяса.",
+        "example": {
+          "surface": "にくはすきじゃないです。",
+          "kana": "にくはすきじゃないです。",
+          "meaningRu": "Мясо я не люблю.",
+          "segments": [
+            {
+              "surface": "にくはすきじゃないです。"
+            }
+          ],
+          "audioUrl": "/audio/learning/lesson05-word-14427a41af50.m4a"
+        }
+      },
+      "illustration": {
+        "src": "/word-illustrations/pantry-v1.webp",
+        "bounds": [
+          341,
+          104,
+          289,
+          202
+        ]
+      }
+    },
+    {
+      "id": "marugoto.starter-a1.word.67154e2e75f5ba6a",
+      "surface": "飲みます",
+      "kana": "のみます",
+      "segments": [
+        {
+          "surface": "飲",
+          "reading": "の"
+        },
+        {
+          "surface": "みます"
+        }
+      ],
+      "meaningRu": "пить",
+      "audioUrl": "/audio/11bd6aaaa860ec4f123a.m4a",
+      "introduction": {
+        "wordId": "marugoto.starter-a1.word.67154e2e75f5ba6a",
+        "explanationRu": "Вежливая форма «пить»; то, что пьют, ставится перед を.",
+        "example": {
+          "surface": "あさ、おちゃをのみます。",
+          "kana": "あさ、おちゃをのみます。",
+          "meaningRu": "Утром я пью чай.",
+          "segments": [
+            {
+              "surface": "あさ、おちゃをのみます。"
+            }
+          ],
+          "audioUrl": "/audio/learning/lesson05-word-d47c51e882ab.m4a"
+        }
+      },
+      "illustration": {
+        "src": "/word-illustrations/meals-v1.webp",
+        "bounds": [
+          335,
+          341,
+          309,
+          280
+        ]
+      }
+    }
+  ],
+  "construction": {
+    "exerciseId": "marugoto.starter-a1.example.wa_identity.l03.1",
+    "explanationRu": "Чтобы назвать себя, профессию или национальность, используйте N1 は N2 です. は здесь читается «ва» и выделяет тему, です делает высказывание вежливым. Если тема уже ясна, её можно опустить.",
+    "example": {
+      "surface": "わたしはがくせいです。",
+      "kana": "わたしはがくせいです。",
+      "meaningRu": "Я студент.",
+      "segments": [
+        {
+          "surface": "わたし"
+        },
+        {
+          "surface": "は"
+        },
+        {
+          "surface": "がくせい"
+        },
+        {
+          "surface": "です"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "audioUrl": "/audio/learning/lesson03-construction-wa-identity.m4a"
+    },
+    "breakdown": [
+      {
+        "text": "わたし",
+        "explanationRu": "я"
+      },
+      {
+        "text": "は",
+        "explanationRu": "Тема высказывания; здесь произносится «ва»."
+      },
+      {
+        "text": "がくせい",
+        "explanationRu": "студент"
+      },
+      {
+        "text": "です",
+        "explanationRu": "Вежливое завершение именной фразы."
+      }
+    ],
+    "promptRu": "Я студент.",
+    "tokens": [
+      {
+        "id": "t1",
+        "surface": "わたし",
+        "kana": "わたし",
+        "segments": [
+          {
+            "surface": "わたし"
+          }
+        ]
+      },
+      {
+        "id": "t2",
+        "surface": "は",
+        "kana": "は",
+        "segments": [
+          {
+            "surface": "は"
+          }
+        ]
+      },
+      {
+        "id": "t3",
+        "surface": "がくせい",
+        "kana": "がくせい",
+        "segments": [
+          {
+            "surface": "がくせい"
+          }
+        ]
+      },
+      {
+        "id": "t4",
+        "surface": "です",
+        "kana": "です",
+        "segments": [
+          {
+            "surface": "です"
+          }
+        ]
+      }
+    ],
+    "acceptedOrders": [
+      [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    ]
+  },
+  "counterCards": [
+    {
+      "definition": {
+        "id": "hon",
+        "surface": "本",
+        "kana": "ほん",
+        "title": "Длинные предметы",
+        "explanation": "Зонтики, карандаши, бананы, бутылки. Обратите внимание на いっぽん・さんぼん・ろっぽん.",
+        "maximum": 9999999
+      },
+      "kind": "image-counter",
+      "quantity": null,
+      "level": 0,
+      "word": {
+        "id": "marugoto.starter-a1.word.a58f3423726ebfdd",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "かさ",
+        "kana": "かさ",
+        "meaningRu": "зонтик",
+        "segments": [
+          {
+            "surface": "かさ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 8,
+            "row": 41,
+            "entry": "かさ",
+            "label": "Словарь · урок 15"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 11,
+            "entry": "かさ",
+            "label": "Словарь · урок 15"
+          }
+        ],
+        "audioUrl": "/audio/e870785c3d830c0c453c.m4a"
+      },
+      "object": {
+        "id": "umbrella",
+        "tile": 3,
+        "kanas": [
+          "かさ"
+        ],
+        "counters": [
+          "hon"
+        ]
+      },
+      "answer": {
+        "surface": "本",
+        "kana": "ほん",
+        "segments": [
+          {
+            "surface": "本",
+            "reading": "ほん"
+          }
+        ]
+      },
+      "options": [
+        {
+          "key": "mai",
+          "label": "枚 · まい"
+        },
+        {
+          "key": "nin",
+          "label": "人 · にん"
+        },
+        {
+          "key": "sai",
+          "label": "歳 · さい"
+        },
+        {
+          "key": "tsu",
+          "label": "つ · つ"
+        },
+        {
+          "key": "ko",
+          "label": "個 · こ"
+        },
+        {
+          "key": "hon",
+          "label": "本 · ほん"
+        },
+        {
+          "key": "satsu",
+          "label": "冊 · さつ"
+        }
+      ],
+      "acceptedKeys": [
+        "hon"
+      ],
+      "introduction": false,
+      "examples": [
+        {
+          "surface": "1本",
+          "kana": "いっぽん",
+          "segments": [
+            {
+              "surface": "1本",
+              "reading": "いっぽん"
+            }
+          ],
+          "audioUrl": "/audio/800097595e086f91b0b7.m4a"
+        },
+        {
+          "surface": "3本",
+          "kana": "さんぼん",
+          "segments": [
+            {
+              "surface": "3本",
+              "reading": "さんぼん"
+            }
+          ],
+          "audioUrl": "/audio/cc2e5fcf49ecc4656379.m4a"
+        },
+        {
+          "surface": "8本",
+          "kana": "はっぽん",
+          "segments": [
+            {
+              "surface": "8本",
+              "reading": "はっぽん"
+            }
+          ],
+          "audioUrl": "/audio/a9e7f0feadd9290019f1.m4a"
+        }
+      ],
+      "audioUrl": "/audio/fa046912f17510ab3d47.m4a"
+    },
+    {
+      "definition": {
+        "id": "hon",
+        "surface": "本",
+        "kana": "ほん",
+        "title": "Длинные предметы",
+        "explanation": "Зонтики, карандаши, бананы, бутылки. Обратите внимание на いっぽん・さんぼん・ろっぽん.",
+        "maximum": 9999999
+      },
+      "kind": "counter-image",
+      "quantity": null,
+      "level": 0,
+      "word": {
+        "id": "marugoto.starter-a1.word.a58f3423726ebfdd",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "かさ",
+        "kana": "かさ",
+        "meaningRu": "зонтик",
+        "segments": [
+          {
+            "surface": "かさ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 8,
+            "row": 41,
+            "entry": "かさ",
+            "label": "Словарь · урок 15"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 11,
+            "entry": "かさ",
+            "label": "Словарь · урок 15"
+          }
+        ],
+        "audioUrl": "/audio/e870785c3d830c0c453c.m4a"
+      },
+      "object": {
+        "id": "umbrella",
+        "tile": 3,
+        "kanas": [
+          "かさ"
+        ],
+        "counters": [
+          "hon"
+        ]
+      },
+      "answer": {
+        "surface": "本",
+        "kana": "ほん",
+        "segments": [
+          {
+            "surface": "本",
+            "reading": "ほん"
+          }
+        ]
+      },
+      "options": [
+        {
+          "key": "marugoto.starter-a1.word.8585fc0dd820bcb4",
+          "label": "журнал",
+          "word": {
+            "id": "marugoto.starter-a1.word.8585fc0dd820bcb4",
+            "lessonIds": [
+              "marugoto.starter-a1.lesson.01"
+            ],
+            "surface": "ざっし",
+            "kana": "ざっし",
+            "meaningRu": "журнал",
+            "segments": [
+              {
+                "surface": "ざっし"
+              }
+            ],
+            "kind": "word",
+            "pos": "word",
+            "reviewStatus": "source-checked",
+            "sourceRefs": [
+              {
+                "part": "katsudoo",
+                "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+                "page": 1,
+                "row": 6,
+                "entry": "ざっし",
+                "label": "Словарь · урок 1"
+              },
+              {
+                "part": "rikai",
+                "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+                "page": 1,
+                "row": 11,
+                "entry": "ざっし",
+                "label": "Словарь · урок 1"
+              }
+            ],
+            "audioUrl": "/audio/993f99b9e3914c8a4722.m4a"
+          },
+          "object": {
+            "id": "magazine",
+            "tile": 24,
+            "kanas": [
+              "ざっし"
+            ],
+            "counters": [
+              "satsu"
+            ]
+          },
+          "quantity": 1,
+          "age": false
+        },
+        {
+          "key": "marugoto.starter-a1.word.a58f3423726ebfdd",
+          "label": "зонтик",
+          "word": {
+            "id": "marugoto.starter-a1.word.a58f3423726ebfdd",
+            "lessonIds": [
+              "marugoto.starter-a1.lesson.15"
+            ],
+            "surface": "かさ",
+            "kana": "かさ",
+            "meaningRu": "зонтик",
+            "segments": [
+              {
+                "surface": "かさ"
+              }
+            ],
+            "kind": "word",
+            "pos": "word",
+            "reviewStatus": "source-checked",
+            "sourceRefs": [
+              {
+                "part": "katsudoo",
+                "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+                "page": 8,
+                "row": 41,
+                "entry": "かさ",
+                "label": "Словарь · урок 15"
+              },
+              {
+                "part": "rikai",
+                "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+                "page": 9,
+                "row": 11,
+                "entry": "かさ",
+                "label": "Словарь · урок 15"
+              }
+            ],
+            "audioUrl": "/audio/e870785c3d830c0c453c.m4a"
+          },
+          "object": {
+            "id": "umbrella",
+            "tile": 3,
+            "kanas": [
+              "かさ"
+            ],
+            "counters": [
+              "hon"
+            ]
+          },
+          "quantity": 1,
+          "age": false
+        },
+        {
+          "key": "marugoto.starter-a1.word.80171d73d1fa8778",
+          "label": "оранжевый цвет",
+          "word": {
+            "id": "marugoto.starter-a1.word.80171d73d1fa8778",
+            "lessonIds": [
+              "marugoto.starter-a1.lesson.16"
+            ],
+            "surface": "オレンジ",
+            "kana": "オレンジ",
+            "meaningRu": "оранжевый цвет",
+            "segments": [
+              {
+                "surface": "オレンジ"
+              }
+            ],
+            "kind": "word",
+            "pos": "word",
+            "reviewStatus": "source-checked",
+            "sourceRefs": [
+              {
+                "part": "katsudoo",
+                "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+                "page": 9,
+                "row": 18,
+                "entry": "オレンジ",
+                "label": "Словарь · урок 16"
+              }
+            ],
+            "audioUrl": "/audio/d0dbdb0a4361fddb726f.m4a"
+          },
+          "object": {
+            "id": "orange",
+            "tile": 12,
+            "kanas": [
+              "みかん",
+              "オレンジ"
+            ],
+            "counters": [
+              "ko",
+              "tsu"
+            ]
+          },
+          "quantity": 1,
+          "age": false
+        },
+        {
+          "key": "marugoto.starter-a1.word.231aa76065182f08",
+          "label": "девочка",
+          "word": {
+            "id": "marugoto.starter-a1.word.231aa76065182f08",
+            "lessonIds": [
+              "marugoto.starter-a1.lesson.04"
+            ],
+            "surface": "おんなのこ",
+            "kana": "おんなのこ",
+            "meaningRu": "девочка",
+            "segments": [
+              {
+                "surface": "おんなのこ"
+              }
+            ],
+            "kind": "word",
+            "pos": "word",
+            "reviewStatus": "source-checked",
+            "sourceRefs": [
+              {
+                "part": "rikai",
+                "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+                "page": 3,
+                "row": 15,
+                "entry": "おんなのこ",
+                "label": "Словарь · урок 4"
+              }
+            ],
+            "audioUrl": "/audio/fb3ce314dd49c5d26915.m4a"
+          },
+          "object": {
+            "id": "person",
+            "tile": 0,
+            "kanas": [
+              "ひと",
+              "こども",
+              "おんなのこ",
+              "がくせい",
+              "ともだち",
+              "せんせい"
+            ],
+            "counters": [
+              "nin",
+              "sai"
+            ]
+          },
+          "quantity": 1,
+          "age": false
+        }
+      ],
+      "acceptedKeys": [
+        "marugoto.starter-a1.word.a58f3423726ebfdd"
+      ],
+      "introduction": false,
+      "examples": [
+        {
+          "surface": "1本",
+          "kana": "いっぽん",
+          "segments": [
+            {
+              "surface": "1本",
+              "reading": "いっぽん"
+            }
+          ],
+          "audioUrl": "/audio/800097595e086f91b0b7.m4a"
+        },
+        {
+          "surface": "3本",
+          "kana": "さんぼん",
+          "segments": [
+            {
+              "surface": "3本",
+              "reading": "さんぼん"
+            }
+          ],
+          "audioUrl": "/audio/cc2e5fcf49ecc4656379.m4a"
+        },
+        {
+          "surface": "8本",
+          "kana": "はっぽん",
+          "segments": [
+            {
+              "surface": "8本",
+              "reading": "はっぽん"
+            }
+          ],
+          "audioUrl": "/audio/a9e7f0feadd9290019f1.m4a"
+        }
+      ],
+      "audioUrl": "/audio/fa046912f17510ab3d47.m4a"
+    },
+    {
+      "definition": {
+        "id": "hon",
+        "surface": "本",
+        "kana": "ほん",
+        "title": "Длинные предметы",
+        "explanation": "Зонтики, карандаши, бананы, бутылки. Обратите внимание на いっぽん・さんぼん・ろっぽん.",
+        "maximum": 9999999
+      },
+      "kind": "reading-choice",
+      "quantity": 3,
+      "level": 0,
+      "word": {
+        "id": "marugoto.starter-a1.word.a58f3423726ebfdd",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "かさ",
+        "kana": "かさ",
+        "meaningRu": "зонтик",
+        "segments": [
+          {
+            "surface": "かさ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 8,
+            "row": 41,
+            "entry": "かさ",
+            "label": "Словарь · урок 15"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 11,
+            "entry": "かさ",
+            "label": "Словарь · урок 15"
+          }
+        ],
+        "audioUrl": "/audio/e870785c3d830c0c453c.m4a"
+      },
+      "object": {
+        "id": "umbrella",
+        "tile": 3,
+        "kanas": [
+          "かさ"
+        ],
+        "counters": [
+          "hon"
+        ]
+      },
+      "answer": {
+        "surface": "3本",
+        "kana": "さんぼん",
+        "segments": [
+          {
+            "surface": "3本",
+            "reading": "さんぼん"
+          }
+        ]
+      },
+      "options": [
+        {
+          "key": "よんほん",
+          "label": "よんほん"
+        },
+        {
+          "key": "さんぼん",
+          "label": "さんぼん"
+        },
+        {
+          "key": "いっぽん",
+          "label": "いっぽん"
+        },
+        {
+          "key": "ろっぽん",
+          "label": "ろっぽん"
+        }
+      ],
+      "acceptedKeys": [
+        "さんぼん"
+      ],
+      "introduction": false,
+      "examples": [
+        {
+          "surface": "1本",
+          "kana": "いっぽん",
+          "segments": [
+            {
+              "surface": "1本",
+              "reading": "いっぽん"
+            }
+          ],
+          "audioUrl": "/audio/800097595e086f91b0b7.m4a"
+        },
+        {
+          "surface": "3本",
+          "kana": "さんぼん",
+          "segments": [
+            {
+              "surface": "3本",
+              "reading": "さんぼん"
+            }
+          ],
+          "audioUrl": "/audio/cc2e5fcf49ecc4656379.m4a"
+        },
+        {
+          "surface": "8本",
+          "kana": "はっぽん",
+          "segments": [
+            {
+              "surface": "8本",
+              "reading": "はっぽん"
+            }
+          ],
+          "audioUrl": "/audio/a9e7f0feadd9290019f1.m4a"
+        }
+      ],
+      "audioUrl": "/audio/cc2e5fcf49ecc4656379.m4a"
+    },
+    {
+      "definition": {
+        "id": "hon",
+        "surface": "本",
+        "kana": "ほん",
+        "title": "Длинные предметы",
+        "explanation": "Зонтики, карандаши, бананы, бутылки. Обратите внимание на いっぽん・さんぼん・ろっぽん.",
+        "maximum": 9999999
+      },
+      "kind": "listening-image",
+      "quantity": 3,
+      "level": 0,
+      "word": {
+        "id": "marugoto.starter-a1.word.a58f3423726ebfdd",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "かさ",
+        "kana": "かさ",
+        "meaningRu": "зонтик",
+        "segments": [
+          {
+            "surface": "かさ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 8,
+            "row": 41,
+            "entry": "かさ",
+            "label": "Словарь · урок 15"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 11,
+            "entry": "かさ",
+            "label": "Словарь · урок 15"
+          }
+        ],
+        "audioUrl": "/audio/e870785c3d830c0c453c.m4a"
+      },
+      "object": {
+        "id": "umbrella",
+        "tile": 3,
+        "kanas": [
+          "かさ"
+        ],
+        "counters": [
+          "hon"
+        ]
+      },
+      "answer": {
+        "surface": "3本",
+        "kana": "さんぼん",
+        "segments": [
+          {
+            "surface": "3本",
+            "reading": "さんぼん"
+          }
+        ]
+      },
+      "options": [
+        {
+          "key": "4",
+          "label": "зонтик",
+          "word": {
+            "id": "marugoto.starter-a1.word.a58f3423726ebfdd",
+            "lessonIds": [
+              "marugoto.starter-a1.lesson.15"
+            ],
+            "surface": "かさ",
+            "kana": "かさ",
+            "meaningRu": "зонтик",
+            "segments": [
+              {
+                "surface": "かさ"
+              }
+            ],
+            "kind": "word",
+            "pos": "word",
+            "reviewStatus": "source-checked",
+            "sourceRefs": [
+              {
+                "part": "katsudoo",
+                "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+                "page": 8,
+                "row": 41,
+                "entry": "かさ",
+                "label": "Словарь · урок 15"
+              },
+              {
+                "part": "rikai",
+                "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+                "page": 9,
+                "row": 11,
+                "entry": "かさ",
+                "label": "Словарь · урок 15"
+              }
+            ],
+            "audioUrl": "/audio/e870785c3d830c0c453c.m4a"
+          },
+          "object": {
+            "id": "umbrella",
+            "tile": 3,
+            "kanas": [
+              "かさ"
+            ],
+            "counters": [
+              "hon"
+            ]
+          },
+          "quantity": 4,
+          "age": false
+        },
+        {
+          "key": "3",
+          "label": "зонтик",
+          "word": {
+            "id": "marugoto.starter-a1.word.a58f3423726ebfdd",
+            "lessonIds": [
+              "marugoto.starter-a1.lesson.15"
+            ],
+            "surface": "かさ",
+            "kana": "かさ",
+            "meaningRu": "зонтик",
+            "segments": [
+              {
+                "surface": "かさ"
+              }
+            ],
+            "kind": "word",
+            "pos": "word",
+            "reviewStatus": "source-checked",
+            "sourceRefs": [
+              {
+                "part": "katsudoo",
+                "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+                "page": 8,
+                "row": 41,
+                "entry": "かさ",
+                "label": "Словарь · урок 15"
+              },
+              {
+                "part": "rikai",
+                "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+                "page": 9,
+                "row": 11,
+                "entry": "かさ",
+                "label": "Словарь · урок 15"
+              }
+            ],
+            "audioUrl": "/audio/e870785c3d830c0c453c.m4a"
+          },
+          "object": {
+            "id": "umbrella",
+            "tile": 3,
+            "kanas": [
+              "かさ"
+            ],
+            "counters": [
+              "hon"
+            ]
+          },
+          "quantity": 3,
+          "age": false
+        },
+        {
+          "key": "1",
+          "label": "зонтик",
+          "word": {
+            "id": "marugoto.starter-a1.word.a58f3423726ebfdd",
+            "lessonIds": [
+              "marugoto.starter-a1.lesson.15"
+            ],
+            "surface": "かさ",
+            "kana": "かさ",
+            "meaningRu": "зонтик",
+            "segments": [
+              {
+                "surface": "かさ"
+              }
+            ],
+            "kind": "word",
+            "pos": "word",
+            "reviewStatus": "source-checked",
+            "sourceRefs": [
+              {
+                "part": "katsudoo",
+                "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+                "page": 8,
+                "row": 41,
+                "entry": "かさ",
+                "label": "Словарь · урок 15"
+              },
+              {
+                "part": "rikai",
+                "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+                "page": 9,
+                "row": 11,
+                "entry": "かさ",
+                "label": "Словарь · урок 15"
+              }
+            ],
+            "audioUrl": "/audio/e870785c3d830c0c453c.m4a"
+          },
+          "object": {
+            "id": "umbrella",
+            "tile": 3,
+            "kanas": [
+              "かさ"
+            ],
+            "counters": [
+              "hon"
+            ]
+          },
+          "quantity": 1,
+          "age": false
+        },
+        {
+          "key": "6",
+          "label": "зонтик",
+          "word": {
+            "id": "marugoto.starter-a1.word.a58f3423726ebfdd",
+            "lessonIds": [
+              "marugoto.starter-a1.lesson.15"
+            ],
+            "surface": "かさ",
+            "kana": "かさ",
+            "meaningRu": "зонтик",
+            "segments": [
+              {
+                "surface": "かさ"
+              }
+            ],
+            "kind": "word",
+            "pos": "word",
+            "reviewStatus": "source-checked",
+            "sourceRefs": [
+              {
+                "part": "katsudoo",
+                "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+                "page": 8,
+                "row": 41,
+                "entry": "かさ",
+                "label": "Словарь · урок 15"
+              },
+              {
+                "part": "rikai",
+                "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+                "page": 9,
+                "row": 11,
+                "entry": "かさ",
+                "label": "Словарь · урок 15"
+              }
+            ],
+            "audioUrl": "/audio/e870785c3d830c0c453c.m4a"
+          },
+          "object": {
+            "id": "umbrella",
+            "tile": 3,
+            "kanas": [
+              "かさ"
+            ],
+            "counters": [
+              "hon"
+            ]
+          },
+          "quantity": 6,
+          "age": false
+        }
+      ],
+      "acceptedKeys": [
+        "3"
+      ],
+      "introduction": false,
+      "examples": [
+        {
+          "surface": "1本",
+          "kana": "いっぽん",
+          "segments": [
+            {
+              "surface": "1本",
+              "reading": "いっぽん"
+            }
+          ],
+          "audioUrl": "/audio/800097595e086f91b0b7.m4a"
+        },
+        {
+          "surface": "3本",
+          "kana": "さんぼん",
+          "segments": [
+            {
+              "surface": "3本",
+              "reading": "さんぼん"
+            }
+          ],
+          "audioUrl": "/audio/cc2e5fcf49ecc4656379.m4a"
+        },
+        {
+          "surface": "8本",
+          "kana": "はっぽん",
+          "segments": [
+            {
+              "surface": "8本",
+              "reading": "はっぽん"
+            }
+          ],
+          "audioUrl": "/audio/a9e7f0feadd9290019f1.m4a"
+        }
+      ],
+      "audioUrl": "/audio/cc2e5fcf49ecc4656379.m4a"
+    },
+    {
+      "definition": {
+        "id": "hon",
+        "surface": "本",
+        "kana": "ほん",
+        "title": "Длинные предметы",
+        "explanation": "Зонтики, карандаши, бананы, бутылки. Обратите внимание на いっぽん・さんぼん・ろっぽん.",
+        "maximum": 9999999
+      },
+      "kind": "recall",
+      "quantity": 3,
+      "level": 0,
+      "word": {
+        "id": "marugoto.starter-a1.word.a58f3423726ebfdd",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.15"
+        ],
+        "surface": "かさ",
+        "kana": "かさ",
+        "meaningRu": "зонтик",
+        "segments": [
+          {
+            "surface": "かさ"
+          }
+        ],
+        "kind": "word",
+        "pos": "word",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+            "page": 8,
+            "row": 41,
+            "entry": "かさ",
+            "label": "Словарь · урок 15"
+          },
+          {
+            "part": "rikai",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+            "page": 9,
+            "row": 11,
+            "entry": "かさ",
+            "label": "Словарь · урок 15"
+          }
+        ],
+        "audioUrl": "/audio/e870785c3d830c0c453c.m4a"
+      },
+      "object": {
+        "id": "umbrella",
+        "tile": 3,
+        "kanas": [
+          "かさ"
+        ],
+        "counters": [
+          "hon"
+        ]
+      },
+      "answer": {
+        "surface": "3本",
+        "kana": "さんぼん",
+        "segments": [
+          {
+            "surface": "3本",
+            "reading": "さんぼん"
+          }
+        ]
+      },
+      "options": [],
+      "acceptedKeys": [],
+      "introduction": false,
+      "examples": [
+        {
+          "surface": "1本",
+          "kana": "いっぽん",
+          "segments": [
+            {
+              "surface": "1本",
+              "reading": "いっぽん"
+            }
+          ],
+          "audioUrl": "/audio/800097595e086f91b0b7.m4a"
+        },
+        {
+          "surface": "3本",
+          "kana": "さんぼん",
+          "segments": [
+            {
+              "surface": "3本",
+              "reading": "さんぼん"
+            }
+          ],
+          "audioUrl": "/audio/cc2e5fcf49ecc4656379.m4a"
+        },
+        {
+          "surface": "8本",
+          "kana": "はっぽん",
+          "segments": [
+            {
+              "surface": "8本",
+              "reading": "はっぽん"
+            }
+          ],
+          "audioUrl": "/audio/a9e7f0feadd9290019f1.m4a"
+        }
+      ],
+      "audioUrl": "/audio/cc2e5fcf49ecc4656379.m4a"
+    }
+  ],
+  "counterDefinition": {
+    "id": "hon",
+    "surface": "本",
+    "kana": "ほん",
+    "title": "Длинные предметы",
+    "explanation": "Зонтики, карандаши, бананы, бутылки. Обратите внимание на いっぽん・さんぼん・ろっぽん.",
+    "maximum": 9999999
+  },
+  "lessons": [
+    {
+      "id": "marugoto.starter-a1.lesson.01",
+      "number": 1,
+      "title": "Приветствие",
+      "topic": "1",
+      "words": 46,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.caff7e7f7e2e879b",
+          "surface": "いいえ",
+          "kana": "いいえ",
+          "segments": [
+            {
+              "surface": "いいえ"
+            }
+          ],
+          "meaningRu": "нет",
+          "audioUrl": "/audio/f2d83dacd35df23093c7.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.5806ccc1a4aa0772",
+          "surface": "カタカナ",
+          "kana": "カタカナ",
+          "segments": [
+            {
+              "surface": "カタカナ"
+            }
+          ],
+          "meaningRu": "катакана (японская слоговая азбука для написания заимствованных слов, а также выделения какого-то слова)",
+          "audioUrl": "/audio/13902ac1413a79f56c69.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.5806ccc1a4aa0772",
+            "explanationRu": "Слоговая азбука с более угловатыми знаками: ア・イ・ウ. Часто записывает заимствования.",
+            "example": {
+              "surface": "これはカタカナの「ア」です。",
+              "kana": "これはカタカナの「ア」です。",
+              "meaningRu": "Это «а», написанное катаканой.",
+              "segments": [
+                {
+                  "surface": "これはカタカナの「ア」です。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson01-word-d750e874526b.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.6f82e7260f603aaa",
+          "surface": "かんじ",
+          "kana": "かんじ",
+          "segments": [
+            {
+              "surface": "かんじ"
+            }
+          ],
+          "meaningRu": "иероглифы",
+          "audioUrl": "/audio/d39c7ed0bf3e0a2bb7ec.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.6f82e7260f603aaa",
+            "explanationRu": "Иероглифы связывают форму со значением; у знака бывает несколько чтений.",
+            "example": {
+              "surface": "これはかんじの「山」です。",
+              "kana": "これはかんじの「やま」です。",
+              "meaningRu": "Это иероглиф «гора».",
+              "segments": [
+                {
+                  "surface": "これはかんじの「"
+                },
+                {
+                  "surface": "山",
+                  "reading": "やま"
+                },
+                {
+                  "surface": "」です。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson01-word-6c9ef048b679.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.a10758058306d04b",
+          "surface": "ご",
+          "kana": "ご",
+          "segments": [
+            {
+              "surface": "ご"
+            }
+          ],
+          "meaningRu": "… язык (счетный суффикс)",
+          "audioUrl": "/audio/29c8be43ec8396244c8f.m4a",
+          "introduction": null,
+          "illustration": null
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.02",
+      "number": 2,
+      "title": "На занятии",
+      "topic": "1",
+      "words": 70,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.5806ccc1a4aa0772",
+          "surface": "カタカナ",
+          "kana": "カタカナ",
+          "segments": [
+            {
+              "surface": "カタカナ"
+            }
+          ],
+          "meaningRu": "катакана (японская слоговая азбука для написания заимствованных слов, а также выделения какого-то слова)",
+          "audioUrl": "/audio/13902ac1413a79f56c69.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.5806ccc1a4aa0772",
+            "explanationRu": "Слоговая азбука с более угловатыми знаками: ア・イ・ウ. Часто записывает заимствования.",
+            "example": {
+              "surface": "これはカタカナの「ア」です。",
+              "kana": "これはカタカナの「ア」です。",
+              "meaningRu": "Это «а», написанное катаканой.",
+              "segments": [
+                {
+                  "surface": "これはカタカナの「ア」です。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson01-word-d750e874526b.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.222e46673cd124b4",
+          "surface": "ページ",
+          "kana": "ページ",
+          "segments": [
+            {
+              "surface": "ページ"
+            }
+          ],
+          "meaningRu": "страница",
+          "audioUrl": "/audio/a20d66d6dc107965d5f8.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.222e46673cd124b4",
+            "explanationRu": "Страница книги; долгий звук エー важен для произношения.",
+            "example": {
+              "surface": "このページをみてください。",
+              "kana": "このページをみてください。",
+              "meaningRu": "Посмотрите на эту страницу.",
+              "segments": [
+                {
+                  "surface": "このページをみてください。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson02-word-d6d8e428ca06.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.ad26604516060e1e",
+          "surface": "いちど",
+          "kana": "いちど",
+          "segments": [
+            {
+              "surface": "いちど"
+            }
+          ],
+          "meaningRu": "один раз",
+          "audioUrl": "/audio/53a3f295edb9a82465f8.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.e27c10e325cc5bbf",
+          "surface": "います",
+          "kana": "います",
+          "segments": [
+            {
+              "surface": "います"
+            }
+          ],
+          "meaningRu": "быть, существовать (об одушевленных предметах)",
+          "audioUrl": "/audio/e1ff253cabe69eb76b9f.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.e27c10e325cc5bbf",
+            "explanationRu": "Есть, находится: о людях и животных; для телевизора применяется あります.",
+            "example": {
+              "surface": "へやにこどもがいます。",
+              "kana": "へやにこどもがいます。",
+              "meaningRu": "В комнате ребёнок.",
+              "segments": [
+                {
+                  "surface": "へやにこどもがいます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson07-word-bd78c7345d30.m4a"
+            }
+          },
+          "illustration": null
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.03",
+      "number": 3,
+      "title": "О себе",
+      "topic": "2",
+      "words": 55,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.8217225960a91885",
+          "surface": "にほんご",
+          "kana": "にほんご",
+          "segments": [
+            {
+              "surface": "にほんご"
+            }
+          ],
+          "meaningRu": "японский язык",
+          "audioUrl": "/audio/cbcada9e8ae8a92252bf.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.8217225960a91885",
+            "explanationRu": "Японский язык: название страны にほん + ご «язык».",
+            "example": {
+              "surface": "にほんごがすこしできます。",
+              "kana": "にほんごがすこしできます。",
+              "meaningRu": "Я немного говорю по-японски.",
+              "segments": [
+                {
+                  "surface": "にほんごがすこしできます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson03-word-cfb6c85dfbd2.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.0375e09aad13f1e2",
+          "surface": "えいご",
+          "kana": "えいご",
+          "segments": [
+            {
+              "surface": "えいご"
+            }
+          ],
+          "meaningRu": "английский язык",
+          "audioUrl": "/audio/6a8a24ad372d06dd4179.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.0375e09aad13f1e2",
+            "explanationRu": "Английский язык; в живой речи えい часто звучит как долгий э.",
+            "example": {
+              "surface": "えいごができます。",
+              "kana": "えいごができます。",
+              "meaningRu": "Я говорю по-английски.",
+              "segments": [
+                {
+                  "surface": "えいごができます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson03-word-129f1310a383.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.ec82a6a9bdbd0924",
+          "surface": "すこし",
+          "kana": "すこし",
+          "segments": [
+            {
+              "surface": "すこし"
+            }
+          ],
+          "meaningRu": "немного",
+          "audioUrl": "/audio/9cdfefd9bcf2f67e974b.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.ec82a6a9bdbd0924",
+            "explanationRu": "Немного: удобно уточнить, что язык пока знаете в небольшой степени.",
+            "example": {
+              "surface": "にほんごがすこしできます。",
+              "kana": "にほんごがすこしできます。",
+              "meaningRu": "Я немного говорю по-японски.",
+              "segments": [
+                {
+                  "surface": "にほんごがすこしできます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson03-word-dce5349220a1.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.3289b4c0bfa92493",
+          "surface": "せんせい",
+          "kana": "せんせい",
+          "segments": [
+            {
+              "surface": "せんせい"
+            }
+          ],
+          "meaningRu": "учитель",
+          "audioUrl": "/audio/96e91aa8b67e131b8aa6.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.3289b4c0bfa92493",
+            "explanationRu": "Обращение к преподавателю. Не называют так себя, сообщая свою профессию.",
+            "example": {
+              "surface": "せんせい、もういちどおねがいします。",
+              "kana": "せんせい、もういちどおねがいします。",
+              "meaningRu": "Учитель, повторите, пожалуйста.",
+              "segments": [
+                {
+                  "surface": "せんせい、もういちどおねがいします。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson02-word-65543d5b57a9.m4a"
+            }
+          },
+          "illustration": null
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.04",
+      "number": 4,
+      "title": "Семья",
+      "topic": "2",
+      "words": 71,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.04763742e49d9b46",
+          "surface": "三",
+          "kana": "さん",
+          "segments": [
+            {
+              "surface": "三",
+              "reading": "さん"
+            }
+          ],
+          "meaningRu": "три",
+          "audioUrl": "/audio/ec4d379de569bfd0cd50.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.e27c10e325cc5bbf",
+          "surface": "います",
+          "kana": "います",
+          "segments": [
+            {
+              "surface": "います"
+            }
+          ],
+          "meaningRu": "быть, существовать (об одушевленных предметах)",
+          "audioUrl": "/audio/e1ff253cabe69eb76b9f.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.e27c10e325cc5bbf",
+            "explanationRu": "Есть, находится: о людях и животных; для телевизора применяется あります.",
+            "example": {
+              "surface": "へやにこどもがいます。",
+              "kana": "へやにこどもがいます。",
+              "meaningRu": "В комнате ребёнок.",
+              "segments": [
+                {
+                  "surface": "へやにこどもがいます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson07-word-bd78c7345d30.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.5898af218a8efa80",
+          "surface": "あに",
+          "kana": "あに",
+          "segments": [
+            {
+              "surface": "あに"
+            }
+          ],
+          "meaningRu": "(мой) старший брат",
+          "audioUrl": "/audio/0330bd8f8a1b529609bb.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.5898af218a8efa80",
+            "explanationRu": "Свой старший брат; возраст относительно говорящего важен для выбора слова.",
+            "example": {
+              "surface": "あにはかいしゃいんです。",
+              "kana": "あにはかいしゃいんです。",
+              "meaningRu": "Мой старший брат — сотрудник компании.",
+              "segments": [
+                {
+                  "surface": "あにはかいしゃいんです。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson04-word-b5aff342a857.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.f11bf70db3c7b278",
+          "surface": "あね",
+          "kana": "あね",
+          "segments": [
+            {
+              "surface": "あね"
+            }
+          ],
+          "meaningRu": "(моя) старшая сестра",
+          "audioUrl": "/audio/c1b6337ba14afa830fde.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.f11bf70db3c7b278",
+            "explanationRu": "Своя старшая сестра; не младшая сестра, которая называется いもうと.",
+            "example": {
+              "surface": "あねはおおさかにすんでいます。",
+              "kana": "あねはおおさかにすんでいます。",
+              "meaningRu": "Моя старшая сестра живёт в Осаке.",
+              "segments": [
+                {
+                  "surface": "あねはおおさかにすんでいます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson04-word-bb5cd3499339.m4a"
+            }
+          },
+          "illustration": null
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.05",
+      "number": 5,
+      "title": "Еда и предпочтения",
+      "topic": "3",
+      "words": 36,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.d62e1fb87f2ea95f",
+          "surface": "あさごはん",
+          "kana": "あさごはん",
+          "segments": [
+            {
+              "surface": "あさごはん"
+            }
+          ],
+          "meaningRu": "завтрак",
+          "audioUrl": "/audio/147b910bf7960f1fef77.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.d62e1fb87f2ea95f",
+            "explanationRu": "Завтрак: あさ «утро» и ごはん «еда».",
+            "example": {
+              "surface": "いつもあさごはんをたべます。",
+              "kana": "いつもあさごはんをたべます。",
+              "meaningRu": "Я всегда завтракаю.",
+              "segments": [
+                {
+                  "surface": "いつもあさごはんをたべます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson05-word-d7e05c5615bb.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.ad61d9e2e4881d67",
+          "surface": "あまり",
+          "kana": "あまり",
+          "segments": [
+            {
+              "surface": "あまり"
+            }
+          ],
+          "meaningRu": "не очень, не особо",
+          "audioUrl": "/audio/91b02d7e9d67c9f7631b.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.ad61d9e2e4881d67",
+            "explanationRu": "Вместе с отрицанием — «не очень часто», «не особенно».",
+            "example": {
+              "surface": "にくはあまりたべません。",
+              "kana": "にくはあまりたべません。",
+              "meaningRu": "Я не очень часто ем мясо.",
+              "segments": [
+                {
+                  "surface": "にくはあまりたべません。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson05-word-11f749f16d2a.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.1f2bee5a2842a87d",
+          "surface": "アンケート",
+          "kana": "アンケート",
+          "segments": [
+            {
+              "surface": "アンケート"
+            }
+          ],
+          "meaningRu": "анкета",
+          "audioUrl": "/audio/f3852cf596af19885d7e.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.c6170ed6dc5a4bed",
+          "surface": "いつも",
+          "kana": "いつも",
+          "segments": [
+            {
+              "surface": "いつも"
+            }
+          ],
+          "meaningRu": "всегда",
+          "audioUrl": "/audio/3188ba073318605d4d24.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.c6170ed6dc5a4bed",
+            "explanationRu": "Всегда, обычно из раза в раз: более высокая частота, чем よく.",
+            "example": {
+              "surface": "いつもおちゃをのみます。",
+              "kana": "いつもおちゃをのみます。",
+              "meaningRu": "Я всегда пью чай.",
+              "segments": [
+                {
+                  "surface": "いつもおちゃをのみます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson05-word-965f07ea940f.m4a"
+            }
+          },
+          "illustration": null
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.06",
+      "number": 6,
+      "title": "Обед и заказ",
+      "topic": "3",
+      "words": 61,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.712e62ba4142b3c5",
+          "surface": "この",
+          "kana": "この",
+          "segments": [
+            {
+              "surface": "この"
+            }
+          ],
+          "meaningRu": "этот",
+          "audioUrl": "/audio/d0ed3f94f7767c054cf0.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.712e62ba4142b3c5",
+            "explanationRu": "«Этот» перед существительным: このひと. Самостоятельно вместо существительного не употребляется.",
+            "example": {
+              "surface": "このひとはあねです。",
+              "kana": "このひとはあねです。",
+              "meaningRu": "Этот человек — моя старшая сестра.",
+              "segments": [
+                {
+                  "surface": "このひとはあねです。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson04-word-224259ffee2d.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.07c1f92fbb843473",
+          "surface": "コーヒー",
+          "kana": "コーヒー",
+          "segments": [
+            {
+              "surface": "コーヒー"
+            }
+          ],
+          "meaningRu": "кофе",
+          "audioUrl": "/audio/9892c7696a5b2b8f24fe.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.07c1f92fbb843473",
+            "explanationRu": "Кофе; сохраните две долгие гласные コー и ヒー.",
+            "example": {
+              "surface": "コーヒー、のみますか。",
+              "kana": "コーヒー、のみますか。",
+              "meaningRu": "Будете кофе?",
+              "segments": [
+                {
+                  "surface": "コーヒー、のみますか。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson05-word-3406753cf4c0.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.9de12b00cf2e4035",
+          "surface": "すき",
+          "kana": "すき",
+          "segments": [
+            {
+              "surface": "すき"
+            }
+          ],
+          "meaningRu": "любимый",
+          "audioUrl": "/audio/e56dc7f7f30d6b5246be.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.9de12b00cf2e4035",
+            "explanationRu": "Нравиться, любимый; предмет симпатии обычно отмечается が.",
+            "example": {
+              "surface": "わたしはさかながすきです。",
+              "kana": "わたしはさかながすきです。",
+              "meaningRu": "Я люблю рыбу.",
+              "segments": [
+                {
+                  "surface": "わたしはさかながすきです。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson05-word-76f7fdb925ae.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.3c0f92c17efac2d9",
+          "surface": "食べます",
+          "kana": "たべます",
+          "segments": [
+            {
+              "surface": "食",
+              "reading": "た"
+            },
+            {
+              "surface": "べます"
+            }
+          ],
+          "meaningRu": "есть, кушать",
+          "audioUrl": "/audio/e22b4f355f2c24f39560.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.3c0f92c17efac2d9",
+            "explanationRu": "Вежливое «есть, кушать»; продукт или приём пищи отмечается を.",
+            "example": {
+              "surface": "パンをたべます。",
+              "kana": "パンをたべます。",
+              "meaningRu": "Я ем хлеб.",
+              "segments": [
+                {
+                  "surface": "パンをたべます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson05-word-3cff35c648c4.m4a"
+            }
+          },
+          "illustration": null
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.07",
+      "number": 7,
+      "title": "Жильё и вещи",
+      "topic": "4",
+      "words": 60,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.193e14d36c7c14e6",
+          "surface": "二",
+          "kana": "に",
+          "segments": [
+            {
+              "surface": "二",
+              "reading": "に"
+            }
+          ],
+          "meaningRu": "два",
+          "audioUrl": "/audio/37df2fd1e99c2b76dcf1.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.e27c10e325cc5bbf",
+          "surface": "います",
+          "kana": "います",
+          "segments": [
+            {
+              "surface": "います"
+            }
+          ],
+          "meaningRu": "быть, существовать (об одушевленных предметах)",
+          "audioUrl": "/audio/e1ff253cabe69eb76b9f.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.e27c10e325cc5bbf",
+            "explanationRu": "Есть, находится: о людях и животных; для телевизора применяется あります.",
+            "example": {
+              "surface": "へやにこどもがいます。",
+              "kana": "へやにこどもがいます。",
+              "meaningRu": "В комнате ребёнок.",
+              "segments": [
+                {
+                  "surface": "へやにこどもがいます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson07-word-bd78c7345d30.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.58e595c1fa37474d",
+          "surface": "わたし",
+          "kana": "わたし",
+          "segments": [
+            {
+              "surface": "わたし"
+            }
+          ],
+          "meaningRu": "я",
+          "audioUrl": "/audio/1fc2d4cb902d7f3e517b.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.58e595c1fa37474d",
+            "explanationRu": "Нейтральное «я». Когда собеседнику ясно, о ком речь, слово часто опускают.",
+            "example": {
+              "surface": "わたしはがくせいです。",
+              "kana": "わたしはがくせいです。",
+              "meaningRu": "Я студент.",
+              "segments": [
+                {
+                  "surface": "わたしはがくせいです。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson03-word-48c4e90c01bf.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.f304a39b5e728680",
+          "surface": "かぞく",
+          "kana": "かぞく",
+          "segments": [
+            {
+              "surface": "かぞく"
+            }
+          ],
+          "meaningRu": "семья",
+          "audioUrl": "/audio/f85d7b995ae23e0415fe.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.f304a39b5e728680",
+            "explanationRu": "Семья как группа; после は можно назвать её состав или количество человек.",
+            "example": {
+              "surface": "わたしのかぞくはさんにんです。",
+              "kana": "わたしのかぞくはさんにんです。",
+              "meaningRu": "В моей семье три человека.",
+              "segments": [
+                {
+                  "surface": "わたしのかぞくはさんにんです。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson04-word-d5cef97a2714.m4a"
+            }
+          },
+          "illustration": null
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.08",
+      "number": 8,
+      "title": "Расположение вещей",
+      "topic": "4",
+      "words": 35,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.e5c1af6c6cb9cf9f",
+          "surface": "どうぞ",
+          "kana": "どうぞ",
+          "segments": [
+            {
+              "surface": "どうぞ"
+            }
+          ],
+          "meaningRu": "пожалуйста, вот",
+          "audioUrl": "/audio/c5f088f8ec8e526c6b76.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.182cd34e277df271",
+          "surface": "きれい",
+          "kana": "きれい",
+          "segments": [
+            {
+              "surface": "きれい"
+            }
+          ],
+          "meaningRu": "красивый",
+          "audioUrl": "/audio/82c4e9efb4f23f7f896b.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.29abc55433d023f5",
+          "surface": "どうも",
+          "kana": "どうも",
+          "segments": [
+            {
+              "surface": "どうも"
+            }
+          ],
+          "meaningRu": "спасибо",
+          "audioUrl": "/audio/f8ab1a4dcc1b6f0fad6e.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.3e0a236031ec93bb",
+          "surface": "あ",
+          "kana": "あ",
+          "segments": [
+            {
+              "surface": "あ"
+            }
+          ],
+          "meaningRu": "да? (удивл.)",
+          "audioUrl": "/audio/319be7f321b3ea106917.m4a",
+          "introduction": null,
+          "illustration": null
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.09",
+      "number": 9,
+      "title": "Распорядок дня",
+      "topic": "5",
+      "words": 62,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.4280d60b0f1f8e4e",
+          "surface": "新聞",
+          "kana": "しんぶん",
+          "segments": [
+            {
+              "surface": "新聞",
+              "reading": "しんぶん"
+            }
+          ],
+          "meaningRu": "газета",
+          "audioUrl": "/audio/84c2318f2ef15b362888.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.9c2a9ad4e0f37352",
+          "surface": "七",
+          "kana": "しち",
+          "segments": [
+            {
+              "surface": "七",
+              "reading": "しち"
+            }
+          ],
+          "meaningRu": "семь",
+          "audioUrl": "/audio/e58a4a2adbe5d62ea77d.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.783c8f0fff891e31",
+          "surface": "はあ",
+          "kana": "はあ",
+          "segments": [
+            {
+              "surface": "はあ"
+            }
+          ],
+          "meaningRu": "вздох \"а-а\"",
+          "audioUrl": "/audio/3b55be8afea32e93104d.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.a96f4fc5ed416761",
+          "surface": "あさ",
+          "kana": "あさ",
+          "segments": [
+            {
+              "surface": "あさ"
+            }
+          ],
+          "meaningRu": "утро",
+          "audioUrl": "/audio/7a66a0d73a169f01728e.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.a96f4fc5ed416761",
+            "explanationRu": "Утро; без конкретного часа часто используется само, без に.",
+            "example": {
+              "surface": "あさ、しちじにおきます。",
+              "kana": "あさ、しちじにおきます。",
+              "meaningRu": "Утром я встаю в семь.",
+              "segments": [
+                {
+                  "surface": "あさ、しちじにおきます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson09-word-f72aa9a38f12.m4a"
+            }
+          },
+          "illustration": null
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.10",
+      "number": 10,
+      "title": "График и встречи",
+      "topic": "5",
+      "words": 56,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.5a892d947dc6fe6c",
+          "surface": "じゅぎょう",
+          "kana": "じゅぎょう",
+          "segments": [
+            {
+              "surface": "じゅぎょう"
+            }
+          ],
+          "meaningRu": "занятие",
+          "audioUrl": "/audio/3f4e776f0e6109caefad.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.5a892d947dc6fe6c",
+            "explanationRu": "Занятие в расписании; не сокращайте долгую гласную в ぎょう.",
+            "example": {
+              "surface": "じゅぎょうはにじからです。",
+              "kana": "じゅぎょうはにじからです。",
+              "meaningRu": "Занятие начинается в два.",
+              "segments": [
+                {
+                  "surface": "じゅぎょうはにじからです。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson10-da133dccc897acab4339.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.38fcb282d41550b1",
+          "surface": "いい",
+          "kana": "いい",
+          "segments": [
+            {
+              "surface": "いい"
+            }
+          ],
+          "meaningRu": "хороший",
+          "audioUrl": "/audio/29463ea7bdbc4ddf81f6.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.e31c09b8c9a8be31",
+          "surface": "しごと",
+          "kana": "しごと",
+          "segments": [
+            {
+              "surface": "しごと"
+            }
+          ],
+          "meaningRu": "работа",
+          "audioUrl": "/audio/3c87c66c6206dd09a81b.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.e31c09b8c9a8be31",
+            "explanationRu": "Работа как занятие или дела, не обязательно название профессии.",
+            "example": {
+              "surface": "くじからしごとです。",
+              "kana": "くじからしごとです。",
+              "meaningRu": "Работа начинается в девять.",
+              "segments": [
+                {
+                  "surface": "くじからしごとです。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson09-word-04cbc731e9b3.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.c136fb9a0acca606",
+          "surface": "します",
+          "kana": "します",
+          "segments": [
+            {
+              "surface": "します"
+            }
+          ],
+          "meaningRu": "делать, заниматься",
+          "audioUrl": "/audio/6fc475d32e149b46e36a.m4a",
+          "introduction": null,
+          "illustration": null
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.11",
+      "number": 11,
+      "title": "Хобби",
+      "topic": "6",
+      "words": 79,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.abf51c53069fc220",
+          "surface": "できます",
+          "kana": "できます",
+          "segments": [
+            {
+              "surface": "できます"
+            }
+          ],
+          "meaningRu": "мочь",
+          "audioUrl": "/audio/e762586e43f506c1f078.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.abf51c53069fc220",
+            "explanationRu": "Здесь — уметь говорить на языке. Объект умения отмечается が.",
+            "example": {
+              "surface": "わたしはにほんごができます。",
+              "kana": "わたしはにほんごができます。",
+              "meaningRu": "Я могу говорить по-японски.",
+              "segments": [
+                {
+                  "surface": "わたしはにほんごができます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson03-word-c22930496292.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.9de12b00cf2e4035",
+          "surface": "すき",
+          "kana": "すき",
+          "segments": [
+            {
+              "surface": "すき"
+            }
+          ],
+          "meaningRu": "любимый",
+          "audioUrl": "/audio/e56dc7f7f30d6b5246be.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.9de12b00cf2e4035",
+            "explanationRu": "Нравиться, любимый; предмет симпатии обычно отмечается が.",
+            "example": {
+              "surface": "わたしはさかながすきです。",
+              "kana": "わたしはさかながすきです。",
+              "meaningRu": "Я люблю рыбу.",
+              "segments": [
+                {
+                  "surface": "わたしはさかながすきです。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson05-word-76f7fdb925ae.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.b569ab0369d576c6",
+          "surface": "へや",
+          "kana": "へや",
+          "segments": [
+            {
+              "surface": "へや"
+            }
+          ],
+          "meaningRu": "комната",
+          "audioUrl": "/audio/7cbfe712135b681008e9.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.b569ab0369d576c6",
+            "explanationRu": "Комната; слово не сообщает её назначение.",
+            "example": {
+              "surface": "へやはひろいです。",
+              "kana": "へやはひろいです。",
+              "meaningRu": "Комната просторная.",
+              "segments": [
+                {
+                  "surface": "へやはひろいです。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson07-word-e66cbbcfa335.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.c30dea93f585802c",
+          "surface": "うち",
+          "kana": "うち",
+          "segments": [
+            {
+              "surface": "うち"
+            }
+          ],
+          "meaningRu": "дом",
+          "audioUrl": "/audio/a599377d2d3b82f4bd61.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.c30dea93f585802c",
+            "explanationRu": "Дом как место обычных занятий.",
+            "example": {
+              "surface": "うちでほんをよみます。",
+              "kana": "うちでほんをよみます。",
+              "meaningRu": "Я читаю книги дома.",
+              "segments": [
+                {
+                  "surface": "うちでほんをよみます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson11-628d0da068cea61d511a.m4a"
+            }
+          },
+          "illustration": null
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.12",
+      "number": 12,
+      "title": "События и приглашения",
+      "topic": "6",
+      "words": 81,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.c32b6aa1ef3c13bc",
+          "surface": "ちょっと",
+          "kana": "ちょっと",
+          "segments": [
+            {
+              "surface": "ちょっと"
+            }
+          ],
+          "meaningRu": "на минуточку, ненадолго, немного",
+          "audioUrl": "/audio/bb9ad75190b85021400a.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.e9eb89c01e577f0b",
+          "surface": "東京",
+          "kana": "とうきょう",
+          "segments": [
+            {
+              "surface": "東京",
+              "reading": "とうきょう"
+            }
+          ],
+          "meaningRu": "Токио",
+          "audioUrl": "/audio/470e377396c042e46dc7.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.e9eb89c01e577f0b",
+            "explanationRu": "Токио; долгие гласные とう и きょう важны для звучания названия.",
+            "example": {
+              "surface": "はははとうきょうにすんでいます。",
+              "kana": "はははとうきょうにすんでいます。",
+              "meaningRu": "Моя мать живёт в Токио.",
+              "segments": [
+                {
+                  "surface": "はははとうきょうにすんでいます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson04-word-5681802aa118.m4a"
+            }
+          },
+          "illustration": {
+            "src": "/word-illustrations/family-counts-v1.webp",
+            "bounds": [
+              337,
+              645,
+              295,
+              307
+            ]
+          }
+        },
+        {
+          "id": "marugoto.starter-a1.word.687f6ea496e591d5",
+          "surface": "七",
+          "kana": "なな",
+          "segments": [
+            {
+              "surface": "七",
+              "reading": "なな"
+            }
+          ],
+          "meaningRu": "семь",
+          "audioUrl": "/audio/ccb6c7149470ec70a66e.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.f954f174d3664fe8",
+          "surface": "へえ",
+          "kana": "へえ",
+          "segments": [
+            {
+              "surface": "へえ"
+            }
+          ],
+          "meaningRu": "да? (удивл.)",
+          "audioUrl": "/audio/2ff7cd778e31d9cfe6c8.m4a",
+          "introduction": null,
+          "illustration": null
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.13",
+      "number": 13,
+      "title": "Транспорт и маршрут",
+      "topic": "7",
+      "words": 76,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.f40471510c8f6d47",
+          "surface": "ひと",
+          "kana": "ひと",
+          "segments": [
+            {
+              "surface": "ひと"
+            }
+          ],
+          "meaningRu": "человек",
+          "audioUrl": "/audio/f1810bda7a182fd5e584.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.a59e656f959afe1c",
+          "surface": "はやい",
+          "kana": "はやい",
+          "segments": [
+            {
+              "surface": "はやい"
+            }
+          ],
+          "meaningRu": "быстрый",
+          "audioUrl": "/audio/3c8b96e39abcc435ba8c.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.a59e656f959afe1c",
+            "explanationRu": "Быстрый: при выборе места речь может идти о быстром обслуживании.",
+            "example": {
+              "surface": "あのみせははやいです。",
+              "kana": "あのみせははやいです。",
+              "meaningRu": "В том заведении обслуживают быстро.",
+              "segments": [
+                {
+                  "surface": "あのみせははやいです。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson06-word-90a2a7448eff.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.453117b1154f4e0b",
+          "surface": "百",
+          "kana": "ひゃく",
+          "segments": [
+            {
+              "surface": "百",
+              "reading": "ひゃく"
+            }
+          ],
+          "meaningRu": "сто",
+          "audioUrl": "/audio/d9fb96b010cb09a0d54b.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.38fcb282d41550b1",
+          "surface": "いい",
+          "kana": "いい",
+          "segments": [
+            {
+              "surface": "いい"
+            }
+          ],
+          "meaningRu": "хороший",
+          "audioUrl": "/audio/29463ea7bdbc4ddf81f6.m4a",
+          "introduction": null,
+          "illustration": null
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.14",
+      "number": 14,
+      "title": "Ориентирование в городе",
+      "topic": "7",
+      "words": 44,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.e27c10e325cc5bbf",
+          "surface": "います",
+          "kana": "います",
+          "segments": [
+            {
+              "surface": "います"
+            }
+          ],
+          "meaningRu": "быть, существовать (об одушевленных предметах)",
+          "audioUrl": "/audio/e1ff253cabe69eb76b9f.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.e27c10e325cc5bbf",
+            "explanationRu": "Есть, находится: о людях и животных; для телевизора применяется あります.",
+            "example": {
+              "surface": "へやにこどもがいます。",
+              "kana": "へやにこどもがいます。",
+              "meaningRu": "В комнате ребёнок.",
+              "segments": [
+                {
+                  "surface": "へやにこどもがいます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson07-word-bd78c7345d30.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.58e595c1fa37474d",
+          "surface": "わたし",
+          "kana": "わたし",
+          "segments": [
+            {
+              "surface": "わたし"
+            }
+          ],
+          "meaningRu": "я",
+          "audioUrl": "/audio/1fc2d4cb902d7f3e517b.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.58e595c1fa37474d",
+            "explanationRu": "Нейтральное «я». Когда собеседнику ясно, о ком речь, слово часто опускают.",
+            "example": {
+              "surface": "わたしはがくせいです。",
+              "kana": "わたしはがくせいです。",
+              "meaningRu": "Я студент.",
+              "segments": [
+                {
+                  "surface": "わたしはがくせいです。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson03-word-48c4e90c01bf.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.56fbeb32dadec92f",
+          "surface": "みせ",
+          "kana": "みせ",
+          "segments": [
+            {
+              "surface": "みせ"
+            }
+          ],
+          "meaningRu": "ресторан, лавка, магазин",
+          "audioUrl": "/audio/96a6158b7b2abe7bed29.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.56fbeb32dadec92f",
+            "explanationRu": "Магазин или заведение; в этой ситуации — место, где можно поесть.",
+            "example": {
+              "surface": "あのみせでたべます。",
+              "kana": "あのみせでたべます。",
+              "meaningRu": "Поем в том заведении.",
+              "segments": [
+                {
+                  "surface": "あのみせでたべます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson06-word-44bab59d2208.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.58c25037d1022b83",
+          "surface": "あります",
+          "kana": "あります",
+          "segments": [
+            {
+              "surface": "あります"
+            }
+          ],
+          "meaningRu": "находиться, быть (о неодушевленных предметах)",
+          "audioUrl": "/audio/2fef2540ccddf538a287.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.58c25037d1022b83",
+            "explanationRu": "Есть, имеется: о предметах и неодушевлённых объектах.",
+            "example": {
+              "surface": "いえにテレビがあります。",
+              "kana": "いえにテレビがあります。",
+              "meaningRu": "Дома есть телевизор.",
+              "segments": [
+                {
+                  "surface": "いえにテレビがあります。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson07-word-ac67aebac6a5.m4a"
+            }
+          },
+          "illustration": null
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.15",
+      "number": 15,
+      "title": "Покупки и подарки",
+      "topic": "8",
+      "words": 71,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.58e595c1fa37474d",
+          "surface": "わたし",
+          "kana": "わたし",
+          "segments": [
+            {
+              "surface": "わたし"
+            }
+          ],
+          "meaningRu": "я",
+          "audioUrl": "/audio/1fc2d4cb902d7f3e517b.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.58e595c1fa37474d",
+            "explanationRu": "Нейтральное «я». Когда собеседнику ясно, о ком речь, слово часто опускают.",
+            "example": {
+              "surface": "わたしはがくせいです。",
+              "kana": "わたしはがくせいです。",
+              "meaningRu": "Я студент.",
+              "segments": [
+                {
+                  "surface": "わたしはがくせいです。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson03-word-48c4e90c01bf.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.f11bf70db3c7b278",
+          "surface": "あね",
+          "kana": "あね",
+          "segments": [
+            {
+              "surface": "あね"
+            }
+          ],
+          "meaningRu": "(моя) старшая сестра",
+          "audioUrl": "/audio/c1b6337ba14afa830fde.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.f11bf70db3c7b278",
+            "explanationRu": "Своя старшая сестра; не младшая сестра, которая называется いもうと.",
+            "example": {
+              "surface": "あねはおおさかにすんでいます。",
+              "kana": "あねはおおさかにすんでいます。",
+              "meaningRu": "Моя старшая сестра живёт в Осаке.",
+              "segments": [
+                {
+                  "surface": "あねはおおさかにすんでいます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson04-word-bb5cd3499339.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.bb5b8febd333744b",
+          "surface": "かっこいい",
+          "kana": "かっこいい",
+          "segments": [
+            {
+              "surface": "かっこいい"
+            }
+          ],
+          "meaningRu": "классный, стильный",
+          "audioUrl": "/audio/a134d2200ad20db38c09.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.bb5b8febd333744b",
+            "explanationRu": "Стильный, классный: оценка внешнего вида.",
+            "example": {
+              "surface": "かっこいいバッグですね。",
+              "kana": "かっこいいバッグですね。",
+              "meaningRu": "Какая стильная сумка!",
+              "segments": [
+                {
+                  "surface": "かっこいいバッグですね。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson15-b94112f7cfd22ee192cc.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.7905be9b72b867a7",
+          "surface": "ともだち",
+          "kana": "ともだち",
+          "segments": [
+            {
+              "surface": "ともだち"
+            }
+          ],
+          "meaningRu": "друг, друзья",
+          "audioUrl": "/audio/2b2296400267da6a4254.m4a",
+          "introduction": null,
+          "illustration": null
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.16",
+      "number": 16,
+      "title": "Одежда и цена",
+      "topic": "8",
+      "words": 64,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.45f511ebbf1ecc82",
+          "surface": "ああ",
+          "kana": "ああ",
+          "segments": [
+            {
+              "surface": "ああ"
+            }
+          ],
+          "meaningRu": "а-а",
+          "audioUrl": "/audio/36687680e2a2d8aea3f8.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.712e62ba4142b3c5",
+          "surface": "この",
+          "kana": "この",
+          "segments": [
+            {
+              "surface": "この"
+            }
+          ],
+          "meaningRu": "этот",
+          "audioUrl": "/audio/d0ed3f94f7767c054cf0.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.712e62ba4142b3c5",
+            "explanationRu": "«Этот» перед существительным: このひと. Самостоятельно вместо существительного не употребляется.",
+            "example": {
+              "surface": "このひとはあねです。",
+              "kana": "このひとはあねです。",
+              "meaningRu": "Этот человек — моя старшая сестра.",
+              "segments": [
+                {
+                  "surface": "このひとはあねです。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson04-word-224259ffee2d.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.dd939a30954ac6cf",
+          "surface": "あの",
+          "kana": "あの",
+          "segments": [
+            {
+              "surface": "あの"
+            }
+          ],
+          "meaningRu": "тот",
+          "audioUrl": "/audio/fb7ce921759e6c18193d.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.dd939a30954ac6cf",
+            "explanationRu": "Тот, в отдалении от обоих собеседников; здесь не междометие «э-э».",
+            "example": {
+              "surface": "あのみせはおいしいです。",
+              "kana": "あのみせはおいしいです。",
+              "meaningRu": "В том заведении вкусно.",
+              "segments": [
+                {
+                  "surface": "あのみせはおいしいです。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson06-word-bd8ab29a519e.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.c400b0b75e58f362",
+          "surface": "これ",
+          "kana": "これ",
+          "segments": [
+            {
+              "surface": "これ"
+            }
+          ],
+          "meaningRu": "это",
+          "audioUrl": "/audio/eed476d3ba9bac03bc49.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.c400b0b75e58f362",
+            "explanationRu": "Это, этот предмет рядом с говорящим; употребляется без следующего существительного.",
+            "example": {
+              "surface": "これはともだちのいえです。",
+              "kana": "これはともだちのいえです。",
+              "meaningRu": "Это дом друга.",
+              "segments": [
+                {
+                  "surface": "これはともだちのいえです。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson08-word-5d9440794367.m4a"
+            }
+          },
+          "illustration": null
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.17",
+      "number": 17,
+      "title": "Прошедший отдых",
+      "topic": "9",
+      "words": 61,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.6bc3e1321c799b1e",
+          "surface": "もう",
+          "kana": "もう",
+          "segments": [
+            {
+              "surface": "もう"
+            }
+          ],
+          "meaningRu": "уже",
+          "audioUrl": "/audio/a6e3ec15358da6f87352.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.58e595c1fa37474d",
+          "surface": "わたし",
+          "kana": "わたし",
+          "segments": [
+            {
+              "surface": "わたし"
+            }
+          ],
+          "meaningRu": "я",
+          "audioUrl": "/audio/1fc2d4cb902d7f3e517b.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.58e595c1fa37474d",
+            "explanationRu": "Нейтральное «я». Когда собеседнику ясно, о ком речь, слово часто опускают.",
+            "example": {
+              "surface": "わたしはがくせいです。",
+              "kana": "わたしはがくせいです。",
+              "meaningRu": "Я студент.",
+              "segments": [
+                {
+                  "surface": "わたしはがくせいです。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson03-word-48c4e90c01bf.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.75bd1f06a73a31f0",
+          "surface": "どこ",
+          "kana": "どこ",
+          "segments": [
+            {
+              "surface": "どこ"
+            }
+          ],
+          "meaningRu": "где",
+          "audioUrl": "/audio/743172e5df59e641555f.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.75bd1f06a73a31f0",
+            "explanationRu": "Где: вопрос о месте. Для проживания — どこにすんでいますか.",
+            "example": {
+              "surface": "どこにすんでいますか。",
+              "kana": "どこにすんでいますか。",
+              "meaningRu": "Где вы живёте?",
+              "segments": [
+                {
+                  "surface": "どこにすんでいますか。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson04-word-7769ef5285dd.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.23f4af490e18bd63",
+          "surface": "なに",
+          "kana": "なに",
+          "segments": [
+            {
+              "surface": "なに"
+            }
+          ],
+          "meaningRu": "что",
+          "audioUrl": "/audio/4a8d84ef1e7913a2b6a0.m4a",
+          "introduction": null,
+          "illustration": null
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.lesson.18",
+      "number": 18,
+      "title": "Путешествия и желания",
+      "topic": "9",
+      "words": 55,
+      "previewWords": [
+        {
+          "id": "marugoto.starter-a1.word.764fbf680a484dfa",
+          "surface": "休みます",
+          "kana": "やすみます",
+          "segments": [
+            {
+              "surface": "休",
+              "reading": "やす"
+            },
+            {
+              "surface": "みます"
+            }
+          ],
+          "meaningRu": "пропускать занятия",
+          "audioUrl": "/audio/6ac7453bb0e3b77651df.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.182cd34e277df271",
+          "surface": "きれい",
+          "kana": "きれい",
+          "segments": [
+            {
+              "surface": "きれい"
+            }
+          ],
+          "meaningRu": "красивый",
+          "audioUrl": "/audio/82c4e9efb4f23f7f896b.m4a",
+          "introduction": null,
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.c1c197116f1aee6c",
+          "surface": "ごはん",
+          "kana": "ごはん",
+          "segments": [
+            {
+              "surface": "ごはん"
+            }
+          ],
+          "meaningRu": "вареный рис",
+          "audioUrl": "/audio/77b25931318014d116f2.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.c1c197116f1aee6c",
+            "explanationRu": "В этом контексте варёный рис; в сочетаниях также означает приём пищи.",
+            "example": {
+              "surface": "ごはんをたべます。",
+              "kana": "ごはんをたべます。",
+              "meaningRu": "Я ем рис.",
+              "segments": [
+                {
+                  "surface": "ごはんをたべます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson05-word-c457b8e30cdc.m4a"
+            }
+          },
+          "illustration": null
+        },
+        {
+          "id": "marugoto.starter-a1.word.3c0f92c17efac2d9",
+          "surface": "食べます",
+          "kana": "たべます",
+          "segments": [
+            {
+              "surface": "食",
+              "reading": "た"
+            },
+            {
+              "surface": "べます"
+            }
+          ],
+          "meaningRu": "есть, кушать",
+          "audioUrl": "/audio/e22b4f355f2c24f39560.m4a",
+          "introduction": {
+            "wordId": "marugoto.starter-a1.word.3c0f92c17efac2d9",
+            "explanationRu": "Вежливое «есть, кушать»; продукт или приём пищи отмечается を.",
+            "example": {
+              "surface": "パンをたべます。",
+              "kana": "パンをたべます。",
+              "meaningRu": "Я ем хлеб.",
+              "segments": [
+                {
+                  "surface": "パンをたべます。"
+                }
+              ],
+              "audioUrl": "/audio/learning/lesson05-word-3cff35c648c4.m4a"
+            }
+          },
+          "illustration": null
+        }
+      ]
+    }
+  ],
+  "video": {
+    "id": "marugoto.starter-a1.lesson.01",
+    "canDoId": 1,
+    "variant": "practice",
+    "title": "Диалог: Приветствие",
+    "sourceUrl": "https://a1.marugotoweb.jp/en/can-do1.php",
+    "mediaUrl": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_01_01.mp4",
+    "captionsSourceUrl": "https://a1.marugotoweb.jp/en/assets/data/topics/cando_01_01.xml",
+    "captions": [
+      {
+        "startSeconds": 0,
+        "endSeconds": 0.2,
+        "text": null
+      },
+      {
+        "startSeconds": 0.2,
+        "endSeconds": 7,
+        "text": null
+      },
+      {
+        "startSeconds": 7,
+        "endSeconds": 9,
+        "text": "あ、おはようございます。"
+      },
+      {
+        "startSeconds": 9,
+        "endSeconds": 11,
+        "text": "おはようございます。"
+      },
+      {
+        "startSeconds": 11,
+        "endSeconds": 14,
+        "text": null
+      },
+      {
+        "startSeconds": 14,
+        "endSeconds": 21.7,
+        "text": null
+      },
+      {
+        "startSeconds": 21.7,
+        "endSeconds": 22.7,
+        "text": "こんにちは。"
+      },
+      {
+        "startSeconds": 22.7,
+        "endSeconds": 25,
+        "text": "こんにちは。"
+      },
+      {
+        "startSeconds": 25,
+        "endSeconds": 28,
+        "text": null
+      },
+      {
+        "startSeconds": 28,
+        "endSeconds": 36.7,
+        "text": null
+      },
+      {
+        "startSeconds": 36.7,
+        "endSeconds": 38,
+        "text": "こんばんは。"
+      },
+      {
+        "startSeconds": 38,
+        "endSeconds": 40,
+        "text": "こんばんは。"
+      },
+      {
+        "startSeconds": 40,
+        "endSeconds": 44,
+        "text": null
+      },
+      {
+        "startSeconds": 44,
+        "endSeconds": 49.7,
+        "text": null
+      },
+      {
+        "startSeconds": 49.7,
+        "endSeconds": 51.2,
+        "text": "こんばんは。"
+      },
+      {
+        "startSeconds": 51.2,
+        "endSeconds": 53,
+        "text": "こんばんは。"
+      },
+      {
+        "startSeconds": 53,
+        "endSeconds": 57,
+        "text": null
+      },
+      {
+        "startSeconds": 57,
+        "endSeconds": 60,
+        "text": null
+      },
+      {
+        "startSeconds": 60,
+        "endSeconds": 66,
+        "text": null
+      },
+      {
+        "startSeconds": 66,
+        "endSeconds": 86,
+        "text": null
+      },
+      {
+        "startSeconds": 86,
+        "endSeconds": 89.9,
+        "text": "せんせい、ありがとうございました。さようなら。"
+      },
+      {
+        "startSeconds": 89.9,
+        "endSeconds": 92,
+        "text": "はい、さようなら。"
+      },
+      {
+        "startSeconds": 92,
+        "endSeconds": 97,
+        "text": null
+      },
+      {
+        "startSeconds": 97,
+        "endSeconds": 108.5,
+        "text": null
+      },
+      {
+        "startSeconds": 108.5,
+        "endSeconds": 113.7,
+        "text": "おさきに　しつれいします。"
+      },
+      {
+        "startSeconds": 113.7,
+        "endSeconds": 116,
+        "text": "おつかれさまでした。"
+      },
+      {
+        "startSeconds": 116,
+        "endSeconds": null,
+        "text": null
+      }
+    ]
+  }
+}

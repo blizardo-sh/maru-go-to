@@ -1,0 +1,11 @@
+@font-face { font-family: 'Marck Script'; src: url('./art/runtime/MarckScript-Regular.ttf') format('truetype'); font-display: swap; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #b8773d; color: #3a2719; font-family: system-ui, sans-serif; }
+#stage { position: relative; width: 100%; }
+canvas { display: block; touch-action: pan-y; }
+.native-editor { position: absolute; z-index: 10; margin: 0; padding: 12px; border: 0; resize: none; opacity: .001; background: transparent; color: transparent; caret-color: transparent; font: 20px/34px sans-serif; }
+.native-video { position: absolute; z-index: 2; background: #29281e; object-fit: contain; pointer-events: none; }
+.semantic-copy { position: absolute; left: 0; top: 0; width: 1px; height: 1px; margin: 0; clip-path: inset(50%); overflow: hidden; }
+[hidden] { display: none !important; }
+#recovery { position: fixed; z-index: 40; inset: 24px; padding: 24px; max-width: 520px; max-height: 260px; background: #fff8e8; }
+#recovery button { min-height: 44px; font: inherit; }

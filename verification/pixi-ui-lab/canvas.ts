@@ -9,9 +9,9 @@ export type Script = 'kana' | 'furigana' | 'kanji';
 export type Control = { id: string; label: string; rect: Rect };
 const measure = document.createElement('canvas').getContext('2d')!;
 
-export function label(root: Container, value: string, x: number, y: number, size = 18, options: { width?: number; color?: string; display?: boolean; center?: boolean } = {}) {
+export function label(root: Container, value: string, x: number, y: number, size = 18, options: { width?: number; color?: string; display?: boolean; center?: boolean; fontFamily?: string } = {}) {
   const text = new Text({ text: value, style: new TextStyle({
-    fontFamily: options.display ? 'Neucha' : 'system-ui, sans-serif', fontSize: size,
+    fontFamily: options.fontFamily ?? (options.display ? 'Neucha' : 'system-ui, sans-serif'), fontSize: size,
     fill: options.color ?? ink, wordWrap: !!options.width, wordWrapWidth: options.width,
     breakWords: true, lineHeight: size * 1.45,
   }) });
@@ -59,18 +59,19 @@ export function textWidth(value: string, size: number, family = jpFont) {
 }
 
 // Ruby groups stay together; curated course segments retain their original readings.
-export function japanese(root: Container, value: JapaneseValue, mode: Script, rect: Rect, size = 42) {
-  const readingSize = Math.round(size * .4), gap = 5, lineHeight = size * 1.65;
+export function japanese(root: Container, value: JapaneseValue, mode: Script, rect: Rect, size = 42, family = jpFont, readingScale = .4) {
+  const readingSize = Math.max(12, Math.round(size * readingScale)), gap = 5;
+  const lineHeight = Math.max(size * 1.65, readingSize + size + gap + 5);
   const segments: JapaneseValue['segments'] = mode === 'furigana' ? value.segments : Array.from(mode === 'kana' ? value.kana : value.surface).map(surface => ({ surface }));
   let x = 0, y = 0;
   const groups: { surface: string; reading?: string; x: number; y: number; width: number }[] = [];
   for (const segment of segments) {
     const reading = mode === 'furigana' && segment.reading !== segment.surface ? segment.reading : undefined;
-    const width = Math.max(textWidth(segment.surface, size), reading ? textWidth(reading, readingSize) : 0);
+    const width = Math.max(textWidth(segment.surface, size, family), reading ? textWidth(reading, readingSize, family) : 0);
     if (x > 0 && x + width > rect.width) { x = 0; y += lineHeight; }
     groups.push({ surface: segment.surface, reading, x, y, width });
-    if (reading) label(root, reading, rect.x + x + width / 2, rect.y + y, readingSize, { center: true });
-    const base = new Text({ text: segment.surface, style: { fontFamily: jpFont, fontSize: size, fill: ink } });
+    if (reading) label(root, reading, rect.x + x + width / 2, rect.y + y, readingSize, { center: true, fontFamily: family });
+    const base = new Text({ text: segment.surface, style: { fontFamily: family, fontSize: size, fill: ink } });
     base.position.set(rect.x + x + width / 2, rect.y + y + readingSize + gap); base.anchor.x = .5; root.addChild(base);
     x += width;
   }

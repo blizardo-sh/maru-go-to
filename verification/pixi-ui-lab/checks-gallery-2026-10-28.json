@@ -1,0 +1,10 @@
+{
+  "chrome": {
+    "gallery": "18 images loaded at 390/320/1280; no horizontal overflow, CSP or JS errors",
+    "touch": "emulated tap: answer, open menu, choose section"
+  },
+  "webkit": {
+    "gallery": "18 images loaded at 390/320/1280; no horizontal overflow, CSP or JS errors",
+    "touch": "emulated tap: answer, open menu, choose section"
+  }
+}
