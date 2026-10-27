@@ -1,0 +1,1689 @@
+{
+  "green": true,
+  "cases": 48,
+  "identicalComposition": true,
+  "draftRetained": true,
+  "checks": [
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screen": "quiz",
+      "skin": "paper",
+      "geometry": {
+        ".sd-stage": {
+          "x": 125,
+          "y": 136,
+          "width": 918,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 133,
+          "y": 235,
+          "width": 902,
+          "height": 493
+        },
+        ".sd-question": {
+          "x": 246.5,
+          "y": 270.3125,
+          "width": 660,
+          "height": 156
+        },
+        ".sd-options": {
+          "x": 246.5,
+          "y": 444.3125,
+          "width": 660,
+          "height": 248.375
+        },
+        ".sd-companion": {
+          "x": 1071,
+          "y": 100,
+          "width": 244,
+          "height": 672
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screen": "quiz",
+      "skin": "wood",
+      "geometry": {
+        ".sd-stage": {
+          "x": 125,
+          "y": 136,
+          "width": 918,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 133,
+          "y": 235,
+          "width": 902,
+          "height": 493
+        },
+        ".sd-question": {
+          "x": 246.5,
+          "y": 270.3125,
+          "width": 660,
+          "height": 156
+        },
+        ".sd-options": {
+          "x": 246.5,
+          "y": 444.3125,
+          "width": 660,
+          "height": 248.375
+        },
+        ".sd-companion": {
+          "x": 1071,
+          "y": 100,
+          "width": 244,
+          "height": 672
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screen": "quiz",
+      "skin": "shoji",
+      "geometry": {
+        ".sd-stage": {
+          "x": 125,
+          "y": 136,
+          "width": 918,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 133,
+          "y": 235,
+          "width": 902,
+          "height": 493
+        },
+        ".sd-question": {
+          "x": 246.5,
+          "y": 270.3125,
+          "width": 660,
+          "height": 156
+        },
+        ".sd-options": {
+          "x": 246.5,
+          "y": 444.3125,
+          "width": 660,
+          "height": 248.375
+        },
+        ".sd-companion": {
+          "x": 1071,
+          "y": 100,
+          "width": 244,
+          "height": 672
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screen": "intro",
+      "skin": "paper",
+      "geometry": {
+        ".sd-stage": {
+          "x": 125,
+          "y": 136,
+          "width": 918,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 133,
+          "y": 235,
+          "width": 902,
+          "height": 493
+        },
+        ".sd-companion": {
+          "x": 1071,
+          "y": 100,
+          "width": 244,
+          "height": 672
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screen": "intro",
+      "skin": "wood",
+      "geometry": {
+        ".sd-stage": {
+          "x": 125,
+          "y": 136,
+          "width": 918,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 133,
+          "y": 235,
+          "width": 902,
+          "height": 493
+        },
+        ".sd-companion": {
+          "x": 1071,
+          "y": 100,
+          "width": 244,
+          "height": 672
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screen": "intro",
+      "skin": "shoji",
+      "geometry": {
+        ".sd-stage": {
+          "x": 125,
+          "y": 136,
+          "width": 918,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 133,
+          "y": 235,
+          "width": 902,
+          "height": 493
+        },
+        ".sd-companion": {
+          "x": 1071,
+          "y": 100,
+          "width": 244,
+          "height": 672
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screen": "review",
+      "skin": "paper",
+      "geometry": {
+        ".sd-stage": {
+          "x": 125,
+          "y": 136,
+          "width": 918,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 133,
+          "y": 235,
+          "width": 902,
+          "height": 493
+        },
+        ".sd-review": {
+          "x": 216.5,
+          "y": 307,
+          "width": 720,
+          "height": 349
+        },
+        ".sd-companion": {
+          "x": 1071,
+          "y": 100,
+          "width": 244,
+          "height": 672
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screen": "review",
+      "skin": "wood",
+      "geometry": {
+        ".sd-stage": {
+          "x": 125,
+          "y": 136,
+          "width": 918,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 133,
+          "y": 235,
+          "width": 902,
+          "height": 493
+        },
+        ".sd-review": {
+          "x": 216.5,
+          "y": 307,
+          "width": 720,
+          "height": 349
+        },
+        ".sd-companion": {
+          "x": 1071,
+          "y": 100,
+          "width": 244,
+          "height": 672
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screen": "review",
+      "skin": "shoji",
+      "geometry": {
+        ".sd-stage": {
+          "x": 125,
+          "y": 136,
+          "width": 918,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 133,
+          "y": 235,
+          "width": 902,
+          "height": 493
+        },
+        ".sd-review": {
+          "x": 216.5,
+          "y": 307,
+          "width": 720,
+          "height": 349
+        },
+        ".sd-companion": {
+          "x": 1071,
+          "y": 100,
+          "width": 244,
+          "height": 672
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screen": "workspace",
+      "skin": "paper",
+      "geometry": {
+        ".sd-stage": {
+          "x": 125,
+          "y": 136,
+          "width": 918,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 133,
+          "y": 235,
+          "width": 902,
+          "height": 493
+        },
+        ".sd-workspace": {
+          "x": 157,
+          "y": 294.5,
+          "width": 839,
+          "height": 373.984375
+        },
+        ".sd-companion": {
+          "x": 1071,
+          "y": 100,
+          "width": 244,
+          "height": 672
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screen": "workspace",
+      "skin": "wood",
+      "geometry": {
+        ".sd-stage": {
+          "x": 125,
+          "y": 136,
+          "width": 918,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 133,
+          "y": 235,
+          "width": 902,
+          "height": 493
+        },
+        ".sd-workspace": {
+          "x": 157,
+          "y": 294.5,
+          "width": 839,
+          "height": 373.984375
+        },
+        ".sd-companion": {
+          "x": 1071,
+          "y": 100,
+          "width": 244,
+          "height": 672
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screen": "workspace",
+      "skin": "shoji",
+      "geometry": {
+        ".sd-stage": {
+          "x": 125,
+          "y": 136,
+          "width": 918,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 133,
+          "y": 235,
+          "width": 902,
+          "height": 493
+        },
+        ".sd-workspace": {
+          "x": 157,
+          "y": 294.5,
+          "width": 839,
+          "height": 373.984375
+        },
+        ".sd-companion": {
+          "x": 1071,
+          "y": 100,
+          "width": 244,
+          "height": 672
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "screen": "quiz",
+      "skin": "paper",
+      "geometry": {
+        ".sd-stage": {
+          "x": 28,
+          "y": 177,
+          "width": 546,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 36,
+          "y": 276,
+          "width": 530,
+          "height": 493
+        },
+        ".sd-question": {
+          "x": 60,
+          "y": 311.3125,
+          "width": 467,
+          "height": 156
+        },
+        ".sd-options": {
+          "x": 60,
+          "y": 485.3125,
+          "width": 467,
+          "height": 248.375
+        },
+        ".sd-companion": {
+          "x": 590,
+          "y": 100,
+          "width": 150,
+          "height": 754
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "screen": "quiz",
+      "skin": "wood",
+      "geometry": {
+        ".sd-stage": {
+          "x": 28,
+          "y": 177,
+          "width": 546,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 36,
+          "y": 276,
+          "width": 530,
+          "height": 493
+        },
+        ".sd-question": {
+          "x": 60,
+          "y": 311.3125,
+          "width": 467,
+          "height": 156
+        },
+        ".sd-options": {
+          "x": 60,
+          "y": 485.3125,
+          "width": 467,
+          "height": 248.375
+        },
+        ".sd-companion": {
+          "x": 590,
+          "y": 100,
+          "width": 150,
+          "height": 754
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "screen": "quiz",
+      "skin": "shoji",
+      "geometry": {
+        ".sd-stage": {
+          "x": 28,
+          "y": 177,
+          "width": 546,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 36,
+          "y": 276,
+          "width": 530,
+          "height": 493
+        },
+        ".sd-question": {
+          "x": 60,
+          "y": 311.3125,
+          "width": 467,
+          "height": 156
+        },
+        ".sd-options": {
+          "x": 60,
+          "y": 485.3125,
+          "width": 467,
+          "height": 248.375
+        },
+        ".sd-companion": {
+          "x": 590,
+          "y": 100,
+          "width": 150,
+          "height": 754
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "screen": "intro",
+      "skin": "paper",
+      "geometry": {
+        ".sd-stage": {
+          "x": 28,
+          "y": 177,
+          "width": 546,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 36,
+          "y": 276,
+          "width": 530,
+          "height": 493
+        },
+        ".sd-companion": {
+          "x": 590,
+          "y": 100,
+          "width": 150,
+          "height": 754
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "screen": "intro",
+      "skin": "wood",
+      "geometry": {
+        ".sd-stage": {
+          "x": 28,
+          "y": 177,
+          "width": 546,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 36,
+          "y": 276,
+          "width": 530,
+          "height": 493
+        },
+        ".sd-companion": {
+          "x": 590,
+          "y": 100,
+          "width": 150,
+          "height": 754
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "screen": "intro",
+      "skin": "shoji",
+      "geometry": {
+        ".sd-stage": {
+          "x": 28,
+          "y": 177,
+          "width": 546,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 36,
+          "y": 276,
+          "width": 530,
+          "height": 493
+        },
+        ".sd-companion": {
+          "x": 590,
+          "y": 100,
+          "width": 150,
+          "height": 754
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "screen": "review",
+      "skin": "paper",
+      "geometry": {
+        ".sd-stage": {
+          "x": 28,
+          "y": 177,
+          "width": 546,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 36,
+          "y": 276,
+          "width": 530,
+          "height": 493
+        },
+        ".sd-review": {
+          "x": 60,
+          "y": 300,
+          "width": 467,
+          "height": 505.234375
+        },
+        ".sd-companion": {
+          "x": 590,
+          "y": 100,
+          "width": 150,
+          "height": 754
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "screen": "review",
+      "skin": "wood",
+      "geometry": {
+        ".sd-stage": {
+          "x": 28,
+          "y": 177,
+          "width": 546,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 36,
+          "y": 276,
+          "width": 530,
+          "height": 493
+        },
+        ".sd-review": {
+          "x": 60,
+          "y": 300,
+          "width": 467,
+          "height": 505.234375
+        },
+        ".sd-companion": {
+          "x": 590,
+          "y": 100,
+          "width": 150,
+          "height": 754
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "screen": "review",
+      "skin": "shoji",
+      "geometry": {
+        ".sd-stage": {
+          "x": 28,
+          "y": 177,
+          "width": 546,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 36,
+          "y": 276,
+          "width": 530,
+          "height": 493
+        },
+        ".sd-review": {
+          "x": 60,
+          "y": 300,
+          "width": 467,
+          "height": 505.234375
+        },
+        ".sd-companion": {
+          "x": 590,
+          "y": 100,
+          "width": 150,
+          "height": 754
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "screen": "workspace",
+      "skin": "paper",
+      "geometry": {
+        ".sd-stage": {
+          "x": 28,
+          "y": 177,
+          "width": 546,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 36,
+          "y": 276,
+          "width": 530,
+          "height": 493
+        },
+        ".sd-workspace": {
+          "x": 60,
+          "y": 300,
+          "width": 467,
+          "height": 462.734375
+        },
+        ".sd-companion": {
+          "x": 590,
+          "y": 100,
+          "width": 150,
+          "height": 754
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "screen": "workspace",
+      "skin": "wood",
+      "geometry": {
+        ".sd-stage": {
+          "x": 28,
+          "y": 177,
+          "width": 546,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 36,
+          "y": 276,
+          "width": 530,
+          "height": 493
+        },
+        ".sd-workspace": {
+          "x": 60,
+          "y": 300,
+          "width": 467,
+          "height": 462.734375
+        },
+        ".sd-companion": {
+          "x": 590,
+          "y": 100,
+          "width": 150,
+          "height": 754
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "screen": "workspace",
+      "skin": "shoji",
+      "geometry": {
+        ".sd-stage": {
+          "x": 28,
+          "y": 177,
+          "width": 546,
+          "height": 600
+        },
+        ".sd-content": {
+          "x": 36,
+          "y": 276,
+          "width": 530,
+          "height": 493
+        },
+        ".sd-workspace": {
+          "x": 60,
+          "y": 300,
+          "width": 467,
+          "height": 462.734375
+        },
+        ".sd-companion": {
+          "x": 590,
+          "y": 100,
+          "width": 150,
+          "height": 754
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screen": "quiz",
+      "skin": "paper",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 370,
+          "height": 602
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 354,
+          "height": 486
+        },
+        ".sd-question": {
+          "x": 34,
+          "y": 294.625,
+          "width": 307,
+          "height": 112
+        },
+        ".sd-options": {
+          "x": 34,
+          "y": 418.625,
+          "width": 307,
+          "height": 144.75
+        },
+        ".sd-companion": {
+          "x": 300,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screen": "quiz",
+      "skin": "wood",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 370,
+          "height": 602
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 354,
+          "height": 486
+        },
+        ".sd-question": {
+          "x": 34,
+          "y": 294.625,
+          "width": 307,
+          "height": 112
+        },
+        ".sd-options": {
+          "x": 34,
+          "y": 418.625,
+          "width": 307,
+          "height": 144.75
+        },
+        ".sd-companion": {
+          "x": 300,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screen": "quiz",
+      "skin": "shoji",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 370,
+          "height": 602
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 354,
+          "height": 486
+        },
+        ".sd-question": {
+          "x": 34,
+          "y": 294.625,
+          "width": 307,
+          "height": 112
+        },
+        ".sd-options": {
+          "x": 34,
+          "y": 418.625,
+          "width": 307,
+          "height": 144.75
+        },
+        ".sd-companion": {
+          "x": 300,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screen": "intro",
+      "skin": "paper",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 370,
+          "height": 602
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 354,
+          "height": 486
+        },
+        ".sd-companion": {
+          "x": 300,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screen": "intro",
+      "skin": "wood",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 370,
+          "height": 602
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 354,
+          "height": 486
+        },
+        ".sd-companion": {
+          "x": 300,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screen": "intro",
+      "skin": "shoji",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 370,
+          "height": 602
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 354,
+          "height": 486
+        },
+        ".sd-companion": {
+          "x": 300,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screen": "review",
+      "skin": "paper",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 370,
+          "height": 602
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 354,
+          "height": 486
+        },
+        ".sd-review": {
+          "x": 34,
+          "y": 274.5,
+          "width": 307,
+          "height": 309
+        },
+        ".sd-companion": {
+          "x": 300,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screen": "review",
+      "skin": "wood",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 370,
+          "height": 602
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 354,
+          "height": 486
+        },
+        ".sd-review": {
+          "x": 34,
+          "y": 274.5,
+          "width": 307,
+          "height": 309
+        },
+        ".sd-companion": {
+          "x": 300,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screen": "review",
+      "skin": "shoji",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 370,
+          "height": 602
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 354,
+          "height": 486
+        },
+        ".sd-review": {
+          "x": 34,
+          "y": 274.5,
+          "width": 307,
+          "height": 309
+        },
+        ".sd-companion": {
+          "x": 300,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screen": "workspace",
+      "skin": "paper",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 370,
+          "height": 602
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 354,
+          "height": 486
+        },
+        ".sd-workspace": {
+          "x": 34,
+          "y": 202,
+          "width": 307,
+          "height": 458.328125
+        },
+        ".sd-companion": {
+          "x": 300,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screen": "workspace",
+      "skin": "wood",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 370,
+          "height": 602
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 354,
+          "height": 486
+        },
+        ".sd-workspace": {
+          "x": 34,
+          "y": 202,
+          "width": 307,
+          "height": 458.328125
+        },
+        ".sd-companion": {
+          "x": 300,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screen": "workspace",
+      "skin": "shoji",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 370,
+          "height": 602
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 354,
+          "height": 486
+        },
+        ".sd-workspace": {
+          "x": 34,
+          "y": 202,
+          "width": 307,
+          "height": 458.328125
+        },
+        ".sd-companion": {
+          "x": 300,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "screen": "quiz",
+      "skin": "paper",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 300,
+          "height": 344
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 284,
+          "height": 228
+        },
+        ".sd-question": {
+          "x": 28,
+          "y": 196,
+          "width": 249,
+          "height": 80.59375
+        },
+        ".sd-options": {
+          "x": 28,
+          "y": 288.59375,
+          "width": 249,
+          "height": 120
+        },
+        ".sd-companion": {
+          "x": 230,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "screen": "quiz",
+      "skin": "wood",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 300,
+          "height": 344
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 284,
+          "height": 228
+        },
+        ".sd-question": {
+          "x": 28,
+          "y": 196,
+          "width": 249,
+          "height": 80.59375
+        },
+        ".sd-options": {
+          "x": 28,
+          "y": 288.59375,
+          "width": 249,
+          "height": 120
+        },
+        ".sd-companion": {
+          "x": 230,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "screen": "quiz",
+      "skin": "shoji",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 300,
+          "height": 344
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 284,
+          "height": 228
+        },
+        ".sd-question": {
+          "x": 28,
+          "y": 196,
+          "width": 249,
+          "height": 80.59375
+        },
+        ".sd-options": {
+          "x": 28,
+          "y": 288.59375,
+          "width": 249,
+          "height": 120
+        },
+        ".sd-companion": {
+          "x": 230,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "screen": "intro",
+      "skin": "paper",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 300,
+          "height": 344
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 284,
+          "height": 228
+        },
+        ".sd-companion": {
+          "x": 230,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "screen": "intro",
+      "skin": "wood",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 300,
+          "height": 344
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 284,
+          "height": 228
+        },
+        ".sd-companion": {
+          "x": 230,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "screen": "intro",
+      "skin": "shoji",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 300,
+          "height": 344
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 284,
+          "height": 228
+        },
+        ".sd-companion": {
+          "x": 230,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "screen": "review",
+      "skin": "paper",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 300,
+          "height": 344
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 284,
+          "height": 228
+        },
+        ".sd-review": {
+          "x": 28,
+          "y": 196,
+          "width": 249,
+          "height": 309
+        },
+        ".sd-companion": {
+          "x": 230,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "screen": "review",
+      "skin": "wood",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 300,
+          "height": 344
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 284,
+          "height": 228
+        },
+        ".sd-review": {
+          "x": 28,
+          "y": 196,
+          "width": 249,
+          "height": 309
+        },
+        ".sd-companion": {
+          "x": 230,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "screen": "review",
+      "skin": "shoji",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 300,
+          "height": 344
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 284,
+          "height": 228
+        },
+        ".sd-review": {
+          "x": 28,
+          "y": 196,
+          "width": 249,
+          "height": 309
+        },
+        ".sd-companion": {
+          "x": 230,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "screen": "workspace",
+      "skin": "paper",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 300,
+          "height": 344
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 284,
+          "height": 228
+        },
+        ".sd-workspace": {
+          "x": 28,
+          "y": 196,
+          "width": 249,
+          "height": 539.328125
+        },
+        ".sd-companion": {
+          "x": 230,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "screen": "workspace",
+      "skin": "wood",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 300,
+          "height": 344
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 284,
+          "height": 228
+        },
+        ".sd-workspace": {
+          "x": 28,
+          "y": 196,
+          "width": 249,
+          "height": 539.328125
+        },
+        ".sd-companion": {
+          "x": 230,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "screen": "workspace",
+      "skin": "shoji",
+      "geometry": {
+        ".sd-stage": {
+          "x": 10,
+          "y": 78,
+          "width": 300,
+          "height": 344
+        },
+        ".sd-content": {
+          "x": 18,
+          "y": 186,
+          "width": 284,
+          "height": 228
+        },
+        ".sd-workspace": {
+          "x": 28,
+          "y": 196,
+          "width": 249,
+          "height": 539.328125
+        },
+        ".sd-companion": {
+          "x": 230,
+          "y": 88,
+          "width": 76,
+          "height": 86
+        }
+      },
+      "green": true
+    }
+  ],
+  "errors": []
+}

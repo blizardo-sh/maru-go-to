@@ -1,0 +1,441 @@
+{
+  "green": true,
+  "cases": 48,
+  "checks": [
+    {
+      "variant": "A",
+      "screen": "quiz",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "green": true
+    },
+    {
+      "variant": "A",
+      "screen": "intro",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "green": true
+    },
+    {
+      "variant": "A",
+      "screen": "review",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "green": true
+    },
+    {
+      "variant": "A",
+      "screen": "workspace",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "green": true
+    },
+    {
+      "variant": "A",
+      "screen": "quiz",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "green": true
+    },
+    {
+      "variant": "A",
+      "screen": "intro",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "green": true
+    },
+    {
+      "variant": "A",
+      "screen": "review",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "green": true
+    },
+    {
+      "variant": "A",
+      "screen": "workspace",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "green": true
+    },
+    {
+      "variant": "A",
+      "screen": "quiz",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "green": true
+    },
+    {
+      "variant": "A",
+      "screen": "intro",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "green": true
+    },
+    {
+      "variant": "A",
+      "screen": "review",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "green": true
+    },
+    {
+      "variant": "A",
+      "screen": "workspace",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "green": true
+    },
+    {
+      "variant": "A",
+      "screen": "quiz",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "green": true
+    },
+    {
+      "variant": "A",
+      "screen": "intro",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "green": true
+    },
+    {
+      "variant": "A",
+      "screen": "review",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "green": true
+    },
+    {
+      "variant": "A",
+      "screen": "workspace",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "green": true
+    },
+    {
+      "variant": "B",
+      "screen": "quiz",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "green": true
+    },
+    {
+      "variant": "B",
+      "screen": "intro",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "green": true
+    },
+    {
+      "variant": "B",
+      "screen": "review",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "green": true
+    },
+    {
+      "variant": "B",
+      "screen": "workspace",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "green": true
+    },
+    {
+      "variant": "B",
+      "screen": "quiz",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "green": true
+    },
+    {
+      "variant": "B",
+      "screen": "intro",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "green": true
+    },
+    {
+      "variant": "B",
+      "screen": "review",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "green": true
+    },
+    {
+      "variant": "B",
+      "screen": "workspace",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "green": true
+    },
+    {
+      "variant": "B",
+      "screen": "quiz",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "green": true
+    },
+    {
+      "variant": "B",
+      "screen": "intro",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "green": true
+    },
+    {
+      "variant": "B",
+      "screen": "review",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "green": true
+    },
+    {
+      "variant": "B",
+      "screen": "workspace",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "green": true
+    },
+    {
+      "variant": "B",
+      "screen": "quiz",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "green": true
+    },
+    {
+      "variant": "B",
+      "screen": "intro",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "green": true
+    },
+    {
+      "variant": "B",
+      "screen": "review",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "green": true
+    },
+    {
+      "variant": "B",
+      "screen": "workspace",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "green": true
+    },
+    {
+      "variant": "C",
+      "screen": "quiz",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "green": true
+    },
+    {
+      "variant": "C",
+      "screen": "intro",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "green": true
+    },
+    {
+      "variant": "C",
+      "screen": "review",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "green": true
+    },
+    {
+      "variant": "C",
+      "screen": "workspace",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "green": true
+    },
+    {
+      "variant": "C",
+      "screen": "quiz",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "green": true
+    },
+    {
+      "variant": "C",
+      "screen": "intro",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "green": true
+    },
+    {
+      "variant": "C",
+      "screen": "review",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "green": true
+    },
+    {
+      "variant": "C",
+      "screen": "workspace",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "green": true
+    },
+    {
+      "variant": "C",
+      "screen": "quiz",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "green": true
+    },
+    {
+      "variant": "C",
+      "screen": "intro",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "green": true
+    },
+    {
+      "variant": "C",
+      "screen": "review",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "green": true
+    },
+    {
+      "variant": "C",
+      "screen": "workspace",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "green": true
+    },
+    {
+      "variant": "C",
+      "screen": "quiz",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "green": true
+    },
+    {
+      "variant": "C",
+      "screen": "intro",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "green": true
+    },
+    {
+      "variant": "C",
+      "screen": "review",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "green": true
+    },
+    {
+      "variant": "C",
+      "screen": "workspace",
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "green": true
+    }
+  ],
+  "errors": [],
+  "learnerApiRequests": [],
+  "mutationsBlocked": true
+}
