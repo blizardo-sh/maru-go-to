@@ -36,3 +36,18 @@ The user selected C's composition and requested more familiar styling. Three ski
 - `variant=C&skin=original` — C0, the earlier neutral style for comparison.
 
 For C, the bottom arrows cycle these skins; the first selector also chooses them directly. The current screen, example, answer and sentence draft remain in place. Add `screen=workspace`, `screen=intro` or `screen=review` to compare other learning screens. The restored labelled wooden navigation is shared by all three familiar skins. The inner composition is unchanged across those skins; they are visual alternatives, not new learning modes.
+
+
+## C2: daily companion (27 October)
+
+The user selected C2 and asked the cat to share the room instead of occupying a separate window. Add `variant=C&skin=wood&cat=daily&daypart=morning|day|evening|auto`. The first selector and arrows compare morning/day/evening; “Место” demonstrates travel to the other side. Screen, answer, orthography and phrase draft stay in place. “По местному времени” samples device time on entry (06–12 morning, 12–18 day, otherwise evening); it does not change the scene during an answer.
+
+The desk uses the existing room illustration. Morning is more active, day is quieter, evening rests with subtle breathing. Real learning audio wakes the evening cat. Review dragging turns the companion toward the card. Reduced motion skips travel. The original C2 without `cat=daily` remains available. Existing art demonstrates the route; finished walking frames and automatic movement between actual learning parts are outside this visual prototype.
+
+Reproduce the browser checks after starting the read-only preview server:
+
+```sh
+bun verification/study-card-prototype/check-daily-cat.ts http://127.0.0.1:PORT
+```
+
+Requires installed Chrome and existing Playwright dependency. The check writes `artifacts/daily-cat/verification.json`. It covers 48 layouts, seven local-time boundaries, draft retention, auto-advance, travel visibility and reduced motion. Screenshots and inspector reports are in `artifacts/daily-cat/{morning,day,evening}`. No physical-device or production performance claim is made.
