@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-27T19:37:17.819Z",
+  "source": "materials/course.json + materials/learning/lesson-03.json + public/word-illustrations/manifest.json",
+  "browsers": {
+    "chrome": {
+      "version": "145.0.7632.160",
+      "renderer": "WebGL",
+      "video": {
+        "crossOrigin": "blocked",
+        "native": "playing",
+        "upload": "SecurityError",
+        "source": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_01_01.mp4"
+      },
+      "matrix": [],
+      "errors": [],
+      "cspViolations": [],
+      "ime": "synthetic-events-only",
+      "password": "masked; native input; autofill manual",
+      "contextRecovery": "passed; editor value retained",
+      "fixturesHash": "0cac86dd84d82e394c54a81c7d99db4f82cec10300f48ffb5f31bc2f9801dafb"
+    },
+    "webkit": {
+      "version": "27.2",
+      "renderer": "WebGL",
+      "video": {
+        "crossOrigin": "blocked",
+        "native": "playing",
+        "upload": "SecurityError",
+        "source": "https://a1.marugotoweb.jp/en/assets/movies/topics/cando_01_01.mp4"
+      },
+      "matrix": [],
+      "errors": [],
+      "cspViolations": [],
+      "ime": "synthetic-events-only",
+      "password": "masked; native input; autofill manual",
+      "contextRecovery": "passed; editor value retained",
+      "fixturesHash": "0cac86dd84d82e394c54a81c7d99db4f82cec10300f48ffb5f31bc2f9801dafb"
+    }
+  },
+  "physicalDevices": "manual-required",
+  "safari": "not-tested-by-this-script",
+  "voiceOver": "manual-required"
+}

@@ -1,0 +1,12 @@
+@font-face { font-family: Neucha; src: url('/fonts/neucha-cyrillic.woff2') format('woff2'); unicode-range: U+0400-052F; font-display: swap; }
+@font-face { font-family: Neucha; src: url('/fonts/neucha-latin.woff2') format('woff2'); font-display: swap; }
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #c5b492; font-family: system-ui, sans-serif; }
+#stage { position: relative; width: 100%; }
+canvas { display: block; }
+.native-editor { position: absolute; z-index: 20; padding: 12px; margin: 0; resize: none; border: 0; opacity: .001; color: transparent; background: transparent; caret-color: transparent; font: 20px/34px sans-serif; }
+.native-video { position: absolute; z-index: 2; object-fit: contain; background: #24251e; }
+.semantic-copy { position: absolute; left: 0; top: 0; margin: 0; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+#recovery { position: fixed; inset: 20px; z-index: 50; max-width: 560px; max-height: 260px; padding: 24px; background: #fff8e9; color: #3f392e; }
+#recovery button { min-height: 44px; padding: 8px 20px; font: inherit; }
+[hidden] { display: none !important; }

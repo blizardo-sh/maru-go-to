@@ -1,0 +1,13 @@
+{
+  "name": "japanese-pixi-ui-lab",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node ../../node_modules/vite/bin/vite.js build",
+    "typecheck": "node ../../node_modules/typescript/bin/tsc --noEmit -p tsconfig.json",
+    "serve": "node serve.mjs",
+    "start": "npm run build && npm run serve",
+    "check": "node check.mjs"
+  },
+  "dependencies": { "pixi.js": "8.22.0" }
+}
