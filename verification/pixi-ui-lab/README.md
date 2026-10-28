@@ -28,6 +28,13 @@ npm --prefix verification/pixi-ui-lab start
 
 ## Что смотреть
 
+- [Композиции компьютера](http://127.0.0.1:5190/studies/compositions.html): общий вид
+  с переходом к столу, постоянное окно локации и общий фон комнаты. В ≡ можно
+  переключать их, сохраняя текущий шаг. По умолчанию — окно локации.
+- Действия закреплены внизу рабочей области; длинное содержимое прокручивается
+  между заголовком и действиями. Реплики и подсказки исходят от кота на светлой
+  непрозрачной плашке. Верный выбор ответа листается через 1,2 секунды;
+  «Остаться» отменяет переход, ошибка ждёт ручного продолжения.
 - [Полное занятие](http://127.0.0.1:5190/paper.html) — новый стартовый экран:
   выбор урока → цели → слова с объяснениями, примерами и звуком → задания →
   итоги частей → завершение. Подключены настоящие маршруты всех 18 уроков.
@@ -73,6 +80,7 @@ npm --prefix verification/pixi-ui-lab run build
 npm --prefix verification/pixi-ui-lab run check:paper
 npm --prefix verification/pixi-ui-lab run check:lesson
 npm --prefix verification/pixi-ui-lab run check:lesson-model
+node verification/pixi-ui-lab/presentation-check.mjs
 npm --prefix verification/pixi-ui-lab run check
 ```
 
@@ -81,6 +89,11 @@ npm --prefix verification/pixi-ui-lab run check
 ответы, раскрытие, подсказки, меню, выбор урока, слова/перетаскивание, IME-guard,
 счёт, аудио, видео, клавиатуру, движение/reduced motion, восстановление графики,
 CSP и отсутствие API-запросов. Снимки/отчёт — в `test-results/paper/`.
+
+`presentation-check.mjs` проверяет закреплённые действия при разной высоте карточек
+и прокрутке, задержку/отмену автоперехода, непрозрачность ответов, контраст реплики
+кота не ниже 7:1, три композиции, входной переход/пропуск/reduced motion и сохранение
+учебного шага при смене композиции. Отчёт — `test-results/presentation/`.
 
 Новые данные создаются только чтением `loadCourse()` и существующих
 `makeCounterCard()`/`counterAudio()`: `bun verification/pixi-ui-lab/make-paper-fixtures.mjs`.

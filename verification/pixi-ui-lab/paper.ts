@@ -12,6 +12,7 @@ import logoUrl from './art/runtime/logo.webp';
 import './paper.css';
 import { LessonFlow, lessonCatalog } from './lesson-flow';
 import type { LearningAdvance } from '../../src/shared/learning';
+import sceneManifest from '../../public/scenes/manifest.json';
 
 // Selected direction 2; offline design prototype. No application API or persistent storage.
 const tasks = {
@@ -26,13 +27,25 @@ const taskTitles = { ...tasks, 'lesson-overview': 'Начало занятия',
 type Task = keyof typeof taskTitles;
 type Word = JapaneseValue & { id: string; meaningRu: string; audioUrl: string | null; illustration?: { src: string; bounds: number[] } | null; introduction?: { explanationRu: string } | null };
 type Counter = { kind: string; definition: { surface: string; kana: string; explanation: string }; word: Word; object: { tile: number }; quantity: number | null; answer: JapaneseValue; audioUrl: string | null; acceptedKeys: string[]; options: { key: string; label: string; quantity?: number; object?: { tile: number } }[]; examples: (JapaneseValue & { audioUrl: string | null })[] };
-type Control = { id: string; label: string; rect: Rect; enabled: boolean };
+type Control = { id: string; label: string; rect: Rect; enabled: boolean; docked?: boolean };
+type ActionOptions = { enabled?: boolean; hand?: boolean; selected?: boolean; value?: JapaneseValue; size?: number; bare?: boolean };
+type ActionSpec = { node: Container; id: string; title: string; rect: Rect; run: () => void; options: ActionOptions };
 const counters: Counter[] = data.counterCards;
 const countKinds: Record<string, string> = { 'count-category': 'image-counter', 'count-picture': 'counter-image', 'count-reading': 'reading-choice', 'count-listen': 'listening-image', 'count-recall': 'recall' };
-const ink = '#3c281b', sage = '#4c6037', hand = 'Marck Script', book = 'Georgia', jp = '"Hiragino Mincho ProN", "Yu Mincho", serif';
+const ink = '#241d17', sage = '#263d25', hand = 'Marck Script', book = 'Georgia', jp = '"Hiragino Mincho ProN", "Yu Mincho", serif';
 const params = new URLSearchParams(location.search);
 let task: Task = params.get('task') && Object.hasOwn(taskTitles, params.get('task')!) ? params.get('task') as Task : 'textbook';
 const flow = new LessonFlow();
+type Composition = 'zoom' | 'window' | 'surround';
+let composition: Composition = ['zoom', 'window', 'surround'].includes(params.get('composition') ?? '') ? params.get('composition') as Composition : 'window';
+const locationScene = sceneManifest.scenes.find(scene => scene.id === params.get('scene')) ?? sceneManifest.scenes[0]!;
+let cameraStarted = 0, cameraProgress = 1, viewRevision = 0;
+let autoTimer: ReturnType<typeof setTimeout> | undefined, autoDeadline = 0, guideText = '', dockTop = 0;
+let speechBounds: Rect | null = null;
+let paintedScroll = 0, pointerHeld = false, deferredPaint = false;
+const actionSpecs = new Map<string, ActionSpec>();
+const controlRuns = new Map<string, () => void>();
+let dockIds: string[] = [];
 if (lessonCatalog.lessons.some(lesson => lesson.id === params.get('lesson'))) { flow.open(params.get('lesson')!); task = 'lesson-overview'; }
 let words: Word[] = data.words, wordIndex = 0, selection: string | null = null, revealed = false;
 let tokenOrder: number[] = [], manual = false, feedback = '', correct: boolean | null = null, showBreakdown = false;
@@ -40,11 +53,14 @@ let ready = false, frame = 0, rendering = false, enteredAt = performance.now(), 
 let controls: Control[] = [], ruby: ReturnType<typeof japanese>[] = [], topCard: Container | null = null, cardOrigin = { x: 0, y: 0 };
 let captions: { id: string; rect: Rect; view: ReturnType<typeof copy> }[] = [];
 let motion = { x: 0, y: 0, rotation: 0 }, manualHint = false;
+let motionElapsed = 0;
 let menuOpen = false, menuPainting = false;
 const seenHints = new Set<string>(), csp: object[] = [];
 const host = document.querySelector<HTMLElement>('#stage')!;
-const app = new Application(), world = new Container(), ui = new Container();
-const background = new Sprite(), cat = new Sprite();
+const app = new Application(), world = new Container(), viewRoot = new Container(), overlay = new Container(), bodyMask = new Graphics();
+let ui = viewRoot;
+const background = new Sprite(), room = new Sprite(), cat = new Sprite();
+const roomWindow = new Sprite(), windowMask = new Graphics(), tableMask = new Graphics(), windowFrame = new Graphics();
 const textures = new Map<string, Texture>(), pictures = new Map<string, Texture>();
 const current = (): Word => flow.active && flow.word ? flow.word : words[wordIndex]!;
 const currentConstruction = () => flow.active && flow.construction ? flow.construction : data.construction;
@@ -78,8 +94,14 @@ document.addEventListener('securitypolicyviolation', event => csp.push({ directi
 function schedule() { if (!ready) return; cancelAnimationFrame(frame); frame = requestAnimationFrame(() => { frame = 0; render(); }); }
 function say(value: string) { feedback = value; status.textContent = value; schedule(); }
 function learnAction() { seenHints.add(hintKey()); manualHint = false; }
-function enterCard() { enteredAt = performance.now(); if (ready) app.start(); }
+function cancelAuto() { clearTimeout(autoTimer); autoTimer = undefined; autoDeadline = 0; }
+function queueAuto(run: () => void) {
+  cancelAuto(); const owner = viewRevision; autoDeadline = performance.now() + 1200;
+  autoTimer = setTimeout(() => { autoTimer = undefined; autoDeadline = 0; if (owner === viewRevision && correct === true && !document.hidden && !menuOpen) run(); }, 1200);
+}
+function enterCard() { enteredAt = performance.now(); motionElapsed = 0; if (ready) app.start(); }
 function navigate(value: Task, keepLesson = false) {
+  cancelAuto(); viewRevision++;
   mediaEpoch++;
   if (!keepLesson) flow.active = false;
   audio.pause(); audio.removeAttribute('src'); audio.load(); video.pause(); task = value; selection = null; revealed = false; correct = null; feedback = ''; tokenOrder = []; manual = false; showBreakdown = false; played = false; manualHint = false; menuOpen = false;
@@ -99,7 +121,7 @@ function lessonAdvance(action: LearningAdvance['action'], requireResult = false)
   const ticket = flow.ticket();
   return () => { if (requireResult && (correct === null || editor.composing)) return; if (flow.advance(ticket, action)) syncLesson(); };
 }
-function startLesson(restart = false) { flow.start(restart); syncLesson(); }
+function startLesson(restart = false) { flow.start(restart); cameraStarted = performance.now(); syncLesson(); }
 function nextWord() { wordIndex = (wordIndex + 1) % words.length; navigate(task); }
 async function speak(source: string | null | undefined) {
   if (!source) { say('Запись для этого примера недоступна.'); return; }
@@ -124,14 +146,18 @@ function interactive(root: Container, id: string, title: string, r: Rect, action
   const node = new Container(); node.position.set(r.x, r.y); node.eventMode = enabled ? 'static' : 'none'; node.cursor = 'pointer'; node.hitArea = new Rectangle(0, 0, r.width, r.height);
   node.accessible = enabled; node.accessibleType = 'button'; node.accessibleHint = title; node.accessiblePointerEvents = 'none';
   node.on('pointertap', () => { if (enabled && !suppressTap) action(); }); root.addChild(node);
-  const global = root.toGlobal({ x: r.x, y: r.y }); controls.push({ id, label: title, rect: { ...r, x: global.x, y: global.y }, enabled });
+  let parent: Container | null = root, attached = false;
+  while (parent) { if (parent === overlay) attached = true; parent = parent.parent; }
+  const global = root.toGlobal({ x: r.x, y: r.y }); controls.push({ id, label: title, rect: { ...r, x: global.x, y: global.y }, enabled, docked: attached });
+  controlRuns.set(id, action);
   return node;
 }
-function action(root: Container, id: string, title: string, r: Rect, run: () => void, options: { enabled?: boolean; hand?: boolean; selected?: boolean; value?: JapaneseValue; size?: number; bare?: boolean } = {}) {
+function action(root: Container, id: string, title: string, r: Rect, run: () => void, options: ActionOptions = {}) {
   const enabled = options.enabled ?? true, node = interactive(root, id, title, r, run, enabled);
   const inset = options.bare ? 12 : Math.min(44, r.width * .24), contentWidth = r.width - inset - 12, center = inset + contentWidth / 2;
   const paper = options.bare ? null : surface(node, box(0, 0, r.width, r.height), textures.get(answerUrl)!, options.selected ? '#e3eccf' : '#ffffff');
-  const focus = new Graphics(); node.addChild(focus); node.alpha = enabled ? 1 : .52;
+  const focus = new Graphics(); node.addChild(focus); node.alpha = 1;
+  if (options.selected) focus.roundRect(6, 5, r.width - 12, r.height - 10, 6).stroke({ color: sage, width: 3 });
   node.on('mouseover', () => { focus.clear().roundRect(7, 6, r.width - 14, r.height - 12, 6).stroke({ color: sage, width: 2 }); app.render(); });
   node.on('mouseout', () => { focus.clear(); app.render(); });
   if (options.value) {
@@ -147,7 +173,7 @@ function action(root: Container, id: string, title: string, r: Rect, run: () => 
     text.y = (r.height - text.height) / 2;
     captions.push({ id, rect: controls[controls.length - 1]!.rect, view: text });
   }
-  if (paper) paper.label = 'paper'; return node;
+  if (paper) paper.label = 'paper'; actionSpecs.set(id, { node, id, title, rect: r, run, options }); return node;
 }
 function deck(r: Rect) {
   const texture = textures.get(cardUrl)!;
@@ -165,38 +191,146 @@ function centeredJapanese(root: Container, value: JapaneseValue, y: number, widt
   const layout = japanese(root, value, 'furigana', box(actual <= available ? (width - actual) / 2 : 24, y, available, 300), size, jp, .28);
   ruby.push(layout); return layout.height;
 }
-function header() {
+function header(root: Container = ui) {
   const w = app.screen.width, x = Math.max(14, (w - 800) / 2), width = Math.min(w - 28, 800);
+  if (shortWide() && usesDock()) {
+    surface(root, box(14, 8, w - 28, 52), textures.get(answerUrl)!);
+    const menu = action(root, 'menu', '≡', box(18, 12, 44, 44), () => { menuOpen = true; cancelAuto(); audio.pause(); video.pause(); schedule(); }, { bare: true, size: 24 }); menu.accessibleHint = 'Открыть разделы';
+    image(root, textures.get(logoUrl)!, box(78, 10, 130, 45));
+    copy(root, flow.active ? `Урок ${flow.lesson!.number} · ${flow.progress().percent}%` : task.startsWith('count') ? 'Счёт' : task.includes('construction') ? 'Фразы' : task === 'video' ? 'Видео' : 'Занятие', w / 2, 20, 22, { hand: true, center: true, width: w - 460 });
+    const help = action(root, 'help', '?', box(w - 142, 12, 44, 44), () => { cancelAuto(); manualHint = !manualHint; schedule(); }, { bare: true, size: 24 }); help.accessibleHint = 'Как пользоваться заданием';
+    action(root, 'lesson-exit', 'К урокам', box(w - 90, 12, 76, 44), () => navigate('textbook'), { hand: true, size: 20, bare: true }); return;
+  }
   const logoW = Math.min(174, width - 154);
-  image(ui, textures.get(logoUrl)!, box(x + 50 + (width - 140 - logoW) / 2, 20, logoW, 54));
+  image(root, textures.get(logoUrl)!, box(x + 50 + (width - 140 - logoW) / 2, 20, logoW, 54));
   const compact = w < 700;
-  const left = action(ui, compact ? 'menu' : 'help', compact ? '≡' : '?', box(x, 23, 44, 44), () => { if (compact) { menuOpen = true; audio.pause(); video.pause(); } else manualHint = !manualHint; schedule(); }, { hand: true, size: 29, bare: true });
-  left.accessibleHint = compact ? 'Открыть разделы' : 'Как пользоваться заданием';
+  surface(root, box(x, 82, width, 54), textures.get(answerUrl)!);
+  const left = action(root, 'menu', '≡', box(x, 23, 44, 44), () => { menuOpen = true; cancelAuto(); audio.pause(); video.pause(); schedule(); }, { size: 25 });
+  left.accessibleHint = 'Открыть разделы';
+  if (!compact) { const help = action(root, 'help', '?', box(x + 52, 23, 44, 44), () => { cancelAuto(); manualHint = !manualHint; schedule(); }, { size: 25 }); help.accessibleHint = 'Как пользоваться заданием'; }
   const progress = flow.active ? `${flow.progress().percent}%` : isWord() ? `${wordIndex + 1} из ${words.length}` : task.startsWith('count') ? 'Счёт' : task === 'video' ? 'Видео' : 'A1';
-  const slip = surface(ui, box(x + width - 80, 24, 80, 43), textures.get(answerUrl)!);
-  copy(ui, progress, slip.x + 40, 29, 23, { hand: true, center: true });
+  const slip = surface(root, box(x + width - 80, 24, 80, 43), textures.get(answerUrl)!);
+  copy(root, progress, slip.x + 40, 29, 23, { hand: true, center: true });
   if (flow.active) {
-    copy(ui, compact ? `Урок ${flow.lesson!.number}` : `Урок ${flow.lesson!.number} · ${flow.lesson!.title}`, x + width / 2 - 25, 90, compact ? 22 : 25, { center: true, hand: true, width: width - 164 });
-    action(ui, 'lesson-exit', 'Выйти', box(x + width - 91, 85, 91, 47), () => navigate('textbook'), { hand: true, bare: true, size: 22 });
-    if (compact) action(ui, 'help', '?', box(x, 85, 44, 47), () => { manualHint = !manualHint; schedule(); }, { bare: true, size: 25 });
+    copy(root, compact ? `Урок ${flow.lesson!.number}` : `Урок ${flow.lesson!.number} · ${flow.lesson!.title}`, x + width / 2 - 25, 90, compact ? 22 : 25, { center: true, hand: true, width: width - 164 });
+    action(root, 'lesson-exit', 'Выйти', box(x + width - 91, 85, 91, 47), () => navigate('textbook'), { hand: true, bare: true, size: 22 });
+    if (compact) action(root, 'help', '?', box(x, 85, 44, 47), () => { cancelAuto(); manualHint = !manualHint; schedule(); }, { bare: true, size: 25 });
   } else if (compact) {
     const section = flow.active || task === 'lesson-overview' || task === 'textbook' ? 'Учебник' : task === 'reference' ? 'Справочник' : 'Повторение';
-    action(ui, 'section', section, box(x, 85, width - 60, 47), () => { menuOpen = true; audio.pause(); video.pause(); schedule(); }, { hand: true, size: 25 });
-    const help = action(ui, 'help', '?', box(x + width - 46, 85, 44, 47), () => { manualHint = !manualHint; schedule(); }, { hand: true, size: 27, bare: true }); help.accessibleHint = 'Как пользоваться заданием';
+    action(root, 'section', section, box(x, 85, width - 60, 47), () => { menuOpen = true; audio.pause(); video.pause(); schedule(); }, { hand: true, size: 25 });
+    const help = action(root, 'help', '?', box(x + width - 46, 85, 44, 47), () => { cancelAuto(); manualHint = !manualHint; schedule(); }, { hand: true, size: 27, bare: true }); help.accessibleHint = 'Как пользоваться заданием';
   } else {
     const tabW = (width - 16) / 3;
-    for (const [index, [title, destination]] of [['Учебник', 'textbook'], ['Повторение', 'word-ja'], ['Справочник', 'reference']].entries()) action(ui, `nav-${destination}`, title!, box(x + index * (tabW + 8), 85, tabW, 47), () => navigate(destination as Task), { hand: true, size: 25, bare: true });
+    for (const [index, [title, destination]] of [['Учебник', 'textbook'], ['Повторение', 'word-ja'], ['Справочник', 'reference']].entries()) action(root, `nav-${destination}`, title!, box(x + index * (tabW + 8), 85, tabW, 47), () => navigate(destination as Task), { hand: true, size: 25, bare: true });
   }
 }
 function drawMenu() {
   if (!menuOpen) return;
-  const width = Math.min(380, app.screen.width - 32), x = (app.screen.width - width) / 2, y = scrollY + 145;
-  const blocker = new Graphics().rect(0, 0, app.screen.width, app.screen.height).fill({ color: '#000000', alpha: .001 }); blocker.eventMode = 'static'; blocker.on('pointertap', () => { menuOpen = false; schedule(); }); ui.addChild(blocker);
-  surface(ui, box(x, y, width, 305), textures.get(cardUrl)!); menuPainting = true;
-  copy(ui, 'Разделы', x + width / 2, y + 20, 28, { hand: true, center: true });
-  const close = action(ui, 'menu-close', '×', box(x + width - 47, y + 7, 44, 44), () => { menuOpen = false; schedule(); }, { hand: true, bare: true }); close.accessibleHint = 'Закрыть разделы';
-  for (const [index, [title, destination]] of [['Учебник', 'textbook'], ['Повторение', 'word-ja'], ['Справочник', 'reference']].entries()) action(ui, `nav-${destination}`, title!, box(x + 23, y + 81 + index * 67, width - 46, 53), () => navigate(destination as Task), { hand: true, size: 27 });
+  cancelAuto();
+  const width = Math.min(440, app.screen.width - 32), x = (app.screen.width - width) / 2, height = app.screen.width >= 1100 ? 358 : 305;
+  const y = paintedScroll + Math.max(16, Math.min(145, (innerHeight - height) / 2));
+  const blocker = new Graphics().rect(0, 0, app.screen.width, app.screen.height).fill({ color: '#20170e', alpha: .35 }); blocker.eventMode = 'static'; blocker.on('pointertap', () => { menuOpen = false; schedule(); }); overlay.addChild(blocker);
+  surface(overlay, box(x, y, width, height), textures.get(cardUrl)!); menuPainting = true;
+  copy(overlay, 'Разделы', x + width / 2, y + 18, 28, { hand: true, center: true });
+  const close = action(overlay, 'menu-close', '×', box(x + width - 47, y + 7, 44, 44), () => { menuOpen = false; schedule(); }, { hand: true, bare: true }); close.accessibleHint = 'Закрыть разделы';
+  for (const [index, [title, destination]] of [['Учебник', 'textbook'], ['Повторение', 'word-ja'], ['Справочник', 'reference']].entries()) action(overlay, `nav-${destination}`, title!, box(x + 23, y + 68 + index * 52, width - 46, 45), () => navigate(destination as Task), { hand: true, size: 25 });
+  if (app.screen.width >= 1100) {
+    copy(overlay, 'Композиция стенда', x + 24, y + 234, 19, { hand: true });
+    const cell = (width - 54) / 3;
+    for (const [index, [id, title]] of [['zoom', 'Переход'], ['window', 'Окно'], ['surround', 'Окружение']].entries()) action(overlay, `composition-${id}`, title!, box(x + 21 + index * (cell + 6), y + 276, cell, 57), () => setComposition(id as Composition), { hand: true, size: 19, selected: composition === id });
+  }
   menuPainting = false;
+}
+function setComposition(value: Composition) {
+  composition = value; menuOpen = false; cameraStarted = performance.now(); cancelAuto();
+  const url = new URL(location.href); url.searchParams.set('composition', value); history.replaceState(null, '', url);
+  enterCard(); resize();
+}
+function usesDock() { return task !== 'textbook' && task !== 'reference'; }
+function shortWide() { return app.screen.width >= 700 && innerHeight < 560; }
+function headerHeight() { return shortWide() && usesDock() ? 66 : 142; }
+function wideStage() { return app.screen.width >= 1100 && innerHeight >= 620 || shortWide(); }
+function stageHeight() { return wideStage() ? Math.min(innerHeight, 900) : innerHeight; }
+function studyWidth() { return Math.min(task === 'textbook' && app.screen.width >= 1000 ? 1000 : shortWide() && usesDock() ? Math.min(470, app.screen.width - 340) : 640, app.screen.width - 38); }
+function studyX(width = studyWidth()) { return usesDock() && wideStage() ? Math.max(24, (app.screen.width - width - 360) / 2) : (app.screen.width - width) / 2; }
+function shortGuide() {
+  if (task === 'construction') return manual ? 'Введите фразу японской клавиатурой и проверьте.' : 'Выбирайте слова по порядку. Нажатие на слово в фразе убирает его.';
+  if (task.startsWith('recall-') || task === 'count-recall') return 'Вспомните ответ, затем откройте карточку и сравните.';
+  if (isListening()) return 'Послушайте запись, затем выберите ответ.';
+  if (task.endsWith('intro')) return 'Послушайте слово и пример. Затем — «Дальше».';
+  if (task === 'video') return 'Посмотрите фрагмент. Его можно пропустить и продолжить урок.';
+  return 'Выберите ответ. Я подскажу, как получилось.';
+}
+function dockControls(x: number, width: number) {
+  const get = (id: string) => actionSpecs.get(id);
+  let primary: ActionSpec | undefined, secondary: ActionSpec | undefined, upper: ActionSpec[] = [];
+  if (task.endsWith('intro')) { primary = get('intro-next'); secondary = get('intro-prev'); upper = [get('intro-listen'), get('intro-example-listen')].filter((v): v is ActionSpec => !!v); }
+  else if (task === 'construction') { primary = get('next') ?? get('check'); secondary = get('clear'); upper = [get('manual')!]; }
+  else if (task === 'video') { primary = get('video-next'); upper = [get('video-play')!, get('video-seek')!]; }
+  else if (task === 'lesson-overview') { primary = get('lesson-start'); secondary = get('lesson-back'); }
+  else if (task === 'lesson-complete') { primary = get('lesson-back'); secondary = get('lesson-restart'); }
+  else if (task === 'part-complete') primary = get('part-next');
+  else if (task.startsWith('recall-') || task === 'count-recall') { primary = get('remember') ?? get('reveal-counter'); secondary = get('again'); }
+  else primary = get('next') ?? get('next-counter');
+  const removed = ['intro-listen', 'intro-example-listen', 'intro-prev', 'intro-next', 'manual', 'check', 'clear', 'next', 'next-counter', 'video-next', 'video-play', 'video-seek', 'lesson-start', 'lesson-back', 'lesson-restart', 'part-next', 'again', 'remember', 'reveal-counter'];
+  for (const id of removed) { const spec = get(id); if (!spec) continue; spec.node.removeFromParent(); spec.node.destroy({ children: true }); actionSpecs.delete(id); controls = controls.filter(c => c.id !== id); captions = captions.filter(c => c.id !== id); }
+  const compactSpeech = !wideStage() && !!(feedback || guideText), extra = upper.length > 0;
+  let speechHeight = 0;
+  if (compactSpeech) {
+    const measure = new Text({ text: feedback || shortGuide(), style: { fontFamily: 'system-ui, sans-serif', fontSize: 16, lineHeight: 23.2, wordWrap: true, wordWrapWidth: app.screen.width - 132, breakWords: true } });
+    speechHeight = Math.max(104, measure.height + 73); measure.destroy();
+  }
+  const base = extra && !shortWide() ? 146 : 82;
+  dockTop = stageHeight() - base - speechHeight;
+  const root = new Container(); root.y = paintedScroll; overlay.addChild(root);
+  const blocker = new Graphics().rect(0, dockTop, app.screen.width, stageHeight() - dockTop).fill({ color: '#70482c', alpha: .001 }); blocker.eventMode = 'static'; root.addChild(blocker);
+  const half = (width - 12) / 2, y = stageHeight() - 68, compactCell = (width - 36) / 4;
+  dockIds = [];
+  const paint = (spec: ActionSpec, rect: Rect) => {
+    const short: Record<string, string> = { 'Начать занятие': 'Начать', 'Посмотреть итог': 'Итог', 'К выбору урока': 'К урокам', 'Пройти ещё раз': 'Ещё раз', 'Следующая часть': 'Дальше', 'Завершить занятие': 'Завершить', 'Продолжить урок': 'Дальше', ...(shortWide() ? { 'Ввести самому': 'Ввод', 'Собирать из слов': 'Слова', 'Показать ответ': 'Открыть' } : {}) };
+    const title = short[spec.title] ?? (spec.title.startsWith('Продолжить ·') ? 'Продолжить' : spec.title);
+    const node = action(root, spec.id, title, rect, spec.run, spec.options); node.accessibleHint = spec.title;
+    controls[controls.length - 1]!.docked = true; dockIds.push(spec.id);
+  };
+  if (upper.length) upper.forEach((spec, index) => paint(spec, shortWide() ? box(x + (index + 1) * (compactCell + 12), y, compactCell, 52) : box(x + (upper.length === 1 ? 0 : index * (half + 12)), y - 64, upper.length === 1 ? width : half, 52)));
+  if (secondary) paint(secondary, box(x, y, shortWide() ? compactCell : half, 52));
+  const primaryRect = shortWide() ? box(x + 3 * (compactCell + 12), y, compactCell, 52) : box(x + half + 12, y, half, 52);
+  if (primary) paint(primary, primaryRect);
+  else if (task.startsWith('recall-')) {
+    const reveal = controlRuns.get('reveal')!;
+    const button = action(root, 'dock-reveal', 'Открыть', primaryRect, reveal, { hand: true }); button.accessibleHint = 'Открыть ответ'; controls[controls.length - 1]!.docked = true; dockIds.push('dock-reveal');
+  } else if (task.startsWith('word-') || task.startsWith('count-')) {
+    action(root, 'next', 'Дальше', primaryRect, () => {}, { hand: true, enabled: false }); controls[controls.length - 1]!.docked = true; dockIds.push('next');
+  }
+  if (autoDeadline) { action(root, 'auto-pause', 'Остаться', box(x, y, shortWide() ? compactCell : half, 52), () => { cancelAuto(); schedule(); }, { hand: true }); controls[controls.length - 1]!.docked = true; dockIds.push('auto-pause'); }
+  copy(root, 'Пробное занятие', x, stageHeight() - 16, 10, { hand: true });
+  return { root, base, speech: compactSpeech };
+}
+function companion(x: number, width: number, dock?: ReturnType<typeof dockControls>) {
+  const wide = wideStage(), fullGuide = wide && !shortWide(), message = manualHint && usesDock() ? fullGuide ? helpMessage() : shortGuide() : feedback || (guideText ? fullGuide ? guideText : shortGuide() : '');
+  const side = wide && (usesDock() || app.screen.width - width >= 260);
+  const size = side ? usesDock() ? shortWide() ? 100 : 196 : Math.max(84, Math.min(196, app.screen.width - x - width - 44)) : dock ? 66 : 78;
+  cat.width = size; cat.height = size / cat.texture.width * cat.texture.height;
+  if (wide && usesDock()) cat.position.set(x + width + 80, paintedScroll + Math.min(410, stageHeight() - dock!.base - size - 22));
+  else cat.position.set(app.screen.width - size - 14, side ? paintedScroll + 410 : app.screen.height - cat.height - 20);
+  if (wide && usesDock() && composition === 'surround') cat.y = paintedScroll + Math.min(stageHeight() - dock!.base - cat.height - 22, room.y - scrollY + room.height * locationScene.tableBackEdge - cat.height + 35);
+  if (!wide && dock) cat.position.set(13, paintedScroll + dockTop + 28);
+  cat.visible = side || !!dock && !!message;
+  if (cat.visible) {
+    const shadow = new Graphics().ellipse(cat.x + size / 2, cat.y + cat.height - 5, size * .47, size * .065).fill({ color: '#382313', alpha: .24 }); overlay.addChild(shadow);
+  }
+  if (message) {
+    const bx = wide ? x + width + 30 : 87, bubbleWidth = wide ? Math.min(308, app.screen.width - bx - 12) : app.screen.width - 100;
+    const text = copy(overlay, message, 16, 44, wide ? 18 : 16, { width: bubbleWidth - 32, sans: true });
+    const height = Math.max(84, text.height + 57), by = wide ? Math.max(paintedScroll + headerHeight() + 4, cat.y - height - 28) : paintedScroll + dockTop + 8;
+    speechBounds = box(bx, by, bubbleWidth, height);
+    const bubble = new Container(); bubble.position.set(bx, by); overlay.addChild(bubble);
+    bubble.addChild(new Graphics().roundRect(2, 4, bubbleWidth, height, 13).fill({ color: '#281b10', alpha: .2 }));
+    bubble.addChild(new Graphics().roundRect(0, 0, bubbleWidth, height, 13).fill('#fff7e7').stroke({ color: '#6c5035', width: 1.5 }).poly(wide ? [45, height - 1, 69, height - 1, 73, height + 23] : [2, 39, 2, 57, -14, 61]).fill('#fff7e7').stroke({ color: '#6c5035', width: 1 }));
+    copy(bubble, 'Кот', 16, 6, 19, { hand: true }); bubble.addChild(text);
+    if (!feedback || manualHint) { const close = action(bubble, 'dismiss-hint', '×', box(bubbleWidth - 45, 0, 44, 44), () => { learnAction(); schedule(); }, { bare: true, size: 22 }); close.accessibleHint = 'Скрыть подсказку'; }
+  }
+  overlay.addChild(cat);
 }
 function helpMessage() {
   if (task === 'construction') return manual ? 'Введите фразу японской клавиатурой. Пока выбирается IME-кандидат, проверка подождёт.' : 'Нажмите на слово — оно добавится в фразу. На компьютере слова можно перетаскивать.';
@@ -212,6 +346,7 @@ function helpMessage() {
 function drawHelp(y: number, x: number, width: number) {
   if (seenHints.has(hintKey()) && !manualHint) return 0;
   const message = helpMessage();
+  if (usesDock()) { guideText = message; return 0; }
   const root = new Container(); root.position.set(x, y); ui.addChild(root);
   const text = copy(root, message, 71, 14, 16, { width: width - 126, sans: true });
   const height = Math.max(80, text.height + 28);
@@ -221,8 +356,7 @@ function drawHelp(y: number, x: number, width: number) {
 }
 function feedbackAt(y: number, x: number, width: number, next = true) {
   if (!feedback) return;
-  const text = copy(ui, feedback, x + 8, y, 18, { width: width - 16, color: correct === false ? '#6f3822' : sage });
-  if (next) action(ui, 'next', 'Дальше', box(x, y + text.height + 16, width, 52), flow.active ? lessonAdvance(correct ? 'remember' : 'again', true) : nextWord, { hand: true });
+  if (next) action(ui, 'next', 'Дальше', box(x, y + 56, width, 52), flow.active ? lessonAdvance(correct ? 'remember' : 'again', true) : nextWord, { hand: true });
 }
 function choiceGrid<T>(items: T[], y: number, x: number, width: number, make: (item: T, r: Rect, index: number) => void, height = 59, columns = 2) {
   const gap = 12, cell = (width - (columns - 1) * gap) / columns;
@@ -231,33 +365,35 @@ function choiceGrid<T>(items: T[], y: number, x: number, width: number, make: (i
 }
 
 function quiz(x: number, width: number) {
-  const word = current(), r = box(x, 158, width, 261), root = deck(r), listening = task === 'word-listen', reverse = task === 'word-ru';
-  copy(root, listening ? 'Что прозвучало?' : reverse ? 'Выберите японское слово' : 'Как переводится слово?', width / 2, 24, width < 300 ? 20 : 22, { center: true, width: width - 42 });
-  if (listening) action(root, 'listen', playing ? 'Слушаем…' : '▶ Прослушать', box(32, 104, width - 64, 78), () => { void speak(word.audioUrl); }, { hand: true, size: 26 });
-  else if (reverse) copy(root, word.meaningRu, width / 2, 111, 38, { center: true, width: width - 50 });
-  else centeredJapanese(root, word, 88, width);
+  const short = shortWide(), word = current(), r = box(x, 158, width, short ? 150 : 261), root = deck(r), listening = task === 'word-listen', reverse = task === 'word-ru';
+  copy(root, listening ? 'Что прозвучало?' : reverse ? 'Выберите японское слово' : 'Как переводится слово?', width / 2, short ? 16 : 24, width < 300 || short ? 20 : 22, { center: true, width: width - 42 });
+  if (listening) action(root, 'listen', playing ? 'Слушаем…' : '▶ Прослушать', box(32, short ? 68 : 104, width - 64, short ? 62 : 78), () => { void speak(word.audioUrl); }, { hand: true, size: 26 });
+  else if (reverse) copy(root, word.meaningRu, width / 2, short ? 82 : 111, short ? 30 : 38, { center: true, width: width - 50 });
+  else centeredJapanese(root, word, short ? 72 : 88, width, short ? 44 : 94);
   const options: Word[] = flow.active ? flow.choices : words;
   const single = options.some(word => reverse ? word.surface.length > 6 : word.meaningRu.length > 23);
   const height = single ? reverse ? Math.max(78, ...options.map(word => Math.ceil(word.surface.length * 22 / (width - 70)) * 44 + 14)) : Math.max(78, ...options.map(word => Math.ceil(textWidth(word.meaningRu, 21, book) / (width - 70)) * 31 + 20)) : reverse ? 78 : 59;
-  const bottom = choiceGrid<Word>(options, 445, x, width, (candidate, area, index) => {
+  const bottom = choiceGrid<Word>(options, short ? 328 : 445, x, width, (candidate, area, index) => {
     action(ui, `word-option-${index}`, reverse ? candidate.surface : candidate.meaningRu, area, () => {
       if (selection !== null) return;
       audio.pause(); selection = candidate.id; correct = candidate.id === word.id; learnAction();
-      say(correct ? 'Верно. Хорошо получилось!' : `Запомним: ${word.surface} — ${word.meaningRu}.${flow.active ? ' Этот формат вернётся.' : ''}`);
+      say(correct ? 'Да, всё верно!' : 'Правильный вариант я отметил. Этот вопрос попробуем ещё раз.');
+      if (correct) queueAuto(flow.active ? lessonAdvance('remember', true) : nextWord);
     }, { enabled: selection === null && (!listening || played), selected: selection !== null && candidate.id === word.id, value: reverse ? candidate : undefined });
   }, height, single ? 1 : 2);
   if (selection !== null) feedbackAt(bottom + 7, x, width); else drawHelp(bottom + 24, x, width);
 }
 
 function recall(x: number, width: number) {
-  const word = current(), root = deck(box(x, 158, width, 318));
+  const word = current(), content = new Container();
   const listening = task === 'recall-listen', reverse = task === 'recall-ru';
-  copy(root, listening ? 'Вспомните смысл услышанного' : reverse ? 'Вспомните по-японски' : 'Вспомните перевод', width / 2, 24, 21, { center: true, width: width - 44 });
+  copy(content, listening ? 'Вспомните смысл услышанного' : reverse ? 'Вспомните по-японски' : 'Вспомните перевод', width / 2, 24, 21, { center: true, width: width - 44 });
+  if (reverse && !revealed) copy(content, word.meaningRu, width / 2, 126, 38, { center: true, width: width - 50 });
+  else if (!listening || revealed) centeredJapanese(content, word, 93, width, 80);
+  if (revealed) copy(content, word.meaningRu, width / 2, 242, 26, { center: true, width: width - 50 });
+  const height = Math.max(318, content.getLocalBounds().maxY + 40), root = deck(box(x, 158, width, height)); root.addChild(content);
   if (listening && !revealed) action(root, 'listen', playing ? 'Слушаем…' : '▶ Прослушать', box(30, 100, width - 60, 74), () => { void speak(word.audioUrl); }, { hand: true, size: 26 });
-  else if (reverse && !revealed) copy(root, word.meaningRu, width / 2, 126, 38, { center: true });
-  else centeredJapanese(root, word, 93, width, 80);
-  if (revealed) copy(root, word.meaningRu, width / 2, 242, 26, { center: true });
-  const reveal = () => { if (listening && !played) { void speak(word.audioUrl); return; } revealed = true; learnAction(); say(`Ответ открыт: ${word.surface}, ${word.kana} — ${word.meaningRu}.`); };
+  const reveal = () => { if (listening && !played) { void speak(word.audioUrl); return; } revealed = true; learnAction(); say('Сравни с тем, что вспомнил. Если было трудно — повторим.'); status.textContent = `Ответ открыт: ${word.surface}, ${word.kana} — ${word.meaningRu}.`; };
   const again = flow.active ? lessonAdvance('again') : nextWord, remember = flow.active ? lessonAdvance('remember') : nextWord;
   const touch = interactive(root, 'reveal', 'Раскрыть карточку', box(10, listening && !revealed ? 205 : 70, width - 20, listening && !revealed ? 80 : 230), reveal);
   let start: { x: number; y: number } | null = null;
@@ -317,7 +453,7 @@ function construction(x: number, width: number) {
     if (editor.composing) { say('Завершите выбор японского текста.'); return; }
     const value = manual ? editor.element.value : tokenOrder.map(index => exercise.tokens[index]!.surface).join('');
     correct = flow.active ? flow.checkConstruction(tokenOrder, manual ? value : undefined) : value.replace(/[。\s]/g, '') === exercise.example.surface.replace(/[。\s]/g, '');
-    learnAction(); say(correct ? 'Верно: ' + exercise.example.surface : flow.active ? 'Этот формат вернётся. Можно поправить фразу или продолжить.' : 'Соберите исходную фразу целиком.');
+    learnAction(); say(correct ? 'Получилось! Фраза собрана.' : 'Попробуем ещё раз. Можно исправить фразу или вернуться к ней позже.');
   }, { hand: true });
   action(ui, 'clear', 'Сначала', box(x + (width - 12) * .62 + 12, bottom + 70, (width - 12) * .38, 51), () => { tokenOrder = []; editor.element.value = ''; correct = null; say(''); }, { hand: true });
   if (feedback) feedbackAt(bottom + 138, x, width, flow.active && correct !== null); else drawHelp(bottom + 139, x, width);
@@ -356,6 +492,7 @@ function count(x: number, width: number) {
     const choice = action(ui, `count-option-${index}`, pictureOptions ? '' : option.label, area, () => {
       if (selection !== null) return; selection = option.key; correct = card.acceptedKeys.includes(option.key); audio.pause(); learnAction();
       say(correct ? 'Верно!' : `Запомним: ${card.answer.surface} — ${card.answer.kana}.`);
+      if (correct) queueAuto(() => navigate(task));
     }, { enabled: selection === null && (kind !== 'listening-image' || played), selected: selection !== null && card.acceptedKeys.includes(option.key), size: kind === 'reading-choice' ? 22 : 21 });
     if (pictureOptions && option.object) {
       choice.accessibleHint = `${option.label}, количество ${option.quantity ?? 1}`;
@@ -367,7 +504,6 @@ function count(x: number, width: number) {
     }
   }, pictureOptions ? 126 : 55);
   if (selection !== null) {
-    copy(ui, feedback, x + 12, bottom + 5, 18, { width: width - 24, color: correct ? sage : ink });
     action(ui, 'next-counter', 'Дальше', box(x, bottom + 59, width, 52), () => navigate(task), { hand: true });
   } else drawHelp(bottom + 18, x, width);
 }
@@ -514,30 +650,71 @@ function frameHeight() {
   return 860;
 }
 function resize() { if (!ready) return; host.style.height = `${Math.max(innerHeight, frameHeight())}px`; app.resize(); render(); }
+function cover(sprite: Sprite, texture: Texture, area: Rect, zoom = 1) {
+  sprite.texture = texture;
+  const scale = Math.max(area.width / texture.width, area.height / texture.height) * zoom;
+  sprite.scale.set(scale); sprite.position.set(area.x + (area.width - sprite.width) / 2, area.y + (area.height - sprite.height) / 2);
+}
 function placeWorld() {
-  const w = app.screen.width, h = app.screen.height;
-  background.texture = textures.get(w >= 900 ? desktopDeskUrl : deskUrl)!;
-  const scale = Math.max(w / background.texture.width, innerHeight / background.texture.height);
-  background.scale.set(scale); background.position.set((w - background.width) / 2, scrollY + (innerHeight - background.height) / 2);
-  const size = w < 700 ? 78 : 215;
-  cat.width = size; cat.height = size / cat.texture.width * cat.texture.height; cat.position.set(w - size - 14, h - cat.height - 20);
+  const w = app.screen.width, area = box(0, scrollY, w, innerHeight), width = studyWidth(), x = studyX(width), scenic = textures.get(locationScene.desktop.src)!;
+  const entering = flow.active && task === 'word-intro' && flow.session?.revision === 0;
+  cameraProgress = composition === 'zoom' && entering && !reduced() ? Math.min(1, (performance.now() - cameraStarted) / 850) : 1;
+  const t = cameraProgress * cameraProgress * (3 - 2 * cameraProgress);
+  cover(room, scenic, area, composition === 'zoom' && entering ? 1 + t * .08 : 1);
+  cover(background, textures.get(w >= 900 ? desktopDeskUrl : deskUrl)!, area);
+  room.visible = wideStage() && (composition !== 'window' || !usesDock()); room.alpha = 1;
+  background.alpha = 1; background.mask = null; tableMask.clear();
+  if (wideStage() && composition === 'window' && !usesDock()) background.alpha = 0;
+  if (wideStage() && composition === 'zoom') {
+    background.alpha = !['textbook', 'reference', 'lesson-overview', 'lesson-complete'].includes(task) ? t : 0;
+  }
+  if (wideStage() && composition === 'surround') {
+    background.alpha = 0;
+  }
+  const showWindow = wideStage() && composition === 'window' && usesDock();
+  roomWindow.visible = showWindow; windowFrame.visible = showWindow; windowMask.clear(); windowFrame.clear();
+  if (showWindow) {
+    const paneX = x + width + 28, pane = box(paneX, scrollY + 150, Math.min(314, w - paneX - 12), 226);
+    cover(roomWindow, scenic, pane); windowMask.roundRect(pane.x, pane.y, pane.width, pane.height, 10).fill('#ffffff'); roomWindow.mask = windowMask;
+    windowFrame.roundRect(pane.x - 5, pane.y - 5, pane.width + 10, pane.height + 10, 13).stroke({ color: '#63452c', width: 10 });
+  }
 }
 function snapshot() {
-  const controlText = captions.map(({ id, rect, view }) => { const b = view.getBounds(); return { id, rect, value: view.text, fontSize: view.style.fontSize, bounds: box(b.minX, b.minY, b.width, b.height) }; });
+  const shift = scrollY - paintedScroll;
+  const controlText = captions.map(({ id, rect, view }) => { const b = view.getBounds(); return { id, rect: controls.find(control => control.id === id)?.docked ? { ...rect, y: rect.y + shift } : rect, value: view.text, fontSize: view.style.fontSize, bounds: box(b.minX, b.minY, b.width, b.height) }; });
   const rotatedUi: string[] = [];
-  const inspect = (node: Container) => { if (Math.abs(node.rotation) > 1e-7 || Math.abs(node.skew.x) > 1e-7 || Math.abs(node.skew.y) > 1e-7) rotatedUi.push(node.label || 'unnamed'); node.children.forEach(inspect); }; inspect(ui);
-  return { ready, task, taskName: taskTitles[task], lesson: flow.snapshot(), view: 'orthographic-top-down', desktopBackground: app.screen.width >= 900, rotatedUi, wordIndex, selection, correct, revealed, tokens: [...tokenOrder], manual, menuOpen, composing: editor.composing, feedback, played, playing, hintVisible: !seenHints.has(hintKey()) || manualHint, hintKey: hintKey(), controls, controlText, contentBottom, catTop: cat.y, ruby, pendingRender: frame !== 0, motion: { ...motion, reduced: reduced(), enteredAt }, cspViolations: [...csp], fontLoaded: document.fonts.check('24px "Marck Script"'), source: data.source, video: { paused: video.paused, time: video.currentTime }, editorValue: editor.element.value };
+  const inspect = (node: Container) => { if (Math.abs(node.rotation) > 1e-7 || Math.abs(node.skew.x) > 1e-7 || Math.abs(node.skew.y) > 1e-7) rotatedUi.push(node.label || 'unnamed'); node.children.forEach(inspect); }; inspect(ui); inspect(overlay);
+  return { ready, task, taskName: taskTitles[task], lesson: flow.snapshot(), composition, cameraProgress, location: locationScene.id, dock: usesDock() ? { top: dockTop, ids: dockIds, stageHeight: stageHeight() } : null, autoAdvance: autoDeadline > 0, feedbackSpeaker: 'cat', speechBounds: speechBounds ? { ...speechBounds, y: speechBounds.y + shift } : null, colors: { ink, bubble: '#fff7e7' }, catVisible: cat.visible, catBounds: box(cat.x, cat.y + shift, cat.width, cat.height), studyBounds: box(studyX(), Math.max(shortWide() && usesDock() ? 82 : 158, scrollY + headerHeight()), studyWidth(), Math.max(0, Math.min(contentBottom, scrollY + (usesDock() ? dockTop : innerHeight)) - Math.max(shortWide() && usesDock() ? 82 : 158, scrollY + headerHeight()))), view: 'orthographic-top-down', desktopBackground: app.screen.width >= 900, rotatedUi, wordIndex, selection, correct, revealed, tokens: [...tokenOrder], manual, menuOpen, composing: editor.composing, feedback, played, playing, hintVisible: !seenHints.has(hintKey()) || manualHint, hintKey: hintKey(), controls: controls.map(control => ({ ...control, rect: control.docked ? { ...control.rect, y: control.rect.y + shift } : control.rect, opacity: actionSpecs.get(control.id)?.node.alpha ?? 1 })), controlText, contentBottom, catTop: cat.y + shift, ruby, pendingRender: frame !== 0, motion: { ...motion, reduced: reduced(), enteredAt }, cspViolations: [...csp], fontLoaded: document.fonts.check('24px "Marck Script"'), source: data.source, video: { paused: video.paused, time: video.currentTime }, editorValue: editor.element.value };
 }
 let contentBottom = 0;
+function clipNative() {
+  for (const element of [video, editor.element]) {
+    const r = element.getBoundingClientRect(), bottom = usesDock() ? Math.max(0, r.bottom - dockTop) : 0, top = Math.max(0, headerHeight() - r.top);
+    element.style.clipPath = top || bottom ? `inset(${Math.min(r.height, top)}px 0 ${Math.min(r.height, bottom)}px 0)` : '';
+  }
+}
+function updateViewport() {
+  if (!ready || rendering) return;
+  overlay.y = scrollY - paintedScroll; bodyMask.y = scrollY - paintedScroll;
+  placeWorld(); app.render(); clipNative();
+}
 function render() {
-  if (!ready || rendering) return; rendering = true;
+  if (!ready || rendering) return;
+  if (pointerHeld) { deferredPaint = true; updateViewport(); return; }
+  rendering = true; paintedScroll = scrollY; overlay.y = 0; bodyMask.y = 0;
   const focus = document.activeElement?.getAttribute('aria-label');
+  ui.mask = null;
+  cat.removeFromParent(); overlay.removeChildren().forEach(child => child.destroy({ children: true }));
   if (drag) { drag.ghost.destroy({ children: true }); drag = null; }
-  ui.removeChildren().forEach(child => child.destroy({ children: true })); controls = []; captions = []; ruby = []; topCard = null; dropZone = null;
+  ui.removeChildren().forEach(child => child.destroy({ children: true })); controls = []; captions = []; ruby = []; topCard = null; dropZone = null; guideText = ''; speechBounds = null; dockIds = []; actionSpecs.clear(); controlRuns.clear();
   if (task !== 'construction' || !manual || menuOpen) editor.place(null);
   if (task !== 'video') video.hidden = true;
-  placeWorld(); header();
-  const w = app.screen.width, width = Math.min(task === 'textbook' && w >= 1000 ? 1000 : 640, w - 38), x = (w - width) / 2;
+  placeWorld();
+  const fixedHeader = new Container(); fixedHeader.y = paintedScroll; overlay.addChild(fixedHeader); header(fixedHeader);
+  const w = app.screen.width, width = studyWidth(), x = studyX(width);
+  const contentLayer = new Container(), bodyOffset = shortWide() && usesDock() ? -76 : 0;
+  contentLayer.y = bodyOffset; viewRoot.addChild(contentLayer); ui = contentLayer;
+  try {
   if (task === 'lesson-overview') lessonOverview(x, width);
   else if (task === 'part-complete' || task === 'lesson-complete') lessonBoundary(x, width);
   else if (task.startsWith('word-') && task !== 'word-intro') quiz(x, width);
@@ -548,19 +725,28 @@ function render() {
   else if (task === 'video') videoPage(x, width);
   else if (task === 'textbook') textbook(x, width);
   else reference(x, width);
+  } finally { ui = viewRoot; }
+  if (dropZone && bodyOffset) (dropZone as Rect).y += bodyOffset;
+  if (bodyOffset) for (const element of [video, editor.element]) if (!element.hidden) element.style.top = `${parseFloat(element.style.top) + bodyOffset}px`;
+  if (manualHint && usesDock()) guideText = helpMessage();
+  const dock = usesDock() ? dockControls(x, width) : undefined;
   contentBottom = ui.getLocalBounds().maxY;
-  const height = Math.ceil(Math.max(innerHeight, frameHeight(), contentBottom + (w < 700 ? 130 : 270)));
+  const height = Math.ceil(dock ? innerHeight + Math.max(0, contentBottom - dockTop + 40) : Math.max(innerHeight, frameHeight(), contentBottom + (w < 700 ? 130 : 270)));
   if (app.screen.height !== height) { host.style.height = `${height}px`; app.resize(); placeWorld(); }
-  copy(ui, 'Стенд · прогресс до обновления страницы', 17, app.screen.height - 47, 13, { hand: true });
+  bodyMask.clear(); ui.mask = bodyMask;
+  bodyMask.rect(0, paintedScroll + headerHeight(), w, Math.max(1, (dock ? dockTop : innerHeight) - headerHeight() - 4)).fill('#ffffff');
+  companion(x, width, dock);
+  if (cameraProgress < 1) action(overlay, 'skip-camera', 'Пропустить', box(w - 226, paintedScroll + 24, 200, 48), () => { cameraStarted = 0; cameraProgress = 1; schedule(); }, { hand: true, size: 22 });
   drawMenu();
   const description = menuOpen ? 'Разделы приложения' : `${taskTitles[task]}. ${flow.active ? `Урок ${flow.lesson!.number}. ${flow.goal?.titleRu ?? flow.lesson!.title}. ` : ''}${task === 'word-ja' || task === 'recall-ja' || task === 'word-intro' ? `${current().surface}, ${current().kana}` : task === 'word-ru' || task === 'recall-ru' ? current().meaningRu : task === 'construction' ? currentConstruction().promptRu : ''}. ${isListening() && !played ? 'Сначала прослушайте запись.' : ''}`;
   if (semantic.textContent !== description) semantic.textContent = description;
   const visibleText: string[] = [];
   const collect = (node: Container) => { if (!node.visible) return; if (node instanceof Text && node.text.trim()) visibleText.push(node.text); node.children.forEach(collect); };
-  collect(ui);
+  collect(ui); collect(overlay);
   const transcript = menuOpen ? 'Учебник. Повторение. Справочник.' : visibleText.join('\n');
   if (screenCopy.textContent !== transcript) screenCopy.textContent = transcript;
-  app.render();
+  overlay.y = scrollY - paintedScroll; bodyMask.y = scrollY - paintedScroll;
+  app.render(); clipNative();
   if (focus && document.activeElement === document.body) [...document.querySelectorAll<HTMLButtonElement>('button[aria-label]')].find(node => node.getAttribute('aria-label') === focus)?.focus({ preventScroll: true });
   if (menuOpen && document.activeElement === document.body) [...document.querySelectorAll<HTMLButtonElement>('button[aria-label]')].find(node => node.getAttribute('aria-label') === 'Учебник')?.focus({ preventScroll: true });
   rendering = false;
@@ -568,8 +754,8 @@ function render() {
 async function start() {
   Assets.setPreferences({ preferWorkers: false }); await document.fonts.load('24px "Marck Script"', 'Учебник 1 из 4');
   await app.init({ resizeTo: host, preference: 'webgl', autoDensity: true, resolution: Math.min(devicePixelRatio, 2), antialias: true, background: '#b8773d', autoStart: false, accessibilityOptions: { enabledByDefault: true, deactivateOnMouseMove: false } });
-  host.prepend(app.canvas); app.canvas.setAttribute('aria-label', 'Учебный стол まるごと'); app.canvas.style.touchAction = 'pan-y'; app.stage.addChild(world, ui); world.addChild(background, cat);
-  const urls = [deskUrl, desktopDeskUrl, cardUrl, answerUrl, catUrl, logoUrl, '/counters/objects-atlas.webp', '/ui/topics-atlas-v1.webp'];
+  host.prepend(app.canvas); app.canvas.setAttribute('aria-label', 'Учебный стол まるごと'); app.canvas.style.touchAction = 'pan-y'; app.stage.addChild(world, ui, bodyMask, overlay); world.addChild(room, background, tableMask, roomWindow, windowMask, windowFrame);
+  const urls = [deskUrl, desktopDeskUrl, cardUrl, answerUrl, catUrl, logoUrl, locationScene.desktop.src, '/counters/objects-atlas.webp', '/ui/topics-atlas-v1.webp'];
   const loaded = await Assets.load<Texture>(urls); for (const url of urls) textures.set(url, loaded[url]!);
   const atlas = textures.get('/counters/objects-atlas.webp')!, rows = [0, 282, 522, 754, 980, 1254];
   for (let tile = 0; tile < 25; tile++) { const row = Math.floor(tile / 5), x = tile % 5 * 250, y = rows[row]!; pictures.set(`counter-${tile}`, new Texture({ source: atlas.source, frame: new Rectangle(x, y, Math.min(tile === 21 ? 275 : 254, atlas.width - x), rows[row + 1]! - y) })); }
@@ -579,19 +765,36 @@ async function start() {
   ready = true; resize(); enterCard();
   app.ticker.maxFPS = 60;
   app.ticker.add(() => {
-    const t = Math.min(1, (performance.now() - enteredAt) / 560);
+    motionElapsed += Math.min(app.ticker.deltaMS, 50);
+    const t = Math.min(1, motionElapsed / 560);
     const still = reduced() || t >= 1;
     const lift = still ? 0 : -8 * Math.sin(Math.PI * t) * (1 - t * .35), sway = still ? 0 : Math.sin(t * Math.PI * 10) * 1.6 * (1 - t);
     motion = { x: sway, y: lift, rotation: 0 };
     if (topCard) topCard.position.set(cardOrigin.x + sway, cardOrigin.y + lift);
-    if (t >= 1 || reduced() || !topCard) app.stop();
+    placeWorld();
+    if ((t >= 1 || reduced() || !topCard) && cameraProgress >= 1) app.stop();
   });
   const gl = app.canvas.getContext('webgl2') ?? app.canvas.getContext('webgl'), recovery = gl?.getExtension('WEBGL_lose_context');
   app.canvas.addEventListener('webglcontextlost', event => { event.preventDefault(); app.stop(); audio.pause(); video.pause(); document.querySelector('#recovery')!.removeAttribute('hidden'); });
   app.canvas.addEventListener('webglcontextrestored', () => { document.querySelector('#recovery')!.setAttribute('hidden', ''); schedule(); });
   document.querySelector('#retry')!.addEventListener('click', () => recovery?.restoreContext());
-  Object.assign(window, { __PAPER__: { snapshot, tasks, navigate, editor: editor.element, app, audio, video, replay: enterCard } });
+  Object.assign(window, { __PAPER__: { snapshot, tasks, navigate, setComposition, editor: editor.element, app, audio, video, replay: enterCard } });
 }
-window.addEventListener('resize', resize); window.addEventListener('scroll', schedule, { passive: true });
-document.addEventListener('visibilitychange', () => { if (document.hidden) { audio.pause(); video.pause(); app.stop(); } });
+window.addEventListener('resize', resize); window.addEventListener('scroll', updateViewport, { passive: true });
+window.addEventListener('pointerdown', () => { updateViewport(); pointerHeld = true; if (autoTimer) cancelAuto(); }, true);
+const releasePointer = () => { pointerHeld = false; if (deferredPaint) { deferredPaint = false; schedule(); } };
+window.addEventListener('pointerup', releasePointer, true); window.addEventListener('pointercancel', releasePointer, true);
+window.addEventListener('blur', () => { cancelAuto(); releasePointer(); });
+document.addEventListener('visibilitychange', () => { if (document.hidden) { cancelAuto(); audio.pause(); video.pause(); app.stop(); } else schedule(); });
+document.addEventListener('focusin', event => {
+  if (!usesDock() || !(event.target instanceof HTMLElement)) return;
+  const label = event.target.getAttribute('aria-label');
+  for (const spec of actionSpecs.values()) if (spec.node.accessibleHint === label) {
+    let parent: Container | null = spec.node;
+    while (parent) { if (parent === overlay) return; parent = parent.parent; }
+  }
+  const rect = event.target.getBoundingClientRect();
+  if (rect.height > 0 && rect.bottom > dockTop - 12) scrollBy(0, rect.bottom - dockTop + 20);
+  else if (rect.height > 0 && rect.top < headerHeight()) scrollBy(0, rect.top - headerHeight() - 16);
+});
 void start().catch(error => { console.error(error); document.querySelector('#recovery')!.removeAttribute('hidden'); });

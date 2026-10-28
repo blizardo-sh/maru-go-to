@@ -1,0 +1,115 @@
+{
+  "date": "2026-10-28T09:06:16.666Z",
+  "browsers": {
+    "chrome": {
+      "sizes": [
+        {
+          "width": 1440,
+          "height": 1000,
+          "actions": "same viewport position across different card heights and scroll",
+          "success": "advances after delay",
+          "wrong": "stays",
+          "pause": "stays",
+          "contrast": ">=7:1",
+          "disabledAnswerOpacity": 1
+        },
+        {
+          "width": 1538,
+          "height": 1468,
+          "actions": "same viewport position across different card heights and scroll",
+          "success": "advances after delay",
+          "wrong": "stays",
+          "pause": "stays",
+          "contrast": ">=7:1",
+          "disabledAnswerOpacity": 1
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "actions": "same viewport position across different card heights and scroll",
+          "success": "advances after delay",
+          "wrong": "stays",
+          "pause": "stays",
+          "contrast": ">=7:1",
+          "disabledAnswerOpacity": 1
+        },
+        {
+          "width": 320,
+          "height": 640,
+          "actions": "same viewport position across different card heights and scroll",
+          "success": "advances after delay",
+          "wrong": "stays",
+          "pause": "stays",
+          "contrast": ">=7:1",
+          "disabledAnswerOpacity": 1
+        }
+      ],
+      "compositions": [
+        "zoom/1440",
+        "window/1440",
+        "surround/1440",
+        "zoom/1538",
+        "window/1538",
+        "surround/1538"
+      ],
+      "camera": "entry transition, skip and reduced motion passed",
+      "sameLessonOnCompositionChange": true,
+      "errors": []
+    },
+    "webkit": {
+      "sizes": [
+        {
+          "width": 1440,
+          "height": 1000,
+          "actions": "same viewport position across different card heights and scroll",
+          "success": "advances after delay",
+          "wrong": "stays",
+          "pause": "stays",
+          "contrast": ">=7:1",
+          "disabledAnswerOpacity": 1
+        },
+        {
+          "width": 1538,
+          "height": 1468,
+          "actions": "same viewport position across different card heights and scroll",
+          "success": "advances after delay",
+          "wrong": "stays",
+          "pause": "stays",
+          "contrast": ">=7:1",
+          "disabledAnswerOpacity": 1
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "actions": "same viewport position across different card heights and scroll",
+          "success": "advances after delay",
+          "wrong": "stays",
+          "pause": "stays",
+          "contrast": ">=7:1",
+          "disabledAnswerOpacity": 1
+        },
+        {
+          "width": 320,
+          "height": 640,
+          "actions": "same viewport position across different card heights and scroll",
+          "success": "advances after delay",
+          "wrong": "stays",
+          "pause": "stays",
+          "contrast": ">=7:1",
+          "disabledAnswerOpacity": 1
+        }
+      ],
+      "compositions": [
+        "zoom/1440",
+        "window/1440",
+        "surround/1440",
+        "zoom/1538",
+        "window/1538",
+        "surround/1538"
+      ],
+      "camera": "entry transition, skip and reduced motion passed",
+      "sameLessonOnCompositionChange": true,
+      "errors": []
+    }
+  }
+}

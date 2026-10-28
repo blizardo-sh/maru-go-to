@@ -13,7 +13,7 @@ async function click(page, id) {
   await settle(page);
   let value = await snapshot(page), control = value.controls.find(control => control.id === id);
   assert.ok(control?.enabled, `${value.task}: unavailable ${id}`);
-  await page.evaluate(y => scrollTo(0, Math.max(0, y - innerHeight / 2)), control.rect.y); await settle(page);
+  if (!control.docked) await page.evaluate(({ y, top }) => scrollTo(0, Math.max(0, y - top / 2)), { y: control.rect.y, top: (await snapshot(page)).dock?.top ?? await page.evaluate(() => innerHeight) }); await settle(page);
   control = (await snapshot(page)).controls.find(control => control.id === id);
   const scroll = await page.evaluate(() => scrollY);
   await page.mouse.click(control.rect.x + control.rect.width / 2, control.rect.y + control.rect.height / 2 - scroll); await settle(page);
@@ -21,7 +21,8 @@ async function click(page, id) {
 function geometry(value, width) {
   assert.deepEqual(value.rotatedUi, []); assert.equal(value.view, 'orthographic-top-down');
   assert.equal(value.desktopBackground, width >= 900); assert.deepEqual(value.cspViolations, []);
-  assert.ok(value.catTop >= value.contentBottom + 20);
+  const cat = value.catBounds, study = value.studyBounds;
+  assert.ok(cat.x >= study.x + study.width + 20 || cat.x + cat.width <= study.x - 20 || cat.y >= study.y + study.height + 20, 'Cat must leave visible study content clear');
   for (const control of value.controls) {
     assert.ok(control.rect.width >= 44 && control.rect.height >= 44, `Small ${control.id}`);
     assert.ok(control.rect.x >= 0 && control.rect.x + control.rect.width <= width + 1, `Outside ${control.id}`);

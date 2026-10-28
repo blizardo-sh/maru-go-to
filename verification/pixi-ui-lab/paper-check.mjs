@@ -16,7 +16,7 @@ async function click(page, id) {
   await settled(page);
   let control = await page.evaluate(id => window.__PAPER__.snapshot().controls.find(item => item.id === id), id);
   assert.ok(control?.enabled, `Unavailable ${id} on ${(await state(page)).task}`);
-  await page.evaluate(y => scrollTo(0, Math.max(0, y - innerHeight / 2)), control.rect.y);
+  if (!control.docked) await page.evaluate(({ y, top }) => scrollTo(0, Math.max(0, y - top / 2)), { y: control.rect.y, top: (await state(page)).dock?.top ?? await page.evaluate(() => innerHeight) });
   await settled(page);
   control = (await state(page)).controls.find(item => item.id === id);
   const scroll = await page.evaluate(() => scrollY);
@@ -24,7 +24,8 @@ async function click(page, id) {
 }
 function geometry(value, width, height) {
   assert.equal(value.fontLoaded, true); assert.deepEqual(value.cspViolations, []);
-  assert.ok(value.catTop >= value.contentBottom + 20, 'Cat must leave the study area clear');
+  const cat = value.catBounds, study = value.studyBounds;
+  assert.ok(cat.x >= study.x + study.width + 20 || cat.x + cat.width <= study.x - 20 || cat.y >= study.y + study.height + 20, 'Cat must leave visible study content clear');
   for (const control of value.controls) {
     assert.ok(control.rect.width >= 44 && control.rect.height >= 44, `Small control ${control.id}`);
     assert.ok(control.rect.x >= 0 && control.rect.x + control.rect.width <= width + 1, `Offscreen ${control.id}`);
@@ -114,7 +115,7 @@ for (const [name, type, options] of [['chrome', chromium, { channel: 'chrome' }]
     await page.emulateMedia({ reducedMotion: 'no-preference' }); await page.evaluate(() => window.__PAPER__.replay());
     await page.waitForFunction(() => Math.abs(window.__PAPER__.snapshot().motion.y) > .5);
     const moving = (await state(page)).motion; assert.equal(moving.rotation, 0); assert.ok(Math.abs(moving.x) <= 1.6 && moving.y >= -8);
-    await page.waitForTimeout(650); assert.equal((await state(page)).motion.y, 0);
+    await page.waitForFunction(() => window.__PAPER__.snapshot().motion.y === 0); assert.equal((await state(page)).motion.y, 0);
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await load(page, 'video'); await click(page, 'video-play'); await page.waitForFunction(() => !window.__PAPER__.video.paused && window.__PAPER__.video.videoWidth > 0);
     await click(page, 'video-play'); assert.equal((await state(page)).video.paused, true);

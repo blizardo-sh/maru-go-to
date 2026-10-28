@@ -1,6 +1,6 @@
 import { Container, Graphics, Text, TextStyle, type Texture, Sprite, Rectangle } from 'pixi.js';
 
-export const ink = '#403a2f';
+export const ink = '#241d17';
 export const green = '#405b40';
 export const jpFont = 'sans-serif';
 export type Rect = { x: number; y: number; width: number; height: number };
