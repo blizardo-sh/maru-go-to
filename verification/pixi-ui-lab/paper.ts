@@ -5,8 +5,10 @@ import data from './paper-fixtures.json';
 import { EditorBridge, japanese, label, textWidth, type JapaneseValue, type Rect } from './canvas';
 import deskUrl from './art/runtime/desk.webp';
 import desktopDeskUrl from './art/runtime/desk-landscape.webp';
-import cardUrl from './art/runtime/card.webp';
-import answerUrl from './art/runtime/answer.webp';
+import cardUrl from './art/runtime/plain-paper.webp';
+import roomStudyUrl from './art/runtime/room-study.webp';
+import standUrl from './art/runtime/stand.webp';
+import standRoomUrl from './art/runtime/room-stand.webp';
 import catUrl from './art/runtime/cat.webp';
 import logoUrl from './art/runtime/logo.webp';
 import './paper.css';
@@ -32,14 +34,16 @@ type ActionOptions = { enabled?: boolean; hand?: boolean; selected?: boolean; va
 type ActionSpec = { node: Container; id: string; title: string; rect: Rect; run: () => void; options: ActionOptions };
 const counters: Counter[] = data.counterCards;
 const countKinds: Record<string, string> = { 'count-category': 'image-counter', 'count-picture': 'counter-image', 'count-reading': 'reading-choice', 'count-listen': 'listening-image', 'count-recall': 'recall' };
-const ink = '#241d17', sage = '#263d25', hand = 'Marck Script', book = 'Georgia', jp = '"Hiragino Mincho ProN", "Yu Mincho", serif';
+const answerUrl = cardUrl;
+const ink = '#241d17', sage = '#263d25', hand = 'Lora', book = 'Lora', jp = '"Hiragino Mincho ProN", "Yu Mincho", serif';
 const params = new URLSearchParams(location.search);
 let task: Task = params.get('task') && Object.hasOwn(taskTitles, params.get('task')!) ? params.get('task') as Task : 'textbook';
 const flow = new LessonFlow();
-type Composition = 'zoom' | 'window' | 'surround';
-let composition: Composition = ['zoom', 'window', 'surround'].includes(params.get('composition') ?? '') ? params.get('composition') as Composition : 'window';
+type Composition = 'zoom' | 'window' | 'surround' | 'stand';
+let composition: Composition = ['zoom', 'window', 'surround', 'stand'].includes(params.get('composition') ?? '') ? params.get('composition') as Composition : 'stand';
 const locationScene = sceneManifest.scenes.find(scene => scene.id === params.get('scene')) ?? sceneManifest.scenes[0]!;
 let cameraStarted = 0, cameraProgress = 1, viewRevision = 0;
+let mobileApproach = false, approachStarted = 0;
 let autoTimer: ReturnType<typeof setTimeout> | undefined, autoDeadline = 0, guideText = '', dockTop = 0;
 let speechBounds: Rect | null = null;
 let paintedScroll = 0, pointerHeld = false, deferredPaint = false;
@@ -48,7 +52,7 @@ const controlRuns = new Map<string, () => void>();
 let dockIds: string[] = [];
 if (lessonCatalog.lessons.some(lesson => lesson.id === params.get('lesson'))) { flow.open(params.get('lesson')!); task = 'lesson-overview'; }
 let words: Word[] = data.words, wordIndex = 0, selection: string | null = null, revealed = false;
-let tokenOrder: number[] = [], manual = false, feedback = '', correct: boolean | null = null, showBreakdown = false;
+let tokenOrder: number[] = [], manual = false, feedback = '', correct: boolean | null = null, hadMistake = false, showBreakdown = false;
 let ready = false, frame = 0, rendering = false, enteredAt = performance.now(), played = false, playing = false, mediaEpoch = 0;
 let controls: Control[] = [], ruby: ReturnType<typeof japanese>[] = [], topCard: Container | null = null, cardOrigin = { x: 0, y: 0 };
 let captions: { id: string; rect: Rect; view: ReturnType<typeof copy> }[] = [];
@@ -60,7 +64,10 @@ const host = document.querySelector<HTMLElement>('#stage')!;
 const app = new Application(), world = new Container(), viewRoot = new Container(), overlay = new Container(), bodyMask = new Graphics();
 let ui = viewRoot;
 const background = new Sprite(), room = new Sprite(), cat = new Sprite();
+let stand: NineSliceSprite, catHit: Container | null = null, catBubble: Container | null = null, catShadow: Graphics | null = null, catPerch = 0;
+let catTravel: { from: { x: number; y: number }; to: { x: number; y: number }; start: number } | null = null;
 const roomWindow = new Sprite(), windowMask = new Graphics(), tableMask = new Graphics(), windowFrame = new Graphics();
+const standFootShadow = new Graphics();
 const textures = new Map<string, Texture>(), pictures = new Map<string, Texture>();
 const current = (): Word => flow.active && flow.word ? flow.word : words[wordIndex]!;
 const currentConstruction = () => flow.active && flow.construction ? flow.construction : data.construction;
@@ -99,12 +106,13 @@ function queueAuto(run: () => void) {
   cancelAuto(); const owner = viewRevision; autoDeadline = performance.now() + 1200;
   autoTimer = setTimeout(() => { autoTimer = undefined; autoDeadline = 0; if (owner === viewRevision && correct === true && !document.hidden && !menuOpen) run(); }, 1200);
 }
-function enterCard() { enteredAt = performance.now(); motionElapsed = 0; if (ready) app.start(); }
+function enterCard() { enteredAt = performance.now(); motionElapsed = 0; motion = { x: 0, y: reduced() ? -8 : 0, rotation: 0 }; if (ready) app.start(); }
+function finishApproach() { mobileApproach = false; host.classList.remove('stand-enter'); cameraProgress = 1; schedule(); }
 function navigate(value: Task, keepLesson = false) {
-  cancelAuto(); viewRevision++;
+  cancelAuto(); catTravel = null; viewRevision++;
   mediaEpoch++;
   if (!keepLesson) flow.active = false;
-  audio.pause(); audio.removeAttribute('src'); audio.load(); video.pause(); task = value; selection = null; revealed = false; correct = null; feedback = ''; tokenOrder = []; manual = false; showBreakdown = false; played = false; manualHint = false; menuOpen = false;
+  audio.pause(); audio.removeAttribute('src'); audio.load(); video.pause(); task = value; selection = null; revealed = false; correct = null; hadMistake = false; feedback = ''; tokenOrder = []; manual = false; showBreakdown = false; played = false; manualHint = false; menuOpen = false;
   editor.element.value = ''; caption = ''; video.removeAttribute('src'); video.load();
   const url = new URL(location.href); url.searchParams.set('task', task);
   if (keepLesson && flow.selectedId) url.searchParams.set('lesson', flow.selectedId); else url.searchParams.delete('lesson');
@@ -133,7 +141,7 @@ function copy(root: Container, value: string, x: number, y: number, size = 20, o
 }
 function surface(root: Container, r: Rect, texture: Texture, tint = '#ffffff') {
   const sourceW = texture.width, scale = Math.min(r.width / sourceW, .36);
-  const paper = new NineSliceSprite({ texture, leftWidth: sourceW * .25, rightWidth: sourceW * .12, topHeight: texture.height * .14, bottomHeight: texture.height * (texture === textures.get(cardUrl) ? .62 : .27) });
+  const paper = new NineSliceSprite({ texture, leftWidth: 24, rightWidth: 24, topHeight: 20, bottomHeight: 20 });
   paper.width = r.width / scale; paper.height = r.height / scale; paper.scale.set(scale); paper.position.set(r.x, r.y); paper.tint = tint; root.addChild(paper); return paper;
 }
 function image(root: Container, texture: Texture, r: Rect, multiply = false) {
@@ -154,7 +162,7 @@ function interactive(root: Container, id: string, title: string, r: Rect, action
 }
 function action(root: Container, id: string, title: string, r: Rect, run: () => void, options: ActionOptions = {}) {
   const enabled = options.enabled ?? true, node = interactive(root, id, title, r, run, enabled);
-  const inset = options.bare ? 12 : Math.min(44, r.width * .24), contentWidth = r.width - inset - 12, center = inset + contentWidth / 2;
+  const inset = 12, contentWidth = r.width - inset - 12, center = r.width / 2;
   const paper = options.bare ? null : surface(node, box(0, 0, r.width, r.height), textures.get(answerUrl)!, options.selected ? '#e3eccf' : '#ffffff');
   const focus = new Graphics(); node.addChild(focus); node.alpha = 1;
   if (options.selected) focus.roundRect(6, 5, r.width - 12, r.height - 10, 6).stroke({ color: sage, width: 3 });
@@ -177,9 +185,10 @@ function action(root: Container, id: string, title: string, r: Rect, run: () => 
 }
 function deck(r: Rect) {
   const texture = textures.get(cardUrl)!;
+  ui.addChild(new Graphics().roundRect(r.x + 3, r.y + 9, r.width - 6, r.height + 5, 8).fill({ color: '#382313', alpha: .17 }));
   surface(ui, box(r.x + 1, r.y + 8, r.width - 2, r.height), texture, '#d4c2a2');
   surface(ui, box(r.x, r.y + 4, r.width, r.height), texture, '#eee2cb');
-  const root = new Container(); root.position.set(r.x, r.y); ui.addChild(root); surface(root, box(0, 0, r.width, r.height), texture);
+  const root = new Container(); root.position.set(r.x, r.y + motion.y); ui.addChild(root); surface(root, box(0, 0, r.width, r.height), texture);
   topCard = root; cardOrigin = { x: r.x, y: r.y }; return root;
 }
 function centeredJapanese(root: Container, value: JapaneseValue, y: number, width: number, size = 94) {
@@ -192,6 +201,24 @@ function centeredJapanese(root: Container, value: JapaneseValue, y: number, widt
   ruby.push(layout); return layout.height;
 }
 function header(root: Container = ui) {
+  if (standMode()) {
+    const width = studyWidth(), x = studyX(width), compact = app.screen.width < 700;
+    surface(root, box(x, 4, width, 50), textures.get(cardUrl)!);
+    const menu = action(root, 'menu', '≡', box(x, 8, 44, 44), () => { menuOpen = true; cancelAuto(); audio.pause(); video.pause(); schedule(); }, { bare: true, size: 24 }); menu.accessibleHint = 'Открыть разделы';
+    image(root, textures.get(logoUrl)!, box(x + width / 2 - 75, 7, 150, 44));
+    copy(root, flow.active ? `${flow.progress().percent}%` : isWord() ? `${wordIndex + 1} из ${words.length}` : 'A1', x + width - 42, 16, 20, { center: true, hand: true });
+    if (shortWide()) return;
+    surface(root, box(x, 58, width, 45), textures.get(cardUrl)!);
+    if (flow.active) {
+      copy(root, compact ? `Урок ${flow.lesson!.number}` : `Урок ${flow.lesson!.number} · ${flow.lesson!.title}`, x + width / 2 - 22, 65, 20, { center: true, width: width - 150 });
+      action(root, 'lesson-exit', 'Выйти', box(x + width - 80, 58, 80, 44), () => navigate('textbook'), { bare: true, size: 20 });
+      action(root, 'help', '?', box(x, 58, 44, 44), () => { cancelAuto(); manualHint = !manualHint; schedule(); }, { bare: true, size: 24 });
+    } else if (compact) {
+      action(root, 'section', task === 'textbook' ? 'Учебник' : task === 'reference' ? 'Справочник' : 'Повторение', box(x, 58, width - 52, 44), () => { menuOpen = true; cancelAuto(); audio.pause(); video.pause(); schedule(); }, { bare: true, size: 22 });
+      action(root, 'help', '?', box(x + width - 44, 58, 44, 44), () => { cancelAuto(); manualHint = !manualHint; schedule(); }, { bare: true, size: 24 });
+    } else for (const [index, [title, destination]] of [['Учебник', 'textbook'], ['Повторение', 'word-ja'], ['Справочник', 'reference']].entries()) action(root, `nav-${destination}`, title!, box(x + index * width / 3, 58, width / 3, 44), () => navigate(destination as Task), { bare: true, size: 21 });
+    return;
+  }
   const w = app.screen.width, x = Math.max(14, (w - 800) / 2), width = Math.min(w - 28, 800);
   if (shortWide() && usesDock()) {
     surface(root, box(14, 8, w - 28, 52), textures.get(answerUrl)!);
@@ -227,8 +254,8 @@ function header(root: Container = ui) {
 function drawMenu() {
   if (!menuOpen) return;
   cancelAuto();
-  const width = Math.min(440, app.screen.width - 32), x = (app.screen.width - width) / 2, height = app.screen.width >= 1100 ? 358 : 305;
-  const y = paintedScroll + Math.max(16, Math.min(145, (innerHeight - height) / 2));
+  const width = Math.min(440, standMode() ? studyWidth() - 12 : app.screen.width - 32), x = standMode() ? studyX() + (studyWidth() - width) / 2 : (app.screen.width - width) / 2, height = app.screen.width >= 1100 ? 418 : 305;
+  const y = paintedScroll + (standMode() ? Math.max(stageTop() + 8, Math.min(headerHeight() + 8, stageHeight() - height - 8)) : Math.max(16, Math.min(145, (innerHeight - height) / 2)));
   const blocker = new Graphics().rect(0, 0, app.screen.width, app.screen.height).fill({ color: '#20170e', alpha: .35 }); blocker.eventMode = 'static'; blocker.on('pointertap', () => { menuOpen = false; schedule(); }); overlay.addChild(blocker);
   surface(overlay, box(x, y, width, height), textures.get(cardUrl)!); menuPainting = true;
   copy(overlay, 'Разделы', x + width / 2, y + 18, 28, { hand: true, center: true });
@@ -238,21 +265,27 @@ function drawMenu() {
     copy(overlay, 'Композиция стенда', x + 24, y + 234, 19, { hand: true });
     const cell = (width - 54) / 3;
     for (const [index, [id, title]] of [['zoom', 'Переход'], ['window', 'Окно'], ['surround', 'Окружение']].entries()) action(overlay, `composition-${id}`, title!, box(x + 21 + index * (cell + 6), y + 276, cell, 57), () => setComposition(id as Composition), { hand: true, size: 19, selected: composition === id });
+    action(overlay, 'composition-stand', 'Стойка для занятий', box(x + 21, y + 344, width - 42, 52), () => setComposition('stand'), { size: 21, selected: standMode() });
   }
   menuPainting = false;
 }
 function setComposition(value: Composition) {
-  composition = value; menuOpen = false; cameraStarted = performance.now(); cancelAuto();
+  composition = value; menuOpen = false; catTravel = null; mobileApproach = false; host.classList.remove('stand-enter'); cameraStarted = performance.now(); cancelAuto();
   const url = new URL(location.href); url.searchParams.set('composition', value); history.replaceState(null, '', url);
   enterCard(); resize();
 }
 function usesDock() { return task !== 'textbook' && task !== 'reference'; }
+function standMode() { return composition === 'stand'; }
+function standScale() { return app.screen.width >= 1000 ? .42 : shortWide() ? .3 : .18; }
 function shortWide() { return app.screen.width >= 700 && innerHeight < 560; }
-function headerHeight() { return shortWide() && usesDock() ? 66 : 142; }
-function wideStage() { return app.screen.width >= 1100 && innerHeight >= 620 || shortWide(); }
-function stageHeight() { return wideStage() ? Math.min(innerHeight, 900) : innerHeight; }
-function studyWidth() { return Math.min(task === 'textbook' && app.screen.width >= 1000 ? 1000 : shortWide() && usesDock() ? Math.min(470, app.screen.width - 340) : 640, app.screen.width - 38); }
-function studyX(width = studyWidth()) { return usesDock() && wideStage() ? Math.max(24, (app.screen.width - width - 360) / 2) : (app.screen.width - width) / 2; }
+function desktopStage() { return app.screen.width >= 1000 && innerHeight >= 620; }
+function stageTop() { return standMode() ? shortWide() ? 0 : Math.max(180 * standScale() + 12, (innerHeight - 720 - 630 * standScale() - 24) / 2 + 180 * standScale() + 12) : desktopStage() && usesDock() ? Math.max(0, (innerHeight - 720) / 2) : 0; }
+function headerHeight() { return stageTop() + (shortWide() && usesDock() ? 66 : standMode() ? 108 : 142); }
+function wideStage() { return desktopStage() || shortWide(); }
+function stageHeight() { return standMode() ? shortWide() ? innerHeight : stageTop() + Math.max(260, Math.min(720, innerHeight - stageTop() - 40)) : desktopStage() ? stageTop() + Math.min(innerHeight, 720) : innerHeight; }
+function contentOffset() { return standMode() ? stageTop() + (shortWide() ? -76 : -32) : usesDock() ? shortWide() ? -76 : desktopStage() ? stageTop() + 44 : 0 : 0; }
+function studyWidth() { return Math.min(!standMode() && task === 'textbook' && app.screen.width >= 1000 ? 1000 : shortWide() && usesDock() ? Math.min(470, app.screen.width - 340) : desktopStage() && (usesDock() || standMode()) ? Math.min(640, app.screen.width - 500) : 640, app.screen.width - (standMode() ? 54 : 38)); }
+function studyX(width = studyWidth()) { return shortWide() && usesDock() ? Math.max(24, (app.screen.width - width - 340) / 2) : (app.screen.width - width) / 2; }
 function shortGuide() {
   if (task === 'construction') return manual ? 'Введите фразу японской клавиатурой и проверьте.' : 'Выбирайте слова по порядку. Нажатие на слово в фразе убирает его.';
   if (task.startsWith('recall-') || task === 'count-recall') return 'Вспомните ответ, затем откройте карточку и сравните.';
@@ -277,13 +310,14 @@ function dockControls(x: number, width: number) {
   const compactSpeech = !wideStage() && !!(feedback || guideText), extra = upper.length > 0;
   let speechHeight = 0;
   if (compactSpeech) {
-    const measure = new Text({ text: feedback || shortGuide(), style: { fontFamily: 'system-ui, sans-serif', fontSize: 16, lineHeight: 23.2, wordWrap: true, wordWrapWidth: app.screen.width - 132, breakWords: true } });
+    const measure = new Text({ text: feedback || shortGuide(), style: { fontFamily: 'system-ui, sans-serif', fontSize: 16, lineHeight: 23.2, wordWrap: true, wordWrapWidth: standMode() ? width - 94 : app.screen.width - 132, breakWords: true } });
     speechHeight = Math.max(104, measure.height + 73); measure.destroy();
   }
   const base = extra && !shortWide() ? 146 : 82;
   dockTop = stageHeight() - base - speechHeight;
   const root = new Container(); root.y = paintedScroll; overlay.addChild(root);
   const blocker = new Graphics().rect(0, dockTop, app.screen.width, stageHeight() - dockTop).fill({ color: '#70482c', alpha: .001 }); blocker.eventMode = 'static'; root.addChild(blocker);
+  surface(root, box(x, stageHeight() - base + 4, width, base - 8), textures.get(cardUrl)!);
   const half = (width - 12) / 2, y = stageHeight() - 68, compactCell = (width - 36) / 4;
   dockIds = [];
   const paint = (spec: ActionSpec, rect: Rect) => {
@@ -303,33 +337,57 @@ function dockControls(x: number, width: number) {
     action(root, 'next', 'Дальше', primaryRect, () => {}, { hand: true, enabled: false }); controls[controls.length - 1]!.docked = true; dockIds.push('next');
   }
   if (autoDeadline) { action(root, 'auto-pause', 'Остаться', box(x, y, shortWide() ? compactCell : half, 52), () => { cancelAuto(); schedule(); }, { hand: true }); controls[controls.length - 1]!.docked = true; dockIds.push('auto-pause'); }
-  copy(root, 'Пробное занятие', x, stageHeight() - 16, 10, { hand: true });
+  else if (!secondary && !shortWide()) copy(root, correct === false ? 'Можно выбрать ещё раз' : selection !== null ? 'Ответ принят' : task.endsWith('intro') ? 'Знакомимся с новым' : 'Не торопитесь', x + 18, y + 14, 16, { width: half - 24 });
   return { root, base, speech: compactSpeech };
+}
+function catSeat(index: number) {
+  if (!wideStage() && usesDock()) return { x: index ? studyX() + studyWidth() + 14 - cat.width : studyX() - 14, y: paintedScroll + dockTop + 28 };
+  const span = stageHeight() - stageTop(), s = standScale();
+  const ledge = index ? stageHeight() + 12 + 35 * s : stageTop() - 12 + (500 - 180) / 650 * (span + 24);
+  return { x: studyX() + studyWidth() + 24 + 135 * s - cat.width / 2, y: paintedScroll + ledge - cat.height + 3 };
+}
+// shortcut: one pose hops between two perches; add gait frames after the stand design is accepted.
+function moveCat() {
+  if (!standMode() || catTravel) return;
+  catPerch = 1 - catPerch; cancelAuto();
+  if (reduced()) { schedule(); return; }
+  catTravel = { from: { x: cat.x, y: cat.y }, to: catSeat(catPerch), start: performance.now() };
+  if (catBubble) catBubble.visible = false;
+  if (catShadow) catShadow.visible = false;
+  app.start();
 }
 function companion(x: number, width: number, dock?: ReturnType<typeof dockControls>) {
   const wide = wideStage(), fullGuide = wide && !shortWide(), message = manualHint && usesDock() ? fullGuide ? helpMessage() : shortGuide() : feedback || (guideText ? fullGuide ? guideText : shortGuide() : '');
   const side = wide && (usesDock() || app.screen.width - width >= 260);
-  const size = side ? usesDock() ? shortWide() ? 100 : 196 : Math.max(84, Math.min(196, app.screen.width - x - width - 44)) : dock ? 66 : 78;
+  const size = side ? usesDock() ? shortWide() ? 100 : Math.min(184, app.screen.width - x - width - 48) : Math.max(84, Math.min(196, app.screen.width - x - width - 44)) : dock ? 66 : 78;
   cat.width = size; cat.height = size / cat.texture.width * cat.texture.height;
-  if (wide && usesDock()) cat.position.set(x + width + 80, paintedScroll + Math.min(410, stageHeight() - dock!.base - size - 22));
+  if (wide && usesDock()) cat.position.set(x + width + 32, paintedScroll + Math.min(stageTop() + 400, stageHeight() - dock!.base - size - 22));
   else cat.position.set(app.screen.width - size - 14, side ? paintedScroll + 410 : app.screen.height - cat.height - 20);
-  if (wide && usesDock() && composition === 'surround') cat.y = paintedScroll + Math.min(stageHeight() - dock!.base - cat.height - 22, room.y - scrollY + room.height * locationScene.tableBackEdge - cat.height + 35);
   if (!wide && dock) cat.position.set(13, paintedScroll + dockTop + 28);
   cat.visible = side || !!dock && !!message;
+  catHit = null; catBubble = null; catShadow = null;
+  if (standMode()) {
+    const close = !wideStage();
+    cat.width = close ? 66 : Math.max(44, Math.min(110, standScale() * 260, 2 * (app.screen.width - x - width - 24 - 135 * standScale() - 8))); cat.height = cat.width / cat.texture.width * cat.texture.height;
+    const seat = catSeat(catPerch); if (!catTravel) cat.position.set(seat.x, seat.y); cat.visible = close ? !!dock : seat.x + cat.width <= app.screen.width;
+    if (close && dock) surface(overlay, box(x - 18, paintedScroll + dockTop + 89, width + 36, 24), pictures.get('stand-rail')!);
+  }
   if (cat.visible) {
-    const shadow = new Graphics().ellipse(cat.x + size / 2, cat.y + cat.height - 5, size * .47, size * .065).fill({ color: '#382313', alpha: .24 }); overlay.addChild(shadow);
+    catShadow = new Graphics().ellipse(cat.x + cat.width / 2, cat.y + cat.height - 3, cat.width * .42, cat.width * .045).fill({ color: '#382313', alpha: .24 }); overlay.addChild(catShadow);
   }
   if (message) {
-    const bx = wide ? x + width + 30 : 87, bubbleWidth = wide ? Math.min(308, app.screen.width - bx - 12) : app.screen.width - 100;
+    const bx = wide ? x + width + 20 : standMode() ? catPerch ? x - 14 : x + 62 : 87, bubbleWidth = wide ? Math.min(284, app.screen.width - bx - 16) : standMode() ? width - 62 : app.screen.width - 100;
     const text = copy(overlay, message, 16, 44, wide ? 18 : 16, { width: bubbleWidth - 32, sans: true });
     const height = Math.max(84, text.height + 57), by = wide ? Math.max(paintedScroll + headerHeight() + 4, cat.y - height - 28) : paintedScroll + dockTop + 8;
     speechBounds = box(bx, by, bubbleWidth, height);
-    const bubble = new Container(); bubble.position.set(bx, by); overlay.addChild(bubble);
+    const bubble = new Container(); bubble.position.set(bx, by); overlay.addChild(bubble); catBubble = bubble;
     bubble.addChild(new Graphics().roundRect(2, 4, bubbleWidth, height, 13).fill({ color: '#281b10', alpha: .2 }));
-    bubble.addChild(new Graphics().roundRect(0, 0, bubbleWidth, height, 13).fill('#fff7e7').stroke({ color: '#6c5035', width: 1.5 }).poly(wide ? [45, height - 1, 69, height - 1, 73, height + 23] : [2, 39, 2, 57, -14, 61]).fill('#fff7e7').stroke({ color: '#6c5035', width: 1 }));
+    bubble.addChild(new Graphics().roundRect(0, 0, bubbleWidth, height, 13).fill('#fff7e7').stroke({ color: '#6c5035', width: 1.5 }).poly(wide ? [45, height - 1, 69, height - 1, 73, height + 23] : standMode() && catPerch ? [bubbleWidth - 2, 39, bubbleWidth - 2, 57, bubbleWidth + 14, 61] : [2, 39, 2, 57, -14, 61]).fill('#fff7e7').stroke({ color: '#6c5035', width: 1 }));
     copy(bubble, 'Кот', 16, 6, 19, { hand: true }); bubble.addChild(text);
     if (!feedback || manualHint) { const close = action(bubble, 'dismiss-hint', '×', box(bubbleWidth - 45, 0, 44, 44), () => { learnAction(); schedule(); }, { bare: true, size: 22 }); close.accessibleHint = 'Скрыть подсказку'; }
   }
+  if (catTravel) { if (catBubble) catBubble.visible = false; if (catShadow) catShadow.visible = false; }
+  if (standMode() && cat.visible) { catHit = action(overlay, 'cat-call', '', box(cat.x, cat.y, cat.width, cat.height), moveCat, { bare: true }); catHit.accessibleHint = 'Позвать кота на другую полку'; }
   overlay.addChild(cat);
 }
 function helpMessage() {
@@ -356,7 +414,7 @@ function drawHelp(y: number, x: number, width: number) {
 }
 function feedbackAt(y: number, x: number, width: number, next = true) {
   if (!feedback) return;
-  if (next) action(ui, 'next', 'Дальше', box(x, y + 56, width, 52), flow.active ? lessonAdvance(correct ? 'remember' : 'again', true) : nextWord, { hand: true });
+  if (next) action(ui, 'next', 'Дальше', box(x, y + 56, width, 52), flow.active ? lessonAdvance(correct && !hadMistake ? 'remember' : 'again', true) : nextWord, { hand: true });
 }
 function choiceGrid<T>(items: T[], y: number, x: number, width: number, make: (item: T, r: Rect, index: number) => void, height = 59, columns = 2) {
   const gap = 12, cell = (width - (columns - 1) * gap) / columns;
@@ -365,21 +423,21 @@ function choiceGrid<T>(items: T[], y: number, x: number, width: number, make: (i
 }
 
 function quiz(x: number, width: number) {
-  const short = shortWide(), word = current(), r = box(x, 158, width, short ? 150 : 261), root = deck(r), listening = task === 'word-listen', reverse = task === 'word-ru';
+  const short = shortWide(), compact = standMode() && !short, word = current(), r = box(x, 158, width, short ? 150 : compact ? 196 : 261), root = deck(r), listening = task === 'word-listen', reverse = task === 'word-ru';
   copy(root, listening ? 'Что прозвучало?' : reverse ? 'Выберите японское слово' : 'Как переводится слово?', width / 2, short ? 16 : 24, width < 300 || short ? 20 : 22, { center: true, width: width - 42 });
-  if (listening) action(root, 'listen', playing ? 'Слушаем…' : '▶ Прослушать', box(32, short ? 68 : 104, width - 64, short ? 62 : 78), () => { void speak(word.audioUrl); }, { hand: true, size: 26 });
-  else if (reverse) copy(root, word.meaningRu, width / 2, short ? 82 : 111, short ? 30 : 38, { center: true, width: width - 50 });
-  else centeredJapanese(root, word, short ? 72 : 88, width, short ? 44 : 94);
+  if (listening) action(root, 'listen', playing ? 'Слушаем…' : '▶ Прослушать', box(32, short ? 68 : compact ? 80 : 104, width - 64, short ? 62 : 78), () => { void speak(word.audioUrl); }, { hand: true, size: 26 });
+  else if (reverse) copy(root, word.meaningRu, width / 2, short ? 82 : compact ? 88 : 111, short ? 30 : 38, { center: true, width: width - 50 });
+  else centeredJapanese(root, word, short ? 72 : compact ? 66 : 88, width, short ? 44 : compact ? 76 : 94);
   const options: Word[] = flow.active ? flow.choices : words;
   const single = options.some(word => reverse ? word.surface.length > 6 : word.meaningRu.length > 23);
   const height = single ? reverse ? Math.max(78, ...options.map(word => Math.ceil(word.surface.length * 22 / (width - 70)) * 44 + 14)) : Math.max(78, ...options.map(word => Math.ceil(textWidth(word.meaningRu, 21, book) / (width - 70)) * 31 + 20)) : reverse ? 78 : 59;
-  const bottom = choiceGrid<Word>(options, short ? 328 : 445, x, width, (candidate, area, index) => {
+  const bottom = choiceGrid<Word>(options, short ? 328 : compact ? 378 : 445, x, width, (candidate, area, index) => {
     action(ui, `word-option-${index}`, reverse ? candidate.surface : candidate.meaningRu, area, () => {
-      if (selection !== null) return;
-      audio.pause(); selection = candidate.id; correct = candidate.id === word.id; learnAction();
-      say(correct ? 'Да, всё верно!' : 'Правильный вариант я отметил. Этот вопрос попробуем ещё раз.');
-      if (correct) queueAuto(flow.active ? lessonAdvance('remember', true) : nextWord);
-    }, { enabled: selection === null && (!listening || played), selected: selection !== null && candidate.id === word.id, value: reverse ? candidate : undefined });
+      if (correct === true) return;
+      audio.pause(); selection = candidate.id; correct = candidate.id === word.id; hadMistake ||= !correct; learnAction();
+      say(correct ? hadMistake ? 'Да, теперь верно! Позже повторим это слово.' : 'Да, всё верно!' : 'Не совсем. Попробуй выбрать ещё раз — я подожду.');
+      if (correct) queueAuto(flow.active ? lessonAdvance(hadMistake ? 'again' : 'remember', true) : nextWord);
+    }, { enabled: correct !== true && (!listening || played), selected: selection !== null && candidate.id === word.id, value: reverse ? candidate : undefined });
   }, height, single ? 1 : 2);
   if (selection !== null) feedbackAt(bottom + 7, x, width); else drawHelp(bottom + 24, x, width);
 }
@@ -490,17 +548,17 @@ function count(x: number, width: number) {
   const pictureOptions = kind === 'counter-image' || kind === 'listening-image';
   const bottom = choiceGrid(card.options, 461, x, width, (option, area, index) => {
     const choice = action(ui, `count-option-${index}`, pictureOptions ? '' : option.label, area, () => {
-      if (selection !== null) return; selection = option.key; correct = card.acceptedKeys.includes(option.key); audio.pause(); learnAction();
-      say(correct ? 'Верно!' : `Запомним: ${card.answer.surface} — ${card.answer.kana}.`);
+      if (correct === true) return; selection = option.key; correct = card.acceptedKeys.includes(option.key); hadMistake ||= !correct; audio.pause(); learnAction();
+      say(correct ? 'Верно!' : 'Не совсем. Попробуй выбрать ещё раз.');
       if (correct) queueAuto(() => navigate(task));
-    }, { enabled: selection === null && (kind !== 'listening-image' || played), selected: selection !== null && card.acceptedKeys.includes(option.key), size: kind === 'reading-choice' ? 22 : 21 });
+    }, { enabled: correct !== true && (kind !== 'listening-image' || played), selected: selection !== null && card.acceptedKeys.includes(option.key), size: kind === 'reading-choice' ? 22 : 21 });
     if (pictureOptions && option.object) {
       choice.accessibleHint = `${option.label}, количество ${option.quantity ?? 1}`;
       const inset = Math.min(44, area.width * .24);
       const text = copy(choice, kind === 'listening-image' ? String(option.quantity ?? 1) : option.label, (inset + area.width - 12) / 2, 0, 17, { center: true, width: area.width - inset - 12 });
       text.y = area.height - text.height - 8;
       objects(choice, option.object.tile, option.quantity ?? 1, box(12, 7, area.width - 24, text.y - 12));
-      captions.push({ id: `count-option-${index}-picture-label`, rect: area, view: text });
+      captions.push({ id: `count-option-${index}-picture-label`, rect: controls.find(c => c.id === `count-option-${index}`)!.rect, view: text });
     }
   }, pictureOptions ? 126 : 55);
   if (selection !== null) {
@@ -627,7 +685,7 @@ function textbook(x: number, width: number) {
     image(item, pictures.get(`topic-${topic}`)!, box(17, 13, cellW - 34, 68));
     copy(item, `Урок ${lesson.number}`, cellW / 2, 87, 18, { hand: true, center: true });
     const title = copy(item, lesson.title, cellW / 2, 119, 18, { center: true, width: cellW - 28 }); item.accessibleHint = `Урок ${lesson.number}. ${lesson.title}`;
-    captions.push({ id: `lesson-${lesson.number}-title`, rect: r, view: title });
+    captions.push({ id: `lesson-${lesson.number}-title`, rect: controls.find(c => c.id === `lesson-${lesson.number}`)!.rect, view: title });
     const progress = flow.progress(lesson.id);
     copy(item, progress.finished ? 'Пройден' : progress.started ? `${progress.percent}%` : 'Новый урок', cellW / 2, 202, 14, { center: true, hand: true, color: sage });
   });
@@ -649,7 +707,7 @@ function frameHeight() {
   if (['count-picture', 'count-listen', 'count-category'].includes(task)) return 1040;
   return 860;
 }
-function resize() { if (!ready) return; host.style.height = `${Math.max(innerHeight, frameHeight())}px`; app.resize(); render(); }
+function resize() { if (!ready) return; catTravel = null; host.style.height = `${Math.max(innerHeight, frameHeight())}px`; app.resize(); render(); }
 function cover(sprite: Sprite, texture: Texture, area: Rect, zoom = 1) {
   sprite.texture = texture;
   const scale = Math.max(area.width / texture.width, area.height / texture.height) * zoom;
@@ -658,11 +716,18 @@ function cover(sprite: Sprite, texture: Texture, area: Rect, zoom = 1) {
 function placeWorld() {
   const w = app.screen.width, area = box(0, scrollY, w, innerHeight), width = studyWidth(), x = studyX(width), scenic = textures.get(locationScene.desktop.src)!;
   const entering = flow.active && task === 'word-intro' && flow.session?.revision === 0;
-  cameraProgress = composition === 'zoom' && entering && !reduced() ? Math.min(1, (performance.now() - cameraStarted) / 850) : 1;
+  cameraProgress = mobileApproach ? Math.min(1, Number(host.getAnimations()[0]?.currentTime ?? performance.now() - approachStarted) / 800) : composition === 'zoom' && entering && !reduced() ? Math.min(1, (performance.now() - cameraStarted) / 850) : 1;
   const t = cameraProgress * cameraProgress * (3 - 2 * cameraProgress);
   cover(room, scenic, area, composition === 'zoom' && entering ? 1 + t * .08 : 1);
+  if (standMode()) cover(room, locationScene.id === 'room' ? textures.get(standRoomUrl)! : scenic, area, app.screen.width < 1000 ? 1.15 : 1);
+  if (composition === 'surround' && wideStage() && usesDock()) {
+    const texture = locationScene.id === 'room' ? textures.get(roomStudyUrl)! : scenic;
+    const edge = Math.min(innerHeight * .55, stageTop() + 182), ratio = locationScene.id === 'room' ? .37 : locationScene.tableBackEdge;
+    const scale = Math.max(w / texture.width, (innerHeight - edge) / (texture.height * (1 - ratio)), edge / (texture.height * ratio));
+    room.texture = texture; room.scale.set(scale); room.position.set((w - room.width) / 2, scrollY + edge - room.height * ratio);
+  }
   cover(background, textures.get(w >= 900 ? desktopDeskUrl : deskUrl)!, area);
-  room.visible = wideStage() && (composition !== 'window' || !usesDock()); room.alpha = 1;
+  room.visible = standMode() || wideStage() && (composition !== 'window' || !usesDock()); room.alpha = 1;
   background.alpha = 1; background.mask = null; tableMask.clear();
   if (wideStage() && composition === 'window' && !usesDock()) background.alpha = 0;
   if (wideStage() && composition === 'zoom') {
@@ -670,6 +735,13 @@ function placeWorld() {
   }
   if (wideStage() && composition === 'surround') {
     background.alpha = 0;
+  }
+  stand.visible = standMode(); standFootShadow.visible = standMode();
+  if (standMode()) {
+    background.alpha = 0;
+    const scale = standScale(); stand.scale.set(1); stand.width = (width + 32) / scale + 480; stand.height = (stageHeight() - stageTop() + 24) / scale + 630; stand.scale.set(scale);
+    stand.position.set(x - 16 - 240 * scale, scrollY + stageTop() - 12 - 180 * scale);
+    standFootShadow.clear().ellipse(x + width / 2, Math.min(scrollY + innerHeight - 8, stand.y + stand.height * scale - 42 * scale), stand.width * scale * .4, 12).fill({ color: '#25190f', alpha: .24 });
   }
   const showWindow = wideStage() && composition === 'window' && usesDock();
   roomWindow.visible = showWindow; windowFrame.visible = showWindow; windowMask.clear(); windowFrame.clear();
@@ -681,10 +753,10 @@ function placeWorld() {
 }
 function snapshot() {
   const shift = scrollY - paintedScroll;
-  const controlText = captions.map(({ id, rect, view }) => { const b = view.getBounds(); return { id, rect: controls.find(control => control.id === id)?.docked ? { ...rect, y: rect.y + shift } : rect, value: view.text, fontSize: view.style.fontSize, bounds: box(b.minX, b.minY, b.width, b.height) }; });
+  const controlText = captions.map(({ id, rect, view }) => { const b = view.getBounds(); return { id, rect: controls.find(control => control.id === id)?.docked ? { ...rect, y: rect.y + shift } : rect, value: view.text, fontSize: view.style.fontSize, fontFamily: view.style.fontFamily, fontStyle: view.style.fontStyle, bounds: box(b.minX, b.minY, b.width, b.height) }; });
   const rotatedUi: string[] = [];
   const inspect = (node: Container) => { if (Math.abs(node.rotation) > 1e-7 || Math.abs(node.skew.x) > 1e-7 || Math.abs(node.skew.y) > 1e-7) rotatedUi.push(node.label || 'unnamed'); node.children.forEach(inspect); }; inspect(ui); inspect(overlay);
-  return { ready, task, taskName: taskTitles[task], lesson: flow.snapshot(), composition, cameraProgress, location: locationScene.id, dock: usesDock() ? { top: dockTop, ids: dockIds, stageHeight: stageHeight() } : null, autoAdvance: autoDeadline > 0, feedbackSpeaker: 'cat', speechBounds: speechBounds ? { ...speechBounds, y: speechBounds.y + shift } : null, colors: { ink, bubble: '#fff7e7' }, catVisible: cat.visible, catBounds: box(cat.x, cat.y + shift, cat.width, cat.height), studyBounds: box(studyX(), Math.max(shortWide() && usesDock() ? 82 : 158, scrollY + headerHeight()), studyWidth(), Math.max(0, Math.min(contentBottom, scrollY + (usesDock() ? dockTop : innerHeight)) - Math.max(shortWide() && usesDock() ? 82 : 158, scrollY + headerHeight()))), view: 'orthographic-top-down', desktopBackground: app.screen.width >= 900, rotatedUi, wordIndex, selection, correct, revealed, tokens: [...tokenOrder], manual, menuOpen, composing: editor.composing, feedback, played, playing, hintVisible: !seenHints.has(hintKey()) || manualHint, hintKey: hintKey(), controls: controls.map(control => ({ ...control, rect: control.docked ? { ...control.rect, y: control.rect.y + shift } : control.rect, opacity: actionSpecs.get(control.id)?.node.alpha ?? 1 })), controlText, contentBottom, catTop: cat.y + shift, ruby, pendingRender: frame !== 0, motion: { ...motion, reduced: reduced(), enteredAt }, cspViolations: [...csp], fontLoaded: document.fonts.check('24px "Marck Script"'), source: data.source, video: { paused: video.paused, time: video.currentTime }, editorValue: editor.element.value };
+  return { ready, task, taskName: taskTitles[task], lesson: flow.snapshot(), composition, cameraProgress, stand: standMode() ? { board: box(studyX() - 16, scrollY + stageTop() - 12, studyWidth() + 32, stageHeight() - stageTop() + 24), frame: box(stand.x, stand.y, stand.width * stand.scale.x, stand.height * stand.scale.y), camera: app.screen.width < 1000 ? 'close' : 'room', catPerch, moving: !!catTravel } : null, location: locationScene.id, dock: usesDock() ? { top: dockTop, ids: dockIds, stageHeight: stageHeight() } : null, autoAdvance: autoDeadline > 0, feedbackSpeaker: 'cat', speechBounds: speechBounds ? { ...speechBounds, y: speechBounds.y + shift } : null, colors: { ink, bubble: '#fff7e7' }, catVisible: cat.visible, catBounds: box(cat.x, cat.y + shift, cat.width, cat.height), studyBounds: box(studyX(), Math.max(158 + contentOffset(), scrollY + headerHeight()), studyWidth(), Math.max(0, Math.min(contentBottom, scrollY + (usesDock() ? dockTop : standMode() ? stageHeight() : innerHeight)) - Math.max(158 + contentOffset(), scrollY + headerHeight()))), view: standMode() ? 'flat-front' : 'orthographic-top-down', desktopBackground: app.screen.width >= 900, rotatedUi, wordIndex, selection, correct, hadMistake, revealed, constructionDrop: dropZone, layout: { stageTop: stageTop(), centered: !shortWide(), font: book, plainPaper: true, deskBackEdge: composition === 'surround' && wideStage() && usesDock() ? room.y - scrollY + room.height * (locationScene.id === 'room' ? .37 : locationScene.tableBackEdge) : null }, tokens: [...tokenOrder], manual, menuOpen, composing: editor.composing, feedback, played, playing, hintVisible: !seenHints.has(hintKey()) || manualHint, hintKey: hintKey(), controls: controls.map(control => ({ ...control, rect: control.id === 'cat-call' ? box(cat.x, cat.y + shift, cat.width, cat.height) : control.docked ? { ...control.rect, y: control.rect.y + shift } : control.rect, opacity: actionSpecs.get(control.id)?.node.alpha ?? 1 })), controlText, contentBottom, catTop: cat.y + shift, ruby, pendingRender: frame !== 0, motion: { ...motion, reduced: reduced(), enteredAt }, cspViolations: [...csp], fontLoaded: document.fonts.check('24px "Lora"'), source: data.source, video: { paused: video.paused, time: video.currentTime }, editorValue: editor.element.value };
 }
 let contentBottom = 0;
 function clipNative() {
@@ -710,9 +782,9 @@ function render() {
   if (task !== 'construction' || !manual || menuOpen) editor.place(null);
   if (task !== 'video') video.hidden = true;
   placeWorld();
-  const fixedHeader = new Container(); fixedHeader.y = paintedScroll; overlay.addChild(fixedHeader); header(fixedHeader);
+  const fixedHeader = new Container(); fixedHeader.y = paintedScroll + stageTop(); overlay.addChild(fixedHeader); header(fixedHeader);
   const w = app.screen.width, width = studyWidth(), x = studyX(width);
-  const contentLayer = new Container(), bodyOffset = shortWide() && usesDock() ? -76 : 0;
+  const contentLayer = new Container(), bodyOffset = contentOffset();
   contentLayer.y = bodyOffset; viewRoot.addChild(contentLayer); ui = contentLayer;
   try {
   if (task === 'lesson-overview') lessonOverview(x, width);
@@ -731,12 +803,12 @@ function render() {
   if (manualHint && usesDock()) guideText = helpMessage();
   const dock = usesDock() ? dockControls(x, width) : undefined;
   contentBottom = ui.getLocalBounds().maxY;
-  const height = Math.ceil(dock ? innerHeight + Math.max(0, contentBottom - dockTop + 40) : Math.max(innerHeight, frameHeight(), contentBottom + (w < 700 ? 130 : 270)));
+  const height = Math.ceil(dock || standMode() ? innerHeight + Math.max(0, contentBottom - (dock ? dockTop : stageHeight()) + 40) : Math.max(innerHeight, frameHeight(), contentBottom + (w < 700 ? 130 : 270)));
   if (app.screen.height !== height) { host.style.height = `${height}px`; app.resize(); placeWorld(); }
   bodyMask.clear(); ui.mask = bodyMask;
-  bodyMask.rect(0, paintedScroll + headerHeight(), w, Math.max(1, (dock ? dockTop : innerHeight) - headerHeight() - 4)).fill('#ffffff');
+  bodyMask.rect(0, paintedScroll + headerHeight(), w, Math.max(1, (dock ? dockTop : standMode() ? stageHeight() : innerHeight) - headerHeight() - 4)).fill('#ffffff');
   companion(x, width, dock);
-  if (cameraProgress < 1) action(overlay, 'skip-camera', 'Пропустить', box(w - 226, paintedScroll + 24, 200, 48), () => { cameraStarted = 0; cameraProgress = 1; schedule(); }, { hand: true, size: 22 });
+  if (cameraProgress < 1) action(overlay, 'skip-camera', 'Пропустить', mobileApproach ? box(w - 144, paintedScroll + stageTop() + 5, 132, 46) : box(w - 226, paintedScroll + 24, 200, 48), () => { cameraStarted = 0; finishApproach(); }, { hand: true, size: 20 });
   drawMenu();
   const description = menuOpen ? 'Разделы приложения' : `${taskTitles[task]}. ${flow.active ? `Урок ${flow.lesson!.number}. ${flow.goal?.titleRu ?? flow.lesson!.title}. ` : ''}${task === 'word-ja' || task === 'recall-ja' || task === 'word-intro' ? `${current().surface}, ${current().kana}` : task === 'word-ru' || task === 'recall-ru' ? current().meaningRu : task === 'construction' ? currentConstruction().promptRu : ''}. ${isListening() && !played ? 'Сначала прослушайте запись.' : ''}`;
   if (semantic.textContent !== description) semantic.textContent = description;
@@ -752,40 +824,52 @@ function render() {
   rendering = false;
 }
 async function start() {
-  Assets.setPreferences({ preferWorkers: false }); await document.fonts.load('24px "Marck Script"', 'Учебник 1 из 4');
+  Assets.setPreferences({ preferWorkers: false }); await document.fonts.load('24px "Lora"', 'Учебник 1 из 4');
   await app.init({ resizeTo: host, preference: 'webgl', autoDensity: true, resolution: Math.min(devicePixelRatio, 2), antialias: true, background: '#b8773d', autoStart: false, accessibilityOptions: { enabledByDefault: true, deactivateOnMouseMove: false } });
   host.prepend(app.canvas); app.canvas.setAttribute('aria-label', 'Учебный стол まるごと'); app.canvas.style.touchAction = 'pan-y'; app.stage.addChild(world, ui, bodyMask, overlay); world.addChild(room, background, tableMask, roomWindow, windowMask, windowFrame);
-  const urls = [deskUrl, desktopDeskUrl, cardUrl, answerUrl, catUrl, logoUrl, locationScene.desktop.src, '/counters/objects-atlas.webp', '/ui/topics-atlas-v1.webp'];
+  const urls = [deskUrl, desktopDeskUrl, cardUrl, catUrl, logoUrl, roomStudyUrl, standUrl, standRoomUrl, locationScene.desktop.src, '/counters/objects-atlas.webp', '/ui/topics-atlas-v1.webp'];
   const loaded = await Assets.load<Texture>(urls); for (const url of urls) textures.set(url, loaded[url]!);
   const atlas = textures.get('/counters/objects-atlas.webp')!, rows = [0, 282, 522, 754, 980, 1254];
   for (let tile = 0; tile < 25; tile++) { const row = Math.floor(tile / 5), x = tile % 5 * 250, y = rows[row]!; pictures.set(`counter-${tile}`, new Texture({ source: atlas.source, frame: new Rectangle(x, y, Math.min(tile === 21 ? 275 : 254, atlas.width - x), rows[row + 1]! - y) })); }
   const topics = textures.get('/ui/topics-atlas-v1.webp')!;
   for (let tile = 0; tile < 9; tile++) pictures.set(`topic-${tile}`, new Texture({ source: topics.source, frame: new Rectangle(tile % 3 * topics.width / 3, Math.floor(tile / 3) * topics.height / 3, topics.width / 3, topics.height / 3) }));
   background.texture = textures.get(deskUrl)!; cat.texture = textures.get(catUrl)!;
-  ready = true; resize(); enterCard();
+  stand = new NineSliceSprite({ texture: textures.get(standUrl)!, leftWidth: 240, rightWidth: 240, topHeight: 180, bottomHeight: 450 }); world.addChild(standFootShadow, stand);
+  pictures.set('stand-rail', new Texture({ source: textures.get(standUrl)!.source, frame: new Rectangle(58, 850, 1080, 80) }));
+  ready = true; enterCard(); resize();
+  if (standMode() && app.screen.width < 1000 && !reduced() && task !== 'video') {
+    mobileApproach = true; approachStarted = performance.now(); host.style.transformOrigin = `${innerWidth / 2}px ${scrollY + innerHeight / 2}px`; host.classList.add('stand-enter'); schedule(); app.start();
+  }
   app.ticker.maxFPS = 60;
   app.ticker.add(() => {
     motionElapsed += Math.min(app.ticker.deltaMS, 50);
-    const t = Math.min(1, motionElapsed / 560);
-    const still = reduced() || t >= 1;
-    const lift = still ? 0 : -8 * Math.sin(Math.PI * t) * (1 - t * .35), sway = still ? 0 : Math.sin(t * Math.PI * 10) * 1.6 * (1 - t);
-    motion = { x: sway, y: lift, rotation: 0 };
-    if (topCard) topCard.position.set(cardOrigin.x + sway, cardOrigin.y + lift);
+    const t = Math.min(1, motionElapsed / 320);
+    const lift = reduced() ? -8 : -8 * (1 - (1 - t) ** 3);
+    motion = { x: 0, y: lift, rotation: 0 };
+    if (topCard) topCard.position.set(cardOrigin.x, cardOrigin.y + lift);
     placeWorld();
-    if ((t >= 1 || reduced() || !topCard) && cameraProgress >= 1) app.stop();
+    if (catTravel) {
+      const t = Math.min(1, (performance.now() - catTravel.start) / 520), eased = t * t * (3 - 2 * t);
+      cat.position.set(catTravel.from.x + (catTravel.to.x - catTravel.from.x) * eased + Math.sin(Math.PI * t) * (wideStage() ? 20 : 0), catTravel.from.y + (catTravel.to.y - catTravel.from.y) * eased - Math.sin(Math.PI * t) * 22);
+      if (catHit) catHit.position.copyFrom(cat.position);
+      if (t >= 1) { catTravel = null; schedule(); }
+    }
+    if ((t >= 1 || reduced() || !topCard) && cameraProgress >= 1 && !catTravel) app.stop();
   });
   const gl = app.canvas.getContext('webgl2') ?? app.canvas.getContext('webgl'), recovery = gl?.getExtension('WEBGL_lose_context');
-  app.canvas.addEventListener('webglcontextlost', event => { event.preventDefault(); app.stop(); audio.pause(); video.pause(); document.querySelector('#recovery')!.removeAttribute('hidden'); });
+  app.canvas.addEventListener('webglcontextlost', event => { event.preventDefault(); catTravel = null; app.stop(); audio.pause(); video.pause(); document.querySelector('#recovery')!.removeAttribute('hidden'); });
   app.canvas.addEventListener('webglcontextrestored', () => { document.querySelector('#recovery')!.setAttribute('hidden', ''); schedule(); });
   document.querySelector('#retry')!.addEventListener('click', () => recovery?.restoreContext());
   Object.assign(window, { __PAPER__: { snapshot, tasks, navigate, setComposition, editor: editor.element, app, audio, video, replay: enterCard } });
 }
 window.addEventListener('resize', resize); window.addEventListener('scroll', updateViewport, { passive: true });
+host.addEventListener('animationend', event => { if (event.animationName === 'stand-approach') finishApproach(); });
+matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', event => { if (event.matches && mobileApproach) finishApproach(); });
 window.addEventListener('pointerdown', () => { updateViewport(); pointerHeld = true; if (autoTimer) cancelAuto(); }, true);
 const releasePointer = () => { pointerHeld = false; if (deferredPaint) { deferredPaint = false; schedule(); } };
 window.addEventListener('pointerup', releasePointer, true); window.addEventListener('pointercancel', releasePointer, true);
 window.addEventListener('blur', () => { cancelAuto(); releasePointer(); });
-document.addEventListener('visibilitychange', () => { if (document.hidden) { cancelAuto(); audio.pause(); video.pause(); app.stop(); } else schedule(); });
+document.addEventListener('visibilitychange', () => { if (document.hidden) { cancelAuto(); catTravel = null; audio.pause(); video.pause(); app.stop(); } else schedule(); });
 document.addEventListener('focusin', event => {
   if (!usesDock() || !(event.target instanceof HTMLElement)) return;
   const label = event.target.getAttribute('aria-label');

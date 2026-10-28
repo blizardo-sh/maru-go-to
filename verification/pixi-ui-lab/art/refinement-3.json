@@ -1,0 +1,53 @@
+{
+  "date": "2026-10-28",
+  "generator": "built-in image_gen",
+  "background": {
+    "prompt": "Edit this approved cozy Japanese-learning room into a NEW production background plate. Preserve the same illustrated Japanese wooden room, shoji, lush garden, pond, bridge, warm morning light and painterly finish. Change CAMERA and framing: sit closer to the study desk, raise camera and point it down approximately 55 degrees so a generously deep wooden TABLETOP begins at 18 percent of image height and occupies the remaining bottom 82 percent. The garden and room are still recognizable in the upper fifth and at the outer edges. All of the central tabletop from x 25 to 80 percent and y 22 to 95 percent is a continuous calm usable wood surface; no rails or gaps, no scenery showing through it. Workable centered composition for a real interface overlaid later. A small tea cup and saucer, a plain indigo closed notebook and a pencil are grouped along the far LEFT tabletop edge, with one small inkstone near the far right foreground. Props modest, unpatterned and separated, no repeated blossom decorations. The desk feels furnished but center remains clear. Important: this is ONLY a background scene asset, do NOT draw cards, papers, interface panels, UI, text, letters, labels, cats, characters, logos or watermark. Landscape approx 1600x1000. Keep desk rear edge almost horizontal; no tilted card perspectives. Preserve scene identity; camera composition is the change.",
+    "reference": "../../../public/scenes/room-v1.webp",
+    "original": "/Users/ivsh/.codex/generated_images/01a179c3-fa57-7f11-8ceb-463aa2df2500/exec-5faa6790-8d96-44d1-8d97-a50375bdf2f9.png",
+    "source": "revision-3/room-study.png",
+    "runtime": "runtime/room-study.webp",
+    "tableBackEdge": 0.37,
+    "sourceSize": [
+      1586,
+      992
+    ],
+    "sourceSha256": "72b17cb04a6a56441a6be5591c2f0776d5bba6ad1656eed4d06ae057dc879079",
+    "runtimeSize": [
+      1586,
+      992
+    ],
+    "bytes": 294758,
+    "sha256": "b3ff25553a23523b52e5559b46895379291de9f809d4296c450d6ef55971aac7"
+  },
+  "paper": {
+    "prompt": "Edit this cream washi paper UI sprite. Keep its single horizontal rectangular sheet, handmade softly irregular deckled edges, warm ivory colour, delicate low-contrast fibres, subtle edge thickness and transparent exterior. REMOVE all flowers, petals, branches, leaves, coloured confetti, decorative motifs and printed borders. The entire paper must be plain quiet cream with only natural faint fine paper fibres; no other objects or repeating motifs. Flatten the sheet front-on, no perspective or tilt, no folded corners. This is a production nine-slice UI texture, very subtle texture and clean generous centre. Output exactly ONE sheet taking nearly the full image, landscape approximately 1200x700, true alpha outside the sheet. No text, symbols, numbers, shadows outside a narrow 3px contact edge, logos, checkerboard, backdrop or mockup.",
+    "reference": "runtime/card.webp",
+    "original": "/Users/ivsh/.codex/generated_images/01a179c3-fa57-7f11-8ceb-463aa2df2500/exec-557e93de-3734-4f02-a255-d2b855b0ff24.png",
+    "source": "revision-3/plain-paper.png",
+    "runtime": "runtime/plain-paper.webp",
+    "sourceSize": [
+      1642,
+      958
+    ],
+    "sourceSha256": "913db00f92892df6063bf41c65799853e66982f3fdc204764cba3b2585f82490",
+    "alphaCrop": [
+      0,
+      0,
+      1641,
+      958
+    ],
+    "runtimeSize": [
+      1024,
+      598
+    ],
+    "bytes": 156208,
+    "sha256": "a1a0803bf7559509a0d32803e66284ab8768f07bb061a41b0af0b14578d8b7fb"
+  },
+  "font": {
+    "family": "Lora",
+    "style": "normal",
+    "source": "https://github.com/google/fonts/tree/main/ofl/lora",
+    "license": "SIL OFL 1.1"
+  }
+}

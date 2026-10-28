@@ -19,10 +19,10 @@ async function click(page, id) {
   await page.mouse.click(control.rect.x + control.rect.width / 2, control.rect.y + control.rect.height / 2 - scroll); await settle(page);
 }
 function geometry(value, width) {
-  assert.deepEqual(value.rotatedUi, []); assert.equal(value.view, 'orthographic-top-down');
+  assert.deepEqual(value.rotatedUi, []); assert.equal(value.view, value.composition === 'stand' ? 'flat-front' : 'orthographic-top-down');
   assert.equal(value.desktopBackground, width >= 900); assert.deepEqual(value.cspViolations, []);
   const cat = value.catBounds, study = value.studyBounds;
-  assert.ok(cat.x >= study.x + study.width + 20 || cat.x + cat.width <= study.x - 20 || cat.y >= study.y + study.height + 20, 'Cat must leave visible study content clear');
+  if (value.catVisible) assert.ok(cat.x >= study.x + study.width + 20 || cat.x + cat.width <= study.x - 20 || cat.y >= study.y + study.height + 20, 'Cat must leave visible study content clear');
   for (const control of value.controls) {
     assert.ok(control.rect.width >= 44 && control.rect.height >= 44, `Small ${control.id}`);
     assert.ok(control.rect.x >= 0 && control.rect.x + control.rect.width <= width + 1, `Outside ${control.id}`);

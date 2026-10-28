@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-28",
+  "generator": "built-in image_gen",
+  "status": "New reading-stand prototype requested after the table composition was rejected",
+  "inspiration": "Fictional study stand, inspired by Japanese kendai reading stands; not a historical reconstruction",
+  "reference": "https://www.metmuseum.org/art/collection/search/44877",
+  "stand": {
+    "prompt": "Create one production game prop sprite, not a screenshot: a freestanding wooden JAPANESE STUDY / READING STAND, a fictional practical design inspired by a traditional kendai book stand and Japanese joinery. Match the approved room reference's warm illustrated wood and gentle painted light. FRONT VIEW, straight orthographic working surface with NO tilt or perspective skew in its rectangular central panel. Tall simple upright honey-walnut timber posts, restrained mortise-and-tenon joints, a broad physical rectangular backing board of dark muted warm wood, unobtrusive grain. The central empty backing panel occupies x=16..78 percent, y=10..79 percent; it is one uninterrupted plain rectangular mounting surface for real UI later. A substantial lower horizontal ledge beneath that panel and sturdy splayed feet visibly support the whole object. Add a small usable wooden CAT PERCH outside the right post at y=55..60 percent, and a second perch outside the left post at y=75 percent, both visibly attached with stout brackets and front top edges. Make the lower ledge continuous so a small cat could walk along the edges. No cat, no paper sheets, no books, no cards, NO TEXT or symbols anywhere. No flowers, leaves, blossom motifs, religious ornaments, bamboo-pattern decoration, gold pattern, logos, UI or other furniture. Output only the complete isolated prop with a transparent background and a small transparent margin. Approx square 1400x1500. Outside silhouette must be real alpha, central backing must be opaque wood. Preserve front-on legibility. This is an illustrated object that must physically integrate real paper UI, not a floating digital panel.",
+    "original": "/Users/ivsh/.codex/generated_images/01a179c3-fa57-7f11-8ceb-463aa2df2500/exec-ee63da61-2f2b-4aa3-9c8b-303d4433fdf3.png",
+    "source": "stand/stand.png",
+    "runtime": "runtime/stand.webp",
+    "sourceSize": [
+      1212,
+      1298
+    ],
+    "sourceSha256": "467e623d75f79f5d9d33c19267f0dac1e85a8b5b8c38cfdcc2608089c964250e",
+    "runtimeSize": [
+      1195,
+      1280
+    ],
+    "bytes": 219206,
+    "sha256": "d31dbc17a02c31731e3cc2a11bbde69de18d2d6bd09671497cb2e436e40d76ee"
+  },
+  "room": {
+    "prompt": "Edit the approved illustrated Japanese room reference into a production BACKGROUND ONLY for a free-standing reading stand that will be a separate sprite. Preserve the exact cozy wooden room, shoji windows, open lush pond garden and bridge, morning light and warm painterly style. REMOVE the entire huge foreground wooden desk. In its place reveal a continuous gently lit TATAMI FLOOR in the lower 35 percent of the image, with the rear edge around 62 percent height. Show a little more room and open air, natural eye-level room perspective. Keep the central floor and central garden view unoccupied and calm; a separate wooden teaching stand will sit there later. Keep modest tea/books/plant furnishing only at far outer edges, nothing obstructing the middle 60 percent. No study stand, easel, board, screen, desk, cats, characters, UI, text, letters, logos or watermarks. Output a landscape 1600x1000 room plate. Recognizable approved location, not a new different building.",
+    "original": "/Users/ivsh/.codex/generated_images/01a179c3-fa57-7f11-8ceb-463aa2df2500/exec-76bad14f-80d2-43ed-bba2-7e95488f8912.png",
+    "source": "stand/room.png",
+    "runtime": "runtime/room-stand.webp",
+    "sourceSize": [
+      1586,
+      992
+    ],
+    "sourceSha256": "c8b598ebb203365d87df1d2b3dd0f9df002a4324982f3446281fc37762de3c4b",
+    "runtimeSize": [
+      1586,
+      992
+    ],
+    "bytes": 353438,
+    "sha256": "7242f723915df5099b0ec7e47285d40a57f9a8bede55d4af551432c27c0f652a"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-28T15:05:11.691Z",
+  "browsers": {
+    "chrome": {
+      "widths": [
+        390,
+        1280
+      ],
+      "images": 6,
+      "errors": []
+    },
+    "webkit": {
+      "widths": [
+        390,
+        1280
+      ],
+      "images": 6,
+      "errors": []
+    }
+  }
+}

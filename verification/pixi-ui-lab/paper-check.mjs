@@ -25,7 +25,7 @@ async function click(page, id) {
 function geometry(value, width, height) {
   assert.equal(value.fontLoaded, true); assert.deepEqual(value.cspViolations, []);
   const cat = value.catBounds, study = value.studyBounds;
-  assert.ok(cat.x >= study.x + study.width + 20 || cat.x + cat.width <= study.x - 20 || cat.y >= study.y + study.height + 20, 'Cat must leave visible study content clear');
+  if (value.catVisible) assert.ok(cat.x >= study.x + study.width + 20 || cat.x + cat.width <= study.x - 20 || cat.y >= study.y + study.height + 20, 'Cat must leave visible study content clear');
   for (const control of value.controls) {
     assert.ok(control.rect.width >= 44 && control.rect.height >= 44, `Small control ${control.id}`);
     assert.ok(control.rect.x >= 0 && control.rect.x + control.rect.width <= width + 1, `Offscreen ${control.id}`);
@@ -100,8 +100,10 @@ for (const [name, type, options] of [['chrome', chromium, { channel: 'chrome' }]
     assert.equal((await state(page)).editorValue, fixture.construction.example.surface);
     await page.setViewportSize({ width: 1280, height: 900 }); await load(page, 'construction');
     const token = (await state(page)).controls.find(item => item.id === 'token-0');
-    await page.mouse.move(token.rect.x + token.rect.width / 2, token.rect.y + 20); await page.mouse.down();
-    await page.mouse.move(500, 357, { steps: 10 }); await page.mouse.up(); await settled(page);
+    const drop = (await state(page)).constructionDrop;
+    const dragScroll = await page.evaluate(() => scrollY);
+    await page.mouse.move(token.rect.x + token.rect.width / 2, token.rect.y + 20 - dragScroll); await page.mouse.down();
+    await page.mouse.move(drop.x + drop.width / 2, drop.y + drop.height / 2 - dragScroll, { steps: 10 }); await page.mouse.up(); await settled(page);
     assert.deepEqual((await state(page)).tokens, [0], 'Dragging a token must add it to the phrase');
     for (const [task, kind] of [['count-category', 'image-counter'], ['count-picture', 'counter-image'], ['count-reading', 'reading-choice'], ['count-listen', 'listening-image']]) {
       await load(page, task); if (task === 'count-listen') { await click(page, 'listen'); await page.waitForFunction(() => window.__PAPER__.snapshot().played); }
@@ -111,11 +113,11 @@ for (const [name, type, options] of [['chrome', chromium, { channel: 'chrome' }]
     await load(page, 'count-recall'); await click(page, 'reveal-counter'); assert.equal((await state(page)).revealed, true);
     await load(page, 'construction-intro'); await click(page, 'breakdown'); assert.equal((await state(page)).hintVisible, false);
     await load(page, 'word-ja'); await page.evaluate(() => window.__PAPER__.replay()); await page.waitForTimeout(100);
-    assert.deepEqual({ x: (await state(page)).motion.x, y: (await state(page)).motion.y }, { x: 0, y: 0 });
+    assert.deepEqual({ x: (await state(page)).motion.x, y: (await state(page)).motion.y }, { x: 0, y: -8 });
     await page.emulateMedia({ reducedMotion: 'no-preference' }); await page.evaluate(() => window.__PAPER__.replay());
     await page.waitForFunction(() => Math.abs(window.__PAPER__.snapshot().motion.y) > .5);
     const moving = (await state(page)).motion; assert.equal(moving.rotation, 0); assert.ok(Math.abs(moving.x) <= 1.6 && moving.y >= -8);
-    await page.waitForFunction(() => window.__PAPER__.snapshot().motion.y === 0); assert.equal((await state(page)).motion.y, 0);
+    await page.waitForFunction(() => window.__PAPER__.snapshot().motion.y === -8); assert.equal((await state(page)).motion.y, -8);
     await page.emulateMedia({ reducedMotion: 'reduce' });
     await load(page, 'video'); await click(page, 'video-play'); await page.waitForFunction(() => !window.__PAPER__.video.paused && window.__PAPER__.video.videoWidth > 0);
     await click(page, 'video-play'); assert.equal((await state(page)).video.paused, true);
@@ -124,7 +126,7 @@ for (const [name, type, options] of [['chrome', chromium, { channel: 'chrome' }]
     await load(page, 'word-ja'); await page.getByRole('button', { name: fixture.words[0].meaningRu, exact: true }).focus(); await page.keyboard.press('Enter'); await settled(page); assert.equal((await state(page)).correct, true);
     await page.goto('http://127.0.0.1:5190/?view=lab'); await page.waitForFunction(() => window.__LAB__?.snapshot().ready); assert.deepEqual(await page.evaluate(() => window.__LAB__.snapshot().cspViolations), []);
     assert.deepEqual(errors, []); assert.equal(requests.some(url => new URL(url).pathname.startsWith('/api')), false);
-    result.browsers[name] = { version: browser.version(), matrix, errors, source: fixture.source, cspViolations: [], motion: 'lift/sway + reduced motion passed', interactions: 'choice, recall, hints, navigation, tokens/drag, IME guard, five counter modes, audio, native video, keyboard' };
+    result.browsers[name] = { version: browser.version(), matrix, errors, source: fixture.source, cspViolations: [], motion: 'steady raised sheet, no sway, reduced motion passed', interactions: 'choice, recall, hints, navigation, tokens/drag, IME guard, five counter modes, audio, native video, keyboard' };
     console.log(`${name}: paper interactions passed`); await page.close();
   } finally { await browser.close(); }
 }
