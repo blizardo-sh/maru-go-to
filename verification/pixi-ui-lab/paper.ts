@@ -30,7 +30,7 @@ type Task = keyof typeof taskTitles;
 type Word = JapaneseValue & { id: string; meaningRu: string; audioUrl: string | null; illustration?: { src: string; bounds: number[] } | null; introduction?: { explanationRu: string } | null };
 type Counter = { kind: string; definition: { surface: string; kana: string; explanation: string }; word: Word; object: { tile: number }; quantity: number | null; answer: JapaneseValue; audioUrl: string | null; acceptedKeys: string[]; options: { key: string; label: string; quantity?: number; object?: { tile: number } }[]; examples: (JapaneseValue & { audioUrl: string | null })[] };
 type Control = { id: string; label: string; rect: Rect; enabled: boolean; docked?: boolean };
-type ActionOptions = { enabled?: boolean; hand?: boolean; selected?: boolean; value?: JapaneseValue; size?: number; bare?: boolean };
+type ActionOptions = { enabled?: boolean; hand?: boolean; selected?: boolean; wrong?: boolean; value?: JapaneseValue; size?: number; bare?: boolean };
 type ActionSpec = { node: Container; id: string; title: string; rect: Rect; run: () => void; options: ActionOptions };
 const counters: Counter[] = data.counterCards;
 const countKinds: Record<string, string> = { 'count-category': 'image-counter', 'count-picture': 'counter-image', 'count-reading': 'reading-choice', 'count-listen': 'listening-image', 'count-recall': 'recall' };
@@ -163,11 +163,13 @@ function interactive(root: Container, id: string, title: string, r: Rect, action
 function action(root: Container, id: string, title: string, r: Rect, run: () => void, options: ActionOptions = {}) {
   const enabled = options.enabled ?? true, node = interactive(root, id, title, r, run, enabled);
   const inset = 12, contentWidth = r.width - inset - 12, center = r.width / 2;
-  const paper = options.bare ? null : surface(node, box(0, 0, r.width, r.height), textures.get(answerUrl)!, options.selected ? '#e3eccf' : '#ffffff');
+  const paper = options.bare ? null : surface(node, box(0, 0, r.width, r.height), textures.get(answerUrl)!, options.wrong ? '#f5e0d1' : options.selected ? '#e3eccf' : '#ffffff');
   const focus = new Graphics(); node.addChild(focus); node.alpha = 1;
-  if (options.selected) focus.roundRect(6, 5, r.width - 12, r.height - 10, 6).stroke({ color: sage, width: 3 });
-  node.on('mouseover', () => { focus.clear().roundRect(7, 6, r.width - 14, r.height - 12, 6).stroke({ color: sage, width: 2 }); app.render(); });
-  node.on('mouseout', () => { focus.clear(); app.render(); });
+  const drawFocus = (hover = false) => { focus.clear(); if (options.selected || options.wrong || hover) focus.roundRect(6, 5, r.width - 12, r.height - 10, 6).stroke({ color: options.wrong ? '#823e32' : sage, width: options.selected || options.wrong ? 3 : 2 }); };
+  drawFocus();
+  node.on('mouseover', () => { drawFocus(true); app.render(); });
+  node.on('mouseout', () => { drawFocus(); app.render(); });
+  if (options.wrong) node.accessibleHint = `${title || 'Этот вариант'}. Неверно. Можно выбрать другой ответ.`;
   if (options.value) {
     const size = Math.min(27, Math.max(22, contentWidth / Math.max(1, options.value.surface.length)));
     const width = Math.max(textWidth(options.value.surface, size, jp), textWidth(options.value.kana, Math.max(12, Math.round(size * .4)), jp));
@@ -437,7 +439,7 @@ function quiz(x: number, width: number) {
       audio.pause(); selection = candidate.id; correct = candidate.id === word.id; hadMistake ||= !correct; learnAction();
       say(correct ? hadMistake ? 'Да, теперь верно! Позже повторим это слово.' : 'Да, всё верно!' : 'Не совсем. Попробуй выбрать ещё раз — я подожду.');
       if (correct) queueAuto(flow.active ? lessonAdvance(hadMistake ? 'again' : 'remember', true) : nextWord);
-    }, { enabled: correct !== true && (!listening || played), selected: selection !== null && candidate.id === word.id, value: reverse ? candidate : undefined });
+    }, { enabled: correct !== true && (!listening || played), selected: correct === true && candidate.id === selection, wrong: correct === false && candidate.id === selection, value: reverse ? candidate : undefined });
   }, height, single ? 1 : 2);
   if (selection !== null) feedbackAt(bottom + 7, x, width); else drawHelp(bottom + 24, x, width);
 }
@@ -528,7 +530,7 @@ function count(x: number, width: number) {
   const titles: Record<string, string> = { 'image-counter': 'Какое счётное слово подходит?', 'counter-image': 'Что считают этим суффиксом?', 'reading-choice': 'Выберите чтение количества', 'listening-image': 'Послушайте и выберите количество', recall: 'Вспомните количество по-японски' };
   const root = deck(box(x, 158, width, 279));
   copy(root, titles[kind]!, width / 2, 20, 21, { center: true, width: width - 42 });
-  if (selection !== null || revealed) {
+  if (correct === true || revealed) {
     centeredJapanese(root, card.answer, 102, width, 64);
   } else if (kind === 'counter-image') centeredJapanese(root, card.answer, 101, width, 77);
   else if (kind === 'listening-image') action(root, 'listen', playing ? 'Слушаем…' : '▶ Прослушать', box(26, 115, width - 52, 73), () => { void speak(card.audioUrl); }, { hand: true, size: 26 });
@@ -551,9 +553,9 @@ function count(x: number, width: number) {
       if (correct === true) return; selection = option.key; correct = card.acceptedKeys.includes(option.key); hadMistake ||= !correct; audio.pause(); learnAction();
       say(correct ? 'Верно!' : 'Не совсем. Попробуй выбрать ещё раз.');
       if (correct) queueAuto(() => navigate(task));
-    }, { enabled: correct !== true && (kind !== 'listening-image' || played), selected: selection !== null && card.acceptedKeys.includes(option.key), size: kind === 'reading-choice' ? 22 : 21 });
+    }, { enabled: correct !== true && (kind !== 'listening-image' || played), selected: correct === true && option.key === selection, wrong: correct === false && option.key === selection, size: kind === 'reading-choice' ? 22 : 21 });
     if (pictureOptions && option.object) {
-      choice.accessibleHint = `${option.label}, количество ${option.quantity ?? 1}`;
+      choice.accessibleHint = `${option.label}, количество ${option.quantity ?? 1}${correct === false && option.key === selection ? '. Неверно. Можно выбрать другой ответ.' : ''}`;
       const inset = Math.min(44, area.width * .24);
       const text = copy(choice, kind === 'listening-image' ? String(option.quantity ?? 1) : option.label, (inset + area.width - 12) / 2, 0, 17, { center: true, width: area.width - inset - 12 });
       text.y = area.height - text.height - 8;
@@ -756,7 +758,7 @@ function snapshot() {
   const controlText = captions.map(({ id, rect, view }) => { const b = view.getBounds(); return { id, rect: controls.find(control => control.id === id)?.docked ? { ...rect, y: rect.y + shift } : rect, value: view.text, fontSize: view.style.fontSize, fontFamily: view.style.fontFamily, fontStyle: view.style.fontStyle, bounds: box(b.minX, b.minY, b.width, b.height) }; });
   const rotatedUi: string[] = [];
   const inspect = (node: Container) => { if (Math.abs(node.rotation) > 1e-7 || Math.abs(node.skew.x) > 1e-7 || Math.abs(node.skew.y) > 1e-7) rotatedUi.push(node.label || 'unnamed'); node.children.forEach(inspect); }; inspect(ui); inspect(overlay);
-  return { ready, task, taskName: taskTitles[task], lesson: flow.snapshot(), composition, cameraProgress, stand: standMode() ? { board: box(studyX() - 16, scrollY + stageTop() - 12, studyWidth() + 32, stageHeight() - stageTop() + 24), frame: box(stand.x, stand.y, stand.width * stand.scale.x, stand.height * stand.scale.y), camera: app.screen.width < 1000 ? 'close' : 'room', catPerch, moving: !!catTravel } : null, location: locationScene.id, dock: usesDock() ? { top: dockTop, ids: dockIds, stageHeight: stageHeight() } : null, autoAdvance: autoDeadline > 0, feedbackSpeaker: 'cat', speechBounds: speechBounds ? { ...speechBounds, y: speechBounds.y + shift } : null, colors: { ink, bubble: '#fff7e7' }, catVisible: cat.visible, catBounds: box(cat.x, cat.y + shift, cat.width, cat.height), studyBounds: box(studyX(), Math.max(158 + contentOffset(), scrollY + headerHeight()), studyWidth(), Math.max(0, Math.min(contentBottom, scrollY + (usesDock() ? dockTop : standMode() ? stageHeight() : innerHeight)) - Math.max(158 + contentOffset(), scrollY + headerHeight()))), view: standMode() ? 'flat-front' : 'orthographic-top-down', desktopBackground: app.screen.width >= 900, rotatedUi, wordIndex, selection, correct, hadMistake, revealed, constructionDrop: dropZone, layout: { stageTop: stageTop(), centered: !shortWide(), font: book, plainPaper: true, deskBackEdge: composition === 'surround' && wideStage() && usesDock() ? room.y - scrollY + room.height * (locationScene.id === 'room' ? .37 : locationScene.tableBackEdge) : null }, tokens: [...tokenOrder], manual, menuOpen, composing: editor.composing, feedback, played, playing, hintVisible: !seenHints.has(hintKey()) || manualHint, hintKey: hintKey(), controls: controls.map(control => ({ ...control, rect: control.id === 'cat-call' ? box(cat.x, cat.y + shift, cat.width, cat.height) : control.docked ? { ...control.rect, y: control.rect.y + shift } : control.rect, opacity: actionSpecs.get(control.id)?.node.alpha ?? 1 })), controlText, contentBottom, catTop: cat.y + shift, ruby, pendingRender: frame !== 0, motion: { ...motion, reduced: reduced(), enteredAt }, cspViolations: [...csp], fontLoaded: document.fonts.check('24px "Lora"'), source: data.source, video: { paused: video.paused, time: video.currentTime }, editorValue: editor.element.value };
+  return { ready, task, taskName: taskTitles[task], lesson: flow.snapshot(), composition, cameraProgress, stand: standMode() ? { board: box(studyX() - 16, scrollY + stageTop() - 12, studyWidth() + 32, stageHeight() - stageTop() + 24), frame: box(stand.x, stand.y, stand.width * stand.scale.x, stand.height * stand.scale.y), camera: app.screen.width < 1000 ? 'close' : 'room', catPerch, moving: !!catTravel } : null, location: locationScene.id, dock: usesDock() ? { top: dockTop, ids: dockIds, stageHeight: stageHeight() } : null, autoAdvance: autoDeadline > 0, feedbackSpeaker: 'cat', speechBounds: speechBounds ? { ...speechBounds, y: speechBounds.y + shift } : null, colors: { ink, bubble: '#fff7e7' }, catVisible: cat.visible, catBounds: box(cat.x, cat.y + shift, cat.width, cat.height), studyBounds: box(studyX(), Math.max(158 + contentOffset(), scrollY + headerHeight()), studyWidth(), Math.max(0, Math.min(contentBottom, scrollY + (usesDock() ? dockTop : standMode() ? stageHeight() : innerHeight)) - Math.max(158 + contentOffset(), scrollY + headerHeight()))), view: standMode() ? 'flat-front' : 'orthographic-top-down', desktopBackground: app.screen.width >= 900, rotatedUi, wordIndex, selection, correct, hadMistake, revealed, constructionDrop: dropZone, layout: { stageTop: stageTop(), centered: !shortWide(), font: book, plainPaper: true, deskBackEdge: composition === 'surround' && wideStage() && usesDock() ? room.y - scrollY + room.height * (locationScene.id === 'room' ? .37 : locationScene.tableBackEdge) : null }, tokens: [...tokenOrder], manual, menuOpen, composing: editor.composing, feedback, played, playing, hintVisible: !seenHints.has(hintKey()) || manualHint, hintKey: hintKey(), controls: controls.map(control => ({ ...control, rect: control.id === 'cat-call' ? box(cat.x, cat.y + shift, cat.width, cat.height) : control.docked ? { ...control.rect, y: control.rect.y + shift } : control.rect, opacity: actionSpecs.get(control.id)?.node.alpha ?? 1, highlight: actionSpecs.get(control.id)?.options.wrong ? 'wrong' : actionSpecs.get(control.id)?.options.selected ? 'selected' : null })), controlText, contentBottom, catTop: cat.y + shift, ruby, pendingRender: frame !== 0, motion: { ...motion, reduced: reduced(), enteredAt }, cspViolations: [...csp], fontLoaded: document.fonts.check('24px "Lora"'), source: data.source, video: { paused: video.paused, time: video.currentTime }, editorValue: editor.element.value };
 }
 let contentBottom = 0;
 function clipNative() {
