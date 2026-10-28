@@ -53,7 +53,7 @@ for (const [name, type, options] of [['chrome', chromium, { channel: 'chrome' }]
       await page.setViewportSize({ width, height });
       for (const task of tasks) {
         await load(page, task); const value = await state(page);
-        geometry(value, width, await page.locator('canvas').first().evaluate(el => el.clientHeight));
+        geometry(value, width, await page.evaluate(() => document.documentElement.scrollHeight));
         assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true);
         if (width === 390) await page.screenshot({ path: new URL(`${name}-${task}.jpg`, output).pathname, type: 'jpeg', quality: 82 });
         matrix.push(`${width}/${task}`);
@@ -101,6 +101,8 @@ for (const [name, type, options] of [['chrome', chromium, { channel: 'chrome' }]
     await page.setViewportSize({ width: 1280, height: 900 }); await load(page, 'construction');
     const token = (await state(page)).controls.find(item => item.id === 'token-0');
     const drop = (await state(page)).constructionDrop;
+    const layout = await state(page), safeBottom = layout.dock.top - (layout.scroll.max ? 48 : 0);
+    await page.evaluate(y => scrollTo(0, y), Math.max(0, token.rect.y + token.rect.height + 8 - safeBottom)); await settled(page);
     const dragScroll = await page.evaluate(() => scrollY);
     await page.mouse.move(token.rect.x + token.rect.width / 2, token.rect.y + 20 - dragScroll); await page.mouse.down();
     await page.mouse.move(drop.x + drop.width / 2, drop.y + drop.height / 2 - dragScroll, { steps: 10 }); await page.mouse.up(); await settled(page);

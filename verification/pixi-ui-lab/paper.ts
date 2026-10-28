@@ -52,6 +52,7 @@ let mobileApproach = false, approachStarted = 0;
 let autoTimer: ReturnType<typeof setTimeout> | undefined, autoDeadline = 0, guideText = '', dockTop = 0;
 let speechBounds: Rect | null = null;
 let paintedScroll = 0, pointerHeld = false, deferredPaint = false;
+let maxSheetScroll = 0, scrollMore: Container | null = null, scrollBack: Container | null = null;
 const actionSpecs = new Map<string, ActionSpec>();
 const controlRuns = new Map<string, () => void>();
 let dockIds: string[] = [];
@@ -168,7 +169,7 @@ function interactive(root: Container, id: string, title: string, r: Rect, action
   node.on('pointertap', () => { if (enabled && !suppressTap) action(); }); root.addChild(node);
   let parent: Container | null = root, attached = false;
   while (parent) { if (parent === overlay) attached = true; parent = parent.parent; }
-  const global = root.toGlobal({ x: r.x, y: r.y }); controls.push({ id, label: title, rect: { ...r, x: global.x, y: global.y }, enabled, docked: attached });
+  const global = root.toGlobal({ x: r.x, y: r.y }); controls.push({ id, label: title, rect: { ...r, x: global.x, y: global.y + scrollY }, enabled, docked: attached });
   controlRuns.set(id, action);
   return node;
 }
@@ -294,13 +295,15 @@ function setComposition(value: Composition) {
 }
 function usesDock() { return task !== 'textbook' && task !== 'reference'; }
 function standMode() { return composition === 'stand'; }
-function standScale() { return app.screen.width >= 1000 ? .42 : shortWide() ? .3 : .18; }
+function standScale() { return app.screen.width >= 1000 ? Math.min(.42, Math.max(.18, (innerHeight - 700) / 630)) : shortWide() ? .3 : .18; }
 function shortWide() { return app.screen.width >= 700 && innerHeight < 560; }
 function desktopStage() { return app.screen.width >= 1000 && innerHeight >= 620; }
-function stageTop() { return standMode() ? shortWide() ? 0 : Math.max(180 * standScale() + 12, (innerHeight - 720 - 630 * standScale() - 24) / 2 + 180 * standScale() + 12) : desktopStage() && usesDock() ? Math.max(0, (innerHeight - 720) / 2) : 0; }
+function stageTop() { return standMode() ? shortWide() ? 0 : 180 * standScale() + 12 : desktopStage() && usesDock() ? Math.max(0, (innerHeight - 720) / 2) : 0; }
 function headerHeight() { return stageTop() + (shortWide() && usesDock() ? 66 : standMode() ? 108 : 142); }
 function wideStage() { return desktopStage() || shortWide(); }
-function stageHeight() { return standMode() ? shortWide() ? innerHeight : stageTop() + Math.max(260, Math.min(720, innerHeight - stageTop() - 40)) : desktopStage() ? stageTop() + Math.min(innerHeight, 720) : innerHeight; }
+function collapsedHint() { return standMode() && innerHeight < 740 && !wideStage() && !manualHint && !feedback; }
+function shortQuiz() { return standMode() && innerHeight < 740 && !wideStage() && (task.startsWith('word-') && task !== 'word-intro' || task.startsWith('count-') && task !== 'count-recall'); }
+function stageHeight() { return standMode() ? shortWide() ? innerHeight : Math.max(stageTop() + 260, innerHeight - 450 * standScale() - 12) : desktopStage() ? stageTop() + Math.min(innerHeight, 720) : innerHeight; }
 function contentOffset() { return standMode() ? stageTop() + (shortWide() ? -76 : -32) : usesDock() ? shortWide() ? -76 : desktopStage() ? stageTop() + 44 : 0 : 0; }
 function studyWidth() { return Math.min(!standMode() && task === 'textbook' && app.screen.width >= 1000 ? 1000 : shortWide() && usesDock() ? Math.min(470, app.screen.width - 340) : desktopStage() && (usesDock() || standMode()) ? Math.min(640, app.screen.width - 500) : 640, app.screen.width - (standMode() ? 54 : 38)); }
 function studyX(width = studyWidth()) { return shortWide() && usesDock() ? Math.max(24, (app.screen.width - width - 340) / 2) : (app.screen.width - width) / 2; }
@@ -329,7 +332,7 @@ function dockControls(x: number, width: number) {
   let speechHeight = 0;
   if (compactSpeech) {
     const measure = new Text({ text: feedback || shortGuide(), style: { fontFamily: 'system-ui, sans-serif', fontSize: 16, lineHeight: 23.2, wordWrap: true, wordWrapWidth: standMode() ? width - 94 : app.screen.width - 132, breakWords: true } });
-    speechHeight = Math.max(104, measure.height + 73); measure.destroy();
+    speechHeight = shortQuiz() && !manualHint ? 104 : Math.max(104, measure.height + 73); measure.destroy();
   }
   const base = extra && !shortWide() ? 146 : 82;
   dockTop = stageHeight() - base - speechHeight;
@@ -375,7 +378,7 @@ function moveCat() {
   app.start();
 }
 function companion(x: number, width: number, dock?: ReturnType<typeof dockControls>) {
-  const wide = wideStage(), fullGuide = wide && !shortWide(), message = manualHint && usesDock() ? fullGuide ? helpMessage() : shortGuide() : feedback || (guideText ? fullGuide ? guideText : shortGuide() : '');
+  const wide = wideStage(), fullGuide = wide && !shortWide(), message = collapsedHint() ? '' : manualHint && usesDock() ? fullGuide ? helpMessage() : shortGuide() : feedback || (guideText ? fullGuide ? guideText : shortGuide() : '');
   const side = wide && (usesDock() || app.screen.width - width >= 260);
   const size = side ? usesDock() ? shortWide() ? 100 : Math.min(184, app.screen.width - x - width - 48) : Math.max(84, Math.min(196, app.screen.width - x - width - 44)) : dock ? 66 : 78;
   cat.width = size; cat.height = size / cat.texture.width * cat.texture.height;
@@ -447,19 +450,26 @@ function quiz(x: number, width: number) {
   else if (reverse) copy(root, word.meaningRu, width / 2, short ? 82 : compact ? 88 : 111, short ? 30 : 38, { center: true, width: width - 50 });
   else centeredJapanese(root, word, short ? 72 : compact ? 66 : 88, width, short ? 44 : compact ? 76 : 94);
   const options: Word[] = flow.active ? flow.choices : words;
-  const single = options.some(word => reverse ? word.surface.length > 6 : word.meaningRu.length > 23);
-  const height = single ? reverse ? Math.max(78, ...options.map(word => Math.ceil(word.surface.length * 22 / (width - 70)) * 44 + 14)) : Math.max(78, ...options.map(word => Math.ceil(textWidth(word.meaningRu, 21, book) / (width - 70)) * 31 + 20)) : reverse ? 78 : 59;
-  const bottom = choiceGrid<Word>(options, short ? 328 : compact ? 378 : 445, x, width, (candidate, area, index) => {
+  const measuredHeight = (columnWidth: number) => reverse ? Math.max(59, ...options.map(word => {
+    const measure = new Container(), size = Math.min(27, Math.max(22, columnWidth / Math.max(1, word.surface.length)));
+    const layout = japanese(measure, word, 'furigana', box(0, 0, columnWidth, 1000), size, jp); measure.destroy({ children: true }); return layout.height + 14;
+  })) : Math.max(59, ...options.map(word => Math.ceil(textWidth(word.meaningRu, 21, book) / columnWidth) * 31 + 20));
+  const twoColumnHeight = measuredHeight((width - 12) / 2 - 24);
+  const maxChoiceHeight = Math.max(96, stageHeight() - headerHeight() - 82 - (wideStage() ? 0 : shortQuiz() ? 104 : 160) - 96);
+  const columns = twoColumnHeight > maxChoiceHeight ? 1 : 2;
+  const height = columns === 1 ? measuredHeight(width - 24) : twoColumnHeight;
+  const bottom = choiceGrid<Word>(options, r.y + r.height + 24, x, width, (candidate, area, index) => {
     action(ui, `word-option-${index}`, reverse ? candidate.surface : candidate.meaningRu, area, async () => {
       if (correct === true || connected?.busy) return;
       audio.pause(); selection = candidate.id;
+      if (connected) feedback = 'Проверяю…';
       const result = connected ? await connected.choose(candidate.id) : candidate.id === word.id;
       if (result === undefined) { selection = null; schedule(); return; }
       correct = result; hadMistake ||= !correct; learnAction();
-      say(correct ? hadMistake ? 'Да, теперь верно! Позже повторим это слово.' : 'Да, всё верно!' : 'Не совсем. Попробуй выбрать ещё раз — я подожду.');
+      say(shortQuiz() ? correct ? 'Верно!' : 'Попробуй ещё раз.' : correct ? hadMistake ? 'Да, теперь верно! Позже повторим это слово.' : 'Да, всё верно!' : 'Не совсем. Попробуй выбрать ещё раз — я подожду.');
       if (correct) queueAuto(flow.active ? lessonAdvance(hadMistake ? 'again' : 'remember', true) : nextWord);
     }, { enabled: correct !== true && (!listening || played), selected: correct === true && candidate.id === selection, wrong: correct === false && candidate.id === selection, value: reverse ? candidate : undefined });
-  }, height, single ? 1 : 2);
+  }, height, columns);
   if (selection !== null) feedbackAt(bottom + 7, x, width); else drawHelp(bottom + 24, x, width);
 }
 
@@ -494,10 +504,10 @@ function beginDrag(node: Container, token: number, source: Rect) {
     copy(ghost, currentConstruction().tokens[token]!.surface, source.width / 2, 10, 22, { center: true }); ghost.alpha = .9;
     drag = { token, x: event.global.x, y: event.global.y, moved: false, ghost };
   });
-  node.on('globalpointermove', (event: FederatedPointerEvent) => { if (!drag) return; if (Math.hypot(event.global.x - drag.x, event.global.y - drag.y) > 8) drag.moved = true; if (drag.moved) { drag.ghost.visible = true; drag.ghost.position.set(event.global.x - source.width / 2, event.global.y - source.height / 2); app.render(); } });
+  node.on('globalpointermove', (event: FederatedPointerEvent) => { if (!drag) return; if (Math.hypot(event.global.x - drag.x, event.global.y - drag.y) > 8) drag.moved = true; if (drag.moved) { const point = ui.toLocal(event.global); drag.ghost.visible = true; drag.ghost.position.set(point.x - source.width / 2, point.y - source.height / 2); app.render(); } });
   const finish = (event: FederatedPointerEvent) => {
     if (!drag) return; const moved = drag.moved, token = drag.token; drag.ghost.destroy({ children: true }); drag = null;
-    if (moved) { suppressTap = true; if (dropZone && new Rectangle(dropZone.x, dropZone.y, dropZone.width, dropZone.height).contains(event.global.x, event.global.y)) addToken(token); setTimeout(() => { suppressTap = false; }, 0); }
+    if (moved) { suppressTap = true; if (dropZone && new Rectangle(dropZone.x, dropZone.y, dropZone.width, dropZone.height).contains(event.global.x, event.global.y + scrollY)) addToken(token); setTimeout(() => { suppressTap = false; }, 0); }
   };
   node.on('pointerup', finish); node.on('pointerupoutside', finish);
   node.on('pointercancel', () => { drag?.ghost.destroy({ children: true }); drag = null; });
@@ -572,10 +582,11 @@ function count(x: number, width: number) {
   const bottom = choiceGrid(card.options, 461, x, width, (option, area, index) => {
     const choice = action(ui, `count-option-${index}`, pictureOptions ? '' : option.label, area, async () => {
       if (correct === true || connected?.busy) return; selection = option.key;
+      if (connected) feedback = 'Проверяю…';
       const result = connected ? await connected.chooseCounter(option.key) : card.acceptedKeys.includes(option.key);
       if (result === undefined) { selection = null; schedule(); return; }
       correct = result; hadMistake ||= !correct; audio.pause(); learnAction();
-      say(correct ? 'Верно!' : 'Не совсем. Попробуй выбрать ещё раз.');
+      say(correct ? 'Верно!' : shortQuiz() ? 'Попробуй ещё раз.' : 'Не совсем. Попробуй выбрать ещё раз.');
       if (correct) queueAuto(flow.active ? lessonAdvance(hadMistake ? 'again' : 'remember', true) : () => navigate(task));
     }, { enabled: correct !== true && (kind !== 'listening-image' || played), selected: correct === true && option.key === selection, wrong: correct === false && option.key === selection, size: kind === 'reading-choice' ? 22 : 21 });
     if (pictureOptions && option.object) {
@@ -594,7 +605,7 @@ function count(x: number, width: number) {
 
 function introduction(x: number, width: number) {
   const isCounter = task === 'counter-intro', isConstruction = task === 'construction-intro';
-  const bodyInset = Math.max(24, width * .28), content = new Container(), exercise = currentConstruction();
+  const bodyInset = 24, content = new Container(), exercise = currentConstruction();
   let paperHeight = 525;
   copy(content, isCounter ? 'Знакомимся со счётным словом' : isConstruction ? 'Как устроена фраза' : flow.active ? `Знакомство · ${flow.session!.introIndex + 1} из ${flow.part!.words.length}` : 'Знакомимся со словом', width / 2, 23, 23, { hand: true, center: true, width: width - 44 });
   if (isCounter) {
@@ -609,16 +620,16 @@ function introduction(x: number, width: number) {
     const ruleY = meaningY + meaning.height + 20, rule = copy(content, exercise.explanationRu, 24, ruleY, 16, { width: width - 48, sans: true });
     paperHeight = Math.max(532, ruleY + rule.height + Math.max(150, width * .3));
   } else {
-    const word = current(), height = centeredJapanese(content, word, 90, width, 75), meaningY = Math.max(219, 90 + height + 20);
-    const meaning = copy(content, word.meaningRu, width / 2, meaningY, 27, { center: true, width: width - 48 });
-    const bodyY = meaningY + meaning.height + 22;
+    const word = current(), height = centeredJapanese(content, word, 64, width, 58), meaningY = 64 + height + 12;
+    const meaning = copy(content, word.meaningRu, width / 2, meaningY, 24, { center: true, width: width - 48 });
+    const bodyY = meaningY + meaning.height + 12;
     const rule = copy(content, word.introduction?.explanationRu ?? 'Послушайте слово, затем перейдём к практике.', bodyInset, bodyY, 16, { width: width - bodyInset - 24, sans: true });
-    paperHeight = Math.max(367, bodyY + rule.height + 40);
+    paperHeight = bodyY + rule.height + 24;
     const example = flow.active ? flow.introduction?.example : null;
     if (example) {
-      const y = bodyY + rule.height + 24, height = centeredJapanese(content, example, y, width, 25);
-      const translation = copy(content, example.meaningRu, 24, y + height + 15, 17, { width: width - 48, sans: true });
-      paperHeight = y + height + 15 + translation.height + 180;
+      const y = bodyY + rule.height + 14, height = centeredJapanese(content, example, y, width, 25);
+      const translation = copy(content, example.meaningRu, 24, y + height + 12, 17, { width: width - 48, sans: true });
+      paperHeight = y + height + 12 + translation.height + 20;
     }
   }
   const root = deck(box(x, 158, width, paperHeight)); root.addChild(content);
@@ -718,7 +729,7 @@ function textbook(x: number, width: number) {
   copy(ui, 'Учебник', x + width / 2, 153, 32, { hand: true, center: true });
   copy(ui, `Стартовый A1 · ${lessonCatalog.lessons.length} уроков`, x + width / 2, 200, 16, { center: true });
   const columns = app.screen.width > 900 ? 3 : 2, gap = 14, cellW = (width - (columns - 1) * gap) / columns;
-  const hintHeight = drawHelp(245, x, width), start = hintHeight ? 245 + hintHeight + 24 : 248;
+  const start = 248;
   lessonCatalog.lessons.forEach((lesson, index) => {
     const r = box(x + index % columns * (cellW + gap), start + Math.floor(index / columns) * 245, cellW, 230);
     const item = action(ui, `lesson-${lesson.number}`, '', r, () => openLesson(lesson.id));
@@ -739,22 +750,14 @@ function reference(x: number, width: number) {
   drawHelp(574, x, width);
 }
 
-function frameHeight() {
-  if (task === 'textbook') return 248 + Math.ceil(data.lessons.length / (innerWidth > 900 ? 3 : 2)) * 245 + 158;
-  if (task === 'construction-intro') return showBreakdown ? 1570 : 1120;
-  if (task === 'word-intro') return 1120;
-  if (task === 'video') return 1120;
-  if (task === 'counter-intro' || task === 'construction') return 1050;
-  if (['count-picture', 'count-listen', 'count-category'].includes(task)) return 1040;
-  return 860;
-}
-function resize() { if (!ready) return; catTravel = null; host.style.height = `${Math.max(innerHeight, frameHeight())}px`; app.resize(); render(); }
+function resize() { if (!ready) return; catTravel = null; app.resize(); render(); }
 function cover(sprite: Sprite, texture: Texture, area: Rect, zoom = 1) {
   sprite.texture = texture;
   const scale = Math.max(area.width / texture.width, area.height / texture.height) * zoom;
   sprite.scale.set(scale); sprite.position.set(area.x + (area.width - sprite.width) / 2, area.y + (area.height - sprite.height) / 2);
 }
 function placeWorld() {
+  app.stage.y = -scrollY;
   const w = app.screen.width, area = box(0, scrollY, w, innerHeight), width = studyWidth(), x = studyX(width), scenic = textures.get(locationScene.desktop.src)!;
   const entering = flow.active && task === 'word-intro' && flow.session?.revision === 0;
   cameraProgress = mobileApproach ? Math.min(1, Number(host.getAnimations()[0]?.currentTime ?? performance.now() - approachStarted) / 800) : composition === 'zoom' && entering && !reduced() ? Math.min(1, (performance.now() - cameraStarted) / 850) : 1;
@@ -794,12 +797,30 @@ function placeWorld() {
 }
 function snapshot() {
   const shift = scrollY - paintedScroll;
-  const controlText = captions.map(({ id, rect, view }) => { const b = view.getBounds(); return { id, rect: controls.find(control => control.id === id)?.docked ? { ...rect, y: rect.y + shift } : rect, value: view.text, fontSize: view.style.fontSize, fontFamily: view.style.fontFamily, fontStyle: view.style.fontStyle, bounds: box(b.minX, b.minY, b.width, b.height) }; });
+  const controlText = captions.map(({ id, rect, view }) => { const b = view.getBounds(); return { id, rect: controls.find(control => control.id === id)?.docked ? { ...rect, y: rect.y + shift } : rect, value: view.text, fontSize: view.style.fontSize, fontFamily: view.style.fontFamily, fontStyle: view.style.fontStyle, bounds: box(b.minX, b.minY + scrollY, b.width, b.height) }; });
   const rotatedUi: string[] = [];
   const inspect = (node: Container) => { if (Math.abs(node.rotation) > 1e-7 || Math.abs(node.skew.x) > 1e-7 || Math.abs(node.skew.y) > 1e-7) rotatedUi.push(node.label || 'unnamed'); node.children.forEach(inspect); }; inspect(ui); inspect(overlay);
-  return { ready, task, taskName: taskTitles[task], lesson: flow.snapshot(), composition, cameraProgress, stand: standMode() ? { board: box(studyX() - 16, scrollY + stageTop() - 12, studyWidth() + 32, stageHeight() - stageTop() + 24), frame: box(stand.x, stand.y, stand.width * stand.scale.x, stand.height * stand.scale.y), camera: app.screen.width < 1000 ? 'close' : 'room', catPerch, moving: !!catTravel } : null, location: locationScene.id, dock: usesDock() ? { top: dockTop, ids: dockIds, stageHeight: stageHeight() } : null, autoAdvance: autoDeadline > 0, feedbackSpeaker: 'cat', speechBounds: speechBounds ? { ...speechBounds, y: speechBounds.y + shift } : null, colors: { ink, bubble: '#fff7e7' }, catVisible: cat.visible, catBounds: box(cat.x, cat.y + shift, cat.width, cat.height), studyBounds: box(studyX(), Math.max(158 + contentOffset(), scrollY + headerHeight()), studyWidth(), Math.max(0, Math.min(contentBottom, scrollY + (usesDock() ? dockTop : standMode() ? stageHeight() : innerHeight)) - Math.max(158 + contentOffset(), scrollY + headerHeight()))), view: standMode() ? 'flat-front' : 'orthographic-top-down', desktopBackground: app.screen.width >= 900, rotatedUi, wordIndex, selection, correct, hadMistake, revealed, constructionDrop: dropZone, layout: { stageTop: stageTop(), centered: !shortWide(), font: book, plainPaper: true, deskBackEdge: composition === 'surround' && wideStage() && usesDock() ? room.y - scrollY + room.height * (locationScene.id === 'room' ? .37 : locationScene.tableBackEdge) : null }, tokens: [...tokenOrder], manual, menuOpen, composing: editor.composing, feedback, played, playing, hintVisible: !seenHints.has(hintKey()) || manualHint, hintKey: hintKey(), controls: controls.map(control => ({ ...control, rect: control.id === 'cat-call' ? box(cat.x, cat.y + shift, cat.width, cat.height) : control.docked ? { ...control.rect, y: control.rect.y + shift } : control.rect, opacity: actionSpecs.get(control.id)?.node.alpha ?? 1, highlight: actionSpecs.get(control.id)?.options.wrong ? 'wrong' : actionSpecs.get(control.id)?.options.selected ? 'selected' : null })), controlText, contentBottom, catTop: cat.y + shift, ruby, pendingRender: frame !== 0, motion: { ...motion, reduced: reduced(), enteredAt }, cspViolations: [...csp], fontLoaded: document.fonts.check('24px "Lora"'), source: data.source, video: { paused: video.paused, time: video.currentTime }, editorValue: editor.element.value };
+  return { ready, task, scroll: { max: maxSheetScroll, position: scrollY }, taskName: taskTitles[task], lesson: flow.snapshot(), composition, cameraProgress, stand: standMode() ? { board: box(studyX() - 16, scrollY + stageTop() - 12, studyWidth() + 32, stageHeight() - stageTop() + 24), frame: box(stand.x, stand.y, stand.width * stand.scale.x, stand.height * stand.scale.y), camera: app.screen.width < 1000 ? 'close' : 'room', catPerch, moving: !!catTravel } : null, location: locationScene.id, dock: usesDock() ? { top: dockTop, ids: dockIds, stageHeight: stageHeight() } : null, autoAdvance: autoDeadline > 0, feedbackSpeaker: 'cat', speechBounds: speechBounds ? { ...speechBounds, y: speechBounds.y + shift } : null, colors: { ink, bubble: '#fff7e7' }, catVisible: cat.visible, catBounds: box(cat.x, cat.y + shift, cat.width, cat.height), studyBounds: box(studyX(), Math.max(158 + contentOffset(), scrollY + headerHeight()), studyWidth(), Math.max(0, Math.min(contentBottom, scrollY + (usesDock() ? dockTop : standMode() ? stageHeight() : innerHeight)) - Math.max(158 + contentOffset(), scrollY + headerHeight()))), view: standMode() ? 'flat-front' : 'orthographic-top-down', desktopBackground: app.screen.width >= 900, rotatedUi, wordIndex, selection, correct, hadMistake, revealed, constructionDrop: dropZone, layout: { stageTop: stageTop(), centered: !shortWide(), font: book, plainPaper: true, deskBackEdge: composition === 'surround' && wideStage() && usesDock() ? room.y - scrollY + room.height * (locationScene.id === 'room' ? .37 : locationScene.tableBackEdge) : null }, tokens: [...tokenOrder], manual, menuOpen, composing: editor.composing, feedback, played, playing, hintVisible: !seenHints.has(hintKey()) || manualHint, hintKey: hintKey(), controls: controls.filter(control => control.id !== 'scroll-more' || scrollY < maxSheetScroll - 1).filter(control => control.id !== 'scroll-back' || scrollY > 1).map(control => ({ ...control, rect: control.id === 'cat-call' ? box(cat.x, cat.y + shift, cat.width, cat.height) : control.docked ? { ...control.rect, y: control.rect.y + shift } : control.rect, opacity: actionSpecs.get(control.id)?.node.alpha ?? 1, highlight: actionSpecs.get(control.id)?.options.wrong ? 'wrong' : actionSpecs.get(control.id)?.options.selected ? 'selected' : null })), controlText, contentBottom, catTop: cat.y + shift, ruby, pendingRender: frame !== 0, motion: { ...motion, reduced: reduced(), enteredAt }, cspViolations: [...csp], fontLoaded: document.fonts.check('24px "Lora"'), source: data.source, video: { paused: video.paused, time: video.currentTime }, editorValue: editor.element.value };
 }
 let contentBottom = 0;
+function updateScrollCues() {
+  if (scrollMore) scrollMore.visible = scrollY < maxSheetScroll - 1;
+  if (scrollBack) scrollBack.visible = scrollY > 1;
+}
+function drawScrollCues(x: number, width: number, bottom: number) {
+  scrollMore = null; scrollBack = null;
+  if (!maxSheetScroll) return;
+  const root = new Container(); root.y = paintedScroll; overlay.addChild(root);
+  const more = new Container(); root.addChild(more);
+  surface(more, box(x + 6, bottom - 47, width - 12, 43), textures.get(cardUrl)!, '#e5d6b5');
+  const list = task === 'textbook', half = (width - 12) / 2, title = list ? 'Ниже ещё уроки ↓' : 'Ниже ↓';
+  const next = action(more, 'scroll-more', title, box(list ? x : x + half + 12, bottom - 44, list ? width : half, 44), () => scrollTo({ top: Math.min(maxSheetScroll, scrollY + Math.max(100, bottom - headerHeight() - 75)), behavior: reduced() ? 'instant' : 'smooth' }), { size: 18 });
+  next.accessibleHint = list ? title : 'Продолжение карточки ниже';
+  scrollMore = more;
+  scrollBack = action(root, 'scroll-back', '↑ Выше', list ? box(x + width - 108, headerHeight() + 1, 108, 44) : box(x, bottom - 44, half, 44), () => scrollTo({ top: Math.max(0, scrollY - Math.max(100, bottom - headerHeight() - 75)), behavior: reduced() ? 'instant' : 'smooth' }), { size: 18 });
+  controls.slice(-2).forEach(control => { control.docked = true; });
+  updateScrollCues();
+}
 function clipNative() {
   for (const element of [video, editor.element]) {
     const r = element.getBoundingClientRect(), bottom = usesDock() ? Math.max(0, r.bottom - dockTop) : 0, top = Math.max(0, headerHeight() - r.top);
@@ -808,8 +829,9 @@ function clipNative() {
 }
 function updateViewport() {
   if (!ready || rendering) return;
+  if (mobileApproach && scrollY > 0) finishApproach();
   overlay.y = scrollY - paintedScroll; bodyMask.y = scrollY - paintedScroll;
-  placeWorld(); app.render(); clipNative();
+  placeWorld(); updateScrollCues(); app.render(); clipNative();
 }
 function render() {
   if (!ready || rendering) return;
@@ -848,10 +870,14 @@ function render() {
   if (manualHint && usesDock()) guideText = helpMessage();
   const dock = usesDock() && !(connectionBlocked()) ? dockControls(x, width) : undefined;
   contentBottom = ui.getLocalBounds().maxY;
-  const height = Math.ceil(dock || standMode() ? innerHeight + Math.max(0, contentBottom - (dock ? dockTop : stageHeight()) + 40) : Math.max(innerHeight, frameHeight(), contentBottom + (w < 700 ? 130 : 270)));
-  if (app.screen.height !== height) { host.style.height = `${height}px`; app.resize(); placeWorld(); }
+  const bottom = dock ? dockTop : standMode() ? stageHeight() : innerHeight;
+  const overflow = contentBottom > bottom - 10;
+  maxSheetScroll = Math.max(0, Math.ceil(contentBottom - bottom + (overflow ? 54 : 10)));
+  const height = innerHeight + maxSheetScroll;
+  if (host.style.height !== `${height}px`) host.style.height = `${height}px`;
   bodyMask.clear(); ui.mask = bodyMask;
-  bodyMask.rect(0, paintedScroll + headerHeight(), w, Math.max(1, (dock ? dockTop : standMode() ? stageHeight() : innerHeight) - headerHeight() - 4)).fill('#ffffff');
+  bodyMask.rect(0, paintedScroll + headerHeight(), w, Math.max(1, bottom - headerHeight() - (overflow ? 48 : 4))).fill('#ffffff');
+  drawScrollCues(x, width, bottom);
   companion(x, width, dock);
   if (cameraProgress < 1) action(overlay, 'skip-camera', 'Пропустить', mobileApproach ? box(w - 144, paintedScroll + stageTop() + 5, 132, 46) : box(w - 226, paintedScroll + 24, 200, 48), () => { cameraStarted = 0; finishApproach(); }, { hand: true, size: 20 });
   drawMenu();
@@ -867,10 +893,12 @@ function render() {
   if (focus && document.activeElement === document.body) [...document.querySelectorAll<HTMLButtonElement>('button[aria-label]')].find(node => node.getAttribute('aria-label') === focus)?.focus({ preventScroll: true });
   if (menuOpen && document.activeElement === document.body) [...document.querySelectorAll<HTMLButtonElement>('button[aria-label]')].find(node => node.getAttribute('aria-label') === 'Учебник')?.focus({ preventScroll: true });
   rendering = false;
+  if (app.stage.y !== -scrollY) updateViewport();
 }
 async function start() {
   Assets.setPreferences({ preferWorkers: false }); await document.fonts.load('24px "Lora"', 'Учебник 1 из 4');
-  await app.init({ resizeTo: host, preference: 'webgl', autoDensity: true, resolution: Math.min(devicePixelRatio, 2), antialias: true, background: '#b8773d', autoStart: false, accessibilityOptions: { enabledByDefault: true, deactivateOnMouseMove: false } });
+  await app.init({ resizeTo: window, preference: 'webgl', autoDensity: true, resolution: Math.min(devicePixelRatio, 2), antialias: true, background: '#b8773d', autoStart: false, accessibilityOptions: { enabledByDefault: true, deactivateOnMouseMove: false } });
+  Object.assign(app.renderer.accessibility.div.style, { position: 'fixed', top: '0', left: '0' });
   host.prepend(app.canvas); app.canvas.setAttribute('aria-label', 'Учебный стол まるごと'); app.canvas.style.touchAction = 'pan-y'; app.stage.addChild(world, ui, bodyMask, overlay); world.addChild(room, background, tableMask, roomWindow, windowMask, windowFrame);
   const urls = [deskUrl, desktopDeskUrl, cardUrl, catUrl, logoUrl, roomStudyUrl, standUrl, standRoomUrl, locationScene.desktop.src, '/counters/objects-atlas.webp', '/ui/topics-atlas-v1.webp'];
   const loaded = await Assets.load<Texture>(urls); for (const url of urls) textures.set(url, loaded[url]!);
@@ -915,20 +943,23 @@ async function start() {
 window.addEventListener('resize', resize); window.addEventListener('scroll', updateViewport, { passive: true });
 host.addEventListener('animationend', event => { if (event.animationName === 'stand-approach') finishApproach(); });
 matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', event => { if (event.matches && mobileApproach) finishApproach(); });
-window.addEventListener('pointerdown', () => { updateViewport(); pointerHeld = true; if (autoTimer) cancelAuto(); }, true);
+window.addEventListener('pointerdown', () => { if (mobileApproach) finishApproach(); updateViewport(); pointerHeld = true; if (autoTimer) cancelAuto(); }, true);
+window.addEventListener('wheel', () => { if (mobileApproach) finishApproach(); }, { passive: true });
 const releasePointer = () => { pointerHeld = false; if (deferredPaint) { deferredPaint = false; schedule(); } };
 window.addEventListener('pointerup', releasePointer, true); window.addEventListener('pointercancel', releasePointer, true);
 window.addEventListener('blur', () => { cancelAuto(); releasePointer(); schedule(); });
 document.addEventListener('visibilitychange', () => { if (document.hidden) { cancelAuto(); catTravel = null; audio.pause(); video.pause(); app.stop(); } else schedule(); });
 document.addEventListener('focusin', event => {
-  if (!usesDock() || !(event.target instanceof HTMLElement)) return;
+  if (!(event.target instanceof HTMLElement)) return;
   const label = event.target.getAttribute('aria-label');
   for (const spec of actionSpecs.values()) if (spec.node.accessibleHint === label) {
     let parent: Container | null = spec.node;
     while (parent) { if (parent === overlay) return; parent = parent.parent; }
   }
   const rect = event.target.getBoundingClientRect();
-  if (rect.height > 0 && rect.bottom > dockTop - 12) scrollBy(0, rect.bottom - dockTop + 20);
+  const bottom = (usesDock() ? dockTop : stageHeight()) - (maxSheetScroll ? 48 : 0);
+  if (rect.height > 0 && rect.bottom > bottom - 12) scrollBy(0, rect.bottom - bottom + 20);
   else if (rect.height > 0 && rect.top < headerHeight()) scrollBy(0, rect.top - headerHeight() - 16);
+  updateViewport();
 });
 void start().catch(error => { console.error(error); document.querySelector('#recovery')!.removeAttribute('hidden'); });

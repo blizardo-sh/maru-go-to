@@ -102,6 +102,8 @@ npm run typecheck
 /private/tmp/japanese-stack-toolchain-1.4.3/bun connected-flow-check.mts
 /private/tmp/japanese-stack-toolchain-1.4.3/bun rehearsal-verify.mts
 node input-focus-check.mjs
+node stand-fit-check.mjs
+/private/tmp/japanese-stack-toolchain-1.4.3/bun stand-content-check.mts
 ```
 
 `connected-check.mjs`, `connected-protocol-check.mts` и `connected-wait-check.mjs`

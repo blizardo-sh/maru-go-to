@@ -5,7 +5,9 @@ html, body { margin: 0; background: #b8773d; color: #3a2719; font-family: system
 #stage.stand-enter { animation: stand-approach 800ms cubic-bezier(.22,.8,.25,1) both; }
 @keyframes stand-approach { from { transform: scale(.76); } to { transform: scale(1); } }
 @media (prefers-reduced-motion: reduce) { #stage.stand-enter { animation: none; } }
-canvas { display: block; touch-action: pan-y; }
+html { scrollbar-width: none; }
+html::-webkit-scrollbar { display: none; }
+canvas { display: block; position: fixed; inset: 0 auto auto 0; touch-action: pan-y; }
 .native-editor { position: absolute; z-index: 10; margin: 0; padding: 12px; border: 0; resize: none; opacity: .001; background: transparent; color: transparent; caret-color: transparent; font: 20px/34px sans-serif; }
 .native-video { position: absolute; z-index: 2; background: #29281e; object-fit: contain; pointer-events: none; }
 .semantic-copy { position: absolute; left: 0; top: 0; width: 1px; height: 1px; margin: 0; clip-path: inset(50%); overflow: hidden; }
