@@ -100,7 +100,12 @@ export class EditorBridge {
   constructor(password: boolean | 'email', changed: () => void) {
     this.changed = changed;
     this.element = document.createElement(password ? 'input' : 'textarea');
-    if (this.element instanceof HTMLInputElement) { this.element.type = password === 'email' ? 'email' : 'password'; this.element.autocomplete = password === 'email' ? 'username' : 'current-password'; }
+    if (this.element instanceof HTMLInputElement) {
+      // Email keyboards need inputMode; type=email does not expose caret/selection to Canvas.
+      this.element.type = password === 'email' ? 'text' : 'password';
+      if (password === 'email') this.element.inputMode = 'email';
+      this.element.autocomplete = password === 'email' ? 'username' : 'new-password';
+    }
     else { this.element.rows = 3; this.element.lang = 'ja'; this.element.inputMode = 'text'; this.element.autocomplete = 'off'; this.element.maxLength = 1000; }
     this.element.className = 'native-editor';
     this.element.setAttribute('aria-label', password ? 'Пробный пароль' : 'Японская фраза');

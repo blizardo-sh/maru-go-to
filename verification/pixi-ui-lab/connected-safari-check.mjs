@@ -18,7 +18,7 @@ async function enter(selector) { await js(selector => document.querySelector(sel
 try {
   await command(path + '/window/rect', { x: 0, y: 25, width: 1440, height: 1050 });
   await command(path + '/url', { url: 'http://localhost:5191/learn.html' }); await until(async () => (await state())?.ready);
-  await fill('input[type=email]', profile.email); await fill('input[type=password]', profile.password); await enter('button[aria-label="Войти"]');
+  await fill('input[autocomplete=username]', profile.email); await fill('input[type=password]', profile.password); await enter('button[aria-label="Войти"]');
   await until(async () => (await state()).lesson.authenticated);
   await enter('button[aria-label^="Урок 4."]'); await enter('button[aria-label^="Продолжить"]');
   const before = (await state()).lesson;

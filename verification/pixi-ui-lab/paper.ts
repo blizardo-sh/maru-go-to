@@ -88,6 +88,7 @@ const screenCopy = document.createElement('p'); screenCopy.id = 'canvas-descript
 const status = document.createElement('p'); status.className = 'semantic-copy'; status.setAttribute('role', 'status'); host.append(status);
 const loginEmail = new EditorBridge('email', schedule); loginEmail.element.setAttribute('aria-label', 'Электронная почта');
 const loginPassword = new EditorBridge(true, schedule); loginPassword.element.setAttribute('aria-label', 'Пароль локальной копии');
+loginPassword.element.autocomplete = 'current-password';
 const editor = new EditorBridge(false, () => { correct = null; feedback = ''; schedule(); }); editor.element.value = '';
 const audio = new Audio(); audio.preload = 'none';
 const video = document.createElement('video'); video.className = 'native-video'; video.playsInline = true; video.preload = 'none'; video.hidden = true; host.append(video);
@@ -820,7 +821,7 @@ function render() {
   if (drag) { drag.ghost.destroy({ children: true }); drag = null; }
   ui.removeChildren().forEach(child => child.destroy({ children: true })); controls = []; captions = []; ruby = []; topCard = null; dropZone = null; guideText = ''; speechBounds = null; dockIds = []; actionSpecs.clear(); controlRuns.clear();
   if (task !== 'construction' || !manual || menuOpen) editor.place(null);
-  loginEmail.place(null); loginPassword.place(null);
+  if (!connected || connected.user || connected.busy || connected.error) { loginEmail.place(null); loginPassword.place(null); }
   editor.element.readOnly = !!connected?.busy;
   if (connected?.busy) status.textContent = 'Ожидаем подтверждения локального сервера.';
   if (task !== 'video') video.hidden = true;
