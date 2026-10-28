@@ -54,7 +54,7 @@ export class LessonFlow {
     this.session.introIndex = Math.max(0, Math.min(this.part.words.length - 1, this.session.introIndex + delta));
     this.session.revision++; return true;
   }
-  advance(ticket: LessonTicket, action: LearningAdvance['action']) {
+  advance(ticket: LessonTicket, action: LearningAdvance['action'], _details: Partial<LearningAdvance> = {}) {
     if (!this.accepts(ticket) || !this.route || !this.session) return false;
     const practice = this.step?.kind === 'word-practice' || this.step?.kind === 'construction-practice';
     const next = advanceLearningState(this.route, this.session.state, action);

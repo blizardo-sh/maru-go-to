@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { mkdir, writeFile } from 'node:fs/promises';
 
-const endpoint = 'http://127.0.0.1:5191';
+const endpoint = 'http://127.0.0.1:5192';
 const output = new URL('./test-results/', import.meta.url);
 await mkdir(output, { recursive: true });
 async function command(path, body, method = body === undefined ? 'GET' : 'POST') {

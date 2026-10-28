@@ -12,7 +12,8 @@ import standRoomUrl from './art/runtime/room-stand.webp';
 import catUrl from './art/runtime/cat.webp';
 import logoUrl from './art/runtime/logo.webp';
 import './paper.css';
-import { LessonFlow, lessonCatalog } from './lesson-flow';
+import { LessonFlow, lessonCatalog as fixtureCatalog } from './lesson-flow';
+import { ConnectedFlow, liveCatalog } from './connected-flow';
 import type { LearningAdvance } from '../../src/shared/learning';
 import sceneManifest from '../../public/scenes/manifest.json';
 
@@ -27,8 +28,8 @@ const tasks = {
 };
 const taskTitles = { ...tasks, 'lesson-overview': 'Начало занятия', 'part-complete': 'Часть пройдена', 'lesson-complete': 'Занятие завершено' };
 type Task = keyof typeof taskTitles;
-type Word = JapaneseValue & { id: string; meaningRu: string; audioUrl: string | null; illustration?: { src: string; bounds: number[] } | null; introduction?: { explanationRu: string } | null };
-type Counter = { kind: string; definition: { surface: string; kana: string; explanation: string }; word: Word; object: { tile: number }; quantity: number | null; answer: JapaneseValue; audioUrl: string | null; acceptedKeys: string[]; options: { key: string; label: string; quantity?: number; object?: { tile: number } }[]; examples: (JapaneseValue & { audioUrl: string | null })[] };
+type Word = JapaneseValue & { id: string; meaningRu: string; audioUrl?: string | null; illustration?: { src: string; bounds: number[] } | null; introduction?: { explanationRu: string } | null };
+type Counter = { kind: string; definition: { surface: string; kana: string; explanation: string }; word: Word; object: { tile: number }; quantity: number | null; answer: JapaneseValue; audioUrl?: string | null; acceptedKeys: string[]; options: { key: string; label: string; quantity?: number; object?: { tile: number } }[]; examples: (JapaneseValue & { audioUrl?: string | null })[] };
 type Control = { id: string; label: string; rect: Rect; enabled: boolean; docked?: boolean };
 type ActionOptions = { enabled?: boolean; hand?: boolean; selected?: boolean; wrong?: boolean; value?: JapaneseValue; size?: number; bare?: boolean };
 type ActionSpec = { node: Container; id: string; title: string; rect: Rect; run: () => void; options: ActionOptions };
@@ -38,7 +39,11 @@ const answerUrl = cardUrl;
 const ink = '#241d17', sage = '#263d25', hand = 'Lora', book = 'Lora', jp = '"Hiragino Mincho ProN", "Yu Mincho", serif';
 const params = new URLSearchParams(location.search);
 let task: Task = params.get('task') && Object.hasOwn(taskTitles, params.get('task')!) ? params.get('task') as Task : 'textbook';
-const flow = new LessonFlow();
+const connected = location.pathname === '/learn.html' ? new ConnectedFlow(() => schedule()) : null;
+const flow = connected ?? new LessonFlow();
+const lessonCatalog = connected ? liveCatalog : fixtureCatalog;
+if (connected) task = 'textbook';
+const connectionBlocked = () => !!connected && (!connected.user || !!connected.error || connected.busy && !flow.active);
 type Composition = 'zoom' | 'window' | 'surround' | 'stand';
 let composition: Composition = ['zoom', 'window', 'surround', 'stand'].includes(params.get('composition') ?? '') ? params.get('composition') as Composition : 'stand';
 const locationScene = sceneManifest.scenes.find(scene => scene.id === params.get('scene')) ?? sceneManifest.scenes[0]!;
@@ -50,7 +55,7 @@ let paintedScroll = 0, pointerHeld = false, deferredPaint = false;
 const actionSpecs = new Map<string, ActionSpec>();
 const controlRuns = new Map<string, () => void>();
 let dockIds: string[] = [];
-if (lessonCatalog.lessons.some(lesson => lesson.id === params.get('lesson'))) { flow.open(params.get('lesson')!); task = 'lesson-overview'; }
+if (!connected && lessonCatalog.lessons.some(lesson => lesson.id === params.get('lesson'))) { flow.open(params.get('lesson')!); task = 'lesson-overview'; }
 let words: Word[] = data.words, wordIndex = 0, selection: string | null = null, revealed = false;
 let tokenOrder: number[] = [], manual = false, feedback = '', correct: boolean | null = null, hadMistake = false, showBreakdown = false;
 let ready = false, frame = 0, rendering = false, enteredAt = performance.now(), played = false, playing = false, mediaEpoch = 0;
@@ -69,18 +74,20 @@ let catTravel: { from: { x: number; y: number }; to: { x: number; y: number }; s
 const roomWindow = new Sprite(), windowMask = new Graphics(), tableMask = new Graphics(), windowFrame = new Graphics();
 const standFootShadow = new Graphics();
 const textures = new Map<string, Texture>(), pictures = new Map<string, Texture>();
-const current = (): Word => flow.active && flow.word ? flow.word : words[wordIndex]!;
-const currentConstruction = () => flow.active && flow.construction ? flow.construction : data.construction;
-const currentVideo = () => flow.active && flow.video ? flow.video : data.video;
+const current = (): Word => { if (connected && flow.active && !flow.word) throw new Error('В опубликованном задании нет слова.'); return flow.active && flow.word ? flow.word : words[wordIndex]!; };
+const currentConstruction = () => { if (connected && flow.active && ['construction', 'construction-intro'].includes(task) && !flow.construction) throw new Error('В опубликованном задании нет конструкции.'); return flow.active && flow.construction ? flow.construction : data.construction; };
+const currentVideo = () => { if (connected && flow.active && !flow.video && flow.step?.kind === 'video') throw new Error('В опубликованном задании нет видео.'); return flow.active && flow.video ? flow.video : data.video; };
 const box = (x: number, y: number, width: number, height: number): Rect => ({ x, y, width, height });
 const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
-const counter = () => counters.find(value => value.kind === countKinds[task]) ?? counters[0]!;
+const counter = (): Counter => { if (connected && flow.active) { if (!connected.counter) throw new Error('В опубликованном задании нет счётной карточки.'); return connected.counter; } return counters.find(value => value.kind === countKinds[task]) ?? counters[0]!; };
 const isWord = () => task.startsWith('word-') || task.startsWith('recall-');
 const isListening = () => ['word-listen', 'recall-listen', 'count-listen'].includes(task);
 const hintKey = () => task === 'word-listen' || task === 'recall-listen' ? task : task.startsWith('word-') && task !== 'word-intro' ? 'word-quiz' : task.startsWith('recall-') ? 'recall' : task;
 const semantic = document.createElement('h1'); semantic.className = 'semantic-copy'; host.append(semantic);
 const screenCopy = document.createElement('p'); screenCopy.id = 'canvas-description'; screenCopy.className = 'semantic-copy'; host.append(screenCopy);
 const status = document.createElement('p'); status.className = 'semantic-copy'; status.setAttribute('role', 'status'); host.append(status);
+const loginEmail = new EditorBridge('email', schedule); loginEmail.element.setAttribute('aria-label', 'Электронная почта');
+const loginPassword = new EditorBridge(true, schedule); loginPassword.element.setAttribute('aria-label', 'Пароль локальной копии');
 const editor = new EditorBridge(false, () => { correct = null; feedback = ''; schedule(); }); editor.element.value = '';
 const audio = new Audio(); audio.preload = 'none';
 const video = document.createElement('video'); video.className = 'native-video'; video.playsInline = true; video.preload = 'none'; video.hidden = true; host.append(video);
@@ -109,6 +116,7 @@ function queueAuto(run: () => void) {
 function enterCard() { enteredAt = performance.now(); motionElapsed = 0; motion = { x: 0, y: reduced() ? -8 : 0, rotation: 0 }; if (ready) app.start(); }
 function finishApproach() { mobileApproach = false; host.classList.remove('stand-enter'); cameraProgress = 1; schedule(); }
 function navigate(value: Task, keepLesson = false) {
+  if (connected && !['textbook', 'lesson-overview', 'part-complete', 'lesson-complete'].includes(value) && !keepLesson) return;
   cancelAuto(); catTravel = null; viewRevision++;
   mediaEpoch++;
   if (!keepLesson) flow.active = false;
@@ -118,16 +126,19 @@ function navigate(value: Task, keepLesson = false) {
   if (keepLesson && flow.selectedId) url.searchParams.set('lesson', flow.selectedId); else url.searchParams.delete('lesson');
   history.replaceState(null, '', url); scrollTo(0, 0); enterCard(); resize();
 }
-function openLesson(id: string) { flow.open(id); learnAction(); navigate('lesson-overview', true); }
+async function openLesson(id: string) { await flow.open(id); if (connected?.error) return; learnAction(); navigate('lesson-overview', true); }
 function syncLesson() {
   const step = flow.step;
+  if (step?.kind === 'counter-practice') { navigate(step.format === 'recall' ? 'count-recall' : step.format === 'listening-image' ? 'count-listen' : 'count-reading', true); return; }
   const next: Task = !step ? 'lesson-complete' : step.kind === 'word-practice' ? ({ 'ja-ru': 'word-ja', listening: 'word-listen', 'ru-ja': 'word-ru' } as const)[step.mode]
     : step.kind === 'construction-practice' ? ({ 'ja-ru': 'recall-ja', listening: 'recall-listen', grammar: 'construction' } as const)[step.mode] : step.kind;
   navigate(next, true);
 }
 function lessonAdvance(action: LearningAdvance['action'], requireResult = false) {
   const ticket = flow.ticket();
-  return () => { if (requireResult && (correct === null || editor.composing)) return; if (flow.advance(ticket, action)) syncLesson(); };
+  return async () => { if (requireResult && (correct === null || editor.composing || manual)) return;
+    const details = task === 'construction' && connected ? { tokenIds: tokenOrder.map(index => currentConstruction().tokens[index]!.id) } : {};
+    if (await flow.advance(ticket, action, details)) syncLesson(); };
 }
 function startLesson(restart = false) { flow.start(restart); cameraStarted = performance.now(); syncLesson(); }
 function nextWord() { wordIndex = (wordIndex + 1) % words.length; navigate(task); }
@@ -150,7 +161,7 @@ function image(root: Container, texture: Texture, r: Rect, multiply = false) {
   if (multiply) sprite.blendMode = 'multiply'; root.addChild(sprite); return sprite;
 }
 function interactive(root: Container, id: string, title: string, r: Rect, action: () => void, enabled = true) {
-  enabled = enabled && (!menuOpen || menuPainting);
+  enabled = enabled && !connected?.busy && (!menuOpen || menuPainting);
   const node = new Container(); node.position.set(r.x, r.y); node.eventMode = enabled ? 'static' : 'none'; node.cursor = 'pointer'; node.hitArea = new Rectangle(0, 0, r.width, r.height);
   node.accessible = enabled; node.accessibleType = 'button'; node.accessibleHint = title; node.accessiblePointerEvents = 'none';
   node.on('pointertap', () => { if (enabled && !suppressTap) action(); }); root.addChild(node);
@@ -211,7 +222,10 @@ function header(root: Container = ui) {
     copy(root, flow.active ? `${flow.progress().percent}%` : isWord() ? `${wordIndex + 1} из ${words.length}` : 'A1', x + width - 42, 16, 20, { center: true, hand: true });
     if (shortWide()) return;
     surface(root, box(x, 58, width, 45), textures.get(cardUrl)!);
-    if (flow.active) {
+    if (connected && !flow.active) {
+      action(root, 'section', 'Учебник', box(x, 58, width - 86, 44), () => navigate('textbook'), { bare: true, size: 22 });
+      if (connected.user) action(root, 'logout', 'Выйти', box(x + width - 86, 58, 86, 44), () => { void connected.logout().then(() => navigate('textbook')); }, { bare: true, size: 18 });
+    } else if (flow.active) {
       copy(root, compact ? `Урок ${flow.lesson!.number}` : `Урок ${flow.lesson!.number} · ${flow.lesson!.title}`, x + width / 2 - 22, 65, 20, { center: true, width: width - 150 });
       action(root, 'lesson-exit', 'Выйти', box(x + width - 80, 58, 80, 44), () => navigate('textbook'), { bare: true, size: 20 });
       action(root, 'help', '?', box(x, 58, 44, 44), () => { cancelAuto(); manualHint = !manualHint; schedule(); }, { bare: true, size: 24 });
@@ -256,6 +270,7 @@ function header(root: Container = ui) {
 function drawMenu() {
   if (!menuOpen) return;
   cancelAuto();
+  if (connected) { menuOpen = false; navigate('textbook'); return; }
   const width = Math.min(440, standMode() ? studyWidth() - 12 : app.screen.width - 32), x = standMode() ? studyX() + (studyWidth() - width) / 2 : (app.screen.width - width) / 2, height = app.screen.width >= 1100 ? 418 : 305;
   const y = paintedScroll + (standMode() ? Math.max(stageTop() + 8, Math.min(headerHeight() + 8, stageHeight() - height - 8)) : Math.max(16, Math.min(145, (innerHeight - height) / 2)));
   const blocker = new Graphics().rect(0, 0, app.screen.width, app.screen.height).fill({ color: '#20170e', alpha: .35 }); blocker.eventMode = 'static'; blocker.on('pointertap', () => { menuOpen = false; schedule(); }); overlay.addChild(blocker);
@@ -339,7 +354,7 @@ function dockControls(x: number, width: number) {
     action(root, 'next', 'Дальше', primaryRect, () => {}, { hand: true, enabled: false }); controls[controls.length - 1]!.docked = true; dockIds.push('next');
   }
   if (autoDeadline) { action(root, 'auto-pause', 'Остаться', box(x, y, shortWide() ? compactCell : half, 52), () => { cancelAuto(); schedule(); }, { hand: true }); controls[controls.length - 1]!.docked = true; dockIds.push('auto-pause'); }
-  else if (!secondary && !shortWide()) copy(root, correct === false ? 'Можно выбрать ещё раз' : selection !== null ? 'Ответ принят' : task.endsWith('intro') ? 'Знакомимся с новым' : 'Не торопитесь', x + 18, y + 14, 16, { width: half - 24 });
+  else if (!secondary && !shortWide()) copy(root, connected?.busy ? 'Сохраняем…' : correct === false ? 'Можно выбрать ещё раз' : selection !== null ? 'Ответ принят' : task.endsWith('intro') ? 'Знакомимся с новым' : 'Не торопитесь', x + 18, y + 14, 16, { width: half - 24 });
   return { root, base, speech: compactSpeech };
 }
 function catSeat(index: number) {
@@ -363,7 +378,7 @@ function companion(x: number, width: number, dock?: ReturnType<typeof dockContro
   const side = wide && (usesDock() || app.screen.width - width >= 260);
   const size = side ? usesDock() ? shortWide() ? 100 : Math.min(184, app.screen.width - x - width - 48) : Math.max(84, Math.min(196, app.screen.width - x - width - 44)) : dock ? 66 : 78;
   cat.width = size; cat.height = size / cat.texture.width * cat.texture.height;
-  if (wide && usesDock()) cat.position.set(x + width + 32, paintedScroll + Math.min(stageTop() + 400, stageHeight() - dock!.base - size - 22));
+  if (wide && usesDock()) cat.position.set(x + width + 32, paintedScroll + Math.min(stageTop() + 400, stageHeight() - (dock?.base ?? 82) - size - 22));
   else cat.position.set(app.screen.width - size - 14, side ? paintedScroll + 410 : app.screen.height - cat.height - 20);
   if (!wide && dock) cat.position.set(13, paintedScroll + dockTop + 28);
   cat.visible = side || !!dock && !!message;
@@ -434,9 +449,12 @@ function quiz(x: number, width: number) {
   const single = options.some(word => reverse ? word.surface.length > 6 : word.meaningRu.length > 23);
   const height = single ? reverse ? Math.max(78, ...options.map(word => Math.ceil(word.surface.length * 22 / (width - 70)) * 44 + 14)) : Math.max(78, ...options.map(word => Math.ceil(textWidth(word.meaningRu, 21, book) / (width - 70)) * 31 + 20)) : reverse ? 78 : 59;
   const bottom = choiceGrid<Word>(options, short ? 328 : compact ? 378 : 445, x, width, (candidate, area, index) => {
-    action(ui, `word-option-${index}`, reverse ? candidate.surface : candidate.meaningRu, area, () => {
-      if (correct === true) return;
-      audio.pause(); selection = candidate.id; correct = candidate.id === word.id; hadMistake ||= !correct; learnAction();
+    action(ui, `word-option-${index}`, reverse ? candidate.surface : candidate.meaningRu, area, async () => {
+      if (correct === true || connected?.busy) return;
+      audio.pause(); selection = candidate.id;
+      const result = connected ? await connected.choose(candidate.id) : candidate.id === word.id;
+      if (result === undefined) { selection = null; schedule(); return; }
+      correct = result; hadMistake ||= !correct; learnAction();
       say(correct ? hadMistake ? 'Да, теперь верно! Позже повторим это слово.' : 'Да, всё верно!' : 'Не совсем. Попробуй выбрать ещё раз — я подожду.');
       if (correct) queueAuto(flow.active ? lessonAdvance(hadMistake ? 'again' : 'remember', true) : nextWord);
     }, { enabled: correct !== true && (!listening || played), selected: correct === true && candidate.id === selection, wrong: correct === false && candidate.id === selection, value: reverse ? candidate : undefined });
@@ -509,11 +527,13 @@ function construction(x: number, width: number) {
     beginDrag(button, index, area);
   }, 53);
   action(ui, 'manual', manual ? 'Собирать из слов' : 'Ввести самому', box(x, bottom + 10, width, 48), () => { manual = !manual; correct = null; feedback = ''; schedule(); if (manual) setTimeout(() => editor.element.focus(), 50); }, { hand: true, size: 22 });
-  action(ui, 'check', 'Проверить', box(x, bottom + 70, (width - 12) * .62, 51), () => {
+  action(ui, 'check', 'Проверить', box(x, bottom + 70, (width - 12) * .62, 51), async () => {
     if (editor.composing) { say('Завершите выбор японского текста.'); return; }
     const value = manual ? editor.element.value : tokenOrder.map(index => exercise.tokens[index]!.surface).join('');
-    correct = flow.active ? flow.checkConstruction(tokenOrder, manual ? value : undefined) : value.replace(/[。\s]/g, '') === exercise.example.surface.replace(/[。\s]/g, '');
-    learnAction(); say(correct ? 'Получилось! Фраза собрана.' : 'Попробуем ещё раз. Можно исправить фразу или вернуться к ней позже.');
+    correct = flow.active ? await flow.checkConstruction(tokenOrder, manual ? value : undefined) : value.replace(/[。\s]/g, '') === exercise.example.surface.replace(/[。\s]/g, '');
+    if (correct !== null) hadMistake ||= !correct;
+    learnAction(); say(correct === null && connected?.checkFeedback ? connected.checkFeedback : correct ? 'Получилось! Фраза собрана.' : 'Попробуем ещё раз. Можно исправить фразу или вернуться к ней позже.');
+    if (correct && flow.active) queueAuto(lessonAdvance(hadMistake ? 'again' : 'remember', true));
   }, { hand: true });
   action(ui, 'clear', 'Сначала', box(x + (width - 12) * .62 + 12, bottom + 70, (width - 12) * .38, 51), () => { tokenOrder = []; editor.element.value = ''; correct = null; say(''); }, { hand: true });
   if (feedback) feedbackAt(bottom + 138, x, width, flow.active && correct !== null); else drawHelp(bottom + 139, x, width);
@@ -541,18 +561,21 @@ function count(x: number, width: number) {
   if (kind === 'recall') {
     if (!revealed) action(ui, 'reveal-counter', 'Показать ответ', box(x, 463, width, 58), () => { revealed = true; learnAction(); schedule(); }, { hand: true });
     else {
-      action(ui, 'again', 'Ещё раз', box(x, 463, (width - 12) / 2, 58), () => navigate(task), { hand: true });
-      action(ui, 'remember', 'Помню', box(x + (width + 12) / 2, 463, (width - 12) / 2, 58), () => navigate(task), { hand: true });
+      action(ui, 'again', 'Ещё раз', box(x, 463, (width - 12) / 2, 58), flow.active ? lessonAdvance('again') : () => navigate(task), { hand: true });
+      action(ui, 'remember', 'Помню', box(x + (width + 12) / 2, 463, (width - 12) / 2, 58), flow.active ? lessonAdvance('remember') : () => navigate(task), { hand: true });
       copy(ui, card.definition.explanation, x + 14, 547, 16, { width: width - 28, sans: true });
     }
     drawHelp(revealed ? 657 : 548, x, width); return;
   }
   const pictureOptions = kind === 'counter-image' || kind === 'listening-image';
   const bottom = choiceGrid(card.options, 461, x, width, (option, area, index) => {
-    const choice = action(ui, `count-option-${index}`, pictureOptions ? '' : option.label, area, () => {
-      if (correct === true) return; selection = option.key; correct = card.acceptedKeys.includes(option.key); hadMistake ||= !correct; audio.pause(); learnAction();
+    const choice = action(ui, `count-option-${index}`, pictureOptions ? '' : option.label, area, async () => {
+      if (correct === true || connected?.busy) return; selection = option.key;
+      const result = connected ? await connected.chooseCounter(option.key) : card.acceptedKeys.includes(option.key);
+      if (result === undefined) { selection = null; schedule(); return; }
+      correct = result; hadMistake ||= !correct; audio.pause(); learnAction();
       say(correct ? 'Верно!' : 'Не совсем. Попробуй выбрать ещё раз.');
-      if (correct) queueAuto(() => navigate(task));
+      if (correct) queueAuto(flow.active ? lessonAdvance(hadMistake ? 'again' : 'remember', true) : () => navigate(task));
     }, { enabled: correct !== true && (kind !== 'listening-image' || played), selected: correct === true && option.key === selection, wrong: correct === false && option.key === selection, size: kind === 'reading-choice' ? 22 : 21 });
     if (pictureOptions && option.object) {
       choice.accessibleHint = `${option.label}, количество ${option.quantity ?? 1}${correct === false && option.key === selection ? '. Неверно. Можно выбрать другой ответ.' : ''}`;
@@ -564,7 +587,7 @@ function count(x: number, width: number) {
     }
   }, pictureOptions ? 126 : 55);
   if (selection !== null) {
-    action(ui, 'next-counter', 'Дальше', box(x, bottom + 59, width, 52), () => navigate(task), { hand: true });
+    action(ui, 'next-counter', 'Дальше', box(x, bottom + 59, width, 52), flow.active ? lessonAdvance(hadMistake ? 'again' : 'remember', true) : () => navigate(task), { hand: true });
   } else drawHelp(bottom + 18, x, width);
 }
 
@@ -607,7 +630,7 @@ function introduction(x: number, width: number) {
   if (flow.active && !isConstruction) {
     const ticket = flow.ticket(), index = flow.session!.introIndex, last = index === flow.part!.words.length - 1;
     action(ui, 'intro-prev', '← Назад', box(x, bottom + 66, 100, 53), () => { if (flow.introduce(ticket, -1)) syncLesson(); }, { hand: true, enabled: index > 0, size: 21 });
-    action(ui, 'intro-next', last ? 'К заданиям' : 'Дальше', box(x + 112, bottom + 66, width - 112, 53), () => { if (last ? flow.advance(ticket, 'start-practice') : flow.introduce(ticket, 1)) syncLesson(); }, { hand: true });
+    action(ui, 'intro-next', last ? 'К заданиям' : 'Дальше', box(x + 112, bottom + 66, width - 112, 53), async () => { if (last ? await flow.advance(ticket, 'start-practice') : flow.introduce(ticket, 1)) syncLesson(); }, { hand: true });
   } else action(ui, 'intro-next', 'К практике', box(x, bottom + 66, width, 53), flow.active ? lessonAdvance('continue') : () => navigate(isConstruction ? 'construction' : isCounter ? 'count-category' : 'word-ja'), { hand: true });
   if (isConstruction && showBreakdown) {
     let y = bottom + 141;
@@ -662,7 +685,7 @@ function lessonBoundary(x: number, width: number) {
   if (finished) {
     y += centeredJapanese(content, { surface: 'おつかれさまでした', kana: 'おつかれさまでした', segments: [{ surface: 'おつかれさまでした' }] }, y, width, 27) + 26;
     const count = new Set(flow.lesson.route.goals.flatMap(goal => goal.parts.flatMap(part => part.words.map(word => word.wordId)))).size;
-    const stats = copy(content, `Познакомились: ${count} слов и фраз\nВыполнили: ${flow.session.attempts} заданий\nВернулись к сложному: ${flow.session.again}`, 30, y, 18, { width: width - 60, sans: true }); y += stats.height + 26;
+    const stats = copy(content, connected ? `Пройдено: ${flow.progress().completed} из ${flow.progress().total} шагов.\nПрогресс подтверждён локальным сервером.` : `Познакомились: ${count} слов и фраз\nВыполнили: ${flow.session.attempts} заданий\nВернулись к сложному: ${flow.session.again}`, 30, y, 18, { width: width - 60, sans: true }); y += stats.height + 26;
     const note = copy(content, 'Все обязательные форматы этого урока пройдены. Можно отдохнуть или выбрать следующий урок.', 30, y, 18, { width: width - 60, sans: true }); y += note.height;
   } else {
     const goal = copy(content, flow.goal?.titleRu ?? '', width / 2, y, 26, { center: true, width: width - 60 }); y += goal.height + 28;
@@ -672,12 +695,27 @@ function lessonBoundary(x: number, width: number) {
   const bottom = 158 + height + 26;
   if (finished) {
     action(ui, 'lesson-back', 'К выбору урока', box(x, bottom, width, 55), () => navigate('textbook'), { hand: true, size: 25 });
-    action(ui, 'lesson-restart', 'Пройти ещё раз', box(x, bottom + 69, width, 52), () => startLesson(true), { hand: true });
+    if (!connected) action(ui, 'lesson-restart', 'Пройти ещё раз', box(x, bottom + 69, width, 52), () => startLesson(true), { hand: true });
   } else action(ui, 'part-next', flow.session.state.partIndex === flow.parts.length - 1 ? 'Завершить занятие' : 'Следующая часть', box(x, bottom, width, 55), lessonAdvance('continue'), { hand: true, size: 24 });
+}
+function connectionScreen(x: number, width: number) {
+  const root = deck(box(x, 158, width, 400));
+  copy(root, connected!.busy ? 'Подождите…' : connected!.error ? 'Нужна проверка' : 'Вход в локальную копию', width / 2, 26, 26, { center: true, width: width - 42 });
+  if (connected!.busy) { copy(root, 'Получаем урок и подтверждение сохранения.', 24, 110, 18, { width: width - 48 }); return; }
+  if (connected!.error) {
+    copy(root, connected!.error, 24, 96, 18, { width: width - 48 });
+    action(root, 'connection-retry', 'Загрузить сохранённое состояние', box(24, 275, width - 48, 60), () => { void connected!.boot().then(() => { if (!connected!.error) navigate('textbook'); }); }, { size: 19 });
+    return;
+  }
+  copy(root, 'Электронная почта', 24, 85, 17);
+  loginEmail.draw(ui, box(x + 24, 276, width - 48, 54), 'Адрес ученика');
+  copy(root, 'Пароль локальной копии', 24, 186, 17);
+  loginPassword.draw(ui, box(x + 24, 378, width - 48, 54), 'Пароль');
+  action(root, 'sign-in', 'Войти', box(24, 300, width - 48, 58), () => { void connected!.signIn(loginEmail.element.value.trim(), loginPassword.element.value).then(() => { loginPassword.element.value = ''; schedule(); }); });
 }
 function textbook(x: number, width: number) {
   copy(ui, 'Учебник', x + width / 2, 153, 32, { hand: true, center: true });
-  copy(ui, 'Стартовый A1 · 18 уроков', x + width / 2, 200, 16, { center: true });
+  copy(ui, `Стартовый A1 · ${lessonCatalog.lessons.length} уроков`, x + width / 2, 200, 16, { center: true });
   const columns = app.screen.width > 900 ? 3 : 2, gap = 14, cellW = (width - (columns - 1) * gap) / columns;
   const hintHeight = drawHelp(245, x, width), start = hintHeight ? 245 + hintHeight + 24 : 248;
   lessonCatalog.lessons.forEach((lesson, index) => {
@@ -782,6 +820,9 @@ function render() {
   if (drag) { drag.ghost.destroy({ children: true }); drag = null; }
   ui.removeChildren().forEach(child => child.destroy({ children: true })); controls = []; captions = []; ruby = []; topCard = null; dropZone = null; guideText = ''; speechBounds = null; dockIds = []; actionSpecs.clear(); controlRuns.clear();
   if (task !== 'construction' || !manual || menuOpen) editor.place(null);
+  loginEmail.place(null); loginPassword.place(null);
+  editor.element.readOnly = !!connected?.busy;
+  if (connected?.busy) status.textContent = 'Ожидаем подтверждения локального сервера.';
   if (task !== 'video') video.hidden = true;
   placeWorld();
   const fixedHeader = new Container(); fixedHeader.y = paintedScroll + stageTop(); overlay.addChild(fixedHeader); header(fixedHeader);
@@ -789,7 +830,8 @@ function render() {
   const contentLayer = new Container(), bodyOffset = contentOffset();
   contentLayer.y = bodyOffset; viewRoot.addChild(contentLayer); ui = contentLayer;
   try {
-  if (task === 'lesson-overview') lessonOverview(x, width);
+  if (connectionBlocked()) connectionScreen(x, width);
+  else if (task === 'lesson-overview') lessonOverview(x, width);
   else if (task === 'part-complete' || task === 'lesson-complete') lessonBoundary(x, width);
   else if (task.startsWith('word-') && task !== 'word-intro') quiz(x, width);
   else if (task.startsWith('recall-')) recall(x, width);
@@ -801,9 +843,9 @@ function render() {
   else reference(x, width);
   } finally { ui = viewRoot; }
   if (dropZone && bodyOffset) (dropZone as Rect).y += bodyOffset;
-  if (bodyOffset) for (const element of [video, editor.element]) if (!element.hidden) element.style.top = `${parseFloat(element.style.top) + bodyOffset}px`;
+  if (bodyOffset) for (const element of [video, editor.element, loginEmail.element, loginPassword.element]) if (!element.hidden) element.style.top = `${parseFloat(element.style.top) + bodyOffset}px`;
   if (manualHint && usesDock()) guideText = helpMessage();
-  const dock = usesDock() ? dockControls(x, width) : undefined;
+  const dock = usesDock() && !(connectionBlocked()) ? dockControls(x, width) : undefined;
   contentBottom = ui.getLocalBounds().maxY;
   const height = Math.ceil(dock || standMode() ? innerHeight + Math.max(0, contentBottom - (dock ? dockTop : stageHeight()) + 40) : Math.max(innerHeight, frameHeight(), contentBottom + (w < 700 ? 130 : 270)));
   if (app.screen.height !== height) { host.style.height = `${height}px`; app.resize(); placeWorld(); }
@@ -812,7 +854,7 @@ function render() {
   companion(x, width, dock);
   if (cameraProgress < 1) action(overlay, 'skip-camera', 'Пропустить', mobileApproach ? box(w - 144, paintedScroll + stageTop() + 5, 132, 46) : box(w - 226, paintedScroll + 24, 200, 48), () => { cameraStarted = 0; finishApproach(); }, { hand: true, size: 20 });
   drawMenu();
-  const description = menuOpen ? 'Разделы приложения' : `${taskTitles[task]}. ${flow.active ? `Урок ${flow.lesson!.number}. ${flow.goal?.titleRu ?? flow.lesson!.title}. ` : ''}${task === 'word-ja' || task === 'recall-ja' || task === 'word-intro' ? `${current().surface}, ${current().kana}` : task === 'word-ru' || task === 'recall-ru' ? current().meaningRu : task === 'construction' ? currentConstruction().promptRu : ''}. ${isListening() && !played ? 'Сначала прослушайте запись.' : ''}`;
+  const description = connectionBlocked() ? 'Вход и сохранение локального занятия' : menuOpen ? 'Разделы приложения' : `${taskTitles[task]}. ${flow.active ? `Урок ${flow.lesson!.number}. ${flow.goal?.titleRu ?? flow.lesson!.title}. ` : ''}${task === 'word-ja' || task === 'recall-ja' || task === 'word-intro' ? `${current().surface}, ${current().kana}` : task === 'word-ru' || task === 'recall-ru' ? current().meaningRu : task === 'construction' ? currentConstruction().promptRu : ''}. ${isListening() && !played ? 'Сначала прослушайте запись.' : ''}`;
   if (semantic.textContent !== description) semantic.textContent = description;
   const visibleText: string[] = [];
   const collect = (node: Container) => { if (!node.visible) return; if (node instanceof Text && node.text.trim()) visibleText.push(node.text); node.children.forEach(collect); };
@@ -859,9 +901,14 @@ async function start() {
     if ((t >= 1 || reduced() || !topCard) && cameraProgress >= 1 && !catTravel) app.stop();
   });
   const gl = app.canvas.getContext('webgl2') ?? app.canvas.getContext('webgl'), recovery = gl?.getExtension('WEBGL_lose_context');
-  app.canvas.addEventListener('webglcontextlost', event => { event.preventDefault(); catTravel = null; app.stop(); audio.pause(); video.pause(); document.querySelector('#recovery')!.removeAttribute('hidden'); });
+  app.canvas.addEventListener('webglcontextlost', event => { event.preventDefault(); cancelAuto(); catTravel = null; app.stop(); audio.pause(); video.pause(); document.querySelector('#recovery')!.removeAttribute('hidden'); });
   app.canvas.addEventListener('webglcontextrestored', () => { document.querySelector('#recovery')!.setAttribute('hidden', ''); schedule(); });
   document.querySelector('#retry')!.addEventListener('click', () => recovery?.restoreContext());
+  if (connected) {
+    await connected.boot();
+    if (connected.user && params.get('lesson') && !connected.error) await openLesson(params.get('lesson')!);
+    schedule();
+  }
   Object.assign(window, { __PAPER__: { snapshot, tasks, navigate, setComposition, editor: editor.element, app, audio, video, replay: enterCard } });
 }
 window.addEventListener('resize', resize); window.addEventListener('scroll', updateViewport, { passive: true });
@@ -870,7 +917,7 @@ matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', event 
 window.addEventListener('pointerdown', () => { updateViewport(); pointerHeld = true; if (autoTimer) cancelAuto(); }, true);
 const releasePointer = () => { pointerHeld = false; if (deferredPaint) { deferredPaint = false; schedule(); } };
 window.addEventListener('pointerup', releasePointer, true); window.addEventListener('pointercancel', releasePointer, true);
-window.addEventListener('blur', () => { cancelAuto(); releasePointer(); });
+window.addEventListener('blur', () => { cancelAuto(); releasePointer(); schedule(); });
 document.addEventListener('visibilitychange', () => { if (document.hidden) { cancelAuto(); catTravel = null; audio.pause(); video.pause(); app.stop(); } else schedule(); });
 document.addEventListener('focusin', event => {
   if (!usesDock() || !(event.target instanceof HTMLElement)) return;

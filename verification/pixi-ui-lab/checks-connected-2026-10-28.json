@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-28T18:46:02.823Z",
+  "comparisonAnchor": "2026-10-28T18:46:01.097Z",
+  "snapshot": "e285b7cd65c2457759c3eb0473673699a59d76d9d57632f070478c42c5e52cc4",
+  "source": "b378244d9fc40a357dc8fafd931400e42b7e1752",
+  "dumpSha256": "5d59ab76af6ee5a0caa46844a3bf25e4382109ea1d60ed7bd5a561e0ec3d0359",
+  "postgres": "18.6",
+  "initialCloneIdentical": true,
+  "baselineStillIdentical": true,
+  "pupilCount": 4,
+  "otherPupilsUnchanged": 3,
+  "preservedStudyRows": 847,
+  "preservedHistoryRows": 602,
+  "addedLocalAttempts": 96,
+  "userIdentitiesUnchanged": true,
+  "publicationsUnchanged": true,
+  "publicationAssetHashChecks": 8310,
+  "otherPupilsApiProgressSettingsListsRoutesEqual": true,
+  "priorAttemptsUnchanged": true,
+  "localAuthException": "Only working-clone passwords/sessions of two profiles; original user identities and baseline retained",
+  "browser": {
+    "at": "2026-10-28T18:06:45.995Z",
+    "browsers": {
+      "chrome": {
+        "login": true,
+        "csp": []
+      },
+      "webkit": {
+        "login": true,
+        "existingRouteResume": true,
+        "csp": []
+      }
+    },
+    "fullLesson": {
+      "iterations": 55,
+      "advances": 49,
+      "firstErrorPreserved": true,
+      "reloadResume": true,
+      "completed": true,
+      "legacyReadsCompletion": true
+    }
+  },
+  "protocol": {
+    "at": "2026-10-28T18:13:22.172Z",
+    "duplicateAttempt": true,
+    "staleVersion": true,
+    "ownerMismatch": true,
+    "publicationMismatch": true,
+    "ambiguousFailureRetainsOutbox": true,
+    "oldClientOutboxRecovered": true,
+    "replayDoesNotRegrade": true,
+    "twoTabs": true,
+    "otherTabOwnerChange": true,
+    "legacyShowsCompletedLesson": true
+  },
+  "safari": {
+    "at": "2026-10-28T18:34:26.143Z",
+    "browser": "Safari",
+    "version": "27.0",
+    "login": true,
+    "keyboardControls": true,
+    "existingRouteResume": true,
+    "csp": [],
+    "physicalIME": "manual-required",
+    "iPhone": "manual-required",
+    "voiceOver": "manual-required",
+    "passwordAutofill": "manual-required"
+  },
+  "waiting": {
+    "at": "2026-10-28T18:44:45.295Z",
+    "introductionResumeCheckedHere": false,
+    "questionRemainsVisibleWhileSaving": true,
+    "controlsStayFixedWhileSaving": true,
+    "controlsDisabledUntilAck": true,
+    "confirmedCorrect": true,
+    "csp": []
+  },
+  "offlineRegression": {
+    "chromeLayouts": [
+      "390x844",
+      "320x640",
+      "1280x900",
+      "844x390"
+    ],
+    "externalVideoPlayback": "timed-out; HTTP HEAD/Range available; no CSP violation",
+    "fullSuitePassed": false
+  }
+}

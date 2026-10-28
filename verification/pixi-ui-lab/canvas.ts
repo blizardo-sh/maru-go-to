@@ -97,10 +97,10 @@ export class EditorBridge {
   focused = false;
   private changed: () => void;
 
-  constructor(password: boolean, changed: () => void) {
+  constructor(password: boolean | 'email', changed: () => void) {
     this.changed = changed;
     this.element = document.createElement(password ? 'input' : 'textarea');
-    if (this.element instanceof HTMLInputElement) { this.element.type = 'password'; this.element.autocomplete = 'new-password'; }
+    if (this.element instanceof HTMLInputElement) { this.element.type = password === 'email' ? 'email' : 'password'; this.element.autocomplete = password === 'email' ? 'username' : 'current-password'; }
     else { this.element.rows = 3; this.element.lang = 'ja'; this.element.inputMode = 'text'; this.element.autocomplete = 'off'; this.element.maxLength = 1000; }
     this.element.className = 'native-editor';
     this.element.setAttribute('aria-label', password ? 'Пробный пароль' : 'Японская фраза');
@@ -126,7 +126,7 @@ export class EditorBridge {
     const clip = new Graphics().rect(rect.x + 8, rect.y + 6, rect.width - 16, rect.height - 12).fill('#ffffff');
     root.addChild(clip, content); content.mask = clip;
     const raw = this.element.value;
-    const shown = this.element instanceof HTMLInputElement ? '•'.repeat(raw.length) : raw;
+    const shown = this.element instanceof HTMLInputElement && this.element.type === 'password' ? '•'.repeat(raw.length) : raw;
     const start = this.element.selectionStart ?? 0, end = this.element.selectionEnd ?? start;
     const scrollTop = this.element.scrollTop;
     let x = rect.x + 12, y = rect.y + 12 - scrollTop;
