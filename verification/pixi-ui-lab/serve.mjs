@@ -18,6 +18,7 @@ createServer(async (req, res) => {
   res.setHeader('Cache-Control', 'no-store');
   try {
     const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
+    if (pathname === '/' && !new URL(req.url, 'http://localhost').search) { res.writeHead(302, { Location: '/paper.html' }).end(); return; }
     if (pathname.startsWith('/api')) { res.writeHead(404).end(); return; }
     if (pathname === '/__meta') {
       res.setHeader('Content-Type', 'application/json');

@@ -103,5 +103,26 @@
     ],
     "bytes": 51092,
     "sha256": "1ef390c8d348d69b773d872650b03c2c55b395150ab5ce7749e143f8884b483c"
+  },
+  {
+    "source": "source/desk-landscape.png",
+    "sourceSize": [
+      1586,
+      992
+    ],
+    "sourceSha256": "7e8525b22094914491abb5dff5b5b243280e80f435b81f92cf1a586c15229852",
+    "alphaCrop": [
+      0,
+      0,
+      1586,
+      992
+    ],
+    "runtime": "runtime/desk-landscape.webp",
+    "runtimeSize": [
+      1586,
+      992
+    ],
+    "bytes": 331004,
+    "sha256": "f61482dbbbfbd80ce398e1694ff0208da0cb036729f0443efda9ec7e00515fcd"
   }
 ]

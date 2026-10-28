@@ -8,7 +8,9 @@
     "serve": "node serve.mjs",
     "start": "npm run build && npm run serve",
     "check": "node check.mjs",
-    "check:paper": "node paper-check.mjs"
+    "check:paper": "node paper-check.mjs",
+    "check:lesson": "node lesson-check.mjs",
+    "check:lesson-model": "bun lesson-flow-check.mjs"
   },
   "dependencies": { "pixi.js": "8.22.0" }
 }

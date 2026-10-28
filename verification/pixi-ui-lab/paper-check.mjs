@@ -68,10 +68,13 @@ for (const [name, type, options] of [['chrome', chromium, { channel: 'chrome' }]
     await click(page, 'menu'); assert.equal((await state(page)).menuOpen, true);
     assert.ok((await state(page)).controls.filter(item => item.enabled).every(item => item.id.startsWith('nav-') || item.id === 'menu-close'));
     await click(page, 'nav-textbook'); assert.equal((await state(page)).task, 'textbook');
-    await click(page, 'lesson-1'); assert.equal((await state(page)).task, 'word-intro');
+    await click(page, 'lesson-1'); assert.equal((await state(page)).task, 'lesson-overview');
+    await click(page, 'lesson-start'); assert.equal((await state(page)).task, 'word-intro');
     await load(page, 'recall-ru'); assert.equal((await state(page)).revealed, false); assert.equal((await state(page)).ruby.length, 0);
     assert.equal(await page.locator('h1.semantic-copy').innerText().then(text => text.includes('魚')), false);
+    assert.equal((await page.locator('#canvas-description').textContent()).includes('魚'), false, 'Screen-reader copy must not disclose a hidden answer');
     await click(page, 'reveal'); assert.equal((await state(page)).revealed, true);
+    assert.equal((await page.locator('#canvas-description').textContent()).includes('魚'), true);
     await click(page, 'remember'); assert.equal((await state(page)).wordIndex, 1);
     await load(page, 'word-listen'); assert.ok((await state(page)).controls.filter(item => item.id.startsWith('word-option')).every(item => !item.enabled));
     await click(page, 'listen'); await page.waitForFunction(() => window.__PAPER__.snapshot().played);
