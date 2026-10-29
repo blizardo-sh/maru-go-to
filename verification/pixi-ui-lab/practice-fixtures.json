@@ -1,0 +1,698 @@
+{
+  "source": "Public b378 course only; controlled familiar group, no learner state",
+  "familiar": [
+    "marugoto.starter-a1.word.4d24fbc80ace520a",
+    "marugoto.starter-a1.word.5f0067ce30621f2b",
+    "marugoto.starter-a1.word.learning.l02.repeat-request",
+    "marugoto.starter-a1.word.learning.l02.slow-request",
+    "marugoto.starter-a1.word.learning.l02.listen-request"
+  ],
+  "introduced": [
+    {
+      "wordId": "marugoto.starter-a1.word.2e19a1c3a04d0a1a",
+      "explanationRu": "Вежливая реплика при входе или когда приходится прервать других.",
+      "example": {
+        "surface": "しつれいします。おくれました。",
+        "kana": "しつれいします。おくれました。",
+        "meaningRu": "Извините. Я опоздал.",
+        "segments": [
+          {
+            "surface": "しつれいします。おくれました。"
+          }
+        ],
+        "audioUrl": "/audio/learning/lesson02-word-7afbe067bbfa.m4a"
+      }
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.3289b4c0bfa92493",
+      "explanationRu": "Обращение к преподавателю. Не называют так себя, сообщая свою профессию.",
+      "example": {
+        "surface": "せんせい、もういちどおねがいします。",
+        "kana": "せんせい、もういちどおねがいします。",
+        "meaningRu": "Учитель, повторите, пожалуйста.",
+        "segments": [
+          {
+            "surface": "せんせい、もういちどおねがいします。"
+          }
+        ],
+        "audioUrl": "/audio/learning/lesson02-word-65543d5b57a9.m4a"
+      }
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.222e46673cd124b4",
+      "explanationRu": "Страница книги; долгий звук エー важен для произношения.",
+      "example": {
+        "surface": "このページをみてください。",
+        "kana": "このページをみてください。",
+        "meaningRu": "Посмотрите на эту страницу.",
+        "segments": [
+          {
+            "surface": "このページをみてください。"
+          }
+        ],
+        "audioUrl": "/audio/learning/0b5dc7520ef6f41c0a96.m4a",
+        "audioText": "このページおみてください。"
+      }
+    }
+  ],
+  "baseline": [
+    {
+      "id": "l02-classroom-02:ja-ru:marugoto.starter-a1.word.2e19a1c3a04d0a1a",
+      "wordId": "marugoto.starter-a1.word.2e19a1c3a04d0a1a",
+      "mode": "ja-ru",
+      "choices": [
+        "marugoto.starter-a1.word.2e19a1c3a04d0a1a",
+        "marugoto.starter-a1.word.9f6170caede38d09",
+        "marugoto.starter-a1.word.45ed9eb43d92618c",
+        "marugoto.starter-a1.word.ab3af1f7aa053d50"
+      ]
+    },
+    {
+      "id": "l02-classroom-02:listening:marugoto.starter-a1.word.2e19a1c3a04d0a1a",
+      "wordId": "marugoto.starter-a1.word.2e19a1c3a04d0a1a",
+      "mode": "listening",
+      "choices": [
+        "marugoto.starter-a1.word.2e19a1c3a04d0a1a",
+        "marugoto.starter-a1.word.9f6170caede38d09",
+        "marugoto.starter-a1.word.45ed9eb43d92618c",
+        "marugoto.starter-a1.word.ab3af1f7aa053d50"
+      ]
+    },
+    {
+      "id": "l02-classroom-02:ru-ja:marugoto.starter-a1.word.2e19a1c3a04d0a1a",
+      "wordId": "marugoto.starter-a1.word.2e19a1c3a04d0a1a",
+      "mode": "ru-ja",
+      "choices": [
+        "marugoto.starter-a1.word.2e19a1c3a04d0a1a",
+        "marugoto.starter-a1.word.9f6170caede38d09",
+        "marugoto.starter-a1.word.45ed9eb43d92618c",
+        "marugoto.starter-a1.word.ab3af1f7aa053d50"
+      ]
+    },
+    {
+      "id": "l02-classroom-02:ja-ru:marugoto.starter-a1.word.3289b4c0bfa92493",
+      "wordId": "marugoto.starter-a1.word.3289b4c0bfa92493",
+      "mode": "ja-ru",
+      "choices": [
+        "marugoto.starter-a1.word.3289b4c0bfa92493",
+        "marugoto.starter-a1.word.559067766abda333",
+        "marugoto.starter-a1.word.b26ab0f21a82d32b",
+        "marugoto.starter-a1.word.a149298ff8f2e16e"
+      ]
+    },
+    {
+      "id": "l02-classroom-02:listening:marugoto.starter-a1.word.3289b4c0bfa92493",
+      "wordId": "marugoto.starter-a1.word.3289b4c0bfa92493",
+      "mode": "listening",
+      "choices": [
+        "marugoto.starter-a1.word.3289b4c0bfa92493",
+        "marugoto.starter-a1.word.559067766abda333",
+        "marugoto.starter-a1.word.b26ab0f21a82d32b",
+        "marugoto.starter-a1.word.a149298ff8f2e16e"
+      ]
+    },
+    {
+      "id": "l02-classroom-02:ru-ja:marugoto.starter-a1.word.3289b4c0bfa92493",
+      "wordId": "marugoto.starter-a1.word.3289b4c0bfa92493",
+      "mode": "ru-ja",
+      "choices": [
+        "marugoto.starter-a1.word.3289b4c0bfa92493",
+        "marugoto.starter-a1.word.559067766abda333",
+        "marugoto.starter-a1.word.b26ab0f21a82d32b",
+        "marugoto.starter-a1.word.a149298ff8f2e16e"
+      ]
+    },
+    {
+      "id": "l02-classroom-02:ja-ru:marugoto.starter-a1.word.222e46673cd124b4",
+      "wordId": "marugoto.starter-a1.word.222e46673cd124b4",
+      "mode": "ja-ru",
+      "choices": [
+        "marugoto.starter-a1.word.fae33f214d42d61d",
+        "marugoto.starter-a1.word.e08d579635c5469e",
+        "marugoto.starter-a1.word.222e46673cd124b4",
+        "marugoto.starter-a1.word.f30b2e71086b8f6b"
+      ]
+    },
+    {
+      "id": "l02-classroom-02:listening:marugoto.starter-a1.word.222e46673cd124b4",
+      "wordId": "marugoto.starter-a1.word.222e46673cd124b4",
+      "mode": "listening",
+      "choices": [
+        "marugoto.starter-a1.word.fae33f214d42d61d",
+        "marugoto.starter-a1.word.e08d579635c5469e",
+        "marugoto.starter-a1.word.222e46673cd124b4",
+        "marugoto.starter-a1.word.f30b2e71086b8f6b"
+      ]
+    },
+    {
+      "id": "l02-classroom-02:ru-ja:marugoto.starter-a1.word.222e46673cd124b4",
+      "wordId": "marugoto.starter-a1.word.222e46673cd124b4",
+      "mode": "ru-ja",
+      "choices": [
+        "marugoto.starter-a1.word.fae33f214d42d61d",
+        "marugoto.starter-a1.word.e08d579635c5469e",
+        "marugoto.starter-a1.word.222e46673cd124b4",
+        "marugoto.starter-a1.word.f30b2e71086b8f6b"
+      ]
+    }
+  ],
+  "words": [
+    {
+      "id": "marugoto.starter-a1.word.222e46673cd124b4",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.02"
+      ],
+      "surface": "ページ",
+      "kana": "ページ",
+      "meaningRu": "страница",
+      "segments": [
+        {
+          "surface": "ページ"
+        }
+      ],
+      "kind": "word",
+      "pos": "suffix",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+          "page": 1,
+          "row": 16,
+          "entry": "～ページ",
+          "label": "Словарь · урок 2"
+        }
+      ],
+      "audioUrl": "/audio/a20d66d6dc107965d5f8.m4a"
+    },
+    {
+      "id": "marugoto.starter-a1.word.3289b4c0bfa92493",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.02",
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "surface": "せんせい",
+      "kana": "せんせい",
+      "meaningRu": "учитель",
+      "segments": [
+        {
+          "surface": "せんせい"
+        }
+      ],
+      "kind": "word",
+      "pos": "word",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+          "page": 1,
+          "row": 29,
+          "entry": "せんせい",
+          "label": "Словарь · урок 2"
+        },
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+          "page": 2,
+          "row": 41,
+          "entry": "せんせい",
+          "label": "Словарь · урок 3"
+        }
+      ],
+      "audioUrl": "/audio/96e91aa8b67e131b8aa6.m4a"
+    },
+    {
+      "id": "marugoto.starter-a1.word.b26ab0f21a82d32b",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "surface": "エンジニア",
+      "kana": "エンジニア",
+      "meaningRu": "инженер",
+      "segments": [
+        {
+          "surface": "エンジニア"
+        }
+      ],
+      "kind": "word",
+      "pos": "word",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+          "page": 1,
+          "row": 47,
+          "entry": "エンジニア",
+          "label": "Словарь · урок 3"
+        },
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+          "page": 2,
+          "row": 26,
+          "entry": "エンジニア",
+          "label": "Словарь · урок 3"
+        }
+      ],
+      "audioUrl": "/audio/7df67988b591dd2b0fe4.m4a"
+    },
+    {
+      "id": "marugoto.starter-a1.word.a149298ff8f2e16e",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "surface": "かいしゃいん",
+      "kana": "かいしゃいん",
+      "meaningRu": "работник фирмы",
+      "segments": [
+        {
+          "surface": "かいしゃいん"
+        }
+      ],
+      "kind": "word",
+      "pos": "word",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+          "page": 2,
+          "row": 1,
+          "entry": "かいしゃいん",
+          "label": "Словарь · урок 3"
+        },
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+          "page": 2,
+          "row": 29,
+          "entry": "かいしゃいん",
+          "label": "Словарь · урок 3"
+        }
+      ],
+      "audioUrl": "/audio/b98ae243081691cbfc6c.m4a"
+    },
+    {
+      "id": "marugoto.starter-a1.word.559067766abda333",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "surface": "がくせい",
+      "kana": "がくせい",
+      "meaningRu": "студент",
+      "segments": [
+        {
+          "surface": "がくせい"
+        }
+      ],
+      "kind": "word",
+      "pos": "word",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+          "page": 2,
+          "row": 3,
+          "entry": "がくせい",
+          "label": "Словарь · урок 3"
+        },
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+          "page": 2,
+          "row": 30,
+          "entry": "がくせい",
+          "label": "Словарь · урок 3"
+        }
+      ],
+      "audioUrl": "/audio/ff5b7bf06ff55aea1c63.m4a"
+    },
+    {
+      "id": "marugoto.starter-a1.word.f30b2e71086b8f6b",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.03"
+      ],
+      "surface": "めいし",
+      "kana": "めいし",
+      "meaningRu": "визитка",
+      "segments": [
+        {
+          "surface": "めいし"
+        }
+      ],
+      "kind": "word",
+      "pos": "word",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+          "page": 2,
+          "row": 21,
+          "entry": "めいし",
+          "label": "Словарь · урок 3"
+        }
+      ],
+      "audioUrl": "/audio/84aa45ede4214bcafce9.m4a"
+    },
+    {
+      "id": "marugoto.starter-a1.word.fae33f214d42d61d",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.06"
+      ],
+      "surface": "メニュー",
+      "kana": "メニュー",
+      "meaningRu": "меню",
+      "segments": [
+        {
+          "surface": "メニュー"
+        }
+      ],
+      "kind": "word",
+      "pos": "word",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+          "page": 3,
+          "row": 54,
+          "entry": "メニュー",
+          "label": "Словарь · урок 6"
+        }
+      ],
+      "audioUrl": "/audio/90eb15a82e31a78810e0.m4a"
+    },
+    {
+      "id": "marugoto.starter-a1.word.e08d579635c5469e",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.08",
+        "marugoto.starter-a1.lesson.01",
+        "marugoto.starter-a1.lesson.12",
+        "marugoto.starter-a1.lesson.15"
+      ],
+      "surface": "ほん",
+      "kana": "ほん",
+      "meaningRu": "книга",
+      "segments": [
+        {
+          "surface": "ほん"
+        }
+      ],
+      "kind": "word",
+      "pos": "word",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_RU.pdf",
+          "page": 4,
+          "row": 52,
+          "entry": "ほん",
+          "label": "Словарь · урок 8"
+        },
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesVocabularyIndex2_RU.pdf",
+          "page": 1,
+          "row": 24,
+          "entry": "ほん",
+          "label": "Словарь · урок 1"
+        }
+      ],
+      "audioUrl": "/audio/fa046912f17510ab3d47.m4a"
+    },
+    {
+      "id": "marugoto.starter-a1.word.9f6170caede38d09",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.01"
+      ],
+      "surface": "ありがとうございます",
+      "kana": "ありがとうございます",
+      "meaningRu": "большое спасибо (вежливо)",
+      "segments": [
+        {
+          "surface": "ありがとうございます"
+        }
+      ],
+      "kind": "phrase",
+      "pos": "expression",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+          "page": 1,
+          "row": 1,
+          "entry": "ありがとう（ございます）",
+          "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+        },
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+          "page": 1,
+          "row": 2,
+          "entry": "ありがとう（ございます）",
+          "label": "Указатель фраз · урок 1 · русский перевод подготовлен для приложения"
+        }
+      ],
+      "audioUrl": "/audio/e13ccc995a5f7c0776e5.m4a"
+    },
+    {
+      "id": "marugoto.starter-a1.word.ab3af1f7aa053d50",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.06",
+        "marugoto.starter-a1.lesson.16"
+      ],
+      "surface": "いらっしゃいませ",
+      "kana": "いらっしゃいませ",
+      "meaningRu": "добро пожаловать (клиенту)",
+      "segments": [
+        {
+          "surface": "いらっしゃいませ"
+        }
+      ],
+      "kind": "phrase",
+      "pos": "expression",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+          "page": 1,
+          "row": 8,
+          "entry": "いらっしゃいませ",
+          "label": "Указатель фраз · урок 6 · русский перевод подготовлен для приложения"
+        },
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+          "page": 1,
+          "row": 8,
+          "entry": "いらっしゃいませ",
+          "label": "Указатель фраз · урок 16 · русский перевод подготовлен для приложения"
+        }
+      ],
+      "audioUrl": "/audio/f372e07a74d73d2514b2.m4a"
+    },
+    {
+      "id": "marugoto.starter-a1.word.45ed9eb43d92618c",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.10"
+      ],
+      "surface": "おめでとう",
+      "kana": "おめでとう",
+      "meaningRu": "поздравляю!",
+      "segments": [
+        {
+          "surface": "おめでとう"
+        }
+      ],
+      "kind": "phrase",
+      "pos": "expression",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+          "page": 1,
+          "row": 15,
+          "entry": "おめでとう",
+          "label": "Указатель фраз · урок 10 · русский перевод подготовлен для приложения"
+        }
+      ],
+      "audioUrl": "/audio/dbfa4596e9b519ecf294.m4a"
+    },
+    {
+      "id": "marugoto.starter-a1.word.2e19a1c3a04d0a1a",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.02"
+      ],
+      "surface": "しつれいします",
+      "kana": "しつれいします",
+      "meaningRu": "извините (при входе, уходе или прерывании)",
+      "segments": [
+        {
+          "surface": "しつれいします"
+        }
+      ],
+      "kind": "phrase",
+      "pos": "expression",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+          "page": 1,
+          "row": 26,
+          "entry": "しつれいします",
+          "label": "Указатель фраз · урок 2 · русский перевод подготовлен для приложения"
+        }
+      ],
+      "audioUrl": "/audio/646e61460250ee6ed3c2.m4a"
+    },
+    {
+      "id": "marugoto.starter-a1.word.4d24fbc80ace520a",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.02",
+        "marugoto.starter-a1.lesson.08"
+      ],
+      "surface": "わかりました",
+      "kana": "わかりました",
+      "meaningRu": "понял(а)",
+      "segments": [
+        {
+          "surface": "わかりました"
+        }
+      ],
+      "kind": "phrase",
+      "pos": "expression",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+          "page": 1,
+          "row": 51,
+          "entry": "わかりました",
+          "label": "Указатель фраз · урок 2 · русский перевод подготовлен для приложения"
+        },
+        {
+          "part": "rikai",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_c/MarugotoStarterCompetencesPhraseIndex.pdf",
+          "page": 1,
+          "row": 37,
+          "entry": "わかりました",
+          "label": "Указатель фраз · урок 8 · русский перевод подготовлен для приложения"
+        }
+      ],
+      "audioUrl": "/audio/9f4840d5357e342e6e1c.m4a"
+    },
+    {
+      "id": "marugoto.starter-a1.word.5f0067ce30621f2b",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.02"
+      ],
+      "surface": "わかりません",
+      "kana": "わかりません",
+      "meaningRu": "не понимаю",
+      "segments": [
+        {
+          "surface": "わかりません"
+        }
+      ],
+      "kind": "phrase",
+      "pos": "expression",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+          "page": 1,
+          "row": 52,
+          "entry": "わかりません",
+          "label": "Указатель фраз · урок 2 · русский перевод подготовлен для приложения"
+        }
+      ],
+      "audioUrl": "/audio/b7fa22ec1e4596378877.m4a"
+    },
+    {
+      "id": "marugoto.starter-a1.word.learning.l02.repeat-request",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.02"
+      ],
+      "surface": "もういちどおねがいします。",
+      "kana": "もういちどおねがいします。",
+      "meaningRu": "Повторите, пожалуйста.",
+      "segments": [
+        {
+          "surface": "もういちどおねがいします。"
+        }
+      ],
+      "kind": "phrase",
+      "pos": "expression",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesPhraseIndex.pdf",
+          "label": "Полная учебная реплика, составленная по ситуации и фразам официального урока"
+        }
+      ],
+      "audioUrl": "/audio/1a6bd6bf9e3d01c3f7f0.m4a"
+    },
+    {
+      "id": "marugoto.starter-a1.word.learning.l02.slow-request",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.02"
+      ],
+      "surface": "もうすこしゆっくりいってください。",
+      "kana": "もうすこしゆっくりいってください。",
+      "meaningRu": "Скажите немного медленнее, пожалуйста.",
+      "segments": [
+        {
+          "surface": "もうすこしゆっくりいってください。"
+        }
+      ],
+      "kind": "phrase",
+      "pos": "expression",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://a1.marugotoweb.jp/en/can-do3.php",
+          "label": "Полная учебная реплика, составленная по ситуации и фразам официального урока"
+        }
+      ],
+      "audioUrl": "/audio/d1b9677c3df0aedbc428.m4a"
+    },
+    {
+      "id": "marugoto.starter-a1.word.learning.l02.listen-request",
+      "lessonIds": [
+        "marugoto.starter-a1.lesson.02"
+      ],
+      "surface": "きいてください。",
+      "kana": "きいてください。",
+      "meaningRu": "Послушайте, пожалуйста.",
+      "segments": [
+        {
+          "surface": "きいてください。"
+        }
+      ],
+      "kind": "phrase",
+      "pos": "expression",
+      "reviewStatus": "source-checked",
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://a1.marugotoweb.jp/en/can-do3.php",
+          "label": "Полная учебная реплика, составленная по ситуации и фразам официального урока"
+        }
+      ],
+      "audioUrl": "/audio/ebcef6c726cd2a07068a.m4a"
+    }
+  ]
+}

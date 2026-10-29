@@ -10,14 +10,14 @@ const parts = learningParts(route), steps = parts.flat();
 const repeat = course.words.find(word => word.meaningRu.includes('Повторите, пожалуйста'))!;
 const listen = course.words.find(word => word.meaningRu.includes('Послушайте, пожалуйста'))!;
 assert.ok(repeat && listen);
-const cases = [{ name: 'introduction', step: steps.find(step => step.kind === 'word-intro' && step.wordId === listen.id)! },
+const cases = [{ name: 'introduction-group2', step: steps.find(step => step.kind === 'word-intro' && step.wordId === route.goals.flatMap(goal => goal.parts)[1]!.words[0]!.wordId)! }, { name: 'introduction', step: steps.find(step => step.kind === 'word-intro' && step.wordId === listen.id)! },
   { name: 'long-answers', step: steps.find(step => step.kind === 'word-practice' && step.wordId === repeat.id && step.mode === 'ru-ja')! }];
 const output = new URL('./test-results/stand-content/', import.meta.url); mkdirSync(output, { recursive: true });
 const results = [];
 for (const [name, type, options] of [['chrome', chromium, { channel: 'chrome' }], ['webkit', webkit, {}]] as const) {
   const browser = await type.launch({ ...options, headless: true });
   try {
-    for (const [width, height] of [[900, 1016], [1440, 1000], [1280, 900], [390, 844], [320, 640], [844, 390]]) for (const item of cases) {
+    for (const [width, height] of [[1096, 1454], [900, 1016], [1440, 1000], [1280, 900], [390, 844], [320, 640], [844, 390]]) for (const item of cases) {
       const page = await browser.newPage({ viewport: { width: width!, height: height! }, reducedMotion: 'reduce' });
       const errors: string[] = [], posted: any[] = [];
       page.on('pageerror', error => errors.push(error.message));
@@ -47,6 +47,7 @@ for (const [name, type, options] of [['chrome', chromium, { channel: 'chrome' }]
       if (item.name === 'long-answers') {
         const choices = snapshot.controls.filter((control: any) => control.id.startsWith('word-option-'));
         assert.equal(choices.length, 4);
+        assert.equal(snapshot.scroll.max, 0, 'All four choices must fit');
         if (width! >= 900) for (const choice of choices) assert.ok(choice.rect.y + choice.rect.height <= snapshot.dock.top + .5, `${name} ${width}: desktop answer clipped`);
         assert.equal(snapshot.ruby.some((ruby: any) => ruby.overflow), false);
         if (snapshot.scroll.max) await page.evaluate(() => scrollTo(0, (window as any).__PAPER__.snapshot().scroll.max));
@@ -60,6 +61,53 @@ for (const [name, type, options] of [['chrome', chromium, { channel: 'chrome' }]
         const selected = confirmed.controls.find((control: any) => control.id === 'word-option-3');
         assert.ok(selected.rect.y + selected.rect.height - await page.evaluate(() => scrollY) <= confirmed.dock.top - (confirmed.scroll.max ? 48 : 0) + 1, `${name} ${width}: feedback hid selected answer`);
       } else {
+        assert.equal(snapshot.scroll.max, 0, 'An exercise must fit without vertical scrolling');
+        const card = snapshot.layout.card, next = snapshot.controls.find((c: any) => c.id === 'intro-next');
+        const sounds = snapshot.controls.filter((c: any) => ['intro-listen', 'intro-example-listen'].includes(c.id));
+        assert.equal(sounds.length, snapshot.layout.introTabbed ? 1 : 2);
+        for (const sound of sounds) {
+          assert.equal(sound.docked, false, 'Speech must stay on the card');
+          assert.ok(sound.rect.y >= card.y && sound.rect.y + 44 <= card.y + card.height + 8);
+          assert.ok(sound.rect.x + 44 <= card.x + card.width - 16, 'Inline speech overflow');
+        }
+        const navY = next.rect.y;
+        const initialWord = course.words.find(word => word.id === snapshot.lesson.wordId)!;
+        const initialIntro = route.goals.flatMap(goal => goal.parts).flatMap(part => part.words).find(intro => intro.wordId === initialWord.id)!;
+        for (const [id, expected] of [['intro-listen', initialWord.audioUrl], ['intro-example-listen', initialIntro.example.audioUrl]]) {
+          let spokenState = await page.evaluate(() => (window as any).__PAPER__.snapshot());
+          if (spokenState.layout.introTabbed) {
+            const tab = spokenState.controls.find((c: any) => c.id === (id === 'intro-listen' ? 'intro-tab-0' : 'intro-tab-2'));
+            await page.mouse.click(tab.rect.x + tab.rect.width / 2, tab.rect.y + 22);
+            await page.waitForFunction(({ id, tabId }: any) => { const value = (window as any).__PAPER__.snapshot(); return value.controls.some((c: any) => c.id === id) && value.controls.find((c: any) => c.id === tabId)?.highlight === 'selected'; }, { id, tabId: tab.id });
+            spokenState = await page.evaluate(() => (window as any).__PAPER__.snapshot());
+          }
+          let sound = spokenState.controls.find((c: any) => c.id === id);
+          assert.ok(sound, `${name} ${width} ${item.name}: missing ${id}; tab ${spokenState.layout.introTab}, controls ${spokenState.controls.map((c: any) => c.id)}`);
+          await page.evaluate((y: number) => scrollTo(0, y), Math.max(0, sound.rect.y - snapshot.layout.stageTop - 130));
+          await page.waitForTimeout(40);
+          sound = (await page.evaluate(() => (window as any).__PAPER__.snapshot())).controls.find((c: any) => c.id === id);
+          await page.mouse.click(sound.rect.x + 22, sound.rect.y + 22 - await page.evaluate(() => scrollY));
+          await page.waitForFunction((source: string) => (window as any).__PAPER__.audio.getAttribute('src') === source, expected);
+          const spoken = await page.evaluate(() => (window as any).__PAPER__.snapshot());
+          assert.equal(spoken.controls.find((c: any) => c.id === 'intro-next').rect.y - await page.evaluate(() => scrollY), navY, 'Audio moved navigation');
+        }
+        await page.evaluate(() => scrollTo(0, 0)); await page.waitForTimeout(40);
+        if (width! >= 1000) {
+          assert.ok(next.rect.y - card.y - card.height <= 60, 'Navigation too far from card');
+          assert.ok(snapshot.stand.board.height < 800, 'Stand stretched with tall viewport');
+          const y = next.rect.y;
+          const previous = snapshot.controls.find((c: any) => c.id === 'intro-prev');
+          await page.mouse.click(previous.rect.x + 30, previous.rect.y + 24);
+          await page.waitForTimeout(60);
+          const earlier = await page.evaluate(() => (window as any).__PAPER__.snapshot());
+          assert.equal(earlier.controls.find((c: any) => c.id === 'intro-next').rect.y, y, 'Navigation moved between intro cards');
+          const forward = earlier.controls.find((c: any) => c.id === 'intro-next');
+          await page.mouse.click(forward.rect.x + 30, forward.rect.y + 24); await page.waitForTimeout(60);
+          const following = await page.evaluate(() => (window as any).__PAPER__.snapshot());
+          assert.equal(following.controls.find((c: any) => c.id === 'intro-next').rect.y, y, 'Navigation moved forward');
+          const cat = following.catBounds, bubble = following.speechBounds;
+          if (bubble) assert.ok(bubble.y + bubble.height <= cat.y || bubble.x + bubble.width <= cat.x || bubble.x >= cat.x + cat.width, 'Cat obscures speech');
+        }
         const textBounds = await page.evaluate(() => { const result: number[] = []; const visit = (node: any) => { if (typeof node.text === 'string' && node.text.trim()) result.push(node.getBounds().maxY + scrollY); node.children.forEach(visit); }; visit((window as any).__PAPER__.app.stage.children[1]); return result; });
         const clipped = textBounds.some(bottom => bottom > snapshot.dock.top + .5);
         if (width! >= 900) assert.equal(clipped, false, `${name} ${width}: desktop introduction clipped`);

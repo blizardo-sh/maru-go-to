@@ -60,8 +60,9 @@ export function textWidth(value: string, size: number, family = jpFont) {
 
 // Ruby groups stay together; curated course segments retain their original readings.
 export function japanese(root: Container, value: JapaneseValue, mode: Script, rect: Rect, size = 42, family = jpFont, readingScale = .4) {
-  const readingSize = Math.max(12, Math.round(size * readingScale)), gap = 5;
-  const lineHeight = Math.max(size * 1.65, readingSize + size + gap + 5);
+  const hasReadings = mode === 'furigana' && value.segments.some(segment => segment.reading && segment.reading !== segment.surface);
+  const readingSize = hasReadings ? Math.max(12, Math.round(size * readingScale)) : 0, gap = hasReadings ? 5 : 0;
+  const lineHeight = Math.max(size * 1.45, readingSize + size + gap + 5);
   const segments: JapaneseValue['segments'] = mode === 'furigana' ? value.segments.flatMap(segment =>
     (!segment.reading || segment.reading === segment.surface) && textWidth(segment.surface, size, family) > rect.width
       ? Array.from(segment.surface).map(surface => ({ surface })) : [segment]) : Array.from(mode === 'kana' ? value.kana : value.surface).map(surface => ({ surface }));

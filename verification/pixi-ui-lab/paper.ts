@@ -15,9 +15,9 @@ import './paper.css';
 import { LessonFlow, lessonCatalog as fixtureCatalog } from './lesson-flow';
 import { ConnectedFlow, liveCatalog } from './connected-flow';
 import type { LearningAdvance } from '../../src/shared/learning';
+import { PracticeStudy, practiceFixture } from './practice-study';
 import sceneManifest from '../../public/scenes/manifest.json';
 
-// Selected direction 2; offline design prototype. No application API or persistent storage.
 const tasks = {
   'word-ja': 'Японский → русский', 'word-ru': 'Русский → японский', 'word-listen': 'Словарное аудирование',
   'recall-ja': 'Раскрытие: японский → русский', 'recall-ru': 'Раскрытие: русский → японский', 'recall-listen': 'Вспоминание на слух',
@@ -26,7 +26,7 @@ const tasks = {
   'count-reading': 'Чтение количества', 'count-listen': 'Количество на слух', 'count-recall': 'Вспомнить количество',
   video: 'Видеодиалог', textbook: 'Учебник', reference: 'Справочник',
 };
-const taskTitles = { ...tasks, 'lesson-overview': 'Начало занятия', 'part-complete': 'Часть пройдена', 'lesson-complete': 'Занятие завершено' };
+const taskTitles = { ...tasks, 'practice-study': 'Сравнение закрепления', 'lesson-overview': 'Начало занятия', 'part-complete': 'Часть пройдена', 'lesson-complete': 'Занятие завершено' };
 type Task = keyof typeof taskTitles;
 type Word = JapaneseValue & { id: string; meaningRu: string; audioUrl?: string | null; illustration?: { src: string; bounds: number[] } | null; introduction?: { explanationRu: string } | null };
 type Counter = { kind: string; definition: { surface: string; kana: string; explanation: string }; word: Word; object: { tile: number }; quantity: number | null; answer: JapaneseValue; audioUrl?: string | null; acceptedKeys: string[]; options: { key: string; label: string; quantity?: number; object?: { tile: number } }[]; examples: (JapaneseValue & { audioUrl?: string | null })[] };
@@ -41,6 +41,8 @@ const params = new URLSearchParams(location.search);
 let task: Task = params.get('task') && Object.hasOwn(taskTitles, params.get('task')!) ? params.get('task') as Task : 'textbook';
 const connected = location.pathname === '/learn.html' ? new ConnectedFlow(() => schedule()) : null;
 const flow = connected ?? new LessonFlow();
+const practice = !connected && params.get('study') === 'compare' ? new PracticeStudy() : null;
+if (practice) task = 'practice-study';
 const lessonCatalog = connected ? liveCatalog : fixtureCatalog;
 if (connected) task = 'textbook';
 const connectionBlocked = () => !!connected && (!connected.user || !!connected.error || connected.busy && !flow.active);
@@ -51,6 +53,7 @@ let cameraStarted = 0, cameraProgress = 1, viewRevision = 0;
 let mobileApproach = false, approachStarted = 0;
 let autoTimer: ReturnType<typeof setTimeout> | undefined, autoDeadline = 0, guideText = '', dockTop = 0;
 let speechBounds: Rect | null = null;
+let introSlotHeight = 0, infoSlotHeight = 0, introTabbed = false, introTab = 0, overviewTab = 0;
 let paintedScroll = 0, pointerHeld = false, deferredPaint = false;
 let maxSheetScroll = 0, scrollMore: Container | null = null, scrollBack: Container | null = null;
 const actionSpecs = new Map<string, ActionSpec>();
@@ -75,7 +78,7 @@ let catTravel: { from: { x: number; y: number }; to: { x: number; y: number }; s
 const roomWindow = new Sprite(), windowMask = new Graphics(), tableMask = new Graphics(), windowFrame = new Graphics();
 const standFootShadow = new Graphics();
 const textures = new Map<string, Texture>(), pictures = new Map<string, Texture>();
-const current = (): Word => { if (connected && flow.active && !flow.word) throw new Error('В опубликованном задании нет слова.'); return flow.active && flow.word ? flow.word : words[wordIndex]!; };
+const current = (): Word => { if (practice) return practice.phase === 'intro' ? practice.introWord : practice.word ?? practice.introWord; if (connected && flow.active && !flow.word) throw new Error('В опубликованном задании нет слова.'); return flow.active && flow.word ? flow.word : words[wordIndex]!; };
 const currentConstruction = () => { if (connected && flow.active && ['construction', 'construction-intro'].includes(task) && !flow.construction) throw new Error('В опубликованном задании нет конструкции.'); return flow.active && flow.construction ? flow.construction : data.construction; };
 const currentVideo = () => { if (connected && flow.active && !flow.video && flow.step?.kind === 'video') throw new Error('В опубликованном задании нет видео.'); return flow.active && flow.video ? flow.video : data.video; };
 const box = (x: number, y: number, width: number, height: number): Rect => ({ x, y, width, height });
@@ -122,7 +125,7 @@ function navigate(value: Task, keepLesson = false) {
   cancelAuto(); catTravel = null; viewRevision++;
   mediaEpoch++;
   if (!keepLesson) flow.active = false;
-  audio.pause(); audio.removeAttribute('src'); audio.load(); video.pause(); task = value; selection = null; revealed = false; correct = null; hadMistake = false; feedback = ''; tokenOrder = []; manual = false; showBreakdown = false; played = false; manualHint = false; menuOpen = false;
+  audio.pause(); audio.removeAttribute('src'); audio.load(); video.pause(); task = value; selection = null; revealed = false; correct = null; hadMistake = false; feedback = ''; tokenOrder = []; manual = false; showBreakdown = false; played = false; manualHint = false; menuOpen = false; introTab = 0; overviewTab = 0;
   editor.element.value = ''; caption = ''; video.removeAttribute('src'); video.load();
   const url = new URL(location.href); url.searchParams.set('task', task);
   if (keepLesson && flow.selectedId) url.searchParams.set('lesson', flow.selectedId); else url.searchParams.delete('lesson');
@@ -175,7 +178,7 @@ function interactive(root: Container, id: string, title: string, r: Rect, action
 }
 function action(root: Container, id: string, title: string, r: Rect, run: () => void, options: ActionOptions = {}) {
   const enabled = options.enabled ?? true, node = interactive(root, id, title, r, run, enabled);
-  const inset = 12, contentWidth = r.width - inset - 12, center = r.width / 2;
+  const inset = r.width < 180 ? 8 : 12, contentWidth = r.width - inset * 2, center = r.width / 2;
   const paper = options.bare ? null : surface(node, box(0, 0, r.width, r.height), textures.get(answerUrl)!, options.wrong ? '#f5e0d1' : options.selected ? '#e3eccf' : '#ffffff');
   const focus = new Graphics(); node.addChild(focus); node.alpha = 1;
   const drawFocus = (hover = false) => { focus.clear(); if (options.selected || options.wrong || hover) focus.roundRect(6, 5, r.width - 12, r.height - 10, 6).stroke({ color: options.wrong ? '#823e32' : sage, width: options.selected || options.wrong ? 3 : 2 }); };
@@ -184,7 +187,7 @@ function action(root: Container, id: string, title: string, r: Rect, run: () => 
   node.on('mouseout', () => { drawFocus(); app.render(); });
   if (options.wrong) node.accessibleHint = `${title || 'Этот вариант'}. Неверно. Можно выбрать другой ответ.`;
   if (options.value) {
-    const size = Math.min(27, Math.max(22, contentWidth / Math.max(1, options.value.surface.length)));
+    const size = options.size ?? Math.min(27, Math.max(22, contentWidth / Math.max(1, options.value.surface.length)));
     const width = Math.max(textWidth(options.value.surface, size, jp), textWidth(options.value.kana, Math.max(12, Math.round(size * .4)), jp));
     ruby.push(japanese(node, options.value, 'furigana', box(width <= contentWidth ? center - width / 2 : inset, 6, contentWidth, r.height - 8), size, jp));
   } else {
@@ -206,24 +209,87 @@ function deck(r: Rect) {
   const root = new Container(); root.position.set(r.x, r.y + motion.y); ui.addChild(root); surface(root, box(0, 0, r.width, r.height), texture);
   topCard = root; cardOrigin = { x: r.x, y: r.y }; return root;
 }
-function centeredJapanese(root: Container, value: JapaneseValue, y: number, width: number, size = 94) {
-  const available = width - 48;
+type SpokenLine = { id: string; title: string; audioUrl?: string | null };
+function centeredJapanese(root: Container, value: JapaneseValue, y: number, width: number, size = 94, speech?: SpokenLine, record = true) {
+  const margin = introTabbed ? 16 : 24, available = width - margin * 2 - (speech ? 52 : 0);
   size = Math.max(22, Math.min(size, available / Math.max(1, value.surface.length)));
   const longest = Math.max(...value.segments.filter(segment => segment.reading && segment.reading !== segment.surface).map(segment => segment.surface.length), 1);
   size = Math.min(size, available / longest);
   const actual = Math.max(textWidth(value.surface, size, jp), textWidth(value.kana, Math.max(12, Math.round(size * .28)), jp));
-  const layout = japanese(root, value, 'furigana', box(actual <= available ? (width - actual) / 2 : 24, y, available, 300), size, jp, .28);
-  ruby.push(layout); return layout.height;
+  const left = actual <= available ? (width - actual - (speech ? 52 : 0)) / 2 : margin;
+  const layout = japanese(root, value, 'furigana', box(left, y, available, 300), size, jp, .28);
+  if (record) ruby.push(layout);
+  const last = layout.groups.at(-1);
+  if (speech && last && record) {
+    const button = action(root, speech.id, '▶', box(left + last.x + last.width + 8, y + last.y + Math.max(0, (size * 1.65 - 44) / 2), 44, 44), () => { void speak(speech.audioUrl); }, { bare: true, size: 22 });
+    button.accessibleHint = speech.title;
+  }
+  return Math.max(layout.height, speech ? 44 : 0);
+}
+function wordIntroduction(root: Container, width: number, word: Word, example: (JapaneseValue & { meaningRu: string; audioUrl?: string | null }) | null | undefined, record = true) {
+  if (introTabbed) {
+    let height = 0;
+    if (introTab === 0) {
+      height = 20 + centeredJapanese(root, word, 20, width, shortWide() ? 36 : 44, { id: 'intro-listen', title: 'Прослушать слово', audioUrl: word.audioUrl }, record);
+      const meaning = copy(root, word.meaningRu, width / 2, height + 8, 20, { center: true, width: width - 32 }); height += meaning.height + 20;
+    } else if (introTab === 1) {
+      const explanation = copy(root, word.introduction?.explanationRu ?? 'Послушайте слово и сравните его с примером.', 16, 20, 16, { width: width - 32, sans: true }); height = 20 + explanation.height + 12;
+    } else if (example) {
+      height = 20 + centeredJapanese(root, example, 20, width, width < 300 ? 22 : 25, { id: 'intro-example-listen', title: 'Прослушать пример', audioUrl: example.audioUrl }, record);
+      const translation = copy(root, example.meaningRu, 16, height + 8, 16, { width: width - 32, sans: true }); height += translation.height + 20;
+    }
+    if (record) {
+      const titles = example ? ['Слово', 'Смысл', 'Пример'] : ['Слово', 'Смысл'];
+      titles.forEach((title, index) => action(root, `intro-tab-${index}`, title, box(12 + index * (width - 24) / titles.length, introSlotHeight - 52, (width - 24) / titles.length, 44), () => { introTab = index; schedule(); }, { bare: true, selected: introTab === index, size: 17 }));
+    }
+    return height + 60;
+  }
+  const height = centeredJapanese(root, word, 64, width, 58, { id: 'intro-listen', title: 'Прослушать слово', audioUrl: word.audioUrl }, record), meaningY = 64 + height + 12;
+  const meaning = copy(root, word.meaningRu, width / 2, meaningY, 24, { center: true, width: width - 48 });
+  const bodyY = meaningY + meaning.height + 12;
+  const rule = copy(root, word.introduction?.explanationRu ?? 'Послушайте слово, затем перейдём к практике.', 24, bodyY, 16, { width: width - 48, sans: true });
+  if (!example) return bodyY + rule.height + 24;
+  const y = bodyY + rule.height + 14;
+  const exampleHeight = centeredJapanese(root, example, y, width, 25, { id: 'intro-example-listen', title: 'Прослушать пример', audioUrl: example.audioUrl }, record);
+  const translation = copy(root, example.meaningRu, 24, y + exampleHeight + 12, 17, { width: width - 48, sans: true });
+  return y + exampleHeight + 12 + translation.height + 20;
+}
+function measureIntroduction(width: number) {
+  const entries = practice ? practiceFixture.introduced.map(intro => ({ word: { ...practiceFixture.words.find(word => word.id === intro.wordId)!, introduction: intro }, example: intro.example })) : flow.active && flow.part ? flow.part.words.map(intro => ({ word: { ...lessonCatalog.words.find(word => word.id === intro.wordId)!, introduction: intro }, example: intro.example })) : [{ word: current(), example: null }];
+  const measure = () => Math.max(...entries.map(({ word, example }) => {
+    const root = new Container(), height = wordIntroduction(root, width, word, example, false);
+    root.destroy({ children: true }); return height;
+  }));
+  introTabbed = false;
+  const full = measure();
+  if (!fitStudy() || full <= paperCapacity()) return full;
+  introTabbed = true;
+  const previous = introTab, heights = [0, 1, 2].map(index => { introTab = index; return measure(); }); introTab = previous;
+  return Math.max(...heights);
+}
+function woodenSign(root: Container, rect: Rect) {
+  root.addChild(new Graphics().roundRect(rect.x + 1, rect.y + 4, rect.width, rect.height, 5).fill({ color: '#28190f', alpha: .3 }));
+  surface(root, rect, pictures.get('stand-rail')!, '#ffffff');
+  root.addChild(new Graphics().roundRect(rect.x, rect.y, rect.width, rect.height, 5).fill({ color: '#ffe7bd', alpha: .68 }));
+  root.addChild(new Graphics().roundRect(rect.x + 3, rect.y + 3, rect.width - 6, rect.height - 6, 4).stroke({ color: '#744522', width: 1.5 }));
 }
 function header(root: Container = ui) {
   if (standMode()) {
     const width = studyWidth(), x = studyX(width), compact = app.screen.width < 700;
-    surface(root, box(x, 4, width, 50), textures.get(cardUrl)!);
-    const menu = action(root, 'menu', '≡', box(x, 8, 44, 44), () => { menuOpen = true; cancelAuto(); audio.pause(); video.pause(); schedule(); }, { bare: true, size: 24 }); menu.accessibleHint = 'Открыть разделы';
-    image(root, textures.get(logoUrl)!, box(x + width / 2 - 75, 7, 150, 44));
-    copy(root, flow.active ? `${flow.progress().percent}%` : isWord() ? `${wordIndex + 1} из ${words.length}` : 'A1', x + width - 42, 16, 20, { center: true, hand: true });
-    if (shortWide()) return;
-    surface(root, box(x, 58, width, 45), textures.get(cardUrl)!);
+    for (const offset of [.14, .86]) root.addChild(new Graphics().roundRect(x + width * offset - 6, 20, 12, signHeight() + 48, 3).fill('#8a572f').stroke({ color: '#c58b50', width: 1.5 }));
+    woodenSign(root, box(x, 4, width, 50));
+    const menu = action(root, 'menu', '', box(x, 8, 44, 44), () => { if (practice) { practice.phase = 'choose'; navigate('practice-study'); return; } menuOpen = true; cancelAuto(); audio.pause(); video.pause(); schedule(); }, { bare: true, size: 24 }); menu.accessibleHint = 'Открыть разделы';
+    const menuInk = new Graphics(); for (const y of [16, 22, 28]) menuInk.moveTo(13, y).lineTo(31, y).stroke({ color: ink, width: 2.5 }); menu.addChild(menuInk);
+    image(root, textures.get(logoUrl)!, box(x + width / 2 - (denseStudy() ? 45 : 75), 7, (denseStudy() ? 90 : 150), 44));
+    if (denseStudy()) action(root, 'help', '?', box(x + 44, 8, 44, 44), () => { manualHint = !manualHint; schedule(); }, { bare: true, size: 22 });
+    copy(root, practice ? practice.phase === 'question' ? String(practice.queue.length) : 'A1' : introTabbed && flow.active ? `${flow.session!.introIndex + 1}/${flow.part!.words.length}` : flow.active ? `${flow.progress().percent}%` : isWord() ? `${wordIndex + 1} из ${words.length}` : 'A1', x + width - 42, 16, 20, { center: true, hand: true });
+    if (shortWide() || denseStudy()) return;
+    woodenSign(root, box(x, 58, width, 45));
+    if (practice) {
+      copy(root, practice.phase === 'choose' ? 'Сравним закрепление' : `${practice.variant === 'choice' ? 'А · Выбор ответа' : 'Б · Вспоминание'}${practice.delayed ? ' · После паузы' : ''}`, x + width / 2, 65, 20, { center: true, width: width - 100 });
+      action(root, 'study-home', '≡', box(x, 58, 44, 44), () => { cancelAuto(); practice.phase = 'choose'; navigate('practice-study'); }, { bare: true, size: 22 });
+      return;
+    }
     if (connected && !flow.active) {
       action(root, 'section', 'Учебник', box(x, 58, width - 86, 44), () => navigate('textbook'), { bare: true, size: 22 });
       if (connected.user) action(root, 'logout', 'Выйти', box(x + width - 86, 58, 86, 44), () => { void connected.logout().then(() => navigate('textbook')); }, { bare: true, size: 18 });
@@ -240,7 +306,7 @@ function header(root: Container = ui) {
   const w = app.screen.width, x = Math.max(14, (w - 800) / 2), width = Math.min(w - 28, 800);
   if (shortWide() && usesDock()) {
     surface(root, box(14, 8, w - 28, 52), textures.get(answerUrl)!);
-    const menu = action(root, 'menu', '≡', box(18, 12, 44, 44), () => { menuOpen = true; cancelAuto(); audio.pause(); video.pause(); schedule(); }, { bare: true, size: 24 }); menu.accessibleHint = 'Открыть разделы';
+    const menu = action(root, 'menu', '≡', box(18, 12, 44, 44), () => { if (practice) { practice.phase = 'choose'; navigate('practice-study'); return; } menuOpen = true; cancelAuto(); audio.pause(); video.pause(); schedule(); }, { bare: true, size: 24 }); menu.accessibleHint = 'Открыть разделы';
     image(root, textures.get(logoUrl)!, box(78, 10, 130, 45));
     copy(root, flow.active ? `Урок ${flow.lesson!.number} · ${flow.progress().percent}%` : task.startsWith('count') ? 'Счёт' : task.includes('construction') ? 'Фразы' : task === 'video' ? 'Видео' : 'Занятие', w / 2, 20, 22, { hand: true, center: true, width: w - 460 });
     const help = action(root, 'help', '?', box(w - 142, 12, 44, 44), () => { cancelAuto(); manualHint = !manualHint; schedule(); }, { bare: true, size: 24 }); help.accessibleHint = 'Как пользоваться заданием';
@@ -293,20 +359,33 @@ function setComposition(value: Composition) {
   const url = new URL(location.href); url.searchParams.set('composition', value); history.replaceState(null, '', url);
   enterCard(); resize();
 }
-function usesDock() { return task !== 'textbook' && task !== 'reference'; }
+function fitStudy() { return standMode() && (practice ? practice.phase === 'intro' || practice.phase === 'question' : ['lesson-overview', 'part-complete', 'lesson-complete', 'word-intro', 'word-ja', 'word-ru', 'word-listen'].includes(task)); }
+function signHeight() { return shortWide() || denseStudy() ? 58 : 110; }
+function standCapacity() { return shortWide() ? innerHeight - 66 : Math.max(220, innerHeight - signHeight() - 12 - (denseStudy() ? 180 : 630) * standScale() - 24); }
+function paperCapacity() { return standCapacity() - 18 - 82 - 26; }
+function introPage() { return task === 'word-intro' || practice?.phase === 'intro'; }
+function usesDock() { if (practice) return practice.phase === 'intro' || practice.phase === 'question'; return task !== 'textbook' && task !== 'reference'; }
 function standMode() { return composition === 'stand'; }
-function standScale() { return app.screen.width >= 1000 ? Math.min(.42, Math.max(.18, (innerHeight - 700) / 630)) : shortWide() ? .3 : .18; }
+function denseStudy() { return fitStudy() && app.screen.width < 700 && innerHeight < 740; }
+function standScale() { return denseStudy() ? .09 : app.screen.width >= 1000 ? Math.min(.42, Math.max(.18, (innerHeight - 700) / 630)) : shortWide() ? .3 : .18; }
 function shortWide() { return app.screen.width >= 700 && innerHeight < 560; }
 function desktopStage() { return app.screen.width >= 1000 && innerHeight >= 620; }
-function stageTop() { return standMode() ? shortWide() ? 0 : 180 * standScale() + 12 : desktopStage() && usesDock() ? Math.max(0, (innerHeight - 720) / 2) : 0; }
-function headerHeight() { return stageTop() + (shortWide() && usesDock() ? 66 : standMode() ? 108 : 142); }
+function studySpan() {
+  const desired = introPage() && introSlotHeight ? 18 + introSlotHeight + 26 + 82 + (!fitStudy() && !wideStage() && !collapsedHint() ? 104 : 0)
+    : infoSlotHeight ? 18 + infoSlotHeight + 26 + 82
+    : practice?.phase === 'question' && practice.recall && !practice.hinted && !practice.revealed ? 18 + 230 + 26 + 146
+    : wideStage() ? 710 : innerHeight;
+  return Math.min(standCapacity(), desired);
+}
+function stageTop() { return standMode() ? shortWide() ? 66 : signHeight() + 180 * standScale() + 24 + Math.max(0, (innerHeight - studySpan() - signHeight() - 12 - 630 * standScale() - 24) / 2) : desktopStage() && usesDock() ? Math.max(0, (innerHeight - 720) / 2) : 0; }
+function headerHeight() { return standMode() ? stageTop() + 8 : stageTop() + (shortWide() && usesDock() ? 66 : 142); }
 function wideStage() { return desktopStage() || shortWide(); }
 function collapsedHint() { return standMode() && innerHeight < 740 && !wideStage() && !manualHint && !feedback; }
 function shortQuiz() { return standMode() && innerHeight < 740 && !wideStage() && (task.startsWith('word-') && task !== 'word-intro' || task.startsWith('count-') && task !== 'count-recall'); }
-function stageHeight() { return standMode() ? shortWide() ? innerHeight : Math.max(stageTop() + 260, innerHeight - 450 * standScale() - 12) : desktopStage() ? stageTop() + Math.min(innerHeight, 720) : innerHeight; }
-function contentOffset() { return standMode() ? stageTop() + (shortWide() ? -76 : -32) : usesDock() ? shortWide() ? -76 : desktopStage() ? stageTop() + 44 : 0 : 0; }
-function studyWidth() { return Math.min(!standMode() && task === 'textbook' && app.screen.width >= 1000 ? 1000 : shortWide() && usesDock() ? Math.min(470, app.screen.width - 340) : desktopStage() && (usesDock() || standMode()) ? Math.min(640, app.screen.width - 500) : 640, app.screen.width - (standMode() ? 54 : 38)); }
-function studyX(width = studyWidth()) { return shortWide() && usesDock() ? Math.max(24, (app.screen.width - width - 340) / 2) : (app.screen.width - width) / 2; }
+function stageHeight() { return standMode() ? stageTop() + studySpan() : desktopStage() ? stageTop() + Math.min(innerHeight, 720) : innerHeight; }
+function contentOffset() { return standMode() ? stageTop() - 140 : usesDock() ? shortWide() ? -76 : desktopStage() ? stageTop() + 44 : 0 : 0; }
+function studyWidth() { return Math.min(!standMode() && task === 'textbook' && app.screen.width >= 1000 ? 1000 : shortWide() && usesDock() ? standMode() ? app.screen.width - 54 : Math.min(470, app.screen.width - 340) : desktopStage() && (usesDock() || standMode()) ? Math.min(640, app.screen.width - 500) : 640, app.screen.width - (standMode() ? 54 : 38)); }
+function studyX(width = studyWidth()) { return shortWide() && usesDock() && !standMode() ? Math.max(24, (app.screen.width - width - 340) / 2) : (app.screen.width - width) / 2; }
 function shortGuide() {
   if (task === 'construction') return manual ? 'Введите фразу японской клавиатурой и проверьте.' : 'Выбирайте слова по порядку. Нажатие на слово в фразе убирает его.';
   if (task.startsWith('recall-') || task === 'count-recall') return 'Вспомните ответ, затем откройте карточку и сравните.';
@@ -316,9 +395,15 @@ function shortGuide() {
   return 'Выберите ответ. Я подскажу, как получилось.';
 }
 function dockControls(x: number, width: number) {
+  const compactDock = shortWide() && !fitStudy();
   const get = (id: string) => actionSpecs.get(id);
   let primary: ActionSpec | undefined, secondary: ActionSpec | undefined, upper: ActionSpec[] = [];
-  if (task.endsWith('intro')) { primary = get('intro-next'); secondary = get('intro-prev'); upper = [get('intro-listen'), get('intro-example-listen')].filter((v): v is ActionSpec => !!v); }
+  if (practice) {
+    if (practice.phase === 'question' && practice.revealed) { primary = get('study-self-remember'); secondary = get('study-self-again'); }
+    else if (practice.phase === 'question' && practice.recall && !practice.hinted) { primary = get('study-hint'); upper = [get('study-reveal')!]; }
+    else { primary = get('study-next') ?? get('next'); secondary = get('study-prev'); }
+  }
+  else if (task.endsWith('intro')) { primary = get('intro-next'); secondary = get('intro-prev'); upper = (task === 'word-intro' ? [] : [get('intro-listen'), get('intro-example-listen')]).filter((v): v is ActionSpec => !!v); }
   else if (task === 'construction') { primary = get('next') ?? get('check'); secondary = get('clear'); upper = [get('manual')!]; }
   else if (task === 'video') { primary = get('video-next'); upper = [get('video-play')!, get('video-seek')!]; }
   else if (task === 'lesson-overview') { primary = get('lesson-start'); secondary = get('lesson-back'); }
@@ -326,15 +411,15 @@ function dockControls(x: number, width: number) {
   else if (task === 'part-complete') primary = get('part-next');
   else if (task.startsWith('recall-') || task === 'count-recall') { primary = get('remember') ?? get('reveal-counter'); secondary = get('again'); }
   else primary = get('next') ?? get('next-counter');
-  const removed = ['intro-listen', 'intro-example-listen', 'intro-prev', 'intro-next', 'manual', 'check', 'clear', 'next', 'next-counter', 'video-next', 'video-play', 'video-seek', 'lesson-start', 'lesson-back', 'lesson-restart', 'part-next', 'again', 'remember', 'reveal-counter'];
+  const removed = ['study-next', 'study-prev', 'study-hint', 'study-reveal', 'study-self-remember', 'study-self-again', ...(task === 'word-intro' ? [] : ['intro-listen', 'intro-example-listen']), 'intro-prev', 'intro-next', 'manual', 'check', 'clear', 'next', 'next-counter', 'video-next', 'video-play', 'video-seek', 'lesson-start', 'lesson-back', 'lesson-restart', 'part-next', 'again', 'remember', 'reveal-counter'];
   for (const id of removed) { const spec = get(id); if (!spec) continue; spec.node.removeFromParent(); spec.node.destroy({ children: true }); actionSpecs.delete(id); controls = controls.filter(c => c.id !== id); captions = captions.filter(c => c.id !== id); }
-  const compactSpeech = !wideStage() && !!(feedback || guideText), extra = upper.length > 0;
+  const compactSpeech = !fitStudy() && !wideStage() && (introPage() ? !collapsedHint() : !!(feedback || guideText)), extra = upper.length > 0;
   let speechHeight = 0;
   if (compactSpeech) {
     const measure = new Text({ text: feedback || shortGuide(), style: { fontFamily: 'system-ui, sans-serif', fontSize: 16, lineHeight: 23.2, wordWrap: true, wordWrapWidth: standMode() ? width - 94 : app.screen.width - 132, breakWords: true } });
     speechHeight = shortQuiz() && !manualHint ? 104 : Math.max(104, measure.height + 73); measure.destroy();
   }
-  const base = extra && !shortWide() ? 146 : 82;
+  const base = extra && !compactDock ? 146 : 82;
   dockTop = stageHeight() - base - speechHeight;
   const root = new Container(); root.y = paintedScroll; overlay.addChild(root);
   const blocker = new Graphics().rect(0, dockTop, app.screen.width, stageHeight() - dockTop).fill({ color: '#70482c', alpha: .001 }); blocker.eventMode = 'static'; root.addChild(blocker);
@@ -342,14 +427,14 @@ function dockControls(x: number, width: number) {
   const half = (width - 12) / 2, y = stageHeight() - 68, compactCell = (width - 36) / 4;
   dockIds = [];
   const paint = (spec: ActionSpec, rect: Rect) => {
-    const short: Record<string, string> = { 'Начать занятие': 'Начать', 'Посмотреть итог': 'Итог', 'К выбору урока': 'К урокам', 'Пройти ещё раз': 'Ещё раз', 'Следующая часть': 'Дальше', 'Завершить занятие': 'Завершить', 'Продолжить урок': 'Дальше', ...(shortWide() ? { 'Ввести самому': 'Ввод', 'Собирать из слов': 'Слова', 'Показать ответ': 'Открыть' } : {}) };
+    const short: Record<string, string> = { 'Начать занятие': 'Начать', 'Посмотреть итог': 'Итог', 'К выбору урока': 'К урокам', 'Пройти ещё раз': 'Ещё раз', 'Следующая часть': 'Дальше', 'Завершить занятие': 'Завершить', 'Продолжить урок': 'Дальше', ...(compactDock ? { 'Ввести самому': 'Ввод', 'Собирать из слов': 'Слова', 'Показать ответ': 'Открыть' } : {}) };
     const title = short[spec.title] ?? (spec.title.startsWith('Продолжить ·') ? 'Продолжить' : spec.title);
     const node = action(root, spec.id, title, rect, spec.run, spec.options); node.accessibleHint = spec.title;
     controls[controls.length - 1]!.docked = true; dockIds.push(spec.id);
   };
-  if (upper.length) upper.forEach((spec, index) => paint(spec, shortWide() ? box(x + (index + 1) * (compactCell + 12), y, compactCell, 52) : box(x + (upper.length === 1 ? 0 : index * (half + 12)), y - 64, upper.length === 1 ? width : half, 52)));
-  if (secondary) paint(secondary, box(x, y, shortWide() ? compactCell : half, 52));
-  const primaryRect = shortWide() ? box(x + 3 * (compactCell + 12), y, compactCell, 52) : box(x + half + 12, y, half, 52);
+  if (upper.length) upper.forEach((spec, index) => paint(spec, compactDock ? box(x + (index + 1) * (compactCell + 12), y, compactCell, 52) : box(x + (upper.length === 1 ? 0 : index * (half + 12)), y - 64, upper.length === 1 ? width : half, 52)));
+  if (secondary) paint(secondary, box(x, y, compactDock ? compactCell : half, 52));
+  const primaryRect = compactDock ? box(x + 3 * (compactCell + 12), y, compactCell, 52) : box(x + half + 12, y, half, 52);
   if (primary) paint(primary, primaryRect);
   else if (task.startsWith('recall-')) {
     const reveal = controlRuns.get('reveal')!;
@@ -357,11 +442,12 @@ function dockControls(x: number, width: number) {
   } else if (task.startsWith('word-') || task.startsWith('count-')) {
     action(root, 'next', 'Дальше', primaryRect, () => {}, { hand: true, enabled: false }); controls[controls.length - 1]!.docked = true; dockIds.push('next');
   }
-  if (autoDeadline) { action(root, 'auto-pause', 'Остаться', box(x, y, shortWide() ? compactCell : half, 52), () => { cancelAuto(); schedule(); }, { hand: true }); controls[controls.length - 1]!.docked = true; dockIds.push('auto-pause'); }
-  else if (!secondary && !shortWide()) copy(root, connected?.busy ? 'Сохраняем…' : correct === false ? 'Можно выбрать ещё раз' : selection !== null ? 'Ответ принят' : task.endsWith('intro') ? 'Знакомимся с новым' : 'Не торопитесь', x + 18, y + 14, 16, { width: half - 24 });
+  if (autoDeadline) { action(root, 'auto-pause', 'Остаться', box(x, y, compactDock ? compactCell : half, 52), () => { cancelAuto(); schedule(); }, { hand: true }); controls[controls.length - 1]!.docked = true; dockIds.push('auto-pause'); }
+  else if (!secondary && !compactDock) { const note = copy(root, fitStudy() && feedback ? correct ? 'Кот: Верно!' : 'Кот: Попробуй ещё.' : practice?.recall && !practice.hinted ? 'Без подсказки' : connected?.busy ? 'Сохраняем…' : correct === false ? 'Можно выбрать ещё раз' : selection !== null ? 'Ответ принят' : task.endsWith('intro') ? 'Знакомимся с новым' : 'Не торопитесь', x + 18, 0, 16, { width: half - 24 }); note.y = y + (52 - note.height) / 2; }
   return { root, base, speech: compactSpeech };
 }
-function catSeat(index: number) {
+function catSeat(index: number, speaking = false) {
+  if (!wideStage() && usesDock() && !speaking) return { x: index ? studyX() + studyWidth() + 14 - cat.width : studyX() - 14, y: paintedScroll + innerHeight - 8 - cat.height };
   if (!wideStage() && usesDock()) return { x: index ? studyX() + studyWidth() + 14 - cat.width : studyX() - 14, y: paintedScroll + dockTop + 28 };
   const span = stageHeight() - stageTop(), s = standScale();
   const ledge = index ? stageHeight() + 12 + 35 * s : stageTop() - 12 + (500 - 180) / 650 * (span + 24);
@@ -372,13 +458,13 @@ function moveCat() {
   if (!standMode() || catTravel) return;
   catPerch = 1 - catPerch; cancelAuto();
   if (reduced()) { schedule(); return; }
-  catTravel = { from: { x: cat.x, y: cat.y }, to: catSeat(catPerch), start: performance.now() };
+  catTravel = { from: { x: cat.x, y: cat.y }, to: catSeat(catPerch, !!speechBounds), start: performance.now() };
   if (catBubble) catBubble.visible = false;
   if (catShadow) catShadow.visible = false;
   app.start();
 }
 function companion(x: number, width: number, dock?: ReturnType<typeof dockControls>) {
-  const wide = wideStage(), fullGuide = wide && !shortWide(), message = collapsedHint() ? '' : manualHint && usesDock() ? fullGuide ? helpMessage() : shortGuide() : feedback || (guideText ? fullGuide ? guideText : shortGuide() : '');
+  const wide = wideStage(), fullGuide = wide && !shortWide(), message = fitStudy() && !wide && !manualHint ? '' : collapsedHint() ? '' : manualHint && usesDock() ? fullGuide ? helpMessage() : shortGuide() : feedback || (guideText ? fullGuide ? guideText : shortGuide() : '');
   const side = wide && (usesDock() || app.screen.width - width >= 260);
   const size = side ? usesDock() ? shortWide() ? 100 : Math.min(184, app.screen.width - x - width - 48) : Math.max(84, Math.min(196, app.screen.width - x - width - 44)) : dock ? 66 : 78;
   cat.width = size; cat.height = size / cat.texture.width * cat.texture.height;
@@ -390,8 +476,8 @@ function companion(x: number, width: number, dock?: ReturnType<typeof dockContro
   if (standMode()) {
     const close = !wideStage();
     cat.width = close ? 66 : Math.max(44, Math.min(110, standScale() * 260, 2 * (app.screen.width - x - width - 24 - 135 * standScale() - 8))); cat.height = cat.width / cat.texture.width * cat.texture.height;
-    const seat = catSeat(catPerch); if (!catTravel) cat.position.set(seat.x, seat.y); cat.visible = close ? !!dock : seat.x + cat.width <= app.screen.width;
-    if (close && dock) surface(overlay, box(x - 18, paintedScroll + dockTop + 89, width + 36, 24), pictures.get('stand-rail')!);
+    const seat = catSeat(catPerch, !!message || !!dock?.speech); if (!catTravel) cat.position.set(seat.x, seat.y); cat.visible = close ? !!dock && (dock.speech || cat.y >= paintedScroll + stageHeight() - 4) : seat.x + cat.width <= app.screen.width;
+    if (close && dock && (message || dock.speech)) surface(overlay, box(x - 18, paintedScroll + dockTop + 89, width + 36, 24), pictures.get('stand-rail')!);
   }
   if (cat.visible) {
     catShadow = new Graphics().ellipse(cat.x + cat.width / 2, cat.y + cat.height - 3, cat.width * .42, cat.width * .045).fill({ color: '#382313', alpha: .24 }); overlay.addChild(catShadow);
@@ -399,7 +485,7 @@ function companion(x: number, width: number, dock?: ReturnType<typeof dockContro
   if (message) {
     const bx = wide ? x + width + 20 : standMode() ? catPerch ? x - 14 : x + 62 : 87, bubbleWidth = wide ? Math.min(284, app.screen.width - bx - 16) : standMode() ? width - 62 : app.screen.width - 100;
     const text = copy(overlay, message, 16, 44, wide ? 18 : 16, { width: bubbleWidth - 32, sans: true });
-    const height = Math.max(84, text.height + 57), by = wide ? Math.max(paintedScroll + headerHeight() + 4, cat.y - height - 28) : paintedScroll + dockTop + 8;
+    const height = Math.max(84, text.height + 57), by = fitStudy() && !wide ? paintedScroll + Math.max(headerHeight() + 8, dockTop - height - 14) : wide ? Math.max(paintedScroll + 16, cat.y - height - 28) : paintedScroll + dockTop + 8;
     speechBounds = box(bx, by, bubbleWidth, height);
     const bubble = new Container(); bubble.position.set(bx, by); overlay.addChild(bubble); catBubble = bubble;
     bubble.addChild(new Graphics().roundRect(2, 4, bubbleWidth, height, 13).fill({ color: '#281b10', alpha: .2 }));
@@ -435,7 +521,7 @@ function drawHelp(y: number, x: number, width: number) {
 }
 function feedbackAt(y: number, x: number, width: number, next = true) {
   if (!feedback) return;
-  if (next) action(ui, 'next', 'Дальше', box(x, y + 56, width, 52), flow.active ? lessonAdvance(correct && !hadMistake ? 'remember' : 'again', true) : nextWord, { hand: true });
+  if (next) action(ui, 'next', 'Дальше', box(x, y + 56, width, 52), practice ? () => { if (practice.next()) navigate('practice-study'); } : flow.active ? lessonAdvance(correct && !hadMistake ? 'remember' : 'again', true) : nextWord, { hand: true });
 }
 function choiceGrid<T>(items: T[], y: number, x: number, width: number, make: (item: T, r: Rect, index: number) => void, height = 59, columns = 2) {
   const gap = 12, cell = (width - (columns - 1) * gap) / columns;
@@ -444,31 +530,47 @@ function choiceGrid<T>(items: T[], y: number, x: number, width: number, make: (i
 }
 
 function quiz(x: number, width: number) {
-  const short = shortWide(), compact = standMode() && !short, word = current(), r = box(x, 158, width, short ? 150 : compact ? 196 : 261), root = deck(r), listening = task === 'word-listen', reverse = task === 'word-ru';
-  copy(root, listening ? 'Что прозвучало?' : reverse ? 'Выберите японское слово' : 'Как переводится слово?', width / 2, short ? 16 : 24, width < 300 || short ? 20 : 22, { center: true, width: width - 42 });
-  if (listening) action(root, 'listen', playing ? 'Слушаем…' : '▶ Прослушать', box(32, short ? 68 : compact ? 80 : 104, width - 64, short ? 62 : 78), () => { void speak(word.audioUrl); }, { hand: true, size: 26 });
-  else if (reverse) copy(root, word.meaningRu, width / 2, short ? 82 : compact ? 88 : 111, short ? 30 : 38, { center: true, width: width - 50 });
-  else centeredJapanese(root, word, short ? 72 : compact ? 66 : 88, width, short ? 44 : compact ? 76 : 94);
-  const options: Word[] = flow.active ? flow.choices : words;
+  const short = shortWide() || fitStudy() && app.screen.width < 700, split = shortWide() && standMode(), compact = standMode() && !short, word = current(), listening = practice ? practice.current?.mode === 'listening' : task === 'word-listen', reverse = practice ? practice.current?.mode === 'ru-ja' : task === 'word-ru';
+  const options: Word[] = practice ? practice.choices : flow.active ? flow.choices : words, choiceSize = short ? 18 : 21;
+  const questionWidth = split ? Math.min(320, width * .4) : width, answersWidth = split ? width - questionWidth - 20 : width;
   const measuredHeight = (columnWidth: number) => reverse ? Math.max(59, ...options.map(word => {
-    const measure = new Container(), size = Math.min(27, Math.max(22, columnWidth / Math.max(1, word.surface.length)));
+    const measure = new Container(), size = short ? 20 : Math.min(27, Math.max(22, columnWidth / Math.max(1, word.surface.length)));
     const layout = japanese(measure, word, 'furigana', box(0, 0, columnWidth, 1000), size, jp); measure.destroy({ children: true }); return layout.height + 14;
-  })) : Math.max(59, ...options.map(word => Math.ceil(textWidth(word.meaningRu, 21, book) / columnWidth) * 31 + 20));
-  const twoColumnHeight = measuredHeight((width - 12) / 2 - 24);
-  const maxChoiceHeight = Math.max(96, stageHeight() - headerHeight() - 82 - (wideStage() ? 0 : shortQuiz() ? 104 : 160) - 96);
-  const columns = twoColumnHeight > maxChoiceHeight ? 1 : 2;
-  const height = columns === 1 ? measuredHeight(width - 24) : twoColumnHeight;
-  const bottom = choiceGrid<Word>(options, r.y + r.height + 24, x, width, (candidate, area, index) => {
+  })) : Math.max(59, ...options.map(word => {
+    const root = new Container(), text = copy(root, word.meaningRu, 0, 0, choiceSize, { width: columnWidth }); const height = text.height + 20; root.destroy({ children: true }); return height;
+  }));
+  const optionWidth = (answersWidth - 12) / 2;
+  const columns = 2, height = measuredHeight(optionWidth - (optionWidth < 180 ? 16 : 24)), promptY = denseStudy() ? 36 : short ? 52 : reverse ? compact ? 88 : 111 : compact ? 66 : 88;
+  let promptSize = reverse ? short ? 26 : 38 : short ? 44 : compact ? 76 : 94;
+  let questionHeight = short ? 150 : compact ? 196 : 261;
+  if (short && !split) {
+    const budget = paperCapacity() + 26 - 24 - 2 * (height + 12);
+    const measure = () => {
+      if (listening) return 62;
+      const root = new Container(), height = reverse ? copy(root, word.meaningRu, width / 2, 0, promptSize, { center: true, width: width - 40 }).height : centeredJapanese(root, word, 0, width, promptSize, undefined, false);
+      root.destroy({ children: true }); return height;
+    };
+    let measured = measure();
+    while (promptY + measured + 12 > budget && promptSize > 20) { promptSize--; measured = measure(); }
+    questionHeight = promptY + measured + (denseStudy() ? 4 : 12);
+  }
+  if (split) questionHeight = Math.min(196, standCapacity() - 18 - 82 - 16);
+  const r = box(x, 158, questionWidth, questionHeight), root = deck(r);
+  copy(root, short ? listening ? 'Что прозвучало?' : reverse ? 'По-японски' : 'Как перевести?' : listening ? 'Что прозвучало?' : reverse ? 'Выберите японское слово' : 'Как переводится слово?', questionWidth / 2, denseStudy() ? 4 : short ? 12 : 24, denseStudy() ? 18 : short ? 20 : 22, { center: true, width: questionWidth - 42 });
+  if (listening) action(root, 'listen', playing ? 'Слушаем…' : '▶ Прослушать', box(24, short ? promptY : compact ? 80 : 104, questionWidth - 48, short ? 62 : 78), () => { void speak(word.audioUrl); }, { hand: true, size: short ? 22 : 26 });
+  else if (reverse) copy(root, word.meaningRu, questionWidth / 2, promptY, promptSize, { center: true, width: questionWidth - 40 });
+  else centeredJapanese(root, word, promptY, questionWidth, promptSize);
+  const bottom = choiceGrid<Word>(options, split ? r.y : r.y + r.height + (denseStudy() ? 12 : 24), split ? x + questionWidth + 20 : x, answersWidth, (candidate, area, index) => {
     action(ui, `word-option-${index}`, reverse ? candidate.surface : candidate.meaningRu, area, async () => {
       if (correct === true || connected?.busy) return;
       audio.pause(); selection = candidate.id;
       if (connected) feedback = 'Проверяю…';
-      const result = connected ? await connected.choose(candidate.id) : candidate.id === word.id;
+      const result = practice ? (practice.choose(candidate.id), practice.correct) : connected ? await connected.choose(candidate.id) : candidate.id === word.id;
       if (result === undefined) { selection = null; schedule(); return; }
       correct = result; hadMistake ||= !correct; learnAction();
       say(shortQuiz() ? correct ? 'Верно!' : 'Попробуй ещё раз.' : correct ? hadMistake ? 'Да, теперь верно! Позже повторим это слово.' : 'Да, всё верно!' : 'Не совсем. Попробуй выбрать ещё раз — я подожду.');
-      if (correct) queueAuto(flow.active ? lessonAdvance(hadMistake ? 'again' : 'remember', true) : nextWord);
-    }, { enabled: correct !== true && (!listening || played), selected: correct === true && candidate.id === selection, wrong: correct === false && candidate.id === selection, value: reverse ? candidate : undefined });
+      if (correct) queueAuto(practice ? () => { practice.next(); navigate('practice-study'); } : flow.active ? lessonAdvance(hadMistake ? 'again' : 'remember', true) : nextWord);
+    }, { enabled: correct !== true && (!listening || played), selected: correct === true && candidate.id === selection, wrong: correct === false && candidate.id === selection, value: reverse ? candidate : undefined, size: reverse ? short ? 20 : undefined : choiceSize });
   }, height, columns);
   if (selection !== null) feedbackAt(bottom + 7, x, width); else drawHelp(bottom + 24, x, width);
 }
@@ -607,7 +709,7 @@ function introduction(x: number, width: number) {
   const isCounter = task === 'counter-intro', isConstruction = task === 'construction-intro';
   const bodyInset = 24, content = new Container(), exercise = currentConstruction();
   let paperHeight = 525;
-  copy(content, isCounter ? 'Знакомимся со счётным словом' : isConstruction ? 'Как устроена фраза' : flow.active ? `Знакомство · ${flow.session!.introIndex + 1} из ${flow.part!.words.length}` : 'Знакомимся со словом', width / 2, 23, 23, { hand: true, center: true, width: width - 44 });
+  if (!introTabbed || isCounter || isConstruction) copy(content, isCounter ? 'Знакомимся со счётным словом' : isConstruction ? 'Как устроена фраза' : flow.active ? `Знакомство · ${flow.session!.introIndex + 1} из ${flow.part!.words.length}` : 'Знакомимся со словом', width / 2, 23, 23, { hand: true, center: true, width: width - 44 });
   if (isCounter) {
     const card = counters[2]!;
     centeredJapanese(content, { surface: card.definition.surface, kana: card.definition.kana, segments: [{ surface: card.definition.surface, reading: card.definition.kana }] }, 92, width, 68);
@@ -620,25 +722,16 @@ function introduction(x: number, width: number) {
     const ruleY = meaningY + meaning.height + 20, rule = copy(content, exercise.explanationRu, 24, ruleY, 16, { width: width - 48, sans: true });
     paperHeight = Math.max(532, ruleY + rule.height + Math.max(150, width * .3));
   } else {
-    const word = current(), height = centeredJapanese(content, word, 64, width, 58), meaningY = 64 + height + 12;
-    const meaning = copy(content, word.meaningRu, width / 2, meaningY, 24, { center: true, width: width - 48 });
-    const bodyY = meaningY + meaning.height + 12;
-    const rule = copy(content, word.introduction?.explanationRu ?? 'Послушайте слово, затем перейдём к практике.', bodyInset, bodyY, 16, { width: width - bodyInset - 24, sans: true });
-    paperHeight = bodyY + rule.height + 24;
-    const example = flow.active ? flow.introduction?.example : null;
-    if (example) {
-      const y = bodyY + rule.height + 14, height = centeredJapanese(content, example, y, width, 25);
-      const translation = copy(content, example.meaningRu, 24, y + height + 12, 17, { width: width - 48, sans: true });
-      paperHeight = y + height + 12 + translation.height + 20;
-    }
+    paperHeight = introSlotHeight;
   }
   const root = deck(box(x, 158, width, paperHeight)); root.addChild(content);
+  if (!isCounter && !isConstruction) wordIntroduction(root, width, current(), flow.active ? flow.introduction?.example : null);
   if (isCounter) counters[2]!.examples.forEach((example, index) => { const cell = (width - bodyInset - 19) / 3; action(root, `example-${index}`, '▶', box(bodyInset + index * cell, 419, cell - 9, 45), () => { void speak(example.audioUrl); }, { hand: true }); });
   if (isConstruction) action(root, 'breakdown', showBreakdown ? 'Свернуть разбор' : 'Разбор по частям', box(26, paperHeight - 83, width - 52, 48), () => { showBreakdown = !showBreakdown; learnAction(); resize(); }, { hand: true });
   const bottom = 158 + paperHeight + 26;
   const example = flow.active && !isConstruction ? flow.introduction?.example : null;
-  action(ui, 'intro-listen', playing ? 'Слушаем…' : example ? '▶ Слово' : '▶ Послушать', box(x, bottom, example ? (width - 12) / 2 : width, 52), () => { void speak(isConstruction ? exercise.example.audioUrl : isCounter ? counters[2]!.audioUrl : current().audioUrl); }, { hand: true });
-  if (example) action(ui, 'intro-example-listen', '▶ Пример', box(x + (width + 12) / 2, bottom, (width - 12) / 2, 52), () => { void speak(example.audioUrl); }, { hand: true });
+  if (isCounter || isConstruction) action(ui, 'intro-listen', playing ? 'Слушаем…' : example ? '▶ Слово' : '▶ Послушать', box(x, bottom, example ? (width - 12) / 2 : width, 52), () => { void speak(isConstruction ? exercise.example.audioUrl : isCounter ? counters[2]!.audioUrl : current().audioUrl); }, { hand: true });
+  if (example && isCounter) action(ui, 'intro-example-listen', '▶ Пример', box(x + (width + 12) / 2, bottom, (width - 12) / 2, 52), () => { void speak(example.audioUrl); }, { hand: true });
   if (flow.active && !isConstruction) {
     const ticket = flow.ticket(), index = flow.session!.introIndex, last = index === flow.part!.words.length - 1;
     action(ui, 'intro-prev', '← Назад', box(x, bottom + 66, 100, 53), () => { if (flow.introduce(ticket, -1)) syncLesson(); }, { hand: true, enabled: index > 0, size: 21 });
@@ -648,6 +741,74 @@ function introduction(x: number, width: number) {
     let y = bottom + 141;
     for (const piece of exercise.breakdown) { copy(ui, piece.text, x + 18, y, 24); const explanation = copy(ui, piece.explanationRu, x + 18, y + 38, 16, { width: width - 36, sans: true }); y += explanation.height + 63; }
   } else drawHelp(bottom + 145, x, width);
+}
+
+function practicePage(x: number, width: number) {
+  if (!practice) return;
+  const repaint = () => navigate('practice-study'), gap = 12, half = (width - gap) / 2;
+  if (practice.phase === 'choose' || practice.phase === 'summary') {
+    const summary = practice.phase === 'summary', content = new Container();
+    let y = 24;
+    const paragraph = (text: string, size = 18, sans = true, gap = 20) => {
+      const line = copy(content, text, 24, y, size, { width: width - 48, sans }); y += line.height + gap;
+    };
+    paragraph(summary ? 'Как прошло закрепление' : 'Два способа закрепления', 26, false);
+    paragraph(summary ? 'Сравниваем ощущения, а не ставим оценку памяти.' : 'Учебный пример: пять фраз уже знакомы. Познакомимся с тремя следующими словами урока 2.');
+    if (summary) {
+      for (const variant of ['choice', 'recall'] as const) {
+        const records = practice.records[variant].filter(record => !record.delayed);
+        paragraph(`${variant === 'choice' ? 'А · Выбор' : 'Б · Вспоминание'}${records.length ? '' : ' — ещё не проходили'}`, 22, false, 10);
+        if (records.length) paragraph(`Первые ошибки: ${records.filter(r => r.firstError).length} · Подсказки: ${records.filter(r => r.hint).length}\nСамооценка «совпало»: ${records.filter(r => r.self === true).length} · «ещё раз»: ${records.filter(r => r.self === false).length}`, 16);
+      }
+      const delayed = practice.records.recall.filter(record => record.delayed);
+      if (delayed.length) paragraph(`После паузы · Самооценка «совпало»: ${delayed.filter(r => r.self === true).length} · «ещё раз»: ${delayed.filter(r => r.self === false).length} · Подсказки: ${delayed.filter(r => r.hint).length}`, 16);
+      paragraph('Проверку после паузы запускайте, когда захотите вернуться. Самооценка не доказывает удержание материала.', 16, true, 8);
+    } else {
+      paragraph('А · Сразу четыре варианта', 23, false, 8);
+      paragraph('Текущие задания и опубликованные ответы.', 17);
+      paragraph('Б · От узнавания к вспоминанию', 23, false, 8);
+      paragraph('Сначала лёгкий круг, затем знакомые слова вперемешку. Можно вспомнить самому или попросить варианты.', 17);
+      paragraph('Только демонстрация. Оценки и расписание ученика не меняются.', 16, true, 8);
+    }
+    const root = deck(box(x, 158, width, y + 16)); root.addChild(content);
+    const bottom = 158 + y + 40;
+    for (const [index, variant] of (['choice', 'recall'] as const).entries()) action(ui, `study-start-${variant}`, `${index ? 'Б' : 'А'} · ${summary ? 'Ещё раз' : 'Попробовать'}`, box(x + index * (half + gap), bottom, half, 54), () => { practice.start(variant); repaint(); });
+    if (summary) action(ui, 'study-recheck', 'Проверить после паузы', box(x, bottom + 68, width, 54), () => { practice.recheck(); repaint(); });
+    return;
+  }
+  if (practice.phase === 'intro') {
+    const root = deck(box(x, 158, width, introSlotHeight));
+    if (!introTabbed) copy(root, `Знакомство · ${practice.introIndex + 1} из ${practiceFixture.introduced.length}`, width / 2, 23, 23, { center: true, width: width - 44 });
+    wordIntroduction(root, width, practice.introWord, practice.intro.example);
+    action(ui, 'study-prev', '← Назад', box(x, 158 + introSlotHeight + 26, half, 52), () => { practice.introduce(-1); repaint(); }, { enabled: practice.introIndex > 0 });
+    action(ui, 'study-next', practice.introIndex === practiceFixture.introduced.length - 1 ? 'К заданиям' : 'Дальше', box(x + half + gap, 158 + introSlotHeight + 26, half, 52), () => { if (practice.introIndex === practiceFixture.introduced.length - 1) practice.begin(); else practice.introduce(1); repaint(); });
+    return;
+  }
+  if (!practice.recall || practice.hinted) {
+    quiz(x, width);
+    if (practice.correct !== true) action(ui, 'study-next', 'Дальше', box(x, 0, 44, 44), () => {}, { enabled: false });
+    return;
+  }
+  const word = practice.word!, reverse = practice.current!.mode === 'ru-ja', listening = practice.current!.mode === 'listening';
+  const root = deck(box(x, 158, width, practice.revealed ? 140 : 230));
+  copy(root, practice.revealed ? 'Сравните с ответом' : practice.recall ? 'Сначала попробуйте вспомнить' : listening ? 'Что прозвучало?' : reverse ? 'Выберите японское слово' : 'Как переводится слово?', width / 2, 24, 22, { center: true, width: width - 48 });
+  if (listening) action(root, 'study-listen', '▶ Прослушать', box(24, 96, width - 48, 62), () => { void speak(word.audioUrl); });
+  else if (reverse) copy(root, word.meaningRu, width / 2, practice.revealed ? 58 : 96, practice.revealed ? 20 : 28, { center: true, width: width - 48 });
+  else centeredJapanese(root, word, practice.revealed ? 58 : 88, width, practice.revealed ? 32 : 58);
+  let bottom = practice.revealed ? 322 : 418;
+  if (practice.revealed) {
+    const content = new Container();
+    const height = reverse ? centeredJapanese(content, word, 14, width, 32) + 30 : copy(content, word.meaningRu, width / 2, 16, 20, { center: true, width: width - 32 }).height + 32;
+    const answer = deck(box(x, bottom, width, Math.max(100, height))); answer.addChild(content);
+    bottom += Math.max(100, height) + 24;
+    action(ui, 'study-self-again', 'Ещё раз', box(x, bottom, half, 54), () => { practice.assess(false); practice.next(); repaint(); });
+    action(ui, 'study-self-remember', 'Совпало', box(x + half + gap, bottom, half, 54), () => { practice.assess(true); practice.next(); repaint(); });
+  } else if (practice.recall && !practice.hinted) {
+    action(ui, 'study-reveal', 'Вспомнил — проверить', box(x, bottom, width, 56), () => { practice.reveal(); repaint(); });
+    action(ui, 'study-hint', 'Нужна подсказка', box(x, bottom + 70, width, 54), () => { practice.hint(); repaint(); });
+
+  }
+  action(ui, 'study-next', 'Дальше', box(x + half + gap, bottom + 24, half, 52), () => { if (practice.next()) repaint(); }, { enabled: practice.correct === true });
 }
 
 function videoPage(x: number, width: number) {
@@ -671,41 +832,64 @@ function videoPage(x: number, width: number) {
   if (feedback) copy(ui, feedback, x + 14, bottom + (flow.active ? 76 : 0), 17, { width: width - 28 });
   else drawHelp(bottom + (flow.active ? 76 : 0), x, width);
 }
+function overviewContent(width: number, tabbed: boolean) {
+  const lesson = flow.lesson!, root = new Container(); let y = 20;
+  const paragraph = (value: string, size = 18, sans = true) => { const text = copy(root, value, 20, y, size, { width: width - 40, sans }); y += text.height + (shortWide() ? 8 : 14); };
+  paragraph(`Урок ${lesson.number} · ${lesson.title}`, width < 400 || shortWide() ? 24 : 28, false);
+  if (!tabbed || overviewTab === 0) {
+    const count = new Set(lesson.route.goals.flatMap(goal => goal.parts.flatMap(part => part.words.map(word => word.wordId)))).size;
+    paragraph(`${count} слов и фраз · ${flow.parts.length} части`, 17);
+    if (!tabbed) {
+      paragraph('Чему научимся', 22, false);
+      lesson.route.goals.forEach((goal, index) => paragraph(`${index + 1}. ${goal.titleRu}`));
+    }
+    paragraph(tabbed ? 'Слова → задания → итог. Трудные слова повторим.' : 'Знакомство со словами → практика → итог. Трудные слова встретим ещё раз.', 17);
+  } else {
+    paragraph(`Чему научимся · ${overviewTab} из ${lesson.route.goals.length}`, 18, false);
+    paragraph(lesson.route.goals[overviewTab - 1]!.titleRu, 18);
+  }
+  return { root, height: y + (tabbed ? 58 : 8) };
+}
+function overviewLayout(width: number) {
+  const full = overviewContent(width, false);
+  if (!fitStudy() || full.height <= paperCapacity()) return { ...full, tabbed: false };
+  full.root.destroy({ children: true });
+  const selected = overviewTab;
+  const heights = [-1, ...flow.lesson!.route.goals.map((_, index) => index)].map(index => { overviewTab = index + 1; const page = overviewContent(width, true); page.root.destroy({ children: true }); return page.height; });
+  overviewTab = selected;
+  return { ...overviewContent(width, true), height: Math.max(...heights), tabbed: true };
+}
 function lessonOverview(x: number, width: number) {
-  const lesson = flow.lesson;
-  if (!lesson) { textbook(x, width); return; }
-  const content = new Container();
-  copy(content, `Урок ${lesson.number}`, width / 2, 22, 25, { hand: true, center: true });
-  image(content, pictures.get(`topic-${Number(lesson.topic) - 1}`)!, box(width / 2 - 55, 72, 110, 80));
-  const title = copy(content, lesson.title, width / 2, 169, 32, { center: true, width: width - 64 });
-  let y = 169 + title.height + 26;
-  copy(content, 'Чему научимся', 32, y, 24, { hand: true }); y += 49;
-  for (const [index, goal] of lesson.route.goals.entries()) { const text = copy(content, `${index + 1}. ${goal.titleRu}`, 32, y, 18, { width: width - 64, sans: true }); y += text.height + 18; }
-  const wordCount = new Set(lesson.route.goals.flatMap(goal => goal.parts.flatMap(part => part.words.map(word => word.wordId)))).size;
-  const meta = copy(content, `Слов и фраз: ${wordCount} · Частей: ${flow.parts.length}`, 32, y + 8, 17, { width: width - 64, sans: true });
-  const height = y + meta.height + 180, root = deck(box(x, 158, width, height)); root.addChild(content);
-  const progress = flow.progress(), bottom = 158 + height + 26;
+  if (!flow.lesson) { textbook(x, width); return; }
+  const page = overviewLayout(width), root = deck(box(x, 158, width, page.height)); root.addChild(page.root);
+  if (page.tabbed) {
+    const labels = ['План', ...flow.lesson.route.goals.map((_, index) => `Цель ${index + 1}`)];
+    labels.forEach((title, index) => { const button = action(root, `overview-tab-${index}`, (width - 24) / labels.length < 70 && index ? String(index) : title, box(12 + index * (width - 24) / labels.length, page.height - 52, (width - 24) / labels.length, 44), () => { overviewTab = index; schedule(); }, { bare: true, selected: overviewTab === index, size: 17 }); button.accessibleHint = title; });
+  }
+  const progress = flow.progress(), bottom = 158 + page.height + 26;
   action(ui, 'lesson-start', progress.finished ? 'Посмотреть итог' : progress.started ? `Продолжить · ${progress.percent}%` : 'Начать занятие', box(x, bottom, width, 55), () => startLesson(), { hand: true, size: 25 });
   action(ui, 'lesson-back', 'К выбору урока', box(x, bottom + 69, width, 52), () => navigate('textbook'), { hand: true });
-  copy(ui, 'Познакомимся со словами, потренируемся и завершим занятие. Трудные задания вернутся перед итогом.', x + 8, bottom + 145, 16, { width: width - 16, sans: true });
+}
+function boundaryContent(width: number, record = true) {
+  const finished = task === 'lesson-complete', root = new Container(); let y = 20;
+  const paragraph = (value: string, size = 18, center = false) => { const text = copy(root, value, center ? width / 2 : 20, y, size, { center, width: width - 40, sans: size === 18 }); y += text.height + 14; };
+  paragraph(finished ? 'Занятие завершено' : 'Часть пройдена', 26, true);
+  if (finished) {
+    y += centeredJapanese(root, { surface: 'おつかれさまでした', kana: 'おつかれさまでした', segments: [{ surface: 'おつかれさまでした' }] }, y, width, 25, undefined, record) + 14;
+    const count = new Set(flow.lesson!.route.goals.flatMap(goal => goal.parts.flatMap(part => part.words.map(word => word.wordId)))).size;
+    paragraph(connected ? `Пройдено: ${flow.progress().completed}/${flow.progress().total} шагов. Прогресс сохранён.` : `Слов и фраз: ${count}\nЗаданий: ${flow.session!.attempts}\nПовторов сложного: ${flow.session!.again}`);
+    paragraph('Можно отдохнуть или выбрать следующий урок.');
+  } else {
+    paragraph(flow.goal?.titleRu ?? '', 20);
+    paragraph(`Часть ${flow.session!.state.partIndex + 1} из ${flow.parts.length}. Все задания этой части пройдены.`);
+  }
+  return { root, height: y - 6 };
 }
 function lessonBoundary(x: number, width: number) {
   if (!flow.lesson || !flow.session) { textbook(x, width); return; }
-  const finished = task === 'lesson-complete', content = new Container();
-  copy(content, finished ? 'Занятие завершено' : 'Часть пройдена', width / 2, 26, 32, { hand: true, center: true, width: width - 60 });
-  let y = 102;
-  if (finished) {
-    y += centeredJapanese(content, { surface: 'おつかれさまでした', kana: 'おつかれさまでした', segments: [{ surface: 'おつかれさまでした' }] }, y, width, 27) + 26;
-    const count = new Set(flow.lesson.route.goals.flatMap(goal => goal.parts.flatMap(part => part.words.map(word => word.wordId)))).size;
-    const stats = copy(content, connected ? `Пройдено: ${flow.progress().completed} из ${flow.progress().total} шагов.\nПрогресс подтверждён локальным сервером.` : `Познакомились: ${count} слов и фраз\nВыполнили: ${flow.session.attempts} заданий\nВернулись к сложному: ${flow.session.again}`, 30, y, 18, { width: width - 60, sans: true }); y += stats.height + 26;
-    const note = copy(content, 'Все обязательные форматы этого урока пройдены. Можно отдохнуть или выбрать следующий урок.', 30, y, 18, { width: width - 60, sans: true }); y += note.height;
-  } else {
-    const goal = copy(content, flow.goal?.titleRu ?? '', width / 2, y, 26, { center: true, width: width - 60 }); y += goal.height + 28;
-    const note = copy(content, `Часть ${flow.session.state.partIndex + 1} из ${flow.parts.length}.\nСлова и задания этой части пройдены, включая те, к которым возвращались.`, 30, y, 18, { width: width - 60, sans: true }); y += note.height;
-  }
-  const height = y + 180, root = deck(box(x, 158, width, height)); root.addChild(content);
-  const bottom = 158 + height + 26;
-  if (finished) {
+  const page = boundaryContent(width), root = deck(box(x, 158, width, page.height)); root.addChild(page.root);
+  const bottom = 158 + page.height + 26;
+  if (task === 'lesson-complete') {
     action(ui, 'lesson-back', 'К выбору урока', box(x, bottom, width, 55), () => navigate('textbook'), { hand: true, size: 25 });
     if (!connected) action(ui, 'lesson-restart', 'Пройти ещё раз', box(x, bottom + 69, width, 52), () => startLesson(true), { hand: true });
   } else action(ui, 'part-next', flow.session.state.partIndex === flow.parts.length - 1 ? 'Завершить занятие' : 'Следующая часть', box(x, bottom, width, 55), lessonAdvance('continue'), { hand: true, size: 24 });
@@ -800,7 +984,7 @@ function snapshot() {
   const controlText = captions.map(({ id, rect, view }) => { const b = view.getBounds(); return { id, rect: controls.find(control => control.id === id)?.docked ? { ...rect, y: rect.y + shift } : rect, value: view.text, fontSize: view.style.fontSize, fontFamily: view.style.fontFamily, fontStyle: view.style.fontStyle, bounds: box(b.minX, b.minY + scrollY, b.width, b.height) }; });
   const rotatedUi: string[] = [];
   const inspect = (node: Container) => { if (Math.abs(node.rotation) > 1e-7 || Math.abs(node.skew.x) > 1e-7 || Math.abs(node.skew.y) > 1e-7) rotatedUi.push(node.label || 'unnamed'); node.children.forEach(inspect); }; inspect(ui); inspect(overlay);
-  return { ready, task, scroll: { max: maxSheetScroll, position: scrollY }, taskName: taskTitles[task], lesson: flow.snapshot(), composition, cameraProgress, stand: standMode() ? { board: box(studyX() - 16, scrollY + stageTop() - 12, studyWidth() + 32, stageHeight() - stageTop() + 24), frame: box(stand.x, stand.y, stand.width * stand.scale.x, stand.height * stand.scale.y), camera: app.screen.width < 1000 ? 'close' : 'room', catPerch, moving: !!catTravel } : null, location: locationScene.id, dock: usesDock() ? { top: dockTop, ids: dockIds, stageHeight: stageHeight() } : null, autoAdvance: autoDeadline > 0, feedbackSpeaker: 'cat', speechBounds: speechBounds ? { ...speechBounds, y: speechBounds.y + shift } : null, colors: { ink, bubble: '#fff7e7' }, catVisible: cat.visible, catBounds: box(cat.x, cat.y + shift, cat.width, cat.height), studyBounds: box(studyX(), Math.max(158 + contentOffset(), scrollY + headerHeight()), studyWidth(), Math.max(0, Math.min(contentBottom, scrollY + (usesDock() ? dockTop : standMode() ? stageHeight() : innerHeight)) - Math.max(158 + contentOffset(), scrollY + headerHeight()))), view: standMode() ? 'flat-front' : 'orthographic-top-down', desktopBackground: app.screen.width >= 900, rotatedUi, wordIndex, selection, correct, hadMistake, revealed, constructionDrop: dropZone, layout: { stageTop: stageTop(), centered: !shortWide(), font: book, plainPaper: true, deskBackEdge: composition === 'surround' && wideStage() && usesDock() ? room.y - scrollY + room.height * (locationScene.id === 'room' ? .37 : locationScene.tableBackEdge) : null }, tokens: [...tokenOrder], manual, menuOpen, composing: editor.composing, feedback, played, playing, hintVisible: !seenHints.has(hintKey()) || manualHint, hintKey: hintKey(), controls: controls.filter(control => control.id !== 'scroll-more' || scrollY < maxSheetScroll - 1).filter(control => control.id !== 'scroll-back' || scrollY > 1).map(control => ({ ...control, rect: control.id === 'cat-call' ? box(cat.x, cat.y + shift, cat.width, cat.height) : control.docked ? { ...control.rect, y: control.rect.y + shift } : control.rect, opacity: actionSpecs.get(control.id)?.node.alpha ?? 1, highlight: actionSpecs.get(control.id)?.options.wrong ? 'wrong' : actionSpecs.get(control.id)?.options.selected ? 'selected' : null })), controlText, contentBottom, catTop: cat.y + shift, ruby, pendingRender: frame !== 0, motion: { ...motion, reduced: reduced(), enteredAt }, cspViolations: [...csp], fontLoaded: document.fonts.check('24px "Lora"'), source: data.source, video: { paused: video.paused, time: video.currentTime }, editorValue: editor.element.value };
+  return { ready, task, practice: practice?.snapshot(), scroll: { max: maxSheetScroll, position: scrollY }, taskName: taskTitles[task], lesson: flow.snapshot(), composition, cameraProgress, stand: standMode() ? { board: box(studyX() - 16, scrollY + stageTop() - 12, studyWidth() + 32, stageHeight() - stageTop() + 24), frame: box(stand.x, stand.y, stand.width * stand.scale.x, stand.height * stand.scale.y), camera: app.screen.width < 1000 ? 'close' : 'room', catPerch, moving: !!catTravel } : null, location: locationScene.id, dock: usesDock() ? { top: dockTop, ids: dockIds, stageHeight: stageHeight() } : null, autoAdvance: autoDeadline > 0, feedbackSpeaker: 'cat', speechBounds: speechBounds ? { ...speechBounds, y: speechBounds.y + shift } : null, colors: { ink, bubble: '#fff7e7' }, catVisible: cat.visible, catBounds: box(cat.x, cat.y + shift, cat.width, cat.height), studyBounds: box(studyX(), Math.max(158 + contentOffset(), scrollY + headerHeight()), studyWidth(), Math.max(0, Math.min(contentBottom, scrollY + (usesDock() ? dockTop : standMode() ? stageHeight() : innerHeight)) - Math.max(158 + contentOffset(), scrollY + headerHeight()))), view: standMode() ? 'flat-front' : 'orthographic-top-down', desktopBackground: app.screen.width >= 900, rotatedUi, wordIndex, selection, correct, hadMistake, revealed, constructionDrop: dropZone, layout: { maskTop: headerHeight(), introTabbed, introTab, overviewTab, infoSlotHeight, introSlotHeight, card: topCard ? { x: cardOrigin.x, y: cardOrigin.y + contentOffset() - 8, width: studyWidth(), height: introSlotHeight } : null, stageTop: stageTop(), centered: !shortWide(), font: book, plainPaper: true, deskBackEdge: composition === 'surround' && wideStage() && usesDock() ? room.y - scrollY + room.height * (locationScene.id === 'room' ? .37 : locationScene.tableBackEdge) : null }, tokens: [...tokenOrder], manual, menuOpen, composing: editor.composing, feedback, played, playing, hintVisible: !seenHints.has(hintKey()) || manualHint, hintKey: hintKey(), controls: controls.filter(control => control.id !== 'scroll-more' || scrollY < maxSheetScroll - 1).filter(control => control.id !== 'scroll-back' || scrollY > 1).map(control => ({ ...control, rect: control.id === 'cat-call' ? box(cat.x, cat.y + shift, cat.width, cat.height) : control.docked ? { ...control.rect, y: control.rect.y + shift } : control.rect, opacity: actionSpecs.get(control.id)?.node.alpha ?? 1, highlight: actionSpecs.get(control.id)?.options.wrong ? 'wrong' : actionSpecs.get(control.id)?.options.selected ? 'selected' : null })), controlText, contentBottom, catTop: cat.y + shift, ruby, pendingRender: frame !== 0, motion: { ...motion, reduced: reduced(), enteredAt }, cspViolations: [...csp], fontLoaded: document.fonts.check('24px "Lora"'), source: data.source, video: { paused: video.paused, time: video.currentTime }, editorValue: editor.element.value };
 }
 let contentBottom = 0;
 function updateScrollCues() {
@@ -847,13 +1031,18 @@ function render() {
   editor.element.readOnly = !!connected?.busy;
   if (connected?.busy) status.textContent = 'Ожидаем подтверждения локального сервера.';
   if (task !== 'video') video.hidden = true;
+  introTabbed = false; infoSlotHeight = 0;
+  if (task === 'lesson-overview' && flow.lesson) { const page = overviewLayout(studyWidth()); infoSlotHeight = page.height; page.root.destroy({ children: true }); }
+  if ((task === 'part-complete' || task === 'lesson-complete') && flow.session) { const page = boundaryContent(studyWidth(), false); infoSlotHeight = page.height; page.root.destroy({ children: true }); }
+  introSlotHeight = introPage() && !connectionBlocked() ? measureIntroduction(studyWidth()) : 0;
   placeWorld();
-  const fixedHeader = new Container(); fixedHeader.y = paintedScroll + stageTop(); overlay.addChild(fixedHeader); header(fixedHeader);
+  const fixedHeader = new Container(); fixedHeader.y = paintedScroll + (standMode() ? shortWide() ? 0 : stageTop() - 12 - 180 * standScale() - signHeight() - 12 : stageTop()); overlay.addChild(fixedHeader); header(fixedHeader);
   const w = app.screen.width, width = studyWidth(), x = studyX(width);
   const contentLayer = new Container(), bodyOffset = contentOffset();
   contentLayer.y = bodyOffset; viewRoot.addChild(contentLayer); ui = contentLayer;
   try {
-  if (connectionBlocked()) connectionScreen(x, width);
+  if (practice) practicePage(x, width);
+  else if (connectionBlocked()) connectionScreen(x, width);
   else if (task === 'lesson-overview') lessonOverview(x, width);
   else if (task === 'part-complete' || task === 'lesson-complete') lessonBoundary(x, width);
   else if (task.startsWith('word-') && task !== 'word-intro') quiz(x, width);
@@ -871,12 +1060,12 @@ function render() {
   const dock = usesDock() && !(connectionBlocked()) ? dockControls(x, width) : undefined;
   contentBottom = ui.getLocalBounds().maxY;
   const bottom = dock ? dockTop : standMode() ? stageHeight() : innerHeight;
-  const overflow = contentBottom > bottom - 10;
-  maxSheetScroll = Math.max(0, Math.ceil(contentBottom - bottom + (overflow ? 54 : 10)));
+  const overflow = contentBottom > bottom + .5;
+  maxSheetScroll = overflow ? Math.max(0, Math.ceil(contentBottom - bottom + 54)) : 0;
   const height = innerHeight + maxSheetScroll;
   if (host.style.height !== `${height}px`) host.style.height = `${height}px`;
   bodyMask.clear(); ui.mask = bodyMask;
-  bodyMask.rect(0, paintedScroll + headerHeight(), w, Math.max(1, bottom - headerHeight() - (overflow ? 48 : 4))).fill('#ffffff');
+  bodyMask.rect(0, paintedScroll + headerHeight(), w, Math.max(1, bottom - headerHeight() - (overflow ? 48 : 0))).fill('#ffffff');
   drawScrollCues(x, width, bottom);
   companion(x, width, dock);
   if (cameraProgress < 1) action(overlay, 'skip-camera', 'Пропустить', mobileApproach ? box(w - 144, paintedScroll + stageTop() + 5, 132, 46) : box(w - 226, paintedScroll + 24, 200, 48), () => { cameraStarted = 0; finishApproach(); }, { hand: true, size: 20 });

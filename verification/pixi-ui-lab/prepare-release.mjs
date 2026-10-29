@@ -12,7 +12,7 @@ if (!existsSync(release)) {
   mkdirSync(release, { mode: 0o700 });
   execFileSync('tar', ['-xf', archive, '-C', release]); rmSync(archive);
 }
-for (const path of ['package.json', 'bun.lock', 'src/server/index.ts', 'src/server/app.ts', 'src/server/learning.ts', 'src/server/publications.ts', 'src/shared/learning.ts', 'src/client/api.ts', 'src/client/guidedApi.ts']) {
+for (const path of ['package.json', 'bun.lock', 'src/server/index.ts', 'src/server/app.ts', 'src/server/learning.ts', 'src/server/publications.ts', 'src/shared/learning.ts', 'src/client/api.ts', 'src/client/guidedApi.ts', 'src/client/study.ts']) {
   assert.deepEqual(readFileSync(resolve(release, path)), execFileSync('git', ['show', `${source}:${path}`], { cwd: root, maxBuffer: 10 * 1024 * 1024 }), `Pinned source changed: ${path}`);
 }
 assert.deepEqual(readFileSync(resolve(release, 'package.json')), readFileSync(resolve(root, '../../package.json')), 'Server dependencies differ from the pinned release');

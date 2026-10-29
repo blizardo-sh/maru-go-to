@@ -1,0 +1,35 @@
+import assert from 'node:assert/strict';
+import { PracticeStudy, practiceFixture } from './practice-study';
+const study = new PracticeStudy();
+study.start('choice'); study.begin();
+assert.equal(study.queue.length, practiceFixture.baseline.length);
+assert.deepEqual(study.choices.map(word => word.id), practiceFixture.baseline[0]!.choices);
+const original = study.queue.map(card => card.targetId), answer = study.word!.id;
+assert.equal(study.next(), false);
+study.choose(study.choices.find(word => word.id !== answer)!.id);
+assert.equal(study.correct, false); assert.equal(study.next(), false);
+study.choose(answer); assert.equal(study.correct, true); study.next();
+assert.deepEqual(study.queue.map(card => card.targetId), [...original.slice(1, 4), original[0]!, ...original.slice(4)]);
+assert.equal(study.records.choice[0]!.firstError, true);
+study.start('recall'); study.begin();
+for (let index = 0; index < 3; index++) { assert.equal(study.recall, false); study.choose(study.word!.id); study.next(); }
+assert.equal(study.recall, true);
+assert.equal(study.choose(study.word!.id), false, 'Unopened choices cannot answer recall');
+const known = new Set([...practiceFixture.familiar, ...practiceFixture.introduced.map(intro => intro.wordId)]);
+assert.ok(study.choices.every(word => known.has(word.id)));
+study.hint(); assert.equal(study.reveal(), false); study.choose(study.word!.id); study.next();
+assert.equal(study.records.recall.at(-1)!.hint, true);
+assert.equal(study.records.recall.at(-1)!.retry, true, 'Hint must not count as independent recall');
+study.reveal(); study.assess(false); study.next();
+assert.equal(study.records.recall.at(-1)!.self, false);
+assert.equal(study.records.recall.at(-1)!.firstError, false, 'Self assessment is not a choice error');
+let count = 0;
+while (study.queue.length && count++ < 40) { study.reveal(); study.assess(true); assert.ok(study.next()); }
+assert.equal(study.phase, 'summary'); assert.ok(count < 40);
+assert.ok(study.records.recall.some(record => record.self === true));
+const records = study.records.recall.length;
+study.recheck(); assert.equal(study.delayed, true); assert.equal(study.queue.length, 3);
+study.reveal(); study.assess(true); study.next();
+assert.equal(study.records.recall.length, records + 1); assert.equal(study.records.recall.at(-1)!.delayed, true);
+assert.equal(study.records.choice[0]!.firstError, true, 'Second scenario must retain first results');
+console.log('Demo repeat queue, hints, correction, separate self assessment and recheck passed; no API/storage.');

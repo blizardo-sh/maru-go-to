@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-29T08:12:15.776Z",
+  "scope": "Local Pixi lab only; production application/data unchanged",
+  "decisions": [
+    "Q18: lesson-list scrolling only; no vertical scrolling in the verified vocabulary/overview/completion scenario",
+    "Header on mounted light wood signs above the stand",
+    "Stable word-group card size; inline speech; semantic tabs when needed",
+    "Q19–Q22: separate controlled comparison, reusing pinned advanceDeck; server FSRS unchanged"
+  ],
+  "checks": {
+    "singleCard": {
+      "cases": 96,
+      "failures": 0,
+      "sizes": [
+        [
+          "1096",
+          "1454"
+        ],
+        [
+          "900",
+          "1016"
+        ],
+        [
+          "1440",
+          "1000"
+        ],
+        [
+          "390",
+          "844"
+        ],
+        [
+          "320",
+          "640"
+        ],
+        [
+          "844",
+          "390"
+        ]
+      ],
+      "browsers": [
+        "Chrome",
+        "Playwright WebKit"
+      ],
+      "script": "single-card-check.mts"
+    },
+    "speechAndChoices": {
+      "cases": 42,
+      "script": "stand-content-check.mts"
+    },
+    "comparison": {
+      "fullScenarios": 16,
+      "realAutoAdvanceAndPauseBrowsers": 2,
+      "noApiOrStorageWrites": true,
+      "script": "practice-browser-check.mjs"
+    },
+    "queueModel": {
+      "passed": true,
+      "script": "practice-study-check.mts"
+    },
+    "fixedWorld": {
+      "cases": 6,
+      "script": "stand-fit-check.mjs"
+    },
+    "legacyScreens": {
+      "layouts": 144,
+      "interactions": true,
+      "script": "paper-check.mjs"
+    },
+    "nativeLoginFocus": {
+      "cases": 4,
+      "script": "input-focus-check.mjs"
+    },
+    "typecheck": true,
+    "build": true
+  },
+  "data": {
+    "course": "Public b378 course fixture, synthetic learner/session state",
+    "realPupilDatabaseRequests": 0,
+    "productionWrites": 0
+  },
+  "limits": [
+    "Real Safari and physical phones were not checked for this revision",
+    "Comparison results live in memory and disappear on reload; a single pass does not prove retention",
+    "Current no-scroll regression scope is vocabulary, lesson overview, part boundary and completion; the remaining subject formats retain their existing layout"
+  ]
+}
