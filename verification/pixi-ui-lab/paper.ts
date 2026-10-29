@@ -53,7 +53,7 @@ let cameraStarted = 0, cameraProgress = 1, viewRevision = 0;
 let mobileApproach = false, approachStarted = 0;
 let autoTimer: ReturnType<typeof setTimeout> | undefined, autoDeadline = 0, guideText = '', dockTop = 0;
 let speechBounds: Rect | null = null;
-let introSlotHeight = 0, infoSlotHeight = 0, introTabbed = false, introTab = 0, overviewTab = 0;
+let introSlotHeight = 0, infoSlotHeight = 0, recallAnswerHeight = 0, introTabbed = false, introTab = 0, overviewTab = 0;
 let paintedScroll = 0, pointerHeld = false, deferredPaint = false;
 let maxSheetScroll = 0, scrollMore: Container | null = null, scrollBack: Container | null = null;
 const actionSpecs = new Map<string, ActionSpec>();
@@ -276,7 +276,7 @@ function woodenSign(root: Container, rect: Rect) {
 function header(root: Container = ui) {
   if (standMode()) {
     const width = studyWidth(), x = studyX(width), compact = app.screen.width < 700;
-    for (const offset of [.14, .86]) root.addChild(new Graphics().roundRect(x + width * offset - 6, 20, 12, signHeight() + 48, 3).fill('#8a572f').stroke({ color: '#c58b50', width: 1.5 }));
+    for (const offset of [.14, .86]) root.addChild(new Graphics().roundRect(x + width * offset - 6, 20, 12, shortWide() ? 42 : signHeight() + 48, 3).fill('#8a572f').stroke({ color: '#c58b50', width: 1.5 }));
     woodenSign(root, box(x, 4, width, 50));
     const menu = action(root, 'menu', '', box(x, 8, 44, 44), () => { if (practice) { practice.phase = 'choose'; navigate('practice-study'); return; } menuOpen = true; cancelAuto(); audio.pause(); video.pause(); schedule(); }, { bare: true, size: 24 }); menu.accessibleHint = 'Открыть разделы';
     const menuInk = new Graphics(); for (const y of [16, 22, 28]) menuInk.moveTo(13, y).lineTo(31, y).stroke({ color: ink, width: 2.5 }); menu.addChild(menuInk);
@@ -373,7 +373,7 @@ function desktopStage() { return app.screen.width >= 1000 && innerHeight >= 620;
 function studySpan() {
   const desired = introPage() && introSlotHeight ? 18 + introSlotHeight + 26 + 82 + (!fitStudy() && !wideStage() && !collapsedHint() ? 104 : 0)
     : infoSlotHeight ? 18 + infoSlotHeight + 26 + 82
-    : practice?.phase === 'question' && practice.recall && !practice.hinted && !practice.revealed ? 18 + 230 + 26 + 146
+    : practice?.phase === 'question' && practice.recall && !practice.hinted ? practiceRecallLayout(studyWidth(), practice.revealed, recallAnswerHeight).height
     : wideStage() ? 710 : innerHeight;
   return Math.min(standCapacity(), desired);
 }
@@ -400,7 +400,10 @@ function dockControls(x: number, width: number) {
   let primary: ActionSpec | undefined, secondary: ActionSpec | undefined, upper: ActionSpec[] = [];
   if (practice) {
     if (practice.phase === 'question' && practice.revealed) { primary = get('study-self-remember'); secondary = get('study-self-again'); }
-    else if (practice.phase === 'question' && practice.recall && !practice.hinted) { primary = get('study-hint'); upper = [get('study-reveal')!]; }
+    else if (practice.phase === 'question' && practice.recall && !practice.hinted) {
+      if (shortWide()) { primary = get('study-reveal'); secondary = get('study-hint'); }
+      else { primary = get('study-hint'); upper = [get('study-reveal')!]; }
+    }
     else { primary = get('study-next') ?? get('next'); secondary = get('study-prev'); }
   }
   else if (task.endsWith('intro')) { primary = get('intro-next'); secondary = get('intro-prev'); upper = (task === 'word-intro' ? [] : [get('intro-listen'), get('intro-example-listen')]).filter((v): v is ActionSpec => !!v); }
@@ -743,6 +746,25 @@ function introduction(x: number, width: number) {
   } else drawHelp(bottom + 145, x, width);
 }
 
+function practiceRecallLayout(width: number, revealed: boolean, answerHeight: number) {
+  const split = revealed && shortWide(), questionHeight = revealed ? 140 : shortWide() ? 180 : 230;
+  const questionWidth = split ? Math.min(320, width * .4) : width;
+  const answerWidth = split ? width - questionWidth - 20 : width;
+  const cardsHeight = revealed ? split ? Math.max(questionHeight, answerHeight) : questionHeight + 24 + answerHeight : questionHeight;
+  return { split, questionWidth, questionHeight, answerWidth, height: 18 + cardsHeight + 26 + (revealed || shortWide() ? 82 : 146) };
+}
+function practiceAnswer(root: Container, width: number, word: Word, reverse: boolean, record = true) {
+  return reverse ? centeredJapanese(root, word, 14, width, 32, undefined, record) + 30
+    : copy(root, word.meaningRu, width / 2, 16, 20, { center: true, width: width - 32 }).height + 32;
+}
+function measurePracticeAnswer(width: number) {
+  const answerWidth = practiceRecallLayout(width, true, 0).answerWidth;
+  const known = new Set([...practiceFixture.familiar, ...practiceFixture.introduced.map(intro => intro.wordId)]);
+  return Math.max(100, ...practiceFixture.words.filter(word => known.has(word.id)).flatMap(word => [false, true].map(reverse => {
+    const root = new Container(), height = practiceAnswer(root, answerWidth, word, reverse, false);
+    root.destroy({ children: true }); return height;
+  })));
+}
 function practicePage(x: number, width: number) {
   if (!practice) return;
   const repaint = () => navigate('practice-study'), gap = 12, half = (width - gap) / 2;
@@ -790,17 +812,18 @@ function practicePage(x: number, width: number) {
     return;
   }
   const word = practice.word!, reverse = practice.current!.mode === 'ru-ja', listening = practice.current!.mode === 'listening';
-  const root = deck(box(x, 158, width, practice.revealed ? 140 : 230));
-  copy(root, practice.revealed ? 'Сравните с ответом' : practice.recall ? 'Сначала попробуйте вспомнить' : listening ? 'Что прозвучало?' : reverse ? 'Выберите японское слово' : 'Как переводится слово?', width / 2, 24, 22, { center: true, width: width - 48 });
-  if (listening) action(root, 'study-listen', '▶ Прослушать', box(24, 96, width - 48, 62), () => { void speak(word.audioUrl); });
-  else if (reverse) copy(root, word.meaningRu, width / 2, practice.revealed ? 58 : 96, practice.revealed ? 20 : 28, { center: true, width: width - 48 });
-  else centeredJapanese(root, word, practice.revealed ? 58 : 88, width, practice.revealed ? 32 : 58);
-  let bottom = practice.revealed ? 322 : 418;
+  const layout = practiceRecallLayout(width, practice.revealed, recallAnswerHeight);
+  const root = deck(box(x, 158, layout.questionWidth, layout.questionHeight));
+  copy(root, practice.revealed ? 'Сравните с ответом' : practice.recall ? 'Сначала попробуйте вспомнить' : listening ? 'Что прозвучало?' : reverse ? 'Выберите японское слово' : 'Как переводится слово?', layout.questionWidth / 2, 24, 22, { center: true, width: layout.questionWidth - 48 });
+  if (listening) action(root, 'study-listen', '▶ Прослушать', box(24, 96, layout.questionWidth - 48, 62), () => { void speak(word.audioUrl); });
+  else if (reverse) copy(root, word.meaningRu, layout.questionWidth / 2, practice.revealed ? 58 : 96, practice.revealed ? 20 : 28, { center: true, width: layout.questionWidth - 48 });
+  else centeredJapanese(root, word, practice.revealed ? 58 : 88, layout.questionWidth, practice.revealed ? 32 : 58);
+  let bottom = layout.split ? 158 : 158 + layout.questionHeight + 24;
   if (practice.revealed) {
     const content = new Container();
-    const height = reverse ? centeredJapanese(content, word, 14, width, 32) + 30 : copy(content, word.meaningRu, width / 2, 16, 20, { center: true, width: width - 32 }).height + 32;
-    const answer = deck(box(x, bottom, width, Math.max(100, height))); answer.addChild(content);
-    bottom += Math.max(100, height) + 24;
+    practiceAnswer(content, layout.answerWidth, word, reverse);
+    const answer = deck(box(layout.split ? x + layout.questionWidth + 20 : x, bottom, layout.answerWidth, recallAnswerHeight)); answer.addChild(content);
+    bottom += (layout.split ? Math.max(layout.questionHeight, recallAnswerHeight) : recallAnswerHeight) + 24;
     action(ui, 'study-self-again', 'Ещё раз', box(x, bottom, half, 54), () => { practice.assess(false); practice.next(); repaint(); });
     action(ui, 'study-self-remember', 'Совпало', box(x + half + gap, bottom, half, 54), () => { practice.assess(true); practice.next(); repaint(); });
   } else if (practice.recall && !practice.hinted) {
@@ -1032,6 +1055,7 @@ function render() {
   if (connected?.busy) status.textContent = 'Ожидаем подтверждения локального сервера.';
   if (task !== 'video') video.hidden = true;
   introTabbed = false; infoSlotHeight = 0;
+  recallAnswerHeight = practice?.phase === 'question' && practice.recall && !practice.hinted ? measurePracticeAnswer(studyWidth()) : 0;
   if (task === 'lesson-overview' && flow.lesson) { const page = overviewLayout(studyWidth()); infoSlotHeight = page.height; page.root.destroy({ children: true }); }
   if ((task === 'part-complete' || task === 'lesson-complete') && flow.session) { const page = boundaryContent(studyWidth(), false); infoSlotHeight = page.height; page.root.destroy({ children: true }); }
   introSlotHeight = introPage() && !connectionBlocked() ? measureIntroduction(studyWidth()) : 0;

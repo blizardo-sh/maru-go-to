@@ -6,7 +6,7 @@ const report = [];
 for (const [name, type, options] of [['chrome', chromium, { channel: 'chrome' }], ['webkit', webkit, {}]]) {
   const browser = await type.launch({ ...options, headless: true });
   try {
-    for (const [width, height] of [[1096, 1454], [1440, 1000], [390, 844], [320, 640]]) {
+    for (const [width, height] of [[1968, 2386], [984, 1193], [1096, 1454], [1440, 1000], [390, 844], [320, 640], [844, 390]]) {
       const page = await browser.newPage({ viewport: { width, height }, reducedMotion: 'reduce' }), errors = [], api = [];
       // Keep manual Next deterministic under concurrent screenshot load; real auto-advance is checked on a clean page below.
       await page.addInitScript(() => { const original = window.setTimeout; window.setTimeout = (run, delay, ...args) => original(run, delay === 1200 ? 600000 : delay, ...args); });
@@ -38,7 +38,7 @@ for (const [name, type, options] of [['chrome', chromium, { channel: 'chrome' }]
         await click(`study-start-${variant}`);
         for (let intro = 0; intro < 3; intro++) await click('study-next');
         assert.equal((await state()).practice.phase, 'question');
-        let turn = 0, usedHint = false, usedWrong = false, selfAgain = false;
+        let turn = 0, usedHint = false, usedWrong = false, selfAgain = false, assessmentY = null;
         while ((await state()).practice.phase === 'question' && turn++ < 40) {
           const snapshot = await state(), demo = snapshot.practice;
           if (snapshot.scroll.max) await page.screenshot({ path: new URL(`${name}-${width}-overflow.png`, output).pathname });
@@ -55,12 +55,23 @@ for (const [name, type, options] of [['chrome', chromium, { channel: 'chrome' }]
           }
           if (demo.recall && !demo.hinted && !demo.revealed) {
             if (!usedHint) {
+              const reveal = snapshot.controls.find(c => c.id === 'study-reveal');
+              assert.ok(reveal.rect.y - snapshot.contentBottom >= 12 && reveal.rect.y - snapshot.contentBottom <= 40, 'Reveal action detached from question');
               await page.screenshot({ path: new URL(`${name}-${width}-recall.png`, output).pathname });
               await click('study-hint'); usedHint = true;
               const hinted = (await state()).practice;
               assert.equal(hinted.hinted, true); assert.equal(hinted.revealed, false); assert.equal(hinted.correct, null);
             } else {
               await click('study-reveal');
+              await page.waitForFunction(() => window.__PAPER__.snapshot().controls.some(c => c.id === 'study-self-remember'));
+              const revealed = await state(), assessment = revealed.controls.find(c => c.id === 'study-self-remember');
+              const gap = assessment.rect.y - revealed.contentBottom;
+              assert.equal(revealed.scroll.max, 0, 'Revealed answer must fit without scrolling');
+              assert.ok(gap >= 12 && gap <= 40, `${name} ${width}: assessment detached from answer (${gap}px)`);
+              const relativeY = assessment.rect.y - revealed.stand.board.y;
+              if (assessmentY !== null) assert.ok(Math.abs(relativeY - assessmentY) < .5, 'Assessment moved between words');
+              assessmentY = relativeY;
+              if (!selfAgain) await page.screenshot({ path: new URL(`${name}-${width}-revealed.png`, output).pathname });
               await click(selfAgain ? 'study-self-remember' : 'study-self-again'); selfAgain = true;
               continue;
             }
@@ -109,4 +120,4 @@ for (const [name, type, options] of [['chrome', chromium, { channel: 'chrome' }]
     assert.deepEqual(api, []); report.push({ browser: name, realAutoAdvance: true, pause: true }); await auto.close();
   } finally { await browser.close(); }
 }
-writeFileSync(new URL('report.json', output), JSON.stringify(report, null, 2) + '\n'); console.log('16 complete demo scenarios passed in Chrome/WebKit, no API/storage writes.');
+writeFileSync(new URL('report.json', output), JSON.stringify(report, null, 2) + '\n'); console.log('28 complete demo scenarios passed in Chrome/WebKit, no API/storage writes.');

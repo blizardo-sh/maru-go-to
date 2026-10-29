@@ -1,11 +1,12 @@
 {
-  "date": "2026-10-29T08:12:15.776Z",
+  "date": "2026-10-29T09:08:54.466Z",
   "scope": "Local Pixi lab only; production application/data unchanged",
   "decisions": [
     "Q18: lesson-list scrolling only; no vertical scrolling in the verified vocabulary/overview/completion scenario",
     "Header on mounted light wood signs above the stand",
     "Stable word-group card size; inline speech; semantic tabs when needed",
-    "Q19–Q22: separate controlled comparison, reusing pinned advanceDeck; server FSRS unchanged"
+    "Q19–Q22: separate controlled comparison, reusing pinned advanceDeck; server FSRS unchanged",
+    "User selected B; revealed recall uses one compact question/answer/action layout with a fixed answer slot for the group"
   ],
   "checks": {
     "singleCard": {
@@ -48,10 +49,51 @@
       "script": "stand-content-check.mts"
     },
     "comparison": {
-      "fullScenarios": 16,
+      "fullScenarios": 28,
       "realAutoAdvanceAndPauseBrowsers": 2,
       "noApiOrStorageWrites": true,
-      "script": "practice-browser-check.mjs"
+      "script": "practice-browser-check.mjs",
+      "recallLayout": {
+        "actionGapPx": [
+          12,
+          40
+        ],
+        "assessmentPositionStableWithinGroup": true,
+        "states": [
+          "before-reveal",
+          "revealed"
+        ],
+        "viewports": [
+          [
+            1968,
+            2386
+          ],
+          [
+            984,
+            1193
+          ],
+          [
+            1096,
+            1454
+          ],
+          [
+            1440,
+            1000
+          ],
+          [
+            390,
+            844
+          ],
+          [
+            320,
+            640
+          ],
+          [
+            844,
+            390
+          ]
+        ]
+      }
     },
     "queueModel": {
       "passed": true,
