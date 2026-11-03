@@ -32,8 +32,10 @@ if [[ $1 == backup ]]; then
         opt/japanese-learning/.env opt/japanese-learning/release.env opt/japanese-learning/compose.yaml opt/japanese-learning/init-db.sh \
         etc/nginx root/.acme.sh root/cert etc/japanese-learning/host.env etc/systemd/system/japanese-backup.service etc/systemd/system/japanese-backup.timer \
         etc/systemd/system/japanese-backup-verify.service etc/systemd/system/japanese-backup-verify.timer \
-        usr/local/sbin/japanese-release usr/local/sbin/japanese-backup usr/local/sbin/japanese-ssh
-    restic backup --tag japanese "$stage"
+        usr/local/sbin/japanese-release usr/local/sbin/japanese-backup usr/local/sbin/japanese-ssh \
+        usr/local/sbin/japanese-content usr/local/sbin/japanese-content-package.py
+    # Media are append-only and installed before DB activation; a prior DB dump never needs later bytes.
+    restic backup --tag japanese "$stage" /var/lib/japanese-content
     restic forget --tag japanese --keep-last 2 --keep-hourly 168 --keep-daily 30 --prune
     date -u +%FT%TZ > "$state/last-success"
     echo 'OFFSITE_BACKUP_OK'
@@ -51,6 +53,8 @@ else
     restic restore latest --tag japanese --target "$work"
     dump=$work/var/lib/japanese-backup/snapshot/database.dump
     test -s "$dump"
+    python3 /usr/local/sbin/japanese-content-package.py verify-backup \
+        "$work/var/lib/japanese-content/bundles" "$work/var/lib/japanese-content/media"
     compose exec -T db createdb -U japanese_admin "$database"
     created=yes
     compose exec -T db pg_restore -U japanese_admin --exit-on-error --no-owner --no-acl -d "$database" < "$dump"

@@ -24,6 +24,7 @@ COPY package.json ./
 COPY src/server ./src/server
 COPY src/shared ./src/shared
 COPY materials ./materials
+COPY scripts/content.ts ./scripts/content.ts
 COPY --from=build /app/dist ./public
 COPY --from=build /app/dist ./dist
 COPY db ./db

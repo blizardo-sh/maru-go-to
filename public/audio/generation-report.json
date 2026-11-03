@@ -2,14 +2,11 @@
   "source": "macOS speech synthesis",
   "voice": "Kyoko",
   "rate": 150,
-  "words": 1547,
-  "audioWords": 1544,
-  "distinctReadings": 1491,
-  "missingWordIds": [
-    "marugoto.starter-a1.word.9148989aa6fc8021",
-    "marugoto.starter-a1.word.6206f3c0ca0ee870",
-    "marugoto.starter-a1.word.23f1417336b4ad34"
-  ],
+  "words": 2314,
+  "examples": 104,
+  "audioWords": 2314,
+  "distinctReadings": 2385,
+  "missingWordIds": [],
   "errors": [],
   "pronunciationReview": "not-human-reviewed"
 }

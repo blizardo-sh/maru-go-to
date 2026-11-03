@@ -1,0 +1,18 @@
+{
+  "unitAndIntegrationTests": 196,
+  "failures": 0,
+  "chromeViewports": [
+    1440,
+    390,
+    320
+  ],
+  "questionFormats": 4,
+  "questionElements": 5,
+  "srsRowsAfterFiveCompleteElements": 15,
+  "ackReplay": true,
+  "clockHandsMatchMetadata": true,
+  "counterReferenceAndLearning": true,
+  "oldReferenceDrillsAndKanaPlayback": true,
+  "physicalDevice": false,
+  "productionDeployment": false
+}

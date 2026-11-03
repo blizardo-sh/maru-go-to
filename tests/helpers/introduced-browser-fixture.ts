@@ -2,6 +2,15 @@ import type { Page } from '@playwright/test';
 import type { Database } from '../../src/server/db';
 import { nextCard } from '../../src/server/reviews';
 import type { Course } from '../../src/shared/types';
+import { initialLearningState } from '../../src/shared/learning';
+
+// Persist the pre-recall route explicitly when a regression exercises the old four-choice UI.
+export async function seedLegacyLearning(database: Database, course: Course, email: string) {
+  if (!/-[0-9a-f-]{36}@example\.test$/.test(email)) throw new Error('Legacy routes require an isolated UUID fixture.');
+  const [learner] = await database.sql`select id from users where email=${email}`;
+  if (!learner) throw new Error('Fixture learner missing.');
+  for (const route of course.learning ?? []) await database.sql`insert into learning_states(user_id,lesson_id,route_version,version,state) values(${learner.id},${route.lessonId},${route.version},0,${initialLearningState(route)})`;
+}
 
 // Historical fixtures are isolated UUID accounts; manual lesson flags are not learning evidence.
 export async function seedAcceptedHistory(database: Database, course: Course, email: string, wordIds: string[], skillIds: string[]) {

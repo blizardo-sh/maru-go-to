@@ -1,0 +1,3006 @@
+{
+ "url": "http://127.0.0.1:65374",
+ "at": "2026-10-25T15:53:46.399Z",
+ "allow": [
+  "emoji",
+  "button-fx",
+  "heavy-shadow"
+ ],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.71,
+    0.75,
+    0.73
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 2331,
+     "screens": 2.6,
+     "words": 303,
+     "img": 1,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 19,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 6,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "room-v1.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [
+      "❧",
+      "♫",
+      "⚙"
+     ],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Учебник",
+     "words": 1,
+     "chars": 7,
+     "lines": 1,
+     "size": 30,
+     "vw": 2.1,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": 0,
+     "leading": 1.25,
+     "top": 135,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Учебник",
+     "words": 1,
+     "lines": 1,
+     "size": 30,
+     "font": "Neucha"
+    },
+    "headings": [
+     {
+      "text": "Учебник",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.72,
+      "top": 135,
+      "tag": "h1",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 1,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "-apple-system",
+       "share": 0.89,
+       "mono": false
+      },
+      {
+       "family": "Hiragino Kaku Gothic ProN",
+       "share": 0.06,
+       "mono": false
+      },
+      {
+       "family": "Neucha",
+       "share": 0.05,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      9,
+      14,
+      15,
+      16,
+      17,
+      22,
+      24,
+      26,
+      30
+     ],
+     "sizeCount": 9,
+     "notLoaded": [
+      "Hiragino Kaku Gothic ProN"
+     ],
+     "body": {
+      "font": "-apple-system",
+      "size": 15,
+      "leading": 1.4,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 39,
+     "max": {
+      "size": 30,
+      "vw": 2.1,
+      "font": "Neucha",
+      "text": "Учебник"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.03,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fdf0d8",
+     "bodyBgHsl": {
+      "h": 39,
+      "s": 0.9,
+      "l": 0.92
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#875b34",
+       "top": 0,
+       "hsl": {
+        "h": 28,
+        "s": 0.44,
+        "l": 0.37
+       }
+      },
+      {
+       "color": "#fdf0d8",
+       "top": 94,
+       "hsl": {
+        "h": 39,
+        "s": 0.9,
+        "l": 0.92
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#311f13",
+       "share": 0.53
+      },
+      {
+       "color": "#665443",
+       "share": 0.46
+      },
+      {
+       "color": "#fffbf1",
+       "share": 0.01
+      },
+      {
+       "color": "#445730",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#445730",
+      "hsl": {
+       "h": 89,
+       "s": 0.29,
+       "l": 0.26
+      },
+      "fg": "#fffbf1"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 43,
+     "inHero": 13,
+     "radius": 8,
+     "height": 44,
+     "withShadow": 1,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "К упражнению",
+      "❧ Учебник",
+      "Тренировки",
+      "Повторение",
+      "Справочник"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 2,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "header.game-hud → rgba(55, 34, 12, 0.2) 0px 6px 16px 0px",
+      "section.section-board.work-board → rgba(50, 25, 8, 0.19) 0px 14px 24px 0px"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 18,
+     "hairlineSamples": [
+      "div.lesson-card-body 295px",
+      "div.lesson-card-body 295px",
+      "div.lesson-card-body 295px",
+      "div.lesson-card-body 295px",
+      "div.lesson-card-body 295px"
+     ],
+     "outlinedBoxes": 18,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 19,
+     "boxRadius": 8,
+     "squareMedia": 6,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 18,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 289
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.7
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.09
+     }
+    ],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 66,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "neucha"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "pageH": 2331,
+    "margins": {
+     "left": 224,
+     "right": 228
+    },
+    "sections": [
+     {
+      "sel": "header.pagehead",
+      "tag": "header",
+      "top": 135,
+      "height": 130,
+      "words": 33,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Учебник",
+       "size": 30,
+       "tag": "h1"
+      },
+      "left": 205,
+      "right": 520,
+      "textLeft": 205,
+      "textRight": 520,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.lesson-grid",
+      "tag": "div",
+      "top": 289,
+      "height": 1861,
+      "words": 1811,
+      "media": 0,
+      "middle": 54,
+      "heading": {
+       "text": "Чему научимся",
+       "size": 24,
+       "tag": "h3"
+      },
+      "left": 224,
+      "right": 224,
+      "textLeft": 224,
+      "textRight": 227,
+      "fullBleed": false,
+      "footer": true,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Учебник",
+      "size": 30,
+      "top": 135,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 224,
+      "n": 19
+     },
+     {
+      "x": 573,
+      "n": 18
+     },
+     {
+      "x": 921,
+      "n": 18
+     },
+     {
+      "x": 324,
+      "n": 6
+     },
+     {
+      "x": 673,
+      "n": 6
+     },
+     {
+      "x": 1021,
+      "n": 6
+     },
+     {
+      "x": 205,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 75,
+    "bodySize": 15,
+    "stage": true,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "dark": false,
+    "ground": "#fdf0d8",
+    "sidebar": null,
+    "topbar": null,
+    "canvas": {
+     "left": 224,
+     "right": 228
+    },
+    "hero": {
+     "text": "Учебник",
+     "words": 1,
+     "chars": 7,
+     "lines": 1,
+     "size": 30,
+     "vw": 2.1,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": 0,
+     "leading": 1.25,
+     "top": 135,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 1,
+     "firstScreen": 1,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 19,
+     "radii": [
+      [
+       8,
+       18
+      ],
+      [
+       0,
+       1
+      ]
+     ],
+     "heavyBorders": 19,
+     "borderSamples": [
+      "#906137 on #fdf0d8 (4.72:1)",
+      "#cbb594 on #fdf0d8 (1.76:1)",
+      "#cbb594 on #fdf0d8 (1.76:1)"
+     ],
+     "heavyShadows": 1,
+     "softShadows": 0,
+     "shadowSamples": [
+      "rgba(50, 25, 8, 0.19) 0px 14px 24px 0px"
+     ],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0,
+     "tiny": 19,
+     "tinySamples": [
+      "しんぶん 9px",
+      "たまご 9px",
+      "かぞく 9px",
+      "とうきょう 9px"
+     ],
+     "sizes": [
+      9,
+      14,
+      15,
+      16,
+      17,
+      22,
+      24,
+      30
+     ]
+    },
+    "title": {
+     "text": "Учебник",
+     "size": 30,
+     "top": 135
+    },
+    "colourShare": 0.245
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    0.92,
+    0.92,
+    0.92,
+    0.88
+   ],
+   "motion": {
+    "elements": 1,
+    "css": 1,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 3325,
+     "screens": 3.2,
+     "words": 302,
+     "img": 1,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 19,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 7,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "room-mobile-v1.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [
+      "♫",
+      "⚙"
+     ],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Учебник",
+     "words": 1,
+     "chars": 7,
+     "lines": 1,
+     "size": 30,
+     "vw": 3.9,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": 0,
+     "leading": 1.25,
+     "top": 179,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Учебник",
+     "words": 1,
+     "lines": 1,
+     "size": 30,
+     "font": "Neucha"
+    },
+    "headings": [
+     {
+      "text": "Учебник",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 30,
+      "vw": 3.9,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.83,
+      "top": 179,
+      "tag": "h1",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 1,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": null,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "-apple-system",
+       "share": 0.89,
+       "mono": false
+      },
+      {
+       "family": "Hiragino Kaku Gothic ProN",
+       "share": 0.06,
+       "mono": false
+      },
+      {
+       "family": "Neucha",
+       "share": 0.05,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      9,
+      14,
+      15,
+      16,
+      17,
+      20,
+      22,
+      24,
+      26,
+      30
+     ],
+     "sizeCount": 10,
+     "notLoaded": [
+      "Hiragino Kaku Gothic ProN"
+     ],
+     "body": {
+      "font": "-apple-system",
+      "size": 15,
+      "leading": 1.4,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 36,
+     "max": {
+      "size": 30,
+      "vw": 3.9,
+      "font": "Neucha",
+      "text": "Учебник"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.03,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fdf0d8",
+     "bodyBgHsl": {
+      "h": 39,
+      "s": 0.9,
+      "l": 0.92
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#875b34",
+       "top": 0,
+       "hsl": {
+        "h": 28,
+        "s": 0.44,
+        "l": 0.37
+       }
+      },
+      {
+       "color": "#fdf0d8",
+       "top": 138,
+       "hsl": {
+        "h": 39,
+        "s": 0.9,
+        "l": 0.92
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#311f13",
+       "share": 0.53
+      },
+      {
+       "color": "#665443",
+       "share": 0.46
+      },
+      {
+       "color": "#fffbf1",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#445730",
+      "hsl": {
+       "h": 89,
+       "s": 0.29,
+       "l": 0.26
+      },
+      "fg": "#fffbf1"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 43,
+     "inHero": 11,
+     "radius": 8,
+     "height": 44,
+     "withShadow": 1,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "К упражнению",
+      "Учебник",
+      "Тренировки",
+      "Повторение",
+      "Справочник"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 2,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "header.game-hud → rgba(55, 34, 12, 0.2) 0px 6px 16px 0px",
+      "section.section-board.work-board → rgba(50, 25, 8, 0.19) 0px 14px 24px 0px"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 18,
+     "hairlineSamples": [
+      "div.lesson-card-body 273px",
+      "div.lesson-card-body 273px",
+      "div.lesson-card-body 273px",
+      "div.lesson-card-body 273px",
+      "div.lesson-card-body 273px"
+     ],
+     "outlinedBoxes": 18,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 19,
+     "boxRadius": 8,
+     "squareMedia": 5,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 18,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 359
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.82
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.1
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.09
+     }
+    ],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 110,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "neucha"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "pageH": 3325,
+    "margins": {
+     "left": 84,
+     "right": 84
+    },
+    "sections": [
+     {
+      "sel": "header.pagehead",
+      "tag": "header",
+      "top": 179,
+      "height": 156,
+      "words": 33,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Учебник",
+       "size": 30,
+       "tag": "h1"
+      },
+      "left": 65,
+      "right": 73,
+      "textLeft": 65,
+      "textRight": 73,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "div.lesson-grid",
+      "tag": "div",
+      "top": 359,
+      "height": 2786,
+      "words": 2241,
+      "media": 0,
+      "middle": 54,
+      "heading": {
+       "text": "Чему научимся",
+       "size": 24,
+       "tag": "h3"
+      },
+      "left": 84,
+      "right": 84,
+      "textLeft": 84,
+      "textRight": 86,
+      "fullBleed": false,
+      "footer": true,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Учебник",
+      "size": 30,
+      "top": 179,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 84,
+      "n": 28
+     },
+     {
+      "x": 411,
+      "n": 27
+     },
+     {
+      "x": 184,
+      "n": 9
+     },
+     {
+      "x": 511,
+      "n": 9
+     },
+     {
+      "x": 65,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 75,
+    "bodySize": 15,
+    "stage": true,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "dark": false,
+    "ground": "#fdf0d8",
+    "sidebar": null,
+    "topbar": null,
+    "canvas": {
+     "left": 84,
+     "right": 84
+    },
+    "hero": {
+     "text": "Учебник",
+     "words": 1,
+     "chars": 7,
+     "lines": 1,
+     "size": 30,
+     "vw": 3.9,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": 0,
+     "leading": 1.25,
+     "top": 179,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 2,
+     "firstScreen": 2,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 20,
+     "radii": [
+      [
+       8,
+       18
+      ],
+      [
+       0,
+       2
+      ]
+     ],
+     "heavyBorders": 20,
+     "borderSamples": [
+      "#76502e on #b17a43 (1.94:1)",
+      "#906137 on #fdf0d8 (4.72:1)",
+      "#cbb594 on #fdf0d8 (1.76:1)"
+     ],
+     "heavyShadows": 2,
+     "softShadows": 0,
+     "shadowSamples": [
+      "rgba(55, 34, 12, 0.2) 0px 6px 16px 0px",
+      "rgba(50, 25, 8, 0.19) 0px 14px 24px 0px"
+     ],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0,
+     "tiny": 19,
+     "tinySamples": [
+      "しんぶん 9px",
+      "たまご 9px",
+      "かぞく 9px",
+      "とうきょう 9px"
+     ],
+     "sizes": [
+      9,
+      14,
+      15,
+      16,
+      17,
+      20,
+      22,
+      24,
+      30
+     ]
+    },
+    "title": {
+     "text": "Учебник",
+     "size": 30,
+     "top": 179
+    },
+    "colourShare": 0.18
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 7,
+   "filled": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0.93
+   ],
+   "motion": {
+    "elements": 0,
+    "css": 0,
+    "transitions": 0,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 5901,
+     "screens": 7,
+     "words": 302,
+     "img": 1,
+     "video": 0,
+     "canvas": 0,
+     "svg": 0,
+     "sections": 19,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 3,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "room-mobile-v1.webp"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": [
+      "♫",
+      "⚙"
+     ],
+     "videosNoPoster": 0
+    },
+    "hero": {
+     "text": "Учебник",
+     "words": 1,
+     "chars": 7,
+     "lines": 1,
+     "size": 30,
+     "vw": 7.7,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": 0,
+     "leading": 1.25,
+     "top": 144,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "h1": {
+     "text": "Учебник",
+     "words": 1,
+     "lines": 1,
+     "size": 30,
+     "font": "Neucha"
+    },
+    "headings": [
+     {
+      "text": "╱",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 25.6,
+      "vw": 6.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.3,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "right",
+      "widthRatio": 0.11,
+      "top": 37,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Учебник",
+      "words": 1,
+      "chars": 7,
+      "lines": 1,
+      "size": 30,
+      "vw": 7.7,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.85,
+      "top": 144,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Приветствие",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.5,
+      "top": 417,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Чему научимся",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 652,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "На занятии",
+      "words": 2,
+      "chars": 10,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.5,
+      "top": 712,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Чему научимся",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 947,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "О себе",
+      "words": 2,
+      "chars": 6,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.5,
+      "top": 1007,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Слова и фразы",
+      "words": 3,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 1236,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Чему научимся",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 1242,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Семья",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.5,
+      "top": 1302,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Чему научимся",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 1537,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Слова и фразы",
+      "words": 3,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 1582,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Еда и предпочтения",
+      "words": 3,
+      "chars": 18,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.5,
+      "top": 1597,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Чему научимся",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 1832,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Обед и заказ",
+      "words": 3,
+      "chars": 12,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.5,
+      "top": 1892,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Конструкции",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 1941,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Слова и фразы",
+      "words": 3,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 2081,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Чему научимся",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 2127,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Жильё и вещи",
+      "words": 3,
+      "chars": 12,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.5,
+      "top": 2187,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Конструкции",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 2261,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Чему научимся",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 2422,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Слова и фразы",
+      "words": 3,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 2460,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Расположение вещей",
+      "words": 2,
+      "chars": 18,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.5,
+      "top": 2482,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Конструкции",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 2499,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Слова и фразы",
+      "words": 3,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 2640,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Чему научимся",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 2717,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Конструкции",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 2775,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Распорядок дня",
+      "words": 2,
+      "chars": 14,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.5,
+      "top": 2777,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Слова и фразы",
+      "words": 3,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 2916,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Чему научимся",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 3012,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Конструкции",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 3038,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "График и встречи",
+      "words": 3,
+      "chars": 16,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.5,
+      "top": 3072,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Слова и фразы",
+      "words": 3,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 3236,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Чему научимся",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 3307,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Конструкции",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 3359,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Хобби",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.5,
+      "top": 3367,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Слова и фразы",
+      "words": 3,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 3442,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Конструкции",
+      "words": 1,
+      "chars": 11,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 3596,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Чему научимся",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.75,
+      "top": 3603,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "События и приглашения",
+      "words": 3,
+      "chars": 21,
+      "lines": 2,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Neucha",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.5,
+      "top": 3663,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 72,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "-apple-system",
+       "share": 0.89,
+       "mono": false
+      },
+      {
+       "family": "Hiragino Kaku Gothic ProN",
+       "share": 0.06,
+       "mono": false
+      },
+      {
+       "family": "Neucha",
+       "share": 0.05,
+       "mono": false
+      }
+     ],
+     "familyCount": 3,
+     "sizes": [
+      9,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      22,
+      24,
+      26,
+      30
+     ],
+     "sizeCount": 11,
+     "notLoaded": [
+      "Hiragino Kaku Gothic ProN"
+     ],
+     "body": {
+      "font": "-apple-system",
+      "size": 15,
+      "leading": 1.4,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 39,
+     "max": {
+      "size": 30,
+      "vw": 7.7,
+      "font": "Neucha",
+      "text": "Учебник"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.03,
+     "smallText": 0
+    },
+    "eyebrows": [
+     {
+      "text": "しんぶん",
+      "above": "Чему научимся",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 8.5,
+      "top": 1518
+     },
+     {
+      "text": "しんぶん",
+      "above": "Слова и фразы",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 8.5,
+      "top": 1518
+     },
+     {
+      "text": "かぞく",
+      "above": "Чему научимся",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 8.5,
+      "top": 1810
+     },
+     {
+      "text": "あね",
+      "above": "Слова и фразы",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 8.5,
+      "top": 2608
+     },
+     {
+      "text": "ふた",
+      "above": "Конструкции",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 8.5,
+      "top": 3561
+     },
+     {
+      "text": "みっ",
+      "above": "Чему научимся",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 8.5,
+      "top": 3593
+     },
+     {
+      "text": "がつ",
+      "above": "Слова и фразы",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 8.5,
+      "top": 4331
+     },
+     {
+      "text": "げつようび",
+      "above": "Конструкции",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 8.5,
+      "top": 4488
+     },
+     {
+      "text": "げつようび",
+      "above": "Чему научимся",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 8.5,
+      "top": 4488
+     },
+     {
+      "text": "とうきょう",
+      "above": "Чему научимся",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 8.5,
+      "top": 4824
+     },
+     {
+      "text": "えん",
+      "above": "Конструкции",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 8.5,
+      "top": 5349
+     },
+     {
+      "text": "えん",
+      "above": "Слова и фразы",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 8.5,
+      "top": 5349
+     },
+     {
+      "text": "えん",
+      "above": "Чему научимся",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": false,
+      "size": 8.5,
+      "top": 5349
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#fdf0d8",
+     "bodyBgHsl": {
+      "h": 39,
+      "s": 0.9,
+      "l": 0.92
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#875b34",
+       "top": 0,
+       "hsl": {
+        "h": 28,
+        "s": 0.44,
+        "l": 0.37
+       }
+      },
+      {
+       "color": "#fdf0d8",
+       "top": 116,
+       "hsl": {
+        "h": 39,
+        "s": 0.9,
+        "l": 0.92
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#311f13",
+       "share": 0.53
+      },
+      {
+       "color": "#665443",
+       "share": 0.46
+      },
+      {
+       "color": "#fffbf1",
+       "share": 0.01
+      }
+     ],
+     "button": {
+      "bg": "#445730",
+      "hsl": {
+       "h": 89,
+       "s": 0.29,
+       "l": 0.26
+      },
+      "fg": "#fffbf1"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 43,
+     "inHero": 9,
+     "radius": 8,
+     "height": 44,
+     "withShadow": 1,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "К упражнению",
+      "Учебник",
+      "Тренировки",
+      "Повторение",
+      "Справочник"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 2,
+     "shadowOverlay": 0,
+     "shadowSamples": [
+      "header.game-hud → rgba(55, 34, 12, 0.2) 0px 6px 16px 0px",
+      "section.section-board.work-board → rgba(50, 25, 8, 0.19) 0px 14px 24px 0px"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 18,
+     "hairlineSamples": [
+      "div.lesson-card-body 292px",
+      "div.lesson-card-body 292px",
+      "div.lesson-card-body 292px",
+      "div.lesson-card-body 292px",
+      "div.lesson-card-body 292px"
+     ],
+     "outlinedBoxes": 18,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 19,
+     "boxRadius": 8,
+     "squareMedia": 2,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": [
+      {
+       "count": 18,
+       "iconTopped": false,
+       "rounded": true,
+       "top": 375
+      }
+     ]
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 1
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.83
+     },
+     {
+      "type": "bg-image",
+      "ratio": 0.11
+     }
+    ],
+    "nav": {
+     "links": 0,
+     "fixed": false,
+     "height": 100,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "neucha"
+    ]
+   },
+   "layout": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "pageH": 5901,
+    "margins": {
+     "left": 49,
+     "right": 49
+    },
+    "sections": [
+     {
+      "sel": "header.pagehead",
+      "tag": "header",
+      "top": 144,
+      "height": 207,
+      "words": 33,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Учебник",
+       "size": 30,
+       "tag": "h1"
+      },
+      "left": 30,
+      "right": 44,
+      "textLeft": 30,
+      "textRight": 44,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": false,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 375,
+      "height": 279,
+      "words": 10,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Приветствие",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 136,
+      "fullBleed": false,
+      "footer": false,
+      "hero": true,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 670,
+      "height": 279,
+      "words": 11,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "На занятии",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 145,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 965,
+      "height": 279,
+      "words": 12,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "О себе",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 121,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 1260,
+      "height": 279,
+      "words": 11,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Семья",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 121,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 1555,
+      "height": 279,
+      "words": 12,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Еда и предпочтения",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 73,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 1850,
+      "height": 279,
+      "words": 12,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Обед и заказ",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 137,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 2145,
+      "height": 279,
+      "words": 12,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Жильё и вещи",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 122,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 2440,
+      "height": 279,
+      "words": 11,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Расположение вещей",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 66,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 2735,
+      "height": 279,
+      "words": 11,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Распорядок дня",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 111,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 3030,
+      "height": 279,
+      "words": 13,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "График и встречи",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 98,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 3325,
+      "height": 279,
+      "words": 11,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Хобби",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 145,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 3621,
+      "height": 307,
+      "words": 13,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "События и приглашения",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 136,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 3943,
+      "height": 279,
+      "words": 13,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Транспорт и маршрут",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 64,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 4238,
+      "height": 307,
+      "words": 13,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Ориентирование в городе",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 104,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 4561,
+      "height": 279,
+      "words": 13,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Покупки и подарки",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 85,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 4856,
+      "height": 279,
+      "words": 13,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Одежда и цена",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 118,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 5151,
+      "height": 279,
+      "words": 12,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Прошедший отдых",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 91,
+      "fullBleed": false,
+      "footer": false,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     },
+     {
+      "sel": "article.lesson-card",
+      "tag": "article",
+      "top": 5446,
+      "height": 307,
+      "words": 13,
+      "media": 0,
+      "middle": 0,
+      "heading": {
+       "text": "Путешествия и желания",
+       "size": 22,
+       "tag": "h2"
+      },
+      "left": 47,
+      "right": 49,
+      "textLeft": 64,
+      "textRight": 133,
+      "fullBleed": false,
+      "footer": true,
+      "hero": false,
+      "continues": true,
+      "pinned": false
+     }
+    ],
+    "gaps": [],
+    "h1s": [
+     {
+      "text": "Учебник",
+      "size": 30,
+      "top": 144,
+      "firstScreen": true
+     }
+    ],
+    "edgeText": [],
+    "edges": [
+     {
+      "x": 49,
+      "n": 55
+     },
+     {
+      "x": 147,
+      "n": 18
+     },
+     {
+      "x": 30,
+      "n": 2
+     }
+    ],
+    "leftBlocks": 75,
+    "bodySize": 15,
+    "stage": true,
+    "explains": false,
+    "slivers": [],
+    "voidShare": 0,
+    "voidBox": null
+   },
+   "app": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "dark": false,
+    "ground": "#fdf0d8",
+    "sidebar": null,
+    "topbar": null,
+    "canvas": {
+     "left": 49,
+     "right": 49
+    },
+    "hero": {
+     "text": "Учебник",
+     "words": 1,
+     "chars": 7,
+     "lines": 1,
+     "size": 30,
+     "vw": 7.7,
+     "font": "Neucha",
+     "weight": 400,
+     "tracking": 0,
+     "leading": 1.25,
+     "top": 144,
+     "tag": "h1",
+     "kind": "heading",
+     "align": "left",
+     "position": "left"
+    },
+    "charts": 0,
+    "layout": {
+     "panels": 2,
+     "firstScreen": 2,
+     "ragged": [],
+     "voids": []
+    },
+    "tiles": 0,
+    "panels": {
+     "count": 20,
+     "radii": [
+      [
+       8,
+       18
+      ],
+      [
+       0,
+       2
+      ]
+     ],
+     "heavyBorders": 20,
+     "borderSamples": [
+      "#76502e on #b17a43 (1.94:1)",
+      "#906137 on #fdf0d8 (4.72:1)",
+      "#cbb594 on #fdf0d8 (1.76:1)"
+     ],
+     "heavyShadows": 2,
+     "softShadows": 0,
+     "shadowSamples": [
+      "rgba(55, 34, 12, 0.2) 0px 6px 16px 0px",
+      "rgba(50, 25, 8, 0.19) 0px 14px 24px 0px"
+     ],
+     "glass": 0
+    },
+    "chips": {
+     "count": 0,
+     "hues": 0,
+     "samples": []
+    },
+    "numbers": {
+     "cells": 0,
+     "leftAligned": 0,
+     "figures": 0,
+     "tabularShare": null,
+     "kpiMax": null
+    },
+    "rows": null,
+    "chartHues": 0,
+    "placeholders": [],
+    "type": {
+     "under13": 0,
+     "tiny": 19,
+     "tinySamples": [
+      "しんぶん 9px",
+      "たまご 9px",
+      "かぞく 9px",
+      "とうきょう 9px"
+     ],
+     "sizes": [
+      9,
+      14,
+      15,
+      16,
+      17,
+      18,
+      22,
+      24,
+      30
+     ]
+    },
+    "title": {
+     "text": "Учебник",
+     "size": 30,
+     "top": 144
+    },
+    "colourShare": 0.181
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "palette-cream",
+   "width": 1440,
+   "message": "Yellow-cream background (page background #fdf0d8, section #fdf0d8, text #fffbf1).",
+   "fix": "Use the drawn palette. If you want warmth, take a low-chroma stone or bone, not a yellow cream.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "font-count",
+   "width": 1440,
+   "message": "3 typefaces in use (-apple-system, Hiragino Kaku Gothic ProN, Neucha).",
+   "fix": "Two at most.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "font-fallback",
+   "width": 1440,
+   "message": "Typeface(s) declared but not loaded, so a fallback is rendering: Hiragino Kaku Gothic ProN",
+   "fix": "Fix the font URL / family name, or the screenshots you are judging are not the design.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "heavy-borders",
+   "width": 1440,
+   "message": "19 panel borders are dark against their ground: #906137 on #fdf0d8 (4.72:1) | #cbb594 on #fdf0d8 (1.76:1) | #cbb594 on #fdf0d8 (1.76:1)",
+   "fix": "A panel border is a whisper: about 1.1–1.3:1 against its ground on a light screen (#e5e7eb–#ededed on white), and about 1.2–1.5:1 on a dark one (#1a1a1a on #000, #2e2e2e on #111). Darker lines turn the screen into a grid of boxes; keep the stronger line for controls.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "colour-sprawl",
+   "width": 1440,
+   "message": "25% of the first screen is strongly coloured.",
+   "fix": "Keep the screen neutral and spend colour on data and status: the studied screens sit near 3%, and only tinted styles reach 10–15%, as pale tints rather than saturated fills.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "tiny-text",
+   "width": 1440,
+   "message": "19 text blocks under 11px: しんぶん 9px, たまご 9px, かぞく 9px, とうきょう 9px.",
+   "fix": "Nothing below 11px; secondary text 12px, data 13–14px.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "covered-text",
+   "width": 1440,
+   "message": "Large text lies under another element at some scroll position: \"Чему научимся\" (screen 3, 50% hidden); \"Слова и фразы\" (screen 3, 25% hidden); \"Конструкции\" (screen 3, 100% hidden)",
+   "fix": "Nothing may sit on top of a headline or statement. Move the picture, shorten the pinned run, or raise the text above it (z-index) and give it a ground.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "app-title-size",
+   "width": 390,
+   "message": "The h1 is 30px (\"Учебник\").",
+   "fix": "An app screen is not a landing page: the title is 18-32px (20-24px on a phone)."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "/private/tmp/maru-textbook-cards-design/after/desktop-fold.jpg",
+   "pages": [
+    "/private/tmp/maru-textbook-cards-design/after/desktop-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "/private/tmp/maru-textbook-cards-design/after/tablet-fold.jpg",
+   "pages": [
+    "/private/tmp/maru-textbook-cards-design/after/tablet-page-01.jpg"
+   ],
+   "film": []
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "/private/tmp/maru-textbook-cards-design/after/mobile-fold.jpg",
+   "pages": [
+    "/private/tmp/maru-textbook-cards-design/after/mobile-page-01.jpg"
+   ],
+   "film": []
+  }
+ ]
+}

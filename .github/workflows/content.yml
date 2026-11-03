@@ -1,0 +1,65 @@
+name: Content publication
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: Publish the reviewed main content or activate an existing publication
+        type: choice
+        options: [publish, rollback]
+        required: true
+      publication:
+        description: 64-character publication ID, required for rollback
+        type: string
+        default: ''
+permissions:
+  contents: read
+concurrency:
+  group: production-content
+  cancel-in-progress: false
+jobs:
+  content:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with:
+          bun-version: 1.4.3
+      - name: Prepare bounded content package
+        env:
+          ACTION: ${{ inputs.action }}
+          PUBLICATION: ${{ inputs.publication }}
+        run: |
+          case "$ACTION" in
+            publish)
+              test -z "$PUBLICATION"
+              bun install --frozen-lockfile
+              bun scripts/content.ts pack "$RUNNER_TEMP/bundle.json"
+              python3 scripts/content-package.py pack "$RUNNER_TEMP/bundle.json" public "$RUNNER_TEMP/content.tar"
+              ;;
+            rollback) [[ "$PUBLICATION" =~ ^[0-9a-f]{64}$ ]] ;;
+            *) exit 64 ;;
+          esac
+      - name: Publish through restricted SSH command
+        env:
+          ACTION: ${{ inputs.action }}
+          PUBLICATION: ${{ inputs.publication }}
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+          DEPLOY_KNOWN_HOSTS: ${{ secrets.DEPLOY_KNOWN_HOSTS }}
+        run: |
+          key=$(mktemp)
+          hosts=$(mktemp)
+          trap 'rm -f "$key" "$hosts"' EXIT
+          chmod 600 "$key"
+          printf '%s\n' "$DEPLOY_KEY" > "$key"
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > "$hosts"
+          remote=(ssh -p 5555 -i "$key" -o IdentitiesOnly=yes -o BatchMode=yes -o ConnectTimeout=10 -o StrictHostKeyChecking=yes -o UserKnownHostsFile="$hosts" "japanese-deploy@$DEPLOY_HOST")
+          if [[ "$ACTION" == publish ]]; then
+            digest=$(sha256sum "$RUNNER_TEMP/content.tar" | cut -d ' ' -f 1)
+            "${remote[@]}" "publish-content $digest" < "$RUNNER_TEMP/content.tar"
+          else
+            [[ "$PUBLICATION" =~ ^[0-9a-f]{64}$ ]]
+            "${remote[@]}" "rollback-content $PUBLICATION" < /dev/null
+          fi

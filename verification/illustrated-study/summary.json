@@ -1,0 +1,69 @@
+{
+  "verifiedAtUTC": "2026-10-23T05:02:47.708552+00:00",
+  "baseCommit": "d0b972eb63e19d3a807b2fc266387cdd0b3973a9",
+  "sourceBranch": "feat/illustrated-study-system",
+  "source": "frozen implementation working tree; final UI corrections verified on built assets",
+  "bundlesSha256": {
+    "index.html": "48fa15f78fbeb36df6c9604ee26459a1cbc59c4566d4e1bbc586fb49b7fb578a",
+    "index-Dge_lz0k.js": "1f63d60d872ca3f6c66aeedca93c70abc192614fe9b6e770edee151c939b7857",
+    "index-fMJNoPh-.css": "f7c7676286b6bed767c382d16ce53fd68a924b887ca3b5355bcdddf0f92af48a"
+  },
+  "tests": {
+    "passed": 156,
+    "failed": 0,
+    "skipped": 0,
+    "assertions": 26847,
+    "files": 31
+  },
+  "focusedReferenceHTTP": {
+    "passed": 4,
+    "assertions": 109
+  },
+  "audioAndClientBoundaries": {
+    "passed": 6,
+    "assertions": 1802
+  },
+  "gates": {
+    "typecheck": true,
+    "build": true,
+    "preparation": true,
+    "releaseCommands": true,
+    "auditHighFindings": 0,
+    "auditBelowHigh": 1
+  },
+  "native": {
+    "reference": true,
+    "guided": true,
+    "albumFlow": true,
+    "paperFlight": true,
+    "counterDeck": true,
+    "sceneMeasurements": 281,
+    "viewports": 8,
+    "frameCatMaxDeltaPx": 0,
+    "minUsefulHeightPx": 112,
+    "controlHitChecks": 54,
+    "catTransitionFrames": 320,
+    "catEmptyFrames": 0,
+    "singleCounterArtSameSizeAt1And8": true,
+    "maximumCounter": 9999999,
+    "ageMaximum": 120,
+    "pageErrors": 0
+  },
+  "audio": {
+    "displayedEntries": 228,
+    "audibleEntries": 226,
+    "distinctSounds": 101,
+    "decodedFiles": 101,
+    "minDurationSeconds": 0.320408,
+    "maxDurationSeconds": 0.549932,
+    "pronunciationReview": "not-human-reviewed"
+  },
+  "audioUniqueBytes": 679492,
+  "limitations": [
+    "No physical-device or Safari/Firefox verification.",
+    "No human pronunciation review or external lesson-video streaming recheck.",
+    "Linux image builds and exact-head GitHub CI are checked after publication."
+  ],
+  "database": "isolated japanese_app_test; UUID fixture cleanup; no reset; only existing main migration0003 applied",
+  "deploymentPerformed": false
+}

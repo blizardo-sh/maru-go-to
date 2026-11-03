@@ -122,3 +122,11 @@ journalctl -u japanese-backup.service -u japanese-backup-verify.service --since 
 Иллюстрации/manifest/helper и пять проверенных family kanji aliases поставляются отдельным PR; UI, серверная оценка слов, регрессии и UX-документы — следующим PR поверх него. Frozen prototype PR #14 не предназначен для merge. Обе production-ветки проходят проверки по точному commit; публикация не выполнена самим созданием PR.
 
 Новых таблиц, SQL-миграций и зависимостей для Album-flow нет: актуальная схема остаётся с additive migration `0002_registration_links.sql`. Route versions, part IDs, word IDs и прежние attempts сохраняются. Старый сервер не знает новые pending-действия `start-practice`/`choose`, поэтому откат UI/API должен учитывать неподтверждённые новые outbox-запросы; не следует выдавать старый образ за совместимый с ними без проверки. Существующие ручные deploy guards и отдельное разрешение на production остаются обязательными.
+
+## Статические записи каны и редакция A
+
+Новая редакция использует готовые `public/audio/kana-manifest.json`, `kana-generation-report.json` и referenced `.m4a`; voice/key на сервере не нужны. Для пересоздания на macOS используется `bun scripts/generate-kana-audio.ts` с существующим offline Kyoko/afconvert. Команда сохраняет прежние vocabulary/counter manifests, проверяет decoding/duration и не объявляет human pronunciation review. В образах API/web должны сохраняться стандартные существующие правила поставки public assets.
+
+Для repeatTypes и изученных конструкций дополнительных миграций нет. Базовая схема всё так же включает существующую `0003_counter_progress`. Применение проверок к локальной одноразовой БД не означает миграцию или deployment работающего сервиса. Публикация PR не запускает ручной deploy; существующие release guards остаются обязательными.
+
+При откате API до редакции без repeatTypes старый строгий settingsSchema не принимает это поле. Перед таким откатом удаляется только ключ repeatTypes из preferences.settings либо используется совместимая версия API; review_states, review_attempts и learning_states не сбрасываются. Вперёд новая версия читает старые настройки с defaults без записи.
