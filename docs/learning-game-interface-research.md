@@ -1,5 +1,7 @@
 # Учебные игровые интерфейсы: проверка аналогов
 
+Архивные материалы прототипа, обозначенные ниже как локальные, не входят в этот PR. Актуальные проверки перенесённого приложения находятся в `verification/m8/`.
+
 Дата проверки: 29 октября 2026. Рассмотрены Wagotabi, renshuu, Lingo Legend,
 Shashingo, Noun Town и, как дополнительный контекст, Influent.
 
@@ -40,8 +42,8 @@ Wagotabi/renshuu. Для нашего проекта это означает н�
 не проверены. Demo встроена в прокручиваемую рекламную страницу: её поведение
 не доказывает отсутствие прокрутки во всех уроках renshuu.
 
-Снимки: [экран задания](../verification/pixi-ui-lab/test-results/research-analogues/renshuu-demo.png)
-и [после выбора](../verification/pixi-ui-lab/test-results/research-analogues/renshuu-demo-feedback.png). Последний снимок сделан при автоматической смене
+Снимки: экран задания (локальный архив: `verification/pixi-ui-lab/test-results/research-analogues/renshuu-demo.png`)
+и после выбора (локальный архив: `verification/pixi-ui-lab/test-results/research-analogues/renshuu-demo-feedback.png`). Последний снимок сделан при автоматической смене
 состояния; наличие верного ответа надёжнее подтверждено также деревом доступности.
 
 ## Wagotabi: учебная книга и самостоятельное пространство диалога
@@ -78,8 +80,8 @@ Smart Tests оформлены разворотом книги: вопрос и 
 [FAQ](https://www.wagotabi.com/faq) и Steam подтверждают наличие мобильных и
 компьютерных версий; равенство их компоновок из этого не следует.
 
-Снимки официальной страницы: [урок](../verification/pixi-ui-lab/test-results/research-analogues/wagotabi-lesson.png)
-и [Smart Tests](../verification/pixi-ui-lab/test-results/research-analogues/wagotabi-smart-tests.png).
+Снимки официальной страницы: урок (локальный архив: `verification/pixi-ui-lab/test-results/research-analogues/wagotabi-lesson.png`)
+и Smart Tests (локальный архив: `verification/pixi-ui-lab/test-results/research-analogues/wagotabi-smart-tests.png`).
 
 ## Lingo Legend: видимый мир и отдельная рабочая область внизу
 
@@ -108,9 +110,9 @@ Smart Tests оформлены разворотом книги: вопрос и 
 максимальная длина всех одновременно видимых вариантов и адаптация к desktop.
 Изображения с фразами не доказывают размещение нашего предельного материала.
 
-Артефакты: [ранний сценарий](../verification/pixi-ui-lab/test-results/research-analogues/lingo-legend-flow.png),
-[мобильное знакомство](../verification/pixi-ui-lab/test-results/research-analogues/lingo-legend-mobile-intro.png),
-[мобильный конструктор](../verification/pixi-ui-lab/test-results/research-analogues/lingo-legend-mobile-builder.png).
+Артефакты: ранний сценарий (локальный архив: `verification/pixi-ui-lab/test-results/research-analogues/lingo-legend-flow.png`),
+мобильное знакомство (локальный архив: `verification/pixi-ui-lab/test-results/research-analogues/lingo-legend-mobile-intro.png`),
+мобильный конструктор (локальный архив: `verification/pixi-ui-lab/test-results/research-analogues/lingo-legend-mobile-builder.png`).
 
 ## Shashingo: учебный предмет с собственной рамкой
 
