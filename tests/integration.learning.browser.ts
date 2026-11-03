@@ -13,7 +13,7 @@ const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
 if (!databaseUrl || new URL(databaseUrl).hostname !== '127.0.0.1' || new URL(databaseUrl).pathname !== '/japanese_app_test') throw new Error('Use only disposable localhost japanese_app_test.');
 const referenceNoteOnly = process.env.BROWSER_REFERENCE_NOTE_ONLY === 'true';
 const functionalOnly = process.env.BROWSER_LEARNING_FUNCTIONAL_ONLY === 'true'; const geometryOnly = process.env.BROWSER_LEARNING_GEOMETRY_ONLY === 'true';
-const base = 'http://127.0.0.1:5173';
+const base = process.env.BROWSER_URL ?? 'http://127.0.0.1:5173';
 const database = connectDatabase(databaseUrl); const course = loadCourse();
 const provider = Bun.serve({ hostname: '127.0.0.1', port: 0, fetch: () => new Response('Fixture quota', { status: 429 }) });
 const app = createApp({ database, course, config: { DATABASE_URL: databaseUrl, BETTER_AUTH_SECRET: 'learning-browser-isolated-fixture-secret-over32', APP_URL: base, PORT: 3000, HOST: '127.0.0.1', ANALYSIS_PROVIDER: 'generic', ANALYSIS_URL: `http://127.0.0.1:${provider.port}/chat/completions`, ANALYSIS_MODEL: 'isolated-learning-fixture', ANALYSIS_FREE_ONLY: 'true' } });
@@ -48,7 +48,7 @@ async function legacySettings(context: BrowserContext, closed = false) {
   const response = await context.request.put(`${api}/api/settings`, { headers: { origin: base }, data: { ...structuredClone(defaultSettings), lessonStatuses: Object.fromEntries(course.lessons.map(lesson => [lesson.id, closed ? 'closed' : 'studying'])), focusLessonIds: [course.lessons[0]!.id], focusSkillIds: ['marugoto.starter-a1.skill.frequency'], focusCanDoIds: [1], newWordsPerDay: 0, newSkillsPerDay: 0 } }); expect(response.status()).toBe(200);
 }
 async function next(page: Page, previous: string, action = 'ArrowRight') {
-  const gesture = page.getByTestId('review-gesture'); await gesture.focus(); await page.keyboard.press(action);
+  const gesture = page.getByTestId('review-gesture'); if (await gesture.getAttribute('data-mode') === 'grammar') await page.locator('.workspace-next').click(); else { await gesture.focus(); await page.keyboard.press(action); }
   await expect.poll(async () => await page.getByRole('heading', { name: 'Порция пройдена', exact: true }).isVisible() || (await gesture.getAttribute('data-review-id')) !== previous).toBe(true);
 }
 async function reference(f: Awaited<ReturnType<typeof fixture>>, known: Progress) {

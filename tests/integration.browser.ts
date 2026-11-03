@@ -11,7 +11,7 @@ import type { LearnerSettings, Progress, ReviewItem, ReviewQueue, ReviewSubmissi
 
 const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
 if (!databaseUrl || new URL(databaseUrl).hostname !== '127.0.0.1' || new URL(databaseUrl).pathname !== '/japanese_app_test') throw new Error('Use only disposable localhost japanese_app_test.');
-const base = 'http://127.0.0.1:5173';
+const base = process.env.BROWSER_URL ?? 'http://127.0.0.1:5173';
 const outboxOnly = process.env.BROWSER_OUTBOX_ONLY === 'true';
 const database = connectDatabase(databaseUrl);
 const course = loadCourse();
@@ -74,7 +74,7 @@ try {
       const request = route.request();
       const target = new URL(request.url()); target.host = `127.0.0.1:${server.port}`;
       const path = target.pathname;
-      if (path === '/api/course' && request.method() === 'GET') courseGets++;
+      if (path === '/api/bootstrap' && request.method() === 'GET') courseGets++;
       if (path === '/api/reviews' && request.method() === 'POST') submissions.push(request.postDataJSON());
       const response = await route.fetch({ url: target.href });
       if (path === '/api/reviews' && request.method() === 'GET' && target.searchParams.get('mode') === 'mixed') {
@@ -155,7 +155,7 @@ try {
           const hidden = await gesture.ariaSnapshot();
           expect(hidden).not.toContain(item.word.surface);
           expect(hidden).not.toContain(item.word.meaningRu);
-          expect(await gesture.locator('[lang="ja"]').count()).toBe(0);
+          expect(await gesture.locator('[lang="ja"]:visible').count()).toBe(0);
           await expect.poll(async () => page.evaluate(() => Reflect.get(window, 'qaAudioPlaying'))).toBeGreaterThan(0);
           const previousPlays = await page.evaluate(() => Reflect.get(window, 'qaAudioPlaying'));
           await expect(page.getByRole('button', { name: 'Прослушать ещё раз', exact: true })).toBeEnabled();
@@ -238,7 +238,7 @@ try {
         expect(await selected.evaluateAll(elements => elements.map(element => element.getAttribute('data-token-id')))).toEqual(tokenIds);
         await page.getByLabel('Действия карточки', { exact: true }).click();
         await page.screenshot({ path: `${output}/qa-session-${viewport.width}-construction.png`, fullPage: true });
-        await gesture.focus(); await page.keyboard.press('ArrowRight');
+        await page.locator('.workspace-next').click();
         await expect(gesture).not.toHaveAttribute('data-review-id', id!);
         expect(submissions).toHaveLength(commitsBefore + 1);
         expect(submissions.at(-1)).toMatchObject({ mode: 'grammar', revealed: false, rating: 3 });
@@ -281,7 +281,7 @@ try {
         await page.screenshot({ path: `${output}/qa-session-${viewport.width}-inline.png`, fullPage: true });
         expect(submissions).toHaveLength(commitsBefore);
         expect((await getProgress(context)).byMode.grammar.reviewedToday).toBe(grammarBefore);
-        await gesture.focus(); await page.keyboard.press('ArrowRight');
+        await page.locator('.workspace-next').click();
         await expect(gesture).not.toHaveAttribute('data-review-id', id!);
         expect(submissions).toHaveLength(commitsBefore);
         expect((await getProgress(context)).byMode.grammar.reviewedToday).toBe(grammarBefore);

@@ -1,3 +1,4 @@
+import { disposableDatabase } from './helpers/disposable-database';
 import { afterAll, beforeAll, beforeEach, describe, expect, test } from 'bun:test';
 import { hashPassword } from 'better-auth/crypto';
 import { createApp } from '../src/server/app';
@@ -37,7 +38,7 @@ suite('quota and deadline registration links on disposable PostgreSQL',()=>{
  const stored=async(id:string)=>(await database.sql`select * from registration_links where id=${id}`)[0]!;
  beforeEach(()=>{fixtureIp=nextFixtureIp();});
  beforeAll(async()=>{
-  const target=new URL(databaseUrl!);if(!['localhost','127.0.0.1'].includes(target.hostname)||target.pathname!=='/japanese_app_test')throw new Error('Use disposable localhost japanese_app_test only.');
+  const target=new URL(databaseUrl!);if(!disposableDatabase(target))throw new Error('Use disposable localhost japanese_app_test only.');
   database=connectDatabase(databaseUrl!);app=createApp({database,config,course:loadCourse()});
   const hash=await hashPassword(password);
   for(const isAdmin of [true,false]){

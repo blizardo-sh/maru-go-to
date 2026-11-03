@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-01",
+  "deviceBasis": "available Mac; Chrome 145 / WebKit 27.2 and native Safari Mac; no physical phone measurements",
+  "targets": {
+    "coldIncludingPublicationBytes": 12582912,
+    "desktopDecodedTextureSourceBytes": 67108864,
+    "mobileDesignDecodedTextureSourceBytes": 50331648,
+    "renderSubmitP95Ms": 8,
+    "sceneParticleCount": 3,
+    "streamingAudioLoops": 2,
+    "activeSfx": 4,
+    "pendingSfxDecodes": 4,
+    "loadedCatFamiliesSteady": 1,
+    "loadedSceneFamiliesSteady": 2
+  },
+  "estimates": {
+    "fixedM5SurfaceSourcesBytes": 20247296,
+    "desktopBackgroundAndLeavesBytes": 6853120,
+    "mobileBackgroundAndLeavesBytes": 3166720,
+    "approvedWalkAtlasBytes": 10616832,
+    "largestNewFamilyBytes": 4718592,
+    "desktopWithWalkBytes": 37717248,
+    "mobileDesignWithWalkBytes": 34030848
+  },
+  "limitations": [
+    "Source RGBA estimate excludes driver/mips/renderbuffers/font atlases/browser decoder copies; not measured GPU VRAM",
+    "Physical phone frame time, RAM/GPU and thermals remain open",
+    "No 60 FPS or absence-of-heap-leak claim from headless desktop"
+  ],
+  "method": "Encoded network/CDP heap/actual WebGL create-delete/draw calls measured separately in full lifecycle report; CPU submission and RAF interval recorded in album snapshot"
+}

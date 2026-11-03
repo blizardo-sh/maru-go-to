@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "date": "2026-11-02",
+  "results": [
+    {
+      "engine": "chrome",
+      "version": "145.0.7632.160",
+      "method": "Touch-enabled mobile viewport emulation; actual touchscreen tap and keyboard Enter",
+      "sizes": [
+        {
+          "width": 390,
+          "height": 844,
+          "controls": 5,
+          "minTarget": 44
+        },
+        {
+          "width": 844,
+          "height": 390,
+          "controls": 7,
+          "minTarget": 44
+        },
+        {
+          "width": 320,
+          "height": 640,
+          "controls": 5,
+          "minTarget": 44
+        },
+        {
+          "width": 640,
+          "height": 320,
+          "controls": 5,
+          "minTarget": 44
+        },
+        {
+          "width": 568,
+          "height": 320,
+          "controls": 5,
+          "minTarget": 44
+        }
+      ],
+      "touchGestures": "PASS: short horizontal, vertical, and cancelled touch do not grade",
+      "hiddenGradeUnavailable": true,
+      "oneKeyboardGrade": true,
+      "physicalPhone": false,
+      "nativeIME": false,
+      "screenReader": false,
+      "nativeZoom": false
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "method": "Touch-enabled mobile viewport emulation; actual touchscreen tap and keyboard Enter",
+      "sizes": [
+        {
+          "width": 390,
+          "height": 844,
+          "controls": 5,
+          "minTarget": 44
+        },
+        {
+          "width": 844,
+          "height": 390,
+          "controls": 7,
+          "minTarget": 44
+        },
+        {
+          "width": 320,
+          "height": 640,
+          "controls": 5,
+          "minTarget": 44
+        },
+        {
+          "width": 640,
+          "height": 320,
+          "controls": 5,
+          "minTarget": 44
+        },
+        {
+          "width": 568,
+          "height": 320,
+          "controls": 5,
+          "minTarget": 44
+        }
+      ],
+      "touchGestures": "NOT_RUN: CDP touch sequences unavailable for WebKit",
+      "hiddenGradeUnavailable": true,
+      "oneKeyboardGrade": true,
+      "physicalPhone": false,
+      "nativeIME": false,
+      "screenReader": false,
+      "nativeZoom": false
+    }
+  ],
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

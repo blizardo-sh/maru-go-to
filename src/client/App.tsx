@@ -1,14 +1,14 @@
 import { useCallback, useEffect, useRef, useState, type FormEvent } from 'react';
-import type { Course, LearnerSettings, Progress, WordList } from '../shared/types';
+import type { LearnerSettings, RepeatType } from '../shared/types';
 import { api, ApiRequestError, json, pendingReviews, submitReview } from './api';
 import { Session } from './Session';
 import { Auth } from './Auth';
 import { RegistrationLinks } from './RegistrationLinks';
 import { GuidedLearning } from './GuidedLearning';
-import { currentLearningState, learningConflict, learningHeaders, pendingLearning, submitLearning } from './guidedApi';
-import type { LearningState } from '../shared/learning';
+import { invalidLearningChoice, learningConflict, learningHeaders, pendingLearning, submitLearning } from './guidedApi';
 import { Cat } from './Cat';
 import { Settings } from './Settings';
+import { Trainings } from './Trainings';
 import { Textbook } from './Textbook';
 import { Reference } from './Reference';
 import { useSceneSound } from './sceneSound';
@@ -16,10 +16,10 @@ import { SceneIntro, SceneStage, useReducedMotion, type EntryPhase } from './Sce
 import { chooseScene, type SceneId } from './scenes';
 import { selectSceneDecor } from './sceneDecor';
 import type { Snapshot, StudySource, User } from './types';
-import { sourceKey } from './learning';
+import { sourceKey, inTrainingSection } from './learning';
 
-type Page = 'review' | 'course' | 'words' | 'settings' | 'admin';
-const navigation: [Page, string][] = [['course', 'Учебник'], ['review', 'Повторение'], ['words', 'Справочник']];
+type Page = 'training' | 'review' | 'course' | 'words' | 'settings' | 'admin';
+const navigation: [Page, string][] = [['course', 'Учебник'], ['training', 'Тренировки'], ['review', 'Повторение'], ['words', 'Справочник']];
 const errorText = (error: unknown) => error instanceof Error ? error.message : 'Не удалось выполнить запрос. Повторите попытку.';
 const pauseLessonMedia = () => document.querySelectorAll<HTMLMediaElement>('.lesson-video video, .guided-learning audio').forEach(media => media.pause());
 
@@ -42,8 +42,8 @@ export function App() {
   const refresh = useCallback(async () => {
     const current = userRef.current; if (!current) return;
     try {
-      const [course, settings, progress, result, learning] = await Promise.all([api<Course>('/api/course', { headers: learningHeaders(current.id) }), api<LearnerSettings>('/api/settings', { headers: learningHeaders(current.id) }), api<Progress>('/api/progress', { headers: learningHeaders(current.id) }), api<{ lists: WordList[] }>('/api/lists', { headers: learningHeaders(current.id) }), api<{ lessons: LearningState[] }>('/api/learning', { headers: learningHeaders(current.id) })]);
-      if (userRef.current?.id === current.id) { setData({ course, settings, progress, lists: result.lists, learning: learning.lessons }); setError(''); }
+      const snapshot = await api<Snapshot>('/api/bootstrap', { headers: learningHeaders(current.id) });
+      if (userRef.current?.id === current.id) { setData(snapshot); setError(''); }
     } catch (failure) { if (userRef.current?.id === current.id) setError(errorText(failure)); }
   }, []);
   const loadUser = useCallback(async (home = false, expectedEmail?: string) => {
@@ -71,7 +71,7 @@ export function App() {
       }
       for (const item of learning) {
         if (userRef.current?.id !== id) return;
-        await submitLearning(id, item);
+        try { await submitLearning(id, item); } catch (failure) { if (!invalidLearningChoice(failure)) throw failure; }
         if (userRef.current?.id !== id) return;
       }
       setOutboxCount(pendingReviews(id).length + pendingLearning(id).length); await refresh();
@@ -89,47 +89,38 @@ export function App() {
     finally { if (userRef.current?.id === id) setSaving(false); }
   }
   async function logout() { try { await api('/api/auth/sign-out', json('POST', {})); userRef.current = null; setUser(null); setData(null); setStudy(false); setSessionSource(null); setPage('course'); setEntryPhase('ready'); setSaving(false); setOutboxCount(0); setError(''); } catch (failure) { setError(errorText(failure)); } }
-  function guidedSaved(id: string, next: LearningState, reviewed: boolean) {
-    if (userRef.current?.id !== id) return;
-    setData(current => {
-      if (!current) return current;
-      const version = current.course.learning?.find(route => route.lessonId === next.lessonId)?.version;
-      const previous = current.learning?.find(state => state.lessonId === next.lessonId) ?? null;
-      if (!version || !currentLearningState(next, next.lessonId, version, previous)) return current;
-      return { ...current, learning: [...(current.learning ?? []).filter(state => state.lessonId !== next.lessonId), next] };
-    });
-    try { setOutboxCount(pendingReviews(id).length + pendingLearning(id).length); } catch (failure) { setError(errorText(failure)); }
-    if (reviewed) void api<Progress>('/api/progress', { headers: learningHeaders(id) }).then(progress => { if (userRef.current?.id === id) setData(current => current ? { ...current, progress } : current); }).catch(failure => { if (userRef.current?.id === id) setError(errorText(failure)); });
-  }
   function sessionSaved(id: string) {
     if (userRef.current?.id !== id) return;
     try { setOutboxCount(pendingReviews(id).length + pendingLearning(id).length); } catch (failure) { setError(errorText(failure)); return; }
-    void refresh();
   }
   if (user === undefined) return <main className="auth">{error ? <Notice error><p>{error}</p><button onClick={() => { setError(''); void loadUser(); }}>Повторить загрузку</button></Notice> : <p role="status">Проверяем вход…</p>}</main>;
   if (!user || location.pathname === '/invite' || location.pathname === '/recover') return <Auth onLogin={email => loadUser(true, email)} />;
   function startOrResume(source: StudySource) {
-    pauseLessonMedia();
+    pauseLessonMedia(); window.scrollTo({ top: 0, behavior: 'instant' });
     if (!sessionSource || sourceKey(sessionSource) !== sourceKey(source)) {
       const chosen = chooseScene(); sound.unlock(chosen); setSelectedScene(chosen); setDecor(selectSceneDecor(chosen)); setEntryId(current => current + 1); setEntryPhase(motionEnabled ? 'loading' : 'ready'); setSessionSource(source);
     } else sound.unlock(selectedScene);
-    setPage(source.kind === 'review' ? 'review' : source.kind === 'lesson' || source.kind === 'guided' || source.kind === 'counters' ? 'course' : 'words'); setStudy(true);
+    setPage(inTrainingSection(source) ? 'training' : source.kind === 'review' ? 'review' : source.kind === 'lesson' || source.kind === 'guided' ? 'course' : 'words'); setStudy(true);
   }
-  function closeSession(toCourse = false) { setStudy(false); setSessionSource(null); finishEntry(); if (toCourse) setPage('course'); }
+  function closeSession(returnPage?: Page) { window.scrollTo({ top: 0, behavior: 'instant' }); setStudy(false); setSessionSource(null); finishEntry(); if (returnPage) setPage(returnPage); void refresh(); }
   function navigate(value: Page) {
-    pauseLessonMedia();
+    pauseLessonMedia(); window.scrollTo({ top: 0, behavior: 'instant' });
     const resumeReview = value === 'review' && sessionSource?.kind === 'review';
     if (resumeReview) sound.unlock(selectedScene); else finishEntry();
-    setPage(value); setStudy(resumeReview);
+    setPage(value); setStudy(resumeReview); if (!resumeReview) void refresh();
   }
-  return <div className="shell game-shell" data-scene={selectedScene} data-motion={motionEnabled} data-entry-phase={entryPhase} data-entry-id={entryId} data-decor-period={decor.period} data-sound-state={sound.state}><SceneStage scene={selectedScene} decor={decor} entryId={entryId} phase={entryPhase} active={study} layoutKey={`${page}:${study}:${!!data}`} onReady={sceneReady} /><a className="skip" href="#main">К упражнению</a><header className="game-hud"><div className="wordmark"><span className="brand-stamp" lang="ja" aria-hidden="true">ま</span><span lang="ja">まるごと</span></div><nav className="nav" aria-label="Разделы">{navigation.map(([value, label]) => <button key={value} aria-current={page === value ? 'page' : undefined} onClick={() => navigate(value)}>{page === value && <span className="nav-leaf" aria-hidden="true">❧</span>}{label}</button>)}<button className="scene-sound-toggle" aria-label="Звуки сцены" aria-pressed={data?.settings.sceneSoundEnabled ?? true} disabled={!data || saving} title={({ paused: 'Музыка и окружение звучат во время занятия', muted: 'Звуки сцены выключены', loading: 'Загружаем звуки сцены…', playing: 'Звуки сцены воспроизводятся', blocked: 'Браузер заблокировал звук. Выключите и снова включите ♪.', unavailable: 'Звук сцены сейчас недоступен' })[sound.state]} onClick={() => { if (!data) return; if (!data.settings.sceneSoundEnabled) sound.unlock(study ? selectedScene : undefined); void saveSettings({ ...data.settings, sceneSoundEnabled: !data.settings.sceneSoundEnabled }); }}><span aria-hidden="true">{data?.settings.sceneSoundEnabled ? '♪' : '♫'}</span><span className="sound-off-mark" aria-hidden="true">{!data?.settings.sceneSoundEnabled && '╱'}</span></button><details className="hud-menu"><summary aria-label="Настройки и аккаунт">⚙</summary><div className="hud-menu-panel"><small>{user.name}</small><button aria-current={page === 'settings' ? 'page' : undefined} onClick={event => { navigate('settings'); event.currentTarget.closest('details')?.removeAttribute('open'); }}>Настройки</button>{user.isAdmin && <button aria-current={page === 'admin' ? 'page' : undefined} onClick={event => { navigate('admin'); event.currentTarget.closest('details')?.removeAttribute('open'); }}>Доступ учеников</button>}<button onClick={() => { void logout(); }}>Выйти</button></div></details></nav></header>{(sound.state === 'blocked' || sound.state === 'unavailable') && <p className="scene-sound-notice" role="status">{sound.state === 'blocked' ? 'Звук сцены заблокирован браузером. Выключите и снова включите ♪.' : 'Звуки сцены пока недоступны. Занятие можно продолжить.'}</p>}<main id="main"><div className="page">{(error || outboxCount > 0) && <div className="page-notices">{error && <Notice error><p>{error}</p><button onClick={() => { void refresh(); }}>Повторить загрузку</button></Notice>}{outboxCount > 0 && <Notice><p>На этом устройстве ждут сохранения ответы: {outboxCount}. Не очищайте данные браузера.</p><button onClick={() => { void retryPending(); }}>Повторить сохранение</button></Notice>}</div>}{!data ? <div className="work-board sheet" aria-busy="true">Загружаем учебник и прогресс…</div> : <>{study && entryPhase !== 'ready' && <SceneIntro scene={selectedScene} entryId={entryId} phase={entryPhase} onReady={finishEntry} />}{sessionSource && <div className="session-preserve" hidden={!study || entryPhase !== 'ready'} inert={!study || entryPhase !== 'ready'}>{sessionSource.kind === 'guided' ? <GuidedLearning key={sourceKey(sessionSource)} lessonId={sessionSource.lessonId} active={study && entryPhase === 'ready'} sound={sound} scene={selectedScene} user={user} data={data} saveSettings={saveSettings} settingsBusy={saving} onExit={() => closeSession()} onCourse={() => closeSession(true)} onSaved={(state, reviewed) => guidedSaved(user.id, state, reviewed)} /> : <Session key={sourceKey(sessionSource)} source={sessionSource} active={study && entryPhase === 'ready'} sound={sound} scene={selectedScene} user={user} data={data} saveSettings={saveSettings} settingsBusy={saving} onExit={() => closeSession()} onCourse={() => closeSession(true)} onSaved={() => sessionSaved(user.id)} />}</div>}{!study && (page === 'review' ? <Repeat data={data} onStudy={() => startOrResume({ kind: 'review' })} onCourse={() => navigate('course')} /> : <section className={`section-board work-board${page === 'course' ? ' textbook-board' : ''}`}>{page === 'course' ? <Textbook data={data} onCounters={() => startOrResume({ kind: 'counters' })} onLearn={lessonId => startOrResume({ kind: 'guided', lessonId })} onTrain={lessonId => startOrResume({ kind: 'lesson', lessonId })} /> : page === 'words' ? <Reference data={data} refresh={refresh} onTrain={listId => startOrResume({ kind: 'list', listId })} /> : page === 'settings' ? <Settings data={data} busy={saving} save={saveSettings} user={user} logout={logout} /> : <Admin />}</section>)}</>}</div></main></div>;
+  return <div className="shell game-shell" data-scene={selectedScene} data-motion={motionEnabled} data-entry-phase={entryPhase} data-entry-id={entryId} data-decor-period={decor.period} data-sound-state={sound.state}><SceneStage scene={selectedScene} decor={decor} entryId={entryId} phase={entryPhase} active={study} layoutKey={`${page}:${study}:${!!data}`} onReady={sceneReady} /><a className="skip" href="#main">К упражнению</a><header className="game-hud"><div className="wordmark"><span className="brand-stamp" lang="ja" aria-hidden="true">ま</span><span lang="ja">まるごと</span></div><nav className="nav" aria-label="Разделы">{navigation.map(([value, label]) => <button key={value} aria-current={page === value ? 'page' : undefined} onClick={() => navigate(value)}>{page === value && <span className="nav-leaf" aria-hidden="true">❧</span>}{label}</button>)}<button className="scene-sound-toggle" aria-label="Звуки сцены" aria-pressed={data?.settings.sceneSoundEnabled ?? true} disabled={!data || saving} title={({ paused: 'Музыка и окружение звучат во время занятия', muted: 'Звуки сцены выключены', loading: 'Загружаем звуки сцены…', playing: 'Звуки сцены воспроизводятся', blocked: 'Браузер заблокировал звук. Выключите и снова включите ♪.', unavailable: 'Звук сцены сейчас недоступен' })[sound.state]} onClick={() => { if (!data) return; if (!data.settings.sceneSoundEnabled) sound.unlock(study ? selectedScene : undefined); void saveSettings({ ...data.settings, sceneSoundEnabled: !data.settings.sceneSoundEnabled }); }}><span aria-hidden="true">{data?.settings.sceneSoundEnabled ? '♪' : '♫'}</span><span className="sound-off-mark" aria-hidden="true">{!data?.settings.sceneSoundEnabled && '╱'}</span></button><details className="hud-menu"><summary aria-label="Настройки и аккаунт">⚙</summary><div className="hud-menu-panel"><small>{user.name}</small><button aria-current={page === 'settings' ? 'page' : undefined} onClick={event => { navigate('settings'); event.currentTarget.closest('details')?.removeAttribute('open'); }}>Настройки</button>{user.isAdmin && <button aria-current={page === 'admin' ? 'page' : undefined} onClick={event => { navigate('admin'); event.currentTarget.closest('details')?.removeAttribute('open'); }}>Доступ учеников</button>}<button onClick={() => { void logout(); }}>Выйти</button></div></details></nav></header>{(sound.state === 'blocked' || sound.state === 'unavailable') && <p className="scene-sound-notice" role="status">{sound.state === 'blocked' ? 'Звук сцены заблокирован браузером. Выключите и снова включите ♪.' : 'Звуки сцены пока недоступны. Занятие можно продолжить.'}</p>}<main id="main"><div className="page">{(error || outboxCount > 0) && <div className="page-notices">{error && <Notice error><p>{error}</p><button onClick={() => { void refresh(); }}>Повторить загрузку</button></Notice>}{outboxCount > 0 && <Notice><p>На этом устройстве ждут сохранения ответы: {outboxCount}. Не очищайте данные браузера.</p><button onClick={() => { void retryPending(); }}>Повторить сохранение</button></Notice>}</div>}{!data ? <div className="work-board sheet" aria-busy="true">Загружаем учебник и прогресс…</div> : <>{study && entryPhase !== 'ready' && <SceneIntro scene={selectedScene} entryId={entryId} phase={entryPhase} onReady={finishEntry} />}{sessionSource && <div className="session-preserve" hidden={!study || entryPhase !== 'ready'} inert={!study || entryPhase !== 'ready'}>{sessionSource.kind === 'guided' ? <GuidedLearning key={sourceKey(sessionSource)} lessonId={sessionSource.lessonId} active={study && entryPhase === 'ready'} sound={sound} scene={selectedScene} user={user} data={data} saveSettings={saveSettings} settingsBusy={saving} onExit={() => closeSession()} onCourse={() => closeSession('course')} onSaved={() => sessionSaved(user.id)} /> : <Session key={sourceKey(sessionSource)} source={sessionSource} active={study && entryPhase === 'ready'} sound={sound} scene={selectedScene} user={user} data={data} saveSettings={saveSettings} settingsBusy={saving} onExit={() => closeSession()} onReturn={() => closeSession(inTrainingSection(sessionSource) ? 'training' : 'course')} onSaved={() => sessionSaved(user.id)} />}</div>}{!study && (page === 'review' ? <Repeat data={data} onStudy={() => startOrResume({ kind: 'review' })} saveSettings={saveSettings} settingsBusy={saving} onCourse={() => navigate('course')} /> : <section className={`section-board work-board${page === 'course' ? ' textbook-board' : ''}`}>{page === 'course' ? <Textbook data={data} onLearn={lessonId => startOrResume({ kind: 'guided', lessonId })} onTrain={lessonId => startOrResume({ kind: 'lesson', lessonId })} /> : page === 'training' ? <Trainings data={data} sound={sound} onTopic={(topicId, sectionId) => startOrResume({ kind: 'topic', topicId, sectionId })} onCounters={() => startOrResume({ kind: 'counters' })} onConstruction={skillId => startOrResume({ kind: 'construction', skillId, mode: 'ja-ru' })} /> : page === 'words' ? <Reference data={data} refresh={refresh} onTrain={listId => startOrResume({ kind: 'list', listId })} /> : page === 'settings' ? <Settings data={data} busy={saving} save={saveSettings} user={user} logout={logout} /> : <Admin />}</section>)}</>}</div></main></div>;
 }
 
-function Repeat({ data, onStudy, onCourse }: { data: Snapshot; onStudy: () => void; onCourse: () => void }) {
+function Repeat({ data, onStudy, onCourse, saveSettings, settingsBusy }: { data: Snapshot; onStudy: () => void; onCourse: () => void; saveSettings: (value: LearnerSettings) => Promise<void>; settingsBusy: boolean }) {
   const { progress, settings } = data;
+  const [selected, setSelected] = useState<RepeatType[]>(settings.repeatTypes);
+  const acknowledged = selected.length === settings.repeatTypes.length && selected.every(type => settings.repeatTypes.includes(type));
+  const count = (type: RepeatType) => progress.byType?.[type].due ?? (type === 'words' ? progress.byMode['ja-ru'].due + progress.byMode['ru-ja'].due + progress.byMode.listening.due : type === 'counters' ? progress.byMode.counter.due : type === 'constructions' ? progress.byMode.grammar.due : 0);
   const reviewed = Object.values(progress.byMode).reduce((sum, mode) => sum + mode.reviewedToday, 0);
-  const due = Object.values(progress.byMode).reduce((sum, mode) => sum + mode.due, 0);
-  return <section className="today work-board"><div className="today-heading"><div><small>Marugoto Starter A1 · личное расписание</small><h1>Повторение</h1><p className="muted">Уже изученные слова, конструкции и счётные карточки, которым пришло время повториться.</p></div><Cat welcome pose={reviewed ? 'success' : 'wave'} /></div><div className="today-stats"><div><strong>{due}</strong><span>к повторению</span></div><div><strong>{reviewed}</strong><span>выполнено сегодня</span></div></div>{due > 0 ? <div><button className="primary start-session" onClick={onStudy}><span className="start-leaf" aria-hidden="true">❧</span>Начать повторение<span aria-hidden="true">↗</span></button></div> : <Notice><p>На сейчас всё повторено. Первое знакомство с материалом начинается в учебнике или личном списке.</p><button className="primary" onClick={onCourse}>К учебнику</button></Notice>}<p className="today-hint">Нажмите на карточку, чтобы раскрыть смысл.<br />Вправо — помню, влево — ещё раз.</p><p className="today-sound-hint">{settings.sceneSoundEnabled ? 'Музыка и окружение звучат во время занятия.' : 'Звуки сцены выключены. Их можно включить кнопкой ♪.'}</p></section>;
+  const due = acknowledged && progress.repeatDue !== undefined ? progress.repeatDue : selected.reduce((sum, type) => sum + count(type), 0);
+  function select(type: RepeatType, checked: boolean) { const next = checked ? [...selected, type] : selected.filter(value => value !== type); setSelected(next); void saveSettings({ ...settings, repeatTypes: next, repeatTypesVersion: 2 }); }
+  return <section className="today work-board"><div className="today-heading"><div><small>Marugoto Starter A1 · личное расписание</small><h1>Повторение</h1><p className="muted">Уже изученный материал, которому пришло время повториться.</p></div><Cat welcome pose={reviewed ? 'success' : 'wave'} /></div><fieldset className="repeat-types" data-testid="repeat-types"><legend>Что повторяем</legend>{([['words', 'Слова'], ['counters', 'Счётные суффиксы'], ['constructions', 'Конструкции'], ['questions', 'Вопросы'], ['time', 'Время и календарь']] as const).map(([type, label]) => <label key={type}><input type="checkbox" checked={selected.includes(type)} disabled={settingsBusy} onChange={event => select(type, event.target.checked)} />{label}<small>{count(type)}</small></label>)}</fieldset>{!acknowledged && !settingsBusy && <Notice><p>Выбор пока не сохранён. Повторение начнётся после подтверждения настроек.</p><button onClick={() => { void saveSettings({ ...settings, repeatTypes: selected, repeatTypesVersion: 2 }); }}>Повторить сохранение выбора</button></Notice>}<div className="today-stats"><div><strong>{due}</strong><span>по выбранным типам</span></div><div><strong>{reviewed}</strong><span>выполнено сегодня</span></div></div>{due > 0 ? <div><button className="primary start-session" disabled={settingsBusy || !acknowledged || !selected.length} onClick={onStudy}><span className="start-leaf" aria-hidden="true">❧</span>Начать повторение<span aria-hidden="true">↗</span></button></div> : <Notice><p>{!selected.length ? 'Выберите хотя бы один тип материала.' : 'На сейчас выбранный материал повторён. Можно выбрать другие типы или изучить новое в учебнике.'}</p><button className="primary" onClick={onCourse}>К учебнику</button></Notice>}<p className="today-hint">Нажмите на карточку, чтобы раскрыть смысл.<br />Вправо — помню, влево — ещё раз.</p><p className="today-sound-hint">{settings.sceneSoundEnabled ? 'Музыка и окружение звучат во время занятия.' : 'Звуки сцены выключены. Их можно включить кнопкой ♪.'}</p></section>;
 }
 
 

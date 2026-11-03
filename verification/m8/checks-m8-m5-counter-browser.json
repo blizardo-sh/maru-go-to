@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "realPublishedCards": true,
+  "browserQueueProjection": true,
+  "checks": [
+    "chrome:image-counter:geometry-4-sizes:API-ACK",
+    "chrome:counter-image:geometry-4-sizes:API-ACK",
+    "chrome:reading-choice:geometry-4-sizes:API-ACK",
+    "chrome:listening-image:geometry-4-sizes:API-ACK",
+    "chrome:recall:geometry-4-sizes:API-ACK",
+    "webkit:image-counter:geometry-4-sizes",
+    "webkit:counter-image:geometry-4-sizes",
+    "webkit:reading-choice:geometry-4-sizes",
+    "webkit:listening-image:geometry-4-sizes",
+    "webkit:recall:geometry-4-sizes"
+  ],
+  "physicalPhones": false,
+  "candidate": "5a6cc0d73c5565d1ef51cb2686ebee51262089cb51b70fabace6b14f3e448367"
+}

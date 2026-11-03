@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-02",
+  "passed": true,
+  "browser": "Safari",
+  "version": "27.0",
+  "nativeMac": true,
+  "inputMethod": "Focused native accessibility buttons, two-frame focus restoration, real WebDriver Enter; no programmatic action callbacks",
+  "fullFirstPublishedLesson": true,
+  "steps": 59,
+  "allFiveScenes": true,
+  "realJapaneseSpeechTimeAdvances": true,
+  "realDuckAndRelease": true,
+  "keyboardPet": true,
+  "manualMotionOffStopsRaf": true,
+  "jsErrors": 0,
+  "cspViolations": 0,
+  "limits": [
+    "Native Mac Safari; not physical phones",
+    "Other M5 groups and real native IME/autofill/readers remain hardware acceptance",
+    "No human headphones/speaker audition claim"
+  ],
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

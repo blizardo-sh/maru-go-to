@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-02",
+  "passed": true,
+  "results": [
+    {
+      "name": "chrome",
+      "passed": true,
+      "actualVideoTimeOverTwoSeconds": true,
+      "attentivePoseHeld": true,
+      "sfxSuppressed": true,
+      "duckAndPauseRelease": true,
+      "jsErrors": 0
+    },
+    {
+      "name": "webkit",
+      "passed": true,
+      "actualVideoTimeOverTwoSeconds": true,
+      "attentivePoseHeld": true,
+      "sfxSuppressed": true,
+      "duckAndPauseRelease": true,
+      "jsErrors": 0
+    }
+  ],
+  "fullExternalCatalogAccepted": false,
+  "humanAudition": false,
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

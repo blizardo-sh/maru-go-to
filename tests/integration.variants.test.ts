@@ -1,7 +1,8 @@
+import { disposableDatabase } from './helpers/disposable-database';
 import { afterAll, beforeAll, describe, expect, test } from 'bun:test';
 import { createApp } from '../src/server/app';
 import { createLink, consumeLink } from '../src/server/auth';
-import { loadCourse } from '../src/server/course';
+import { legacyCourseFixture as loadCourse } from './helpers/legacy-course-fixture';
 import { connectDatabase } from '../src/server/db';
 import { defaultSettings } from '../src/server/material';
 import { reviewId } from '../src/server/reviews';
@@ -25,7 +26,7 @@ suite('authored equivalent sentence variants over HTTP', () => {
   });
   beforeAll(async () => {
     const target = new URL(databaseUrl!);
-    if (target.hostname !== '127.0.0.1' || target.pathname !== '/japanese_app_test') throw new Error('Use only disposable localhost japanese_app_test.');
+    if (!disposableDatabase(target)) throw new Error('Use only disposable localhost japanese_app_test.');
     database = connectDatabase(databaseUrl!);
     app = createApp({ database, course, config: { DATABASE_URL: databaseUrl!, BETTER_AUTH_SECRET: 'topic-omission-fixture-secret-with-more-than-32-characters', APP_URL: origin, PORT: 3000, HOST: '127.0.0.1' } });
     const link = await createLink(database, 'invite', email, null);

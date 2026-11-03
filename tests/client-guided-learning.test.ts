@@ -28,12 +28,12 @@ beforeEach(() => { Object.defineProperty(globalThis, 'localStorage', { value: ne
 afterEach(() => { fetchSpy.mockRestore(); if (storage) Object.defineProperty(globalThis, 'localStorage', storage); else Reflect.deleteProperty(globalThis, 'localStorage'); });
 
 test('lost learning ACK retains the exact attempt, retries unchanged, and never touches another learner outbox', async () => {
-  const first = attempt(); const other = attempt(); const posts: unknown[] = [];
+  const first = attempt(); first.submission.publicationId = 'a'.repeat(64); const other = attempt(); const posts: unknown[] = [];
   localStorage.setItem('japanese-pending-learning:learner-b', JSON.stringify([other]));
-  fetchSpy.mockImplementation(Object.assign(async (_url: RequestInfo | URL, init?: RequestInit) => { posts.push(JSON.parse(String(init?.body))); throw new Error('Lost ACK'); }, { preconnect() {} }));
+  fetchSpy.mockImplementation(Object.assign(async (_url: RequestInfo | URL, init?: RequestInit) => { expect(new Headers(init?.headers).get('X-Content-Publication')).toBe(first.submission.publicationId!); posts.push(JSON.parse(String(init?.body))); throw new Error('Lost ACK'); }, { preconnect() {} }));
   await expect(submitLearning('learner-a', first)).rejects.toThrow('Lost ACK');
   expect(pendingLearning('learner-a')).toEqual([first]); expect(pendingLearning('learner-b')).toEqual([other]);
-  fetchSpy.mockImplementation(Object.assign(async (_url: RequestInfo | URL, init?: RequestInit) => { posts.push(JSON.parse(String(init?.body))); return Response.json({ attemptId: first.submission.attemptId, state: { ...state, version: 1, completedSteps: 1 } }); }, { preconnect() {} }));
+  fetchSpy.mockImplementation(Object.assign(async (_url: RequestInfo | URL, init?: RequestInit) => { expect(new Headers(init?.headers).get('X-Content-Publication')).toBe(first.submission.publicationId!); posts.push(JSON.parse(String(init?.body))); return Response.json({ attemptId: first.submission.attemptId, state: { ...state, publicationId: 'b'.repeat(64), routeVersion: 'new-publication-route', version: 1, completedSteps: 1 } }); }, { preconnect() {} }));
   const result = await submitLearning('learner-a', pendingLearning('learner-a')[0]!);
   expect(result.state.version).toBe(1); expect(posts).toEqual([first.submission, first.submission]); expect(pendingLearning('learner-a')).toEqual([]); expect(pendingLearning('learner-b')).toEqual([other]);
 });
@@ -62,12 +62,13 @@ test('only an explicit not-applied learning conflict discards an obsolete attemp
 });
 
 test('ordinary repeat retry sends its expected learner and preserves the exact outbox when another learner owns the cookie', async () => {
-  const answer: ReviewSubmission = { attemptId: crypto.randomUUID(), reviewId: 'word-a:ja-ru', version: 0, mode: 'ja-ru', rating: 3 };
+  const answer: ReviewSubmission = { attemptId: crypto.randomUUID(), reviewId: 'word-a:ja-ru', version: 0, publicationId: 'a'.repeat(64), mode: 'ja-ru', rating: 3 };
   const saved = JSON.stringify([answer]);
   localStorage.setItem('japanese-pending-reviews:learner-a', saved);
   fetchSpy.mockImplementation(Object.assign(async (url: RequestInfo | URL, init?: RequestInit) => {
     expect(url).toBe('/api/reviews');
     expect(new Headers(init?.headers).get('X-Learning-Learner-Id')).toBe('learner-a');
+    expect(new Headers(init?.headers).get('X-Content-Publication')).toBe(answer.publicationId!);
     expect(JSON.parse(String(init?.body))).toEqual(answer);
     return Response.json({ error: { code: 'OWNER_CHANGED', message: 'Account changed' } }, { status: 409 });
   }, { preconnect() {} }));
@@ -76,6 +77,18 @@ test('ordinary repeat retry sends its expected learner and preserves the exact o
   expect(pendingReviews('learner-a')).toEqual([answer]);
   expect(localStorage.getItem('japanese-pending-reviews:learner-b')).toBeNull();
   expect(fetchSpy).toHaveBeenCalledTimes(1);
+});
+
+test('only explicit INVALID_CHOICE discards a rejected choice; other learner and ambiguous failures remain queued', async () => {
+  const stale: PendingLearning = { ...attempt(), submission: { ...attempt().submission, action: 'choose', choiceWordId: 'old-choice' } }, unrelated = attempt(), other = attempt();
+  localStorage.setItem('japanese-pending-learning:learner-a', JSON.stringify([unrelated]));
+  localStorage.setItem('japanese-pending-learning:learner-b', JSON.stringify([other]));
+  fetchSpy.mockResolvedValue(Response.json({ error: { code: 'INVALID_CHOICE', message: 'Choices changed' } }, { status: 400 }));
+  await expect(submitLearning('learner-a', stale)).rejects.toMatchObject({ status: 400, code: 'INVALID_CHOICE' });
+  expect(pendingLearning('learner-a')).toEqual([unrelated]); expect(pendingLearning('learner-b')).toEqual([other]);
+  fetchSpy.mockResolvedValue(Response.json({ error: { code: 'INVALID_CHOICE', message: 'Ambiguous failure' } }, { status: 503 }));
+  await expect(submitLearning('learner-a', stale)).rejects.toMatchObject({ status: 503 });
+  expect(pendingLearning('learner-a')).toEqual([unrelated, stale]);
 });
 
 test('a stale ACK cannot move a newer route backward or cross lesson/content versions', () => {
@@ -91,7 +104,28 @@ test('textbook primary route progress is separate from legacy SRS and vocabulary
   const course = learningFixture(); const lesson = course.learning[0]!;
   const counts = { due: 0, learned: 0, reviewedToday: 0 };
   const progress: Progress = { counters: [], introducedWordIds: course.words.map(word => word.id), introducedSkillIds: course.skills.map(skill => skill.id), completedLessons: 18, totalLessons: 18, wordsIntroducedToday: 0, skillsIntroducedToday: 0, byMode: { 'ja-ru': counts, 'ru-ja': counts, listening: counts, grammar: counts, counter: counts } };
-  const html = renderToStaticMarkup(createElement(Textbook, { data: { course, settings: defaultSettings, progress, lists: [], learning: [{ ...state, lessonId: lesson.lessonId, routeVersion: lesson.version }] }, onLearn() {}, onTrain() {}, onCounters() {} }));
+  const html = renderToStaticMarkup(createElement(Textbook, { data: { course, settings: defaultSettings, progress, lists: [], learning: [{ ...state, lessonId: lesson.lessonId, routeVersion: lesson.version }] }, onLearn() {}, onTrain() {} }));
   const card = [...html.matchAll(/<article[^>]+data-lesson-id="([^"]+)"[\s\S]*?<\/article>/g)].find(match => match[1] === lesson.lessonId)?.[0];
-  expect(card).toBeDefined(); expect(card).toContain('Учебный маршрут: 0%'); expect(card).toContain('Начать урок'); expect(card).toContain('Дополнительный словарь и конструкции'); expect(card).toContain('Практиковать словарь'); expect(card).not.toContain('Урок пройден');
+  expect(card).toBeDefined(); expect(card).toContain('aria-valuenow="0"'); expect(card).toContain('Части: 0 из 2'); expect(card).toContain('Начать урок'); expect(card).toContain('Дополнительный словарь и конструкции'); expect(card).toContain('Практиковать словарь'); expect(card).not.toContain('Урок пройден');
+});
+
+test('textbook segments use pinned part boundaries and count completed later parts, with equal weight per part', () => {
+  const course = learningFixture(), lesson = course.learning[0]!;
+  const counts = { due: 0, learned: 0, reviewedToday: 0 };
+  const progress: Progress = { counters: [], introducedWordIds: [], introducedSkillIds: [], completedLessons: 0, totalLessons: 18, wordsIntroducedToday: 0, skillsIntroducedToday: 0, byMode: { 'ja-ru': counts, 'ru-ja': counts, listening: counts, grammar: counts, counter: counts } };
+  const pinned = { ...state, lessonId: lesson.lessonId, routeVersion: 'old-publication', totalParts: 3, completedSteps: 8, totalSteps: 15, partProgress: [
+    { partId: 'pinned-a', completedSteps: 5, totalSteps: 10 },
+    { partId: 'pinned-b', completedSteps: 2, totalSteps: 2 },
+    { partId: 'pinned-c', completedSteps: 1, totalSteps: 3 },
+  ] };
+  const html = renderToStaticMarkup(createElement(Textbook, { data: { course, settings: defaultSettings, progress, lists: [], learning: [pinned] }, onLearn() {}, onTrain() {} }));
+  const card = [...html.matchAll(/<article[^>]+data-lesson-id="([^"]+)"[\s\S]*?<\/article>/g)].find(match => match[1] === lesson.lessonId)![0];
+  expect(card).toContain('Части: 1 из 3');
+  expect(card).toContain('aria-valuenow="61"');
+  expect(card).toContain('data-part-id="pinned-a" data-completed="false" data-current="true"');
+  expect(card).toContain('data-part-id="pinned-b" data-completed="true"');
+  expect(card).toContain('width:50%');
+  expect(card).toContain('Продолжить урок');
+  expect(card.indexOf('Начать урок')).toBe(-1);
+  expect(card.indexOf('lesson-train')).toBeLessThan(card.indexOf('lesson-material'));
 });

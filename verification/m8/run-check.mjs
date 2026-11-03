@@ -1,0 +1,7 @@
+import {spawnSync} from 'node:child_process';
+import {readFileSync,writeFileSync,appendFileSync,readdirSync,statSync} from 'node:fs';
+import assert from 'node:assert/strict';
+const name=process.argv[2],manifest=JSON.parse(readFileSync('replay-provenance.json','utf8'));assert.ok(manifest.scripts.some(x=>x.m8Script===name));
+const candidate=JSON.parse(readFileSync('frozen-candidate.json','utf8')).id,started=Date.now(),result=spawnSync(name.endsWith('.mts')?'/private/tmp/japanese-stack-toolchain-1.4.3/bun':process.execPath,[name,...process.argv.slice(3)],{encoding:'utf8',maxBuffer:64*1024*1024});const log=(result.stdout??'')+(result.stderr??'');writeFileSync('.local/'+name+'-'+started+'.log',log,{mode:0o600});writeFileSync('.local/'+name+'.log',log,{mode:0o600});
+for(const file of readdirSync('.').filter(x=>x.startsWith('checks-')&&x.endsWith('.json'))){if(statSync(file).mtimeMs>=started){const value=JSON.parse(readFileSync(file,'utf8'));if(!Array.isArray(value)){value.candidate=candidate;writeFileSync(file,JSON.stringify(value,null,2)+'\n');}}}
+const run={check:name,args:process.argv.slice(3),candidate,started:new Date(started).toISOString(),finished:new Date().toISOString(),exitCode:result.status};appendFileSync('.local/check-runs.jsonl',JSON.stringify(run)+'\n',{mode:0o600});console.log(JSON.stringify({check:name,exitCode:result.status,privateLog:true}));process.exit(result.status??1);

@@ -11,7 +11,7 @@ import type { ReviewItem, ReviewQueue, ReviewSubmission } from '../src/shared/ty
 
 const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
 if (!databaseUrl || new URL(databaseUrl).hostname !== '127.0.0.1' || new URL(databaseUrl).pathname !== '/japanese_app_test') throw new Error('Use only disposable localhost japanese_app_test.');
-const base = 'http://127.0.0.1:5173';
+const base = process.env.BROWSER_URL ?? 'http://127.0.0.1:5173';
 const database = connectDatabase(databaseUrl);
 const course = loadCourse();
 // This fixture never reads preview env or configures an external analysis provider.
@@ -102,6 +102,7 @@ try {
         for (let step = 1; step <= 5; step++) await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: x + step * 22, y }] });
         await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] }); await cdp.detach();
       } else { await gesture.focus(); await page.keyboard.press('ArrowRight'); }
+      expect(submissions).toHaveLength(0); await page.locator('.workspace-next').click();
       await expect(page.getByRole('heading', { name: 'Повторение завершено', exact: true })).toBeVisible();
       expect(submissions).toHaveLength(1);
       expect(submissions[0]).toMatchObject({ mode: 'grammar', tokenIds: order, revealed: false, exploring: false, rating: 3 });

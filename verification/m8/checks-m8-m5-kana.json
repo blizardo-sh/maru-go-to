@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "checks": [
+    "lost-IDB-receipt-retry-one-stat-update",
+    "chrome:both-scripts-directions-error-repeat-and-reload",
+    "chrome:no-vocabulary-FSRS-or-lesson-progress",
+    "chrome:account-isolation",
+    "webkit:both-scripts-directions-error-repeat-and-reload",
+    "webkit:no-vocabulary-FSRS-or-lesson-progress",
+    "webkit:account-isolation"
+  ],
+  "storage": "IndexedDB per origin/browser profile/learner; no cross-browser transfer",
+  "sqlMigration": false,
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

@@ -1,0 +1,4 @@
+#stage { position: fixed; inset: 0; overflow: hidden; }
+#stage > canvas { position: absolute; inset: 0; touch-action: pan-y; }
+#stage .native-editor { color: transparent; caret-color: transparent; opacity: .01; background: transparent; }
+#recovery { z-index: 30; }

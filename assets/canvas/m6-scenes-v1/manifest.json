@@ -1,0 +1,172 @@
+{
+  "version": 1,
+  "date": "2026-11-01",
+  "sources": "Original public/scenes plates and layers are immutable; built-in image_gen project artwork, see their manifests/generation.json",
+  "programSource": "../../m6-scenes.ts",
+  "programSha256": "60b1609396215a6fbb7b9f8880489d20e81f3cf696067993c9dea0a6a77fb50a",
+  "camera": "fixed; book and text coordinates unchanged",
+  "variants": "desktop/mobile selected at width 700; cover transform fixed per resize",
+  "approvalBasis": "Natural masked river and foliage accepted; flying highlight stripes removed. Other local programs follow accepted plan.",
+  "scenes": [
+    {
+      "id": "room",
+      "nameRu": "Тёплая комната",
+      "sourceSha256": "0ea434825a3ccbd94092586c3c735d3b0ccfece57bb14393cbc51e11628e4431",
+      "desktopPosition": "50% 50%",
+      "mobilePosition": "50% 50%",
+      "tableBackEdge": 0.67,
+      "desktop": {
+        "src": "/scenes/room-v1.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 180596,
+        "format": "image/webp",
+        "quality": 83
+      },
+      "mobile": {
+        "src": "/scenes/room-mobile-v1.webp",
+        "width": 540,
+        "height": 960,
+        "bytes": 53544,
+        "format": "image/webp",
+        "quality": 83
+      }
+    },
+    {
+      "id": "garden",
+      "nameRu": "Сад и веранда",
+      "sourceSha256": "bac0bd2aa715fff039adc934150c4e0d8bb3a7e9b04cf29a65e67c2bf0be8cc6",
+      "desktopPosition": "50% 50%",
+      "mobilePosition": "50% 50%",
+      "tableBackEdge": 0.67,
+      "desktop": {
+        "src": "/scenes/garden-v1.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 244060,
+        "format": "image/webp",
+        "quality": 83
+      },
+      "mobile": {
+        "src": "/scenes/garden-mobile-v1.webp",
+        "width": 540,
+        "height": 960,
+        "bytes": 75310,
+        "format": "image/webp",
+        "quality": 83
+      }
+    },
+    {
+      "id": "mountains",
+      "nameRu": "Горная хижина",
+      "sourceSha256": "241667a39cd05a58dd6f9776a9a4a676661ba9d1903bfbcddd02c9eb4bf31609",
+      "desktopPosition": "50% 50%",
+      "mobilePosition": "50% 50%",
+      "tableBackEdge": 0.67,
+      "desktop": {
+        "src": "/scenes/mountains-v1.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 240660,
+        "format": "image/webp",
+        "quality": 83
+      },
+      "mobile": {
+        "src": "/scenes/mountains-mobile-v1.webp",
+        "width": 540,
+        "height": 960,
+        "bytes": 58060,
+        "format": "image/webp",
+        "quality": 83
+      }
+    },
+    {
+      "id": "river",
+      "nameRu": "У реки",
+      "sourceSha256": "d8067f83c89991ad126c0f582f4170c13f0a0bd0d0f2b56081511c362a32092a",
+      "desktopPosition": "50% 50%",
+      "mobilePosition": "50% 50%",
+      "tableBackEdge": 0.67,
+      "desktop": {
+        "src": "/scenes/river-v1.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 233980,
+        "format": "image/webp",
+        "quality": 83
+      },
+      "mobile": {
+        "src": "/scenes/river-mobile-v1.webp",
+        "width": 540,
+        "height": 960,
+        "bytes": 62524,
+        "format": "image/webp",
+        "quality": 83
+      }
+    },
+    {
+      "id": "tokyo",
+      "nameRu": "Вечер в Токио",
+      "sourceSha256": "ddf0d0688619d37ad007e50fbf16514e2e5583b40dc7f8b456627d9bc5268faa",
+      "desktopPosition": "50% 50%",
+      "mobilePosition": "50% 50%",
+      "tableBackEdge": 0.67,
+      "desktop": {
+        "src": "/scenes/tokyo-v1.webp",
+        "width": 1600,
+        "height": 900,
+        "bytes": 164740,
+        "format": "image/webp",
+        "quality": 83
+      },
+      "mobile": {
+        "src": "/scenes/tokyo-mobile-v1.webp",
+        "width": 540,
+        "height": 960,
+        "bytes": 40880,
+        "format": "image/webp",
+        "quality": 83
+      }
+    }
+  ],
+  "motion": {
+    "room": [
+      "separate foliage",
+      "local warm light",
+      "tea steam at illustrated cup on desktop; mobile crop has no cup",
+      "three window dust motes"
+    ],
+    "garden": [
+      "separate sakura",
+      "three upper petals",
+      "water polygon excludes banks/table"
+    ],
+    "mountains": [
+      "cloud polygon restricted to sky; no moving mountain silhouettes",
+      "separate translucent valley haze",
+      "separate foliage",
+      "local warm light"
+    ],
+    "river": [
+      "accepted water polygon",
+      "separate foliage",
+      "two small bank motes; no light stripes"
+    ],
+    "tokyo": [
+      "four window regions",
+      "lamp glow on desktop; mobile crop excludes lamp"
+    ]
+  },
+  "reduced": "all decorative RAF stops; static plate/foliage/light remain",
+  "maxParticles": 3,
+  "layers": [
+    {
+      "file": "../../public/scenes/layers/foliage-v1.webp",
+      "sha256": "4f269c6b0522bb16b44b2e51875e9ad5251621b82c8ca4e0f0170fc72fb9e846"
+    },
+    {
+      "file": "../../public/scenes/layers/sakura-v1.webp",
+      "sha256": "89385061d816920279571f0ef5617406513289316f599b0df2fd770012366567"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
 import type { CatPose, CompanionState } from './companion';
 import { useReducedMotion } from './SceneStage';
 
@@ -52,11 +52,11 @@ export function Cat({ pose = 'neutral', text, activity = 'idle', reactionKey, we
   const reactionPose = reaction?.pose === 'success' && wave ? 'wave' : reaction?.pose;
   const actual: CatPose = reactionPose ?? (petting ? 'wave' : blink && pose === 'neutral' ? 'blink' : activity === 'complete' ? 'wave' : pose);
   const shown = ready.has(actual) ? actual : 'neutral';
-  useEffect(() => { setPrevious(last.current); last.current = shown; const timer = window.setTimeout(() => setPrevious(null), 180); return () => window.clearTimeout(timer); }, [shown]);
+  useLayoutEffect(() => { setPrevious(last.current); last.current = shown; const timer = window.setTimeout(() => setPrevious(null), 180); return () => window.clearTimeout(timer); }, [shown]);
   const pet = () => { if (!visible) return; setPetting(true); window.clearTimeout(petTimer.current); petTimer.current = window.setTimeout(() => setPetting(false), 900); };
   const useRig = !!rig && !failed;
   const picture = (value: CatPose, outgoing = false) => <img key={`${outgoing ? 'old' : 'new'}:${value}`} className={`cat-pose${outgoing ? ' cat-pose-outgoing' : ''}`} src={`/mascot/${value}.png`} width="360" height="360" alt="" decoding="async" style={{ '--cat-foot-gap': `${footGap[value] * 100}%` } as CSSProperties} />;
-  const frame = <div className="cat-frame"><span className="cat-shadow" aria-hidden="true" /><span className="cat-motion" key={reaction?.key ?? reactionKey ?? 'idle'} aria-hidden="true"><span className="cat-base" data-hidden={shown !== 'neutral'}>
+  const frame = <div className="cat-frame"><span className="cat-shadow" aria-hidden="true" /><span className="cat-motion" aria-hidden="true"><span className="cat-base" data-hidden={shown !== 'neutral'}>
     {useRig && rig ? <span className="cat-rig">{(['tail', 'body', 'head'] as const).map(layer => { const source = rig.layers[layer]; const pivot = source.pivot ?? { x: .5, y: 1 }; return <img key={layer} className={`cat-layer cat-${layer}`} src={source.src} width={rig.canvas.width} height={rig.canvas.height} alt="" decoding="async" onError={() => setFailed(true)} style={{ transformOrigin: `${pivot.x * 100}% ${pivot.y * 100}%` }} />; })}</span> : picture('neutral')}
   </span>{previous && previous !== 'neutral' && previous !== shown && picture(previous, true)}{shown !== 'neutral' && picture(shown)}</span></div>;
   return <aside className="companion" data-pose={actual} data-activity={activity} data-event-key={reaction?.key ?? reactionKey} data-visible={visible} data-welcome={welcome} data-playful={playful} data-rig-ready={useRig} data-reaction={reaction?.pose === 'success' ? 'good' : reaction?.pose === 'encourage' ? 'again' : activity === 'complete' ? 'complete' : 'idle'}>

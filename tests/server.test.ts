@@ -1,3 +1,4 @@
+import { disposableDatabase } from './helpers/disposable-database';
 import { describe, expect, test, afterAll } from 'bun:test';
 import { OpenAPIHono } from '@hono/zod-openapi';
 import { registerContract } from '../src/server/openapi';
@@ -99,7 +100,7 @@ test('OpenAPI exports own routes with request validation, cookie auth and middle
 });
 const url=process.env.TEST_DATABASE_URL;const suite=url?describe:describe.skip;
 suite('one-use links on disposable PostgreSQL',()=>{
- if(url){const parsed=new URL(url);if(!['localhost','127.0.0.1'].includes(parsed.hostname)||parsed.pathname!=='/japanese_app_test')throw new Error('Use only disposable localhost japanese_app_test');}
+ if(url){const parsed=new URL(url);if(!disposableDatabase(parsed))throw new Error('Use only disposable localhost japanese_app_test');}
  const database=url?connectDatabase(url):null;const emails:string[]=[];
  afterAll(async()=>{if(database){for(const email of emails){await database.sql`delete from access_links where email=${email}`;await database.sql`delete from users where email=${email}`;}await database.sql.close();}});
  test('invitation is consumed once under concurrent attempts and expiry is enforced',async()=>{

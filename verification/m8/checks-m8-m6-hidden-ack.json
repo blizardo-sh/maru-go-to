@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-02",
+  "passed": true,
+  "results": [
+    {
+      "name": "chrome",
+      "passed": true,
+      "realAckCommittedWhilePresentationHidden": true,
+      "receiptConsumedOnce": true,
+      "noCelebrationOrSfxOnResume": true,
+      "reloadSeesSavedNextStep": true,
+      "jsErrors": 0
+    },
+    {
+      "name": "webkit",
+      "passed": true,
+      "realAckCommittedWhilePresentationHidden": true,
+      "receiptConsumedOnce": true,
+      "noCelebrationOrSfxOnResume": true,
+      "reloadSeesSavedNextStep": true,
+      "jsErrors": 0
+    }
+  ],
+  "method": "Real connected grade/ACK held by route; synthetic document.hidden + visibility events; no physical OS background claim",
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

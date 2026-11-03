@@ -1,7 +1,16 @@
 import { expect, test } from 'bun:test';
-import { advanceLearningState, currentLearningStep, initialLearningState, learningParts, reconcileOptionalVideos, validateLearning } from '../src/shared/learning';
+import { advanceLearningState, currentLearningStep, initialLearningState, learningPartProgress, learningParts, reconcileOptionalVideos, validateLearning } from '../src/shared/learning';
 import { withLearningMaterial } from '../src/server/course';
 import { learningFixture } from './helpers/learning-fixture';
+
+test('part progress counts saved steps independently, including completed later parts after a content update', () => {
+  const parts = learningParts(learningFixture().learning[0]!);
+  const progress = learningPartProgress(parts, { completedStepIds: [parts[0]![0]!.id, parts[0]![0]!.id, 'removed-step', ...parts[1]!.map(step => step.id)] });
+  expect(progress).toEqual([
+    { partId: parts[0]![0]!.partId, completedSteps: 1, totalSteps: parts[0]!.length },
+    { partId: parts[1]![0]!.partId, completedSteps: parts[1]!.length, totalSteps: parts[1]!.length },
+  ]);
+});
 
 test('a guided part introduces the whole group then explicitly practices every word and full construction in three formats', () => {
   const course = learningFixture(); const route = course.learning[0]!;
@@ -102,4 +111,18 @@ test('new optional clips do not reopen summaries, past parts or completed routes
  while(currentLearningStep(route,state))next();
  const complete=reconcileOptionalVideos(expanded,state);expect(complete.partIndex).toBe(state.partIndex);expect(complete.pendingStepIds).toEqual([]);expect(currentLearningStep(expanded,complete)).toBeNull();
  expect(complete.completedStepIds).toHaveLength(learningParts(expanded).flat().length);expect(complete.completedStepIds.filter(id=>!id.includes(':video:'))).toEqual(state.completedStepIds.filter(id=>!id.includes(':video:')));
+});
+
+
+test('shared overlay records ignore JSON key order but reject conflicting authored meanings',()=>{
+ const course=learningFixture(), first=structuredClone(course.learning[0]!), second=structuredClone(first);
+ second.lessonId=course.lessons.find(lesson=>lesson.number===4)!.id;
+ const original=course.words.find(word=>word.id===first.goals[0]!.parts[0]!.words[0]!.wordId)!;
+ const shared={...original,lessonIds:[...new Set([...original.lessonIds,second.lessonId])]};
+ first.authored={words:[shared],forms:[],skills:[],exercises:[]};
+ const {id,...fields}=shared;
+ second.authored={words:[{...fields,id}],forms:[],skills:[],exercises:[]};
+ expect(()=>withLearningMaterial(course,[first,second])).not.toThrow();
+ second.authored.words[0]!.meaningRu+=' другой смысл';
+ expect(()=>withLearningMaterial(course,[first,second])).toThrow('Conflicting authored records');
 });

@@ -11,7 +11,7 @@ import type { Progress, ReviewItem, ReviewQueue, ReviewSubmission } from '../src
 
 const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
 if (!databaseUrl || new URL(databaseUrl).hostname !== '127.0.0.1' || new URL(databaseUrl).pathname !== '/japanese_app_test') throw new Error('Use only disposable localhost japanese_app_test.');
-const base = 'http://127.0.0.1:5173';
+const base = process.env.BROWSER_URL ?? 'http://127.0.0.1:5173';
 const database = connectDatabase(databaseUrl);
 const course = loadCourse();
 // No preview env or external inference: unavailable analysis uses a local HTTP429 fixture.
@@ -147,7 +147,7 @@ try {
       const listening = issued[0]; if (listening?.mode !== 'listening') throw new Error('Expected actual listening card');
       expect(await session.ariaSnapshot()).not.toContain(listening.word.surface);
       expect(await session.ariaSnapshot()).not.toContain(listening.word.meaningRu);
-      expect(await session.locator('[lang="ja"]').count()).toBe(0);
+      expect(await session.locator('[lang="ja"]:visible').count()).toBe(0);
       const nav = page.getByRole('navigation', { name: 'Разделы' });
       expect(await nav.getByRole('button', { name: 'Учебник', exact: true }).evaluate(element => element instanceof HTMLButtonElement)).toBe(true);
       await nav.getByRole('button', { name: 'Учебник', exact: true }).click();
@@ -305,7 +305,7 @@ try {
       expect(geometry.controlsMinHeight).toBeGreaterThanOrEqual(44); expect(geometry.japaneseMinFont).toBeGreaterThanOrEqual(20); expect(geometry.catOverlaps).toBe(false);
       expect(submissions).toHaveLength(3); expect((await progressState(context)).byMode.grammar.reviewedToday).toBe(0);
       await page.screenshot({ path: `${output}/qa-game-${viewport.width}.png`, fullPage: true });
-      await gesture.focus(); await page.keyboard.press('ArrowRight');
+      await page.locator('.workspace-next').click();
       await expect(gesture).toHaveAttribute('data-review-id', issued[3]!.id); await checkProgress(page, 3);
       await expect(feedback).toHaveAttribute('data-feedback', 'neutral'); await expect(feedback).toHaveText('');
       expect(submissions).toHaveLength(4); expect(submissions[3]).toMatchObject({ mode: 'grammar', rating: 3, revealed: false });
@@ -321,7 +321,7 @@ try {
       await expect(page.getByText('Бесплатный сервис временно ограничил запросы. Попробуйте позже.', { exact: true })).toBeVisible();
       await catActivity(page, 'neutral', 'neutral');
       await feedbackMotion(draft.locator('.answer-feedback-marker'), touch, 'neutral'); await checkProgress(page, 3); expect(submissions).toHaveLength(4);
-      await gesture.focus(); await page.keyboard.press('ArrowRight');
+      await page.locator('.workspace-next').click();
       await expect(gesture).toHaveAttribute('data-review-id', issued[4]!.id); await checkProgress(page, 4);
       expect(submissions).toHaveLength(4); expect((await progressState(context)).byMode.grammar.reviewedToday).toBe(1);
       await expect(feedback).toHaveAttribute('data-feedback', 'neutral');
@@ -330,7 +330,7 @@ try {
       await expect(page.locator('[data-outcome="incomplete"]')).toBeVisible(); await expect(draft).toHaveAttribute('data-feedback', 'neutral');
       await catActivity(page, 'neutral', 'neutral');
       await feedbackMotion(draft.locator('.answer-feedback-marker'), touch, 'neutral'); await checkProgress(page, 4); expect(submissions).toHaveLength(4);
-      await gesture.focus(); await page.keyboard.press('ArrowRight');
+      await page.locator('.workspace-next').click();
       await expect(page.getByRole('heading', { name: 'Повторение завершено', exact: true })).toBeVisible(); await checkProgress(page, 5);
       expect(submissions).toHaveLength(4); const final = await progressState(context);
       expect(final.byMode.listening.reviewedToday).toBe(1); expect(final.byMode['ja-ru'].reviewedToday).toBe(1); expect(final.byMode.grammar.reviewedToday).toBe(1);

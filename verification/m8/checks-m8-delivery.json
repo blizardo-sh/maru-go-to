@@ -1,0 +1,83 @@
+{
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+  "passed": true,
+  "files": 8048,
+  "bytes": 178517407,
+  "exactFrozenHashes": true,
+  "noSourceSymlinks": true,
+  "knownPrivateValuesScanned": 98,
+  "privateMatches": 0,
+  "absoluteMacPaths": 0,
+  "artifactContainsLabOrFixtures": false,
+  "independentRebuild": {
+    "passed": true,
+    "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+    "identicalFiles": 8048,
+    "independentFrozenInstall": true,
+    "typecheck": true,
+    "build": true,
+    "labPresent": false
+  },
+  "independentStart": {
+    "passed": true,
+    "method": "Normal bun start from independently rebuilt source package without lab, node_modules symlinks or private application imports; configuration supplied only in environment; fresh M8 test clone.",
+    "checks": [
+      {
+        "path": "/",
+        "status": 200,
+        "type": "text/html;charset=utf-8",
+        "csp": true
+      },
+      {
+        "path": "/legacy.html",
+        "status": 200,
+        "type": "text/html;charset=utf-8",
+        "csp": true
+      },
+      {
+        "path": "/invite",
+        "status": 200,
+        "type": "text/html;charset=utf-8",
+        "csp": true
+      },
+      {
+        "path": "/recover",
+        "status": 200,
+        "type": "text/html;charset=utf-8",
+        "csp": true
+      },
+      {
+        "path": "/admin",
+        "status": 200,
+        "type": "text/html;charset=utf-8",
+        "csp": true
+      },
+      {
+        "path": "/m6/audio/manifest.json",
+        "status": 200,
+        "type": "application/json;charset=utf-8",
+        "csp": true
+      },
+      {
+        "path": "/fonts/neucha-cyrillic.woff2",
+        "status": 200,
+        "type": "font/woff2",
+        "csp": true
+      }
+    ]
+  },
+  "dockerBuildInputs": {
+    "typecheckAndBuild": "PASS",
+    "method": "Exact Docker build-stage COPY inputs; frozen installed deps shared locally; not a container execution"
+  },
+  "containerExecution": {
+    "status": "NOT_RUN",
+    "reason": "Docker and Caddy CLI unavailable",
+    "detected": {
+      "docker": null,
+      "caddy": null
+    }
+  },
+  "rootFilesMatchFrozen": 8048,
+  "archiveFilesIndependentlyVerified": 8049
+}

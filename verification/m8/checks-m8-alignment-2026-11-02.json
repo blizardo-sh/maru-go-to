@@ -1,0 +1,583 @@
+{
+  "passed": true,
+  "method": "Longest word projected from each actual issued review queue; browser geometry, not hardware. No grades. Media.play mocked only for geometry.",
+  "checks": [
+    {
+      "engine": "chrome",
+      "mode": "ja-ru",
+      "shown": false,
+      "width": 1280,
+      "height": 900,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "ja-ru",
+      "shown": false,
+      "width": 844,
+      "height": 390,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "ja-ru",
+      "shown": false,
+      "width": 640,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "ja-ru",
+      "shown": false,
+      "width": 568,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "ja-ru",
+      "shown": false,
+      "width": 390,
+      "height": 844,
+      "centreDelta": null
+    },
+    {
+      "engine": "chrome",
+      "mode": "ja-ru",
+      "shown": false,
+      "width": 320,
+      "height": 640,
+      "centreDelta": null
+    },
+    {
+      "engine": "chrome",
+      "mode": "ja-ru",
+      "shown": true,
+      "width": 1280,
+      "height": 900,
+      "centreDelta": 5.684341886080802e-14
+    },
+    {
+      "engine": "chrome",
+      "mode": "ja-ru",
+      "shown": true,
+      "width": 844,
+      "height": 390,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "ja-ru",
+      "shown": true,
+      "width": 640,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "ja-ru",
+      "shown": true,
+      "width": 568,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "ja-ru",
+      "shown": true,
+      "width": 390,
+      "height": 844,
+      "centreDelta": null
+    },
+    {
+      "engine": "chrome",
+      "mode": "ja-ru",
+      "shown": true,
+      "width": 320,
+      "height": 640,
+      "centreDelta": null
+    },
+    {
+      "engine": "chrome",
+      "mode": "ru-ja",
+      "shown": false,
+      "width": 1280,
+      "height": 900,
+      "centreDelta": 5.684341886080802e-14
+    },
+    {
+      "engine": "chrome",
+      "mode": "ru-ja",
+      "shown": false,
+      "width": 844,
+      "height": 390,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "ru-ja",
+      "shown": false,
+      "width": 640,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "ru-ja",
+      "shown": false,
+      "width": 568,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "ru-ja",
+      "shown": false,
+      "width": 390,
+      "height": 844,
+      "centreDelta": null
+    },
+    {
+      "engine": "chrome",
+      "mode": "ru-ja",
+      "shown": false,
+      "width": 320,
+      "height": 640,
+      "centreDelta": null
+    },
+    {
+      "engine": "chrome",
+      "mode": "ru-ja",
+      "shown": true,
+      "width": 1280,
+      "height": 900,
+      "centreDelta": 5.684341886080802e-14
+    },
+    {
+      "engine": "chrome",
+      "mode": "ru-ja",
+      "shown": true,
+      "width": 844,
+      "height": 390,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "ru-ja",
+      "shown": true,
+      "width": 640,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "ru-ja",
+      "shown": true,
+      "width": 568,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "ru-ja",
+      "shown": true,
+      "width": 390,
+      "height": 844,
+      "centreDelta": null
+    },
+    {
+      "engine": "chrome",
+      "mode": "ru-ja",
+      "shown": true,
+      "width": 320,
+      "height": 640,
+      "centreDelta": null
+    },
+    {
+      "engine": "chrome",
+      "mode": "listening",
+      "shown": false,
+      "width": 1280,
+      "height": 900,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "listening",
+      "shown": false,
+      "width": 844,
+      "height": 390,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "listening",
+      "shown": false,
+      "width": 640,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "listening",
+      "shown": false,
+      "width": 568,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "listening",
+      "shown": false,
+      "width": 390,
+      "height": 844,
+      "centreDelta": null
+    },
+    {
+      "engine": "chrome",
+      "mode": "listening",
+      "shown": false,
+      "width": 320,
+      "height": 640,
+      "centreDelta": null
+    },
+    {
+      "engine": "chrome",
+      "mode": "listening",
+      "shown": true,
+      "width": 1280,
+      "height": 900,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "listening",
+      "shown": true,
+      "width": 844,
+      "height": 390,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "listening",
+      "shown": true,
+      "width": 640,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "listening",
+      "shown": true,
+      "width": 568,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "chrome",
+      "mode": "listening",
+      "shown": true,
+      "width": 390,
+      "height": 844,
+      "centreDelta": null
+    },
+    {
+      "engine": "chrome",
+      "mode": "listening",
+      "shown": true,
+      "width": 320,
+      "height": 640,
+      "centreDelta": null
+    },
+    {
+      "engine": "webkit",
+      "mode": "ja-ru",
+      "shown": false,
+      "width": 1280,
+      "height": 900,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "ja-ru",
+      "shown": false,
+      "width": 844,
+      "height": 390,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "ja-ru",
+      "shown": false,
+      "width": 640,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "ja-ru",
+      "shown": false,
+      "width": 568,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "ja-ru",
+      "shown": false,
+      "width": 390,
+      "height": 844,
+      "centreDelta": null
+    },
+    {
+      "engine": "webkit",
+      "mode": "ja-ru",
+      "shown": false,
+      "width": 320,
+      "height": 640,
+      "centreDelta": null
+    },
+    {
+      "engine": "webkit",
+      "mode": "ja-ru",
+      "shown": true,
+      "width": 1280,
+      "height": 900,
+      "centreDelta": 5.684341886080802e-14
+    },
+    {
+      "engine": "webkit",
+      "mode": "ja-ru",
+      "shown": true,
+      "width": 844,
+      "height": 390,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "ja-ru",
+      "shown": true,
+      "width": 640,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "ja-ru",
+      "shown": true,
+      "width": 568,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "ja-ru",
+      "shown": true,
+      "width": 390,
+      "height": 844,
+      "centreDelta": null
+    },
+    {
+      "engine": "webkit",
+      "mode": "ja-ru",
+      "shown": true,
+      "width": 320,
+      "height": 640,
+      "centreDelta": null
+    },
+    {
+      "engine": "webkit",
+      "mode": "ru-ja",
+      "shown": false,
+      "width": 1280,
+      "height": 900,
+      "centreDelta": 5.684341886080802e-14
+    },
+    {
+      "engine": "webkit",
+      "mode": "ru-ja",
+      "shown": false,
+      "width": 844,
+      "height": 390,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "ru-ja",
+      "shown": false,
+      "width": 640,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "ru-ja",
+      "shown": false,
+      "width": 568,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "ru-ja",
+      "shown": false,
+      "width": 390,
+      "height": 844,
+      "centreDelta": null
+    },
+    {
+      "engine": "webkit",
+      "mode": "ru-ja",
+      "shown": false,
+      "width": 320,
+      "height": 640,
+      "centreDelta": null
+    },
+    {
+      "engine": "webkit",
+      "mode": "ru-ja",
+      "shown": true,
+      "width": 1280,
+      "height": 900,
+      "centreDelta": 5.684341886080802e-14
+    },
+    {
+      "engine": "webkit",
+      "mode": "ru-ja",
+      "shown": true,
+      "width": 844,
+      "height": 390,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "ru-ja",
+      "shown": true,
+      "width": 640,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "ru-ja",
+      "shown": true,
+      "width": 568,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "ru-ja",
+      "shown": true,
+      "width": 390,
+      "height": 844,
+      "centreDelta": null
+    },
+    {
+      "engine": "webkit",
+      "mode": "ru-ja",
+      "shown": true,
+      "width": 320,
+      "height": 640,
+      "centreDelta": null
+    },
+    {
+      "engine": "webkit",
+      "mode": "listening",
+      "shown": false,
+      "width": 1280,
+      "height": 900,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "listening",
+      "shown": false,
+      "width": 844,
+      "height": 390,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "listening",
+      "shown": false,
+      "width": 640,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "listening",
+      "shown": false,
+      "width": 568,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "listening",
+      "shown": false,
+      "width": 390,
+      "height": 844,
+      "centreDelta": null
+    },
+    {
+      "engine": "webkit",
+      "mode": "listening",
+      "shown": false,
+      "width": 320,
+      "height": 640,
+      "centreDelta": null
+    },
+    {
+      "engine": "webkit",
+      "mode": "listening",
+      "shown": true,
+      "width": 1280,
+      "height": 900,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "listening",
+      "shown": true,
+      "width": 844,
+      "height": 390,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "listening",
+      "shown": true,
+      "width": 640,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "listening",
+      "shown": true,
+      "width": 568,
+      "height": 320,
+      "centreDelta": 0
+    },
+    {
+      "engine": "webkit",
+      "mode": "listening",
+      "shown": true,
+      "width": 390,
+      "height": 844,
+      "centreDelta": null
+    },
+    {
+      "engine": "webkit",
+      "mode": "listening",
+      "shown": true,
+      "width": 320,
+      "height": 640,
+      "centreDelta": null
+    }
+  ],
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

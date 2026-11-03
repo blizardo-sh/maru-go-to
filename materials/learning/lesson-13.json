@@ -71,7 +71,8 @@
                     "surface": "バスののりばはどこですか。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson13-c9feb40f2d485d84ed81.m4a"
+                "audioUrl": "/audio/learning/828120224bab04e28902.m4a",
+                "audioText": "バスののりばわどこですか。"
               }
             }
           ]
@@ -225,7 +226,8 @@
                     "surface": "えきででんしゃをおります。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson13-f85b079cddedd6691567.m4a"
+                "audioUrl": "/audio/learning/ec6a8c3e8e623df6403b.m4a",
+                "audioText": "えきででんしゃおおります。"
               }
             }
           ],
@@ -314,7 +316,8 @@
                     "surface": "ちかてつはべんりです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson13-19868f7bdbfa96f9db36.m4a"
+                "audioUrl": "/audio/learning/56da5b977c9ea21f6ac5.m4a",
+                "audioText": "ちかてつわべんりです。"
               }
             },
             {
@@ -329,7 +332,8 @@
                     "surface": "でんしゃははやいです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson13-9e0d750873b60a7ea2e7.m4a"
+                "audioUrl": "/audio/learning/792c8e652b5d4cdbff14.m4a",
+                "audioText": "でんしゃわはやいです。"
               }
             },
             {
@@ -423,7 +427,8 @@
                   "surface": "。"
                 }
               ],
-              "audioUrl": "/audio/learning/lesson13-f85b079cddedd6691567.m4a"
+              "audioUrl": "/audio/learning/ec6a8c3e8e623df6403b.m4a",
+              "audioText": "えきででんしゃおおります。"
             },
             "breakdown": [
               {
@@ -474,7 +479,8 @@
                   "surface": "。"
                 }
               ],
-              "audioUrl": "/audio/learning/lesson13-5e9c8b73d06b863a1153.m4a"
+              "audioUrl": "/audio/learning/267eddda333dec69541b.m4a",
+              "audioText": "くうこうわでんしゃがいいです。"
             },
             "breakdown": [
               {
@@ -1158,7 +1164,7 @@
             "surface": "あるいて"
           }
         ],
-        "kind": "phrase",
+        "kind": "word",
         "pos": "expression",
         "reviewStatus": "source-checked",
         "sourceRefs": [

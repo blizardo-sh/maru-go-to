@@ -1,4 +1,4 @@
-import type { GuidedLesson } from './learning';
+import type { GuidedLesson, LearningConstruction } from './learning';
 export type ContentStatus = "missing" | "draft" | "source-checked" | "reviewed";
 export type ReviewStatus = Exclude<ContentStatus, "missing">;
 export type Orthography = "kana" | "furigana" | "kanji";
@@ -6,6 +6,9 @@ export type LessonStatus = "closed" | "studying" | "completed";
 export type MaterialScope = "studied" | "selected" | "all";
 export type ReviewMode = "ja-ru" | "ru-ja" | "listening" | "grammar" | "counter";
 export type Rating = 1 | 2 | 3 | 4;
+export const repeatTypes = ['words', 'counters', 'constructions', 'questions', 'time'] as const;
+export type RepeatType = typeof repeatTypes[number];
+export type ConstructionMode = 'ja-ru' | 'listening' | 'grammar';
 
 export interface SourceRef {
   part: "katsudoo" | "rikai";
@@ -56,6 +59,7 @@ export interface Lesson {
 }
 
 export interface Word {
+  trainingOnly?: boolean;
   id: string;
   lessonIds: string[];
   surface: string;
@@ -106,6 +110,9 @@ export interface Exercise {
 }
 
 export interface Course {
+  media?: string[];
+  publicationId?: string;
+  catalog?: import("./catalog").CourseCatalog;
   id: string;
   version: string;
   title: string;
@@ -118,6 +125,7 @@ export interface Course {
 }
 
 export interface LearnerSettings {
+  repeatTypesVersion?: 2;
   lessonStatuses: Record<string, LessonStatus>;
   focusLessonIds: string[];
   focusCanDoIds: number[];
@@ -129,6 +137,7 @@ export interface LearnerSettings {
   newWordsPerDay: number;
   newSkillsPerDay: number;
   animations: boolean;
+  repeatTypes: RepeatType[];
   sceneSoundEnabled: boolean;
   musicVolume: number;
   ambienceVolume: number;
@@ -137,6 +146,8 @@ export interface LearnerSettings {
 }
 
 interface ReviewBase {
+  preparation?: import('./training').StudyPreparation;
+  publicationId?: string;
   id: string;
   targetId: string;
   version: number;
@@ -145,32 +156,36 @@ interface ReviewBase {
 }
 
 export type ReviewItem = ReviewBase & (
-  | { mode: "ja-ru" | "ru-ja" | "listening"; word: Word }
-  | { mode: "grammar"; exercise: Exercise; skill: Skill }
+  | { mode: "ja-ru" | "ru-ja" | "listening"; word: Word; choices?: string[]; application?: import('./training').TrainingEntry['application']; visual?: import('./training').TrainingEntry['visual'] }
+  | { mode: "grammar"; exercise: Exercise; skill: Skill; construction?: LearningConstruction & { mode: ConstructionMode } }
   | { mode: "counter"; counter: import('./counters').CounterCard }
 );
 
 export interface ReviewQueue {
+  reference?: { title: string; text: string };
   items: ReviewItem[];
   remainingDue: number;
   remainingNew: number;
 }
 
 interface SubmissionBase {
+  practiceFormat?: 'ja-ru' | 'ru-ja' | 'listening' | 'grammar' | 'application';
+  publicationId?: string;
   attemptId: string;
   reviewId: string;
   version: number;
 }
 
 export type ReviewSubmission = SubmissionBase & (
-  | { mode: "ja-ru" | "ru-ja" | "listening"; rating: Rating }
+  | { mode: "ja-ru" | "ru-ja" | "listening"; rating: Rating; choiceWordId?: string; helped?: boolean }
   | { mode: "grammar"; tokenIds: string[]; tokenForms?: Record<string, string>; revealed: boolean; rating?: 1 | 3; exploring?: boolean }
   | { mode: "counter"; rating: 1 | 3; choice?: string; helped: boolean }
 );
 
 export interface ReviewResult {
+  publicationId?: string;
   attemptId: string;
-  status: "scheduled" | "additional-practice";
+  status: "scheduled" | "additional-practice" | "learning";
   version: number;
   nextDue: string;
   correct?: boolean;
@@ -178,6 +193,8 @@ export interface ReviewResult {
 }
 
 export interface Progress {
+  repeatDue?: number;
+  byType?: Record<RepeatType,{due:number;learned:number;reviewedToday:number}>;
   counters: import('./counters').CounterProgress[];
   introducedWordIds: string[];
   introducedSkillIds: string[];
@@ -203,9 +220,13 @@ export interface WordUpdate {
 }
 
 export interface TrainingContext {
+  topicId?: 'questions' | 'time';
+  sectionId?: string;
   lessonId?: string;
   listId?: string;
   counters?: boolean;
+  skillId?: string;
+  constructionMode?: ConstructionMode;
 }
 
 export interface AnalysisRequest extends TrainingContext {
@@ -265,6 +286,7 @@ export interface RegistrationLinkCreateResult {
 }
 
 export interface TargetEvaluationRequest {
+  publicationId?: string;
   reviewId: string;
   version: number;
   tokenIds: string[];

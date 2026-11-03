@@ -1,0 +1,23 @@
+import { katakana } from '@app/shared/kana';
+import type { CourseCatalog } from '@app/shared/catalog';
+import type { StudyAction, StudyChoice, StudySurface } from './study-surface';
+import { bookRows } from './album-book';
+import type { KanaFlow } from './kana-flow';
+export function renderKana(surface:StudySurface,flow:KanaFlow,catalog:CourseCatalog,state:{offset:number},options:{safe:(action:StudyAction)=>StudyAction;changed:()=>void;home:()=>void;prompt?:{x:number;y:number;width:number;height:number}}){
+ const a=surface.body,footer=(actions:StudyAction[])=>surface.footer(actions.map(action=>options.safe({...action,fontSize:16})));
+ if(flow.error){surface.text(flow.error,a,18);footer([{id:'kana-retry',text:'Повторить',run:()=>void flow.retry()},{id:'kana-home',text:'К разделам',run:options.home}]);return;}
+ if(flow.showStats){const stats=flow.stats.filter(stat=>stat.script===flow.script&&stat.direction===flow.direction);bookRows(surface,'Статистика знаков · этот браузер',stats.map(stat=>({id:'kana-stat:'+stat.glyph,text:`${stat.glyph} · попыток ${stat.attempts}, ошибок ${stat.errors}`,run:()=>{}})),state,{safe:options.safe,changed:options.changed,back:()=>{flow.showStats=false;options.changed();}});return;}
+ if(flow.active&&flow.item){const item=flow.item,choices:StudyChoice[]=item.options.map((value,index)=>({id:'kana-choice:'+index,text:value,japanese:flow.direction==='reading-sign',enabled:!flow.busy,run:()=>{}}));const plan=surface.quiz(`${flow.direction==='sign-reading'?'Как читается знак?':'Найдите знак'} · осталось ${flow.queue.length}`,item.prompt,choices,undefined,{question:options.prompt,paper:false,titleSize:16});surface.choices(choices,plan.choices,id=>void flow.choose(item.options[Number(id.slice(12))]!),plan.columns,plan.size);footer([{id:'kana-pause',text:'К наборам',run:()=>{flow.active=false;options.changed();}}]);return;}
+ if(flow.total&&flow.completed===flow.total&&!flow.queue.length){surface.text('Занятие каны завершено.\nСтатистика знаков сохранена в этом браузере для вашей учётной записи.',{...a,y:a.y+20},20);footer([{id:'kana-new',text:'Новое занятие',run:()=>{flow.total=0;flow.completed=0;options.changed();}},{id:'kana-stats',text:'Статистика',run:()=>{flow.showStats=true;options.changed();}}]);return;}
+ const script=flow.script==='hiragana'?'Хирагана':'Катакана',direction=flow.direction==='sign-reading'?'Знак → чтение':'Чтение → знак';
+ const items:StudyAction[]=[
+  ...(flow.queue.length?[{id:'kana-end',text:'Завершить текущее занятие',run:()=>{flow.queue=[];flow.total=0;flow.completed=0;options.changed();}}]:[]),
+  {id:'kana-direction',text:'Направление: '+direction+' ⇄',enabled:!flow.queue.length,run:()=>flow.configure({direction:flow.direction==='sign-reading'?'reading-sign':'sign-reading'},catalog)},
+  {id:'kana-group',enabled:!flow.queue.length,text:'Набор: '+({basic:'основные знаки',voiced:'дакутэн и хандакутэн',yoon:'ёон'}[flow.group]),run:()=>flow.configure({group:flow.group==='basic'?'voiced':flow.group==='voiced'?'yoon':'basic'},catalog)},
+  {id:'kana-all',enabled:!flow.queue.length,text:flow.rows.length===catalog.kana[flow.group].length?'Снять выбор рядов':'Выбрать все ряды',run:()=>flow.configure({rows:flow.rows.length===catalog.kana[flow.group].length?[]:catalog.kana[flow.group].map((_,index)=>index)},catalog)},
+  ...catalog.kana[flow.group].map((row,index)=>({id:'kana-row:'+index,enabled:!flow.queue.length,text:`${flow.rows.includes(index)?'✓ ':''}${row.cells.filter(Boolean).map(entry=>flow.script==='katakana'?katakana(entry!.kana):entry!.kana).join(' · ')}`,run:()=>flow.configure({rows:flow.rows.includes(index)?flow.rows.filter(value=>value!==index):[...flow.rows,index]},catalog)})),
+  {id:'kana-stats',text:'Статистика знаков · хранится в этом браузере',run:()=>{flow.showStats=true;state.offset=0;options.changed();}},
+ ];
+ // Pagination is only for choosing sets; every answer option is displayed together during practice.
+ bookRows(surface,script+' · '+flow.entries(catalog).length+' знаков',items,state,{safe:options.safe,changed:options.changed,back:options.home,tabs:(['hiragana','katakana'] as const).map(script=>({id:'kana-script:'+script,text:script==='hiragana'?'Хирагана':'Катакана',selected:flow.script===script,enabled:!flow.queue.length,accessibleLabel:(script==='hiragana'?'Хирагана':'Катакана')+(flow.script===script?', выбрана':''),run:()=>{state.offset=0;flow.configure({script},catalog);}})),centerAction:{id:'kana-start',text:flow.queue.length?'Продолжить':'Начать',enabled:!flow.busy&&flow.entries(catalog).length>=2,run:()=>{if(flow.queue.length){flow.active=true;options.changed();}else void flow.start(catalog);}}});
+}

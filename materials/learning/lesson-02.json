@@ -135,7 +135,8 @@
                     "surface": "このページをみてください。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson02-word-d6d8e428ca06.m4a"
+                "audioUrl": "/audio/learning/0b5dc7520ef6f41c0a96.m4a",
+                "audioText": "このページおみてください。"
               }
             }
           ]
@@ -169,7 +170,8 @@
                     "surface": "なまえはイワンです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson02-word-436da8d761a5.m4a"
+                "audioUrl": "/audio/learning/c283fa4c9caecd2fde8d.m4a",
+                "audioText": "なまえわイワンです。"
               }
             },
             {
@@ -184,7 +186,8 @@
                     "surface": "くにはロシアです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson02-word-22534becc362.m4a"
+                "audioUrl": "/audio/learning/2bd1ca9e16a3136629cb.m4a",
+                "audioText": "くにわロシアです。"
               }
             },
             {
@@ -229,7 +232,8 @@
                     "surface": "なまえをカタカナでかきます。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson02-word-d750e874526b.m4a"
+                "audioUrl": "/audio/learning/1029a9810266b2feefd9.m4a",
+                "audioText": "なまえおカタカナでかきます。"
               }
             }
           ]

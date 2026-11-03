@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "publishedExerciseTokens": 8,
+  "checks": [
+    "chrome:move-and-draft-reload",
+    "chrome:long-published-answer-evaluated",
+    "chrome:insert-and-manual-analysis-no-target-credit",
+    "chrome:forms-and-no-target-grade-for-analysis",
+    "chrome:wrong-draft-no-credit; correct-draft-nod; explicit-ACK-one-saved-result",
+    "webkit:move-and-draft-reload",
+    "webkit:long-published-answer-evaluated",
+    "webkit:insert-and-manual-analysis-no-target-credit",
+    "webkit:forms-and-no-target-grade-for-analysis",
+    "webkit:wrong-draft-no-credit; correct-draft-nod; explicit-ACK-one-saved-result"
+  ],
+  "candidate": "5a6cc0d73c5565d1ef51cb2686ebee51262089cb51b70fabace6b14f3e448367"
+}

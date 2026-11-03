@@ -1,0 +1,249 @@
+{
+  "method": "Adapted reviewed assertions; new execution only. Runtime/DB guards/root imports/origin/report paths remapped. M7 stable-frame and kana readiness corrections retained. Main entry / used.",
+  "scripts": [
+    {
+      "source": "verification/pixi-ui-lab/m6-browser-data.mts",
+      "sourceSha256": "ca66833d4f8df4847853acdcf40ec8e8ec22ac9402be5a92b8ac26343cfb9f89",
+      "m8Script": "m6-browser-data.mts",
+      "m8Sha256": "429c55970854f8c1c5410259e4a34184c7f0979d73c4038b8ca95d1a6f7bd754"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m6-connected-check.mjs",
+      "sourceSha256": "8efd015dfa68bb937a35ca3bc7e3bc32804c9bf6bfa54a6be22d031675eae2a4",
+      "m8Script": "m6-connected-check.mjs",
+      "m8Sha256": "2866f858b50e3d1188e42dc08fe37d5a7674d5cc6f875d70fe69848418209967"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m6-workspace-prepare.mts",
+      "sourceSha256": "af9ce21e1190617921f2c13582d3176e8dc3c7b0fcd426ea2ea844f0e538367b",
+      "m8Script": "m6-workspace-prepare.mts",
+      "m8Sha256": "6c434e8cf7170a86ff724fc5070723d00da226053d828a951b14b4f090c049d6"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m6-workspace-check.mjs",
+      "sourceSha256": "23fae3fd30f5d79cfa9ddac3b33cbfdb5f765d1a1a5d90876d8898c177677f91",
+      "m8Script": "m6-workspace-check.mjs",
+      "m8Sha256": "113546df3069cffff15cf00120aed387f02b4c72c520ce4ec33430a19b1c7a82"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m5-counter-browser-prepare.mts",
+      "sourceSha256": "04bf93a35fbf9b00d91a9a408c409faa952f0bcce545fe618190c8a64049bc35",
+      "m8Script": "m5-counter-browser-prepare.mts",
+      "m8Sha256": "1cd9f1bc591ff990d49bf3fb3c5fa7ecbeff8b64679b865981e53f813d60c665"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m5-counter-browser-check.mjs",
+      "sourceSha256": "4afbf02387f7d2b76318c9f6be0a15a1e2f7fe886e2ee9410d65408d3dc972d7",
+      "m8Script": "m5-counter-browser-check.mjs",
+      "m8Sha256": "2554ff578363cb55abc8ae15d2dbf2324ea507e9d63c9b2c84343c52911ba36a"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m5-access-prepare.mts",
+      "sourceSha256": "6e85fc53426ad25397ada0864576c2650398aceb39508cada023b63f764be75f",
+      "m8Script": "m5-access-prepare.mts",
+      "m8Sha256": "2e21a03e47f760ed2e6cf84adb375398a5910d56402a72ce51d33da6413f282c"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m5-access-browser-check.mjs",
+      "sourceSha256": "aedb34d621bfce9213c32fdb0e26e3a918d0448dd5dad479736b6f368d212328",
+      "m8Script": "m5-access-browser-check.mjs",
+      "m8Sha256": "66cd226344de20f98b0b87c0066e600d1a7af83ed94beffe43ac6b099de84b23"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m5-book-browser-check.mjs",
+      "sourceSha256": "e525d19d8c99b6ea835645b1028b6f3bb089dbc099d99ea79166c1ddb5bdcf7e",
+      "m8Script": "m5-book-browser-check.mjs",
+      "m8Sha256": "27c16b6dab25e7dbc3c778aea30242682d778a17bd7fd288b6696355e31c42bd"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m5-personal-browser-check.mjs",
+      "sourceSha256": "e7e07582ca3a95b1ec8a50a7f6b14f05ad4d87f9860f68df406a181804248e6d",
+      "m8Script": "m5-personal-browser-check.mjs",
+      "m8Sha256": "3eb899b1181ad9f42f22cd62d24bfd25552a3bbdec550272894a0e979884cd67"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m5-kana-browser-check.mjs",
+      "sourceSha256": "fe585b2ecca9df1dc41c14b6d3a622c6fae980fccab507ae2d9f0b0b30b1347a",
+      "m8Script": "m5-kana-browser-check.mjs",
+      "m8Sha256": "9adbf6bf898a0cb2a970a48d576af41cdaf9cec9c6fb0b2e53e256db89d7f87c"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m5-kana-storage-browser-check.mjs",
+      "sourceSha256": "d5a4e35166a6168702dccb7ae6e044762ed5c93759d1a3cbd31856cac71a5377",
+      "m8Script": "m5-kana-storage-browser-check.mjs",
+      "m8Sha256": "84d3ff0cb4623cfaa1af3d2c8b148cdceddb17014d9e430004f63ce68a08c756"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m6-kana-storage-check.mjs",
+      "sourceSha256": "8054744ac8efe79296d5f6a3d9f55a9531c6251f659dc691fe126a9cf4f7ab67",
+      "m8Script": "m6-kana-storage-check.mjs",
+      "m8Sha256": "aac656d9d6bbd1509aefed042040fe8bbc2e7cb522daaa81919250223b625625"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m6-full-lifecycle-check.mjs",
+      "sourceSha256": "377bf7964a0ebe031abc1479791e251b9e7e506500a463f58ab93ad92b80691b",
+      "m8Script": "m6-full-lifecycle-check.mjs",
+      "m8Sha256": "91253675dd034d2a2aa75a83113178b3763599eb84c6bf46092ecb9c3a77d235"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m6-hidden-ack-check.mjs",
+      "sourceSha256": "8f54cbf89ebb2be6d67e89f6d774e48598ec1a019d509fab521b81e906d68050",
+      "m8Script": "m6-hidden-ack-check.mjs",
+      "m8Sha256": "4f014141b8d2f7f4ba502dd7713f3c095ee7121e98c8e72e3b6a5b7453369d8d"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m6-recovery-input-check.mjs",
+      "sourceSha256": "abdc7823294d65108358a37ae94ea23abc905066b0bc71609a439b00af5f38d8",
+      "m8Script": "m6-recovery-input-check.mjs",
+      "m8Sha256": "ad31c31849bf4c8b59b31a9f8c98ec6ad685518f2092da9fade22c055cc2d063"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m6-owner-audio-check.mjs",
+      "sourceSha256": "90d03e1602e9f873b62e6868b485876ae2db7d10adf17445e26be709cbe2b115",
+      "m8Script": "m6-owner-audio-check.mjs",
+      "m8Sha256": "4cf7434cb726932ef3c74c7877e95f0e33e6158c53436a42146617c64f9a3de1"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m6-video-check.mjs",
+      "sourceSha256": "4dc73de1eb1851d5118891968b14b54370763181e6bdee39948dfba6667a0099",
+      "m8Script": "m6-video-check.mjs",
+      "m8Sha256": "618365f8b062432b13f0be9de63a9c04ad55ab2c2522fdaecc2810f10f989ce8"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m6-entry-idle-check.mjs",
+      "sourceSha256": "9b7e305fbbd99f58a8942cdb167476b16202b47357716b2d3162d885538e0b9a",
+      "m8Script": "m6-entry-idle-check.mjs",
+      "m8Sha256": "182400462c3d7c6e17deae6c68e98d58794a17f1ce84318d595efb2be6e97af4"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m6-full-sound-check.mts",
+      "sourceSha256": "6b1694b2c447b5a44996f64528645ca10f1b200d7393af527d5baa609333f668",
+      "m8Script": "m6-full-sound-check.mts",
+      "m8Sha256": "4fb6dce87f6efc15baa19bb8ac2b0baf7b9489abc6c58dee89cd851caf2b6947"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m6-events-check.mts",
+      "sourceSha256": "5cb2ab5e3511849ce1c44b725294b5150b3fbcb87a189779a6ca76b684fe7941",
+      "m8Script": "m6-events-check.mts",
+      "m8Sha256": "74d76f5a9b338dba37cd936377c70a2884f033c2a22809ba4baa083ec35ba850"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m6-native-safari-check.mjs",
+      "sourceSha256": "840ef718d34cc0796a300dc276fe103cd73d1eb7f6ee071e56fbd93c4d1cfd1f",
+      "m8Script": "m6-native-safari-check.mjs",
+      "m8Sha256": "4c994c6662418bfe946508f545d45ef4cb7230b3a7d9de75b54bd44f1119a23e",
+      "adaptation": "Main root URL/guarded M8 accounts. Native WebDriver focus + Enter after two-frame focus restoration; exact control bounds resolve repeated labels; not direct application callbacks. Native IME/autofill/readers not claimed."
+    },
+    {
+      "source": "verification/pixi-ui-lab/m6-native-profile.mjs",
+      "sourceSha256": "0e66fa4d2ad2c5772ad82c4979c956ded50b50acfb9d4c8b72fe019ab6a54328",
+      "m8Script": "m6-native-profile.mjs",
+      "m8Sha256": "d52183e69049de03e5fb84eb296c297cfd306827a5fdd361004dfcef970cb0c1"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m7-native-groups.mjs",
+      "sourceSha256": "a87b6b96b977746ab772122dd1364e1902b4a5285d86e81d20dba3a795793b61",
+      "m8Script": "m7-native-groups.mjs",
+      "m8Sha256": "7e427a160a8d90ea5b61378c7ceb18578c341e682e8db0d5e244048b956f6218",
+      "adaptation": "Main root URL/guarded M8 accounts. Native WebDriver focus + Enter after two-frame focus restoration; exact control bounds resolve repeated labels; not direct application callbacks. Native IME/autofill/readers not claimed."
+    },
+    {
+      "source": "verification/pixi-ui-lab/m7-video-catalog.mjs",
+      "sourceSha256": "64bb57e00058bcd8953fe24832086d3a13507debe6e16ccd42faf2005e3aad12",
+      "m8Script": "m7-video-catalog.mjs",
+      "m8Sha256": "7170f530947dcae384e8efb7fdd6319f357b4f17389a28cfc30b9a724c603d65"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m7-alignment.mjs",
+      "sourceSha256": "0dd86e525e2eefd566374d2172376384c7def8453329edee7ce84434fd6966e0",
+      "m8Script": "m7-alignment.mjs",
+      "m8Sha256": "32fc2453c3cb6e50f06cdd2d34c745c0dbc33426f9c9a2c82f5e4a6b876d3d90"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m7-network.mjs",
+      "sourceSha256": "61747a541ea3711f91aa4879c580c864f3c102a59813a9f6da4f2e5e43921922",
+      "m8Script": "m7-network.mjs",
+      "m8Sha256": "d4c9320b956ff86881916812b1d155f4aefadd847333d69de314373796d3975f"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m7-mobile.mjs",
+      "sourceSha256": "4c2e1ff30d0af1f4d3a7ee9a58445ad9f06e2fb18b2bb7c944e7cf4e0f129a1e",
+      "m8Script": "m7-mobile.mjs",
+      "adaptation": "Fresh guarded M8 main-publication profiles instead of lab fixtures",
+      "m8Sha256": "b778251e4e73126b09733d084f295e540873b1a9c944e8796beabb63d5815b40"
+    },
+    {
+      "source": "verification/pixi-ui-lab/m7-choice-alignment.mjs",
+      "sourceSha256": "24e9390e0eb747318215e824689a66ced07690332f86ebe9a913281e23160727",
+      "m8Script": "m7-choice-alignment.mjs",
+      "adaptation": "Fresh guarded M8 main-publication profiles instead of lab fixtures",
+      "m8Sha256": "c9d1005e165e61c5d02d2432f475ab4ffe1fe84c0a67498406333b8c6fefeb8e"
+    },
+    {
+      "m8Script": "guard.mjs",
+      "m8Sha256": "a1cdd28e88ddcffe48f083dac5f662ee4e459dfeceb9ae5c1b1d0d72ae376533",
+      "source": "New M8 integration verification",
+      "adaptation": "Isolated local M8 runtime; private credentials loaded at execution only"
+    },
+    {
+      "m8Script": "launch.mts",
+      "m8Sha256": "8ed5aea6d564c571830f34a85787d79b90eba412d97fb6c6ad02b2cebb730f13",
+      "source": "New M8 integration verification",
+      "adaptation": "Isolated local M8 runtime; private credentials loaded at execution only"
+    },
+    {
+      "m8Script": "prepare-final.mts",
+      "m8Sha256": "a6802fc46a20aea1f17acf6e21975b47075b3bb386d967ffdaec10f5321212e7",
+      "source": "New M8 integration verification",
+      "adaptation": "Isolated local M8 runtime; private credentials loaded at execution only"
+    },
+    {
+      "m8Script": "prepare-isolation.mts",
+      "m8Sha256": "a47d3f42eeb6fa4ede7e780d04b777b61c3e226d5e0c6f2935275f00a484b020",
+      "source": "New M8 integration verification",
+      "adaptation": "Isolated local M8 runtime; private credentials loaded at execution only"
+    },
+    {
+      "m8Script": "prepare-mobile.mts",
+      "m8Sha256": "98c93ceb7f3fa0b64fa57741c6f0379ca8b0f49a536b4c47141b12a7e99b119b",
+      "source": "New M8 integration verification",
+      "adaptation": "Isolated local M8 runtime; private credentials loaded at execution only"
+    },
+    {
+      "m8Script": "prepare.mts",
+      "m8Sha256": "6f8bb30aa61d3c9f630aee2346ca96ae43332f668701f08e7727e86b564d2a62",
+      "source": "New M8 integration verification",
+      "adaptation": "Isolated local M8 runtime; private credentials loaded at execution only"
+    },
+    {
+      "m8Script": "rollback-sql.mts",
+      "m8Sha256": "f93d4d2917021fee4cc6c53875c76d776b2c5a24152d8a2d4071702d79014110",
+      "source": "New M8 integration verification",
+      "adaptation": "Isolated local M8 runtime; private credentials loaded at execution only"
+    },
+    {
+      "m8Script": "rollback.mjs",
+      "m8Sha256": "55d2babb021fe41f08269280223a15f01bf9b30cb4a7d78c4f5ac992021dcb72",
+      "source": "New M8 integration verification",
+      "adaptation": "Isolated local M8 runtime; private credentials loaded at execution only"
+    },
+    {
+      "m8Script": "rotate-safari.mts",
+      "m8Sha256": "4533221449f9b893f732e98bb0b0ea190ea44907504789a66b64140e4ac2cd6e",
+      "source": "New M8 integration verification",
+      "adaptation": "Isolated local M8 runtime; private credentials loaded at execution only"
+    },
+    {
+      "m8Script": "run-check.mjs",
+      "m8Sha256": "45147b00d46447ca07c1d7f200f08bd29a6d3da158499445f8dd6655c7e2fce9",
+      "source": "New M8 integration verification",
+      "adaptation": "Isolated local M8 runtime; private credentials loaded at execution only"
+    },
+    {
+      "m8Script": "run-units.mts",
+      "m8Sha256": "1618b942fcf0714db6a8eff5526e7e82bdd32996fe41b75ce265f3f1144043e1",
+      "source": "New M8 integration verification",
+      "adaptation": "Isolated local M8 runtime; private credentials loaded at execution only"
+    }
+  ]
+}

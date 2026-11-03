@@ -1,0 +1,19 @@
+{
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+  "passed": true,
+  "checks": [
+    {
+      "case": "extra-file",
+      "passed": true
+    },
+    {
+      "case": "nested-symlink",
+      "passed": true
+    },
+    {
+      "case": "exact-reuse",
+      "passed": true
+    }
+  ],
+  "method": "Independent immutable candidate copy; only synthetic extra entries added/removed; original candidate bytes never edited."
+}

@@ -1,0 +1,43 @@
+{
+  "format": 1,
+  "scope": "Local M8 source integration and compatible renderer rollback; production release not authorized",
+  "integrationBase": "c5b0358ed8450b4b7d0ab130f0e20bde3c701232",
+  "verifiedServerBase": "b378244d9fc40a357dc8fafd931400e42b7e1752",
+  "acceptedM7Digest": "1c445fda5d67158790469b6861b024646512a48909c21ffca20b930786aca4d4",
+  "preM8SnapshotManifestSha256": "3b2d205229862432383e136aff3886546dd1493d51cdaf7ec1fdb4527fd90358",
+  "patches": {
+    "m4": "09206e86a3452e74c08cc8e28aaa8f7d6b6a31b2f3e82169e5ca02af642f6927",
+    "m5": "182735310f7b3016fa3e5b8164c251eb497d9d0813407ea45ed530e969ac6865",
+    "m6": "0f9c02f85ad311b29f6ff91d2670153af4d7007482377b571d4b1846f75d4aa5"
+  },
+  "tools": {
+    "vite": "8.3.4",
+    "typescript": "7.0.2",
+    "pixi": "8.22.0",
+    "react": "19.3.1",
+    "playwrightVerification": "1.64.1"
+  },
+  "activePublication": "2d881f9576cb7f120e0a6c8de00c5cdc8c38c2d14c13b0a5ef5416dc37cac116",
+  "course": {
+    "lessons": 18,
+    "videos": 80,
+    "words": 2314,
+    "exercises": 108
+  },
+  "interfaces": {
+    "main": "index.html",
+    "compatibleRollback": "legacy.html",
+    "selection": "CLIENT_ENTRY=index.html|legacy.html; same origin, cookie namespace and browser profile",
+    "databaseRestore": false,
+    "kanaStorage": "japanese-kana-v1"
+  },
+  "integrationChanges": [
+    "Ordinary root sources from verified chain; runtime assets moved out of lab",
+    "One shared transport/API contract; M7 art and behavior preserved",
+    "Root static entry and security headers; optional test cookie namespace",
+    "Low landscape long listening gloss: bounded translation row with shared question/answer center; complete text retained",
+    "Release sources and filtered public files; build bound to source before packaging",
+    "Dynamic companion atlas lookup uses the relocated Vite glob keys; whole-cat v4 and repertoire bytes unchanged"
+  ],
+  "schema": "Historical 0004/0005 migrations transferred from verified server base; no M8 schema or FSRS algorithm change"
+}

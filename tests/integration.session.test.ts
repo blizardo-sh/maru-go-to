@@ -1,7 +1,8 @@
+import { disposableDatabase } from './helpers/disposable-database';
 import { afterAll, beforeAll, beforeEach, describe, expect, spyOn, test } from 'bun:test';
 import { createApp } from '../src/server/app';
 import { createLink, consumeLink } from '../src/server/auth';
-import { loadCourse } from '../src/server/course';
+import { legacyCourseFixture as loadCourse } from './helpers/legacy-course-fixture';
 import { connectDatabase } from '../src/server/db';
 import { defaultSettings } from '../src/server/material';
 import { reviewId } from '../src/server/reviews';
@@ -19,7 +20,7 @@ suite('lesson training and introduced-only repetition over authenticated HTTP',(
  const train=()=>queue('/api/training?lessonId='+lesson.id);
  const progress=async():Promise<Progress>=>(await request('/api/progress')).json();
  const answer=(item:ReviewItem):ReviewSubmission=>item.mode==='counter'?{attemptId:crypto.randomUUID(),reviewId:item.id,version:item.version,mode:'counter',rating:3,choice:item.counter.acceptedKeys[0],helped:false}:item.mode==='grammar'?{attemptId:crypto.randomUUID(),reviewId:item.id,version:item.version,mode:'grammar',tokenIds:item.exercise.acceptedOrders[0]!,revealed:false}:{attemptId:crypto.randomUUID(),reviewId:item.id,version:item.version,mode:item.mode,rating:3};
- beforeAll(()=>{const target=new URL(databaseUrl!);if(target.hostname!=='127.0.0.1'||target.pathname!=='/japanese_app_test')throw new Error('Use disposable localhost japanese_app_test.');database=connectDatabase(databaseUrl!);app=createApp({database,course,config:{DATABASE_URL:databaseUrl!,BETTER_AUTH_SECRET:'lesson-training-fixture-secret-with-more-than-32-characters',APP_URL:origin,PORT:3000,HOST:'127.0.0.1'}});});
+ beforeAll(()=>{const target=new URL(databaseUrl!);if(!disposableDatabase(target))throw new Error('Use disposable localhost japanese_app_test.');database=connectDatabase(databaseUrl!);app=createApp({database,course,config:{DATABASE_URL:databaseUrl!,BETTER_AUTH_SECRET:'lesson-training-fixture-secret-with-more-than-32-characters',APP_URL:origin,PORT:3000,HOST:'127.0.0.1'}});});
  beforeEach(async()=>{cookie='';fixtureIp=nextFixtureIp();const email=`lesson-training-${crypto.randomUUID()}@example.test`;const link=await createLink(database,'invite',email,null);expect(await consumeLink(database,'invite',link.token,password,'Lesson training fixture')).toBe(true);const signedIn=await request('/api/auth/sign-in/email',{email,password});expect(signedIn.status).toBe(200);userId=(await signedIn.json()).user.id;learners.push({id:userId,email});cookie=signedIn.headers.getSetCookie().map(value=>value.split(';')[0]).join('; ');});
  afterAll(async()=>{if(!database)return;for(const learner of learners){await database.sql`delete from access_links where email=${learner.email}`;await database.sql`delete from users where id=${learner.id}`;}await database.sql.close();});
  test('manual opening and all legacy filters cannot introduce material; GET is read-only',async()=>{

@@ -25,7 +25,8 @@
                     "surface": "わたしのいえはちいさいです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson07-word-c8e4bf0b4465.m4a"
+                "audioUrl": "/audio/learning/a3d8d37c520d1a348c27.m4a",
+                "audioText": "わたしのいえわちいさいです。"
               }
             },
             {
@@ -40,7 +41,8 @@
                     "surface": "へやはひろいです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson07-word-e66cbbcfa335.m4a"
+                "audioUrl": "/audio/learning/37c9c779c5241f9b6bb9.m4a",
+                "audioText": "へやわひろいです。"
               }
             },
             {
@@ -55,7 +57,8 @@
                     "surface": "わたしのいえはちいさいです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson07-word-d2dbb62d5b61.m4a"
+                "audioUrl": "/audio/learning/a3d8d37c520d1a348c27.m4a",
+                "audioText": "わたしのいえわちいさいです。"
               }
             },
             {
@@ -70,7 +73,8 @@
                     "surface": "このへやはひろいです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson07-word-037ab26bad24.m4a"
+                "audioUrl": "/audio/learning/bea2fc65ae889038aba5.m4a",
+                "audioText": "このへやわひろいです。"
               }
             },
             {
@@ -119,7 +123,8 @@
                   "surface": "。"
                 }
               ],
-              "audioUrl": "/audio/learning/lesson07-construction-adjective-predicate.m4a"
+              "audioUrl": "/audio/learning/a3d8d37c520d1a348c27.m4a",
+              "audioText": "わたしのいえわちいさいです。"
             },
             "breakdown": [
               {
@@ -144,7 +149,7 @@
               },
               {
                 "text": "です",
-                "explanationRu": "Вежливое завершение именной фразы."
+                "explanationRu": "Делает высказывание вежливым."
               }
             ]
           }
@@ -194,7 +199,8 @@
                     "surface": "わたしはかぞくとすんでいます。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson07-word-2aa5827b4748.m4a"
+                "audioUrl": "/audio/learning/3b8cc89262d1dd589e24.m4a",
+                "audioText": "わたしわかぞくとすんでいます。"
               }
             }
           ],
@@ -225,7 +231,8 @@
                   "surface": "。"
                 }
               ],
-              "audioUrl": "/audio/learning/lesson07-construction-companion-residence.m4a"
+              "audioUrl": "/audio/learning/3b8cc89262d1dd589e24.m4a",
+              "audioText": "わたしわかぞくとすんでいます。"
             },
             "breakdown": [
               {
@@ -1848,6 +1855,31 @@
           }
         ],
         "audioUrl": "/audio/10390828cb533da6b66a.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.supplement-alone",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.07"
+        ],
+        "surface": "ひとりで",
+        "kana": "ひとりで",
+        "meaningRu": "один / самостоятельно",
+        "segments": [
+          {
+            "surface": "ひとりで"
+          }
+        ],
+        "kind": "word",
+        "pos": "expression",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_4_7_5.php",
+            "entry": "ひとりで",
+            "label": "Marugoto · ひとりで: alone, не ひとりと"
+          }
+        ]
       }
     ],
     "forms": [
@@ -2151,6 +2183,29 @@
             "row": 1,
             "entry": "あそびに きてください",
             "label": "Указатель фраз · урок 7 · русский перевод подготовлен для приложения"
+          }
+        ]
+      },
+      {
+        "id": "marugoto.starter-a1.form.supplement-alone",
+        "wordId": "marugoto.starter-a1.word.supplement-alone",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.07"
+        ],
+        "surface": "ひとりで",
+        "kana": "ひとりで",
+        "segments": [
+          {
+            "surface": "ひとりで"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://a1.marugotoweb.jp/en/note_4_7_5.php",
+            "entry": "ひとりで",
+            "label": "Marugoto · ひとりで: alone, не ひとりと"
           }
         ]
       }

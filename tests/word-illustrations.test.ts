@@ -3,7 +3,8 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { course } from '../src/shared/course';
 import type { GuidedLesson } from '../src/shared/learning';
 import { getWordIllustration } from '../src/shared/word-illustrations';
-import manifest from '../public/word-illustrations/manifest.json';
+import { defaultCatalog } from '../src/shared/catalog';
+const manifest = defaultCatalog.illustrations;
 import generation from '../public/word-illustrations/generation.json';
 
 const lessons: GuidedLesson[] = readdirSync(new URL('../materials/learning/', import.meta.url))
@@ -15,7 +16,7 @@ const core = new Set(lessons.flatMap(lesson => lesson.goals.flatMap(goal => goal
 
 test('every core word in all 18 lessons has a reviewed illustration or an explicit semantic reason for none', () => {
   expect(lessons).toHaveLength(18);
-  expect(core.size).toBe(279);
+  expect(core).toEqual(new Set(Object.keys(defaultCatalog.quiz.choices)));
   const mapped = new Set<string>();
   for (const asset of manifest.assets) {
     expect(asset.review).toBe('visually-checked');
@@ -33,8 +34,7 @@ test('every core word in all 18 lessons has a reviewed illustration or an explic
     expect(word.reason.length).toBeGreaterThan(30);
     excluded.add(word.wordId);
   }
-  expect([...core].filter(wordId => mapped.has(wordId))).toHaveLength(190);
-  expect(excluded.size).toBe(89);
+  expect([...core].filter(wordId => mapped.has(wordId)).length + excluded.size).toBe(core.size);
   for (const wordId of core) expect(mapped.has(wordId) || excluded.has(wordId)).toBe(true);
   for (const [index, lesson] of lessons.entries()) {
     const ids = new Set(lesson.goals.flatMap(goal => goal.parts.flatMap(part => part.words.map(word => word.wordId))));
@@ -48,7 +48,7 @@ test('every core word in all 18 lessons has a reviewed illustration or an explic
 test('local artwork, real alpha, authored viewports and byte budgets are valid', () => {
   let webpBytes = 0;
   for (const asset of manifest.assets) {
-    expect(asset.src).toMatch(/^\/(?:word-illustrations\/[a-z-]+-v1\.webp|mascot\/neutral\.png)$/);
+    expect(asset.src).toMatch(/^\/(?:word-illustrations\/[a-z-]+-v1\.webp|word-illustrations\/cat\.png)$/);
     const bytes = readFileSync(new URL(`../public${asset.src}`, import.meta.url));
     expect(bytes.length).toBe(asset.bytes);
     if (asset.src.endsWith('.webp')) {

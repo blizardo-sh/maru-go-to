@@ -1,3 +1,4 @@
+import { disposableDatabase } from './helpers/disposable-database';
 import { afterAll, beforeAll, beforeEach, describe, expect, test } from 'bun:test';
 import { createApp } from '../src/server/app';
 import { createLink, tokenHash } from '../src/server/auth';
@@ -16,7 +17,7 @@ suite('invitation registration and login identity',()=>{
  const request=(path:string,body:unknown,cookie='')=>app.request(origin+path,{method:'POST',headers:{origin,'x-forwarded-for':fixtureIp,'content-type':'application/json',...(cookie?{cookie}:{})},body:JSON.stringify(body)});
  const cookieFrom=(response:Response)=>response.headers.getSetCookie().map(part=>part.split(';')[0]).join('; ');
  beforeAll(()=>{
-  const target=new URL(url!);if(!['localhost','127.0.0.1'].includes(target.hostname)||target.pathname!=='/japanese_app_test')throw new Error('Use only disposable localhost japanese_app_test.');
+  const target=new URL(url!);if(!disposableDatabase(target))throw new Error('Use only disposable localhost japanese_app_test.');
   database=connectDatabase(url!);app=createApp({database,course:loadCourse(),config:{DATABASE_URL:url!,BETTER_AUTH_SECRET:'isolated-regression-secret-at-least-32-characters',APP_URL:origin,HOST:'127.0.0.1',PORT:3000}});
  });
  afterAll(async()=>{if(!database)return;for(const token of fixtureTokens)await database.sql`delete from access_links where token_hash=${tokenHash(token)}`;for(const email of fixtureEmails){await database.sql`delete from access_links where email=${email}`;await database.sql`delete from users where email=${email}`;}await database.sql.close();});

@@ -1,11 +1,18 @@
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
+import { isDeepStrictEqual } from 'node:util';
+import { defaultCatalog } from '../shared/catalog';
 import type { Course } from '../shared/types';
 import { validateLearning, type GuidedLesson } from '../shared/learning';
 import { validateCourse } from '../shared/course';
+import type { ThematicMaterial } from '../shared/training';
 export function withLearningMaterial(course:Course,lessons:GuidedLesson[]):Course {
  const result=structuredClone(course);
+ const authored = new Map<string,unknown>();
  for(const lesson of lessons)for(const kind of ['words','forms','skills','exercises'] as const){
   for(const entry of lesson.authored?.[kind]??[]){
+   const key=kind+':'+entry.id;
+   if(authored.has(key)&&!isDeepStrictEqual(authored.get(key),entry))throw new Error(`Conflicting authored records: ${entry.id}`);
+   authored.set(key,entry);
    if(kind==='exercises'?(entry as Course['exercises'][number]).lessonId!==lesson.lessonId:!(entry as Course['words'][number]).lessonIds.includes(lesson.lessonId))throw new Error(`Invalid learning authored scope: ${entry.id}`);
    const entries=result[kind] as {id:string;lessonIds?:string[]}[];const index=entries.findIndex(item=>item.id===entry.id);
    if(index>=0&&entries[index]!.lessonIds?.some(id=>!(entry as Course['words'][number]).lessonIds.includes(id)))throw new Error(`Learning material removes existing lesson membership: ${entry.id}`);
@@ -23,6 +30,17 @@ export function loadCourse():Course {
  if(existsSync(learningDirectory)){
   const lessons=readdirSync(learningDirectory).filter(name=>/^lesson-\d{2}\.json$/.test(name)).sort().map(name=>JSON.parse(readFileSync(new URL(name,learningDirectory),'utf8')) as GuidedLesson);
   course=withLearningMaterial(course,lessons);
+ }
+ course.catalog=structuredClone(defaultCatalog);
+ const thematicPath=new URL('../../materials/thematic-training.json',import.meta.url);
+ if(existsSync(thematicPath)){
+  const thematic=JSON.parse(readFileSync(thematicPath,'utf8')) as ThematicMaterial;
+  for(const word of thematic.words){if(course.words.some(item=>item.id===word.id))throw new Error(`Duplicate thematic word: ${word.id}`);course.words.push(word);}
+  course.forms.push(...thematic.forms);
+  const {words:thematicWords,forms:thematicForms,...metadata}=thematic;
+  course.catalog.thematic=metadata;course.catalog.learningPolicy='master-before-repeat';
+  for(const route of course.learning??[]) { route.version += '-staged'; for(const goal of route.goals)for(const part of goal.parts)if(part.counterPractice)part.counterPractice.formats=['reading-choice','listening-image','recall']; }
+  validateCourse(course);
  }
  const audioPath=new URL('../../public/audio/manifest.json',import.meta.url);
  if(existsSync(audioPath)){

@@ -1,7 +1,8 @@
+import { disposableDatabase } from './helpers/disposable-database';
 import { afterAll, beforeAll, beforeEach, describe, expect, test } from 'bun:test';
 import { createApp } from '../src/server/app';
 import { createLink, consumeLink } from '../src/server/auth';
-import { loadCourse } from '../src/server/course';
+import { legacyCourseFixture as loadCourse } from './helpers/legacy-course-fixture';
 import { connectDatabase } from '../src/server/db';
 import { defaultSettings } from '../src/server/material';
 import { nextFixtureIp } from './helpers/fixture-ip';
@@ -50,7 +51,7 @@ suite('application HTTP integration with disposable PostgreSQL', () => {
 
   beforeAll(async () => {
     const target = new URL(databaseUrl!);
-    if (!['127.0.0.1', 'localhost'].includes(target.hostname) || target.pathname !== '/japanese_app_test') {
+    if (!disposableDatabase(target)) {
       throw new Error('Integration tests require disposable localhost /japanese_app_test.');
     }
     database = connectDatabase(databaseUrl!);

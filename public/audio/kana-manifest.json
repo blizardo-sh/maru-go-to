@@ -1,0 +1,919 @@
+{
+  "voice": "Kyoko",
+  "rate": 150,
+  "pronunciationReview": "not-human-reviewed",
+  "entries": {
+    "あ": {
+      "soundKey": "a",
+      "audioUrl": "/audio/319be7f321b3ea106917.m4a"
+    },
+    "ア": {
+      "soundKey": "a",
+      "audioUrl": "/audio/319be7f321b3ea106917.m4a"
+    },
+    "い": {
+      "soundKey": "i",
+      "audioUrl": "/audio/0af3bb0bf0f67860a492.m4a"
+    },
+    "イ": {
+      "soundKey": "i",
+      "audioUrl": "/audio/0af3bb0bf0f67860a492.m4a"
+    },
+    "う": {
+      "soundKey": "u",
+      "audioUrl": "/audio/d02693d53135268b3f8d.m4a"
+    },
+    "ウ": {
+      "soundKey": "u",
+      "audioUrl": "/audio/d02693d53135268b3f8d.m4a"
+    },
+    "え": {
+      "soundKey": "e",
+      "audioUrl": "/audio/758ff6630ab240d74100.m4a"
+    },
+    "エ": {
+      "soundKey": "e",
+      "audioUrl": "/audio/758ff6630ab240d74100.m4a"
+    },
+    "お": {
+      "soundKey": "o",
+      "audioUrl": "/audio/5e24c68b014c81fd8ab7.m4a"
+    },
+    "オ": {
+      "soundKey": "o",
+      "audioUrl": "/audio/5e24c68b014c81fd8ab7.m4a"
+    },
+    "か": {
+      "soundKey": "ka",
+      "audioUrl": "/audio/fb86c5a5151ab7f4ac17.m4a"
+    },
+    "カ": {
+      "soundKey": "ka",
+      "audioUrl": "/audio/fb86c5a5151ab7f4ac17.m4a"
+    },
+    "き": {
+      "soundKey": "ki",
+      "audioUrl": "/audio/d11849a3bc8032cf1ff0.m4a"
+    },
+    "キ": {
+      "soundKey": "ki",
+      "audioUrl": "/audio/d11849a3bc8032cf1ff0.m4a"
+    },
+    "く": {
+      "soundKey": "ku",
+      "audioUrl": "/audio/fa1bbfc8dbbcee7ce054.m4a"
+    },
+    "ク": {
+      "soundKey": "ku",
+      "audioUrl": "/audio/fa1bbfc8dbbcee7ce054.m4a"
+    },
+    "け": {
+      "soundKey": "ke",
+      "audioUrl": "/audio/93a7ad03a85403dc0960.m4a"
+    },
+    "ケ": {
+      "soundKey": "ke",
+      "audioUrl": "/audio/93a7ad03a85403dc0960.m4a"
+    },
+    "こ": {
+      "soundKey": "ko",
+      "audioUrl": "/audio/9de6b41ed2ab99d83682.m4a"
+    },
+    "コ": {
+      "soundKey": "ko",
+      "audioUrl": "/audio/9de6b41ed2ab99d83682.m4a"
+    },
+    "さ": {
+      "soundKey": "sa",
+      "audioUrl": "/audio/797250956f0dcabb585c.m4a"
+    },
+    "サ": {
+      "soundKey": "sa",
+      "audioUrl": "/audio/797250956f0dcabb585c.m4a"
+    },
+    "し": {
+      "soundKey": "shi",
+      "audioUrl": "/audio/406616305daddc224acf.m4a"
+    },
+    "シ": {
+      "soundKey": "shi",
+      "audioUrl": "/audio/406616305daddc224acf.m4a"
+    },
+    "す": {
+      "soundKey": "su",
+      "audioUrl": "/audio/33e97293b4559f2f83b4.m4a"
+    },
+    "ス": {
+      "soundKey": "su",
+      "audioUrl": "/audio/33e97293b4559f2f83b4.m4a"
+    },
+    "せ": {
+      "soundKey": "se",
+      "audioUrl": "/audio/076c1a97ab2e8794f10f.m4a"
+    },
+    "セ": {
+      "soundKey": "se",
+      "audioUrl": "/audio/076c1a97ab2e8794f10f.m4a"
+    },
+    "そ": {
+      "soundKey": "so",
+      "audioUrl": "/audio/71771099d2c6ea768c86.m4a"
+    },
+    "ソ": {
+      "soundKey": "so",
+      "audioUrl": "/audio/71771099d2c6ea768c86.m4a"
+    },
+    "た": {
+      "soundKey": "ta",
+      "audioUrl": "/audio/bf9367df0a268cab78e2.m4a"
+    },
+    "タ": {
+      "soundKey": "ta",
+      "audioUrl": "/audio/bf9367df0a268cab78e2.m4a"
+    },
+    "ち": {
+      "soundKey": "chi",
+      "audioUrl": "/audio/50c5f5cfaa32501e69de.m4a"
+    },
+    "チ": {
+      "soundKey": "chi",
+      "audioUrl": "/audio/50c5f5cfaa32501e69de.m4a"
+    },
+    "つ": {
+      "soundKey": "tsu",
+      "audioUrl": "/audio/dc145ab65bedda68fd0a.m4a"
+    },
+    "ツ": {
+      "soundKey": "tsu",
+      "audioUrl": "/audio/dc145ab65bedda68fd0a.m4a"
+    },
+    "て": {
+      "soundKey": "te",
+      "audioUrl": "/audio/eb97cf1ba16d02e4d115.m4a"
+    },
+    "テ": {
+      "soundKey": "te",
+      "audioUrl": "/audio/eb97cf1ba16d02e4d115.m4a"
+    },
+    "と": {
+      "soundKey": "to",
+      "audioUrl": "/audio/d01be83751ed3799fac8.m4a"
+    },
+    "ト": {
+      "soundKey": "to",
+      "audioUrl": "/audio/d01be83751ed3799fac8.m4a"
+    },
+    "な": {
+      "soundKey": "na",
+      "audioUrl": "/audio/078d698233b0c0cb6198.m4a"
+    },
+    "ナ": {
+      "soundKey": "na",
+      "audioUrl": "/audio/078d698233b0c0cb6198.m4a"
+    },
+    "に": {
+      "soundKey": "ni",
+      "audioUrl": "/audio/37df2fd1e99c2b76dcf1.m4a"
+    },
+    "ニ": {
+      "soundKey": "ni",
+      "audioUrl": "/audio/37df2fd1e99c2b76dcf1.m4a"
+    },
+    "ぬ": {
+      "soundKey": "nu",
+      "audioUrl": "/audio/f4bb32ac043be3e2055f.m4a"
+    },
+    "ヌ": {
+      "soundKey": "nu",
+      "audioUrl": "/audio/f4bb32ac043be3e2055f.m4a"
+    },
+    "ね": {
+      "soundKey": "ne",
+      "audioUrl": "/audio/7bb7629621a4e8fd30b3.m4a"
+    },
+    "ネ": {
+      "soundKey": "ne",
+      "audioUrl": "/audio/7bb7629621a4e8fd30b3.m4a"
+    },
+    "の": {
+      "soundKey": "no",
+      "audioUrl": "/audio/cffb7479a8067402dc4b.m4a"
+    },
+    "ノ": {
+      "soundKey": "no",
+      "audioUrl": "/audio/cffb7479a8067402dc4b.m4a"
+    },
+    "は": {
+      "soundKey": "ha",
+      "audioUrl": "/audio/d1c6f7298ced633ead2b.m4a"
+    },
+    "ハ": {
+      "soundKey": "ha",
+      "audioUrl": "/audio/d1c6f7298ced633ead2b.m4a"
+    },
+    "ひ": {
+      "soundKey": "hi",
+      "audioUrl": "/audio/989a4e47a7dbea7785a7.m4a"
+    },
+    "ヒ": {
+      "soundKey": "hi",
+      "audioUrl": "/audio/989a4e47a7dbea7785a7.m4a"
+    },
+    "ふ": {
+      "soundKey": "fu",
+      "audioUrl": "/audio/d4d1ca4840ee65817997.m4a"
+    },
+    "フ": {
+      "soundKey": "fu",
+      "audioUrl": "/audio/d4d1ca4840ee65817997.m4a"
+    },
+    "へ": {
+      "soundKey": "he",
+      "audioUrl": "/audio/14c486b7d66544b9381f.m4a"
+    },
+    "ヘ": {
+      "soundKey": "he",
+      "audioUrl": "/audio/14c486b7d66544b9381f.m4a"
+    },
+    "ほ": {
+      "soundKey": "ho",
+      "audioUrl": "/audio/2b1adcd936fb96aa5c26.m4a"
+    },
+    "ホ": {
+      "soundKey": "ho",
+      "audioUrl": "/audio/2b1adcd936fb96aa5c26.m4a"
+    },
+    "ま": {
+      "soundKey": "ma",
+      "audioUrl": "/audio/8e81501f6320ce68f821.m4a"
+    },
+    "マ": {
+      "soundKey": "ma",
+      "audioUrl": "/audio/8e81501f6320ce68f821.m4a"
+    },
+    "み": {
+      "soundKey": "mi",
+      "audioUrl": "/audio/b1ddb025c6c1e0cf4cb0.m4a"
+    },
+    "ミ": {
+      "soundKey": "mi",
+      "audioUrl": "/audio/b1ddb025c6c1e0cf4cb0.m4a"
+    },
+    "む": {
+      "soundKey": "mu",
+      "audioUrl": "/audio/58b6f5dec11364c91252.m4a"
+    },
+    "ム": {
+      "soundKey": "mu",
+      "audioUrl": "/audio/58b6f5dec11364c91252.m4a"
+    },
+    "め": {
+      "soundKey": "me",
+      "audioUrl": "/audio/587f2cba9aa0066d3d78.m4a"
+    },
+    "メ": {
+      "soundKey": "me",
+      "audioUrl": "/audio/587f2cba9aa0066d3d78.m4a"
+    },
+    "も": {
+      "soundKey": "mo",
+      "audioUrl": "/audio/5cc2c08de07d1cc795a1.m4a"
+    },
+    "モ": {
+      "soundKey": "mo",
+      "audioUrl": "/audio/5cc2c08de07d1cc795a1.m4a"
+    },
+    "や": {
+      "soundKey": "ya",
+      "audioUrl": "/audio/572b3a363db89993d4db.m4a"
+    },
+    "ヤ": {
+      "soundKey": "ya",
+      "audioUrl": "/audio/572b3a363db89993d4db.m4a"
+    },
+    "ゆ": {
+      "soundKey": "yu",
+      "audioUrl": "/audio/9830f72cde77ba2274fe.m4a"
+    },
+    "ユ": {
+      "soundKey": "yu",
+      "audioUrl": "/audio/9830f72cde77ba2274fe.m4a"
+    },
+    "よ": {
+      "soundKey": "yo",
+      "audioUrl": "/audio/4e0a7b0bca8fceceaef1.m4a"
+    },
+    "ヨ": {
+      "soundKey": "yo",
+      "audioUrl": "/audio/4e0a7b0bca8fceceaef1.m4a"
+    },
+    "ら": {
+      "soundKey": "ra",
+      "audioUrl": "/audio/91a4c27ed303e3cd6d49.m4a"
+    },
+    "ラ": {
+      "soundKey": "ra",
+      "audioUrl": "/audio/91a4c27ed303e3cd6d49.m4a"
+    },
+    "り": {
+      "soundKey": "ri",
+      "audioUrl": "/audio/d56106bff9c2ecf7de88.m4a"
+    },
+    "リ": {
+      "soundKey": "ri",
+      "audioUrl": "/audio/d56106bff9c2ecf7de88.m4a"
+    },
+    "る": {
+      "soundKey": "ru",
+      "audioUrl": "/audio/f1b85a70990b0c67e165.m4a"
+    },
+    "ル": {
+      "soundKey": "ru",
+      "audioUrl": "/audio/f1b85a70990b0c67e165.m4a"
+    },
+    "れ": {
+      "soundKey": "re",
+      "audioUrl": "/audio/a8d93a9629cb9ec126c6.m4a"
+    },
+    "レ": {
+      "soundKey": "re",
+      "audioUrl": "/audio/a8d93a9629cb9ec126c6.m4a"
+    },
+    "ろ": {
+      "soundKey": "ro",
+      "audioUrl": "/audio/a897e0de2a49a4a86c48.m4a"
+    },
+    "ロ": {
+      "soundKey": "ro",
+      "audioUrl": "/audio/a897e0de2a49a4a86c48.m4a"
+    },
+    "わ": {
+      "soundKey": "wa",
+      "audioUrl": "/audio/05a500e6c3c55f8e321c.m4a"
+    },
+    "ワ": {
+      "soundKey": "wa",
+      "audioUrl": "/audio/05a500e6c3c55f8e321c.m4a"
+    },
+    "を": {
+      "soundKey": "o",
+      "audioUrl": "/audio/5e24c68b014c81fd8ab7.m4a"
+    },
+    "ヲ": {
+      "soundKey": "o",
+      "audioUrl": "/audio/5e24c68b014c81fd8ab7.m4a"
+    },
+    "ん": {
+      "soundKey": "n",
+      "audioUrl": "/audio/fcb821fb472fd6c4e33a.m4a"
+    },
+    "ン": {
+      "soundKey": "n",
+      "audioUrl": "/audio/fcb821fb472fd6c4e33a.m4a"
+    },
+    "が": {
+      "soundKey": "ga",
+      "audioUrl": "/audio/717abcb4b4de603bbb30.m4a"
+    },
+    "ガ": {
+      "soundKey": "ga",
+      "audioUrl": "/audio/717abcb4b4de603bbb30.m4a"
+    },
+    "ぎ": {
+      "soundKey": "gi",
+      "audioUrl": "/audio/7d98f1dd4200c39f0962.m4a"
+    },
+    "ギ": {
+      "soundKey": "gi",
+      "audioUrl": "/audio/7d98f1dd4200c39f0962.m4a"
+    },
+    "ぐ": {
+      "soundKey": "gu",
+      "audioUrl": "/audio/a4b9988a1e9ce43fc22f.m4a"
+    },
+    "グ": {
+      "soundKey": "gu",
+      "audioUrl": "/audio/a4b9988a1e9ce43fc22f.m4a"
+    },
+    "げ": {
+      "soundKey": "ge",
+      "audioUrl": "/audio/728a13730c5cbba5abbc.m4a"
+    },
+    "ゲ": {
+      "soundKey": "ge",
+      "audioUrl": "/audio/728a13730c5cbba5abbc.m4a"
+    },
+    "ご": {
+      "soundKey": "go",
+      "audioUrl": "/audio/29c8be43ec8396244c8f.m4a"
+    },
+    "ゴ": {
+      "soundKey": "go",
+      "audioUrl": "/audio/29c8be43ec8396244c8f.m4a"
+    },
+    "ざ": {
+      "soundKey": "za",
+      "audioUrl": "/audio/56a9fcf0268a0e6136a6.m4a"
+    },
+    "ザ": {
+      "soundKey": "za",
+      "audioUrl": "/audio/56a9fcf0268a0e6136a6.m4a"
+    },
+    "じ": {
+      "soundKey": "ji",
+      "audioUrl": "/audio/5e3d001aca0befa42632.m4a"
+    },
+    "ジ": {
+      "soundKey": "ji",
+      "audioUrl": "/audio/5e3d001aca0befa42632.m4a"
+    },
+    "ず": {
+      "soundKey": "zu",
+      "audioUrl": "/audio/6e9bddd0452f830d5d90.m4a"
+    },
+    "ズ": {
+      "soundKey": "zu",
+      "audioUrl": "/audio/6e9bddd0452f830d5d90.m4a"
+    },
+    "ぜ": {
+      "soundKey": "ze",
+      "audioUrl": "/audio/98b6989a136130c51fd6.m4a"
+    },
+    "ゼ": {
+      "soundKey": "ze",
+      "audioUrl": "/audio/98b6989a136130c51fd6.m4a"
+    },
+    "ぞ": {
+      "soundKey": "zo",
+      "audioUrl": "/audio/fc8e5b62b7f081594ed7.m4a"
+    },
+    "ゾ": {
+      "soundKey": "zo",
+      "audioUrl": "/audio/fc8e5b62b7f081594ed7.m4a"
+    },
+    "だ": {
+      "soundKey": "da",
+      "audioUrl": "/audio/094aa4917eb4b7197d23.m4a"
+    },
+    "ダ": {
+      "soundKey": "da",
+      "audioUrl": "/audio/094aa4917eb4b7197d23.m4a"
+    },
+    "ぢ": {
+      "soundKey": "ji",
+      "audioUrl": "/audio/5e3d001aca0befa42632.m4a"
+    },
+    "ヂ": {
+      "soundKey": "ji",
+      "audioUrl": "/audio/5e3d001aca0befa42632.m4a"
+    },
+    "づ": {
+      "soundKey": "zu",
+      "audioUrl": "/audio/6e9bddd0452f830d5d90.m4a"
+    },
+    "ヅ": {
+      "soundKey": "zu",
+      "audioUrl": "/audio/6e9bddd0452f830d5d90.m4a"
+    },
+    "で": {
+      "soundKey": "de",
+      "audioUrl": "/audio/4d0410b5405efb2b55d6.m4a"
+    },
+    "デ": {
+      "soundKey": "de",
+      "audioUrl": "/audio/4d0410b5405efb2b55d6.m4a"
+    },
+    "ど": {
+      "soundKey": "do",
+      "audioUrl": "/audio/a14ef10c33c5ddf62955.m4a"
+    },
+    "ド": {
+      "soundKey": "do",
+      "audioUrl": "/audio/a14ef10c33c5ddf62955.m4a"
+    },
+    "ば": {
+      "soundKey": "ba",
+      "audioUrl": "/audio/b01977c4085bb8e3ba56.m4a"
+    },
+    "バ": {
+      "soundKey": "ba",
+      "audioUrl": "/audio/b01977c4085bb8e3ba56.m4a"
+    },
+    "び": {
+      "soundKey": "bi",
+      "audioUrl": "/audio/dc7fd3f694c36f626d1a.m4a"
+    },
+    "ビ": {
+      "soundKey": "bi",
+      "audioUrl": "/audio/dc7fd3f694c36f626d1a.m4a"
+    },
+    "ぶ": {
+      "soundKey": "bu",
+      "audioUrl": "/audio/b924cd481c009540e0cd.m4a"
+    },
+    "ブ": {
+      "soundKey": "bu",
+      "audioUrl": "/audio/b924cd481c009540e0cd.m4a"
+    },
+    "べ": {
+      "soundKey": "be",
+      "audioUrl": "/audio/4c846d5e497bb7980d07.m4a"
+    },
+    "ベ": {
+      "soundKey": "be",
+      "audioUrl": "/audio/4c846d5e497bb7980d07.m4a"
+    },
+    "ぼ": {
+      "soundKey": "bo",
+      "audioUrl": "/audio/bc1433711c0629e92fd2.m4a"
+    },
+    "ボ": {
+      "soundKey": "bo",
+      "audioUrl": "/audio/bc1433711c0629e92fd2.m4a"
+    },
+    "ぱ": {
+      "soundKey": "pa",
+      "audioUrl": "/audio/fe819093c01926ad1ec9.m4a"
+    },
+    "パ": {
+      "soundKey": "pa",
+      "audioUrl": "/audio/fe819093c01926ad1ec9.m4a"
+    },
+    "ぴ": {
+      "soundKey": "pi",
+      "audioUrl": "/audio/c65cc71c9e5c03c2e715.m4a"
+    },
+    "ピ": {
+      "soundKey": "pi",
+      "audioUrl": "/audio/c65cc71c9e5c03c2e715.m4a"
+    },
+    "ぷ": {
+      "soundKey": "pu",
+      "audioUrl": "/audio/532602d00bb212251156.m4a"
+    },
+    "プ": {
+      "soundKey": "pu",
+      "audioUrl": "/audio/532602d00bb212251156.m4a"
+    },
+    "ぺ": {
+      "soundKey": "pe",
+      "audioUrl": "/audio/eb42df2dcf018f2514c0.m4a"
+    },
+    "ペ": {
+      "soundKey": "pe",
+      "audioUrl": "/audio/eb42df2dcf018f2514c0.m4a"
+    },
+    "ぽ": {
+      "soundKey": "po",
+      "audioUrl": "/audio/3dfc942a9dd9179513da.m4a"
+    },
+    "ポ": {
+      "soundKey": "po",
+      "audioUrl": "/audio/3dfc942a9dd9179513da.m4a"
+    },
+    "きゃ": {
+      "soundKey": "kya",
+      "audioUrl": "/audio/c2aaddc686c681fe7d84.m4a"
+    },
+    "キャ": {
+      "soundKey": "kya",
+      "audioUrl": "/audio/c2aaddc686c681fe7d84.m4a"
+    },
+    "きゅ": {
+      "soundKey": "kyu",
+      "audioUrl": "/audio/cb7eac6c2f6ceea08a53.m4a"
+    },
+    "キュ": {
+      "soundKey": "kyu",
+      "audioUrl": "/audio/cb7eac6c2f6ceea08a53.m4a"
+    },
+    "きょ": {
+      "soundKey": "kyo",
+      "audioUrl": "/audio/e9da7309843706242b8a.m4a"
+    },
+    "キョ": {
+      "soundKey": "kyo",
+      "audioUrl": "/audio/e9da7309843706242b8a.m4a"
+    },
+    "しゃ": {
+      "soundKey": "sha",
+      "audioUrl": "/audio/c5cc8c7387fb7f9fa7c4.m4a"
+    },
+    "シャ": {
+      "soundKey": "sha",
+      "audioUrl": "/audio/c5cc8c7387fb7f9fa7c4.m4a"
+    },
+    "しゅ": {
+      "soundKey": "shu",
+      "audioUrl": "/audio/b4d1fa851670689bedec.m4a"
+    },
+    "シュ": {
+      "soundKey": "shu",
+      "audioUrl": "/audio/b4d1fa851670689bedec.m4a"
+    },
+    "しょ": {
+      "soundKey": "sho",
+      "audioUrl": "/audio/c0c113b87c37ce1c6c5b.m4a"
+    },
+    "ショ": {
+      "soundKey": "sho",
+      "audioUrl": "/audio/c0c113b87c37ce1c6c5b.m4a"
+    },
+    "ちゃ": {
+      "soundKey": "cha",
+      "audioUrl": "/audio/3044522009c2a2578be5.m4a"
+    },
+    "チャ": {
+      "soundKey": "cha",
+      "audioUrl": "/audio/3044522009c2a2578be5.m4a"
+    },
+    "ちゅ": {
+      "soundKey": "chu",
+      "audioUrl": "/audio/eb126e75b69ea9488b96.m4a"
+    },
+    "チュ": {
+      "soundKey": "chu",
+      "audioUrl": "/audio/eb126e75b69ea9488b96.m4a"
+    },
+    "ちょ": {
+      "soundKey": "cho",
+      "audioUrl": "/audio/1976a9640ac9d81baf40.m4a"
+    },
+    "チョ": {
+      "soundKey": "cho",
+      "audioUrl": "/audio/1976a9640ac9d81baf40.m4a"
+    },
+    "にゃ": {
+      "soundKey": "nya",
+      "audioUrl": "/audio/658d07bd9d343b88f1d9.m4a"
+    },
+    "ニャ": {
+      "soundKey": "nya",
+      "audioUrl": "/audio/658d07bd9d343b88f1d9.m4a"
+    },
+    "にゅ": {
+      "soundKey": "nyu",
+      "audioUrl": "/audio/3618068c8681dee23712.m4a"
+    },
+    "ニュ": {
+      "soundKey": "nyu",
+      "audioUrl": "/audio/3618068c8681dee23712.m4a"
+    },
+    "にょ": {
+      "soundKey": "nyo",
+      "audioUrl": "/audio/998495a2fcebf70583e2.m4a"
+    },
+    "ニョ": {
+      "soundKey": "nyo",
+      "audioUrl": "/audio/998495a2fcebf70583e2.m4a"
+    },
+    "ひゃ": {
+      "soundKey": "hya",
+      "audioUrl": "/audio/870c635bbc83af797b05.m4a"
+    },
+    "ヒャ": {
+      "soundKey": "hya",
+      "audioUrl": "/audio/870c635bbc83af797b05.m4a"
+    },
+    "ひゅ": {
+      "soundKey": "hyu",
+      "audioUrl": "/audio/076153b03f2f22c32245.m4a"
+    },
+    "ヒュ": {
+      "soundKey": "hyu",
+      "audioUrl": "/audio/076153b03f2f22c32245.m4a"
+    },
+    "ひょ": {
+      "soundKey": "hyo",
+      "audioUrl": "/audio/85d2f2bfaa796069b0ba.m4a"
+    },
+    "ヒョ": {
+      "soundKey": "hyo",
+      "audioUrl": "/audio/85d2f2bfaa796069b0ba.m4a"
+    },
+    "みゃ": {
+      "soundKey": "mya",
+      "audioUrl": "/audio/d021ab44f32cc71c06a9.m4a"
+    },
+    "ミャ": {
+      "soundKey": "mya",
+      "audioUrl": "/audio/d021ab44f32cc71c06a9.m4a"
+    },
+    "みゅ": {
+      "soundKey": "myu",
+      "audioUrl": "/audio/c2ddb21d3f7994d9e606.m4a"
+    },
+    "ミュ": {
+      "soundKey": "myu",
+      "audioUrl": "/audio/c2ddb21d3f7994d9e606.m4a"
+    },
+    "みょ": {
+      "soundKey": "myo",
+      "audioUrl": "/audio/9d430597f5ba8c87f087.m4a"
+    },
+    "ミョ": {
+      "soundKey": "myo",
+      "audioUrl": "/audio/9d430597f5ba8c87f087.m4a"
+    },
+    "りゃ": {
+      "soundKey": "rya",
+      "audioUrl": "/audio/462b42b440131f61fd68.m4a"
+    },
+    "リャ": {
+      "soundKey": "rya",
+      "audioUrl": "/audio/462b42b440131f61fd68.m4a"
+    },
+    "りゅ": {
+      "soundKey": "ryu",
+      "audioUrl": "/audio/418f099d76a6ff6ea62d.m4a"
+    },
+    "リュ": {
+      "soundKey": "ryu",
+      "audioUrl": "/audio/418f099d76a6ff6ea62d.m4a"
+    },
+    "りょ": {
+      "soundKey": "ryo",
+      "audioUrl": "/audio/c53015547bd1904e22a3.m4a"
+    },
+    "リョ": {
+      "soundKey": "ryo",
+      "audioUrl": "/audio/c53015547bd1904e22a3.m4a"
+    },
+    "ぎゃ": {
+      "soundKey": "gya",
+      "audioUrl": "/audio/4f274f125db16e7facec.m4a"
+    },
+    "ギャ": {
+      "soundKey": "gya",
+      "audioUrl": "/audio/4f274f125db16e7facec.m4a"
+    },
+    "ぎゅ": {
+      "soundKey": "gyu",
+      "audioUrl": "/audio/2364419d51b83f3ae67e.m4a"
+    },
+    "ギュ": {
+      "soundKey": "gyu",
+      "audioUrl": "/audio/2364419d51b83f3ae67e.m4a"
+    },
+    "ぎょ": {
+      "soundKey": "gyo",
+      "audioUrl": "/audio/f3db8ecdbf18b458109e.m4a"
+    },
+    "ギョ": {
+      "soundKey": "gyo",
+      "audioUrl": "/audio/f3db8ecdbf18b458109e.m4a"
+    },
+    "じゃ": {
+      "soundKey": "ja",
+      "audioUrl": "/audio/244026416da1ce7f7ca9.m4a"
+    },
+    "ジャ": {
+      "soundKey": "ja",
+      "audioUrl": "/audio/244026416da1ce7f7ca9.m4a"
+    },
+    "じゅ": {
+      "soundKey": "ju",
+      "audioUrl": "/audio/460379bea28a0001078a.m4a"
+    },
+    "ジュ": {
+      "soundKey": "ju",
+      "audioUrl": "/audio/460379bea28a0001078a.m4a"
+    },
+    "じょ": {
+      "soundKey": "jo",
+      "audioUrl": "/audio/3f4e5b501a8e05198e5e.m4a"
+    },
+    "ジョ": {
+      "soundKey": "jo",
+      "audioUrl": "/audio/3f4e5b501a8e05198e5e.m4a"
+    },
+    "びゃ": {
+      "soundKey": "bya",
+      "audioUrl": "/audio/04a82ac46654d09e7eb8.m4a"
+    },
+    "ビャ": {
+      "soundKey": "bya",
+      "audioUrl": "/audio/04a82ac46654d09e7eb8.m4a"
+    },
+    "びゅ": {
+      "soundKey": "byu",
+      "audioUrl": "/audio/a6c6cdf12161142944b2.m4a"
+    },
+    "ビュ": {
+      "soundKey": "byu",
+      "audioUrl": "/audio/a6c6cdf12161142944b2.m4a"
+    },
+    "びょ": {
+      "soundKey": "byo",
+      "audioUrl": "/audio/f601649a9a13eaf5b91e.m4a"
+    },
+    "ビョ": {
+      "soundKey": "byo",
+      "audioUrl": "/audio/f601649a9a13eaf5b91e.m4a"
+    },
+    "ぴゃ": {
+      "soundKey": "pya",
+      "audioUrl": "/audio/1ff11233c82f171671f7.m4a"
+    },
+    "ピャ": {
+      "soundKey": "pya",
+      "audioUrl": "/audio/1ff11233c82f171671f7.m4a"
+    },
+    "ぴゅ": {
+      "soundKey": "pyu",
+      "audioUrl": "/audio/ccfc71a3a16031509521.m4a"
+    },
+    "ピュ": {
+      "soundKey": "pyu",
+      "audioUrl": "/audio/ccfc71a3a16031509521.m4a"
+    },
+    "ぴょ": {
+      "soundKey": "pyo",
+      "audioUrl": "/audio/1ef455f1bc98bca16b87.m4a"
+    },
+    "ピョ": {
+      "soundKey": "pyo",
+      "audioUrl": "/audio/1ef455f1bc98bca16b87.m4a"
+    },
+    "ぁ": {
+      "soundKey": "a",
+      "audioUrl": "/audio/319be7f321b3ea106917.m4a"
+    },
+    "ァ": {
+      "soundKey": "a",
+      "audioUrl": "/audio/319be7f321b3ea106917.m4a"
+    },
+    "ぃ": {
+      "soundKey": "i",
+      "audioUrl": "/audio/0af3bb0bf0f67860a492.m4a"
+    },
+    "ィ": {
+      "soundKey": "i",
+      "audioUrl": "/audio/0af3bb0bf0f67860a492.m4a"
+    },
+    "ぅ": {
+      "soundKey": "u",
+      "audioUrl": "/audio/d02693d53135268b3f8d.m4a"
+    },
+    "ゥ": {
+      "soundKey": "u",
+      "audioUrl": "/audio/d02693d53135268b3f8d.m4a"
+    },
+    "ぇ": {
+      "soundKey": "e",
+      "audioUrl": "/audio/758ff6630ab240d74100.m4a"
+    },
+    "ェ": {
+      "soundKey": "e",
+      "audioUrl": "/audio/758ff6630ab240d74100.m4a"
+    },
+    "ぉ": {
+      "soundKey": "o",
+      "audioUrl": "/audio/5e24c68b014c81fd8ab7.m4a"
+    },
+    "ォ": {
+      "soundKey": "o",
+      "audioUrl": "/audio/5e24c68b014c81fd8ab7.m4a"
+    },
+    "ゃ": {
+      "soundKey": "ya",
+      "audioUrl": "/audio/572b3a363db89993d4db.m4a"
+    },
+    "ャ": {
+      "soundKey": "ya",
+      "audioUrl": "/audio/572b3a363db89993d4db.m4a"
+    },
+    "ゅ": {
+      "soundKey": "yu",
+      "audioUrl": "/audio/9830f72cde77ba2274fe.m4a"
+    },
+    "ュ": {
+      "soundKey": "yu",
+      "audioUrl": "/audio/9830f72cde77ba2274fe.m4a"
+    },
+    "ょ": {
+      "soundKey": "yo",
+      "audioUrl": "/audio/4e0a7b0bca8fceceaef1.m4a"
+    },
+    "ョ": {
+      "soundKey": "yo",
+      "audioUrl": "/audio/4e0a7b0bca8fceceaef1.m4a"
+    },
+    "っ": {
+      "soundKey": null,
+      "unavailableReason": "Малый っ/ッ обозначает удвоение следующего согласного и не имеет отдельного звука. Для него доступно узнавание знака."
+    },
+    "ッ": {
+      "soundKey": null,
+      "unavailableReason": "Малый っ/ッ обозначает удвоение следующего согласного и не имеет отдельного звука. Для него доступно узнавание знака."
+    },
+    "ゎ": {
+      "soundKey": "wa",
+      "audioUrl": "/audio/05a500e6c3c55f8e321c.m4a"
+    },
+    "ヮ": {
+      "soundKey": "wa",
+      "audioUrl": "/audio/05a500e6c3c55f8e321c.m4a"
+    }
+  }
+}

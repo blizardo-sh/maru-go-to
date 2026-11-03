@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checks": [
+    "two-tabs-replay-same-attempt-one-IDB-update",
+    "refused-storage-keeps-step-and-retry-once",
+    "stale-older-turn-rejected-no-stat-change-and-new-session-available",
+    "Chrome-process-restart-same-profile-statistics-restored"
+  ],
+  "physicalDevice": false,
+  "crossBrowserTransfer": false,
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

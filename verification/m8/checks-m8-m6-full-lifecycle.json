@@ -1,0 +1,528 @@
+{
+  "date": "2026-11-02",
+  "passed": true,
+  "results": [
+    {
+      "name": "chrome",
+      "version": "145.0.7632.160",
+      "passed": true,
+      "coldEncodedBytes": 8967688,
+      "coldCatFamilies": 0,
+      "timing": {
+        "samples": 240,
+        "frameIntervalP95Ms": 124.90000000000146,
+        "renderSubmitP95Ms": 0.40000009536743164
+      },
+      "cycles": [
+        {
+          "i": 0,
+          "scene": "garden",
+          "width": 1440,
+          "height": 900,
+          "heapUsedBytes": 14813892,
+          "gpuAlive": 31
+        },
+        {
+          "i": 1,
+          "scene": "mountains",
+          "width": 390,
+          "height": 844,
+          "heapUsedBytes": 15501128,
+          "gpuAlive": 34
+        },
+        {
+          "i": 2,
+          "scene": "river",
+          "width": 320,
+          "height": 640,
+          "heapUsedBytes": 15374776,
+          "gpuAlive": 34
+        },
+        {
+          "i": 3,
+          "scene": "tokyo",
+          "width": 844,
+          "height": 390,
+          "heapUsedBytes": 15505576,
+          "gpuAlive": 39
+        },
+        {
+          "i": 4,
+          "scene": "room",
+          "width": 1440,
+          "height": 900,
+          "heapUsedBytes": 15713488,
+          "gpuAlive": 40
+        },
+        {
+          "i": 5,
+          "scene": "garden",
+          "width": 390,
+          "height": 844,
+          "heapUsedBytes": 15834928,
+          "gpuAlive": 41
+        },
+        {
+          "i": 6,
+          "scene": "mountains",
+          "width": 320,
+          "height": 640,
+          "heapUsedBytes": 16059048,
+          "gpuAlive": 40
+        },
+        {
+          "i": 7,
+          "scene": "river",
+          "width": 844,
+          "height": 390,
+          "heapUsedBytes": 16109612,
+          "gpuAlive": 40
+        },
+        {
+          "i": 8,
+          "scene": "tokyo",
+          "width": 1440,
+          "height": 900,
+          "heapUsedBytes": 16208952,
+          "gpuAlive": 38
+        },
+        {
+          "i": 9,
+          "scene": "room",
+          "width": 390,
+          "height": 844,
+          "heapUsedBytes": 16342620,
+          "gpuAlive": 41
+        },
+        {
+          "i": 10,
+          "scene": "garden",
+          "width": 320,
+          "height": 640,
+          "heapUsedBytes": 16453244,
+          "gpuAlive": 40
+        },
+        {
+          "i": 11,
+          "scene": "mountains",
+          "width": 844,
+          "height": 390,
+          "heapUsedBytes": 17117808,
+          "gpuAlive": 40
+        },
+        {
+          "i": 12,
+          "scene": "river",
+          "width": 1440,
+          "height": 900,
+          "heapUsedBytes": 16495160,
+          "gpuAlive": 40
+        },
+        {
+          "i": 13,
+          "scene": "tokyo",
+          "width": 390,
+          "height": 844,
+          "heapUsedBytes": 16575896,
+          "gpuAlive": 40
+        },
+        {
+          "i": 14,
+          "scene": "room",
+          "width": 320,
+          "height": 640,
+          "heapUsedBytes": 16581244,
+          "gpuAlive": 40
+        },
+        {
+          "i": 15,
+          "scene": "garden",
+          "width": 844,
+          "height": 390,
+          "heapUsedBytes": 16593812,
+          "gpuAlive": 40
+        },
+        {
+          "i": 16,
+          "scene": "mountains",
+          "width": 1440,
+          "height": 900,
+          "heapUsedBytes": 16735768,
+          "gpuAlive": 40
+        },
+        {
+          "i": 17,
+          "scene": "river",
+          "width": 390,
+          "height": 844,
+          "heapUsedBytes": 16666084,
+          "gpuAlive": 41
+        },
+        {
+          "i": 18,
+          "scene": "tokyo",
+          "width": 320,
+          "height": 640,
+          "heapUsedBytes": 16720668,
+          "gpuAlive": 39
+        },
+        {
+          "i": 19,
+          "scene": "room",
+          "width": 844,
+          "height": 390,
+          "heapUsedBytes": 16723320,
+          "gpuAlive": 40
+        },
+        {
+          "i": 20,
+          "scene": "garden",
+          "width": 1440,
+          "height": 900,
+          "heapUsedBytes": 16797128,
+          "gpuAlive": 38
+        },
+        {
+          "i": 21,
+          "scene": "mountains",
+          "width": 390,
+          "height": 844,
+          "heapUsedBytes": 16896800,
+          "gpuAlive": 41
+        },
+        {
+          "i": 22,
+          "scene": "river",
+          "width": 320,
+          "height": 640,
+          "heapUsedBytes": 16830452,
+          "gpuAlive": 40
+        },
+        {
+          "i": 23,
+          "scene": "tokyo",
+          "width": 844,
+          "height": 390,
+          "heapUsedBytes": 16792436,
+          "gpuAlive": 39
+        },
+        {
+          "i": 24,
+          "scene": "room",
+          "width": 1440,
+          "height": 900,
+          "heapUsedBytes": 16901632,
+          "gpuAlive": 40
+        },
+        {
+          "i": 25,
+          "scene": "garden",
+          "width": 390,
+          "height": 844,
+          "heapUsedBytes": 16897460,
+          "gpuAlive": 41
+        },
+        {
+          "i": 26,
+          "scene": "mountains",
+          "width": 320,
+          "height": 640,
+          "heapUsedBytes": 16946664,
+          "gpuAlive": 40
+        },
+        {
+          "i": 27,
+          "scene": "river",
+          "width": 844,
+          "height": 390,
+          "heapUsedBytes": 16888764,
+          "gpuAlive": 40
+        },
+        {
+          "i": 28,
+          "scene": "tokyo",
+          "width": 1440,
+          "height": 900,
+          "heapUsedBytes": 16947968,
+          "gpuAlive": 39
+        },
+        {
+          "i": 29,
+          "scene": "room",
+          "width": 390,
+          "height": 844,
+          "heapUsedBytes": 16957268,
+          "gpuAlive": 41
+        }
+      ],
+      "drawCallsPerRaf": {
+        "p95": 7,
+        "max": 9,
+        "samples": 848
+      },
+      "teardown": {
+        "created": 121,
+        "deleted": 121,
+        "alive": 0
+      },
+      "allFiveScenes": true,
+      "reducedRafStopped": true,
+      "bfcacheEventSuspendResume": true,
+      "lateSceneIgnored": true,
+      "missingPlateRetry": true,
+      "missingCatRetryWithoutNewSfx": true,
+      "petMouseAndKeyboard": true,
+      "manualOffStopsRaf": true,
+      "jsErrors": 0,
+      "cspViolations": 0
+    },
+    {
+      "name": "webkit",
+      "version": "27.2",
+      "passed": true,
+      "coldEncodedBytes": 8840178,
+      "coldCatFamilies": 0,
+      "timing": {
+        "samples": 240,
+        "frameIntervalP95Ms": 26,
+        "renderSubmitP95Ms": 1
+      },
+      "cycles": [
+        {
+          "i": 0,
+          "scene": "garden",
+          "width": 1440,
+          "height": 900,
+          "gpuAlive": 31
+        },
+        {
+          "i": 1,
+          "scene": "mountains",
+          "width": 390,
+          "height": 844,
+          "gpuAlive": 34
+        },
+        {
+          "i": 2,
+          "scene": "river",
+          "width": 320,
+          "height": 640,
+          "gpuAlive": 34
+        },
+        {
+          "i": 3,
+          "scene": "tokyo",
+          "width": 844,
+          "height": 390,
+          "gpuAlive": 39
+        },
+        {
+          "i": 4,
+          "scene": "room",
+          "width": 1440,
+          "height": 900,
+          "gpuAlive": 40
+        },
+        {
+          "i": 5,
+          "scene": "garden",
+          "width": 390,
+          "height": 844,
+          "gpuAlive": 41
+        },
+        {
+          "i": 6,
+          "scene": "mountains",
+          "width": 320,
+          "height": 640,
+          "gpuAlive": 40
+        },
+        {
+          "i": 7,
+          "scene": "river",
+          "width": 844,
+          "height": 390,
+          "gpuAlive": 40
+        },
+        {
+          "i": 8,
+          "scene": "tokyo",
+          "width": 1440,
+          "height": 900,
+          "gpuAlive": 39
+        },
+        {
+          "i": 9,
+          "scene": "room",
+          "width": 390,
+          "height": 844,
+          "gpuAlive": 41
+        },
+        {
+          "i": 10,
+          "scene": "garden",
+          "width": 320,
+          "height": 640,
+          "gpuAlive": 40
+        },
+        {
+          "i": 11,
+          "scene": "mountains",
+          "width": 844,
+          "height": 390,
+          "gpuAlive": 40
+        },
+        {
+          "i": 12,
+          "scene": "river",
+          "width": 1440,
+          "height": 900,
+          "gpuAlive": 40
+        },
+        {
+          "i": 13,
+          "scene": "tokyo",
+          "width": 390,
+          "height": 844,
+          "gpuAlive": 40
+        },
+        {
+          "i": 14,
+          "scene": "room",
+          "width": 320,
+          "height": 640,
+          "gpuAlive": 40
+        },
+        {
+          "i": 15,
+          "scene": "garden",
+          "width": 844,
+          "height": 390,
+          "gpuAlive": 40
+        },
+        {
+          "i": 16,
+          "scene": "mountains",
+          "width": 1440,
+          "height": 900,
+          "gpuAlive": 40
+        },
+        {
+          "i": 17,
+          "scene": "river",
+          "width": 390,
+          "height": 844,
+          "gpuAlive": 41
+        },
+        {
+          "i": 18,
+          "scene": "tokyo",
+          "width": 320,
+          "height": 640,
+          "gpuAlive": 39
+        },
+        {
+          "i": 19,
+          "scene": "room",
+          "width": 844,
+          "height": 390,
+          "gpuAlive": 40
+        },
+        {
+          "i": 20,
+          "scene": "garden",
+          "width": 1440,
+          "height": 900,
+          "gpuAlive": 40
+        },
+        {
+          "i": 21,
+          "scene": "mountains",
+          "width": 390,
+          "height": 844,
+          "gpuAlive": 41
+        },
+        {
+          "i": 22,
+          "scene": "river",
+          "width": 320,
+          "height": 640,
+          "gpuAlive": 40
+        },
+        {
+          "i": 23,
+          "scene": "tokyo",
+          "width": 844,
+          "height": 390,
+          "gpuAlive": 39
+        },
+        {
+          "i": 24,
+          "scene": "room",
+          "width": 1440,
+          "height": 900,
+          "gpuAlive": 40
+        },
+        {
+          "i": 25,
+          "scene": "garden",
+          "width": 390,
+          "height": 844,
+          "gpuAlive": 41
+        },
+        {
+          "i": 26,
+          "scene": "mountains",
+          "width": 320,
+          "height": 640,
+          "gpuAlive": 40
+        },
+        {
+          "i": 27,
+          "scene": "river",
+          "width": 844,
+          "height": 390,
+          "gpuAlive": 40
+        },
+        {
+          "i": 28,
+          "scene": "tokyo",
+          "width": 1440,
+          "height": 900,
+          "gpuAlive": 39
+        },
+        {
+          "i": 29,
+          "scene": "room",
+          "width": 390,
+          "height": 844,
+          "gpuAlive": 41
+        }
+      ],
+      "drawCallsPerRaf": {
+        "p95": 8,
+        "max": 9,
+        "samples": 1012
+      },
+      "teardown": {
+        "created": 121,
+        "deleted": 121,
+        "alive": 0
+      },
+      "allFiveScenes": true,
+      "reducedRafStopped": true,
+      "bfcacheEventSuspendResume": true,
+      "lateSceneIgnored": true,
+      "missingPlateRetry": true,
+      "missingCatRetryWithoutNewSfx": true,
+      "petMouseAndKeyboard": true,
+      "manualOffStopsRaf": true,
+      "jsErrors": 0,
+      "cspViolations": 0
+    }
+  ],
+  "method": "Actual Chrome/WebKit WebGL calls and CDP GC heap; BFCache handlers tested by persisted page events; not physical phone or OS background measurement",
+  "humanAudition": false,
+  "physicalPhones": false,
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

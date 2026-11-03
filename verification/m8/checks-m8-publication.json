@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+  "publication": "2d881f9576cb7f120e0a6c8de00c5cdc8c38c2d14c13b0a5ef5416dc37cac116",
+  "assets": 3828,
+  "lessons": 18,
+  "videos": 80,
+  "words": 2314,
+  "exercises": 108,
+  "method": "Canonical contentId(packContent(loadCourse())); each local media byte hash verified"
+}

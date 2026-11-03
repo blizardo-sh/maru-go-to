@@ -3,10 +3,10 @@ import { course, validateCourse } from "../src/shared/course";
 
 describe("published full-course material", () => {
   test("retains every source vocabulary row, both parts, and all 52 grammar notes", () => {
-    const rows = new Set(course.words.flatMap((word) => word.sourceRefs.filter((ref) => ref.url.includes("VocabularyIndex")).map((ref) => `${ref.url}:${ref.page}:${ref.row}`)));
+    const rows = new Set(course.words.flatMap((word) => word.sourceRefs.filter((ref) => ref.url.includes("/starter_") && ref.url.includes("VocabularyIndex")).map((ref) => `${ref.url}:${ref.page}:${ref.row}`)));
     expect(rows.size).toBe(1113);
     for (const part of ["katsudoo", "rikai"]) {
-      const refs = new Set(course.words.flatMap((word) => word.sourceRefs.filter((ref) => ref.part === part && ref.url.includes("VocabularyIndex")).map((ref) => `${ref.url}:${ref.page}:${ref.row}`)));
+      const refs = new Set(course.words.flatMap((word) => word.sourceRefs.filter((ref) => ref.part === part && ref.url.includes("/starter_") && ref.url.includes("VocabularyIndex")).map((ref) => `${ref.url}:${ref.page}:${ref.row}`)));
       expect(refs.size).toBe(part === "katsudoo" ? 546 : 567);
       for (let n = 1; n <= 18; n++) {
         expect(course.words.some((word) => word.sourceRefs.some((ref) => ref.part === part && ref.url.includes("VocabularyIndex") && ref.label === `Словарь · урок ${n}`))).toBe(true);
@@ -40,8 +40,9 @@ describe("published full-course material", () => {
   test("accepts meaningful enumeration alternatives without reversing family relationships", () => {
     const parents = course.exercises.find((exercise) => exercise.id.includes("to_noun_list") && exercise.promptRu.includes("отец"));
     expect(parents?.acceptedOrders).toEqual([["t1", "t2", "t3", "t4"], ["t3", "t2", "t1", "t4"]]);
-    const wife = course.exercises.find((exercise) => exercise.id.includes("no_relation") && exercise.promptRu.includes("жена"));
-    expect(wife?.acceptedOrders).toEqual([["t1", "t2", "t3", "t4"]]);
+    const child = course.exercises.find((exercise) => exercise.id === "marugoto.starter-a1.example.no_relation.l04.1");
+    expect(child?.acceptedOrders).toEqual([["t1", "t2", "t3", "t4"]]);
+    expect(child?.translationRu).toBe("Это ребёнок моей старшей сестры.");
   });
 
   test("corrects documented dates and classifier translation mistakes", () => {
@@ -61,7 +62,15 @@ describe("published full-course material", () => {
     expect(bySource("katsudoo", 1, 3)?.id).toBe(bySource("rikai", 1, 37)?.id);
     expect(bySource("katsudoo", 1, 2)?.id).toBe(bySource("rikai", 4, 31)?.id);
     const vocabulary = course.words.filter((word) => word.sourceRefs.some((ref) => ref.url.includes("VocabularyIndex")));
-    expect(new Set(vocabulary.map((word) => `${word.kana}|${word.meaningRu}`)).size).toBe(vocabulary.length);
+    const senses = new Map<string, string[]>();
+    for (const word of vocabulary) {
+      const key = `${word.kana}|${word.meaningRu}`;
+      senses.set(key, [...(senses.get(key) ?? []), word.id]);
+    }
+    // Correcting both source glosses must preserve the two existing progress IDs.
+    expect([...senses.values()].filter(ids => ids.length > 1)).toEqual([[
+      "marugoto.starter-a1.word.610ff8cd8119e844", "marugoto.starter-a1.word.10ae214081105f7a",
+    ]]);
   });
 
   test("resolves exercise helpers by grammatical meaning and keeps lexical homophones separate", () => {

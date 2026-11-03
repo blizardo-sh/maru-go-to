@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "date": "2026-11-02",
+  "browser": "Safari",
+  "version": "27.0",
+  "nativeMac": true,
+  "checks": [
+    "all-18-lessons-parts-main-extra-and-80-native-video-views",
+    "reference-particles-both-kana-tables-personal-import-confirm-reload",
+    "kana-both-scripts-directions-full-five-sign-sessions-error-repeat-no-FSRS",
+    "settings-three-writing-modes-motion-mute-four-independent-volumes-reload",
+    "five-published-counter-formats-real-listening-and-saved-ACK",
+    "long-published-workspace-move-remove-forms-insert-and-ACK",
+    "native-workspace-manual-analysis-without-target-grade",
+    "native-three-review-directions-with-real-listening",
+    "admin-invite-recovery-Canvas-and-role-guard"
+  ],
+  "failures": [],
+  "method": "Safari WebDriver Enter on focused native semantic controls at the Canvas control bounds; two-frame focus restoration; input text inserted through native fields with input events. Real media, no media mocks. Counter queue projects actually issued API cards.",
+  "physicalPhone": false,
+  "nativeIME": false,
+  "passwordManager": false,
+  "screenReader": false,
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

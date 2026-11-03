@@ -1,0 +1,58 @@
+name: japanese-staging
+services:
+  db:
+    image: postgres:18.6-bookworm@sha256:bbf83594798e144bff365a9c191c5d779f181fb3135902064ab8ff11918020fc
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: japanese_learning
+      POSTGRES_USER: japanese_admin
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?}
+      APP_DATABASE_PASSWORD: ${APP_DATABASE_PASSWORD:?}
+      PGDATA: /var/lib/postgresql/18/docker
+    volumes:
+      - staging-postgres:/var/lib/postgresql
+      - ./init-db.sh:/docker-entrypoint-initdb.d/10-app-user.sh:ro
+    networks: [private]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U japanese_admin -d japanese_learning']
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    security_opt: [no-new-privileges:true]
+    mem_limit: 256m
+    pids_limit: 128
+    logging: &logging
+      driver: json-file
+      options: {max-size: 5m, max-file: '2'}
+  api:
+    image: ${STAGING_IMAGE:?}
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: ${DATABASE_URL:?}
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET:?}
+      AUTH_COOKIE_PREFIX: japanese_staging
+      APP_URL: https://94.103.2.98:4443
+      HOST: 0.0.0.0
+      PORT: '3000'
+      NODE_ENV: production
+    ports: ['127.0.0.1:8082:3000']
+    networks: [private]
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    mem_limit: 384m
+    pids_limit: 128
+    logging: *logging
+    healthcheck:
+      test: [CMD, bun, -e, 'const r=await fetch("http://127.0.0.1:3000/ready");process.exit(r.ok?0:1)']
+      interval: 15s
+      timeout: 5s
+      retries: 5
+volumes:
+  staging-postgres:
+networks:
+  private:

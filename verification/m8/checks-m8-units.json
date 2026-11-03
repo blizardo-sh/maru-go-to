@@ -1,0 +1,9 @@
+{
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+  "passed": true,
+  "exitCode": 0,
+  "pass": 204,
+  "fail": 0,
+  "skip": 0,
+  "assertions": 49018
+}

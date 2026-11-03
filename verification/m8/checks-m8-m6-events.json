@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-02",
+  "passed": true,
+  "checks": [
+    "draft carries no saved result",
+    "wrong card activity ignored",
+    "duplicate and conflicting ACK deduplicated",
+    "renderer-independent receipt ledger persists across card scope",
+    "completion once per session key",
+    "three deterministic variants",
+    "account boundary clears ledger",
+    "anonymous late result ignored",
+    "completion requires observing an active plan; reload or re-entry to a finished route cannot celebrate"
+  ],
+  "scope": "presentation receipt ledger; no learning algorithm or transport mocked",
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

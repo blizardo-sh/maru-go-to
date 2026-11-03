@@ -274,7 +274,8 @@
                     "surface": "よる、にほんごをべんきょうします。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson09-word-387ba2aa0436.m4a"
+                "audioUrl": "/audio/learning/30f6bc2f1cdf371aa54e.m4a",
+                "audioText": "よる、にほんごおべんきょうします。"
               }
             },
             {
@@ -289,7 +290,8 @@
                     "surface": "まいにちコーヒーをのみます。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson09-word-d0952b0fe7fc.m4a"
+                "audioUrl": "/audio/learning/6c0296a3cdba58ab2eeb.m4a",
+                "audioText": "まいにちコーヒーおのみます。"
               }
             },
             {
@@ -319,7 +321,8 @@
                     "surface": "よる、にほんごをべんきょうします。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson09-word-bef22fddd0e4.m4a"
+                "audioUrl": "/audio/learning/30f6bc2f1cdf371aa54e.m4a",
+                "audioText": "よる、にほんごおべんきょうします。"
               }
             }
           ]
@@ -339,7 +342,8 @@
                     "surface": "じゅうにじにひるごはんをたべます。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson09-word-d3eec2abad2f.m4a"
+                "audioUrl": "/audio/learning/816ff169e75a866aa392.m4a",
+                "audioText": "じゅうにじにひるごはんおたべます。"
               }
             },
             {
@@ -354,7 +358,8 @@
                     "surface": "しちじにばんごはんをたべます。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson09-word-8bd9c27b8594.m4a"
+                "audioUrl": "/audio/learning/1f98be9f584fffa138f6.m4a",
+                "audioText": "しちじにばんごはんおたべます。"
               }
             },
             {
@@ -384,7 +389,8 @@
                     "surface": "よる、おんがくをききます。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson09-word-1a845989ef24.m4a"
+                "audioUrl": "/audio/learning/615a578e866caf334986.m4a",
+                "audioText": "よる、おんがくおききます。"
               }
             },
             {
@@ -399,7 +405,8 @@
                     "surface": "ばんごはんのあと、テレビをみます。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson09-word-749cf3040a77.m4a"
+                "audioUrl": "/audio/learning/e4a4fd56d0ec57333f23.m4a",
+                "audioText": "ばんごはんのあと、テレビおみます。"
               }
             }
           ]
@@ -1228,6 +1235,31 @@
           }
         ],
         "audioUrl": "/audio/70c776550ac9828eb7f7.m4a"
+      },
+      {
+        "id": "marugoto.starter-a1.word.supplement-evening",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "surface": "ゆうがた",
+        "kana": "ゆうがた",
+        "meaningRu": "ранний вечер (перед наступлением ночи)",
+        "segments": [
+          {
+            "surface": "ゆうがた"
+          }
+        ],
+        "kind": "word",
+        "pos": "noun",
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://www.irodori.jpf.go.jp/assets/data/wordlist_Y.pdf",
+            "entry": "ゆうがた",
+            "label": "Дополнительный вариант ответа · Japan Foundation · Irodori 初級1 · L2–2 · 夕方（ゆうがた）: early evening"
+          }
+        ]
       }
     ],
     "forms": [
@@ -1440,6 +1472,29 @@
           }
         ],
         "wordId": "marugoto.starter-a1.word.a296622c50317ab9"
+      },
+      {
+        "id": "marugoto.starter-a1.form.supplement-evening",
+        "wordId": "marugoto.starter-a1.word.supplement-evening",
+        "lessonIds": [
+          "marugoto.starter-a1.lesson.09"
+        ],
+        "surface": "ゆうがた",
+        "kana": "ゆうがた",
+        "segments": [
+          {
+            "surface": "ゆうがた"
+          }
+        ],
+        "reviewStatus": "source-checked",
+        "sourceRefs": [
+          {
+            "part": "rikai",
+            "url": "https://www.irodori.jpf.go.jp/assets/data/wordlist_Y.pdf",
+            "entry": "ゆうがた",
+            "label": "Дополнительный вариант ответа · Japan Foundation · Irodori 初級1 · L2–2 · 夕方（ゆうがた）: early evening"
+          }
+        ]
       }
     ],
     "skills": [

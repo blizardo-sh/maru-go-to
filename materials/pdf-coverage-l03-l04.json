@@ -1,0 +1,1478 @@
+{
+  "version": "2026-10-24.1",
+  "scope": "All 103 positions from the two supplied vocabulary PDFs are explicit guided word or quantity-practice targets.",
+  "sources": [
+    {
+      "path": "user-provided/downloaded.pdf",
+      "sha256": "a87e6e7d7d5c4a6a97d4e69801567f8abbb7a6f10d083a02b5f45b609c08efd0"
+    },
+    {
+      "path": "user-provided/downloaded (1).pdf",
+      "sha256": "ca731ddadc81e52caf8228a6c722b0402974dc0040bb07d8eba0721d8995378f"
+    }
+  ],
+  "positions": [
+    {
+      "lessonNumber": 4,
+      "position": 1,
+      "page": 1,
+      "pdfKana": "あに",
+      "english": "(my) elder brother",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.5898af218a8efa80",
+        "formIds": [
+          "marugoto.starter-a1.form.b8692c26c972b16f",
+          "marugoto.starter-a1.form.7bd7a3ff113a84c3"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 2,
+      "page": 1,
+      "pdfKana": "あね",
+      "english": "(my) elder sister",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.f11bf70db3c7b278",
+        "formIds": [
+          "marugoto.starter-a1.form.47cdd36adfbdeb2a",
+          "marugoto.starter-a1.form.706bcbc2bf08bff7"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 3,
+      "page": 1,
+      "pdfKana": "いもうと",
+      "english": "(my) younger sister",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.e2c5c1b293069cce",
+        "formIds": [
+          "marugoto.starter-a1.form.01546f4abf1884da"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 4,
+      "page": 1,
+      "pdfKana": "おいくつですか",
+      "english": "How old are you?",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.24a335e09a8a32ba",
+        "formIds": [
+          "marugoto.starter-a1.form.d5ab638f1338811b"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 5,
+      "page": 1,
+      "pdfKana": "おおさか",
+      "english": "Osaka (name of a place/prefecture in Japan)",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.d4d63d4653ee4566",
+        "formIds": [
+          "marugoto.starter-a1.form.7a819c790618cb31"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 6,
+      "page": 1,
+      "pdfKana": "おっと",
+      "english": "(my) husband",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.8b3d3b511e59fff3",
+        "formIds": [
+          "marugoto.starter-a1.form.c2e61bcf3dfbba37"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 7,
+      "page": 1,
+      "pdfKana": "おとうと",
+      "english": "(my) younger brother",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.ab938f825a16029d",
+        "formIds": [
+          "marugoto.starter-a1.form.ef83cc1e2a73074f"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 8,
+      "page": 1,
+      "pdfKana": "かぞく",
+      "english": "family",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.f304a39b5e728680",
+        "formIds": [
+          "marugoto.starter-a1.form.b1a934c058326c46",
+          "marugoto.starter-a1.form.af90b4bf62755cc8"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 9,
+      "page": 1,
+      "pdfKana": "かっこいい",
+      "english": "cool/good-looking",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.bb5b8febd333744b",
+        "formIds": [
+          "marugoto.starter-a1.form.8129ee45e939b7df"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 10,
+      "page": 1,
+      "pdfKana": "かわいい",
+      "english": "cute",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.50867557b70d8314",
+        "formIds": [
+          "marugoto.starter-a1.form.05e119dbd1964f48"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 11,
+      "page": 2,
+      "pdfKana": "きれい（な）",
+      "english": "beautiful",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.182cd34e277df271",
+        "formIds": [
+          "marugoto.starter-a1.form.e926269074094c2f",
+          "marugoto.starter-a1.form.learning.l04.kirei-na"
+        ]
+      },
+      "note": "В PDF （な） — грамматическая помета NA-прилагательного; запись きれい, pos=na-adjective. Это не отдельное слово きれいな."
+    },
+    {
+      "lessonNumber": 4,
+      "position": 12,
+      "page": 2,
+      "pdfKana": "こ",
+      "english": "child",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.a3759aa9767ff749",
+        "formIds": [
+          "marugoto.starter-a1.form.8366fbad1eff8663"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 13,
+      "page": 2,
+      "pdfKana": "こども",
+      "english": "child",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.9af71ce04d34fc49",
+        "formIds": [
+          "marugoto.starter-a1.form.fda91890b35d523f"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 14,
+      "page": 2,
+      "pdfKana": "この",
+      "english": "this [Noun]",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.712e62ba4142b3c5",
+        "formIds": [
+          "marugoto.starter-a1.form.dc13767a7bc0c227"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 15,
+      "page": 2,
+      "pdfKana": "だれ",
+      "english": "who",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.a5e32b90deb17e6c",
+        "formIds": [
+          "marugoto.starter-a1.form.faf9c2542487bc25"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 16,
+      "page": 2,
+      "pdfKana": "だれですか",
+      "english": "Who is this?",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.learning.l04.who-question",
+        "formIds": [
+          "marugoto.starter-a1.form.learning.l04.who-question"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 17,
+      "page": 2,
+      "pdfKana": "ちち",
+      "english": "(my) father",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.2d31dd8d68a3ada0",
+        "formIds": [
+          "marugoto.starter-a1.form.ba11224717e66ca5",
+          "marugoto.starter-a1.form.9417bd388ad9a18e"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 18,
+      "page": 2,
+      "pdfKana": "つま",
+      "english": "(my) wife",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.1c638292e212a5ce",
+        "formIds": [
+          "marugoto.starter-a1.form.3f6080ea6c4375ab"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 19,
+      "page": 2,
+      "pdfKana": "とうきょう",
+      "english": "Tokyo",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.e9eb89c01e577f0b",
+        "formIds": [
+          "marugoto.starter-a1.form.27583ea79d818963",
+          "marugoto.starter-a1.form.3993aff9cffdbc63"
+        ]
+      },
+      "note": "Основная запись 東京 с чтением とうきょう; явная form.27583ea79d818963 сохраняет написание PDF とうきょう."
+    },
+    {
+      "lessonNumber": 4,
+      "position": 20,
+      "page": 2,
+      "pdfKana": "ともだち",
+      "english": "friend",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.7905be9b72b867a7",
+        "formIds": [
+          "marugoto.starter-a1.form.a2a353cd7d51633b"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 21,
+      "page": 2,
+      "pdfKana": "どこ",
+      "english": "where",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.75bd1f06a73a31f0",
+        "formIds": [
+          "marugoto.starter-a1.form.001483aa40ecf09d"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 22,
+      "page": 2,
+      "pdfKana": "はは",
+      "english": "(my) mother",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.07ab7fc730f6f2bb",
+        "formIds": [
+          "marugoto.starter-a1.form.e0de0f4cb997ad32",
+          "marugoto.starter-a1.form.8ce8c115c561cd75"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 23,
+      "page": 3,
+      "pdfKana": "ひと",
+      "english": "person",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.f40471510c8f6d47",
+        "formIds": [
+          "marugoto.starter-a1.form.28553df5e0965dd0"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 24,
+      "page": 3,
+      "pdfKana": "ひとり",
+      "english": "one person",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.085bb1515278ae01",
+        "formIds": [
+          "marugoto.starter-a1.form.50fbbea3488ebb9e"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 25,
+      "page": 3,
+      "pdfKana": "ふたり",
+      "english": "two people",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.b46d8ae7ed1a2508",
+        "formIds": [
+          "marugoto.starter-a1.form.ea0e58a81f93287e"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 26,
+      "page": 3,
+      "pdfKana": "ほっかいどう",
+      "english": "Hokkaidou (name of a place/prefecture in Japan)",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.f15790a46a9479bf",
+        "formIds": [
+          "marugoto.starter-a1.form.c591170a442107dc"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 27,
+      "page": 3,
+      "pdfKana": "わかい",
+      "english": "young",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.51ff5fb63a7d9b66",
+        "formIds": [
+          "marugoto.starter-a1.form.8296f8e4e7173af4"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 28,
+      "page": 3,
+      "pdfKana": "ソウル",
+      "english": "Seoul",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.983a594dd4da786f",
+        "formIds": [
+          "marugoto.starter-a1.form.e8e1c8ba52b8be09"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 29,
+      "page": 3,
+      "pdfKana": "パリ",
+      "english": "Paris",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.d3545b3ce755d5a0",
+        "formIds": [
+          "marugoto.starter-a1.form.3d6b6ab790fa2baf"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 30,
+      "page": 3,
+      "pdfKana": "～さい",
+      "english": "- years old",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.ab84e14613cf9cf5",
+        "formIds": [
+          "marugoto.starter-a1.form.7fe287bf742a251f"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 31,
+      "page": 3,
+      "pdfKana": "～に すんで います",
+      "english": "(I) live in -.",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.23f1417336b4ad34",
+        "formIds": [
+          "marugoto.starter-a1.form.4e473a5eecb6ed7a"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 32,
+      "page": 3,
+      "pdfKana": "～にん",
+      "english": "(counter for people)",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.042257bf0025e2ff",
+        "formIds": [
+          "marugoto.starter-a1.form.a7117fd44de6c75a"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 33,
+      "page": 3,
+      "pdfKana": "います",
+      "english": "to be (existence)",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.e27c10e325cc5bbf",
+        "formIds": [
+          "marugoto.starter-a1.form.b02868c89d23fbf7"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 34,
+      "page": 3,
+      "pdfKana": "いもうとさん",
+      "english": "(someone else's) younger sister",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.7a2329236a8c0d4c",
+        "formIds": [
+          "marugoto.starter-a1.form.f7977a3e3d573c12"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 35,
+      "page": 4,
+      "pdfKana": "おかあさん",
+      "english": "(someone else's) mother",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.24948b79aebe026a",
+        "formIds": [
+          "marugoto.starter-a1.form.aff2ef815b980100"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 36,
+      "page": 4,
+      "pdfKana": "おきなわ",
+      "english": "Okinawa (name of a place/prefecture in Japan)",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.04978338498ae0d7",
+        "formIds": [
+          "marugoto.starter-a1.form.4c28bda78a3c3963"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 37,
+      "page": 4,
+      "pdfKana": "おくさん",
+      "english": "(someone else's) wife",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.e466ab0e50508b66",
+        "formIds": [
+          "marugoto.starter-a1.form.c08c06bdd8af5961"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 38,
+      "page": 4,
+      "pdfKana": "おこさん",
+      "english": "(someone else's) child",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.8d94b37b564c52db",
+        "formIds": [
+          "marugoto.starter-a1.form.4a6e9a08d72cd6aa"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 39,
+      "page": 4,
+      "pdfKana": "おとうさん",
+      "english": "(someone else's) father",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.fa352771e8199249",
+        "formIds": [
+          "marugoto.starter-a1.form.6834fbeba98e4ffb"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 40,
+      "page": 4,
+      "pdfKana": "おとうとさん",
+      "english": "(someone else's) younger brother",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.8ab2440d4ba09cb0",
+        "formIds": [
+          "marugoto.starter-a1.form.33e555f10e2622b8"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 41,
+      "page": 4,
+      "pdfKana": "おとこ",
+      "english": "man/male",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.cdba4d6f7e72fefc",
+        "formIds": [
+          "marugoto.starter-a1.form.d6ae13fe7fc88b7c"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 42,
+      "page": 4,
+      "pdfKana": "おとこのこ",
+      "english": "boy",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.91eba862978ea458",
+        "formIds": [
+          "marugoto.starter-a1.form.d8352a072c44d605"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 43,
+      "page": 4,
+      "pdfKana": "おとこのひと",
+      "english": "man/male",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.bccad138b115fee4",
+        "formIds": [
+          "marugoto.starter-a1.form.ed7a19695415f2bf"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 44,
+      "page": 4,
+      "pdfKana": "おにいさん",
+      "english": "(someone else's) elder brother",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.2e1687c1c11fe383",
+        "formIds": [
+          "marugoto.starter-a1.form.f5975b1a97a08629"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 45,
+      "page": 4,
+      "pdfKana": "おねえさん",
+      "english": "(someone else's) elder sister",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.3133e45120ff9f46",
+        "formIds": [
+          "marugoto.starter-a1.form.ab2b9eb370a09765"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 46,
+      "page": 4,
+      "pdfKana": "おんな",
+      "english": "woman/female",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.cff93023f5821587",
+        "formIds": [
+          "marugoto.starter-a1.form.3b2a7f2df9441073"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 47,
+      "page": 5,
+      "pdfKana": "おんなのこ",
+      "english": "girl",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.231aa76065182f08",
+        "formIds": [
+          "marugoto.starter-a1.form.bdcf29c35c057583"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 48,
+      "page": 5,
+      "pdfKana": "おんなのひと",
+      "english": "woman",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.0395fedc3b783941",
+        "formIds": [
+          "marugoto.starter-a1.form.9b8a7f815dbc1379"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 49,
+      "page": 5,
+      "pdfKana": "ごしゅじん",
+      "english": "(someone else's) husband",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.7c84bcd7743a6785",
+        "formIds": [
+          "marugoto.starter-a1.form.ca265c8a8324416c"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 50,
+      "page": 5,
+      "pdfKana": "ごにん",
+      "english": "five people",
+      "coverage": {
+        "kind": "counter",
+        "counterId": "nin",
+        "quantity": 5,
+        "wordId": "marugoto.starter-a1.word.f40471510c8f6d47",
+        "partId": "l04-family-count-01"
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 51,
+      "page": 5,
+      "pdfKana": "さんにん",
+      "english": "three people",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.3c2a23fa6dbf95e5",
+        "formIds": [
+          "marugoto.starter-a1.form.834e43b586efc198"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 52,
+      "page": 5,
+      "pdfKana": "なんさい",
+      "english": "how old",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.93b1f9e7fc222764",
+        "formIds": [
+          "marugoto.starter-a1.form.b11ce223290e6d47"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 53,
+      "page": 5,
+      "pdfKana": "なんにん",
+      "english": "how many people",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.8b06574d40c677ba",
+        "formIds": [
+          "marugoto.starter-a1.form.9d041b40e607a631"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 54,
+      "page": 5,
+      "pdfKana": "ひろしま",
+      "english": "Hiroshima (name of a place/prefecture in Japan)",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.22d18d5b7c33ad75",
+        "formIds": [
+          "marugoto.starter-a1.form.156a6efa43f44e3a"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 55,
+      "page": 5,
+      "pdfKana": "よにん",
+      "english": "four people",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.147ac3dedeb8f421",
+        "formIds": [
+          "marugoto.starter-a1.form.db29e77d942a355e"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 56,
+      "page": 5,
+      "pdfKana": "ろくにん",
+      "english": "six people",
+      "coverage": {
+        "kind": "counter",
+        "counterId": "nin",
+        "quantity": 6,
+        "wordId": "marugoto.starter-a1.word.f40471510c8f6d47",
+        "partId": "l04-family-count-01"
+      }
+    },
+    {
+      "lessonNumber": 4,
+      "position": 57,
+      "page": 5,
+      "pdfKana": "わたしたち",
+      "english": "we/us",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.549dc1bbc07042e8",
+        "formIds": [
+          "marugoto.starter-a1.form.8aa889f7290b2bd8"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 1,
+      "page": 1,
+      "pdfKana": "あのう",
+      "english": "ah…/Excuse me/well…",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.7f92d0d5b7eb33b1",
+        "formIds": [
+          "marugoto.starter-a1.form.2d7dc54ae5b2a49c"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 2,
+      "page": 1,
+      "pdfKana": "えっ",
+      "english": "What?/Pardon me?/Excuse me?",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.6888cb9a96a60f48",
+        "formIds": [
+          "marugoto.starter-a1.form.413b86ccef257c22"
+        ]
+      },
+      "note": "Явная form.413b86ccef257c22 задаёт kana=えっ для базовой え; source entry=え／えっ. Совпадает междометие реакции/удивления; весь английский набор Pardon/Excuse не расписан в русском значении."
+    },
+    {
+      "lessonNumber": 3,
+      "position": 3,
+      "page": 1,
+      "pdfKana": "おしごとは？",
+      "english": "(What's) your job?/What do you do for a living?",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.a198bbf90127b45c",
+        "formIds": [
+          "marugoto.starter-a1.form.ca96ba3d9c5960b9"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 4,
+      "page": 1,
+      "pdfKana": "おなまえは？",
+      "english": "(what's) your name?",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.learning.l03.name-question",
+        "formIds": [
+          "marugoto.starter-a1.form.learning.l03.name-question"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 5,
+      "page": 1,
+      "pdfKana": "かいしゃいん",
+      "english": "company employee",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.a149298ff8f2e16e",
+        "formIds": [
+          "marugoto.starter-a1.form.157e7c7e1903cb6f"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 6,
+      "page": 1,
+      "pdfKana": "かんこく",
+      "english": "South Korea",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.19e7bb501190f7b5",
+        "formIds": [
+          "marugoto.starter-a1.form.32014fef54166f79"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 7,
+      "page": 1,
+      "pdfKana": "かんこくご",
+      "english": "Korean language",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.a1df5e9d56ff2067",
+        "formIds": [
+          "marugoto.starter-a1.form.e9ff0f10876bdb2c"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 8,
+      "page": 1,
+      "pdfKana": "かんこくじん",
+      "english": "Korean people",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.fbd2d21b1d628944",
+        "formIds": [
+          "marugoto.starter-a1.form.e775ce1209303f45"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 9,
+      "page": 1,
+      "pdfKana": "がくせい",
+      "english": "student",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.559067766abda333",
+        "formIds": [
+          "marugoto.starter-a1.form.054f78e2ef4a7e72"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 10,
+      "page": 1,
+      "pdfKana": "きょうし",
+      "english": "teacher/instructor",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.870190aabd2ca4bf",
+        "formIds": [
+          "marugoto.starter-a1.form.d9217dbfb15e097b"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 11,
+      "page": 2,
+      "pdfKana": "こうむいん",
+      "english": "civil servant",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.5b4d218b977e5d59",
+        "formIds": [
+          "marugoto.starter-a1.form.d8794c8f4d7e727a",
+          "marugoto.starter-a1.form.72709f1ee2b22e2c"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 12,
+      "page": 2,
+      "pdfKana": "しゅふ",
+      "english": "housewife/homemaker",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.71674c6edf020ea9",
+        "formIds": [
+          "marugoto.starter-a1.form.6249ee6aa740a4c8"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 13,
+      "page": 2,
+      "pdfKana": "すこし",
+      "english": "a little/a few",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.ec82a6a9bdbd0924",
+        "formIds": [
+          "marugoto.starter-a1.form.4d376a2c1e3fabf4"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 14,
+      "page": 2,
+      "pdfKana": "そうですか",
+      "english": "I see./I understand.",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.a269082034ac2170",
+        "formIds": [
+          "marugoto.starter-a1.form.ccd89d47584e7019"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 15,
+      "page": 2,
+      "pdfKana": "ちゅうごく",
+      "english": "China",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.b4b9d057c5b0f68d",
+        "formIds": [
+          "marugoto.starter-a1.form.7642c9d8e34bb662"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 16,
+      "page": 2,
+      "pdfKana": "ちゅうごくご",
+      "english": "Chinese language",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.9b6634b9ac78cb0c",
+        "formIds": [
+          "marugoto.starter-a1.form.5583d5eb7da3733d"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 17,
+      "page": 2,
+      "pdfKana": "できます",
+      "english": "(I) can speak （language)",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.abf51c53069fc220",
+        "formIds": [
+          "marugoto.starter-a1.form.8f463561a7e1f247"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 18,
+      "page": 2,
+      "pdfKana": "どうぞ よろしく （おねがいします）",
+      "english": "Pleased to meet you.",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.72484669620e4adc",
+        "variantWordIds": [
+          "marugoto.starter-a1.word.579b97a4ede59ac6"
+        ],
+        "formIds": [
+          "marugoto.starter-a1.form.6bd275f2275caf1e"
+        ]
+      },
+      "note": "PDF разрешает краткий и полный варианты: полный どうぞよろしくおねがいします — core; короткий word.579b97a4ede59ac6 どうぞよろしく — supplementary draft. Одна PDF-позиция считается core по полному варианту."
+    },
+    {
+      "lessonNumber": 3,
+      "position": 19,
+      "page": 2,
+      "pdfKana": "どちらから？",
+      "english": "Where are you from?",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.9b473beed948c0b3",
+        "formIds": [
+          "marugoto.starter-a1.form.2ea41badd9ed7437"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 20,
+      "page": 2,
+      "pdfKana": "はじめまして",
+      "english": "How do you do?/Nice to meet you.",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.be25e6ec541a983a",
+        "formIds": [
+          "marugoto.starter-a1.form.16d1822e7b230753"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 21,
+      "page": 2,
+      "pdfKana": "べんきょうちゅう",
+      "english": "in the middle of studying",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.6c1513d2349d25fd",
+        "formIds": [
+          "marugoto.starter-a1.form.baf4bb9e0dd1e364"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 22,
+      "page": 2,
+      "pdfKana": "めいし",
+      "english": "business card",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.f30b2e71086b8f6b",
+        "formIds": [
+          "marugoto.starter-a1.form.4794d0b9d379708a"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 23,
+      "page": 3,
+      "pdfKana": "わたし",
+      "english": "I/me",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.58e595c1fa37474d",
+        "formIds": [
+          "marugoto.starter-a1.form.8f4403a1ef1a7014"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 24,
+      "page": 3,
+      "pdfKana": "アラビアご",
+      "english": "Arabic language",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.0ecfc17a772e65d9",
+        "formIds": [
+          "marugoto.starter-a1.form.88fe620c6b4bb14a"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 25,
+      "page": 3,
+      "pdfKana": "エジプト",
+      "english": "Egypt",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.ad4bf8e72fd7465f",
+        "formIds": [
+          "marugoto.starter-a1.form.fbde25ea8a0398b4"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 26,
+      "page": 3,
+      "pdfKana": "エンジニア",
+      "english": "engineer",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.b26ab0f21a82d32b",
+        "formIds": [
+          "marugoto.starter-a1.form.2686e079e313b97b"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 27,
+      "page": 3,
+      "pdfKana": "ドイツ",
+      "english": "Germany",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.6dadb09b8210544e",
+        "formIds": [
+          "marugoto.starter-a1.form.72eaab735bf74a19"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 28,
+      "page": 3,
+      "pdfKana": "ドイツご",
+      "english": "German language",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.ab5204b44a31c701",
+        "formIds": [
+          "marugoto.starter-a1.form.f10236e4b32fc70d"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 29,
+      "page": 3,
+      "pdfKana": "～と もうします",
+      "english": "My name is -./I'm (name).",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.6206f3c0ca0ee870",
+        "formIds": [
+          "marugoto.starter-a1.form.8a729697281635d9"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 30,
+      "page": 3,
+      "pdfKana": "えいご",
+      "english": "English language",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.0375e09aad13f1e2",
+        "formIds": [
+          "marugoto.starter-a1.form.4f2d94200c1eb0e1"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 31,
+      "page": 3,
+      "pdfKana": "おくには？",
+      "english": "(Where's) your country?",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.2839da6ecbf6a5fd",
+        "formIds": [
+          "marugoto.starter-a1.form.6cf85e0e80d6f14c"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 32,
+      "page": 3,
+      "pdfKana": "おしごと",
+      "english": "job (polite expression)",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.71622e15e5c20c28",
+        "formIds": [
+          "marugoto.starter-a1.form.898b376b2660e288"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 33,
+      "page": 3,
+      "pdfKana": "ことば",
+      "english": "language/word",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.learning.l03.kotoba",
+        "formIds": [
+          "marugoto.starter-a1.form.learning.l03.kotoba"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 34,
+      "page": 3,
+      "pdfKana": "じこしょうかい（します）",
+      "english": "self-introduction (to introduce oneself)",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.4ebd099ea8478bd7",
+        "variantWordIds": [
+          "marugoto.starter-a1.word.learning.l03.self-introduction-verb"
+        ],
+        "formIds": [
+          "marugoto.starter-a1.form.5528e4824b0af69e"
+        ]
+      },
+      "note": "Существительное じこしょうかい («рассказ о себе») есть; вариант じこしょうかいします не оформлен отдельной Word/form. Существительное допускается самой необязательной пометой PDF （します）."
+    },
+    {
+      "lessonNumber": 3,
+      "position": 35,
+      "page": 4,
+      "pdfKana": "すごいですね",
+      "english": "That's great.",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.learning.l03.great-reaction",
+        "formIds": [
+          "marugoto.starter-a1.form.learning.l03.great-reaction"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 36,
+      "page": 4,
+      "pdfKana": "せんせい",
+      "english": "teacher/instructor",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.3289b4c0bfa92493",
+        "formIds": [
+          "marugoto.starter-a1.form.7afa8931d2ac5cfa"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 37,
+      "page": 4,
+      "pdfKana": "ちゅうごくじん",
+      "english": "Chinese people",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.4639bca7886015ec",
+        "formIds": [
+          "marugoto.starter-a1.form.839ddbf4d7400b0f"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 38,
+      "page": 4,
+      "pdfKana": "なにご",
+      "english": "what language",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.26f199d991d81947",
+        "formIds": [
+          "marugoto.starter-a1.form.8d7031be98aaabac"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 39,
+      "page": 4,
+      "pdfKana": "なんですか",
+      "english": "What is (it)?",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.learning.l03.what-question",
+        "formIds": [
+          "marugoto.starter-a1.form.learning.l03.what-question"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 40,
+      "page": 4,
+      "pdfKana": "にほんじん",
+      "english": "Japanese people",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.3c235a881cc674db",
+        "formIds": [
+          "marugoto.starter-a1.form.52e916d7e055a22c"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 41,
+      "page": 4,
+      "pdfKana": "ふたり",
+      "english": "two people",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.b46d8ae7ed1a2508",
+        "formIds": [
+          "marugoto.starter-a1.form.ea0e58a81f93287e"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 42,
+      "page": 4,
+      "pdfKana": "フランスご",
+      "english": "French language",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.fd108aa9a25d41ef",
+        "formIds": [
+          "marugoto.starter-a1.form.5df2141d61ac72d7"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 43,
+      "page": 4,
+      "pdfKana": "フランスじん",
+      "english": "French people",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.31ea23c304eb3532",
+        "formIds": [
+          "marugoto.starter-a1.form.746db61f3e55f9fa"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 44,
+      "page": 4,
+      "pdfKana": "マレーシアじん",
+      "english": "Malaysian people",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.69498dfd42c40969",
+        "formIds": [
+          "marugoto.starter-a1.form.827c25607d0e6c44"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 45,
+      "page": 4,
+      "pdfKana": "～さん",
+      "english": "Mr./Ms./Mrs./Miss",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.0e48d8d73ac7877d",
+        "formIds": [
+          "marugoto.starter-a1.form.6c0ffa97ba9b103e"
+        ]
+      }
+    },
+    {
+      "lessonNumber": 3,
+      "position": 46,
+      "page": 4,
+      "pdfKana": "～じん",
+      "english": "（nationality）",
+      "coverage": {
+        "kind": "word",
+        "wordId": "marugoto.starter-a1.word.1fcceb7edeff3cc2",
+        "formIds": [
+          "marugoto.starter-a1.form.9b795e88cd2c3b01"
+        ]
+      }
+    }
+  ],
+  "editorialStatus": "Prepared text/readings/examples; generated TTS has not been independently certified by a Japanese pronunciation specialist."
+}

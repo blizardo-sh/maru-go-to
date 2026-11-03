@@ -1,1 +1,37 @@
-{"compilerOptions":{"target":"ES2022","module":"Preserve","moduleResolution":"bundler","lib":["ES2022","DOM","DOM.Iterable"],"types":["bun","react","react-dom"],"jsx":"react-jsx","strict":true,"noUncheckedIndexedAccess":true,"skipLibCheck":true,"noEmit":true,"resolveJsonModule":true,"allowImportingTsExtensions":true},"include":["src/**/*.ts","src/**/*.tsx","tests/**/*.ts","vite.config.ts","drizzle.config.ts"]}
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "Preserve",
+    "moduleResolution": "bundler",
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "types": [
+      "bun",
+      "react",
+      "react-dom",
+      "vite/client"
+    ],
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true,
+    "paths": {
+      "@app/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "tests/**/*.ts",
+    "vite.config.ts",
+    "drizzle.config.ts"
+  ]
+}

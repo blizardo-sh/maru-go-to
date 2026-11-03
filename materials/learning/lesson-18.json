@@ -26,7 +26,8 @@
                     "surface": "りょこうはたのしかったです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson18-9a3edb3c4672d73a129b.m4a"
+                "audioUrl": "/audio/learning/1cd7ae5050dbd32ebb07.m4a",
+                "audioText": "りょこうわたのしかったです。"
               }
             },
             {
@@ -71,7 +72,8 @@
                     "surface": "おてらをみました。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson18-49dfc67b2e861f95c344.m4a"
+                "audioUrl": "/audio/learning/9f24be32a29f1e60a13d.m4a",
+                "audioText": "おてらおみました。"
               }
             },
             {
@@ -86,7 +88,8 @@
                     "surface": "おみやげをかいました。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson18-31a08ef3ddbfceecf438.m4a"
+                "audioUrl": "/audio/learning/b809cbde53899ac5ad50.m4a",
+                "audioText": "おみやげおかいました。"
               }
             },
             {
@@ -101,7 +104,8 @@
                     "surface": "おてらをみました。それからかいものをしました。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson18-67fec514fa3d530a24f1.m4a"
+                "audioUrl": "/audio/learning/8cc45bb356b70da9387f.m4a",
+                "audioText": "おてらおみました。それからかいものおしました。"
               }
             }
           ],
@@ -149,7 +153,8 @@
                   "surface": "。"
                 }
               ],
-              "audioUrl": "/audio/learning/lesson18-f0db760d706f7bb69191.m4a"
+              "audioUrl": "/audio/learning/c13f9234ac595fe74e46.m4a",
+              "audioText": "おてらおみました。それからおみやげおかいました。"
             },
             "breakdown": [
               {
@@ -182,7 +187,8 @@
                     "surface": "すしはおいしかったです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson18-c2c68607ef78fc017de5.m4a"
+                "audioUrl": "/audio/learning/270483c17a53c497f6c2.m4a",
+                "audioText": "すしわおいしかったです。"
               }
             },
             {
@@ -231,7 +237,8 @@
                   "surface": "。"
                 }
               ],
-              "audioUrl": "/audio/learning/lesson18-aef71dfab486c6f4ee9d.m4a"
+              "audioUrl": "/audio/learning/075ba68c3906260a043e.m4a",
+              "audioText": "すしわおいしかったです。でもたかかったです。"
             },
             "breakdown": [
               {
@@ -279,7 +286,8 @@
                     "surface": "かぶきをみました。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson18-b6b5d8e034fb067d2cc8.m4a"
+                "audioUrl": "/audio/learning/5800af90bf46a80950e4.m4a",
+                "audioText": "かぶきおみました。"
               }
             }
           ],
@@ -316,7 +324,8 @@
                   "surface": "。"
                 }
               ],
-              "audioUrl": "/audio/learning/lesson18-606cb7fd3d0e7bf48b83.m4a"
+              "audioUrl": "/audio/learning/d3c611a0d1f321849f4b.m4a",
+              "audioText": "かぶきわきれいでした。そしておもしろかったです。"
             },
             "breakdown": [
               {
@@ -378,7 +387,8 @@
                     "surface": "つぎはきょうとにいきたいです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson18-712ed57c94843f2f96e0.m4a"
+                "audioUrl": "/audio/learning/4f041190c903ab897eee.m4a",
+                "audioText": "つぎわきょうとにいきたいです。"
               }
             },
             {
@@ -481,7 +491,8 @@
                     "surface": "ことしはにほんにいきたいです。"
                   }
                 ],
-                "audioUrl": "/audio/learning/lesson18-4ecee93440f212b8399a.m4a"
+                "audioUrl": "/audio/learning/53e463d6503e5e4a6a22.m4a",
+                "audioText": "ことしわにほんにいきたいです。"
               }
             }
           ]
@@ -853,7 +864,7 @@
         ],
         "surface": "そして",
         "kana": "そして",
-        "meaningRu": "затем, потом",
+        "meaningRu": "и, а также; затем, потом",
         "segments": [
           {
             "surface": "そして"
