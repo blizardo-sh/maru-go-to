@@ -1,25 +1,25 @@
 {
-  "commit": "c4d9cf3dac8bc5348633b2de1c2a6940963320fd",
-  "startedAt": "2026-11-03T19:48:20.730Z",
+  "commit": "30fce3d51c6d1bb1d8c7a6d641d6eb19429e0d13",
+  "startedAt": "2026-11-03T20:05:07.936Z",
   "host": "127.0.0.1",
   "port": 55440,
-  "database": "japanese_pixi_m8_units_1793735300722",
+  "database": "japanese_pixi_m8_units_1793736307930",
   "created": true,
   "steps": [
     {
       "name": "migrate",
       "status": 0,
-      "durationMs": 65
+      "durationMs": 57
     },
     {
       "name": "migrate-idempotent",
       "status": 0,
-      "durationMs": 31
+      "durationMs": 28
     },
     {
       "name": "tests",
       "status": 0,
-      "durationMs": 25180
+      "durationMs": 25414
     }
   ],
   "postgres": {
@@ -33,7 +33,8 @@
   },
   "passed": true,
   "cleanedUp": true,
-  "finishedAt": "2026-11-03T19:48:46.160Z",
+  "finishedAt": "2026-11-03T20:05:33.539Z",
+  "testedSource": "Clean git archive of 30fce3d51c6d1bb1d8c7a6d641d6eb19429e0d13; shared installed dependencies",
   "previouslySkipped": {
     "reported": 87,
     "namedTests": 66,
@@ -41,5 +42,5 @@
     "allNamedTestsPassed": true
   },
   "expectCalls": 49119,
-  "testLogSha256": "19b73c4f7772a25b76638c0c567d67c963be64a909900e43e1c6e7924ae0abcf"
+  "testLogSha256": "2b9bae295ae0deb8c899deb854ad1b48423f70daf15826666104771ea641a992"
 }
