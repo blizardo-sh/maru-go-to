@@ -1,5 +1,5 @@
 import { expect, test } from 'bun:test';
-import { captionAt } from '../src/client/videoCaptions';
+import { captionAt, videoCaption } from '../src/client/videoCaptions';
 import { course, validateCourse } from '../src/shared/course';
 import { createElement } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
@@ -22,6 +22,14 @@ const video: LessonVideo = {
   mediaUrl: 'https://a1.marugotoweb.jp/en/assets/movies/topics/cando_01_01.mp4',
   captionsSourceUrl: 'https://a1.marugotoweb.jp/en/assets/data/topics/cando_01_01.xml', captions,
 };
+
+test('challenge shows the learner response at its official cue and clears it in gaps', () => {
+  const challenge = course.lessons[0]!.videos!.find(v => v.id === 'marugoto.starter-a1.video.challenge01')!;
+  expect(videoCaption(challenge, 14.8)).toEqual({ text: 'おはようございます。', learner: false });
+  expect(videoCaption(challenge, 17.5)).toEqual({ text: 'おはようございます。', learner: true });
+  expect(videoCaption(challenge, 23)).toEqual({ text: null, learner: false });
+  expect(videoCaption(challenge, 38).learner).toBe(true);
+});
 
 test('video captions use media time at boundaries, gaps and backwards seeks without retaining old text', () => {
   const textAt = (time: number) => captions[captionAt(captions, time)]?.text ?? null;

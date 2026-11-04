@@ -1,3 +1,4 @@
+import { matchesPreparedAnswer } from '../shared/answers';
 import { studyPreparations, studySpec, introduceStudy } from './study';
 import { stagedLearning } from '../shared/training';
 import { createHash } from 'node:crypto';
@@ -10,7 +11,7 @@ import { getPublication, legacyPublication } from './publications';
 import { counterTarget, makeCounterCard } from '../shared/counters';
 import { counterAudio } from './counter-audio';
 import { reviewId } from './reviews';
-import { learningWordChoices } from '../shared/learningChoices';
+import { learningWordChoices, recallWordChoices } from '../shared/learningChoices';
 
 function routeFor(course: Course, lessonId: string): GuidedLesson {
   const route = course.learning?.find(lesson => lesson.lessonId === lessonId);
@@ -19,15 +20,15 @@ function routeFor(course: Course, lessonId: string): GuidedLesson {
 }
 function storedState(route: GuidedLesson, row?: { route_version: string; state: LearningRouteState }): LearningRouteState {
   if (row && row.route_version !== route.version) throw new ReviewError('ROUTE_CHANGED', 'Учебный маршрут обновился. Обратитесь к преподавателю для переноса прогресса.', 409);
-  return row ? reconcileOptionalVideos(route, row.state) : initialLearningState(route);
+  return row ? reconcileOptionalVideos(route, row.state) : { ...initialLearningState(route), recallPolicy: 'recall-v1' };
 }
 async function stateFor(sql: Database['sql'], userId: string, course: Course, route: GuidedLesson, state: LearningRouteState, version: number, hydrate: boolean): Promise<LearningState> {
   const step = currentLearningStep(route, state);
   const parts = learningParts(route);
-  const result: LearningState = { ...(course.publicationId ? { publicationId: course.publicationId } : {}), lessonId: route.lessonId, routeVersion: route.version, version, partIndex: state.partIndex, totalParts: parts.length, partProgress: learningPartProgress(parts, state), completedSteps: state.completedStepIds.length, totalSteps: parts.flat().length, completed: state.partIndex >= parts.length, step };
+  const result: LearningState = { ...(state.recallPolicy ? { recallPolicy: state.recallPolicy } : {}), ...(course.publicationId ? { publicationId: course.publicationId } : {}), lessonId: route.lessonId, routeVersion: route.version, version, partIndex: state.partIndex, totalParts: parts.length, partProgress: learningPartProgress(parts, state), completedSteps: state.completedStepIds.length, totalSteps: parts.flat().length, completed: state.partIndex >= parts.length, step };
   if (hydrate && step?.kind === 'word-practice') {
     result.reviewItem = await learningReviewItem(sql, userId, course, step.mode, step.wordId);
-    result.wordChoices = learningWordChoices(course, route, step);
+    result.wordChoices = state.recallPolicy ? recallWordChoices(course, route, step, state) : learningWordChoices(course, route, step);
   }
   if (hydrate && step?.kind === 'construction-practice') {
     const exercise = course.exercises.find(item => item.id === step.exerciseId)!;
@@ -52,6 +53,7 @@ async function counterReview(sql:Database['sql'],userId:string,course:Course,ste
   if(stagedLearning(course)&&counter)counter.introduction=true;
   if(!counter)throw new ReviewError('MATERIAL_UNAVAILABLE','Счётное задание недоступно.',403);
   counter.audioUrl=counterAudio(counter.definition,counter.quantity,course.catalog,course.media);
+  counter.examples.forEach((example,index)=>{example.audioUrl=counterAudio(counter.definition,[1,3,8][index]!,course.catalog,course.media);});
   const item:Extract<ReviewItem,{mode:'counter'}> = {id:reviewId('counter',targetId,`${step.wordId}|${seed}`),targetId,mode:'counter',version:saved?.version??0,due:new Date(saved?.due??Date.now()).toISOString(),isNew:!saved,counter,...(course.publicationId?{publicationId:course.publicationId}:{})};
   return (await studyPreparations(sql,userId,course,[item]))[0] as typeof item;
 }
@@ -95,8 +97,24 @@ export async function advanceLearning(database: Database, userId: string, course
     const step = currentLearningStep(route, state);
     if (!step || step.id !== input.stepId) throw new ReviewError('LEARNING_CONFLICT', 'Этот учебный шаг уже изменился.', 409);
     validateAction(step, input);
-    if (step.kind === 'word-practice' && state.wordQuiz && input.action !== 'choose') throw new ReviewError('INVALID_ACTION', 'Выберите один из четырёх ответов.');
+    const recall = !!state.recallPolicy && (step.kind === 'word-practice' || step.kind === 'construction-practice');
+    if (recall !== !!input.recall) throw new ReviewError('INVALID_ACTION', 'Правила ответа не совпадают с выданной частью.');
+    if (recall && !['remember', 'again'].includes(input.action)) throw new ReviewError('INVALID_ACTION', 'После раскрытия нужна самооценка.');
+    if (step.kind === 'word-practice' && state.wordQuiz && !recall && input.action !== 'choose') throw new ReviewError('INVALID_ACTION', 'Выберите один из четырёх ответов.');
     let action = input.action;
+    if (input.recall) {
+      const first = input.recall.firstChoiceWordId;
+      const tokens = input.recall.firstTokenIds;
+      if (step.kind === 'word-practice') {
+        if (tokens || first && !recallWordChoices(course, route, step, state).includes(first)) throw new ReviewError('INVALID_CHOICE', 'Первая попытка не относится к вопросу.');
+        if (first && !input.recall.helped) throw new ReviewError('INVALID_ACTION', 'Выбор вариантов является подсказкой.');
+        if (input.recall.helped || first && first !== step.wordId) action = 'again';
+      } else if (step.kind === 'construction-practice') {
+        if (first || tokens && step.mode !== 'grammar') throw new ReviewError('INVALID_ACTION', 'Первая попытка не относится к конструкции.');
+        const exercise = course.exercises.find(value => value.id === step.exerciseId)!;
+        if (input.recall.helped || tokens && !matchesPreparedAnswer(exercise, course.forms, tokens, input.recall.firstTokenForms)) action = 'again';
+      }
+    }
     if (step.kind === 'word-practice' && action === 'choose') {
       if (!learningWordChoices(course, route, step).includes(input.choiceWordId!)) throw new ReviewError('INVALID_CHOICE', 'Вариант не относится к этому вопросу.');
       action = input.choiceWordId === step.wordId ? 'remember' : 'again';
@@ -124,6 +142,9 @@ export async function advanceLearning(database: Database, userId: string, course
       if (step.kind === 'word-practice' && input.action === 'choose') reviewResult = { ...reviewResult, correct: action === 'remember' };
       if ((item.mode === 'grammar' || item.mode === 'counter') && (reviewResult.correct === false || submission.mode === 'grammar' && submission.revealed)) action = 'again';
     }
+    if (step.kind === 'counter-practice' && input.helped) action = 'again';
+    if (step.kind === 'counter-practice' && reviewResult) reviewResult = { ...reviewResult, correct: action === 'remember' && reviewResult.correct !== false };
+    if (recall && reviewResult) reviewResult = { ...reviewResult, correct: action === 'remember' && reviewResult.correct !== false };
     let next = advanceLearningState(route, state, action);
     const nextRoute=routeFor(nextCourse,lessonId);
     if(nextCourse.publicationId!==course.publicationId)next=reconcileLearningRoute(route,nextRoute,next);

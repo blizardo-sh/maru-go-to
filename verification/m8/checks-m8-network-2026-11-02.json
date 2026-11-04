@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "date": "2026-11-02",
+  "browser": "145.0.7632.160",
+  "method": "Resource Timing same-origin bytes and driver-observed authenticated/scene-ready; one fresh context then reload; HTML no-store; assets no-cache revalidation; not phone or FPS measurement",
+  "samples": [
+    {
+      "name": "cold-new-context",
+      "resources": 38,
+      "transferBytes": 8869490,
+      "encodedBytes": 8858090,
+      "driverObservedReadyMs": 2095
+    },
+    {
+      "name": "warm-reload",
+      "resources": 38,
+      "transferBytes": 8869490,
+      "encodedBytes": 8858090,
+      "driverObservedReadyMs": 984
+    }
+  ],
+  "physicalDevice": false,
+  "cachePolicyChanged": true,
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

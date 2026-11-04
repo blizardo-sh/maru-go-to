@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-27",
+  "generator": "built-in image_gen",
+  "reference": "../art-direction/mobile-overhead-cards-v2.png",
+  "assets": [
+    {
+      "key": "desk",
+      "prompt": "Use case: precise-object-edit. Reference image is the APPROVED overhead Japanese learning desk. Produce a clean background plate for a real PixiJS app, tall portrait approximately 960x2080. Keep the exact top-down camera, warm wooden tabletop, golden soft light, tea cup and cloth at upper left, books and blossoms at upper right and lower left, soft leaves around outer edges, detailed cozy painted material and palette. REMOVE ALL interface, ALL text including logo and progress, ALL paper cards and answer slips, and REMOVE the cat. Seamlessly fill those areas with matching uninterrupted wooden table and natural light. The central 80 percent must be clear wood usable behind interactive paper objects. No new objects in the working area. No symbols, text, UI, card silhouettes, animals or watermarks. Preserve the existing quality and identity of the desk illustration.",
+      "transparent": false,
+      "source": "/Users/ivsh/.codex/generated_images/01a179c3-fa57-7f11-8ceb-463aa2df2500/exec-af6851e3-06b4-468e-8f3b-a11fdb358723.png"
+    },
+    {
+      "key": "card",
+      "prompt": "Use case: background-extraction / precise-object-edit. Create a transparent production UI asset from the APPROVED overhead study-card reference. Isolate ONE beautiful flat thick cream washi card, viewed exactly from above, front-facing orthographic and axis-aligned. Preserve the approved paper fibers, softly irregular natural edges, the restrained painted botanical sprig at lower-left and tiny petal detail near lower-right, warm cream material and nuanced painted contact shadow. REMOVE ALL text, kanji, kana and symbols, remove the entire background, other cards, cat, props and interface. This should be one blank card, not a stack, with a clean open center for native Canvas typography. Approximately 1024x800 aspect, no rotation or perspective, all four corners fully visible with small transparent margins. Soft detailed illustration matching reference, not photoreal aged parchment, not a flat vector rectangle. Genuine transparent background.",
+      "transparent": true,
+      "source": "/Users/ivsh/.codex/generated_images/01a179c3-fa57-7f11-8ceb-463aa2df2500/exec-b7e3f9a6-2269-44c0-9be1-7e5f5cc488bd.png"
+    },
+    {
+      "key": "answer",
+      "prompt": "Use case: background-extraction / precise-object-edit. Create ONE transparent blank paper answer slip from the APPROVED overhead learning-card reference. A wide horizontal light cream washi slip, approximately 1024x288 aspect, perfectly top-down, axis-aligned, zero rotation or perspective. Match the reference's beautiful natural slightly fibrous paper edges, fine subtle fibers, warm light cream face and soft painted shadow. A very small restrained botanical detail may sit at the far left edge only; keep the entire center blank and calm for native text. REMOVE all words and marks, other papers, wooden table, cat and props. One single fully visible slip on genuine transparency with small transparent margins. This is a reusable physical paper UI surface, not a gray HTML button or heavy frame.",
+      "transparent": true,
+      "source": "/Users/ivsh/.codex/generated_images/01a179c3-fa57-7f11-8ceb-463aa2df2500/exec-26eab380-8ebc-4381-9709-83330cefe72f.png"
+    },
+    {
+      "key": "cat",
+      "prompt": "Use case: background-extraction / identity-preserve. Extract and refine the cream cat at the lower right of reference image 1 as a transparent game sprite. Reference image 2 locks the original approved cat identity: exact warm cream fur, large brown eyes, muzzle, pink inner ears, cheeks and sage scarf. Keep the overhead-desk study's pose: small face looking up, both front paws visible in front, chest/scarf behind. Preserve the gentle expression and polished soft 2D illustration. Isolate the cat's head, paws and short upper chest, no wooden edge or desk, no books, foliage, UI, text or other objects. It is a friendly companion peeking from the lower edge of a top-down study desk. Whole ears and paws fully visible, genuine transparent background, no border, no checkerboard baked in, approximately square framing.",
+      "transparent": true,
+      "source": "/Users/ivsh/.codex/generated_images/01a179c3-fa57-7f11-8ceb-463aa2df2500/exec-5c990613-ec0c-4bc7-9b87-a2c1a316074a.png"
+    },
+    {
+      "key": "logo",
+      "prompt": "Use case: background-extraction / identity-preserve. Extract the approved hand-lettered Japanese brand mark from the overhead study reference: exact text 'まるごと' and its small pair of olive/sage leaves to the right. Preserve the warm dark-brown brush-ink character, fine natural stroke variation and gentle handwritten elegance. One horizontal brand mark only, perfectly readable, no other text. Remove every bit of wooden background, paper, cards, progress, cat and scenery. Genuine transparent background with small clear margins around the lettering and leaf detail. This is a reusable UI logo asset, not a new logo concept. Wide aspect about 4:1, no texture rectangle behind it.",
+      "transparent": true,
+      "source": "/Users/ivsh/.codex/generated_images/01a179c3-fa57-7f11-8ceb-463aa2df2500/exec-99a451ef-9a69-4f4b-b6f4-c2b4d831d0ba.png"
+    }
+  ]
+}

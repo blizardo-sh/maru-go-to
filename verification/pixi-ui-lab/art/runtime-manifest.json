@@ -1,0 +1,128 @@
+[
+  {
+    "source": "source/answer.png",
+    "sourceSize": [
+      2048,
+      768
+    ],
+    "sourceSha256": "8362b8bb5f0427ecfe7b3a6b2f2df16cb891c32ddc95f3f8079203d260a916fd",
+    "alphaCrop": [
+      79,
+      127,
+      1979,
+      658
+    ],
+    "runtime": "runtime/answer.webp",
+    "runtimeSize": [
+      1024,
+      286
+    ],
+    "bytes": 73322,
+    "sha256": "cda4ae4423f73d326b01c77fa8db4ed89521a02d3c7afea13221619b2e4e3354"
+  },
+  {
+    "source": "source/card.png",
+    "sourceSize": [
+      1419,
+      1108
+    ],
+    "sourceSha256": "f0d736ea9bd1dfb91aa6bc1b519df35983fd5f5398120e7045bcd69511e2f05c",
+    "alphaCrop": [
+      49,
+      101,
+      1374,
+      1015
+    ],
+    "runtime": "runtime/card.webp",
+    "runtimeSize": [
+      1024,
+      706
+    ],
+    "bytes": 201204,
+    "sha256": "6e4c4585ac734316f681028b8423ea4395930a3e6253ee19d7d893a1d9a02f69"
+  },
+  {
+    "source": "source/cat.png",
+    "sourceSize": [
+      1254,
+      1254
+    ],
+    "sourceSha256": "e4d58cbeb6d8f78eb900f1428c5cd7782bbe6f13eb6599615c537ceb95d74891",
+    "alphaCrop": [
+      75,
+      43,
+      1245,
+      1211
+    ],
+    "runtime": "runtime/cat.webp",
+    "runtimeSize": [
+      1024,
+      1022
+    ],
+    "bytes": 148948,
+    "sha256": "0143248fe2d24f9c1a9227686e9b2ddf50884db856d8f893cd42dc08d53b0c28"
+  },
+  {
+    "source": "source/desk.png",
+    "sourceSize": [
+      880,
+      1787
+    ],
+    "sourceSha256": "26e6ba4e391c7abe78cbe6f0dab31d11019d8a6d36e639853cb16b523685c123",
+    "alphaCrop": [
+      0,
+      0,
+      880,
+      1787
+    ],
+    "runtime": "runtime/desk.webp",
+    "runtimeSize": [
+      880,
+      1787
+    ],
+    "bytes": 291954,
+    "sha256": "9edabf71f63689ab9899c24a8889f69a3f80262863197c2b1a632a3ba68e8b77"
+  },
+  {
+    "source": "source/logo.png",
+    "sourceSize": [
+      2143,
+      734
+    ],
+    "sourceSha256": "749bc9a69241cb307fe0e3534b0d523662bac222df265e2d61da2a02e55d1fdb",
+    "alphaCrop": [
+      145,
+      171,
+      2043,
+      596
+    ],
+    "runtime": "runtime/logo.webp",
+    "runtimeSize": [
+      1024,
+      229
+    ],
+    "bytes": 51092,
+    "sha256": "1ef390c8d348d69b773d872650b03c2c55b395150ab5ce7749e143f8884b483c"
+  },
+  {
+    "source": "source/desk-landscape.png",
+    "sourceSize": [
+      1586,
+      992
+    ],
+    "sourceSha256": "7e8525b22094914491abb5dff5b5b243280e80f435b81f92cf1a586c15229852",
+    "alphaCrop": [
+      0,
+      0,
+      1586,
+      992
+    ],
+    "runtime": "runtime/desk-landscape.webp",
+    "runtimeSize": [
+      1586,
+      992
+    ],
+    "bytes": 331004,
+    "sha256": "f61482dbbbfbd80ce398e1694ff0208da0cb036729f0443efda9ec7e00515fcd"
+  }
+]

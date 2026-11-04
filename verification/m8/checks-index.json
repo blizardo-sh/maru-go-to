@@ -1,0 +1,251 @@
+{
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+  "method": "Original report identity retained. Hashes cover the current report bytes. Index does not include itself. Historical unsuccessful attempts remain private; sanitized attempt status list included separately.",
+  "checks": [
+    {
+      "file": "checks-m8-alignment-2026-11-02.json",
+      "sha256": "dddfed0e9afc21e061550bc46fc75b47026c9c6dfdd921e50b108126e77efce7",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-choice-alignment-2026-11-02.json",
+      "sha256": "1052c327d17cef422122d72b6d2079e8d5a9716fd37ea7eb82c72581a64b7eb2",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-data-preservation.json",
+      "sha256": "06eae0e6b334395f00bf1ab9120caa6b082cf3433a8ee7a8fb1608231932176d",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-delivery.json",
+      "sha256": "20781e230c366ccc0daab485ad8a90a239112ca5150635cb41155aaf929325ab",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-dependencies.json",
+      "sha256": "ecf4690f6d02c746570ec83de6eb203d0a2f95206caae68849f2d4243aa60e71",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-file-preservation.json",
+      "sha256": "6e4c32990eb26cc99dd1af0825771a4d69783cdf2ff507a21f1ebd405bb41272",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-final-review.json",
+      "sha256": "8f6bdb4db434f29a94a02cfe841fc509a440508e95200920d80baa84315e89ec",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-m5-access-browser.json",
+      "sha256": "53930b39905b008d2747c75f69be590e473dcf6daf19b44a0a9bbabc569b2b43",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-m5-book.json",
+      "sha256": "f42c2e5ad0cd901979a012be91dd51fb537006ad5464f3f5928c882d0592325a",
+      "status": "PASS",
+      "executionCandidate": "5a6cc0d73c5565d1ef51cb2686ebee51262089cb51b70fabace6b14f3e448367",
+      "applicability": "Carried forward by exact source delta in evidence-map.json"
+    },
+    {
+      "file": "checks-m8-m5-counter-browser.json",
+      "sha256": "4a1c1ca0c8775a4ba14f42ace72932d5258370ee20e39495ada12e073ffbab0c",
+      "status": "PASS",
+      "executionCandidate": "5a6cc0d73c5565d1ef51cb2686ebee51262089cb51b70fabace6b14f3e448367",
+      "applicability": "Carried forward by exact source delta in evidence-map.json"
+    },
+    {
+      "file": "checks-m8-m5-kana-storage.json",
+      "sha256": "f574e3ae814f273e1391d321615278685caf91c531c470132f99ae904530babe",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-m5-kana.json",
+      "sha256": "85d7565d5dc9e259b2ba4d4af4c7ca9cddcd1668c16d92b4d50fd46c912c682a",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-m5-personal-browser.json",
+      "sha256": "0790616a60a77424f92562be1d13280b42162d3bf8199b7c853bb6f0f873b7aa",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-m6-connected.json",
+      "sha256": "bfc2e1b2616d30942f334bc4b4fa2f6b0949774e1bfb0bec124be25ba166d9ca",
+      "status": "PASS",
+      "executionCandidate": "5a6cc0d73c5565d1ef51cb2686ebee51262089cb51b70fabace6b14f3e448367",
+      "applicability": "Carried forward by exact source delta in evidence-map.json"
+    },
+    {
+      "file": "checks-m8-m6-entry-idle.json",
+      "sha256": "785844097a11cb0adca55ac885800f280c9bc86a6dcba8ce6ad79593c6b3a406",
+      "status": "PASS",
+      "executionCandidate": "5a6cc0d73c5565d1ef51cb2686ebee51262089cb51b70fabace6b14f3e448367",
+      "applicability": "Carried forward by exact source delta in evidence-map.json"
+    },
+    {
+      "file": "checks-m8-m6-events.json",
+      "sha256": "6ac07605f10cdd2ada1e9d9697cb360b84a6325f9d1dfd844f384d78096d012e",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-m6-full-lifecycle.json",
+      "sha256": "4601154ba0d9bba21157f8a70435f579a8f53c875d452a7997aad038f93caa27",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-m6-full-sound.json",
+      "sha256": "be8fe79f93e5cb850df0244604aff23fb5b5291e4bea9c90f840eab42224802f",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-m6-hidden-ack.json",
+      "sha256": "a5e831530ec54956ce77451fec6d38de7bd1b76616c8014c7f369e753a315faf",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-m6-kana-storage.json",
+      "sha256": "412d0c79e4e8f1ed6ea16717d3d745008888cf80ea2d25db4b118068503ae59b",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-m6-native-profile.json",
+      "sha256": "c0700eeb21217a3e5578236066854bb0cb971bbdf21037e0f4ae4babcba949f7",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-m6-native-safari.json",
+      "sha256": "413af8a2c2f98f6c132d4f795c7ad030d93dd18a4ba4e5a17aa4501026f3bd52",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-m6-owner-audio.json",
+      "sha256": "d4a686a127cb089d41e5417d606370cbabab93d31549d34e2028380451273dee",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-m6-recovery-input.json",
+      "sha256": "118662576de16918564bf35fa0654e750b5c83557e6d11333086fad3bd518126",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-m6-video.json",
+      "sha256": "a58367e9a20c6580a7d22bfbb4d2a34eb2ece3dccd17d7e64f19b104e7ff9022",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-m6-workspace.json",
+      "sha256": "2565032667bc1a5d588b859dae0904a04b1ed988c9665e48992ad74082f3b51d",
+      "status": "PASS",
+      "executionCandidate": "5a6cc0d73c5565d1ef51cb2686ebee51262089cb51b70fabace6b14f3e448367",
+      "applicability": "Carried forward by exact source delta in evidence-map.json"
+    },
+    {
+      "file": "checks-m8-m7-native-groups.json",
+      "sha256": "ab890fc1cdffcf4eaaec3b1be07c766b112bd1ecdd66f32341ef2c7e6bc75d5f",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-m7-video-catalog.json",
+      "sha256": "bdbd4244bdd2d68cd2c01859d0cd54a3f8916396740396190021e6f6201fdd75",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-mobile-2026-11-02.json",
+      "sha256": "a05cbd4b42ccf35cb2904f52b1353a3b5de9df1e9d8ff25f57089e506b02f1c7",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-network-2026-11-02.json",
+      "sha256": "8e429219a5640a48ca2836d7029751fb0dc40aa480167450da8edd057a57c815",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-publication.json",
+      "sha256": "015d8d6156cf2cd45bddc2cea0117efeb4216a038567e431438e85191398dfbd",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-release-reuse.json",
+      "sha256": "ffbd417a22266756ed2ebac8b930bb39ba05aaa228374dbced652ec81524c05c",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-rollback-sql.json",
+      "sha256": "bf9584d7fbfd4d5a2d98579f48d9e63988e761b44620f14495ea144baaec8fc8",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-rollback.json",
+      "sha256": "8115486b5917ac43dcb60eb64e12d82a771d7ec22dc88523de9f18b2aaa401f3",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    },
+    {
+      "file": "checks-m8-units.json",
+      "sha256": "f0f7103d6d0542da71addb0724a9fd401d448f6d9438d83b1cd09fabb5533fd9",
+      "status": "PASS",
+      "executionCandidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+      "applicability": "Exact final candidate"
+    }
+  ]
+}

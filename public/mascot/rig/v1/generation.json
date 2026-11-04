@@ -3,7 +3,7 @@
   "generator": "built-in image_gen.imagegen",
   "mode": "three individual transparent isolation edits",
   "originalApprovedArtwork": {
-    "path": "/Users/ivsh/source/own_server/japanese-learning/assets/mascot/mascot-neutral-v1.png",
+    "path": "provenance://source/mascot-neutral-v1.png",
     "sha256": "4ddcb8c9ac1d1dd24d749eb818555d5039f2bf86fb16f532774ae657d3459228",
     "dimensions": [
       1261,
@@ -12,7 +12,7 @@
     "mode": "RGBA"
   },
   "registeredReference": {
-    "path": "/Users/ivsh/Documents/ChatGPT/Japanese learning/output/cat-rig-input/neutral-reference-720.png",
+    "path": "provenance://source/neutral-reference-720.png",
     "sha256": "900238a52f197970623fef0288904c569d93219bbac01ef72569115928f3b119",
     "dimensions": [
       720,
@@ -24,7 +24,7 @@
   "layers": {
     "tail": {
       "source": {
-        "path": "/Users/ivsh/.codex/generated_images/01a15d9a-e862-7750-a746-01e09d11bee0/exec-9062542a-e0f2-4f32-8f53-07ab9ecd9cb2.png",
+        "path": "imagegen://01a15d9a-e862-7750-a746-01e09d11bee0/exec-9062542a-e0f2-4f32-8f53-07ab9ecd9cb2.png",
         "sha256": "0647de87d6471e734e2d0f4f6120e5e425c9992d14c96d7004327af8b4def01b",
         "dimensions": [
           1254,
@@ -58,7 +58,7 @@
     },
     "body": {
       "source": {
-        "path": "/Users/ivsh/.codex/generated_images/01a15d9a-e862-7750-a746-01e09d11bee0/exec-666e749f-b82d-46b4-b5a4-d651cc9f498f.png",
+        "path": "imagegen://01a15d9a-e862-7750-a746-01e09d11bee0/exec-666e749f-b82d-46b4-b5a4-d651cc9f498f.png",
         "sha256": "a578564a3f7f6f1a156d67e625cad5e8510f6ef3f5048eb38a04e4f3d49e9c1c",
         "dimensions": [
           1254,
@@ -92,7 +92,7 @@
     },
     "head": {
       "source": {
-        "path": "/Users/ivsh/.codex/generated_images/01a15d9a-e862-7750-a746-01e09d11bee0/exec-feb483e8-8c27-4ccb-81a3-f587ccf43c6b.png",
+        "path": "imagegen://01a15d9a-e862-7750-a746-01e09d11bee0/exec-feb483e8-8c27-4ccb-81a3-f587ccf43c6b.png",
         "sha256": "210eec1b7ec855bd7cc1c98eb95e65c7ae4cad58e0aada5774f51c4c50a1828d",
         "dimensions": [
           1254,
@@ -175,7 +175,7 @@
     "decode": "PASS all three RGBA WebP 720×720",
     "alpha": "PASS extrema0..255 and four transparent corner pixels per layer",
     "registration": "PASS neck overlap>=5644 and tail-root overlap>=3673 opaque pixels for all five checked combinations",
-    "previewPath": "/Users/ivsh/Documents/ChatGPT/Japanese learning/output/cat-rig-registration-review.png",
+    "previewPath": "provenance://source/cat-rig-registration-review.png",
     "browserMotion": "Not checked here; consuming component must respect max rotations and reduced motion."
   }
 }

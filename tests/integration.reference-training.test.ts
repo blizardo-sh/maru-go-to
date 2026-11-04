@@ -1,3 +1,4 @@
+import { disposableDatabase } from './helpers/disposable-database';
 import { afterAll, beforeAll, beforeEach, describe, expect, test } from 'bun:test';
 import { createApp } from '../src/server/app';
 import { consumeLink, createLink } from '../src/server/auth';
@@ -30,7 +31,7 @@ const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
     expect((await request('/api/reviews', { attemptId: crypto.randomUUID(), reviewId: reviewId('grammar', exercise.skillId, exercise.id), version: 0, mode: 'grammar', tokenIds: exercise.acceptedOrders[0], revealed: false, rating: 3 })).status).toBe(200);
   };
   beforeAll(() => {
-    const url = new URL(databaseUrl!); if (!['localhost', '127.0.0.1'].includes(url.hostname) || url.pathname !== '/japanese_app_test') throw new Error('Disposable local japanese_app_test required.');
+    const url = new URL(databaseUrl!); if (!disposableDatabase(url)) throw new Error('Disposable local japanese_app_test required.');
     database = connectDatabase(databaseUrl!); app = createApp({ database, course, config: { DATABASE_URL: databaseUrl!, BETTER_AUTH_SECRET: 'reference-training-isolated-secret-over-32-characters', APP_URL: origin, PORT: 3099, HOST: '127.0.0.1' } });
   });
   beforeEach(async () => {

@@ -1,0 +1,104 @@
+{
+  "passed": true,
+  "commonInstant": "2026-11-02T15:08:52.599Z",
+  "todayStartsAt": "2026-11-01T21:00:00.000Z",
+  "todayZone": "Europe/Moscow",
+  "originalDatabases": 9,
+  "originalDatabaseFingerprintsUnchanged": true,
+  "clones": [
+    {
+      "clone": "published",
+      "originalLearners": 4,
+      "originalReviewHistory": 299,
+      "originalGuidedHistory": 303,
+      "allOriginalOwnedRowsByteIdentical": true,
+      "dueTodaySameInstant": {
+        "due": 212,
+        "today": 0
+      },
+      "newSyntheticUsers": 55,
+      "tableRowDelta": {
+        "access_links": 59,
+        "accounts": 55,
+        "content_active": 0,
+        "content_publications": 0,
+        "counter_progress": 10,
+        "learning_attempts": 461,
+        "learning_states": 33,
+        "personal_words": 9,
+        "preferences": 6,
+        "registration_links": 6,
+        "review_attempts": 405,
+        "review_states": 555,
+        "sessions": 143,
+        "study_progress": 209,
+        "users": 55,
+        "verifications": 0,
+        "word_lists": 9
+      }
+    },
+    {
+      "clone": "test",
+      "originalLearners": 4,
+      "originalReviewHistory": 299,
+      "originalGuidedHistory": 303,
+      "allOriginalOwnedRowsByteIdentical": true,
+      "dueTodaySameInstant": {
+        "due": 212,
+        "today": 0
+      },
+      "newSyntheticUsers": 0,
+      "tableRowDelta": {
+        "access_links": 0,
+        "accounts": 0,
+        "content_active": 0,
+        "content_publications": 0,
+        "counter_progress": 0,
+        "learning_attempts": 0,
+        "learning_states": 0,
+        "personal_words": 0,
+        "preferences": 0,
+        "registration_links": 0,
+        "review_attempts": 0,
+        "review_states": 0,
+        "sessions": 0,
+        "study_progress": 0,
+        "users": 0,
+        "verifications": 0,
+        "word_lists": 0
+      }
+    },
+    {
+      "clone": "units",
+      "originalLearners": 4,
+      "originalReviewHistory": 299,
+      "originalGuidedHistory": 303,
+      "allOriginalOwnedRowsByteIdentical": true,
+      "dueTodaySameInstant": {
+        "due": 212,
+        "today": 0
+      },
+      "newSyntheticUsers": 0,
+      "tableRowDelta": {
+        "access_links": 0,
+        "accounts": 0,
+        "content_active": 0,
+        "content_publications": 1,
+        "counter_progress": 0,
+        "learning_attempts": 0,
+        "learning_states": 0,
+        "personal_words": 0,
+        "preferences": 0,
+        "registration_links": 0,
+        "review_attempts": 0,
+        "review_states": 0,
+        "sessions": 0,
+        "study_progress": 0,
+        "users": 0,
+        "verifications": 0,
+        "word_lists": 0
+      }
+    }
+  ],
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

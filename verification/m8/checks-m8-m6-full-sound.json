@@ -1,0 +1,17 @@
+{
+  "date": "2026-11-02",
+  "passed": true,
+  "checks": [
+    "duplicate/conflicting ACK cues deduplicate",
+    "speech stops effects; release preserves changed levels",
+    "late cue discarded across hide/show",
+    "late cue discarded across A→B→A scene switch",
+    "late cue discarded across speech interruption",
+    "late zero-volume cue suppressed",
+    "mutable caller settings cannot preserve a pre-mute cue",
+    "late owner disposal cannot play",
+    "effect polyphony and concurrent decoding bounded at four"
+  ],
+  "scope": "root SceneSoundController fake audio graph; obsolete preview-motion assertions excluded; no hearing or device claim",
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

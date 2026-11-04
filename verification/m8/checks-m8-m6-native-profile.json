@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-02",
+  "passed": true,
+  "browser": "Safari",
+  "version": "27.0",
+  "nativeMac": true,
+  "scene": "river",
+  "viewport": "native Safari window 1280x900 including browser chrome",
+  "method": "M6 decor RAF timestamp intervals and CPU app.render submission, last 240 frames, no CDP GC or scene cycling during sample",
+  "timing": {
+    "samples": 240,
+    "frameIntervalP95Ms": 18,
+    "renderSubmitP95Ms": 1
+  },
+  "decorTicks": 391,
+  "physicalPhone": false,
+  "gpuVramMeasured": false,
+  "sixtyFpsClaim": false,
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

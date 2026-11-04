@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+  "method": "Root Canvas creates both pending payloads; private persistent Chrome profile restart; two compatible React tabs at same localhost:5202 origin deliver unchanged payload/attemptId; matching HTTP200 ACK; SQL exact one record per queue; back to Canvas; no database restore.",
+  "guidedStorageFailureNoPost": true,
+  "reviewStorageFailureNoPost": true,
+  "reviewCommittedBeforeLostAck": true,
+  "processRestart": true,
+  "twoReactTabs": true,
+  "kanaIDBSameOriginPreserved": true,
+  "kanaBeforeSha256": "51a1f1acb7b81f2af3cd164fc23541eccfe9daa79eaaa703ccb65fe0399e4b75",
+  "kanaAfterSha256": "51a1f1acb7b81f2af3cd164fc23541eccfe9daa79eaaa703ccb65fe0399e4b75",
+  "restoredPresentationDoesNotCelebrate": true,
+  "queues": {
+    "learning": {
+      "payloadSha256": "b6302e443cb3df6e648b066f4c4c601754909e6d00aa5c3e43030af0cbaa3815",
+      "ackSha256": "4235ca7f504beee84c44771962232c00c72a19d5ccf065347b3fef9a964891a4",
+      "httpDeliveries": 1
+    },
+    "reviews": {
+      "payloadSha256": "d3628116a3992b6df5807331b5533de29f47a6d88c506e3dcb99d036acaa19b9",
+      "ackSha256": "a3c4ab6bee65e5ed8b52420a2238e0a75114a8da6a17956666d69c693e9aca43",
+      "httpDeliveries": 1
+    }
+  },
+  "sql": {
+    "passed": true,
+    "checks": [
+      {
+        "queue": "learning",
+        "receiptRows": 1,
+        "gradeRows": 1,
+        "payloadAndAckMatch": true
+      },
+      {
+        "queue": "reviews",
+        "receiptRows": 1,
+        "gradeRows": 1,
+        "payloadAndAckMatch": true
+      }
+    ]
+  }
+}

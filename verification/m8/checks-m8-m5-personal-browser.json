@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checks": [
+    "lost-ACK-create-retry",
+    "chrome:import-draft-confirm-reading-reload",
+    "webkit:import-draft-confirm-reading-reload"
+  ],
+  "serverSchemaMigration": false,
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

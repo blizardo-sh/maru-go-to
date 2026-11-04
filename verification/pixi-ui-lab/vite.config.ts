@@ -1,0 +1,2 @@
+import { defineConfig } from 'vite';
+export default defineConfig({ publicDir: false, resolve: { alias: { '@rehearsal': new URL('./.local/rehearsal-20261028/server-release/src', import.meta.url).pathname } }, build: { copyPublicDir: false, rolldownOptions: { input: { index: new URL('./index.html', import.meta.url).pathname, paper: new URL('./paper.html', import.meta.url).pathname, learn: new URL('./learn.html', import.meta.url).pathname } } } });

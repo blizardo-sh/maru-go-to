@@ -3,13 +3,13 @@ import type { LearnerSettings } from '../shared/types';
 import { defaultSoundSettings } from '../shared/sound';
 import type { SceneId } from './scenes';
 
-export type SoundCue = 'reveal' | 'move' | 'good' | 'again' | 'complete';
+export type SoundCue = 'reveal' | 'move' | 'good' | 'again' | 'complete' | 'pet';
 export type SoundState = 'paused' | 'muted' | 'loading' | 'playing' | 'blocked' | 'unavailable';
 type SoundSettings = Pick<LearnerSettings, 'sceneSoundEnabled' | 'musicVolume' | 'ambienceVolume' | 'sfxVolume'>;
-type Manifest = { version: 1; scenes: Record<SceneId, { music: string; ambience: string }>; sfx: Record<SoundCue, string> };
+type Manifest = { version: 1; scenes: Record<SceneId, { music: string; ambience: string }>; sfx: Record<Exclude<SoundCue, 'pet'>, string> & { pet?: string } };
 export type SceneSound = { unlock: (scene?: SceneId) => void; setSpeechPlaying: (playing: boolean) => void; cue: (type: SoundCue, eventId: string) => void; state: SoundState };
 
-class SceneSoundController {
+export class SceneSoundController {
   context: AudioContext | null = null;
   private music: GainNode | null = null;
   private ambience: GainNode | null = null;
@@ -29,10 +29,18 @@ class SceneSoundController {
   private cues = new Set<string>();
   private oneShots = new Set<AudioBufferSourceNode>();
   private loading = 0;
+  private lifecycle = 0;
+  private pendingCues = 0;
+  private startedEffects = 0;
+  private decodedBytes = 0;
 
-  constructor(private onState: (value: SoundState) => void) { void this.getManifest().catch(() => {}); }
+  constructor(private onState: (value: SoundState) => void, private manifestUrl = '/m6/audio/manifest.json') {
+    if (!['/audio/game/manifest.json', '/m6/audio/manifest.json'].includes(manifestUrl)) throw new Error('Invalid sound manifest');
+    void this.getManifest().catch(() => {});
+  }
   configure(settings: SoundSettings, scene: SceneId, active: boolean, visible: boolean) {
-    this.settings = settings; this.scene = scene; this.active = active; this.visible = visible;
+    if (this.scene !== scene || this.active !== active || this.visible !== visible || this.settings.sceneSoundEnabled !== settings.sceneSoundEnabled) { ++this.lifecycle; this.stopEffects(); }
+    this.settings = { ...settings }; this.scene = scene; this.active = active; this.visible = visible;
     this.gains(); this.sync();
   }
   unlock(scene?: SceneId) {
@@ -47,10 +55,11 @@ class SceneSoundController {
       }
       // Called directly from Start/toggle, before any network request or intro delay.
       void this.context.resume().then(() => this.sync()).catch(() => { if (!this.disposed) this.onState('blocked'); });
-      if (this.manifestValue && this.running()) { this.installLoops(this.manifestValue); this.playLoops(); }
+      if (this.manifestValue && this.running()) { this.installLoops(this.manifestValue); for (const { audio } of this.loops.values()) if (audio.error) audio.load(); this.playLoops(); }
     } catch { this.onState('unavailable'); }
   }
-  setSpeechPlaying(value: boolean) { this.speechPlaying = value; this.gains(); }
+  setSpeechPlaying(value: boolean) { if (value !== this.speechPlaying) ++this.lifecycle; this.speechPlaying = value; if (value) this.stopEffects(); this.gains(); }
+  private stopEffects() { for (const source of this.oneShots) { source.onended = null; try { source.stop(); } catch {} source.disconnect(); } this.oneShots.clear(); }
   private running() { return this.active && this.visible && this.settings.sceneSoundEnabled && !this.disposed; }
   private gains() {
     if (!this.context) return;
@@ -65,19 +74,19 @@ class SceneSoundController {
     const context = this.context;
     if (this.disposed) return;
     if (!context) { this.onState(this.settings.sceneSoundEnabled ? 'paused' : 'muted'); return; }
-    if (!this.running()) { for (const { audio } of this.loops.values()) audio.pause(); for (const source of this.oneShots) source.stop(); this.oneShots.clear(); void context.suspend().catch(() => {}); this.onState(this.settings.sceneSoundEnabled ? 'paused' : 'muted'); return; }
+    if (!this.running()) { for (const { audio } of this.loops.values()) audio.pause(); this.stopEffects(); void context.suspend().catch(() => {}); this.onState(this.settings.sceneSoundEnabled ? 'paused' : 'muted'); return; }
     if (context.state !== 'running') { void context.resume().then(() => { if (this.running()) this.prepare(); else this.sync(); }).catch(() => { if (!this.disposed) this.onState('blocked'); }); }
     else this.prepare();
   }
   private getManifest() {
-    if (!this.manifest) this.manifest = fetch('/audio/game/manifest.json').then(async response => { if (!response.ok) throw new Error('Sound unavailable'); const value: Manifest = await response.json(); if (value.version !== 1 || !value.scenes || !value.sfx) throw new Error('Sound unavailable'); this.manifestValue = value; return value; }).catch(error => { this.manifest = null; throw error; });
+    if (!this.manifest) this.manifest = fetch(this.manifestUrl).then(async response => { if (!response.ok) throw new Error('Sound unavailable'); const value: Manifest = await response.json(); if (value.version !== 1 || !value.scenes || !value.sfx) throw new Error('Sound unavailable'); this.manifestValue = value; return value; }).catch(error => { this.manifest = null; throw error; });
     return this.manifest;
   }
   private buffer(src: string) {
-    if (!src.startsWith('/audio/game/') || src.includes('..')) return Promise.reject(new Error('Invalid sound asset'));
+    if ((!src.startsWith('/audio/game/') && !src.startsWith('/m6/audio/')) || src.includes('..') || /[?#\\]/.test(src)) return Promise.reject(new Error('Invalid sound asset'));
     let result = this.buffers.get(src);
     if (!result) {
-      result = fetch(src).then(async response => { if (!response.ok) throw new Error('Sound unavailable'); return this.context!.decodeAudioData(await response.arrayBuffer()); }).catch(error => { this.buffers.delete(src); throw error; });
+      result = fetch(src).then(async response => { if (!response.ok) throw new Error('Sound unavailable'); const buffer = await this.context!.decodeAudioData(await response.arrayBuffer()); if (!this.disposed && this.buffers.has(src)) this.decodedBytes += buffer.length * buffer.numberOfChannels * 4; return buffer; }).catch(error => { this.buffers.delete(src); throw error; });
       this.buffers.set(src, result);
     }
     return result;
@@ -96,7 +105,7 @@ class SceneSoundController {
   }
   private loop(channel: 'music' | 'ambience', src: string, gain: GainNode) {
     if (this.loops.get(channel)?.src === src) return;
-    if (!src.startsWith('/audio/game/') || src.includes('..')) throw new Error('Invalid sound asset');
+    if ((!src.startsWith('/audio/game/') && !src.startsWith('/m6/audio/')) || src.includes('..') || /[?#\\]/.test(src)) throw new Error('Invalid sound asset');
     const previous = this.loops.get(channel); if (previous) { previous.audio.onplaying = null; previous.audio.onpause = null; previous.audio.onwaiting = null; previous.audio.onerror = null; previous.audio.pause(); previous.audio.removeAttribute('src'); previous.audio.load(); previous.source.disconnect(); }
     const audio = new Audio(); audio.preload = 'none'; audio.loop = true; audio.src = src;
     const source = this.context!.createMediaElementSource(audio); source.connect(gain);
@@ -119,16 +128,20 @@ class SceneSoundController {
     if (this.cues.has(key)) return;
     this.cues.add(key);
     if (!this.running() || this.speechPlaying || !this.context || this.context.state !== 'running' || this.settings.sfxVolume === 0) return;
-    const scene = this.scene;
+    const scene = this.scene, lifecycle = this.lifecycle;
+    if (this.pendingCues >= 4) return;
+    ++this.pendingCues;
     void (async () => {
       try {
-        const manifest = await this.getManifest(); const buffer = await this.buffer(manifest.sfx[type]);
-        if (!this.running() || this.speechPlaying || scene !== this.scene || this.context?.state !== 'running') return;
-        const source = this.context.createBufferSource(); source.buffer = buffer; source.connect(this.effects!); this.oneShots.add(source); source.onended = () => { this.oneShots.delete(source); source.disconnect(); }; source.start();
-      } catch { if (!this.disposed) this.onState('unavailable'); }
+        const manifest = await this.getManifest(); const buffer = await this.buffer(type === 'pet' ? manifest.sfx.pet ?? manifest.sfx.again : manifest.sfx[type]);
+        if (!this.running() || lifecycle !== this.lifecycle || this.speechPlaying || this.settings.sfxVolume === 0 || scene !== this.scene || this.context?.state !== 'running' || this.oneShots.size >= 4) return;
+        const source = this.context.createBufferSource(); source.buffer = buffer; if (type === 'good' && source.playbackRate) { let hash = 0; for (const char of eventId) hash = Math.imul(hash, 31) + char.charCodeAt(0) | 0; source.playbackRate.value = [.97, 1, 1.03][(hash >>> 0) % 3]!; } source.connect(this.effects!); this.oneShots.add(source); source.onended = () => { this.oneShots.delete(source); source.disconnect(); }; source.start(); ++this.startedEffects;
+      } catch { if (!this.disposed && lifecycle === this.lifecycle) this.onState('unavailable'); }
+      finally { --this.pendingCues; }
     })();
   }
-  dispose() { this.disposed = true; for (const source of this.oneShots) source.stop(); this.oneShots.clear(); for (const { audio, source } of this.loops.values()) { audio.pause(); audio.removeAttribute('src'); audio.load(); source.disconnect(); } this.loops.clear(); void this.context?.close().catch(() => {}); }
+  snapshot() { return { context: this.context?.state ?? 'locked', loops: this.loops.size, playingLoops: [...this.loops.values()].filter(loop => loop.playing).length, oneShots: this.oneShots.size, pendingCues: this.pendingCues, startedEffects: this.startedEffects, buffers: this.buffers.size, decodedBytes: this.decodedBytes, sampleRate: this.context?.sampleRate, events: this.cues.size, speechPlaying: this.speechPlaying, active: this.running(), gains: { music: this.music?.gain.value, ambience: this.ambience?.gain.value, effects: this.effects?.gain.value, duck: this.duck?.gain.value }, lifecycle: this.lifecycle }; }
+  dispose() { ++this.lifecycle; this.disposed = true; this.buffers.clear(); this.decodedBytes = 0; this.stopEffects(); for (const { audio, source } of this.loops.values()) { audio.pause(); audio.removeAttribute('src'); audio.load(); source.disconnect(); } this.loops.clear(); void this.context?.close().catch(() => {}); }
 }
 
 export function useSceneSound({ learnerId, settings, scene, active }: { learnerId: string | null; settings?: LearnerSettings; scene: SceneId; active: boolean }): SceneSound {

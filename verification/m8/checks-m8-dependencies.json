@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "unrelatedPackagesUnchanged": 218,
+  "addedPackages": [
+    "@pixi/colord",
+    "@types/earcut",
+    "@webgpu/types",
+    "@xmldom/xmldom",
+    "earcut",
+    "eventemitter3",
+    "gifuct-js",
+    "ismobilejs",
+    "js-binary-schema-parser",
+    "parse-svg-path",
+    "pixi.js",
+    "tiny-lru"
+  ],
+  "addedDirectDependency": {
+    "pixi.js": "8.22.0"
+  },
+  "initialLockMatchesHEAD": true,
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

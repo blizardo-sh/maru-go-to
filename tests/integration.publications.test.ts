@@ -1,3 +1,4 @@
+import { disposableDatabase } from './helpers/disposable-database';
 import { test, expect } from 'bun:test';
 import { mkdtempSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -14,7 +15,7 @@ import { nextFixtureIp } from './helpers/fixture-ip';
 
 const url=process.env.JAPANESE_INTEGRATION_DATABASE_URL;
 (url?test:test.skip)('a live publication pins old answers, adds PDF material without losing progress and safely rolls back',async()=>{
-  const target=new URL(url!); if(!['localhost','127.0.0.1'].includes(target.hostname)||target.pathname!=='/japanese_app_test')throw new Error('Disposable localhost database required.');
+  const target=new URL(url!); if(!disposableDatabase(target))throw new Error('Disposable localhost database required.');
   const db=connectDatabase(url!), origin='http://127.0.0.1:5173', ip=nextFixtureIp(), email=`publication-${crypto.randomUUID()}@example.test`, password='Publication-test-only-2026!';
   const initial=packContent(loadCourse()), archived=packContent(legacy as Course), root=new URL('../public',import.meta.url).pathname;
   let userId='', oldActive=''; const created:string[]=[];
@@ -58,7 +59,7 @@ const url=process.env.JAPANESE_INTEGRATION_DATABASE_URL;
     expect(pinnedProgress.partProgress?.reduce((count,part)=>count+part.completedSteps,0)).toBe(pinnedProgress.completedSteps);
     expect((await (await request('/api/bootstrap',undefined,pubA)).json()).course.publicationId).toBe(pubA);
     if(open.step?.kind!=='word-practice')throw new Error('Expected word practice');
-    const input=answer(open,{action:'choose',choiceWordId:open.step.wordId}), ack=await advance(lesson,input);
+    const input=answer(open,{action:'remember',recall:{helped:false}}), ack=await advance(lesson,input);
     expect(ack.reviewResult).toMatchObject({correct:true,publicationId:pubA});expect(ack.state.publicationId).toBe(pubB);
     expect(await advance(lesson,input)).toEqual(ack);
     const [schedule]=await db.sql`select version,due from review_states where user_id=${userId} and item_id=${open.step.wordId} and mode=${open.step.mode}`;

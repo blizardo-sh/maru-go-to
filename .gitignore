@@ -14,3 +14,8 @@ ARCHIVE-MANIFEST.json
 /verification/*.json
 /docs/discovery.md
 /deployment/server-profile.json
+
+.local/
+
+# Local release copies, diagnostic logs and temporary fixtures
+/work/

@@ -1,0 +1,256 @@
+{
+  "at": "2026-10-28T22:03:40.160Z",
+  "scope": "Isolated Pixi stand UI; production and learning rules unchanged",
+  "q18": "accepted: paper continuation cues; no ordinary scrollbar",
+  "q19": "pending: difficulty direction; no learning-rule changes",
+  "sourceRelease": "b378244d9fc40a357dc8fafd931400e42b7e1752",
+  "scroll": {
+    "at": "2026-10-28T21:59:53.693Z",
+    "cases": [
+      {
+        "browser": "chrome",
+        "width": 900,
+        "height": 1016,
+        "fixedWorld": true,
+        "paperCues": true,
+        "keyboardLesson18": true
+      },
+      {
+        "browser": "chrome",
+        "width": 1440,
+        "height": 1000,
+        "fixedWorld": true,
+        "paperCues": true,
+        "keyboardLesson18": true
+      },
+      {
+        "browser": "chrome",
+        "width": 390,
+        "height": 844,
+        "fixedWorld": true,
+        "paperCues": true,
+        "keyboardLesson18": true
+      },
+      {
+        "browser": "webkit",
+        "width": 900,
+        "height": 1016,
+        "fixedWorld": true,
+        "paperCues": true,
+        "keyboardLesson18": true
+      },
+      {
+        "browser": "webkit",
+        "width": 1440,
+        "height": 1000,
+        "fixedWorld": true,
+        "paperCues": true,
+        "keyboardLesson18": true
+      },
+      {
+        "browser": "webkit",
+        "width": 390,
+        "height": 844,
+        "fixedWorld": true,
+        "paperCues": true,
+        "keyboardLesson18": true
+      }
+    ]
+  },
+  "content": [
+    {
+      "browser": "chrome",
+      "width": 900,
+      "height": 1016,
+      "case": "introduction",
+      "passed": true
+    },
+    {
+      "browser": "chrome",
+      "width": 900,
+      "height": 1016,
+      "case": "long-answers",
+      "passed": true
+    },
+    {
+      "browser": "chrome",
+      "width": 1440,
+      "height": 1000,
+      "case": "introduction",
+      "passed": true
+    },
+    {
+      "browser": "chrome",
+      "width": 1440,
+      "height": 1000,
+      "case": "long-answers",
+      "passed": true
+    },
+    {
+      "browser": "chrome",
+      "width": 1280,
+      "height": 900,
+      "case": "introduction",
+      "passed": true
+    },
+    {
+      "browser": "chrome",
+      "width": 1280,
+      "height": 900,
+      "case": "long-answers",
+      "passed": true
+    },
+    {
+      "browser": "chrome",
+      "width": 390,
+      "height": 844,
+      "case": "introduction",
+      "passed": true
+    },
+    {
+      "browser": "chrome",
+      "width": 390,
+      "height": 844,
+      "case": "long-answers",
+      "passed": true
+    },
+    {
+      "browser": "chrome",
+      "width": 320,
+      "height": 640,
+      "case": "introduction",
+      "passed": true
+    },
+    {
+      "browser": "chrome",
+      "width": 320,
+      "height": 640,
+      "case": "long-answers",
+      "passed": true
+    },
+    {
+      "browser": "chrome",
+      "width": 844,
+      "height": 390,
+      "case": "introduction",
+      "passed": true
+    },
+    {
+      "browser": "chrome",
+      "width": 844,
+      "height": 390,
+      "case": "long-answers",
+      "passed": true
+    },
+    {
+      "browser": "webkit",
+      "width": 900,
+      "height": 1016,
+      "case": "introduction",
+      "passed": true
+    },
+    {
+      "browser": "webkit",
+      "width": 900,
+      "height": 1016,
+      "case": "long-answers",
+      "passed": true
+    },
+    {
+      "browser": "webkit",
+      "width": 1440,
+      "height": 1000,
+      "case": "introduction",
+      "passed": true
+    },
+    {
+      "browser": "webkit",
+      "width": 1440,
+      "height": 1000,
+      "case": "long-answers",
+      "passed": true
+    },
+    {
+      "browser": "webkit",
+      "width": 1280,
+      "height": 900,
+      "case": "introduction",
+      "passed": true
+    },
+    {
+      "browser": "webkit",
+      "width": 1280,
+      "height": 900,
+      "case": "long-answers",
+      "passed": true
+    },
+    {
+      "browser": "webkit",
+      "width": 390,
+      "height": 844,
+      "case": "introduction",
+      "passed": true
+    },
+    {
+      "browser": "webkit",
+      "width": 390,
+      "height": 844,
+      "case": "long-answers",
+      "passed": true
+    },
+    {
+      "browser": "webkit",
+      "width": 320,
+      "height": 640,
+      "case": "introduction",
+      "passed": true
+    },
+    {
+      "browser": "webkit",
+      "width": 320,
+      "height": 640,
+      "case": "long-answers",
+      "passed": true
+    },
+    {
+      "browser": "webkit",
+      "width": 844,
+      "height": 390,
+      "case": "introduction",
+      "passed": true
+    },
+    {
+      "browser": "webkit",
+      "width": 844,
+      "height": 390,
+      "case": "long-answers",
+      "passed": true
+    }
+  ],
+  "regression": {
+    "at": "2026-10-28T21:58:01.553Z",
+    "browsers": {
+      "chrome": {
+        "version": "145.0.7632.160",
+        "layoutCases": 72,
+        "errors": [],
+        "cspViolations": [],
+        "interactions": "choice, recall, hints, navigation, tokens/drag, IME guard, five counter modes, audio, native video, keyboard"
+      },
+      "webkit": {
+        "version": "27.2",
+        "layoutCases": 72,
+        "errors": [],
+        "cspViolations": [],
+        "interactions": "choice, recall, hints, navigation, tokens/drag, IME guard, five counter modes, audio, native video, keyboard"
+      }
+    }
+  },
+  "inputFocus": "Chrome/WebKit 1440x1000 and 390x844: ordinary typing, caret edit, Tab passed",
+  "pupilDatabaseWrites": false,
+  "limitations": [
+    "Physical phones and real Safari not verified for this change",
+    "Actual learner difficulty/retention not measured",
+    "Difficulty proposal awaits Q19 and subsequent decisions"
+  ]
+}

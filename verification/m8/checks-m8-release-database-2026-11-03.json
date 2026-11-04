@@ -1,0 +1,46 @@
+{
+  "commit": "30fce3d51c6d1bb1d8c7a6d641d6eb19429e0d13",
+  "startedAt": "2026-11-03T20:05:07.936Z",
+  "host": "127.0.0.1",
+  "port": 55440,
+  "database": "japanese_pixi_m8_units_1793736307930",
+  "created": true,
+  "steps": [
+    {
+      "name": "migrate",
+      "status": 0,
+      "durationMs": 57
+    },
+    {
+      "name": "migrate-idempotent",
+      "status": 0,
+      "durationMs": 28
+    },
+    {
+      "name": "tests",
+      "status": 0,
+      "durationMs": 25414
+    }
+  ],
+  "postgres": {
+    "version": "PostgreSQL 18.6 (Postgres.app) on aarch64-apple-darwin23.6.0, compiled by Apple clang version 15.0.0 (clang-1500.3.9.4), 64-bit",
+    "role": "pixi_owner"
+  },
+  "summary": {
+    "passed": 225,
+    "failed": 0,
+    "skipped": 0
+  },
+  "passed": true,
+  "cleanedUp": true,
+  "finishedAt": "2026-11-03T20:05:33.539Z",
+  "testedSource": "Clean git archive of 30fce3d51c6d1bb1d8c7a6d641d6eb19429e0d13; shared installed dependencies",
+  "previouslySkipped": {
+    "reported": 87,
+    "namedTests": 66,
+    "setupAndTeardownHooks": 21,
+    "allNamedTestsPassed": true
+  },
+  "expectCalls": 49119,
+  "testLogSha256": "2b9bae295ae0deb8c899deb854ad1b48423f70daf15826666104771ea641a992"
+}

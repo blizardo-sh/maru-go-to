@@ -1,3 +1,4 @@
+import { staticHandler, securityHeaders } from './static';
 import { readConfig } from './config';
 import { connectDatabase } from './db';
 import { loadCourse } from './course';
@@ -10,7 +11,14 @@ const [active]=await database.sql`select publication_id from content_active wher
 if(!active)await ensureInitialPublications(database,packContent(loadCourse()),packContent(legacy as Course));
 const course=await currentPublication(database);
 const app=createApp({database,config,course,publications:(id,old)=>id?getPublication(database,id):old?legacyPublication(database):currentPublication(database)});
-const server=Bun.serve({hostname:config.HOST,port:config.PORT,idleTimeout:30,fetch:app.fetch});
+const serveStatic = staticHandler(process.env.STATIC_DIR, process.env.CONTENT_MEDIA_ROOT, process.env.CLIENT_ENTRY);
+const server=Bun.serve({hostname:config.HOST,port:config.PORT,idleTimeout:30,async fetch(request) {
+ const path = new URL(request.url).pathname;
+ if (!path.startsWith('/api/') && path !== '/health' && path !== '/ready') return serveStatic(request);
+ const response = await app.fetch(request);
+ for (const [name, value] of Object.entries(securityHeaders)) response.headers.set(name, value);
+ return response;
+}});
 console.info(`Japanese learning API listening on ${server.url.origin}`);
 let stopping=false;
 for(const signal of ['SIGTERM','SIGINT'] as const)process.on(signal,async()=>{if(stopping)return;stopping=true;const timer=setTimeout(()=>{server.stop(true);database.sql.close({timeout:1});process.exit(1);},20000);try{await server.stop();await database.sql.close();clearTimeout(timer);process.exit(0);}catch{clearTimeout(timer);process.exit(1);}});

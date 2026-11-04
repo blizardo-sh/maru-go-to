@@ -1,3 +1,5 @@
+import { z } from 'zod';
+import { ReviewError } from './reviews';
 import { betterAuth } from 'better-auth';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
 import { hashPassword } from 'better-auth/crypto';
@@ -12,15 +14,16 @@ export function createAuth(database:Database,config:Config) {
   return betterAuth({ baseURL:config.APP_URL,secret:config.BETTER_AUTH_SECRET,database:drizzleAdapter(database.db,{provider:'pg',schema}),trustedOrigins:[config.APP_URL],
     emailAndPassword:{enabled:true,disableSignUp:true,minPasswordLength:8,maxPasswordLength:128},
     rateLimit:{enabled:true,window:60,max:100,customRules:{'/sign-in/email':{window:60,max:5}}},
-    advanced:{useSecureCookies:new URL(config.APP_URL).protocol==='https:'},
+    advanced:{cookiePrefix:config.AUTH_COOKIE_PREFIX,useSecureCookies:new URL(config.APP_URL).protocol==='https:'},
     session:{expiresIn:60*60*24*30,updateAge:60*60*24},
   });
 }
-export async function createLink(database:Database,kind:'invite'|'recovery',email:string,createdBy:string|null) {
+export async function createLink(database:Database,kind:'invite'|'recovery',email:string,createdBy:string|null,requestToken?:string) {
   email=emailSchema.parse(email);
-  const token=randomBytes(32).toString('base64url');
-  const expiresAt=new Date(Date.now()+(kind==='invite'?7*86400000:3600000));
+  const token=requestToken??randomBytes(32).toString('base64url');
+  let expiresAt=new Date(Date.now()+(kind==='invite'?7*86400000:3600000));
   await database.sql.begin(async tx=>{
+    if(requestToken){await tx`select pg_advisory_xact_lock(hashtext(${'access-command:'+tokenHash(token)}))`;const [prior]=await tx`select kind,email,created_by,expires_at from access_links where token_hash=${tokenHash(token)}`;if(prior){if(prior.kind!==kind||prior.email!==email||prior.created_by!==createdBy)throw new ReviewError('COMMAND_CONFLICT','Первоначальный запрос создания ссылки отличается.',409);expiresAt=new Date(prior.expires_at);return;}}
     await tx`select pg_advisory_xact_lock(hashtext(${kind+':'+email}))`;
     await tx`update access_links set used_at=now(),updated_at=now() where email=${email} and kind=${kind} and used_at is null`;
     await tx`insert into access_links(token_hash,kind,email,expires_at,created_by) values(${tokenHash(token)},${kind},${email},${expiresAt},${createdBy})`;
@@ -74,12 +77,16 @@ function registrationLinkDetails(row:RegistrationRow):RegistrationLink {
   return {id:row.id,registrationLimit:row.registration_limit,registrationsCount:row.registrations_count,remainingRegistrations:remaining,expiresAt:row.expires_at?new Date(row.expires_at).toISOString():null,revokedAt:row.revoked_at?new Date(row.revoked_at).toISOString():null,createdAt:new Date(row.created_at).toISOString(),status};
 }
 
-export async function createRegistrationLink(database:Database,input:RegistrationLinkInput,createdBy:string|null) {
-  const parsed=registrationLinkSchema.parse(input);
+export async function createRegistrationLink(database:Database,input:RegistrationLinkInput,createdBy:string|null,requestToken?:string,requestId?:string) {
+  const parsed=requestToken?z.object(registrationLinkSchema.shape).strict().parse(input):registrationLinkSchema.parse(input);
   const expiresAt=parsed.expiresAt===undefined?new Date(Date.now()+7*86400000):parsed.expiresAt===null?null:new Date(parsed.expiresAt);
-  const token=randomBytes(32).toString('base64url');
-  const [row]=await database.sql<RegistrationRow[]>`insert into registration_links(id,token_hash,registration_limit,expires_at,created_by) values(${crypto.randomUUID()},${tokenHash(token)},${parsed.registrationLimit},${expiresAt},${createdBy}) returning id,registration_limit,registrations_count,expires_at,revoked_at,created_at`;
-  return {token,link:registrationLinkDetails(row!)};
+  const token=requestToken??randomBytes(32).toString('base64url');
+  return database.sql.begin(async tx=>{
+    if(requestToken){await tx`select pg_advisory_xact_lock(hashtext(${'access-command:'+tokenHash(token)}))`;const [prior]=await tx`select id,registration_limit,registrations_count,expires_at,revoked_at,created_at,created_by from registration_links where token_hash=${tokenHash(token)}`;if(prior){if(prior.created_by!==createdBy||prior.registration_limit!==parsed.registrationLimit||parsed.expiresAt!==undefined&&(prior.expires_at?new Date(prior.expires_at).getTime():null)!==(expiresAt?expiresAt.getTime():null))throw new ReviewError('COMMAND_CONFLICT','Первоначальный запрос создания ссылки отличается.',409);return {token,link:registrationLinkDetails(prior)};}}
+    registrationLinkSchema.parse(input);
+    const [row]=await tx<RegistrationRow[]>`insert into registration_links(id,token_hash,registration_limit,expires_at,created_by) values(${requestId??crypto.randomUUID()},${tokenHash(token)},${parsed.registrationLimit},${expiresAt},${createdBy}) returning id,registration_limit,registrations_count,expires_at,revoked_at,created_at`;
+    return {token,link:registrationLinkDetails(row!)};
+  });
 }
 
 export async function registrationLinksFor(database:Database):Promise<RegistrationLink[]> {

@@ -1,3 +1,4 @@
+import { disposableDatabase } from './helpers/disposable-database';
 import { afterAll, beforeAll, expect, describe, test } from 'bun:test';
 import { createApp } from '../src/server/app';
 import { connectDatabase } from '../src/server/db';
@@ -23,14 +24,14 @@ suite('guided learning HTTP with disposable PostgreSQL', () => {
   const state = async (owner = 0): Promise<LearningState> => {
     const response = await request('/api/learning/' + lessonId, owner); expect(response.status).toBe(200); return response.json();
   };
-  const payload = (current: LearningState, action: LearningAdvance['action'] = 'continue', extra: Partial<LearningAdvance> = {}): LearningAdvance => ({ attemptId: crypto.randomUUID(), routeVersion: current.routeVersion, stateVersion: current.version, stepId: current.step!.id, action, ...extra });
+  const payload = (current: LearningState, action: LearningAdvance['action'] = 'continue', extra: Partial<LearningAdvance> = {}): LearningAdvance => ({ attemptId: crypto.randomUUID(), routeVersion: current.routeVersion, stateVersion: current.version, stepId: current.step!.id, action, ...(current.recallPolicy && ['word-practice','construction-practice'].includes(current.step!.kind) ? { recall: { helped: false } } : {}), ...extra });
   const advance = async (current: LearningState, action: LearningAdvance['action'], extra: Partial<LearningAdvance> = {}, owner = 0): Promise<LearningAdvanceResult> => {
     const response = await request('/api/learning/' + lessonId + '/advance', owner, payload(current, action, extra));
     expect(response.status).toBe(200); return response.json();
   };
   beforeAll(async () => {
     const url = new URL(databaseUrl!);
-    if (!['localhost', '127.0.0.1'].includes(url.hostname) || url.pathname !== '/japanese_app_test') throw new Error('Disposable localhost /japanese_app_test required.');
+    if (!disposableDatabase(url)) throw new Error('Disposable localhost /japanese_app_test required.');
     database = connectDatabase(databaseUrl!);
     app = createApp({ database, course, config: { DATABASE_URL: databaseUrl!, BETTER_AUTH_SECRET: 'guided-fixture-only-auth-secret-more-than-32-characters', APP_URL: origin, PORT: 3000, HOST: '127.0.0.1' } });
     for (let owner = 0; owner < 3; owner++) {
@@ -86,7 +87,9 @@ suite('guided learning HTTP with disposable PostgreSQL', () => {
     expect(overview.lessons[0].version).toBe(1);
   });
 
-  test('first graded Again enrolls SRS immediately, retries a format until Remember, and resumes each exact step', async () => {
+  test('persisted legacy route: first graded Again enrolls SRS immediately, retries a format until Remember, and resumes each exact step', async () => {
+    // Explicitly emulate an existing pre-recall route, not a new B lesson.
+    await database.sql`insert into learning_states(user_id,lesson_id,route_version,version,state) values(${users[1]!.id},${lessonId},${course.learning[0]!.version},0,${initialLearningState(course.learning[0]!)})`;
     let current = await state(1);
     current = (await advance(current, 'continue', {}, 1)).state;
     current = (await advance(current, 'continue', {}, 1)).state;
@@ -119,7 +122,9 @@ suite('guided learning HTTP with disposable PostgreSQL', () => {
     expect((await state()).completed).toBe(false);
   });
 
-  test('server grades assembly, rejects incomplete/exploratory changes without progress writes and keeps incorrect complete answers in the part', async () => {
+  test('persisted legacy route: server grades assembly, rejects incomplete/exploratory changes without progress writes and keeps incorrect complete answers in the part', async () => {
+    // Preserve the legacy assembly contract on an explicitly pre-recall saved state.
+    await database.sql`update learning_states set state=state-'recallPolicy' where user_id=${users[0]!.id} and lesson_id=${lessonId}`;
     let current = await state();
     while (!(current.step?.kind === 'construction-practice' && current.step.mode === 'grammar')) {
       current = (await advance(current, current.step?.kind.endsWith('practice') ? 'remember' : 'continue')).state;

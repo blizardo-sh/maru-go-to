@@ -4,7 +4,9 @@ COPY package.json bun.lock bunfig.toml ./
 RUN bun install --frozen-lockfile
 
 FROM dependencies AS build
-COPY index.html tsconfig.json vite.config.ts tokens.css ./
+COPY index.html legacy.html tsconfig.json vite.config.ts tokens.css ./
+COPY scripts/delivery.ts ./scripts/delivery.ts
+COPY assets/canvas ./assets/canvas
 COPY src ./src
 COPY public ./public
 COPY materials ./materials
@@ -22,8 +24,9 @@ COPY package.json ./
 COPY src/server ./src/server
 COPY src/shared ./src/shared
 COPY materials ./materials
-COPY public ./public
 COPY scripts/content.ts ./scripts/content.ts
+COPY --from=build /app/dist ./public
+COPY --from=build /app/dist ./dist
 COPY db ./db
 USER bun
 ENV HOST=0.0.0.0 PORT=3000

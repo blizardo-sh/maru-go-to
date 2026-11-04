@@ -1,3 +1,4 @@
+import { disposableDatabase } from './helpers/disposable-database';
 import { afterAll, beforeAll, beforeEach, describe, expect, test } from 'bun:test';
 import { createApp } from '../src/server/app';
 import { connectDatabase } from '../src/server/db';
@@ -21,7 +22,7 @@ const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
   async function introduce(kana: string) { const entry = word(kana); expect(entry).toBeDefined(); expect((await request('/api/reviews', { mode: 'ja-ru', attemptId: crypto.randomUUID(), reviewId: reviewId('ja-ru', entry.id), version: 0, rating: 3 })).status).toBe(200); }
   const input = (item: Extract<ReviewItem, { mode: 'counter' }>, choice = item.counter.acceptedKeys[0]) => ({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, mode: 'counter', rating: 3, choice, helped: false });
   beforeAll(() => {
-    const url = new URL(databaseUrl!); if (url.hostname !== '127.0.0.1' || url.pathname !== '/japanese_app_test') throw new Error('Use disposable localhost japanese_app_test.');
+    const url = new URL(databaseUrl!); if (!disposableDatabase(url)) throw new Error('Use disposable localhost japanese_app_test.');
     database = connectDatabase(databaseUrl!); app = createApp({ database, course, config: { DATABASE_URL: databaseUrl!, BETTER_AUTH_SECRET: 'counter-isolated-fixture-secret-more-than-32-characters', APP_URL: origin, PORT: 3000, HOST: '127.0.0.1' } });
   });
   beforeEach(async () => {

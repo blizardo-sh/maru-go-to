@@ -58,8 +58,16 @@ export interface LearningRouteState {
   completedStepIds: string[];
   completedKeys?: string[];
   wordQuiz?: boolean;
+  recallPolicy?: 'recall-v1';
+}
+export interface RecallAttempt {
+  helped: boolean;
+  firstChoiceWordId?: string;
+  firstTokenIds?: string[];
+  firstTokenForms?: Record<string, string>;
 }
 export interface LearningState {
+  recallPolicy?: 'recall-v1';
   publicationId?: string;
   lessonId: string;
   routeVersion: string;
@@ -75,6 +83,7 @@ export interface LearningState {
   wordChoices?: string[];
 }
 export interface LearningAdvance {
+  recall?: RecallAttempt;
   publicationId?: string;
   counterChoice?: string;
   helped?: boolean;
@@ -187,6 +196,7 @@ export function advanceLearningState(lesson: GuidedLesson, state: LearningRouteS
     const parts=learningParts(lesson);
     do { next.partIndex++; next.pendingStepIds=parts[next.partIndex]?.filter(item=>!next.completedStepIds.includes(item.id)).map(item=>item.id)??[]; } while(next.partIndex<parts.length&&!next.pendingStepIds.length);
     delete next.wordQuiz;
+    next.recallPolicy = 'recall-v1';
   }
   return next;
 }
@@ -271,10 +281,10 @@ export function reconcileLearningRoute(previous: GuidedLesson, current: GuidedLe
     if (part.every(step => step.kind === 'part-complete' || completed.has(step.id)) && (done.has(key(summary)) || !before.some(step => step.partId === summary.partId))) completed.add(summary.id);
   }
   const partIndex = parts.findIndex(part => part.some(step => !completed.has(step.id)));
-  if (partIndex < 0) return { partIndex: parts.length, pendingStepIds: [], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}) };
+  if (partIndex < 0) return { partIndex: parts.length, pendingStepIds: [], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}), ...(state.recallPolicy ? { recallPolicy: state.recallPolicy } : {}) };
   const remaining = parts[partIndex]!.filter(step => !completed.has(step.id));
   const oldOrder = state.pendingStepIds.flatMap(id => { const step = before.find(item => item.id === id); const next = step && remaining.find(item => key(item) === key(step)); return next ? [next.id] : []; });
   const extras = remaining.filter(step => !oldOrder.includes(step.id));
   const boundary=(step:LearningStep)=>step.kind==='video'||step.kind==='part-complete';
-  return { partIndex, pendingStepIds: [...extras.filter(step=>step.kind==='word-intro').map(step=>step.id),...oldOrder.filter(id=>!remaining.some(step=>step.id===id&&boundary(step))),...extras.filter(step=>step.kind!=='word-intro'&&!boundary(step)).map(step=>step.id),...remaining.filter(boundary).map(step=>step.id)], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}) };
+  return { partIndex, pendingStepIds: [...extras.filter(step=>step.kind==='word-intro').map(step=>step.id),...oldOrder.filter(id=>!remaining.some(step=>step.id===id&&boundary(step))),...extras.filter(step=>step.kind!=='word-intro'&&!boundary(step)).map(step=>step.id),...remaining.filter(boundary).map(step=>step.id)], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}), ...(state.recallPolicy ? { recallPolicy: state.recallPolicy } : {}) };
 }

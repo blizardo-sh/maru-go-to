@@ -1,3 +1,5 @@
+import { seedLegacyLearning } from './helpers/introduced-browser-fixture';
+import { loadCourse } from '../src/server/course';
 import { chromium, expect, type BrowserContext, type Page } from '@playwright/test';
 import { connectDatabase } from '../src/server/db';
 import { createLink, consumeLink } from '../src/server/auth';
@@ -21,7 +23,7 @@ const page = await context.newPage(); page.setDefaultTimeout(15000); const wordM
 page.on('pageerror', error=>errors.push(error.message));
 page.on('request',request=>{const path=new URL(request.url()).pathname; if(path.startsWith('/api/')) {const key=`${request.method()} ${path}`;counts.set(key,(counts.get(key)??0)+1);}});
 let owner=''; let releaseHeldAdvance: (() => void) | undefined;
-async function actor(label:string){const email=`guided-browser-${crypto.randomUUID()}@example.test`;emails.push(email);const link=await createLink(database,'invite',email,null);await consumeLink(database,'invite',link.token,password,label);const [row]=await database.sql`select id from users where email=${email}`;return {email,id:String(row.id)};}
+async function actor(label:string){const email=`guided-browser-${crypto.randomUUID()}@example.test`;emails.push(email);const link=await createLink(database,'invite',email,null);await consumeLink(database,'invite',link.token,password,label);await seedLegacyLearning(database,loadCourse(),email);const [row]=await database.sql`select id from users where email=${email}`;return {email,id:String(row.id)};}
 async function signIn(actor:{email:string;id:string}){const response=await context.request.post(`${api}/api/auth/sign-in/email`,{headers:{origin:base},data:{email:actor.email,password}});expect(response.status()).toBe(200);owner=actor.id;}
 async function json<T>(path:string):Promise<T>{const response=await context.request.get(`${api}${path}`,{headers:{'X-Learning-Learner-Id':owner}});expect(response.status()).toBe(200);return response.json();}
 const session=(p:Page=page)=>p.getByTestId('guided-learning');

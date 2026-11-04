@@ -36,6 +36,7 @@ services:
       HOST: 0.0.0.0
       PORT: '3000'
       CONTENT_MEDIA_ROOT: /content
+      CLIENT_ENTRY: ${CLIENT_ENTRY:-index.html}
       ANALYSIS_PROVIDER: ${ANALYSIS_PROVIDER:-}
       OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
       OPENROUTER_MODEL: ${OPENROUTER_MODEL:-}
@@ -66,6 +67,8 @@ services:
     depends_on:
       api:
         condition: service_healthy
+    environment:
+      CLIENT_ENTRY: ${CLIENT_ENTRY:-index.html}
     ports: ['127.0.0.1:8081:8080']
     user: '1000:1000'
     volumes:

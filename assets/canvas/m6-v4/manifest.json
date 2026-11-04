@@ -1,0 +1,857 @@
+{
+  "version": 4,
+  "date": "2026-11-01",
+  "source": "../m6-v1/cat-sequence.webp",
+  "sourceSha256": "5b6e52780fe6f8afb14c371bee4bb4ddd304e71f00c2aa986558281a386dba6d",
+  "sourceGeneration": "../m6-v1/generation.json",
+  "generator": "local Apple Vision optical flow revision 1, bidirectional premultiplied RGBA inbetweens",
+  "generatorSourceSha256": "cb93b95677bb57c2a56fd838afb520ddeeb746af447e5b50168fc335788ff10b",
+  "nativeSourceSha256": "b373c10a76f91e7b8d6a593b23a4a482c4b3462274e427fcb5bc342465d6e73d",
+  "runtime": "whole-cat-atlas.webp",
+  "width": 1536,
+  "height": 1728,
+  "cell": 192,
+  "bytes": 799592,
+  "sha256": "fa33f16eed19cc97a281df7c3b3299c1fc0115265cb13c00ef3d47644ae65c13",
+  "decodedBytes": 10616832,
+  "fps": 30,
+  "walkFrames": 24,
+  "turnStart": 24,
+  "program": {
+    "walkSeconds": 1.2,
+    "walkCycles": 1,
+    "pauseSeconds": 0.25,
+    "turnSeconds": 0.8,
+    "lookHoldSeconds": 0.2,
+    "gestureSeconds": 0.6,
+    "blink": false,
+    "upperBodyCardTailStableDuringWalk": true
+  },
+  "pivot": [
+    0.5,
+    0.953125
+  ],
+  "wholeCharacterFrames": true,
+  "separateBodyParts": false,
+  "frames": [
+    {
+      "from": 0,
+      "to": 1,
+      "alpha": 0.0,
+      "family": "walk",
+      "frame": [
+        0,
+        0,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 0,
+      "to": 1,
+      "alpha": 0.3333333333333333,
+      "family": "walk",
+      "frame": [
+        192,
+        0,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 0,
+      "to": 1,
+      "alpha": 0.6666666666666666,
+      "family": "walk",
+      "frame": [
+        384,
+        0,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 1,
+      "to": 2,
+      "alpha": 0.0,
+      "family": "walk",
+      "frame": [
+        576,
+        0,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 1,
+      "to": 2,
+      "alpha": 0.3333333333333333,
+      "family": "walk",
+      "frame": [
+        768,
+        0,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 1,
+      "to": 2,
+      "alpha": 0.6666666666666666,
+      "family": "walk",
+      "frame": [
+        960,
+        0,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "alpha": 0.0,
+      "family": "walk",
+      "frame": [
+        1152,
+        0,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "alpha": 0.3333333333333333,
+      "family": "walk",
+      "frame": [
+        1344,
+        0,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 2,
+      "to": 3,
+      "alpha": 0.6666666666666666,
+      "family": "walk",
+      "frame": [
+        0,
+        192,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "alpha": 0.0,
+      "family": "walk",
+      "frame": [
+        192,
+        192,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "alpha": 0.3333333333333333,
+      "family": "walk",
+      "frame": [
+        384,
+        192,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 3,
+      "to": 4,
+      "alpha": 0.6666666666666666,
+      "family": "walk",
+      "frame": [
+        576,
+        192,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 4,
+      "to": 5,
+      "alpha": 0.0,
+      "family": "walk",
+      "frame": [
+        768,
+        192,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 4,
+      "to": 5,
+      "alpha": 0.3333333333333333,
+      "family": "walk",
+      "frame": [
+        960,
+        192,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 4,
+      "to": 5,
+      "alpha": 0.6666666666666666,
+      "family": "walk",
+      "frame": [
+        1152,
+        192,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 5,
+      "to": 6,
+      "alpha": 0.0,
+      "family": "walk",
+      "frame": [
+        1344,
+        192,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 5,
+      "to": 6,
+      "alpha": 0.3333333333333333,
+      "family": "walk",
+      "frame": [
+        0,
+        384,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 5,
+      "to": 6,
+      "alpha": 0.6666666666666666,
+      "family": "walk",
+      "frame": [
+        192,
+        384,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 6,
+      "to": 7,
+      "alpha": 0.0,
+      "family": "walk",
+      "frame": [
+        384,
+        384,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 6,
+      "to": 7,
+      "alpha": 0.3333333333333333,
+      "family": "walk",
+      "frame": [
+        576,
+        384,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 6,
+      "to": 7,
+      "alpha": 0.6666666666666666,
+      "family": "walk",
+      "frame": [
+        768,
+        384,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 7,
+      "to": 0,
+      "alpha": 0.0,
+      "family": "walk",
+      "frame": [
+        960,
+        384,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 7,
+      "to": 0,
+      "alpha": 0.3333333333333333,
+      "family": "walk",
+      "frame": [
+        1152,
+        384,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 7,
+      "to": 0,
+      "alpha": 0.6666666666666666,
+      "family": "walk",
+      "frame": [
+        1344,
+        384,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 0,
+      "to": 8,
+      "alpha": 0.0,
+      "family": "turn-gesture",
+      "frame": [
+        0,
+        576,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 0,
+      "to": 8,
+      "alpha": 0.16666666666666666,
+      "family": "turn-gesture",
+      "frame": [
+        192,
+        576,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 0,
+      "to": 8,
+      "alpha": 0.3333333333333333,
+      "family": "turn-gesture",
+      "frame": [
+        384,
+        576,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 0,
+      "to": 8,
+      "alpha": 0.5,
+      "family": "turn-gesture",
+      "frame": [
+        576,
+        576,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 0,
+      "to": 8,
+      "alpha": 0.6666666666666666,
+      "family": "turn-gesture",
+      "frame": [
+        768,
+        576,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 0,
+      "to": 8,
+      "alpha": 0.8333333333333334,
+      "family": "turn-gesture",
+      "frame": [
+        960,
+        576,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 8,
+      "to": 9,
+      "alpha": 0.0,
+      "family": "turn-gesture",
+      "frame": [
+        1152,
+        576,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 8,
+      "to": 9,
+      "alpha": 0.16666666666666666,
+      "family": "turn-gesture",
+      "frame": [
+        1344,
+        576,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 8,
+      "to": 9,
+      "alpha": 0.3333333333333333,
+      "family": "turn-gesture",
+      "frame": [
+        0,
+        768,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 8,
+      "to": 9,
+      "alpha": 0.5,
+      "family": "turn-gesture",
+      "frame": [
+        192,
+        768,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 8,
+      "to": 9,
+      "alpha": 0.6666666666666666,
+      "family": "turn-gesture",
+      "frame": [
+        384,
+        768,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 8,
+      "to": 9,
+      "alpha": 0.8333333333333334,
+      "family": "turn-gesture",
+      "frame": [
+        576,
+        768,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 9,
+      "to": 10,
+      "alpha": 0.0,
+      "family": "turn-gesture",
+      "frame": [
+        768,
+        768,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 9,
+      "to": 10,
+      "alpha": 0.16666666666666666,
+      "family": "turn-gesture",
+      "frame": [
+        960,
+        768,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 9,
+      "to": 10,
+      "alpha": 0.3333333333333333,
+      "family": "turn-gesture",
+      "frame": [
+        1152,
+        768,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 9,
+      "to": 10,
+      "alpha": 0.5,
+      "family": "turn-gesture",
+      "frame": [
+        1344,
+        768,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 9,
+      "to": 10,
+      "alpha": 0.6666666666666666,
+      "family": "turn-gesture",
+      "frame": [
+        0,
+        960,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 9,
+      "to": 10,
+      "alpha": 0.8333333333333334,
+      "family": "turn-gesture",
+      "frame": [
+        192,
+        960,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 10,
+      "to": 11,
+      "alpha": 0.0,
+      "family": "turn-gesture",
+      "frame": [
+        384,
+        960,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 10,
+      "to": 11,
+      "alpha": 0.16666666666666666,
+      "family": "turn-gesture",
+      "frame": [
+        576,
+        960,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 10,
+      "to": 11,
+      "alpha": 0.3333333333333333,
+      "family": "turn-gesture",
+      "frame": [
+        768,
+        960,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 10,
+      "to": 11,
+      "alpha": 0.5,
+      "family": "turn-gesture",
+      "frame": [
+        960,
+        960,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 10,
+      "to": 11,
+      "alpha": 0.6666666666666666,
+      "family": "turn-gesture",
+      "frame": [
+        1152,
+        960,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 10,
+      "to": 11,
+      "alpha": 0.8333333333333334,
+      "family": "turn-gesture",
+      "frame": [
+        1344,
+        960,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 11,
+      "to": 11,
+      "alpha": 0,
+      "family": "look-hold",
+      "frame": [
+        0,
+        1152,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 11,
+      "to": 12,
+      "alpha": 0.0,
+      "family": "one-gesture",
+      "frame": [
+        192,
+        1152,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 11,
+      "to": 12,
+      "alpha": 0.16666666666666666,
+      "family": "one-gesture",
+      "frame": [
+        384,
+        1152,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 11,
+      "to": 12,
+      "alpha": 0.3333333333333333,
+      "family": "one-gesture",
+      "frame": [
+        576,
+        1152,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 11,
+      "to": 12,
+      "alpha": 0.5,
+      "family": "one-gesture",
+      "frame": [
+        768,
+        1152,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 11,
+      "to": 12,
+      "alpha": 0.6666666666666666,
+      "family": "one-gesture",
+      "frame": [
+        960,
+        1152,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 11,
+      "to": 12,
+      "alpha": 0.8333333333333334,
+      "family": "one-gesture",
+      "frame": [
+        1152,
+        1152,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 12,
+      "to": 13,
+      "alpha": 0.0,
+      "family": "one-gesture",
+      "frame": [
+        1344,
+        1152,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 12,
+      "to": 13,
+      "alpha": 0.16666666666666666,
+      "family": "one-gesture",
+      "frame": [
+        0,
+        1344,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 12,
+      "to": 13,
+      "alpha": 0.3333333333333333,
+      "family": "one-gesture",
+      "frame": [
+        192,
+        1344,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 12,
+      "to": 13,
+      "alpha": 0.5,
+      "family": "one-gesture",
+      "frame": [
+        384,
+        1344,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 12,
+      "to": 13,
+      "alpha": 0.6666666666666666,
+      "family": "one-gesture",
+      "frame": [
+        576,
+        1344,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 12,
+      "to": 13,
+      "alpha": 0.8333333333333334,
+      "family": "one-gesture",
+      "frame": [
+        768,
+        1344,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 13,
+      "to": 14,
+      "alpha": 0.0,
+      "family": "one-gesture",
+      "frame": [
+        960,
+        1344,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 13,
+      "to": 14,
+      "alpha": 0.16666666666666666,
+      "family": "one-gesture",
+      "frame": [
+        1152,
+        1344,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 13,
+      "to": 14,
+      "alpha": 0.3333333333333333,
+      "family": "one-gesture",
+      "frame": [
+        1344,
+        1344,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 13,
+      "to": 14,
+      "alpha": 0.5,
+      "family": "one-gesture",
+      "frame": [
+        0,
+        1536,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 13,
+      "to": 14,
+      "alpha": 0.6666666666666666,
+      "family": "one-gesture",
+      "frame": [
+        192,
+        1536,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 13,
+      "to": 14,
+      "alpha": 0.8333333333333334,
+      "family": "one-gesture",
+      "frame": [
+        384,
+        1536,
+        192,
+        192
+      ]
+    },
+    {
+      "from": 14,
+      "to": 14,
+      "alpha": 0,
+      "family": "hold",
+      "frame": [
+        576,
+        1536,
+        192,
+        192
+      ]
+    }
+  ],
+  "approval": "approved 2026-11-01: Да, принять эту спокойную пластику",
+  "soundDirection": "approved; unchanged m6-v1 files",
+  "riverDecision": "natural motion accepted; extra flying light stripes removed"
+}

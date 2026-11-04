@@ -1,5 +1,6 @@
 import { z } from 'zod';
 export const configSchema = z.object({
+  AUTH_COOKIE_PREFIX: z.string().regex(/^[a-zA-Z0-9_-]+$/).optional(),
   DATABASE_URL: z.url().refine(v=>/^postgres(ql)?:/.test(v)),
   BETTER_AUTH_SECRET:z.string().min(32), APP_URL:z.url(), PORT:z.coerce.number().int().min(1).max(65535).default(3000), HOST:z.string().default('127.0.0.1'),
   ANALYSIS_PROVIDER:z.enum(['openrouter','generic']).optional(), OPENROUTER_API_KEY:z.string().min(1).optional(), OPENROUTER_MODEL:z.string().min(1).optional(),

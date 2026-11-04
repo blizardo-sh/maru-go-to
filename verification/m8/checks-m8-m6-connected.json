@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "syntheticDisposable": true,
+  "report": [
+    {
+      "engine": "Chrome",
+      "passed": true,
+      "lessonComplete": true,
+      "lostAckRetry": true,
+      "hintReload": true,
+      "threeReviewDirections": true,
+      "contextRecovery": true,
+      "rendererRecreationKeepsQueue": true,
+      "completedRouteReloadNoFarewell": true,
+      "navigationCycles": 20,
+      "stableCanvasAndAccessibilityControls": true,
+      "syntheticIMEGuard": false,
+      "analysisWithoutGrade": false,
+      "firstBuilderErrorCorrection": false,
+      "viewportChecks": 4,
+      "reactions": [
+        "entry",
+        "card",
+        "revealed",
+        "neutral",
+        "listening",
+        "again",
+        "idle",
+        "good",
+        "complete",
+        "checking"
+      ],
+      "successVariants": [
+        2,
+        0,
+        1
+      ],
+      "cspViolations": 0,
+      "jsErrors": 0
+    },
+    {
+      "engine": "Playwright WebKit",
+      "passed": true,
+      "lessonComplete": true,
+      "lostAckRetry": true,
+      "hintReload": true,
+      "threeReviewDirections": true,
+      "contextRecovery": true,
+      "rendererRecreationKeepsQueue": true,
+      "completedRouteReloadNoFarewell": true,
+      "navigationCycles": 20,
+      "stableCanvasAndAccessibilityControls": true,
+      "syntheticIMEGuard": false,
+      "analysisWithoutGrade": false,
+      "firstBuilderErrorCorrection": false,
+      "viewportChecks": 4,
+      "reactions": [
+        "entry",
+        "card",
+        "revealed",
+        "neutral",
+        "listening",
+        "again",
+        "good",
+        "complete",
+        "idle"
+      ],
+      "successVariants": [
+        1,
+        0,
+        2
+      ],
+      "cspViolations": 0,
+      "jsErrors": 0
+    }
+  ],
+  "limits": [
+    "No physical phones, native IME or screen readers",
+    "Listening transition tests use controlled media play after separate real audio check"
+  ],
+  "candidate": "5a6cc0d73c5565d1ef51cb2686ebee51262089cb51b70fabace6b14f3e448367"
+}

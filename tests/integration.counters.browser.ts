@@ -19,7 +19,7 @@ let app: ReturnType<typeof createApp>;
 const server = Bun.serve({ hostname: '127.0.0.1', port: 0, fetch: async request => {
   const path = new URL(request.url).pathname;
   if (path.startsWith('/api/')) return app.fetch(request);
-  const file = resolve(dist, '.' + decodeURIComponent(path === '/' ? '/index.html' : path));
+  const file = resolve(dist, '.' + decodeURIComponent(path === '/' ? '/legacy.html' : path));
   if (!file.startsWith(dist + '/') || !['GET', 'HEAD'].includes(request.method)) return new Response('Not found', { status: 404 });
   const asset = Bun.file(file); return await asset.exists() ? new Response(asset) : new Response('Not found', { status: 404 });
 } });

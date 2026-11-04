@@ -1,0 +1,21 @@
+{
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89",
+  "passed": true,
+  "publicFilesScanned": 94,
+  "knownPrivateValuesChecked": 107,
+  "privateMatches": 0,
+  "gitDiffCheck": true,
+  "untrackedCanvasSourceWhitespaceCheck": 28,
+  "readOnlyReviews": [
+    "standards",
+    "spec"
+  ],
+  "reviewFindingsResolved": [
+    "Docker build-stage helper COPY",
+    "Exact immutable reuse file set and symlink rejection",
+    "Dynamic atlas glob key",
+    "Complete Russian gloss fitting and shared centres",
+    "Documentation cache-policy scope and missing evidence links"
+  ],
+  "limits": "Secret matching uses actual local runtime values plus artifact forbidden-path scan, not a claim of mathematically complete secret detection."
+}

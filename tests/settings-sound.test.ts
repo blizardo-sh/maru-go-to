@@ -1,3 +1,4 @@
+import { disposableDatabase } from './helpers/disposable-database';
 import { expect, test } from 'bun:test';
 import { defaultSettings } from '../src/server/material';
 import { settingsSchema } from '../src/server/validation';
@@ -27,7 +28,7 @@ test('sound preferences reject out of range and malformed values at the API boun
 
 test.skipIf(!process.env.JAPANESE_INTEGRATION_DATABASE_URL)('legacy JSONB preferences merge defaults and sound preferences persist separately per learner', async () => {
   const url = process.env.JAPANESE_INTEGRATION_DATABASE_URL!; const target = new URL(url);
-  if (!['127.0.0.1', 'localhost'].includes(target.hostname) || target.pathname !== '/japanese_app_test') throw new Error('Sound settings test requires disposable localhost /japanese_app_test.');
+  if (!disposableDatabase(target)) throw new Error('Dedicated disposable localhost test database required.');
   const { connectDatabase } = await import('../src/server/db'); const { settingsFor } = await import('../src/server/material');
   const database = connectDatabase(url); const ids = [crypto.randomUUID(), crypto.randomUUID()];
   try {

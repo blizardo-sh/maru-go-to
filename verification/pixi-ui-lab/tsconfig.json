@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "target": "ES2022", "module": "ESNext", "moduleResolution": "bundler",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"], "strict": true,
+    "noUncheckedIndexedAccess": true, "skipLibCheck": true, "resolveJsonModule": true,
+    "noEmit": true, "types": ["vite/client", "bun"],
+    "paths": { "@rehearsal/*": ["./.local/rehearsal-20261028/server-release/src/*"] }
+  },
+  "include": ["*.ts"]
+}

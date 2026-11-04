@@ -1,0 +1,251 @@
+{
+  "date": "2026-10-28T09:06:00.738Z",
+  "lessons": [
+    {
+      "lesson": 1,
+      "completed": 59,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    },
+    {
+      "lesson": 2,
+      "completed": 58,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    },
+    {
+      "lesson": 3,
+      "completed": 75,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja",
+        "construction-practice/ja-ru",
+        "construction-practice/listening",
+        "construction-practice/grammar"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    },
+    {
+      "lesson": 4,
+      "completed": 118,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja",
+        "construction-practice/ja-ru",
+        "construction-practice/listening",
+        "construction-practice/grammar"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    },
+    {
+      "lesson": 5,
+      "completed": 108,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja",
+        "construction-practice/ja-ru",
+        "construction-practice/listening",
+        "construction-practice/grammar"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    },
+    {
+      "lesson": 6,
+      "completed": 115,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja",
+        "construction-practice/ja-ru",
+        "construction-practice/listening",
+        "construction-practice/grammar"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    },
+    {
+      "lesson": 7,
+      "completed": 126,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja",
+        "construction-practice/ja-ru",
+        "construction-practice/listening",
+        "construction-practice/grammar"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    },
+    {
+      "lesson": 8,
+      "completed": 99,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja",
+        "construction-practice/ja-ru",
+        "construction-practice/listening",
+        "construction-practice/grammar"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    },
+    {
+      "lesson": 9,
+      "completed": 92,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja",
+        "construction-practice/ja-ru",
+        "construction-practice/listening",
+        "construction-practice/grammar"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    },
+    {
+      "lesson": 10,
+      "completed": 81,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja",
+        "construction-practice/ja-ru",
+        "construction-practice/listening",
+        "construction-practice/grammar"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    },
+    {
+      "lesson": 11,
+      "completed": 89,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja",
+        "construction-practice/ja-ru",
+        "construction-practice/listening",
+        "construction-practice/grammar"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    },
+    {
+      "lesson": 12,
+      "completed": 95,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja",
+        "construction-practice/ja-ru",
+        "construction-practice/listening",
+        "construction-practice/grammar"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    },
+    {
+      "lesson": 13,
+      "completed": 95,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja",
+        "construction-practice/ja-ru",
+        "construction-practice/listening",
+        "construction-practice/grammar"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    },
+    {
+      "lesson": 14,
+      "completed": 95,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja",
+        "construction-practice/ja-ru",
+        "construction-practice/listening",
+        "construction-practice/grammar"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    },
+    {
+      "lesson": 15,
+      "completed": 85,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja",
+        "construction-practice/ja-ru",
+        "construction-practice/listening",
+        "construction-practice/grammar"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    },
+    {
+      "lesson": 16,
+      "completed": 77,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja",
+        "construction-practice/ja-ru",
+        "construction-practice/listening",
+        "construction-practice/grammar"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    },
+    {
+      "lesson": 17,
+      "completed": 91,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja",
+        "construction-practice/ja-ru",
+        "construction-practice/listening",
+        "construction-practice/grammar"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    },
+    {
+      "lesson": 18,
+      "completed": 86,
+      "modes": [
+        "word-practice/ja-ru",
+        "word-practice/listening",
+        "word-practice/ru-ja",
+        "construction-practice/ja-ru",
+        "construction-practice/listening",
+        "construction-practice/grammar"
+      ],
+      "repeat": "returned before completion",
+      "staleEvents": "ignored"
+    }
+  ]
+}

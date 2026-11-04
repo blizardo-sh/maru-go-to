@@ -13,7 +13,7 @@ import { isCurrentAnalysis, shuffledTokens } from './study';
 import { useReviewSave } from './useReviewSave';
 import { learningHeaders } from './guidedApi';
 
-type Token = { id: string; wordId: string; formId: string | null };
+import { preparedWorkspace, placeWorkspaceToken, moveWorkspaceToken, type WorkspaceToken as Token } from './workspace';
 type Editor = { kind: 'token'; id: string } | { kind: 'add'; afterId?: string } | { kind: 'manual' } | null;
 
 
@@ -46,7 +46,7 @@ export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved,
   function update(next: Token[], research = false) {
     if (locked) return;
     const forms = Object.fromEntries(next.filter(token => token.formId).map(token => [token.id, token.formId!]));
-    const prepared = next.every(token => token.formId !== null) && matchesPreparedAnswer(exercise, data.course.forms, next.map(token => token.id), forms);
+    const prepared = preparedWorkspace(exercise, data.course, next);
     invalidate(); setTokens(next); setManualText(null); setExploring(current => (research || current) && !prepared);
   }
   function closeEditor() { setEditor(null); setSearch(''); setComposing(false); }
@@ -80,14 +80,9 @@ export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved,
   function dropToken(id: string, targetId?: string, after = false) {
     setDropTarget(null); setDragging(false);
     if (locked || id === targetId) return;
-    const next = tokens.filter(token => token.id !== id);
-    const targetIndex = targetId ? next.findIndex(token => token.id === targetId) : -1;
-    const position = targetIndex < 0 ? next.length : targetIndex + (after ? 1 : 0);
-    const token = tokens.find(value => value.id === id) ?? original.find(value => value.id === id);
-    if (!token) return;
-    next.splice(position, 0, token); if (next.length !== tokens.length || next.some((value, index) => value.id !== tokens[index]?.id)) { update(next); sound.cue('move', crypto.randomUUID()); }
+    const next = placeWorkspaceToken(tokens, original, id, targetId, after); if (next.length !== tokens.length || next.some((value, index) => value.id !== tokens[index]?.id)) { update(next); sound.cue('move', crypto.randomUUID()); }
   }
-  function move(id: string, step: -1 | 1) { const index = tokens.findIndex(token => token.id === id); if (!tokens[index + step]) return; const next = [...tokens]; [next[index], next[index + step]] = [next[index + step]!, next[index]!]; if (!locked) { update(next); sound.cue('move', crypto.randomUUID()); } }
+  function move(id: string, step: -1 | 1) { const next = moveWorkspaceToken(tokens, id, step); if (!locked && next !== tokens) { update(next); sound.cue('move', crypto.randomUUID()); } }
   function remove(id: string) { update(tokens.filter(token => token.id !== id), true); closeEditor(); }
   function choose(word: Word) {
     const forms = formsFor(word.id); if (data.course.forms.some(form => form.wordId === word.id) && forms.length === 0) return; const form = forms.find(value => value.surface === word.surface) ?? forms[0];

@@ -1,5 +1,5 @@
 import type { Course, Word } from './types';
-import type { GuidedLesson, LearningStep } from './learning';
+import type { GuidedLesson, LearningStep, LearningRouteState } from './learning';
 import { catalogFor, defaultCatalog, type CourseCatalog } from './catalog';
 
 const normalized = (text: string) => text.normalize('NFKC').toLowerCase().replace(/[\s\p{P}\p{S}]/gu, '');
@@ -37,5 +37,21 @@ export function learningWordChoices(course: Course, route: GuidedLesson, step: E
   let hash = 2166136261;
   for (const char of step.id) hash = Math.imul(hash ^ char.charCodeAt(0), 16777619);
   const offset = (hash >>> 0) % 4;
+  return [...selected.slice(offset), ...selected.slice(0, offset)].map(word => word.id);
+}
+
+// B uses only introduced words from this route; no future distractor is substituted in the browser.
+export function recallWordChoices(course: Course, route: GuidedLesson, step: Extract<LearningStep, { kind: 'word-practice' }>, state: LearningRouteState): string[] {
+  const target = course.words.find(word => word.id === step.wordId)!;
+  const known = new Set(route.goals.flatMap(goal => goal.parts.flatMap(part => part.words.filter(word => state.completedStepIds.includes(`${part.id}:intro:${word.wordId}`)).map(word => word.wordId))));
+  const catalog = catalogFor(course), selected = [target];
+  const candidates = [...(catalog.quiz.choices[target.id] ?? []), ...known];
+  for (const id of candidates) {
+    const word = course.words.find(word => word.id === id);
+    if (known.has(id) && word && word.reviewStatus !== 'draft' && word.kind === target.kind && !selected.some(other => confusableLearningWords(other, word, catalog))) selected.push(word);
+    if (selected.length === 4) break;
+  }
+  let hash = 0; for (const char of step.id) hash = Math.imul(hash, 31) + char.charCodeAt(0) | 0;
+  const offset = (hash >>> 0) % selected.length;
   return [...selected.slice(offset), ...selected.slice(0, offset)].map(word => word.id);
 }

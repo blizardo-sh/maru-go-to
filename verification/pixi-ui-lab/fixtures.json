@@ -1,0 +1,592 @@
+{
+  "source": "materials/course.json + materials/learning/lesson-03.json + public/word-illustrations/manifest.json",
+  "courseSha256": "0cac86dd84d82e394c54a81c7d99db4f82cec10300f48ffb5f31bc2f9801dafb",
+  "words": [
+    {
+      "id": "marugoto.starter-a1.word.d3bb981e73f63ffd",
+      "surface": "魚",
+      "kana": "さかな",
+      "meaningRu": "рыба",
+      "segments": [
+        {
+          "surface": "魚",
+          "reading": "さかな"
+        }
+      ],
+      "reviewStatus": "source-checked",
+      "illustration": {
+        "src": "/word-illustrations/pantry-v1.webp",
+        "bounds": [
+          26,
+          93,
+          311,
+          214
+        ]
+      }
+    },
+    {
+      "id": "marugoto.starter-a1.word.e9eb89c01e577f0b",
+      "surface": "東京",
+      "kana": "とうきょう",
+      "meaningRu": "Токио",
+      "segments": [
+        {
+          "surface": "東京",
+          "reading": "とうきょう"
+        }
+      ],
+      "reviewStatus": "source-checked",
+      "illustration": {
+        "src": "/word-illustrations/family-counts-v1.webp",
+        "bounds": [
+          337,
+          645,
+          295,
+          307
+        ]
+      }
+    },
+    {
+      "id": "marugoto.starter-a1.word.b601ce9a7a769129",
+      "surface": "肉",
+      "kana": "にく",
+      "meaningRu": "мясо",
+      "segments": [
+        {
+          "surface": "肉",
+          "reading": "にく"
+        }
+      ],
+      "reviewStatus": "source-checked",
+      "illustration": {
+        "src": "/word-illustrations/pantry-v1.webp",
+        "bounds": [
+          341,
+          104,
+          289,
+          202
+        ]
+      }
+    },
+    {
+      "id": "marugoto.starter-a1.word.67154e2e75f5ba6a",
+      "surface": "飲みます",
+      "kana": "のみます",
+      "meaningRu": "пить",
+      "segments": [
+        {
+          "surface": "飲",
+          "reading": "の"
+        },
+        {
+          "surface": "みます"
+        }
+      ],
+      "reviewStatus": "source-checked",
+      "illustration": {
+        "src": "/word-illustrations/meals-v1.webp",
+        "bounds": [
+          335,
+          341,
+          309,
+          280
+        ]
+      }
+    }
+  ],
+  "rubySamples": [
+    {
+      "id": "marugoto.starter-a1.word.04763742e49d9b46",
+      "surface": "三",
+      "kana": "さん",
+      "segments": [
+        {
+          "surface": "三",
+          "reading": "さん"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.4280d60b0f1f8e4e",
+      "surface": "新聞",
+      "kana": "しんぶん",
+      "segments": [
+        {
+          "surface": "新聞",
+          "reading": "しんぶん"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.1b1df523dcbfc0ab",
+      "surface": "卵",
+      "kana": "たまご",
+      "segments": [
+        {
+          "surface": "卵",
+          "reading": "たまご"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.193e14d36c7c14e6",
+      "surface": "二",
+      "kana": "に",
+      "segments": [
+        {
+          "surface": "二",
+          "reading": "に"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.764fbf680a484dfa",
+      "surface": "休みます",
+      "kana": "やすみます",
+      "segments": [
+        {
+          "surface": "休",
+          "reading": "やす"
+        },
+        {
+          "surface": "みます"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.1904cefc3f0e5013",
+      "surface": "五",
+      "kana": "ご",
+      "segments": [
+        {
+          "surface": "五",
+          "reading": "ご"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.9c2a9ad4e0f37352",
+      "surface": "七",
+      "kana": "しち",
+      "segments": [
+        {
+          "surface": "七",
+          "reading": "しち"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.e9eb89c01e577f0b",
+      "surface": "東京",
+      "kana": "とうきょう",
+      "segments": [
+        {
+          "surface": "東京",
+          "reading": "とうきょう"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.687f6ea496e591d5",
+      "surface": "七",
+      "kana": "なな",
+      "segments": [
+        {
+          "surface": "七",
+          "reading": "なな"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.8e4d06f19b544304",
+      "surface": "四",
+      "kana": "よん",
+      "segments": [
+        {
+          "surface": "四",
+          "reading": "よん"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.2a0eb3bb38f36cd5",
+      "surface": "六",
+      "kana": "ろく",
+      "segments": [
+        {
+          "surface": "六",
+          "reading": "ろく"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.d3bb981e73f63ffd",
+      "surface": "魚",
+      "kana": "さかな",
+      "segments": [
+        {
+          "surface": "魚",
+          "reading": "さかな"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.3c0f92c17efac2d9",
+      "surface": "食べます",
+      "kana": "たべます",
+      "segments": [
+        {
+          "surface": "食",
+          "reading": "た"
+        },
+        {
+          "surface": "べます"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.92c9d4a69b1ed084",
+      "surface": "食べもの",
+      "kana": "たべもの",
+      "segments": [
+        {
+          "surface": "食",
+          "reading": "た"
+        },
+        {
+          "surface": "べもの"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.b601ce9a7a769129",
+      "surface": "肉",
+      "kana": "にく",
+      "segments": [
+        {
+          "surface": "肉",
+          "reading": "にく"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.67154e2e75f5ba6a",
+      "surface": "飲みます",
+      "kana": "のみます",
+      "segments": [
+        {
+          "surface": "飲",
+          "reading": "の"
+        },
+        {
+          "surface": "みます"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.50ed8dc9f820e0f6",
+      "surface": "飲みもの",
+      "kana": "のみもの",
+      "segments": [
+        {
+          "surface": "飲",
+          "reading": "の"
+        },
+        {
+          "surface": "みもの"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.dab1b377ee04ec7e",
+      "surface": "一つ",
+      "kana": "ひとつ",
+      "segments": [
+        {
+          "surface": "一",
+          "reading": "ひと"
+        },
+        {
+          "surface": "つ"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.453117b1154f4e0b",
+      "surface": "百",
+      "kana": "ひゃく",
+      "segments": [
+        {
+          "surface": "百",
+          "reading": "ひゃく"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.d5a93be57f6f1496",
+      "surface": "二つ",
+      "kana": "ふたつ",
+      "segments": [
+        {
+          "surface": "二",
+          "reading": "ふた"
+        },
+        {
+          "surface": "つ"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.9d5fcd4b125306bf",
+      "surface": "三つ",
+      "kana": "みっつ",
+      "segments": [
+        {
+          "surface": "三",
+          "reading": "みっ"
+        },
+        {
+          "surface": "つ"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.8f95fff59a2547e2",
+      "surface": "新しい",
+      "kana": "あたらしい",
+      "segments": [
+        {
+          "surface": "新",
+          "reading": "あたら"
+        },
+        {
+          "surface": "しい"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.e290e549d40d7986",
+      "surface": "大きい",
+      "kana": "おおきい",
+      "segments": [
+        {
+          "surface": "大",
+          "reading": "おお"
+        },
+        {
+          "surface": "きい"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.78a467265c9a061b",
+      "surface": "小さい",
+      "kana": "ちいさい",
+      "segments": [
+        {
+          "surface": "小",
+          "reading": "ちい"
+        },
+        {
+          "surface": "さい"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.03421cd05b0c6632",
+      "surface": "古い",
+      "kana": "ふるい",
+      "segments": [
+        {
+          "surface": "古",
+          "reading": "ふる"
+        },
+        {
+          "surface": "い"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.01a7883ca3693828",
+      "surface": "休み",
+      "kana": "やすみ",
+      "segments": [
+        {
+          "surface": "休",
+          "reading": "やす"
+        },
+        {
+          "surface": "み"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.10d2007bc30b98ad",
+      "surface": "行きます",
+      "kana": "いきます",
+      "segments": [
+        {
+          "surface": "行",
+          "reading": "い"
+        },
+        {
+          "surface": "きます"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.4262c6c61ace3e06",
+      "surface": "書きます",
+      "kana": "かきます",
+      "segments": [
+        {
+          "surface": "書",
+          "reading": "か"
+        },
+        {
+          "surface": "きます"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.2676a133085ee4e3",
+      "surface": "九",
+      "kana": "く",
+      "segments": [
+        {
+          "surface": "九",
+          "reading": "く"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.8eb03270fd3961e0",
+      "surface": "時",
+      "kana": "じ",
+      "segments": [
+        {
+          "surface": "時",
+          "reading": "じ"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.9823c8250e29eda0",
+      "surface": "十",
+      "kana": "じゅう",
+      "segments": [
+        {
+          "surface": "十",
+          "reading": "じゅう"
+        }
+      ]
+    },
+    {
+      "id": "marugoto.starter-a1.word.e1cdfb046b266277",
+      "surface": "八",
+      "kana": "はち",
+      "segments": [
+        {
+          "surface": "八",
+          "reading": "はち"
+        }
+      ]
+    }
+  ],
+  "construction": {
+    "exerciseId": "marugoto.starter-a1.example.wa_identity.l03.1",
+    "explanationRu": "Чтобы назвать себя, профессию или национальность, используйте N1 は N2 です. は здесь читается «ва» и выделяет тему, です делает высказывание вежливым. Если тема уже ясна, её можно опустить.",
+    "example": {
+      "surface": "わたしはがくせいです。",
+      "kana": "わたしはがくせいです。",
+      "meaningRu": "Я студент.",
+      "segments": [
+        {
+          "surface": "わたし"
+        },
+        {
+          "surface": "は"
+        },
+        {
+          "surface": "がくせい"
+        },
+        {
+          "surface": "です"
+        },
+        {
+          "surface": "。"
+        }
+      ],
+      "audioUrl": "/audio/learning/lesson03-construction-wa-identity.m4a"
+    },
+    "breakdown": [
+      {
+        "text": "わたし",
+        "explanationRu": "я"
+      },
+      {
+        "text": "は",
+        "explanationRu": "Тема высказывания; здесь произносится «ва»."
+      },
+      {
+        "text": "がくせい",
+        "explanationRu": "студент"
+      },
+      {
+        "text": "です",
+        "explanationRu": "Вежливое завершение именной фразы."
+      }
+    ],
+    "promptRu": "Я студент.",
+    "tokens": [
+      {
+        "id": "t1",
+        "surface": "わたし",
+        "kana": "わたし",
+        "segments": [
+          {
+            "surface": "わたし"
+          }
+        ]
+      },
+      {
+        "id": "t2",
+        "surface": "は",
+        "kana": "は",
+        "segments": [
+          {
+            "surface": "は"
+          }
+        ]
+      },
+      {
+        "id": "t3",
+        "surface": "がくせい",
+        "kana": "がくせい",
+        "segments": [
+          {
+            "surface": "がくせい"
+          }
+        ]
+      },
+      {
+        "id": "t4",
+        "surface": "です",
+        "kana": "です",
+        "segments": [
+          {
+            "surface": "です"
+          }
+        ]
+      }
+    ],
+    "acceptedOrders": [
+      [
+        "t1",
+        "t2",
+        "t3",
+        "t4"
+      ]
+    ]
+  }
+}

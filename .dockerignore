@@ -4,8 +4,15 @@
 !.env.example
 node_modules
 verification
-assets
+assets/*
+!assets/canvas/
 dist
 test-results
 playwright-report
 *.log
+
+.local
+
+materials/examples
+**/selfcheck.*
+**/*generation-report.json

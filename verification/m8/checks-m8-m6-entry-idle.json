@@ -1,0 +1,27 @@
+{
+  "date": "2026-11-02",
+  "passed": true,
+  "browser": "145.0.7632.160",
+  "entryOnRealLesson": true,
+  "entryFamilies": [
+    "stand",
+    "walk",
+    "sit",
+    ""
+  ],
+  "entryDoesNotStartPractice": true,
+  "entrySkipEscape": true,
+  "bookFixedThroughout": true,
+  "idleFamilies": [
+    "blink",
+    "breathe",
+    "eyes",
+    "ears",
+    "blink",
+    "tail",
+    "stretch"
+  ],
+  "idleMethod": "Virtual clock fast-forward in actual connected album; one sparse action at a time, no grades",
+  "jsErrors": 0,
+  "candidate": "5a6cc0d73c5565d1ef51cb2686ebee51262089cb51b70fabace6b14f3e448367"
+}

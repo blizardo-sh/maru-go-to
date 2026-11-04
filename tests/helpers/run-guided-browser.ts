@@ -17,7 +17,8 @@ const stop = () => child?.kill();
 process.once('SIGINT', stop);
 process.once('SIGTERM', stop);
 try {
-  web = await preview({ root, preview:{ host:'127.0.0.1', port:0, strictPort:true, proxy:{ '/api':`http://127.0.0.1:${api.port}` } } });
+  // These DOM regressions cover the compatible React client; Canvas remains the production default.
+  web = await preview({ root, plugins:[{ name:'legacy-browser-fixture', configurePreviewServer(server) { server.middlewares.use((request, _response, next) => { const url=new URL(request.url??'/', 'http://localhost'); if(['/','/index.html','/invite','/recover','/login','/admin'].includes(url.pathname))request.url='/legacy.html'+url.search; next(); }); } }], preview:{ host:'127.0.0.1', port:0, strictPort:true, proxy:{ '/api':`http://127.0.0.1:${api.port}` } } });
   const address = web.httpServer.address();
   if (!address || typeof address === 'string') throw new Error('Missing isolated browser preview port.');
   const base = `http://localhost:${address.port}`;

@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "results": [
+    {
+      "engine": "chrome",
+      "version": "145.0.7632.160",
+      "method": "Actual issued guided card, hint choices; content centre compared to the complete answer grid; no grade",
+      "sizes": [
+        {
+          "width": 1280,
+          "height": 900,
+          "centreDelta": 5.684341886080802e-14
+        },
+        {
+          "width": 844,
+          "height": 390,
+          "centreDelta": 0
+        },
+        {
+          "width": 640,
+          "height": 320,
+          "centreDelta": 0
+        },
+        {
+          "width": 568,
+          "height": 320,
+          "centreDelta": 0
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "centreDelta": null
+        },
+        {
+          "width": 320,
+          "height": 640,
+          "centreDelta": null
+        }
+      ]
+    },
+    {
+      "engine": "webkit",
+      "version": "27.2",
+      "method": "Actual issued guided card, hint choices; content centre compared to the complete answer grid; no grade",
+      "sizes": [
+        {
+          "width": 1280,
+          "height": 900,
+          "centreDelta": 5.684341886080802e-14
+        },
+        {
+          "width": 844,
+          "height": 390,
+          "centreDelta": 0
+        },
+        {
+          "width": 640,
+          "height": 320,
+          "centreDelta": 0
+        },
+        {
+          "width": 568,
+          "height": 320,
+          "centreDelta": 0
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "centreDelta": null
+        },
+        {
+          "width": 320,
+          "height": 640,
+          "centreDelta": null
+        }
+      ]
+    }
+  ],
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

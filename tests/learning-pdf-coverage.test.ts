@@ -2,7 +2,7 @@ import { expect, test } from 'bun:test';
 import { createHash } from 'node:crypto';
 import { readFileSync, statSync } from 'node:fs';
 import coverage from '../materials/pdf-coverage-l03-l04.json';
-import audit from '../verification/vocabulary-l03-l04/audit.json';
+import audit from './fixtures/vocabulary-audit.json';
 import { loadCourse } from '../src/server/course';
 import { learningParts } from '../src/shared/learning';
 import { confusableLearningWords, learningWordChoices } from '../src/shared/learningChoices';

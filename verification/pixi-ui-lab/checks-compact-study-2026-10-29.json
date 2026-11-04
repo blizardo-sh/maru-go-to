@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-29T09:08:54.466Z",
+  "scope": "Local Pixi lab only; production application/data unchanged",
+  "decisions": [
+    "Q18: lesson-list scrolling only; no vertical scrolling in the verified vocabulary/overview/completion scenario",
+    "Header on mounted light wood signs above the stand",
+    "Stable word-group card size; inline speech; semantic tabs when needed",
+    "Q19–Q22: separate controlled comparison, reusing pinned advanceDeck; server FSRS unchanged",
+    "User selected B; revealed recall uses one compact question/answer/action layout with a fixed answer slot for the group"
+  ],
+  "checks": {
+    "singleCard": {
+      "cases": 96,
+      "failures": 0,
+      "sizes": [
+        [
+          "1096",
+          "1454"
+        ],
+        [
+          "900",
+          "1016"
+        ],
+        [
+          "1440",
+          "1000"
+        ],
+        [
+          "390",
+          "844"
+        ],
+        [
+          "320",
+          "640"
+        ],
+        [
+          "844",
+          "390"
+        ]
+      ],
+      "browsers": [
+        "Chrome",
+        "Playwright WebKit"
+      ],
+      "script": "single-card-check.mts"
+    },
+    "speechAndChoices": {
+      "cases": 42,
+      "script": "stand-content-check.mts"
+    },
+    "comparison": {
+      "fullScenarios": 28,
+      "realAutoAdvanceAndPauseBrowsers": 2,
+      "noApiOrStorageWrites": true,
+      "script": "practice-browser-check.mjs",
+      "recallLayout": {
+        "actionGapPx": [
+          12,
+          40
+        ],
+        "assessmentPositionStableWithinGroup": true,
+        "states": [
+          "before-reveal",
+          "revealed"
+        ],
+        "viewports": [
+          [
+            1968,
+            2386
+          ],
+          [
+            984,
+            1193
+          ],
+          [
+            1096,
+            1454
+          ],
+          [
+            1440,
+            1000
+          ],
+          [
+            390,
+            844
+          ],
+          [
+            320,
+            640
+          ],
+          [
+            844,
+            390
+          ]
+        ]
+      }
+    },
+    "queueModel": {
+      "passed": true,
+      "script": "practice-study-check.mts"
+    },
+    "fixedWorld": {
+      "cases": 6,
+      "script": "stand-fit-check.mjs"
+    },
+    "legacyScreens": {
+      "layouts": 144,
+      "interactions": true,
+      "script": "paper-check.mjs"
+    },
+    "nativeLoginFocus": {
+      "cases": 4,
+      "script": "input-focus-check.mjs"
+    },
+    "typecheck": true,
+    "build": true
+  },
+  "data": {
+    "course": "Public b378 course fixture, synthetic learner/session state",
+    "realPupilDatabaseRequests": 0,
+    "productionWrites": 0
+  },
+  "limits": [
+    "Real Safari and physical phones were not checked for this revision",
+    "Comparison results live in memory and disappear on reload; a single pass does not prove retention",
+    "Current no-scroll regression scope is vocabulary, lesson overview, part boundary and completion; the remaining subject formats retain their existing layout"
+  ]
+}

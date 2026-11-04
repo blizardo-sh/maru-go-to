@@ -1,0 +1,11 @@
+{
+  "created": "2026-11-01",
+  "tool": "built-in image_gen",
+  "source": "source/cat-sequence.png",
+  "references": [
+    "public/mascot/neutral.png",
+    "public/mascot/standing.png"
+  ],
+  "approval": "pending",
+  "note": "One frame-animation artistic sample; not full repertoire. Shared scale and alpha normalization only."
+}

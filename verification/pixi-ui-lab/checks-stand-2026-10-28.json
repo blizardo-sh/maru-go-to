@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-28T15:00:12.440Z",
+  "browsers": {
+    "chrome": {
+      "version": "145.0.7632.160",
+      "matrix": [
+        {
+          "width": 1440,
+          "height": 1000,
+          "camera": "room",
+          "correction": true,
+          "steadyActions": true,
+          "catPerches": true
+        },
+        {
+          "width": 1538,
+          "height": 1468,
+          "camera": "room",
+          "correction": true,
+          "steadyActions": true,
+          "catPerches": true
+        },
+        {
+          "width": 1280,
+          "height": 900,
+          "camera": "room",
+          "correction": true,
+          "steadyActions": true,
+          "catPerches": true
+        },
+        {
+          "width": 1024,
+          "height": 754,
+          "camera": "room",
+          "correction": true,
+          "steadyActions": true,
+          "catPerches": true
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "camera": "close",
+          "correction": true,
+          "steadyActions": true,
+          "catPerches": true
+        },
+        {
+          "width": 320,
+          "height": 640,
+          "camera": "close",
+          "correction": true,
+          "steadyActions": true,
+          "catPerches": true
+        },
+        {
+          "width": 844,
+          "height": 390,
+          "camera": "close",
+          "correction": true,
+          "steadyActions": true,
+          "catPerches": true
+        }
+      ],
+      "correctedAnswerStillRepeats": true,
+      "realAudio": true,
+      "catJump": true,
+      "mobileApproach": "whole scene, skip and reduced motion passed",
+      "errors": [],
+      "api": []
+    },
+    "webkit": {
+      "version": "27.2",
+      "matrix": [
+        {
+          "width": 1440,
+          "height": 1000,
+          "camera": "room",
+          "correction": true,
+          "steadyActions": true,
+          "catPerches": true
+        },
+        {
+          "width": 1538,
+          "height": 1468,
+          "camera": "room",
+          "correction": true,
+          "steadyActions": true,
+          "catPerches": true
+        },
+        {
+          "width": 1280,
+          "height": 900,
+          "camera": "room",
+          "correction": true,
+          "steadyActions": true,
+          "catPerches": true
+        },
+        {
+          "width": 1024,
+          "height": 754,
+          "camera": "room",
+          "correction": true,
+          "steadyActions": true,
+          "catPerches": true
+        },
+        {
+          "width": 390,
+          "height": 844,
+          "camera": "close",
+          "correction": true,
+          "steadyActions": true,
+          "catPerches": true
+        },
+        {
+          "width": 320,
+          "height": 640,
+          "camera": "close",
+          "correction": true,
+          "steadyActions": true,
+          "catPerches": true
+        },
+        {
+          "width": 844,
+          "height": 390,
+          "camera": "close",
+          "correction": true,
+          "steadyActions": true,
+          "catPerches": true
+        }
+      ],
+      "correctedAnswerStillRepeats": true,
+      "realAudio": true,
+      "catJump": true,
+      "mobileApproach": "whole scene, skip and reduced motion passed",
+      "errors": [],
+      "api": []
+    }
+  }
+}

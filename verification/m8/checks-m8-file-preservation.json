@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "snapshotManifestSha256": "3b2d205229862432383e136aff3886546dd1493d51cdaf7ec1fdb4527fd90358",
+  "snapshotEntries": 63491,
+  "m7Files": 4155,
+  "m7AllBytesPreserved": true,
+  "m7Digest": "1c445fda5d67158790469b6861b024646512a48909c21ffca20b930786aca4d4",
+  "historicalPublicCheckReports": 171,
+  "allHistoricalPublicCheckReportsUnchanged": true,
+  "head": "c5b0358ed8450b4b7d0ab130f0e20bde3c701232",
+  "branch": "prototype/pixi-ui-lab",
+  "stagedDiffUnchanged": true,
+  "changes": "Intended root source/build/dependency integration; old root dist rebuilt. Live private PostgreSQL WAL and already-running old Chrome housekeeping naturally rotate/change; snapshot retains original bytes. No old user profile used for automated grades.",
+  "missingFiles": "Only previous dist outputs and live private WAL/profile housekeeping; no historical public source/report loss.",
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

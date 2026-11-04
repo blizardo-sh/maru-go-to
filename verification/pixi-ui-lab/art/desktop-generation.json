@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-28",
+  "generator": "built-in image_gen",
+  "reference": "runtime/desk.webp",
+  "prompt": "Production background plate for the APPROVED cozy Japanese-learning desk, matching this reference's exact warm painted wood, cream paper stationery palette, sage green floral fabric and gentle golden lighting. Create a wide LANDSCAPE desktop composition approximately 2048x1280. CAMERA: STRICT ORTHOGRAPHIC 90-DEGREE TOP-DOWN flat lay, zero perspective convergence, no front faces or horizon, tabletop boards exactly horizontal. Recompose the source, do not simply crop or stretch the portrait. Keep a circular cup of green tea cropped near far upper-left, a closed botanical notebook and small blossom branch at far upper-right, a pen and tiny floral notebook cropped at far lower-left; only sparse small details in outer 15 percent. Central 75 percent is quiet unoccupied tabletop for real Canvas cards. Props must look directly down onto their top surfaces, not three-quarter views. Keep tabletop texture restrained and softly lit so text UI remains focal. No paper cards or slips in the central area, no interface, NO TEXT, logos, labels, characters, cats, frames, watermarks or fake application screenshots. Preserve the approved illustrated identity and warmth; this is a background sprite, not a mockup of the app.",
+  "source": "/Users/ivsh/.codex/generated_images/01a179c3-fa57-7f11-8ceb-463aa2df2500/exec-93fcac13-5da8-4e7d-b56a-9e44d357bd18.png",
+  "projectSource": "source/desk-landscape.png",
+  "runtime": "runtime/desk-landscape.webp",
+  "purpose": "Wide desktop background; orthographic top-down; no baked UI or learning text"
+}

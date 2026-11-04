@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>まるごと · Сцены с котом</title>
+    <link rel="icon" type="image/png" href="/mascot/neutral.png" />
+  </head>
+  <body>
+    <div id="scene" aria-hidden="true"></div>
+    <div class="preview">
+      <header class="toolbar paper">
+        <div class="identity"><span lang="ja" class="wordmark">まるごと</span><span>Сцены с котом · пробная версия</span></div>
+        <div class="toolbar-actions">
+          <button id="card-toggle" type="button" aria-pressed="true">Скрыть карточку</button>
+          <button id="motion-toggle" type="button" aria-pressed="true">Остановить движение</button>
+        </div>
+      </header>
+
+      <main>
+        <section class="study paper" id="study" aria-labelledby="study-title">
+          <div class="study-heading"><h1 id="study-title">Немного японского</h1><span>Пробная карточка</span></div>
+          <button id="flashcard" class="flashcard" type="button" aria-expanded="false" aria-controls="answer">
+            <span class="prompt-hint">Как это по-русски?</span>
+            <span class="japanese" lang="ja"><ruby>猫<rt>ねこ</rt></ruby></span>
+            <span id="answer" hidden>Кошка</span>
+            <span id="reveal-hint" class="prompt-hint">Нажмите, чтобы перевернуть</span>
+          </button>
+          <div class="answer-actions"><button id="again" type="button">Ещё раз</button><button id="good" class="primary" type="button">Помню</button></div>
+          <p class="study-note">Можно отвечать свободно — прогресс не сохраняется.</p>
+        </section>
+        <div class="cat-controls">
+          <p id="cat-message" class="cat-message paper" role="status">Давай учиться вместе.</p>
+          <button id="pet" class="paper" type="button">Погладить кота</button>
+        </div>
+      </main>
+
+      <footer class="scene-picker paper">
+        <div class="picker-heading"><h2 id="scene-name">Тёплая комната</h2><span id="status" role="status">Загружаем сцену…</span></div>
+        <div id="backgrounds" class="backgrounds" role="group" aria-label="Задний план"></div>
+        <p class="picker-hint">Поведите мышью по фону или нажмите на кота.</p>
+      </footer>
+      <p id="error" class="error paper" role="alert" hidden></p>
+    </div>
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>

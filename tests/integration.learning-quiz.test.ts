@@ -1,3 +1,4 @@
+import { disposableDatabase } from './helpers/disposable-database';
 import { afterAll, beforeAll, describe, expect, test } from 'bun:test';
 import { createApp } from '../src/server/app';
 import { createLink, consumeLink } from '../src/server/auth';
@@ -8,7 +9,7 @@ import { nextFixtureIp } from './helpers/fixture-ip';
 import { learningWordChoices } from '../src/shared/learningChoices';
 
 const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
-(databaseUrl ? describe : describe.skip)('group introduction and server-graded word choices', () => {
+(databaseUrl ? describe : describe.skip)('persisted legacy group introduction and server-graded word choices', () => {
   const origin = 'http://127.0.0.1:5173'; const course = learningFixture(); const route = course.learning[0]!;
   const part = route.goals[0]!.parts[0]!;
   const extraWords = ['せんせい', 'がくせい', 'エンジニア'].map(kana => course.words.find(word => word.kana === kana && word.lessonIds.includes(route.lessonId))!);
@@ -27,7 +28,7 @@ const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
   const counts = async (owner = 0) => (await database.sql`select (select count(*)::int from learning_attempts where user_id=${users[owner]!.id}) as learning,(select count(*)::int from review_attempts where user_id=${users[owner]!.id}) as reviews,(select count(*)::int from review_states where user_id=${users[owner]!.id}) as cards`)[0];
   beforeAll(async () => {
     const url = new URL(databaseUrl!);
-    if (!['localhost', '127.0.0.1'].includes(url.hostname) || url.pathname !== '/japanese_app_test') throw new Error('Disposable local test database required.');
+    if (!disposableDatabase(url)) throw new Error('Disposable local test database required.');
     database = connectDatabase(databaseUrl!); app = createApp({ database, course, config });
     for (let i = 0; i < 4; i++) {
       const email = `quiz-${crypto.randomUUID()}@example.test`; const ip = nextFixtureIp(); const password = 'Quiz-fixture-password-2026!';
@@ -35,6 +36,8 @@ const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
       const response = await app.request(origin + '/api/auth/sign-in/email', { method: 'POST', headers: { origin, 'content-type': 'application/json', 'x-forwarded-for': ip }, body: JSON.stringify({ email, password }) });
       expect(response.status).toBe(200); const body = await response.json(); users.push({ id: body.user.id, email, ip, cookie: response.headers.getSetCookie().map(value => value.split(';')[0]).join('; ') });
     }
+    // This suite verifies persisted pre-recall routes; fresh B routes are exercised by M8 connected/protocol checks.
+    for (const index of [0, 1, 3]) await database.sql`insert into learning_states(user_id,lesson_id,route_version,version,state) values(${users[index]!.id},${route.lessonId},${route.version},0,${initialLearningState(route)})`;
   });
   afterAll(async () => { if (!database) return; for (const user of users) { await database.sql`delete from access_links where email=${user.email}`; await database.sql`delete from users where id=${user.id}`; } await database.sql.close(); });
 
@@ -105,7 +108,7 @@ const databaseUrl = process.env.JAPANESE_INTEGRATION_DATABASE_URL;
     const current = (await submit(3, input(await state(3), 'start-practice'))).state;
     if (current.step?.kind !== 'word-practice') throw new Error('Missing language question.');
     const step = current.step;
-    const oldAnchor = course.words.find(word => word.kana === 'がくせい')!.id;
+    const oldAnchor = course.words.find(word => word.reviewStatus !== 'draft' && !current.wordChoices!.includes(word.id))!.id;
     expect(current.wordChoices).not.toContain(oldAnchor);
     const before = await counts(3);
     const rejected = await request(3, input(current, 'choose', oldAnchor));

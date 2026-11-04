@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { LessonVideo as VideoMaterial, Course, Orthography } from '../shared/types';
 import { JapaneseText } from './JapaneseText';
-import { captionAt } from './videoCaptions';
+import { captionAt, videoCaption } from './videoCaptions';
 
 const variantNames = { practice: 'Сценка · Practice', challenge: 'Попробуйте сами · Challenge' } as const;
 
@@ -33,6 +33,7 @@ export function LessonVideo({ material, active = true, onPlayingChange, course, 
     <header><small>Marugoto Plus · Can-do {material.canDoId} · {variantNames[material.variant]}</small><h3>{material.title}</h3><p className="muted">Необязательный материал урока. Просмотр не меняет повторения.</p></header>
     <video ref={video} src={material.mediaUrl} controls controlsList="nodownload" playsInline preload="none" aria-label={material.title} onTimeUpdate={sync} onSeeking={sync} onSeeked={sync} onLoadedMetadata={sync} onPlay={() => { setFailed(false); sync(); }} onPlaying={() => { if (!active || document.hidden) video.current?.pause(); else onPlayingChange?.(true); }} onPause={() => { onPlayingChange?.(false); sync(); }} onEnded={() => { onPlayingChange?.(false); setActiveCaption(-1); }} onError={() => { onPlayingChange?.(false); setFailed(true); setActiveCaption(-1); }} />
     <div className="lesson-video-caption" data-cue={activeCaption} role="group" aria-label="Японский текст видео">
+      {caption && videoCaption(material, caption.startSeconds).learner && <small>Ваша реплика · произнесите вслух</small>}
       {caption?.text && <p key={activeCaption}>{course ? <JapaneseText text={caption.text} course={course} mode={orthography} /> : <span className="jp" lang="ja">{caption.text}</span>}</p>}
     </div>
     {material.captionNote && <p className="muted">{material.captionNote}</p>}

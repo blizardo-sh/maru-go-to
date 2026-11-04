@@ -1,3 +1,5 @@
+import { seedLegacyLearning } from '../../tests/helpers/introduced-browser-fixture';
+import { loadCourse } from '../../src/server/course';
 import { mkdir } from 'node:fs/promises';
 import { join } from 'node:path';
 import { output as artifacts } from '../../tests/helpers/artifact-output';
@@ -22,7 +24,7 @@ if(new URL(base).port==='5298')await context.routeWebSocket(url=>['localhost','1
 const page=await context.newPage();page.setDefaultTimeout(15000); const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
 const lesson='marugoto.starter-a1.lesson.01'; const report:Record<string,unknown>={isolated:true,noDatabaseReset:true}; let owner=''; let release:(()=>void)|undefined;
 const session=()=>page.getByTestId('guided-learning');
-async function actor(){const email=`album-flow-${crypto.randomUUID()}@example.test`,password=`Album-${crypto.randomUUID()}!`;const link=await createLink(database,'invite',email,null);expect(await consumeLink(database,'invite',link.token,password,'Album flow')).toBe(true);const[row]=await database.sql`select id from users where email=${email}`;const result={id:String(row.id),email,password};actors.push(result);return result;}
+async function actor(){const email=`album-flow-${crypto.randomUUID()}@example.test`,password=`Album-${crypto.randomUUID()}!`;const link=await createLink(database,'invite',email,null);expect(await consumeLink(database,'invite',link.token,password,'Album flow')).toBe(true);await seedLegacyLearning(database,loadCourse(),email);const[row]=await database.sql`select id from users where email=${email}`;const result={id:String(row.id),email,password};actors.push(result);return result;}
 async function login(value:typeof actors[number],c:BrowserContext=context){const response=await c.request.post(base+'/api/auth/sign-in/email',{headers:{origin:base},data:{email:value.email,password:value.password}});expect(response.status()).toBe(200);owner=value.id;}
 async function state(lessonId=lesson):Promise<LearningState>{const response=await context.request.get(`${base}/api/learning/${lessonId}`,{headers:{'X-Learning-Learner-Id':owner}});expect(response.status()).toBe(200);return response.json();}
 async function open(lessonId=lesson,p:Page=page){await p.goto(base);await expect(p.getByTestId('learn-lesson')).toHaveCount(18);await p.locator(`[data-testid=learn-lesson][data-lesson-id="${lessonId}"]`).click();const skip=p.getByRole('button',{name:/Перейти к занятию/});if(await skip.isVisible())await skip.click();await expect(p.getByTestId('guided-learning')).toHaveAttribute('data-step-kind',/./);}

@@ -30,7 +30,9 @@
   }
   handle {
     root * /srv
-    try_files {path} /index.html
+    @entry path / /index.html /album.html /invite /recover /login /admin
+    rewrite @entry /{$CLIENT_ENTRY:index.html}
+    try_files {path} =404
     file_server
   }
 }

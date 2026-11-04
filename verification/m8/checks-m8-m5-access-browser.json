@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "checks": [
+    "settings-lost-ACK-exact-retry",
+    "chrome:independent-volumes-reload-and-admin-role",
+    "chrome:registration-Canvas-limit-and-token-removed",
+    "chrome:expired-and-exhausted-links",
+    "webkit:independent-volumes-reload-and-admin-role",
+    "webkit:registration-Canvas-limit-and-token-removed",
+    "webkit:expired-and-exhausted-links"
+  ],
+  "nativePasswordManagers": false,
+  "candidate": "94803e9d551cad3057b3f225c8c52fd05885d72b3e68effd75eee961de9c1e89"
+}

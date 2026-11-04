@@ -1,0 +1,318 @@
+{
+  "version": 1,
+  "generator": "built-in image_gen + local Apple Vision revision 1 whole-cel inbetweens",
+  "source": "source/repertoire.png",
+  "sourceSha256": "41d70670df6c95bd44c4637e1723af0a39ad098ea6141b53f97dd6d8e0714b4c",
+  "reference": [
+    "public/mascot/neutral.png",
+    "public/mascot/standing.png"
+  ],
+  "license": "generated for this project; original project character references",
+  "approvalBasis": "m6-v4 calm whole-character plasticity accepted 2026-11-01; extension families",
+  "cell": 192,
+  "pivot": [
+    0.5,
+    0.953125
+  ],
+  "wholeCharacterFrames": true,
+  "separateBodyParts": false,
+  "families": {
+    "stretch": {
+      "file": "stretch.webp",
+      "frames": 25,
+      "columns": 8,
+      "width": 1536,
+      "height": 768,
+      "bytes": 323856,
+      "decodedBytes": 4718592,
+      "sha256": "34fbb3e37b1f7fa1b999bdef2f4c24164e47ab4f5cacca4e692c74c21a748d2a",
+      "seconds": 2.2,
+      "keys": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "subframes": 8
+    },
+    "pet": {
+      "file": "pet.webp",
+      "frames": 25,
+      "columns": 8,
+      "width": 1536,
+      "height": 768,
+      "bytes": 329006,
+      "decodedBytes": 4718592,
+      "sha256": "21b1337647ec0e9fa3f568f1be8b914197b5e3ffba41d3cdd45ad3dcddd1c906",
+      "seconds": 1.3,
+      "keys": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "subframes": 8
+    },
+    "joy-paws": {
+      "file": "joy-paws.webp",
+      "frames": 17,
+      "columns": 8,
+      "width": 1536,
+      "height": 576,
+      "bytes": 197344,
+      "decodedBytes": 3538944,
+      "sha256": "2db6a4dbe2d7e238bdbeaf26d310071ac7cf5fbe66cb74caa1426c059b8b8975",
+      "seconds": 1.15,
+      "keys": [
+        8,
+        9,
+        8
+      ],
+      "subframes": 8
+    },
+    "joy-hop": {
+      "file": "joy-hop.webp",
+      "frames": 25,
+      "columns": 8,
+      "width": 1536,
+      "height": 768,
+      "bytes": 279124,
+      "decodedBytes": 4718592,
+      "sha256": "fb4b100a2967c4e212ac80fca73e973740b8b9ad69861e49088ff13d0db1bb7a",
+      "seconds": 1.35,
+      "keys": [
+        8,
+        11,
+        10,
+        11,
+        8
+      ],
+      "subframes": 6
+    },
+    "farewell": {
+      "file": "farewell.webp",
+      "frames": 25,
+      "columns": 8,
+      "width": 1536,
+      "height": 768,
+      "bytes": 272966,
+      "decodedBytes": 4718592,
+      "sha256": "4e7ff87e1470d1c1052f7d9cd9a6810535ce4349e979eceb414c1d6394814d47",
+      "seconds": 2.1,
+      "keys": [
+        12,
+        13,
+        14,
+        13,
+        15
+      ],
+      "subframes": 6
+    },
+    "sit": {
+      "file": "sit.webp",
+      "frames": 11,
+      "columns": 8,
+      "width": 1536,
+      "height": 384,
+      "bytes": 127040,
+      "decodedBytes": 2359296,
+      "sha256": "e1db846abdec97c3a3125d6cec1845707739b0585685ae1bf2891257d5b609a5",
+      "seconds": 0.65,
+      "keys": [
+        22,
+        16
+      ],
+      "subframes": 10
+    },
+    "stand": {
+      "file": "stand.webp",
+      "frames": 11,
+      "columns": 8,
+      "width": 1536,
+      "height": 384,
+      "bytes": 128044,
+      "decodedBytes": 2359296,
+      "sha256": "13ace55e90c5751f2f969d9601317d7cc345c77520bdbc76d9e3ba5752f0bb1b",
+      "seconds": 0.65,
+      "keys": [
+        16,
+        22
+      ],
+      "subframes": 10
+    },
+    "listen": {
+      "file": "listen.webp",
+      "frames": 16,
+      "columns": 8,
+      "width": 1536,
+      "height": 384,
+      "bytes": 157894,
+      "decodedBytes": 2359296,
+      "sha256": "b8daca3f8f0a58474f564eace618ac8e98f287f1f8bde7ee3362985e95f8ce8b",
+      "seconds": 1.8,
+      "keys": [
+        16,
+        18,
+        18,
+        16
+      ],
+      "subframes": 5
+    },
+    "think": {
+      "file": "think.webp",
+      "frames": 13,
+      "columns": 8,
+      "width": 1536,
+      "height": 384,
+      "bytes": 132544,
+      "decodedBytes": 2359296,
+      "sha256": "b9868d15f032c4cd688b579aad573432ad70860e3be4a8c9ed8a44f7f4aebcae",
+      "seconds": 1.4,
+      "keys": [
+        16,
+        18,
+        16
+      ],
+      "subframes": 6
+    },
+    "point": {
+      "file": "point.webp",
+      "frames": 13,
+      "columns": 8,
+      "width": 1536,
+      "height": 384,
+      "bytes": 138252,
+      "decodedBytes": 2359296,
+      "sha256": "7db6707f26733063d038416a37802a6f6f55ffc3f6f363bf8f7abd4e60adc1f0",
+      "seconds": 1.1,
+      "keys": [
+        16,
+        19,
+        16
+      ],
+      "subframes": 6
+    },
+    "support": {
+      "file": "support.webp",
+      "frames": 13,
+      "columns": 8,
+      "width": 1536,
+      "height": 384,
+      "bytes": 139244,
+      "decodedBytes": 2359296,
+      "sha256": "f0d9c4cdedee484508bb405cb25ff8e8daeb2394675e7a694fc68618dc501746",
+      "seconds": 1.3,
+      "keys": [
+        16,
+        20,
+        16
+      ],
+      "subframes": 6
+    },
+    "nod": {
+      "file": "nod.webp",
+      "frames": 13,
+      "columns": 8,
+      "width": 1536,
+      "height": 384,
+      "bytes": 136272,
+      "decodedBytes": 2359296,
+      "sha256": "c8e41bd3cef97b0e4305c672fa02234aa9caa4ab6c3e8317891a0bd19b801520",
+      "seconds": 0.7,
+      "keys": [
+        16,
+        21,
+        16
+      ],
+      "subframes": 6
+    },
+    "joy-pose": {
+      "file": "joy-pose.webp",
+      "frames": 19,
+      "columns": 8,
+      "width": 1536,
+      "height": 576,
+      "bytes": 188318,
+      "decodedBytes": 3538944,
+      "sha256": "fcf17245fc34a4b62e0ab2f388ded53947bc20d06e88f28660c4834bf7100353",
+      "seconds": 1.25,
+      "keys": [
+        16,
+        21,
+        21,
+        16
+      ],
+      "subframes": 6
+    },
+    "blink": {
+      "file": "blink.webp",
+      "frames": 9,
+      "columns": 8,
+      "width": 1536,
+      "height": 384,
+      "bytes": 92510,
+      "decodedBytes": 2359296,
+      "sha256": "e65db59a427f431630f301baf3af6a4a5115f096274386b69f8b80c2c44b35ab",
+      "seconds": 0.32,
+      "keys": [
+        16,
+        17,
+        16
+      ],
+      "subframes": 4
+    },
+    "breathe": {
+      "file": "breathe.webp",
+      "frames": 12,
+      "columns": 8,
+      "width": 1536,
+      "height": 384,
+      "bytes": 109330,
+      "decodedBytes": 2359296,
+      "sha256": "b2fadcc3fad21f11c346646dbc094e30d53dbc83b09fa6f05fa8395b9ccfcece",
+      "seconds": 2.8,
+      "offlineWholeCelDisplacement": "breathe",
+      "maximumPixels": 0.7
+    },
+    "ears": {
+      "file": "ears.webp",
+      "frames": 12,
+      "columns": 8,
+      "width": 1536,
+      "height": 384,
+      "bytes": 107186,
+      "decodedBytes": 2359296,
+      "sha256": "758ec94c42704c73c81ba7ddb9734108d25a317dd239853d74c6226842c0398c",
+      "seconds": 0.9,
+      "offlineWholeCelDisplacement": "ears",
+      "maximumPixels": 0.75
+    },
+    "eyes": {
+      "file": "eyes.webp",
+      "frames": 12,
+      "columns": 8,
+      "width": 1536,
+      "height": 384,
+      "bytes": 103844,
+      "decodedBytes": 2359296,
+      "sha256": "1a5ced619948d8b9af747941356c17f3e776e41e425e8dab8ed5e4e5839c6b50",
+      "seconds": 0.9,
+      "offlineWholeCelDisplacement": "eyes",
+      "maximumPixels": 0.65
+    },
+    "tail": {
+      "file": "tail.webp",
+      "frames": 12,
+      "columns": 8,
+      "width": 1536,
+      "height": 384,
+      "bytes": 112912,
+      "decodedBytes": 2359296,
+      "sha256": "917196e108006bbebd275c16176542943d8cdec3f46fe3194fc8dd5d058ec068",
+      "seconds": 0.9,
+      "offlineWholeCelDisplacement": "tail",
+      "maximumPixels": 1.1
+    }
+  },
+  "generatorSourceSha256": "8e5fbe10255cd09585b66aedc78f9471571762d7413467da650f9cf6af0f9058"
+}

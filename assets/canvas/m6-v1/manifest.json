@@ -1,0 +1,717 @@
+{
+  "version": 1,
+  "generatorSha256": "83f0109a0cfd7111f6b1831e11e489622ac44fef8309b09450cb454e528192c2",
+  "cat": {
+    "source": "source/cat-sequence.png",
+    "sourceSha256": "ae9723aeabd2dc366441a6a9b1e5ca88357813ed78b06d3815750229aee17f36",
+    "runtime": "cat-sequence.webp",
+    "sha256": "5b6e52780fe6f8afb14c371bee4bb4ddd304e71f00c2aa986558281a386dba6d",
+    "bytes": 759282,
+    "width": 1024,
+    "height": 1024,
+    "decodedBytes": 4194304,
+    "pivot": [
+      0.5,
+      0.953125
+    ],
+    "frames": [
+      {
+        "index": 0,
+        "cell": [
+          0,
+          0,
+          256,
+          256
+        ],
+        "sourceCell": [
+          0,
+          0
+        ],
+        "offset": [
+          13,
+          21
+        ],
+        "contactBaseline": 244,
+        "contactX": 148.869,
+        "alphaBounds": [
+          30,
+          5,
+          204,
+          223
+        ]
+      },
+      {
+        "index": 1,
+        "cell": [
+          256,
+          0,
+          256,
+          256
+        ],
+        "sourceCell": [
+          1,
+          0
+        ],
+        "offset": [
+          13,
+          23
+        ],
+        "contactBaseline": 244,
+        "contactX": 147.736,
+        "alphaBounds": [
+          30,
+          7,
+          204,
+          221
+        ]
+      },
+      {
+        "index": 2,
+        "cell": [
+          512,
+          0,
+          256,
+          256
+        ],
+        "sourceCell": [
+          2,
+          0
+        ],
+        "offset": [
+          13,
+          25
+        ],
+        "contactBaseline": 244,
+        "contactX": 126.328,
+        "alphaBounds": [
+          28,
+          2,
+          209,
+          219
+        ]
+      },
+      {
+        "index": 3,
+        "cell": [
+          768,
+          0,
+          256,
+          256
+        ],
+        "sourceCell": [
+          3,
+          0
+        ],
+        "offset": [
+          13,
+          21
+        ],
+        "contactBaseline": 244,
+        "contactX": 150.585,
+        "alphaBounds": [
+          30,
+          7,
+          204,
+          223
+        ]
+      },
+      {
+        "index": 4,
+        "cell": [
+          0,
+          256,
+          256,
+          256
+        ],
+        "sourceCell": [
+          0,
+          1
+        ],
+        "offset": [
+          13,
+          20
+        ],
+        "contactBaseline": 244,
+        "contactX": 157.475,
+        "alphaBounds": [
+          28,
+          0,
+          207,
+          224
+        ]
+      },
+      {
+        "index": 5,
+        "cell": [
+          256,
+          256,
+          256,
+          256
+        ],
+        "sourceCell": [
+          1,
+          1
+        ],
+        "offset": [
+          13,
+          25
+        ],
+        "contactBaseline": 244,
+        "contactX": 167.783,
+        "alphaBounds": [
+          28,
+          3,
+          206,
+          219
+        ]
+      },
+      {
+        "index": 6,
+        "cell": [
+          512,
+          256,
+          256,
+          256
+        ],
+        "sourceCell": [
+          2,
+          1
+        ],
+        "offset": [
+          13,
+          25
+        ],
+        "contactBaseline": 244,
+        "contactX": 134.832,
+        "alphaBounds": [
+          28,
+          0,
+          208,
+          219
+        ]
+      },
+      {
+        "index": 7,
+        "cell": [
+          768,
+          256,
+          256,
+          256
+        ],
+        "sourceCell": [
+          3,
+          1
+        ],
+        "offset": [
+          13,
+          21
+        ],
+        "contactBaseline": 244,
+        "contactX": 155.44,
+        "alphaBounds": [
+          24,
+          2,
+          205,
+          223
+        ]
+      },
+      {
+        "index": 8,
+        "cell": [
+          0,
+          512,
+          256,
+          256
+        ],
+        "sourceCell": [
+          0,
+          2
+        ],
+        "offset": [
+          13,
+          19
+        ],
+        "contactBaseline": 244,
+        "contactX": 128.824,
+        "alphaBounds": [
+          22,
+          4,
+          208,
+          225
+        ]
+      },
+      {
+        "index": 9,
+        "cell": [
+          256,
+          512,
+          256,
+          256
+        ],
+        "sourceCell": [
+          1,
+          2
+        ],
+        "offset": [
+          13,
+          21
+        ],
+        "contactBaseline": 244,
+        "contactX": 138.758,
+        "alphaBounds": [
+          28,
+          3,
+          208,
+          223
+        ]
+      },
+      {
+        "index": 10,
+        "cell": [
+          512,
+          512,
+          256,
+          256
+        ],
+        "sourceCell": [
+          2,
+          2
+        ],
+        "offset": [
+          13,
+          19
+        ],
+        "contactBaseline": 244,
+        "contactX": 134.104,
+        "alphaBounds": [
+          22,
+          2,
+          203,
+          225
+        ]
+      },
+      {
+        "index": 11,
+        "cell": [
+          768,
+          512,
+          256,
+          256
+        ],
+        "sourceCell": [
+          3,
+          2
+        ],
+        "offset": [
+          13,
+          20
+        ],
+        "contactBaseline": 244,
+        "contactX": 135.94,
+        "alphaBounds": [
+          26,
+          2,
+          199,
+          224
+        ]
+      },
+      {
+        "index": 12,
+        "cell": [
+          0,
+          768,
+          256,
+          256
+        ],
+        "sourceCell": [
+          0,
+          3
+        ],
+        "offset": [
+          13,
+          21
+        ],
+        "contactBaseline": 244,
+        "contactX": 130.569,
+        "alphaBounds": [
+          21,
+          1,
+          204,
+          223
+        ]
+      },
+      {
+        "index": 13,
+        "cell": [
+          256,
+          768,
+          256,
+          256
+        ],
+        "sourceCell": [
+          1,
+          3
+        ],
+        "offset": [
+          13,
+          21
+        ],
+        "contactBaseline": 244,
+        "contactX": 135.721,
+        "alphaBounds": [
+          25,
+          1,
+          221,
+          223
+        ]
+      },
+      {
+        "index": 14,
+        "cell": [
+          512,
+          768,
+          256,
+          256
+        ],
+        "sourceCell": [
+          2,
+          3
+        ],
+        "offset": [
+          13,
+          21
+        ],
+        "contactBaseline": 244,
+        "contactX": 131.92,
+        "alphaBounds": [
+          21,
+          1,
+          225,
+          223
+        ]
+      },
+      {
+        "index": 15,
+        "cell": [
+          768,
+          768,
+          256,
+          256
+        ],
+        "sourceCell": [
+          3,
+          3
+        ],
+        "offset": [
+          13,
+          21
+        ],
+        "contactBaseline": 244,
+        "contactX": 133.061,
+        "alphaBounds": [
+          22,
+          1,
+          220,
+          223
+        ]
+      }
+    ],
+    "alpha": true,
+    "approval": "pending",
+    "generator": "built-in image_gen",
+    "sourceDimensions": [
+      1254,
+      1254
+    ],
+    "license": "generated for this project; no third-party character reference",
+    "reference": [
+      "public/mascot/neutral.png",
+      "public/mascot/standing.png"
+    ]
+  },
+  "audio": [
+    {
+      "file": "audio/m6-paper-reveal-v1.wav",
+      "sha256": "9d4c107f66d54edc303738ef287a1975e8d7ad13308e2b67f8807b1a5c1940d1",
+      "bytes": 12524,
+      "seconds": 0.26,
+      "format": "PCM16 mono WAV 24000 Hz",
+      "peakDbfs": -23,
+      "rmsDbfs": -32.55,
+      "loop": false,
+      "event": "reveal",
+      "source": "m6-assets.py; deterministic original synthesis",
+      "license": "CC0-1.0",
+      "version": 1,
+      "approval": "pending",
+      "humanAudition": false,
+      "speech": "suppressed while speech/video active",
+      "pause": "stop; no queued replay"
+    },
+    {
+      "file": "audio/m6-paper-move-v1.wav",
+      "sha256": "2c7a9d0efcc38160e5fa2781f7b5e087119bdeaca486d2beda99593c3c8ab1c2",
+      "bytes": 15404,
+      "seconds": 0.32,
+      "format": "PCM16 mono WAV 24000 Hz",
+      "peakDbfs": -24,
+      "rmsDbfs": -36.49,
+      "loop": false,
+      "event": "move",
+      "source": "m6-assets.py; deterministic original synthesis",
+      "license": "CC0-1.0",
+      "version": 1,
+      "approval": "pending",
+      "humanAudition": false,
+      "speech": "suppressed while speech/video active",
+      "pause": "stop; no queued replay"
+    },
+    {
+      "file": "audio/m6-purr-v1.wav",
+      "sha256": "edc94ee6e791e6dbb26681654787ab990ca4638fc891af4fb1c1a371e110d977",
+      "bytes": 40844,
+      "seconds": 0.85,
+      "format": "PCM16 mono WAV 24000 Hz",
+      "peakDbfs": -22,
+      "rmsDbfs": -30.72,
+      "loop": false,
+      "event": "pet",
+      "source": "m6-assets.py; deterministic original synthesis",
+      "license": "CC0-1.0",
+      "version": 1,
+      "approval": "pending",
+      "humanAudition": false,
+      "speech": "suppressed while speech/video active",
+      "pause": "stop; no queued replay"
+    },
+    {
+      "file": "audio/m6-good-v1.wav",
+      "sha256": "2821d060e26afb70c6b51687e3ad26f8db7e8a21d87fec4da96d89c7c30aef2e",
+      "bytes": 31244,
+      "seconds": 0.65,
+      "format": "PCM16 mono WAV 24000 Hz",
+      "peakDbfs": -21,
+      "rmsDbfs": -34.07,
+      "loop": false,
+      "event": "good",
+      "source": "m6-assets.py; deterministic original synthesis",
+      "license": "CC0-1.0",
+      "version": 1,
+      "approval": "pending",
+      "humanAudition": false,
+      "speech": "suppressed while speech/video active",
+      "pause": "stop; no queued replay"
+    },
+    {
+      "file": "audio/m6-again-v1.wav",
+      "sha256": "e009393a6e310fd2ab04b7632c28ec3c83a2b3f40682a67b349a698dbc6f6c94",
+      "bytes": 20204,
+      "seconds": 0.42,
+      "format": "PCM16 mono WAV 24000 Hz",
+      "peakDbfs": -24,
+      "rmsDbfs": -36.88,
+      "loop": false,
+      "event": "again",
+      "source": "m6-assets.py; deterministic original synthesis",
+      "license": "CC0-1.0",
+      "version": 1,
+      "approval": "pending",
+      "humanAudition": false,
+      "speech": "suppressed while speech/video active",
+      "pause": "stop; no queued replay"
+    },
+    {
+      "file": "audio/m6-complete-v1.wav",
+      "sha256": "173965d1d5be728dad254696ce37edecd9cce39525071766dc82d047d759fd46",
+      "bytes": 55244,
+      "seconds": 1.15,
+      "format": "PCM16 mono WAV 24000 Hz",
+      "peakDbfs": -22,
+      "rmsDbfs": -34.27,
+      "loop": false,
+      "event": "complete",
+      "source": "m6-assets.py; deterministic original synthesis",
+      "license": "CC0-1.0",
+      "version": 1,
+      "approval": "pending",
+      "humanAudition": false,
+      "speech": "suppressed while speech/video active",
+      "pause": "stop; no queued replay"
+    }
+  ],
+  "status": "M3/M6 artistic sample, not complete M6",
+  "music": {
+    "id": "music-cozy",
+    "filename": "music-cozy.m4a",
+    "kind": "music",
+    "title": "Hot Springs Town",
+    "author": "Kistol",
+    "source": "https://opengameart.org/content/hot-springs-town",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sourceRangeSeconds": [
+      0.0,
+      160.0
+    ],
+    "modifications": "Trimmed encoder silence; DC removal; 0.6-second equal-power end/start crossfade; gentle level normalization; AAC 96 kbps.",
+    "gainDb": -6.962355973223065,
+    "pcmSeconds": 159.4,
+    "loopStart": 0,
+    "loopEnd": 159.4,
+    "sourceSha256": "da33a9f057c759f35b19c5cd737cc59ce44d9b272b1b6c8ada4605fa1ece2a69",
+    "src": "/audio/game/music-cozy.m4a",
+    "bytes": 1908191,
+    "sha256": "e9ed24d254e9fca78ad63baa2a8a3c6a536fc7aca7b3562face2b92260936bd0",
+    "duration": 159.4,
+    "sampleRate": 44100,
+    "channels": 2,
+    "peakDbfs": -8.822,
+    "rmsDbfs": -25.02,
+    "maxAbsDc": 5.482e-06,
+    "mimeType": "audio/mp4",
+    "loopBoundaryMaxStep": 0.003479004,
+    "adjacentStep99Percentile": 0.017913818,
+    "mp4Atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "bytes": 28
+      },
+      {
+        "type": "moov",
+        "offset": 28,
+        "bytes": 29546
+      },
+      {
+        "type": "free",
+        "offset": 29574,
+        "bytes": 3186
+      },
+      {
+        "type": "mdat",
+        "offset": 32760,
+        "bytes": 1875431
+      }
+    ],
+    "progressiveStreamingReady": true,
+    "loop": true,
+    "approval": "existing basis, new mix pending",
+    "humanAudition": false,
+    "speech": "music/ambience gain multiplied by 0.15 during speech/video",
+    "pause": "pause on hidden/inactive; continue only for current owner"
+  },
+  "ambience": {
+    "id": "ambience-river",
+    "filename": "ambience-river.m4a",
+    "kind": "ambience",
+    "title": "Small Stream",
+    "author": "Joseph SARDIN",
+    "source": "https://bigsoundbank.com/small-stream-s0823.html",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "sourceRangeSeconds": [
+      50.0,
+      84.0
+    ],
+    "modifications": "Selected quieter 34-second passage; 65 Hz high-pass, 6.5 kHz low-pass, DC removal, equal-power 2-second end/start crossfade, gentle level normalization; AAC 96 kbps.",
+    "gainDb": -12.570795596236257,
+    "pcmSeconds": 32.0,
+    "loopStart": 0,
+    "loopEnd": 32.0,
+    "sourceSha256": "d32083bb18dd27661c77a6b17f5b7ae3db40a7860ff1089cd9281f1148d04e6d",
+    "src": "/audio/game/ambience-river.m4a",
+    "bytes": 384259,
+    "sha256": "dc852c9949af6f38320e48c940b59869bcbea5038418a85995bd13028db24810",
+    "duration": 32.0,
+    "sampleRate": 44100,
+    "channels": 2,
+    "peakDbfs": -15.916,
+    "rmsDbfs": -38.057,
+    "maxAbsDc": 1.92e-07,
+    "mimeType": "audio/mp4",
+    "loopBoundaryMaxStep": 0.003814697,
+    "adjacentStep99Percentile": 0.013214722,
+    "mp4Atoms": [
+      {
+        "type": "ftyp",
+        "offset": 0,
+        "bytes": 28
+      },
+      {
+        "type": "moov",
+        "offset": 28,
+        "bytes": 6602
+      },
+      {
+        "type": "free",
+        "offset": 6630,
+        "bytes": 1554
+      },
+      {
+        "type": "mdat",
+        "offset": 8184,
+        "bytes": 376075
+      }
+    ],
+    "progressiveStreamingReady": true,
+    "loop": true,
+    "approval": "existing basis, new mix pending",
+    "humanAudition": false,
+    "speech": "music/ambience gain multiplied by 0.15 during speech/video",
+    "pause": "pause on hidden/inactive; continue only for current owner"
+  },
+  "riverLayers": {
+    "assets": [
+      {
+        "file": "public/scenes/river-v1.webp",
+        "sha256": "c4b1e238a7747de1122c50f0e79ea0139d915ced68ff67ef9b2f32ec998b43a4",
+        "bytes": 233980,
+        "width": 1600,
+        "height": 900,
+        "decodedBytes": 5760000,
+        "source": "existing project image_gen artwork; original retained",
+        "approval": "illustration already accepted; motion pending"
+      },
+      {
+        "file": "public/scenes/river-mobile-v1.webp",
+        "sha256": "33394128d0f8322ea3a4c4c65c51acbd81c97a2f605b277d667e4fb36685889e",
+        "bytes": 62524,
+        "width": 540,
+        "height": 960,
+        "decodedBytes": 2073600,
+        "source": "existing project image_gen artwork; original retained",
+        "approval": "illustration already accepted; motion pending"
+      },
+      {
+        "file": "public/scenes/layers/foliage-v1.webp",
+        "sha256": "4f269c6b0522bb16b44b2e51875e9ad5251621b82c8ca4e0f0170fc72fb9e846",
+        "bytes": 85850,
+        "width": 640,
+        "height": 427,
+        "decodedBytes": 1093120,
+        "source": "existing project image_gen artwork; original retained",
+        "approval": "illustration already accepted; motion pending"
+      }
+    ],
+    "masks": "../../m6-motion.ts#riverMasks",
+    "order": [
+      "stationary original plate",
+      "water copy in polygon mask",
+      "masked glints",
+      "foliage",
+      "cat/contact shadow",
+      "paper controls"
+    ],
+    "motionSourcePixels": {
+      "waterX": 1.1,
+      "waterY": 0.45,
+      "foliageRadians": 0.008
+    },
+    "wholePlateMoves": false,
+    "particles": 0,
+    "glintSegments": 9,
+    "reducedMotion": "stationary water/leaves; fixed glint alpha"
+  },
+  "humanAudition": false,
+  "userApproval": false
+}
