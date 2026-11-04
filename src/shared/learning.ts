@@ -53,6 +53,7 @@ export type LearningStep = StepBase & (
   | { kind: 'part-complete' }
 );
 export interface LearningRouteState {
+  skippedStepIds?: string[];
   partIndex: number;
   pendingStepIds: string[];
   completedStepIds: string[];
@@ -130,6 +131,30 @@ export function learningPartProgress(parts: LearningStep[][], state: Pick<Learni
 }
 export function initialLearningState(lesson: GuidedLesson): LearningRouteState {
   return { partIndex: 0, pendingStepIds: learningParts(lesson)[0]!.map(step => step.id), completedStepIds: [] };
+}
+// Keep skipped steps separate so undo can reopen material without erasing real work.
+export function applyKnownLearning(course: Course, lesson: GuidedLesson, state: LearningRouteState, words: Set<string>, skills: Set<string>): LearningRouteState {
+  if (!words.size && !skills.size && !state.skippedStepIds?.length) return state;
+  const parts = learningParts(lesson), previouslySkipped = new Set(state.skippedStepIds);
+  const completed = new Set(state.completedStepIds.filter(id => !previouslySkipped.has(id)));
+  const known = (step: LearningStep) => step.kind === 'word-intro' || step.kind === 'word-practice' ? words.has(step.wordId)
+    : step.kind === 'construction-intro' || step.kind === 'construction-practice' ? skills.has(course.exercises.find(exercise => exercise.id === step.exerciseId)?.skillId ?? '') : false;
+  const primary = (step: LearningStep) => step.kind === 'word-intro' || step.kind === 'construction-intro';
+  const material = parts.flat().filter(primary), wholeLesson = material.length > 0 && material.every(known);
+  const skipped: string[] = [];
+  for (const part of parts) {
+    const main = part.filter(primary), wholePart = main.length > 0 && main.every(known);
+    for (const step of part) if (!completed.has(step.id) && (wholeLesson || wholePart || known(step))) {
+      skipped.push(step.id); completed.add(step.id);
+    }
+  }
+  const index = parts.findIndex(part => part.some(step => !completed.has(step.id)));
+  if (index < 0) return { ...state, partIndex: parts.length, pendingStepIds: [], completedStepIds: [...completed], skippedStepIds: skipped };
+  const remaining = parts[index]!.filter(step => !completed.has(step.id));
+  const oldOrder = index === state.partIndex ? state.pendingStepIds.filter(id => remaining.some(step => step.id === id)) : [];
+  const missing = remaining.filter(step => !oldOrder.includes(step.id));
+  return { ...state, partIndex: index, completedStepIds: [...completed], skippedStepIds: skipped,
+    pendingStepIds: [...missing.filter(step => step.kind === 'word-intro').map(step => step.id), ...oldOrder, ...missing.filter(step => step.kind !== 'word-intro').map(step => step.id)] };
 }
 // Definitions/IDs stay unchanged: only a newly started group's pending order changes.
 export function mixedWordPractice(steps: LearningStep[]): LearningStep[] {
@@ -274,7 +299,7 @@ export function validateLearning(course: Course, lessons: GuidedLesson[], comple
 export function reconcileLearningRoute(previous: GuidedLesson, current: GuidedLesson, state: LearningRouteState): LearningRouteState {
   const before = learningParts(previous).flat(), parts = learningParts(current);
   const key = (step: LearningStep): string => step.kind === 'word-intro' || step.kind === 'word-practice' ? `${step.kind}:${step.wordId}:${'mode' in step ? step.mode : ''}` : step.kind === 'construction-intro' || step.kind === 'construction-practice' ? `${step.kind}:${step.exerciseId}:${'mode' in step ? step.mode : ''}` : step.kind === 'counter-practice' ? `${step.kind}:${step.counterId}:${step.quantity}:${step.wordId}:${step.format ?? 'reading-choice'}` : step.kind === 'video' ? `video:${step.videoId}` : `complete:${step.partId}`;
-  const done = new Set([...(state.completedKeys??[]),...state.completedStepIds.flatMap(id => { const step = before.find(item => item.id === id); return step ? [key(step)] : []; })]);
+  const done = new Set([...(state.completedKeys??[]),...state.completedStepIds.filter(id=>!state.skippedStepIds?.includes(id)).flatMap(id => { const step = before.find(item => item.id === id); return step ? [key(step)] : []; })]);
   const completed = new Set(parts.flat().filter(step => step.kind !== 'part-complete' && done.has(key(step))).map(step => step.id));
   for (const part of parts) {
     const summary = part.find(step => step.kind === 'part-complete')!;

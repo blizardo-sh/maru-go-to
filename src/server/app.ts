@@ -1,5 +1,7 @@
 import { createHash, createHmac } from 'node:crypto';
 import { settingsKey } from '../shared/settings';
+import { markPriorLearning } from './prior-learning';
+import { priorLearningSchema } from './validation';
 import { advanceLearning, learningOverview, learningState } from './learning';
 import { publicationIdSchema } from './validation';
 import { learningAdvanceSchema } from './validation';
@@ -73,6 +75,7 @@ export function createApp({database,config,course,publications}:{database:Databa
  .get('/api/settings',async c=>c.json(await settingsFor(database,c.get('actor').id)))
  .put('/api/settings',async c=>{const body=settingsSchema.parse(await c.req.json());const listRows=await database.sql`select id from word_lists where user_id=${c.get('actor').id}`;if(body.enabledListIds.some(id=>!listRows.some((r:any)=>r.id===id)))return fail(c,'UNKNOWN_LIST','Личный список недоступен.',403);const expected=c.req.header('If-Match');if(expected!==undefined&&!/^[a-f0-9]{64}$/.test(expected))return fail(c,'VALIDATION','Неверная версия настроек.',400);const owner=c.get('actor').id;await database.sql.begin(async tx=>{await tx`select pg_advisory_xact_lock(hashtext(${'settings:'+owner}))`;const current=await settingsFor({sql:tx} as unknown as Database,owner),digest=(value:typeof body)=>createHash('sha256').update(settingsKey(value)).digest('hex');if(expected&&digest(current)!==expected&&settingsKey(current)!==settingsKey(body))throw new ReviewError('SETTINGS_CONFLICT','Настройки изменены в другой вкладке. Загрузите их перед изменением.',409);await tx`insert into preferences(user_id,settings) values(${owner},${body}) on conflict(user_id) do update set settings=excluded.settings,updated_at=now()`;});return c.json(body);})
  .get('/api/progress',async c=>{const course=c.get('course');return c.json(await progressFor(database,c.get('actor').id,course));})
+ .post('/api/prior-learning',async c=>c.json(await markPriorLearning(database,c.get('actor').id,c.get('course'),priorLearningSchema.parse(await c.req.json()))))
  .get('/api/reviews',async c=>{const course=c.get('course');const mode=z.enum(['ja-ru','ru-ja','listening','grammar','counter','mixed']).parse(c.req.query('mode')??'ja-ru') as ReviewMode|'mixed';return c.json(await reviewQueue(database,c.get('actor').id,course,mode));})
  .get('/api/learning',async c=>{const course=c.get('course');return c.json(await learningOverview(database,c.get('actor').id,course));})
  .get('/api/learning/:lessonId',async c=>{const course=c.get('course');return c.json(await learningState(database,c.get('actor').id,course,c.req.param('lessonId')));})

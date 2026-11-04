@@ -441,7 +441,7 @@ function renderCounter() {
 function renderVideo() { renderVideoPlayer(flow.video, true); }
 function renderLesson() {
   const step = flow.step;
-  if (!step) { message('Урок пройден', 'Все обязательные шаги подтверждены сервером. Повторения продолжаются по расписанию.', [{ id: 'lesson-done', text: 'К урокам', run: home }]); return; }
+  if (!step) { message('Урок пройден', 'Основной материал урока изучен. Повторения продолжаются по расписанию.', [{ id: 'lesson-done', text: 'К урокам', run: home }]); return; }
   if (step.kind.endsWith('intro')) renderIntro();
   else if (step.kind === 'word-practice') flow.recall ? renderWordRecall() : renderOldWord();
   else if (step.kind === 'construction-practice') step.mode === 'grammar' ? renderBuilder() : renderWordRecall();
@@ -543,7 +543,7 @@ function draw() {
   else if (page === 'review') renderReviews();
   else if (page === 'counters') renderCounter();
   else if (page === 'grammar') renderBuilder();
-  else if (page === 'book') { if (library.error) message('Материалы недоступны', library.error, [{id:'book-retry',text:'Повторить',run:()=>void library.load(flow.user!.id)}]); else if (!library.data || library.busy) message('Загружаем урок', 'Подождите немного.', []); else renderBook(surface, library, {safe,changed:schedule,home,learn:id=>void openLesson(id),train:id=>beginTraining({lessonId:id}),trainGrammar:id=>openGrammar({lessonId:id}),field:libraryField,video:openLibraryVideo}); }
+  else if (page === 'book') { if (library.error) message('Материалы недоступны', library.error, [{id:'book-retry',text:'Повторить',run:()=>void library.load(flow.user!.id)}]); else if (!library.data || library.busy) message('Загружаем урок', 'Подождите немного.', []); else renderBook(surface, library, {safe,changed:schedule,saved:()=>{if(library.owner===flow.user?.id&&library.data)flow.updateProgress(library.data.learning??[],library.data.progress.introducedWordIds);schedule();},home,learn:id=>void openLesson(id),train:id=>beginTraining({lessonId:id}),trainGrammar:id=>openGrammar({lessonId:id}),field:libraryField,video:openLibraryVideo}); }
   else if (page === 'admin') { if (!flow.user.isAdmin) message('Доступ закрыт', 'Требуются права администратора.', [{id:'admin-home',text:'К урокам',run:home}]); else renderAdminAccess(surface,admin,{safe,changed:schedule,home,prompt:view.prompt,field:referenceField}); }
   else if (page === 'kana') renderKana(surface, kana, catalogFor(flow.course!), kanaView, { safe, changed: schedule, home: openPracticeMenu, prompt: view.prompt });
   else if (page === 'reference') { if (library.error) message('Справочник недоступен', library.error, [{id:'reference-retry',text:'Повторить',run:()=>void library.load(flow.user!.id)}]); else if (reference.error && !library.data) message('Личные данные недоступны',reference.error,[{id:'personal-home',text:'К урокам',run:home}]); else if (reference.error) renderReference(surface,reference,{safe,changed:schedule,home,field:referenceField,train:id=>beginTraining({listId:id}),trainGrammar:id=>openGrammar({listId:id}),play:url=>{if(url)void play(url);}}); else if (!library.data || library.busy) message('Загружаем справочник', 'Подождите немного.', []); else renderReference(surface,reference,{safe,changed:schedule,home,field:referenceField,train:id=>beginTraining({listId:id}),trainGrammar:id=>openGrammar({listId:id}),play:url=>{if(url)void play(url);}}); }

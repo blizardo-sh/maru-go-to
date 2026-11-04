@@ -1,4 +1,6 @@
 import { matchesPreparedAnswer } from '../shared/answers';
+import { applyKnownLearning } from '../shared/learning';
+import { mainLessonMaterial } from '../shared/priorLearning';
 import { studyPreparations, studySpec, introduceStudy } from './study';
 import { stagedLearning } from '../shared/training';
 import { createHash } from 'node:crypto';
@@ -23,6 +25,7 @@ function storedState(route: GuidedLesson, row?: { route_version: string; state: 
   return row ? reconcileOptionalVideos(route, row.state) : { ...initialLearningState(route), recallPolicy: 'recall-v1' };
 }
 async function stateFor(sql: Database['sql'], userId: string, course: Course, route: GuidedLesson, state: LearningRouteState, version: number, hydrate: boolean): Promise<LearningState> {
+  state = await knownLearningState(sql, userId, course, route, state);
   const step = currentLearningStep(route, state);
   const parts = learningParts(route);
   const result: LearningState = { ...(state.recallPolicy ? { recallPolicy: state.recallPolicy } : {}), ...(course.publicationId ? { publicationId: course.publicationId } : {}), lessonId: route.lessonId, routeVersion: route.version, version, partIndex: state.partIndex, totalParts: parts.length, partProgress: learningPartProgress(parts, state), completedSteps: state.completedStepIds.length, totalSteps: parts.flat().length, completed: state.partIndex >= parts.length, step };
@@ -37,6 +40,13 @@ async function stateFor(sql: Database['sql'], userId: string, course: Course, ro
   if (hydrate && step?.kind === 'counter-practice') result.reviewItem = await counterReview(sql,userId,course,step,version);
   if (result.reviewItem && course.publicationId) result.reviewItem.publicationId=course.publicationId;
   return result;
+}
+async function knownLearningState(sql: Database['sql'], userId: string, course: Course, route: GuidedLesson, state: LearningRouteState): Promise<LearningRouteState> {
+  const marks = await sql`select kind,item_id from prior_learning where user_id=${userId}`;
+  const explicit = mainLessonMaterial(course,route.lessonId).some(target=>marks.some((mark:any)=>mark.kind===target.kind&&mark.item_id===target.itemId));
+  if (!explicit) return state.skippedStepIds?.length ? applyKnownLearning(course,route,state,new Set(),new Set()) : state;
+  const rows = await sql`select item_id,mode from review_states where user_id=${userId} and mode<>'counter'`;
+  return applyKnownLearning(course, route, state, new Set<string>(rows.filter((row:any)=>row.mode!=='grammar').map((row:any)=>row.item_id)), new Set<string>(rows.filter((row:any)=>row.mode==='grammar').map((row:any)=>row.item_id)));
 }
 async function previousContext(database:Database,course:Course,route:GuidedLesson,row?:any) {
   if(!row || !course.publicationId || row.publication_id===course.publicationId) return {course,route,state:storedState(route,row)};
@@ -93,7 +103,10 @@ export async function advanceLearning(database: Database, userId: string, course
     }
     const [row] = await tx`select route_version,publication_id,version,state from learning_states where user_id=${userId} and lesson_id=${lessonId} for update`;
     if (input.routeVersion !== route.version || input.stateVersion !== (row?.version ?? 0)) throw new ReviewError('LEARNING_CONFLICT', 'Учебный шаг изменился на другом устройстве. Обновите маршрут.', 409);
-    const state = row&&context.course.publicationId!==course.publicationId?reconcileLearningRoute(context.route,route,context.state):storedState(route,row);
+    const savedState = row&&context.course.publicationId!==course.publicationId?reconcileLearningRoute(context.route,route,context.state):storedState(route,row);
+    let state = await knownLearningState(tx,userId,course,route,savedState);
+    // A question already issued before a mark may still commit its real answer.
+    if (currentLearningStep(route,state)?.id !== input.stepId && currentLearningStep(route,savedState)?.id === input.stepId) state = savedState;
     const step = currentLearningStep(route, state);
     if (!step || step.id !== input.stepId) throw new ReviewError('LEARNING_CONFLICT', 'Этот учебный шаг уже изменился.', 409);
     validateAction(step, input);
@@ -149,6 +162,7 @@ export async function advanceLearning(database: Database, userId: string, course
     const nextRoute=routeFor(nextCourse,lessonId);
     if(nextCourse.publicationId!==course.publicationId)next=reconcileLearningRoute(route,nextRoute,next);
     if (step.kind === 'word-practice' && input.action === 'choose') next.wordQuiz = true;
+    next = await knownLearningState(tx,userId,nextCourse,nextRoute,next);
     const version = (row?.version ?? 0) + 1;
     await tx`insert into learning_states(user_id,lesson_id,publication_id,route_version,version,state) values(${userId},${lessonId},${nextCourse.publicationId??null},${nextRoute.version},${version},${next}) on conflict(user_id,lesson_id) do update set publication_id=excluded.publication_id,route_version=excluded.route_version,version=excluded.version,state=excluded.state,updated_at=now()`;
     const result: LearningAdvanceResult = { attemptId: input.attemptId, state: await stateFor(tx, userId, nextCourse, nextRoute, next, version, true), ...(reviewResult ? { reviewResult } : {}) };

@@ -2,9 +2,10 @@ import { Graphics, Rectangle } from 'pixi.js';
 import type { StudyAction, StudySurface } from './study-surface';
 
 // Long reference and analysis text scrolls inside the existing page; practice choices never use this view.
-export function renderReading(surface: StudySurface, text: string, state: { scroll: number }, options: { title?: string; back: StudyAction; safe: (action: StudyAction) => StudyAction; changed: () => void }) {
-  const a = surface.body, heading = options.title ? surface.measure(options.title, a.width - 16, 20) + 16 : 8;
+export function renderReading(surface: StudySurface, text: string, state: { scroll: number }, options: { title?: string; action?: StudyAction; back: StudyAction; safe: (action: StudyAction) => StudyAction; changed: () => void }) {
+  const a = surface.body; let heading = options.title ? surface.measure(options.title, a.width - 16, 20) + 16 : 8;
   if (options.title) surface.text(options.title, { x: a.x + 8, y: a.y + 8, width: a.width - 16, height: heading - 8 }, 20);
+  if (options.action) { surface.row([options.safe(options.action)], { x: a.x + 8, y: a.y + heading, width: a.width - 16, height: 48 }); heading += 60; }
   const viewport = { x: a.x + 8, y: a.y + heading, width: a.width - 16, height: a.height - heading - 8 };
   const height = surface.measure(text, viewport.width, 17), maximum = Math.max(0, height - viewport.height);
   state.scroll = Math.max(0, Math.min(state.scroll, maximum));

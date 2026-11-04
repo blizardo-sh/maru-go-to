@@ -193,6 +193,7 @@ export interface ReviewResult {
 }
 
 export interface Progress {
+  priorLearning?: import('./priorLearning').PriorLearningMark[];
   repeatDue?: number;
   byType?: Record<RepeatType,{due:number;learned:number;reviewedToday:number}>;
   counters: import('./counters').CounterProgress[];

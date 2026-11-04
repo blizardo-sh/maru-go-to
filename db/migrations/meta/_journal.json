@@ -43,6 +43,13 @@
       "when": 1792843200000,
       "tag": "0005_study_progress",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1793750400000,
+      "tag": "0006_prior_learning",
+      "breakpoints": true
     }
   ]
 }

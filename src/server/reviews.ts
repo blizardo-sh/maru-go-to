@@ -1,3 +1,4 @@
+import { mainLessonMaterial } from '../shared/priorLearning';
 import { repeatTypes } from '../shared/types';
 import { studySpec, studyPreparations, introduceStudy, passStudy, studyFormat, enrollmentTargets } from './study';
 import { stagedLearning, trainingSections, trainingEntry, preparedChoices, itemRepeatTypes, wordRepeatTypes } from '../shared/training';
@@ -306,6 +307,7 @@ export async function submitReviewLocked(tx:Database['sql'],userId:string,course
    }
   }
   await tx`insert into review_attempts(attempt_id,user_id,item_id,mode,expected_version,payload,result,scheduled) values(${input.attemptId},${userId},${targetId},${mode},${input.version},${input},${result},${scheduled})`;
+  if(mode!=='counter')await tx`update prior_learning set reviewed=true where user_id=${userId} and item_id=${targetId} and kind=${mode==='grammar'?'grammar':'word'}`;
   return result;
 
 }
@@ -319,5 +321,7 @@ export async function progressFor(database:Database,userId:string,course:Course)
  for(const row of attempts)for(const type of types(row.mode,row.item_id))byType[type].reviewedToday+=row.count;
  const introducedWordIds=[...introduced(snap)];const introducedSkillIds=[...introduced(snap,true)];
  const selected=(await settingsFor(database,userId)).repeatTypes;const repeatDue=[...dueKeys.values()].filter(item=>itemRepeatTypes(course,item).some(type=>selected.includes(type))).length;
- return {byType,repeatDue,counters:snap.counters,introducedWordIds,introducedSkillIds,completedLessons:course.lessons.filter(lesson=>course.words.filter(word=>!word.trainingOnly&&word.lessonIds.includes(lesson.id)&&word.reviewStatus!=='draft'&&validSegments(word)).every(word=>introducedWordIds.includes(word.id))&&course.skills.filter(skill=>skill.lessonIds.includes(lesson.id)).every(skill=>introducedSkillIds.includes(skill.id))).length,totalLessons:course.lessons.length,wordsIntroducedToday:snap.wordsToday,skillsIntroducedToday:snap.skillsToday,byMode};
+ const marks=await database.sql`select kind,item_id,reviewed from prior_learning where user_id=${userId}`;
+ const priorLearning=marks.map((row:any)=>({kind:row.kind,itemId:row.item_id,canUndo:!row.reviewed}));
+ return {priorLearning,byType,repeatDue,counters:snap.counters,introducedWordIds,introducedSkillIds,completedLessons:course.lessons.filter(lesson=>{const material=mainLessonMaterial(course,lesson.id);return material.length>0&&material.every(target=>(target.kind==='word'?introducedWordIds:introducedSkillIds).includes(target.itemId));}).length,totalLessons:course.lessons.length,wordsIntroducedToday:snap.wordsToday,skillsIntroducedToday:snap.skillsToday,byMode};
 }
