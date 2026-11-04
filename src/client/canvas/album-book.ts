@@ -1,6 +1,7 @@
 import { contentPages } from './album-navigation';
 import { renderReading } from './album-reading';
-import { api } from '@app/client/api';
+import { api, ApiRequestError, json } from '@app/client/api';
+import { mainLessonMaterial, type PriorLearningRequest, type PriorLearningResult, type PriorLearningTarget } from '@app/shared/priorLearning';
 import { learningHeaders } from '@app/client/guidedApi';
 import { learningParts } from '@app/shared/learning';
 import { studyWord } from '@app/client/learning';
@@ -19,11 +20,35 @@ export class AlbumLibrary {
   lessonId: string | null = null;
   tab: 'overview' | 'parts' | 'words' | 'extra' | 'videos' = 'overview';
   detail = '';
+  detailTarget: PriorLearningTarget | null = null;
+  markMessage = '';
+  markError = '';
+  pendingMark: PriorLearningRequest | null = null;
   scroll = 0;
   video: LessonVideo | null = null;
   private epoch = 0;
   constructor(private changed: () => void) {}
-  clear() { ++this.epoch; this.owner = ''; this.data = null; this.error = ''; this.busy = false; this.search = ''; this.offset = 0; this.lessonId = null; this.detail = ''; this.video = null; }
+  clear() { ++this.epoch; this.owner = ''; this.data = null; this.error = ''; this.busy = false; this.search = ''; this.offset = 0; this.lessonId = null; this.detail = ''; this.detailTarget = null; this.markMessage = ''; this.markError = ''; this.pendingMark = null; this.video = null; }
+  async mark(input: Omit<PriorLearningRequest, 'requestId'> | undefined, saved: () => void) {
+    if (this.busy || !this.data || !this.owner) return;
+    if (!this.pendingMark && input) this.pendingMark = { ...input, requestId: crypto.randomUUID() };
+    if (!this.pendingMark) return;
+    const owner = this.owner, epoch = this.epoch;
+    this.busy = true; this.markError = ''; this.markMessage = ''; this.changed();
+    try {
+      const result = await api<PriorLearningResult>('/api/prior-learning', { ...json('POST', this.pendingMark), headers: learningHeaders(owner, this.data.course.publicationId) });
+      if (owner !== this.owner || epoch !== this.epoch) return;
+      this.pendingMark = null;
+      this.markMessage = result.removedCards ? `Отметка отменена. Убрано карточек: ${result.removedCards}.` : result.addedCards ? `Добавлено: ${result.addedCards} карточек · На сегодня, с учётом типов повторения.` : 'Материал уже изучен. Прежнее расписание сохранено.';
+      await this.load(owner);
+      if (owner === this.owner) saved();
+    } catch (error) {
+      if (owner !== this.owner || epoch !== this.epoch) return;
+      this.markError = error instanceof Error ? error.message : 'Не удалось сохранить отметку.'; this.busy = false;
+      if (error instanceof ApiRequestError && error.status >= 400 && error.status < 500) { this.pendingMark = null; await this.load(owner); if (owner === this.owner) saved(); }
+      this.changed();
+    }
+  }
   async load(owner: string) {
     if (this.owner !== owner) this.clear(); const epoch = ++this.epoch; this.owner = owner; this.busy = true; this.error = ''; this.changed();
     try {
@@ -69,12 +94,16 @@ export function bookRows(surface: StudySurface, title: string, items: StudyActio
 
 export function renderBook(surface: StudySurface, library: AlbumLibrary, options: {
   safe: (action: StudyAction) => StudyAction; changed: () => void; home: () => void; learn: (id: string) => void;
+  saved: () => void;
   train: (id: string) => void; trainGrammar: (id: string) => void; field: (rect: Rect,value: string,changed: (value:string)=>void) => void; video: (material: LessonVideo) => void;
 }) {
   const data=library.data!;
-  const change=()=>{library.offset=0;library.search='';library.detail='';library.scroll=0;options.changed();};
+  const change=()=>{library.offset=0;library.search='';library.detail='';library.detailTarget=null;library.scroll=0;options.changed();};
   const back=()=>{if(library.detail){library.detail='';library.scroll=0;options.changed();}else if(library.tab!=='overview'){library.tab='overview';change();}else options.home();};
-  if(library.detail){renderReading(surface,library.detail,library,{back:{id:'book-detail-back',text:'К материалам',run:back},safe:options.safe,changed:options.changed});return;}
+  const known=(target:PriorLearningTarget)=>(target.kind==='word'?data.progress.introducedWordIds:data.progress.introducedSkillIds).includes(target.itemId);
+  const markAction=(target:PriorLearningTarget):StudyAction=>{const mark=data.progress.priorLearning?.find(value=>value.kind===target.kind&&value.itemId===target.itemId);return {id:'book-mark:'+target.kind+':'+target.itemId,text:mark?.canUndo?'Отменить отметку':known(target)?'Изучено':'Уже проходил',enabled:!known(target)||!!mark?.canUndo,run:()=>void library.mark({...target,action:mark?.canUndo?'unmark':'mark'},options.saved)};};
+  if(library.pendingMark&&library.markError){renderReading(surface,library.markError,library,{action:{id:'book-mark-retry',text:'Повторить сохранение',run:()=>void library.mark(undefined,options.saved)},back:{id:'book-mark-home',text:'К урокам',run:options.home},safe:options.safe,changed:options.changed});return;}
+  if(library.detail){renderReading(surface,[library.markError||library.markMessage,library.detail].filter(Boolean).join('\n\n'),library,{...(library.detailTarget?{action:markAction(library.detailTarget)}:{}),back:{id:'book-detail-back',text:'К материалам',run:back},safe:options.safe,changed:options.changed});return;}
   const lesson=data.course.lessons.find(lesson=>lesson.id===library.lessonId), state=data.learning?.find(state=>state.lessonId===lesson?.id);
   let title='Уроки · '+data.course.lessons.length+' уроков',items:StudyAction[]=[];
   if(!lesson) items=data.course.lessons.filter(lesson=>`${lesson.number} ${lesson.title} ${lesson.topic}`.toLowerCase().includes(library.search.toLowerCase())).map(lesson=>{
@@ -86,9 +115,10 @@ export function renderBook(surface: StudySurface, library: AlbumLibrary, options
     const route=data.course.learning?.find(route=>route.lessonId===lesson.id), mainIds=new Set(route?.goals.flatMap(goal=>goal.parts.flatMap(part=>part.words.map(word=>word.wordId))));
     if(library.tab==='overview') items=[
       {id:'book-learn',text:state?.completed?'Итог урока':state?.completedSteps?'Продолжить урок':'Начать урок',enabled:!!route,run:()=>options.learn(lesson.id)},
+      {id:'book-mark-lesson',text:'Уже проходил основной материал урока',enabled:!!route&&(!state?.completed||mainLessonMaterial(data.course,lesson.id).some(target=>!known(target))),run:()=>void library.mark({kind:'lesson',itemId:lesson.id,action:'mark'},options.saved)},
       {id:'book-parts',text:`Объяснения и части урока · ${state?.totalParts??route?.goals.flatMap(goal=>goal.parts).length??0}`,run:()=>{library.tab='parts';change();}},
       {id:'book-main',text:`Словарь урока · ${mainIds.size} слов и фраз`,run:()=>{library.tab='words';change();}},
-      {id:'book-extra',text:'Дополнительный словарь и конструкции',run:()=>{library.tab='extra';change();}},
+      {id:'book-extra',text:'Все слова и конструкции',run:()=>{library.tab='extra';change();}},
       {id:'book-videos',text:`Видео урока · ${lesson.videos?.length??0}`,run:()=>{library.tab='videos';change();}},
       {id:'book-train',text:'Практиковать словарь',run:()=>options.train(lesson.id)},
       {id:'book-grammar',text:'Практиковать конструкции',enabled:data.course.exercises.some(exercise=>exercise.lessonId===lesson.id),run:()=>options.trainGrammar(lesson.id)},
@@ -100,9 +130,10 @@ export function renderBook(surface: StudySurface, library: AlbumLibrary, options
     else if(library.tab==='videos') items=(lesson.videos??[]).map(material=>({id:'book-video:'+material.id,text:material.title,run:()=>options.video(material)}));
     else {
       const words=data.course.words.filter(word=>studyWord(word)&&word.lessonIds.includes(lesson.id)&&!word.trainingOnly&&(library.tab==='words'?mainIds.has(word.id):true));
-      items=[...words.map(word=>({id:'book-word:'+word.id,text:`${word.surface} · ${word.kana} — ${word.meaningRu}`,run:()=>{library.detail=`${word.surface} · ${word.kana}\n${word.meaningRu}`;options.changed();}})),...(library.tab==='extra'?data.course.skills.filter(skill=>data.course.exercises.some(exercise=>exercise.lessonId===lesson.id&&exercise.skillId===skill.id)).map(skill=>({id:'book-skill:'+skill.id,text:skill.title,run:()=>{library.detail=skill.title+'\n'+skill.explanationRu;options.changed();}})):[])];
+      items=[...words.map(word=>({id:'book-word:'+word.id,text:`${word.surface} · ${word.kana} — ${word.meaningRu}${known({kind:'word',itemId:word.id})?' · Изучено':''}`,run:()=>{library.detailTarget={kind:'word',itemId:word.id};library.detail=`${word.surface} · ${word.kana}\n${word.meaningRu}\n\n${mainIds.has(word.id)?'Основной':'Дополнительный'} материал урока. Отметку можно отменить до первого повторения.`;options.changed();}})),...(library.tab==='extra'?data.course.skills.filter(skill=>skill.reviewStatus!=='draft'&&data.course.exercises.some(exercise=>exercise.lessonId===lesson.id&&exercise.skillId===skill.id&&exercise.reviewStatus!=='draft')).map(skill=>({id:'book-skill:'+skill.id,text:skill.title+(known({kind:'grammar',itemId:skill.id})?' · Изучено':''),run:()=>{library.detailTarget={kind:'grammar',itemId:skill.id};library.detail=skill.title+'\n'+skill.explanationRu+'\n\nОтметку можно отменить до первого повторения.';options.changed();}})):[])];
       items=items.filter(item=>item.text.toLowerCase().includes(library.search.toLowerCase()));
     }
   }
+  if(library.markMessage||library.markError)items.unshift({id:'book-mark-status',text:library.markError||library.markMessage,enabled:false,run:()=>{}});
   bookRows(surface,title,items,library,{safe:options.safe,changed:options.changed,back,...(!lesson||library.tab==='words'||library.tab==='extra'?{search:{value:library.search,draw:(rect:Rect)=>options.field(rect,library.search,value=>{library.search=value;library.offset=0;options.changed();})}}:{})});
 }

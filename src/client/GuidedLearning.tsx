@@ -161,8 +161,10 @@ export function GuidedLearning({ lessonId, user, data: incomingData, active, sou
     finally { if (current === request.current && mounted.current && owner.current === user.id) setLoading(false); }
   }, [lessonId, user.id]);
   const overviewVersion = data.learning?.find(lesson => lesson.lessonId === lessonId)?.version;
+  const priorLearningKey = JSON.stringify(data.progress.priorLearning?.map(mark => [mark.kind, mark.itemId]) ?? []);
+  const lastPriorLearning = useRef(priorLearningKey);
   const wasActive = useRef(false);
-  useEffect(() => { const entering = active && !wasActive.current; wasActive.current = active; if (!active) return; const current = stateRef.current; if (entering || !current || current.routeVersion !== route?.version || (overviewVersion ?? 0) > current.version) void load(); const retry = () => { void load(); }; window.addEventListener('online', retry); window.addEventListener('focus', retry); return () => { request.current++; window.removeEventListener('online', retry); window.removeEventListener('focus', retry); }; }, [load, active, overviewVersion]);
+  useEffect(() => { const entering = active && !wasActive.current; wasActive.current = active; if (!active) return; const current = stateRef.current, priorChanged = lastPriorLearning.current !== priorLearningKey; lastPriorLearning.current = priorLearningKey; if (priorChanged || entering || !current || current.routeVersion !== route?.version || (overviewVersion ?? 0) > current.version) void load(priorChanged); const retry = () => { void load(); }; window.addEventListener('online', retry); window.addEventListener('focus', retry); return () => { request.current++; window.removeEventListener('online', retry); window.removeEventListener('focus', retry); }; }, [load, active, overviewVersion, priorLearningKey]);
 
   async function advance(action: LearningAdvance['action'], details: Partial<LearningAdvance> = {}, attemptId: string = crypto.randomUUID()): Promise<LearningAdvanceResult> {
     const current = stateRef.current;
@@ -221,7 +223,7 @@ export function GuidedLearning({ lessonId, user, data: incomingData, active, sou
   const video = step?.kind === 'video' ? lesson?.videos?.find(video => video.id === step.videoId) : undefined;
   let board;
   if (!route) board = <div className="work-board notice"><p>Учебный маршрут пока недоступен. Дополнительный словарь остаётся в учебнике.</p><button onClick={onCourse}>К учебнику</button></div>;
-  else if (viewState?.completed) board = <div className="work-board stack" data-testid="learning-complete"><h2>Урок пройден</h2><p>Все обязательные форматы основного материала выполнены. Личные повторения продолжаются по своему расписанию.</p><button className="primary" onClick={onCourse}>К учебнику</button></div>;
+  else if (viewState?.completed) board = <div className="work-board stack" data-testid="learning-complete"><h2>Урок пройден</h2><p>Основной материал урока изучен. Личные повторения продолжаются по своему расписанию.</p><button className="primary" onClick={onCourse}>К учебнику</button></div>;
   else if (step?.kind === 'word-intro' && part) board = <GroupIntro key={part.id} part={part} data={data} active={active} busy={blocked} sound={sound} onActivity={setActivity} stepId={step.id} onStart={() => go('start-practice')} />;
   else if (step?.kind === 'word-practice' && word && !viewState?.recallPolicy && viewState?.wordChoices?.length === 4) board = <WordQuiz key={`${step.id}:${viewState.version}`} value={{ ...word, audioUrl: word.audioUrl ?? '' }} wordId={word.id} choices={viewState.wordChoices} mode={step.mode} data={data} active={active} busy={blocked} sound={sound} onActivity={setActivity} stepId={step.id} selection={quiz} choose={choose} />;
   else if (step?.kind === 'word-practice' && word) board = <Recall draftKey={viewState?.recallPolicy ? recallDraftKey(user.id, viewState) : undefined} key={`${step.id}:${state?.version}`} value={{ ...word, audioUrl: word.audioUrl ?? '' }} mode={step.mode} data={data} active={active} busy={blocked} sound={sound} onActivity={setActivity} stepId={step.id} grade={rating => advance(rating === 3 ? 'remember' : 'again')} />;

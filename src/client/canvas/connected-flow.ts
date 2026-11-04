@@ -39,6 +39,7 @@ export class ConnectedFlow {
   feedback: { attemptId: string; kind: 'good' | 'again' } | null = null;
   course: Course | null = null;
   introducedWordIds = new Set<string>();
+  updateProgress(lessons: LearningState[], wordIds: string[]) { this.states = new Map(lessons.map(state => [state.lessonId, state])); this.introducedWordIds = new Set(wordIds); }
   private states = new Map<string, LearningState>();
   private displayed: LearningState | null = null;
   private held: LearningState | null = null;

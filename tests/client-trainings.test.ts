@@ -23,7 +23,7 @@ test('training catalog owns all standalone trainers while textbook starts direct
   expect((html.match(/<article/g) ?? [])).toHaveLength(data.course.catalog!.thematic!.sections.length + 1);
   expect(html).not.toContain('части до 5'); expect(html).not.toContain('выражений ·');
   expect(html).toContain('Справка по счёту');
-  const textbook = renderToStaticMarkup(createElement(Textbook, { data, onLearn() {}, onTrain() {} }));
+  const textbook = renderToStaticMarkup(createElement(Textbook, { userId: "textbook-test", refresh: async () => {}, data, onLearn() {}, onTrain() {} }));
   expect((textbook.match(/data-testid="learn-lesson"/g) ?? [])).toHaveLength(18);
   expect(textbook).not.toContain('counter-course'); expect(textbook).not.toContain('thematic-sections'); expect(textbook).not.toContain('train-kana');
 });
