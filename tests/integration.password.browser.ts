@@ -1,3 +1,4 @@
+import { confirmFixtureEmail } from './helpers/browser-mailbox';
 import { chromium, expect, type Browser, type BrowserContext } from '@playwright/test';
 import { connectDatabase } from '../src/server/db';
 import { createLink } from '../src/server/auth';
@@ -33,7 +34,8 @@ try {
   await password.fill(invitePassword);
   const accepted = page.waitForResponse(response => new URL(response.url()).pathname === '/api/invitations/accept' && response.request().method() === 'POST');
   await page.getByRole('button', { name: 'Создать аккаунт', exact: true }).click();
-  expect((await accepted).status()).toBe(200); await expect(page.getByRole('status')).toContainText('Аккаунт создан');
+  expect((await accepted).status()).toBe(200); await expect(page.getByRole('status')).toContainText('Проверьте почту');
+  await confirmFixtureEmail(email,api,base,nextFixtureIp());
   await page.getByRole('button', { name: 'Перейти ко входу', exact: true }).click();
   await expect(password).toHaveAttribute('minlength', '1');
   await password.fill(invitePassword);

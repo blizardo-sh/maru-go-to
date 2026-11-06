@@ -5,33 +5,52 @@ import type { Rect } from './canvas';
 import type { StudyAction, StudySurface } from './study-surface';
 import { bookRows } from './album-book';
 
+export type AccessMode='invite'|'recover'|'register'|'forgot'|'resend'|'verify'|'account';
+const modeAtLocation=():AccessMode|null=>({'/invite':'invite','/recover':'recover','/register':'register','/forgot-password':'forgot','/verify-email':'verify','/confirm-email':'account'} as Record<string,AccessMode>)[location.pathname]??null;
+const accessPaths:Record<AccessMode,string>={invite:'/invite',recover:'/recover',register:'/register',forgot:'/forgot-password',resend:'/register',verify:'/verify-email',account:'/confirm-email'};
 export class AccessFlow {
-  mode:'invite'|'recover'|null=location.pathname==='/invite'?'invite':location.pathname==='/recover'?'recover':null;
+  mode:AccessMode|null=modeAtLocation();
   token=new URLSearchParams(location.hash.slice(1)).get('token')??'';
   invitation:InvitationDetails|null=null;
-  busy=false;error='';complete='';email='';name='';
+  busy=false;error='';complete='';email='';name='';owner='';
   private epoch=0;
   constructor(private changed:()=>void){}
   get revision(){return this.epoch;}
-  locationChanged(){this.epoch++;this.mode=location.pathname==='/invite'?'invite':location.pathname==='/recover'?'recover':null;this.token=new URLSearchParams(location.hash.slice(1)).get('token')??'';this.invitation=null;this.error='';this.complete='';this.email='';this.name='';this.busy=false;this.changed();}
+  locationChanged(){this.epoch++;this.mode=modeAtLocation();this.token=new URLSearchParams(location.hash.slice(1)).get('token')??'';this.invitation=null;this.error='';this.complete='';this.email='';this.name='';this.busy=false;this.changed();}
+  open(mode:AccessMode,email=this.email,owner=''){this.owner=owner;this.epoch++;this.mode=mode;this.email=email;this.token='';this.error='';this.complete='';this.busy=false;history.replaceState(null,'',accessPaths[mode]);this.changed();}
   async load(){
-    if(!this.mode||this.mode==='recover')return;if(!this.token){this.error='В ссылке нет токена. Попросите новую ссылку у администратора.';this.changed();return;}
-    const epoch=this.epoch,token=this.token;this.busy=true;this.error='';this.changed();
-    try{const invitation=await api<InvitationDetails>('/api/invitations/details',json('POST',{token}));if(epoch!==this.epoch)return;this.invitation=invitation;if(invitation.kind==='invite')this.email=invitation.email;}
-    catch(error){if(epoch===this.epoch)this.error=error instanceof Error?error.message:'Ссылка недоступна.';}finally{if(epoch===this.epoch){this.busy=false;this.changed();}}
-  }
-  async submit(password:string):Promise<InvitationAcceptResult|null>{
-    if(this.busy||document.hidden)return null;
-    if(!this.token){this.error='В ссылке нет токена. Попросите новую ссылку.';this.changed();return null;}
-    if(password.length<8||password.length>128){this.error='Пароль должен содержать от 8 до 128 символов.';this.changed();return null;}
-    if(this.mode==='invite'&&(!this.invitation||!this.name.trim())){this.error='Проверьте ссылку и укажите имя.';this.changed();return null;}
+    if(this.mode!=='invite'&&this.mode!=='account')return;
+    if(this.mode==='invite'&&!this.token){this.error='В ссылке нет токена. Зарегистрируйтесь без приглашения.';this.changed();return;}
     const epoch=this.epoch,token=this.token,mode=this.mode;this.busy=true;this.error='';this.changed();
     try{
+      if(mode==='account'){const user=await api<{id:string;email:string}>('/api/me');if(epoch===this.epoch){this.email=user.email;this.owner=user.id;}}
+      else {const invitation=await api<InvitationDetails>('/api/invitations/details',json('POST',{token}));if(epoch!==this.epoch)return;this.invitation=invitation;if(invitation.kind==='invite')this.email=invitation.email;}
+    }catch(error){if(epoch===this.epoch)this.error=error instanceof Error?error.message:'Не удалось загрузить данные.';}
+    finally{if(epoch===this.epoch){this.busy=false;this.changed();}}
+  }
+  async submit(password:string):Promise<InvitationAcceptResult|null>{
+    if(this.busy||document.hidden||!this.mode)return null;
+    const mode=this.mode,needsToken=['invite','recover','verify'].includes(mode),needsNewPassword=['invite','recover','register'].includes(mode);
+    if(needsToken&&!this.token){this.error='В ссылке нет токена. Запросите новое письмо.';this.changed();return null;}
+    if(needsNewPassword&&(password.length<8||password.length>128)){this.error='Пароль должен содержать от 8 до 128 символов.';this.changed();return null;}
+    if(mode==='account'&&!password){this.error='Введите текущий пароль.';this.changed();return null;}
+    if((mode==='invite'||mode==='register')&&!this.name.trim()){this.error='Укажите имя в приложении.';this.changed();return null;}
+    if(mode==='invite'&&!this.invitation){this.error='Сначала проверьте ссылку.';this.changed();return null;}
+    const epoch=this.epoch,token=this.token,email=this.email.trim().toLowerCase();this.busy=true;this.error='';this.changed();
+    try{
       let result:InvitationAcceptResult|null=null;
-      if(mode==='recover'){await api('/api/recovery/complete',json('POST',{token,password}));if(epoch!==this.epoch)return null;this.complete='Пароль изменён. Войдите с новым паролем.';}
-      else{result=await api<InvitationAcceptResult>('/api/invitations/accept',json('POST',{token,name:this.name.trim(),password,...(this.invitation!.kind==='registration'?{email:this.email.trim().toLowerCase()}:{})}));if(epoch!==this.epoch)return null;this.email=result.email;this.complete='Аккаунт создан. Войдите с вашим email и паролем. Повторная регистрация не нужна.';}
-      history.replaceState(null,'',mode==='recover'?'/recover':'/invite');this.token='';return result;
-    }catch(error){if(epoch===this.epoch)this.error=error instanceof Error?error.message:'Не удалось подтвердить действие. Проверьте соединение.';return null;}
+      if(mode==='recover')await api('/api/recovery/complete',json('POST',{token,password}));
+      else if(mode==='verify')await api('/api/email-verification/complete',json('POST',{token}));
+      else if(mode==='forgot')await api('/api/recovery/request',json('POST',{email}));
+      else if(mode==='resend')await api('/api/email-verification/request',json('POST',{email}));
+      else if(mode==='account')await api('/api/account/verify-email/request',{...json('POST',{password}),headers:learningHeaders(this.owner)});
+      else if(mode==='register')await api('/api/register',json('POST',{name:this.name.trim(),email,password}));
+      else result=await api<InvitationAcceptResult>('/api/invitations/accept',json('POST',{token,name:this.name.trim(),password,...(this.invitation!.kind==='registration'?{email}:{})}));
+      if(epoch!==this.epoch)return null;
+      if(result)this.email=result.email;
+      this.complete=mode==='recover'?'Пароль изменён. Войдите с новым паролем.':mode==='verify'?'Почта подтверждена. Теперь доступно самостоятельное восстановление пароля.':mode==='forgot'?'Если у аккаунта подтверждена почта, мы отправим ссылку восстановления. Проверьте «Входящие» и «Спам». Для неподтверждённого адреса обратитесь к администратору.':'Проверьте почту и папку «Спам». Если адрес ожидает подтверждения, мы отправим письмо. Повторный запрос доступен через минуту.';
+      history.replaceState(null,'',accessPaths[mode]);this.token='';return result;
+    }catch(error){if(epoch===this.epoch)this.error=error instanceof Error?error.message:'Не удалось выполнить запрос. Попробуйте снова.';return null;}
     finally{if(epoch===this.epoch){this.busy=false;this.changed();}}
   }
   login(){this.epoch++;this.mode=null;this.token='';this.error='';this.complete='';history.replaceState(null,'','/album.html');this.changed();}

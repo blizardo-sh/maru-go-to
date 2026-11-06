@@ -1,3 +1,4 @@
+import { testMailbox } from './helpers/mailbox';
 import { disposableDatabase } from './helpers/disposable-database';
 import { afterAll, beforeAll, beforeEach, describe, expect, test } from 'bun:test';
 import { createApp } from '../src/server/app';
@@ -11,6 +12,8 @@ const suite=url?describe:describe.skip;
 const origin='http://127.0.0.1:5173';
 suite('invitation registration and login identity',()=>{
  let database:ReturnType<typeof connectDatabase>;let app:ReturnType<typeof createApp>;
+ const mailbox=testMailbox();
+ const confirm=async(email:string)=>{await app.drainMail();expect((await request('/api/email-verification/complete',{token:mailbox.token(email)})).status).toBe(200);};
  const fixtureEmails:string[]=[];const fixtureTokens:string[]=[];
  const password='Only-an-isolated-regression-password-2026!';let fixtureIp=nextFixtureIp();
  beforeEach(()=>{fixtureIp=nextFixtureIp();});
@@ -18,13 +21,14 @@ suite('invitation registration and login identity',()=>{
  const cookieFrom=(response:Response)=>response.headers.getSetCookie().map(part=>part.split(';')[0]).join('; ');
  beforeAll(()=>{
   const target=new URL(url!);if(!disposableDatabase(target))throw new Error('Use only disposable localhost japanese_app_test.');
-  database=connectDatabase(url!);app=createApp({database,course:loadCourse(),config:{DATABASE_URL:url!,BETTER_AUTH_SECRET:'isolated-regression-secret-at-least-32-characters',APP_URL:origin,HOST:'127.0.0.1',PORT:3000}});
+  database=connectDatabase(url!);app=createApp({database,sendMail:mailbox.send,course:loadCourse(),config:{DATABASE_URL:url!,BETTER_AUTH_SECRET:'isolated-regression-secret-at-least-32-characters',APP_URL:origin,HOST:'127.0.0.1',PORT:3000}});
  });
- afterAll(async()=>{if(!database)return;for(const token of fixtureTokens)await database.sql`delete from access_links where token_hash=${tokenHash(token)}`;for(const email of fixtureEmails){await database.sql`delete from access_links where email=${email}`;await database.sql`delete from users where email=${email}`;}await database.sql.close();});
+ afterAll(async()=>{if(!database)return;await app.drainMail();for(const token of fixtureTokens)await database.sql`delete from access_links where token_hash=${tokenHash(token)}`;for(const email of fixtureEmails){await database.sql`delete from access_links where email=${email}`;await database.sql`delete from users where email=${email}`;}await database.sql.close();});
  test('name ivan is not an email: show the invitation identity across registration, logout and login',async()=>{
   const email=`onboarding-${crypto.randomUUID()}@example.test`;fixtureEmails.push(email);const link=await createLink(database,'invite',email,null);fixtureTokens.push(link.token);
   const details=await request('/api/invitations/details',{token:link.token});
   const accepted=await request('/api/invitations/accept',{token:link.token,name:'ivan',password});expect(accepted.status).toBe(200);const created=await accepted.json();
+  await confirm(email);
   const mistaken=await request('/api/auth/sign-in/email',{email:'ivan',password});expect(mistaken.status).toBe(400);
   const signedIn=await request('/api/auth/sign-in/email',{email,password});expect(signedIn.status).toBe(200);const cookie=cookieFrom(signedIn);
   const signedOut=await request('/api/auth/sign-out',{},cookie);expect(signedOut.status).toBe(200);
@@ -46,7 +50,7 @@ suite('invitation registration and login identity',()=>{
  test('invite creation and login apply the same trimmed lowercase email identity',async()=>{
   const email=`normalized-${crypto.randomUUID()}@example.test`;fixtureEmails.push(email);const raw='  '+email.toUpperCase()+'  ';const link=await createLink(database,'invite',raw,null);fixtureTokens.push(link.token);
   const details=await request('/api/invitations/details',{token:link.token});expect(details.status).toBe(200);expect((await details.json()).email).toBe(email);
-  expect((await request('/api/invitations/accept',{token:link.token,name:'Another learner',password})).status).toBe(200);expect((await request('/api/auth/sign-in/email',{email:raw,password})).status).toBe(200);
+  expect((await request('/api/invitations/accept',{token:link.token,name:'Another learner',password})).status).toBe(200);await confirm(email);expect((await request('/api/auth/sign-in/email',{email:raw,password})).status).toBe(200);
  });
  test('invitation rejects seven and 129 characters without consuming the link, then accepts an eight-character password',async()=>{
   const email=`password-invite-${crypto.randomUUID()}@example.test`;fixtureEmails.push(email);const link=await createLink(database,'invite',email,null);fixtureTokens.push(link.token);
@@ -57,13 +61,13 @@ suite('invitation registration and login identity',()=>{
   }
   const minimum='Eight123';
   expect((await request('/api/invitations/accept',{token:link.token,name:'Password boundary fixture',password:minimum})).status).toBe(200);
-  expect((await request('/api/auth/sign-in/email',{email,password:minimum})).status).toBe(200);
+  await confirm(email);expect((await request('/api/auth/sign-in/email',{email,password:minimum})).status).toBe(200);
  });
  test('recovery accepts eight literal characters, preserves the 128 maximum and invalidates only after a valid reset',async()=>{
   const email=`password-recovery-${crypto.randomUUID()}@example.test`;fixtureEmails.push(email);const invite=await createLink(database,'invite',email,null);fixtureTokens.push(invite.token);
   const maximum='M'.repeat(128);
   expect((await request('/api/invitations/accept',{token:invite.token,name:'Password recovery fixture',password:maximum})).status).toBe(200);
-  const signedIn=await request('/api/auth/sign-in/email',{email,password:maximum});expect(signedIn.status).toBe(200);const cookie=cookieFrom(signedIn);
+  await confirm(email);const signedIn=await request('/api/auth/sign-in/email',{email,password:maximum});expect(signedIn.status).toBe(200);const cookie=cookieFrom(signedIn);
   const recovery=await createLink(database,'recovery',email,null);fixtureTokens.push(recovery.token);
   for(const candidate of ['x'.repeat(7),'x'.repeat(129)]){
    expect((await request('/api/recovery/complete',{token:recovery.token,password:candidate})).status).toBe(400);

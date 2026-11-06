@@ -19,7 +19,7 @@ export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
   // Revalidate with the authenticated server before reusing a publication or personal vocabulary.
   if (response.status === 304 && cached) return cached.data as T;
   const data = await response.json().catch(() => null);
-  if (!response.ok) throw new ApiRequestError(data?.error?.message ?? data?.message ?? `Запрос не выполнен (${response.status}). Попробуйте ещё раз.`, response.status, data?.error?.code);
+  if (!response.ok) throw new ApiRequestError(data?.error?.message ?? data?.message ?? `Запрос не выполнен (${response.status}). Попробуйте ещё раз.`, response.status, data?.error?.code ?? data?.code);
   const etag = response.headers.get('etag');
   if (key && etag) { courses.set(key, { etag, data }); if (courses.size > 8) courses.delete(courses.keys().next().value!); }
   return data as T;

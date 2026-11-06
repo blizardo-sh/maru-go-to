@@ -27,7 +27,7 @@ import { renderAlbumRecall } from './album-recall';
 import { renderAlbumIntro } from './album-intro';
 import { videoCaption } from '@app/client/videoCaptions';
 import { renderReading } from './album-reading';
-import { AccessFlow, AdminAccess, renderAdminAccess } from './album-access';
+import { AccessFlow, AdminAccess, renderAdminAccess, type AccessMode } from './album-access';
 import { renderFullSettings, storeSettings, pendingSettings } from './album-settings';
 import { KanaFlow } from './kana-flow';
 import { renderKana } from './album-kana';
@@ -287,7 +287,7 @@ function topNavigation() {
   const actions: StudyAction[] = [
     { id: 'home', text: 'Разделы', run: () => { menuOpen = !menuOpen; schedule(); } },
     { id: 'reviews', text: 'Повторение', run: openReviewMenu },
-    { id: 'settings', text: 'Настройки', run: () => { notice = ''; menuOpen = false; stopMedia(); page = 'settings'; schedule(); } },
+      { id: 'settings', text: 'Настройки', run: () => { notice = ''; menuOpen = false; stopMedia(); page = 'settings'; schedule(); } },
     { id: 'logout', text: 'Выход', run: () => void logout() },
   ];
   const x = !view.wide && !view.low ? Math.max(a.x, 108 - view.layout.paper.x) : a.x;
@@ -320,22 +320,27 @@ function topNavigation() {
       { id: 'reviews', text: 'Повторение', description: 'Изученное по расписанию', run: openReviewMenu },
       { id: 'practice-menu', text: 'Тренажёры', description: 'Азбуки и счёт', run: openPracticeMenu },
       { id: 'reference', text: 'Справочник', description: 'Изученное и личные списки', run: () => openReference() },
+      ...(flow.user?.emailVerified===false?[{id:'confirm-email',text:'Подтвердить почту',description:'Для восстановления пароля',run:()=>openAccess('account')}]:[]),
       { id: 'settings', text: 'Настройки', run: () => { menuOpen = false; page = 'settings'; schedule(); } },
       ...(flow.user?.isAdmin ? [{ id: 'admin-access', text: 'Доступ учеников', run: openAdmin }] : []),
     ], safe);
     footer([{ id: 'menu-close', text: 'Закрыть меню', run: () => { menuOpen = false; schedule(); } }]);
   }
 }
+function openAccess(mode:AccessMode) { menuOpen=false;stopMedia();flow.error=''; password.element.value=''; email.element.readOnly=false; password.element.readOnly=false; access.open(mode,flow.user?.email??email.element.value,flow.user?.id); schedule(); }
+async function finishAccess() { email.element.value=access.email; password.element.value=''; password.element.autocomplete='current-password'; access.login(); await flow.boot(); if(flow.user)await loadSettings(); schedule(); }
 function renderLogin() {
   const a = surface.body, width = Math.min(a.width - 24, 420), x = a.x + (a.width - width) / 2, y = a.y + Math.max(0, (a.height - 228) / 2);
   surface.text('まるごと · Вход', box(x, y, width, 48), 24, false, true);
   nativeField(email, box(x, y + 60, width, 50), 'Электронная почта'); nativeField(password, box(x, y + 124, width, 50), 'Пароль');
-  footer([{ id: 'sign-in', text: flow.busy ? 'Входим…' : 'Войти', run: () => void signIn() }]);
+  footer([{ id: 'sign-in', text: flow.busy ? 'Входим…' : 'Войти', run: () => void signIn() },{id:'register',text:'Регистрация',run:()=>openAccess('register')},{id:'forgot-password',text:'Забыли пароль?',run:()=>openAccess('forgot')}]);
 }
+
 function openPracticeMenu() { notice = ''; stopMedia(); review.hide(); grammar.hide(); counters.hide(); kana.hide(); flow.active = false; menuOpen = false; page = 'practice'; schedule(); }
 function renderPracticeMenu() {
   sectionCards(surface, 'Приложение', 'Настройки и управление доступом', [
-    { id: 'settings', text: 'Настройки', run: () => { menuOpen = false; page = 'settings'; schedule(); } },
+    ...(flow.user?.emailVerified===false?[{id:'confirm-email',text:'Подтвердить почту',description:'Для восстановления пароля',run:()=>openAccess('account')}]:[]),
+      { id: 'settings', text: 'Настройки', run: () => { menuOpen = false; page = 'settings'; schedule(); } },
     ...(flow.user?.isAdmin ? [{ id: 'admin-access', text: 'Доступ учеников', run: openAdmin }] : []),
   ], safe);
 }
@@ -355,7 +360,7 @@ function openReviewMenu() {
 function renderLessons() {
   renderAlbumMenu(surface, view, lessonPages, {
     lessons: liveCatalog.lessons.map(lesson => ({ ...lesson, ...flow.progress(lesson.id), parts: flow.lessonStages(lesson.id) })),
-    safe, changed: schedule, learn: id => openBook(id),
+    safe, changed: schedule, learn: id => openBook(id), confirmEmail: flow.user?.emailVerified===false ? ()=>openAccess('account') : undefined,
   });
 }
 function renderIntro() {
@@ -492,21 +497,36 @@ async function submitAccess() {
   }
 }
 function renderAccess() {
-  if (access.complete) { message('Доступ готов', access.complete, [{id:'access-login',text:'Перейти ко входу',run:()=>{email.element.value=access.email;password.element.value='';password.element.autocomplete='current-password';access.login();}}]); return; }
-  const a=surface.body,prompt=view.prompt??a,title=access.mode==='recover'?'Новый пароль':access.invitation?.kind==='registration'?'Регистрация по ссылке':'Принять приглашение';
-  surface.text(title,{x:prompt.x+8,y:prompt.y+8,width:prompt.width-16,height:60},22,false,true);
-  let y=a.y+(view.prompt?12:76);
-  if(access.mode==='invite'){
-    if(email.element.value!==access.email)email.element.value=access.email;
-    email.element.readOnly=access.busy||access.invitation?.kind==='invite';nativeField(email,box(a.x,y,a.width,48),'Email для входа');y+=58;
-    accessName.element.readOnly=access.busy;nativeField(accessName,box(a.x,y,a.width,48),'Имя в приложении');y+=58;
+  const mode=access.mode!;
+  if(access.complete){
+    const actions:StudyAction[]=[{id:'access-login',text:mode==='verify'||mode==='account'?'Продолжить':'Перейти ко входу',run:()=>void finishAccess()}];
+    if(['register','invite','resend'].includes(mode))actions.push({id:'access-resend',text:'Повторить письмо',run:()=>openAccess('resend')});
+    if(mode==='account')actions.push({id:'access-resend',text:'Повторить письмо',run:()=>openAccess('account')});
+    message(mode==='verify'?'Почта подтверждена':mode==='recover'?'Пароль изменён':'Проверьте почту',access.complete,actions);return;
   }
-  password.element.autocomplete='new-password';password.element.minLength=8;password.element.maxLength=128;password.element.readOnly=access.busy;nativeField(password,box(a.x,y,a.width,48),'Пароль · 8–128 символов');y+=60;
-  const text=access.error||(!access.token?'В ссылке нет токена. Попросите новую ссылку.':access.busy?'Проверяем ссылку…':'Email станет логином. Пароль — от 8 до 128 символов.');
+  const a=surface.body,prompt=view.prompt??a,titles:Record<AccessMode,string>={invite:'Принять приглашение',recover:'Новый пароль',register:'Регистрация',forgot:'Восстановить пароль',resend:'Повторить письмо',verify:'Подтвердить почту',account:'Подтвердить вашу почту'};
+  surface.text(titles[mode],{x:prompt.x+8,y:prompt.y+8,width:prompt.width-16,height:60},22,false,true);
+  let y=a.y+(view.prompt?12:76);
+  if(['invite','register','forgot','resend','account'].includes(mode)){
+    if(email.element.value!==access.email)email.element.value=access.email;
+    email.element.readOnly=access.busy||mode==='account'||mode==='invite'&&access.invitation?.kind==='invite';nativeField(email,box(a.x,y,a.width,48),'Электронная почта');y+=58;
+  }
+  if(mode==='invite'||mode==='register'){accessName.element.readOnly=access.busy;nativeField(accessName,box(a.x,y,a.width,48),'Имя в приложении');y+=58;}
+  if(['invite','register','recover','account'].includes(mode)){
+    password.element.autocomplete=mode==='account'?'current-password':'new-password';password.element.minLength=mode==='account'?1:8;password.element.maxLength=128;password.element.readOnly=access.busy;
+    nativeField(password,box(a.x,y,a.width,48),mode==='account'?'Текущий пароль':'Пароль · 8–128 символов');y+=60;
+  }
+  const needsToken=['invite','recover','verify'].includes(mode);
+  const hint=mode==='account'?'Подтвердите текущий пароль. Занятия и прогресс останутся доступны.':mode==='verify'?'Нажмите кнопку, чтобы подтвердить адрес из письма.':mode==='forgot'?'Ссылка придёт на подтверждённую почту. Иначе поможет администратор.':mode==='resend'?'Повторное письмо доступно через минуту. Старый аккаунт: подтвердите адрес после входа.':'Для доступа к занятиям подтвердите email по ссылке из письма.';
+  const text=access.error||(needsToken&&!access.token?'В ссылке нет токена. Запросите новое письмо.':access.busy?'Подождите…':hint);
   const region=view.prompt?{x:prompt.x+8,y:prompt.y+80,width:prompt.width-16,height:prompt.height-88}:{x:a.x+8,y,width:a.width-16,height:Math.max(54,a.y+a.height-y)};
   surface.text(text,region,16);
-  footer([{id:'access-submit',text:access.mode==='recover'?'Сохранить пароль':'Создать аккаунт',fontSize:16,enabled:!!access.token&&!access.busy&&(access.mode==='recover'||!!access.invitation),run:()=>void submitAccess()},{id:'access-back',text:'Ко входу',fontSize:16,run:()=>{password.element.value='';password.element.readOnly=false;email.element.readOnly=false;password.element.autocomplete='current-password';access.login();}}]);
+  const actions:StudyAction[]=[{id:'access-submit',text:mode==='recover'?'Сохранить пароль':mode==='register'||mode==='invite'?'Создать аккаунт':mode==='verify'?'Подтвердить почту':'Отправить письмо',fontSize:16,enabled:(!needsToken||!!access.token)&&!access.busy&&(mode!=='invite'||!!access.invitation),run:()=>void submitAccess()},{id:'access-back',text:'Назад',fontSize:16,run:()=>void finishAccess()}];
+  if(mode==='verify')actions.push({id:'access-resend',text:'Новое письмо',run:()=>openAccess('resend')});
+  if(mode==='recover')actions.push({id:'access-request',text:'Новая ссылка',run:()=>openAccess('forgot')});
+  footer(actions);
 }
+
 let motionReduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 async function saveSettings(next: LearnerSettings) {
   const owner = flow.user?.id; if (!owner) return; settingsBusy = true; schedule();
@@ -532,7 +552,7 @@ function draw() {
   const error = flow.error || (page === 'review' ? review.saveError : page === 'counters' ? counters.saveError : page === 'grammar' ? grammar.saveError : '');
   if (access.mode) renderAccess();
   else if (!flow.user && !flow.error) { password.element.readOnly=false; email.element.readOnly=false; password.element.autocomplete='current-password'; renderLogin(); }
-  else if (!flow.user) message('Не удалось войти', flow.error, [{ id: 'login-retry', text: 'Вернуться ко входу', run: () => { flow.error = ''; schedule(); } }]);
+  else if (!flow.user) message('Не удалось войти', flow.error, [{ id: 'login-retry', text: 'Ко входу', run: () => { flow.error = ''; schedule(); } },{id:'login-resend',text:'Подтвердить почту',run:()=>openAccess('resend')},{id:'login-recovery',text:'Забыли пароль?',run:()=>openAccess('forgot')}]);
   else if (menuOpen) { /* Hide task/error controls until the menu closes; pending data stays intact. */ }
   else if (error) message('Не удалось подтвердить', error, [{ id: 'retry-save', text: 'Повторить', run: () => { if (page === 'review') void review.retry(); else if (page === 'counters') void counters.retry(); else if (page === 'grammar') void grammar.retry(); else void flow.refresh(); } }, { id: 'error-home', text: 'К урокам', run: home }]);
   else if (flow.busy && !flow.active || review.loading) message('Загружаем занятие', 'Подождите немного.', []);

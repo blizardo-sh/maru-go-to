@@ -19,7 +19,7 @@ export const reviewId=(mode:ReviewMode,targetId:string,exerciseId='')=>Buffer.fr
 export function decodeReview(id:string):[ReviewMode,string,string]{
  try {const data=JSON.parse(Buffer.from(id,'base64url').toString('utf8'));if(!Array.isArray(data)||data.length!==3||data.some(v=>typeof v!=='string')||!['ja-ru','ru-ja','listening','grammar','counter'].includes(data[0])||!data[1])throw 0;return data as [ReviewMode,string,string];}catch{throw new ReviewError('INVALID_REVIEW','Неверная карточка.',400);}
 }
-export class ReviewError extends Error {constructor(public code:string,message:string,public status:400|403|404|409=400){super(message);}}
+export class ReviewError extends Error {constructor(public code:string,message:string,public status:400|403|404|409|503=400){super(message);}}
 export function gradeGrammar(course:Course,submission:Extract<ReviewSubmission,{mode:'grammar'}>,exerciseId:string){
  const evaluation=evaluateTarget(course,exerciseId,{...submission,revision:0});const correct=evaluation.outcome==='correct';
  return {correct,rating:correct&&!submission.revealed&&submission.rating!==1?3 as const:1 as const,feedback:correct?(submission.revealed?'Верно после раскрытия. Навык нужно повторить.':'Верно: смысл и целевая конструкция сохранены.'):evaluation.feedback};
