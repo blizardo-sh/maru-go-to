@@ -53,8 +53,9 @@ try {
         const resetPage=await resetContext.newPage();resetPage.on('pageerror',error=>errors.push(error.message));
         await resetPage.goto(base+'/');await click(resetPage,'Забыли пароль?');
         await resetPage.getByRole('textbox',{name:canvas?'Электронная почта':'Email',exact:true}).fill(email);
-        await click(resetPage,'Отправить письмо');
-        await expect.poll(()=>canvas?resetPage.evaluate(()=>(window as any).__ALBUM__?.snapshot().access.complete):resetPage.getByRole('button',{name:'Перейти ко входу',exact:true}).isVisible()).toBe(true);
+        const requested=resetPage.waitForResponse(response=>new URL(response.url()).pathname==='/api/recovery/request'&&response.request().method()==='POST');
+        await click(resetPage,'Отправить письмо');expect((await requested).status()).toBe(200);
+        await expect.poll(()=>canvas?resetPage.evaluate(()=>(window as any).__ALBUM__?.snapshot().access.complete):resetPage.getByRole('status').isVisible()).toBe(true);
         const recovery=await fixtureMail(email,'recovery');sensitive.push(recovery.url);
         await resetPage.goto(recovery.url);await resetPage.getByLabel('Пароль',{exact:true}).fill(replacement);
         const response=resetPage.waitForResponse(response=>new URL(response.url()).pathname==='/api/recovery/complete');
