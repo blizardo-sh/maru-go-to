@@ -9,7 +9,8 @@ export function createMailer(config: Config): SendMail | undefined {
   const transport = nodemailer.createTransport({
     host: config.SMTP_HOST, port: config.SMTP_PORT ?? 465, secure: (config.SMTP_PORT ?? 465) === 465,
     requireTLS: true, auth: { user: config.SMTP_USER, pass: config.SMTP_PASSWORD },
-    connectionTimeout: 10000, greetingTimeout: 10000, socketTimeout: 15000,
+    // Gmail can take more than 15 seconds to acknowledge DATA after accepting its body.
+    connectionTimeout: 10000, greetingTimeout: 10000, socketTimeout: 120000,
     disableFileAccess: true, disableUrlAccess: true,
   });
   return async ({ to, kind, url }) => {

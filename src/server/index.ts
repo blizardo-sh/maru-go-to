@@ -21,4 +21,4 @@ const server=Bun.serve({hostname:config.HOST,port:config.PORT,idleTimeout:30,asy
 }});
 console.info(`Japanese learning API listening on ${server.url.origin}`);
 let stopping=false;
-for(const signal of ['SIGTERM','SIGINT'] as const)process.on(signal,async()=>{if(stopping)return;stopping=true;const timer=setTimeout(()=>{server.stop(true);database.sql.close({timeout:1});process.exit(1);},20000);try{await server.stop();await app.drainMail();await database.sql.close();clearTimeout(timer);process.exit(0);}catch{clearTimeout(timer);process.exit(1);}});
+for(const signal of ['SIGTERM','SIGINT'] as const)process.on(signal,async()=>{if(stopping)return;stopping=true;const timer=setTimeout(()=>{server.stop(true);database.sql.close({timeout:1});process.exit(1);},150000);try{await server.stop();await app.drainMail();await database.sql.close();clearTimeout(timer);process.exit(0);}catch{clearTimeout(timer);process.exit(1);}});
