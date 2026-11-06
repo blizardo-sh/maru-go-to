@@ -2,6 +2,9 @@ import { z } from 'zod';
 import { defaultSoundSettings } from '../shared/sound';
 import { repeatTypes } from '../shared/types';
 export const emailSchema=z.string().trim().toLowerCase().pipe(z.email().max(254));
+export const registrationSchema=z.object({name:z.string().trim().min(1).max(100),email:emailSchema,password:z.string().min(8).max(128)}).strict();
+export const emailRequestSchema=z.object({email:emailSchema}).strict();
+export const confirmAccountEmailSchema=z.object({password:z.string().min(1).max(128)}).strict();
 export const invitationDetailsSchema=z.object({token:z.string().min(20).max(200)}).strict();
 export const settingsSchema = z.object({
  repeatTypesVersion:z.literal(2).optional(),repeatTypes:z.array(z.enum(repeatTypes)).max(repeatTypes.length).refine(value=>new Set(value).size===value.length,'Choose each material type once.').default([...repeatTypes]),

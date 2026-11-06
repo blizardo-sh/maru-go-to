@@ -1,3 +1,4 @@
+import { testMailbox } from './helpers/mailbox';
 import { disposableDatabase } from './helpers/disposable-database';
 import { afterAll, beforeAll, beforeEach, describe, expect, test } from 'bun:test';
 import { hashPassword } from 'better-auth/crypto';
@@ -24,6 +25,9 @@ const suite=databaseUrl?describe:describe.skip;
 const origin='http://127.0.0.1:5173';
 suite('quota and deadline registration links on disposable PostgreSQL',()=>{
  let database:ReturnType<typeof connectDatabase>;let app:ReturnType<typeof createApp>;let adminCookie:string;let learnerCookie:string;let adminId:string;
+ const mailbox=testMailbox();
+ const confirm=async(address:string,target=app)=>{await target.drainMail();expect((await request('/api/email-verification/complete',{token:mailbox.token(address)})).status).toBe(200);};
+ const loginAfterConfirm=async(response:Response)=>{const {email:address}=await response.clone().json();await confirm(address);return request('/api/auth/sign-in/email',{email:address,password});};
  const emails:string[]=[];const linkIds:string[]=[];const personalTokens:string[]=[];const password='Isolated-registration-password-2026!';let fixtureIp=nextFixtureIp();
  const config={DATABASE_URL:databaseUrl!,BETTER_AUTH_SECRET:'isolated-registration-secret-at-least-32-characters',APP_URL:origin,HOST:'127.0.0.1',PORT:3000};
  const email=()=>{const value=`registration-${crypto.randomUUID()}@example.test`;emails.push(value);return value;};
@@ -39,7 +43,7 @@ suite('quota and deadline registration links on disposable PostgreSQL',()=>{
  beforeEach(()=>{fixtureIp=nextFixtureIp();});
  beforeAll(async()=>{
   const target=new URL(databaseUrl!);if(!disposableDatabase(target))throw new Error('Use disposable localhost japanese_app_test only.');
-  database=connectDatabase(databaseUrl!);app=createApp({database,config,course:loadCourse()});
+  database=connectDatabase(databaseUrl!);app=createApp({database,config,sendMail:mailbox.send,course:loadCourse()});
   const hash=await hashPassword(password);
   for(const isAdmin of [true,false]){
    const id=crypto.randomUUID();const address=email();
@@ -54,7 +58,7 @@ suite('quota and deadline registration links on disposable PostgreSQL',()=>{
   await database.sql`insert into learning_states(user_id,lesson_id,route_version,state) values(${adminId},'private-fixture','1',${{step:3}})`;
  });
  afterAll(async()=>{
-  if(!database)return;
+  if(!database)return;await app.drainMail();
   for(const id of linkIds)await database.sql`delete from registration_links where id=${id}`;
   for(const token of personalTokens)await database.sql`delete from access_links where token_hash=${tokenHash(token)}`;
   for(const address of emails){await database.sql`delete from access_links where email=${address}`;await database.sql`delete from users where email=${address}`;}
@@ -74,14 +78,14 @@ suite('quota and deadline registration links on disposable PostgreSQL',()=>{
   expect((await stored(created.link.id)).registration_limit).toBe(5);
   expect((await request(`/api/admin/registration-links/${crypto.randomUUID()}/revoke`,{},adminCookie)).status).toBe(404);
  });
- test('a shared link creates distinct unverified ordinary learners, signs them in and starts with empty private progress',async()=>{
+ test('a shared link creates distinct unverified ordinary learners, requires mailbox confirmation and starts with empty private progress',async()=>{
   const link=await create();const addresses=[email(),email()];const ids:string[]=[];
   for(const address of addresses){
    const details=await request('/api/invitations/details',{token:link.token});expect(details.status).toBe(200);expect(await details.json()).toMatchObject({kind:'registration',email:null});
-   const registered=await accept(link.token,' '+address.toUpperCase()+' ');expect(registered.status).toBe(200);expect(await registered.json()).toEqual({ok:true,email:address,authenticated:true});
-   const cookie=cookieFrom(registered);expect(cookie).toContain('better-auth.session_token=');
+   const registered=await accept(link.token,' '+address.toUpperCase()+' ');expect(registered.status).toBe(200);expect(await registered.clone().json()).toEqual({ok:true,email:address,authenticated:false,verificationRequired:true});
+   const cookie=cookieFrom(await loginAfterConfirm(registered));expect(cookie).toContain('better-auth.session_token=');
    const me=await request('/api/me',undefined,cookie);expect(me.status).toBe(200);const user=await me.json();expect(user).toMatchObject({name:'New learner',email:address,isAdmin:false});ids.push(user.id);
-   expect((await database.sql`select email_verified,is_admin from users where id=${user.id}`)[0]).toMatchObject({email_verified:false,is_admin:false});
+   expect((await database.sql`select email_verified,is_admin from users where id=${user.id}`)[0]).toMatchObject({email_verified:true,is_admin:false});
    const progress=await request('/api/progress',undefined,cookie);expect(await progress.json()).toMatchObject({introducedWordIds:[],introducedSkillIds:[]});
    const learning=await (await request('/api/learning',undefined,cookie)).json();expect(learning.lessons).toHaveLength(18);
    for(const state of learning.lessons)expect(state).toMatchObject({version:0,completedSteps:0,completed:false});
@@ -134,26 +138,26 @@ suite('quota and deadline registration links on disposable PostgreSQL',()=>{
   const unused=links[rows.findIndex(row=>row.registrations_count===0)]!;expect((await accept(unused.token)).status).toBe(200);
  });
  test('revocation is idempotent and affects future registrations only, keeping an existing session and progress',async()=>{
-  const link=await create();const registered=await accept(link.token);expect(registered.status).toBe(200);const cookie=cookieFrom(registered);const user=await (await request('/api/me',undefined,cookie)).json();
+  const link=await create();const registered=await accept(link.token);expect(registered.status).toBe(200);const cookie=cookieFrom(await loginAfterConfirm(registered));const user=await (await request('/api/me',undefined,cookie)).json();
   await database.sql`insert into learning_states(user_id,lesson_id,route_version,state) values(${user.id},'private-after-registration','1',${{step:4}})`;
   const revoked=await request(`/api/admin/registration-links/${link.link.id}/revoke`,{},adminCookie);expect(revoked.status).toBe(200);const first=(await revoked.json()).link;expect(first).toMatchObject({status:'revoked',registrationsCount:1});
   const repeated=await request(`/api/admin/registration-links/${link.link.id}/revoke`,{},adminCookie);expect((await repeated.json()).link.revokedAt).toBe(first.revokedAt);
   expect((await request('/api/invitations/details',{token:link.token})).status).toBe(400);expect((await accept(link.token)).status).toBe(400);expect((await stored(link.link.id)).registrations_count).toBe(1);
   expect((await request('/api/me',undefined,cookie)).status).toBe(200);expect((await database.sql`select state from learning_states where user_id=${user.id}`)[0].state).toEqual({step:4});
  });
- test('post-commit session failure acknowledges the created account and supports ordinary manual sign-in',async()=>{
+ test('registration creates no session before email confirmation',async()=>{
   const link=await create();const address=email();
   const failingDatabase={...database,db:new Proxy(database.db,{get(target,property,receiver){const value=Reflect.get(target,property,receiver);if(property!=='insert')return typeof value==='function'?value.bind(target):value;return(...args:unknown[])=>{if(args[0]===session)throw new Error('Isolated fixture session failure');return Reflect.apply(value,target,args);};}})};
-  const failingApp=createApp({database:failingDatabase,config,course:loadCourse()});
-  const result=await accept(link.token,address,failingApp);expect(result.status).toBe(200);expect(await result.json()).toEqual({ok:true,email:address,authenticated:false});expect(cookieFrom(result)).toBe('');
-  expect((await stored(link.link.id)).registrations_count).toBe(1);expect((await request('/api/auth/sign-in/email',{email:address,password})).status).toBe(200);
+  const failingApp=createApp({database:failingDatabase,config,sendMail:mailbox.send,course:loadCourse()});
+  const result=await accept(link.token,address,failingApp);expect(result.status).toBe(200);expect(await result.json()).toEqual({ok:true,email:address,authenticated:false,verificationRequired:true});expect(cookieFrom(result)).toBe('');
+  expect((await stored(link.link.id)).registrations_count).toBe(1);await confirm(address,failingApp);expect((await request('/api/auth/sign-in/email',{email:address,password})).status).toBe(200);
  });
  test('old personal invitation issuance and recovery remain compatible and general registration cannot call public signup',async()=>{
   const address=email();const issued=await request('/api/admin/links',{kind:'invite',email:address},adminCookie);expect(issued.status).toBe(200);const result=await issued.json();const token=new URLSearchParams(new URL(result.url).hash.slice(1)).get('token')!;personalTokens.push(token);
   const details=await request('/api/invitations/details',{token});expect(await details.json()).toEqual({kind:'invite',email:address,expiresAt:result.expiresAt});
   const mismatch=await request('/api/invitations/accept',{token,name:'Legacy',email:email(),password});expect(mismatch.status).toBe(400);
-  const accepted=await request('/api/invitations/accept',{token,name:'Legacy',password});expect(accepted.status).toBe(200);expect(await accepted.json()).toEqual({ok:true,email:address,authenticated:false});expect(cookieFrom(accepted)).toBe('');
-  expect((await database.sql`select email_verified,is_admin from users where email=${address}`)[0]).toMatchObject({email_verified:true,is_admin:false});
+  const accepted=await request('/api/invitations/accept',{token,name:'Legacy',password});expect(accepted.status).toBe(200);expect(await accepted.json()).toEqual({ok:true,email:address,authenticated:false,verificationRequired:true});expect(cookieFrom(accepted)).toBe('');
+  expect((await database.sql`select email_verified,is_admin from users where email=${address}`)[0]).toMatchObject({email_verified:false,is_admin:false});await confirm(address);
   const login=await request('/api/auth/sign-in/email',{email:address,password});expect(login.status).toBe(200);const cookie=cookieFrom(login);
   const recovery=await request('/api/admin/links',{kind:'recovery',email:address},adminCookie);expect(recovery.status).toBe(200);const recoveryToken=new URLSearchParams(new URL((await recovery.json()).url).hash.slice(1)).get('token')!;personalTokens.push(recoveryToken);
   expect((await request('/api/recovery/complete',{token:recoveryToken,password:'Eight123'})).status).toBe(200);expect((await request('/api/me',undefined,cookie)).status).toBe(401);expect((await request('/api/recovery/complete',{token:recoveryToken,password:'Another8'})).status).toBe(400);
@@ -162,6 +166,6 @@ suite('quota and deadline registration links on disposable PostgreSQL',()=>{
   const noOrigin=await app.request(origin+'/api/invitations/accept',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({token:common.token,name:'No origin',email:email(),password})});expect(noOrigin.status).toBe(403);
   const noJson=await app.request(origin+'/api/invitations/accept',{method:'POST',headers:{origin,'content-type':'text/plain'},body:'{}'});expect(noJson.status).toBe(415);
   const oversized=await request('/api/invitations/accept',{token:common.token,name:'Large',email:email(),password,extra:'x'.repeat(66000)});expect(oversized.status).toBe(413);expect((await stored(common.link.id)).registrations_count).toBe(0);
-  const created=await createRegistrationLink(database,{registrationLimit:1,expiresAt:null},null);linkIds.push(created.link.id);const ordinary=await accept(created.token);expect(ordinary.status).toBe(200);expect((await (await request('/api/me',undefined,cookieFrom(ordinary))).json()).isAdmin).toBe(false);
+  const created=await createRegistrationLink(database,{registrationLimit:1,expiresAt:null},null);linkIds.push(created.link.id);const ordinary=await accept(created.token);expect(ordinary.status).toBe(200);expect((await (await request('/api/me',undefined,cookieFrom(await loginAfterConfirm(ordinary)))).json()).isAdmin).toBe(false);
  });
 });

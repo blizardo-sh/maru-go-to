@@ -21,10 +21,14 @@ import { addList, appendList, renameList, listsFor, updateWord } from './words';
 import { adminLinkSchema, studyIntroductionSchema, analysisSchema, emailSchema, invitationDetailsSchema, invitationSchema, listSchema, recoverySchema, registrationLinkIdSchema, registrationLinkSchema, settingsSchema, submissionSchema, targetEvaluationSchema, trainingContextSchema, wordUpdateSchema } from './validation';
 import { createAnalyzer } from './analysis';
 import { withPersonalPractice } from './personal-practice';
-type Actor={id:string;name:string;email:string;isAdmin:boolean};
+import { createMailer, type SendMail } from './mail';
+import { checkAccountPassword, confirmEmail, createEmailAccess, registerLearner, takeAuthLimit } from './email-access';
+import { registrationSchema, emailRequestSchema, confirmAccountEmailSchema } from './validation';
+type Actor={id:string;name:string;email:string;isAdmin:boolean;emailVerified:boolean};
 type AppEnv={Variables:{actor:Actor;requestId:string;course:Course}};
-export function createApp({database,config,course,publications}:{database:Database;config:Config;course:Course;publications?:(id?:string,legacy?:boolean)=>Promise<Course>}){
+export function createApp({database,config,course,publications,sendMail}:{database:Database;config:Config;course:Course;publications?:(id?:string,legacy?:boolean)=>Promise<Course>;sendMail?:SendMail}){
  const auth=createAuth(database,config);const analyze=createAnalyzer(config);const log=pino({level:process.env.LOG_LEVEL??'info',redact:['password','token','secret','authorization','cookie']});
+ const emailAccess=createEmailAccess(database,config,sendMail??createMailer(config),()=>log.error('Access email delivery failed; user may retry.'));
  const app=new OpenAPIHono<AppEnv>();const fail=(c:any,code:string,message:string,status=400)=>c.json({error:{code,message}},status);
  app.use('*',async(c,next)=>{const started=performance.now();c.set('requestId',crypto.randomUUID());c.header('x-request-id',c.get('requestId'));c.header('cache-control','no-store');c.header('x-content-type-options','nosniff');c.header('referrer-policy','no-referrer');await next();log.info({requestId:c.get('requestId'),method:c.req.method,path:c.req.path,status:c.res.status,durationMs:Math.round(performance.now()-started)},'request');});
  app.use('/api/*',bodyLimit({maxSize:65536,onError:c=>fail(c,'TOO_LARGE','Запрос слишком большой.',413)}));
@@ -35,28 +39,42 @@ export function createApp({database,config,course,publications}:{database:Databa
  app.onError((error,c)=>{if(error instanceof ReviewError)return fail(c,error.code,error.message,error.status);if(error instanceof z.ZodError)return fail(c,'VALIDATION','Проверьте данные запроса.',400);if(error instanceof SyntaxError)return fail(c,'INVALID_JSON','Некорректный JSON.',400);if(error instanceof HTTPException)return fail(c,'HTTP_ERROR','Запрос отклонён.',error.status);log.error({requestId:c.get('requestId'),errorName:error.name},'request failed');return fail(c,'INTERNAL','Не удалось выполнить действие. Попробуйте снова.',500);});
  app.get('/health',c=>c.json({ok:true}));
  app.get('/ready',async c=>{await database.sql`select 1 from review_states limit 1`;const current=publications?await publications():course;return c.json({ok:true,courseVersion:current.version,publicationId:current.publicationId});});
- app.on(['GET','POST'],'/api/auth/*',async c=>{const path=c.req.path.slice('/api/auth'.length);if(!['/get-session','/sign-in/email','/sign-out'].includes(path))return fail(c,'INVITATION_REQUIRED','Регистрация доступна по приглашению.',403);if(path==='/sign-in/email'&&c.req.method==='POST'){const body=await c.req.json();const email=emailSchema.parse(body?.email);const headers=new Headers(c.req.raw.headers);headers.delete('content-length');return auth.handler(new Request(c.req.raw.url,{method:'POST',headers,body:JSON.stringify({...body,email}),signal:c.req.raw.signal}));}return auth.handler(c.req.raw);});
+ const publicAccessPaths=new Set(['/api/register','/api/email-verification/request','/api/email-verification/complete','/api/recovery/request','/api/recovery/complete']);
+ app.use('/api/*',async(c,next)=>{
+  if(publicAccessPaths.has(c.req.path)){
+   // nginx replaces the address and Caddy forwards only that value; API is private.
+   const ip=c.req.header('x-forwarded-for')?.trim()||'unknown';
+   if(!await takeAuthLimit(database,'request:'+createHash('sha256').update(ip).digest('hex'),10,60))return fail(c,'RATE_LIMITED','Слишком много попыток. Подождите минуту.',429);
+  }
+  await next();
+ });
+ app.post('/api/register',async c=>{const body=registrationSchema.parse(await c.req.json());emailAccess.available();
+  if(!await takeAuthLimit(database,'registrations:hour',100,3600))return fail(c,'RATE_LIMITED','Регистрация временно ограничена. Попробуйте позже.',429);
+  await registerLearner(database,body);emailAccess.request(body.email,'verify');return c.json({ok:true});});
+ app.post('/api/email-verification/request',async c=>{const {email}=emailRequestSchema.parse(await c.req.json());emailAccess.request(email,'verify');return c.json({ok:true});});
+ app.post('/api/email-verification/complete',async c=>{const {token}=invitationDetailsSchema.parse(await c.req.json());return await confirmEmail(database,token)?c.json({ok:true}):fail(c,'INVALID_LINK','Ссылка недействительна, использована или истекла. Запросите новое письмо.',400);});
+ app.post('/api/recovery/request',async c=>{const {email}=emailRequestSchema.parse(await c.req.json());emailAccess.request(email,'recovery');return c.json({ok:true});});
+ app.on(['GET','POST'],'/api/auth/*',async c=>{const path=c.req.path.slice('/api/auth'.length);if(!['/get-session','/sign-in/email','/sign-out'].includes(path))return fail(c,'ROUTE_DISABLED','Используйте форму регистрации или восстановления доступа.',403);if(path==='/sign-in/email'&&c.req.method==='POST'){const body=await c.req.json();const email=emailSchema.parse(body?.email);const headers=new Headers(c.req.raw.headers);headers.delete('content-length');return auth.handler(new Request(c.req.raw.url,{method:'POST',headers,body:JSON.stringify({...body,email}),signal:c.req.raw.signal}));}return auth.handler(c.req.raw);});
  app.post('/api/invitations/details',async c=>{const body=invitationDetailsSchema.parse(await c.req.json());const details=await invitationDetails(database,body.token);return details?c.json(details):fail(c,'INVALID_LINK','Ссылка недействительна, использована или истекла.',400);});
  app.post('/api/invitations/accept',async c=>{
   const body=invitationSchema.parse(await c.req.json());const details=await invitationDetails(database,body.token);
   if(!details)return fail(c,'INVALID_LINK','Ссылка недействительна, использована, отозвана или истекла.',400);
+  emailAccess.available();
   if(details.kind==='invite'){
    if(body.email!==undefined&&body.email!==details.email)return fail(c,'VALIDATION','Email должен совпадать с персональным приглашением.',400);
-   const ok=await consumeLink(database,'invite',body.token,body.password,body.name);
-   return ok?c.json({ok:true,email:details.email,authenticated:false}):fail(c,'INVALID_LINK','Ссылка недействительна, использована или истекла.',400);
+   const ok=await consumeLink(database,'invite',body.token,body.password,body.name,true);
+   if(ok)emailAccess.request(details.email,'verify');
+   return ok?c.json({ok:true,email:details.email,authenticated:false,verificationRequired:true}):fail(c,'INVALID_LINK','Ссылка недействительна, использована или истекла.',400);
   }
   const email=emailSchema.parse(body.email);
-  const result=await consumeRegistrationLink(database,{...body,email});
+  const result=await consumeRegistrationLink(database,{...body,email},true);
   if(!result.ok)return result.reason==='EMAIL_EXISTS'?fail(c,'EMAIL_EXISTS','Учётная запись с этим email уже существует. Войдите с вашим паролем или попросите администратора восстановить доступ.',409):fail(c,'INVALID_LINK','Ссылка недействительна, отозвана, исчерпана или истекла.',400);
-  // The account is committed. A session failure must not invite another registration attempt.
-  try{
-   const signedIn=await auth.api.signInEmail({body:{email:result.email,password:body.password},headers:c.req.raw.headers,asResponse:true});
-   if(signedIn.ok){for(const cookie of signedIn.headers.getSetCookie())c.header('set-cookie',cookie,{append:true});return c.json({ok:true,email:result.email,authenticated:true});}
-  }catch{log.warn({requestId:c.get('requestId')},'Account created; automatic sign-in unavailable');}
-  return c.json({ok:true,email:result.email,authenticated:false});
+  emailAccess.request(result.email,'verify');
+  return c.json({ok:true,email:result.email,authenticated:false,verificationRequired:true});
  });
  app.post('/api/recovery/complete',async c=>{const body=recoverySchema.parse(await c.req.json());const ok=await consumeLink(database,'recovery',body.token,body.password);return ok?c.json({ok:true}):fail(c,'INVALID_LINK','Ссылка недействительна, использована или истекла.',400);});
- app.use('/api/*',async(c,next)=>{const session=await auth.api.getSession({headers:c.req.raw.headers});if(!session)return fail(c,'UNAUTHENTICATED','Войдите в приложение.',401);const [actor]=await database.sql`select id,name,email,is_admin from users where id=${session.user.id}`;if(!actor)return fail(c,'UNAUTHENTICATED','Войдите в приложение.',401);const expectedLearner=c.req.header('X-Learning-Learner-Id');if(expectedLearner!==undefined&&expectedLearner!==actor.id)return fail(c,'OWNER_CHANGED','Учётная запись изменилась в другой вкладке. Обновите страницу и войдите в нужную учётную запись.',409);c.set('actor',{id:actor.id,name:actor.name,email:actor.email,isAdmin:actor.is_admin});await next();});
+ app.use('/api/*',async(c,next)=>{const session=await auth.api.getSession({headers:c.req.raw.headers});if(!session)return fail(c,'UNAUTHENTICATED','Войдите в приложение.',401);const [actor]=await database.sql`select id,name,email,is_admin,email_verified,email_verification_required from users where id=${session.user.id}`;if(!actor)return fail(c,'UNAUTHENTICATED','Войдите в приложение.',401);if(actor.email_verification_required&&!actor.email_verified)return fail(c,'EMAIL_NOT_VERIFIED','Подтвердите почту перед входом.',403);const expectedLearner=c.req.header('X-Learning-Learner-Id');if(expectedLearner!==undefined&&expectedLearner!==actor.id)return fail(c,'OWNER_CHANGED','Учётная запись изменилась в другой вкладке. Обновите страницу и войдите в нужную учётную запись.',409);c.set('actor',{id:actor.id,name:actor.name,email:actor.email,isAdmin:actor.is_admin,emailVerified:actor.email_verified});await next();});
+ app.post('/api/account/verify-email/request',async c=>{const {password}=confirmAccountEmailSchema.parse(await c.req.json());const user=c.get('actor');emailAccess.available();if(!await takeAuthLimit(database,'proof:'+user.id,5,900))return fail(c,'RATE_LIMITED','Слишком много попыток. Попробуйте через 15 минут.',429);await checkAccountPassword(database,user.id,password);emailAccess.request(user.email,'verify',user.id);return c.json({ok:true});});
  app.use('/api/*',async(c,next)=>{
   const header=c.req.header('X-Content-Publication');
   const body=!['GET','HEAD','OPTIONS'].includes(c.req.method)?await c.req.json().catch(()=>undefined):undefined;
@@ -107,6 +125,6 @@ export function createApp({database,config,course,publications}:{database:Databa
  .post('/api/admin/registration-links/:linkId/revoke',async c=>{z.object({}).strict().parse(await c.req.json());const id=registrationLinkIdSchema.parse(c.req.param('linkId'));const link=await revokeRegistrationLink(database,id);return link?c.json({link}):fail(c,'NOT_FOUND','Регистрационная ссылка не найдена.',404);});
  registerContract(app,new URL(config.APP_URL).protocol==='https:');
  app.notFound(c=>fail(c,'NOT_FOUND','Маршрут не найден.',404));
- return routes;
+ return Object.assign(routes,{drainMail:()=>emailAccess.drain()});
 }
 export type AppType=ReturnType<typeof createApp>;

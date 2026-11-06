@@ -27,7 +27,7 @@ export function presentation(course: Course) {
   };
 }
 export const liveCatalog: ReturnType<typeof presentation> = { lessons: [], words: [], constructions: [] };
-type User = { id: string; name: string; email: string; isAdmin: boolean };
+type User = { id: string; name: string; email: string; isAdmin: boolean; emailVerified?: boolean };
 
 export class ConnectedFlow {
   selectedId: string | null = null;
@@ -120,7 +120,7 @@ export class ConnectedFlow {
     });
   }
   async signIn(email: string, password: string) {
-    if (!email || !password) { this.error = 'Введите почту и пароль локальной копии.'; this.changed(); return; }
+    if (!email || !password) { this.error = 'Введите почту и пароль.'; this.changed(); return; }
     const ok = await this.job(async () => { await api('/api/auth/sign-in/email', json('POST', { email, password })); return true; });
     if (ok) return this.boot();
   }

@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { ReviewError } from './reviews';
 import { betterAuth } from 'better-auth';
+import { APIError } from 'better-auth/api';
 import { drizzleAdapter } from 'better-auth/adapters/drizzle';
 import { hashPassword } from 'better-auth/crypto';
 import { createHash, randomBytes } from 'node:crypto';
@@ -13,6 +14,10 @@ export const tokenHash = (token:string) => createHash('sha256').update(token).di
 export function createAuth(database:Database,config:Config) {
   return betterAuth({ baseURL:config.APP_URL,secret:config.BETTER_AUTH_SECRET,database:drizzleAdapter(database.db,{provider:'pg',schema}),trustedOrigins:[config.APP_URL],
     emailAndPassword:{enabled:true,disableSignUp:true,minPasswordLength:8,maxPasswordLength:128},
+    databaseHooks:{session:{create:{before:async session=>{
+      const [user]=await database.sql`select email_verified,email_verification_required from users where id=${session.userId}`;
+      if(user?.email_verification_required&&!user.email_verified)throw new APIError('FORBIDDEN',{code:'EMAIL_NOT_VERIFIED',message:'Подтвердите почту перед входом. Письмо можно запросить повторно.'});
+    }}}},
     rateLimit:{enabled:true,window:60,max:100,customRules:{'/sign-in/email':{window:60,max:5}}},
     advanced:{cookiePrefix:config.AUTH_COOKIE_PREFIX,useSecureCookies:new URL(config.APP_URL).protocol==='https:'},
     session:{expiresIn:60*60*24*30,updateAge:60*60*24},
@@ -41,7 +46,7 @@ export async function invitationDetails(database:Database,token:string):Promise<
   const details=registrationLinkDetails(registration);
   return details.status==='active'?{kind:'registration',email:null,expiresAt:details.expiresAt,remainingRegistrations:details.remainingRegistrations}:null;
 }
-export async function consumeLink(database:Database,kind:'invite'|'recovery',token:string,password:string,name='Ученик') {
+export async function consumeLink(database:Database,kind:'invite'|'recovery',token:string,password:string,name='Ученик',requireVerification=false) {
   const [available]=await database.sql`select email from access_links where token_hash=${tokenHash(token)} and kind=${kind} and used_at is null and expires_at>now()`;
   if(!available||!emailSchema.safeParse(available.email).success)return false;
   const hash=await hashPassword(password);
@@ -57,13 +62,14 @@ export async function consumeLink(database:Database,kind:'invite'|'recovery',tok
       await tx`select pg_advisory_xact_lock(hashtext('bootstrap-first-admin'))`;
       const [{count}]=await tx`select count(*)::int as count from users`;
       const id=crypto.randomUUID();
-      const [created]=await tx`insert into users(id,name,email,email_verified,is_admin) values(${id},${name},${email},true,${count===0}) on conflict(email) do nothing returning id`;
+      const [created]=await tx`insert into users(id,name,email,email_verified,email_verification_required,is_admin) values(${id},${name},${email},${!requireVerification},${requireVerification},${count===0}) on conflict(email) do nothing returning id`;
       if(!created)return false;
       await tx`insert into accounts(id,account_id,provider_id,user_id,password) values(${crypto.randomUUID()},${id},'credential',${id},${hash})`;
     } else {
       if(!existing) return false;
       await tx`update accounts set password=${hash},updated_at=now() where user_id=${existing.id} and provider_id='credential'`;
       await tx`delete from sessions where user_id=${existing.id}`;
+      await tx`update access_links set used_at=now(),updated_at=now() where email=${email} and kind='verify' and used_at is null`;
     }
     await tx`update access_links set used_at=now(),updated_at=now() where token_hash=${tokenHash(token)}`;
     return true;
@@ -99,7 +105,7 @@ export async function revokeRegistrationLink(database:Database,id:string):Promis
   return row?registrationLinkDetails(row):null;
 }
 
-export async function consumeRegistrationLink(database:Database,input:{token:string;name:string;email:string;password:string}):Promise<{ok:true;email:string}|{ok:false;reason:'INVALID_LINK'|'EMAIL_EXISTS'}> {
+export async function consumeRegistrationLink(database:Database,input:{token:string;name:string;email:string;password:string},requireVerification=false):Promise<{ok:true;email:string}|{ok:false;reason:'INVALID_LINK'|'EMAIL_EXISTS'}> {
   const body=invitationSchema.extend({email:emailSchema}).parse(input);
   const details=await invitationDetails(database,body.token);
   if(!details||details.kind!=='registration')return {ok:false,reason:'INVALID_LINK'};
@@ -110,7 +116,7 @@ export async function consumeRegistrationLink(database:Database,input:{token:str
     if(!row||registrationLinkDetails(row).status!=='active')return {ok:false,reason:'INVALID_LINK'} as const;
     const id=crypto.randomUUID();
     // The unique email also arbitrates simultaneous registrations on different links.
-    const [created]=await tx`insert into users(id,name,email,email_verified,is_admin) values(${id},${body.name},${body.email},false,false) on conflict(email) do nothing returning id`;
+    const [created]=await tx`insert into users(id,name,email,email_verified,email_verification_required,is_admin) values(${id},${body.name},${body.email},false,${requireVerification},false) on conflict(email) do nothing returning id`;
     if(!created)return {ok:false,reason:'EMAIL_EXISTS'} as const;
     await tx`insert into accounts(id,account_id,provider_id,user_id,password) values(${crypto.randomUUID()},${id},'credential',${id},${hash})`;
     await tx`update registration_links set registrations_count=registrations_count+1,updated_at=now() where id=${row.id}`;

@@ -1,3 +1,4 @@
+import { confirmFixtureEmail } from './helpers/browser-mailbox';
 import { chromium, expect } from '@playwright/test';
 import { connectDatabase } from '../src/server/db';
 import { createLink, tokenHash } from '../src/server/auth';
@@ -47,11 +48,11 @@ try {
   await page.getByRole('button', { name: 'Создать аккаунт', exact: true }).click();
   const accepted = await acceptance;
   expect(accepted.status()).toBe(200);
-  expect(await accepted.json()).toEqual({ ok: true, email, authenticated: false });
+  expect(await accepted.json()).toEqual({ ok: true, email, authenticated: false, verificationRequired: true });
   expect(acceptedRequests).toEqual([{ keys: ['name','password','token'], name: 'ivan', emailSubmitted: false }]);
   const success = page.getByRole('status');
-  await expect(success).toContainText('Аккаунт создан');
-  await expect(success).toContainText(email);
+  await expect(success).toContainText('Проверьте почту');
+  await confirmFixtureEmail(email,base,base,fixtureIp);
   await expect(success).not.toContainText('Пароль изменён');
 
   await page.getByRole('button', { name: 'Перейти ко входу', exact: true }).click();

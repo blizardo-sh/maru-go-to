@@ -1,61 +1,82 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import type { InvitationAcceptResult, InvitationDetails } from '../shared/types';
+import type { User } from './types';
 import { api, ApiRequestError, json } from './api';
 
-const errorText = (error: unknown) => error instanceof ApiRequestError && error.code === 'INVALID_LINK'
-  ? 'Эта ссылка недоступна: срок мог истечь, число регистраций исчерпано или администратор отозвал её. Попросите новую ссылку.'
-  : error instanceof Error ? error.message : 'Не удалось выполнить запрос. Повторите попытку.';
+type Flow = 'login' | 'register' | 'forgot' | 'resend' | 'verify' | 'account' | 'invite' | 'recover';
+const initialFlow = (): Flow => ({ '/register':'register', '/forgot-password':'forgot', '/verify-email':'verify', '/confirm-email':'account', '/invite':'invite', '/recover':'recover' } as Record<string, Flow>)[location.pathname] ?? 'login';
+const paths: Record<Flow,string> = { login:'/login',register:'/register',forgot:'/forgot-password',resend:'/register',verify:'/verify-email',account:'/confirm-email',invite:'/invite',recover:'/recover' };
+const titles: Record<Flow,string> = { login:'Войти',register:'Регистрация',forgot:'Восстановить пароль',resend:'Повторить письмо',verify:'Подтвердить почту',account:'Подтвердить вашу почту',invite:'Принять приглашение',recover:'Новый пароль' };
+const verificationNotice = 'Проверьте почту. Если адрес ожидает подтверждения, мы отправим письмо со ссылкой. Проверьте также папку «Спам». Повторный запрос доступен через минуту.';
+const recoveryNotice = 'Если для этого адреса есть аккаунт с подтверждённой почтой, мы отправим ссылку восстановления. Проверьте также папку «Спам». Если почта ещё не подтверждена, обратитесь к администратору.';
 
-export function Auth({ onLogin }: { onLogin: (expectedEmail: string) => Promise<boolean> }) {
-  const [token] = useState(() => new URLSearchParams(location.hash.slice(1)).get('token'));
-  const [flow, setFlow] = useState<'invite' | 'recover' | 'login'>(() => location.pathname === '/invite' ? 'invite' : location.pathname === '/recover' ? 'recover' : 'login');
-  const [email, setEmail] = useState(''); const [name, setName] = useState(''); const [password, setPassword] = useState('');
-  const [busy, setBusy] = useState(false); const [message, setMessage] = useState(''); const [complete, setComplete] = useState(false);
+export function Auth({ onLogin, user }: { onLogin: (expectedEmail: string) => Promise<boolean>; user?: User }) {
+  const [token, setToken] = useState(() => new URLSearchParams(location.hash.slice(1)).get('token') ?? '');
+  const [flow, setFlow] = useState<Flow>(initialFlow);
+  const [email, setEmail] = useState(user?.email ?? ''); const [name, setName] = useState(''); const [password, setPassword] = useState('');
+  const [busy, setBusy] = useState(false); const [message, setMessage] = useState(''); const [complete, setComplete] = useState('');
   const [invitation, setInvitation] = useState<InvitationDetails | null>(null);
-  const [inviteLoading, setInviteLoading] = useState(flow === 'invite' && !!token); const [inviteError, setInviteError] = useState(''); const [inviteRetry, setInviteRetry] = useState(0);
+  const [inviteLoading, setInviteLoading] = useState(flow === 'invite' && !!token); const [inviteRetry, setInviteRetry] = useState(0);
   const registration = invitation?.kind === 'registration';
+  const needsToken = ['invite','recover','verify'].includes(flow);
+  const needsPassword = ['login','register','invite','recover','account'].includes(flow);
+  const needsEmail = ['login','register','forgot','resend','invite','account'].includes(flow);
+  const newPassword = ['register','invite','recover'].includes(flow);
   useEffect(() => {
     if (flow !== 'invite' || !token || complete) return;
-    const controller = new AbortController(); setInviteLoading(true); setInviteError(''); setInvitation(null);
+    const controller = new AbortController(); setInviteLoading(true); setMessage('');
     void api<InvitationDetails>('/api/invitations/details', { ...json('POST', { token }), signal: controller.signal }).then(details => {
       setInvitation(details); if (details.kind === 'invite') setEmail(details.email);
-    }).catch(error => { if (!controller.signal.aborted) setInviteError(errorText(error)); }).finally(() => { if (!controller.signal.aborted) setInviteLoading(false); });
+    }).catch(error => { if (!controller.signal.aborted) setMessage(error instanceof Error ? error.message : 'Не удалось проверить ссылку.'); }).finally(() => { if (!controller.signal.aborted) setInviteLoading(false); });
     return () => controller.abort();
   }, [flow, token, inviteRetry, complete]);
-  function manualLogin() { setFlow('login'); setComplete(false); setMessage(''); }
+  function navigate(next: Flow) { setFlow(next); setComplete(''); setMessage(''); setPassword(''); setToken(''); history.replaceState(null, '', paths[next]); }
   async function submit(event: FormEvent) {
-    event.preventDefault();
+    event.preventDefault(); if (busy) return;
     if (flow === 'invite' && !invitation) { setMessage('Сначала дождитесь проверки ссылки или повторите её.'); return; }
     setBusy(true); setMessage('');
     try {
+      const address = email.trim().toLowerCase();
       if (flow === 'login') {
-        await api('/api/auth/sign-in/email', json('POST', { email: email.trim().toLowerCase(), password }));
-        if (!await onLogin(email.trim().toLowerCase())) setMessage('Вход пока не подтверждён. Проверьте соединение и попробуйте войти ещё раз.');
+        await api('/api/auth/sign-in/email', json('POST', { email:address, password }));
+        if (!await onLogin(address)) setMessage('Вход пока не подтверждён. Проверьте соединение и попробуйте ещё раз.');
         return;
       }
-      if (flow === 'recover') await api('/api/recovery/complete', json('POST', { token, password }));
-      else {
-        const result = await api<InvitationAcceptResult>('/api/invitations/accept', json('POST', { token, name, password, ...(registration ? { email: email.trim().toLowerCase() } : {}) }));
-        setEmail(result.email); setComplete(true); setPassword('');
-        if (result.authenticated && await onLogin(result.email)) return;
+      if (flow === 'register') { await api('/api/register', json('POST', { name, email:address, password })); setComplete(verificationNotice); }
+      if (flow === 'resend') { await api('/api/email-verification/request', json('POST', { email:address })); setComplete(verificationNotice); }
+      if (flow === 'forgot') { await api('/api/recovery/request', json('POST', { email:address })); setComplete(recoveryNotice); }
+      if (flow === 'account') { await api('/api/account/verify-email/request', { ...json('POST', { password }), headers:user ? {'X-Learning-Learner-Id':user.id} : {} }); setComplete(verificationNotice); }
+      if (flow === 'verify') { await api('/api/email-verification/complete', json('POST', { token })); setComplete('Почта подтверждена. Теперь доступно самостоятельное восстановление пароля.'); }
+      if (flow === 'recover') { await api('/api/recovery/complete', json('POST', { token, password })); setComplete('Пароль изменён. Войдите с новым паролем.'); }
+      if (flow === 'invite') {
+        const result = await api<InvitationAcceptResult>('/api/invitations/accept', json('POST', { token, name, password, ...(registration ? { email:address } : {}) }));
+        setEmail(result.email); setComplete(verificationNotice);
       }
-      // Remove the consumed token while keeping this public screen until a confirmed sign-in.
-      history.replaceState(null, '', flow === 'recover' ? '/recover' : '/invite');
-      setComplete(true); setPassword('');
-    } catch (error) { setMessage(errorText(error)); }
-    finally { setBusy(false); }
+      setPassword(''); setToken(''); history.replaceState(null, '', paths[flow]);
+    } catch (error) {
+      if (error instanceof ApiRequestError && error.code === 'EMAIL_NOT_VERIFIED') { setFlow('resend'); setPassword(''); }
+      setMessage(error instanceof Error ? error.message : 'Не удалось выполнить запрос. Повторите попытку.');
+    } finally { setBusy(false); }
   }
-  const emailField = <label><span>{flow === 'invite' ? 'Email для входа' : 'Email'}</span><input type="email" required maxLength={254} readOnly={flow === 'invite' && !registration} autoComplete="username" autoCapitalize="none" spellCheck={false} value={email} aria-describedby={flow === 'invite' ? 'invite-email-help' : undefined} onInvalid={event => { const text = 'Укажите email, например name@example.com. Имя в приложении для входа не подходит.'; event.currentTarget.setCustomValidity(text); setMessage(text); }} onChange={event => { event.currentTarget.setCustomValidity(''); setEmail(event.target.value); setMessage(''); }} /></label>;
+  const invalidEmail = (input: HTMLInputElement) => { const text='Укажите email, например name@example.com. Имя в приложении для входа не подходит.'; input.setCustomValidity(text); setMessage(text); };
   return <main className="auth"><header className="auth-intro"><p className="eyebrow">MARUGOTO · STARTER A1</p><h1>Японский к занятию</h1><p className="muted">Слова, конструкции и практика на слух. Понемногу, каждый день.</p><div className="cat-frame"><img src="/mascot/wave.png" width="360" height="360" alt="Кот-помощник приветствует вас" decoding="async" /></div></header>
-    {complete ? <section className="stack"><div className="notice" role="status">{flow === 'invite' ? <p>Аккаунт создан. Ваш email для входа: <strong>{email}</strong>. Если автоматический вход не завершился, войдите с этим адресом и вашим паролем. Повторно регистрироваться не нужно.</p> : <p>Пароль изменён. Войдите с новым паролем.</p>}</div><button className="primary" onClick={manualLogin}>Перейти ко входу</button></section> : <form onSubmit={submit} className="sheet stack" aria-busy={busy}>
-      <h2>{flow === 'invite' ? registration ? 'Регистрация по ссылке' : 'Принять приглашение' : flow === 'recover' ? 'Новый пароль' : 'Войти'}</h2>
-      {flow === 'login' && emailField}
-      {flow === 'invite' && <>{emailField}<div id="invite-email-help" className="status muted" role="status">{inviteLoading ? 'Проверяем ссылку…' : invitation ? registration ? 'Укажите свой email: он станет логином. Письмо для подтверждения не отправляется.' : 'Этот адрес указан в приглашении. Для входа используйте его, а не имя.' : 'Форма станет доступна после проверки ссылки.'}</div>{inviteError && <div className="notice error" role="alert"><p>{inviteError}</p><button type="button" disabled={inviteLoading} onClick={() => setInviteRetry(current => current + 1)}>Повторить проверку</button></div>}<label><span>Имя в приложении</span><input required autoComplete="nickname" value={name} maxLength={100} onChange={event => setName(event.target.value)} /></label></>}
-      <label><span>Пароль</span><input type="password" required minLength={flow === 'login' ? 1 : 8} maxLength={flow === 'login' ? undefined : 128} autoComplete={flow === 'login' ? 'current-password' : 'new-password'} value={password} onChange={event => setPassword(event.target.value)} aria-describedby="auth-help" /></label>
-      <div id="auth-help" className="status muted">{flow === 'login' ? 'Для регистрации или восстановления доступа попросите администратора выдать ссылку.' : `От 8 до 128 символов.${flow === 'invite' && registration ? ' Для восстановления доступа администратор выдаёт личную ссылку.' : ' Ссылка действует один раз.'}`}</div>
+    {complete ? <section className="stack"><div className="notice" role="status">{complete}</div>
+      <button className="primary" onClick={() => flow === 'verify' || flow === 'account' ? location.assign('/') : navigate('login')}>{flow === 'verify' || flow === 'account' ? 'Продолжить' : 'Перейти ко входу'}</button>
+      {['register','invite','resend'].includes(flow) && <button onClick={() => navigate('resend')}>Запросить письмо ещё раз</button>}
+      {flow === 'account' && <button onClick={() => { setComplete(''); }}>Запросить письмо ещё раз</button>}
+    </section> : <form onSubmit={submit} className="sheet stack" aria-busy={busy}>
+      <h2>{flow === 'invite' && registration ? 'Регистрация по ссылке' : titles[flow]}</h2>
+      {needsEmail && <label><span>{flow === 'invite' ? 'Email для входа' : 'Email'}</span><input type="email" required maxLength={254} readOnly={flow === 'account' || flow === 'invite' && !registration} autoComplete="username" autoCapitalize="none" spellCheck={false} value={email} onInvalid={event => invalidEmail(event.currentTarget)} onChange={event => { event.currentTarget.setCustomValidity(''); setEmail(event.target.value); setMessage(''); }} /></label>}
+      {(flow === 'register' || flow === 'invite') && <label><span>Имя в приложении</span><input required autoComplete="nickname" value={name} maxLength={100} onChange={event => setName(event.target.value)} /></label>}
+      {needsPassword && <label><span>{flow === 'account' ? 'Текущий пароль' : 'Пароль'}</span><input type="password" required minLength={newPassword ? 8 : 1} maxLength={newPassword ? 128 : undefined} autoComplete={newPassword ? 'new-password' : 'current-password'} value={password} onChange={event => setPassword(event.target.value)} aria-describedby="auth-help" /></label>}
+      <div id="auth-help" className="status muted">{newPassword ? 'От 8 до 128 символов.' : flow === 'account' ? 'Подтвердите текущий пароль, затем откройте письмо. Ваш доступ к занятиям и прогресс сохраняются.' : flow === 'verify' ? 'Нажмите кнопку, чтобы подтвердить адрес из письма.' : flow === 'forgot' ? 'Восстановление доступно для подтверждённой почты.' : flow === 'resend' ? 'Повторное письмо можно запросить через минуту. Для старого аккаунта подтвердите адрес после входа или обратитесь к администратору.' : 'Войдите с вашим email и паролем.'}</div>
+      {(flow === 'register' || flow === 'invite') && <p className="muted">Для доступа к тренажёру подтвердите email по ссылке в письме.</p>}
       {message && <div className="notice error" role="alert">{message}</div>}
-      {flow !== 'login' && !token ? <div className="notice error" role="alert">В ссылке нет токена. Попросите администратора выдать новую ссылку.</div> : <button className="primary" disabled={busy || flow === 'invite' && (inviteLoading || !invitation)}>{busy ? 'Сохраняем…' : flow === 'login' ? 'Войти' : flow === 'invite' ? 'Создать аккаунт' : 'Сохранить пароль'}</button>}
-      {flow === 'invite' && registration && message && <button type="button" onClick={manualLogin}>Войти с этим email</button>}
+      {needsToken && !token ? <div className="notice error" role="alert">В ссылке нет токена. Запросите новое письмо.</div> : <button className="primary" disabled={busy || flow === 'invite' && (inviteLoading || !invitation)}>{busy ? 'Подождите…' : flow === 'recover' ? 'Сохранить пароль' : flow === 'register' || flow === 'invite' ? 'Создать аккаунт' : flow === 'login' ? 'Войти' : flow === 'verify' ? 'Подтвердить почту' : 'Отправить письмо'}</button>}
+      {flow === 'invite' && !invitation && <button type="button" disabled={busy || inviteLoading} onClick={() => setInviteRetry(value => value + 1)}>Повторить проверку ссылки</button>}
+      {flow === 'login' ? <><button type="button" onClick={() => navigate('register')}>Создать аккаунт</button><button type="button" onClick={() => navigate('forgot')}>Забыли пароль?</button></> : <button type="button" disabled={busy} onClick={() => navigate('login')}>Перейти ко входу</button>}
+      {(flow === 'verify' || flow === 'register') && <button type="button" disabled={busy} onClick={() => navigate('resend')}>Запросить письмо ещё раз</button>}
+      {flow === 'recover' && <button type="button" disabled={busy} onClick={() => navigate('forgot')}>Запросить новую ссылку</button>}
     </form>}
   </main>;
 }

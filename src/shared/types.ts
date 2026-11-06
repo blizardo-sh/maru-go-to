@@ -262,7 +262,7 @@ export type InvitationDetails =
 export interface InvitationAcceptResult {
   ok: true;
   email: string;
-  authenticated: boolean;
+  authenticated: boolean; verificationRequired?: boolean;
 }
 
 export interface RegistrationLinkInput {

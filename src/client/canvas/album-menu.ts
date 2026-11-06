@@ -6,10 +6,11 @@ import { lessonPagePlan, stageSummary, type LessonStage } from './lesson-overvie
 
 type Lesson = { id: string; number: number; title: string; finished: boolean; started: boolean; parts: LessonStage[] };
 export function renderAlbumMenu(surface: StudySurface, view: PrototypeLayout, state: { page: number; capacity?: number }, options: {
-  lessons: Lesson[]; safe: (action: StudyAction) => StudyAction; learn: (id: string) => void; changed: () => void;
+  lessons: Lesson[]; safe: (action: StudyAction) => StudyAction; learn: (id: string) => void; changed: () => void; confirmEmail?: () => void;
 }) {
   const pages = contentPages(surface, true), width = Math.min(...pages.map(p => p.width)), font = width < 430 ? 16 : 17, compact = width >= 430;
-  const header = view.low ? 28 : width < 430 ? 62 : 38, footerHeight = view.low ? 46 : 54;
+  const titleHeight = view.low ? 28 : width < 430 ? 62 : 38;
+  const header = titleHeight + (options.confirmEmail ? 50 : 0), footerHeight = view.low ? 46 : 54;
   const rowHeight = Math.max(48, ...options.lessons.map(lesson => surface.measure(lesson.title, width - (compact ? 132 : 68), font) + (compact ? 23 : 40)));
   let plan = lessonPagePlan(options.lessons.length, pages.length, pages[0]!.height - header, rowHeight);
   if (plan.pages > 1) plan = lessonPagePlan(options.lessons.length, pages.length, pages[0]!.height - header - footerHeight, rowHeight);
@@ -24,6 +25,7 @@ export function renderAlbumMenu(surface: StudySurface, view: PrototypeLayout, st
     const range = items.length ? `${items[0]!.number}–${items.at(-1)!.number}` : '';
     surface.text(side ? (items.length === 1 ? `Урок ${items[0]!.number}` : `Уроки ${range}`) : 'Уроки японского', { ...page, y: page.y + 2, height: 36 }, view.low ? 19 : width < 330 ? 23 : 25);
     if (!view.low && !side) surface.text(`${options.lessons.filter(l => l.finished).length} из ${options.lessons.length} пройдено`, { x: page.x + (width < 430 ? 0 : page.width - 135), y: page.y + (width < 430 ? 36 : 13), width: 135, height: 22 }, 12).style.fill = '#65533f';
+    if (!side && options.confirmEmail) surface.action({id:'confirm-email',text:'Подтвердить почту для восстановления',fontSize:14,run:options.confirmEmail},{x:page.x,y:page.y+titleHeight,width:page.width,height:44});
     const available = page.height - header - (plan.pages > 1 ? footerHeight : 0);
     const pitch = Math.min(rowHeight + 20, available / Math.max(1, perPage));
     items.forEach((lesson, index) => {
