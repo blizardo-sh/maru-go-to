@@ -12,7 +12,14 @@ const browser=await chromium.launch({channel:'chrome',headless:true});
 const emails:string[]=[], errors:string[]=[], sensitive:string[]=[];
 async function click(page:Page,name:string) {
   if(!canvas){await page.getByRole('button',{name,exact:true}).click();return;}
-  const handle=await page.waitForFunction(name=>(window as any).__ALBUM__?.snapshot().controls?.find((control:any)=>control.text===name&&control.enabled)?.rect,name);
+  // Snapshot controls can exist behind the startup overlay while settings load.
+  // A pointer click is valid only once the Canvas actually receives that point.
+  const handle=await page.waitForFunction(name=>{
+    const control=(window as any).__ALBUM__?.snapshot().controls?.find((item:any)=>item.text===name&&item.enabled);
+    if(!control)return false;
+    const {x,y,width,height}=control.rect;
+    return document.elementFromPoint(x+width/2,y+height/2)?.tagName==='CANVAS'&&control.rect;
+  },name);
   const rect=await handle.jsonValue();await handle.dispose();
   await page.mouse.click(rect.x+rect.width/2,rect.y+rect.height/2);
 }
@@ -60,9 +67,18 @@ try {
         // Simulate the grandfathered migration state while keeping the live session.
         await database.sql`update users set email_verified=false,email_verification_required=false where email=${email}`;
         await database.sql`update auth_limits set expires_at=now()-interval '1 second' where key=${'mail:verify:cooldown:'+tokenHash(email)}`;
-        await resetPage.goto(base+'/');
+        if(canvas){
+          let release!:()=>void;
+          const settingsGate=new Promise<void>(resolve=>{release=resolve;});
+          await resetPage.route('**/api/settings',async route=>{await settingsGate;await route.continue();});
+          try{
+            await resetPage.goto(base+'/',{waitUntil:'domcontentloaded'});
+            await resetPage.waitForFunction(()=>(window as any).__ALBUM__?.snapshot().controls?.some((control:any)=>control.id==='confirm-email'));
+            await expect(resetPage.locator('#startup')).toBeVisible();
+          }finally{release();}
+        }else await resetPage.goto(base+'/');
         if(canvas)await click(resetPage,'Подтвердить почту для восстановления');else await resetPage.getByRole('link',{name:'Подтвердить почту',exact:true}).click();
-        if(canvas)await resetPage.waitForFunction(()=>(window as any).__ALBUM__?.snapshot().controls?.some((control:any)=>control.id==='access-submit'));
+        if(canvas){await resetPage.waitForFunction(()=>(window as any).__ALBUM__?.snapshot().controls?.some((control:any)=>control.id==='access-submit'));await resetPage.unroute('**/api/settings');}
         try{await expect(resetPage.getByRole('textbox',{name:canvas?'Электронная почта':'Email',exact:true})).toHaveValue(email);}catch(error){if(canvas)console.info(await resetPage.evaluate(()=>({path:location.pathname,access:(window as any).__ALBUM__?.snapshot().access})));throw error;}
         await resetPage.getByLabel(canvas?'Пароль':'Текущий пароль',{exact:true}).fill(replacement);
         const proof=resetPage.waitForResponse(response=>new URL(response.url()).pathname==='/api/account/verify-email/request');
