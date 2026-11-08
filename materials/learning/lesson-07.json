@@ -1127,7 +1127,7 @@
         ],
         "surface": "テレビ",
         "kana": "テレビ",
-        "meaningRu": "телевизор",
+        "meaningRu": "телевизор; телевидение",
         "segments": [
           {
             "surface": "テレビ"
@@ -1152,6 +1152,13 @@
             "row": 1,
             "entry": "テレビ",
             "label": "Словарь · урок 2"
+          },
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+            "entry": "テレビ",
+            "label": "Словарь EN · урок 7 · уточнение русского перевода",
+            "page": 4
           }
         ],
         "audioUrl": "/audio/56e8bbdaf88d7aaef071.m4a"
@@ -1240,7 +1247,7 @@
         ],
         "surface": "あります",
         "kana": "あります",
-        "meaningRu": "находиться, быть (о неодушевленных предметах)",
+        "meaningRu": "находиться, быть (о неодушевлённых предметах); проводиться (о мероприятии)",
         "segments": [
           {
             "surface": "あります"
@@ -1265,6 +1272,13 @@
             "row": 58,
             "entry": "あります",
             "label": "Словарь · урок 6"
+          },
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+            "entry": "あります",
+            "label": "Словарь EN · урок 7 · уточнение русского перевода",
+            "page": 4
           }
         ],
         "audioUrl": "/audio/2fef2540ccddf538a287.m4a"

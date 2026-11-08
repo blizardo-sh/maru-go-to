@@ -1,0 +1,913 @@
+{
+  "lessonId": "marugoto.pre-intermediate-a2b1.topic.07",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Обсуждаем проблемы",
+  "goals": [
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.07.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.07.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.15b966637e50a660",
+              "explanationRu": "В этой ситуации: совет(советоваться)",
+              "example": {
+                "surface": "家族のことで相談したいです。",
+                "kana": "かぞくのことでそうだんしたいです。",
+                "segments": [
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "のことで"
+                  },
+                  {
+                    "surface": "相談",
+                    "reading": "そうだん"
+                  },
+                  {
+                    "surface": "したいです。"
+                  }
+                ],
+                "meaningRu": "Я хочу посоветоваться по поводу семьи.",
+                "audioUrl": "/audio/marugoto/cebe903b809782e7.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.07.grammar.242",
+      "titleRu": "～て（い）て",
+      "introductionRu": "て-форма соединяет причину и состояние; в разговоре ている часто сокращается до てる.",
+      "canDoIds": [
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.07.part.grammar.242",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.242",
+            "explanationRu": "て-форма соединяет причину и состояние; в разговоре ている часто сокращается до てる.",
+            "example": {
+              "surface": "最近忙しくて少し疲れています。",
+              "kana": "さいきんいそがしくてすこしつかれています。",
+              "segments": [
+                {
+                  "surface": "最近",
+                  "reading": "さいきん"
+                },
+                {
+                  "surface": "忙",
+                  "reading": "いそが"
+                },
+                {
+                  "surface": "しくて"
+                },
+                {
+                  "surface": "少",
+                  "reading": "すこ"
+                },
+                {
+                  "surface": "し"
+                },
+                {
+                  "surface": "疲",
+                  "reading": "つか"
+                },
+                {
+                  "surface": "れています。"
+                }
+              ],
+              "meaningRu": "В последнее время я занят и немного устал.",
+              "audioUrl": "/audio/marugoto/ca32453051e9d116.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "最近",
+                "explanationRu": "Смысловой фрагмент: В последнее время я занят и немного устал."
+              },
+              {
+                "text": "忙しくて",
+                "explanationRu": "Смысловой фрагмент: В последнее время я занят и немного устал."
+              },
+              {
+                "text": "少し",
+                "explanationRu": "Смысловой фрагмент: В последнее время я занят и немного устал."
+              },
+              {
+                "text": "疲れています",
+                "explanationRu": "て-форма соединяет причину и состояние; в разговоре ている часто сокращается до てる."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.07.grammar.243",
+      "titleRu": "～のことで",
+      "introductionRu": "のことで обозначает тему беспокойства или консультации.",
+      "canDoIds": [
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.07.part.grammar.243",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.243",
+            "explanationRu": "のことで обозначает тему беспокойства или консультации.",
+            "example": {
+              "surface": "家族のことで相談したいです。",
+              "kana": "かぞくのことでそうだんしたいです。",
+              "segments": [
+                {
+                  "surface": "家族",
+                  "reading": "かぞく"
+                },
+                {
+                  "surface": "のことで"
+                },
+                {
+                  "surface": "相談",
+                  "reading": "そうだん"
+                },
+                {
+                  "surface": "したいです。"
+                }
+              ],
+              "meaningRu": "Я хочу посоветоваться по поводу семьи.",
+              "audioUrl": "/audio/marugoto/cebe903b809782e7.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "家族のことで",
+                "explanationRu": "Смысловой фрагмент: Я хочу посоветоваться по поводу семьи."
+              },
+              {
+                "text": "相談したいです",
+                "explanationRu": "のことで обозначает тему беспокойства или консультации."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.07.grammar.244",
+      "titleRu": "～かもしれない",
+      "introductionRu": "かもしれません осторожно выдвигает предположение о другом человеке.",
+      "canDoIds": [
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.07.part.grammar.244",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.244",
+            "explanationRu": "かもしれません осторожно выдвигает предположение о другом человеке.",
+            "example": {
+              "surface": "友達も困っているかもしれません。",
+              "kana": "ともだちもこまっているかもしれません。",
+              "segments": [
+                {
+                  "surface": "友達",
+                  "reading": "ともだち"
+                },
+                {
+                  "surface": "も"
+                },
+                {
+                  "surface": "困",
+                  "reading": "こま"
+                },
+                {
+                  "surface": "っているかもしれません。"
+                }
+              ],
+              "meaningRu": "Возможно, друг тоже испытывает трудности.",
+              "audioUrl": "/audio/marugoto/1acba68df2958a33.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "友達も",
+                "explanationRu": "Смысловой фрагмент: Возможно, друг тоже испытывает трудности."
+              },
+              {
+                "text": "困っているかも",
+                "explanationRu": "Смысловой фрагмент: Возможно, друг тоже испытывает трудности."
+              },
+              {
+                "text": "しれません",
+                "explanationRu": "かもしれません осторожно выдвигает предположение о другом человеке."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.07.grammar.245",
+      "titleRu": "～のに",
+      "introductionRu": "のに показывает несоответствие ожиданию и часто передаёт недовольство.",
+      "canDoIds": [
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.07.part.grammar.245",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.245",
+            "explanationRu": "のに показывает несоответствие ожиданию и часто передаёт недовольство.",
+            "example": {
+              "surface": "一緒にいるのに友達はスマホばかり見ています。",
+              "kana": "いっしょにいるのにともだちはスマホばかりみています。",
+              "segments": [
+                {
+                  "surface": "一緒",
+                  "reading": "いっしょ"
+                },
+                {
+                  "surface": "にいるのに"
+                },
+                {
+                  "surface": "友達",
+                  "reading": "ともだち"
+                },
+                {
+                  "surface": "はスマホばかり"
+                },
+                {
+                  "surface": "見",
+                  "reading": "み"
+                },
+                {
+                  "surface": "ています。"
+                }
+              ],
+              "meaningRu": "Хотя мы вместе, друг всё время смотрит в телефон.",
+              "audioUrl": "/audio/marugoto/7eb8c86fc90df94b.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "一緒にいるのに",
+                "explanationRu": "Смысловой фрагмент: Хотя мы вместе, друг всё время смотрит в телефон."
+              },
+              {
+                "text": "友達は",
+                "explanationRu": "Смысловой фрагмент: Хотя мы вместе, друг всё время смотрит в телефон."
+              },
+              {
+                "text": "スマホばかり",
+                "explanationRu": "Смысловой фрагмент: Хотя мы вместе, друг всё время смотрит в телефон."
+              },
+              {
+                "text": "見ています",
+                "explanationRu": "のに показывает несоответствие ожиданию и часто передаёт недовольство."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.07.grammar.246",
+      "titleRu": "～て欲しい",
+      "introductionRu": "Человек + に + てほしい выражает желаемое действие другого человека.",
+      "canDoIds": [
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.07.part.grammar.246",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.246",
+            "explanationRu": "Человек + に + てほしい выражает желаемое действие другого человека.",
+            "example": {
+              "surface": "友達に話を聞いてほしいです。",
+              "kana": "ともだちにはなしをきいてほしいです。",
+              "segments": [
+                {
+                  "surface": "友達",
+                  "reading": "ともだち"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "話",
+                  "reading": "はなし"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "聞",
+                  "reading": "き"
+                },
+                {
+                  "surface": "いてほしいです。"
+                }
+              ],
+              "meaningRu": "Я хочу, чтобы друг меня выслушал.",
+              "audioUrl": "/audio/marugoto/58e4a945c58ce902.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "友達に",
+                "explanationRu": "Смысловой фрагмент: Я хочу, чтобы друг меня выслушал."
+              },
+              {
+                "text": "話を",
+                "explanationRu": "Смысловой фрагмент: Я хочу, чтобы друг меня выслушал."
+              },
+              {
+                "text": "聞いてほしいです",
+                "explanationRu": "Человек + に + てほしい выражает желаемое действие другого человека."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.30.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        30
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.30.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.30",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Обсудите обеспокоенный вид знакомого, отделив наблюдение от догадки.",
+              "canDoIds": [
+                30
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Обсудите обеспокоенный вид знакомого, отделив наблюдение от догадки.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "アキさんは最近、元気がないですね。仕事のことで困っているかもしれません。",
+                "kana": "アキさんはさいきん、げんきがないですね。しごとのことでこまっているかもしれません。",
+                "segments": [
+                  {
+                    "surface": "アキさんは"
+                  },
+                  {
+                    "surface": "最近",
+                    "reading": "さいきん"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "元気",
+                    "reading": "げんき"
+                  },
+                  {
+                    "surface": "がないですね。"
+                  },
+                  {
+                    "surface": "仕事",
+                    "reading": "しごと"
+                  },
+                  {
+                    "surface": "のことで"
+                  },
+                  {
+                    "surface": "困",
+                    "reading": "こま"
+                  },
+                  {
+                    "surface": "っているかもしれません。"
+                  }
+                ],
+                "meaningRu": "Аки в последнее время выглядит невесёлым. Возможно, испытывает трудности на работе.",
+                "audioUrl": "/audio/marugoto/13a20d14ebe032c3.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Обсудите обеспокоенный вид знакомого, отделив наблюдение от догадки.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.31.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        31
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.31.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.31",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Начните разговор с расстроенным человеком и предложите выслушать.",
+              "canDoIds": [
+                31
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Начните разговор с расстроенным человеком и предложите выслушать.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "少し疲れているみたいですね。何かありましたか。よかったら、話してください。",
+                "kana": "すこしつかれているみたいですね。なにかありましたか。よかったら、はなしてください。",
+                "segments": [
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "疲",
+                    "reading": "つか"
+                  },
+                  {
+                    "surface": "れているみたいですね。"
+                  },
+                  {
+                    "surface": "何",
+                    "reading": "なに"
+                  },
+                  {
+                    "surface": "かありましたか。よかったら、"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "してください。"
+                  }
+                ],
+                "meaningRu": "Вы выглядите немного уставшим. Что-то случилось? Если хотите, расскажите.",
+                "audioUrl": "/audio/marugoto/15bcaa4e4f6deeb3.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Начните разговор с расстроенным человеком и предложите выслушать.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.32.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        32
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.32.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.32",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Перескажите небольшое обсуждение проблем друзей и выскажите своё мнение.",
+              "canDoIds": [
+                32
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Перескажите небольшое обсуждение проблем друзей и выскажите своё мнение.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "友達二人に聞きました。二人とも時間が足りないと言っていました。私も、休む時間を作ることが大切だと思います。",
+                "kana": "ともだちふたりにききました。ふたりともじかんがたりないといっていました。わたしも、やすむじかんをつくることがたいせつだとおもいます。",
+                "segments": [
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "二人",
+                    "reading": "ふたり"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "聞",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "きました。"
+                  },
+                  {
+                    "surface": "二人",
+                    "reading": "ふたり"
+                  },
+                  {
+                    "surface": "とも"
+                  },
+                  {
+                    "surface": "時間",
+                    "reading": "じかん"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "足",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "りないと"
+                  },
+                  {
+                    "surface": "言",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "っていました。"
+                  },
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "も、"
+                  },
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "む"
+                  },
+                  {
+                    "surface": "時間",
+                    "reading": "じかん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "ることが"
+                  },
+                  {
+                    "surface": "大切",
+                    "reading": "たいせつ"
+                  },
+                  {
+                    "surface": "だと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "います。"
+                  }
+                ],
+                "meaningRu": "Я спросил двух друзей. Оба сказали, что не хватает времени. Я тоже считаю важным находить время для отдыха.",
+                "audioUrl": "/audio/marugoto/fc49823980fafe6d.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Перескажите небольшое обсуждение проблем друзей и выскажите своё мнение.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.33.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        33
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.33.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.33",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте сообщение о проблеме и определите, чего хочет автор.",
+              "canDoIds": [
+                33
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "友達と会っているのに、友達はずっとスマホを見ています。忙しいのは分かりますが、少し寂しいです。会っているときは、私の話も聞いてほしいです。",
+                  "kana": "ともだちとあっているのに、ともだちはずっとスマホをみています。いそがしいのはわかりますが、すこしさびしいです。あっているときは、わたしのはなしもきいてほしいです。",
+                  "segments": [
+                    {
+                      "surface": "友達",
+                      "reading": "ともだち"
+                    },
+                    {
+                      "surface": "と"
+                    },
+                    {
+                      "surface": "会",
+                      "reading": "あ"
+                    },
+                    {
+                      "surface": "っているのに、"
+                    },
+                    {
+                      "surface": "友達",
+                      "reading": "ともだち"
+                    },
+                    {
+                      "surface": "はずっとスマホを"
+                    },
+                    {
+                      "surface": "見",
+                      "reading": "み"
+                    },
+                    {
+                      "surface": "ています。"
+                    },
+                    {
+                      "surface": "忙",
+                      "reading": "いそが"
+                    },
+                    {
+                      "surface": "しいのは"
+                    },
+                    {
+                      "surface": "分",
+                      "reading": "わ"
+                    },
+                    {
+                      "surface": "かりますが、"
+                    },
+                    {
+                      "surface": "少",
+                      "reading": "すこ"
+                    },
+                    {
+                      "surface": "し"
+                    },
+                    {
+                      "surface": "寂",
+                      "reading": "さび"
+                    },
+                    {
+                      "surface": "しいです。"
+                    },
+                    {
+                      "surface": "会",
+                      "reading": "あ"
+                    },
+                    {
+                      "surface": "っているときは、"
+                    },
+                    {
+                      "surface": "私",
+                      "reading": "わたし"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "話",
+                      "reading": "はなし"
+                    },
+                    {
+                      "surface": "も"
+                    },
+                    {
+                      "surface": "聞",
+                      "reading": "き"
+                    },
+                    {
+                      "surface": "いてほしいです。"
+                    }
+                  ],
+                  "meaningRu": "Мы встречаемся, но друг всё время смотрит в телефон. Я понимаю, что он занят, но мне немного одиноко. На встрече я хочу, чтобы меня тоже слушали.",
+                  "audioUrl": "/audio/marugoto/75e9def3fd1a68d7.m4a"
+                }
+              ],
+              "questionRu": "В чём основное желание автора?",
+              "options": [
+                {
+                  "id": "b",
+                  "text": "Чтобы друг совсем отказался от телефона"
+                },
+                {
+                  "id": "a",
+                  "text": "Чтобы друг уделял внимание разговору при встрече"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Мы встречаемся, но друг всё время смотрит в телефон. Я понимаю, что он занят, но мне немного одиноко. На встрече я хочу, чтобы меня тоже слушали."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.34.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        34
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.34.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.34",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте совет в ответ на проблему и выделите предлагаемый первый шаг.",
+              "canDoIds": [
+                34
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "いきなり怒らないで、自分が寂しいと思っていることを伝えてみませんか。友達は気づいていないかもしれません。二人で話す時間を決めてもいいと思います。",
+                  "kana": "いきなりおこらないで、じぶんがさびしいとおもっていることをつたえてみませんか。ともだちはきづいていないかもしれません。ふたりではなすじかんをきめてもいいとおもいます。",
+                  "segments": [
+                    {
+                      "surface": "いきなり"
+                    },
+                    {
+                      "surface": "怒",
+                      "reading": "おこ"
+                    },
+                    {
+                      "surface": "らないで、"
+                    },
+                    {
+                      "surface": "自分",
+                      "reading": "じぶん"
+                    },
+                    {
+                      "surface": "が"
+                    },
+                    {
+                      "surface": "寂",
+                      "reading": "さび"
+                    },
+                    {
+                      "surface": "しいと"
+                    },
+                    {
+                      "surface": "思",
+                      "reading": "おも"
+                    },
+                    {
+                      "surface": "っていることを"
+                    },
+                    {
+                      "surface": "伝",
+                      "reading": "つた"
+                    },
+                    {
+                      "surface": "えてみませんか。"
+                    },
+                    {
+                      "surface": "友達",
+                      "reading": "ともだち"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "気",
+                      "reading": "き"
+                    },
+                    {
+                      "surface": "づいていないかもしれません。"
+                    },
+                    {
+                      "surface": "二人",
+                      "reading": "ふたり"
+                    },
+                    {
+                      "surface": "で"
+                    },
+                    {
+                      "surface": "話",
+                      "reading": "はな"
+                    },
+                    {
+                      "surface": "す"
+                    },
+                    {
+                      "surface": "時間",
+                      "reading": "じかん"
+                    },
+                    {
+                      "surface": "を"
+                    },
+                    {
+                      "surface": "決",
+                      "reading": "き"
+                    },
+                    {
+                      "surface": "めてもいいと"
+                    },
+                    {
+                      "surface": "思",
+                      "reading": "おも"
+                    },
+                    {
+                      "surface": "います。"
+                    }
+                  ],
+                  "meaningRu": "Вместо того чтобы сразу сердиться, попробуйте сказать, что вам одиноко. Друг мог не заметить. Можно договориться о времени для разговора.",
+                  "audioUrl": "/audio/marugoto/608275727df61802.m4a"
+                }
+              ],
+              "questionRu": "Что советуют сделать сначала?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Спокойно рассказать о своих чувствах"
+                },
+                {
+                  "id": "b",
+                  "text": "Сразу прекратить дружбу"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Вместо того чтобы сразу сердиться, попробуйте сказать, что вам одиноко. Друг мог не заметить. Можно договориться о времени для разговора."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

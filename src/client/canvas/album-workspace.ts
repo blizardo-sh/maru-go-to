@@ -1,6 +1,7 @@
+import { ratingOptions } from '@app/client/review-ratings';
 import { api, json } from '@app/client/api';
 import { learningHeaders } from '@app/client/guidedApi';
-import type { AnalysisResult, ReviewItem, TargetEvaluationResult, TrainingContext } from '@app/shared/types';
+import type { AnalysisResult, Rating, ReviewSchedule, ReviewItem, TargetEvaluationResult, TrainingContext } from '@app/shared/types';
 import { renderReading } from './album-reading';
 import { misplacedTokens } from './builder-mistakes';
 import { preparedWorkspace, moveWorkspaceToken, placeWorkspaceToken, type WorkspaceToken } from '@app/client/workspace';
@@ -83,10 +84,10 @@ export class AlbumWorkspace {
 }
 
 export function renderWorkspace(surface: StudySurface, model: AlbumWorkspace, options: {
-  prompt?: Rect; safe: (action: StudyAction) => StudyAction; drawField: (rect: Rect, value: string, placeholder: string, changed: (value: string) => void) => void;
-  changed: () => void; composing: boolean; busy: boolean; revealed: boolean; check: () => void; analyze: () => void; grade: (rating: 1 | 3) => void;
+  schedule?: ReviewSchedule; prompt?: Rect; safe: (action: StudyAction) => StudyAction; drawField: (rect: Rect, value: string, placeholder: string, changed: (value: string) => void) => void;
+  changed: () => void; composing: boolean; busy: boolean; revealed: boolean; check: () => void; analyze: () => void; grade: (rating: Rating) => void;
 }) {
-  const a = surface.body, safe = options.safe, footer = (actions: StudyAction[]) => surface.footer(actions.map(action => safe({ ...action, fontSize: 16 })));
+  const a = surface.body, safe = options.safe, footer = (actions: StudyAction[]) => surface.footer(actions.map(action => safe({ ...action, fontSize: action.id.startsWith('grade-') ? 14 : 16 })));
   const label = (token: WorkspaceToken) => surface.script === 'kana' ? model.value(token).kana : model.value(token).surface;
   if (model.error) {
     surface.text(model.error, a, 18); footer([{ id: 'workspace-reload', text: 'Загрузить черновик', run: () => { try { model.restore(); } catch (error) { model.error = error instanceof Error ? error.message : 'Черновик недоступен.'; } options.changed(); } }]); return;
@@ -124,7 +125,7 @@ export function renderWorkspace(surface: StudySurface, model: AlbumWorkspace, op
     { id: 'workspace-add', text: '+ Слово', run: () => { model.editing = 'add'; model.afterId = undefined; model.search = ''; options.changed(); } },
     { id: 'workspace-reset', text: a.width < 300 ? 'Сброс' : 'Сначала', accessibleLabel: 'Начать фразу заново', run: () => model.reset() },
   ];
-  surface.row(tools.map(action => safe({ ...action, fontSize: 16 })), { x: area.x, y: options.prompt ? area.y : area.y - 50, width: area.width, height: 44 });
+  surface.row(tools.map(action => safe({ ...action, fontSize: action.id.startsWith('grade-') ? 14 : 16 })), { x: area.x, y: options.prompt ? area.y : area.y - 50, width: area.width, height: 44 });
   const workspace = options.prompt ? { ...area, y: area.y + 54, height: area.height - 54 } : area;
   const sentence = options.prompt ? { ...prompt, y: prompt.y + surface.measure(model.exercise.promptRu, prompt.width - 16, 18) + 18, height: prompt.height - surface.measure(model.exercise.promptRu, prompt.width - 16, 18) - 18 } : undefined;
   const bank = model.bankOrder.filter(id => !model.tokens.some(token => token.id === id)).map(id => { const token = model.original.find(token => token.id === id)!; return safe({ id: 'token:' + model.original.findIndex(token => token.id === id), text: label(token), accessibleLabel: 'Добавить: ' + label(token), run: () => model.add(id) }); });
@@ -147,5 +148,5 @@ export function renderWorkspace(surface: StudySurface, model: AlbumWorkspace, op
     node.removeAllListeners('pointertap'); node.on('pointertap', () => { if (!moved) action.run(); });
     node.on('pointerup', drop); node.on('pointerupoutside', drop);
   }
-  footer(model.manualText === null && !model.exploring && !!model.verdict ? [{ id: 'grade-again', text: 'Ещё раз', run: () => options.grade(1) }, { id: 'grade-remember', text: 'Помню', run: () => options.grade(3) }] : [{ id: 'builder-check', text: model.exploring || model.manualText !== null ? 'Разобрать фразу' : 'Проверить', enabled: !options.composing && !model.checking && !!model.text.trim(), run: model.exploring || model.manualText !== null ? options.analyze : options.check }]);
+  footer(model.manualText === null && !model.exploring && !!model.verdict ? ratingOptions(options.schedule).map(option => ({...option, enabled: option.rating === 1 || model.verdict === 'correct', run: () => options.grade(option.rating)})) : [{ id: 'builder-check', text: model.exploring || model.manualText !== null ? 'Разобрать фразу' : 'Проверить', enabled: !options.composing && !model.checking && !!model.text.trim(), run: model.exploring || model.manualText !== null ? options.analyze : options.check }]);
 }

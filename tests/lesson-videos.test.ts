@@ -57,7 +57,7 @@ test('goals resolve videos within their own lesson and Can-do, with no repeated 
 });
 
 test('all 18 lessons publish the 80 source-linked dialogue clips, while the four pilot step IDs remain exact',()=>{
- const published=loadCourse();const all=published.lessons.flatMap(lesson=>lesson.videos??[]);
+ const published=loadCourse({includeBooks:false});const all=published.lessons.flatMap(lesson=>lesson.videos??[]);
  expect(all).toHaveLength(80);expect(all.filter(item=>item.variant==='practice')).toHaveLength(44);expect(all.filter(item=>item.variant==='challenge')).toHaveLength(36);
  for(const lesson of published.lessons){
   expect(lesson.videos!.length).toBeGreaterThanOrEqual(2);

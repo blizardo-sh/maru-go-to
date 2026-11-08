@@ -3,6 +3,7 @@ import type { Database } from './db';
 import { defaultSoundSettings } from '../shared/sound';
 import { repeatTypes } from '../shared/types';
 import { settingsSchema } from './validation';
+import { lexemeIds } from '../shared/meanings';
 export const defaultSettings: LearnerSettings={lessonStatuses:{},focusLessonIds:[],focusCanDoIds:[],focusSkillIds:[],enabledListIds:[],freeLessonIds:[],freeScopes:{words:'studied',particles:'studied',constructions:'studied',forms:'studied'},orthography:'furigana',newWordsPerDay:5,newSkillsPerDay:2,animations:true,repeatTypesVersion:2,repeatTypes:[...repeatTypes],...defaultSoundSettings};
 export async function settingsFor(database:Database,userId:string):Promise<LearnerSettings>{
  const [row]=await database.sql`select settings from preferences where user_id=${userId}`;
@@ -16,9 +17,10 @@ export async function allWords(database:Pick<Database,'sql'>,userId:string,cours
  return [...course.words,...rows.map((r:any)=>r.data as Word)];
 }
 export interface MaterialAccess { wordIds:Set<string>; skillIds:Set<string>; exerciseIds?:Set<string> }
-export async function introducedMaterial(database:Database,userId:string):Promise<MaterialAccess>{
+export async function introducedMaterial(database:Database,userId:string,course?:Course):Promise<MaterialAccess>{
  const rows=await database.sql`select item_id,mode from review_states where user_id=${userId}`;
- return {wordIds:new Set(rows.filter((row:any)=>row.mode!=='grammar'&&row.mode!=='counter').map((row:any)=>row.item_id as string)),skillIds:new Set(rows.filter((row:any)=>row.mode==='grammar').map((row:any)=>row.item_id as string))};
+ const targets=rows.filter((row:any)=>row.mode!=='grammar'&&row.mode!=='counter').map((row:any)=>row.item_id as string);
+ return {wordIds:course?lexemeIds(course,targets):new Set(targets),skillIds:new Set(rows.filter((row:any)=>row.mode==='grammar').map((row:any)=>row.item_id as string))};
 }
 export function validSegments(word:Pick<Word,'surface'|'kana'|'segments'>){
  return !!word.kana&&word.segments.map(s=>s.surface).join('')===word.surface&&word.segments.map(s=>s.reading??s.surface).join('')===word.kana;

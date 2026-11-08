@@ -1,0 +1,857 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.09",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Опыт изучения языков",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.09.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.09.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.meaning.ee8a6a7101ea26bd",
+              "explanationRu": "В этой ситуации: еще",
+              "example": {
+                "surface": "もう一度お願いします。",
+                "kana": "もういちどおねがいします。",
+                "segments": [
+                  {
+                    "surface": "もう一度お願いします。",
+                    "reading": "もういちどおねがいします。"
+                  }
+                ],
+                "meaningRu": "Ещё раз, пожалуйста.",
+                "audioUrl": "/audio/marugoto/04bc80c4b64e6066.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.fd108aa9a25d41ef",
+              "explanationRu": "В этой ситуации: французский язык",
+              "example": {
+                "surface": "フランス語は聞くのが楽しいです。",
+                "kana": "フランスごはきくのがたのしいです。",
+                "segments": [
+                  {
+                    "surface": "フランス"
+                  },
+                  {
+                    "surface": "語",
+                    "reading": "ご"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "聞",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "くのが"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しいです。"
+                  }
+                ],
+                "meaningRu": "Французскую речь приятно слушать.",
+                "audioUrl": "/audio/marugoto/d6a74b9af66379bd.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.409d9076811276ee",
+              "explanationRu": "В этой ситуации: сложный",
+              "example": {
+                "surface": "日本語は漢字が難しいです。",
+                "kana": "にほんごはかんじがむずかしいです。",
+                "segments": [
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "漢字",
+                    "reading": "かんじ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "難",
+                    "reading": "むずか"
+                  },
+                  {
+                    "surface": "しいです。"
+                  }
+                ],
+                "meaningRu": "В японском языке трудны иероглифы.",
+                "audioUrl": "/audio/marugoto/aab79baae00586df.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.75940f8e3733af4b",
+              "explanationRu": "В этой ситуации: Франция",
+              "example": {
+                "surface": "フランス語は聞くのが楽しいです。",
+                "kana": "フランスごはきくのがたのしいです。",
+                "segments": [
+                  {
+                    "surface": "フランス"
+                  },
+                  {
+                    "surface": "語",
+                    "reading": "ご"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "聞",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "くのが"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しいです。"
+                  }
+                ],
+                "meaningRu": "Французскую речь приятно слушать.",
+                "audioUrl": "/audio/marugoto/d6a74b9af66379bd.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.ad26604516060e1e",
+              "explanationRu": "В этой ситуации: один раз",
+              "example": {
+                "surface": "もう一度読んでくださいませんか。",
+                "kana": "もういちどよんでくださいませんか。",
+                "segments": [
+                  {
+                    "surface": "もう"
+                  },
+                  {
+                    "surface": "一度",
+                    "reading": "いちど"
+                  },
+                  {
+                    "surface": "読",
+                    "reading": "よ"
+                  },
+                  {
+                    "surface": "んでくださいませんか。"
+                  }
+                ],
+                "meaningRu": "Не могли бы вы прочитать ещё раз?",
+                "audioUrl": "/audio/marugoto/474b42525239d43e.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.09.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.09.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.6f82e7260f603aaa",
+              "explanationRu": "В этой ситуации: иероглифы",
+              "example": {
+                "surface": "日本語は漢字が難しいです。",
+                "kana": "にほんごはかんじがむずかしいです。",
+                "segments": [
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "漢字",
+                    "reading": "かんじ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "難",
+                    "reading": "むずか"
+                  },
+                  {
+                    "surface": "しいです。"
+                  }
+                ],
+                "meaningRu": "В японском языке трудны иероглифы.",
+                "audioUrl": "/audio/marugoto/aab79baae00586df.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.f07e2c9caacb6b93",
+              "explanationRu": "В этой ситуации: год",
+              "example": {
+                "surface": "学生のとき、英語を勉強しました。去年、日本語を始めました。",
+                "kana": "がくせいのとき、えいごをべんきょうしました。きょねん、にほんごをはじめました。",
+                "segments": [
+                  {
+                    "surface": "学生",
+                    "reading": "がくせい"
+                  },
+                  {
+                    "surface": "のとき、"
+                  },
+                  {
+                    "surface": "英語",
+                    "reading": "えいご"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "勉強",
+                    "reading": "べんきょう"
+                  },
+                  {
+                    "surface": "しました。"
+                  },
+                  {
+                    "surface": "去年",
+                    "reading": "きょねん"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "始",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "めました。"
+                  }
+                ],
+                "meaningRu": "В студенческие годы я изучал английский. В прошлом году начал японский.",
+                "audioUrl": "/audio/marugoto/0de5197407ef4659.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.09.grammar.97",
+      "titleRu": "～は～が～",
+      "introductionRu": "は задаёт общую тему, が выделяет её свойство или часть.",
+      "canDoIds": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.09.part.grammar.97",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.97",
+            "explanationRu": "は задаёт общую тему, が выделяет её свойство или часть.",
+            "example": {
+              "surface": "日本語は漢字が難しいです。",
+              "kana": "にほんごはかんじがむずかしいです。",
+              "segments": [
+                {
+                  "surface": "日本語",
+                  "reading": "にほんご"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "漢字",
+                  "reading": "かんじ"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "難",
+                  "reading": "むずか"
+                },
+                {
+                  "surface": "しいです。"
+                }
+              ],
+              "meaningRu": "В японском языке трудны иероглифы.",
+              "audioUrl": "/audio/marugoto/aab79baae00586df.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "日本語は",
+                "explanationRu": "Смысловой фрагмент: В японском языке трудны иероглифы."
+              },
+              {
+                "text": "漢字が",
+                "explanationRu": "Смысловой фрагмент: В японском языке трудны иероглифы."
+              },
+              {
+                "text": "難しいです",
+                "explanationRu": "は задаёт общую тему, が выделяет её свойство или часть."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.09.grammar.98",
+      "titleRu": "～は～のが～",
+      "introductionRu": "Глагол в словарной форме + の обозначает действие как предмет оценки.",
+      "canDoIds": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.09.part.grammar.98",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.98",
+            "explanationRu": "Глагол в словарной форме + の обозначает действие как предмет оценки.",
+            "example": {
+              "surface": "フランス語は聞くのが楽しいです。",
+              "kana": "フランスごはきくのがたのしいです。",
+              "segments": [
+                {
+                  "surface": "フランス"
+                },
+                {
+                  "surface": "語",
+                  "reading": "ご"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "聞",
+                  "reading": "き"
+                },
+                {
+                  "surface": "くのが"
+                },
+                {
+                  "surface": "楽",
+                  "reading": "たの"
+                },
+                {
+                  "surface": "しいです。"
+                }
+              ],
+              "meaningRu": "Французскую речь приятно слушать.",
+              "audioUrl": "/audio/marugoto/d6a74b9af66379bd.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "フランス語は",
+                "explanationRu": "Смысловой фрагмент: Французскую речь приятно слушать."
+              },
+              {
+                "text": "聞くのが",
+                "explanationRu": "Смысловой фрагмент: Французскую речь приятно слушать."
+              },
+              {
+                "text": "楽しいです",
+                "explanationRu": "Глагол в словарной форме + の обозначает действие как предмет оценки."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.09.grammar.99",
+      "titleRu": "～てくださいませんか",
+      "introductionRu": "てくださいませんか — мягкая вежливая просьба.",
+      "canDoIds": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.09.part.grammar.99",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.99",
+            "explanationRu": "てくださいませんか — мягкая вежливая просьба.",
+            "example": {
+              "surface": "もう一度読んでくださいませんか。",
+              "kana": "もういちどよんでくださいませんか。",
+              "segments": [
+                {
+                  "surface": "もう"
+                },
+                {
+                  "surface": "一度",
+                  "reading": "いちど"
+                },
+                {
+                  "surface": "読",
+                  "reading": "よ"
+                },
+                {
+                  "surface": "んでくださいませんか。"
+                }
+              ],
+              "meaningRu": "Не могли бы вы прочитать ещё раз?",
+              "audioUrl": "/audio/marugoto/474b42525239d43e.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "もう一度",
+                "explanationRu": "Смысловой фрагмент: Не могли бы вы прочитать ещё раз?"
+              },
+              {
+                "text": "読んで",
+                "explanationRu": "Смысловой фрагмент: Не могли бы вы прочитать ещё раз?"
+              },
+              {
+                "text": "くださいませんか",
+                "explanationRu": "てくださいませんか — мягкая вежливая просьба."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.09.grammar.100",
+      "titleRu": "～かた",
+      "introductionRu": "Основа перед ます + 方 обозначает способ действия.",
+      "canDoIds": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.09.part.grammar.100",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.100",
+            "explanationRu": "Основа перед ます + 方 обозначает способ действия.",
+            "example": {
+              "surface": "この字の書き方を教えてください。",
+              "kana": "このじのかきかたをおしえてください。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "字",
+                  "reading": "じ"
+                },
+                {
+                  "surface": "の"
+                },
+                {
+                  "surface": "書",
+                  "reading": "か"
+                },
+                {
+                  "surface": "き"
+                },
+                {
+                  "surface": "方",
+                  "reading": "かた"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "教",
+                  "reading": "おし"
+                },
+                {
+                  "surface": "えてください。"
+                }
+              ],
+              "meaningRu": "Покажите, пожалуйста, как пишется этот знак.",
+              "audioUrl": "/audio/marugoto/28efba4b4215533b.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この字の",
+                "explanationRu": "Смысловой фрагмент: Покажите, пожалуйста, как пишется этот знак."
+              },
+              {
+                "text": "書き方を",
+                "explanationRu": "Смысловой фрагмент: Покажите, пожалуйста, как пишется этот знак."
+              },
+              {
+                "text": "教えてください",
+                "explanationRu": "Основа перед ます + 方 обозначает способ действия."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.20.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        20
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.20.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.20",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите, какой язык и когда вы начали изучать.",
+              "canDoIds": [
+                20
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите, какой язык и когда вы начали изучать.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "学生のとき、英語を勉強しました。去年、日本語を始めました。",
+                "kana": "がくせいのとき、えいごをべんきょうしました。きょねん、にほんごをはじめました。",
+                "segments": [
+                  {
+                    "surface": "学生",
+                    "reading": "がくせい"
+                  },
+                  {
+                    "surface": "のとき、"
+                  },
+                  {
+                    "surface": "英語",
+                    "reading": "えいご"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "勉強",
+                    "reading": "べんきょう"
+                  },
+                  {
+                    "surface": "しました。"
+                  },
+                  {
+                    "surface": "去年",
+                    "reading": "きょねん"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "始",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "めました。"
+                  }
+                ],
+                "meaningRu": "В студенческие годы я изучал английский. В прошлом году начал японский.",
+                "audioUrl": "/audio/marugoto/0de5197407ef4659.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите, какой язык и когда вы начали изучать.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.21.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        21
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.21.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.21",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Оцените изучаемый язык: что трудно, что интересно.",
+              "canDoIds": [
+                21
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Оцените изучаемый язык: что трудно, что интересно.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "日本語は漢字が難しいです。でも、話すのがおもしろいです。",
+                "kana": "にほんごはかんじがむずかしいです。でも、はなすのがおもしろいです。",
+                "segments": [
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "漢字",
+                    "reading": "かんじ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "難",
+                    "reading": "むずか"
+                  },
+                  {
+                    "surface": "しいです。でも、"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "すのがおもしろいです。"
+                  }
+                ],
+                "meaningRu": "В японском трудны иероглифы. Но говорить на нём интересно.",
+                "audioUrl": "/audio/marugoto/2c4eaaab1a239d2d.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Оцените изучаемый язык: что трудно, что интересно.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.22.goal",
+      "titleRu": "Письменный ответ",
+      "canDoIds": [
+        22
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.22.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.22",
+              "titleRu": "Письменный ответ",
+              "instructionRu": "Составьте короткую запись о своей истории изучения языков.",
+              "canDoIds": [
+                22
+              ],
+              "kind": "production",
+              "response": "written",
+              "supports": [
+                "Составьте короткую запись о своей истории изучения языков.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "去年から日本語を勉強しています。週に二回、学校に行きます。",
+                "kana": "きょねんからにほんごをべんきょうしています。しゅうににかい、がっこうにいきます。",
+                "segments": [
+                  {
+                    "surface": "去年",
+                    "reading": "きょねん"
+                  },
+                  {
+                    "surface": "から"
+                  },
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "勉強",
+                    "reading": "べんきょう"
+                  },
+                  {
+                    "surface": "しています。"
+                  },
+                  {
+                    "surface": "週",
+                    "reading": "しゅう"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "二回",
+                    "reading": "にかい"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "学校",
+                    "reading": "がっこう"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きます。"
+                  }
+                ],
+                "meaningRu": "Я изучаю японский с прошлого года. Дважды в неделю хожу в школу.",
+                "audioUrl": "/audio/marugoto/debd376c42cc940b.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Составьте короткую запись о своей истории изучения языков.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.23.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        23
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.23.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.23",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Попросите объяснить непонятное чтение и произнесите ответ помощника.",
+              "canDoIds": [
+                23
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Попросите объяснить непонятное чтение и произнесите ответ помощника.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "この字の読み方を教えてくださいませんか。はい、「あき」です。",
+                "kana": "このじのよみかたをおしえてくださいませんか。はい、「あき」です。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "字",
+                    "reading": "じ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "読",
+                    "reading": "よ"
+                  },
+                  {
+                    "surface": "み"
+                  },
+                  {
+                    "surface": "方",
+                    "reading": "かた"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "教",
+                    "reading": "おし"
+                  },
+                  {
+                    "surface": "えてくださいませんか。はい、「あき」です。"
+                  }
+                ],
+                "meaningRu": "Не могли бы вы подсказать чтение этого знака? Да, «аки».",
+                "audioUrl": "/audio/marugoto/f12580eff53c125c.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Попросите объяснить непонятное чтение и произнесите ответ помощника.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,835 @@
+{
+  "lessonId": "marugoto.pre-intermediate-a2b1.topic.09",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Ищем работу",
+  "goals": [
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.09.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        41,
+        42,
+        43,
+        44
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.09.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.d47ee2c03c315e06",
+              "explanationRu": "В этой ситуации: деятельность, работа; бизнес, предприятие",
+              "example": {
+                "surface": "田中と申します。営業の山田さんと約束があります。お願いできますか。",
+                "kana": "たなかともうします。えいぎょうのやまださんとやくそくがあります。おねがいできますか。",
+                "segments": [
+                  {
+                    "surface": "田中",
+                    "reading": "たなか"
+                  },
+                  {
+                    "surface": "と"
+                  },
+                  {
+                    "surface": "申",
+                    "reading": "もう"
+                  },
+                  {
+                    "surface": "します。"
+                  },
+                  {
+                    "surface": "営業",
+                    "reading": "えいぎょう"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "山田",
+                    "reading": "やまだ"
+                  },
+                  {
+                    "surface": "さんと"
+                  },
+                  {
+                    "surface": "約束",
+                    "reading": "やくそく"
+                  },
+                  {
+                    "surface": "があります。お"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いできますか。"
+                  }
+                ],
+                "meaningRu": "Меня зовут Танака. У меня назначена встреча с господином Ямадой из отдела продаж. Можете сообщить ему?",
+                "audioUrl": "/audio/marugoto/fe7b74e925d010f7.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.ee505e9a629adc43",
+              "explanationRu": "В этой ситуации: сильная сторона, конек,быть сильным в чем-либо",
+              "example": {
+                "surface": "電話で話すよりメールを書くほうが得意です。",
+                "kana": "でんわではなすよりメールをかくほうがとくいです。",
+                "segments": [
+                  {
+                    "surface": "電話",
+                    "reading": "でんわ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "すよりメールを"
+                  },
+                  {
+                    "surface": "書",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "くほうが"
+                  },
+                  {
+                    "surface": "得意",
+                    "reading": "とくい"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Мне лучше удаётся писать письма, чем разговаривать по телефону.",
+                "audioUrl": "/audio/marugoto/9bdb26798fdb33de.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.19cbdaaacb7603a3",
+              "explanationRu": "В этой ситуации: О! (удивл.)",
+              "example": {
+                "surface": "電話で話すよりメールを書くほうが得意です。",
+                "kana": "でんわではなすよりメールをかくほうがとくいです。",
+                "segments": [
+                  {
+                    "surface": "電話",
+                    "reading": "でんわ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "すよりメールを"
+                  },
+                  {
+                    "surface": "書",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "くほうが"
+                  },
+                  {
+                    "surface": "得意",
+                    "reading": "とくい"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Мне лучше удаётся писать письма, чем разговаривать по телефону.",
+                "audioUrl": "/audio/marugoto/9bdb26798fdb33de.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.09.grammar.251",
+      "titleRu": "～たら、～たいと思って（い）る",
+      "introductionRu": "たら задаёт будущий момент, たいと思っている — намерение или желание.",
+      "canDoIds": [
+        41,
+        42,
+        43,
+        44
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.09.part.grammar.251",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.251",
+            "explanationRu": "たら задаёт будущий момент, たいと思っている — намерение или желание.",
+            "example": {
+              "surface": "学校が終わったら日本で働きたいと思っています。",
+              "kana": "がっこうがおわったらにほんではたらきたいとおもっています。",
+              "segments": [
+                {
+                  "surface": "学校",
+                  "reading": "がっこう"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "終",
+                  "reading": "お"
+                },
+                {
+                  "surface": "わったら"
+                },
+                {
+                  "surface": "日本",
+                  "reading": "にほん"
+                },
+                {
+                  "surface": "で"
+                },
+                {
+                  "surface": "働",
+                  "reading": "はたら"
+                },
+                {
+                  "surface": "きたいと"
+                },
+                {
+                  "surface": "思",
+                  "reading": "おも"
+                },
+                {
+                  "surface": "っています。"
+                }
+              ],
+              "meaningRu": "После окончания учёбы я хотел бы работать в Японии.",
+              "audioUrl": "/audio/marugoto/089bb6870165a6d4.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "学校が",
+                "explanationRu": "Смысловой фрагмент: После окончания учёбы я хотел бы работать в Японии."
+              },
+              {
+                "text": "終わったら",
+                "explanationRu": "Смысловой фрагмент: После окончания учёбы я хотел бы работать в Японии."
+              },
+              {
+                "text": "日本で",
+                "explanationRu": "Смысловой фрагмент: После окончания учёбы я хотел бы работать в Японии."
+              },
+              {
+                "text": "働きたいと思っています",
+                "explanationRu": "たら задаёт будущий момент, たいと思っている — намерение или желание."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.09.grammar.252",
+      "titleRu": "～ことができる",
+      "introductionRu": "Словарная форма + ことができる описывает способность или возможность.",
+      "canDoIds": [
+        41,
+        42,
+        43,
+        44
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.09.part.grammar.252",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.252",
+            "explanationRu": "Словарная форма + ことができる описывает способность или возможность.",
+            "example": {
+              "surface": "日本語でメールを書くことができます。",
+              "kana": "にほんごでメールをかくことができます。",
+              "segments": [
+                {
+                  "surface": "日本語",
+                  "reading": "にほんご"
+                },
+                {
+                  "surface": "でメールを"
+                },
+                {
+                  "surface": "書",
+                  "reading": "か"
+                },
+                {
+                  "surface": "くことができます。"
+                }
+              ],
+              "meaningRu": "Я умею писать письма по-японски.",
+              "audioUrl": "/audio/marugoto/d4a5a653648f8152.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "日本語で",
+                "explanationRu": "Смысловой фрагмент: Я умею писать письма по-японски."
+              },
+              {
+                "text": "メールを",
+                "explanationRu": "Смысловой фрагмент: Я умею писать письма по-японски."
+              },
+              {
+                "text": "書くことができます",
+                "explanationRu": "Словарная форма + ことができる описывает способность или возможность."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.09.grammar.253",
+      "titleRu": "～より～方が～",
+      "introductionRu": "Действие + より + действие + ほうが сравнивает два занятия по выбранному признаку.",
+      "canDoIds": [
+        41,
+        42,
+        43,
+        44
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.09.part.grammar.253",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.253",
+            "explanationRu": "Действие + より + действие + ほうが сравнивает два занятия по выбранному признаку.",
+            "example": {
+              "surface": "電話で話すよりメールを書くほうが得意です。",
+              "kana": "でんわではなすよりメールをかくほうがとくいです。",
+              "segments": [
+                {
+                  "surface": "電話",
+                  "reading": "でんわ"
+                },
+                {
+                  "surface": "で"
+                },
+                {
+                  "surface": "話",
+                  "reading": "はな"
+                },
+                {
+                  "surface": "すよりメールを"
+                },
+                {
+                  "surface": "書",
+                  "reading": "か"
+                },
+                {
+                  "surface": "くほうが"
+                },
+                {
+                  "surface": "得意",
+                  "reading": "とくい"
+                },
+                {
+                  "surface": "です。"
+                }
+              ],
+              "meaningRu": "Мне лучше удаётся писать письма, чем разговаривать по телефону.",
+              "audioUrl": "/audio/marugoto/9bdb26798fdb33de.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "電話で",
+                "explanationRu": "Смысловой фрагмент: Мне лучше удаётся писать письма, чем разговаривать по телефону."
+              },
+              {
+                "text": "話すより",
+                "explanationRu": "Смысловой фрагмент: Мне лучше удаётся писать письма, чем разговаривать по телефону."
+              },
+              {
+                "text": "メールを",
+                "explanationRu": "Смысловой фрагмент: Мне лучше удаётся писать письма, чем разговаривать по телефону."
+              },
+              {
+                "text": "書くほうが",
+                "explanationRu": "Смысловой фрагмент: Мне лучше удаётся писать письма, чем разговаривать по телефону."
+              },
+              {
+                "text": "得意です",
+                "explanationRu": "Действие + より + действие + ほうが сравнивает два занятия по выбранному признаку."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.41.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        41
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.41.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.41",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Обратитесь на стойку регистрации компании: представьтесь и попросите пригласить нужного человека.",
+              "canDoIds": [
+                41
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Обратитесь на стойку регистрации компании: представьтесь и попросите пригласить нужного человека.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "田中と申します。営業の山田さんと約束があります。お願いできますか。",
+                "kana": "たなかともうします。えいぎょうのやまださんとやくそくがあります。おねがいできますか。",
+                "segments": [
+                  {
+                    "surface": "田中",
+                    "reading": "たなか"
+                  },
+                  {
+                    "surface": "と"
+                  },
+                  {
+                    "surface": "申",
+                    "reading": "もう"
+                  },
+                  {
+                    "surface": "します。"
+                  },
+                  {
+                    "surface": "営業",
+                    "reading": "えいぎょう"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "山田",
+                    "reading": "やまだ"
+                  },
+                  {
+                    "surface": "さんと"
+                  },
+                  {
+                    "surface": "約束",
+                    "reading": "やくそく"
+                  },
+                  {
+                    "surface": "があります。お"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いできますか。"
+                  }
+                ],
+                "meaningRu": "Меня зовут Танака. У меня назначена встреча с господином Ямадой из отдела продаж. Можете сообщить ему?",
+                "audioUrl": "/audio/marugoto/fe7b74e925d010f7.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Обратитесь на стойку регистрации компании: представьтесь и попросите пригласить нужного человека.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.42.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        42
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.42.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.42",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите о компании и своих обязанностях, назовите одно умение.",
+              "canDoIds": [
+                42
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите о компании и своих обязанностях, назовите одно умение.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "小さい旅行の会社で働いています。外国のお客さんにメールを書きます。日本語で案内することもできます。",
+                "kana": "ちいさいりょこうのかいしゃではたらいています。がいこくのおきゃくさんにメールをかきます。にほんごであんないすることもできます。",
+                "segments": [
+                  {
+                    "surface": "小",
+                    "reading": "ちい"
+                  },
+                  {
+                    "surface": "さい"
+                  },
+                  {
+                    "surface": "旅行",
+                    "reading": "りょこう"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "会社",
+                    "reading": "かいしゃ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "働",
+                    "reading": "はたら"
+                  },
+                  {
+                    "surface": "いています。"
+                  },
+                  {
+                    "surface": "外国",
+                    "reading": "がいこく"
+                  },
+                  {
+                    "surface": "のお"
+                  },
+                  {
+                    "surface": "客",
+                    "reading": "きゃく"
+                  },
+                  {
+                    "surface": "さんにメールを"
+                  },
+                  {
+                    "surface": "書",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "きます。"
+                  },
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "案内",
+                    "reading": "あんない"
+                  },
+                  {
+                    "surface": "することもできます。"
+                  }
+                ],
+                "meaningRu": "Я работаю в небольшой туристической компании. Пишу письма иностранным клиентам. Также могу давать информацию по-японски.",
+                "audioUrl": "/audio/marugoto/73ce3db704cd5f5e.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите о компании и своих обязанностях, назовите одно умение.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.43.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        43
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.43.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.43",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте запрос совета о работе и ответ. Определите полезное направление.",
+              "canDoIds": [
+                43
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "アキ：電話で話すのは苦手ですが、メールを書くのは好きです。どんな仕事がいいでしょうか。ユウ：書く力を使える仕事を探してみたらどうですか。",
+                  "kana": "アキ：でんわではなすのはにがてですが、メールをかくのはすきです。どんなしごとがいいでしょうか。ユウ：かくちからをつかえるしごとをさがしてみたらどうですか。",
+                  "segments": [
+                    {
+                      "surface": "アキ："
+                    },
+                    {
+                      "surface": "電話",
+                      "reading": "でんわ"
+                    },
+                    {
+                      "surface": "で"
+                    },
+                    {
+                      "surface": "話",
+                      "reading": "はな"
+                    },
+                    {
+                      "surface": "すのは"
+                    },
+                    {
+                      "surface": "苦手",
+                      "reading": "にがて"
+                    },
+                    {
+                      "surface": "ですが、メールを"
+                    },
+                    {
+                      "surface": "書",
+                      "reading": "か"
+                    },
+                    {
+                      "surface": "くのは"
+                    },
+                    {
+                      "surface": "好",
+                      "reading": "す"
+                    },
+                    {
+                      "surface": "きです。どんな"
+                    },
+                    {
+                      "surface": "仕事",
+                      "reading": "しごと"
+                    },
+                    {
+                      "surface": "がいいでしょうか。ユウ："
+                    },
+                    {
+                      "surface": "書",
+                      "reading": "か"
+                    },
+                    {
+                      "surface": "く"
+                    },
+                    {
+                      "surface": "力",
+                      "reading": "ちから"
+                    },
+                    {
+                      "surface": "を"
+                    },
+                    {
+                      "surface": "使",
+                      "reading": "つか"
+                    },
+                    {
+                      "surface": "える"
+                    },
+                    {
+                      "surface": "仕事",
+                      "reading": "しごと"
+                    },
+                    {
+                      "surface": "を"
+                    },
+                    {
+                      "surface": "探",
+                      "reading": "さが"
+                    },
+                    {
+                      "surface": "してみたらどうですか。"
+                    }
+                  ],
+                  "meaningRu": "Аки: мне трудно говорить по телефону, но нравится писать письма. Какая работа подойдёт? Ю: почему бы не поискать работу, где пригодится умение писать?",
+                  "audioUrl": "/audio/marugoto/fda872c3c66919db.m4a"
+                }
+              ],
+              "questionRu": "Что советует Ю?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Искать работу с опорой на сильную сторону"
+                },
+                {
+                  "id": "b",
+                  "text": "Выбирать работу только с телефонными звонками"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Аки: мне трудно говорить по телефону, но нравится писать письма. Какая работа подойдёт? Ю: почему бы не поискать работу, где пригодится умение писать?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.44.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        44
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.44.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.44",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте итог поиска работы и определите отношение автора к отказу.",
+              "canDoIds": [
+                44
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "面接では緊張して、うまく話せませんでした。今回は残念な結果でしたが、自分に足りないことが分かりました。次のために、友達と練習しようと思っています。",
+                  "kana": "めんせつではきんちょうして、うまくはなせませんでした。こんかいはざんねんなけっかでしたが、じぶんにたりないことがわかりました。つぎのために、ともだちとれんしゅうしようとおもっています。",
+                  "segments": [
+                    {
+                      "surface": "面接",
+                      "reading": "めんせつ"
+                    },
+                    {
+                      "surface": "では"
+                    },
+                    {
+                      "surface": "緊張",
+                      "reading": "きんちょう"
+                    },
+                    {
+                      "surface": "して、うまく"
+                    },
+                    {
+                      "surface": "話",
+                      "reading": "はな"
+                    },
+                    {
+                      "surface": "せませんでした。"
+                    },
+                    {
+                      "surface": "今回",
+                      "reading": "こんかい"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "残念",
+                      "reading": "ざんねん"
+                    },
+                    {
+                      "surface": "な"
+                    },
+                    {
+                      "surface": "結果",
+                      "reading": "けっか"
+                    },
+                    {
+                      "surface": "でしたが、"
+                    },
+                    {
+                      "surface": "自分",
+                      "reading": "じぶん"
+                    },
+                    {
+                      "surface": "に"
+                    },
+                    {
+                      "surface": "足",
+                      "reading": "た"
+                    },
+                    {
+                      "surface": "りないことが"
+                    },
+                    {
+                      "surface": "分",
+                      "reading": "わ"
+                    },
+                    {
+                      "surface": "かりました。"
+                    },
+                    {
+                      "surface": "次",
+                      "reading": "つぎ"
+                    },
+                    {
+                      "surface": "のために、"
+                    },
+                    {
+                      "surface": "友達",
+                      "reading": "ともだち"
+                    },
+                    {
+                      "surface": "と"
+                    },
+                    {
+                      "surface": "練習",
+                      "reading": "れんしゅう"
+                    },
+                    {
+                      "surface": "しようと"
+                    },
+                    {
+                      "surface": "思",
+                      "reading": "おも"
+                    },
+                    {
+                      "surface": "っています。"
+                    }
+                  ],
+                  "meaningRu": "На собеседовании я волновался и плохо говорил. На этот раз результат огорчил, но я понял, чего мне не хватает. К следующему разу намерен потренироваться с другом.",
+                  "audioUrl": "/audio/marugoto/8bc6fb25f14b9ac4.m4a"
+                }
+              ],
+              "questionRu": "Как автор воспринимает результат?",
+              "options": [
+                {
+                  "id": "b",
+                  "text": "Доволен и больше готовиться не собирается"
+                },
+                {
+                  "id": "a",
+                  "text": "Огорчён, но видит урок и планирует подготовку"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "На собеседовании я волновался и плохо говорил. На этот раз результат огорчил, но я понял, чего мне не хватает. К следующему разу намерен потренироваться с другом."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

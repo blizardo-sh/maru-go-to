@@ -1,7 +1,7 @@
 import type { submitReview } from './api';
 import { catalogFor } from '../shared/catalog';
 import { useEffect, useRef, useState } from 'react';
-import type { LearnerSettings, ReviewItem, ReviewResult } from '../shared/types';
+import type { LearnerSettings, Rating, ReviewItem, ReviewResult } from '../shared/types';
 import type { Snapshot } from './types';
 import { GestureCard } from './GestureCard';
 import { FlipCard } from './FlipCard';
@@ -67,14 +67,14 @@ export function CounterCard({ item, data, userId, onNext, onSaved, onFeedback, s
     if (objective && value !== undefined) void saving.save({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, ...(item.publicationId ? { publicationId: item.publicationId } : {}), mode: 'counter', rating: card.acceptedKeys.includes(value) && !helped ? 3 : 1, choice: value, helped });
     document.querySelector<HTMLElement>('[data-testid="review-gesture"]')?.focus({ preventScroll: true });
   }
-  function grade(rating: 1 | 3) {
+  function grade(rating: Rating) {
     if (!enabled || document.hidden || objective || !revealed) return;
     return saving.save({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, ...(item.publicationId ? { publicationId: item.publicationId } : {}), mode: 'counter', rating: correct === false || helped ? 1 : rating, choice, helped });
   }
   const title = { 'image-counter': 'Какое счётное слово подходит?', 'counter-image': 'Что считают этим суффиксом?', 'reading-choice': 'Выберите чтение количества', 'listening-image': 'Послушайте и выберите количество', recall: 'Вспомните количество по-японски' }[card.kind];
   const picture = <CounterPicture catalog={catalog} object={card.object} quantity={card.quantity ?? (age ? 7 : 1)} label={card.word.meaningRu} age={age} showQuantity={card.quantity !== null} />;
   const ruleContent = <><h2><Japanese value={counterAnswer(card.definition, null, catalog)} mode={data.settings.orthography} /> · {card.definition.title}</h2><p><JapaneseText text={card.definition.explanation} course={data.course} mode={data.settings.orthography} spellings={[counterAnswer(card.definition, null, catalog)]} /></p><div className="counter-examples">{card.examples.map(example => <CounterExample key={example.surface} example={example} data={data} active={active && (intro || ruleOpen)} sound={sound} />)}</div></>;
-  return <GestureCard mode="counter" phase={objective || intro ? 'choice' : revealed ? 'answer' : 'question'} reviewId={item.id} enabled={enabled && revealed && !objective} active={active} onAdvance={grade} actions={<DisplayControl mode={data.settings.orthography} disabled={settingsBusy || !enabled} onChange={orthography => { void saveSettings({ ...data.settings, orthography }); }} />}>
+  return <GestureCard schedule={item.schedule} againOnly={helped} mode="counter" phase={objective || intro ? 'choice' : revealed ? 'answer' : 'question'} reviewId={item.id} enabled={enabled && revealed && !objective} active={active} onAdvance={grade} actions={<DisplayControl mode={data.settings.orthography} disabled={settingsBusy || !enabled} onChange={orthography => { void saveSettings({ ...data.settings, orthography }); }} />}>
     {intro ? <div className="counter-introduction illustrated-card" data-testid="counter-introduction"><div className="card-art">{picture}</div><div className="card-information"><small>Знакомимся со счётным словом</small>{ruleContent}<button className="primary" disabled={!active || introBusy} onClick={async () => { setIntroBusy(true); setIntroError(''); try { await onIntroductionRead(); setIntro(false); } catch (error) { setIntroError(error instanceof Error ? error.message : 'Не удалось сохранить знакомство.'); } finally { setIntroBusy(false); } }}>{introBusy ? 'Сохраняем…' : 'К карточке'}</button></div></div> : <>
       <FlipCard revealed={revealed} front={<div className={`counter-card${card.kind === 'recall' ? ' recall-face' : ''}`} data-testid="counter-front" data-card-face={card.kind === 'recall' || undefined} role={card.kind === 'recall' ? 'button' : undefined} tabIndex={card.kind === 'recall' ? 0 : undefined} onClick={event => { if (card.kind === 'recall' && !((event.target as Element).closest('button, a, summary'))) reveal(); }} onKeyDown={event => { if (card.kind === 'recall' && event.currentTarget === event.target && ['Enter', ' '].includes(event.key)) { event.preventDefault(); reveal(); } }}>
         <div className="illustrated-card"><div className="card-art">{card.kind === 'counter-image' ? <span className="prompt"><Japanese value={card.answer} mode={data.settings.orthography} /></span> : card.kind === 'listening-image' ? <button className="counter-listen inline-audio" aria-label="Прослушать количество" onClick={() => { void speech.play(); }} disabled={!active || speech.playing}>▶ {speech.playing ? 'Слушаем…' : 'Прослушать ещё раз'}</button> : picture}</div><div className="card-information"><small>Счётные суффиксы</small><h2>{title}</h2>{card.kind !== 'listening-image' && card.kind !== 'counter-image' && <p><Japanese value={card.word} forms={data.course.forms} mode={data.settings.orthography} /> · {card.word.meaningRu}</p>}
@@ -86,7 +86,7 @@ export function CounterCard({ item, data, userId, onNext, onSaved, onFeedback, s
     {introError && <p className="error" role="alert">{introError}</p>}
     {speech.error && <p className="error" role="alert">{speech.error}</p>}
     {saving.busy && <p role="status">Сохраняем ответ…</p>}
-    {confirmed && <p role="status" data-testid="counter-confirmed" data-feedback={confirmed.feedback.kind}>{confirmed.feedback.kind === 'good' ? 'Верно! Следующий вопрос…' : 'Это задание вернётся после других карточек.'}</p>}
+    {confirmed && <p role="status" data-testid="counter-confirmed" data-feedback={confirmed.feedback.kind}>{confirmed.feedback.kind === 'good' ? 'Верно! Следующий вопрос…' : confirmed.result.status === 'scheduled' ? 'Следующее повторение назначено по расписанию.' : 'Это задание вернётся после других карточек.'}</p>}
     {saving.error && <div className="notice error" role="alert"><p>{saving.error}</p><button disabled={!active} onClick={saving.retry}>Повторить сохранение</button></div>}
   </GestureCard>;
 }

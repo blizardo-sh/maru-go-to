@@ -1,0 +1,789 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.08",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Встречаемся на мероприятии",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.08.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        22,
+        23,
+        24
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.08.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.2f61178bf464bac6",
+              "explanationRu": "В этой ситуации: начинаться",
+              "example": {
+                "surface": "コンサートは何時に始まりますか。会場は二階ですか。",
+                "kana": "コンサートはなんじにはじまりますか。かいじょうはにかいですか。",
+                "segments": [
+                  {
+                    "surface": "コンサートは"
+                  },
+                  {
+                    "surface": "何時",
+                    "reading": "なんじ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "始",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "まりますか。"
+                  },
+                  {
+                    "surface": "会場",
+                    "reading": "かいじょう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "二階",
+                    "reading": "にかい"
+                  },
+                  {
+                    "surface": "ですか。"
+                  }
+                ],
+                "meaningRu": "Во сколько начинается концерт? Зал на втором этаже?",
+                "audioUrl": "/audio/marugoto/0e42a6d48c7b1e56.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.44aee094d40ce5b3",
+              "explanationRu": "В этой ситуации: все, дамы и господа(обращение к присутствующим)",
+              "example": {
+                "surface": "皆さん、こんにちは。もうすぐ始まります。携帯電話の音を消してください。",
+                "kana": "みなさん、こんにちは。もうすぐはじまります。けいたいでんわのおとをけしてください。",
+                "segments": [
+                  {
+                    "surface": "皆",
+                    "reading": "みな"
+                  },
+                  {
+                    "surface": "さん、こんにちは。もうすぐ"
+                  },
+                  {
+                    "surface": "始",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "まります。"
+                  },
+                  {
+                    "surface": "携帯電話",
+                    "reading": "けいたいでんわ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "音",
+                    "reading": "おと"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "消",
+                    "reading": "け"
+                  },
+                  {
+                    "surface": "してください。"
+                  }
+                ],
+                "meaningRu": "Здравствуйте, все. Скоро начинаем. Выключите звук мобильных телефонов.",
+                "audioUrl": "/audio/marugoto/5aae7f392e943f98.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.24fc1fa2254580c7",
+              "explanationRu": "В этой ситуации: уже скоро",
+              "example": {
+                "surface": "皆さん、こんにちは。もうすぐ始まります。携帯電話の音を消してください。",
+                "kana": "みなさん、こんにちは。もうすぐはじまります。けいたいでんわのおとをけしてください。",
+                "segments": [
+                  {
+                    "surface": "皆",
+                    "reading": "みな"
+                  },
+                  {
+                    "surface": "さん、こんにちは。もうすぐ"
+                  },
+                  {
+                    "surface": "始",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "まります。"
+                  },
+                  {
+                    "surface": "携帯電話",
+                    "reading": "けいたいでんわ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "音",
+                    "reading": "おと"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "消",
+                    "reading": "け"
+                  },
+                  {
+                    "surface": "してください。"
+                  }
+                ],
+                "meaningRu": "Здравствуйте, все. Скоро начинаем. Выключите звук мобильных телефонов.",
+                "audioUrl": "/audio/marugoto/5aae7f392e943f98.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.c1d439c5b3023001",
+              "explanationRu": "В этой ситуации: воскресенье",
+              "example": {
+                "surface": "皆さん、こんにちは。もうすぐ始まります。携帯電話の音を消してください。",
+                "kana": "みなさん、こんにちは。もうすぐはじまります。けいたいでんわのおとをけしてください。",
+                "segments": [
+                  {
+                    "surface": "皆",
+                    "reading": "みな"
+                  },
+                  {
+                    "surface": "さん、こんにちは。もうすぐ"
+                  },
+                  {
+                    "surface": "始",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "まります。"
+                  },
+                  {
+                    "surface": "携帯電話",
+                    "reading": "けいたいでんわ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "音",
+                    "reading": "おと"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "消",
+                    "reading": "け"
+                  },
+                  {
+                    "surface": "してください。"
+                  }
+                ],
+                "meaningRu": "Здравствуйте, все. Скоро начинаем. Выключите звук мобильных телефонов.",
+                "audioUrl": "/audio/marugoto/5aae7f392e943f98.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.12514bf00ecdf875",
+              "explanationRu": "В этой ситуации: концерт",
+              "example": {
+                "surface": "コンサートは何時に始まりますか。会場は二階ですか。",
+                "kana": "コンサートはなんじにはじまりますか。かいじょうはにかいですか。",
+                "segments": [
+                  {
+                    "surface": "コンサートは"
+                  },
+                  {
+                    "surface": "何時",
+                    "reading": "なんじ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "始",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "まりますか。"
+                  },
+                  {
+                    "surface": "会場",
+                    "reading": "かいじょう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "二階",
+                    "reading": "にかい"
+                  },
+                  {
+                    "surface": "ですか。"
+                  }
+                ],
+                "meaningRu": "Во сколько начинается концерт? Зал на втором этаже?",
+                "audioUrl": "/audio/marugoto/0e42a6d48c7b1e56.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.08.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        22,
+        23,
+        24
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.08.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.75bd1f06a73a31f0",
+              "explanationRu": "В этой ситуации: где",
+              "example": {
+                "surface": "会議がどこで始まるか知っていますか。",
+                "kana": "かいぎがどこではじまるかしっていますか。",
+                "segments": [
+                  {
+                    "surface": "会議",
+                    "reading": "かいぎ"
+                  },
+                  {
+                    "surface": "がどこで"
+                  },
+                  {
+                    "surface": "始",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "まるか"
+                  },
+                  {
+                    "surface": "知",
+                    "reading": "し"
+                  },
+                  {
+                    "surface": "っていますか。"
+                  }
+                ],
+                "meaningRu": "Вы знаете, где начнётся собрание?",
+                "audioUrl": "/audio/marugoto/447e6e83f130aeaf.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.08.grammar.162",
+      "titleRu": "もう（～た）",
+      "introductionRu": "もう уточняет, состоялся ли ожидаемый переход.",
+      "canDoIds": [
+        22,
+        23,
+        24
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.08.part.grammar.162",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.162",
+            "explanationRu": "もう уточняет, состоялся ли ожидаемый переход.",
+            "example": {
+              "surface": "受付はもう始まりましたか。",
+              "kana": "うけつけはもうはじまりましたか。",
+              "segments": [
+                {
+                  "surface": "受付",
+                  "reading": "うけつけ"
+                },
+                {
+                  "surface": "はもう"
+                },
+                {
+                  "surface": "始",
+                  "reading": "はじ"
+                },
+                {
+                  "surface": "まりましたか。"
+                }
+              ],
+              "meaningRu": "Регистрация уже началась?",
+              "audioUrl": "/audio/marugoto/13362fde35ef4179.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "受付は",
+                "explanationRu": "Смысловой фрагмент: Регистрация уже началась?"
+              },
+              {
+                "text": "もう",
+                "explanationRu": "Смысловой фрагмент: Регистрация уже началась?"
+              },
+              {
+                "text": "始まりましたか",
+                "explanationRu": "もう уточняет, состоялся ли ожидаемый переход."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.08.grammar.163",
+      "titleRu": "まだ（～ない）",
+      "introductionRu": "まだ + ていません говорит, что ожидаемое действие пока не произошло.",
+      "canDoIds": [
+        22,
+        23,
+        24
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.08.part.grammar.163",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.163",
+            "explanationRu": "まだ + ていません говорит, что ожидаемое действие пока не произошло.",
+            "example": {
+              "surface": "いいえまだ始まっていません。",
+              "kana": "いいえまだはじまっていません。",
+              "segments": [
+                {
+                  "surface": "いいえまだ"
+                },
+                {
+                  "surface": "始",
+                  "reading": "はじ"
+                },
+                {
+                  "surface": "まっていません。"
+                }
+              ],
+              "meaningRu": "Нет, ещё не началась.",
+              "audioUrl": "/audio/marugoto/2de5a4b26cc6d427.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "いいえ",
+                "explanationRu": "Смысловой фрагмент: Нет, ещё не началась."
+              },
+              {
+                "text": "まだ",
+                "explanationRu": "Смысловой фрагмент: Нет, ещё не началась."
+              },
+              {
+                "text": "始まっていません",
+                "explanationRu": "まだ + ていません говорит, что ожидаемое действие пока не произошло."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.08.grammar.164",
+      "titleRu": "まだ（～ます／ています）",
+      "introductionRu": "まだ + ています сообщает о продолжающемся действии.",
+      "canDoIds": [
+        22,
+        23,
+        24
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.08.part.grammar.164",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.164",
+            "explanationRu": "まだ + ています сообщает о продолжающемся действии.",
+            "example": {
+              "surface": "まだ会場を準備しています。",
+              "kana": "まだかいじょうをじゅんびしています。",
+              "segments": [
+                {
+                  "surface": "まだ"
+                },
+                {
+                  "surface": "会場",
+                  "reading": "かいじょう"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "準備",
+                  "reading": "じゅんび"
+                },
+                {
+                  "surface": "しています。"
+                }
+              ],
+              "meaningRu": "Мы ещё готовим зал.",
+              "audioUrl": "/audio/marugoto/cfa530d5ecf70c53.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "まだ",
+                "explanationRu": "Смысловой фрагмент: Мы ещё готовим зал."
+              },
+              {
+                "text": "会場を",
+                "explanationRu": "Смысловой фрагмент: Мы ещё готовим зал."
+              },
+              {
+                "text": "準備しています",
+                "explanationRu": "まだ + ています сообщает о продолжающемся действии."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.08.grammar.165",
+      "titleRu": "もう（～ません／ました）",
+      "introductionRu": "もう + отрицание означает, что прежняя ситуация прекратилась.",
+      "canDoIds": [
+        22,
+        23,
+        24
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.08.part.grammar.165",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.165",
+            "explanationRu": "もう + отрицание означает, что прежняя ситуация прекратилась.",
+            "example": {
+              "surface": "チケットはもうありません。",
+              "kana": "チケットはもうありません。",
+              "segments": [
+                {
+                  "surface": "チケットはもうありません。"
+                }
+              ],
+              "meaningRu": "Билетов больше нет.",
+              "audioUrl": "/audio/marugoto/f3838bd49d30c9ce.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "チケットは",
+                "explanationRu": "Смысловой фрагмент: Билетов больше нет."
+              },
+              {
+                "text": "もう",
+                "explanationRu": "Смысловой фрагмент: Билетов больше нет."
+              },
+              {
+                "text": "ありません",
+                "explanationRu": "もう + отрицание означает, что прежняя ситуация прекратилась."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.08.grammar.166",
+      "titleRu": "～か知っていますか",
+      "introductionRu": "Встроенный вопрос заканчивается か и становится частью другого предложения.",
+      "canDoIds": [
+        22,
+        23,
+        24
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.08.part.grammar.166",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.166",
+            "explanationRu": "Встроенный вопрос заканчивается か и становится частью другого предложения.",
+            "example": {
+              "surface": "会議がどこで始まるか知っていますか。",
+              "kana": "かいぎがどこではじまるかしっていますか。",
+              "segments": [
+                {
+                  "surface": "会議",
+                  "reading": "かいぎ"
+                },
+                {
+                  "surface": "がどこで"
+                },
+                {
+                  "surface": "始",
+                  "reading": "はじ"
+                },
+                {
+                  "surface": "まるか"
+                },
+                {
+                  "surface": "知",
+                  "reading": "し"
+                },
+                {
+                  "surface": "っていますか。"
+                }
+              ],
+              "meaningRu": "Вы знаете, где начнётся собрание?",
+              "audioUrl": "/audio/marugoto/447e6e83f130aeaf.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "会議が",
+                "explanationRu": "Смысловой фрагмент: Вы знаете, где начнётся собрание?"
+              },
+              {
+                "text": "どこで",
+                "explanationRu": "Смысловой фрагмент: Вы знаете, где начнётся собрание?"
+              },
+              {
+                "text": "始まるか",
+                "explanationRu": "Смысловой фрагмент: Вы знаете, где начнётся собрание?"
+              },
+              {
+                "text": "知っていますか",
+                "explanationRu": "Встроенный вопрос заканчивается か и становится частью другого предложения."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.22.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        22
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.22.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.22",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Уточните на регистрации время и место начала мероприятия.",
+              "canDoIds": [
+                22
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Уточните на регистрации время и место начала мероприятия.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "コンサートは何時に始まりますか。会場は二階ですか。",
+                "kana": "コンサートはなんじにはじまりますか。かいじょうはにかいですか。",
+                "segments": [
+                  {
+                    "surface": "コンサートは"
+                  },
+                  {
+                    "surface": "何時",
+                    "reading": "なんじ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "始",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "まりますか。"
+                  },
+                  {
+                    "surface": "会場",
+                    "reading": "かいじょう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "二階",
+                    "reading": "にかい"
+                  },
+                  {
+                    "surface": "ですか。"
+                  }
+                ],
+                "meaningRu": "Во сколько начинается концерт? Зал на втором этаже?",
+                "audioUrl": "/audio/marugoto/0e42a6d48c7b1e56.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Уточните на регистрации время и место начала мероприятия.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.23.goal",
+      "titleRu": "Слушаем и понимаем",
+      "canDoIds": [
+        23
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.23.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.23",
+              "titleRu": "Слушаем и понимаем",
+              "instructionRu": "Узнайте, можно ли ещё получить билет.",
+              "canDoIds": [
+                23
+              ],
+              "kind": "listening",
+              "passage": [
+                {
+                  "surface": "チケットはまだありますか。すみません。もう全部なくなりました。",
+                  "kana": "チケットはまだありますか。すみません。もうぜんぶなくなりました。",
+                  "segments": [
+                    {
+                      "surface": "チケットはまだありますか。すみません。もう"
+                    },
+                    {
+                      "surface": "全部",
+                      "reading": "ぜんぶ"
+                    },
+                    {
+                      "surface": "なくなりました。"
+                    }
+                  ],
+                  "meaningRu": "Билеты ещё есть? Простите, уже все закончились.",
+                  "audioUrl": "/audio/marugoto/837a07f62e5c7f0f.m4a"
+                }
+              ],
+              "questionRu": "Можно ли получить билет сейчас?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Нет, все закончились"
+                },
+                {
+                  "id": "b",
+                  "text": "Да, осталось много"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Билеты ещё есть? Простите, уже все закончились."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.24.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        24
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.24.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.24",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Как ведущий поприветствуйте гостей и объявите начало и одну просьбу.",
+              "canDoIds": [
+                24
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Как ведущий поприветствуйте гостей и объявите начало и одну просьбу.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "皆さん、こんにちは。もうすぐ始まります。携帯電話の音を消してください。",
+                "kana": "みなさん、こんにちは。もうすぐはじまります。けいたいでんわのおとをけしてください。",
+                "segments": [
+                  {
+                    "surface": "皆",
+                    "reading": "みな"
+                  },
+                  {
+                    "surface": "さん、こんにちは。もうすぐ"
+                  },
+                  {
+                    "surface": "始",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "まります。"
+                  },
+                  {
+                    "surface": "携帯電話",
+                    "reading": "けいたいでんわ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "音",
+                    "reading": "おと"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "消",
+                    "reading": "け"
+                  },
+                  {
+                    "surface": "してください。"
+                  }
+                ],
+                "meaningRu": "Здравствуйте, все. Скоро начинаем. Выключите звук мобильных телефонов.",
+                "audioUrl": "/audio/marugoto/5aae7f392e943f98.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Как ведущий поприветствуйте гостей и объявите начало и одну просьбу.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

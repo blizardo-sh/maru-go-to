@@ -1,0 +1,1139 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.02",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Описываем человека",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.02.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        3,
+        4
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.02.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.f9190718bf52c5ad",
+              "explanationRu": "В этой ситуации: красный",
+              "example": {
+                "surface": "あの人は赤い服を着ています。",
+                "kana": "あのひとはあかいふくをきています。",
+                "segments": [
+                  {
+                    "surface": "あの"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "赤",
+                    "reading": "あか"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "服",
+                    "reading": "ふく"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "着",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "ています。"
+                  }
+                ],
+                "meaningRu": "Тот человек одет в красную одежду.",
+                "audioUrl": "/audio/marugoto/d82b7871dae7a921.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.1b98957d3e5635d0",
+              "explanationRu": "В этой ситуации: бодрый, здоровый",
+              "example": {
+                "surface": "元気そうな人ですね。",
+                "kana": "げんきそうなひとですね。",
+                "segments": [
+                  {
+                    "surface": "元気",
+                    "reading": "げんき"
+                  },
+                  {
+                    "surface": "そうな"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "ですね。"
+                  }
+                ],
+                "meaningRu": "Этот человек выглядит бодрым.",
+                "audioUrl": "/audio/marugoto/1f8fe83ba3566355.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.6742ba82316bae92",
+              "explanationRu": "В этой ситуации: очки",
+              "example": {
+                "surface": "眼鏡をかけている人は兄です。",
+                "kana": "めがねをかけているひとはあにです。",
+                "segments": [
+                  {
+                    "surface": "眼鏡",
+                    "reading": "めがね"
+                  },
+                  {
+                    "surface": "をかけている"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "兄",
+                    "reading": "あに"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Человек в очках — мой старший брат.",
+                "audioUrl": "/audio/marugoto/09013c11393be4fd.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.77104cc7c88983e9",
+              "explanationRu": "В этой ситуации: волосы",
+              "example": {
+                "surface": "赤い服を着ている人です。髪が短くて、眼鏡をかけています。",
+                "kana": "あかいふくをきているひとです。かみがみじかくて、めがねをかけています。",
+                "segments": [
+                  {
+                    "surface": "赤",
+                    "reading": "あか"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "服",
+                    "reading": "ふく"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "着",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "ている"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "髪",
+                    "reading": "かみ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "短",
+                    "reading": "みじか"
+                  },
+                  {
+                    "surface": "くて、"
+                  },
+                  {
+                    "surface": "眼鏡",
+                    "reading": "めがね"
+                  },
+                  {
+                    "surface": "をかけています。"
+                  }
+                ],
+                "meaningRu": "Это человек в красной одежде. У него короткие волосы и очки.",
+                "audioUrl": "/audio/marugoto/32d7d0e927ecc06e.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.3f0dd38049c97804",
+              "explanationRu": "В этой ситуации: так",
+              "example": {
+                "surface": "あの人は親切そうです。",
+                "kana": "あのひとはしんせつそうです。",
+                "segments": [
+                  {
+                    "surface": "あの"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "親切",
+                    "reading": "しんせつ"
+                  },
+                  {
+                    "surface": "そうです。"
+                  }
+                ],
+                "meaningRu": "Тот человек кажется добрым.",
+                "audioUrl": "/audio/marugoto/56da10995f352aee.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.02.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        3,
+        4
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.02.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.word.83f894201c099ac5",
+              "explanationRu": "В этой ситуации: нос",
+              "example": {
+                "surface": "ゆっくり丁寧に話します。",
+                "kana": "ゆっくりていねいにはなします。",
+                "segments": [
+                  {
+                    "surface": "ゆっくり"
+                  },
+                  {
+                    "surface": "丁寧",
+                    "reading": "ていねい"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "します。"
+                  }
+                ],
+                "meaningRu": "Он говорит медленно и вежливо.",
+                "audioUrl": "/audio/marugoto/04252ebed9c69f3a.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.3289b4c0bfa92493",
+              "explanationRu": "В этой ситуации: учитель",
+              "example": {
+                "surface": "ピアノを弾いている人は先生です。",
+                "kana": "ピアノをひいているひとはせんせいです。",
+                "segments": [
+                  {
+                    "surface": "ピアノを"
+                  },
+                  {
+                    "surface": "弾",
+                    "reading": "ひ"
+                  },
+                  {
+                    "surface": "いている"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "先生",
+                    "reading": "せんせい"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Человек, который играет на пианино, — преподаватель.",
+                "audioUrl": "/audio/marugoto/2b283bf416a0d7b8.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.ca5209695abff483",
+              "explanationRu": "В этой ситуации: высокий",
+              "example": {
+                "surface": "あの男性は背が高いです。",
+                "kana": "あのだんせいはせがたかいです。",
+                "segments": [
+                  {
+                    "surface": "あの"
+                  },
+                  {
+                    "surface": "男性",
+                    "reading": "だんせい"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "背",
+                    "reading": "せ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "高",
+                    "reading": "たか"
+                  },
+                  {
+                    "surface": "いです。"
+                  }
+                ],
+                "meaningRu": "Тот мужчина высокий.",
+                "audioUrl": "/audio/marugoto/4a63550ec181a2f4.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.00dc822860607642",
+              "explanationRu": "В этой ситуации: дорогой",
+              "example": {
+                "surface": "あの男性は背が高いです。",
+                "kana": "あのだんせいはせがたかいです。",
+                "segments": [
+                  {
+                    "surface": "あの"
+                  },
+                  {
+                    "surface": "男性",
+                    "reading": "だんせい"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "背",
+                    "reading": "せ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "高",
+                    "reading": "たか"
+                  },
+                  {
+                    "surface": "いです。"
+                  }
+                ],
+                "meaningRu": "Тот мужчина высокий.",
+                "audioUrl": "/audio/marugoto/4a63550ec181a2f4.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.dd939a30954ac6cf",
+              "explanationRu": "В этой ситуации: тот",
+              "example": {
+                "surface": "あの男性は背が高いです。",
+                "kana": "あのだんせいはせがたかいです。",
+                "segments": [
+                  {
+                    "surface": "あの"
+                  },
+                  {
+                    "surface": "男性",
+                    "reading": "だんせい"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "背",
+                    "reading": "せ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "高",
+                    "reading": "たか"
+                  },
+                  {
+                    "surface": "いです。"
+                  }
+                ],
+                "meaningRu": "Тот мужчина высокий.",
+                "audioUrl": "/audio/marugoto/4a63550ec181a2f4.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.02.words.3",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        3,
+        4
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.02.part.words.3",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.6f4ed29151d53f7e",
+              "explanationRu": "В этой ситуации: песня",
+              "example": {
+                "surface": "子どもが楽しそうに歌っています。",
+                "kana": "こどもがたのしそうにうたっています。",
+                "segments": [
+                  {
+                    "surface": "子",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "どもが"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しそうに"
+                  },
+                  {
+                    "surface": "歌",
+                    "reading": "うた"
+                  },
+                  {
+                    "surface": "っています。"
+                  }
+                ],
+                "meaningRu": "Ребёнок поёт с радостным видом.",
+                "audioUrl": "/audio/marugoto/292f31fd14c844b8.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.4a52dc1dd7854ca0",
+              "explanationRu": "В этой ситуации: цветы",
+              "example": {
+                "surface": "ゆっくり丁寧に話します。",
+                "kana": "ゆっくりていねいにはなします。",
+                "segments": [
+                  {
+                    "surface": "ゆっくり"
+                  },
+                  {
+                    "surface": "丁寧",
+                    "reading": "ていねい"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "します。"
+                  }
+                ],
+                "meaningRu": "Он говорит медленно и вежливо.",
+                "audioUrl": "/audio/marugoto/04252ebed9c69f3a.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.02.grammar.136",
+      "titleRu": "～は～が～",
+      "introductionRu": "は выделяет человека, が — характеризующую его часть или свойство.",
+      "canDoIds": [
+        3,
+        4
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.02.part.grammar.136",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.136",
+            "explanationRu": "は выделяет человека, が — характеризующую его часть или свойство.",
+            "example": {
+              "surface": "あの男性は背が高いです。",
+              "kana": "あのだんせいはせがたかいです。",
+              "segments": [
+                {
+                  "surface": "あの"
+                },
+                {
+                  "surface": "男性",
+                  "reading": "だんせい"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "背",
+                  "reading": "せ"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "高",
+                  "reading": "たか"
+                },
+                {
+                  "surface": "いです。"
+                }
+              ],
+              "meaningRu": "Тот мужчина высокий.",
+              "audioUrl": "/audio/marugoto/4a63550ec181a2f4.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "あの",
+                "explanationRu": "Смысловой фрагмент: Тот мужчина высокий."
+              },
+              {
+                "text": "男性は",
+                "explanationRu": "Смысловой фрагмент: Тот мужчина высокий."
+              },
+              {
+                "text": "背が",
+                "explanationRu": "Смысловой фрагмент: Тот мужчина высокий."
+              },
+              {
+                "text": "高いです",
+                "explanationRu": "は выделяет человека, が — характеризующую его часть или свойство."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.02.grammar.137",
+      "titleRu": "文＋人　＜連体修飾節＞",
+      "introductionRu": "Фраза перед 人 помогает опознать человека по внешнему признаку.",
+      "canDoIds": [
+        3,
+        4
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.02.part.grammar.137",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.137",
+            "explanationRu": "Фраза перед 人 помогает опознать человека по внешнему признаку.",
+            "example": {
+              "surface": "眼鏡をかけている人は兄です。",
+              "kana": "めがねをかけているひとはあにです。",
+              "segments": [
+                {
+                  "surface": "眼鏡",
+                  "reading": "めがね"
+                },
+                {
+                  "surface": "をかけている"
+                },
+                {
+                  "surface": "人",
+                  "reading": "ひと"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "兄",
+                  "reading": "あに"
+                },
+                {
+                  "surface": "です。"
+                }
+              ],
+              "meaningRu": "Человек в очках — мой старший брат.",
+              "audioUrl": "/audio/marugoto/09013c11393be4fd.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "眼鏡を",
+                "explanationRu": "Смысловой фрагмент: Человек в очках — мой старший брат."
+              },
+              {
+                "text": "かけている人は",
+                "explanationRu": "Смысловой фрагмент: Человек в очках — мой старший брат."
+              },
+              {
+                "text": "兄です",
+                "explanationRu": "Фраза перед 人 помогает опознать человека по внешнему признаку."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.02.grammar.138",
+      "titleRu": "～ている",
+      "introductionRu": "ている с 着る описывает результат: человек сейчас одет.",
+      "canDoIds": [
+        3,
+        4
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.02.part.grammar.138",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.138",
+            "explanationRu": "ている с 着る описывает результат: человек сейчас одет.",
+            "example": {
+              "surface": "あの人は赤い服を着ています。",
+              "kana": "あのひとはあかいふくをきています。",
+              "segments": [
+                {
+                  "surface": "あの"
+                },
+                {
+                  "surface": "人",
+                  "reading": "ひと"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "赤",
+                  "reading": "あか"
+                },
+                {
+                  "surface": "い"
+                },
+                {
+                  "surface": "服",
+                  "reading": "ふく"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "着",
+                  "reading": "き"
+                },
+                {
+                  "surface": "ています。"
+                }
+              ],
+              "meaningRu": "Тот человек одет в красную одежду.",
+              "audioUrl": "/audio/marugoto/d82b7871dae7a921.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "あの人は",
+                "explanationRu": "Смысловой фрагмент: Тот человек одет в красную одежду."
+              },
+              {
+                "text": "赤い服を",
+                "explanationRu": "Смысловой фрагмент: Тот человек одет в красную одежду."
+              },
+              {
+                "text": "着ています",
+                "explanationRu": "ている с 着る описывает результат: человек сейчас одет."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.02.grammar.139",
+      "titleRu": "文＋人　＜連体修飾節＞",
+      "introductionRu": "ている перед 人 описывает наблюдаемое действие человека.",
+      "canDoIds": [
+        3,
+        4
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.02.part.grammar.139",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.139",
+            "explanationRu": "ている перед 人 описывает наблюдаемое действие человека.",
+            "example": {
+              "surface": "ピアノを弾いている人は先生です。",
+              "kana": "ピアノをひいているひとはせんせいです。",
+              "segments": [
+                {
+                  "surface": "ピアノを"
+                },
+                {
+                  "surface": "弾",
+                  "reading": "ひ"
+                },
+                {
+                  "surface": "いている"
+                },
+                {
+                  "surface": "人",
+                  "reading": "ひと"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "先生",
+                  "reading": "せんせい"
+                },
+                {
+                  "surface": "です。"
+                }
+              ],
+              "meaningRu": "Человек, который играет на пианино, — преподаватель.",
+              "audioUrl": "/audio/marugoto/2b283bf416a0d7b8.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "ピアノを",
+                "explanationRu": "Смысловой фрагмент: Человек, который играет на пианино, — преподаватель."
+              },
+              {
+                "text": "弾いている人は",
+                "explanationRu": "Смысловой фрагмент: Человек, который играет на пианино, — преподаватель."
+              },
+              {
+                "text": "先生です",
+                "explanationRu": "ている перед 人 описывает наблюдаемое действие человека."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.02.grammar.140",
+      "titleRu": "～そうだ",
+      "introductionRu": "そう выражает впечатление, а не подтверждённый факт о характере.",
+      "canDoIds": [
+        3,
+        4
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.02.part.grammar.140",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.140",
+            "explanationRu": "そう выражает впечатление, а не подтверждённый факт о характере.",
+            "example": {
+              "surface": "あの人は親切そうです。",
+              "kana": "あのひとはしんせつそうです。",
+              "segments": [
+                {
+                  "surface": "あの"
+                },
+                {
+                  "surface": "人",
+                  "reading": "ひと"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "親切",
+                  "reading": "しんせつ"
+                },
+                {
+                  "surface": "そうです。"
+                }
+              ],
+              "meaningRu": "Тот человек кажется добрым.",
+              "audioUrl": "/audio/marugoto/56da10995f352aee.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "あの人は",
+                "explanationRu": "Смысловой фрагмент: Тот человек кажется добрым."
+              },
+              {
+                "text": "親切そうです",
+                "explanationRu": "そう выражает впечатление, а не подтверждённый факт о характере."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.02.grammar.141",
+      "titleRu": "～そうな＋N",
+      "introductionRu": "Перед существительным форма впечатления заканчивается на そうな.",
+      "canDoIds": [
+        3,
+        4
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.02.part.grammar.141",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.141",
+            "explanationRu": "Перед существительным форма впечатления заканчивается на そうな.",
+            "example": {
+              "surface": "元気そうな人ですね。",
+              "kana": "げんきそうなひとですね。",
+              "segments": [
+                {
+                  "surface": "元気",
+                  "reading": "げんき"
+                },
+                {
+                  "surface": "そうな"
+                },
+                {
+                  "surface": "人",
+                  "reading": "ひと"
+                },
+                {
+                  "surface": "ですね。"
+                }
+              ],
+              "meaningRu": "Этот человек выглядит бодрым.",
+              "audioUrl": "/audio/marugoto/1f8fe83ba3566355.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "元気そうな",
+                "explanationRu": "Смысловой фрагмент: Этот человек выглядит бодрым."
+              },
+              {
+                "text": "人ですね",
+                "explanationRu": "Перед существительным форма впечатления заканчивается на そうな."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.02.grammar.142",
+      "titleRu": "～く／～に",
+      "introductionRu": "な-прилагательное + に описывает способ действия; у い-прилагательных используется く.",
+      "canDoIds": [
+        3,
+        4
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.02.part.grammar.142",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.142",
+            "explanationRu": "な-прилагательное + に описывает способ действия; у い-прилагательных используется く.",
+            "example": {
+              "surface": "ゆっくり丁寧に話します。",
+              "kana": "ゆっくりていねいにはなします。",
+              "segments": [
+                {
+                  "surface": "ゆっくり"
+                },
+                {
+                  "surface": "丁寧",
+                  "reading": "ていねい"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "話",
+                  "reading": "はな"
+                },
+                {
+                  "surface": "します。"
+                }
+              ],
+              "meaningRu": "Он говорит медленно и вежливо.",
+              "audioUrl": "/audio/marugoto/04252ebed9c69f3a.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "ゆっくり",
+                "explanationRu": "Смысловой фрагмент: Он говорит медленно и вежливо."
+              },
+              {
+                "text": "丁寧に",
+                "explanationRu": "Смысловой фрагмент: Он говорит медленно и вежливо."
+              },
+              {
+                "text": "話します",
+                "explanationRu": "な-прилагательное + に описывает способ действия; у い-прилагательных используется く."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.02.grammar.143",
+      "titleRu": "～そうに",
+      "introductionRu": "そうに + глагол описывает, как действие выглядит со стороны.",
+      "canDoIds": [
+        3,
+        4
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.02.part.grammar.143",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.143",
+            "explanationRu": "そうに + глагол описывает, как действие выглядит со стороны.",
+            "example": {
+              "surface": "子どもが楽しそうに歌っています。",
+              "kana": "こどもがたのしそうにうたっています。",
+              "segments": [
+                {
+                  "surface": "子",
+                  "reading": "こ"
+                },
+                {
+                  "surface": "どもが"
+                },
+                {
+                  "surface": "楽",
+                  "reading": "たの"
+                },
+                {
+                  "surface": "しそうに"
+                },
+                {
+                  "surface": "歌",
+                  "reading": "うた"
+                },
+                {
+                  "surface": "っています。"
+                }
+              ],
+              "meaningRu": "Ребёнок поёт с радостным видом.",
+              "audioUrl": "/audio/marugoto/292f31fd14c844b8.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "子どもが",
+                "explanationRu": "Смысловой фрагмент: Ребёнок поёт с радостным видом."
+              },
+              {
+                "text": "楽しそうに",
+                "explanationRu": "Смысловой фрагмент: Ребёнок поёт с радостным видом."
+              },
+              {
+                "text": "歌っています",
+                "explanationRu": "そうに + глагол описывает, как действие выглядит со стороны."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.03.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        3
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.03.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.03",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Помогите найти человека: опишите одежду и внешность.",
+              "canDoIds": [
+                3
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Помогите найти человека: опишите одежду и внешность.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "赤い服を着ている人です。髪が短くて、眼鏡をかけています。",
+                "kana": "あかいふくをきているひとです。かみがみじかくて、めがねをかけています。",
+                "segments": [
+                  {
+                    "surface": "赤",
+                    "reading": "あか"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "服",
+                    "reading": "ふく"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "着",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "ている"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "髪",
+                    "reading": "かみ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "短",
+                    "reading": "みじか"
+                  },
+                  {
+                    "surface": "くて、"
+                  },
+                  {
+                    "surface": "眼鏡",
+                    "reading": "めがね"
+                  },
+                  {
+                    "surface": "をかけています。"
+                  }
+                ],
+                "meaningRu": "Это человек в красной одежде. У него короткие волосы и очки.",
+                "audioUrl": "/audio/marugoto/32d7d0e927ecc06e.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Помогите найти человека: опишите одежду и внешность.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.04.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        4
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.04.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.04",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Поделитесь впечатлением о незнакомом человеке, обозначив, что это предположение.",
+              "canDoIds": [
+                4
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Поделитесь впечатлением о незнакомом человеке, обозначив, что это предположение.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "あの人は優しそうですね。楽しそうに話しています。",
+                "kana": "あのひとはやさしそうですね。たのしそうにはなしています。",
+                "segments": [
+                  {
+                    "surface": "あの"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "優",
+                    "reading": "やさ"
+                  },
+                  {
+                    "surface": "しそうですね。"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しそうに"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "しています。"
+                  }
+                ],
+                "meaningRu": "Тот человек кажется добрым. Он говорит с радостным видом.",
+                "audioUrl": "/audio/marugoto/db135ab40706da38.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Поделитесь впечатлением о незнакомом человеке, обозначив, что это предположение.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

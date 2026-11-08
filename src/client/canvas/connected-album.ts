@@ -1,3 +1,6 @@
+import { ratingOptions, intervalLabel } from '@app/client/review-ratings';
+import { meaningDisplay } from '@app/shared/meanings';
+import { TaskView, renderTask } from './album-task';
 import 'pixi.js/unsafe-eval';
 import 'pixi.js/accessibility';
 import { Application, Assets, Container, Graphics, Rectangle, Text, Texture } from 'pixi.js';
@@ -6,7 +9,7 @@ import { learningHeaders, pendingLearning } from '@app/client/guidedApi';
 import { prepareCardAudio, warmCardAudio } from '../cardAudio';
 import { SceneSoundController } from '../sceneSound';
 import { defaultSoundSettings } from '@app/shared/sound';
-import type { ReviewItem, LearnerSettings } from '@app/shared/types';
+import type { Rating, ReviewItem, LearnerSettings } from '@app/shared/types';
 import type { LearningAdvance } from '@app/shared/learning';
 import { matchesPreparedAnswer } from '@app/shared/answers';
 import { EditorBridge, type Rect, type JapaneseValue } from './canvas';
@@ -17,6 +20,9 @@ import { albumPages, paintScene, prototypeLayout, type SceneTextures } from './p
 import { AlbumLeaf, liftAlbumPage } from './album-leaf';
 import { renderReviewOverview } from './album-review';
 import { renderAlbumMenu } from './album-menu';
+import { renderBookShelf } from './album-books';
+import { booksFor, bookForLesson, lessonBookId, lessonAvailability, starterBookId } from '@app/shared/books';
+import { readBookNavigation, saveBookNavigation, type BookNavigation } from '../book-navigation';
 import { contentPages, sectionCards, woodenTab } from './album-navigation';
 import { M6Companion } from './m6-companion';
 import { M6Events } from './m6-events';
@@ -97,6 +103,22 @@ let preview: { width: number; height: number } | null = null;
 const box = (x: number, y: number, width: number, height: number): Rect => ({ x, y, width, height });
 const heldPointers = new Set<number>();
 const lessonPages = { page: 0 };
+let bookNavigation: BookNavigation = { bookId: starterBookId, places: {} };
+let shelfOpen = false, requestedFocus: string | null = null, bookReturnFocus: string | null = null;
+const shelfPages = { offset: 0 };
+function savePlace() {
+  if (!flow.user) return;
+  bookNavigation.places[bookNavigation.bookId] = { ...bookNavigation.places[bookNavigation.bookId], page: lessonPages.page };
+  saveBookNavigation(flow.user.id, bookNavigation);
+}
+function rememberLesson(id: string) {
+  const lesson = flow.course?.lessons.find(value => value.id === id);
+  if (!lesson) return;
+  savePlace(); bookNavigation.bookId = lessonBookId(lesson);
+  lessonPages.page = bookNavigation.places[bookNavigation.bookId]?.page ?? 0;
+  bookNavigation.places[bookNavigation.bookId] = { page: lessonPages.page, lessonId: id };
+  savePlace();
+}
 const busy = () => flow.busy || review.busy || grammar.busy || counters.busy || library.busy || reference.busy || kana.busy || access.busy || admin.busy || settingsBusy;
 const reviewWord = () => { const item = review.item; return item && 'word' in item ? item : undefined; };
 const reviewCounter = () => review.item?.mode === 'counter' ? review.item : undefined;
@@ -105,7 +127,7 @@ const listening = () => page === 'counters' || page === 'review' && reviewStarte
 const counterRecall = () => ((page === 'counters' || page === 'review' && reviewStarted) && activeCounter()?.counter.kind === 'recall' && activeCounter()?.preparation?.introduced !== false && !!(page === 'review' ? review.course : counters.course) && counterArt.ready(catalogFor((page === 'review' ? review.course : counters.course)!)) || page === 'lesson' && flow.counter?.kind === 'recall' && !!flow.course && counterArt.ready(catalogFor(flow.course))) && !counterDraft.rule && !(page === 'lesson' && flow.counterNeedsIntro);
 const isRecall = () => counterRecall() || page === 'review' && reviewStarted && !!reviewWord() && !reviewWord()?.choices?.length || page === 'lesson' && (flow.recall && flow.step?.kind !== 'construction-practice' || flow.step?.kind === 'construction-practice' && flow.step.mode !== 'grammar');
 const isRevealed = () => counterRecall() ? counterDraft.revealed : page === 'lesson' && flow.recall ? flow.draft.revealed : revealed;
-const allowed = (rating: 1 | 3) => ready && !contextLost && !suspended && !menuOpen && !busy() && !flow.error && !(page === 'review' && (review.saveError || review.pending)) && !(page === 'counters' && (counters.saveError || counters.pending)) && isRevealed() && (!listening() || heard && !mediaError);
+const allowed = (rating: Rating) => ready && !contextLost && !suspended && !menuOpen && !busy() && !flow.error && !(page === 'review' && (review.saveError || review.pending)) && !(page === 'counters' && (counters.saveError || counters.pending)) && isRevealed() && (!listening() || heard && !mediaError);
 function feedbackForPage() { return page === 'review' ? review.last : page === 'counters' ? counters.last : page === 'grammar' ? grammar.last : page === 'kana' ? kana.last : page === 'lesson' ? flow.feedback : null; }
 function presentationPlan() {
   const done = page === 'lesson' ? flow.state?.completed : page === 'review' ? review.total > 0 && review.completed >= review.total && !review.item : page === 'grammar' ? grammar.total > 0 && grammar.completed >= grammar.total && !grammar.item : page === 'counters' ? counters.total > 0 && counters.completed >= counters.total && !counters.item : page === 'kana' ? kana.total > 0 && kana.completed >= kana.total && !kana.item : false;
@@ -170,7 +192,7 @@ async function advance(action: LearningAdvance['action'], details: Partial<Learn
   }
   schedule();
 }
-function acceptGrade(rating: 1 | 3) {
+function acceptGrade(rating: Rating) {
   if (!allowed(rating) || document.hidden) return false;
   const owner = flow.user!.id;
   if (page === 'counters' || page === 'review' && reviewCounter()) { const item = activeCounter()!; void (page === 'review' ? review : counters).save({attemptId:crypto.randomUUID(),reviewId:item.id,version:item.version,publicationId:item.publicationId,mode:'counter',rating,helped:counterDraft.helped}); try { return pendingReviews(owner).some(value=>value.reviewId===item.id&&value.version===item.version); } catch { return false; } }
@@ -178,13 +200,13 @@ function acceptGrade(rating: 1 | 3) {
     const item = review.item!; void review.grade(owner, rating);
     try { return pendingReviews(owner).some(value => value.reviewId === item.id && value.version === item.version); } catch { return false; }
   }
-  const state = flow.state!; void advance(rating === 3 ? 'remember' : 'again', flow.counter ? {helped:counterDraft.helped} : {});
+  const state = flow.state!; void advance(rating === 1 ? 'again' : 'remember', {rating,...(flow.counter ? {helped:counterDraft.helped} : {})});
   try { return pendingLearning(owner).some(value => value.lessonId === state.lessonId && value.submission.stateVersion === state.version && value.submission.stepId === state.step!.id); } catch { return false; }
 }
-function gradeActions(): StudyAction[] { return [
-  { id: 'grade-again', text: '← Ещё раз', enabled: allowed(1), run: () => leaf.commit(1) },
-  { id: 'grade-remember', text: 'Помню →', enabled: allowed(3), run: () => leaf.commit(3) },
-]; }
+function gradeActions(): StudyAction[] {
+  const item = page === 'lesson' ? flow.state?.reviewItem : review.item;
+  return ratingOptions(item?.schedule).map(option => ({...option, fontSize: 14, accessibleLabel: `${option.label}, ${option.interval}`, enabled: allowed(option.rating) && (option.rating === 1 || page !== 'lesson' || !flow.draft.helped), run: () => { acceptGrade(option.rating); }}));
+}
 function safe(action: StudyAction): StudyAction { const ticket = flow.ticket(), turn = review.turn, counterTurn = counters.turn, grammarTurn = grammar.turn, kanaTurn = kana.turn, currentPage = page; return { ...action, enabled: action.enabled !== false && !busy(), run: () => { if (ready && !contextLost && !suspended && !busy() && !document.hidden && page === currentPage && counters.turn === counterTurn && grammar.turn === grammarTurn && kana.turn === kanaTurn && ticket.stepId === flow.ticket().stepId && ticket.revision === flow.ticket().revision && turn === review.turn) { sound.unlock(flow.user ? chosenScene : undefined); action.run(); } } }; }
 function footer(actions: StudyAction[]) { surface.footer(actions.map(safe)); }
 function message(title: string, detail: string, actions: StudyAction[]) {
@@ -212,10 +234,10 @@ async function loadSettings() {
   try { let next = await api<LearnerSettings>('/api/settings', { headers: learningHeaders(owner) }); const pending = pendingSettings(owner); if (pending) next = await storeSettings(owner, pending.value, next); if (flow.user?.id === owner) settings = next; }
   catch { if (flow.user?.id === owner) notice = 'Настройки временно недоступны.'; } schedule();
 }
-async function openLesson(id: string) { notice = '';
+async function openLesson(id: string) { notice = ''; rememberLesson(id);
   stopMedia(); review.hide(); await flow.open(id); if (!flow.error) { page = 'lesson'; flow.start(); draw(); companion.react('entry'); history.replaceState(null, '', `?lesson=${encodeURIComponent(id)}`); } schedule();
 }
-function home() { notice = ''; menuOpen = false; stopMedia(); flow.active = false; review.hide(); grammar.hide(); counters.hide(); kana.hide(); page = 'lessons'; history.replaceState(null, '', location.pathname); schedule(); }
+function home() { if(page==='book')requestedFocus=bookReturnFocus; notice = ''; shelfOpen = false; menuOpen = false; stopMedia(); flow.active = false; review.hide(); grammar.hide(); counters.hide(); kana.hide(); page = 'lessons'; history.replaceState(null, '', location.pathname); schedule(); }
 async function logout() { stopMedia(); sound.configure(settings ?? defaultSoundSettings, chosenScene, false, false); companion.quiet(); review.clear(); grammar.clear(); counters.clear(); page = 'lessons'; settings = null; await flow.logout(); schedule(); }
 function openGrammar(context?: TrainingContext) { notice = ''; stopMedia(); review.hide(); counters.hide(); flow.active = false; menuOpen = false; page = 'grammar'; if (JSON.stringify(context) !== JSON.stringify(grammarContext)) grammar.clear(); grammarContext = context; grammar.active = true; if (!grammar.item && !grammar.pending) void grammar.open(flow.user!.id, 'grammar', context); schedule(); }
 function openCounters() { notice = ''; stopMedia(); review.hide(); grammar.hide(); flow.active = false; menuOpen = false; page = 'counters'; counters.active = true; if (!counters.item && !counters.pending) void counters.open(flow.user!.id, 'counter', {counters:true}); schedule(); }
@@ -228,7 +250,7 @@ function referenceField(id: string, rect: Rect, value: string, placeholder: stri
   nativeField(field, rect, placeholder);
 }
 function openReference(lists = false) { notice = ''; stopMedia(); review.hide(); grammar.hide(); counters.hide(); flow.active = false; menuOpen = false; page = 'reference'; try { reference.bind(flow.user!.id); if (lists) reference.section = 'lists'; if (personalCommands(flow.user!.id).length) void reference.save(); else void library.load(flow.user!.id); } catch (error) { reference.error = error instanceof Error ? error.message : 'Черновик недоступен.'; } schedule(); }
-function openBook(lessonId?: string) { notice = ''; if (lessonId) { if (library.owner !== flow.user!.id) { library.clear(); library.owner = flow.user!.id; } library.lessonId = lessonId; library.tab = 'overview'; library.detail = ''; library.search = ''; library.offset = 0; } stopMedia(); review.hide(); grammar.hide(); counters.hide(); flow.active = false; menuOpen = false; page = 'book'; void library.load(flow.user!.id); schedule(); }
+function openBook(lessonId?: string) { bookReturnFocus=surface?.controls.find(control=>control.id==='lesson:'+lessonId)?.accessibleLabel??null; notice = ''; if (lessonId) { savePlace(); const lesson = flow.course?.lessons.find(value => value.id === lessonId); if (lesson) bookNavigation.bookId = lessonBookId(lesson); history.replaceState(null, '', `?lesson=${encodeURIComponent(lessonId)}`); if (library.owner !== flow.user!.id) { library.clear(); library.owner = flow.user!.id; } library.lessonId = lessonId; library.tab = 'overview'; library.detail = ''; library.search = ''; library.offset = 0; } stopMedia(); review.hide(); grammar.hide(); counters.hide(); flow.active = false; menuOpen = false; page = 'book'; void library.load(flow.user!.id); schedule(); }
 function libraryField(rect: Rect, value: string, changed: (value: string) => void) { libraryInput = changed; if (!editor.composing && editor.element.value !== value) editor.element.value = value; nativeField(editor, rect, 'Поиск'); }
 function beginTraining(context: TrainingContext) { notice = ''; stopMedia(); flow.active = false; review.clear(); trainingContext = context; reviewStarted = true; page = 'review'; schedule(); }
 function openLibraryVideo(material: LessonVideo) { stopMedia(); library.video = material; mediaError = ''; page = 'library-video'; schedule(); }
@@ -355,12 +377,22 @@ function openReviewMenu() {
   if (trainingContext) { review.clear(); trainingContext = undefined; }
   review.active = true;
   if (!review.item && !review.pending) { reviewStarted = false; void review.open(flow.user!.id, 'mixed'); }
+  else void review.refreshDue();
   schedule();
 }
 function renderLessons() {
+  const course = flow.course; if (!course) return;
+  const books = booksFor(course), book = books.find(value => value.id === bookNavigation.bookId) ?? books[0]!;
+  if (shelfOpen) { renderBookShelf(surface, books, book.id, shelfPages, {
+    safe, changed: schedule, close: () => { shelfOpen = false; requestedFocus = `${book.shortTitle} · Выбрать учебник`; schedule(); },
+    choose: id => { savePlace(); bookNavigation.bookId = id; lessonPages.page = bookNavigation.places[id]?.page ?? 0; shelfOpen = false; savePlace(); requestedFocus = `${books.find(value => value.id === id)!.shortTitle} · Выбрать учебник`; schedule(); },
+  }); return; }
+  const lessons = course.lessons.filter(lesson => lessonBookId(lesson) === book.id).map(lesson => ({ ...lesson, availability: lessonAvailability(course, lesson), ...flow.progress(lesson.id), parts: flow.lessonStages(lesson.id) }));
+  const saved = lessons.find(lesson => lesson.id === bookNavigation.places[book.id]?.lessonId && lesson.availability==='full' && !lesson.finished);
   renderAlbumMenu(surface, view, lessonPages, {
-    lessons: liveCatalog.lessons.map(lesson => ({ ...lesson, ...flow.progress(lesson.id), parts: flow.lessonStages(lesson.id) })),
-    safe, changed: schedule, learn: id => openBook(id), confirmEmail: flow.user?.emailVerified===false ? ()=>openAccess('account') : undefined,
+    lessons, book, continueLesson: saved ?? lessons.find(lesson => lesson.started && !lesson.finished),
+    chooseBook: () => { savePlace(); shelfOpen = true; schedule(); },
+    safe, changed: () => { savePlace(); schedule(); }, learn: id => openBook(id), confirmEmail: flow.user?.emailVerified===false ? ()=>openAccess('account') : undefined,
   });
 }
 function renderIntro() {
@@ -377,6 +409,7 @@ function renderIntro() {
   ] : [{ id: 'intro-next', text: 'К практике →', run: () => void advance('continue') }]);
 }
 let introTab = 0;
+const taskView = new TaskView();
 function renderWordRecall() {
   const item = page === 'review' ? reviewWord()! : null, word = item?.word ?? flow.word!, mode = item?.mode ?? (flow.step as { mode: 'ja-ru' | 'ru-ja' | 'listening' }).mode;
   const shown = isRevealed(), draft = flow.recall && page === 'lesson' ? flow.draft : null;
@@ -390,7 +423,7 @@ function renderWordRecall() {
 function renderOldWord() {
   const step = flow.step!; if (step.kind !== 'word-practice') return;
   const mode = step.mode, choices: StudyChoice[] = flow.choices.map(word => ({ id: word.id, text: mode === 'ru-ja' ? word.surface : word.meaningRu, japanese: mode === 'ru-ja', wrong: wrong.includes(word.id), selected: selected === word.id && correct === true, enabled: !busy() && (!listening() || heard && !mediaError), run: () => {} }));
-  const plan = surface.quiz(correct === false ? 'Попробуйте другой вариант' : 'Выберите ответ', mode === 'listening' ? '♪' : mode === 'ru-ja' ? flow.word!.meaningRu : flow.word!.surface, choices, undefined, { question: view.prompt, alignQuestion: true, paper: false, titleSize: 16, ruby: mode === 'ja-ru' ? flow.word! : undefined });
+  const plan = surface.quiz(correct === false ? 'Попробуйте другой вариант' : 'Выберите ответ', mode === 'listening' ? '♪' : mode === 'ru-ja' ? meaningDisplay(flow.word!).meaningRu : meaningDisplay(flow.word!).surface, choices, undefined, { question: view.prompt, alignQuestion: true, paper: false, titleSize: 16, ruby: mode === 'ja-ru' ? meaningDisplay(flow.word!) : undefined });
   surface.choices(choices, plan.choices, id => { void (async () => { const before = key, result = await flow.choose(id); if (before !== key || result === undefined) return; selected = id; correct = result; if (!result && !wrong.includes(id)) wrong.push(id); schedule(); })(); }, plan.columns, plan.size);
   if (listening()) surface.action(safe({ id: 'audio', text: '▶', run: () => void play('audioUrl' in flow.word! ? flow.word!.audioUrl : undefined) }), box(plan.question.x + plan.question.width - 48, plan.question.y + plan.question.height - 46, 44, 44));
   footer([{ id: 'old-next', text: 'Дальше →', enabled: correct === true, run: () => void advance('remember') }]);
@@ -409,7 +442,7 @@ function renderBuilder() {
   }
   const model = workspace, currentPage = page, current = () => workspace === model && flow.user?.id === owner && page === currentPage && (guided || session.item === item);
   order = model.tokens.map(token => item.exercise.tokens.findIndex(value => value.id === token.id));
-  renderWorkspace(surface, model, { prompt: view.prompt, safe, changed: schedule, busy: busy(), composing: editor.composing, revealed: guided ? flow.draft.revealed : !!model.verdict,
+  renderWorkspace(surface, model, { schedule: item.schedule, prompt: view.prompt, safe, changed: schedule, busy: busy(), composing: editor.composing, revealed: guided ? flow.draft.revealed : !!model.verdict,
     drawField: (rect, value, placeholder, changed) => { workspaceInput = changed; if (!editor.composing && editor.element.value !== value) editor.element.value = value; nativeField(editor, rect, placeholder); },
     check: () => void model.evaluate(owner, item, current, (result, tokenIds, tokenForms) => {
       if (guided && flow.recall && ['correct', 'incorrect'].includes(result.outcome)) writeRecallDraft(recallDraftKey(owner, flow.state!), { firstTokenIds: tokenIds, firstTokenForms: tokenForms, tokenIds, revealed: result.outcome === 'correct' });
@@ -417,7 +450,7 @@ function renderBuilder() {
       schedule();
     }),
     analyze: () => { void model.analyze(owner, item, guided ? { lessonId: item.exercise.lessonId } : context?.listId ? { listId: context.listId } : context?.lessonId ? { lessonId: context.lessonId } : {}, current).then(() => { if (current() && model.result) { notice = model.result; schedule(); } }); },
-    grade: rating => { const tokenIds = model.tokens.map(token => token.id), tokenForms = model.forms; if (guided) void advance(rating === 3 ? 'remember' : 'again', { tokenIds, tokenForms }); else void session.save({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, publicationId: item.publicationId, mode: 'grammar', tokenIds, tokenForms, exploring: model.exploring, revealed: false, rating }); },
+    grade: rating => { const tokenIds = model.tokens.map(token => token.id), tokenForms = model.forms; if (guided) void advance(rating === 1 ? 'again' : 'remember', { tokenIds, tokenForms, rating }); else void session.save({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, publicationId: item.publicationId, mode: 'grammar', tokenIds, tokenForms, exploring: model.exploring, revealed: false, rating }); },
   });
 }
 function persistCounterDraft() { if (page === 'lesson' && flow.user && flow.state) { try { writeRecallDraft(recallDraftKey(flow.user.id, flow.state), { helped: counterDraft.helped, revealed: counterDraft.revealed }); } catch { notice = 'Не удалось сохранить черновик на устройстве.'; } } schedule(); }
@@ -431,7 +464,7 @@ function renderCounter() {
   const before = key;
   const changed = persistCounterDraft;
   renderCounterCard(surface, card, course, counterDraft, {
-    prompt: view.prompt, pictures: counterArt.textures, intro: guided ? flow.counterNeedsIntro : item?.preparation ? !item.preparation.introduced : card.introduction,
+    schedule: (guided ? flow.state?.reviewItem : item)?.schedule, prompt: view.prompt, pictures: counterArt.textures, intro: guided ? flow.counterNeedsIntro : item?.preparation ? !item.preparation.introduced : card.introduction,
     busy: busy(), heard, mediaError, changed, safe,
     play: url => void play(url), introduce: () => void (guided ? flow.introduceCounter() : session.introduce()),
     choose: (id, helped) => { if (document.hidden || busy()) return; void (async () => {
@@ -439,18 +472,19 @@ function renderCounter() {
       else { const item = activeCounter()!; await session.save({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, publicationId: item.publicationId, mode: 'counter', rating: card.acceptedKeys.includes(id) && !helped ? 3 : 1, choice: id, helped }); }
       schedule();
     })(); },
-    grade: rating => { leaf.commit(rating); },
+    grade: rating => { acceptGrade(rating); },
     ...(guided ? { next: () => void advance(counterDraft.wrong.length || counterDraft.helped ? 'again' : 'remember') } : {}),
   });
 }
 function renderVideo() { renderVideoPlayer(flow.video, true); }
 function renderLesson() {
   const step = flow.step;
-  if (!step) { message('Урок пройден', 'Основной материал урока изучен. Повторения продолжаются по расписанию.', [{ id: 'lesson-done', text: 'К урокам', run: home }]); return; }
+  if (!step) { message('Урок пройден', flow.state?.completionBasis==='recognized'?'Ранее проходил. Отметка сохранена отдельно от выполненных ответов.':flow.state?.completionBasis==='self-assessed'?'Задания выполнены. Собственный ответ отмечен по самооценке. Повторения продолжаются по расписанию.':'Все обязательные шаги выполнены. Повторения продолжаются по расписанию.', [{ id: 'lesson-done', text: 'К урокам', run: home }]); return; }
   if (step.kind.endsWith('intro')) renderIntro();
   else if (step.kind === 'word-practice') flow.recall ? renderWordRecall() : renderOldWord();
   else if (step.kind === 'construction-practice') step.mode === 'grammar' ? renderBuilder() : renderWordRecall();
   else if (step.kind === 'counter-practice') renderCounter();
+  else if (step.kind === 'learning-task') { const task=flow.part?.tasks?.find(task=>task.id===step.taskId); if(task){taskView.bind(flow.user!.id,flow.state!);renderTask(surface,task,flow.state!,taskView,{orthography:settings?.orthography??'furigana',safe,changed:schedule,play:url=>void play(url),field:(rect,value,changed)=>{libraryInput=changed;if(!editor.composing)editor.element.value=value;nativeField(editor,rect,'Ваш ответ по-японски');},advance:(action,details)=>void advance(action,details)});} }
   else if (step.kind === 'video') renderVideo();
   else message('Часть пройдена', 'Ответы сохранены. Можно перейти к следующей части.', [{ id: 'part-next', text: flow.state!.partIndex === flow.state!.totalParts - 1 ? 'Завершить урок' : 'Следующая часть →', run: () => void advance('continue') }]);
 }
@@ -470,7 +504,7 @@ function renderReviews() {
     { id: 'review-ru', text: 'Русский → японский', description: 'Вспоминаем японское слово по смыслу', run: () => void review.open(flow.user!.id, 'ru-ja', trainingContext) },
     { id: 'review-audio', text: 'На слух', description: 'Слушаем и узнаём знакомые слова', run: () => void review.open(flow.user!.id, 'listening', trainingContext) },
   ], safe); return; }
-  if (!review.item) { message(review.total ? 'Занятие завершено' : 'На сейчас всё повторено', review.total ? 'Ответы сохранены. Следующее повторение назначено по вашим ответам.' : 'Новые карточки появятся после изучения материала в уроках.', [
+  if (!review.item) { message(review.nextDue && !trainingContext ? 'Ближайшее повторение' : review.total ? 'Занятие завершено' : 'На сейчас всё повторено', review.nextDue && !trainingContext ? `Карточки вернутся через ${intervalLabel((Date.parse(review.nextDue)-Date.now())/1000)}. Можно продолжить урок; расписание сохранено.` : review.total ? 'Ответы сохранены. Следующее повторение назначено по вашим ответам.' : 'Новые карточки появятся после изучения материала в уроках.', [
     { id: 'review-done', text: 'К урокам', run: home },
     { id: 'review-next', text: trainingContext ? 'Ещё занятие' : 'К повторению', run: () => { review.clear(); if (trainingContext) schedule(); else openReviewMenu(); } },
   ]); return; }
@@ -539,11 +573,12 @@ function draw() {
   renderCount++;
   const owner = flow.user?.id ?? null;
   if (owner !== displayedOwner) {
-    lessonPages.page = 0;
+    bookNavigation = owner && flow.course ? readBookNavigation(owner, flow.course) : { bookId: starterBookId, places: {} };
+    lessonPages.page = bookNavigation.places[bookNavigation.bookId]?.page ?? 0; shelfOpen = false;
     const previous = displayedOwner; displayedOwner = owner; if (previous || !owner) { sound.dispose(); sound = newSound(); } settingsBusy = false; settingsView.volume = null; settingsView.offset = 0; kanaView.offset = 0; review.clear(); reviewStarted = false; grammar.clear(); counters.clear(); library.clear(); reference.clear(); kana.clear(); admin.clear(); for (const field of referenceFields.values()) field.element.value = ''; workspace = null; workspaceInput = null; lastGuided = null; lastAttempt = ''; companion.quiet(); key = ''; autoPlayedKey = ''; stopMedia(); mediaError = ''; notice = ''; menuOpen = false; revealed = false; heard = false; selected = null; order = []; wrong = []; bad = []; correct = null; manual = false; editor.element.value = '';
     if (previous) { page = 'lessons'; settings = null; if (owner) void loadSettings(); }
   }
-  const focus = app.renderer.accessibility.div.contains(document.activeElement) ? document.activeElement?.getAttribute('aria-label') : null;
+  const focus = requestedFocus ?? (app.renderer.accessibility.div.contains(document.activeElement) ? document.activeElement?.getAttribute('aria-label') : null); requestedFocus = null;
   leaf.bind(); changedCard(); companion.context(owner, `${page}:${key}`); companion.setActive(!!owner && !document.hidden && !contextLost && !suspended); ui.removeChildren().forEach(child => child.destroy({ children: true, context: true, style: true }));
   placedFields.clear(); referenceCallbacks.clear(); workspaceInput = null; libraryInput = null; video.hidden = true;
   let layout = view.layout;
@@ -563,7 +598,7 @@ function draw() {
   else if (page === 'review') renderReviews();
   else if (page === 'counters') renderCounter();
   else if (page === 'grammar') renderBuilder();
-  else if (page === 'book') { if (library.error) message('Материалы недоступны', library.error, [{id:'book-retry',text:'Повторить',run:()=>void library.load(flow.user!.id)}]); else if (!library.data || library.busy) message('Загружаем урок', 'Подождите немного.', []); else renderBook(surface, library, {safe,changed:schedule,saved:()=>{if(library.owner===flow.user?.id&&library.data)flow.updateProgress(library.data.learning??[],library.data.progress.introducedWordIds);schedule();},home,learn:id=>void openLesson(id),train:id=>beginTraining({lessonId:id}),trainGrammar:id=>openGrammar({lessonId:id}),field:libraryField,video:openLibraryVideo}); }
+  else if (page === 'book') { if (library.error) message('Материалы недоступны', library.error, [{id:'book-retry',text:'Повторить',run:()=>void library.load(flow.user!.id)}]); else if (!library.data || library.busy) message('Загружаем урок', 'Подождите немного.', []); else renderBook(surface, library, {safe,changed:schedule,home,learn:id=>void openLesson(id),train:id=>beginTraining({lessonId:id}),trainGrammar:id=>openGrammar({lessonId:id}),field:libraryField,video:openLibraryVideo,play:url=>void play(url)}); }
   else if (page === 'admin') { if (!flow.user.isAdmin) message('Доступ закрыт', 'Требуются права администратора.', [{id:'admin-home',text:'К урокам',run:home}]); else renderAdminAccess(surface,admin,{safe,changed:schedule,home,prompt:view.prompt,field:referenceField}); }
   else if (page === 'kana') renderKana(surface, kana, catalogFor(flow.course!), kanaView, { safe, changed: schedule, home: openPracticeMenu, prompt: view.prompt });
   else if (page === 'reference') { if (library.error) message('Справочник недоступен', library.error, [{id:'reference-retry',text:'Повторить',run:()=>void library.load(flow.user!.id)}]); else if (reference.error && !library.data) message('Личные данные недоступны',reference.error,[{id:'personal-home',text:'К урокам',run:home}]); else if (reference.error) renderReference(surface,reference,{safe,changed:schedule,home,field:referenceField,train:id=>beginTraining({listId:id}),trainGrammar:id=>openGrammar({listId:id}),play:url=>{if(url)void play(url);}}); else if (!library.data || library.busy) message('Загружаем справочник', 'Подождите немного.', []); else renderReference(surface,reference,{safe,changed:schedule,home,field:referenceField,train:id=>beginTraining({listId:id}),trainGrammar:id=>openGrammar({listId:id}),play:url=>{if(url)void play(url);}}); }
@@ -628,7 +663,7 @@ async function start(restore = false) {
   app.stage.addChild(environment.root, world, ui, companion.root); ready = true; resize();
   app.canvas.addEventListener('webglcontextlost', event => { event.preventDefault(); contextLost = true; stopDecor(); stopMedia(); sound.configure(settings ?? defaultSoundSettings, chosenScene, false, false); leaf.cancel(); companion.setActive(false); recovery.hidden = false; });
   app.canvas.addEventListener('webglcontextrestored', () => { contextLost = false; recovery.hidden = true; resize(); });
-  if (!restore) { if (startupMessage) startupMessage.textContent = 'Загружаем уроки…'; await account; if (flow.user) { const lesson = new URLSearchParams(location.search).get('lesson'); if (lesson) await openLesson(lesson); } }
+  if (!restore) { if (startupMessage) startupMessage.textContent = 'Загружаем уроки…'; await account; if (flow.user) { const lesson = new URLSearchParams(location.search).get('lesson'); if (lesson) openBook(lesson); } }
   recovery.hidden = true; schedule();
 }
 let recovering = false;
@@ -646,7 +681,7 @@ const releasePointer = (event: PointerEvent) => { if (heldPointers.delete(event.
 window.addEventListener('pointerup', releasePointer, { capture: true }); window.addEventListener('pointercancel', releasePointer, { capture: true });
 window.addEventListener('resize', resize);
 window.addEventListener('hashchange', () => { access.locationChanged(); accessName.element.value = ''; password.element.value = ''; if (access.mode) void access.load(); schedule(); });
-const resume = () => { if (flow.user && !busy() && !document.hidden) { if (page === 'lesson' && !flow.snapshot().confirmedNext) void flow.refresh(); else void flow.boot().then(() => { if (page === 'settings' && flow.user) void loadSettings(); schedule(); }); } };
+const resume = () => { if (flow.user && !busy() && !document.hidden) { if (page === 'lesson' && !flow.snapshot().confirmedNext) void flow.refresh(); else if (page === 'review' && !trainingContext && review.active) void review.refreshDue(); else void flow.boot().then(() => { if (page === 'settings' && flow.user) void loadSettings(); schedule(); }); } };
 window.addEventListener('online', resume); window.addEventListener('focus', resume);
 window.addEventListener('storage', event => { if (event.key?.startsWith('japanese-recall-draft:')) schedule(); });
 document.addEventListener('visibilitychange', () => { if (document.hidden) { stopDecor(); stopMedia(); leaf?.cancel(); companion?.setActive(false); sound.configure(settings ?? defaultSoundSettings, chosenScene, false, false); } else schedule(); });

@@ -1,3 +1,4 @@
+import { wordTargets } from './meanings';
 import { validateThematicMaterial } from './training';
 import data from '../../materials/catalog.json';
 import type { CounterDefinition, CounterObject } from './counters';
@@ -34,7 +35,7 @@ export function validateCatalog(course: Course): void {
   const local = (value: unknown) => text(value) && /^\/[a-z0-9][a-z0-9/_.-]*$/i.test(value) && !value.split('/').some(part => part === '..' || part === '.');
   ensure(c && c.schemaVersion === 1, 'schema');
   ensure(record(c.quiz) && record(c.quiz.choices), 'quiz');
-  const words = new Map(course.words.map(word => [word.id, word]));
+  const words = new Map(wordTargets(course).map(word => [word.id, word]));
   for (const [id, choices] of Object.entries(c.quiz.choices)) ensure(words.has(id) && Array.isArray(choices) && choices.length === 3 && new Set([id,...choices]).size === 4 && choices.every(choice => words.has(choice)), `choices ${id}`);
   ensure(Array.isArray(c.quiz.equivalent) && c.quiz.equivalent.every(group => Array.isArray(group) && group.length >= 2 && group.every(text)), 'equivalent answers');
   ensure(Array.isArray(c.quiz.courtesyMarkers) && c.quiz.courtesyMarkers.every(text), 'courtesy markers');

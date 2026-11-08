@@ -1,0 +1,1176 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.01",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Жизнь и работа моей семьи",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.01.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        1,
+        2
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.01.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.9e46eae5ec4a4570",
+              "explanationRu": "В этой ситуации: разговаривать",
+              "example": {
+                "surface": "家族とはロシア語で話します。友達とは日本語でも話します。",
+                "kana": "かぞくとはロシアごではなします。ともだちとはにほんごでもはなします。",
+                "segments": [
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "とはロシア"
+                  },
+                  {
+                    "surface": "語",
+                    "reading": "ご"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "します。"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "とは"
+                  },
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "でも"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "します。"
+                  }
+                ],
+                "meaningRu": "С семьёй я говорю по-русски. С друзьями говорю и по-японски.",
+                "audioUrl": "/audio/marugoto/23ec2e0a9abd9610.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.0aa3a1aaaf653aae",
+              "explanationRu": "В этой ситуации: больница",
+              "example": {
+                "surface": "弟は病院で働いています。",
+                "kana": "おとうとはびょういんではたらいています。",
+                "segments": [
+                  {
+                    "surface": "弟",
+                    "reading": "おとうと"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "病院",
+                    "reading": "びょういん"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "働",
+                    "reading": "はたら"
+                  },
+                  {
+                    "surface": "いています。"
+                  }
+                ],
+                "meaningRu": "Мой младший брат работает в больнице.",
+                "audioUrl": "/audio/marugoto/8808f742f195f8c3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.5bed5f85e91e0ad3",
+              "explanationRu": "В этой ситуации: учёба",
+              "example": {
+                "surface": "私は大阪に住んでいます。会社で働いています。姉は京都で勉強しています。",
+                "kana": "わたしはおおさかにすんでいます。かいしゃではたらいています。あねはきょうとでべんきょうしています。",
+                "segments": [
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "大阪",
+                    "reading": "おおさか"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "住",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "んでいます。"
+                  },
+                  {
+                    "surface": "会社",
+                    "reading": "かいしゃ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "働",
+                    "reading": "はたら"
+                  },
+                  {
+                    "surface": "いています。"
+                  },
+                  {
+                    "surface": "姉",
+                    "reading": "あね"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "京都",
+                    "reading": "きょうと"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "勉強",
+                    "reading": "べんきょう"
+                  },
+                  {
+                    "surface": "しています。"
+                  }
+                ],
+                "meaningRu": "Я живу в Осаке и работаю в компании. Старшая сестра учится в Киото.",
+                "audioUrl": "/audio/marugoto/c00f9803c72372a6.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.70e282b0cec0e2f3",
+              "explanationRu": "В этой ситуации: велосипед",
+              "example": {
+                "surface": "大学まで自転車で行きます。",
+                "kana": "だいがくまでじてんしゃでいきます。",
+                "segments": [
+                  {
+                    "surface": "大学",
+                    "reading": "だいがく"
+                  },
+                  {
+                    "surface": "まで"
+                  },
+                  {
+                    "surface": "自転車",
+                    "reading": "じてんしゃ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きます。"
+                  }
+                ],
+                "meaningRu": "До университета я еду на велосипеде.",
+                "audioUrl": "/audio/marugoto/b122127a6b2b447f.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.ab938f825a16029d",
+              "explanationRu": "В этой ситуации: (мой) младший брат",
+              "example": {
+                "surface": "弟は病院で働いています。",
+                "kana": "おとうとはびょういんではたらいています。",
+                "segments": [
+                  {
+                    "surface": "弟",
+                    "reading": "おとうと"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "病院",
+                    "reading": "びょういん"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "働",
+                    "reading": "はたら"
+                  },
+                  {
+                    "surface": "いています。"
+                  }
+                ],
+                "meaningRu": "Мой младший брат работает в больнице.",
+                "audioUrl": "/audio/marugoto/8808f742f195f8c3.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.01.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        1,
+        2
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.01.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.1eec125ba175f767",
+              "explanationRu": "В этой ситуации: фирма, компания",
+              "example": {
+                "surface": "私は大阪に住んでいます。会社で働いています。姉は京都で勉強しています。",
+                "kana": "わたしはおおさかにすんでいます。かいしゃではたらいています。あねはきょうとでべんきょうしています。",
+                "segments": [
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "大阪",
+                    "reading": "おおさか"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "住",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "んでいます。"
+                  },
+                  {
+                    "surface": "会社",
+                    "reading": "かいしゃ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "働",
+                    "reading": "はたら"
+                  },
+                  {
+                    "surface": "いています。"
+                  },
+                  {
+                    "surface": "姉",
+                    "reading": "あね"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "京都",
+                    "reading": "きょうと"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "勉強",
+                    "reading": "べんきょう"
+                  },
+                  {
+                    "surface": "しています。"
+                  }
+                ],
+                "meaningRu": "Я живу в Осаке и работаю в компании. Старшая сестра учится в Киото.",
+                "audioUrl": "/audio/marugoto/c00f9803c72372a6.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8217225960a91885",
+              "explanationRu": "В этой ситуации: японский язык",
+              "example": {
+                "surface": "家族とはロシア語で話します。友達とは日本語でも話します。",
+                "kana": "かぞくとはロシアごではなします。ともだちとはにほんごでもはなします。",
+                "segments": [
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "とはロシア"
+                  },
+                  {
+                    "surface": "語",
+                    "reading": "ご"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "します。"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "とは"
+                  },
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "でも"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "します。"
+                  }
+                ],
+                "meaningRu": "С семьёй я говорю по-русски. С друзьями говорю и по-японски.",
+                "audioUrl": "/audio/marugoto/23ec2e0a9abd9610.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.10d2007bc30b98ad",
+              "explanationRu": "В этой ситуации: идти; ехать",
+              "example": {
+                "surface": "大学まで自転車で行きます。",
+                "kana": "だいがくまでじてんしゃでいきます。",
+                "segments": [
+                  {
+                    "surface": "大学",
+                    "reading": "だいがく"
+                  },
+                  {
+                    "surface": "まで"
+                  },
+                  {
+                    "surface": "自転車",
+                    "reading": "じてんしゃ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きます。"
+                  }
+                ],
+                "meaningRu": "До университета я еду на велосипеде.",
+                "audioUrl": "/audio/marugoto/b122127a6b2b447f.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.7905be9b72b867a7",
+              "explanationRu": "В этой ситуации: друг, друзья",
+              "example": {
+                "surface": "家族とはロシア語で話します。友達とは日本語でも話します。",
+                "kana": "かぞくとはロシアごではなします。ともだちとはにほんごでもはなします。",
+                "segments": [
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "とはロシア"
+                  },
+                  {
+                    "surface": "語",
+                    "reading": "ご"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "します。"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "とは"
+                  },
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "でも"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "します。"
+                  }
+                ],
+                "meaningRu": "С семьёй я говорю по-русски. С друзьями говорю и по-японски.",
+                "audioUrl": "/audio/marugoto/23ec2e0a9abd9610.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.f304a39b5e728680",
+              "explanationRu": "В этой ситуации: семья",
+              "example": {
+                "surface": "家族とはロシア語で話します。友達とは日本語でも話します。",
+                "kana": "かぞくとはロシアごではなします。ともだちとはにほんごでもはなします。",
+                "segments": [
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "とはロシア"
+                  },
+                  {
+                    "surface": "語",
+                    "reading": "ご"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "します。"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "とは"
+                  },
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "でも"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "します。"
+                  }
+                ],
+                "meaningRu": "С семьёй я говорю по-русски. С друзьями говорю и по-японски.",
+                "audioUrl": "/audio/marugoto/23ec2e0a9abd9610.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.01.words.3",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        1,
+        2
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.01.part.words.3",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.c136fb9a0acca606",
+              "explanationRu": "В этой ситуации: делать, заниматься",
+              "example": {
+                "surface": "家族とはロシア語で話します。友達とは日本語でも話します。",
+                "kana": "かぞくとはロシアごではなします。ともだちとはにほんごでもはなします。",
+                "segments": [
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "とはロシア"
+                  },
+                  {
+                    "surface": "語",
+                    "reading": "ご"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "します。"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "とは"
+                  },
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "でも"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "します。"
+                  }
+                ],
+                "meaningRu": "С семьёй я говорю по-русски. С друзьями говорю и по-японски.",
+                "audioUrl": "/audio/marugoto/23ec2e0a9abd9610.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.cbfa9f0083aa4a40",
+              "explanationRu": "В этой ситуации: Япония",
+              "example": {
+                "surface": "家族とはロシア語で話します。友達とは日本語でも話します。",
+                "kana": "かぞくとはロシアごではなします。ともだちとはにほんごでもはなします。",
+                "segments": [
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "とはロシア"
+                  },
+                  {
+                    "surface": "語",
+                    "reading": "ご"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "します。"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "とは"
+                  },
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "でも"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "します。"
+                  }
+                ],
+                "meaningRu": "С семьёй я говорю по-русски. С друзьями говорю и по-японски.",
+                "audioUrl": "/audio/marugoto/23ec2e0a9abd9610.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.58e595c1fa37474d",
+              "explanationRu": "В этой ситуации: я",
+              "example": {
+                "surface": "私は大阪に住んでいます。",
+                "kana": "わたしはおおさかにすんでいます。",
+                "segments": [
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "大阪",
+                    "reading": "おおさか"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "住",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "んでいます。"
+                  }
+                ],
+                "meaningRu": "Я живу в Осаке.",
+                "audioUrl": "/audio/marugoto/60864e8acce4bbcf.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.e27c10e325cc5bbf",
+              "explanationRu": "В этой ситуации: быть, существовать (об одушевленных предметах)",
+              "example": {
+                "surface": "私は大阪に住んでいます。",
+                "kana": "わたしはおおさかにすんでいます。",
+                "segments": [
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "大阪",
+                    "reading": "おおさか"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "住",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "んでいます。"
+                  }
+                ],
+                "meaningRu": "Я живу в Осаке.",
+                "audioUrl": "/audio/marugoto/60864e8acce4bbcf.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.584c20478d4e882e",
+              "explanationRu": "В этой ситуации: приходить; приезжать",
+              "example": {
+                "surface": "大学まで自転車で行きます。",
+                "kana": "だいがくまでじてんしゃでいきます。",
+                "segments": [
+                  {
+                    "surface": "大学",
+                    "reading": "だいがく"
+                  },
+                  {
+                    "surface": "まで"
+                  },
+                  {
+                    "surface": "自転車",
+                    "reading": "じてんしゃ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きます。"
+                  }
+                ],
+                "meaningRu": "До университета я еду на велосипеде.",
+                "audioUrl": "/audio/marugoto/b122127a6b2b447f.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.01.grammar.58",
+      "titleRu": "～ている",
+      "introductionRu": "ている описывает продолжающееся состояние: место жительства или постоянную работу.",
+      "canDoIds": [
+        1,
+        2
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.01.part.grammar.58",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.58",
+            "explanationRu": "ている описывает продолжающееся состояние: место жительства или постоянную работу.",
+            "example": {
+              "surface": "私は大阪に住んでいます。",
+              "kana": "わたしはおおさかにすんでいます。",
+              "segments": [
+                {
+                  "surface": "私",
+                  "reading": "わたし"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "大阪",
+                  "reading": "おおさか"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "住",
+                  "reading": "す"
+                },
+                {
+                  "surface": "んでいます。"
+                }
+              ],
+              "meaningRu": "Я живу в Осаке.",
+              "audioUrl": "/audio/marugoto/60864e8acce4bbcf.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "私は",
+                "explanationRu": "Смысловой фрагмент: Я живу в Осаке."
+              },
+              {
+                "text": "大阪に",
+                "explanationRu": "Смысловой фрагмент: Я живу в Осаке."
+              },
+              {
+                "text": "住んでいます",
+                "explanationRu": "ている описывает продолжающееся состояние: место жительства или постоянную работу."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.01.grammar.59",
+      "titleRu": "～に",
+      "introductionRu": "Место проживания отмечаем に; глагол 住む используем в форме 住んでいます.",
+      "canDoIds": [
+        1,
+        2
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.01.part.grammar.59",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.59",
+            "explanationRu": "Место проживания отмечаем に; глагол 住む используем в форме 住んでいます.",
+            "example": {
+              "surface": "姉は京都に住んでいます。",
+              "kana": "あねはきょうとにすんでいます。",
+              "segments": [
+                {
+                  "surface": "姉",
+                  "reading": "あね"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "京都",
+                  "reading": "きょうと"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "住",
+                  "reading": "す"
+                },
+                {
+                  "surface": "んでいます。"
+                }
+              ],
+              "meaningRu": "Моя старшая сестра живёт в Киото.",
+              "audioUrl": "/audio/marugoto/2b5c00833ba7f74d.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "姉は",
+                "explanationRu": "Смысловой фрагмент: Моя старшая сестра живёт в Киото."
+              },
+              {
+                "text": "京都に",
+                "explanationRu": "Смысловой фрагмент: Моя старшая сестра живёт в Киото."
+              },
+              {
+                "text": "住んでいます",
+                "explanationRu": "Место проживания отмечаем に; глагол 住む используем в форме 住んでいます."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.01.grammar.60",
+      "titleRu": "～で",
+      "introductionRu": "で отмечает место действия, здесь — место работы.",
+      "canDoIds": [
+        1,
+        2
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.01.part.grammar.60",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.60",
+            "explanationRu": "で отмечает место действия, здесь — место работы.",
+            "example": {
+              "surface": "弟は病院で働いています。",
+              "kana": "おとうとはびょういんではたらいています。",
+              "segments": [
+                {
+                  "surface": "弟",
+                  "reading": "おとうと"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "病院",
+                  "reading": "びょういん"
+                },
+                {
+                  "surface": "で"
+                },
+                {
+                  "surface": "働",
+                  "reading": "はたら"
+                },
+                {
+                  "surface": "いています。"
+                }
+              ],
+              "meaningRu": "Мой младший брат работает в больнице.",
+              "audioUrl": "/audio/marugoto/8808f742f195f8c3.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "弟は",
+                "explanationRu": "Смысловой фрагмент: Мой младший брат работает в больнице."
+              },
+              {
+                "text": "病院で",
+                "explanationRu": "Смысловой фрагмент: Мой младший брат работает в больнице."
+              },
+              {
+                "text": "働いています",
+                "explanationRu": "で отмечает место действия, здесь — место работы."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.01.grammar.61",
+      "titleRu": "～で",
+      "introductionRu": "で после транспорта означает средство передвижения; まで задаёт конечную точку.",
+      "canDoIds": [
+        1,
+        2
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.01.part.grammar.61",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.61",
+            "explanationRu": "で после транспорта означает средство передвижения; まで задаёт конечную точку.",
+            "example": {
+              "surface": "大学まで自転車で行きます。",
+              "kana": "だいがくまでじてんしゃでいきます。",
+              "segments": [
+                {
+                  "surface": "大学",
+                  "reading": "だいがく"
+                },
+                {
+                  "surface": "まで"
+                },
+                {
+                  "surface": "自転車",
+                  "reading": "じてんしゃ"
+                },
+                {
+                  "surface": "で"
+                },
+                {
+                  "surface": "行",
+                  "reading": "い"
+                },
+                {
+                  "surface": "きます。"
+                }
+              ],
+              "meaningRu": "До университета я еду на велосипеде.",
+              "audioUrl": "/audio/marugoto/b122127a6b2b447f.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "大学まで",
+                "explanationRu": "Смысловой фрагмент: До университета я еду на велосипеде."
+              },
+              {
+                "text": "自転車で",
+                "explanationRu": "Смысловой фрагмент: До университета я еду на велосипеде."
+              },
+              {
+                "text": "行きます",
+                "explanationRu": "で после транспорта означает средство передвижения; まで задаёт конечную точку."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.01.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        1
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.01.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.01",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Представьте себя и одного родственника: где живёте и чем занимаетесь.",
+              "canDoIds": [
+                1
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Представьте себя и одного родственника: где живёте и чем занимаетесь.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "私は大阪に住んでいます。会社で働いています。姉は京都で勉強しています。",
+                "kana": "わたしはおおさかにすんでいます。かいしゃではたらいています。あねはきょうとでべんきょうしています。",
+                "segments": [
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "大阪",
+                    "reading": "おおさか"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "住",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "んでいます。"
+                  },
+                  {
+                    "surface": "会社",
+                    "reading": "かいしゃ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "働",
+                    "reading": "はたら"
+                  },
+                  {
+                    "surface": "いています。"
+                  },
+                  {
+                    "surface": "姉",
+                    "reading": "あね"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "京都",
+                    "reading": "きょうと"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "勉強",
+                    "reading": "べんきょう"
+                  },
+                  {
+                    "surface": "しています。"
+                  }
+                ],
+                "meaningRu": "Я живу в Осаке и работаю в компании. Старшая сестра учится в Киото.",
+                "audioUrl": "/audio/marugoto/c00f9803c72372a6.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Представьте себя и одного родственника: где живёте и чем занимаетесь.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.02.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        2
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.02.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.02",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Скажите, на каких языках вы говорите с семьёй и друзьями.",
+              "canDoIds": [
+                2
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Скажите, на каких языках вы говорите с семьёй и друзьями.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "家族とはロシア語で話します。友達とは日本語でも話します。",
+                "kana": "かぞくとはロシアごではなします。ともだちとはにほんごでもはなします。",
+                "segments": [
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "とはロシア"
+                  },
+                  {
+                    "surface": "語",
+                    "reading": "ご"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "します。"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "とは"
+                  },
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "でも"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "します。"
+                  }
+                ],
+                "meaningRu": "С семьёй я говорю по-русски. С друзьями говорю и по-японски.",
+                "audioUrl": "/audio/marugoto/23ec2e0a9abd9610.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Скажите, на каких языках вы говорите с семьёй и друзьями.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

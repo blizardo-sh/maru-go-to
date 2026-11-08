@@ -1,0 +1,1047 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.13",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Встречаем коллегу",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.13.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        33,
+        34,
+        35,
+        36
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.13.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.79c74c26f0803b0a",
+              "explanationRu": "В этой ситуации: фабрика, завод",
+              "example": {
+                "surface": "午前は工場を見ます。会議は午後二時からです。",
+                "kana": "ごぜんはこうじょうをみます。かいぎはごごにじからです。",
+                "segments": [
+                  {
+                    "surface": "午前",
+                    "reading": "ごぜん"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "工場",
+                    "reading": "こうじょう"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "ます。"
+                  },
+                  {
+                    "surface": "会議",
+                    "reading": "かいぎ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "午後",
+                    "reading": "ごご"
+                  },
+                  {
+                    "surface": "二時",
+                    "reading": "にじ"
+                  },
+                  {
+                    "surface": "からです。"
+                  }
+                ],
+                "meaningRu": "Утром осмотрим завод. Совещание начнётся в два часа дня.",
+                "audioUrl": "/audio/marugoto/6a476db3f8894cf4.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.239f3b54b688a9e4",
+              "explanationRu": "В этой ситуации: добро пожаловать",
+              "example": {
+                "surface": "ようこそ。長い旅行で疲れましたか。ホテルに行きましょう。",
+                "kana": "ようこそ。ながいりょこうでつかれましたか。ホテルにいきましょう。",
+                "segments": [
+                  {
+                    "surface": "ようこそ。"
+                  },
+                  {
+                    "surface": "長",
+                    "reading": "なが"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "旅行",
+                    "reading": "りょこう"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "疲",
+                    "reading": "つか"
+                  },
+                  {
+                    "surface": "れましたか。ホテルに"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きましょう。"
+                  }
+                ],
+                "meaningRu": "Добро пожаловать. Устали от долгой поездки? Давайте поедем в отель.",
+                "audioUrl": "/audio/marugoto/f95498acd8e9194a.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.67d5e276daef5190",
+              "explanationRu": "В этой ситуации: слишком; более, чем, сверх, пере-",
+              "example": {
+                "surface": "このお茶は熱すぎます。",
+                "kana": "このおちゃはあつすぎます。",
+                "segments": [
+                  {
+                    "surface": "このお"
+                  },
+                  {
+                    "surface": "茶",
+                    "reading": "ちゃ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "熱",
+                    "reading": "あつ"
+                  },
+                  {
+                    "surface": "すぎます。"
+                  }
+                ],
+                "meaningRu": "Этот чай слишком горячий.",
+                "audioUrl": "/audio/marugoto/5c89ca83211e3021.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.846855965c92b4b4",
+              "explanationRu": "В этой ситуации: собрание",
+              "example": {
+                "surface": "午前は工場を見ます。会議は午後二時からです。",
+                "kana": "ごぜんはこうじょうをみます。かいぎはごごにじからです。",
+                "segments": [
+                  {
+                    "surface": "午前",
+                    "reading": "ごぜん"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "工場",
+                    "reading": "こうじょう"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "ます。"
+                  },
+                  {
+                    "surface": "会議",
+                    "reading": "かいぎ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "午後",
+                    "reading": "ごご"
+                  },
+                  {
+                    "surface": "二時",
+                    "reading": "にじ"
+                  },
+                  {
+                    "surface": "からです。"
+                  }
+                ],
+                "meaningRu": "Утром осмотрим завод. Совещание начнётся в два часа дня.",
+                "audioUrl": "/audio/marugoto/6a476db3f8894cf4.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.3b3a3d200bd790e4",
+              "explanationRu": "В этой ситуации: понедельник",
+              "example": {
+                "surface": "大阪の山田さんが来ます。来週の月曜日です。",
+                "kana": "おおさかのやまださんがきます。らいしゅうのげつようびです。",
+                "segments": [
+                  {
+                    "surface": "大阪",
+                    "reading": "おおさか"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "山田",
+                    "reading": "やまだ"
+                  },
+                  {
+                    "surface": "さんが"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "ます。"
+                  },
+                  {
+                    "surface": "来週",
+                    "reading": "らいしゅう"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "月曜日",
+                    "reading": "げつようび"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Приедет господин Ямада из Осаки. В следующий понедельник.",
+                "audioUrl": "/audio/marugoto/f610cf56228e6730.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.13.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        33,
+        34,
+        35,
+        36
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.13.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.648aae19c6acf74a",
+              "explanationRu": "В этой ситуации: длинный, продолжительный",
+              "example": {
+                "surface": "ようこそ。長い旅行で疲れましたか。ホテルに行きましょう。",
+                "kana": "ようこそ。ながいりょこうでつかれましたか。ホテルにいきましょう。",
+                "segments": [
+                  {
+                    "surface": "ようこそ。"
+                  },
+                  {
+                    "surface": "長",
+                    "reading": "なが"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "旅行",
+                    "reading": "りょこう"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "疲",
+                    "reading": "つか"
+                  },
+                  {
+                    "surface": "れましたか。ホテルに"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きましょう。"
+                  }
+                ],
+                "meaningRu": "Добро пожаловать. Устали от долгой поездки? Давайте поедем в отель.",
+                "audioUrl": "/audio/marugoto/f95498acd8e9194a.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.aa74603de587df7d",
+              "explanationRu": "В этой ситуации: день",
+              "example": {
+                "surface": "大阪の山田さんが来ます。来週の月曜日です。",
+                "kana": "おおさかのやまださんがきます。らいしゅうのげつようびです。",
+                "segments": [
+                  {
+                    "surface": "大阪",
+                    "reading": "おおさか"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "山田",
+                    "reading": "やまだ"
+                  },
+                  {
+                    "surface": "さんが"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "ます。"
+                  },
+                  {
+                    "surface": "来週",
+                    "reading": "らいしゅう"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "月曜日",
+                    "reading": "げつようび"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Приедет господин Ямада из Осаки. В следующий понедельник.",
+                "audioUrl": "/audio/marugoto/f610cf56228e6730.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.d39ce14d472a03c4",
+              "explanationRu": "В этой ситуации: день; полдень",
+              "example": {
+                "surface": "昼に食べすぎました。",
+                "kana": "ひるにたべすぎました。",
+                "segments": [
+                  {
+                    "surface": "昼",
+                    "reading": "ひる"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べすぎました。"
+                  }
+                ],
+                "meaningRu": "За обедом я слишком много съел.",
+                "audioUrl": "/audio/marugoto/46a1a50cdbe0d56e.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.783c8f0fff891e31",
+              "explanationRu": "В этой ситуации: а-а…; да…; э-э… (неуверенная реакция)",
+              "example": {
+                "surface": "このお茶は熱すぎます。",
+                "kana": "このおちゃはあつすぎます。",
+                "segments": [
+                  {
+                    "surface": "このお"
+                  },
+                  {
+                    "surface": "茶",
+                    "reading": "ちゃ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "熱",
+                    "reading": "あつ"
+                  },
+                  {
+                    "surface": "すぎます。"
+                  }
+                ],
+                "meaningRu": "Этот чай слишком горячий.",
+                "audioUrl": "/audio/marugoto/5c89ca83211e3021.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.b569ab0369d576c6",
+              "explanationRu": "В этой ситуации: комната",
+              "example": {
+                "surface": "この部屋は狭いですが明るいです。",
+                "kana": "このへやはせまいですがあかるいです。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "部屋",
+                    "reading": "へや"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "狭",
+                    "reading": "せま"
+                  },
+                  {
+                    "surface": "いですが"
+                  },
+                  {
+                    "surface": "明",
+                    "reading": "あか"
+                  },
+                  {
+                    "surface": "るいです。"
+                  }
+                ],
+                "meaningRu": "Эта комната тесная, но светлая.",
+                "audioUrl": "/audio/marugoto/b68b9c880b4463ca.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.13.grammar.114",
+      "titleRu": "～たことがある",
+      "introductionRu": "たことがある сообщает о жизненном опыте без указания конкретной даты.",
+      "canDoIds": [
+        33,
+        34,
+        35,
+        36
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.13.part.grammar.114",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.114",
+            "explanationRu": "たことがある сообщает о жизненном опыте без указания конкретной даты.",
+            "example": {
+              "surface": "北海道に行ったことがあります。",
+              "kana": "ほっかいどうにいったことがあります。",
+              "segments": [
+                {
+                  "surface": "北海道",
+                  "reading": "ほっかいどう"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "行",
+                  "reading": "い"
+                },
+                {
+                  "surface": "ったことがあります。"
+                }
+              ],
+              "meaningRu": "Я бывал на Хоккайдо.",
+              "audioUrl": "/audio/marugoto/7df790cd65caa910.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "北海道に",
+                "explanationRu": "Смысловой фрагмент: Я бывал на Хоккайдо."
+              },
+              {
+                "text": "行ったことが",
+                "explanationRu": "Смысловой фрагмент: Я бывал на Хоккайдо."
+              },
+              {
+                "text": "あります",
+                "explanationRu": "たことがある сообщает о жизненном опыте без указания конкретной даты."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.13.grammar.115",
+      "titleRu": "～すぎる",
+      "introductionRu": "Основа い-прилагательного + すぎる означает чрезмерность.",
+      "canDoIds": [
+        33,
+        34,
+        35,
+        36
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.13.part.grammar.115",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.115",
+            "explanationRu": "Основа い-прилагательного + すぎる означает чрезмерность.",
+            "example": {
+              "surface": "このお茶は熱すぎます。",
+              "kana": "このおちゃはあつすぎます。",
+              "segments": [
+                {
+                  "surface": "このお"
+                },
+                {
+                  "surface": "茶",
+                  "reading": "ちゃ"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "熱",
+                  "reading": "あつ"
+                },
+                {
+                  "surface": "すぎます。"
+                }
+              ],
+              "meaningRu": "Этот чай слишком горячий.",
+              "audioUrl": "/audio/marugoto/5c89ca83211e3021.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Этот чай слишком горячий."
+              },
+              {
+                "text": "お茶は",
+                "explanationRu": "Смысловой фрагмент: Этот чай слишком горячий."
+              },
+              {
+                "text": "熱すぎます",
+                "explanationRu": "Основа い-прилагательного + すぎる означает чрезмерность."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.13.grammar.116",
+      "titleRu": "～すぎる",
+      "introductionRu": "После な-прилагательного перед すぎる не ставим な.",
+      "canDoIds": [
+        33,
+        34,
+        35,
+        36
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.13.part.grammar.116",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.116",
+            "explanationRu": "После な-прилагательного перед すぎる не ставим な.",
+            "example": {
+              "surface": "このホテルは静かすぎます。",
+              "kana": "このホテルはしずかすぎます。",
+              "segments": [
+                {
+                  "surface": "このホテルは"
+                },
+                {
+                  "surface": "静",
+                  "reading": "しず"
+                },
+                {
+                  "surface": "かすぎます。"
+                }
+              ],
+              "meaningRu": "В этом отеле слишком тихо.",
+              "audioUrl": "/audio/marugoto/5613ddc796bfb564.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: В этом отеле слишком тихо."
+              },
+              {
+                "text": "ホテルは",
+                "explanationRu": "Смысловой фрагмент: В этом отеле слишком тихо."
+              },
+              {
+                "text": "静かすぎます",
+                "explanationRu": "После な-прилагательного перед すぎる не ставим な."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.13.grammar.117",
+      "titleRu": "～すぎる",
+      "introductionRu": "Основа глагола перед ます + すぎる означает чрезмерное действие.",
+      "canDoIds": [
+        33,
+        34,
+        35,
+        36
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.13.part.grammar.117",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.117",
+            "explanationRu": "Основа глагола перед ます + すぎる означает чрезмерное действие.",
+            "example": {
+              "surface": "昼に食べすぎました。",
+              "kana": "ひるにたべすぎました。",
+              "segments": [
+                {
+                  "surface": "昼",
+                  "reading": "ひる"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "食",
+                  "reading": "た"
+                },
+                {
+                  "surface": "べすぎました。"
+                }
+              ],
+              "meaningRu": "За обедом я слишком много съел.",
+              "audioUrl": "/audio/marugoto/46a1a50cdbe0d56e.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "昼に",
+                "explanationRu": "Смысловой фрагмент: За обедом я слишком много съел."
+              },
+              {
+                "text": "食べすぎました",
+                "explanationRu": "Основа глагола перед ます + すぎる означает чрезмерное действие."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.13.grammar.118",
+      "titleRu": "～が",
+      "introductionRu": "が вежливо соединяет противопоставленные характеристики.",
+      "canDoIds": [
+        33,
+        34,
+        35,
+        36
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.13.part.grammar.118",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.118",
+            "explanationRu": "が вежливо соединяет противопоставленные характеристики.",
+            "example": {
+              "surface": "この部屋は狭いですが明るいです。",
+              "kana": "このへやはせまいですがあかるいです。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "部屋",
+                  "reading": "へや"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "狭",
+                  "reading": "せま"
+                },
+                {
+                  "surface": "いですが"
+                },
+                {
+                  "surface": "明",
+                  "reading": "あか"
+                },
+                {
+                  "surface": "るいです。"
+                }
+              ],
+              "meaningRu": "Эта комната тесная, но светлая.",
+              "audioUrl": "/audio/marugoto/b68b9c880b4463ca.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Эта комната тесная, но светлая."
+              },
+              {
+                "text": "部屋は",
+                "explanationRu": "Смысловой фрагмент: Эта комната тесная, но светлая."
+              },
+              {
+                "text": "狭いですが",
+                "explanationRu": "Смысловой фрагмент: Эта комната тесная, но светлая."
+              },
+              {
+                "text": "明るいです",
+                "explanationRu": "が вежливо соединяет противопоставленные характеристики."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.33.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        33
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.33.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.33",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Обсудите встречу гостя: кто приезжает и когда.",
+              "canDoIds": [
+                33
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Обсудите встречу гостя: кто приезжает и когда.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "大阪の山田さんが来ます。来週の月曜日です。",
+                "kana": "おおさかのやまださんがきます。らいしゅうのげつようびです。",
+                "segments": [
+                  {
+                    "surface": "大阪",
+                    "reading": "おおさか"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "山田",
+                    "reading": "やまだ"
+                  },
+                  {
+                    "surface": "さんが"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "ます。"
+                  },
+                  {
+                    "surface": "来週",
+                    "reading": "らいしゅう"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "月曜日",
+                    "reading": "げつようび"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Приедет господин Ямада из Осаки. В следующий понедельник.",
+                "audioUrl": "/audio/marugoto/f610cf56228e6730.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Обсудите встречу гостя: кто приезжает и когда.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.34.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        34
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.34.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.34",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Встретьте гостя и спросите о дороге.",
+              "canDoIds": [
+                34
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Встретьте гостя и спросите о дороге.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "ようこそ。長い旅行で疲れましたか。ホテルに行きましょう。",
+                "kana": "ようこそ。ながいりょこうでつかれましたか。ホテルにいきましょう。",
+                "segments": [
+                  {
+                    "surface": "ようこそ。"
+                  },
+                  {
+                    "surface": "長",
+                    "reading": "なが"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "旅行",
+                    "reading": "りょこう"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "疲",
+                    "reading": "つか"
+                  },
+                  {
+                    "surface": "れましたか。ホテルに"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きましょう。"
+                  }
+                ],
+                "meaningRu": "Добро пожаловать. Устали от долгой поездки? Давайте поедем в отель.",
+                "audioUrl": "/audio/marugoto/f95498acd8e9194a.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Встретьте гостя и спросите о дороге.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.35.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        35
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.35.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.35",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Проверьте номер отеля и сообщите об одной проблеме.",
+              "canDoIds": [
+                35
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Проверьте номер отеля и сообщите об одной проблеме.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "部屋はきれいですが、少し寒すぎます。暖房をつけてもいいですか。",
+                "kana": "へやはきれいですが、すこしさむすぎます。だんぼうをつけてもいいですか。",
+                "segments": [
+                  {
+                    "surface": "部屋",
+                    "reading": "へや"
+                  },
+                  {
+                    "surface": "はきれいですが、"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "寒",
+                    "reading": "さむ"
+                  },
+                  {
+                    "surface": "すぎます。"
+                  },
+                  {
+                    "surface": "暖房",
+                    "reading": "だんぼう"
+                  },
+                  {
+                    "surface": "をつけてもいいですか。"
+                  }
+                ],
+                "meaningRu": "Комната чистая, но слишком холодная. Можно включить отопление?",
+                "audioUrl": "/audio/marugoto/8449875ac11ca5cf.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Проверьте номер отеля и сообщите об одной проблеме.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.36.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        36
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.36.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.36",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте план командировки и найдите время совещания.",
+              "canDoIds": [
+                36
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "午前は工場を見ます。会議は午後二時からです。",
+                  "kana": "ごぜんはこうじょうをみます。かいぎはごごにじからです。",
+                  "segments": [
+                    {
+                      "surface": "午前",
+                      "reading": "ごぜん"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "工場",
+                      "reading": "こうじょう"
+                    },
+                    {
+                      "surface": "を"
+                    },
+                    {
+                      "surface": "見",
+                      "reading": "み"
+                    },
+                    {
+                      "surface": "ます。"
+                    },
+                    {
+                      "surface": "会議",
+                      "reading": "かいぎ"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "午後",
+                      "reading": "ごご"
+                    },
+                    {
+                      "surface": "二時",
+                      "reading": "にじ"
+                    },
+                    {
+                      "surface": "からです。"
+                    }
+                  ],
+                  "meaningRu": "Утром осмотрим завод. Совещание начнётся в два часа дня.",
+                  "audioUrl": "/audio/marugoto/6a476db3f8894cf4.m4a"
+                }
+              ],
+              "questionRu": "Когда совещание?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "В два часа дня"
+                },
+                {
+                  "id": "b",
+                  "text": "Утром до осмотра завода"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Утром осмотрим завод. Совещание начнётся в два часа дня."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

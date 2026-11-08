@@ -28,7 +28,11 @@ if [[ $1 == backup ]]; then
     mkdir -p "$stage"
     compose exec -T db pg_dump -U japanese_admin -d japanese_learning -Fc > "$stage/database.dump.partial"
     mv "$stage/database.dump.partial" "$stage/database.dump"
-    tar -C / -czf "$stage/configuration.tar.gz" \
+    markers=()
+    for file in deployed-commit previous.env deployment-status; do
+        if [[ -f /opt/japanese-learning/$file ]]; then markers+=("opt/japanese-learning/$file"); fi
+    done
+    tar -C / -czf "$stage/configuration.tar.gz" "${markers[@]}" \
         opt/japanese-learning/.env opt/japanese-learning/release.env opt/japanese-learning/compose.yaml opt/japanese-learning/init-db.sh \
         etc/nginx root/.acme.sh root/cert etc/japanese-learning/host.env etc/systemd/system/japanese-backup.service etc/systemd/system/japanese-backup.timer \
         etc/systemd/system/japanese-backup-verify.service etc/systemd/system/japanese-backup-verify.timer \

@@ -1,3 +1,4 @@
+import { courseRepresentationHeader, learnerCourseRepresentation } from '../shared/course-representation';
 import type { ReviewSubmission, ReviewResult } from '../shared/types';
 
 export class ApiRequestError extends Error {
@@ -8,7 +9,8 @@ const courses = new Map<string, { etag: string; data: unknown }>();
 export async function api<T>(path: string, init: RequestInit = {}): Promise<T> {
   const headers = new Headers(init.headers);
   if (init.body) headers.set('Content-Type', 'application/json');
-  const key = path === '/api/course' && (!init.method || init.method === 'GET') ? JSON.stringify([headers.get('X-Learning-Learner-Id'), headers.get('X-Content-Publication')]) : null;
+  if ((!init.method || init.method === 'GET') && ['/api/course','/api/bootstrap'].includes(path) && !headers.has(courseRepresentationHeader)) headers.set(courseRepresentationHeader, learnerCourseRepresentation);
+  const key = path === '/api/course' && (!init.method || init.method === 'GET') ? JSON.stringify([headers.get('X-Learning-Learner-Id'), headers.get('X-Content-Publication'), headers.get(courseRepresentationHeader)]) : null;
   const cached = key ? courses.get(key) : undefined;
   if (cached) headers.set('If-None-Match', cached.etag);
   const response = await fetch(path, {

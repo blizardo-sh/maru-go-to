@@ -1,0 +1,740 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.16",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Привычки для здоровья",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.16.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        44,
+        45,
+        46
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.16.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.d6de84d06257c71b",
+              "explanationRu": "В этой ситуации: плавать",
+              "example": {
+                "surface": "質問：毎日、運動しますか。答え：いいえ。週末だけ泳ぎます。",
+                "kana": "しつもん：まいにち、うんどうしますか。こたえ：いいえ。しゅうまつだけおよぎます。",
+                "segments": [
+                  {
+                    "surface": "質問",
+                    "reading": "しつもん"
+                  },
+                  {
+                    "surface": "："
+                  },
+                  {
+                    "surface": "毎日",
+                    "reading": "まいにち"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "運動",
+                    "reading": "うんどう"
+                  },
+                  {
+                    "surface": "しますか。"
+                  },
+                  {
+                    "surface": "答",
+                    "reading": "こた"
+                  },
+                  {
+                    "surface": "え：いいえ。"
+                  },
+                  {
+                    "surface": "週末",
+                    "reading": "しゅうまつ"
+                  },
+                  {
+                    "surface": "だけ"
+                  },
+                  {
+                    "surface": "泳",
+                    "reading": "およ"
+                  },
+                  {
+                    "surface": "ぎます。"
+                  }
+                ],
+                "meaningRu": "Вопрос: вы занимаетесь каждый день? Ответ: нет, плаваю только в выходные.",
+                "audioUrl": "/audio/marugoto/7e8a7737a65b21e1.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.6109f3faf273f445",
+              "explanationRu": "В этой ситуации: выходные",
+              "example": {
+                "surface": "週末は歩いたり泳いだりします。",
+                "kana": "しゅうまつはあるいたりおよいだりします。",
+                "segments": [
+                  {
+                    "surface": "週末",
+                    "reading": "しゅうまつ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "歩",
+                    "reading": "ある"
+                  },
+                  {
+                    "surface": "いたり"
+                  },
+                  {
+                    "surface": "泳",
+                    "reading": "およ"
+                  },
+                  {
+                    "surface": "いだりします。"
+                  }
+                ],
+                "meaningRu": "В выходные я, например, гуляю и плаваю.",
+                "audioUrl": "/audio/marugoto/453b70f06aff1d08.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.564817667635a289",
+              "explanationRu": "В этой ситуации: ответ",
+              "example": {
+                "surface": "質問：毎日、運動しますか。答え：いいえ。週末だけ泳ぎます。",
+                "kana": "しつもん：まいにち、うんどうしますか。こたえ：いいえ。しゅうまつだけおよぎます。",
+                "segments": [
+                  {
+                    "surface": "質問",
+                    "reading": "しつもん"
+                  },
+                  {
+                    "surface": "："
+                  },
+                  {
+                    "surface": "毎日",
+                    "reading": "まいにち"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "運動",
+                    "reading": "うんどう"
+                  },
+                  {
+                    "surface": "しますか。"
+                  },
+                  {
+                    "surface": "答",
+                    "reading": "こた"
+                  },
+                  {
+                    "surface": "え：いいえ。"
+                  },
+                  {
+                    "surface": "週末",
+                    "reading": "しゅうまつ"
+                  },
+                  {
+                    "surface": "だけ"
+                  },
+                  {
+                    "surface": "泳",
+                    "reading": "およ"
+                  },
+                  {
+                    "surface": "ぎます。"
+                  }
+                ],
+                "meaningRu": "Вопрос: вы занимаетесь каждый день? Ответ: нет, плаваю только в выходные.",
+                "audioUrl": "/audio/marugoto/7e8a7737a65b21e1.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.4380b3f9a0984b8c",
+              "explanationRu": "В этой ситуации: вопрос",
+              "example": {
+                "surface": "質問：毎日、運動しますか。答え：いいえ。週末だけ泳ぎます。",
+                "kana": "しつもん：まいにち、うんどうしますか。こたえ：いいえ。しゅうまつだけおよぎます。",
+                "segments": [
+                  {
+                    "surface": "質問",
+                    "reading": "しつもん"
+                  },
+                  {
+                    "surface": "："
+                  },
+                  {
+                    "surface": "毎日",
+                    "reading": "まいにち"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "運動",
+                    "reading": "うんどう"
+                  },
+                  {
+                    "surface": "しますか。"
+                  },
+                  {
+                    "surface": "答",
+                    "reading": "こた"
+                  },
+                  {
+                    "surface": "え：いいえ。"
+                  },
+                  {
+                    "surface": "週末",
+                    "reading": "しゅうまつ"
+                  },
+                  {
+                    "surface": "だけ"
+                  },
+                  {
+                    "surface": "泳",
+                    "reading": "およ"
+                  },
+                  {
+                    "surface": "ぎます。"
+                  }
+                ],
+                "meaningRu": "Вопрос: вы занимаетесь каждый день? Ответ: нет, плаваю только в выходные.",
+                "audioUrl": "/audio/marugoto/7e8a7737a65b21e1.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.312f86dfe9da479c",
+              "explanationRu": "В этой ситуации: дом",
+              "example": {
+                "surface": "質問：毎日、運動しますか。答え：いいえ。週末だけ泳ぎます。",
+                "kana": "しつもん：まいにち、うんどうしますか。こたえ：いいえ。しゅうまつだけおよぎます。",
+                "segments": [
+                  {
+                    "surface": "質問",
+                    "reading": "しつもん"
+                  },
+                  {
+                    "surface": "："
+                  },
+                  {
+                    "surface": "毎日",
+                    "reading": "まいにち"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "運動",
+                    "reading": "うんどう"
+                  },
+                  {
+                    "surface": "しますか。"
+                  },
+                  {
+                    "surface": "答",
+                    "reading": "こた"
+                  },
+                  {
+                    "surface": "え：いいえ。"
+                  },
+                  {
+                    "surface": "週末",
+                    "reading": "しゅうまつ"
+                  },
+                  {
+                    "surface": "だけ"
+                  },
+                  {
+                    "surface": "泳",
+                    "reading": "およ"
+                  },
+                  {
+                    "surface": "ぎます。"
+                  }
+                ],
+                "meaningRu": "Вопрос: вы занимаетесь каждый день? Ответ: нет, плаваю только в выходные.",
+                "audioUrl": "/audio/marugoto/7e8a7737a65b21e1.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.16.grammar.124",
+      "titleRu": "～たり～たり",
+      "introductionRu": "たり перечисляет примеры действий; время оформляется в конце через する.",
+      "canDoIds": [
+        44,
+        45,
+        46
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.16.part.grammar.124",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.124",
+            "explanationRu": "たり перечисляет примеры действий; время оформляется в конце через する.",
+            "example": {
+              "surface": "週末は歩いたり泳いだりします。",
+              "kana": "しゅうまつはあるいたりおよいだりします。",
+              "segments": [
+                {
+                  "surface": "週末",
+                  "reading": "しゅうまつ"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "歩",
+                  "reading": "ある"
+                },
+                {
+                  "surface": "いたり"
+                },
+                {
+                  "surface": "泳",
+                  "reading": "およ"
+                },
+                {
+                  "surface": "いだりします。"
+                }
+              ],
+              "meaningRu": "В выходные я, например, гуляю и плаваю.",
+              "audioUrl": "/audio/marugoto/453b70f06aff1d08.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "週末は",
+                "explanationRu": "Смысловой фрагмент: В выходные я, например, гуляю и плаваю."
+              },
+              {
+                "text": "歩いたり",
+                "explanationRu": "Смысловой фрагмент: В выходные я, например, гуляю и плаваю."
+              },
+              {
+                "text": "泳いだりします",
+                "explanationRu": "たり перечисляет примеры действий; время оформляется в конце через する."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.16.grammar.125",
+      "titleRu": "文＋人　＜連体修飾節＞",
+      "introductionRu": "Глагольная фраза перед 人 определяет группу людей.",
+      "canDoIds": [
+        44,
+        45,
+        46
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.16.part.grammar.125",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.125",
+            "explanationRu": "Глагольная фраза перед 人 определяет группу людей.",
+            "example": {
+              "surface": "毎日歩く人は八人です。",
+              "kana": "まいにちあるくひとははちにんです。",
+              "segments": [
+                {
+                  "surface": "毎日",
+                  "reading": "まいにち"
+                },
+                {
+                  "surface": "歩",
+                  "reading": "ある"
+                },
+                {
+                  "surface": "く"
+                },
+                {
+                  "surface": "人",
+                  "reading": "ひと"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "八人",
+                  "reading": "はちにん"
+                },
+                {
+                  "surface": "です。"
+                }
+              ],
+              "meaningRu": "Каждый день ходят пешком восемь человек.",
+              "audioUrl": "/audio/marugoto/580b089120ef5c4e.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "毎日",
+                "explanationRu": "Смысловой фрагмент: Каждый день ходят пешком восемь человек."
+              },
+              {
+                "text": "歩く人は",
+                "explanationRu": "Смысловой фрагмент: Каждый день ходят пешком восемь человек."
+              },
+              {
+                "text": "八人です",
+                "explanationRu": "Глагольная фраза перед 人 определяет группу людей."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.16.grammar.126",
+      "titleRu": "文＋人　＜連体修飾節＞",
+      "introductionRu": "Отрицательная простая форма перед 人 определяет тех, кто не делает действие.",
+      "canDoIds": [
+        44,
+        45,
+        46
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.16.part.grammar.126",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.126",
+            "explanationRu": "Отрицательная простая форма перед 人 определяет тех, кто не делает действие.",
+            "example": {
+              "surface": "朝運動しない人は五人です。",
+              "kana": "あさうんどうしないひとはごにんです。",
+              "segments": [
+                {
+                  "surface": "朝",
+                  "reading": "あさ"
+                },
+                {
+                  "surface": "運動",
+                  "reading": "うんどう"
+                },
+                {
+                  "surface": "しない"
+                },
+                {
+                  "surface": "人",
+                  "reading": "ひと"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "五人",
+                  "reading": "ごにん"
+                },
+                {
+                  "surface": "です。"
+                }
+              ],
+              "meaningRu": "Утром не занимаются пять человек.",
+              "audioUrl": "/audio/marugoto/a480e66c5a2f578d.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "朝",
+                "explanationRu": "Смысловой фрагмент: Утром не занимаются пять человек."
+              },
+              {
+                "text": "運動しない人は",
+                "explanationRu": "Смысловой фрагмент: Утром не занимаются пять человек."
+              },
+              {
+                "text": "五人です",
+                "explanationRu": "Отрицательная простая форма перед 人 определяет тех, кто не делает действие."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.44.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        44
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.44.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.44",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите о двух привычках, которые помогают вам поддерживать форму.",
+              "canDoIds": [
+                44
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите о двух привычках, которые помогают вам поддерживать форму.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "毎日、歩いたり、体操したりしています。夜は早く寝ます。",
+                "kana": "まいにち、あるいたり、たいそうしたりしています。よるははやくねます。",
+                "segments": [
+                  {
+                    "surface": "毎日",
+                    "reading": "まいにち"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "歩",
+                    "reading": "ある"
+                  },
+                  {
+                    "surface": "いたり、"
+                  },
+                  {
+                    "surface": "体操",
+                    "reading": "たいそう"
+                  },
+                  {
+                    "surface": "したりしています。"
+                  },
+                  {
+                    "surface": "夜",
+                    "reading": "よる"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "早",
+                    "reading": "はや"
+                  },
+                  {
+                    "surface": "く"
+                  },
+                  {
+                    "surface": "寝",
+                    "reading": "ね"
+                  },
+                  {
+                    "surface": "ます。"
+                  }
+                ],
+                "meaningRu": "Каждый день я гуляю, делаю зарядку. Вечером рано ложусь.",
+                "audioUrl": "/audio/marugoto/10176c7799f97787.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите о двух привычках, которые помогают вам поддерживать форму.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.45.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        45
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.45.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.45",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте ответ на анкету и определите регулярность занятия.",
+              "canDoIds": [
+                45
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "質問：毎日、運動しますか。答え：いいえ。週末だけ泳ぎます。",
+                  "kana": "しつもん：まいにち、うんどうしますか。こたえ：いいえ。しゅうまつだけおよぎます。",
+                  "segments": [
+                    {
+                      "surface": "質問",
+                      "reading": "しつもん"
+                    },
+                    {
+                      "surface": "："
+                    },
+                    {
+                      "surface": "毎日",
+                      "reading": "まいにち"
+                    },
+                    {
+                      "surface": "、"
+                    },
+                    {
+                      "surface": "運動",
+                      "reading": "うんどう"
+                    },
+                    {
+                      "surface": "しますか。"
+                    },
+                    {
+                      "surface": "答",
+                      "reading": "こた"
+                    },
+                    {
+                      "surface": "え：いいえ。"
+                    },
+                    {
+                      "surface": "週末",
+                      "reading": "しゅうまつ"
+                    },
+                    {
+                      "surface": "だけ"
+                    },
+                    {
+                      "surface": "泳",
+                      "reading": "およ"
+                    },
+                    {
+                      "surface": "ぎます。"
+                    }
+                  ],
+                  "meaningRu": "Вопрос: вы занимаетесь каждый день? Ответ: нет, плаваю только в выходные.",
+                  "audioUrl": "/audio/marugoto/7e8a7737a65b21e1.m4a"
+                }
+              ],
+              "questionRu": "Когда отвечает человек, что он плавает?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Только в выходные"
+                },
+                {
+                  "id": "b",
+                  "text": "Каждый день"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Вопрос: вы занимаетесь каждый день? Ответ: нет, плаваю только в выходные."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.46.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        46
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.46.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.46",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Представьте результаты опроса: восемь человек гуляют ежедневно, пять не занимаются утром.",
+              "canDoIds": [
+                46
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Представьте результаты опроса: восемь человек гуляют ежедневно, пять не занимаются утром.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "毎日歩く人は八人です。朝、運動しない人は五人です。",
+                "kana": "まいにちあるくひとははちにんです。あさ、うんどうしないひとはごにんです。",
+                "segments": [
+                  {
+                    "surface": "毎日",
+                    "reading": "まいにち"
+                  },
+                  {
+                    "surface": "歩",
+                    "reading": "ある"
+                  },
+                  {
+                    "surface": "く"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "八人",
+                    "reading": "はちにん"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "朝",
+                    "reading": "あさ"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "運動",
+                    "reading": "うんどう"
+                  },
+                  {
+                    "surface": "しない"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "五人",
+                    "reading": "ごにん"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Каждый день гуляют восемь человек. Утром не занимаются пять человек.",
+                "audioUrl": "/audio/marugoto/488cefa2bc6b1583.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Представьте результаты опроса: восемь человек гуляют ежедневно, пять не занимаются утром.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

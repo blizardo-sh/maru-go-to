@@ -1,0 +1,770 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.15",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Советы о самочувствии",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.15.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        41,
+        42,
+        43
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.15.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.6432377c12c90a61",
+              "explanationRu": "В этой ситуации: резко, внезапно",
+              "example": {
+                "surface": "ゆっくり手を上げてください。急に動かさないでください。",
+                "kana": "ゆっくりてをあげてください。きゅうにうごかさないでください。",
+                "segments": [
+                  {
+                    "surface": "ゆっくり"
+                  },
+                  {
+                    "surface": "手",
+                    "reading": "て"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "上",
+                    "reading": "あ"
+                  },
+                  {
+                    "surface": "げてください。"
+                  },
+                  {
+                    "surface": "急",
+                    "reading": "きゅう"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "動",
+                    "reading": "うご"
+                  },
+                  {
+                    "surface": "かさないでください。"
+                  }
+                ],
+                "meaningRu": "Медленно поднимите руки. Не делайте резких движений.",
+                "audioUrl": "/audio/marugoto/6982f5d4caa4f7e1.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.9cf6eadb28ed831f",
+              "explanationRu": "В этой ситуации: голова",
+              "example": {
+                "surface": "具合はどうですか。少し頭が痛いです。",
+                "kana": "ぐあいはどうですか。すこしあたまがいたいです。",
+                "segments": [
+                  {
+                    "surface": "具合",
+                    "reading": "ぐあい"
+                  },
+                  {
+                    "surface": "はどうですか。"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "頭",
+                    "reading": "あたま"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "痛",
+                    "reading": "いた"
+                  },
+                  {
+                    "surface": "いです。"
+                  }
+                ],
+                "meaningRu": "Как самочувствие? Немного болит голова.",
+                "audioUrl": "/audio/marugoto/cbaa777c4b900f63.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.8bd9dd656c2bfdd1",
+              "explanationRu": "В этой ситуации: больно, болит",
+              "example": {
+                "surface": "具合はどうですか。少し頭が痛いです。",
+                "kana": "ぐあいはどうですか。すこしあたまがいたいです。",
+                "segments": [
+                  {
+                    "surface": "具合",
+                    "reading": "ぐあい"
+                  },
+                  {
+                    "surface": "はどうですか。"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "頭",
+                    "reading": "あたま"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "痛",
+                    "reading": "いた"
+                  },
+                  {
+                    "surface": "いです。"
+                  }
+                ],
+                "meaningRu": "Как самочувствие? Немного болит голова.",
+                "audioUrl": "/audio/marugoto/cbaa777c4b900f63.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.173f1b7f4a6e2446",
+              "explanationRu": "В этой ситуации: усталость",
+              "example": {
+                "surface": "疲れたときは少し休むといいですよ。",
+                "kana": "つかれたときはすこしやすむといいですよ。",
+                "segments": [
+                  {
+                    "surface": "疲",
+                    "reading": "つか"
+                  },
+                  {
+                    "surface": "れたときは"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "むといいですよ。"
+                  }
+                ],
+                "meaningRu": "Когда устали, хорошо немного отдохнуть.",
+                "audioUrl": "/audio/marugoto/28ebc4c0e941a5cb.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.a5f5c5cf54db2614",
+              "explanationRu": "В этой ситуации: рука (от плеча до кисти)",
+              "example": {
+                "surface": "具合はどうですか。少し頭が痛いです。",
+                "kana": "ぐあいはどうですか。すこしあたまがいたいです。",
+                "segments": [
+                  {
+                    "surface": "具合",
+                    "reading": "ぐあい"
+                  },
+                  {
+                    "surface": "はどうですか。"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "頭",
+                    "reading": "あたま"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "痛",
+                    "reading": "いた"
+                  },
+                  {
+                    "surface": "いです。"
+                  }
+                ],
+                "meaningRu": "Как самочувствие? Немного болит голова.",
+                "audioUrl": "/audio/marugoto/cbaa777c4b900f63.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.15.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        41,
+        42,
+        43
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.15.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.word.3e89219bc1e44c4d",
+              "explanationRu": "В этой ситуации: поясница",
+              "example": {
+                "surface": "疲れたときは少し休むといいですよ。",
+                "kana": "つかれたときはすこしやすむといいですよ。",
+                "segments": [
+                  {
+                    "surface": "疲",
+                    "reading": "つか"
+                  },
+                  {
+                    "surface": "れたときは"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "むといいですよ。"
+                  }
+                ],
+                "meaningRu": "Когда устали, хорошо немного отдохнуть.",
+                "audioUrl": "/audio/marugoto/28ebc4c0e941a5cb.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.68a6ffd169a0915d",
+              "explanationRu": "В этой ситуации: перенапрягаться, делать через силу",
+              "example": {
+                "surface": "無理をしないでください。",
+                "kana": "むりをしないでください。",
+                "segments": [
+                  {
+                    "surface": "無理",
+                    "reading": "むり"
+                  },
+                  {
+                    "surface": "をしないでください。"
+                  }
+                ],
+                "meaningRu": "Пожалуйста, не перенапрягайтесь.",
+                "audioUrl": "/audio/marugoto/85b8745d00a1327c.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.67154e2e75f5ba6a",
+              "explanationRu": "В этой ситуации: пить",
+              "example": {
+                "surface": "出かける前に水を飲みます。",
+                "kana": "でかけるまえにみずをのみます。",
+                "segments": [
+                  {
+                    "surface": "出",
+                    "reading": "で"
+                  },
+                  {
+                    "surface": "かける"
+                  },
+                  {
+                    "surface": "前",
+                    "reading": "まえ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "水",
+                    "reading": "みず"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "飲",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "みます。"
+                  }
+                ],
+                "meaningRu": "Перед выходом я пью воду.",
+                "audioUrl": "/audio/marugoto/7c4704c81211bb8d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.31985c6eb9f4dc4a",
+              "explanationRu": "В этой ситуации: не спеша, медленно",
+              "example": {
+                "surface": "ゆっくり手を上げてください。急に動かさないでください。",
+                "kana": "ゆっくりてをあげてください。きゅうにうごかさないでください。",
+                "segments": [
+                  {
+                    "surface": "ゆっくり"
+                  },
+                  {
+                    "surface": "手",
+                    "reading": "て"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "上",
+                    "reading": "あ"
+                  },
+                  {
+                    "surface": "げてください。"
+                  },
+                  {
+                    "surface": "急",
+                    "reading": "きゅう"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "動",
+                    "reading": "うご"
+                  },
+                  {
+                    "surface": "かさないでください。"
+                  }
+                ],
+                "meaningRu": "Медленно поднимите руки. Не делайте резких движений.",
+                "audioUrl": "/audio/marugoto/6982f5d4caa4f7e1.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.15.grammar.121",
+      "titleRu": "～まえに",
+      "introductionRu": "Перед 前に глагол стоит в словарной форме, независимо от времени главного действия.",
+      "canDoIds": [
+        41,
+        42,
+        43
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.15.part.grammar.121",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.121",
+            "explanationRu": "Перед 前に глагол стоит в словарной форме, независимо от времени главного действия.",
+            "example": {
+              "surface": "出かける前に水を飲みます。",
+              "kana": "でかけるまえにみずをのみます。",
+              "segments": [
+                {
+                  "surface": "出",
+                  "reading": "で"
+                },
+                {
+                  "surface": "かける"
+                },
+                {
+                  "surface": "前",
+                  "reading": "まえ"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "水",
+                  "reading": "みず"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "飲",
+                  "reading": "の"
+                },
+                {
+                  "surface": "みます。"
+                }
+              ],
+              "meaningRu": "Перед выходом я пью воду.",
+              "audioUrl": "/audio/marugoto/7c4704c81211bb8d.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "出かける前に",
+                "explanationRu": "Смысловой фрагмент: Перед выходом я пью воду."
+              },
+              {
+                "text": "水を",
+                "explanationRu": "Смысловой фрагмент: Перед выходом я пью воду."
+              },
+              {
+                "text": "飲みます",
+                "explanationRu": "Перед 前に глагол стоит в словарной форме, независимо от времени главного действия."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.15.grammar.122",
+      "titleRu": "～といい",
+      "introductionRu": "といい даёт мягкий совет, что могло бы помочь.",
+      "canDoIds": [
+        41,
+        42,
+        43
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.15.part.grammar.122",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.122",
+            "explanationRu": "といい даёт мягкий совет, что могло бы помочь.",
+            "example": {
+              "surface": "疲れたときは少し休むといいですよ。",
+              "kana": "つかれたときはすこしやすむといいですよ。",
+              "segments": [
+                {
+                  "surface": "疲",
+                  "reading": "つか"
+                },
+                {
+                  "surface": "れたときは"
+                },
+                {
+                  "surface": "少",
+                  "reading": "すこ"
+                },
+                {
+                  "surface": "し"
+                },
+                {
+                  "surface": "休",
+                  "reading": "やす"
+                },
+                {
+                  "surface": "むといいですよ。"
+                }
+              ],
+              "meaningRu": "Когда устали, хорошо немного отдохнуть.",
+              "audioUrl": "/audio/marugoto/28ebc4c0e941a5cb.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "疲れたときは",
+                "explanationRu": "Смысловой фрагмент: Когда устали, хорошо немного отдохнуть."
+              },
+              {
+                "text": "少し",
+                "explanationRu": "Смысловой фрагмент: Когда устали, хорошо немного отдохнуть."
+              },
+              {
+                "text": "休むといいですよ",
+                "explanationRu": "といい даёт мягкий совет, что могло бы помочь."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.15.grammar.123",
+      "titleRu": "～ないでください",
+      "introductionRu": "ないでください — просьба не делать что-либо.",
+      "canDoIds": [
+        41,
+        42,
+        43
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.15.part.grammar.123",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.123",
+            "explanationRu": "ないでください — просьба не делать что-либо.",
+            "example": {
+              "surface": "無理をしないでください。",
+              "kana": "むりをしないでください。",
+              "segments": [
+                {
+                  "surface": "無理",
+                  "reading": "むり"
+                },
+                {
+                  "surface": "をしないでください。"
+                }
+              ],
+              "meaningRu": "Пожалуйста, не перенапрягайтесь.",
+              "audioUrl": "/audio/marugoto/85b8745d00a1327c.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "無理を",
+                "explanationRu": "Смысловой фрагмент: Пожалуйста, не перенапрягайтесь."
+              },
+              {
+                "text": "しないでください",
+                "explanationRu": "ないでください — просьба не делать что-либо."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.41.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        41
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.41.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.41",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Спросите о самочувствии и назовите простое недомогание в ответе.",
+              "canDoIds": [
+                41
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Спросите о самочувствии и назовите простое недомогание в ответе.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "具合はどうですか。少し頭が痛いです。",
+                "kana": "ぐあいはどうですか。すこしあたまがいたいです。",
+                "segments": [
+                  {
+                    "surface": "具合",
+                    "reading": "ぐあい"
+                  },
+                  {
+                    "surface": "はどうですか。"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "頭",
+                    "reading": "あたま"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "痛",
+                    "reading": "いた"
+                  },
+                  {
+                    "surface": "いです。"
+                  }
+                ],
+                "meaningRu": "Как самочувствие? Немного болит голова.",
+                "audioUrl": "/audio/marugoto/cbaa777c4b900f63.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Спросите о самочувствии и назовите простое недомогание в ответе.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.42.goal",
+      "titleRu": "Слушаем и понимаем",
+      "canDoIds": [
+        42
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.42.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.42",
+              "titleRu": "Слушаем и понимаем",
+              "instructionRu": "Послушайте инструкцию к лёгкой разминке и найдите ограничение.",
+              "canDoIds": [
+                42
+              ],
+              "kind": "listening",
+              "passage": [
+                {
+                  "surface": "ゆっくり手を上げてください。急に動かさないでください。",
+                  "kana": "ゆっくりてをあげてください。きゅうにうごかさないでください。",
+                  "segments": [
+                    {
+                      "surface": "ゆっくり"
+                    },
+                    {
+                      "surface": "手",
+                      "reading": "て"
+                    },
+                    {
+                      "surface": "を"
+                    },
+                    {
+                      "surface": "上",
+                      "reading": "あ"
+                    },
+                    {
+                      "surface": "げてください。"
+                    },
+                    {
+                      "surface": "急",
+                      "reading": "きゅう"
+                    },
+                    {
+                      "surface": "に"
+                    },
+                    {
+                      "surface": "動",
+                      "reading": "うご"
+                    },
+                    {
+                      "surface": "かさないでください。"
+                    }
+                  ],
+                  "meaningRu": "Медленно поднимите руки. Не делайте резких движений.",
+                  "audioUrl": "/audio/marugoto/6982f5d4caa4f7e1.m4a"
+                }
+              ],
+              "questionRu": "Чего просит не делать инструктор?",
+              "options": [
+                {
+                  "id": "b",
+                  "text": "Поднимать руки"
+                },
+                {
+                  "id": "a",
+                  "text": "Двигаться резко"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Медленно поднимите руки. Не делайте резких движений."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.43.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        43
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.43.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.43",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Дайте другу мягкий бытовой совет для отдыха, без медицинских обещаний.",
+              "canDoIds": [
+                43
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Дайте другу мягкий бытовой совет для отдыха, без медицинских обещаний.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "疲れたときは、少し休むといいですよ。無理をしないでください。",
+                "kana": "つかれたときは、すこしやすむといいですよ。むりをしないでください。",
+                "segments": [
+                  {
+                    "surface": "疲",
+                    "reading": "つか"
+                  },
+                  {
+                    "surface": "れたときは、"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "むといいですよ。"
+                  },
+                  {
+                    "surface": "無理",
+                    "reading": "むり"
+                  },
+                  {
+                    "surface": "をしないでください。"
+                  }
+                ],
+                "meaningRu": "Когда устали, хорошо немного отдохнуть. Не перенапрягайтесь.",
+                "audioUrl": "/audio/marugoto/f457c98eade79033.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Дайте другу мягкий бытовой совет для отдыха, без медицинских обещаний.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

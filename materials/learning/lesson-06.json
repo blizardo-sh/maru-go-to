@@ -610,7 +610,7 @@
         ],
         "surface": "りょうり",
         "kana": "りょうり",
-        "meaningRu": "еда, блюда",
+        "meaningRu": "еда, блюда; приготовление пищи; кухня",
         "segments": [
           {
             "surface": "りょうり"
@@ -635,6 +635,13 @@
             "row": 26,
             "entry": "りょうり",
             "label": "Словарь · урок 6"
+          },
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+            "entry": "りょうり",
+            "label": "Словарь EN · урок 6 · уточнение русского перевода",
+            "page": 3
           }
         ],
         "audioUrl": "/audio/0aea4e679130af1a226a.m4a"

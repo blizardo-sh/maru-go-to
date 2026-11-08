@@ -618,7 +618,7 @@
         ],
         "surface": "おみやげ",
         "kana": "おみやげ",
-        "meaningRu": "сувенир",
+        "meaningRu": "сувенир; гостинец",
         "segments": [
           {
             "surface": "おみやげ"
@@ -643,6 +643,13 @@
             "row": 10,
             "entry": "おみやげ（みやげ）",
             "label": "Словарь · урок 15"
+          },
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+            "entry": "おみやげ",
+            "label": "Словарь EN · урок 15 · уточнение русского перевода",
+            "page": 8
           }
         ],
         "audioUrl": "/audio/659213e7cee35ba87e30.m4a"
@@ -1113,7 +1120,7 @@
         ],
         "surface": "とまります",
         "kana": "とまります",
-        "meaningRu": "останавливаться",
+        "meaningRu": "останавливаться; ночевать в гостинице",
         "segments": [
           {
             "surface": "とまります"
@@ -1130,6 +1137,13 @@
             "row": 30,
             "entry": "とまります",
             "label": "Словарь · урок 18"
+          },
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+            "entry": "とまります",
+            "label": "Словарь EN · урок 18 · уточнение русского перевода",
+            "page": 10
           }
         ],
         "audioUrl": "/audio/4a9a790f6045f78c8772.m4a"

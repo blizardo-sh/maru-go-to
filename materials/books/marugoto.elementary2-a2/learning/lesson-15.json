@@ -1,0 +1,599 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.15",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Экономим ресурсы",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.15.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        41,
+        42
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.15.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.24d093b99d6d8b07",
+              "explanationRu": "В этой ситуации: выключать (свет)",
+              "example": {
+                "surface": "電気がついたままですよ。すみません。今、消します。",
+                "kana": "でんきがついたままですよ。すみません。いま、けします。",
+                "segments": [
+                  {
+                    "surface": "電気",
+                    "reading": "でんき"
+                  },
+                  {
+                    "surface": "がついたままですよ。すみません。"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "消",
+                    "reading": "け"
+                  },
+                  {
+                    "surface": "します。"
+                  }
+                ],
+                "meaningRu": "Свет остался включённым. Простите, сейчас выключу.",
+                "audioUrl": "/audio/marugoto/e7b54d29459d8635.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.74f05aef6097b5bb",
+              "explanationRu": "В этой ситуации: электричество",
+              "example": {
+                "surface": "電気を消すようにしています。",
+                "kana": "でんきをけすようにしています。",
+                "segments": [
+                  {
+                    "surface": "電気",
+                    "reading": "でんき"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "消",
+                    "reading": "け"
+                  },
+                  {
+                    "surface": "すようにしています。"
+                  }
+                ],
+                "meaningRu": "Я стараюсь выключать свет.",
+                "audioUrl": "/audio/marugoto/3a1c9a39f1af90c7.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.a38b33c86c08905b",
+              "explanationRu": "В этой ситуации: мешок, пакет",
+              "example": {
+                "surface": "この袋は何度も使うのに便利です。",
+                "kana": "このふくろはなんどもつかうのにべんりです。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "袋",
+                    "reading": "ふくろ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "何度",
+                    "reading": "なんど"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "使",
+                    "reading": "つか"
+                  },
+                  {
+                    "surface": "うのに"
+                  },
+                  {
+                    "surface": "便利",
+                    "reading": "べんり"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Эту сумку удобно использовать многократно.",
+                "audioUrl": "/audio/marugoto/25682396d9ba4c60.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.562df57ebdba65c3",
+              "explanationRu": "В этой ситуации: окно",
+              "example": {
+                "surface": "窓が開いたままです。",
+                "kana": "まどがあいたままです。",
+                "segments": [
+                  {
+                    "surface": "窓",
+                    "reading": "まど"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "開",
+                    "reading": "あ"
+                  },
+                  {
+                    "surface": "いたままです。"
+                  }
+                ],
+                "meaningRu": "Окно осталось открытым.",
+                "audioUrl": "/audio/marugoto/97e7c645987af20b.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.696ff2427f284c1f",
+              "explanationRu": "В этой ситуации: бесполезный",
+              "example": {
+                "surface": "水を無駄にしないようにしています。",
+                "kana": "みずをむだにしないようにしています。",
+                "segments": [
+                  {
+                    "surface": "水",
+                    "reading": "みず"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "無駄",
+                    "reading": "むだ"
+                  },
+                  {
+                    "surface": "にしないようにしています。"
+                  }
+                ],
+                "meaningRu": "Я стараюсь не тратить воду зря.",
+                "audioUrl": "/audio/marugoto/3305ecbdd9535530.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.15.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        41,
+        42
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.15.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.c136fb9a0acca606",
+              "explanationRu": "В этой ситуации: делать, заниматься",
+              "example": {
+                "surface": "電気がついたままですよ。すみません。今、消します。",
+                "kana": "でんきがついたままですよ。すみません。いま、けします。",
+                "segments": [
+                  {
+                    "surface": "電気",
+                    "reading": "でんき"
+                  },
+                  {
+                    "surface": "がついたままですよ。すみません。"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "消",
+                    "reading": "け"
+                  },
+                  {
+                    "surface": "します。"
+                  }
+                ],
+                "meaningRu": "Свет остался включённым. Простите, сейчас выключу.",
+                "audioUrl": "/audio/marugoto/e7b54d29459d8635.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.15.grammar.192",
+      "titleRu": "～たまま",
+      "introductionRu": "たまま указывает, что состояние после действия сохраняется.",
+      "canDoIds": [
+        41,
+        42
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.15.part.grammar.192",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.192",
+            "explanationRu": "たまま указывает, что состояние после действия сохраняется.",
+            "example": {
+              "surface": "窓が開いたままです。",
+              "kana": "まどがあいたままです。",
+              "segments": [
+                {
+                  "surface": "窓",
+                  "reading": "まど"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "開",
+                  "reading": "あ"
+                },
+                {
+                  "surface": "いたままです。"
+                }
+              ],
+              "meaningRu": "Окно осталось открытым.",
+              "audioUrl": "/audio/marugoto/97e7c645987af20b.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "窓が",
+                "explanationRu": "Смысловой фрагмент: Окно осталось открытым."
+              },
+              {
+                "text": "開いたままです",
+                "explanationRu": "たまま указывает, что состояние после действия сохраняется."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.15.grammar.193",
+      "titleRu": "～ようにしている",
+      "introductionRu": "ようにしている описывает сознательно поддерживаемую привычку.",
+      "canDoIds": [
+        41,
+        42
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.15.part.grammar.193",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.193",
+            "explanationRu": "ようにしている описывает сознательно поддерживаемую привычку.",
+            "example": {
+              "surface": "電気を消すようにしています。",
+              "kana": "でんきをけすようにしています。",
+              "segments": [
+                {
+                  "surface": "電気",
+                  "reading": "でんき"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "消",
+                  "reading": "け"
+                },
+                {
+                  "surface": "すようにしています。"
+                }
+              ],
+              "meaningRu": "Я стараюсь выключать свет.",
+              "audioUrl": "/audio/marugoto/3a1c9a39f1af90c7.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "電気を",
+                "explanationRu": "Смысловой фрагмент: Я стараюсь выключать свет."
+              },
+              {
+                "text": "消すようにしています",
+                "explanationRu": "ようにしている описывает сознательно поддерживаемую привычку."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.15.grammar.194",
+      "titleRu": "～ないようにしている",
+      "introductionRu": "ないようにしている — регулярное усилие не делать что-либо.",
+      "canDoIds": [
+        41,
+        42
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.15.part.grammar.194",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.194",
+            "explanationRu": "ないようにしている — регулярное усилие не делать что-либо.",
+            "example": {
+              "surface": "水を無駄にしないようにしています。",
+              "kana": "みずをむだにしないようにしています。",
+              "segments": [
+                {
+                  "surface": "水",
+                  "reading": "みず"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "無駄",
+                  "reading": "むだ"
+                },
+                {
+                  "surface": "にしないようにしています。"
+                }
+              ],
+              "meaningRu": "Я стараюсь не тратить воду зря.",
+              "audioUrl": "/audio/marugoto/3305ecbdd9535530.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "水を",
+                "explanationRu": "Смысловой фрагмент: Я стараюсь не тратить воду зря."
+              },
+              {
+                "text": "無駄にしないようにしています",
+                "explanationRu": "ないようにしている — регулярное усилие не делать что-либо."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.15.grammar.195",
+      "titleRu": "～のに",
+      "introductionRu": "のに после глагола здесь обозначает применение, а не уступку.",
+      "canDoIds": [
+        41,
+        42
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.15.part.grammar.195",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.195",
+            "explanationRu": "のに после глагола здесь обозначает применение, а не уступку.",
+            "example": {
+              "surface": "この袋は何度も使うのに便利です。",
+              "kana": "このふくろはなんどもつかうのにべんりです。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "袋",
+                  "reading": "ふくろ"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "何度",
+                  "reading": "なんど"
+                },
+                {
+                  "surface": "も"
+                },
+                {
+                  "surface": "使",
+                  "reading": "つか"
+                },
+                {
+                  "surface": "うのに"
+                },
+                {
+                  "surface": "便利",
+                  "reading": "べんり"
+                },
+                {
+                  "surface": "です。"
+                }
+              ],
+              "meaningRu": "Эту сумку удобно использовать многократно.",
+              "audioUrl": "/audio/marugoto/25682396d9ba4c60.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Эту сумку удобно использовать многократно."
+              },
+              {
+                "text": "袋は",
+                "explanationRu": "Смысловой фрагмент: Эту сумку удобно использовать многократно."
+              },
+              {
+                "text": "何度も",
+                "explanationRu": "Смысловой фрагмент: Эту сумку удобно использовать многократно."
+              },
+              {
+                "text": "使うのに",
+                "explanationRu": "Смысловой фрагмент: Эту сумку удобно использовать многократно."
+              },
+              {
+                "text": "便利です",
+                "explanationRu": "のに после глагола здесь обозначает применение, а не уступку."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.41.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        41
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.41.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.41",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Обратите внимание на забытый свет и вежливо отреагируйте на замечание.",
+              "canDoIds": [
+                41
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Обратите внимание на забытый свет и вежливо отреагируйте на замечание.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "電気がついたままですよ。すみません。今、消します。",
+                "kana": "でんきがついたままですよ。すみません。いま、けします。",
+                "segments": [
+                  {
+                    "surface": "電気",
+                    "reading": "でんき"
+                  },
+                  {
+                    "surface": "がついたままですよ。すみません。"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "消",
+                    "reading": "け"
+                  },
+                  {
+                    "surface": "します。"
+                  }
+                ],
+                "meaningRu": "Свет остался включённым. Простите, сейчас выключу.",
+                "audioUrl": "/audio/marugoto/e7b54d29459d8635.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Обратите внимание на забытый свет и вежливо отреагируйте на замечание.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.42.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        42
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.42.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.42",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите о двух экологических привычках.",
+              "canDoIds": [
+                42
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите о двух экологических привычках.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "自分の袋を使うようにしています。水も無駄にしないようにしています。",
+                "kana": "じぶんのふくろをつかうようにしています。みずもむだにしないようにしています。",
+                "segments": [
+                  {
+                    "surface": "自分",
+                    "reading": "じぶん"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "袋",
+                    "reading": "ふくろ"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "使",
+                    "reading": "つか"
+                  },
+                  {
+                    "surface": "うようにしています。"
+                  },
+                  {
+                    "surface": "水",
+                    "reading": "みず"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "無駄",
+                    "reading": "むだ"
+                  },
+                  {
+                    "surface": "にしないようにしています。"
+                  }
+                ],
+                "meaningRu": "Я стараюсь пользоваться своей сумкой и не тратить воду зря.",
+                "audioUrl": "/audio/marugoto/add2f9be2b26492a.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите о двух экологических привычках.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

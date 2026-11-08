@@ -895,7 +895,7 @@
         ],
         "surface": "のります",
         "kana": "のります",
-        "meaningRu": "садиться в транспорт",
+        "meaningRu": "садиться в транспорт; ехать на транспорте",
         "segments": [
           {
             "surface": "のります"
@@ -920,6 +920,13 @@
             "row": 30,
             "entry": "のります",
             "label": "Словарь · урок 13"
+          },
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+            "entry": "のります",
+            "label": "Словарь EN · урок 13 · уточнение русского перевода",
+            "page": 7
           }
         ],
         "audioUrl": "/audio/a87c7eecd8aade3020e4.m4a"

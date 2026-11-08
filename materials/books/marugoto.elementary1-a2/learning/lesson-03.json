@@ -1,0 +1,787 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.03",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Времена года",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.03.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.03.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.3b44015c516e0053",
+              "explanationRu": "В этой ситуации: прохладный (освежающе прохладный)",
+              "example": {
+                "surface": "涼しいですから秋が好きです。",
+                "kana": "すずしいですからあきがすきです。",
+                "segments": [
+                  {
+                    "surface": "涼",
+                    "reading": "すず"
+                  },
+                  {
+                    "surface": "しいですから"
+                  },
+                  {
+                    "surface": "秋",
+                    "reading": "あき"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  }
+                ],
+                "meaningRu": "Я люблю осень, потому что прохладно.",
+                "audioUrl": "/audio/marugoto/d3d63ac85c71d7ef.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.6fc3f2d090b4f504",
+              "explanationRu": "В этой ситуации: холодный",
+              "example": {
+                "surface": "寒いのはあまり好きじゃないです。",
+                "kana": "さむいのはあまりすきじゃないです。",
+                "segments": [
+                  {
+                    "surface": "寒",
+                    "reading": "さむ"
+                  },
+                  {
+                    "surface": "いのはあまり"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きじゃないです。"
+                  }
+                ],
+                "meaningRu": "Холод я не очень люблю.",
+                "audioUrl": "/audio/marugoto/1c8d90992c3e6108.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.c15721bf3769472e",
+              "explanationRu": "В этой ситуации: осень",
+              "example": {
+                "surface": "十月に秋になります。",
+                "kana": "じゅうがつにあきになります。",
+                "segments": [
+                  {
+                    "surface": "十月",
+                    "reading": "じゅうがつ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "秋",
+                    "reading": "あき"
+                  },
+                  {
+                    "surface": "になります。"
+                  }
+                ],
+                "meaningRu": "В октябре наступает осень.",
+                "audioUrl": "/audio/marugoto/df1c705b2dda5d64.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.5b5febba33b3a3c4",
+              "explanationRu": "В этой ситуации: становиться",
+              "example": {
+                "surface": "十月に秋になります。",
+                "kana": "じゅうがつにあきになります。",
+                "segments": [
+                  {
+                    "surface": "十月",
+                    "reading": "じゅうがつ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "秋",
+                    "reading": "あき"
+                  },
+                  {
+                    "surface": "になります。"
+                  }
+                ],
+                "meaningRu": "В октябре наступает осень.",
+                "audioUrl": "/audio/marugoto/df1c705b2dda5d64.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.ca1bca12d3bd4f9f",
+              "explanationRu": "В этой ситуации: тихий",
+              "example": {
+                "surface": "朝は公園が静かになります。",
+                "kana": "あさはこうえんがしずかになります。",
+                "segments": [
+                  {
+                    "surface": "朝",
+                    "reading": "あさ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "公園",
+                    "reading": "こうえん"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "静",
+                    "reading": "しず"
+                  },
+                  {
+                    "surface": "かになります。"
+                  }
+                ],
+                "meaningRu": "Утром в парке становится тихо.",
+                "audioUrl": "/audio/marugoto/9397704f8feca79a.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.03.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.03.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.b637eab6bf70782e",
+              "explanationRu": "В этой ситуации: месяц",
+              "example": {
+                "surface": "十月に秋になります。",
+                "kana": "じゅうがつにあきになります。",
+                "segments": [
+                  {
+                    "surface": "十月",
+                    "reading": "じゅうがつ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "秋",
+                    "reading": "あき"
+                  },
+                  {
+                    "surface": "になります。"
+                  }
+                ],
+                "meaningRu": "В октябре наступает осень.",
+                "audioUrl": "/audio/marugoto/df1c705b2dda5d64.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.9a65a58244cf0f00",
+              "explanationRu": "В этой ситуации: примерно, около",
+              "example": {
+                "surface": "九月ごろ、涼しくなります。夜は少し寒くなります。",
+                "kana": "くがつごろ、すずしくなります。よるはすこしさむくなります。",
+                "segments": [
+                  {
+                    "surface": "九月",
+                    "reading": "くがつ"
+                  },
+                  {
+                    "surface": "ごろ、"
+                  },
+                  {
+                    "surface": "涼",
+                    "reading": "すず"
+                  },
+                  {
+                    "surface": "しくなります。"
+                  },
+                  {
+                    "surface": "夜",
+                    "reading": "よる"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "寒",
+                    "reading": "さむ"
+                  },
+                  {
+                    "surface": "くなります。"
+                  }
+                ],
+                "meaningRu": "Примерно в сентябре становится прохладнее. По ночам становится немного холодно.",
+                "audioUrl": "/audio/marugoto/cc4b3eca2fff25cd.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8b9e7b30b9f17cbb",
+              "explanationRu": "В этой ситуации: ночь; вечер",
+              "example": {
+                "surface": "夜は涼しくなります。",
+                "kana": "よるはすずしくなります。",
+                "segments": [
+                  {
+                    "surface": "夜",
+                    "reading": "よる"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "涼",
+                    "reading": "すず"
+                  },
+                  {
+                    "surface": "しくなります。"
+                  }
+                ],
+                "meaningRu": "Ночью становится прохладнее.",
+                "audioUrl": "/audio/marugoto/3bed66674fe51f38.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.03.grammar.66",
+      "titleRu": "～になる",
+      "introductionRu": "Существительное + に + なる обозначает переход в новое состояние.",
+      "canDoIds": [
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.03.part.grammar.66",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.66",
+            "explanationRu": "Существительное + に + なる обозначает переход в новое состояние.",
+            "example": {
+              "surface": "十月に秋になります。",
+              "kana": "じゅうがつにあきになります。",
+              "segments": [
+                {
+                  "surface": "十月",
+                  "reading": "じゅうがつ"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "秋",
+                  "reading": "あき"
+                },
+                {
+                  "surface": "になります。"
+                }
+              ],
+              "meaningRu": "В октябре наступает осень.",
+              "audioUrl": "/audio/marugoto/df1c705b2dda5d64.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "十月に",
+                "explanationRu": "Смысловой фрагмент: В октябре наступает осень."
+              },
+              {
+                "text": "秋に",
+                "explanationRu": "Смысловой фрагмент: В октябре наступает осень."
+              },
+              {
+                "text": "なります",
+                "explanationRu": "Существительное + に + なる обозначает переход в новое состояние."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.03.grammar.67",
+      "titleRu": "～くなる",
+      "introductionRu": "Для изменения признака меняем окончание い на く и добавляем なる.",
+      "canDoIds": [
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.03.part.grammar.67",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.67",
+            "explanationRu": "Для изменения признака меняем окончание い на く и добавляем なる.",
+            "example": {
+              "surface": "夜は涼しくなります。",
+              "kana": "よるはすずしくなります。",
+              "segments": [
+                {
+                  "surface": "夜",
+                  "reading": "よる"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "涼",
+                  "reading": "すず"
+                },
+                {
+                  "surface": "しくなります。"
+                }
+              ],
+              "meaningRu": "Ночью становится прохладнее.",
+              "audioUrl": "/audio/marugoto/3bed66674fe51f38.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "夜は",
+                "explanationRu": "Смысловой фрагмент: Ночью становится прохладнее."
+              },
+              {
+                "text": "涼しく",
+                "explanationRu": "Смысловой фрагмент: Ночью становится прохладнее."
+              },
+              {
+                "text": "なります",
+                "explanationRu": "Для изменения признака меняем окончание い на く и добавляем なる."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.03.grammar.68",
+      "titleRu": "～になる",
+      "introductionRu": "У な-прилагательного перед なる используем に.",
+      "canDoIds": [
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.03.part.grammar.68",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.68",
+            "explanationRu": "У な-прилагательного перед なる используем に.",
+            "example": {
+              "surface": "朝は公園が静かになります。",
+              "kana": "あさはこうえんがしずかになります。",
+              "segments": [
+                {
+                  "surface": "朝",
+                  "reading": "あさ"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "公園",
+                  "reading": "こうえん"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "静",
+                  "reading": "しず"
+                },
+                {
+                  "surface": "かになります。"
+                }
+              ],
+              "meaningRu": "Утром в парке становится тихо.",
+              "audioUrl": "/audio/marugoto/9397704f8feca79a.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "朝は",
+                "explanationRu": "Смысловой фрагмент: Утром в парке становится тихо."
+              },
+              {
+                "text": "公園が",
+                "explanationRu": "Смысловой фрагмент: Утром в парке становится тихо."
+              },
+              {
+                "text": "静かになります",
+                "explanationRu": "У な-прилагательного перед なる используем に."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.03.grammar.69",
+      "titleRu": "～（の）が好き",
+      "introductionRu": "Предмет предпочтения при 好き отмечаем が.",
+      "canDoIds": [
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.03.part.grammar.69",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.69",
+            "explanationRu": "Предмет предпочтения при 好き отмечаем が.",
+            "example": {
+              "surface": "私は秋が好きです。",
+              "kana": "わたしはあきがすきです。",
+              "segments": [
+                {
+                  "surface": "私",
+                  "reading": "わたし"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "秋",
+                  "reading": "あき"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "好",
+                  "reading": "す"
+                },
+                {
+                  "surface": "きです。"
+                }
+              ],
+              "meaningRu": "Мне нравится осень.",
+              "audioUrl": "/audio/marugoto/1c556587a4e0b632.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "私は",
+                "explanationRu": "Смысловой фрагмент: Мне нравится осень."
+              },
+              {
+                "text": "秋が",
+                "explanationRu": "Смысловой фрагмент: Мне нравится осень."
+              },
+              {
+                "text": "好きです",
+                "explanationRu": "Предмет предпочтения при 好き отмечаем が."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.03.grammar.70",
+      "titleRu": "～のは好きじゃない",
+      "introductionRu": "の превращает признак в предмет обсуждения; は выделяет его как тему.",
+      "canDoIds": [
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.03.part.grammar.70",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.70",
+            "explanationRu": "の превращает признак в предмет обсуждения; は выделяет его как тему.",
+            "example": {
+              "surface": "寒いのはあまり好きじゃないです。",
+              "kana": "さむいのはあまりすきじゃないです。",
+              "segments": [
+                {
+                  "surface": "寒",
+                  "reading": "さむ"
+                },
+                {
+                  "surface": "いのはあまり"
+                },
+                {
+                  "surface": "好",
+                  "reading": "す"
+                },
+                {
+                  "surface": "きじゃないです。"
+                }
+              ],
+              "meaningRu": "Холод я не очень люблю.",
+              "audioUrl": "/audio/marugoto/1c8d90992c3e6108.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "寒いのは",
+                "explanationRu": "Смысловой фрагмент: Холод я не очень люблю."
+              },
+              {
+                "text": "あまり",
+                "explanationRu": "Смысловой фрагмент: Холод я не очень люблю."
+              },
+              {
+                "text": "好きじゃないです",
+                "explanationRu": "の превращает признак в предмет обсуждения; は выделяет его как тему."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.03.grammar.71",
+      "titleRu": "～から",
+      "introductionRu": "から после законченного высказывания вводит причину.",
+      "canDoIds": [
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.03.part.grammar.71",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.71",
+            "explanationRu": "から после законченного высказывания вводит причину.",
+            "example": {
+              "surface": "涼しいですから秋が好きです。",
+              "kana": "すずしいですからあきがすきです。",
+              "segments": [
+                {
+                  "surface": "涼",
+                  "reading": "すず"
+                },
+                {
+                  "surface": "しいですから"
+                },
+                {
+                  "surface": "秋",
+                  "reading": "あき"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "好",
+                  "reading": "す"
+                },
+                {
+                  "surface": "きです。"
+                }
+              ],
+              "meaningRu": "Я люблю осень, потому что прохладно.",
+              "audioUrl": "/audio/marugoto/d3d63ac85c71d7ef.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "涼しいですから",
+                "explanationRu": "Смысловой фрагмент: Я люблю осень, потому что прохладно."
+              },
+              {
+                "text": "秋が",
+                "explanationRu": "Смысловой фрагмент: Я люблю осень, потому что прохладно."
+              },
+              {
+                "text": "好きです",
+                "explanationRu": "から после законченного высказывания вводит причину."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.06.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        6
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.06.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.06",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Опишите, как меняется погода с приходом нового времени года.",
+              "canDoIds": [
+                6
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Опишите, как меняется погода с приходом нового времени года.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "九月ごろ、涼しくなります。夜は少し寒くなります。",
+                "kana": "くがつごろ、すずしくなります。よるはすこしさむくなります。",
+                "segments": [
+                  {
+                    "surface": "九月",
+                    "reading": "くがつ"
+                  },
+                  {
+                    "surface": "ごろ、"
+                  },
+                  {
+                    "surface": "涼",
+                    "reading": "すず"
+                  },
+                  {
+                    "surface": "しくなります。"
+                  },
+                  {
+                    "surface": "夜",
+                    "reading": "よる"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "寒",
+                    "reading": "さむ"
+                  },
+                  {
+                    "surface": "くなります。"
+                  }
+                ],
+                "meaningRu": "Примерно в сентябре становится прохладнее. По ночам становится немного холодно.",
+                "audioUrl": "/audio/marugoto/cc4b3eca2fff25cd.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Опишите, как меняется погода с приходом нового времени года.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.07.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.07.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.07",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Назовите любимое время года и объясните причину.",
+              "canDoIds": [
+                7
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Назовите любимое время года и объясните причину.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "私は秋が好きです。涼しいですから、よく散歩します。",
+                "kana": "わたしはあきがすきです。すずしいですから、よくさんぽします。",
+                "segments": [
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "秋",
+                    "reading": "あき"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  },
+                  {
+                    "surface": "涼",
+                    "reading": "すず"
+                  },
+                  {
+                    "surface": "しいですから、よく"
+                  },
+                  {
+                    "surface": "散歩",
+                    "reading": "さんぽ"
+                  },
+                  {
+                    "surface": "します。"
+                  }
+                ],
+                "meaningRu": "Я люблю осень. Прохладно, поэтому я часто гуляю.",
+                "audioUrl": "/audio/marugoto/2b0832fdd8ef39e8.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Назовите любимое время года и объясните причину.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

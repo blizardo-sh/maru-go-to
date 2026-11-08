@@ -1,0 +1,1366 @@
+{
+  "lessonId": "marugoto.pre-intermediate-a2b1.topic.05",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Радость изучения языка",
+  "goals": [
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.05.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.05.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.cc7e99afec5d4ecd",
+              "explanationRu": "В этой ситуации: одинаковый",
+              "example": {
+                "surface": "近くに日本語の学校がなくても、オンラインで会話の練習ができます。同じ趣味の人を探すと、話すことが見つけやすいです。週に一度から始めてみましょう。",
+                "kana": "ちかくににほんごのがっこうがなくても、オンラインでかいわのれんしゅうができます。おなじしゅみのひとをさがすと、はなすことがみつけやすいです。しゅうにいちどからはじめてみましょう。",
+                "segments": [
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "くに"
+                  },
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "学校",
+                    "reading": "がっこう"
+                  },
+                  {
+                    "surface": "がなくても、オンラインで"
+                  },
+                  {
+                    "surface": "会話",
+                    "reading": "かいわ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "練習",
+                    "reading": "れんしゅう"
+                  },
+                  {
+                    "surface": "ができます。"
+                  },
+                  {
+                    "surface": "同",
+                    "reading": "おな"
+                  },
+                  {
+                    "surface": "じ"
+                  },
+                  {
+                    "surface": "趣味",
+                    "reading": "しゅみ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "探",
+                    "reading": "さが"
+                  },
+                  {
+                    "surface": "すと、"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "すことが"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "つけやすいです。"
+                  },
+                  {
+                    "surface": "週",
+                    "reading": "しゅう"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "一度",
+                    "reading": "いちど"
+                  },
+                  {
+                    "surface": "から"
+                  },
+                  {
+                    "surface": "始",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "めてみましょう。"
+                  }
+                ],
+                "meaningRu": "Даже без школы поблизости можно тренировать разговор онлайн. С человеком с общим хобби легче найти тему. Попробуйте начать раз в неделю.",
+                "audioUrl": "/audio/marugoto/da76ab4a742df299.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.c78c8fa3167572a3",
+              "explanationRu": "В этой ситуации: диалог",
+              "example": {
+                "surface": "会話を忘れないように、毎日声に出して練習しています。前より話せるようになりました。来年、試験を受けようと思っています。",
+                "kana": "かいわをわすれないように、まいにちこえにだしてれんしゅうしています。まえよりはなせるようになりました。らいねん、しけんをうけようとおもっています。",
+                "segments": [
+                  {
+                    "surface": "会話",
+                    "reading": "かいわ"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "忘",
+                    "reading": "わす"
+                  },
+                  {
+                    "surface": "れないように、"
+                  },
+                  {
+                    "surface": "毎日",
+                    "reading": "まいにち"
+                  },
+                  {
+                    "surface": "声",
+                    "reading": "こえ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "出",
+                    "reading": "だ"
+                  },
+                  {
+                    "surface": "して"
+                  },
+                  {
+                    "surface": "練習",
+                    "reading": "れんしゅう"
+                  },
+                  {
+                    "surface": "しています。"
+                  },
+                  {
+                    "surface": "前",
+                    "reading": "まえ"
+                  },
+                  {
+                    "surface": "より"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "せるようになりました。"
+                  },
+                  {
+                    "surface": "来年",
+                    "reading": "らいねん"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "試験",
+                    "reading": "しけん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "受",
+                    "reading": "う"
+                  },
+                  {
+                    "surface": "けようと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "っています。"
+                  }
+                ],
+                "meaningRu": "Чтобы не забывать разговорные выражения, я ежедневно тренируюсь вслух. Стал говорить лучше. В следующем году намерен сдать экзамен.",
+                "audioUrl": "/audio/marugoto/09e226fc53ae0f64.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.940a7f9600e0c6c5",
+              "explanationRu": "В этой ситуации: класс, группа",
+              "example": {
+                "surface": "クラスでは友達の話が聞けるので楽しいです。昨日は旅行について話しました。自分も行ってみたくなりました。",
+                "kana": "クラスではともだちのはなしがきけるのでたのしいです。きのうはりょこうについてはなしました。じぶんもいってみたくなりました。",
+                "segments": [
+                  {
+                    "surface": "クラスでは"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はなし"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "聞",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "けるので"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しいです。"
+                  },
+                  {
+                    "surface": "昨日",
+                    "reading": "きのう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "旅行",
+                    "reading": "りょこう"
+                  },
+                  {
+                    "surface": "について"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "しました。"
+                  },
+                  {
+                    "surface": "自分",
+                    "reading": "じぶん"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "ってみたくなりました。"
+                  }
+                ],
+                "meaningRu": "На занятиях интересно слушать рассказы друзей. Вчера говорили о путешествиях. Мне тоже захотелось поехать.",
+                "audioUrl": "/audio/marugoto/87e813230c3067d9.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.80c932629af9e32d",
+              "explanationRu": "В этой ситуации: экзамен",
+              "example": {
+                "surface": "来年試験を受けようと思っています。",
+                "kana": "らいねんしけんをうけようとおもっています。",
+                "segments": [
+                  {
+                    "surface": "来年",
+                    "reading": "らいねん"
+                  },
+                  {
+                    "surface": "試験",
+                    "reading": "しけん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "受",
+                    "reading": "う"
+                  },
+                  {
+                    "surface": "けようと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "っています。"
+                  }
+                ],
+                "meaningRu": "В следующем году я намерен сдать экзамен.",
+                "audioUrl": "/audio/marugoto/30a2a69679d9c710.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.3289b4c0bfa92493",
+              "explanationRu": "В этой ситуации: учитель",
+              "example": {
+                "surface": "前のテストは難しくて、あまりできませんでした。でも、先生に勉強の仕方を教えてもらいました。今度は少しできそうなので、続けたいです。",
+                "kana": "まえのテストはむずかしくて、あまりできませんでした。でも、せんせいにべんきょうのしかたをおしえてもらいました。こんどはすこしできそうなので、つづけたいです。",
+                "segments": [
+                  {
+                    "surface": "前",
+                    "reading": "まえ"
+                  },
+                  {
+                    "surface": "のテストは"
+                  },
+                  {
+                    "surface": "難",
+                    "reading": "むずか"
+                  },
+                  {
+                    "surface": "しくて、あまりできませんでした。でも、"
+                  },
+                  {
+                    "surface": "先生",
+                    "reading": "せんせい"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "勉強",
+                    "reading": "べんきょう"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "仕方",
+                    "reading": "しかた"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "教",
+                    "reading": "おし"
+                  },
+                  {
+                    "surface": "えてもらいました。"
+                  },
+                  {
+                    "surface": "今度",
+                    "reading": "こんど"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "しできそうなので、"
+                  },
+                  {
+                    "surface": "続",
+                    "reading": "つづ"
+                  },
+                  {
+                    "surface": "けたいです。"
+                  }
+                ],
+                "meaningRu": "Прошлый тест был трудным, я мало смог сделать. Но преподаватель объяснил, как заниматься. В следующий раз, кажется, получится лучше, поэтому хочу продолжать.",
+                "audioUrl": "/audio/marugoto/5326a926d731fbe6.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.05.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.05.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.34252b85ea08c483",
+              "explanationRu": "В этой ситуации: весёлый; приятный; доставляющий удовольствие",
+              "example": {
+                "surface": "日本語の勉強は楽しいですか。",
+                "kana": "にほんごのべんきょうはたのしいですか。",
+                "segments": [
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "勉強",
+                    "reading": "べんきょう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しいですか。"
+                  }
+                ],
+                "meaningRu": "Вам интересно изучать японский?",
+                "audioUrl": "/audio/marugoto/3cba80f00936b8da.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.2c8966c5b6fb5bd3",
+              "explanationRu": "В этой ситуации: разговор",
+              "example": {
+                "surface": "会話を忘れないように、毎日声に出して練習しています。前より話せるようになりました。来年、試験を受けようと思っています。",
+                "kana": "かいわをわすれないように、まいにちこえにだしてれんしゅうしています。まえよりはなせるようになりました。らいねん、しけんをうけようとおもっています。",
+                "segments": [
+                  {
+                    "surface": "会話",
+                    "reading": "かいわ"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "忘",
+                    "reading": "わす"
+                  },
+                  {
+                    "surface": "れないように、"
+                  },
+                  {
+                    "surface": "毎日",
+                    "reading": "まいにち"
+                  },
+                  {
+                    "surface": "声",
+                    "reading": "こえ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "出",
+                    "reading": "だ"
+                  },
+                  {
+                    "surface": "して"
+                  },
+                  {
+                    "surface": "練習",
+                    "reading": "れんしゅう"
+                  },
+                  {
+                    "surface": "しています。"
+                  },
+                  {
+                    "surface": "前",
+                    "reading": "まえ"
+                  },
+                  {
+                    "surface": "より"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "せるようになりました。"
+                  },
+                  {
+                    "surface": "来年",
+                    "reading": "らいねん"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "試験",
+                    "reading": "しけん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "受",
+                    "reading": "う"
+                  },
+                  {
+                    "surface": "けようと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "っています。"
+                  }
+                ],
+                "meaningRu": "Чтобы не забывать разговорные выражения, я ежедневно тренируюсь вслух. Стал говорить лучше. В следующем году намерен сдать экзамен.",
+                "audioUrl": "/audio/marugoto/09e226fc53ae0f64.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.05.grammar.232",
+      "titleRu": "～ように",
+      "introductionRu": "ように может выражать цель; ようにしている — старание, ようになる — достигнутое изменение.",
+      "canDoIds": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.05.part.grammar.232",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.232",
+            "explanationRu": "ように может выражать цель; ようにしている — старание, ようになる — достигнутое изменение.",
+            "example": {
+              "surface": "忘れないように毎日復習しています。",
+              "kana": "わすれないようにまいにちふくしゅうしています。",
+              "segments": [
+                {
+                  "surface": "忘",
+                  "reading": "わす"
+                },
+                {
+                  "surface": "れないように"
+                },
+                {
+                  "surface": "毎日",
+                  "reading": "まいにち"
+                },
+                {
+                  "surface": "復習",
+                  "reading": "ふくしゅう"
+                },
+                {
+                  "surface": "しています。"
+                }
+              ],
+              "meaningRu": "Я повторяю каждый день, чтобы не забыть.",
+              "audioUrl": "/audio/marugoto/0e7d041533220fec.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "忘れないように",
+                "explanationRu": "Смысловой фрагмент: Я повторяю каждый день, чтобы не забыть."
+              },
+              {
+                "text": "毎日",
+                "explanationRu": "Смысловой фрагмент: Я повторяю каждый день, чтобы не забыть."
+              },
+              {
+                "text": "復習しています",
+                "explanationRu": "ように может выражать цель; ようにしている — старание, ようになる — достигнутое изменение."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.05.grammar.233",
+      "titleRu": "普通体・丁寧体使い分け",
+      "introductionRu": "Вежливый вопрос подходит новому знакомому. С близким другом: 日本語の勉強、楽しい？",
+      "canDoIds": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.05.part.grammar.233",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.233",
+            "explanationRu": "Вежливый вопрос подходит новому знакомому. С близким другом: 日本語の勉強、楽しい？",
+            "example": {
+              "surface": "日本語の勉強は楽しいですか。",
+              "kana": "にほんごのべんきょうはたのしいですか。",
+              "segments": [
+                {
+                  "surface": "日本語",
+                  "reading": "にほんご"
+                },
+                {
+                  "surface": "の"
+                },
+                {
+                  "surface": "勉強",
+                  "reading": "べんきょう"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "楽",
+                  "reading": "たの"
+                },
+                {
+                  "surface": "しいですか。"
+                }
+              ],
+              "meaningRu": "Вам интересно изучать японский?",
+              "audioUrl": "/audio/marugoto/3cba80f00936b8da.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "日本語の",
+                "explanationRu": "Смысловой фрагмент: Вам интересно изучать японский?"
+              },
+              {
+                "text": "勉強は",
+                "explanationRu": "Смысловой фрагмент: Вам интересно изучать японский?"
+              },
+              {
+                "text": "楽しいですか",
+                "explanationRu": "Вежливый вопрос подходит новому знакомому. С близким другом: 日本語の勉強、楽しい？"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.05.grammar.234",
+      "titleRu": "～（よ）うと思っている",
+      "introductionRu": "Волевая форма + と思っている выражает уже обдуманное намерение.",
+      "canDoIds": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.05.part.grammar.234",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.234",
+            "explanationRu": "Волевая форма + と思っている выражает уже обдуманное намерение.",
+            "example": {
+              "surface": "来年試験を受けようと思っています。",
+              "kana": "らいねんしけんをうけようとおもっています。",
+              "segments": [
+                {
+                  "surface": "来年",
+                  "reading": "らいねん"
+                },
+                {
+                  "surface": "試験",
+                  "reading": "しけん"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "受",
+                  "reading": "う"
+                },
+                {
+                  "surface": "けようと"
+                },
+                {
+                  "surface": "思",
+                  "reading": "おも"
+                },
+                {
+                  "surface": "っています。"
+                }
+              ],
+              "meaningRu": "В следующем году я намерен сдать экзамен.",
+              "audioUrl": "/audio/marugoto/30a2a69679d9c710.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "来年",
+                "explanationRu": "Смысловой фрагмент: В следующем году я намерен сдать экзамен."
+              },
+              {
+                "text": "試験を",
+                "explanationRu": "Смысловой фрагмент: В следующем году я намерен сдать экзамен."
+              },
+              {
+                "text": "受けようと思っています",
+                "explanationRu": "Волевая форма + と思っている выражает уже обдуманное намерение."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.05.grammar.235",
+      "titleRu": "～そうだ",
+      "introductionRu": "Основа потенциального глагола + そう оценивает вероятную возможность.",
+      "canDoIds": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.05.part.grammar.235",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.235",
+            "explanationRu": "Основа потенциального глагола + そう оценивает вероятную возможность.",
+            "example": {
+              "surface": "この記事なら読めそうです。",
+              "kana": "このきじならよめそうです。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "記事",
+                  "reading": "きじ"
+                },
+                {
+                  "surface": "なら"
+                },
+                {
+                  "surface": "読",
+                  "reading": "よ"
+                },
+                {
+                  "surface": "めそうです。"
+                }
+              ],
+              "meaningRu": "Кажется, эту статью я смогу прочитать.",
+              "audioUrl": "/audio/marugoto/ee22380a1eb17f54.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Кажется, эту статью я смогу прочитать."
+              },
+              {
+                "text": "記事なら",
+                "explanationRu": "Смысловой фрагмент: Кажется, эту статью я смогу прочитать."
+              },
+              {
+                "text": "読めそうです",
+                "explanationRu": "Основа потенциального глагола + そう оценивает вероятную возможность."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.05.grammar.236",
+      "titleRu": "～も",
+      "introductionRu": "も после количества подчёркивает, что говорящий считает его большим.",
+      "canDoIds": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.05.part.grammar.236",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.236",
+            "explanationRu": "も после количества подчёркивает, что говорящий считает его большим.",
+            "example": {
+              "surface": "昨日二時間も勉強しました。",
+              "kana": "きのうにじかんもべんきょうしました。",
+              "segments": [
+                {
+                  "surface": "昨日",
+                  "reading": "きのう"
+                },
+                {
+                  "surface": "二時間",
+                  "reading": "にじかん"
+                },
+                {
+                  "surface": "も"
+                },
+                {
+                  "surface": "勉強",
+                  "reading": "べんきょう"
+                },
+                {
+                  "surface": "しました。"
+                }
+              ],
+              "meaningRu": "Вчера я занимался целых два часа.",
+              "audioUrl": "/audio/marugoto/4c9e56c4f0ed9437.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "昨日",
+                "explanationRu": "Смысловой фрагмент: Вчера я занимался целых два часа."
+              },
+              {
+                "text": "二時間も",
+                "explanationRu": "Смысловой фрагмент: Вчера я занимался целых два часа."
+              },
+              {
+                "text": "勉強しました",
+                "explanationRu": "も после количества подчёркивает, что говорящий считает его большим."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.21.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        21
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.21.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.21",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Поделитесь способом изучения языка: цель, действие и замеченное изменение.",
+              "canDoIds": [
+                21
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Поделитесь способом изучения языка: цель, действие и замеченное изменение.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "会話を忘れないように、毎日声に出して練習しています。前より話せるようになりました。来年、試験を受けようと思っています。",
+                "kana": "かいわをわすれないように、まいにちこえにだしてれんしゅうしています。まえよりはなせるようになりました。らいねん、しけんをうけようとおもっています。",
+                "segments": [
+                  {
+                    "surface": "会話",
+                    "reading": "かいわ"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "忘",
+                    "reading": "わす"
+                  },
+                  {
+                    "surface": "れないように、"
+                  },
+                  {
+                    "surface": "毎日",
+                    "reading": "まいにち"
+                  },
+                  {
+                    "surface": "声",
+                    "reading": "こえ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "出",
+                    "reading": "だ"
+                  },
+                  {
+                    "surface": "して"
+                  },
+                  {
+                    "surface": "練習",
+                    "reading": "れんしゅう"
+                  },
+                  {
+                    "surface": "しています。"
+                  },
+                  {
+                    "surface": "前",
+                    "reading": "まえ"
+                  },
+                  {
+                    "surface": "より"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "せるようになりました。"
+                  },
+                  {
+                    "surface": "来年",
+                    "reading": "らいねん"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "試験",
+                    "reading": "しけん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "受",
+                    "reading": "う"
+                  },
+                  {
+                    "surface": "けようと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "っています。"
+                  }
+                ],
+                "meaningRu": "Чтобы не забывать разговорные выражения, я ежедневно тренируюсь вслух. Стал говорить лучше. В следующем году намерен сдать экзамен.",
+                "audioUrl": "/audio/marugoto/09e226fc53ae0f64.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Поделитесь способом изучения языка: цель, действие и замеченное изменение.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.22.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        22
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.22.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.22",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите, что вам нравится в занятиях с другими людьми, приведя пример.",
+              "canDoIds": [
+                22
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите, что вам нравится в занятиях с другими людьми, приведя пример.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "クラスでは友達の話が聞けるので楽しいです。昨日は旅行について話しました。自分も行ってみたくなりました。",
+                "kana": "クラスではともだちのはなしがきけるのでたのしいです。きのうはりょこうについてはなしました。じぶんもいってみたくなりました。",
+                "segments": [
+                  {
+                    "surface": "クラスでは"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はなし"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "聞",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "けるので"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しいです。"
+                  },
+                  {
+                    "surface": "昨日",
+                    "reading": "きのう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "旅行",
+                    "reading": "りょこう"
+                  },
+                  {
+                    "surface": "について"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "しました。"
+                  },
+                  {
+                    "surface": "自分",
+                    "reading": "じぶん"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "ってみたくなりました。"
+                  }
+                ],
+                "meaningRu": "На занятиях интересно слушать рассказы друзей. Вчера говорили о путешествиях. Мне тоже захотелось поехать.",
+                "audioUrl": "/audio/marugoto/87e813230c3067d9.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите, что вам нравится в занятиях с другими людьми, приведя пример.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.23.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        23
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.23.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.23",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте совет об изучении языка вне Японии и определите доступный способ.",
+              "canDoIds": [
+                23
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "近くに日本語の学校がなくても、オンラインで会話の練習ができます。同じ趣味の人を探すと、話すことが見つけやすいです。週に一度から始めてみましょう。",
+                  "kana": "ちかくににほんごのがっこうがなくても、オンラインでかいわのれんしゅうができます。おなじしゅみのひとをさがすと、はなすことがみつけやすいです。しゅうにいちどからはじめてみましょう。",
+                  "segments": [
+                    {
+                      "surface": "近",
+                      "reading": "ちか"
+                    },
+                    {
+                      "surface": "くに"
+                    },
+                    {
+                      "surface": "日本語",
+                      "reading": "にほんご"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "学校",
+                      "reading": "がっこう"
+                    },
+                    {
+                      "surface": "がなくても、オンラインで"
+                    },
+                    {
+                      "surface": "会話",
+                      "reading": "かいわ"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "練習",
+                      "reading": "れんしゅう"
+                    },
+                    {
+                      "surface": "ができます。"
+                    },
+                    {
+                      "surface": "同",
+                      "reading": "おな"
+                    },
+                    {
+                      "surface": "じ"
+                    },
+                    {
+                      "surface": "趣味",
+                      "reading": "しゅみ"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "人",
+                      "reading": "ひと"
+                    },
+                    {
+                      "surface": "を"
+                    },
+                    {
+                      "surface": "探",
+                      "reading": "さが"
+                    },
+                    {
+                      "surface": "すと、"
+                    },
+                    {
+                      "surface": "話",
+                      "reading": "はな"
+                    },
+                    {
+                      "surface": "すことが"
+                    },
+                    {
+                      "surface": "見",
+                      "reading": "み"
+                    },
+                    {
+                      "surface": "つけやすいです。"
+                    },
+                    {
+                      "surface": "週",
+                      "reading": "しゅう"
+                    },
+                    {
+                      "surface": "に"
+                    },
+                    {
+                      "surface": "一度",
+                      "reading": "いちど"
+                    },
+                    {
+                      "surface": "から"
+                    },
+                    {
+                      "surface": "始",
+                      "reading": "はじ"
+                    },
+                    {
+                      "surface": "めてみましょう。"
+                    }
+                  ],
+                  "meaningRu": "Даже без школы поблизости можно тренировать разговор онлайн. С человеком с общим хобби легче найти тему. Попробуйте начать раз в неделю.",
+                  "audioUrl": "/audio/marugoto/da76ab4a742df299.m4a"
+                }
+              ],
+              "questionRu": "Что советуют при отсутствии школы рядом?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Общаться онлайн по общим интересам"
+                },
+                {
+                  "id": "b",
+                  "text": "Обязательно ждать переезда в Японию"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Даже без школы поблизости можно тренировать разговор онлайн. С человеком с общим хобби легче найти тему. Попробуйте начать раз в неделю."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.24.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        24
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.24.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.24",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте письмо об учёбе и определите отношение к трудности.",
+              "canDoIds": [
+                24
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "前のテストは難しくて、あまりできませんでした。でも、先生に勉強の仕方を教えてもらいました。今度は少しできそうなので、続けたいです。",
+                  "kana": "まえのテストはむずかしくて、あまりできませんでした。でも、せんせいにべんきょうのしかたをおしえてもらいました。こんどはすこしできそうなので、つづけたいです。",
+                  "segments": [
+                    {
+                      "surface": "前",
+                      "reading": "まえ"
+                    },
+                    {
+                      "surface": "のテストは"
+                    },
+                    {
+                      "surface": "難",
+                      "reading": "むずか"
+                    },
+                    {
+                      "surface": "しくて、あまりできませんでした。でも、"
+                    },
+                    {
+                      "surface": "先生",
+                      "reading": "せんせい"
+                    },
+                    {
+                      "surface": "に"
+                    },
+                    {
+                      "surface": "勉強",
+                      "reading": "べんきょう"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "仕方",
+                      "reading": "しかた"
+                    },
+                    {
+                      "surface": "を"
+                    },
+                    {
+                      "surface": "教",
+                      "reading": "おし"
+                    },
+                    {
+                      "surface": "えてもらいました。"
+                    },
+                    {
+                      "surface": "今度",
+                      "reading": "こんど"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "少",
+                      "reading": "すこ"
+                    },
+                    {
+                      "surface": "しできそうなので、"
+                    },
+                    {
+                      "surface": "続",
+                      "reading": "つづ"
+                    },
+                    {
+                      "surface": "けたいです。"
+                    }
+                  ],
+                  "meaningRu": "Прошлый тест был трудным, я мало смог сделать. Но преподаватель объяснил, как заниматься. В следующий раз, кажется, получится лучше, поэтому хочу продолжать.",
+                  "audioUrl": "/audio/marugoto/5326a926d731fbe6.m4a"
+                }
+              ],
+              "questionRu": "Как автор относится к дальнейшей учёбе?",
+              "options": [
+                {
+                  "id": "b",
+                  "text": "Решил окончательно бросить"
+                },
+                {
+                  "id": "a",
+                  "text": "Надеется на улучшение и хочет продолжать"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Прошлый тест был трудным, я мало смог сделать. Но преподаватель объяснил, как заниматься. В следующий раз, кажется, получится лучше, поэтому хочу продолжать."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

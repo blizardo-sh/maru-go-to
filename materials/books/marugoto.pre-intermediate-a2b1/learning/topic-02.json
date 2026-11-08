@@ -1,0 +1,1963 @@
+{
+  "lessonId": "marugoto.pre-intermediate-a2b1.topic.02",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Ищем жильё",
+  "goals": [
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.02.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.02.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.433045a3e7065890",
+              "explanationRu": "В этой ситуации: переезд（переезжать）",
+              "example": {
+                "surface": "駅に近い部屋があれば引っ越したいです。",
+                "kana": "えきにちかいへやがあればひっこしたいです。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "部屋",
+                    "reading": "へや"
+                  },
+                  {
+                    "surface": "があれば"
+                  },
+                  {
+                    "surface": "引",
+                    "reading": "ひ"
+                  },
+                  {
+                    "surface": "っ"
+                  },
+                  {
+                    "surface": "越",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "したいです。"
+                  }
+                ],
+                "meaningRu": "Если найдётся комната рядом со станцией, я хочу переехать.",
+                "audioUrl": "/audio/marugoto/797ee494397e9ff5.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.1fc0aae94fcc34f1",
+              "explanationRu": "В этой ситуации: терпение",
+              "example": {
+                "surface": "駅に近い部屋があれば、引っ越したいです。家賃も大切です。狭くても我慢できます。",
+                "kana": "えきにちかいへやがあれば、ひっこしたいです。やちんもたいせつです。せまくてもがまんできます。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "部屋",
+                    "reading": "へや"
+                  },
+                  {
+                    "surface": "があれば、"
+                  },
+                  {
+                    "surface": "引",
+                    "reading": "ひ"
+                  },
+                  {
+                    "surface": "っ"
+                  },
+                  {
+                    "surface": "越",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "したいです。"
+                  },
+                  {
+                    "surface": "家賃",
+                    "reading": "やちん"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "大切",
+                    "reading": "たいせつ"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "狭",
+                    "reading": "せま"
+                  },
+                  {
+                    "surface": "くても"
+                  },
+                  {
+                    "surface": "我慢",
+                    "reading": "がまん"
+                  },
+                  {
+                    "surface": "できます。"
+                  }
+                ],
+                "meaningRu": "Если найдётся комната рядом со станцией, я хочу переехать. Аренда тоже важна. С теснотой могу смириться.",
+                "audioUrl": "/audio/marugoto/dc620e4f29300c7f.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.bf79a13c62d6197e",
+              "explanationRu": "В этой ситуации: квартплата",
+              "example": {
+                "surface": "家賃が安かったからここに決めました。",
+                "kana": "やちんがやすかったからここにきめました。",
+                "segments": [
+                  {
+                    "surface": "家賃",
+                    "reading": "やちん"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "安",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "かったからここに"
+                  },
+                  {
+                    "surface": "決",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "めました。"
+                  }
+                ],
+                "meaningRu": "Я выбрал это место, потому что аренда была недорогой.",
+                "audioUrl": "/audio/marugoto/4f78dc7ba2c89d80.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.6dfae2e872ae29f1",
+              "explanationRu": "В этой ситуации: светлый",
+              "example": {
+                "surface": "今の家は駅から遠いけど、静かだから決めました。部屋が明るいのも気に入っています。",
+                "kana": "いまのいえはえきからとおいけど、しずかだからきめました。へやがあかるいのもきにいっています。",
+                "segments": [
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "家",
+                    "reading": "いえ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "から"
+                  },
+                  {
+                    "surface": "遠",
+                    "reading": "とお"
+                  },
+                  {
+                    "surface": "いけど、"
+                  },
+                  {
+                    "surface": "静",
+                    "reading": "しず"
+                  },
+                  {
+                    "surface": "かだから"
+                  },
+                  {
+                    "surface": "決",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "めました。"
+                  },
+                  {
+                    "surface": "部屋",
+                    "reading": "へや"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "明",
+                    "reading": "あか"
+                  },
+                  {
+                    "surface": "るいのも"
+                  },
+                  {
+                    "surface": "気",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "入",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "っています。"
+                  }
+                ],
+                "meaningRu": "Мой нынешний дом далеко от станции, но я выбрал его из-за тишины. Мне нравится и светлая комната.",
+                "audioUrl": "/audio/marugoto/1e4abe7b48fa4cc6.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.abf51c53069fc220",
+              "explanationRu": "В этой ситуации: мочь",
+              "example": {
+                "surface": "駅に近い部屋があれば、引っ越したいです。家賃も大切です。狭くても我慢できます。",
+                "kana": "えきにちかいへやがあれば、ひっこしたいです。やちんもたいせつです。せまくてもがまんできます。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "部屋",
+                    "reading": "へや"
+                  },
+                  {
+                    "surface": "があれば、"
+                  },
+                  {
+                    "surface": "引",
+                    "reading": "ひ"
+                  },
+                  {
+                    "surface": "っ"
+                  },
+                  {
+                    "surface": "越",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "したいです。"
+                  },
+                  {
+                    "surface": "家賃",
+                    "reading": "やちん"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "大切",
+                    "reading": "たいせつ"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "狭",
+                    "reading": "せま"
+                  },
+                  {
+                    "surface": "くても"
+                  },
+                  {
+                    "surface": "我慢",
+                    "reading": "がまん"
+                  },
+                  {
+                    "surface": "できます。"
+                  }
+                ],
+                "meaningRu": "Если найдётся комната рядом со станцией, я хочу переехать. Аренда тоже важна. С теснотой могу смириться.",
+                "audioUrl": "/audio/marugoto/dc620e4f29300c7f.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.02.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.02.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.7fcfa571a8e518a5",
+              "explanationRu": "В этой ситуации: электричка, поезд",
+              "example": {
+                "surface": "家で働くようになって、電車に乗らなくてもよくなりました。便利ですが、仕事と休みの時間を分けるのが難しいです。今は毎朝、散歩してから仕事を始めています。",
+                "kana": "いえではたらくようになって、でんしゃにのらなくてもよくなりました。べんりですが、しごととやすみのじかんをわけるのがむずかしいです。いまはまいあさ、さんぽしてからしごとをはじめています。",
+                "segments": [
+                  {
+                    "surface": "家",
+                    "reading": "いえ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "働",
+                    "reading": "はたら"
+                  },
+                  {
+                    "surface": "くようになって、"
+                  },
+                  {
+                    "surface": "電車",
+                    "reading": "でんしゃ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "乗",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "らなくてもよくなりました。"
+                  },
+                  {
+                    "surface": "便利",
+                    "reading": "べんり"
+                  },
+                  {
+                    "surface": "ですが、"
+                  },
+                  {
+                    "surface": "仕事",
+                    "reading": "しごと"
+                  },
+                  {
+                    "surface": "と"
+                  },
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "みの"
+                  },
+                  {
+                    "surface": "時間",
+                    "reading": "じかん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "分",
+                    "reading": "わ"
+                  },
+                  {
+                    "surface": "けるのが"
+                  },
+                  {
+                    "surface": "難",
+                    "reading": "むずか"
+                  },
+                  {
+                    "surface": "しいです。"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "毎朝",
+                    "reading": "まいあさ"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "散歩",
+                    "reading": "さんぽ"
+                  },
+                  {
+                    "surface": "してから"
+                  },
+                  {
+                    "surface": "仕事",
+                    "reading": "しごと"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "始",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "めています。"
+                  }
+                ],
+                "meaningRu": "Работая дома, я перестал ездить на поезде. Это удобно, но трудно разделить рабочее и свободное время. Теперь каждое утро начинаю работу после прогулки.",
+                "audioUrl": "/audio/marugoto/30b001af73e6dd5d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.9af71ce04d34fc49",
+              "explanationRu": "В этой ситуации: ребенок",
+              "example": {
+                "surface": "私の家は古くて、駅からも遠いです。でも、広い庭があります。子どもが外で遊べるので、ここに決めました。",
+                "kana": "わたしのいえはふるくて、えきからもとおいです。でも、ひろいにわがあります。こどもがそとであそべるので、ここにきめました。",
+                "segments": [
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "家",
+                    "reading": "いえ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "古",
+                    "reading": "ふる"
+                  },
+                  {
+                    "surface": "くて、"
+                  },
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "からも"
+                  },
+                  {
+                    "surface": "遠",
+                    "reading": "とお"
+                  },
+                  {
+                    "surface": "いです。でも、"
+                  },
+                  {
+                    "surface": "広",
+                    "reading": "ひろ"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "庭",
+                    "reading": "にわ"
+                  },
+                  {
+                    "surface": "があります。"
+                  },
+                  {
+                    "surface": "子",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "どもが"
+                  },
+                  {
+                    "surface": "外",
+                    "reading": "そと"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "遊",
+                    "reading": "あそ"
+                  },
+                  {
+                    "surface": "べるので、ここに"
+                  },
+                  {
+                    "surface": "決",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "めました。"
+                  }
+                ],
+                "meaningRu": "Мой дом старый и далеко от станции. Зато есть просторный сад. Я выбрал его, потому что дети могут играть на улице.",
+                "audioUrl": "/audio/marugoto/0bb399ab2d53cdad.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.bb5d894377c33f7c",
+              "explanationRu": "В этой ситуации: время",
+              "example": {
+                "surface": "家で働くようになって、電車に乗らなくてもよくなりました。便利ですが、仕事と休みの時間を分けるのが難しいです。今は毎朝、散歩してから仕事を始めています。",
+                "kana": "いえではたらくようになって、でんしゃにのらなくてもよくなりました。べんりですが、しごととやすみのじかんをわけるのがむずかしいです。いまはまいあさ、さんぽしてからしごとをはじめています。",
+                "segments": [
+                  {
+                    "surface": "家",
+                    "reading": "いえ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "働",
+                    "reading": "はたら"
+                  },
+                  {
+                    "surface": "くようになって、"
+                  },
+                  {
+                    "surface": "電車",
+                    "reading": "でんしゃ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "乗",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "らなくてもよくなりました。"
+                  },
+                  {
+                    "surface": "便利",
+                    "reading": "べんり"
+                  },
+                  {
+                    "surface": "ですが、"
+                  },
+                  {
+                    "surface": "仕事",
+                    "reading": "しごと"
+                  },
+                  {
+                    "surface": "と"
+                  },
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "みの"
+                  },
+                  {
+                    "surface": "時間",
+                    "reading": "じかん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "分",
+                    "reading": "わ"
+                  },
+                  {
+                    "surface": "けるのが"
+                  },
+                  {
+                    "surface": "難",
+                    "reading": "むずか"
+                  },
+                  {
+                    "surface": "しいです。"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "毎朝",
+                    "reading": "まいあさ"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "散歩",
+                    "reading": "さんぽ"
+                  },
+                  {
+                    "surface": "してから"
+                  },
+                  {
+                    "surface": "仕事",
+                    "reading": "しごと"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "始",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "めています。"
+                  }
+                ],
+                "meaningRu": "Работая дома, я перестал ездить на поезде. Это удобно, но трудно разделить рабочее и свободное время. Теперь каждое утро начинаю работу после прогулки.",
+                "audioUrl": "/audio/marugoto/30b001af73e6dd5d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.ca1bca12d3bd4f9f",
+              "explanationRu": "В этой ситуации: тихий",
+              "example": {
+                "surface": "駅から遠いけど静かだからここにしました。",
+                "kana": "えきからとおいけどしずかだからここにしました。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "から"
+                  },
+                  {
+                    "surface": "遠",
+                    "reading": "とお"
+                  },
+                  {
+                    "surface": "いけど"
+                  },
+                  {
+                    "surface": "静",
+                    "reading": "しず"
+                  },
+                  {
+                    "surface": "かだからここにしました。"
+                  }
+                ],
+                "meaningRu": "Я выбрал это место: от станции далеко, зато тихо.",
+                "audioUrl": "/audio/marugoto/ff5ca9b1b154bc98.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.27aacadebc325d6c",
+              "explanationRu": "В этой ситуации: близкий",
+              "example": {
+                "surface": "駅に近い部屋があれば引っ越したいです。",
+                "kana": "えきにちかいへやがあればひっこしたいです。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "部屋",
+                    "reading": "へや"
+                  },
+                  {
+                    "surface": "があれば"
+                  },
+                  {
+                    "surface": "引",
+                    "reading": "ひ"
+                  },
+                  {
+                    "surface": "っ"
+                  },
+                  {
+                    "surface": "越",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "したいです。"
+                  }
+                ],
+                "meaningRu": "Если найдётся комната рядом со станцией, я хочу переехать.",
+                "audioUrl": "/audio/marugoto/797ee494397e9ff5.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.02.words.3",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.02.part.words.3",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.0cb83eb998ccf45d",
+              "explanationRu": "В этой ситуации: далекий",
+              "example": {
+                "surface": "駅から遠いけど静かだからここにしました。",
+                "kana": "えきからとおいけどしずかだからここにしました。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "から"
+                  },
+                  {
+                    "surface": "遠",
+                    "reading": "とお"
+                  },
+                  {
+                    "surface": "いけど"
+                  },
+                  {
+                    "surface": "静",
+                    "reading": "しず"
+                  },
+                  {
+                    "surface": "かだからここにしました。"
+                  }
+                ],
+                "meaningRu": "Я выбрал это место: от станции далеко, зато тихо.",
+                "audioUrl": "/audio/marugoto/ff5ca9b1b154bc98.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.71d1c349d47ffc70",
+              "explanationRu": "В этой ситуации: место",
+              "example": {
+                "surface": "部屋を探しているんですけどいいところがなくて。",
+                "kana": "へやをさがしているんですけどいいところがなくて。",
+                "segments": [
+                  {
+                    "surface": "部屋",
+                    "reading": "へや"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "探",
+                    "reading": "さが"
+                  },
+                  {
+                    "surface": "しているんですけどいいところがなくて。"
+                  }
+                ],
+                "meaningRu": "Я ищу комнату, но подходящих вариантов нет…",
+                "audioUrl": "/audio/marugoto/463ab9720e0bdaf6.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.4523d64bdb8f0705",
+              "explanationRu": "В этой ситуации: широкий, просторный",
+              "example": {
+                "surface": "私の家は古くて、駅からも遠いです。でも、広い庭があります。子どもが外で遊べるので、ここに決めました。",
+                "kana": "わたしのいえはふるくて、えきからもとおいです。でも、ひろいにわがあります。こどもがそとであそべるので、ここにきめました。",
+                "segments": [
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "家",
+                    "reading": "いえ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "古",
+                    "reading": "ふる"
+                  },
+                  {
+                    "surface": "くて、"
+                  },
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "からも"
+                  },
+                  {
+                    "surface": "遠",
+                    "reading": "とお"
+                  },
+                  {
+                    "surface": "いです。でも、"
+                  },
+                  {
+                    "surface": "広",
+                    "reading": "ひろ"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "庭",
+                    "reading": "にわ"
+                  },
+                  {
+                    "surface": "があります。"
+                  },
+                  {
+                    "surface": "子",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "どもが"
+                  },
+                  {
+                    "surface": "外",
+                    "reading": "そと"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "遊",
+                    "reading": "あそ"
+                  },
+                  {
+                    "surface": "べるので、ここに"
+                  },
+                  {
+                    "surface": "決",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "めました。"
+                  }
+                ],
+                "meaningRu": "Мой дом старый и далеко от станции. Зато есть просторный сад. Я выбрал его, потому что дети могут играть на улице.",
+                "audioUrl": "/audio/marugoto/0bb399ab2d53cdad.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.4332fcbf78cc8bee",
+              "explanationRu": "В этой ситуации: удобный",
+              "example": {
+                "surface": "家で働くようになって、電車に乗らなくてもよくなりました。便利ですが、仕事と休みの時間を分けるのが難しいです。今は毎朝、散歩してから仕事を始めています。",
+                "kana": "いえではたらくようになって、でんしゃにのらなくてもよくなりました。べんりですが、しごととやすみのじかんをわけるのがむずかしいです。いまはまいあさ、さんぽしてからしごとをはじめています。",
+                "segments": [
+                  {
+                    "surface": "家",
+                    "reading": "いえ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "働",
+                    "reading": "はたら"
+                  },
+                  {
+                    "surface": "くようになって、"
+                  },
+                  {
+                    "surface": "電車",
+                    "reading": "でんしゃ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "乗",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "らなくてもよくなりました。"
+                  },
+                  {
+                    "surface": "便利",
+                    "reading": "べんり"
+                  },
+                  {
+                    "surface": "ですが、"
+                  },
+                  {
+                    "surface": "仕事",
+                    "reading": "しごと"
+                  },
+                  {
+                    "surface": "と"
+                  },
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "みの"
+                  },
+                  {
+                    "surface": "時間",
+                    "reading": "じかん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "分",
+                    "reading": "わ"
+                  },
+                  {
+                    "surface": "けるのが"
+                  },
+                  {
+                    "surface": "難",
+                    "reading": "むずか"
+                  },
+                  {
+                    "surface": "しいです。"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "毎朝",
+                    "reading": "まいあさ"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "散歩",
+                    "reading": "さんぽ"
+                  },
+                  {
+                    "surface": "してから"
+                  },
+                  {
+                    "surface": "仕事",
+                    "reading": "しごと"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "始",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "めています。"
+                  }
+                ],
+                "meaningRu": "Работая дома, я перестал ездить на поезде. Это удобно, но трудно разделить рабочее и свободное время. Теперь каждое утро начинаю работу после прогулки.",
+                "audioUrl": "/audio/marugoto/30b001af73e6dd5d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.312f86dfe9da479c",
+              "explanationRu": "В этой ситуации: дом",
+              "example": {
+                "surface": "今の家は駅から遠いけど、静かだから決めました。部屋が明るいのも気に入っています。",
+                "kana": "いまのいえはえきからとおいけど、しずかだからきめました。へやがあかるいのもきにいっています。",
+                "segments": [
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "家",
+                    "reading": "いえ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "から"
+                  },
+                  {
+                    "surface": "遠",
+                    "reading": "とお"
+                  },
+                  {
+                    "surface": "いけど、"
+                  },
+                  {
+                    "surface": "静",
+                    "reading": "しず"
+                  },
+                  {
+                    "surface": "かだから"
+                  },
+                  {
+                    "surface": "決",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "めました。"
+                  },
+                  {
+                    "surface": "部屋",
+                    "reading": "へや"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "明",
+                    "reading": "あか"
+                  },
+                  {
+                    "surface": "るいのも"
+                  },
+                  {
+                    "surface": "気",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "入",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "っています。"
+                  }
+                ],
+                "meaningRu": "Мой нынешний дом далеко от станции, но я выбрал его из-за тишины. Мне нравится и светлая комната.",
+                "audioUrl": "/audio/marugoto/1e4abe7b48fa4cc6.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.02.grammar.218",
+      "titleRu": "～けど／なくて",
+      "introductionRu": "Незаконченные けど и なくて мягко подводят к просьбе или объясняют затруднение.",
+      "canDoIds": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.02.part.grammar.218",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.218",
+            "explanationRu": "Незаконченные けど и なくて мягко подводят к просьбе или объясняют затруднение.",
+            "example": {
+              "surface": "部屋を探しているんですけどいいところがなくて。",
+              "kana": "へやをさがしているんですけどいいところがなくて。",
+              "segments": [
+                {
+                  "surface": "部屋",
+                  "reading": "へや"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "探",
+                  "reading": "さが"
+                },
+                {
+                  "surface": "しているんですけどいいところがなくて。"
+                }
+              ],
+              "meaningRu": "Я ищу комнату, но подходящих вариантов нет…",
+              "audioUrl": "/audio/marugoto/463ab9720e0bdaf6.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "部屋を",
+                "explanationRu": "Смысловой фрагмент: Я ищу комнату, но подходящих вариантов нет…"
+              },
+              {
+                "text": "探しているんですけど",
+                "explanationRu": "Смысловой фрагмент: Я ищу комнату, но подходящих вариантов нет…"
+              },
+              {
+                "text": "いいところが",
+                "explanationRu": "Смысловой фрагмент: Я ищу комнату, но подходящих вариантов нет…"
+              },
+              {
+                "text": "なくて",
+                "explanationRu": "Незаконченные けど и なくて мягко подводят к просьбе или объясняют затруднение."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.02.grammar.219",
+      "titleRu": "～から",
+      "introductionRu": "から объясняет причину личного решения.",
+      "canDoIds": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.02.part.grammar.219",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.219",
+            "explanationRu": "から объясняет причину личного решения.",
+            "example": {
+              "surface": "家賃が安かったからここに決めました。",
+              "kana": "やちんがやすかったからここにきめました。",
+              "segments": [
+                {
+                  "surface": "家賃",
+                  "reading": "やちん"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "安",
+                  "reading": "やす"
+                },
+                {
+                  "surface": "かったからここに"
+                },
+                {
+                  "surface": "決",
+                  "reading": "き"
+                },
+                {
+                  "surface": "めました。"
+                }
+              ],
+              "meaningRu": "Я выбрал это место, потому что аренда была недорогой.",
+              "audioUrl": "/audio/marugoto/4f78dc7ba2c89d80.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "家賃が",
+                "explanationRu": "Смысловой фрагмент: Я выбрал это место, потому что аренда была недорогой."
+              },
+              {
+                "text": "安かったから",
+                "explanationRu": "Смысловой фрагмент: Я выбрал это место, потому что аренда была недорогой."
+              },
+              {
+                "text": "ここに",
+                "explanationRu": "Смысловой фрагмент: Я выбрал это место, потому что аренда была недорогой."
+              },
+              {
+                "text": "決めました",
+                "explanationRu": "から объясняет причину личного решения."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.02.grammar.220",
+      "titleRu": "～けど、～から",
+      "introductionRu": "けど признаёт недостаток, から затем объясняет решающий довод.",
+      "canDoIds": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.02.part.grammar.220",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.220",
+            "explanationRu": "けど признаёт недостаток, から затем объясняет решающий довод.",
+            "example": {
+              "surface": "駅から遠いけど静かだからここにしました。",
+              "kana": "えきからとおいけどしずかだからここにしました。",
+              "segments": [
+                {
+                  "surface": "駅",
+                  "reading": "えき"
+                },
+                {
+                  "surface": "から"
+                },
+                {
+                  "surface": "遠",
+                  "reading": "とお"
+                },
+                {
+                  "surface": "いけど"
+                },
+                {
+                  "surface": "静",
+                  "reading": "しず"
+                },
+                {
+                  "surface": "かだからここにしました。"
+                }
+              ],
+              "meaningRu": "Я выбрал это место: от станции далеко, зато тихо.",
+              "audioUrl": "/audio/marugoto/ff5ca9b1b154bc98.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "駅から",
+                "explanationRu": "Смысловой фрагмент: Я выбрал это место: от станции далеко, зато тихо."
+              },
+              {
+                "text": "遠いけど",
+                "explanationRu": "Смысловой фрагмент: Я выбрал это место: от станции далеко, зато тихо."
+              },
+              {
+                "text": "静かだから",
+                "explanationRu": "Смысловой фрагмент: Я выбрал это место: от станции далеко, зато тихо."
+              },
+              {
+                "text": "ここにしました",
+                "explanationRu": "けど признаёт недостаток, から затем объясняет решающий довод."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.02.grammar.221",
+      "titleRu": "～ても",
+      "introductionRu": "ても показывает, что условие не изменяет желания или результата.",
+      "canDoIds": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.02.part.grammar.221",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.221",
+            "explanationRu": "ても показывает, что условие не изменяет желания или результата.",
+            "example": {
+              "surface": "部屋が小さくてもここに住みたいです。",
+              "kana": "へやがちいさくてもここにすみたいです。",
+              "segments": [
+                {
+                  "surface": "部屋",
+                  "reading": "へや"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "小",
+                  "reading": "ちい"
+                },
+                {
+                  "surface": "さくてもここに"
+                },
+                {
+                  "surface": "住",
+                  "reading": "す"
+                },
+                {
+                  "surface": "みたいです。"
+                }
+              ],
+              "meaningRu": "Даже если комната маленькая, я хочу здесь жить.",
+              "audioUrl": "/audio/marugoto/e36a9814f51aee22.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "部屋が",
+                "explanationRu": "Смысловой фрагмент: Даже если комната маленькая, я хочу здесь жить."
+              },
+              {
+                "text": "小さくても",
+                "explanationRu": "Смысловой фрагмент: Даже если комната маленькая, я хочу здесь жить."
+              },
+              {
+                "text": "ここに",
+                "explanationRu": "Смысловой фрагмент: Даже если комната маленькая, я хочу здесь жить."
+              },
+              {
+                "text": "住みたいです",
+                "explanationRu": "ても показывает, что условие не изменяет желания или результата."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.02.grammar.222",
+      "titleRu": "～ば／なければ",
+      "introductionRu": "ば задаёт условие; отрицательная форма — なければ.",
+      "canDoIds": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.02.part.grammar.222",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.222",
+            "explanationRu": "ば задаёт условие; отрицательная форма — なければ.",
+            "example": {
+              "surface": "駅に近い部屋があれば引っ越したいです。",
+              "kana": "えきにちかいへやがあればひっこしたいです。",
+              "segments": [
+                {
+                  "surface": "駅",
+                  "reading": "えき"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "近",
+                  "reading": "ちか"
+                },
+                {
+                  "surface": "い"
+                },
+                {
+                  "surface": "部屋",
+                  "reading": "へや"
+                },
+                {
+                  "surface": "があれば"
+                },
+                {
+                  "surface": "引",
+                  "reading": "ひ"
+                },
+                {
+                  "surface": "っ"
+                },
+                {
+                  "surface": "越",
+                  "reading": "こ"
+                },
+                {
+                  "surface": "したいです。"
+                }
+              ],
+              "meaningRu": "Если найдётся комната рядом со станцией, я хочу переехать.",
+              "audioUrl": "/audio/marugoto/797ee494397e9ff5.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "駅に",
+                "explanationRu": "Смысловой фрагмент: Если найдётся комната рядом со станцией, я хочу переехать."
+              },
+              {
+                "text": "近い部屋があれば",
+                "explanationRu": "Смысловой фрагмент: Если найдётся комната рядом со станцией, я хочу переехать."
+              },
+              {
+                "text": "引っ越したいです",
+                "explanationRu": "ば задаёт условие; отрицательная форма — なければ."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.08.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        8
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.08.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.08",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите о двух важных условиях выбора жилья и о том, с чем готовы смириться.",
+              "canDoIds": [
+                8
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите о двух важных условиях выбора жилья и о том, с чем готовы смириться.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "駅に近い部屋があれば、引っ越したいです。家賃も大切です。狭くても我慢できます。",
+                "kana": "えきにちかいへやがあれば、ひっこしたいです。やちんもたいせつです。せまくてもがまんできます。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "部屋",
+                    "reading": "へや"
+                  },
+                  {
+                    "surface": "があれば、"
+                  },
+                  {
+                    "surface": "引",
+                    "reading": "ひ"
+                  },
+                  {
+                    "surface": "っ"
+                  },
+                  {
+                    "surface": "越",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "したいです。"
+                  },
+                  {
+                    "surface": "家賃",
+                    "reading": "やちん"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "大切",
+                    "reading": "たいせつ"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "狭",
+                    "reading": "せま"
+                  },
+                  {
+                    "surface": "くても"
+                  },
+                  {
+                    "surface": "我慢",
+                    "reading": "がまん"
+                  },
+                  {
+                    "surface": "できます。"
+                  }
+                ],
+                "meaningRu": "Если найдётся комната рядом со станцией, я хочу переехать. Аренда тоже важна. С теснотой могу смириться.",
+                "audioUrl": "/audio/marugoto/dc620e4f29300c7f.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите о двух важных условиях выбора жилья и о том, с чем готовы смириться.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.09.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        9
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.09.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.09",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Опишите жильё, объясните выбор и назовите один недостаток.",
+              "canDoIds": [
+                9
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Опишите жильё, объясните выбор и назовите один недостаток.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "今の家は駅から遠いけど、静かだから決めました。部屋が明るいのも気に入っています。",
+                "kana": "いまのいえはえきからとおいけど、しずかだからきめました。へやがあかるいのもきにいっています。",
+                "segments": [
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "家",
+                    "reading": "いえ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "から"
+                  },
+                  {
+                    "surface": "遠",
+                    "reading": "とお"
+                  },
+                  {
+                    "surface": "いけど、"
+                  },
+                  {
+                    "surface": "静",
+                    "reading": "しず"
+                  },
+                  {
+                    "surface": "かだから"
+                  },
+                  {
+                    "surface": "決",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "めました。"
+                  },
+                  {
+                    "surface": "部屋",
+                    "reading": "へや"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "明",
+                    "reading": "あか"
+                  },
+                  {
+                    "surface": "るいのも"
+                  },
+                  {
+                    "surface": "気",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "入",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "っています。"
+                  }
+                ],
+                "meaningRu": "Мой нынешний дом далеко от станции, но я выбрал его из-за тишины. Мне нравится и светлая комната.",
+                "audioUrl": "/audio/marugoto/1e4abe7b48fa4cc6.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Опишите жильё, объясните выбор и назовите один недостаток.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.10.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        10
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.10.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.10",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте рассказ о выборе дома и выделите решающий довод.",
+              "canDoIds": [
+                10
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "私の家は古くて、駅からも遠いです。でも、広い庭があります。子どもが外で遊べるので、ここに決めました。",
+                  "kana": "わたしのいえはふるくて、えきからもとおいです。でも、ひろいにわがあります。こどもがそとであそべるので、ここにきめました。",
+                  "segments": [
+                    {
+                      "surface": "私",
+                      "reading": "わたし"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "家",
+                      "reading": "いえ"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "古",
+                      "reading": "ふる"
+                    },
+                    {
+                      "surface": "くて、"
+                    },
+                    {
+                      "surface": "駅",
+                      "reading": "えき"
+                    },
+                    {
+                      "surface": "からも"
+                    },
+                    {
+                      "surface": "遠",
+                      "reading": "とお"
+                    },
+                    {
+                      "surface": "いです。でも、"
+                    },
+                    {
+                      "surface": "広",
+                      "reading": "ひろ"
+                    },
+                    {
+                      "surface": "い"
+                    },
+                    {
+                      "surface": "庭",
+                      "reading": "にわ"
+                    },
+                    {
+                      "surface": "があります。"
+                    },
+                    {
+                      "surface": "子",
+                      "reading": "こ"
+                    },
+                    {
+                      "surface": "どもが"
+                    },
+                    {
+                      "surface": "外",
+                      "reading": "そと"
+                    },
+                    {
+                      "surface": "で"
+                    },
+                    {
+                      "surface": "遊",
+                      "reading": "あそ"
+                    },
+                    {
+                      "surface": "べるので、ここに"
+                    },
+                    {
+                      "surface": "決",
+                      "reading": "き"
+                    },
+                    {
+                      "surface": "めました。"
+                    }
+                  ],
+                  "meaningRu": "Мой дом старый и далеко от станции. Зато есть просторный сад. Я выбрал его, потому что дети могут играть на улице.",
+                  "audioUrl": "/audio/marugoto/0bb399ab2d53cdad.m4a"
+                }
+              ],
+              "questionRu": "Что определило выбор?",
+              "options": [
+                {
+                  "id": "b",
+                  "text": "Близость станции"
+                },
+                {
+                  "id": "a",
+                  "text": "Сад и возможность детям играть снаружи"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Мой дом старый и далеко от станции. Зато есть просторный сад. Я выбрал его, потому что дети могут играть на улице."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.11.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.11.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.11",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте заметку о работе дома. Отделите удобство от проблемы.",
+              "canDoIds": [
+                11
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "家で働くようになって、電車に乗らなくてもよくなりました。便利ですが、仕事と休みの時間を分けるのが難しいです。今は毎朝、散歩してから仕事を始めています。",
+                  "kana": "いえではたらくようになって、でんしゃにのらなくてもよくなりました。べんりですが、しごととやすみのじかんをわけるのがむずかしいです。いまはまいあさ、さんぽしてからしごとをはじめています。",
+                  "segments": [
+                    {
+                      "surface": "家",
+                      "reading": "いえ"
+                    },
+                    {
+                      "surface": "で"
+                    },
+                    {
+                      "surface": "働",
+                      "reading": "はたら"
+                    },
+                    {
+                      "surface": "くようになって、"
+                    },
+                    {
+                      "surface": "電車",
+                      "reading": "でんしゃ"
+                    },
+                    {
+                      "surface": "に"
+                    },
+                    {
+                      "surface": "乗",
+                      "reading": "の"
+                    },
+                    {
+                      "surface": "らなくてもよくなりました。"
+                    },
+                    {
+                      "surface": "便利",
+                      "reading": "べんり"
+                    },
+                    {
+                      "surface": "ですが、"
+                    },
+                    {
+                      "surface": "仕事",
+                      "reading": "しごと"
+                    },
+                    {
+                      "surface": "と"
+                    },
+                    {
+                      "surface": "休",
+                      "reading": "やす"
+                    },
+                    {
+                      "surface": "みの"
+                    },
+                    {
+                      "surface": "時間",
+                      "reading": "じかん"
+                    },
+                    {
+                      "surface": "を"
+                    },
+                    {
+                      "surface": "分",
+                      "reading": "わ"
+                    },
+                    {
+                      "surface": "けるのが"
+                    },
+                    {
+                      "surface": "難",
+                      "reading": "むずか"
+                    },
+                    {
+                      "surface": "しいです。"
+                    },
+                    {
+                      "surface": "今",
+                      "reading": "いま"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "毎朝",
+                      "reading": "まいあさ"
+                    },
+                    {
+                      "surface": "、"
+                    },
+                    {
+                      "surface": "散歩",
+                      "reading": "さんぽ"
+                    },
+                    {
+                      "surface": "してから"
+                    },
+                    {
+                      "surface": "仕事",
+                      "reading": "しごと"
+                    },
+                    {
+                      "surface": "を"
+                    },
+                    {
+                      "surface": "始",
+                      "reading": "はじ"
+                    },
+                    {
+                      "surface": "めています。"
+                    }
+                  ],
+                  "meaningRu": "Работая дома, я перестал ездить на поезде. Это удобно, но трудно разделить рабочее и свободное время. Теперь каждое утро начинаю работу после прогулки.",
+                  "audioUrl": "/audio/marugoto/30b001af73e6dd5d.m4a"
+                }
+              ],
+              "questionRu": "Что остаётся трудным?",
+              "options": [
+                {
+                  "id": "b",
+                  "text": "Каждый день ездить на работу"
+                },
+                {
+                  "id": "a",
+                  "text": "Разделять работу и отдых"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Работая дома, я перестал ездить на поезде. Это удобно, но трудно разделить рабочее и свободное время. Теперь каждое утро начинаю работу после прогулки."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

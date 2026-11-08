@@ -1,0 +1,1767 @@
+{
+  "lessonId": "marugoto.pre-intermediate-a2b1.topic.06",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Свадьба",
+  "goals": [
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.06.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.06.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.321d4177c79801d8",
+              "explanationRu": "В этой ситуации: свадебная церемония",
+              "example": {
+                "surface": "聞いた人の多くは、結婚式に家族を呼びたいと言っていました。高い服より、一緒に過ごす時間が大切だそうです。ただ、考え方は人によって違います。",
+                "kana": "きいたひとのおおくは、けっこんしきにかぞくをよびたいといっていました。たかいふくより、いっしょにすごすじかんがたいせつだそうです。ただ、かんがえかたはひとによってちがいます。",
+                "segments": [
+                  {
+                    "surface": "聞",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "いた"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "多",
+                    "reading": "おお"
+                  },
+                  {
+                    "surface": "くは、"
+                  },
+                  {
+                    "surface": "結婚式",
+                    "reading": "けっこんしき"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "呼",
+                    "reading": "よ"
+                  },
+                  {
+                    "surface": "びたいと"
+                  },
+                  {
+                    "surface": "言",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "っていました。"
+                  },
+                  {
+                    "surface": "高",
+                    "reading": "たか"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "服",
+                    "reading": "ふく"
+                  },
+                  {
+                    "surface": "より、"
+                  },
+                  {
+                    "surface": "一緒",
+                    "reading": "いっしょ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "過",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "ごす"
+                  },
+                  {
+                    "surface": "時間",
+                    "reading": "じかん"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "大切",
+                    "reading": "たいせつ"
+                  },
+                  {
+                    "surface": "だそうです。ただ、"
+                  },
+                  {
+                    "surface": "考",
+                    "reading": "かんが"
+                  },
+                  {
+                    "surface": "え"
+                  },
+                  {
+                    "surface": "方",
+                    "reading": "かた"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "によって"
+                  },
+                  {
+                    "surface": "違",
+                    "reading": "ちが"
+                  },
+                  {
+                    "surface": "います。"
+                  }
+                ],
+                "meaningRu": "Большинство опрошенных хотят пригласить семью. По их словам, совместное время важнее дорогой одежды. Но взгляды у людей разные.",
+                "audioUrl": "/audio/marugoto/2ea6e3189a72c761.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.7bc47d818578c300",
+              "explanationRu": "В этой ситуации: счастье",
+              "example": {
+                "surface": "ご結婚おめでとうございます。学生のとき、いつも助けてくれました。お二人で、どうぞお幸せに。",
+                "kana": "ごけっこんおめでとうございます。がくせいのとき、いつもたすけてくれました。おふたりで、どうぞおしあわせに。",
+                "segments": [
+                  {
+                    "surface": "ご"
+                  },
+                  {
+                    "surface": "結婚",
+                    "reading": "けっこん"
+                  },
+                  {
+                    "surface": "おめでとうございます。"
+                  },
+                  {
+                    "surface": "学生",
+                    "reading": "がくせい"
+                  },
+                  {
+                    "surface": "のとき、いつも"
+                  },
+                  {
+                    "surface": "助",
+                    "reading": "たす"
+                  },
+                  {
+                    "surface": "けてくれました。お"
+                  },
+                  {
+                    "surface": "二人",
+                    "reading": "ふたり"
+                  },
+                  {
+                    "surface": "で、どうぞお"
+                  },
+                  {
+                    "surface": "幸",
+                    "reading": "しあわ"
+                  },
+                  {
+                    "surface": "せに。"
+                  }
+                ],
+                "meaningRu": "Поздравляю со свадьбой. В студенческие годы ты всегда мне помогал. Желаю вам обоим счастья.",
+                "audioUrl": "/audio/marugoto/4f53a6afe2656825.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.78674e2585e969f7",
+              "explanationRu": "В этой ситуации: ваша свадьба (свадьба)",
+              "example": {
+                "surface": "ご結婚すると聞きました。本当ですか。式は来月なんですよね。",
+                "kana": "ごけっこんするとききました。ほんとうですか。しきはらいげつなんですよね。",
+                "segments": [
+                  {
+                    "surface": "ご"
+                  },
+                  {
+                    "surface": "結婚",
+                    "reading": "けっこん"
+                  },
+                  {
+                    "surface": "すると"
+                  },
+                  {
+                    "surface": "聞",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "きました。"
+                  },
+                  {
+                    "surface": "本当",
+                    "reading": "ほんとう"
+                  },
+                  {
+                    "surface": "ですか。"
+                  },
+                  {
+                    "surface": "式",
+                    "reading": "しき"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "来月",
+                    "reading": "らいげつ"
+                  },
+                  {
+                    "surface": "なんですよね。"
+                  }
+                ],
+                "meaningRu": "Я слышал, что вы женитесь. Это правда? Церемония ведь в следующем месяце?",
+                "audioUrl": "/audio/marugoto/d03c89f098479e3e.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.f5cd27309358bb37",
+              "explanationRu": "В этой ситуации: большой",
+              "example": {
+                "surface": "大きな会場で式をしなくてもいいと思っています。家族と友達がゆっくり話せる小さなパーティーにしたいです。料理は二人で選びます。",
+                "kana": "おおきなかいじょうでしきをしなくてもいいとおもっています。かぞくとともだちがゆっくりはなせるちいさなパーティーにしたいです。りょうりはふたりでえらびます。",
+                "segments": [
+                  {
+                    "surface": "大",
+                    "reading": "おお"
+                  },
+                  {
+                    "surface": "きな"
+                  },
+                  {
+                    "surface": "会場",
+                    "reading": "かいじょう"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "式",
+                    "reading": "しき"
+                  },
+                  {
+                    "surface": "をしなくてもいいと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "っています。"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "と"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "がゆっくり"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "せる"
+                  },
+                  {
+                    "surface": "小",
+                    "reading": "ちい"
+                  },
+                  {
+                    "surface": "さなパーティーにしたいです。"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "二人",
+                    "reading": "ふたり"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "選",
+                    "reading": "えら"
+                  },
+                  {
+                    "surface": "びます。"
+                  }
+                ],
+                "meaningRu": "Мы считаем, что необязательно проводить церемонию в большом зале. Хотим маленькую вечеринку, где семья и друзья смогут спокойно поговорить. Блюда выберем вдвоём.",
+                "audioUrl": "/audio/marugoto/04043a8b62a3dedf.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.2daf52d325d159a2",
+              "explanationRu": "В этой ситуации: двое (два человека)",
+              "example": {
+                "surface": "ご結婚おめでとうございます。学生のとき、いつも助けてくれました。お二人で、どうぞお幸せに。",
+                "kana": "ごけっこんおめでとうございます。がくせいのとき、いつもたすけてくれました。おふたりで、どうぞおしあわせに。",
+                "segments": [
+                  {
+                    "surface": "ご"
+                  },
+                  {
+                    "surface": "結婚",
+                    "reading": "けっこん"
+                  },
+                  {
+                    "surface": "おめでとうございます。"
+                  },
+                  {
+                    "surface": "学生",
+                    "reading": "がくせい"
+                  },
+                  {
+                    "surface": "のとき、いつも"
+                  },
+                  {
+                    "surface": "助",
+                    "reading": "たす"
+                  },
+                  {
+                    "surface": "けてくれました。お"
+                  },
+                  {
+                    "surface": "二人",
+                    "reading": "ふたり"
+                  },
+                  {
+                    "surface": "で、どうぞお"
+                  },
+                  {
+                    "surface": "幸",
+                    "reading": "しあわ"
+                  },
+                  {
+                    "surface": "せに。"
+                  }
+                ],
+                "meaningRu": "Поздравляю со свадьбой. В студенческие годы ты всегда мне помогал. Желаю вам обоим счастья.",
+                "audioUrl": "/audio/marugoto/4f53a6afe2656825.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.06.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.06.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.word.c79fd500eb8cfc71",
+              "explanationRu": "В этой ситуации: мысль, идея",
+              "example": {
+                "surface": "聞いた人の多くは、結婚式に家族を呼びたいと言っていました。高い服より、一緒に過ごす時間が大切だそうです。ただ、考え方は人によって違います。",
+                "kana": "きいたひとのおおくは、けっこんしきにかぞくをよびたいといっていました。たかいふくより、いっしょにすごすじかんがたいせつだそうです。ただ、かんがえかたはひとによってちがいます。",
+                "segments": [
+                  {
+                    "surface": "聞",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "いた"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "多",
+                    "reading": "おお"
+                  },
+                  {
+                    "surface": "くは、"
+                  },
+                  {
+                    "surface": "結婚式",
+                    "reading": "けっこんしき"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "呼",
+                    "reading": "よ"
+                  },
+                  {
+                    "surface": "びたいと"
+                  },
+                  {
+                    "surface": "言",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "っていました。"
+                  },
+                  {
+                    "surface": "高",
+                    "reading": "たか"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "服",
+                    "reading": "ふく"
+                  },
+                  {
+                    "surface": "より、"
+                  },
+                  {
+                    "surface": "一緒",
+                    "reading": "いっしょ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "過",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "ごす"
+                  },
+                  {
+                    "surface": "時間",
+                    "reading": "じかん"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "大切",
+                    "reading": "たいせつ"
+                  },
+                  {
+                    "surface": "だそうです。ただ、"
+                  },
+                  {
+                    "surface": "考",
+                    "reading": "かんが"
+                  },
+                  {
+                    "surface": "え"
+                  },
+                  {
+                    "surface": "方",
+                    "reading": "かた"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "によって"
+                  },
+                  {
+                    "surface": "違",
+                    "reading": "ちが"
+                  },
+                  {
+                    "surface": "います。"
+                  }
+                ],
+                "meaningRu": "Большинство опрошенных хотят пригласить семью. По их словам, совместное время важнее дорогой одежды. Но взгляды у людей разные.",
+                "audioUrl": "/audio/marugoto/2ea6e3189a72c761.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.4dc9debf38c9fddd",
+              "explanationRu": "В этой ситуации: брак, свадьба（жениться, выходить замуж）",
+              "example": {
+                "surface": "ユウさんは来月、結婚するそうです。きっと今、忙しいでしょうね。",
+                "kana": "ユウさんはらいげつ、けっこんするそうです。きっといま、いそがしいでしょうね。",
+                "segments": [
+                  {
+                    "surface": "ユウさんは"
+                  },
+                  {
+                    "surface": "来月",
+                    "reading": "らいげつ"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "結婚",
+                    "reading": "けっこん"
+                  },
+                  {
+                    "surface": "するそうです。きっと"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "忙",
+                    "reading": "いそが"
+                  },
+                  {
+                    "surface": "しいでしょうね。"
+                  }
+                ],
+                "meaningRu": "Говорят, Ю женится в следующем месяце. Наверное, сейчас он очень занят.",
+                "audioUrl": "/audio/marugoto/b8e8ba76c7a3ec3b.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.f5201a0399561ff9",
+              "explanationRu": "В этой ситуации: счастье, счастливый",
+              "example": {
+                "surface": "ご結婚おめでとうございます。学生のとき、いつも助けてくれました。お二人で、どうぞお幸せに。",
+                "kana": "ごけっこんおめでとうございます。がくせいのとき、いつもたすけてくれました。おふたりで、どうぞおしあわせに。",
+                "segments": [
+                  {
+                    "surface": "ご"
+                  },
+                  {
+                    "surface": "結婚",
+                    "reading": "けっこん"
+                  },
+                  {
+                    "surface": "おめでとうございます。"
+                  },
+                  {
+                    "surface": "学生",
+                    "reading": "がくせい"
+                  },
+                  {
+                    "surface": "のとき、いつも"
+                  },
+                  {
+                    "surface": "助",
+                    "reading": "たす"
+                  },
+                  {
+                    "surface": "けてくれました。お"
+                  },
+                  {
+                    "surface": "二人",
+                    "reading": "ふたり"
+                  },
+                  {
+                    "surface": "で、どうぞお"
+                  },
+                  {
+                    "surface": "幸",
+                    "reading": "しあわ"
+                  },
+                  {
+                    "surface": "せに。"
+                  }
+                ],
+                "meaningRu": "Поздравляю со свадьбой. В студенческие годы ты всегда мне помогал. Желаю вам обоим счастья.",
+                "audioUrl": "/audio/marugoto/4f53a6afe2656825.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.31d15be6a0764112",
+              "explanationRu": "В этой ситуации: непременно, обязательно",
+              "example": {
+                "surface": "二人はきっとうれしいでしょうね。",
+                "kana": "ふたりはきっとうれしいでしょうね。",
+                "segments": [
+                  {
+                    "surface": "二人",
+                    "reading": "ふたり"
+                  },
+                  {
+                    "surface": "はきっとうれしいでしょうね。"
+                  }
+                ],
+                "meaningRu": "Эти двое, наверное, очень рады.",
+                "audioUrl": "/audio/marugoto/cea41b73fd0abb6a.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.ad86c94e8733566e",
+              "explanationRu": "В этой ситуации: церемония",
+              "example": {
+                "surface": "式は来月なんですよね。",
+                "kana": "しきはらいげつなんですよね。",
+                "segments": [
+                  {
+                    "surface": "式",
+                    "reading": "しき"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "来月",
+                    "reading": "らいげつ"
+                  },
+                  {
+                    "surface": "なんですよね。"
+                  }
+                ],
+                "meaningRu": "Церемония ведь в следующем месяце, верно?",
+                "audioUrl": "/audio/marugoto/8b27a769f46dddbc.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.06.words.3",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.06.part.words.3",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.45ed9eb43d92618c",
+              "explanationRu": "В этой ситуации: поздравляю!",
+              "example": {
+                "surface": "ご結婚おめでとうございます。学生のとき、いつも助けてくれました。お二人で、どうぞお幸せに。",
+                "kana": "ごけっこんおめでとうございます。がくせいのとき、いつもたすけてくれました。おふたりで、どうぞおしあわせに。",
+                "segments": [
+                  {
+                    "surface": "ご"
+                  },
+                  {
+                    "surface": "結婚",
+                    "reading": "けっこん"
+                  },
+                  {
+                    "surface": "おめでとうございます。"
+                  },
+                  {
+                    "surface": "学生",
+                    "reading": "がくせい"
+                  },
+                  {
+                    "surface": "のとき、いつも"
+                  },
+                  {
+                    "surface": "助",
+                    "reading": "たす"
+                  },
+                  {
+                    "surface": "けてくれました。お"
+                  },
+                  {
+                    "surface": "二人",
+                    "reading": "ふたり"
+                  },
+                  {
+                    "surface": "で、どうぞお"
+                  },
+                  {
+                    "surface": "幸",
+                    "reading": "しあわ"
+                  },
+                  {
+                    "surface": "せに。"
+                  }
+                ],
+                "meaningRu": "Поздравляю со свадьбой. В студенческие годы ты всегда мне помогал. Желаю вам обоим счастья.",
+                "audioUrl": "/audio/marugoto/4f53a6afe2656825.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.109424231b67c7a1",
+              "explanationRu": "В этой ситуации: вечеринка",
+              "example": {
+                "surface": "大きな会場で式をしなくてもいいと思っています。家族と友達がゆっくり話せる小さなパーティーにしたいです。料理は二人で選びます。",
+                "kana": "おおきなかいじょうでしきをしなくてもいいとおもっています。かぞくとともだちがゆっくりはなせるちいさなパーティーにしたいです。りょうりはふたりでえらびます。",
+                "segments": [
+                  {
+                    "surface": "大",
+                    "reading": "おお"
+                  },
+                  {
+                    "surface": "きな"
+                  },
+                  {
+                    "surface": "会場",
+                    "reading": "かいじょう"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "式",
+                    "reading": "しき"
+                  },
+                  {
+                    "surface": "をしなくてもいいと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "っています。"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "と"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "がゆっくり"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "せる"
+                  },
+                  {
+                    "surface": "小",
+                    "reading": "ちい"
+                  },
+                  {
+                    "surface": "さなパーティーにしたいです。"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "二人",
+                    "reading": "ふたり"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "選",
+                    "reading": "えら"
+                  },
+                  {
+                    "surface": "びます。"
+                  }
+                ],
+                "meaningRu": "Мы считаем, что необязательно проводить церемонию в большом зале. Хотим маленькую вечеринку, где семья и друзья смогут спокойно поговорить. Блюда выберем вдвоём.",
+                "audioUrl": "/audio/marugoto/04043a8b62a3dedf.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.fbcedda0efe5a10a",
+              "explanationRu": "В этой ситуации: на самом деле",
+              "example": {
+                "surface": "ご結婚すると聞きました。本当ですか。式は来月なんですよね。",
+                "kana": "ごけっこんするとききました。ほんとうですか。しきはらいげつなんですよね。",
+                "segments": [
+                  {
+                    "surface": "ご"
+                  },
+                  {
+                    "surface": "結婚",
+                    "reading": "けっこん"
+                  },
+                  {
+                    "surface": "すると"
+                  },
+                  {
+                    "surface": "聞",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "きました。"
+                  },
+                  {
+                    "surface": "本当",
+                    "reading": "ほんとう"
+                  },
+                  {
+                    "surface": "ですか。"
+                  },
+                  {
+                    "surface": "式",
+                    "reading": "しき"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "来月",
+                    "reading": "らいげつ"
+                  },
+                  {
+                    "surface": "なんですよね。"
+                  }
+                ],
+                "meaningRu": "Я слышал, что вы женитесь. Это правда? Церемония ведь в следующем месяце?",
+                "audioUrl": "/audio/marugoto/d03c89f098479e3e.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.b637eab6bf70782e",
+              "explanationRu": "В этой ситуации: месяц",
+              "example": {
+                "surface": "式は来月なんですよね。",
+                "kana": "しきはらいげつなんですよね。",
+                "segments": [
+                  {
+                    "surface": "式",
+                    "reading": "しき"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "来月",
+                    "reading": "らいげつ"
+                  },
+                  {
+                    "surface": "なんですよね。"
+                  }
+                ],
+                "meaningRu": "Церемония ведь в следующем месяце, верно?",
+                "audioUrl": "/audio/marugoto/8b27a769f46dddbc.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.80a62c3c54a84c73",
+              "explanationRu": "В этой ситуации: черный цвет",
+              "example": {
+                "surface": "花を贈ろうと思うんですが。",
+                "kana": "はなをおくろうとおもうんですが。",
+                "segments": [
+                  {
+                    "surface": "花",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "贈",
+                    "reading": "おく"
+                  },
+                  {
+                    "surface": "ろうと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "うんですが。"
+                  }
+                ],
+                "meaningRu": "Я думаю подарить цветы…",
+                "audioUrl": "/audio/marugoto/86f69d04822fe932.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.06.grammar.237",
+      "titleRu": "～でしょう",
+      "introductionRu": "でしょう выражает предположение, ね приглашает разделить мнение.",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.06.part.grammar.237",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.237",
+            "explanationRu": "でしょう выражает предположение, ね приглашает разделить мнение.",
+            "example": {
+              "surface": "二人はきっとうれしいでしょうね。",
+              "kana": "ふたりはきっとうれしいでしょうね。",
+              "segments": [
+                {
+                  "surface": "二人",
+                  "reading": "ふたり"
+                },
+                {
+                  "surface": "はきっとうれしいでしょうね。"
+                }
+              ],
+              "meaningRu": "Эти двое, наверное, очень рады.",
+              "audioUrl": "/audio/marugoto/cea41b73fd0abb6a.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "二人は",
+                "explanationRu": "Смысловой фрагмент: Эти двое, наверное, очень рады."
+              },
+              {
+                "text": "きっと",
+                "explanationRu": "Смысловой фрагмент: Эти двое, наверное, очень рады."
+              },
+              {
+                "text": "うれしいでしょうね",
+                "explanationRu": "でしょう выражает предположение, ね приглашает разделить мнение."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.06.grammar.238",
+      "titleRu": "～（よ）うと思うんですが",
+      "introductionRu": "Волевая форма + と思うんですが мягко предлагает план для обсуждения.",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.06.part.grammar.238",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.238",
+            "explanationRu": "Волевая форма + と思うんですが мягко предлагает план для обсуждения.",
+            "example": {
+              "surface": "花を贈ろうと思うんですが。",
+              "kana": "はなをおくろうとおもうんですが。",
+              "segments": [
+                {
+                  "surface": "花",
+                  "reading": "はな"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "贈",
+                  "reading": "おく"
+                },
+                {
+                  "surface": "ろうと"
+                },
+                {
+                  "surface": "思",
+                  "reading": "おも"
+                },
+                {
+                  "surface": "うんですが。"
+                }
+              ],
+              "meaningRu": "Я думаю подарить цветы…",
+              "audioUrl": "/audio/marugoto/86f69d04822fe932.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "花を",
+                "explanationRu": "Смысловой фрагмент: Я думаю подарить цветы…"
+              },
+              {
+                "text": "贈ろうと思うんですが",
+                "explanationRu": "Волевая форма + と思うんですが мягко предлагает план для обсуждения."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.06.grammar.239",
+      "titleRu": "～よ／ね／よね",
+      "introductionRu": "よね проверяет общее знание; よ сообщает новое, ね ищет согласие.",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.06.part.grammar.239",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.239",
+            "explanationRu": "よね проверяет общее знание; よ сообщает новое, ね ищет согласие.",
+            "example": {
+              "surface": "式は来月なんですよね。",
+              "kana": "しきはらいげつなんですよね。",
+              "segments": [
+                {
+                  "surface": "式",
+                  "reading": "しき"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "来月",
+                  "reading": "らいげつ"
+                },
+                {
+                  "surface": "なんですよね。"
+                }
+              ],
+              "meaningRu": "Церемония ведь в следующем месяце, верно?",
+              "audioUrl": "/audio/marugoto/8b27a769f46dddbc.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "式は",
+                "explanationRu": "Смысловой фрагмент: Церемония ведь в следующем месяце, верно?"
+              },
+              {
+                "text": "来月なんですよね",
+                "explanationRu": "よね проверяет общее знание; よ сообщает новое, ね ищет согласие."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.06.grammar.240",
+      "titleRu": "～てあげる",
+      "introductionRu": "てあげる описывает действие в пользу другого; при прямом предложении помощи звучание может быть покровительственным.",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.06.part.grammar.240",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.240",
+            "explanationRu": "てあげる описывает действие в пользу другого; при прямом предложении помощи звучание может быть покровительственным.",
+            "example": {
+              "surface": "友達の荷物を持ってあげました。",
+              "kana": "ともだちのにもつをもってあげました。",
+              "segments": [
+                {
+                  "surface": "友達",
+                  "reading": "ともだち"
+                },
+                {
+                  "surface": "の"
+                },
+                {
+                  "surface": "荷物",
+                  "reading": "にもつ"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "持",
+                  "reading": "も"
+                },
+                {
+                  "surface": "ってあげました。"
+                }
+              ],
+              "meaningRu": "Я помог другу донести багаж.",
+              "audioUrl": "/audio/marugoto/2416d1c54be7f584.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "友達の",
+                "explanationRu": "Смысловой фрагмент: Я помог другу донести багаж."
+              },
+              {
+                "text": "荷物を",
+                "explanationRu": "Смысловой фрагмент: Я помог другу донести багаж."
+              },
+              {
+                "text": "持ってあげました",
+                "explanationRu": "てあげる описывает действие в пользу другого; при прямом предложении помощи звучание может быть покровительственным."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.06.grammar.241",
+      "titleRu": "～なくてもいい／だいじょうぶ",
+      "introductionRu": "なくてもいい снимает необходимость, но не запрещает действие.",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.06.part.grammar.241",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.241",
+            "explanationRu": "なくてもいい снимает необходимость, но не запрещает действие.",
+            "example": {
+              "surface": "高いプレゼントは買わなくてもいいです。",
+              "kana": "たかいプレゼントはかわなくてもいいです。",
+              "segments": [
+                {
+                  "surface": "高",
+                  "reading": "たか"
+                },
+                {
+                  "surface": "いプレゼントは"
+                },
+                {
+                  "surface": "買",
+                  "reading": "か"
+                },
+                {
+                  "surface": "わなくてもいいです。"
+                }
+              ],
+              "meaningRu": "Не обязательно покупать дорогой подарок.",
+              "audioUrl": "/audio/marugoto/1260e3bfbfb1ecbc.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "高いプレゼントは",
+                "explanationRu": "Смысловой фрагмент: Не обязательно покупать дорогой подарок."
+              },
+              {
+                "text": "買わなくても",
+                "explanationRu": "Смысловой фрагмент: Не обязательно покупать дорогой подарок."
+              },
+              {
+                "text": "いいです",
+                "explanationRu": "なくてもいい снимает необходимость, но не запрещает действие."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.25.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        25
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.25.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.25",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите другу услышанную новость о знакомом и добавьте своё предположение.",
+              "canDoIds": [
+                25
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите другу услышанную новость о знакомом и добавьте своё предположение.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "ユウさんは来月、結婚するそうです。きっと今、忙しいでしょうね。",
+                "kana": "ユウさんはらいげつ、けっこんするそうです。きっといま、いそがしいでしょうね。",
+                "segments": [
+                  {
+                    "surface": "ユウさんは"
+                  },
+                  {
+                    "surface": "来月",
+                    "reading": "らいげつ"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "結婚",
+                    "reading": "けっこん"
+                  },
+                  {
+                    "surface": "するそうです。きっと"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "忙",
+                    "reading": "いそが"
+                  },
+                  {
+                    "surface": "しいでしょうね。"
+                  }
+                ],
+                "meaningRu": "Говорят, Ю женится в следующем месяце. Наверное, сейчас он очень занят.",
+                "audioUrl": "/audio/marugoto/b8e8ba76c7a3ec3b.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите другу услышанную новость о знакомом и добавьте своё предположение.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.26.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        26
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.26.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.26",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Тактично уточните у знакомого услышанную новость о свадьбе.",
+              "canDoIds": [
+                26
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Тактично уточните у знакомого услышанную новость о свадьбе.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "ご結婚すると聞きました。本当ですか。式は来月なんですよね。",
+                "kana": "ごけっこんするとききました。ほんとうですか。しきはらいげつなんですよね。",
+                "segments": [
+                  {
+                    "surface": "ご"
+                  },
+                  {
+                    "surface": "結婚",
+                    "reading": "けっこん"
+                  },
+                  {
+                    "surface": "すると"
+                  },
+                  {
+                    "surface": "聞",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "きました。"
+                  },
+                  {
+                    "surface": "本当",
+                    "reading": "ほんとう"
+                  },
+                  {
+                    "surface": "ですか。"
+                  },
+                  {
+                    "surface": "式",
+                    "reading": "しき"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "来月",
+                    "reading": "らいげつ"
+                  },
+                  {
+                    "surface": "なんですよね。"
+                  }
+                ],
+                "meaningRu": "Я слышал, что вы женитесь. Это правда? Церемония ведь в следующем месяце?",
+                "audioUrl": "/audio/marugoto/d03c89f098479e3e.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Тактично уточните у знакомого услышанную новость о свадьбе.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.27.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        27
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.27.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.27",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "По опорам «поздравление → воспоминание → пожелание» произнесите короткую свадебную речь.",
+              "canDoIds": [
+                27
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "По опорам «поздравление → воспоминание → пожелание» произнесите короткую свадебную речь.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "ご結婚おめでとうございます。学生のとき、いつも助けてくれました。お二人で、どうぞお幸せに。",
+                "kana": "ごけっこんおめでとうございます。がくせいのとき、いつもたすけてくれました。おふたりで、どうぞおしあわせに。",
+                "segments": [
+                  {
+                    "surface": "ご"
+                  },
+                  {
+                    "surface": "結婚",
+                    "reading": "けっこん"
+                  },
+                  {
+                    "surface": "おめでとうございます。"
+                  },
+                  {
+                    "surface": "学生",
+                    "reading": "がくせい"
+                  },
+                  {
+                    "surface": "のとき、いつも"
+                  },
+                  {
+                    "surface": "助",
+                    "reading": "たす"
+                  },
+                  {
+                    "surface": "けてくれました。お"
+                  },
+                  {
+                    "surface": "二人",
+                    "reading": "ふたり"
+                  },
+                  {
+                    "surface": "で、どうぞお"
+                  },
+                  {
+                    "surface": "幸",
+                    "reading": "しあわ"
+                  },
+                  {
+                    "surface": "せに。"
+                  }
+                ],
+                "meaningRu": "Поздравляю со свадьбой. В студенческие годы ты всегда мне помогал. Желаю вам обоим счастья.",
+                "audioUrl": "/audio/marugoto/4f53a6afe2656825.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: По опорам «поздравление → воспоминание → пожелание» произнесите короткую свадебную речь.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.28.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        28
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.28.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.28",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте пожелания пары к свадьбе и выделите главное.",
+              "canDoIds": [
+                28
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "大きな会場で式をしなくてもいいと思っています。家族と友達がゆっくり話せる小さなパーティーにしたいです。料理は二人で選びます。",
+                  "kana": "おおきなかいじょうでしきをしなくてもいいとおもっています。かぞくとともだちがゆっくりはなせるちいさなパーティーにしたいです。りょうりはふたりでえらびます。",
+                  "segments": [
+                    {
+                      "surface": "大",
+                      "reading": "おお"
+                    },
+                    {
+                      "surface": "きな"
+                    },
+                    {
+                      "surface": "会場",
+                      "reading": "かいじょう"
+                    },
+                    {
+                      "surface": "で"
+                    },
+                    {
+                      "surface": "式",
+                      "reading": "しき"
+                    },
+                    {
+                      "surface": "をしなくてもいいと"
+                    },
+                    {
+                      "surface": "思",
+                      "reading": "おも"
+                    },
+                    {
+                      "surface": "っています。"
+                    },
+                    {
+                      "surface": "家族",
+                      "reading": "かぞく"
+                    },
+                    {
+                      "surface": "と"
+                    },
+                    {
+                      "surface": "友達",
+                      "reading": "ともだち"
+                    },
+                    {
+                      "surface": "がゆっくり"
+                    },
+                    {
+                      "surface": "話",
+                      "reading": "はな"
+                    },
+                    {
+                      "surface": "せる"
+                    },
+                    {
+                      "surface": "小",
+                      "reading": "ちい"
+                    },
+                    {
+                      "surface": "さなパーティーにしたいです。"
+                    },
+                    {
+                      "surface": "料理",
+                      "reading": "りょうり"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "二人",
+                      "reading": "ふたり"
+                    },
+                    {
+                      "surface": "で"
+                    },
+                    {
+                      "surface": "選",
+                      "reading": "えら"
+                    },
+                    {
+                      "surface": "びます。"
+                    }
+                  ],
+                  "meaningRu": "Мы считаем, что необязательно проводить церемонию в большом зале. Хотим маленькую вечеринку, где семья и друзья смогут спокойно поговорить. Блюда выберем вдвоём.",
+                  "audioUrl": "/audio/marugoto/04043a8b62a3dedf.m4a"
+                }
+              ],
+              "questionRu": "Что важно паре?",
+              "options": [
+                {
+                  "id": "b",
+                  "text": "Самый большой зал"
+                },
+                {
+                  "id": "a",
+                  "text": "Спокойное общение близких"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Мы считаем, что необязательно проводить церемонию в большом зале. Хотим маленькую вечеринку, где семья и друзья смогут спокойно поговорить. Блюда выберем вдвоём."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.29.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.29.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.29",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте заметку по результатам опроса о свадьбе и выделите основной вывод.",
+              "canDoIds": [
+                29
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "聞いた人の多くは、結婚式に家族を呼びたいと言っていました。高い服より、一緒に過ごす時間が大切だそうです。ただ、考え方は人によって違います。",
+                  "kana": "きいたひとのおおくは、けっこんしきにかぞくをよびたいといっていました。たかいふくより、いっしょにすごすじかんがたいせつだそうです。ただ、かんがえかたはひとによってちがいます。",
+                  "segments": [
+                    {
+                      "surface": "聞",
+                      "reading": "き"
+                    },
+                    {
+                      "surface": "いた"
+                    },
+                    {
+                      "surface": "人",
+                      "reading": "ひと"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "多",
+                      "reading": "おお"
+                    },
+                    {
+                      "surface": "くは、"
+                    },
+                    {
+                      "surface": "結婚式",
+                      "reading": "けっこんしき"
+                    },
+                    {
+                      "surface": "に"
+                    },
+                    {
+                      "surface": "家族",
+                      "reading": "かぞく"
+                    },
+                    {
+                      "surface": "を"
+                    },
+                    {
+                      "surface": "呼",
+                      "reading": "よ"
+                    },
+                    {
+                      "surface": "びたいと"
+                    },
+                    {
+                      "surface": "言",
+                      "reading": "い"
+                    },
+                    {
+                      "surface": "っていました。"
+                    },
+                    {
+                      "surface": "高",
+                      "reading": "たか"
+                    },
+                    {
+                      "surface": "い"
+                    },
+                    {
+                      "surface": "服",
+                      "reading": "ふく"
+                    },
+                    {
+                      "surface": "より、"
+                    },
+                    {
+                      "surface": "一緒",
+                      "reading": "いっしょ"
+                    },
+                    {
+                      "surface": "に"
+                    },
+                    {
+                      "surface": "過",
+                      "reading": "す"
+                    },
+                    {
+                      "surface": "ごす"
+                    },
+                    {
+                      "surface": "時間",
+                      "reading": "じかん"
+                    },
+                    {
+                      "surface": "が"
+                    },
+                    {
+                      "surface": "大切",
+                      "reading": "たいせつ"
+                    },
+                    {
+                      "surface": "だそうです。ただ、"
+                    },
+                    {
+                      "surface": "考",
+                      "reading": "かんが"
+                    },
+                    {
+                      "surface": "え"
+                    },
+                    {
+                      "surface": "方",
+                      "reading": "かた"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "人",
+                      "reading": "ひと"
+                    },
+                    {
+                      "surface": "によって"
+                    },
+                    {
+                      "surface": "違",
+                      "reading": "ちが"
+                    },
+                    {
+                      "surface": "います。"
+                    }
+                  ],
+                  "meaningRu": "Большинство опрошенных хотят пригласить семью. По их словам, совместное время важнее дорогой одежды. Но взгляды у людей разные.",
+                  "audioUrl": "/audio/marugoto/2ea6e3189a72c761.m4a"
+                }
+              ],
+              "questionRu": "Какой вывод соответствует заметке?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Для многих общение важнее расходов, но мнения различаются"
+                },
+                {
+                  "id": "b",
+                  "text": "Все люди хотят одинаковую дорогую свадьбу"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Большинство опрошенных хотят пригласить семью. По их словам, совместное время важнее дорогой одежды. Но взгляды у людей разные."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

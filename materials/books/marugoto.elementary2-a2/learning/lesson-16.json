@@ -1,0 +1,470 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.16",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Вторая жизнь вещей",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.16.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        43,
+        44
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.16.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.03421cd05b0c6632",
+              "explanationRu": "В этой ситуации: старый",
+              "example": {
+                "surface": "古い靴が履けなくなりました。",
+                "kana": "ふるいくつがはけなくなりました。",
+                "segments": [
+                  {
+                    "surface": "古",
+                    "reading": "ふる"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "靴",
+                    "reading": "くつ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "履",
+                    "reading": "は"
+                  },
+                  {
+                    "surface": "けなくなりました。"
+                  }
+                ],
+                "meaningRu": "Я больше не могу носить старую обувь.",
+                "audioUrl": "/audio/marugoto/1074ac742c0d9fa7.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.10f02fb3ede1ec9b",
+              "explanationRu": "В этой ситуации: туфли, обувь",
+              "example": {
+                "surface": "古い靴が履けなくなりました。",
+                "kana": "ふるいくつがはけなくなりました。",
+                "segments": [
+                  {
+                    "surface": "古",
+                    "reading": "ふる"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "靴",
+                    "reading": "くつ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "履",
+                    "reading": "は"
+                  },
+                  {
+                    "surface": "けなくなりました。"
+                  }
+                ],
+                "meaningRu": "Я больше не могу носить старую обувь.",
+                "audioUrl": "/audio/marugoto/1074ac742c0d9fa7.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.16.grammar.196",
+      "titleRu": "～（られ）なくなった",
+      "introductionRu": "Потенциальная отрицательная форма + なる означает потерю возможности.",
+      "canDoIds": [
+        43,
+        44
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.16.part.grammar.196",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.196",
+            "explanationRu": "Потенциальная отрицательная форма + なる означает потерю возможности.",
+            "example": {
+              "surface": "古い靴が履けなくなりました。",
+              "kana": "ふるいくつがはけなくなりました。",
+              "segments": [
+                {
+                  "surface": "古",
+                  "reading": "ふる"
+                },
+                {
+                  "surface": "い"
+                },
+                {
+                  "surface": "靴",
+                  "reading": "くつ"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "履",
+                  "reading": "は"
+                },
+                {
+                  "surface": "けなくなりました。"
+                }
+              ],
+              "meaningRu": "Я больше не могу носить старую обувь.",
+              "audioUrl": "/audio/marugoto/1074ac742c0d9fa7.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "古い靴が",
+                "explanationRu": "Смысловой фрагмент: Я больше не могу носить старую обувь."
+              },
+              {
+                "text": "履けなくなりました",
+                "explanationRu": "Потенциальная отрицательная форма + なる означает потерю возможности."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.16.grammar.197",
+      "titleRu": "～たら",
+      "introductionRu": "たら связывает будущую ситуацию с последующим действием.",
+      "canDoIds": [
+        43,
+        44
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.16.part.grammar.197",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.197",
+            "explanationRu": "たら связывает будущую ситуацию с последующим действием.",
+            "example": {
+              "surface": "服が小さくなったら妹にあげます。",
+              "kana": "ふくがちいさくなったらいもうとにあげます。",
+              "segments": [
+                {
+                  "surface": "服",
+                  "reading": "ふく"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "小",
+                  "reading": "ちい"
+                },
+                {
+                  "surface": "さくなったら"
+                },
+                {
+                  "surface": "妹",
+                  "reading": "いもうと"
+                },
+                {
+                  "surface": "にあげます。"
+                }
+              ],
+              "meaningRu": "Когда одежда станет мала, я отдам её сестре.",
+              "audioUrl": "/audio/marugoto/aa0dd5f0e6c58783.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "服が",
+                "explanationRu": "Смысловой фрагмент: Когда одежда станет мала, я отдам её сестре."
+              },
+              {
+                "text": "小さくなったら",
+                "explanationRu": "Смысловой фрагмент: Когда одежда станет мала, я отдам её сестре."
+              },
+              {
+                "text": "妹に",
+                "explanationRu": "Смысловой фрагмент: Когда одежда станет мала, я отдам её сестре."
+              },
+              {
+                "text": "あげます",
+                "explanationRu": "たら связывает будущую ситуацию с последующим действием."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.16.grammar.198",
+      "titleRu": "～にする",
+      "introductionRu": "を…にする обозначает намеренное преобразование предмета.",
+      "canDoIds": [
+        43,
+        44
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.16.part.grammar.198",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.198",
+            "explanationRu": "を…にする обозначает намеренное преобразование предмета.",
+            "example": {
+              "surface": "古いシャツを袋にしました。",
+              "kana": "ふるいシャツをふくろにしました。",
+              "segments": [
+                {
+                  "surface": "古",
+                  "reading": "ふる"
+                },
+                {
+                  "surface": "いシャツを"
+                },
+                {
+                  "surface": "袋",
+                  "reading": "ふくろ"
+                },
+                {
+                  "surface": "にしました。"
+                }
+              ],
+              "meaningRu": "Я превратил старую рубашку в сумку.",
+              "audioUrl": "/audio/marugoto/cf3e98d9eced52c6.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "古いシャツを",
+                "explanationRu": "Смысловой фрагмент: Я превратил старую рубашку в сумку."
+              },
+              {
+                "text": "袋に",
+                "explanationRu": "Смысловой фрагмент: Я превратил старую рубашку в сумку."
+              },
+              {
+                "text": "しました",
+                "explanationRu": "を…にする обозначает намеренное преобразование предмета."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.16.grammar.199",
+      "titleRu": "～になる",
+      "introductionRu": "に なる описывает получившийся результат без указания действующего лица.",
+      "canDoIds": [
+        43,
+        44
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.16.part.grammar.199",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.199",
+            "explanationRu": "に なる описывает получившийся результат без указания действующего лица.",
+            "example": {
+              "surface": "紙が箱になりました。",
+              "kana": "かみがはこになりました。",
+              "segments": [
+                {
+                  "surface": "紙",
+                  "reading": "かみ"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "箱",
+                  "reading": "はこ"
+                },
+                {
+                  "surface": "になりました。"
+                }
+              ],
+              "meaningRu": "Бумага превратилась в коробку.",
+              "audioUrl": "/audio/marugoto/ff7a128a68077579.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "紙が",
+                "explanationRu": "Смысловой фрагмент: Бумага превратилась в коробку."
+              },
+              {
+                "text": "箱に",
+                "explanationRu": "Смысловой фрагмент: Бумага превратилась в коробку."
+              },
+              {
+                "text": "なりました",
+                "explanationRu": "に なる описывает получившийся результат без указания действующего лица."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.43.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        43
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.43.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.43",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Объясните, как вы используете вещи повторно.",
+              "canDoIds": [
+                43
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Объясните, как вы используете вещи повторно.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "服が小さくなったら、妹にあげます。すぐには捨てません。",
+                "kana": "ふくがちいさくなったら、いもうとにあげます。すぐにはすてません。",
+                "segments": [
+                  {
+                    "surface": "服",
+                    "reading": "ふく"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "小",
+                    "reading": "ちい"
+                  },
+                  {
+                    "surface": "さくなったら、"
+                  },
+                  {
+                    "surface": "妹",
+                    "reading": "いもうと"
+                  },
+                  {
+                    "surface": "にあげます。すぐには"
+                  },
+                  {
+                    "surface": "捨",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "てません。"
+                  }
+                ],
+                "meaningRu": "Когда одежда становится мала, я отдаю её сестре. Сразу не выбрасываю.",
+                "audioUrl": "/audio/marugoto/d982aff1692dcbab.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Объясните, как вы используете вещи повторно.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.44.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        44
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.44.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.44",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите о новой вещи из старого материала.",
+              "canDoIds": [
+                44
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите о новой вещи из старого материала.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "古いシャツを袋にしました。買い物のときに使っています。",
+                "kana": "ふるいシャツをふくろにしました。かいもののときにつかっています。",
+                "segments": [
+                  {
+                    "surface": "古",
+                    "reading": "ふる"
+                  },
+                  {
+                    "surface": "いシャツを"
+                  },
+                  {
+                    "surface": "袋",
+                    "reading": "ふくろ"
+                  },
+                  {
+                    "surface": "にしました。"
+                  },
+                  {
+                    "surface": "買",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "物",
+                    "reading": "もの"
+                  },
+                  {
+                    "surface": "のときに"
+                  },
+                  {
+                    "surface": "使",
+                    "reading": "つか"
+                  },
+                  {
+                    "surface": "っています。"
+                  }
+                ],
+                "meaningRu": "Я превратил старую рубашку в сумку. Пользуюсь ею для покупок.",
+                "audioUrl": "/audio/marugoto/dfe9ec434f70d7d0.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите о новой вещи из старого материала.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

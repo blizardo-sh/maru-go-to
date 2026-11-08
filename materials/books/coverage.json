@@ -1,0 +1,4844 @@
+{
+  "canDo": [
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.01",
+      "canDoId": 1,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.01"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.01",
+      "canDoId": 2,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.02"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.02",
+      "canDoId": 3,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.03"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.02",
+      "canDoId": 4,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.04"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.02",
+      "canDoId": 5,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.05"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.03",
+      "canDoId": 6,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.06"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.03",
+      "canDoId": 7,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.07"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.04",
+      "canDoId": 8,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.08"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.04",
+      "canDoId": 9,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.09"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.05",
+      "canDoId": 10,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.10"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.05",
+      "canDoId": 11,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.11"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.06",
+      "canDoId": 12,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.12"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.06",
+      "canDoId": 13,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.13"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.06",
+      "canDoId": 14,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.14"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.07",
+      "canDoId": 15,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.15"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.07",
+      "canDoId": 16,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.16"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.07",
+      "canDoId": 17,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.17"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.08",
+      "canDoId": 18,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.18"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.08",
+      "canDoId": 19,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.19"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.09",
+      "canDoId": 20,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.20"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.09",
+      "canDoId": 21,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.21"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.09",
+      "canDoId": 22,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.22"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.09",
+      "canDoId": 23,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.23"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.10",
+      "canDoId": 24,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.24"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.10",
+      "canDoId": 25,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.25"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.10",
+      "canDoId": 26,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.26"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.11",
+      "canDoId": 27,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.27"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.11",
+      "canDoId": 28,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.28"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.11",
+      "canDoId": 29,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.29"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.12",
+      "canDoId": 30,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.30"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.12",
+      "canDoId": 31,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.31"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.12",
+      "canDoId": 32,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.32"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.13",
+      "canDoId": 33,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.33"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.13",
+      "canDoId": 34,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.34"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.13",
+      "canDoId": 35,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.35"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.13",
+      "canDoId": 36,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.36"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.14",
+      "canDoId": 37,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.37"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.14",
+      "canDoId": 38,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.38"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.14",
+      "canDoId": 39,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.39"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.14",
+      "canDoId": 40,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.40"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.15",
+      "canDoId": 41,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.41"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.15",
+      "canDoId": 42,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.42"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.15",
+      "canDoId": 43,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.43"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.16",
+      "canDoId": 44,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.44"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.16",
+      "canDoId": 45,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.45"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.16",
+      "canDoId": 46,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.46"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.17",
+      "canDoId": 47,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.47"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.17",
+      "canDoId": 48,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.48"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.17",
+      "canDoId": 49,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.49"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.18",
+      "canDoId": 50,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.50"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.18",
+      "canDoId": 51,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.51"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.18",
+      "canDoId": 52,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.52"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.18",
+      "canDoId": 53,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary1-a2.cando.53"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.01",
+      "canDoId": 1,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.01"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.01",
+      "canDoId": 2,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.02"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.02",
+      "canDoId": 3,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.03"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.02",
+      "canDoId": 4,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.04"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.03",
+      "canDoId": 5,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.05"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.03",
+      "canDoId": 6,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.06"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.03",
+      "canDoId": 7,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.07"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.03",
+      "canDoId": 8,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.08"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.03",
+      "canDoId": 9,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.09"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.04",
+      "canDoId": 10,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.10"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.04",
+      "canDoId": 11,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.11"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.04",
+      "canDoId": 12,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.12"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.05",
+      "canDoId": 13,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.13"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.05",
+      "canDoId": 14,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.14"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.05",
+      "canDoId": 15,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.15"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.06",
+      "canDoId": 16,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.16"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.06",
+      "canDoId": 17,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.17"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.06",
+      "canDoId": 18,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.18"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.07",
+      "canDoId": 19,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.19"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.07",
+      "canDoId": 20,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.20"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.07",
+      "canDoId": 21,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.21"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.08",
+      "canDoId": 22,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.22"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.08",
+      "canDoId": 23,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.23"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.08",
+      "canDoId": 24,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.24"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.09",
+      "canDoId": 25,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.25"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.09",
+      "canDoId": 26,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.26"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.09",
+      "canDoId": 27,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.27"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.09",
+      "canDoId": 28,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.28"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.10",
+      "canDoId": 29,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.29"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.10",
+      "canDoId": 30,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.30"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.11",
+      "canDoId": 31,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.31"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.11",
+      "canDoId": 32,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.32"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.12",
+      "canDoId": 33,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.33"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.12",
+      "canDoId": 34,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.34"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.13",
+      "canDoId": 35,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.35"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.13",
+      "canDoId": 36,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.36"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.13",
+      "canDoId": 37,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.37"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.13",
+      "canDoId": 38,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.38"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.14",
+      "canDoId": 39,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.39"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.14",
+      "canDoId": 40,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.40"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.15",
+      "canDoId": 41,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.41"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.15",
+      "canDoId": 42,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.42"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.16",
+      "canDoId": 43,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.43"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.16",
+      "canDoId": 44,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.44"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.17",
+      "canDoId": 45,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.45"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.17",
+      "canDoId": 46,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.46"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.17",
+      "canDoId": 47,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.47"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.18",
+      "canDoId": 48,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.48"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.18",
+      "canDoId": 49,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.elementary2-a2.cando.49"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.01",
+      "canDoId": 1,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.01"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.01",
+      "canDoId": 2,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.02"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.01",
+      "canDoId": 3,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.03"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.01",
+      "canDoId": 4,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.04"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.01",
+      "canDoId": 5,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.05"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.01",
+      "canDoId": 6,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.06"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.01",
+      "canDoId": 7,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.07"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.02",
+      "canDoId": 8,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.08"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.02",
+      "canDoId": 9,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.09"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.02",
+      "canDoId": 10,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.10"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.02",
+      "canDoId": 11,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.11"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.03",
+      "canDoId": 12,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.12"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.03",
+      "canDoId": 13,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.13"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.03",
+      "canDoId": 14,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.14"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.03",
+      "canDoId": 15,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.15"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.04",
+      "canDoId": 16,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.16"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.04",
+      "canDoId": 17,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.17"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.04",
+      "canDoId": 18,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.18"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.04",
+      "canDoId": 19,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.19"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.04",
+      "canDoId": 20,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.20"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.05",
+      "canDoId": 21,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.21"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.05",
+      "canDoId": 22,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.22"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.05",
+      "canDoId": 23,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.23"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.05",
+      "canDoId": 24,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 1
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.24"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.06",
+      "canDoId": 25,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.25"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.06",
+      "canDoId": 26,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.26"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.06",
+      "canDoId": 27,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.27"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.06",
+      "canDoId": 28,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.28"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.06",
+      "canDoId": 29,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.29"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.07",
+      "canDoId": 30,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.30"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.07",
+      "canDoId": 31,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.31"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.07",
+      "canDoId": 32,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.32"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.07",
+      "canDoId": 33,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.33"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.07",
+      "canDoId": 34,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.34"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.08",
+      "canDoId": 35,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.35"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.08",
+      "canDoId": 36,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.36"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.08",
+      "canDoId": 37,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.37"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.08",
+      "canDoId": 38,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.38"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.08",
+      "canDoId": 39,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.39"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.08",
+      "canDoId": 40,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.40"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.09",
+      "canDoId": 41,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.41"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.09",
+      "canDoId": 42,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.42"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.09",
+      "canDoId": 43,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.43"
+      ],
+      "status": "authored-awaiting-language-review"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.09",
+      "canDoId": 44,
+      "source": {
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+        "page": 2
+      },
+      "tasks": [
+        "marugoto.pre-intermediate-a2b1.cando.44"
+      ],
+      "status": "authored-awaiting-language-review"
+    }
+  ],
+  "grammar": [
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.01",
+      "sourceRow": 58,
+      "sourceNumber": 56,
+      "pattern": "～ている",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.6208ef0f7750c111"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.58"
+      ],
+      "sharedSkillId": "marugoto.grammar.6208ef0f7750c111"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.01",
+      "sourceRow": 59,
+      "sourceNumber": 57,
+      "pattern": "～に",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.starter-a1.skill.ni_residence"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.59"
+      ],
+      "sharedSkillId": "marugoto.starter-a1.skill.ni_residence"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.01",
+      "sourceRow": 60,
+      "sourceNumber": 58,
+      "pattern": "～で",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.starter-a1.skill.de_activity_place"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.60"
+      ],
+      "sharedSkillId": "marugoto.starter-a1.skill.de_activity_place"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.01",
+      "sourceRow": 61,
+      "sourceNumber": 59,
+      "pattern": "～で",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.starter-a1.skill.route_transport"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.61"
+      ],
+      "sharedSkillId": "marugoto.starter-a1.skill.route_transport"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.02",
+      "sourceRow": 62,
+      "sourceNumber": 60,
+      "pattern": "～こと",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.2f47f313e4106a0c"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.62"
+      ],
+      "sharedSkillId": "marugoto.grammar.2f47f313e4106a0c"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.02",
+      "sourceRow": 63,
+      "sourceNumber": 61,
+      "pattern": "～とき",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.e6f8db2b2f032f45"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.63"
+      ],
+      "sharedSkillId": "marugoto.grammar.e6f8db2b2f032f45"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.02",
+      "sourceRow": 64,
+      "sourceNumber": 62,
+      "pattern": "～とき",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.e6f8db2b2f032f45"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.64"
+      ],
+      "sharedSkillId": "marugoto.grammar.e6f8db2b2f032f45"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.02",
+      "sourceRow": 65,
+      "sourceNumber": 63,
+      "pattern": "～とき",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.e6f8db2b2f032f45"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.65"
+      ],
+      "sharedSkillId": "marugoto.grammar.e6f8db2b2f032f45"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.03",
+      "sourceRow": 66,
+      "sourceNumber": 64,
+      "pattern": "～になる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.1e3723bbb68a8cb9"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.66"
+      ],
+      "sharedSkillId": "marugoto.grammar.1e3723bbb68a8cb9"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.03",
+      "sourceRow": 67,
+      "sourceNumber": 65,
+      "pattern": "～くなる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.5cfe131ad819e777"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.67"
+      ],
+      "sharedSkillId": "marugoto.grammar.5cfe131ad819e777"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.03",
+      "sourceRow": 68,
+      "sourceNumber": 66,
+      "pattern": "～になる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.1e3723bbb68a8cb9"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.68"
+      ],
+      "sharedSkillId": "marugoto.grammar.1e3723bbb68a8cb9"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.03",
+      "sourceRow": 69,
+      "sourceNumber": 67,
+      "pattern": "～（の）が好き",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.starter-a1.skill.ga_liking"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.69"
+      ],
+      "sharedSkillId": "marugoto.starter-a1.skill.ga_liking"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.03",
+      "sourceRow": 70,
+      "sourceNumber": 68,
+      "pattern": "～のは好きじゃない",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.4f4630313068659f"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.70"
+      ],
+      "sharedSkillId": "marugoto.grammar.4f4630313068659f"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.03",
+      "sourceRow": 71,
+      "sourceNumber": 69,
+      "pattern": "～から",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.starter-a1.skill.kara_reason"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.71"
+      ],
+      "sharedSkillId": "marugoto.starter-a1.skill.kara_reason"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.04",
+      "sourceRow": 72,
+      "sourceNumber": 70,
+      "pattern": "～です／でした",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.starter-a1.skill.adjective_past"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.72"
+      ],
+      "sharedSkillId": "marugoto.starter-a1.skill.adjective_past"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.04",
+      "sourceRow": 73,
+      "sourceNumber": 71,
+      "pattern": "～です／かったです",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.starter-a1.skill.adjective_past"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.73"
+      ],
+      "sharedSkillId": "marugoto.starter-a1.skill.adjective_past"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.04",
+      "sourceRow": 74,
+      "sourceNumber": 72,
+      "pattern": "～ます／ました",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.starter-a1.skill.verb_past"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.74"
+      ],
+      "sharedSkillId": "marugoto.starter-a1.skill.verb_past"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.04",
+      "sourceRow": 75,
+      "sourceNumber": 73,
+      "pattern": "～ている",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.f369cb89fc627e66"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.75"
+      ],
+      "sharedSkillId": "marugoto.grammar.f369cb89fc627e66"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.05",
+      "sourceRow": 76,
+      "sourceNumber": 74,
+      "pattern": "～くて",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.7dc44595d9cb33da"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.76"
+      ],
+      "sharedSkillId": "marugoto.grammar.7dc44595d9cb33da"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.05",
+      "sourceRow": 77,
+      "sourceNumber": 75,
+      "pattern": "～で",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.a88a7902cb4ef697"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.77"
+      ],
+      "sharedSkillId": "marugoto.grammar.a88a7902cb4ef697"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.05",
+      "sourceRow": 78,
+      "sourceNumber": 76,
+      "pattern": "～で",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.349c41201b62db85"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.78"
+      ],
+      "sharedSkillId": "marugoto.grammar.349c41201b62db85"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.05",
+      "sourceRow": 79,
+      "sourceNumber": 77,
+      "pattern": "～けど",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.14c5ea44e4e355a1"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.79"
+      ],
+      "sharedSkillId": "marugoto.grammar.14c5ea44e4e355a1"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.05",
+      "sourceRow": 80,
+      "sourceNumber": 78,
+      "pattern": "～けど",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.14c5ea44e4e355a1"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.80"
+      ],
+      "sharedSkillId": "marugoto.grammar.14c5ea44e4e355a1"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.05",
+      "sourceRow": 81,
+      "sourceNumber": 79,
+      "pattern": "～けど",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.14c5ea44e4e355a1"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.81"
+      ],
+      "sharedSkillId": "marugoto.grammar.14c5ea44e4e355a1"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.05",
+      "sourceRow": 82,
+      "sourceNumber": 80,
+      "pattern": "～や～（など）",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.0dfe555dc0189db3"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.82"
+      ],
+      "sharedSkillId": "marugoto.grammar.0dfe555dc0189db3"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.06",
+      "sourceRow": 83,
+      "sourceNumber": 81,
+      "pattern": "～てください",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.de5bbb0b6d4f5c93"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.83"
+      ],
+      "sharedSkillId": "marugoto.grammar.de5bbb0b6d4f5c93"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.06",
+      "sourceRow": 84,
+      "sourceNumber": 82,
+      "pattern": "～て",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.ce481de13138d4f3"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.84"
+      ],
+      "sharedSkillId": "marugoto.grammar.ce481de13138d4f3"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.06",
+      "sourceRow": 85,
+      "sourceNumber": 83,
+      "pattern": "～くて～な／～い＋Ｎ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.ca4cbc457ec9e824"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.85"
+      ],
+      "sharedSkillId": "marugoto.grammar.ca4cbc457ec9e824"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.06",
+      "sourceRow": 86,
+      "sourceNumber": 84,
+      "pattern": "～で～な／～い＋Ｎ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.ae422df18d4ebf08"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.86"
+      ],
+      "sharedSkillId": "marugoto.grammar.ae422df18d4ebf08"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.06",
+      "sourceRow": 87,
+      "sourceNumber": 85,
+      "pattern": "～じゃなくて",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.ef2776e6bf1f27bc"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.87"
+      ],
+      "sharedSkillId": "marugoto.grammar.ef2776e6bf1f27bc"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.07",
+      "sourceRow": 88,
+      "sourceNumber": 86,
+      "pattern": "～でもいい",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.8051a18cd3a469b8"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.88"
+      ],
+      "sharedSkillId": "marugoto.grammar.8051a18cd3a469b8"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.07",
+      "sourceRow": 89,
+      "sourceNumber": 87,
+      "pattern": "～で",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.cd70bea023f752a0"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.89"
+      ],
+      "sharedSkillId": "marugoto.grammar.cd70bea023f752a0"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.07",
+      "sourceRow": 90,
+      "sourceNumber": 88,
+      "pattern": "～て",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.ce481de13138d4f3"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.90"
+      ],
+      "sharedSkillId": "marugoto.grammar.ce481de13138d4f3"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.08",
+      "sourceRow": 91,
+      "sourceNumber": 89,
+      "pattern": "もう（～た）",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.3ad13690fd68d6ed"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.91"
+      ],
+      "sharedSkillId": "marugoto.grammar.3ad13690fd68d6ed"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.08",
+      "sourceRow": 92,
+      "sourceNumber": 90,
+      "pattern": "まだ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.319df777c4a488b2"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.92"
+      ],
+      "sharedSkillId": "marugoto.grammar.319df777c4a488b2"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.08",
+      "sourceRow": 93,
+      "sourceNumber": 91,
+      "pattern": "～のまえに",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.98dda5a7f83733a2"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.93"
+      ],
+      "sharedSkillId": "marugoto.grammar.98dda5a7f83733a2"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.08",
+      "sourceRow": 94,
+      "sourceNumber": 92,
+      "pattern": "～のあとで",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.ea4d804e22e85d38"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.94"
+      ],
+      "sharedSkillId": "marugoto.grammar.ea4d804e22e85d38"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.08",
+      "sourceRow": 95,
+      "sourceNumber": 93,
+      "pattern": "～に行く",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.starter-a1.skill.ni_purpose"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.95"
+      ],
+      "sharedSkillId": "marugoto.starter-a1.skill.ni_purpose"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.08",
+      "sourceRow": 96,
+      "sourceNumber": 94,
+      "pattern": "～に行く",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.starter-a1.skill.ni_purpose"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.96"
+      ],
+      "sharedSkillId": "marugoto.starter-a1.skill.ni_purpose"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.09",
+      "sourceRow": 97,
+      "sourceNumber": 95,
+      "pattern": "～は～が～",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.57c31b33212cb970"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.97"
+      ],
+      "sharedSkillId": "marugoto.grammar.57c31b33212cb970"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.09",
+      "sourceRow": 98,
+      "sourceNumber": 96,
+      "pattern": "～は～のが～",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.f88b21c6d5e3893a"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.98"
+      ],
+      "sharedSkillId": "marugoto.grammar.f88b21c6d5e3893a"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.09",
+      "sourceRow": 99,
+      "sourceNumber": 97,
+      "pattern": "～てくださいませんか",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.d5f2cc4e75649514"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.99"
+      ],
+      "sharedSkillId": "marugoto.grammar.d5f2cc4e75649514"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.09",
+      "sourceRow": 100,
+      "sourceNumber": 98,
+      "pattern": "～かた",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.5e2874845a1992a0"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.100"
+      ],
+      "sharedSkillId": "marugoto.grammar.5e2874845a1992a0"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.10",
+      "sourceRow": 101,
+      "sourceNumber": 99,
+      "pattern": "～たい／たくない",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.starter-a1.skill.tai_desire"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.101"
+      ],
+      "sharedSkillId": "marugoto.starter-a1.skill.tai_desire"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.10",
+      "sourceRow": 102,
+      "sourceNumber": 100,
+      "pattern": "～に～回（ぐらい）",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.1e8483bff3e58a5d"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.102"
+      ],
+      "sharedSkillId": "marugoto.grammar.1e8483bff3e58a5d"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.10",
+      "sourceRow": 103,
+      "sourceNumber": 101,
+      "pattern": "～てみる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.f6e0243efa800e4b"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.103"
+      ],
+      "sharedSkillId": "marugoto.grammar.f6e0243efa800e4b"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.10",
+      "sourceRow": 104,
+      "sourceNumber": 102,
+      "pattern": "～ましょうか",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.f0f9b19686b08d82"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.104"
+      ],
+      "sharedSkillId": "marugoto.grammar.f0f9b19686b08d82"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.11",
+      "sourceRow": 105,
+      "sourceNumber": 103,
+      "pattern": "～ていく／くる ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.8fea2f3df3ab71d4"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.105"
+      ],
+      "sharedSkillId": "marugoto.grammar.8fea2f3df3ab71d4"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.11",
+      "sourceRow": 106,
+      "sourceNumber": 104,
+      "pattern": "～てくる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.ddbd753dc645ee6d"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.106"
+      ],
+      "sharedSkillId": "marugoto.grammar.ddbd753dc645ee6d"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.11",
+      "sourceRow": 107,
+      "sourceNumber": 105,
+      "pattern": "【疑問詞】＋でも",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.2473992f2da6de00"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.107"
+      ],
+      "sharedSkillId": "marugoto.grammar.2473992f2da6de00"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.11",
+      "sourceRow": 108,
+      "sourceNumber": 106,
+      "pattern": "～と～（と）どちらが～",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.7ffdfd5f7936d4fd"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.108"
+      ],
+      "sharedSkillId": "marugoto.grammar.7ffdfd5f7936d4fd"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.11",
+      "sourceRow": 109,
+      "sourceNumber": 107,
+      "pattern": "～がいい",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.4bfce3461d5e0dcb"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.109"
+      ],
+      "sharedSkillId": "marugoto.grammar.4bfce3461d5e0dcb"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.12",
+      "sourceRow": 110,
+      "sourceNumber": 108,
+      "pattern": "～そうだ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.6d1622d0f2bc1a5d"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.110"
+      ],
+      "sharedSkillId": "marugoto.grammar.6d1622d0f2bc1a5d"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.12",
+      "sourceRow": 111,
+      "sourceNumber": 109,
+      "pattern": "～そうな～",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.6d1622d0f2bc1a5d"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.111"
+      ],
+      "sharedSkillId": "marugoto.grammar.6d1622d0f2bc1a5d"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.12",
+      "sourceRow": 112,
+      "sourceNumber": 110,
+      "pattern": "～くて／くなくて",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.9cf472af9d5ae489"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.112"
+      ],
+      "sharedSkillId": "marugoto.grammar.9cf472af9d5ae489"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.12",
+      "sourceRow": 113,
+      "sourceNumber": 111,
+      "pattern": "～で／じゃなくて",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.c46c64aa9e479cd7"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.113"
+      ],
+      "sharedSkillId": "marugoto.grammar.c46c64aa9e479cd7"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.13",
+      "sourceRow": 114,
+      "sourceNumber": 112,
+      "pattern": "～たことがある",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.cb839866bdf05ba9"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.114"
+      ],
+      "sharedSkillId": "marugoto.grammar.cb839866bdf05ba9"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.13",
+      "sourceRow": 115,
+      "sourceNumber": 113,
+      "pattern": "～すぎる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.1d1758e0213c87fe"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.115"
+      ],
+      "sharedSkillId": "marugoto.grammar.1d1758e0213c87fe"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.13",
+      "sourceRow": 116,
+      "sourceNumber": 114,
+      "pattern": "～すぎる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.1d1758e0213c87fe"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.116"
+      ],
+      "sharedSkillId": "marugoto.grammar.1d1758e0213c87fe"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.13",
+      "sourceRow": 117,
+      "sourceNumber": 115,
+      "pattern": "～すぎる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.1d1758e0213c87fe"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.117"
+      ],
+      "sharedSkillId": "marugoto.grammar.1d1758e0213c87fe"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.13",
+      "sourceRow": 118,
+      "sourceNumber": 116,
+      "pattern": "～が",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.d77505d3b2ae9548"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.118"
+      ],
+      "sharedSkillId": "marugoto.grammar.d77505d3b2ae9548"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.14",
+      "sourceRow": 119,
+      "sourceNumber": 117,
+      "pattern": "～て【期間】になる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.9e41483358864c3d"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.119"
+      ],
+      "sharedSkillId": "marugoto.grammar.9e41483358864c3d"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.14",
+      "sourceRow": 120,
+      "sourceNumber": 118,
+      "pattern": "～てもいい",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.d73a99f0daf7e117"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.120"
+      ],
+      "sharedSkillId": "marugoto.grammar.d73a99f0daf7e117"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.15",
+      "sourceRow": 121,
+      "sourceNumber": 119,
+      "pattern": "～まえに",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.3c48c6e524e0c9d1"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.121"
+      ],
+      "sharedSkillId": "marugoto.grammar.3c48c6e524e0c9d1"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.15",
+      "sourceRow": 122,
+      "sourceNumber": 120,
+      "pattern": "～といい",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.7f952534ffe52d42"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.122"
+      ],
+      "sharedSkillId": "marugoto.grammar.7f952534ffe52d42"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.15",
+      "sourceRow": 123,
+      "sourceNumber": 121,
+      "pattern": "～ないでください",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.1c64f35dbd8c402b"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.123"
+      ],
+      "sharedSkillId": "marugoto.grammar.1c64f35dbd8c402b"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.16",
+      "sourceRow": 124,
+      "sourceNumber": 122,
+      "pattern": "～たり～たり",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.4a61241e0e6dbcd2"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.124"
+      ],
+      "sharedSkillId": "marugoto.grammar.4a61241e0e6dbcd2"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.16",
+      "sourceRow": 125,
+      "sourceNumber": 123,
+      "pattern": "文＋人　＜連体修飾節＞",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.9f9b175422f85a4a"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.125"
+      ],
+      "sharedSkillId": "marugoto.grammar.9f9b175422f85a4a"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.16",
+      "sourceRow": 126,
+      "sourceNumber": 124,
+      "pattern": "文＋人　＜連体修飾節＞",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.9f9b175422f85a4a"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.126"
+      ],
+      "sharedSkillId": "marugoto.grammar.9f9b175422f85a4a"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.17",
+      "sourceRow": 127,
+      "sourceNumber": 125,
+      "pattern": "～んです",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.6f298f83ebb8d83d"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.127"
+      ],
+      "sharedSkillId": "marugoto.grammar.6f298f83ebb8d83d"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.17",
+      "sourceRow": 128,
+      "sourceNumber": 126,
+      "pattern": "あげる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.starter-a1.skill.ageru"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.128"
+      ],
+      "sharedSkillId": "marugoto.starter-a1.skill.ageru"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.17",
+      "sourceRow": 129,
+      "sourceNumber": 127,
+      "pattern": "もらう",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.starter-a1.skill.morau"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.129"
+      ],
+      "sharedSkillId": "marugoto.starter-a1.skill.morau"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.17",
+      "sourceRow": 130,
+      "sourceNumber": 128,
+      "pattern": "文＋N　＜連体修飾節＞",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.f29a8ad848d388ee"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.130"
+      ],
+      "sharedSkillId": "marugoto.grammar.f29a8ad848d388ee"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.18",
+      "sourceRow": 131,
+      "sourceNumber": 129,
+      "pattern": "～と思う",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.92694cdd7dd7f413"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.131"
+      ],
+      "sharedSkillId": "marugoto.grammar.92694cdd7dd7f413"
+    },
+    {
+      "bookId": "marugoto.elementary1-a2",
+      "lessonId": "marugoto.elementary1-a2.lesson.18",
+      "sourceRow": 132,
+      "sourceNumber": 130,
+      "pattern": "～と言っていた",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.027207cbb6d57509"
+      ],
+      "exercises": [
+        "marugoto.elementary1-a2.example.grammar.132"
+      ],
+      "sharedSkillId": "marugoto.grammar.027207cbb6d57509"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.01",
+      "sourceRow": 133,
+      "sourceNumber": 131,
+      "pattern": "～という意味",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.472e81357eac9d5d"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.133"
+      ],
+      "sharedSkillId": "marugoto.grammar.472e81357eac9d5d"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.01",
+      "sourceRow": 134,
+      "sourceNumber": 132,
+      "pattern": "～というN",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.642f46efa9420835"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.134"
+      ],
+      "sharedSkillId": "marugoto.grammar.642f46efa9420835"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.01",
+      "sourceRow": 135,
+      "sourceNumber": 133,
+      "pattern": "文＋N　＜連体修飾節＞",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.f29a8ad848d388ee"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.135"
+      ],
+      "sharedSkillId": "marugoto.grammar.f29a8ad848d388ee"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.02",
+      "sourceRow": 136,
+      "sourceNumber": 134,
+      "pattern": "～は～が～",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.57c31b33212cb970"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.136"
+      ],
+      "sharedSkillId": "marugoto.grammar.57c31b33212cb970"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.02",
+      "sourceRow": 137,
+      "sourceNumber": 135,
+      "pattern": "文＋人　＜連体修飾節＞",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.9f9b175422f85a4a"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.137"
+      ],
+      "sharedSkillId": "marugoto.grammar.9f9b175422f85a4a"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.02",
+      "sourceRow": 138,
+      "sourceNumber": 136,
+      "pattern": "～ている",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.d6a4031733610bb0"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.138"
+      ],
+      "sharedSkillId": "marugoto.grammar.d6a4031733610bb0"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.02",
+      "sourceRow": 139,
+      "sourceNumber": 137,
+      "pattern": "文＋人　＜連体修飾節＞",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.9f9b175422f85a4a"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.139"
+      ],
+      "sharedSkillId": "marugoto.grammar.9f9b175422f85a4a"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.02",
+      "sourceRow": 140,
+      "sourceNumber": 138,
+      "pattern": "～そうだ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.6d1622d0f2bc1a5d"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.140"
+      ],
+      "sharedSkillId": "marugoto.grammar.6d1622d0f2bc1a5d"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.02",
+      "sourceRow": 141,
+      "sourceNumber": 139,
+      "pattern": "～そうな＋N",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.6d1622d0f2bc1a5d"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.141"
+      ],
+      "sharedSkillId": "marugoto.grammar.6d1622d0f2bc1a5d"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.02",
+      "sourceRow": 142,
+      "sourceNumber": 140,
+      "pattern": "～く／～に",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.98a793f26daa08a3"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.142"
+      ],
+      "sharedSkillId": "marugoto.grammar.98a793f26daa08a3"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.02",
+      "sourceRow": 143,
+      "sourceNumber": 141,
+      "pattern": "～そうに",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.5c40de9ec26a61d1"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.143"
+      ],
+      "sharedSkillId": "marugoto.grammar.5c40de9ec26a61d1"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.03",
+      "sourceRow": 144,
+      "sourceNumber": 142,
+      "pattern": "～ので",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.e8d6da4164494821"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.144"
+      ],
+      "sharedSkillId": "marugoto.grammar.e8d6da4164494821"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.03",
+      "sourceRow": 145,
+      "sourceNumber": 143,
+      "pattern": "～のは～だ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.5a8d33855aa22469"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.145"
+      ],
+      "sharedSkillId": "marugoto.grammar.5a8d33855aa22469"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.03",
+      "sourceRow": 146,
+      "sourceNumber": 144,
+      "pattern": "～なら～がいい",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.f030401b87ed83d0"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.146"
+      ],
+      "sharedSkillId": "marugoto.grammar.f030401b87ed83d0"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.03",
+      "sourceRow": 147,
+      "sourceNumber": 145,
+      "pattern": "～ずつ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.1d7d7663b970ea1c"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.147"
+      ],
+      "sharedSkillId": "marugoto.grammar.1d7d7663b970ea1c"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.04",
+      "sourceRow": 148,
+      "sourceNumber": 146,
+      "pattern": "～てはいけない／だめ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.c650104675c44829"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.148"
+      ],
+      "sharedSkillId": "marugoto.grammar.c650104675c44829"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.04",
+      "sourceRow": 149,
+      "sourceNumber": 147,
+      "pattern": "～ちゃいけない／だめ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.f83e4840849a9dab"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.149"
+      ],
+      "sharedSkillId": "marugoto.grammar.f83e4840849a9dab"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.04",
+      "sourceRow": 150,
+      "sourceNumber": 148,
+      "pattern": "～てから",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.10d4555bd4e3a6ba"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.150"
+      ],
+      "sharedSkillId": "marugoto.grammar.10d4555bd4e3a6ba"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.04",
+      "sourceRow": 151,
+      "sourceNumber": 149,
+      "pattern": "～て～",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.a451db5b34aa3ad3"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.151"
+      ],
+      "sharedSkillId": "marugoto.grammar.a451db5b34aa3ad3"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.04",
+      "sourceRow": 152,
+      "sourceNumber": 150,
+      "pattern": "～ないで",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.b1d98c1f1d7455d1"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.152"
+      ],
+      "sharedSkillId": "marugoto.grammar.b1d98c1f1d7455d1"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.04",
+      "sourceRow": 153,
+      "sourceNumber": 151,
+      "pattern": "～と",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.712e21c7ef5244c7"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.153"
+      ],
+      "sharedSkillId": "marugoto.grammar.712e21c7ef5244c7"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.05",
+      "sourceRow": 154,
+      "sourceNumber": 152,
+      "pattern": "～たほうがいい",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.88e9f3bf54be97cd"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.154"
+      ],
+      "sharedSkillId": "marugoto.grammar.88e9f3bf54be97cd"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.05",
+      "sourceRow": 155,
+      "sourceNumber": 153,
+      "pattern": "～ないほうがいい",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.70969cfe19af13d5"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.155"
+      ],
+      "sharedSkillId": "marugoto.grammar.70969cfe19af13d5"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.05",
+      "sourceRow": 156,
+      "sourceNumber": 154,
+      "pattern": "～とき",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.e6f8db2b2f032f45"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.156"
+      ],
+      "sharedSkillId": "marugoto.grammar.e6f8db2b2f032f45"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.06",
+      "sourceRow": 157,
+      "sourceNumber": 155,
+      "pattern": "～（られ）る　＜可能＞",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.24037ba6475419f4"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.157"
+      ],
+      "sharedSkillId": "marugoto.grammar.24037ba6475419f4"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.06",
+      "sourceRow": 158,
+      "sourceNumber": 156,
+      "pattern": "～し",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.edd9b1e7e3488272"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.158"
+      ],
+      "sharedSkillId": "marugoto.grammar.edd9b1e7e3488272"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.07",
+      "sourceRow": 159,
+      "sourceNumber": 157,
+      "pattern": "～（られ）る　＜可能＞",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.24037ba6475419f4"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.159"
+      ],
+      "sharedSkillId": "marugoto.grammar.24037ba6475419f4"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.07",
+      "sourceRow": 160,
+      "sourceNumber": 158,
+      "pattern": "文＋人　＜連体修飾節＞",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.9f9b175422f85a4a"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.160"
+      ],
+      "sharedSkillId": "marugoto.grammar.9f9b175422f85a4a"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.07",
+      "sourceRow": 161,
+      "sourceNumber": 159,
+      "pattern": "～たら",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.0343cdd482744c9c"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.161"
+      ],
+      "sharedSkillId": "marugoto.grammar.0343cdd482744c9c"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.08",
+      "sourceRow": 162,
+      "sourceNumber": 160,
+      "pattern": "もう（～た）",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.3ad13690fd68d6ed"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.162"
+      ],
+      "sharedSkillId": "marugoto.grammar.3ad13690fd68d6ed"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.08",
+      "sourceRow": 163,
+      "sourceNumber": 161,
+      "pattern": "まだ（～ない）",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.3d09d5f0b2e4e950"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.163"
+      ],
+      "sharedSkillId": "marugoto.grammar.3d09d5f0b2e4e950"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.08",
+      "sourceRow": 164,
+      "sourceNumber": 162,
+      "pattern": "まだ（～ます／ています）",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.7e1499e3c849ae74"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.164"
+      ],
+      "sharedSkillId": "marugoto.grammar.7e1499e3c849ae74"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.08",
+      "sourceRow": 165,
+      "sourceNumber": 163,
+      "pattern": "もう（～ません／ました）",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.c6233ad4d760caf0"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.165"
+      ],
+      "sharedSkillId": "marugoto.grammar.c6233ad4d760caf0"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.08",
+      "sourceRow": 166,
+      "sourceNumber": 164,
+      "pattern": "～か知っていますか",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.42bab7c14951a9e6"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.166"
+      ],
+      "sharedSkillId": "marugoto.grammar.42bab7c14951a9e6"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.09",
+      "sourceRow": 167,
+      "sourceNumber": 165,
+      "pattern": "～ていた",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.3efa5c45c4ca48ed"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.167"
+      ],
+      "sharedSkillId": "marugoto.grammar.3efa5c45c4ca48ed"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.09",
+      "sourceRow": 168,
+      "sourceNumber": 166,
+      "pattern": "～（られ）て",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.ebb3f75aed3ef964"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.168"
+      ],
+      "sharedSkillId": "marugoto.grammar.ebb3f75aed3ef964"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.09",
+      "sourceRow": 169,
+      "sourceNumber": 167,
+      "pattern": "～（られ）なくて",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.f42bc46de8d4b0b6"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.169"
+      ],
+      "sharedSkillId": "marugoto.grammar.f42bc46de8d4b0b6"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.09",
+      "sourceRow": 170,
+      "sourceNumber": 168,
+      "pattern": "～しか（～ない）",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.36a2cac9562e6bc8"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.170"
+      ],
+      "sharedSkillId": "marugoto.grammar.36a2cac9562e6bc8"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.09",
+      "sourceRow": 171,
+      "sourceNumber": 169,
+      "pattern": "～だけ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.a03b2f655244b27f"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.171"
+      ],
+      "sharedSkillId": "marugoto.grammar.a03b2f655244b27f"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.10",
+      "sourceRow": 172,
+      "sourceNumber": 170,
+      "pattern": "～ように",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.68519a9eca55c68c"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.172"
+      ],
+      "sharedSkillId": "marugoto.grammar.68519a9eca55c68c"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.10",
+      "sourceRow": 173,
+      "sourceNumber": 171,
+      "pattern": "～ように",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.4a8596a7790b5ca9"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.173"
+      ],
+      "sharedSkillId": "marugoto.grammar.4a8596a7790b5ca9"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.10",
+      "sourceRow": 174,
+      "sourceNumber": 172,
+      "pattern": "～たり",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.6118856398c537e1"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.174"
+      ],
+      "sharedSkillId": "marugoto.grammar.6118856398c537e1"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.10",
+      "sourceRow": 175,
+      "sourceNumber": 173,
+      "pattern": "～ように願う",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.ad01a062238ff8f2"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.175"
+      ],
+      "sharedSkillId": "marugoto.grammar.ad01a062238ff8f2"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.10",
+      "sourceRow": 176,
+      "sourceNumber": 174,
+      "pattern": "～ように祈る",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.d8a8e4c0f149d55b"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.176"
+      ],
+      "sharedSkillId": "marugoto.grammar.d8a8e4c0f149d55b"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.11",
+      "sourceRow": 177,
+      "sourceNumber": 175,
+      "pattern": "～なくなる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.8f3009882ba1af5a"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.177"
+      ],
+      "sharedSkillId": "marugoto.grammar.8f3009882ba1af5a"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.11",
+      "sourceRow": 178,
+      "sourceNumber": 176,
+      "pattern": "～てしまう",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.989914bfbfcfed3d"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.178"
+      ],
+      "sharedSkillId": "marugoto.grammar.989914bfbfcfed3d"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.11",
+      "sourceRow": 179,
+      "sourceNumber": 177,
+      "pattern": "～ないで",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.b1d98c1f1d7455d1"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.179"
+      ],
+      "sharedSkillId": "marugoto.grammar.b1d98c1f1d7455d1"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.11",
+      "sourceRow": 180,
+      "sourceNumber": 178,
+      "pattern": "～まで",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.b6ce2b81d235deae"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.180"
+      ],
+      "sharedSkillId": "marugoto.grammar.b6ce2b81d235deae"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.12",
+      "sourceRow": 181,
+      "sourceNumber": 179,
+      "pattern": "～にくい",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.ab38d6242ff94d24"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.181"
+      ],
+      "sharedSkillId": "marugoto.grammar.ab38d6242ff94d24"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.12",
+      "sourceRow": 182,
+      "sourceNumber": 180,
+      "pattern": "～やすい",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.385faf1a9e77c215"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.182"
+      ],
+      "sharedSkillId": "marugoto.grammar.385faf1a9e77c215"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.12",
+      "sourceRow": 183,
+      "sourceNumber": 181,
+      "pattern": "どちら／どっちが～",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.5ea87737872aaf3d"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.183"
+      ],
+      "sharedSkillId": "marugoto.grammar.5ea87737872aaf3d"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.12",
+      "sourceRow": 184,
+      "sourceNumber": 182,
+      "pattern": "～のほうが～",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.9fef0209cc3714c4"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.184"
+      ],
+      "sharedSkillId": "marugoto.grammar.9fef0209cc3714c4"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.13",
+      "sourceRow": 185,
+      "sourceNumber": 183,
+      "pattern": "【疑問詞】＋～ても",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.87d8b6da6918dfc7"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.185"
+      ],
+      "sharedSkillId": "marugoto.grammar.87d8b6da6918dfc7"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.13",
+      "sourceRow": 186,
+      "sourceNumber": 184,
+      "pattern": "～と～で",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.4d1da8bac8fb1395"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.186"
+      ],
+      "sharedSkillId": "marugoto.grammar.4d1da8bac8fb1395"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.13",
+      "sourceRow": 187,
+      "sourceNumber": 185,
+      "pattern": "～（ら）れる　＜受身＞",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.3ba35e2079aa9741"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.187"
+      ],
+      "sharedSkillId": "marugoto.grammar.3ba35e2079aa9741"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.14",
+      "sourceRow": 188,
+      "sourceNumber": 186,
+      "pattern": "～そうだ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.e5ac58aa0bcf6c64"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.188"
+      ],
+      "sharedSkillId": "marugoto.grammar.e5ac58aa0bcf6c64"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.14",
+      "sourceRow": 189,
+      "sourceNumber": 187,
+      "pattern": "～ために",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.c883d929bc694e11"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.189"
+      ],
+      "sharedSkillId": "marugoto.grammar.c883d929bc694e11"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.14",
+      "sourceRow": 190,
+      "sourceNumber": 188,
+      "pattern": "～のために",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.4be8d5e6a3d5deda"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.190"
+      ],
+      "sharedSkillId": "marugoto.grammar.4be8d5e6a3d5deda"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.14",
+      "sourceRow": 191,
+      "sourceNumber": 189,
+      "pattern": "～てある",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.15c72005c42e03f8"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.191"
+      ],
+      "sharedSkillId": "marugoto.grammar.15c72005c42e03f8"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.15",
+      "sourceRow": 192,
+      "sourceNumber": 190,
+      "pattern": "～たまま",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.2dd5548081a2b5cc"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.192"
+      ],
+      "sharedSkillId": "marugoto.grammar.2dd5548081a2b5cc"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.15",
+      "sourceRow": 193,
+      "sourceNumber": 191,
+      "pattern": "～ようにしている",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.8acdf87c871ed39e"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.193"
+      ],
+      "sharedSkillId": "marugoto.grammar.8acdf87c871ed39e"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.15",
+      "sourceRow": 194,
+      "sourceNumber": 192,
+      "pattern": "～ないようにしている",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.f5b3ce59a480c723"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.194"
+      ],
+      "sharedSkillId": "marugoto.grammar.f5b3ce59a480c723"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.15",
+      "sourceRow": 195,
+      "sourceNumber": 193,
+      "pattern": "～のに",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.1dfacb2ea5a03e0a"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.195"
+      ],
+      "sharedSkillId": "marugoto.grammar.1dfacb2ea5a03e0a"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.16",
+      "sourceRow": 196,
+      "sourceNumber": 194,
+      "pattern": "～（られ）なくなった",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.acdfb8f403d988db"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.196"
+      ],
+      "sharedSkillId": "marugoto.grammar.acdfb8f403d988db"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.16",
+      "sourceRow": 197,
+      "sourceNumber": 195,
+      "pattern": "～たら",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.0343cdd482744c9c"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.197"
+      ],
+      "sharedSkillId": "marugoto.grammar.0343cdd482744c9c"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.16",
+      "sourceRow": 198,
+      "sourceNumber": 196,
+      "pattern": "～にする",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.da047862f4e51589"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.198"
+      ],
+      "sharedSkillId": "marugoto.grammar.da047862f4e51589"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.16",
+      "sourceRow": 199,
+      "sourceNumber": 197,
+      "pattern": "～になる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.1e3723bbb68a8cb9"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.199"
+      ],
+      "sharedSkillId": "marugoto.grammar.1e3723bbb68a8cb9"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.17",
+      "sourceRow": 200,
+      "sourceNumber": 198,
+      "pattern": "～そうだ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.e5ac58aa0bcf6c64"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.200"
+      ],
+      "sharedSkillId": "marugoto.grammar.e5ac58aa0bcf6c64"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.17",
+      "sourceRow": 201,
+      "sourceNumber": 199,
+      "pattern": "～てから",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.10d4555bd4e3a6ba"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.201"
+      ],
+      "sharedSkillId": "marugoto.grammar.10d4555bd4e3a6ba"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.17",
+      "sourceRow": 202,
+      "sourceNumber": 200,
+      "pattern": "～てから",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.10d4555bd4e3a6ba"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.202"
+      ],
+      "sharedSkillId": "marugoto.grammar.10d4555bd4e3a6ba"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.17",
+      "sourceRow": 203,
+      "sourceNumber": 201,
+      "pattern": "～まで",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.b6ce2b81d235deae"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.203"
+      ],
+      "sharedSkillId": "marugoto.grammar.b6ce2b81d235deae"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.17",
+      "sourceRow": 204,
+      "sourceNumber": 202,
+      "pattern": "～かもしれない",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.5c2f2072b2407b1c"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.204"
+      ],
+      "sharedSkillId": "marugoto.grammar.5c2f2072b2407b1c"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.18",
+      "sourceRow": 205,
+      "sourceNumber": 203,
+      "pattern": "～（ら）れる　＜受身＞",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.3ba35e2079aa9741"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.205"
+      ],
+      "sharedSkillId": "marugoto.grammar.3ba35e2079aa9741"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.18",
+      "sourceRow": 206,
+      "sourceNumber": 204,
+      "pattern": "～（ら）れる　＜受身＞",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.3ba35e2079aa9741"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.206"
+      ],
+      "sharedSkillId": "marugoto.grammar.3ba35e2079aa9741"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.18",
+      "sourceRow": 207,
+      "sourceNumber": 205,
+      "pattern": "～ようになる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.e42df57fceb1a887"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.207"
+      ],
+      "sharedSkillId": "marugoto.grammar.e42df57fceb1a887"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.18",
+      "sourceRow": 208,
+      "sourceNumber": 206,
+      "pattern": "～なくなる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.8f3009882ba1af5a"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.208"
+      ],
+      "sharedSkillId": "marugoto.grammar.8f3009882ba1af5a"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.18",
+      "sourceRow": 209,
+      "sourceNumber": 207,
+      "pattern": "～（られ）るようになる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.ec0aa6ea669cbfb8"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.209"
+      ],
+      "sharedSkillId": "marugoto.grammar.ec0aa6ea669cbfb8"
+    },
+    {
+      "bookId": "marugoto.elementary2-a2",
+      "lessonId": "marugoto.elementary2-a2.lesson.18",
+      "sourceRow": 210,
+      "sourceNumber": 208,
+      "pattern": "～（られ）なくなる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.36dcd38af8ee00eb"
+      ],
+      "exercises": [
+        "marugoto.elementary2-a2.example.grammar.210"
+      ],
+      "sharedSkillId": "marugoto.grammar.36dcd38af8ee00eb"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.01",
+      "sourceRow": 211,
+      "sourceNumber": 209,
+      "pattern": "～なら",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.8e174c88915eeead"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.211"
+      ],
+      "sharedSkillId": "marugoto.grammar.8e174c88915eeead"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.01",
+      "sourceRow": 212,
+      "sourceNumber": 210,
+      "pattern": "～って言って（い）ました",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.cd0a6940ff408786"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.212"
+      ],
+      "sharedSkillId": "marugoto.grammar.cd0a6940ff408786"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.01",
+      "sourceRow": 213,
+      "sourceNumber": 211,
+      "pattern": "実は、～んです",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.9ce99ebb73943891"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.213"
+      ],
+      "sharedSkillId": "marugoto.grammar.9ce99ebb73943891"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.01",
+      "sourceRow": 214,
+      "sourceNumber": 212,
+      "pattern": "応援の表現",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.08729cb1faa6bf8c"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.214"
+      ],
+      "sharedSkillId": "marugoto.grammar.08729cb1faa6bf8c"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.01",
+      "sourceRow": 215,
+      "sourceNumber": 213,
+      "pattern": "～なければならない",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.cb6f094974a47653"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.215"
+      ],
+      "sharedSkillId": "marugoto.grammar.cb6f094974a47653"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.01",
+      "sourceRow": 216,
+      "sourceNumber": 214,
+      "pattern": "～さ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.8769f6a3d1ebe6bb"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.216"
+      ],
+      "sharedSkillId": "marugoto.grammar.8769f6a3d1ebe6bb"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.01",
+      "sourceRow": 217,
+      "sourceNumber": 215,
+      "pattern": "【助詞】のN",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.379346cddb5a6204"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.217"
+      ],
+      "sharedSkillId": "marugoto.grammar.379346cddb5a6204"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.02",
+      "sourceRow": 218,
+      "sourceNumber": 216,
+      "pattern": "～けど／なくて",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.ada9221417f5a0a5"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.218"
+      ],
+      "sharedSkillId": "marugoto.grammar.ada9221417f5a0a5"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.02",
+      "sourceRow": 219,
+      "sourceNumber": 217,
+      "pattern": "～から",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.starter-a1.skill.kara_reason"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.219"
+      ],
+      "sharedSkillId": "marugoto.starter-a1.skill.kara_reason"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.02",
+      "sourceRow": 220,
+      "sourceNumber": 218,
+      "pattern": "～けど、～から",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.eab02fb8f2cdcf80"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.220"
+      ],
+      "sharedSkillId": "marugoto.grammar.eab02fb8f2cdcf80"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.02",
+      "sourceRow": 221,
+      "sourceNumber": 219,
+      "pattern": "～ても",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.dc0784bdff2fcb11"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.221"
+      ],
+      "sharedSkillId": "marugoto.grammar.dc0784bdff2fcb11"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.02",
+      "sourceRow": 222,
+      "sourceNumber": 220,
+      "pattern": "～ば／なければ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.ea9ca1daf25de1d6"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.222"
+      ],
+      "sharedSkillId": "marugoto.grammar.ea9ca1daf25de1d6"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.03",
+      "sourceRow": 223,
+      "sourceNumber": 221,
+      "pattern": "～ないですか",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.1b97afad4ec27ca0"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.223"
+      ],
+      "sharedSkillId": "marugoto.grammar.1b97afad4ec27ca0"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.03",
+      "sourceRow": 224,
+      "sourceNumber": 222,
+      "pattern": "～ませんか",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.6bdf0011144442dd"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.224"
+      ],
+      "sharedSkillId": "marugoto.grammar.6bdf0011144442dd"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.03",
+      "sourceRow": 225,
+      "sourceNumber": 223,
+      "pattern": "～から",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.starter-a1.skill.kara_reason"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.225"
+      ],
+      "sharedSkillId": "marugoto.starter-a1.skill.kara_reason"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.03",
+      "sourceRow": 226,
+      "sourceNumber": 224,
+      "pattern": "～ので",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.e8d6da4164494821"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.226"
+      ],
+      "sharedSkillId": "marugoto.grammar.e8d6da4164494821"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.03",
+      "sourceRow": 227,
+      "sourceNumber": 225,
+      "pattern": "～みたい",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.59cfc03476003fbb"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.227"
+      ],
+      "sharedSkillId": "marugoto.grammar.59cfc03476003fbb"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.03",
+      "sourceRow": 228,
+      "sourceNumber": 226,
+      "pattern": "～ないです／ありません",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.0eaa80e036b82708"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.228"
+      ],
+      "sharedSkillId": "marugoto.grammar.0eaa80e036b82708"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.04",
+      "sourceRow": 229,
+      "sourceNumber": 227,
+      "pattern": "普通体・丁寧体使い分け",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.6ddad82611d5da30"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.229"
+      ],
+      "sharedSkillId": "marugoto.grammar.6ddad82611d5da30"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.04",
+      "sourceRow": 230,
+      "sourceNumber": 228,
+      "pattern": "～てくれる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.b93ab1436383b3c5"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.230"
+      ],
+      "sharedSkillId": "marugoto.grammar.b93ab1436383b3c5"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.04",
+      "sourceRow": 231,
+      "sourceNumber": 229,
+      "pattern": "～てもらう",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.ad8c0f0d6e6b500a"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.231"
+      ],
+      "sharedSkillId": "marugoto.grammar.ad8c0f0d6e6b500a"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.05",
+      "sourceRow": 232,
+      "sourceNumber": 230,
+      "pattern": "～ように",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.e48cfe9fd760309f"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.232"
+      ],
+      "sharedSkillId": "marugoto.grammar.e48cfe9fd760309f"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.05",
+      "sourceRow": 233,
+      "sourceNumber": 231,
+      "pattern": "普通体・丁寧体使い分け",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.6ddad82611d5da30"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.233"
+      ],
+      "sharedSkillId": "marugoto.grammar.6ddad82611d5da30"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.05",
+      "sourceRow": 234,
+      "sourceNumber": 232,
+      "pattern": "～（よ）うと思っている",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.f2c142c14d260828"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.234"
+      ],
+      "sharedSkillId": "marugoto.grammar.f2c142c14d260828"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.05",
+      "sourceRow": 235,
+      "sourceNumber": 233,
+      "pattern": "～そうだ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.0a2d643bfd24a028"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.235"
+      ],
+      "sharedSkillId": "marugoto.grammar.0a2d643bfd24a028"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.05",
+      "sourceRow": 236,
+      "sourceNumber": 234,
+      "pattern": "～も",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.2d777826c7b7955a"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.236"
+      ],
+      "sharedSkillId": "marugoto.grammar.2d777826c7b7955a"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.06",
+      "sourceRow": 237,
+      "sourceNumber": 235,
+      "pattern": "～でしょう",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.b09f6b7067725c76"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.237"
+      ],
+      "sharedSkillId": "marugoto.grammar.b09f6b7067725c76"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.06",
+      "sourceRow": 238,
+      "sourceNumber": 236,
+      "pattern": "～（よ）うと思うんですが",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.9f10082fbac2aa45"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.238"
+      ],
+      "sharedSkillId": "marugoto.grammar.9f10082fbac2aa45"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.06",
+      "sourceRow": 239,
+      "sourceNumber": 237,
+      "pattern": "～よ／ね／よね",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.dea82cb87bd58d93"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.239"
+      ],
+      "sharedSkillId": "marugoto.grammar.dea82cb87bd58d93"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.06",
+      "sourceRow": 240,
+      "sourceNumber": 238,
+      "pattern": "～てあげる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.7d2cec2126f38f7b"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.240"
+      ],
+      "sharedSkillId": "marugoto.grammar.7d2cec2126f38f7b"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.06",
+      "sourceRow": 241,
+      "sourceNumber": 239,
+      "pattern": "～なくてもいい／だいじょうぶ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.8a9bf3a517a09ac0"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.241"
+      ],
+      "sharedSkillId": "marugoto.grammar.8a9bf3a517a09ac0"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.07",
+      "sourceRow": 242,
+      "sourceNumber": 240,
+      "pattern": "～て（い）て",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.5dc441a9e74534b7"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.242"
+      ],
+      "sharedSkillId": "marugoto.grammar.5dc441a9e74534b7"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.07",
+      "sourceRow": 243,
+      "sourceNumber": 241,
+      "pattern": "～のことで",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.4fa62a241b0d1dd9"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.243"
+      ],
+      "sharedSkillId": "marugoto.grammar.4fa62a241b0d1dd9"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.07",
+      "sourceRow": 244,
+      "sourceNumber": 242,
+      "pattern": "～かもしれない",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.5c2f2072b2407b1c"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.244"
+      ],
+      "sharedSkillId": "marugoto.grammar.5c2f2072b2407b1c"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.07",
+      "sourceRow": 245,
+      "sourceNumber": 243,
+      "pattern": "～のに",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.011af72a910ac4ac"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.245"
+      ],
+      "sharedSkillId": "marugoto.grammar.011af72a910ac4ac"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.07",
+      "sourceRow": 246,
+      "sourceNumber": 244,
+      "pattern": "～て欲しい",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.cfef16017b95c95a"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.246"
+      ],
+      "sharedSkillId": "marugoto.grammar.cfef16017b95c95a"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.08",
+      "sourceRow": 247,
+      "sourceNumber": 245,
+      "pattern": "～そうだ",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.e5ac58aa0bcf6c64"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.247"
+      ],
+      "sharedSkillId": "marugoto.grammar.e5ac58aa0bcf6c64"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.08",
+      "sourceRow": 248,
+      "sourceNumber": 246,
+      "pattern": "普通体・丁寧体使い分け",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.6ddad82611d5da30"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.248"
+      ],
+      "sharedSkillId": "marugoto.grammar.6ddad82611d5da30"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.08",
+      "sourceRow": 249,
+      "sourceNumber": 247,
+      "pattern": "自動詞・他動詞",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.517ac017638f32d0"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.249"
+      ],
+      "sharedSkillId": "marugoto.grammar.517ac017638f32d0"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.08",
+      "sourceRow": 250,
+      "sourceNumber": 248,
+      "pattern": "～ながら",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.5f8bd86335757118"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.250"
+      ],
+      "sharedSkillId": "marugoto.grammar.5f8bd86335757118"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.09",
+      "sourceRow": 251,
+      "sourceNumber": 249,
+      "pattern": "～たら、～たいと思って（い）る",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.d12d73d9f67dd071"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.251"
+      ],
+      "sharedSkillId": "marugoto.grammar.d12d73d9f67dd071"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.09",
+      "sourceRow": 252,
+      "sourceNumber": 250,
+      "pattern": "～ことができる",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.36e74a4ebe326f1f"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.252"
+      ],
+      "sharedSkillId": "marugoto.grammar.36e74a4ebe326f1f"
+    },
+    {
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "lessonId": "marugoto.pre-intermediate-a2b1.topic.09",
+      "sourceRow": 253,
+      "sourceNumber": 251,
+      "pattern": "～より～方が～",
+      "status": "authored-awaiting-language-review",
+      "skills": [
+        "marugoto.grammar.5659f272eb85ee39"
+      ],
+      "exercises": [
+        "marugoto.pre-intermediate-a2b1.example.grammar.253"
+      ],
+      "sharedSkillId": "marugoto.grammar.5659f272eb85ee39"
+    }
+  ]
+}

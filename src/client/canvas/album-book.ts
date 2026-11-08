@@ -1,7 +1,9 @@
+import { PriorLearningClient } from '@app/client/prior-learning';
+import { priorTargets, type PriorScope, type PriorTarget } from '@app/shared/prior-learning';
+import { wordTarget, wordTargets } from '@app/shared/meanings';
 import { contentPages } from './album-navigation';
 import { renderReading } from './album-reading';
-import { api, ApiRequestError, json } from '@app/client/api';
-import { mainLessonMaterial, type PriorLearningRequest, type PriorLearningResult, type PriorLearningTarget } from '@app/shared/priorLearning';
+import { api } from '@app/client/api';
 import { learningHeaders } from '@app/client/guidedApi';
 import { learningParts } from '@app/shared/learning';
 import { studyWord } from '@app/client/learning';
@@ -9,6 +11,7 @@ import type { Snapshot } from '@app/client/types';
 import type { LessonVideo } from '@app/shared/types';
 import type { Rect } from './canvas';
 import type { StudyAction, StudySurface } from './study-surface';
+import { bookResources, bookForLesson, lessonAvailability, unitLabel } from '@app/shared/books';
 
 export class AlbumLibrary {
   data: Snapshot | null = null;
@@ -20,37 +23,16 @@ export class AlbumLibrary {
   lessonId: string | null = null;
   tab: 'overview' | 'parts' | 'words' | 'extra' | 'videos' = 'overview';
   detail = '';
-  detailTarget: PriorLearningTarget | null = null;
-  markMessage = '';
-  markError = '';
-  pendingMark: PriorLearningRequest | null = null;
   scroll = 0;
   video: LessonVideo | null = null;
+  prior = new PriorLearningClient();
+  recognition: PriorScope | null = null;
+  detailTarget: PriorTarget | null = null;
   private epoch = 0;
   constructor(private changed: () => void) {}
-  clear() { ++this.epoch; this.owner = ''; this.data = null; this.error = ''; this.busy = false; this.search = ''; this.offset = 0; this.lessonId = null; this.detail = ''; this.detailTarget = null; this.markMessage = ''; this.markError = ''; this.pendingMark = null; this.video = null; }
-  async mark(input: Omit<PriorLearningRequest, 'requestId'> | undefined, saved: () => void) {
-    if (this.busy || !this.data || !this.owner) return;
-    if (!this.pendingMark && input) this.pendingMark = { ...input, requestId: crypto.randomUUID() };
-    if (!this.pendingMark) return;
-    const owner = this.owner, epoch = this.epoch;
-    this.busy = true; this.markError = ''; this.markMessage = ''; this.changed();
-    try {
-      const result = await api<PriorLearningResult>('/api/prior-learning', { ...json('POST', this.pendingMark), headers: learningHeaders(owner, this.data.course.publicationId) });
-      if (owner !== this.owner || epoch !== this.epoch) return;
-      this.pendingMark = null;
-      this.markMessage = result.removedCards ? `Отметка отменена. Убрано карточек: ${result.removedCards}.` : result.addedCards ? `Добавлено: ${result.addedCards} карточек · На сегодня, с учётом типов повторения.` : 'Материал уже изучен. Прежнее расписание сохранено.';
-      await this.load(owner);
-      if (owner === this.owner) saved();
-    } catch (error) {
-      if (owner !== this.owner || epoch !== this.epoch) return;
-      this.markError = error instanceof Error ? error.message : 'Не удалось сохранить отметку.'; this.busy = false;
-      if (error instanceof ApiRequestError && error.status >= 400 && error.status < 500) { this.pendingMark = null; await this.load(owner); if (owner === this.owner) saved(); }
-      this.changed();
-    }
-  }
+  clear() { ++this.epoch; this.owner = ''; this.data = null; this.error = ''; this.busy = false; this.search = ''; this.offset = 0; this.lessonId = null; this.detail = ''; this.recognition=null;this.detailTarget=null; this.video = null; }
   async load(owner: string) {
-    if (this.owner !== owner) this.clear(); const epoch = ++this.epoch; this.owner = owner; this.busy = true; this.error = ''; this.changed();
+    if (this.owner !== owner) this.clear(); const epoch = ++this.epoch; this.owner = owner; this.prior.bind(owner); this.busy = true; this.error = ''; this.changed();
     try {
       const headers = learningHeaders(owner), course = await api<Snapshot['course']>('/api/course', {headers});
       const pinned = {headers:learningHeaders(owner,course.publicationId)};
@@ -94,16 +76,20 @@ export function bookRows(surface: StudySurface, title: string, items: StudyActio
 
 export function renderBook(surface: StudySurface, library: AlbumLibrary, options: {
   safe: (action: StudyAction) => StudyAction; changed: () => void; home: () => void; learn: (id: string) => void;
-  saved: () => void;
-  train: (id: string) => void; trainGrammar: (id: string) => void; field: (rect: Rect,value: string,changed: (value:string)=>void) => void; video: (material: LessonVideo) => void;
+  play?: (url:string) => void; train: (id: string) => void; trainGrammar: (id: string) => void; field: (rect: Rect,value: string,changed: (value:string)=>void) => void; video: (material: LessonVideo) => void;
 }) {
   const data=library.data!;
-  const change=()=>{library.offset=0;library.search='';library.detail='';library.detailTarget=null;library.scroll=0;options.changed();};
+  const change=()=>{library.detailTarget=null;library.offset=0;library.search='';library.detail='';library.scroll=0;options.changed();};
   const back=()=>{if(library.detail){library.detail='';library.scroll=0;options.changed();}else if(library.tab!=='overview'){library.tab='overview';change();}else options.home();};
-  const known=(target:PriorLearningTarget)=>(target.kind==='word'?data.progress.introducedWordIds:data.progress.introducedSkillIds).includes(target.itemId);
-  const markAction=(target:PriorLearningTarget):StudyAction=>{const mark=data.progress.priorLearning?.find(value=>value.kind===target.kind&&value.itemId===target.itemId);return {id:'book-mark:'+target.kind+':'+target.itemId,text:mark?.canUndo?'Отменить отметку':known(target)?'Изучено':'Уже проходил',enabled:!known(target)||!!mark?.canUndo,run:()=>void library.mark({...target,action:mark?.canUndo?'unmark':'mark'},options.saved)};};
-  if(library.pendingMark&&library.markError){renderReading(surface,library.markError,library,{action:{id:'book-mark-retry',text:'Повторить сохранение',run:()=>void library.mark(undefined,options.saved)},back:{id:'book-mark-home',text:'К урокам',run:options.home},safe:options.safe,changed:options.changed});return;}
-  if(library.detail){renderReading(surface,[library.markError||library.markMessage,library.detail].filter(Boolean).join('\n\n'),library,{...(library.detailTarget?{action:markAction(library.detailTarget)}:{}),back:{id:'book-detail-back',text:'К материалам',run:back},safe:options.safe,changed:options.changed});return;}
+  const prior=library.prior;
+  const mark=(selection:PriorScope)=>{library.recognition=selection;library.offset=0;options.changed();};
+  const send=async(selection?:PriorScope,undo?:string)=>{await prior.send(data.course.publicationId,selection,undo);library.recognition=null;library.detail='';await library.load(library.owner);};
+  if(library.recognition){const selection=library.recognition,targets=priorTargets(data.course,selection);bookRows(surface,'Уже проходил',[
+    {id:'prior-scope',text:`${targets.filter(value=>value.kind==='word').length} слов / значений и ${targets.filter(value=>value.kind==='grammar').length} конструкций. Новые карточки будут доступны сегодня. Прежние сроки сохранятся.`,run:()=>{}},
+    {id:'prior-confirm',text:'Подтвердить прежнее изучение',enabled:!prior.busy,run:()=>void send(selection)},
+    {id:'prior-cancel',text:'Отмена',enabled:!prior.busy,run:()=>{library.recognition=null;options.changed();}},
+  ],library,{safe:options.safe,changed:options.changed,back:()=>{library.recognition=null;options.changed();}});return;}
+  if(library.detail){renderReading(surface,library.detail,library,{back:{id:'book-detail-back',text:'К материалам',run:back},safe:options.safe,changed:options.changed,actions:library.detailTarget?[...(library.detailTarget.kind==='word'&&wordTarget(data.course,library.detailTarget.id)?.audioUrl&&options.play?[{id:'book-word-audio',text:'▶',accessibleLabel:'Послушать слово или пример',run:()=>options.play!(wordTarget(data.course,library.detailTarget!.id)!.audioUrl!)}]:[]),{id:'prior-one',text:'Уже проходил',run:()=>mark({targets:[library.detailTarget!]})}]:[]});return;}
   const lesson=data.course.lessons.find(lesson=>lesson.id===library.lessonId), state=data.learning?.find(state=>state.lessonId===lesson?.id);
   let title='Уроки · '+data.course.lessons.length+' уроков',items:StudyAction[]=[];
   if(!lesson) items=data.course.lessons.filter(lesson=>`${lesson.number} ${lesson.title} ${lesson.topic}`.toLowerCase().includes(library.search.toLowerCase())).map(lesson=>{
@@ -111,29 +97,34 @@ export function renderBook(surface: StudySurface, library: AlbumLibrary, options
     return {id:'book-lesson:'+lesson.id,text:`${lesson.number}. ${lesson.title} · ${state?.completed?'Пройден':state?.completedSteps?'Продолжить':'Новый'}`,run:()=>{library.lessonId=lesson.id;change();}};
   });
   else {
-    title=`${lesson.number}. ${lesson.title}`;
+    const book = bookForLesson(data.course, lesson), unit = unitLabel(book), availability = lessonAvailability(data.course, lesson);
+    title=`${book.shortTitle} · ${unit} ${lesson.number}\n${lesson.title}`;
     const route=data.course.learning?.find(route=>route.lessonId===lesson.id), mainIds=new Set(route?.goals.flatMap(goal=>goal.parts.flatMap(part=>part.words.map(word=>word.wordId))));
     if(library.tab==='overview') items=[
-      {id:'book-learn',text:state?.completed?'Итог урока':state?.completedSteps?'Продолжить урок':'Начать урок',enabled:!!route,run:()=>options.learn(lesson.id)},
-      {id:'book-mark-lesson',text:'Уже проходил основной материал урока',enabled:!!route&&(!state?.completed||mainLessonMaterial(data.course,lesson.id).some(target=>!known(target))),run:()=>void library.mark({kind:'lesson',itemId:lesson.id,action:'mark'},options.saved)},
-      {id:'book-parts',text:`Объяснения и части урока · ${state?.totalParts??route?.goals.flatMap(goal=>goal.parts).length??0}`,run:()=>{library.tab='parts';change();}},
-      {id:'book-main',text:`Словарь урока · ${mainIds.size} слов и фраз`,run:()=>{library.tab='words';change();}},
-      {id:'book-extra',text:'Все слова и конструкции',run:()=>{library.tab='extra';change();}},
-      {id:'book-videos',text:`Видео урока · ${lesson.videos?.length??0}`,run:()=>{library.tab='videos';change();}},
-      {id:'book-train',text:'Практиковать словарь',run:()=>options.train(lesson.id)},
+      ...(availability === 'full' ? [{id:'book-learn',text:state?.completed?'Повторить материал':state?.completedSteps?'Продолжить':'Начать',enabled:!!route,run:()=>options.learn(lesson.id)}] : [{id:'book-availability',text:availability === 'vocabulary' ? 'Пока доступен словарь. Урок готовится' : 'Материал готовится',enabled:false,run:()=>{}}]),
+      ...(route?[{id:'prior-main',text:state?.completionBasis==='recognized'?'Ранее проходил · Основной материал':'Уже проходил · Основной материал',run:()=>mark({lessonId:lesson.id,scope:'main'})},{id:'prior-extra',text:'Отметить дополнительный материал отдельно',run:()=>mark({lessonId:lesson.id,scope:'extra'})}]:[]),
+      ...(prior.last?[{id:'prior-undo',text:'Отменить последнюю отметку',enabled:!prior.busy,run:()=>void send(undefined,prior.last!)}]:[]),
+      ...(prior.pending?[{id:'prior-retry',text:'Повторить сохранение отметки',enabled:!prior.busy,run:()=>void send()}]:[]),
+      ...(prior.error?[{id:'prior-error',text:prior.error,run:()=>{}}]:[]),
+      ...(prior.result?[{id:'prior-result',text:`Добавлено карточек: ${prior.result.added}. Удалено при отмене: ${prior.result.removed}. Сохранено после реального ответа: ${prior.result.retained}. Новые карточки появятся в следующей порции с учётом выбранных типов.`,run:()=>{}}]:[]),
+      {id:'book-parts',text:`${book.unit==='topic'?'Части темы':'Части урока'} и объяснения · ${state?.totalParts??route?.goals.flatMap(goal=>goal.parts).length??0}`,run:()=>{library.tab='parts';change();}},
+      {id:'book-main',text:`Основной материал · ${mainIds.size} слов и фраз`,enabled:!!route,run:()=>{library.tab='words';change();}},
+      {id:'book-extra',text:'Дополнительный словарь и конструкции',run:()=>{library.tab='extra';change();}},
+      {id:'book-videos',text:'Видео, практика и источники',run:()=>{library.tab='videos';change();}},
+      {id:'book-train',text:'Практиковать словарь',enabled:availability !== 'preparing',run:()=>options.train(lesson.id)},
       {id:'book-grammar',text:'Практиковать конструкции',enabled:data.course.exercises.some(exercise=>exercise.lessonId===lesson.id),run:()=>options.trainGrammar(lesson.id)},
     ];
     else if(library.tab==='parts') items=route?.goals.flatMap(goal=>goal.parts.map(part=>{
       const progress=state?.partProgress?.find(value=>value.partId===part.id);
-      return {id:'book-part:'+part.id,text:`${goal.titleRu} · ${part.words.length} слов · ${progress?.completedSteps??0}/${progress?.totalSteps??learningParts({...route,goals:[{...goal,parts:[part]}]})[0]?.length??0}`,run:()=>{library.detail=[goal.titleRu,goal.introductionRu??'',...part.words.map(word=>{const value=data.course.words.find(value=>value.id===word.wordId)!;return `${value.surface} · ${value.kana} — ${value.meaningRu}`;}),part.construction?.explanationRu??''].filter(Boolean).join('\n');options.changed();}};
+      return {id:'book-part:'+part.id,text:`${goal.titleRu} · ${part.words.length} слов · ${progress?.completedSteps??0}/${progress?.totalSteps??learningParts({...route,goals:[{...goal,parts:[part]}]})[0]?.length??0}`,run:()=>{library.detail=[goal.titleRu,goal.introductionRu??'',...part.words.map(word=>{const value=wordTarget(data.course,word.wordId)!;return `${value.surface} · ${value.kana} — ${value.meaningRu}`;}),part.construction?.explanationRu??''].filter(Boolean).join('\n');options.changed();}};
     }))??[];
-    else if(library.tab==='videos') items=(lesson.videos??[]).map(material=>({id:'book-video:'+material.id,text:material.title,run:()=>options.video(material)}));
+    else if(library.tab==='videos') items=[...(lesson.videos??[]).map(material=>({id:'book-video:'+material.id,text:material.title,run:()=>options.video(material)})),
+      ...[...bookResources(book.id),...Array.from(new Map(lesson.sourceRefs.map(source=>[source.url,{title:source.label??'Официальный источник',url:source.url}])).values())].map((source,index)=>({id:'book-source:'+index,text:source.title+' ↗',run:()=>{window.open(source.url,'_blank','noopener,noreferrer');}}))];
     else {
-      const words=data.course.words.filter(word=>studyWord(word)&&word.lessonIds.includes(lesson.id)&&!word.trainingOnly&&(library.tab==='words'?mainIds.has(word.id):true));
-      items=[...words.map(word=>({id:'book-word:'+word.id,text:`${word.surface} · ${word.kana} — ${word.meaningRu}${known({kind:'word',itemId:word.id})?' · Изучено':''}`,run:()=>{library.detailTarget={kind:'word',itemId:word.id};library.detail=`${word.surface} · ${word.kana}\n${word.meaningRu}\n\n${mainIds.has(word.id)?'Основной':'Дополнительный'} материал урока. Отметку можно отменить до первого повторения.`;options.changed();}})),...(library.tab==='extra'?data.course.skills.filter(skill=>skill.reviewStatus!=='draft'&&data.course.exercises.some(exercise=>exercise.lessonId===lesson.id&&exercise.skillId===skill.id&&exercise.reviewStatus!=='draft')).map(skill=>({id:'book-skill:'+skill.id,text:skill.title+(known({kind:'grammar',itemId:skill.id})?' · Изучено':''),run:()=>{library.detailTarget={kind:'grammar',itemId:skill.id};library.detail=skill.title+'\n'+skill.explanationRu+'\n\nОтметку можно отменить до первого повторения.';options.changed();}})):[])];
+      const words=wordTargets(data.course).filter(word=>studyWord(word)&&word.lessonIds.includes(lesson.id)&&!word.trainingOnly&&(library.tab==='words'?mainIds.has(word.id):true));
+      items=[...words.map(word=>({id:'book-word:'+word.id,text:`${word.surface} · ${word.kana} — ${word.meaningRu}`,run:()=>{library.detailTarget={kind:'word',id:word.id};library.detail=`${word.surface} · ${word.kana}\n${word.meaningRu}`+(word.meaningContext?`\n\n${word.meaningContext.surface}\n${word.meaningContext.kana}\n${word.meaningContext.meaningRu}`:'');options.changed();}})),...(library.tab==='extra'?data.course.skills.filter(skill=>data.course.exercises.some(exercise=>exercise.lessonId===lesson.id&&exercise.skillId===skill.id)).map(skill=>({id:'book-skill:'+skill.id,text:skill.title,run:()=>{library.detailTarget={kind:'grammar',id:skill.id};library.detail=skill.title+'\n'+skill.explanationRu;options.changed();}})):[])];
       items=items.filter(item=>item.text.toLowerCase().includes(library.search.toLowerCase()));
     }
   }
-  if(library.markMessage||library.markError)items.unshift({id:'book-mark-status',text:library.markError||library.markMessage,enabled:false,run:()=>{}});
   bookRows(surface,title,items,library,{safe:options.safe,changed:options.changed,back,...(!lesson||library.tab==='words'||library.tab==='extra'?{search:{value:library.search,draw:(rect:Rect)=>options.field(rect,library.search,value=>{library.search=value;library.offset=0;options.changed();})}}:{})});
 }

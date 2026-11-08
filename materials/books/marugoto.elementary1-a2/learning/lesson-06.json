@@ -1,0 +1,967 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.06",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Объясняем дорогу",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.06.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        12,
+        13,
+        14
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.06.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.75714d7e548c5e2e",
+              "explanationRu": "В этой ситуации: библиотека",
+              "example": {
+                "surface": "静かできれいな図書館です。",
+                "kana": "しずかできれいなとしょかんです。",
+                "segments": [
+                  {
+                    "surface": "静",
+                    "reading": "しず"
+                  },
+                  {
+                    "surface": "かできれいな"
+                  },
+                  {
+                    "surface": "図書館",
+                    "reading": "としょかん"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Это тихая красивая библиотека.",
+                "audioUrl": "/audio/marugoto/336852af1b6d3651.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.0d29788bd7ef69f0",
+              "explanationRu": "В этой ситуации: здание",
+              "example": {
+                "surface": "あの低くて赤い建物です。",
+                "kana": "あのひくくてあかいたてものです。",
+                "segments": [
+                  {
+                    "surface": "あの"
+                  },
+                  {
+                    "surface": "低",
+                    "reading": "ひく"
+                  },
+                  {
+                    "surface": "くて"
+                  },
+                  {
+                    "surface": "赤",
+                    "reading": "あか"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "建物",
+                    "reading": "たてもの"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Это то низкое красное здание.",
+                "audioUrl": "/audio/marugoto/48dcc67ceb6221f0.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.f9190718bf52c5ad",
+              "explanationRu": "В этой ситуации: красный",
+              "example": {
+                "surface": "あの低くて赤い建物です。",
+                "kana": "あのひくくてあかいたてものです。",
+                "segments": [
+                  {
+                    "surface": "あの"
+                  },
+                  {
+                    "surface": "低",
+                    "reading": "ひく"
+                  },
+                  {
+                    "surface": "くて"
+                  },
+                  {
+                    "surface": "赤",
+                    "reading": "あか"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "建物",
+                    "reading": "たてもの"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Это то низкое красное здание.",
+                "audioUrl": "/audio/marugoto/48dcc67ceb6221f0.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.2ae0d767e7600cc8",
+              "explanationRu": "В этой ситуации: угол",
+              "example": {
+                "surface": "次の角を左に曲がってください。",
+                "kana": "つぎのかどをひだりにまがってください。",
+                "segments": [
+                  {
+                    "surface": "次",
+                    "reading": "つぎ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "角",
+                    "reading": "かど"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "左",
+                    "reading": "ひだり"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "曲",
+                    "reading": "ま"
+                  },
+                  {
+                    "surface": "がってください。"
+                  }
+                ],
+                "meaningRu": "На следующем углу поверните налево.",
+                "audioUrl": "/audio/marugoto/261f19fa448a2260.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.bccae41f484d4313",
+              "explanationRu": "В этой ситуации: мост",
+              "example": {
+                "surface": "橋を渡って右に曲がってください。",
+                "kana": "はしをわたってみぎにまがってください。",
+                "segments": [
+                  {
+                    "surface": "橋",
+                    "reading": "はし"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "渡",
+                    "reading": "わた"
+                  },
+                  {
+                    "surface": "って"
+                  },
+                  {
+                    "surface": "右",
+                    "reading": "みぎ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "曲",
+                    "reading": "ま"
+                  },
+                  {
+                    "surface": "がってください。"
+                  }
+                ],
+                "meaningRu": "Перейдите мост и поверните направо.",
+                "audioUrl": "/audio/marugoto/79937a2b8e9d4246.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.06.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        12,
+        13,
+        14
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.06.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.e290e549d40d7986",
+              "explanationRu": "В этой ситуации: большой",
+              "example": {
+                "surface": "あの低くて赤い建物です。入口が大きいです。",
+                "kana": "あのひくくてあかいたてものです。いりぐちがおおきいです。",
+                "segments": [
+                  {
+                    "surface": "あの"
+                  },
+                  {
+                    "surface": "低",
+                    "reading": "ひく"
+                  },
+                  {
+                    "surface": "くて"
+                  },
+                  {
+                    "surface": "赤",
+                    "reading": "あか"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "建物",
+                    "reading": "たてもの"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "入口",
+                    "reading": "いりぐち"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "大",
+                    "reading": "おお"
+                  },
+                  {
+                    "surface": "きいです。"
+                  }
+                ],
+                "meaningRu": "Это то низкое красное здание. У него большой вход.",
+                "audioUrl": "/audio/marugoto/a8021dbfd43b594c.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.caff7e7f7e2e879b",
+              "explanationRu": "В этой ситуации: нет; не за что; ничего страшного",
+              "example": {
+                "surface": "左ですか。いいえ、左じゃなくて、右です。",
+                "kana": "ひだりですか。いいえ、ひだりじゃなくて、みぎです。",
+                "segments": [
+                  {
+                    "surface": "左",
+                    "reading": "ひだり"
+                  },
+                  {
+                    "surface": "ですか。いいえ、"
+                  },
+                  {
+                    "surface": "左",
+                    "reading": "ひだり"
+                  },
+                  {
+                    "surface": "じゃなくて、"
+                  },
+                  {
+                    "surface": "右",
+                    "reading": "みぎ"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Налево? Нет, не налево, а направо.",
+                "audioUrl": "/audio/marugoto/1709fa43d14e8d5d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.1348fdc7ea12c682",
+              "explanationRu": "В этой ситуации: лево",
+              "example": {
+                "surface": "次の角を左に曲がってください。",
+                "kana": "つぎのかどをひだりにまがってください。",
+                "segments": [
+                  {
+                    "surface": "次",
+                    "reading": "つぎ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "角",
+                    "reading": "かど"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "左",
+                    "reading": "ひだり"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "曲",
+                    "reading": "ま"
+                  },
+                  {
+                    "surface": "がってください。"
+                  }
+                ],
+                "meaningRu": "На следующем углу поверните налево.",
+                "audioUrl": "/audio/marugoto/261f19fa448a2260.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.dd939a30954ac6cf",
+              "explanationRu": "В этой ситуации: тот",
+              "example": {
+                "surface": "あの低くて赤い建物です。",
+                "kana": "あのひくくてあかいたてものです。",
+                "segments": [
+                  {
+                    "surface": "あの"
+                  },
+                  {
+                    "surface": "低",
+                    "reading": "ひく"
+                  },
+                  {
+                    "surface": "くて"
+                  },
+                  {
+                    "surface": "赤",
+                    "reading": "あか"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "建物",
+                    "reading": "たてもの"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Это то низкое красное здание.",
+                "audioUrl": "/audio/marugoto/48dcc67ceb6221f0.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.fbc9b9c8522e11a7",
+              "explanationRu": "В этой ситуации: право",
+              "example": {
+                "surface": "橋を渡って右に曲がってください。",
+                "kana": "はしをわたってみぎにまがってください。",
+                "segments": [
+                  {
+                    "surface": "橋",
+                    "reading": "はし"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "渡",
+                    "reading": "わた"
+                  },
+                  {
+                    "surface": "って"
+                  },
+                  {
+                    "surface": "右",
+                    "reading": "みぎ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "曲",
+                    "reading": "ま"
+                  },
+                  {
+                    "surface": "がってください。"
+                  }
+                ],
+                "meaningRu": "Перейдите мост и поверните направо.",
+                "audioUrl": "/audio/marugoto/79937a2b8e9d4246.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.06.grammar.83",
+      "titleRu": "～てください",
+      "introductionRu": "てください — вежливая инструкция или просьба.",
+      "canDoIds": [
+        12,
+        13,
+        14
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.06.part.grammar.83",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.83",
+            "explanationRu": "てください — вежливая инструкция или просьба.",
+            "example": {
+              "surface": "次の角を左に曲がってください。",
+              "kana": "つぎのかどをひだりにまがってください。",
+              "segments": [
+                {
+                  "surface": "次",
+                  "reading": "つぎ"
+                },
+                {
+                  "surface": "の"
+                },
+                {
+                  "surface": "角",
+                  "reading": "かど"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "左",
+                  "reading": "ひだり"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "曲",
+                  "reading": "ま"
+                },
+                {
+                  "surface": "がってください。"
+                }
+              ],
+              "meaningRu": "На следующем углу поверните налево.",
+              "audioUrl": "/audio/marugoto/261f19fa448a2260.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "次の",
+                "explanationRu": "Смысловой фрагмент: На следующем углу поверните налево."
+              },
+              {
+                "text": "角を",
+                "explanationRu": "Смысловой фрагмент: На следующем углу поверните налево."
+              },
+              {
+                "text": "左に",
+                "explanationRu": "Смысловой фрагмент: На следующем углу поверните налево."
+              },
+              {
+                "text": "曲がってください",
+                "explanationRu": "てください — вежливая инструкция или просьба."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.06.grammar.84",
+      "titleRu": "～て",
+      "introductionRu": "て-форма связывает последовательные действия; просьба оформляется в конце.",
+      "canDoIds": [
+        12,
+        13,
+        14
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.06.part.grammar.84",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.84",
+            "explanationRu": "て-форма связывает последовательные действия; просьба оформляется в конце.",
+            "example": {
+              "surface": "橋を渡って右に曲がってください。",
+              "kana": "はしをわたってみぎにまがってください。",
+              "segments": [
+                {
+                  "surface": "橋",
+                  "reading": "はし"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "渡",
+                  "reading": "わた"
+                },
+                {
+                  "surface": "って"
+                },
+                {
+                  "surface": "右",
+                  "reading": "みぎ"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "曲",
+                  "reading": "ま"
+                },
+                {
+                  "surface": "がってください。"
+                }
+              ],
+              "meaningRu": "Перейдите мост и поверните направо.",
+              "audioUrl": "/audio/marugoto/79937a2b8e9d4246.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "橋を",
+                "explanationRu": "Смысловой фрагмент: Перейдите мост и поверните направо."
+              },
+              {
+                "text": "渡って",
+                "explanationRu": "Смысловой фрагмент: Перейдите мост и поверните направо."
+              },
+              {
+                "text": "右に",
+                "explanationRu": "Смысловой фрагмент: Перейдите мост и поверните направо."
+              },
+              {
+                "text": "曲がってください",
+                "explanationRu": "て-форма связывает последовательные действия; просьба оформляется в конце."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.06.grammar.85",
+      "titleRu": "～くて～な／～い＋Ｎ",
+      "introductionRu": "Первое い-прилагательное получает くて, второе определяет существительное.",
+      "canDoIds": [
+        12,
+        13,
+        14
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.06.part.grammar.85",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.85",
+            "explanationRu": "Первое い-прилагательное получает くて, второе определяет существительное.",
+            "example": {
+              "surface": "あの低くて赤い建物です。",
+              "kana": "あのひくくてあかいたてものです。",
+              "segments": [
+                {
+                  "surface": "あの"
+                },
+                {
+                  "surface": "低",
+                  "reading": "ひく"
+                },
+                {
+                  "surface": "くて"
+                },
+                {
+                  "surface": "赤",
+                  "reading": "あか"
+                },
+                {
+                  "surface": "い"
+                },
+                {
+                  "surface": "建物",
+                  "reading": "たてもの"
+                },
+                {
+                  "surface": "です。"
+                }
+              ],
+              "meaningRu": "Это то низкое красное здание.",
+              "audioUrl": "/audio/marugoto/48dcc67ceb6221f0.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "あの",
+                "explanationRu": "Смысловой фрагмент: Это то низкое красное здание."
+              },
+              {
+                "text": "低くて",
+                "explanationRu": "Смысловой фрагмент: Это то низкое красное здание."
+              },
+              {
+                "text": "赤い建物です",
+                "explanationRu": "Первое い-прилагательное получает くて, второе определяет существительное."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.06.grammar.86",
+      "titleRu": "～で～な／～い＋Ｎ",
+      "introductionRu": "Первое な-прилагательное соединяем через で, последнее — через な перед существительным.",
+      "canDoIds": [
+        12,
+        13,
+        14
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.06.part.grammar.86",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.86",
+            "explanationRu": "Первое な-прилагательное соединяем через で, последнее — через な перед существительным.",
+            "example": {
+              "surface": "静かできれいな図書館です。",
+              "kana": "しずかできれいなとしょかんです。",
+              "segments": [
+                {
+                  "surface": "静",
+                  "reading": "しず"
+                },
+                {
+                  "surface": "かできれいな"
+                },
+                {
+                  "surface": "図書館",
+                  "reading": "としょかん"
+                },
+                {
+                  "surface": "です。"
+                }
+              ],
+              "meaningRu": "Это тихая красивая библиотека.",
+              "audioUrl": "/audio/marugoto/336852af1b6d3651.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "静かで",
+                "explanationRu": "Смысловой фрагмент: Это тихая красивая библиотека."
+              },
+              {
+                "text": "きれいな",
+                "explanationRu": "Смысловой фрагмент: Это тихая красивая библиотека."
+              },
+              {
+                "text": "図書館です",
+                "explanationRu": "Первое な-прилагательное соединяем через で, последнее — через な перед существительным."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.06.grammar.87",
+      "titleRu": "～じゃなくて",
+      "introductionRu": "じゃなくて исправляет неверную информацию и вводит верную.",
+      "canDoIds": [
+        12,
+        13,
+        14
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.06.part.grammar.87",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.87",
+            "explanationRu": "じゃなくて исправляет неверную информацию и вводит верную.",
+            "example": {
+              "surface": "左じゃなくて右です。",
+              "kana": "ひだりじゃなくてみぎです。",
+              "segments": [
+                {
+                  "surface": "左",
+                  "reading": "ひだり"
+                },
+                {
+                  "surface": "じゃなくて"
+                },
+                {
+                  "surface": "右",
+                  "reading": "みぎ"
+                },
+                {
+                  "surface": "です。"
+                }
+              ],
+              "meaningRu": "Не налево, а направо.",
+              "audioUrl": "/audio/marugoto/906d7fbab812d746.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "左じゃなくて",
+                "explanationRu": "Смысловой фрагмент: Не налево, а направо."
+              },
+              {
+                "text": "右です",
+                "explanationRu": "じゃなくて исправляет неверную информацию и вводит верную."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.12.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        12
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.12.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.12",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Объясните маршрут: перейти мост, затем повернуть направо.",
+              "canDoIds": [
+                12
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Объясните маршрут: перейти мост, затем повернуть направо.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "橋を渡って、右に曲がってください。そこに店があります。",
+                "kana": "はしをわたって、みぎにまがってください。そこにみせがあります。",
+                "segments": [
+                  {
+                    "surface": "橋",
+                    "reading": "はし"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "渡",
+                    "reading": "わた"
+                  },
+                  {
+                    "surface": "って、"
+                  },
+                  {
+                    "surface": "右",
+                    "reading": "みぎ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "曲",
+                    "reading": "ま"
+                  },
+                  {
+                    "surface": "がってください。そこに"
+                  },
+                  {
+                    "surface": "店",
+                    "reading": "みせ"
+                  },
+                  {
+                    "surface": "があります。"
+                  }
+                ],
+                "meaningRu": "Перейдите мост и поверните направо. Там находится магазин.",
+                "audioUrl": "/audio/marugoto/5b5ebcbfe2c9919b.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Объясните маршрут: перейти мост, затем повернуть направо.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.13.goal",
+      "titleRu": "Слушаем и понимаем",
+      "canDoIds": [
+        13
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.13.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.13",
+              "titleRu": "Слушаем и понимаем",
+              "instructionRu": "Собеседник переспросил направление. Определите исправленный вариант.",
+              "canDoIds": [
+                13
+              ],
+              "kind": "listening",
+              "passage": [
+                {
+                  "surface": "左ですか。いいえ、左じゃなくて、右です。",
+                  "kana": "ひだりですか。いいえ、ひだりじゃなくて、みぎです。",
+                  "segments": [
+                    {
+                      "surface": "左",
+                      "reading": "ひだり"
+                    },
+                    {
+                      "surface": "ですか。いいえ、"
+                    },
+                    {
+                      "surface": "左",
+                      "reading": "ひだり"
+                    },
+                    {
+                      "surface": "じゃなくて、"
+                    },
+                    {
+                      "surface": "右",
+                      "reading": "みぎ"
+                    },
+                    {
+                      "surface": "です。"
+                    }
+                  ],
+                  "meaningRu": "Налево? Нет, не налево, а направо.",
+                  "audioUrl": "/audio/marugoto/1709fa43d14e8d5d.m4a"
+                }
+              ],
+              "questionRu": "Куда нужно повернуть?",
+              "options": [
+                {
+                  "id": "b",
+                  "text": "Налево"
+                },
+                {
+                  "id": "a",
+                  "text": "Направо"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Налево? Нет, не налево, а направо."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.14.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        14
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.14.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.14",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Помогите другу узнать здание вдали по двум признакам.",
+              "canDoIds": [
+                14
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Помогите другу узнать здание вдали по двум признакам.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "あの低くて赤い建物です。入口が大きいです。",
+                "kana": "あのひくくてあかいたてものです。いりぐちがおおきいです。",
+                "segments": [
+                  {
+                    "surface": "あの"
+                  },
+                  {
+                    "surface": "低",
+                    "reading": "ひく"
+                  },
+                  {
+                    "surface": "くて"
+                  },
+                  {
+                    "surface": "赤",
+                    "reading": "あか"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "建物",
+                    "reading": "たてもの"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "入口",
+                    "reading": "いりぐち"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "大",
+                    "reading": "おお"
+                  },
+                  {
+                    "surface": "きいです。"
+                  }
+                ],
+                "meaningRu": "Это то низкое красное здание. У него большой вход.",
+                "audioUrl": "/audio/marugoto/a8021dbfd43b594c.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Помогите другу узнать здание вдали по двум признакам.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -87,7 +87,7 @@ suite('quota and deadline registration links on disposable PostgreSQL',()=>{
    const me=await request('/api/me',undefined,cookie);expect(me.status).toBe(200);const user=await me.json();expect(user).toMatchObject({name:'New learner',email:address,isAdmin:false});ids.push(user.id);
    expect((await database.sql`select email_verified,is_admin from users where id=${user.id}`)[0]).toMatchObject({email_verified:true,is_admin:false});
    const progress=await request('/api/progress',undefined,cookie);expect(await progress.json()).toMatchObject({introducedWordIds:[],introducedSkillIds:[]});
-   const learning=await (await request('/api/learning',undefined,cookie)).json();expect(learning.lessons).toHaveLength(18);
+   const learning=await (await request('/api/learning',undefined,cookie)).json();expect(learning.lessons).toHaveLength(loadCourse().learning!.length);
    for(const state of learning.lessons)expect(state).toMatchObject({version:0,completedSteps:0,completed:false});
    expect(await (await request('/api/lists',undefined,cookie)).json()).toEqual({lists:[]});
    for(const rows of [await database.sql`select user_id from review_states where user_id=${user.id}`,await database.sql`select user_id from learning_states where user_id=${user.id}`,await database.sql`select user_id from personal_words where user_id=${user.id}`])expect(rows).toHaveLength(0);

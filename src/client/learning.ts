@@ -14,7 +14,7 @@ export function studyWord(word: Word): boolean {
 }
 
 export function editorWordIds(data: Snapshot, source: StudySource): Set<string> {
-  const ids = new Set(data.progress.introducedWordIds);
+  const ids = new Set(data.progress.introducedLexemeIds ?? data.progress.introducedWordIds);
   if (source.kind === 'lesson' || source.kind === 'guided') for (const word of data.course.words) { if (word.lessonIds.includes(source.lessonId)) ids.add(word.id); }
   if (source.kind === 'list') for (const word of data.lists.find(list => list.id === source.listId)?.words ?? []) { if (studyWord(word)) ids.add(word.id); }
   return ids;

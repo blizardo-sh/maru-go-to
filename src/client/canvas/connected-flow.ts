@@ -1,3 +1,4 @@
+import { wordTargets } from '@app/shared/meanings';
 import { api, ApiRequestError, json, pendingReviews, submitReview } from '@app/client/api';
 import { recallDraftKey, readRecallDraft, writeRecallDraft, learningConflict, invalidLearningChoice, learningHeaders, pendingLearning, submitLearning } from '@app/client/guidedApi';
 import { learningParts, type LearningAdvance, type LearningState } from '@app/shared/learning';
@@ -11,7 +12,7 @@ export function presentation(course: Course) {
   const forms = new Map(course.forms.map(form => [form.id, form]));
   return {
     lessons: (course.learning ?? []).map(route => ({ ...course.lessons.find(lesson => lesson.id === route.lessonId)!, route })),
-    words: course.words,
+    words: wordTargets(course),
     constructions: (course.learning ?? []).flatMap(route => route.goals.flatMap(goal => goal.parts.flatMap(part => {
       if (!part.construction) return [];
       const intro = part.construction, exercise = course.exercises.find(value => value.id === intro.exerciseId);
@@ -39,7 +40,6 @@ export class ConnectedFlow {
   feedback: { attemptId: string; kind: 'good' | 'again' } | null = null;
   course: Course | null = null;
   introducedWordIds = new Set<string>();
-  updateProgress(lessons: LearningState[], wordIds: string[]) { this.states = new Map(lessons.map(state => [state.lessonId, state])); this.introducedWordIds = new Set(wordIds); }
   private states = new Map<string, LearningState>();
   private displayed: LearningState | null = null;
   private held: LearningState | null = null;
@@ -115,7 +115,7 @@ export class ConnectedFlow {
       }
       const [overview, progress] = await Promise.all([api<{ lessons: LearningState[] }>('/api/learning', { headers: learningHeaders(user.id, course.publicationId) }), api<Progress>('/api/progress', { headers: learningHeaders(user.id, course.publicationId) })]);
       if (epoch !== this.generation) return;
-      this.user = user; this.useCourse(course); this.introducedWordIds = new Set(progress.introducedWordIds); this.states = new Map(overview.lessons.map(state => [state.lessonId, state]));
+      this.user = user; this.useCourse(course); this.introducedWordIds = new Set(progress.introducedLexemeIds ?? progress.introducedWordIds); this.states = new Map(overview.lessons.map(state => [state.lessonId, state]));
       return true;
     });
   }
@@ -241,7 +241,7 @@ export class ConnectedFlow {
   progress(id = this.selectedId) {
     const state = id ? this.states.get(id) : undefined;
     const total = state?.totalSteps ?? 0, completed = state?.completedSteps ?? 0;
-    return { completed, total, finished: state?.completed ?? false, started: (state?.version ?? 0) > 0, percent: total ? Math.floor(completed / total * 100) : 0 };
+    return { completionBasis:state?.completionBasis, completed, total, finished: state?.completed ?? false, started: (state?.version ?? 0) > 0, percent: total ? Math.floor(completed / total * 100) : 0 };
   }
   lessonStages(id: string) {
     const route = liveCatalog.lessons.find(lesson => lesson.id === id)?.route;

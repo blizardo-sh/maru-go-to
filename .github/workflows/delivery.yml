@@ -48,6 +48,8 @@ jobs:
         run: bun tests/integration.prior-learning.browser.ts
       - name: Browser learner feedback interactions
         run: bun tests/integration.learner-interaction.browser.ts
+      - name: Browser FSRS intervals and scheduled return
+        run: bun tests/integration.review-scheduling.browser.ts
       - name: Browser thematic training and mastery enrollment
         run: bun tests/helpers/run-guided-browser.ts tests/integration.thematic-training.browser.ts
       - name: Browser guided learning route
@@ -83,7 +85,7 @@ jobs:
         run: |
           docker build --platform linux/amd64 --target api -t japanese-api:check .
           docker build --platform linux/amd64 --target web -t japanese-web:check .
-          docker run --rm --read-only --cap-drop ALL --security-opt no-new-privileges:true --tmpfs /tmp japanese-api:check bun -e 'import {loadCourse} from "./src/server/course.ts"; import {createApp} from "./src/server/app.ts"; const course=loadCourse(); if(course.lessons.length!==18||course.learning?.length!==18||typeof createApp!=="function"||process.getuid()!==1000)throw new Error("Invalid production API");'
+          docker run --rm --read-only --cap-drop ALL --security-opt no-new-privileges:true --tmpfs /tmp japanese-api:check bun -e 'import {loadCourse} from "./src/server/course.ts"; import {createApp} from "./src/server/app.ts"; const course=loadCourse(); const units=course.books?.reduce((sum,book)=>sum+book.unitCount,0); if(!units||course.lessons.length!==units||course.learning?.length!==units||typeof createApp!=="function"||process.getuid()!==1000)throw new Error("Invalid production API");'
           docker run --rm --read-only --cap-drop ALL --security-opt no-new-privileges:true --tmpfs /tmp japanese-api:check sh -c 'bun scripts/content.ts pack /tmp/content.json && bun scripts/content.ts verify-media /tmp/content.json'
           docker run --rm --user 1000:1000 --read-only --cap-drop ALL --security-opt no-new-privileges:true --tmpfs /tmp --tmpfs /config --tmpfs /data japanese-web:check caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
           bash deployment/check-media.sh japanese-web:check

@@ -1,0 +1,604 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.06",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Возможности на отдыхе",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.06.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        16,
+        17,
+        18
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.06.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.dc0f2f3bd0febac2",
+              "explanationRu": "В этой ситуации: участие (принимать участие)",
+              "example": {
+                "surface": "景色：とてもよかった。説明：少し難しかった。もう一度参加したい：はい。",
+                "kana": "けしき：とてもよかった。せつめい：すこしむずかしかった。もういちどさんかしたい：はい。",
+                "segments": [
+                  {
+                    "surface": "景色",
+                    "reading": "けしき"
+                  },
+                  {
+                    "surface": "：とてもよかった。"
+                  },
+                  {
+                    "surface": "説明",
+                    "reading": "せつめい"
+                  },
+                  {
+                    "surface": "："
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "難",
+                    "reading": "むずか"
+                  },
+                  {
+                    "surface": "しかった。もう"
+                  },
+                  {
+                    "surface": "一度",
+                    "reading": "いちど"
+                  },
+                  {
+                    "surface": "参加",
+                    "reading": "さんか"
+                  },
+                  {
+                    "surface": "したい：はい。"
+                  }
+                ],
+                "meaningRu": "Пейзажи: очень понравились. Объяснение: немного трудное. Хочется участвовать снова: да.",
+                "audioUrl": "/audio/marugoto/f8b87c836b77a3cf.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.dbb9007e23be9a12",
+              "explanationRu": "В этой ситуации: тур",
+              "example": {
+                "surface": "このツアーでは、お城の中が見られますか。写真も撮れますか。",
+                "kana": "このツアーでは、おしろのなかがみられますか。しゃしんもとれますか。",
+                "segments": [
+                  {
+                    "surface": "このツアーでは、お"
+                  },
+                  {
+                    "surface": "城",
+                    "reading": "しろ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "中",
+                    "reading": "なか"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "られますか。"
+                  },
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "撮",
+                    "reading": "と"
+                  },
+                  {
+                    "surface": "れますか。"
+                  }
+                ],
+                "meaningRu": "На этой экскурсии можно посмотреть замок изнутри? Можно фотографировать?",
+                "audioUrl": "/audio/marugoto/eeaad405c2c66700.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.eb80e6bd05cee008",
+              "explanationRu": "В этой ситуации: замок, крепость",
+              "example": {
+                "surface": "このツアーでは、お城の中が見られますか。写真も撮れますか。",
+                "kana": "このツアーでは、おしろのなかがみられますか。しゃしんもとれますか。",
+                "segments": [
+                  {
+                    "surface": "このツアーでは、お"
+                  },
+                  {
+                    "surface": "城",
+                    "reading": "しろ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "中",
+                    "reading": "なか"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "られますか。"
+                  },
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "撮",
+                    "reading": "と"
+                  },
+                  {
+                    "surface": "れますか。"
+                  }
+                ],
+                "meaningRu": "На этой экскурсии можно посмотреть замок изнутри? Можно фотографировать?",
+                "audioUrl": "/audio/marugoto/eeaad405c2c66700.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.25391206d8ff5375",
+              "explanationRu": "В этой ситуации: очень",
+              "example": {
+                "surface": "景色：とてもよかった。説明：少し難しかった。もう一度参加したい：はい。",
+                "kana": "けしき：とてもよかった。せつめい：すこしむずかしかった。もういちどさんかしたい：はい。",
+                "segments": [
+                  {
+                    "surface": "景色",
+                    "reading": "けしき"
+                  },
+                  {
+                    "surface": "：とてもよかった。"
+                  },
+                  {
+                    "surface": "説明",
+                    "reading": "せつめい"
+                  },
+                  {
+                    "surface": "："
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "難",
+                    "reading": "むずか"
+                  },
+                  {
+                    "surface": "しかった。もう"
+                  },
+                  {
+                    "surface": "一度",
+                    "reading": "いちど"
+                  },
+                  {
+                    "surface": "参加",
+                    "reading": "さんか"
+                  },
+                  {
+                    "surface": "したい：はい。"
+                  }
+                ],
+                "meaningRu": "Пейзажи: очень понравились. Объяснение: немного трудное. Хочется участвовать снова: да.",
+                "audioUrl": "/audio/marugoto/f8b87c836b77a3cf.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.06.grammar.157",
+      "titleRu": "～（られ）る　＜可能＞",
+      "introductionRu": "Потенциальная форма выражает возможность; 見る → 見られる.",
+      "canDoIds": [
+        16,
+        17,
+        18
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.06.part.grammar.157",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.157",
+            "explanationRu": "Потенциальная форма выражает возможность; 見る → 見られる.",
+            "example": {
+              "surface": "ここから海が見られます。",
+              "kana": "ここからうみがみられます。",
+              "segments": [
+                {
+                  "surface": "ここから"
+                },
+                {
+                  "surface": "海",
+                  "reading": "うみ"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "見",
+                  "reading": "み"
+                },
+                {
+                  "surface": "られます。"
+                }
+              ],
+              "meaningRu": "Отсюда можно увидеть море.",
+              "audioUrl": "/audio/marugoto/5cc9189093c87388.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "ここから",
+                "explanationRu": "Смысловой фрагмент: Отсюда можно увидеть море."
+              },
+              {
+                "text": "海が",
+                "explanationRu": "Смысловой фрагмент: Отсюда можно увидеть море."
+              },
+              {
+                "text": "見られます",
+                "explanationRu": "Потенциальная форма выражает возможность; 見る → 見られる."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.06.grammar.158",
+      "titleRu": "～し",
+      "introductionRu": "し перечисляет несколько доводов или впечатлений без исчерпывающего списка.",
+      "canDoIds": [
+        16,
+        17,
+        18
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.06.part.grammar.158",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.158",
+            "explanationRu": "し перечисляет несколько доводов или впечатлений без исчерпывающего списка.",
+            "example": {
+              "surface": "船にも乗ったし写真も撮れました。",
+              "kana": "ふねにものったししゃしんもとれました。",
+              "segments": [
+                {
+                  "surface": "船",
+                  "reading": "ふね"
+                },
+                {
+                  "surface": "にも"
+                },
+                {
+                  "surface": "乗",
+                  "reading": "の"
+                },
+                {
+                  "surface": "ったし"
+                },
+                {
+                  "surface": "写真",
+                  "reading": "しゃしん"
+                },
+                {
+                  "surface": "も"
+                },
+                {
+                  "surface": "撮",
+                  "reading": "と"
+                },
+                {
+                  "surface": "れました。"
+                }
+              ],
+              "meaningRu": "Я и на корабле покатался, и смог сделать фотографии.",
+              "audioUrl": "/audio/marugoto/fe185e822e8be469.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "船にも",
+                "explanationRu": "Смысловой фрагмент: Я и на корабле покатался, и смог сделать фотографии."
+              },
+              {
+                "text": "乗ったし",
+                "explanationRu": "Смысловой фрагмент: Я и на корабле покатался, и смог сделать фотографии."
+              },
+              {
+                "text": "写真も",
+                "explanationRu": "Смысловой фрагмент: Я и на корабле покатался, и смог сделать фотографии."
+              },
+              {
+                "text": "撮れました",
+                "explanationRu": "し перечисляет несколько доводов или впечатлений без исчерпывающего списка."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.16.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        16
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.16.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.16",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "В отеле уточните, что можно увидеть во время экскурсии.",
+              "canDoIds": [
+                16
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "В отеле уточните, что можно увидеть во время экскурсии.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "このツアーでは、お城の中が見られますか。写真も撮れますか。",
+                "kana": "このツアーでは、おしろのなかがみられますか。しゃしんもとれますか。",
+                "segments": [
+                  {
+                    "surface": "このツアーでは、お"
+                  },
+                  {
+                    "surface": "城",
+                    "reading": "しろ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "中",
+                    "reading": "なか"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "られますか。"
+                  },
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "撮",
+                    "reading": "と"
+                  },
+                  {
+                    "surface": "れますか。"
+                  }
+                ],
+                "meaningRu": "На этой экскурсии можно посмотреть замок изнутри? Можно фотографировать?",
+                "audioUrl": "/audio/marugoto/eeaad405c2c66700.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: В отеле уточните, что можно увидеть во время экскурсии.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.17.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        17
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.17.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.17",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Поделитесь двумя впечатлениями от экскурсии.",
+              "canDoIds": [
+                17
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Поделитесь двумя впечатлениями от экскурсии.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "景色も見たし、おいしい料理も食べたし、楽しかったです。",
+                "kana": "けしきもみたし、おいしいりょうりもたべたし、たのしかったです。",
+                "segments": [
+                  {
+                    "surface": "景色",
+                    "reading": "けしき"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "たし、おいしい"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べたし、"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しかったです。"
+                  }
+                ],
+                "meaningRu": "Мы и видами любовались, и вкусно поели — было интересно.",
+                "audioUrl": "/audio/marugoto/6debbf013edeba30.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Поделитесь двумя впечатлениями от экскурсии.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.18.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        18
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.18.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.18",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте заполненную анкету об экскурсии.",
+              "canDoIds": [
+                18
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "景色：とてもよかった。説明：少し難しかった。もう一度参加したい：はい。",
+                  "kana": "けしき：とてもよかった。せつめい：すこしむずかしかった。もういちどさんかしたい：はい。",
+                  "segments": [
+                    {
+                      "surface": "景色",
+                      "reading": "けしき"
+                    },
+                    {
+                      "surface": "：とてもよかった。"
+                    },
+                    {
+                      "surface": "説明",
+                      "reading": "せつめい"
+                    },
+                    {
+                      "surface": "："
+                    },
+                    {
+                      "surface": "少",
+                      "reading": "すこ"
+                    },
+                    {
+                      "surface": "し"
+                    },
+                    {
+                      "surface": "難",
+                      "reading": "むずか"
+                    },
+                    {
+                      "surface": "しかった。もう"
+                    },
+                    {
+                      "surface": "一度",
+                      "reading": "いちど"
+                    },
+                    {
+                      "surface": "参加",
+                      "reading": "さんか"
+                    },
+                    {
+                      "surface": "したい：はい。"
+                    }
+                  ],
+                  "meaningRu": "Пейзажи: очень понравились. Объяснение: немного трудное. Хочется участвовать снова: да.",
+                  "audioUrl": "/audio/marugoto/f8b87c836b77a3cf.m4a"
+                }
+              ],
+              "questionRu": "Что было трудным?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Объяснение"
+                },
+                {
+                  "id": "b",
+                  "text": "Виды"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Пейзажи: очень понравились. Объяснение: немного трудное. Хочется участвовать снова: да."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

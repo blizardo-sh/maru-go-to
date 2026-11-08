@@ -1,0 +1,1016 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.01",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Знакомство и имена",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.01.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        1,
+        2
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.01.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.63eae3434b7f8fb0",
+              "explanationRu": "В этой ситуации: смысл",
+              "example": {
+                "surface": "この名前は光という意味です。",
+                "kana": "このなまえはひかりといういみです。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "名前",
+                    "reading": "なまえ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "光",
+                    "reading": "ひかり"
+                  },
+                  {
+                    "surface": "という"
+                  },
+                  {
+                    "surface": "意味",
+                    "reading": "いみ"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Это имя означает «свет».",
+                "audioUrl": "/audio/marugoto/68052b6dabe9483d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.28b76414c5f7c291",
+              "explanationRu": "В этой ситуации: прошлая неделя",
+              "example": {
+                "surface": "写真が好きです。先週撮った写真を友達に見せました。",
+                "kana": "しゃしんがすきです。せんしゅうとったしゃしんをともだちにみせました。",
+                "segments": [
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  },
+                  {
+                    "surface": "先週",
+                    "reading": "せんしゅう"
+                  },
+                  {
+                    "surface": "撮",
+                    "reading": "と"
+                  },
+                  {
+                    "surface": "った"
+                  },
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "せました。"
+                  }
+                ],
+                "meaningRu": "Я люблю фотографию. Я показал другу фотографии, снятые на прошлой неделе.",
+                "audioUrl": "/audio/marugoto/8fac2b86d8547789.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.7905be9b72b867a7",
+              "explanationRu": "В этой ситуации: друг, друзья",
+              "example": {
+                "surface": "写真が好きです。先週撮った写真を友達に見せました。",
+                "kana": "しゃしんがすきです。せんしゅうとったしゃしんをともだちにみせました。",
+                "segments": [
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  },
+                  {
+                    "surface": "先週",
+                    "reading": "せんしゅう"
+                  },
+                  {
+                    "surface": "撮",
+                    "reading": "と"
+                  },
+                  {
+                    "surface": "った"
+                  },
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "せました。"
+                  }
+                ],
+                "meaningRu": "Я люблю фотографию. Я показал другу фотографии, снятые на прошлой неделе.",
+                "audioUrl": "/audio/marugoto/8fac2b86d8547789.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.f304a39b5e728680",
+              "explanationRu": "В этой ситуации: семья",
+              "example": {
+                "surface": "ヒカリといいます。光という意味です。家族がつけてくれた名前です。",
+                "kana": "ヒカリといいます。ひかりといういみです。かぞくがつけてくれたなまえです。",
+                "segments": [
+                  {
+                    "surface": "ヒカリといいます。"
+                  },
+                  {
+                    "surface": "光",
+                    "reading": "ひかり"
+                  },
+                  {
+                    "surface": "という"
+                  },
+                  {
+                    "surface": "意味",
+                    "reading": "いみ"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "がつけてくれた"
+                  },
+                  {
+                    "surface": "名前",
+                    "reading": "なまえ"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Меня зовут Хикари. Это означает «свет». Имя мне дала семья.",
+                "audioUrl": "/audio/marugoto/36acca0d0d261403.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.e27c10e325cc5bbf",
+              "explanationRu": "В этой ситуации: быть, существовать (об одушевленных предметах)",
+              "example": {
+                "surface": "奈良という町に住んでいます。",
+                "kana": "ならというまちにすんでいます。",
+                "segments": [
+                  {
+                    "surface": "奈良",
+                    "reading": "なら"
+                  },
+                  {
+                    "surface": "という"
+                  },
+                  {
+                    "surface": "町",
+                    "reading": "まち"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "住",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "んでいます。"
+                  }
+                ],
+                "meaningRu": "Я живу в городе под названием Нара.",
+                "audioUrl": "/audio/marugoto/d24d619377d91d77.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.01.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        1,
+        2
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.01.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.38fcb282d41550b1",
+              "explanationRu": "В этой ситуации: хороший",
+              "example": {
+                "surface": "ヒカリといいます。光という意味です。家族がつけてくれた名前です。",
+                "kana": "ヒカリといいます。ひかりといういみです。かぞくがつけてくれたなまえです。",
+                "segments": [
+                  {
+                    "surface": "ヒカリといいます。"
+                  },
+                  {
+                    "surface": "光",
+                    "reading": "ひかり"
+                  },
+                  {
+                    "surface": "という"
+                  },
+                  {
+                    "surface": "意味",
+                    "reading": "いみ"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "がつけてくれた"
+                  },
+                  {
+                    "surface": "名前",
+                    "reading": "なまえ"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Меня зовут Хикари. Это означает «свет». Имя мне дала семья.",
+                "audioUrl": "/audio/marugoto/36acca0d0d261403.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.b637eab6bf70782e",
+              "explanationRu": "В этой ситуации: месяц",
+              "example": {
+                "surface": "ヒカリといいます。光という意味です。家族がつけてくれた名前です。",
+                "kana": "ヒカリといいます。ひかりといういみです。かぞくがつけてくれたなまえです。",
+                "segments": [
+                  {
+                    "surface": "ヒカリといいます。"
+                  },
+                  {
+                    "surface": "光",
+                    "reading": "ひかり"
+                  },
+                  {
+                    "surface": "という"
+                  },
+                  {
+                    "surface": "意味",
+                    "reading": "いみ"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "がつけてくれた"
+                  },
+                  {
+                    "surface": "名前",
+                    "reading": "なまえ"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Меня зовут Хикари. Это означает «свет». Имя мне дала семья.",
+                "audioUrl": "/audio/marugoto/36acca0d0d261403.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.5c23767c56d85027",
+              "explanationRu": "В этой ситуации: под, внизу",
+              "example": {
+                "surface": "写真が好きです。先週撮った写真を友達に見せました。",
+                "kana": "しゃしんがすきです。せんしゅうとったしゃしんをともだちにみせました。",
+                "segments": [
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  },
+                  {
+                    "surface": "先週",
+                    "reading": "せんしゅう"
+                  },
+                  {
+                    "surface": "撮",
+                    "reading": "と"
+                  },
+                  {
+                    "surface": "った"
+                  },
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "せました。"
+                  }
+                ],
+                "meaningRu": "Я люблю фотографию. Я показал другу фотографии, снятые на прошлой неделе.",
+                "audioUrl": "/audio/marugoto/8fac2b86d8547789.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.9de12b00cf2e4035",
+              "explanationRu": "В этой ситуации: любимый",
+              "example": {
+                "surface": "写真が好きです。先週撮った写真を友達に見せました。",
+                "kana": "しゃしんがすきです。せんしゅうとったしゃしんをともだちにみせました。",
+                "segments": [
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  },
+                  {
+                    "surface": "先週",
+                    "reading": "せんしゅう"
+                  },
+                  {
+                    "surface": "撮",
+                    "reading": "と"
+                  },
+                  {
+                    "surface": "った"
+                  },
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "せました。"
+                  }
+                ],
+                "meaningRu": "Я люблю фотографию. Я показал другу фотографии, снятые на прошлой неделе.",
+                "audioUrl": "/audio/marugoto/8fac2b86d8547789.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.aa74603de587df7d",
+              "explanationRu": "В этой ситуации: день",
+              "example": {
+                "surface": "昨日読んだ本はおもしろかったです。",
+                "kana": "きのうよんだほんはおもしろかったです。",
+                "segments": [
+                  {
+                    "surface": "昨日",
+                    "reading": "きのう"
+                  },
+                  {
+                    "surface": "読",
+                    "reading": "よ"
+                  },
+                  {
+                    "surface": "んだ"
+                  },
+                  {
+                    "surface": "本",
+                    "reading": "ほん"
+                  },
+                  {
+                    "surface": "はおもしろかったです。"
+                  }
+                ],
+                "meaningRu": "Книга, которую я прочитал вчера, была интересной.",
+                "audioUrl": "/audio/marugoto/1973d79b27d41ebf.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.01.words.3",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        1,
+        2
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.01.part.words.3",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.1818945b1c2d9aaa",
+              "explanationRu": "В этой ситуации: город",
+              "example": {
+                "surface": "奈良という町に住んでいます。",
+                "kana": "ならというまちにすんでいます。",
+                "segments": [
+                  {
+                    "surface": "奈良",
+                    "reading": "なら"
+                  },
+                  {
+                    "surface": "という"
+                  },
+                  {
+                    "surface": "町",
+                    "reading": "まち"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "住",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "んでいます。"
+                  }
+                ],
+                "meaningRu": "Я живу в городе под названием Нара.",
+                "audioUrl": "/audio/marugoto/d24d619377d91d77.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.56fbeb32dadec92f",
+              "explanationRu": "В этой ситуации: ресторан, лавка, магазин",
+              "example": {
+                "surface": "写真が好きです。先週撮った写真を友達に見せました。",
+                "kana": "しゃしんがすきです。せんしゅうとったしゃしんをともだちにみせました。",
+                "segments": [
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  },
+                  {
+                    "surface": "先週",
+                    "reading": "せんしゅう"
+                  },
+                  {
+                    "surface": "撮",
+                    "reading": "と"
+                  },
+                  {
+                    "surface": "った"
+                  },
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "せました。"
+                  }
+                ],
+                "meaningRu": "Я люблю фотографию. Я показал другу фотографии, снятые на прошлой неделе.",
+                "audioUrl": "/audio/marugoto/8fac2b86d8547789.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.bbe0ecab21ce5807",
+              "explanationRu": "В этой ситуации: сейчас",
+              "example": {
+                "surface": "奈良という町に住んでいます。",
+                "kana": "ならというまちにすんでいます。",
+                "segments": [
+                  {
+                    "surface": "奈良",
+                    "reading": "なら"
+                  },
+                  {
+                    "surface": "という"
+                  },
+                  {
+                    "surface": "町",
+                    "reading": "まち"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "住",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "んでいます。"
+                  }
+                ],
+                "meaningRu": "Я живу в городе под названием Нара.",
+                "audioUrl": "/audio/marugoto/d24d619377d91d77.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.e08d579635c5469e",
+              "explanationRu": "В этой ситуации: книга",
+              "example": {
+                "surface": "昨日読んだ本はおもしろかったです。",
+                "kana": "きのうよんだほんはおもしろかったです。",
+                "segments": [
+                  {
+                    "surface": "昨日",
+                    "reading": "きのう"
+                  },
+                  {
+                    "surface": "読",
+                    "reading": "よ"
+                  },
+                  {
+                    "surface": "んだ"
+                  },
+                  {
+                    "surface": "本",
+                    "reading": "ほん"
+                  },
+                  {
+                    "surface": "はおもしろかったです。"
+                  }
+                ],
+                "meaningRu": "Книга, которую я прочитал вчера, была интересной.",
+                "audioUrl": "/audio/marugoto/1973d79b27d41ebf.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.01.grammar.133",
+      "titleRu": "～という意味",
+      "introductionRu": "という意味 объясняет значение слова или имени.",
+      "canDoIds": [
+        1,
+        2
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.01.part.grammar.133",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.133",
+            "explanationRu": "という意味 объясняет значение слова или имени.",
+            "example": {
+              "surface": "この名前は光という意味です。",
+              "kana": "このなまえはひかりといういみです。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "名前",
+                  "reading": "なまえ"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "光",
+                  "reading": "ひかり"
+                },
+                {
+                  "surface": "という"
+                },
+                {
+                  "surface": "意味",
+                  "reading": "いみ"
+                },
+                {
+                  "surface": "です。"
+                }
+              ],
+              "meaningRu": "Это имя означает «свет».",
+              "audioUrl": "/audio/marugoto/68052b6dabe9483d.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Это имя означает «свет»."
+              },
+              {
+                "text": "名前は",
+                "explanationRu": "Смысловой фрагмент: Это имя означает «свет»."
+              },
+              {
+                "text": "光という意味です",
+                "explanationRu": "という意味 объясняет значение слова или имени."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.01.grammar.134",
+      "titleRu": "～というN",
+      "introductionRu": "Название + という + категория вводит имя объекта, которое собеседник может не знать.",
+      "canDoIds": [
+        1,
+        2
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.01.part.grammar.134",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.134",
+            "explanationRu": "Название + という + категория вводит имя объекта, которое собеседник может не знать.",
+            "example": {
+              "surface": "奈良という町に住んでいます。",
+              "kana": "ならというまちにすんでいます。",
+              "segments": [
+                {
+                  "surface": "奈良",
+                  "reading": "なら"
+                },
+                {
+                  "surface": "という"
+                },
+                {
+                  "surface": "町",
+                  "reading": "まち"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "住",
+                  "reading": "す"
+                },
+                {
+                  "surface": "んでいます。"
+                }
+              ],
+              "meaningRu": "Я живу в городе под названием Нара.",
+              "audioUrl": "/audio/marugoto/d24d619377d91d77.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "奈良という",
+                "explanationRu": "Смысловой фрагмент: Я живу в городе под названием Нара."
+              },
+              {
+                "text": "町に",
+                "explanationRu": "Смысловой фрагмент: Я живу в городе под названием Нара."
+              },
+              {
+                "text": "住んでいます",
+                "explanationRu": "Название + という + категория вводит имя объекта, которое собеседник может не знать."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.01.grammar.135",
+      "titleRu": "文＋N　＜連体修飾節＞",
+      "introductionRu": "Определяющая фраза ставится перед существительным без относительного местоимения.",
+      "canDoIds": [
+        1,
+        2
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.01.part.grammar.135",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.135",
+            "explanationRu": "Определяющая фраза ставится перед существительным без относительного местоимения.",
+            "example": {
+              "surface": "昨日読んだ本はおもしろかったです。",
+              "kana": "きのうよんだほんはおもしろかったです。",
+              "segments": [
+                {
+                  "surface": "昨日",
+                  "reading": "きのう"
+                },
+                {
+                  "surface": "読",
+                  "reading": "よ"
+                },
+                {
+                  "surface": "んだ"
+                },
+                {
+                  "surface": "本",
+                  "reading": "ほん"
+                },
+                {
+                  "surface": "はおもしろかったです。"
+                }
+              ],
+              "meaningRu": "Книга, которую я прочитал вчера, была интересной.",
+              "audioUrl": "/audio/marugoto/1973d79b27d41ebf.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "昨日",
+                "explanationRu": "Смысловой фрагмент: Книга, которую я прочитал вчера, была интересной."
+              },
+              {
+                "text": "読んだ本は",
+                "explanationRu": "Смысловой фрагмент: Книга, которую я прочитал вчера, была интересной."
+              },
+              {
+                "text": "おもしろかったです",
+                "explanationRu": "Определяющая фраза ставится перед существительным без относительного местоимения."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.01.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        1
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.01.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.01",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Представьтесь и объясните значение имени или его происхождение.",
+              "canDoIds": [
+                1
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Представьтесь и объясните значение имени или его происхождение.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "ヒカリといいます。光という意味です。家族がつけてくれた名前です。",
+                "kana": "ヒカリといいます。ひかりといういみです。かぞくがつけてくれたなまえです。",
+                "segments": [
+                  {
+                    "surface": "ヒカリといいます。"
+                  },
+                  {
+                    "surface": "光",
+                    "reading": "ひかり"
+                  },
+                  {
+                    "surface": "という"
+                  },
+                  {
+                    "surface": "意味",
+                    "reading": "いみ"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "がつけてくれた"
+                  },
+                  {
+                    "surface": "名前",
+                    "reading": "なまえ"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Меня зовут Хикари. Это означает «свет». Имя мне дала семья.",
+                "audioUrl": "/audio/marugoto/36acca0d0d261403.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Представьтесь и объясните значение имени или его происхождение.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.02.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        2
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.02.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.02",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите о своём увлечении и недавнем опыте немного подробнее.",
+              "canDoIds": [
+                2
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите о своём увлечении и недавнем опыте немного подробнее.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "写真が好きです。先週撮った写真を友達に見せました。",
+                "kana": "しゃしんがすきです。せんしゅうとったしゃしんをともだちにみせました。",
+                "segments": [
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  },
+                  {
+                    "surface": "先週",
+                    "reading": "せんしゅう"
+                  },
+                  {
+                    "surface": "撮",
+                    "reading": "と"
+                  },
+                  {
+                    "surface": "った"
+                  },
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "せました。"
+                  }
+                ],
+                "meaningRu": "Я люблю фотографию. Я показал другу фотографии, снятые на прошлой неделе.",
+                "audioUrl": "/audio/marugoto/8fac2b86d8547789.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите о своём увлечении и недавнем опыте немного подробнее.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

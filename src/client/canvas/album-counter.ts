@@ -1,6 +1,7 @@
+import { ratingOptions } from '@app/client/review-ratings';
 import { Sprite, type Texture } from 'pixi.js';
 import { readingVariants, type CounterCard } from '@app/shared/counters';
-import type { Course } from '@app/shared/types';
+import type { Course, Rating, ReviewSchedule } from '@app/shared/types';
 import type { Rect } from './canvas';
 import { StudySurface, type StudyAction, type StudyChoice } from './study-surface';
 
@@ -16,9 +17,9 @@ export function counterPicture(surface: StudySurface, picture: Texture | undefin
   surface.texts.push({ value: label, rect, size: 0 });
 }
 export function renderCounterCard(surface: StudySurface, card: CounterCard, course: Course, draft: CounterDraft, options: {
-  prompt?: Rect; pictures: Map<number, Texture>; intro: boolean; busy: boolean; heard: boolean; mediaError: string;
+  schedule?: ReviewSchedule; prompt?: Rect; pictures: Map<number, Texture>; intro: boolean; busy: boolean; heard: boolean; mediaError: string;
   changed: () => void; play: (url?: string) => void; introduce: () => void; choose: (id: string, helped: boolean) => void;
-  grade: (rating: 1 | 3, helped: boolean) => void; next?: () => void; safe: (action: StudyAction) => StudyAction;
+  grade: (rating: Rating, helped: boolean) => void; next?: () => void; safe: (action: StudyAction) => StudyAction;
 }) {
   const a = surface.body, safe = options.safe, footer = (actions: StudyAction[]) => surface.footer(actions.map(safe));
   const openRule = () => { draft.helped = true; draft.rule = true; options.changed(); };
@@ -46,10 +47,7 @@ export function renderCounterCard(surface: StudySurface, card: CounterCard, cour
     else surface.text('Назовите количество по-японски', answer, 19, false, true);
     if (draft.revealed) surface.action(safe({id:'counter-rule',text:'Правило',fontSize:16,run:openRule}),{x:answer.x,y:answer.y+answer.height-44,width:Math.min(140,answer.width-54),height:44});
     if (draft.revealed) surface.action(safe({ id: 'counter-audio', text: '▶', accessibleLabel: 'Прослушать ответ', run: () => options.play(card.audioUrl) }), { x: answer.x + answer.width - 44, y: answer.y + answer.height - 44, width: 44, height: 44 });
-    footer(draft.revealed ? [
-      { id: 'grade-again', text: 'Ещё раз', run: () => options.grade(1, draft.helped) },
-      { id: 'grade-remember', text: 'Помню', run: () => options.grade(3, draft.helped) },
-    ] : [
+    footer(draft.revealed ? ratingOptions(options.schedule).map(option => ({...option, fontSize: 14, enabled: option.rating === 1 || !draft.helped, run: () => options.grade(option.rating, draft.helped)})) : [
       { id: 'show-answer', text: 'Раскрыть', run: () => { draft.revealed = true; options.changed(); } },
       { id: 'counter-rule', text: 'Правило', run: openRule },
     ]); return;

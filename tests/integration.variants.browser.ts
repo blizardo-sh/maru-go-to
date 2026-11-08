@@ -1,3 +1,4 @@
+import { workspaceNext } from './helpers/workspace-next';
 import { chromium, expect } from '@playwright/test';
 import { createApp } from '../src/server/app';
 import { createLink, consumeLink } from '../src/server/auth';
@@ -102,8 +103,8 @@ try {
         for (let step = 1; step <= 5; step++) await cdp.send('Input.dispatchTouchEvent', { type: 'touchMove', touchPoints: [{ x: x + step * 22, y }] });
         await cdp.send('Input.dispatchTouchEvent', { type: 'touchEnd', touchPoints: [] }); await cdp.detach();
       } else { await gesture.focus(); await page.keyboard.press('ArrowRight'); }
-      expect(submissions).toHaveLength(0); await page.locator('.workspace-next').click();
-      await expect(page.getByRole('heading', { name: 'Повторение завершено', exact: true })).toBeVisible();
+      expect(submissions).toHaveLength(0); await workspaceNext(page).click();
+      await expect(page.getByRole('heading', { name: /^(Повторение завершено|Ближайшее повторение)$/ })).toBeVisible();
       expect(submissions).toHaveLength(1);
       expect(submissions[0]).toMatchObject({ mode: 'grammar', tokenIds: order, revealed: false, exploring: false, rating: 3 });
       const progress = await (await context.request.get(`http://127.0.0.1:${server.port}/api/progress`)).json();

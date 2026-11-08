@@ -1,0 +1,1097 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.02",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Рассказываем об увлечениях",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.02.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        3,
+        4,
+        5
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.02.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.e512c36838643b4c",
+              "explanationRu": "В этой ситуации: дело, факт, обстоятельство; грам. субстантиватор",
+              "example": {
+                "surface": "趣味は写真を撮ることです。",
+                "kana": "しゅみはしゃしんをとることです。",
+                "segments": [
+                  {
+                    "surface": "趣味",
+                    "reading": "しゅみ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "撮",
+                    "reading": "と"
+                  },
+                  {
+                    "surface": "ることです。"
+                  }
+                ],
+                "meaningRu": "Моё хобби — фотографировать.",
+                "audioUrl": "/audio/marugoto/89692df9766c3bc1.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.07f99a3517baea9c",
+              "explanationRu": "В этой ситуации: время",
+              "example": {
+                "surface": "子どものときよく泳ぎました。",
+                "kana": "こどものときよくおよぎました。",
+                "segments": [
+                  {
+                    "surface": "子",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "どものときよく"
+                  },
+                  {
+                    "surface": "泳",
+                    "reading": "およ"
+                  },
+                  {
+                    "surface": "ぎました。"
+                  }
+                ],
+                "meaningRu": "В детстве я часто плавал.",
+                "audioUrl": "/audio/marugoto/ec0d8786b25dda0d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.5bbf7156b87c4fcd",
+              "explanationRu": "В этой ситуации: досуг (свободный о времени)",
+              "example": {
+                "surface": "暇なとき絵を描きます。",
+                "kana": "ひまなときえをかきます。",
+                "segments": [
+                  {
+                    "surface": "暇",
+                    "reading": "ひま"
+                  },
+                  {
+                    "surface": "なとき"
+                  },
+                  {
+                    "surface": "絵",
+                    "reading": "え"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "描",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "きます。"
+                  }
+                ],
+                "meaningRu": "В свободное время я рисую.",
+                "audioUrl": "/audio/marugoto/a298e240d526fbb0.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.be25e6ec541a983a",
+              "explanationRu": "В этой ситуации: рад(а) познакомиться (первая встреча)",
+              "example": {
+                "surface": "はじめまして。ナオです。京都に住んでいます。週末はよく絵を描きます。",
+                "kana": "はじめまして。ナオです。きょうとにすんでいます。しゅうまつはよくえをかきます。",
+                "segments": [
+                  {
+                    "surface": "はじめまして。ナオです。"
+                  },
+                  {
+                    "surface": "京都",
+                    "reading": "きょうと"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "住",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "んでいます。"
+                  },
+                  {
+                    "surface": "週末",
+                    "reading": "しゅうまつ"
+                  },
+                  {
+                    "surface": "はよく"
+                  },
+                  {
+                    "surface": "絵",
+                    "reading": "え"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "描",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "きます。"
+                  }
+                ],
+                "meaningRu": "Приятно познакомиться. Я Нао, живу в Киото. По выходным часто рисую.",
+                "audioUrl": "/audio/marugoto/d2e2b844df0e6942.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.9f691d62515e5689",
+              "explanationRu": "В этой ситуации: занятой",
+              "example": {
+                "surface": "忙しいとき音楽を聞きます。",
+                "kana": "いそがしいときおんがくをききます。",
+                "segments": [
+                  {
+                    "surface": "忙",
+                    "reading": "いそが"
+                  },
+                  {
+                    "surface": "しいとき"
+                  },
+                  {
+                    "surface": "音楽",
+                    "reading": "おんがく"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "聞",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "きます。"
+                  }
+                ],
+                "meaningRu": "Когда я занят, я слушаю музыку.",
+                "audioUrl": "/audio/marugoto/7d579768e04cd3bb.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.02.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        3,
+        4,
+        5
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.02.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.32f91f95f187231c",
+              "explanationRu": "В этой ситуации: музыка",
+              "example": {
+                "surface": "忙しいとき音楽を聞きます。",
+                "kana": "いそがしいときおんがくをききます。",
+                "segments": [
+                  {
+                    "surface": "忙",
+                    "reading": "いそが"
+                  },
+                  {
+                    "surface": "しいとき"
+                  },
+                  {
+                    "surface": "音楽",
+                    "reading": "おんがく"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "聞",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "きます。"
+                  }
+                ],
+                "meaningRu": "Когда я занят, я слушаю музыку.",
+                "audioUrl": "/audio/marugoto/7d579768e04cd3bb.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.4262c6c61ace3e06",
+              "explanationRu": "В этой ситуации: писать",
+              "example": {
+                "surface": "暇なとき絵を描きます。",
+                "kana": "ひまなときえをかきます。",
+                "segments": [
+                  {
+                    "surface": "暇",
+                    "reading": "ひま"
+                  },
+                  {
+                    "surface": "なとき"
+                  },
+                  {
+                    "surface": "絵",
+                    "reading": "え"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "描",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "きます。"
+                  }
+                ],
+                "meaningRu": "В свободное время я рисую.",
+                "audioUrl": "/audio/marugoto/a298e240d526fbb0.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.f9f2e4ca0f705faf",
+              "explanationRu": "В этой ситуации: слушать",
+              "example": {
+                "surface": "忙しいとき音楽を聞きます。",
+                "kana": "いそがしいときおんがくをききます。",
+                "segments": [
+                  {
+                    "surface": "忙",
+                    "reading": "いそが"
+                  },
+                  {
+                    "surface": "しいとき"
+                  },
+                  {
+                    "surface": "音楽",
+                    "reading": "おんがく"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "聞",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "きます。"
+                  }
+                ],
+                "meaningRu": "Когда я занят, я слушаю музыку.",
+                "audioUrl": "/audio/marugoto/7d579768e04cd3bb.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.7b31ce54648399ba",
+              "explanationRu": "В этой ситуации: фотография",
+              "example": {
+                "surface": "趣味は写真を撮ることです。",
+                "kana": "しゅみはしゃしんをとることです。",
+                "segments": [
+                  {
+                    "surface": "趣味",
+                    "reading": "しゅみ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "撮",
+                    "reading": "と"
+                  },
+                  {
+                    "surface": "ることです。"
+                  }
+                ],
+                "meaningRu": "Моё хобби — фотографировать.",
+                "audioUrl": "/audio/marugoto/89692df9766c3bc1.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.74620368ce431525",
+              "explanationRu": "В этой ситуации: рисовать (картины)",
+              "example": {
+                "surface": "暇なとき絵を描きます。",
+                "kana": "ひまなときえをかきます。",
+                "segments": [
+                  {
+                    "surface": "暇",
+                    "reading": "ひま"
+                  },
+                  {
+                    "surface": "なとき"
+                  },
+                  {
+                    "surface": "絵",
+                    "reading": "え"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "描",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "きます。"
+                  }
+                ],
+                "meaningRu": "В свободное время я рисую.",
+                "audioUrl": "/audio/marugoto/a298e240d526fbb0.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.02.words.3",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        3,
+        4,
+        5
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.02.part.words.3",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.cc70e5aef62ca0fe",
+              "explanationRu": "В этой ситуации: парк",
+              "example": {
+                "surface": "趣味は写真を撮ることです。休みの日に公園に行きます。",
+                "kana": "しゅみはしゃしんをとることです。やすみのひにこうえんにいきます。",
+                "segments": [
+                  {
+                    "surface": "趣味",
+                    "reading": "しゅみ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "撮",
+                    "reading": "と"
+                  },
+                  {
+                    "surface": "ることです。"
+                  },
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "みの"
+                  },
+                  {
+                    "surface": "日",
+                    "reading": "ひ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "公園",
+                    "reading": "こうえん"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きます。"
+                  }
+                ],
+                "meaningRu": "Моё хобби — фотографировать. В выходные я хожу в парк.",
+                "audioUrl": "/audio/marugoto/8e686c69b5def69d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.9af71ce04d34fc49",
+              "explanationRu": "В этой ситуации: ребенок",
+              "example": {
+                "surface": "子どものときよく泳ぎました。",
+                "kana": "こどものときよくおよぎました。",
+                "segments": [
+                  {
+                    "surface": "子",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "どものときよく"
+                  },
+                  {
+                    "surface": "泳",
+                    "reading": "およ"
+                  },
+                  {
+                    "surface": "ぎました。"
+                  }
+                ],
+                "meaningRu": "В детстве я часто плавал.",
+                "audioUrl": "/audio/marugoto/ec0d8786b25dda0d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.3f346ec8618fc3b8",
+              "explanationRu": "В этой ситуации: хобби",
+              "example": {
+                "surface": "趣味は写真を撮ることです。",
+                "kana": "しゅみはしゃしんをとることです。",
+                "segments": [
+                  {
+                    "surface": "趣味",
+                    "reading": "しゅみ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "撮",
+                    "reading": "と"
+                  },
+                  {
+                    "surface": "ることです。"
+                  }
+                ],
+                "meaningRu": "Моё хобби — фотографировать.",
+                "audioUrl": "/audio/marugoto/89692df9766c3bc1.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.9de12b00cf2e4035",
+              "explanationRu": "В этой ситуации: любимый",
+              "example": {
+                "surface": "はじめまして。アキです。私も絵を描くのが好きです。よろしくお願いします。",
+                "kana": "はじめまして。アキです。わたしもえをかくのがすきです。よろしくおねがいします。",
+                "segments": [
+                  {
+                    "surface": "はじめまして。アキです。"
+                  },
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "絵",
+                    "reading": "え"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "描",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "くのが"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。よろしくお"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いします。"
+                  }
+                ],
+                "meaningRu": "Приятно познакомиться. Я Аки. Я тоже люблю рисовать. Рад знакомству.",
+                "audioUrl": "/audio/marugoto/43c19ecf6871ed42.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.3bdf1f8a19d27583",
+              "explanationRu": "В этой ситуации: часто",
+              "example": {
+                "surface": "子どものときよく泳ぎました。",
+                "kana": "こどものときよくおよぎました。",
+                "segments": [
+                  {
+                    "surface": "子",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "どものときよく"
+                  },
+                  {
+                    "surface": "泳",
+                    "reading": "およ"
+                  },
+                  {
+                    "surface": "ぎました。"
+                  }
+                ],
+                "meaningRu": "В детстве я часто плавал.",
+                "audioUrl": "/audio/marugoto/ec0d8786b25dda0d.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.02.grammar.62",
+      "titleRu": "～こと",
+      "introductionRu": "Словарная форма глагола + こと превращает действие в название занятия.",
+      "canDoIds": [
+        3,
+        4,
+        5
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.02.part.grammar.62",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.62",
+            "explanationRu": "Словарная форма глагола + こと превращает действие в название занятия.",
+            "example": {
+              "surface": "趣味は写真を撮ることです。",
+              "kana": "しゅみはしゃしんをとることです。",
+              "segments": [
+                {
+                  "surface": "趣味",
+                  "reading": "しゅみ"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "写真",
+                  "reading": "しゃしん"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "撮",
+                  "reading": "と"
+                },
+                {
+                  "surface": "ることです。"
+                }
+              ],
+              "meaningRu": "Моё хобби — фотографировать.",
+              "audioUrl": "/audio/marugoto/89692df9766c3bc1.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "趣味は",
+                "explanationRu": "Смысловой фрагмент: Моё хобби — фотографировать."
+              },
+              {
+                "text": "写真を",
+                "explanationRu": "Смысловой фрагмент: Моё хобби — фотографировать."
+              },
+              {
+                "text": "撮ることです",
+                "explanationRu": "Словарная форма глагола + こと превращает действие в название занятия."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.02.grammar.63",
+      "titleRu": "～とき",
+      "introductionRu": "После существительного перед とき ставим の. Прошедшее время главного глагола задаёт время рассказа.",
+      "canDoIds": [
+        3,
+        4,
+        5
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.02.part.grammar.63",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.63",
+            "explanationRu": "После существительного перед とき ставим の. Прошедшее время главного глагола задаёт время рассказа.",
+            "example": {
+              "surface": "子どものときよく泳ぎました。",
+              "kana": "こどものときよくおよぎました。",
+              "segments": [
+                {
+                  "surface": "子",
+                  "reading": "こ"
+                },
+                {
+                  "surface": "どものときよく"
+                },
+                {
+                  "surface": "泳",
+                  "reading": "およ"
+                },
+                {
+                  "surface": "ぎました。"
+                }
+              ],
+              "meaningRu": "В детстве я часто плавал.",
+              "audioUrl": "/audio/marugoto/ec0d8786b25dda0d.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "子どものとき",
+                "explanationRu": "Смысловой фрагмент: В детстве я часто плавал."
+              },
+              {
+                "text": "よく",
+                "explanationRu": "Смысловой фрагмент: В детстве я часто плавал."
+              },
+              {
+                "text": "泳ぎました",
+                "explanationRu": "После существительного перед とき ставим の. Прошедшее время главного глагола задаёт время рассказа."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.02.grammar.64",
+      "titleRu": "～とき",
+      "introductionRu": "い-прилагательное соединяется с とき без の и な.",
+      "canDoIds": [
+        3,
+        4,
+        5
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.02.part.grammar.64",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.64",
+            "explanationRu": "い-прилагательное соединяется с とき без の и な.",
+            "example": {
+              "surface": "忙しいとき音楽を聞きます。",
+              "kana": "いそがしいときおんがくをききます。",
+              "segments": [
+                {
+                  "surface": "忙",
+                  "reading": "いそが"
+                },
+                {
+                  "surface": "しいとき"
+                },
+                {
+                  "surface": "音楽",
+                  "reading": "おんがく"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "聞",
+                  "reading": "き"
+                },
+                {
+                  "surface": "きます。"
+                }
+              ],
+              "meaningRu": "Когда я занят, я слушаю музыку.",
+              "audioUrl": "/audio/marugoto/7d579768e04cd3bb.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "忙しいとき",
+                "explanationRu": "Смысловой фрагмент: Когда я занят, я слушаю музыку."
+              },
+              {
+                "text": "音楽を",
+                "explanationRu": "Смысловой фрагмент: Когда я занят, я слушаю музыку."
+              },
+              {
+                "text": "聞きます",
+                "explanationRu": "い-прилагательное соединяется с とき без の и な."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.02.grammar.65",
+      "titleRu": "～とき",
+      "introductionRu": "Перед とき после な-прилагательного сохраняем な.",
+      "canDoIds": [
+        3,
+        4,
+        5
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.02.part.grammar.65",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.65",
+            "explanationRu": "Перед とき после な-прилагательного сохраняем な.",
+            "example": {
+              "surface": "暇なとき絵を描きます。",
+              "kana": "ひまなときえをかきます。",
+              "segments": [
+                {
+                  "surface": "暇",
+                  "reading": "ひま"
+                },
+                {
+                  "surface": "なとき"
+                },
+                {
+                  "surface": "絵",
+                  "reading": "え"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "描",
+                  "reading": "か"
+                },
+                {
+                  "surface": "きます。"
+                }
+              ],
+              "meaningRu": "В свободное время я рисую.",
+              "audioUrl": "/audio/marugoto/a298e240d526fbb0.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "暇なとき",
+                "explanationRu": "Смысловой фрагмент: В свободное время я рисую."
+              },
+              {
+                "text": "絵を",
+                "explanationRu": "Смысловой фрагмент: В свободное время я рисую."
+              },
+              {
+                "text": "描きます",
+                "explanationRu": "Перед とき после な-прилагательного сохраняем な."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.03.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        3
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.03.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.03",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите о хобби и о том, когда им занимаетесь.",
+              "canDoIds": [
+                3
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите о хобби и о том, когда им занимаетесь.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "趣味は写真を撮ることです。休みの日に公園に行きます。",
+                "kana": "しゅみはしゃしんをとることです。やすみのひにこうえんにいきます。",
+                "segments": [
+                  {
+                    "surface": "趣味",
+                    "reading": "しゅみ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "撮",
+                    "reading": "と"
+                  },
+                  {
+                    "surface": "ることです。"
+                  },
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "みの"
+                  },
+                  {
+                    "surface": "日",
+                    "reading": "ひ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "公園",
+                    "reading": "こうえん"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きます。"
+                  }
+                ],
+                "meaningRu": "Моё хобби — фотографировать. В выходные я хожу в парк.",
+                "audioUrl": "/audio/marugoto/8e686c69b5def69d.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите о хобби и о том, когда им занимаетесь.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.04.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        4
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.04.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.04",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте сообщение нового знакомого и найдите его увлечение.",
+              "canDoIds": [
+                4
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "はじめまして。ナオです。京都に住んでいます。週末はよく絵を描きます。",
+                  "kana": "はじめまして。ナオです。きょうとにすんでいます。しゅうまつはよくえをかきます。",
+                  "segments": [
+                    {
+                      "surface": "はじめまして。ナオです。"
+                    },
+                    {
+                      "surface": "京都",
+                      "reading": "きょうと"
+                    },
+                    {
+                      "surface": "に"
+                    },
+                    {
+                      "surface": "住",
+                      "reading": "す"
+                    },
+                    {
+                      "surface": "んでいます。"
+                    },
+                    {
+                      "surface": "週末",
+                      "reading": "しゅうまつ"
+                    },
+                    {
+                      "surface": "はよく"
+                    },
+                    {
+                      "surface": "絵",
+                      "reading": "え"
+                    },
+                    {
+                      "surface": "を"
+                    },
+                    {
+                      "surface": "描",
+                      "reading": "か"
+                    },
+                    {
+                      "surface": "きます。"
+                    }
+                  ],
+                  "meaningRu": "Приятно познакомиться. Я Нао, живу в Киото. По выходным часто рисую.",
+                  "audioUrl": "/audio/marugoto/d2e2b844df0e6942.m4a"
+                }
+              ],
+              "questionRu": "Чем Нао занимается по выходным?",
+              "options": [
+                {
+                  "id": "b",
+                  "text": "Работает в больнице"
+                },
+                {
+                  "id": "a",
+                  "text": "Рисует"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Приятно познакомиться. Я Нао, живу в Киото. По выходным часто рисую."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.05.goal",
+      "titleRu": "Письменный ответ",
+      "canDoIds": [
+        5
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.05.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.05",
+              "titleRu": "Письменный ответ",
+              "instructionRu": "Напишите короткий комментарий новому знакомому: представьтесь и назовите общий интерес.",
+              "canDoIds": [
+                5
+              ],
+              "kind": "production",
+              "response": "written",
+              "supports": [
+                "Напишите короткий комментарий новому знакомому: представьтесь и назовите общий интерес.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "はじめまして。アキです。私も絵を描くのが好きです。よろしくお願いします。",
+                "kana": "はじめまして。アキです。わたしもえをかくのがすきです。よろしくおねがいします。",
+                "segments": [
+                  {
+                    "surface": "はじめまして。アキです。"
+                  },
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "絵",
+                    "reading": "え"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "描",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "くのが"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。よろしくお"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いします。"
+                  }
+                ],
+                "meaningRu": "Приятно познакомиться. Я Аки. Я тоже люблю рисовать. Рад знакомству.",
+                "audioUrl": "/audio/marugoto/43c19ecf6871ed42.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Напишите короткий комментарий новому знакомому: представьтесь и назовите общий интерес.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

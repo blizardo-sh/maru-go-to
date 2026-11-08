@@ -1,3 +1,5 @@
+import type { LearningTask, TaskEvidence } from './learning-tasks';
+import { wordTarget } from './meanings';
 import type { Course, Exercise, ReviewItem, ReviewResult, Segment, Skill, Word, WordForm } from './types';
 
 export interface LearningExample {
@@ -22,6 +24,7 @@ export interface LearningConstruction {
   breakdown: { text: string; explanationRu: string }[];
 }
 export interface LearningPart {
+  tasks?: LearningTask[];
   counterPractice?: { counterId: import("./counters").CounterId; quantities: number[]; wordId: string; formats?: ('reading-choice'|'listening-image'|'recall')[] };
   id: string;
   words: LearningWord[];
@@ -50,10 +53,14 @@ export type LearningStep = StepBase & (
   | { kind: 'construction-practice'; exerciseId: string; mode: 'ja-ru' | 'listening' | 'grammar' }
   | { kind: 'counter-practice'; counterId: import('./counters').CounterId; quantity: number; wordId: string; format?: 'reading-choice'|'listening-image'|'recall' }
   | { kind: 'video'; videoId: string }
+  | { kind: 'learning-task'; taskId: string; phase: 'question' | 'feedback' | 'attempt' | 'assessment' }
   | { kind: 'part-complete' }
 );
 export interface LearningRouteState {
-  skippedStepIds?: string[];
+  taskEvidence?: Record<string,TaskEvidence>;
+  recognizedStepIds?: string[];
+  skippedStepIds?: string[]; // Persisted by the previously released prior-learning implementation.
+  recognizedWhole?: boolean;
   partIndex: number;
   pendingStepIds: string[];
   completedStepIds: string[];
@@ -68,6 +75,9 @@ export interface RecallAttempt {
   firstTokenForms?: Record<string, string>;
 }
 export interface LearningState {
+  taskEvidence?: Record<string,TaskEvidence>;
+  completionBasis?: 'performed' | 'self-assessed' | 'recognized';
+  recognizedSteps?: number;
   recallPolicy?: 'recall-v1';
   publicationId?: string;
   lessonId: string;
@@ -84,6 +94,10 @@ export interface LearningState {
   wordChoices?: string[];
 }
 export interface LearningAdvance {
+  rating?: import('./types').Rating;
+  taskAnswer?: string;
+  selfAssessment?: 'achieved' | 'with-help' | 'retry';
+  attempted?: boolean;
   recall?: RecallAttempt;
   publicationId?: string;
   counterChoice?: string;
@@ -92,7 +106,7 @@ export interface LearningAdvance {
   routeVersion: string;
   stateVersion: number;
   stepId: string;
-  action: 'continue' | 'remember' | 'again' | 'skip' | 'start-practice' | 'choose';
+  action: 'continue' | 'remember' | 'again' | 'skip' | 'start-practice' | 'choose' | 'answer' | 'attempt' | 'assess';
   choiceWordId?: string;
   tokenIds?: string[];
   tokenForms?: Record<string, string>;
@@ -120,6 +134,7 @@ export function learningParts(lesson: GuidedLesson): LearningStep[][] {
       for (const mode of ['ja-ru', 'listening', 'grammar'] as const) steps.push({ ...base, id: `${part.id}:${mode}:${exerciseId}`, kind: 'construction-practice', exerciseId, mode });
     }
     if (part.counterPractice) for (const quantity of part.counterPractice.quantities) for (const format of part.counterPractice.formats ?? ['reading-choice']) steps.push({ ...base, id: `${part.id}:counter:${part.counterPractice.counterId}:${quantity}${format === 'reading-choice' ? '' : ':'+format}`, kind: 'counter-practice', counterId: part.counterPractice.counterId, quantity, wordId: part.counterPractice.wordId, format });
+    for (const task of part.tasks ?? []) for (const phase of task.kind === 'production' ? ['attempt','assessment'] as const : ['question','feedback'] as const) steps.push({...base,id:`${part.id}:task:${task.id}:${phase}`,kind:'learning-task',taskId:task.id,phase});
     if (index === goal.parts.length - 1) for (const videoId of goal.videoIds ?? []) steps.push({ ...base, id: `${part.id}:video:${videoId}`, kind: 'video', videoId });
     steps.push({ ...base, id: `${part.id}:complete`, kind: 'part-complete' });
     return steps;
@@ -131,30 +146,6 @@ export function learningPartProgress(parts: LearningStep[][], state: Pick<Learni
 }
 export function initialLearningState(lesson: GuidedLesson): LearningRouteState {
   return { partIndex: 0, pendingStepIds: learningParts(lesson)[0]!.map(step => step.id), completedStepIds: [] };
-}
-// Keep skipped steps separate so undo can reopen material without erasing real work.
-export function applyKnownLearning(course: Course, lesson: GuidedLesson, state: LearningRouteState, words: Set<string>, skills: Set<string>): LearningRouteState {
-  if (!words.size && !skills.size && !state.skippedStepIds?.length) return state;
-  const parts = learningParts(lesson), previouslySkipped = new Set(state.skippedStepIds);
-  const completed = new Set(state.completedStepIds.filter(id => !previouslySkipped.has(id)));
-  const known = (step: LearningStep) => step.kind === 'word-intro' || step.kind === 'word-practice' ? words.has(step.wordId)
-    : step.kind === 'construction-intro' || step.kind === 'construction-practice' ? skills.has(course.exercises.find(exercise => exercise.id === step.exerciseId)?.skillId ?? '') : false;
-  const primary = (step: LearningStep) => step.kind === 'word-intro' || step.kind === 'construction-intro';
-  const material = parts.flat().filter(primary), wholeLesson = material.length > 0 && material.every(known);
-  const skipped: string[] = [];
-  for (const part of parts) {
-    const main = part.filter(primary), wholePart = main.length > 0 && main.every(known);
-    for (const step of part) if (!completed.has(step.id) && (wholeLesson || wholePart || known(step))) {
-      skipped.push(step.id); completed.add(step.id);
-    }
-  }
-  const index = parts.findIndex(part => part.some(step => !completed.has(step.id)));
-  if (index < 0) return { ...state, partIndex: parts.length, pendingStepIds: [], completedStepIds: [...completed], skippedStepIds: skipped };
-  const remaining = parts[index]!.filter(step => !completed.has(step.id));
-  const oldOrder = index === state.partIndex ? state.pendingStepIds.filter(id => remaining.some(step => step.id === id)) : [];
-  const missing = remaining.filter(step => !oldOrder.includes(step.id));
-  return { ...state, partIndex: index, completedStepIds: [...completed], skippedStepIds: skipped,
-    pendingStepIds: [...missing.filter(step => step.kind === 'word-intro').map(step => step.id), ...oldOrder, ...missing.filter(step => step.kind !== 'word-intro').map(step => step.id)] };
 }
 // Definitions/IDs stay unchanged: only a newly started group's pending order changes.
 export function mixedWordPractice(steps: LearningStep[]): LearningStep[] {
@@ -207,7 +198,7 @@ export function advanceLearningState(lesson: GuidedLesson, state: LearningRouteS
   if (action === 'start-practice') return startLearningPractice(lesson, state);
   const step = currentLearningStep(lesson, state);
   if (!step) throw new Error('Learning route is complete.');
-  const practice = step.kind === 'word-practice' || step.kind === 'construction-practice' || step.kind === 'counter-practice';
+  const practice = step.kind === 'learning-task' && step.phase !== 'feedback' || step.kind === 'word-practice' || step.kind === 'construction-practice' || step.kind === 'counter-practice';
   if (practice ? !['remember', 'again'].includes(action) : step.kind === 'video' ? !['continue', 'skip'].includes(action) : action !== 'continue') throw new Error('Action does not match learning step.');
   const next = structuredClone(state);
   next.pendingStepIds.shift();
@@ -229,29 +220,43 @@ export function advanceLearningState(lesson: GuidedLesson, state: LearningRouteS
 export function validateLearning(course: Course, lessons: GuidedLesson[], complete = false): void {
   const ensure = (ok: unknown, message: string): void => { if (!ok) throw new Error(`Invalid learning material: ${message}`); };
   ensure(new Set(lessons.map(lesson => lesson.lessonId)).size === lessons.length, 'duplicate lesson');
-  if (complete) ensure(lessons.length === 18 && course.lessons.every(lesson => lessons.some(route => route.lessonId === lesson.id)), 'all 18 lessons required');
+  if (complete) for (const lesson of course.lessons) {
+    const hasRoute = lessons.some(route => route.lessonId === lesson.id);
+    ensure(lesson.availability === undefined || lesson.availability === 'full' ? hasRoute : !hasRoute, `route availability ${lesson.id}`);
+  }
   const audio = (value: string) => /^\/audio\/[a-z0-9][a-z0-9/_.-]*\.(m4a|mp3|ogg|wav)$/i.test(value) && !value.split('/').some(segment => segment === '..' || segment === '.');
   const text = (value: unknown) => typeof value === 'string' && value.trim().length > 0;
   const example = (value: LearningExample, id: string) => {
     ensure(text(value.surface) && text(value.kana) && text(value.meaningRu), `example text ${id}`);
     ensure(value.segments?.map(segment => segment.surface).join('') === value.surface && value.segments.map(segment => segment.reading ?? segment.surface).join('') === value.kana, `example reading ${id}`);
-    ensure(/^[ぁ-ゖァ-ヺー・\s。、！？!?「」『』（）()…,.\d]+$/u.test(value.kana), `example Japanese reading ${id}`);
+    ensure(/^[ぁ-ゖァ-ヺー・\s。、！？!?「」『』（）()…,.：:\d]+$/u.test(value.kana), `example Japanese reading ${id}`);
     ensure(audio(value.audioUrl), `example audio ${id}`);
     ensure(value.audioText === undefined || (typeof value.audioText === 'string' && value.audioText.length > 0 && value.audioText.length <= 300 && value.audioText === value.audioText.trim() && learningAudioTextPattern.test(value.audioText)), `example pronunciation ${id}`);
   };
   const officialSource = (entry: { sourceRefs: Word['sourceRefs'] }) => entry.sourceRefs?.length && entry.sourceRefs.every(source => {
-    try { const url = new URL(source.url); return url.protocol === 'https:' && ['marugoto.jpf.go.jp', 'marugotoweb.jp', 'a1.marugotoweb.jp', 'a2.marugotoweb.jp', 'www.irodori.jpf.go.jp', 'www.hirogaru-nihongo.jpf.go.jp'].includes(url.hostname); } catch { return false; }
+    try { const url = new URL(source.url); return url.protocol === 'https:' && ['marugoto.jpf.go.jp', 'marugotoweb.jp', 'a1.marugotoweb.jp', 'a2.marugotoweb.jp', 'a2-2.marugotoweb.jp', 'md.jpf.go.jp', 'www.irodori.jpf.go.jp', 'www.hirogaru-nihongo.jpf.go.jp'].includes(url.hostname); } catch { return false; }
   });
   for (const route of lessons) {
     const lesson = course.lessons.find(item => item.id === route.lessonId);
     ensure(lesson && text(route.version) && text(route.titleRu) && route.goals.length, `lesson ${route.lessonId}`);
-    const goalIds = new Set<string>(); const partIds = new Set<string>(); const words = new Set<string>(); const videos = new Set<string>();
+    const taskIds = new Set<string>(); const goalIds = new Set<string>(); const partIds = new Set<string>(); const words = new Set<string>(); const videos = new Set<string>();
     for (const goal of route.goals) {
       ensure(text(goal.id) && !goalIds.has(goal.id) && text(goal.titleRu) && goal.parts.length, `goal ${goal.id}`); goalIds.add(goal.id);
       ensure(goal.introductionRu === undefined || text(goal.introductionRu), `goal context ${goal.id}`);
       ensure(goal.canDoIds.length && goal.canDoIds.every(id => lesson!.canDoIds.includes(id)), `goal Can-do ${goal.id}`);
       for (const part of goal.parts) {
-        ensure(text(part.id) && !partIds.has(part.id) && part.words.length <= 5 && (part.words.length || part.construction || part.counterPractice), `part ${part.id}`); partIds.add(part.id);
+        ensure(text(part.id) && !partIds.has(part.id) && part.words.length <= 5 && (part.words.length || part.construction || part.counterPractice || part.tasks?.length), `part ${part.id}`); partIds.add(part.id);
+        for (const task of part.tasks ?? []) {
+          ensure(text(task.id) && !taskIds.has(task.id) && text(task.titleRu) && text(task.instructionRu) && task.canDoIds.length && task.canDoIds.every(id=>goal.canDoIds.includes(id)), `task ${task.id}`);
+          taskIds.add(task.id);
+          if (task.kind === 'production') {
+            ensure(['spoken','written'].includes(task.response) && task.supports.length && task.supports.every(text) && task.rubric.length >= 2 && task.rubric.every(text), `production ${task.id}`);
+            example(task.model,task.id);
+          } else {
+            ensure((task.layout===undefined||task.layout==='vertical-menu'&&task.kind==='reading'&&task.passage.length<=4) && ['reading','listening'].includes(task.kind) && task.passage.length && text(task.questionRu) && text(task.explanationRu) && task.options.length >= 2 && new Set(task.options.map(option=>option.id)).size===task.options.length && task.options.every(option=>text(option.id)&&text(option.text)) && task.acceptedAnswers.length && task.acceptedAnswers.every(answer=>task.options.some(option=>option.id===answer)), `comprehension ${task.id}`);
+            for (const line of task.passage) example(line,task.id);
+          }
+        }
         if (part.counterPractice) {
           const training = part.counterPractice;
           ensure(training.formats === undefined || Array.isArray(training.formats) && training.formats.length > 0 && new Set(training.formats).size === training.formats.length && training.formats.every(format => ['reading-choice','listening-image','recall'].includes(format)), 'counter formats');
@@ -260,7 +265,7 @@ export function validateLearning(course: Course, lessons: GuidedLesson[], comple
           ensure(course.words.some(word => word.id === training.wordId && word.lessonIds.includes(route.lessonId) && word.reviewStatus !== 'draft'), `counter word ${part.id}`);
         }
         for (const introduction of part.words) {
-          const word = course.words.find(item => item.id === introduction.wordId);
+          const word = wordTarget(course, introduction.wordId);
           ensure(word && word.lessonIds.includes(route.lessonId) && word.reviewStatus !== 'draft' && officialSource(word), `word scope or readiness ${introduction.wordId}`);
           ensure(!words.has(introduction.wordId), `duplicate core word ${introduction.wordId}`); words.add(introduction.wordId);
           ensure(audio(word!.audioUrl ?? '') && text(introduction.explanationRu), `word introduction ${introduction.wordId}`);
@@ -298,7 +303,7 @@ export function validateLearning(course: Course, lessons: GuidedLesson[], comple
 // Match learning meaning across authored part moves; SRS IDs and completed formats do not change.
 export function reconcileLearningRoute(previous: GuidedLesson, current: GuidedLesson, state: LearningRouteState): LearningRouteState {
   const before = learningParts(previous).flat(), parts = learningParts(current);
-  const key = (step: LearningStep): string => step.kind === 'word-intro' || step.kind === 'word-practice' ? `${step.kind}:${step.wordId}:${'mode' in step ? step.mode : ''}` : step.kind === 'construction-intro' || step.kind === 'construction-practice' ? `${step.kind}:${step.exerciseId}:${'mode' in step ? step.mode : ''}` : step.kind === 'counter-practice' ? `${step.kind}:${step.counterId}:${step.quantity}:${step.wordId}:${step.format ?? 'reading-choice'}` : step.kind === 'video' ? `video:${step.videoId}` : `complete:${step.partId}`;
+  const key = (step: LearningStep): string => step.kind === 'word-intro' || step.kind === 'word-practice' ? `${step.kind}:${step.wordId}:${'mode' in step ? step.mode : ''}` : step.kind === 'construction-intro' || step.kind === 'construction-practice' ? `${step.kind}:${step.exerciseId}:${'mode' in step ? step.mode : ''}` : step.kind === 'counter-practice' ? `${step.kind}:${step.counterId}:${step.quantity}:${step.wordId}:${step.format ?? 'reading-choice'}` : step.kind === 'learning-task' ? `task:${step.taskId}:${step.phase}` : step.kind === 'video' ? `video:${step.videoId}` : `complete:${step.partId}`;
   const done = new Set([...(state.completedKeys??[]),...state.completedStepIds.filter(id=>!state.skippedStepIds?.includes(id)).flatMap(id => { const step = before.find(item => item.id === id); return step ? [key(step)] : []; })]);
   const completed = new Set(parts.flat().filter(step => step.kind !== 'part-complete' && done.has(key(step))).map(step => step.id));
   for (const part of parts) {
@@ -306,10 +311,10 @@ export function reconcileLearningRoute(previous: GuidedLesson, current: GuidedLe
     if (part.every(step => step.kind === 'part-complete' || completed.has(step.id)) && (done.has(key(summary)) || !before.some(step => step.partId === summary.partId))) completed.add(summary.id);
   }
   const partIndex = parts.findIndex(part => part.some(step => !completed.has(step.id)));
-  if (partIndex < 0) return { partIndex: parts.length, pendingStepIds: [], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}), ...(state.recallPolicy ? { recallPolicy: state.recallPolicy } : {}) };
+  if (partIndex < 0) return { taskEvidence:state.taskEvidence, partIndex: parts.length, pendingStepIds: [], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}), ...(state.recallPolicy ? { recallPolicy: state.recallPolicy } : {}) };
   const remaining = parts[partIndex]!.filter(step => !completed.has(step.id));
   const oldOrder = state.pendingStepIds.flatMap(id => { const step = before.find(item => item.id === id); const next = step && remaining.find(item => key(item) === key(step)); return next ? [next.id] : []; });
   const extras = remaining.filter(step => !oldOrder.includes(step.id));
   const boundary=(step:LearningStep)=>step.kind==='video'||step.kind==='part-complete';
-  return { partIndex, pendingStepIds: [...extras.filter(step=>step.kind==='word-intro').map(step=>step.id),...oldOrder.filter(id=>!remaining.some(step=>step.id===id&&boundary(step))),...extras.filter(step=>step.kind!=='word-intro'&&!boundary(step)).map(step=>step.id),...remaining.filter(boundary).map(step=>step.id)], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}), ...(state.recallPolicy ? { recallPolicy: state.recallPolicy } : {}) };
+  return { taskEvidence:state.taskEvidence, partIndex, pendingStepIds: [...extras.filter(step=>step.kind==='word-intro').map(step=>step.id),...oldOrder.filter(id=>!remaining.some(step=>step.id===id&&boundary(step))),...extras.filter(step=>step.kind!=='word-intro'&&!boundary(step)).map(step=>step.id),...remaining.filter(boundary).map(step=>step.id)], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}), ...(state.recallPolicy ? { recallPolicy: state.recallPolicy } : {}) };
 }

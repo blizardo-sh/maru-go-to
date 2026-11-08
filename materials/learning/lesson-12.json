@@ -1019,7 +1019,7 @@
         ],
         "surface": "行きます",
         "kana": "いきます",
-        "meaningRu": "идти",
+        "meaningRu": "идти; ехать",
         "segments": [
           {
             "surface": "行",
@@ -1048,6 +1048,13 @@
             "row": 59,
             "entry": "いきます／行きます",
             "label": "Словарь · урок 6"
+          },
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+            "entry": "いきます",
+            "label": "Словарь EN · урок 9 · уточнение русского перевода",
+            "page": 4
           }
         ],
         "audioUrl": "/audio/967f41f4e7fa4bfc8240.m4a"
@@ -1063,7 +1070,7 @@
         ],
         "surface": "見ます",
         "kana": "みます",
-        "meaningRu": "смотреть",
+        "meaningRu": "смотреть; видеть",
         "segments": [
           {
             "surface": "見",
@@ -1092,6 +1099,13 @@
             "row": 2,
             "entry": "みます／見ます",
             "label": "Словарь · урок 9"
+          },
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+            "entry": "みます",
+            "label": "Словарь EN · урок 11 · уточнение русского перевода",
+            "page": 6
           }
         ],
         "audioUrl": "/audio/70c776550ac9828eb7f7.m4a"

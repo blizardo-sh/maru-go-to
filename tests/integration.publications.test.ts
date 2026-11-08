@@ -1,3 +1,4 @@
+import { learnerCourse } from '../src/server/client-course';
 import { disposableDatabase } from './helpers/disposable-database';
 import { test, expect } from 'bun:test';
 import { mkdtempSync, rmSync } from 'node:fs';
@@ -10,14 +11,15 @@ import { connectDatabase } from '../src/server/db';
 import { createApp } from '../src/server/app';
 import { createLink, consumeLink } from '../src/server/auth';
 import { legacyCourseFixture as loadCourse } from './helpers/legacy-course-fixture';
-import { activatePublication, currentPublication, ensureInitialPublications, getPublication, legacyPublication, packContent, publishContent, validatePublicationMedia } from '../src/server/publications';
+import { activatePublication, currentPublication, ensureInitialPublications, getPublication, legacyPublication, packContent, publicationCourse, publishContent, validatePublicationMedia } from '../src/server/publications';
 import { nextFixtureIp } from './helpers/fixture-ip';
+import { createEmptyCard } from 'ts-fsrs';
 
 const url=process.env.JAPANESE_INTEGRATION_DATABASE_URL;
 (url?test:test.skip)('a live publication pins old answers, adds PDF material without losing progress and safely rolls back',async()=>{
   const target=new URL(url!); if(!disposableDatabase(target))throw new Error('Disposable localhost database required.');
   const db=connectDatabase(url!), origin='http://127.0.0.1:5173', ip=nextFixtureIp(), email=`publication-${crypto.randomUUID()}@example.test`, password='Publication-test-only-2026!';
-  const initial=packContent(loadCourse()), archived=packContent(legacy as Course), root=new URL('../public',import.meta.url).pathname;
+  const initial=packContent(loadCourse()), legacyPacked=packContent(legacy as Course), archived={formatVersion:1 as const,course:publicationCourse(legacyPacked),assets:legacyPacked.assets}, root=new URL('../public',import.meta.url).pathname;
   let userId='', oldActive=''; const created:string[]=[];
   const empty=mkdtempSync(join(tmpdir(),'maru-empty-media-'));
   try {
@@ -37,6 +39,31 @@ const url=process.env.JAPANESE_INTEGRATION_DATABASE_URL;
     expect(signed.status).toBe(200);userId=(await signed.json()).user.id;
     const cookie=signed.headers.getSetCookie().map(value=>value.split(';')[0]).join('; ');
     const request=(path:string,body?:unknown,pin?:string)=>app.request(origin+path,{method:body?'POST':'GET',headers:{origin,cookie,'x-forwarded-for':ip,...(pin?{'X-Content-Publication':pin}:{}),...(body?{'content-type':'application/json'}:{})},...(body?{body:JSON.stringify(body)}:{})});
+    // Preserve full responses for old clients and isolate negotiated cache variants.
+    const format2={formatVersion:2 as const,course:{...publicationCourse(initial),title:'v2 compatibility '+crypto.randomUUID()},assets:initial.assets};
+    const pubV2=(await publishContent(db,format2,{mediaRoot:root,activate:false})).id;created.push(pubV2);
+    const v3=(await publishContent(db,b,{mediaRoot:root,activate:false})).id;created.push(v3);
+    for(const pin of [pubA,pubV2,v3]){
+      const get=(path:string,headers:Record<string,string>={})=>app.request(origin+path,{headers:{cookie,'x-forwarded-for':ip,'X-Learning-Learner-Id':userId,'X-Content-Publication':pin,...headers}});
+      const full=await get('/api/course'), fullData=await full.json();expect(full.status).toBe(200);
+      expect(full.headers.get('X-Course-Representation')).toBe('full');
+      expect(full.headers.get('Vary')).toContain('X-Course-Representation');
+      expect(fullData.words[0].sourceRefs.length).toBeGreaterThan(0);
+      const negotiated={'X-Course-Representation':'learner-v1'};
+      const compact=await get('/api/course',{...negotiated,'If-None-Match':full.headers.get('ETag')!});
+      expect(compact.status).toBe(200);expect(compact.headers.get('X-Course-Representation')).toBe('learner-v1');
+      expect(await compact.json()).toEqual(learnerCourse(fullData));
+      expect((await get('/api/course',{...negotiated,'If-None-Match':compact.headers.get('ETag')!})).status).toBe(304);
+      expect((await get('/api/course',{'If-None-Match':compact.headers.get('ETag')!})).status).toBe(200);
+      expect((await get('/api/course',{'X-Course-Representation':'unknown','If-None-Match':full.headers.get('ETag')!})).status).toBe(304);
+      expect((await get('/api/course',{...negotiated,'X-Learning-Learner-Id':crypto.randomUUID()})).status).toBe(409);
+      const bootstrap=await get('/api/bootstrap',negotiated);expect(bootstrap.status).toBe(200);
+      expect((await bootstrap.json()).course).toEqual(learnerCourse(fullData));
+      expect(bootstrap.headers.get('cache-control')).toBe('no-store');
+      const [stored]=await db.sql`select bundle from content_publications where id=${pin}`;
+      expect(stored.bundle.formatVersion).toBe(pin===pubA?1:pin===pubV2?2:3);
+      expect((await getPublication(db,pin)).words[0]!.sourceRefs.length).toBeGreaterThan(0);
+    }
     const lesson=courseA.lessons.find(item=>item.number===3)!.id;
     const state=async(id=lesson):Promise<LearningState>=>{const response=await request('/api/learning/'+id);expect(response.status).toBe(200);return response.json();};
     const answer=(current:LearningState,extra:Partial<LearningAdvance>):LearningAdvance=>({attemptId:crypto.randomUUID(),publicationId:current.publicationId,routeVersion:current.routeVersion,stateVersion:current.version,stepId:current.step!.id,action:'continue',...extra});
@@ -45,7 +72,7 @@ const url=process.env.JAPANESE_INTEGRATION_DATABASE_URL;
     const open=(await advance(lesson,answer(start,{action:'start-practice'}))).state as LearningState;
     expect(open.step?.kind).toBe('word-practice');
     await expect(publishContent(db,b,{mediaRoot:empty})).rejects.toThrow();expect((await currentPublication(db)).publicationId).toBe(pubA);
-    const pubB=(await publishContent(db,b,{mediaRoot:root})).id;created.push(pubB);
+    const pubB=(await publishContent(db,b,{mediaRoot:root})).id;
     const frozen=await legacyPublication(db), firstRoute=frozen.learning!.find(item=>item.lessonId.endsWith('.01'))!;
     const preUpgrade={partIndex:0,pendingStepIds:learningParts(firstRoute)[0]!.map(step=>step.id),completedStepIds:[]};
     await db.sql`insert into learning_states(user_id,lesson_id,route_version,version,state) values(${userId},${firstRoute.lessonId},${firstRoute.version},2,${preUpgrade})`;
@@ -82,7 +109,7 @@ const url=process.env.JAPANESE_INTEGRATION_DATABASE_URL;
     const courseB=await getPublication(db,pubB), route=courseB.learning!.find(item=>item.lessonId===family.lessonId)!, parts=learningParts(route), index=parts.findIndex(part=>part.some(step=>step.kind==='counter-practice'));
     const countStep=parts[index]!.find(step=>step.kind==='counter-practice')!;
     if(countStep.kind!=='counter-practice')throw new Error('Missing counter step');
-    await db.sql`insert into review_states(user_id,item_id,mode,version,card,due) values(${userId},${countStep.wordId},'ja-ru',1,${{}},now()) on conflict do nothing`;
+    await db.sql`insert into review_states(user_id,item_id,mode,version,card,due) values(${userId},${countStep.wordId},'ja-ru',1,${createEmptyCard(new Date())},now()) on conflict do nothing`;
     const counterState={partIndex:index,pendingStepIds:parts[index]!.map(step=>step.id),completedStepIds:parts.slice(0,index).flat().map(step=>step.id)};
     await db.sql`update learning_states set publication_id=${pubB},route_version=${route.version},version=20,state=${counterState} where user_id=${userId} and lesson_id=${route.lessonId}`;
     const counter=await state(route.lessonId), reload=await state(route.lessonId);

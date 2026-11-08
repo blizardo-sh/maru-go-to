@@ -1,0 +1,489 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.12",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Угощаем и обсуждаем еду",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.12.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        30,
+        31,
+        32
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.12.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.aebbe41721cb0eda",
+              "explanationRu": "В этой ситуации: суп",
+              "example": {
+                "surface": "このスープは辛くなくて飲みやすいです。",
+                "kana": "このスープはからくなくてのみやすいです。",
+                "segments": [
+                  {
+                    "surface": "このスープは"
+                  },
+                  {
+                    "surface": "辛",
+                    "reading": "から"
+                  },
+                  {
+                    "surface": "くなくて"
+                  },
+                  {
+                    "surface": "飲",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "みやすいです。"
+                  }
+                ],
+                "meaningRu": "Этот суп не острый, его легко есть.",
+                "audioUrl": "/audio/marugoto/b0be5dd07d2ebe34.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.5f28f2f0fa798edf",
+              "explanationRu": "В этой ситуации: приятного аппетита (перед едой)",
+              "example": {
+                "surface": "おにぎりはいかがですか。ありがとうございます。一ついただきます。",
+                "kana": "おにぎりはいかがですか。ありがとうございます。ひとついただきます。",
+                "segments": [
+                  {
+                    "surface": "おにぎりはいかがですか。ありがとうございます。"
+                  },
+                  {
+                    "surface": "一",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "ついただきます。"
+                  }
+                ],
+                "meaningRu": "Не хотите онигири? Спасибо. Возьму одно.",
+                "audioUrl": "/audio/marugoto/5f58238e14de771b.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.12.grammar.110",
+      "titleRu": "～そうだ",
+      "introductionRu": "Основа い-прилагательного + そう описывает впечатление по внешнему виду.",
+      "canDoIds": [
+        30,
+        31,
+        32
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.12.part.grammar.110",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.110",
+            "explanationRu": "Основа い-прилагательного + そう описывает впечатление по внешнему виду.",
+            "example": {
+              "surface": "このケーキは甘そうです。",
+              "kana": "このケーキはあまそうです。",
+              "segments": [
+                {
+                  "surface": "このケーキは"
+                },
+                {
+                  "surface": "甘",
+                  "reading": "あま"
+                },
+                {
+                  "surface": "そうです。"
+                }
+              ],
+              "meaningRu": "Этот торт выглядит сладким.",
+              "audioUrl": "/audio/marugoto/df9b1708084e1d74.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Этот торт выглядит сладким."
+              },
+              {
+                "text": "ケーキは",
+                "explanationRu": "Смысловой фрагмент: Этот торт выглядит сладким."
+              },
+              {
+                "text": "甘そうです",
+                "explanationRu": "Основа い-прилагательного + そう описывает впечатление по внешнему виду."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.12.grammar.111",
+      "titleRu": "～そうな～",
+      "introductionRu": "そうな ставится перед существительным, когда описывает впечатление о предмете.",
+      "canDoIds": [
+        30,
+        31,
+        32
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.12.part.grammar.111",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.111",
+            "explanationRu": "そうな ставится перед существительным, когда описывает впечатление о предмете.",
+            "example": {
+              "surface": "便利そうな箱ですね。",
+              "kana": "べんりそうなはこですね。",
+              "segments": [
+                {
+                  "surface": "便利",
+                  "reading": "べんり"
+                },
+                {
+                  "surface": "そうな"
+                },
+                {
+                  "surface": "箱",
+                  "reading": "はこ"
+                },
+                {
+                  "surface": "ですね。"
+                }
+              ],
+              "meaningRu": "Какая удобная на вид коробка.",
+              "audioUrl": "/audio/marugoto/6848428e7535dd45.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "便利そうな",
+                "explanationRu": "Смысловой фрагмент: Какая удобная на вид коробка."
+              },
+              {
+                "text": "箱ですね",
+                "explanationRu": "そうな ставится перед существительным, когда описывает впечатление о предмете."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.12.grammar.112",
+      "titleRu": "～くて／くなくて",
+      "introductionRu": "Отрицательная соединительная форма い-прилагательного — くなくて.",
+      "canDoIds": [
+        30,
+        31,
+        32
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.12.part.grammar.112",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.112",
+            "explanationRu": "Отрицательная соединительная форма い-прилагательного — くなくて.",
+            "example": {
+              "surface": "このスープは辛くなくて飲みやすいです。",
+              "kana": "このスープはからくなくてのみやすいです。",
+              "segments": [
+                {
+                  "surface": "このスープは"
+                },
+                {
+                  "surface": "辛",
+                  "reading": "から"
+                },
+                {
+                  "surface": "くなくて"
+                },
+                {
+                  "surface": "飲",
+                  "reading": "の"
+                },
+                {
+                  "surface": "みやすいです。"
+                }
+              ],
+              "meaningRu": "Этот суп не острый, его легко есть.",
+              "audioUrl": "/audio/marugoto/b0be5dd07d2ebe34.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Этот суп не острый, его легко есть."
+              },
+              {
+                "text": "スープは",
+                "explanationRu": "Смысловой фрагмент: Этот суп не острый, его легко есть."
+              },
+              {
+                "text": "辛くなくて",
+                "explanationRu": "Смысловой фрагмент: Этот суп не острый, его легко есть."
+              },
+              {
+                "text": "飲みやすいです",
+                "explanationRu": "Отрицательная соединительная форма い-прилагательного — くなくて."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.12.grammar.113",
+      "titleRu": "～で／じゃなくて",
+      "introductionRu": "Для отрицательного соединения な-прилагательного используем じゃなくて.",
+      "canDoIds": [
+        30,
+        31,
+        32
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.12.part.grammar.113",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.113",
+            "explanationRu": "Для отрицательного соединения な-прилагательного используем じゃなくて.",
+            "example": {
+              "surface": "この料理は複雑じゃなくて簡単です。",
+              "kana": "このりょうりはふくざつじゃなくてかんたんです。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "料理",
+                  "reading": "りょうり"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "複雑",
+                  "reading": "ふくざつ"
+                },
+                {
+                  "surface": "じゃなくて"
+                },
+                {
+                  "surface": "簡単",
+                  "reading": "かんたん"
+                },
+                {
+                  "surface": "です。"
+                }
+              ],
+              "meaningRu": "Это блюдо не сложное, а простое.",
+              "audioUrl": "/audio/marugoto/56dbe24816601f7d.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Это блюдо не сложное, а простое."
+              },
+              {
+                "text": "料理は",
+                "explanationRu": "Смысловой фрагмент: Это блюдо не сложное, а простое."
+              },
+              {
+                "text": "複雑じゃなくて",
+                "explanationRu": "Смысловой фрагмент: Это блюдо не сложное, а простое."
+              },
+              {
+                "text": "簡単です",
+                "explanationRu": "Для отрицательного соединения な-прилагательного используем じゃなくて."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.30.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        30
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.30.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.30",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Спросите о незнакомом блюде: что это и из чего оно приготовлено.",
+              "canDoIds": [
+                30
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Спросите о незнакомом блюде: что это и из чего оно приготовлено.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "おいしそうですね。これは何ですか。魚の料理ですか。",
+                "kana": "おいしそうですね。これはなんですか。さかなのりょうりですか。",
+                "segments": [
+                  {
+                    "surface": "おいしそうですね。これは"
+                  },
+                  {
+                    "surface": "何",
+                    "reading": "なん"
+                  },
+                  {
+                    "surface": "ですか。"
+                  },
+                  {
+                    "surface": "魚",
+                    "reading": "さかな"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "ですか。"
+                  }
+                ],
+                "meaningRu": "Выглядит вкусно. Что это? Это рыбное блюдо?",
+                "audioUrl": "/audio/marugoto/c209d513921eeea4.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Спросите о незнакомом блюде: что это и из чего оно приготовлено.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.31.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        31
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.31.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.31",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Прокомментируйте вкус блюда двумя характеристиками.",
+              "canDoIds": [
+                31
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Прокомментируйте вкус блюда двумя характеристиками.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "このスープは辛くなくて、おいしいです。温かいですね。",
+                "kana": "このスープはからくなくて、おいしいです。あたたかいですね。",
+                "segments": [
+                  {
+                    "surface": "このスープは"
+                  },
+                  {
+                    "surface": "辛",
+                    "reading": "から"
+                  },
+                  {
+                    "surface": "くなくて、おいしいです。"
+                  },
+                  {
+                    "surface": "温",
+                    "reading": "あたた"
+                  },
+                  {
+                    "surface": "かいですね。"
+                  }
+                ],
+                "meaningRu": "Этот суп не острый и вкусный. Он тёплый.",
+                "audioUrl": "/audio/marugoto/dff0f80ca9c459fd.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Прокомментируйте вкус блюда двумя характеристиками.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.32.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        32
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.32.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.32",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Предложите гостю блюдо и вежливо ответьте на предложение.",
+              "canDoIds": [
+                32
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Предложите гостю блюдо и вежливо ответьте на предложение.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "おにぎりはいかがですか。ありがとうございます。一ついただきます。",
+                "kana": "おにぎりはいかがですか。ありがとうございます。ひとついただきます。",
+                "segments": [
+                  {
+                    "surface": "おにぎりはいかがですか。ありがとうございます。"
+                  },
+                  {
+                    "surface": "一",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "ついただきます。"
+                  }
+                ],
+                "meaningRu": "Не хотите онигири? Спасибо. Возьму одно.",
+                "audioUrl": "/audio/marugoto/5f58238e14de771b.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Предложите гостю блюдо и вежливо ответьте на предложение.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

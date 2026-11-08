@@ -1,3 +1,4 @@
+import { workspaceNext } from './helpers/workspace-next';
 import { chromium, expect, type BrowserContext, type Locator, type Page } from '@playwright/test';
 import { createApp } from '../src/server/app';
 import { connectDatabase } from '../src/server/db';
@@ -238,7 +239,7 @@ try {
         expect(await selected.evaluateAll(elements => elements.map(element => element.getAttribute('data-token-id')))).toEqual(tokenIds);
         await page.getByLabel('Действия карточки', { exact: true }).click();
         await page.screenshot({ path: `${output}/qa-session-${viewport.width}-construction.png`, fullPage: true });
-        await page.locator('.workspace-next').click();
+        await workspaceNext(page).click();
         await expect(gesture).not.toHaveAttribute('data-review-id', id!);
         expect(submissions).toHaveLength(commitsBefore + 1);
         expect(submissions.at(-1)).toMatchObject({ mode: 'grammar', revealed: false, rating: 3 });
@@ -281,7 +282,7 @@ try {
         await page.screenshot({ path: `${output}/qa-session-${viewport.width}-inline.png`, fullPage: true });
         expect(submissions).toHaveLength(commitsBefore);
         expect((await getProgress(context)).byMode.grammar.reviewedToday).toBe(grammarBefore);
-        await page.locator('.workspace-next').click();
+        await workspaceNext(page).click();
         await expect(gesture).not.toHaveAttribute('data-review-id', id!);
         expect(submissions).toHaveLength(commitsBefore);
         expect((await getProgress(context)).byMode.grammar.reviewedToday).toBe(grammarBefore);

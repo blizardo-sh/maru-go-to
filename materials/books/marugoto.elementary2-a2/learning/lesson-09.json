@@ -1,0 +1,1150 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.09",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Новогодние впечатления",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.09.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.09.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.e29caa6b35af1029",
+              "explanationRu": "В этой ситуации: Новый год",
+              "example": {
+                "surface": "お正月は家族と過ごします。一緒に料理を作るのが楽しいです。",
+                "kana": "おしょうがつはかぞくとすごします。いっしょにりょうりをつくるのがたのしいです。",
+                "segments": [
+                  {
+                    "surface": "お"
+                  },
+                  {
+                    "surface": "正月",
+                    "reading": "しょうがつ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "と"
+                  },
+                  {
+                    "surface": "過",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "ごします。"
+                  },
+                  {
+                    "surface": "一緒",
+                    "reading": "いっしょ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "るのが"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しいです。"
+                  }
+                ],
+                "meaningRu": "Новый год я провожу с семьёй. Мне нравится вместе готовить.",
+                "audioUrl": "/audio/marugoto/6889c49fb4f4702a.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.89eb02faeca37fe8",
+              "explanationRu": "В этой ситуации: Новый год",
+              "example": {
+                "surface": "お正月は家族と過ごします。一緒に料理を作るのが楽しいです。",
+                "kana": "おしょうがつはかぞくとすごします。いっしょにりょうりをつくるのがたのしいです。",
+                "segments": [
+                  {
+                    "surface": "お"
+                  },
+                  {
+                    "surface": "正月",
+                    "reading": "しょうがつ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "と"
+                  },
+                  {
+                    "surface": "過",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "ごします。"
+                  },
+                  {
+                    "surface": "一緒",
+                    "reading": "いっしょ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "るのが"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しいです。"
+                  }
+                ],
+                "meaningRu": "Новый год я провожу с семьёй. Мне нравится вместе готовить.",
+                "audioUrl": "/audio/marugoto/6889c49fb4f4702a.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.19fbf529827b0a02",
+              "explanationRu": "В этой ситуации: проводить время",
+              "example": {
+                "surface": "お正月は家族と過ごします。一緒に料理を作るのが楽しいです。",
+                "kana": "おしょうがつはかぞくとすごします。いっしょにりょうりをつくるのがたのしいです。",
+                "segments": [
+                  {
+                    "surface": "お"
+                  },
+                  {
+                    "surface": "正月",
+                    "reading": "しょうがつ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "と"
+                  },
+                  {
+                    "surface": "過",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "ごします。"
+                  },
+                  {
+                    "surface": "一緒",
+                    "reading": "いっしょ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "るのが"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しいです。"
+                  }
+                ],
+                "meaningRu": "Новый год я провожу с семьёй. Мне нравится вместе готовить.",
+                "audioUrl": "/audio/marugoto/6889c49fb4f4702a.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.89569ec5c7c56994",
+              "explanationRu": "В этой ситуации: гостиная",
+              "example": {
+                "surface": "休みは家でゆっくりしていました。",
+                "kana": "やすみはいえでゆっくりしていました。",
+                "segments": [
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "みは"
+                  },
+                  {
+                    "surface": "家",
+                    "reading": "いえ"
+                  },
+                  {
+                    "surface": "でゆっくりしていました。"
+                  }
+                ],
+                "meaningRu": "В отпуске я спокойно отдыхал дома.",
+                "audioUrl": "/audio/marugoto/5352ba157ece69c3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.fa8500055ccf91a9",
+              "explanationRu": "В этой ситуации: год",
+              "example": {
+                "surface": "あけましておめでとうございます。今年もよろしくお願いします。また遊びに来てください。",
+                "kana": "あけましておめでとうございます。ことしもよろしくおねがいします。またあそびにきてください。",
+                "segments": [
+                  {
+                    "surface": "あけましておめでとうございます。"
+                  },
+                  {
+                    "surface": "今年",
+                    "reading": "ことし"
+                  },
+                  {
+                    "surface": "もよろしくお"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いします。また"
+                  },
+                  {
+                    "surface": "遊",
+                    "reading": "あそ"
+                  },
+                  {
+                    "surface": "びに"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "てください。"
+                  }
+                ],
+                "meaningRu": "С Новым годом. Буду рад общению и в этом году. Приходите ещё в гости.",
+                "audioUrl": "/audio/marugoto/1229e9812ffe4374.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.09.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.09.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.45ed9eb43d92618c",
+              "explanationRu": "В этой ситуации: поздравляю!",
+              "example": {
+                "surface": "あけましておめでとうございます。今年もよろしくお願いします。また遊びに来てください。",
+                "kana": "あけましておめでとうございます。ことしもよろしくおねがいします。またあそびにきてください。",
+                "segments": [
+                  {
+                    "surface": "あけましておめでとうございます。"
+                  },
+                  {
+                    "surface": "今年",
+                    "reading": "ことし"
+                  },
+                  {
+                    "surface": "もよろしくお"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いします。また"
+                  },
+                  {
+                    "surface": "遊",
+                    "reading": "あそ"
+                  },
+                  {
+                    "surface": "びに"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "てください。"
+                  }
+                ],
+                "meaningRu": "С Новым годом. Буду рад общению и в этом году. Приходите ещё в гости.",
+                "audioUrl": "/audio/marugoto/1229e9812ffe4374.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.31985c6eb9f4dc4a",
+              "explanationRu": "В этой ситуации: не спеша, медленно",
+              "example": {
+                "surface": "休みは家でゆっくりしていました。",
+                "kana": "やすみはいえでゆっくりしていました。",
+                "segments": [
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "みは"
+                  },
+                  {
+                    "surface": "家",
+                    "reading": "いえ"
+                  },
+                  {
+                    "surface": "でゆっくりしていました。"
+                  }
+                ],
+                "meaningRu": "В отпуске я спокойно отдыхал дома.",
+                "audioUrl": "/audio/marugoto/5352ba157ece69c3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.e27c10e325cc5bbf",
+              "explanationRu": "В этой ситуации: быть, существовать (об одушевленных предметах)",
+              "example": {
+                "surface": "あけましておめでとうございます。今年もよろしくお願いします。また遊びに来てください。",
+                "kana": "あけましておめでとうございます。ことしもよろしくおねがいします。またあそびにきてください。",
+                "segments": [
+                  {
+                    "surface": "あけましておめでとうございます。"
+                  },
+                  {
+                    "surface": "今年",
+                    "reading": "ことし"
+                  },
+                  {
+                    "surface": "もよろしくお"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いします。また"
+                  },
+                  {
+                    "surface": "遊",
+                    "reading": "あそ"
+                  },
+                  {
+                    "surface": "びに"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "てください。"
+                  }
+                ],
+                "meaningRu": "С Новым годом. Буду рад общению и в этом году. Приходите ещё в гости.",
+                "audioUrl": "/audio/marugoto/1229e9812ffe4374.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.01a7883ca3693828",
+              "explanationRu": "В этой ситуации: выходной, отпуск, каникулы",
+              "example": {
+                "surface": "休みは家でゆっくりしていました。",
+                "kana": "やすみはいえでゆっくりしていました。",
+                "segments": [
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "みは"
+                  },
+                  {
+                    "surface": "家",
+                    "reading": "いえ"
+                  },
+                  {
+                    "surface": "でゆっくりしていました。"
+                  }
+                ],
+                "meaningRu": "В отпуске я спокойно отдыхал дома.",
+                "audioUrl": "/audio/marugoto/5352ba157ece69c3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.312f86dfe9da479c",
+              "explanationRu": "В этой ситуации: дом",
+              "example": {
+                "surface": "休みは家でゆっくりしていました。",
+                "kana": "やすみはいえでゆっくりしていました。",
+                "segments": [
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "みは"
+                  },
+                  {
+                    "surface": "家",
+                    "reading": "いえ"
+                  },
+                  {
+                    "surface": "でゆっくりしていました。"
+                  }
+                ],
+                "meaningRu": "В отпуске я спокойно отдыхал дома.",
+                "audioUrl": "/audio/marugoto/5352ba157ece69c3.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.09.words.3",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.09.part.words.3",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.f07e2c9caacb6b93",
+              "explanationRu": "В этой ситуации: год",
+              "example": {
+                "surface": "祖母に会えなくて残念でした。",
+                "kana": "そぼにあえなくてざんねんでした。",
+                "segments": [
+                  {
+                    "surface": "祖母",
+                    "reading": "そぼ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "会",
+                    "reading": "あ"
+                  },
+                  {
+                    "surface": "えなくて"
+                  },
+                  {
+                    "surface": "残念",
+                    "reading": "ざんねん"
+                  },
+                  {
+                    "surface": "でした。"
+                  }
+                ],
+                "meaningRu": "Жаль, что не удалось увидеть бабушку.",
+                "audioUrl": "/audio/marugoto/67311da3230265ae.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.aa74603de587df7d",
+              "explanationRu": "В этой ситуации: день",
+              "example": {
+                "surface": "休みは二日しかありませんでした。",
+                "kana": "やすみはふつかしかありませんでした。",
+                "segments": [
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "みは"
+                  },
+                  {
+                    "surface": "二日",
+                    "reading": "ふつか"
+                  },
+                  {
+                    "surface": "しかありませんでした。"
+                  }
+                ],
+                "meaningRu": "У меня было всего два дня отдыха.",
+                "audioUrl": "/audio/marugoto/a5f0a4d70ad9f275.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.09.grammar.167",
+      "titleRu": "～ていた",
+      "introductionRu": "ていた описывает состояние или длительное действие в прошлом.",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.09.part.grammar.167",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.167",
+            "explanationRu": "ていた описывает состояние или длительное действие в прошлом.",
+            "example": {
+              "surface": "休みは家でゆっくりしていました。",
+              "kana": "やすみはいえでゆっくりしていました。",
+              "segments": [
+                {
+                  "surface": "休",
+                  "reading": "やす"
+                },
+                {
+                  "surface": "みは"
+                },
+                {
+                  "surface": "家",
+                  "reading": "いえ"
+                },
+                {
+                  "surface": "でゆっくりしていました。"
+                }
+              ],
+              "meaningRu": "В отпуске я спокойно отдыхал дома.",
+              "audioUrl": "/audio/marugoto/5352ba157ece69c3.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "休みは",
+                "explanationRu": "Смысловой фрагмент: В отпуске я спокойно отдыхал дома."
+              },
+              {
+                "text": "家で",
+                "explanationRu": "Смысловой фрагмент: В отпуске я спокойно отдыхал дома."
+              },
+              {
+                "text": "ゆっくりしていました",
+                "explanationRu": "ていた описывает состояние или длительное действие в прошлом."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.09.grammar.168",
+      "titleRu": "～（られ）て",
+      "introductionRu": "Потенциальная て-форма связывает возможность с эмоциональной оценкой.",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.09.part.grammar.168",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.168",
+            "explanationRu": "Потенциальная て-форма связывает возможность с эмоциональной оценкой.",
+            "example": {
+              "surface": "家族に会えてうれしかったです。",
+              "kana": "かぞくにあえてうれしかったです。",
+              "segments": [
+                {
+                  "surface": "家族",
+                  "reading": "かぞく"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "会",
+                  "reading": "あ"
+                },
+                {
+                  "surface": "えてうれしかったです。"
+                }
+              ],
+              "meaningRu": "Я был рад, что смог встретиться с семьёй.",
+              "audioUrl": "/audio/marugoto/0dce9e10722682bc.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "家族に",
+                "explanationRu": "Смысловой фрагмент: Я был рад, что смог встретиться с семьёй."
+              },
+              {
+                "text": "会えて",
+                "explanationRu": "Смысловой фрагмент: Я был рад, что смог встретиться с семьёй."
+              },
+              {
+                "text": "うれしかったです",
+                "explanationRu": "Потенциальная て-форма связывает возможность с эмоциональной оценкой."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.09.grammar.169",
+      "titleRu": "～（られ）なくて",
+      "introductionRu": "Отрицательная потенциальная форма на なくて объясняет сожаление.",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.09.part.grammar.169",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.169",
+            "explanationRu": "Отрицательная потенциальная форма на なくて объясняет сожаление.",
+            "example": {
+              "surface": "祖母に会えなくて残念でした。",
+              "kana": "そぼにあえなくてざんねんでした。",
+              "segments": [
+                {
+                  "surface": "祖母",
+                  "reading": "そぼ"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "会",
+                  "reading": "あ"
+                },
+                {
+                  "surface": "えなくて"
+                },
+                {
+                  "surface": "残念",
+                  "reading": "ざんねん"
+                },
+                {
+                  "surface": "でした。"
+                }
+              ],
+              "meaningRu": "Жаль, что не удалось увидеть бабушку.",
+              "audioUrl": "/audio/marugoto/67311da3230265ae.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "祖母に",
+                "explanationRu": "Смысловой фрагмент: Жаль, что не удалось увидеть бабушку."
+              },
+              {
+                "text": "会えなくて",
+                "explanationRu": "Смысловой фрагмент: Жаль, что не удалось увидеть бабушку."
+              },
+              {
+                "text": "残念でした",
+                "explanationRu": "Отрицательная потенциальная форма на なくて объясняет сожаление."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.09.grammar.170",
+      "titleRu": "～しか（～ない）",
+      "introductionRu": "しか требует отрицания и подчёркивает ограниченность количества.",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.09.part.grammar.170",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.170",
+            "explanationRu": "しか требует отрицания и подчёркивает ограниченность количества.",
+            "example": {
+              "surface": "休みは二日しかありませんでした。",
+              "kana": "やすみはふつかしかありませんでした。",
+              "segments": [
+                {
+                  "surface": "休",
+                  "reading": "やす"
+                },
+                {
+                  "surface": "みは"
+                },
+                {
+                  "surface": "二日",
+                  "reading": "ふつか"
+                },
+                {
+                  "surface": "しかありませんでした。"
+                }
+              ],
+              "meaningRu": "У меня было всего два дня отдыха.",
+              "audioUrl": "/audio/marugoto/a5f0a4d70ad9f275.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "休みは",
+                "explanationRu": "Смысловой фрагмент: У меня было всего два дня отдыха."
+              },
+              {
+                "text": "二日しか",
+                "explanationRu": "Смысловой фрагмент: У меня было всего два дня отдыха."
+              },
+              {
+                "text": "ありませんでした",
+                "explanationRu": "しか требует отрицания и подчёркивает ограниченность количества."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.09.grammar.171",
+      "titleRu": "～だけ",
+      "introductionRu": "だけ ограничивает количество без обязательной отрицательной формы.",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.09.part.grammar.171",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.171",
+            "explanationRu": "だけ ограничивает количество без обязательной отрицательной формы.",
+            "example": {
+              "surface": "休みは二日だけでした。",
+              "kana": "やすみはふつかだけでした。",
+              "segments": [
+                {
+                  "surface": "休",
+                  "reading": "やす"
+                },
+                {
+                  "surface": "みは"
+                },
+                {
+                  "surface": "二日",
+                  "reading": "ふつか"
+                },
+                {
+                  "surface": "だけでした。"
+                }
+              ],
+              "meaningRu": "Отдых длился только два дня.",
+              "audioUrl": "/audio/marugoto/e884d3e7ca45e819.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "休みは",
+                "explanationRu": "Смысловой фрагмент: Отдых длился только два дня."
+              },
+              {
+                "text": "二日だけでした",
+                "explanationRu": "だけ ограничивает количество без обязательной отрицательной формы."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.25.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        25
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.25.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.25",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите, как вы проводите Новый год и что вам в этом нравится.",
+              "canDoIds": [
+                25
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите, как вы проводите Новый год и что вам в этом нравится.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "お正月は家族と過ごします。一緒に料理を作るのが楽しいです。",
+                "kana": "おしょうがつはかぞくとすごします。いっしょにりょうりをつくるのがたのしいです。",
+                "segments": [
+                  {
+                    "surface": "お"
+                  },
+                  {
+                    "surface": "正月",
+                    "reading": "しょうがつ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "と"
+                  },
+                  {
+                    "surface": "過",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "ごします。"
+                  },
+                  {
+                    "surface": "一緒",
+                    "reading": "いっしょ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "るのが"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しいです。"
+                  }
+                ],
+                "meaningRu": "Новый год я провожу с семьёй. Мне нравится вместе готовить.",
+                "audioUrl": "/audio/marugoto/6889c49fb4f4702a.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите, как вы проводите Новый год и что вам в этом нравится.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.26.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        26
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.26.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.26",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите о прошедших праздничных выходных и оцените их.",
+              "canDoIds": [
+                26
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите о прошедших праздничных выходных и оцените их.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "休みは家で過ごしていました。家族に会えて、よかったです。",
+                "kana": "やすみはいえですごしていました。かぞくにあえて、よかったです。",
+                "segments": [
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "みは"
+                  },
+                  {
+                    "surface": "家",
+                    "reading": "いえ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "過",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "ごしていました。"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "会",
+                    "reading": "あ"
+                  },
+                  {
+                    "surface": "えて、よかったです。"
+                  }
+                ],
+                "meaningRu": "На выходных я был дома. Было хорошо увидеть семью.",
+                "audioUrl": "/audio/marugoto/c7ac59ed5d19c082.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите о прошедших праздничных выходных и оцените их.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.27.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        27
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.27.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.27",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте новогоднюю открытку и определите дополнительную просьбу.",
+              "canDoIds": [
+                27
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "あけましておめでとうございます。今年もよろしくお願いします。また遊びに来てください。",
+                  "kana": "あけましておめでとうございます。ことしもよろしくおねがいします。またあそびにきてください。",
+                  "segments": [
+                    {
+                      "surface": "あけましておめでとうございます。"
+                    },
+                    {
+                      "surface": "今年",
+                      "reading": "ことし"
+                    },
+                    {
+                      "surface": "もよろしくお"
+                    },
+                    {
+                      "surface": "願",
+                      "reading": "ねが"
+                    },
+                    {
+                      "surface": "いします。また"
+                    },
+                    {
+                      "surface": "遊",
+                      "reading": "あそ"
+                    },
+                    {
+                      "surface": "びに"
+                    },
+                    {
+                      "surface": "来",
+                      "reading": "き"
+                    },
+                    {
+                      "surface": "てください。"
+                    }
+                  ],
+                  "meaningRu": "С Новым годом. Буду рад общению и в этом году. Приходите ещё в гости.",
+                  "audioUrl": "/audio/marugoto/1229e9812ffe4374.m4a"
+                }
+              ],
+              "questionRu": "О чём просит автор?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Прийти в гости снова"
+                },
+                {
+                  "id": "b",
+                  "text": "Прислать подарок"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "С Новым годом. Буду рад общению и в этом году. Приходите ещё в гости."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.28.goal",
+      "titleRu": "Письменный ответ",
+      "canDoIds": [
+        28
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.28.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.28",
+              "titleRu": "Письменный ответ",
+              "instructionRu": "Напишите новогоднее поздравление знакомому с пожеланием встречи.",
+              "canDoIds": [
+                28
+              ],
+              "kind": "production",
+              "response": "written",
+              "supports": [
+                "Напишите новогоднее поздравление знакомому с пожеланием встречи.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "あけましておめでとうございます。今年もどうぞよろしくお願いします。また会えるといいですね。",
+                "kana": "あけましておめでとうございます。ことしもどうぞよろしくおねがいします。またあえるといいですね。",
+                "segments": [
+                  {
+                    "surface": "あけましておめでとうございます。"
+                  },
+                  {
+                    "surface": "今年",
+                    "reading": "ことし"
+                  },
+                  {
+                    "surface": "もどうぞよろしくお"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いします。また"
+                  },
+                  {
+                    "surface": "会",
+                    "reading": "あ"
+                  },
+                  {
+                    "surface": "えるといいですね。"
+                  }
+                ],
+                "meaningRu": "С Новым годом. Буду рад общению и в этом году. Надеюсь, мы снова встретимся.",
+                "audioUrl": "/audio/marugoto/7563d25cb6051e6b.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Напишите новогоднее поздравление знакомому с пожеланием встречи.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

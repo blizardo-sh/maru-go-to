@@ -1,5 +1,6 @@
+import { ReviewRatings } from './ReviewRatings';
 import { useEffect, useRef, useState } from 'react';
-import type { AnalysisResult, LearnerSettings, ReviewItem, ReviewResult, TargetEvaluationRequest, TargetEvaluationResult, Word } from '../shared/types';
+import type { AnalysisResult, LearnerSettings, Rating, ReviewItem, ReviewResult, TargetEvaluationRequest, TargetEvaluationResult, Word } from '../shared/types';
 import type { Snapshot, StudySource } from './types';
 import { editorWordIds, sourceKey, trainingContext } from './learning';
 import type { SceneSound } from './sceneSound';
@@ -92,7 +93,7 @@ export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved,
     closeEditor();
   }
   function reset() { if (locked) return; invalidate(); setTokens([]); setManualText(null); setExploring(false); closeEditor(); }
-  function advance(rating: 1 | 3) {
+  function advance(rating: Rating) {
     if (document.hidden || loading || !evaluation || locked || composing || editor) return;
     if (evaluation.outcome === 'incomplete' || evaluation.outcome === 'exploration') { if (!requiredPractice) onNext(); return; }
     return saving.save({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, ...(item.publicationId ? { publicationId: item.publicationId } : {}), mode: 'grammar', practiceFormat: 'grammar', tokenIds: tokens.map(token => token.id), tokenForms, revealed: false, exploring, rating });
@@ -124,7 +125,7 @@ export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved,
     </details>}
     {error && <div className="notice error" role="alert"><p>{error}</p><button onClick={() => setRetryRevision(value => value + 1)}>Повторить разбор</button></div>}
     {saving.error && <div className="notice error" role="alert"><p>{saving.error}</p><button onClick={saving.retry}>Повторить сохранение</button></div>}
-    <button className="primary workspace-next" disabled={loading || !evaluation || requiredPractice && evaluation.outcome !== 'correct' && evaluation.outcome !== 'incorrect' || locked || !!editor || composing} onClick={() => { void advance(3); }}>Дальше</button>
+    {targetVerdict ? <ReviewRatings schedule={item.schedule} disabled={loading || locked || !!editor || composing} againOnly={targetVerdict.outcome === 'incorrect'} grade={advance} /> : <button className="primary workspace-next" disabled={loading || !evaluation || requiredPractice || locked || !!editor || composing} onClick={() => { void advance(3); }}>Дальше</button>}
     <dialog ref={dialog} className="token-dialog" onCancel={closeEditor} onClose={closeEditor} onClick={event => { if (event.target === event.currentTarget) closeEditor(); }} aria-label={editor?.kind === 'token' ? 'Изменить элемент' : editor?.kind === 'manual' ? 'Ввести фразу' : 'Добавить элемент'}>
       <div className="stack"><div className="spread"><h2>{editor?.kind === 'token' ? 'Изменить элемент' : editor?.kind === 'manual' ? 'Ввести фразу' : 'Добавить элемент'}</h2><button className="quiet" onClick={closeEditor} aria-label="Закрыть редактор">×</button></div>
         {editor?.kind === 'manual' ? <><label><span>Ваша фраза</span><textarea autoFocus lang="ja" value={manualText ?? text} maxLength={1000} onCompositionStart={() => setComposing(true)} onCompositionEnd={() => setComposing(false)} onChange={event => { invalidate(); setManualText(event.target.value); setExploring(true); }} /></label><small>Самостоятельный ввод исследует фразу и не меняет расписание исходного задания.</small></> : <>

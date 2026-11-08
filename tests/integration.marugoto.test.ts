@@ -1,0 +1,76 @@
+import { afterAll, beforeAll, describe, expect, test } from 'bun:test';
+import { connectDatabase } from '../src/server/db';
+import { disposableDatabase } from './helpers/disposable-database';
+import { learningFixture } from './helpers/learning-fixture';
+import { recognizePriorLearning } from '../src/server/prior-learning';
+import { learningState, advanceLearning } from '../src/server/learning';
+import { reviewId, submitReview, progressFor } from '../src/server/reviews';
+import { initialLearningState } from '../src/shared/learning';
+import { wordTarget } from '../src/shared/meanings';
+const url=process.env.JAPANESE_INTEGRATION_DATABASE_URL;
+(url?describe:describe.skip)('Marugoto meanings, prior learning and content tasks',()=>{
+ const db=connectDatabase(url!);const users=Array.from({length:4},()=>crypto.randomUUID());
+ const course=learningFixture(),route=course.learning[0]!,word=course.words.find(w=>w.id===route.goals[0]!.parts[0]!.words[0]!.wordId)!;
+ const example=route.goals[0]!.parts[0]!.words[0]!.example;
+ course.meanings=[{id:'meaning.test',wordId:word.id,meaningRu:'отдельный учебный смысл',lessonIds:word.lessonIds,reviewStatus:'source-checked',sourceRefs:word.sourceRefs,context:example}];
+ beforeAll(async()=>{if(!disposableDatabase(new URL(url!)))throw new Error('Disposable DB required');for(const id of users)await db.sql`insert into users(id,name,email) values(${id},'A2 fixture',${id+'@example.test'})`;});
+ afterAll(async()=>{for(const id of users)await db.sql`delete from users where id=${id}`;await db.sql.close();});
+ test('sense enrollment never duplicates a lexeme or alters the existing sense schedule; undo only adds/removes its own modes',async()=>{
+  const user=users[0]!;
+  await submitReview(db,user,course,{attemptId:crypto.randomUUID(),reviewId:reviewId('ja-ru',word.id),version:0,mode:'ja-ru',rating:3});
+  const before=await db.sql`select * from review_states where user_id=${user} and item_id=${word.id}`;
+  const command={requestId:crypto.randomUUID(),selection:{targets:[{kind:'word' as const,id:'meaning.test'}]}};
+  const result=await recognizePriorLearning(db,user,course,command);expect(result.added).toBe(3);
+  expect(await recognizePriorLearning(db,user,course,command)).toEqual(result);
+  expect(await db.sql`select * from review_states where user_id=${user} and item_id=${word.id}`).toEqual(before);
+  const states=await db.sql`select card,version from review_states where user_id=${user} and item_id='meaning.test'`;
+  expect(states.every((row:any)=>row.version===0&&row.card.reps===0&&row.card.stability===0)).toBe(true);
+  const progress=await progressFor(db,user,course);expect(progress.introducedWordIds).toContain('meaning.test');expect(progress.introducedLexemeIds!.filter(id=>id===word.id)).toHaveLength(1);
+  expect(wordTarget(course,'meaning.test')?.meaningContext).toEqual(example);
+  const undo=await recognizePriorLearning(db,user,course,{requestId:crypto.randomUUID(),undo:command.requestId});expect(undo.removed).toBe(3);
+  expect(await db.sql`select * from review_states where user_id=${user} and item_id=${word.id}`).toEqual(before);
+  expect((await db.sql`select * from review_attempts where user_id=${user}`)).toHaveLength(1);
+ });
+ test('an already issued answer is accepted after recognition; actual repetition prevents undo',async()=>{
+  const user=users[1]!,before=await learningState(db,user,course,route.lessonId);
+  const command={requestId:crypto.randomUUID(),selection:{targets:[{kind:'word' as const,id:word.id}]}};
+  await recognizePriorLearning(db,user,course,command);
+  const projected=await learningState(db,user,course,route.lessonId);expect(projected.step?.id).not.toBe(before.step?.id);
+  await advanceLearning(db,user,course,route.lessonId,{attemptId:crypto.randomUUID(),routeVersion:before.routeVersion,stateVersion:before.version,stepId:before.step!.id,action:'continue'});
+  const response={attemptId:crypto.randomUUID(),reviewId:reviewId('ja-ru',word.id),version:0,mode:'ja-ru' as const,rating:3 as const};
+  await submitReview(db,user,course,response);
+  const undo=await recognizePriorLearning(db,user,course,{requestId:crypto.randomUUID(),undo:command.requestId});expect(undo.retained).toBe(1);expect(undo.removed).toBe(0);
+  expect((await db.sql`select * from review_attempts where user_id=${user}`)).toHaveLength(1);
+ });
+ test('whole lesson recognition is explicit, reversible, owner scoped and creates no successful answers',async()=>{
+  const user=users[2]!,command={requestId:crypto.randomUUID(),selection:{lessonId:route.lessonId,scope:'main' as const}};
+  await recognizePriorLearning(db,user,course,command);
+  const state=await learningState(db,user,course,route.lessonId);expect(state.completed).toBe(true);expect(state.completionBasis).toBe('recognized');expect(state.completedSteps).toBe(0);
+  expect((await progressFor(db,user,course)).completedLessons).toBe(1);
+  expect((await db.sql`select * from learning_attempts where user_id=${user}`)).toHaveLength(0);
+  await expect(recognizePriorLearning(db,users[3]!,course,command)).rejects.toThrow('уже использован');
+  await recognizePriorLearning(db,user,course,{requestId:crypto.randomUUID(),undo:command.requestId});expect((await learningState(db,user,course,route.lessonId)).completed).toBe(false);
+ });
+ test('objective questions and self assessment have separate evidence, reject invalid phase and do not enroll whole texts',async()=>{
+  const user=users[3]!,copy=structuredClone(course),lesson=copy.learning[0]!;lesson.version='task-v1';
+  const part=lesson.goals[0]!.parts[0]!;part.words=[];delete part.construction;
+  part.tasks=[{id:'read',kind:'reading',titleRu:'Текст',instructionRu:'Прочитайте',canDoIds:lesson.goals[0]!.canDoIds,passage:[example],questionRu:'Выберите',options:[{id:'yes',text:'Да'},{id:'no',text:'Нет'}],acceptedAnswers:['yes'],explanationRu:'В тексте есть ответ.'},
+  {id:'speak',kind:'production',response:'written',titleRu:'Ответ',instructionRu:'Расскажите',canDoIds:lesson.goals[0]!.canDoIds,supports:['Начните с приветствия'],model:example,rubric:['Названа тема','Смысл понятен']}];
+  lesson.goals=[{...lesson.goals[0]!,parts:[part],videoIds:[]}];
+  const mark={requestId:crypto.randomUUID(),selection:{targets:[{kind:'word' as const,id:word.id}]}};
+  await recognizePriorLearning(db,user,copy,mark);
+  let state=await learningState(db,user,copy,lesson.lessonId);expect(state.completed).toBe(false);expect(state.step?.kind).toBe('learning-task');
+  await recognizePriorLearning(db,user,copy,{requestId:crypto.randomUUID(),undo:mark.requestId});
+  const send=async(action:any,extra:any={})=>{const input={attemptId:crypto.randomUUID(),routeVersion:state.routeVersion,stateVersion:state.version,stepId:state.step!.id,action,...extra};const result=await advanceLearning(db,user,copy,lesson.lessonId,input);expect(await advanceLearning(db,user,copy,lesson.lessonId,input)).toEqual(result);state=result.state;return result;};
+  await expect(send('assess',{selfAssessment:'achieved'})).rejects.toThrow();
+  await send('answer',{taskAnswer:'no'});expect(state.taskEvidence?.read?.correct).toBe(false);expect(state.step?.kind==='learning-task'&&state.step.phase).toBe('question');
+  await send('answer',{taskAnswer:'yes'});expect(state.taskEvidence?.read?.correct).toBe(true);
+  await send('continue');await expect(send('attempt',{attempted:false})).rejects.toThrow();
+  await expect(send('attempt',{attempted:true})).rejects.toThrow();
+  await send('attempt',{attempted:true,taskAnswer:'最初の答えです。'});await send('assess',{selfAssessment:'retry'});
+  expect(state.step?.kind==='learning-task'&&state.step.phase).toBe('attempt');expect(state.completed).toBe(false);
+  await send('attempt',{attempted:true,taskAnswer:'直した答えです。'});await send('assess',{selfAssessment:'with-help'});await send('continue');
+  expect(state.completed).toBe(true);expect(state.completionBasis).toBe('self-assessed');expect(state.taskEvidence?.speak?.basis).toBe('self-assessed');
+  expect((await db.sql`select * from review_states where user_id=${user}`)).toHaveLength(0);
+ });
+});
