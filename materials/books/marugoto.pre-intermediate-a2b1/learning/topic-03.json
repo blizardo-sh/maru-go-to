@@ -1,0 +1,1869 @@
+{
+  "lessonId": "marugoto.pre-intermediate-a2b1.topic.03",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Привычная еда",
+  "goals": [
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.03.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.03.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.8c2b0f3e1bc1f856",
+              "explanationRu": "В этой ситуации: ингредиенты",
+              "example": {
+                "surface": "近くで材料が買えるからよく作ります。",
+                "kana": "ちかくでざいりょうがかえるからよくつくります。",
+                "segments": [
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "くで"
+                  },
+                  {
+                    "surface": "材料",
+                    "reading": "ざいりょう"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "買",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "えるからよく"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "ります。"
+                  }
+                ],
+                "meaningRu": "Я часто это готовлю, потому что продукты можно купить рядом.",
+                "audioUrl": "/audio/marugoto/4d9722621157bb5d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.d729cc34c46301c0",
+              "explanationRu": "В этой ситуации: комплексный обед (в столовой, в кафе)",
+              "example": {
+                "surface": "この定食は量が多すぎませんか。",
+                "kana": "このていしょくはりょうがおおすぎませんか。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "定食",
+                    "reading": "ていしょく"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "量",
+                    "reading": "りょう"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "多",
+                    "reading": "おお"
+                  },
+                  {
+                    "surface": "すぎませんか。"
+                  }
+                ],
+                "meaningRu": "В этом комплексном обеде не слишком большая порция?",
+                "audioUrl": "/audio/marugoto/de9ea1494a01b80e.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.ce82d26cfea88c15",
+              "explanationRu": "В этой ситуации: зарубежные страны, заграница",
+              "example": {
+                "surface": "海外に住んでいますが、家ではよくスープを作ります。子どものころ、母が作ってくれた味です。これを食べると、遠くにいても安心します。",
+                "kana": "かいがいにすんでいますが、いえではよくスープをつくります。こどものころ、ははがつくってくれたあじです。これをたべると、とおくにいてもあんしんします。",
+                "segments": [
+                  {
+                    "surface": "海外",
+                    "reading": "かいがい"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "住",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "んでいますが、"
+                  },
+                  {
+                    "surface": "家",
+                    "reading": "いえ"
+                  },
+                  {
+                    "surface": "ではよくスープを"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "ります。"
+                  },
+                  {
+                    "surface": "子",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "どものころ、"
+                  },
+                  {
+                    "surface": "母",
+                    "reading": "はは"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "ってくれた"
+                  },
+                  {
+                    "surface": "味",
+                    "reading": "あじ"
+                  },
+                  {
+                    "surface": "です。これを"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べると、"
+                  },
+                  {
+                    "surface": "遠",
+                    "reading": "とお"
+                  },
+                  {
+                    "surface": "くにいても"
+                  },
+                  {
+                    "surface": "安心",
+                    "reading": "あんしん"
+                  },
+                  {
+                    "surface": "します。"
+                  }
+                ],
+                "meaningRu": "Я живу за границей, но дома часто готовлю суп. Это вкус супа, который мама готовила в детстве. Когда ем его, даже вдали от дома становится спокойно.",
+                "audioUrl": "/audio/marugoto/3e96965b44668d14.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.1df75a5cee146bee",
+              "explanationRu": "В этой ситуации: зарубежная страна, заграница",
+              "example": {
+                "surface": "外国の料理を試すのが好きです。初めは味が濃いと思いましたが、今は楽しんでいます。野菜のスープが特に好きです。",
+                "kana": "がいこくのりょうりをためすのがすきです。はじめはあじがこいとおもいましたが、いまはたのしんでいます。やさいのスープがとくにすきです。",
+                "segments": [
+                  {
+                    "surface": "外国",
+                    "reading": "がいこく"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "試",
+                    "reading": "ため"
+                  },
+                  {
+                    "surface": "すのが"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  },
+                  {
+                    "surface": "初",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "めは"
+                  },
+                  {
+                    "surface": "味",
+                    "reading": "あじ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "濃",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "いと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "いましたが、"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しんでいます。"
+                  },
+                  {
+                    "surface": "野菜",
+                    "reading": "やさい"
+                  },
+                  {
+                    "surface": "のスープが"
+                  },
+                  {
+                    "surface": "特",
+                    "reading": "とく"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  }
+                ],
+                "meaningRu": "Я люблю пробовать иностранную еду. Сначала вкус казался насыщенным, но теперь мне нравится. Особенно люблю овощной суп.",
+                "audioUrl": "/audio/marugoto/2635e9fdf22bf174.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.db457697c905f598",
+              "explanationRu": "В этой ситуации: сладости, снеки",
+              "example": {
+                "surface": "このお菓子はパンみたいです。",
+                "kana": "このおかしはパンみたいです。",
+                "segments": [
+                  {
+                    "surface": "このお"
+                  },
+                  {
+                    "surface": "菓子",
+                    "reading": "かし"
+                  },
+                  {
+                    "surface": "はパンみたいです。"
+                  }
+                ],
+                "meaningRu": "Эта сладость похожа на хлеб.",
+                "audioUrl": "/audio/marugoto/4f1dd1de9c942650.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.03.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.03.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.word.11e422612170c643",
+              "explanationRu": "В этой ситуации: неделя",
+              "example": {
+                "surface": "前は忙しくて、外で食べてばかりいました。今は週末に料理を作っておきます。時間はかかりますが、自分で選んだ材料で作れるのがうれしいです。",
+                "kana": "まえはいそがしくて、そとでたべてばかりいました。いまはしゅうまつにりょうりをつくっておきます。じかんはかかりますが、じぶんでえらんだざいりょうでつくれるのがうれしいです。",
+                "segments": [
+                  {
+                    "surface": "前",
+                    "reading": "まえ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "忙",
+                    "reading": "いそが"
+                  },
+                  {
+                    "surface": "しくて、"
+                  },
+                  {
+                    "surface": "外",
+                    "reading": "そと"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べてばかりいました。"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "週末",
+                    "reading": "しゅうまつ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "っておきます。"
+                  },
+                  {
+                    "surface": "時間",
+                    "reading": "じかん"
+                  },
+                  {
+                    "surface": "はかかりますが、"
+                  },
+                  {
+                    "surface": "自分",
+                    "reading": "じぶん"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "選",
+                    "reading": "えら"
+                  },
+                  {
+                    "surface": "んだ"
+                  },
+                  {
+                    "surface": "材料",
+                    "reading": "ざいりょう"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "れるのがうれしいです。"
+                  }
+                ],
+                "meaningRu": "Раньше из-за занятости я всё время ел вне дома. Теперь готовлю заранее по выходным. Это требует времени, но я рад, что выбираю продукты сам.",
+                "audioUrl": "/audio/marugoto/af80ea1a5c67f44d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.af48ac93c09cd477",
+              "explanationRu": "В этой ситуации: еда",
+              "example": {
+                "surface": "この定食は量が多すぎませんか。",
+                "kana": "このていしょくはりょうがおおすぎませんか。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "定食",
+                    "reading": "ていしょく"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "量",
+                    "reading": "りょう"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "多",
+                    "reading": "おお"
+                  },
+                  {
+                    "surface": "すぎませんか。"
+                  }
+                ],
+                "meaningRu": "В этом комплексном обеде не слишком большая порция?",
+                "audioUrl": "/audio/marugoto/de9ea1494a01b80e.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.d8a3bc450cc37a38",
+              "explanationRu": "В этой ситуации: начало",
+              "example": {
+                "surface": "外国の料理を試すのが好きです。初めは味が濃いと思いましたが、今は楽しんでいます。野菜のスープが特に好きです。",
+                "kana": "がいこくのりょうりをためすのがすきです。はじめはあじがこいとおもいましたが、いまはたのしんでいます。やさいのスープがとくにすきです。",
+                "segments": [
+                  {
+                    "surface": "外国",
+                    "reading": "がいこく"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "試",
+                    "reading": "ため"
+                  },
+                  {
+                    "surface": "すのが"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  },
+                  {
+                    "surface": "初",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "めは"
+                  },
+                  {
+                    "surface": "味",
+                    "reading": "あじ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "濃",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "いと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "いましたが、"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しんでいます。"
+                  },
+                  {
+                    "surface": "野菜",
+                    "reading": "やさい"
+                  },
+                  {
+                    "surface": "のスープが"
+                  },
+                  {
+                    "surface": "特",
+                    "reading": "とく"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  }
+                ],
+                "meaningRu": "Я люблю пробовать иностранную еду. Сначала вкус казался насыщенным, но теперь мне нравится. Особенно люблю овощной суп.",
+                "audioUrl": "/audio/marugoto/2635e9fdf22bf174.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.2807948874967c39",
+              "explanationRu": "В этой ситуации: вкус",
+              "example": {
+                "surface": "外国の料理を試すのが好きです。初めは味が濃いと思いましたが、今は楽しんでいます。野菜のスープが特に好きです。",
+                "kana": "がいこくのりょうりをためすのがすきです。はじめはあじがこいとおもいましたが、いまはたのしんでいます。やさいのスープがとくにすきです。",
+                "segments": [
+                  {
+                    "surface": "外国",
+                    "reading": "がいこく"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "試",
+                    "reading": "ため"
+                  },
+                  {
+                    "surface": "すのが"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  },
+                  {
+                    "surface": "初",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "めは"
+                  },
+                  {
+                    "surface": "味",
+                    "reading": "あじ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "濃",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "いと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "いましたが、"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しんでいます。"
+                  },
+                  {
+                    "surface": "野菜",
+                    "reading": "やさい"
+                  },
+                  {
+                    "surface": "のスープが"
+                  },
+                  {
+                    "surface": "特",
+                    "reading": "とく"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  }
+                ],
+                "meaningRu": "Я люблю пробовать иностранную еду. Сначала вкус казался насыщенным, но теперь мне нравится. Особенно люблю овощной суп.",
+                "audioUrl": "/audio/marugoto/2635e9fdf22bf174.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.d760e4db93136cf2",
+              "explanationRu": "В этой ситуации: водоросли \"нори\"",
+              "example": {
+                "surface": "この料理はあまり甘くありません。",
+                "kana": "このりょうりはあまりあまくありません。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "はあまり"
+                  },
+                  {
+                    "surface": "甘",
+                    "reading": "あま"
+                  },
+                  {
+                    "surface": "くありません。"
+                  }
+                ],
+                "meaningRu": "Это блюдо не очень сладкое.",
+                "audioUrl": "/audio/marugoto/d38193fcf6437ed9.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.03.words.3",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.03.part.words.3",
+          "words": [
+            {
+              "wordId": "marugoto.word.df4327d53a5d8bc1",
+              "explanationRu": "В этой ситуации: вещь",
+              "example": {
+                "surface": "朝はパンを食べることが多いです。忙しいので、すぐ食べられるものが便利です。休みの日は料理をします。",
+                "kana": "あさはパンをたべることがおおいです。いそがしいので、すぐたべられるものがべんりです。やすみのひはりょうりをします。",
+                "segments": [
+                  {
+                    "surface": "朝",
+                    "reading": "あさ"
+                  },
+                  {
+                    "surface": "はパンを"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べることが"
+                  },
+                  {
+                    "surface": "多",
+                    "reading": "おお"
+                  },
+                  {
+                    "surface": "いです。"
+                  },
+                  {
+                    "surface": "忙",
+                    "reading": "いそが"
+                  },
+                  {
+                    "surface": "しいので、すぐ"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べられるものが"
+                  },
+                  {
+                    "surface": "便利",
+                    "reading": "べんり"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "みの"
+                  },
+                  {
+                    "surface": "日",
+                    "reading": "ひ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "をします。"
+                  }
+                ],
+                "meaningRu": "По утрам я часто ем хлеб. Я занят, поэтому удобна еда, которую можно быстро съесть. В выходные готовлю.",
+                "audioUrl": "/audio/marugoto/6e018b8e0ad81a01.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.4dce91f5ba175348",
+              "explanationRu": "В этой ситуации: страна",
+              "example": {
+                "surface": "外国の料理を試すのが好きです。初めは味が濃いと思いましたが、今は楽しんでいます。野菜のスープが特に好きです。",
+                "kana": "がいこくのりょうりをためすのがすきです。はじめはあじがこいとおもいましたが、いまはたのしんでいます。やさいのスープがとくにすきです。",
+                "segments": [
+                  {
+                    "surface": "外国",
+                    "reading": "がいこく"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "試",
+                    "reading": "ため"
+                  },
+                  {
+                    "surface": "すのが"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  },
+                  {
+                    "surface": "初",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "めは"
+                  },
+                  {
+                    "surface": "味",
+                    "reading": "あじ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "濃",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "いと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "いましたが、"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しんでいます。"
+                  },
+                  {
+                    "surface": "野菜",
+                    "reading": "やさい"
+                  },
+                  {
+                    "surface": "のスープが"
+                  },
+                  {
+                    "surface": "特",
+                    "reading": "とく"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  }
+                ],
+                "meaningRu": "Я люблю пробовать иностранную еду. Сначала вкус казался насыщенным, но теперь мне нравится. Особенно люблю овощной суп.",
+                "audioUrl": "/audio/marugoto/2635e9fdf22bf174.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.aa74603de587df7d",
+              "explanationRu": "В этой ситуации: день",
+              "example": {
+                "surface": "朝はパンを食べることが多いです。忙しいので、すぐ食べられるものが便利です。休みの日は料理をします。",
+                "kana": "あさはパンをたべることがおおいです。いそがしいので、すぐたべられるものがべんりです。やすみのひはりょうりをします。",
+                "segments": [
+                  {
+                    "surface": "朝",
+                    "reading": "あさ"
+                  },
+                  {
+                    "surface": "はパンを"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べることが"
+                  },
+                  {
+                    "surface": "多",
+                    "reading": "おお"
+                  },
+                  {
+                    "surface": "いです。"
+                  },
+                  {
+                    "surface": "忙",
+                    "reading": "いそが"
+                  },
+                  {
+                    "surface": "しいので、すぐ"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べられるものが"
+                  },
+                  {
+                    "surface": "便利",
+                    "reading": "べんり"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "みの"
+                  },
+                  {
+                    "surface": "日",
+                    "reading": "ひ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "をします。"
+                  }
+                ],
+                "meaningRu": "По утрам я часто ем хлеб. Я занят, поэтому удобна еда, которую можно быстро съесть. В выходные готовлю.",
+                "audioUrl": "/audio/marugoto/6e018b8e0ad81a01.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.03.grammar.223",
+      "titleRu": "～ないですか",
+      "introductionRu": "Отрицательный вопрос приглашает собеседника подтвердить впечатление.",
+      "canDoIds": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.03.part.grammar.223",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.223",
+            "explanationRu": "Отрицательный вопрос приглашает собеседника подтвердить впечатление.",
+            "example": {
+              "surface": "このスープは辛くないですか。",
+              "kana": "このスープはからくないですか。",
+              "segments": [
+                {
+                  "surface": "このスープは"
+                },
+                {
+                  "surface": "辛",
+                  "reading": "から"
+                },
+                {
+                  "surface": "くないですか。"
+                }
+              ],
+              "meaningRu": "Этот суп не слишком острый?",
+              "audioUrl": "/audio/marugoto/f3416d18c5522141.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Этот суп не слишком острый?"
+              },
+              {
+                "text": "スープは",
+                "explanationRu": "Смысловой фрагмент: Этот суп не слишком острый?"
+              },
+              {
+                "text": "辛くないですか",
+                "explanationRu": "Отрицательный вопрос приглашает собеседника подтвердить впечатление."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.03.grammar.224",
+      "titleRu": "～ませんか",
+      "introductionRu": "Отрицательный вопрос на ませんか может проверять общую оценку, а не приглашать к действию.",
+      "canDoIds": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.03.part.grammar.224",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.224",
+            "explanationRu": "Отрицательный вопрос на ませんか может проверять общую оценку, а не приглашать к действию.",
+            "example": {
+              "surface": "この定食は量が多すぎませんか。",
+              "kana": "このていしょくはりょうがおおすぎませんか。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "定食",
+                  "reading": "ていしょく"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "量",
+                  "reading": "りょう"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "多",
+                  "reading": "おお"
+                },
+                {
+                  "surface": "すぎませんか。"
+                }
+              ],
+              "meaningRu": "В этом комплексном обеде не слишком большая порция?",
+              "audioUrl": "/audio/marugoto/de9ea1494a01b80e.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: В этом комплексном обеде не слишком большая порция?"
+              },
+              {
+                "text": "定食は",
+                "explanationRu": "Смысловой фрагмент: В этом комплексном обеде не слишком большая порция?"
+              },
+              {
+                "text": "量が",
+                "explanationRu": "Смысловой фрагмент: В этом комплексном обеде не слишком большая порция?"
+              },
+              {
+                "text": "多すぎませんか",
+                "explanationRu": "Отрицательный вопрос на ませんか может проверять общую оценку, а не приглашать к действию."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.03.grammar.225",
+      "titleRu": "～から",
+      "introductionRu": "から связывает доступность продуктов с привычкой готовить.",
+      "canDoIds": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.03.part.grammar.225",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.225",
+            "explanationRu": "から связывает доступность продуктов с привычкой готовить.",
+            "example": {
+              "surface": "近くで材料が買えるからよく作ります。",
+              "kana": "ちかくでざいりょうがかえるからよくつくります。",
+              "segments": [
+                {
+                  "surface": "近",
+                  "reading": "ちか"
+                },
+                {
+                  "surface": "くで"
+                },
+                {
+                  "surface": "材料",
+                  "reading": "ざいりょう"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "買",
+                  "reading": "か"
+                },
+                {
+                  "surface": "えるからよく"
+                },
+                {
+                  "surface": "作",
+                  "reading": "つく"
+                },
+                {
+                  "surface": "ります。"
+                }
+              ],
+              "meaningRu": "Я часто это готовлю, потому что продукты можно купить рядом.",
+              "audioUrl": "/audio/marugoto/4d9722621157bb5d.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "近くで",
+                "explanationRu": "Смысловой фрагмент: Я часто это готовлю, потому что продукты можно купить рядом."
+              },
+              {
+                "text": "材料が",
+                "explanationRu": "Смысловой фрагмент: Я часто это готовлю, потому что продукты можно купить рядом."
+              },
+              {
+                "text": "買えるから",
+                "explanationRu": "Смысловой фрагмент: Я часто это готовлю, потому что продукты можно купить рядом."
+              },
+              {
+                "text": "よく作ります",
+                "explanationRu": "から связывает доступность продуктов с привычкой готовить."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.03.grammar.226",
+      "titleRu": "～ので",
+      "introductionRu": "ので даёт спокойное объяснение причины; сравните с более личным から.",
+      "canDoIds": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.03.part.grammar.226",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.226",
+            "explanationRu": "ので даёт спокойное объяснение причины; сравните с более личным から.",
+            "example": {
+              "surface": "忙しいので簡単な料理を作ります。",
+              "kana": "いそがしいのでかんたんなりょうりをつくります。",
+              "segments": [
+                {
+                  "surface": "忙",
+                  "reading": "いそが"
+                },
+                {
+                  "surface": "しいので"
+                },
+                {
+                  "surface": "簡単",
+                  "reading": "かんたん"
+                },
+                {
+                  "surface": "な"
+                },
+                {
+                  "surface": "料理",
+                  "reading": "りょうり"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "作",
+                  "reading": "つく"
+                },
+                {
+                  "surface": "ります。"
+                }
+              ],
+              "meaningRu": "Я занят, поэтому готовлю простые блюда.",
+              "audioUrl": "/audio/marugoto/de86674659c1b591.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "忙しいので",
+                "explanationRu": "Смысловой фрагмент: Я занят, поэтому готовлю простые блюда."
+              },
+              {
+                "text": "簡単な料理を",
+                "explanationRu": "Смысловой фрагмент: Я занят, поэтому готовлю простые блюда."
+              },
+              {
+                "text": "作ります",
+                "explanationRu": "ので даёт спокойное объяснение причины; сравните с более личным から."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.03.grammar.227",
+      "titleRu": "～みたい",
+      "introductionRu": "Существительное + みたい описывает сходство; перед другим существительным ставим みたいな.",
+      "canDoIds": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.03.part.grammar.227",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.227",
+            "explanationRu": "Существительное + みたい описывает сходство; перед другим существительным ставим みたいな.",
+            "example": {
+              "surface": "このお菓子はパンみたいです。",
+              "kana": "このおかしはパンみたいです。",
+              "segments": [
+                {
+                  "surface": "このお"
+                },
+                {
+                  "surface": "菓子",
+                  "reading": "かし"
+                },
+                {
+                  "surface": "はパンみたいです。"
+                }
+              ],
+              "meaningRu": "Эта сладость похожа на хлеб.",
+              "audioUrl": "/audio/marugoto/4f1dd1de9c942650.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Эта сладость похожа на хлеб."
+              },
+              {
+                "text": "お菓子は",
+                "explanationRu": "Смысловой фрагмент: Эта сладость похожа на хлеб."
+              },
+              {
+                "text": "パンみたいです",
+                "explanationRu": "Существительное + みたい описывает сходство; перед другим существительным ставим みたいな."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.03.grammar.228",
+      "titleRu": "～ないです／ありません",
+      "introductionRu": "Вежливое отрицание い-прилагательного возможно как くありません или くないです.",
+      "canDoIds": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.03.part.grammar.228",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.228",
+            "explanationRu": "Вежливое отрицание い-прилагательного возможно как くありません или くないです.",
+            "example": {
+              "surface": "この料理はあまり甘くありません。",
+              "kana": "このりょうりはあまりあまくありません。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "料理",
+                  "reading": "りょうり"
+                },
+                {
+                  "surface": "はあまり"
+                },
+                {
+                  "surface": "甘",
+                  "reading": "あま"
+                },
+                {
+                  "surface": "くありません。"
+                }
+              ],
+              "meaningRu": "Это блюдо не очень сладкое.",
+              "audioUrl": "/audio/marugoto/d38193fcf6437ed9.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Это блюдо не очень сладкое."
+              },
+              {
+                "text": "料理は",
+                "explanationRu": "Смысловой фрагмент: Это блюдо не очень сладкое."
+              },
+              {
+                "text": "あまり",
+                "explanationRu": "Смысловой фрагмент: Это блюдо не очень сладкое."
+              },
+              {
+                "text": "甘くありません",
+                "explanationRu": "Вежливое отрицание い-прилагательного возможно как くありません или くないです."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.12.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        12
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.12.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.12",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Выскажите мнение о еде за границей: впечатление, причина и пример.",
+              "canDoIds": [
+                12
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Выскажите мнение о еде за границей: впечатление, причина и пример.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "外国の料理を試すのが好きです。初めは味が濃いと思いましたが、今は楽しんでいます。野菜のスープが特に好きです。",
+                "kana": "がいこくのりょうりをためすのがすきです。はじめはあじがこいとおもいましたが、いまはたのしんでいます。やさいのスープがとくにすきです。",
+                "segments": [
+                  {
+                    "surface": "外国",
+                    "reading": "がいこく"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "試",
+                    "reading": "ため"
+                  },
+                  {
+                    "surface": "すのが"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  },
+                  {
+                    "surface": "初",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "めは"
+                  },
+                  {
+                    "surface": "味",
+                    "reading": "あじ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "濃",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "いと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "いましたが、"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しんでいます。"
+                  },
+                  {
+                    "surface": "野菜",
+                    "reading": "やさい"
+                  },
+                  {
+                    "surface": "のスープが"
+                  },
+                  {
+                    "surface": "特",
+                    "reading": "とく"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  }
+                ],
+                "meaningRu": "Я люблю пробовать иностранную еду. Сначала вкус казался насыщенным, но теперь мне нравится. Особенно люблю овощной суп.",
+                "audioUrl": "/audio/marugoto/2635e9fdf22bf174.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Выскажите мнение о еде за границей: впечатление, причина и пример.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.13.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        13
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.13.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.13",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите о своей привычной еде, частоте и причине выбора.",
+              "canDoIds": [
+                13
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите о своей привычной еде, частоте и причине выбора.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "朝はパンを食べることが多いです。忙しいので、すぐ食べられるものが便利です。休みの日は料理をします。",
+                "kana": "あさはパンをたべることがおおいです。いそがしいので、すぐたべられるものがべんりです。やすみのひはりょうりをします。",
+                "segments": [
+                  {
+                    "surface": "朝",
+                    "reading": "あさ"
+                  },
+                  {
+                    "surface": "はパンを"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べることが"
+                  },
+                  {
+                    "surface": "多",
+                    "reading": "おお"
+                  },
+                  {
+                    "surface": "いです。"
+                  },
+                  {
+                    "surface": "忙",
+                    "reading": "いそが"
+                  },
+                  {
+                    "surface": "しいので、すぐ"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べられるものが"
+                  },
+                  {
+                    "surface": "便利",
+                    "reading": "べんり"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "みの"
+                  },
+                  {
+                    "surface": "日",
+                    "reading": "ひ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "をします。"
+                  }
+                ],
+                "meaningRu": "По утрам я часто ем хлеб. Я занят, поэтому удобна еда, которую можно быстро съесть. В выходные готовлю.",
+                "audioUrl": "/audio/marugoto/6e018b8e0ad81a01.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите о своей привычной еде, частоте и причине выбора.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.14.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        14
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.14.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.14",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте рассказ о привычной еде и найдите её эмоциональное значение.",
+              "canDoIds": [
+                14
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "海外に住んでいますが、家ではよくスープを作ります。子どものころ、母が作ってくれた味です。これを食べると、遠くにいても安心します。",
+                  "kana": "かいがいにすんでいますが、いえではよくスープをつくります。こどものころ、ははがつくってくれたあじです。これをたべると、とおくにいてもあんしんします。",
+                  "segments": [
+                    {
+                      "surface": "海外",
+                      "reading": "かいがい"
+                    },
+                    {
+                      "surface": "に"
+                    },
+                    {
+                      "surface": "住",
+                      "reading": "す"
+                    },
+                    {
+                      "surface": "んでいますが、"
+                    },
+                    {
+                      "surface": "家",
+                      "reading": "いえ"
+                    },
+                    {
+                      "surface": "ではよくスープを"
+                    },
+                    {
+                      "surface": "作",
+                      "reading": "つく"
+                    },
+                    {
+                      "surface": "ります。"
+                    },
+                    {
+                      "surface": "子",
+                      "reading": "こ"
+                    },
+                    {
+                      "surface": "どものころ、"
+                    },
+                    {
+                      "surface": "母",
+                      "reading": "はは"
+                    },
+                    {
+                      "surface": "が"
+                    },
+                    {
+                      "surface": "作",
+                      "reading": "つく"
+                    },
+                    {
+                      "surface": "ってくれた"
+                    },
+                    {
+                      "surface": "味",
+                      "reading": "あじ"
+                    },
+                    {
+                      "surface": "です。これを"
+                    },
+                    {
+                      "surface": "食",
+                      "reading": "た"
+                    },
+                    {
+                      "surface": "べると、"
+                    },
+                    {
+                      "surface": "遠",
+                      "reading": "とお"
+                    },
+                    {
+                      "surface": "くにいても"
+                    },
+                    {
+                      "surface": "安心",
+                      "reading": "あんしん"
+                    },
+                    {
+                      "surface": "します。"
+                    }
+                  ],
+                  "meaningRu": "Я живу за границей, но дома часто готовлю суп. Это вкус супа, который мама готовила в детстве. Когда ем его, даже вдали от дома становится спокойно.",
+                  "audioUrl": "/audio/marugoto/3e96965b44668d14.m4a"
+                }
+              ],
+              "questionRu": "Почему суп важен автору?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Напоминает о доме и успокаивает"
+                },
+                {
+                  "id": "b",
+                  "text": "Это единственное доступное блюдо"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Я живу за границей, но дома часто готовлю суп. Это вкус супа, который мама готовила в детстве. Когда ем его, даже вдали от дома становится спокойно."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.15.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        15
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.15.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.15",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте размышление о питании и определите изменение отношения.",
+              "canDoIds": [
+                15
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "前は忙しくて、外で食べてばかりいました。今は週末に料理を作っておきます。時間はかかりますが、自分で選んだ材料で作れるのがうれしいです。",
+                  "kana": "まえはいそがしくて、そとでたべてばかりいました。いまはしゅうまつにりょうりをつくっておきます。じかんはかかりますが、じぶんでえらんだざいりょうでつくれるのがうれしいです。",
+                  "segments": [
+                    {
+                      "surface": "前",
+                      "reading": "まえ"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "忙",
+                      "reading": "いそが"
+                    },
+                    {
+                      "surface": "しくて、"
+                    },
+                    {
+                      "surface": "外",
+                      "reading": "そと"
+                    },
+                    {
+                      "surface": "で"
+                    },
+                    {
+                      "surface": "食",
+                      "reading": "た"
+                    },
+                    {
+                      "surface": "べてばかりいました。"
+                    },
+                    {
+                      "surface": "今",
+                      "reading": "いま"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "週末",
+                      "reading": "しゅうまつ"
+                    },
+                    {
+                      "surface": "に"
+                    },
+                    {
+                      "surface": "料理",
+                      "reading": "りょうり"
+                    },
+                    {
+                      "surface": "を"
+                    },
+                    {
+                      "surface": "作",
+                      "reading": "つく"
+                    },
+                    {
+                      "surface": "っておきます。"
+                    },
+                    {
+                      "surface": "時間",
+                      "reading": "じかん"
+                    },
+                    {
+                      "surface": "はかかりますが、"
+                    },
+                    {
+                      "surface": "自分",
+                      "reading": "じぶん"
+                    },
+                    {
+                      "surface": "で"
+                    },
+                    {
+                      "surface": "選",
+                      "reading": "えら"
+                    },
+                    {
+                      "surface": "んだ"
+                    },
+                    {
+                      "surface": "材料",
+                      "reading": "ざいりょう"
+                    },
+                    {
+                      "surface": "で"
+                    },
+                    {
+                      "surface": "作",
+                      "reading": "つく"
+                    },
+                    {
+                      "surface": "れるのがうれしいです。"
+                    }
+                  ],
+                  "meaningRu": "Раньше из-за занятости я всё время ел вне дома. Теперь готовлю заранее по выходным. Это требует времени, но я рад, что выбираю продукты сам.",
+                  "audioUrl": "/audio/marugoto/af80ea1a5c67f44d.m4a"
+                }
+              ],
+              "questionRu": "Что автор ценит в новой привычке?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Возможность самому выбирать продукты"
+                },
+                {
+                  "id": "b",
+                  "text": "Полное отсутствие затрат времени"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Раньше из-за занятости я всё время ел вне дома. Теперь готовлю заранее по выходным. Это требует времени, но я рад, что выбираю продукты сам."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

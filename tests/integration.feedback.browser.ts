@@ -1,3 +1,4 @@
+import { workspaceNext } from './helpers/workspace-next';
 import { chromium, expect, type BrowserContext, type Locator, type Page } from '@playwright/test';
 import { createApp } from '../src/server/app';
 import { createLink, consumeLink } from '../src/server/auth';
@@ -305,7 +306,7 @@ try {
       expect(geometry.controlsMinHeight).toBeGreaterThanOrEqual(44); expect(geometry.japaneseMinFont).toBeGreaterThanOrEqual(20); expect(geometry.catOverlaps).toBe(false);
       expect(submissions).toHaveLength(3); expect((await progressState(context)).byMode.grammar.reviewedToday).toBe(0);
       await page.screenshot({ path: `${output}/qa-game-${viewport.width}.png`, fullPage: true });
-      await page.locator('.workspace-next').click();
+      await workspaceNext(page).click();
       await expect(gesture).toHaveAttribute('data-review-id', issued[3]!.id); await checkProgress(page, 3);
       await expect(feedback).toHaveAttribute('data-feedback', 'neutral'); await expect(feedback).toHaveText('');
       expect(submissions).toHaveLength(4); expect(submissions[3]).toMatchObject({ mode: 'grammar', rating: 3, revealed: false });
@@ -321,7 +322,7 @@ try {
       await expect(page.getByText('Бесплатный сервис временно ограничил запросы. Попробуйте позже.', { exact: true })).toBeVisible();
       await catActivity(page, 'neutral', 'neutral');
       await feedbackMotion(draft.locator('.answer-feedback-marker'), touch, 'neutral'); await checkProgress(page, 3); expect(submissions).toHaveLength(4);
-      await page.locator('.workspace-next').click();
+      await workspaceNext(page).click();
       await expect(gesture).toHaveAttribute('data-review-id', issued[4]!.id); await checkProgress(page, 4);
       expect(submissions).toHaveLength(4); expect((await progressState(context)).byMode.grammar.reviewedToday).toBe(1);
       await expect(feedback).toHaveAttribute('data-feedback', 'neutral');
@@ -330,8 +331,8 @@ try {
       await expect(page.locator('[data-outcome="incomplete"]')).toBeVisible(); await expect(draft).toHaveAttribute('data-feedback', 'neutral');
       await catActivity(page, 'neutral', 'neutral');
       await feedbackMotion(draft.locator('.answer-feedback-marker'), touch, 'neutral'); await checkProgress(page, 4); expect(submissions).toHaveLength(4);
-      await page.locator('.workspace-next').click();
-      await expect(page.getByRole('heading', { name: 'Повторение завершено', exact: true })).toBeVisible(); await checkProgress(page, 5);
+      await workspaceNext(page).click();
+      await expect(page.getByRole('heading', { name: /^(Повторение завершено|Ближайшее повторение)$/ })).toBeVisible(); await checkProgress(page, 5);
       expect(submissions).toHaveLength(4); const final = await progressState(context);
       expect(final.byMode.listening.reviewedToday).toBe(1); expect(final.byMode['ja-ru'].reviewedToday).toBe(1); expect(final.byMode.grammar.reviewedToday).toBe(1);
       await catActivity(page, 'complete', 'rest');

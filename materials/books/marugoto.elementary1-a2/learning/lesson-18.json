@@ -1,0 +1,643 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.18",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Планируем праздник",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.18.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        50,
+        51,
+        52,
+        53
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.18.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.51ef7856f0887003",
+              "explanationRu": "В этой ситуации: думать",
+              "example": {
+                "surface": "お祝いは花がいいと思います。",
+                "kana": "おいわいははながいいとおもいます。",
+                "segments": [
+                  {
+                    "surface": "お"
+                  },
+                  {
+                    "surface": "祝",
+                    "reading": "いわ"
+                  },
+                  {
+                    "surface": "いは"
+                  },
+                  {
+                    "surface": "花",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "がいいと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "います。"
+                  }
+                ],
+                "meaningRu": "Думаю, на праздник подойдут цветы.",
+                "audioUrl": "/audio/marugoto/7a628550ce9ba351.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.78674e2585e969f7",
+              "explanationRu": "В этой ситуации: ваша свадьба (свадьба)",
+              "example": {
+                "surface": "ご結婚おめでとうございます。お二人の幸せを願っています。",
+                "kana": "ごけっこんおめでとうございます。おふたりのしあわせをねがっています。",
+                "segments": [
+                  {
+                    "surface": "ご"
+                  },
+                  {
+                    "surface": "結婚",
+                    "reading": "けっこん"
+                  },
+                  {
+                    "surface": "おめでとうございます。お"
+                  },
+                  {
+                    "surface": "二人",
+                    "reading": "ふたり"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "幸",
+                    "reading": "しあわ"
+                  },
+                  {
+                    "surface": "せを"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "っています。"
+                  }
+                ],
+                "meaningRu": "Поздравляем со свадьбой. Желаем вам обоим счастья.",
+                "audioUrl": "/audio/marugoto/ab5df9f2cadd2323.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.f5201a0399561ff9",
+              "explanationRu": "В этой ситуации: счастье, счастливый",
+              "example": {
+                "surface": "ご結婚おめでとうございます。お二人の幸せを願っています。",
+                "kana": "ごけっこんおめでとうございます。おふたりのしあわせをねがっています。",
+                "segments": [
+                  {
+                    "surface": "ご"
+                  },
+                  {
+                    "surface": "結婚",
+                    "reading": "けっこん"
+                  },
+                  {
+                    "surface": "おめでとうございます。お"
+                  },
+                  {
+                    "surface": "二人",
+                    "reading": "ふたり"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "幸",
+                    "reading": "しあわ"
+                  },
+                  {
+                    "surface": "せを"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "っています。"
+                  }
+                ],
+                "meaningRu": "Поздравляем со свадьбой. Желаем вам обоим счастья.",
+                "audioUrl": "/audio/marugoto/ab5df9f2cadd2323.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.ffbd919bbc64a5d5",
+              "explanationRu": "В этой ситуации: этот, текущий",
+              "example": {
+                "surface": "ご結婚おめでとうございます。お二人の幸せを願っています。",
+                "kana": "ごけっこんおめでとうございます。おふたりのしあわせをねがっています。",
+                "segments": [
+                  {
+                    "surface": "ご"
+                  },
+                  {
+                    "surface": "結婚",
+                    "reading": "けっこん"
+                  },
+                  {
+                    "surface": "おめでとうございます。お"
+                  },
+                  {
+                    "surface": "二人",
+                    "reading": "ふたり"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "幸",
+                    "reading": "しあわ"
+                  },
+                  {
+                    "surface": "せを"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "っています。"
+                  }
+                ],
+                "meaningRu": "Поздравляем со свадьбой. Желаем вам обоим счастья.",
+                "audioUrl": "/audio/marugoto/ab5df9f2cadd2323.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.45ed9eb43d92618c",
+              "explanationRu": "В этой ситуации: поздравляю!",
+              "example": {
+                "surface": "ご結婚おめでとうございます。お二人の幸せを願っています。",
+                "kana": "ごけっこんおめでとうございます。おふたりのしあわせをねがっています。",
+                "segments": [
+                  {
+                    "surface": "ご"
+                  },
+                  {
+                    "surface": "結婚",
+                    "reading": "けっこん"
+                  },
+                  {
+                    "surface": "おめでとうございます。お"
+                  },
+                  {
+                    "surface": "二人",
+                    "reading": "ふたり"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "幸",
+                    "reading": "しあわ"
+                  },
+                  {
+                    "surface": "せを"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "っています。"
+                  }
+                ],
+                "meaningRu": "Поздравляем со свадьбой. Желаем вам обоим счастья.",
+                "audioUrl": "/audio/marugoto/ab5df9f2cadd2323.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.18.grammar.131",
+      "titleRu": "～と思う",
+      "introductionRu": "Простая форма + と思う выражает собственное мнение.",
+      "canDoIds": [
+        50,
+        51,
+        52,
+        53
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.18.part.grammar.131",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.131",
+            "explanationRu": "Простая форма + と思う выражает собственное мнение.",
+            "example": {
+              "surface": "お祝いは花がいいと思います。",
+              "kana": "おいわいははながいいとおもいます。",
+              "segments": [
+                {
+                  "surface": "お"
+                },
+                {
+                  "surface": "祝",
+                  "reading": "いわ"
+                },
+                {
+                  "surface": "いは"
+                },
+                {
+                  "surface": "花",
+                  "reading": "はな"
+                },
+                {
+                  "surface": "がいいと"
+                },
+                {
+                  "surface": "思",
+                  "reading": "おも"
+                },
+                {
+                  "surface": "います。"
+                }
+              ],
+              "meaningRu": "Думаю, на праздник подойдут цветы.",
+              "audioUrl": "/audio/marugoto/7a628550ce9ba351.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "お祝いは",
+                "explanationRu": "Смысловой фрагмент: Думаю, на праздник подойдут цветы."
+              },
+              {
+                "text": "花が",
+                "explanationRu": "Смысловой фрагмент: Думаю, на праздник подойдут цветы."
+              },
+              {
+                "text": "いいと思います",
+                "explanationRu": "Простая форма + と思う выражает собственное мнение."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.18.grammar.132",
+      "titleRu": "～と言っていた",
+      "introductionRu": "Простая форма + と言っていました передаёт сказанное другим человеком.",
+      "canDoIds": [
+        50,
+        51,
+        52,
+        53
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.18.part.grammar.132",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.132",
+            "explanationRu": "Простая форма + と言っていました передаёт сказанное другим человеком.",
+            "example": {
+              "surface": "友達はうれしかったと言っていました。",
+              "kana": "ともだちはうれしかったといっていました。",
+              "segments": [
+                {
+                  "surface": "友達",
+                  "reading": "ともだち"
+                },
+                {
+                  "surface": "はうれしかったと"
+                },
+                {
+                  "surface": "言",
+                  "reading": "い"
+                },
+                {
+                  "surface": "っていました。"
+                }
+              ],
+              "meaningRu": "Друг сказал, что был рад.",
+              "audioUrl": "/audio/marugoto/0b911e9f14f705b9.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "友達は",
+                "explanationRu": "Смысловой фрагмент: Друг сказал, что был рад."
+              },
+              {
+                "text": "うれしかったと",
+                "explanationRu": "Смысловой фрагмент: Друг сказал, что был рад."
+              },
+              {
+                "text": "言っていました",
+                "explanationRu": "Простая форма + と言っていました передаёт сказанное другим человеком."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.50.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        50
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.50.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.50",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Предложите подарок для праздника друга и обоснуйте выбор.",
+              "canDoIds": [
+                50
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Предложите подарок для праздника друга и обоснуйте выбор.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "花がいいと思います。友達は花が好きだと言っていました。",
+                "kana": "はながいいとおもいます。ともだちははながすきだといっていました。",
+                "segments": [
+                  {
+                    "surface": "花",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "がいいと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "います。"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "花",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きだと"
+                  },
+                  {
+                    "surface": "言",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "っていました。"
+                  }
+                ],
+                "meaningRu": "Думаю, подойдут цветы. Друг говорил, что любит цветы.",
+                "audioUrl": "/audio/marugoto/8d5567a5ee827c3d.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Предложите подарок для праздника друга и обоснуйте выбор.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.51.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        51
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.51.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.51",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте открытку и определите повод поздравления.",
+              "canDoIds": [
+                51
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "ご結婚おめでとうございます。お二人の幸せを願っています。",
+                  "kana": "ごけっこんおめでとうございます。おふたりのしあわせをねがっています。",
+                  "segments": [
+                    {
+                      "surface": "ご"
+                    },
+                    {
+                      "surface": "結婚",
+                      "reading": "けっこん"
+                    },
+                    {
+                      "surface": "おめでとうございます。お"
+                    },
+                    {
+                      "surface": "二人",
+                      "reading": "ふたり"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "幸",
+                      "reading": "しあわ"
+                    },
+                    {
+                      "surface": "せを"
+                    },
+                    {
+                      "surface": "願",
+                      "reading": "ねが"
+                    },
+                    {
+                      "surface": "っています。"
+                    }
+                  ],
+                  "meaningRu": "Поздравляем со свадьбой. Желаем вам обоим счастья.",
+                  "audioUrl": "/audio/marugoto/ab5df9f2cadd2323.m4a"
+                }
+              ],
+              "questionRu": "С чем поздравляют?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Со свадьбой"
+                },
+                {
+                  "id": "b",
+                  "text": "С окончанием школы"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Поздравляем со свадьбой. Желаем вам обоим счастья."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.52.goal",
+      "titleRu": "Письменный ответ",
+      "canDoIds": [
+        52
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.52.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.52",
+              "titleRu": "Письменный ответ",
+              "instructionRu": "Напишите короткое поздравление со свадьбой с пожеланием.",
+              "canDoIds": [
+                52
+              ],
+              "kind": "production",
+              "response": "written",
+              "supports": [
+                "Напишите короткое поздравление со свадьбой с пожеланием.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "ご結婚おめでとうございます。どうぞお幸せに。また会いましょう。",
+                "kana": "ごけっこんおめでとうございます。どうぞおしあわせに。またあいましょう。",
+                "segments": [
+                  {
+                    "surface": "ご"
+                  },
+                  {
+                    "surface": "結婚",
+                    "reading": "けっこん"
+                  },
+                  {
+                    "surface": "おめでとうございます。どうぞお"
+                  },
+                  {
+                    "surface": "幸",
+                    "reading": "しあわ"
+                  },
+                  {
+                    "surface": "せに。また"
+                  },
+                  {
+                    "surface": "会",
+                    "reading": "あ"
+                  },
+                  {
+                    "surface": "いましょう。"
+                  }
+                ],
+                "meaningRu": "Поздравляю со свадьбой. Желаю счастья. До новой встречи.",
+                "audioUrl": "/audio/marugoto/6aee0fb03c7fe4b6.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Напишите короткое поздравление со свадьбой с пожеланием.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.53.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        53
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.53.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.53",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Поблагодарите за подарок и скажите, как будете им пользоваться.",
+              "canDoIds": [
+                53
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Поблагодарите за подарок и скажите, как будете им пользоваться.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "すてきなペンをありがとうございます。毎日使います。",
+                "kana": "すてきなペンをありがとうございます。まいにちつかいます。",
+                "segments": [
+                  {
+                    "surface": "すてきなペンをありがとうございます。"
+                  },
+                  {
+                    "surface": "毎日",
+                    "reading": "まいにち"
+                  },
+                  {
+                    "surface": "使",
+                    "reading": "つか"
+                  },
+                  {
+                    "surface": "います。"
+                  }
+                ],
+                "meaningRu": "Спасибо за замечательную ручку. Буду пользоваться каждый день.",
+                "audioUrl": "/audio/marugoto/88eeb2650e5ff796.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Поблагодарите за подарок и скажите, как будете им пользоваться.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

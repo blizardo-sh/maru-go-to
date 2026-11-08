@@ -1,4 +1,6 @@
 import { expect, test } from 'bun:test';
+import {wordTarget} from '../src/shared/meanings';
+import {catalogFor} from '../src/shared/catalog';
 import { loadCourse } from '../src/server/course';
 import { advanceLearningState, currentLearningStep, initialLearningState, learningParts, startLearningPractice } from '../src/shared/learning';
 import { confusableLearningWords, learningWordChoices } from '../src/shared/learningChoices';
@@ -59,14 +61,14 @@ test('all authored word placements have four stable, distinct prepared choices i
     const ids = learningWordChoices(course, route, step);
     expect(ids).toHaveLength(4); expect(new Set(ids).size).toBe(4); expect(ids).toContain(step.wordId);
     expect(learningWordChoices(reloaded, reloaded.learning!.find(item => item.lessonId === route.lessonId)!, structuredClone(step))).toEqual(ids);
-    const words = ids.map(id => course.words.find(word => word.id === id)!);
-    const target = course.words.find(word => word.id === step.wordId)!;
+    const words = ids.map(id => wordTarget(course,id)!);
+    const target = wordTarget(course,step.wordId)!;
     expect(target.lessonIds).toContain(route.lessonId);
     for (const word of words) { expect(word.reviewStatus).not.toBe('draft'); expect(word.kind).toBe(target.kind); }
     for (let i = 0; i < words.length; i++) for (let j = i + 1; j < words.length; j++) expect(confusableLearningWords(words[i]!, words[j]!)).toBe(false);
     targets.add(step.wordId); questions++;
   }
-  expect(questions).toBe(course.learning!.flatMap(route=>route.goals.flatMap(goal=>goal.parts.flatMap(part=>part.words))).length*3); expect(targets.size).toBeGreaterThanOrEqual(348); expect(preparedLearningChoices.size).toBe(targets.size);
+  expect(questions).toBe(course.learning!.flatMap(route=>route.goals.flatMap(goal=>goal.parts.flatMap(part=>part.words))).length*3); expect(targets.size).toBeGreaterThanOrEqual(348); expect(Object.keys(catalogFor(course).quiz.choices).length).toBe(targets.size);
 });
 
 test('politeness, shared meanings and equivalent readings cannot create a false wrong answer', () => {
@@ -122,7 +124,7 @@ test('prepared choices distinguish people, age, clock time, writing systems and 
   ];
   for (const example of examples) {
     const route = course.learning!.find(route => course.lessons.find(lesson => lesson.id === route.lessonId)!.number === example.lesson)!;
-    const steps = learningParts(route).flat().filter(step => step.kind === 'word-practice' && course.words.find(word => word.id === step.wordId)!.kana === example.target);
+    const steps = learningParts(route).flat().filter(step => step.kind === 'word-practice' && wordTarget(course,step.wordId)!.kana === example.target);
     expect(steps).toHaveLength(3);
     for (const step of steps) if (step.kind === 'word-practice') {
       const words = learningWordChoices(course, route, step).map(id => course.words.find(word => word.id === id)!);
@@ -130,7 +132,7 @@ test('prepared choices distinguish people, age, clock time, writing systems and 
     }
   }
   const route = course.learning![1]!;
-  const step = learningParts(route).flat().find(step => step.kind === 'word-practice' && course.words.find(word => word.id === step.wordId)!.kana === 'もういちどおねがいします。')!;
+  const step = learningParts(route).flat().find(step => step.kind === 'word-practice' && wordTarget(course,step.wordId)!.kana === 'もういちどおねがいします。')!;
   if (step.kind !== 'word-practice') throw new Error('Missing prepared request.');
   const words = learningWordChoices(course, route, step).map(id => course.words.find(word => word.id === id)!);
   expect(words.map(word => word.kind)).toEqual(['phrase', 'phrase', 'phrase', 'phrase']);

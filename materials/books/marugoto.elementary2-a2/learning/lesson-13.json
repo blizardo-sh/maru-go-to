@@ -1,0 +1,807 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.13",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Знакомимся с историей места",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.13.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.13.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.835f169726031ad9",
+              "explanationRu": "В этой ситуации: объяснение(описывать, объяснять)",
+              "example": {
+                "surface": "景色がきれいでした。説明も分かりやすかったです。また来たいです。",
+                "kana": "けしきがきれいでした。せつめいもわかりやすかったです。またきたいです。",
+                "segments": [
+                  {
+                    "surface": "景色",
+                    "reading": "けしき"
+                  },
+                  {
+                    "surface": "がきれいでした。"
+                  },
+                  {
+                    "surface": "説明",
+                    "reading": "せつめい"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "分",
+                    "reading": "わ"
+                  },
+                  {
+                    "surface": "かりやすかったです。また"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "たいです。"
+                  }
+                ],
+                "meaningRu": "Виды были красивыми. Объяснение тоже было понятным. Хочу приехать снова.",
+                "audioUrl": "/audio/marugoto/7ad5922052dab75b.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.ca1bca12d3bd4f9f",
+              "explanationRu": "В этой ситуации: тихий",
+              "example": {
+                "surface": "庭がとても静かでした。雨の日でも楽しめました。また来たいです。",
+                "kana": "にわがとてもしずかでした。あめのひでもたのしめました。またきたいです。",
+                "segments": [
+                  {
+                    "surface": "庭",
+                    "reading": "にわ"
+                  },
+                  {
+                    "surface": "がとても"
+                  },
+                  {
+                    "surface": "静",
+                    "reading": "しず"
+                  },
+                  {
+                    "surface": "かでした。"
+                  },
+                  {
+                    "surface": "雨",
+                    "reading": "あめ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "日",
+                    "reading": "ひ"
+                  },
+                  {
+                    "surface": "でも"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しめました。また"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "たいです。"
+                  }
+                ],
+                "meaningRu": "В саду было очень тихо. Даже в дождливый день было приятно. Хочу приехать снова.",
+                "audioUrl": "/audio/marugoto/76d1f9c045a3be69.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8505f761b2760b88",
+              "explanationRu": "В этой ситуации: здесь",
+              "example": {
+                "surface": "ここは何度来ても楽しいです。",
+                "kana": "ここはなんどきてもたのしいです。",
+                "segments": [
+                  {
+                    "surface": "ここは"
+                  },
+                  {
+                    "surface": "何度",
+                    "reading": "なんど"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "ても"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しいです。"
+                  }
+                ],
+                "meaningRu": "Сколько бы раз я сюда ни приезжал, всегда интересно.",
+                "audioUrl": "/audio/marugoto/c640e1da5c9c88f2.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.d11df0d6e4fe534e",
+              "explanationRu": "В этой ситуации: сад, двор",
+              "example": {
+                "surface": "庭がとても静かでした。雨の日でも楽しめました。また来たいです。",
+                "kana": "にわがとてもしずかでした。あめのひでもたのしめました。またきたいです。",
+                "segments": [
+                  {
+                    "surface": "庭",
+                    "reading": "にわ"
+                  },
+                  {
+                    "surface": "がとても"
+                  },
+                  {
+                    "surface": "静",
+                    "reading": "しず"
+                  },
+                  {
+                    "surface": "かでした。"
+                  },
+                  {
+                    "surface": "雨",
+                    "reading": "あめ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "日",
+                    "reading": "ひ"
+                  },
+                  {
+                    "surface": "でも"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しめました。また"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "たいです。"
+                  }
+                ],
+                "meaningRu": "В саду было очень тихо. Даже в дождливый день было приятно. Хочу приехать снова.",
+                "audioUrl": "/audio/marugoto/76d1f9c045a3be69.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.4a52dc1dd7854ca0",
+              "explanationRu": "В этой ситуации: цветы",
+              "example": {
+                "surface": "ここは何度来ても楽しいです。",
+                "kana": "ここはなんどきてもたのしいです。",
+                "segments": [
+                  {
+                    "surface": "ここは"
+                  },
+                  {
+                    "surface": "何度",
+                    "reading": "なんど"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "ても"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しいです。"
+                  }
+                ],
+                "meaningRu": "Сколько бы раз я сюда ни приезжал, всегда интересно.",
+                "audioUrl": "/audio/marugoto/c640e1da5c9c88f2.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.13.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.13.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.2eabfab66df7124d",
+              "explanationRu": "В этой ситуации: перед",
+              "example": {
+                "surface": "この橋は百年前に作られました。",
+                "kana": "このはしはひゃくねんまえにつくられました。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "橋",
+                    "reading": "はし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "百年前",
+                    "reading": "ひゃくねんまえ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "られました。"
+                  }
+                ],
+                "meaningRu": "Этот мост был построен сто лет назад.",
+                "audioUrl": "/audio/marugoto/79d18221a3c162e3.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.13.grammar.185",
+      "titleRu": "【疑問詞】＋～ても",
+      "introductionRu": "Вопросительное слово + ても означает неизменность результата при разных условиях.",
+      "canDoIds": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.13.part.grammar.185",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.185",
+            "explanationRu": "Вопросительное слово + ても означает неизменность результата при разных условиях.",
+            "example": {
+              "surface": "ここは何度来ても楽しいです。",
+              "kana": "ここはなんどきてもたのしいです。",
+              "segments": [
+                {
+                  "surface": "ここは"
+                },
+                {
+                  "surface": "何度",
+                  "reading": "なんど"
+                },
+                {
+                  "surface": "来",
+                  "reading": "き"
+                },
+                {
+                  "surface": "ても"
+                },
+                {
+                  "surface": "楽",
+                  "reading": "たの"
+                },
+                {
+                  "surface": "しいです。"
+                }
+              ],
+              "meaningRu": "Сколько бы раз я сюда ни приезжал, всегда интересно.",
+              "audioUrl": "/audio/marugoto/c640e1da5c9c88f2.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "ここは",
+                "explanationRu": "Смысловой фрагмент: Сколько бы раз я сюда ни приезжал, всегда интересно."
+              },
+              {
+                "text": "何度",
+                "explanationRu": "Смысловой фрагмент: Сколько бы раз я сюда ни приезжал, всегда интересно."
+              },
+              {
+                "text": "来ても",
+                "explanationRu": "Смысловой фрагмент: Сколько бы раз я сюда ни приезжал, всегда интересно."
+              },
+              {
+                "text": "楽しいです",
+                "explanationRu": "Вопросительное слово + ても означает неизменность результата при разных условиях."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.13.grammar.186",
+      "titleRu": "～と～で",
+      "introductionRu": "と указывает спутника, количество + で — состав группы целиком.",
+      "canDoIds": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.13.part.grammar.186",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.186",
+            "explanationRu": "と указывает спутника, количество + で — состав группы целиком.",
+            "example": {
+              "surface": "友達と三人で来ました。",
+              "kana": "ともだちとさんにんできました。",
+              "segments": [
+                {
+                  "surface": "友達",
+                  "reading": "ともだち"
+                },
+                {
+                  "surface": "と"
+                },
+                {
+                  "surface": "三人",
+                  "reading": "さんにん"
+                },
+                {
+                  "surface": "で"
+                },
+                {
+                  "surface": "来",
+                  "reading": "き"
+                },
+                {
+                  "surface": "ました。"
+                }
+              ],
+              "meaningRu": "Мы приехали втроём с друзьями.",
+              "audioUrl": "/audio/marugoto/5ad17f0eb9fdda31.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "友達と",
+                "explanationRu": "Смысловой фрагмент: Мы приехали втроём с друзьями."
+              },
+              {
+                "text": "三人で",
+                "explanationRu": "Смысловой фрагмент: Мы приехали втроём с друзьями."
+              },
+              {
+                "text": "来ました",
+                "explanationRu": "と указывает спутника, количество + で — состав группы целиком."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.13.grammar.187",
+      "titleRu": "～（ら）れる　＜受身＞",
+      "introductionRu": "Пассив выводит объект действия в тему: 作る → 作られる.",
+      "canDoIds": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.13.part.grammar.187",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.187",
+            "explanationRu": "Пассив выводит объект действия в тему: 作る → 作られる.",
+            "example": {
+              "surface": "この橋は百年前に作られました。",
+              "kana": "このはしはひゃくねんまえにつくられました。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "橋",
+                  "reading": "はし"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "百年前",
+                  "reading": "ひゃくねんまえ"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "作",
+                  "reading": "つく"
+                },
+                {
+                  "surface": "られました。"
+                }
+              ],
+              "meaningRu": "Этот мост был построен сто лет назад.",
+              "audioUrl": "/audio/marugoto/79d18221a3c162e3.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Этот мост был построен сто лет назад."
+              },
+              {
+                "text": "橋は",
+                "explanationRu": "Смысловой фрагмент: Этот мост был построен сто лет назад."
+              },
+              {
+                "text": "百年前に",
+                "explanationRu": "Смысловой фрагмент: Этот мост был построен сто лет назад."
+              },
+              {
+                "text": "作られました",
+                "explanationRu": "Пассив выводит объект действия в тему: 作る → 作られる."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.35.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        35
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.35.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.35",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Спросите участника экскурсии, впервые ли он здесь, и ответьте о своём опыте.",
+              "canDoIds": [
+                35
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Спросите участника экскурсии, впервые ли он здесь, и ответьте о своём опыте.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "ここは初めてですか。私は友達と一度来たことがあります。",
+                "kana": "ここははじめてですか。わたしはともだちといちどきたことがあります。",
+                "segments": [
+                  {
+                    "surface": "ここは"
+                  },
+                  {
+                    "surface": "初",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "めてですか。"
+                  },
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "と"
+                  },
+                  {
+                    "surface": "一度",
+                    "reading": "いちど"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "たことがあります。"
+                  }
+                ],
+                "meaningRu": "Вы здесь впервые? Я однажды приезжал с другом.",
+                "audioUrl": "/audio/marugoto/e3e979dce8998348.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Спросите участника экскурсии, впервые ли он здесь, и ответьте о своём опыте.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.36.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        36
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.36.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.36",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Коротко представьте известное место, указав историю и особенность.",
+              "canDoIds": [
+                36
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Коротко представьте известное место, указав историю и особенность.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "この橋は百年前に作られました。夜もきれいです。",
+                "kana": "このはしはひゃくねんまえにつくられました。よるもきれいです。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "橋",
+                    "reading": "はし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "百年前",
+                    "reading": "ひゃくねんまえ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "られました。"
+                  },
+                  {
+                    "surface": "夜",
+                    "reading": "よる"
+                  },
+                  {
+                    "surface": "もきれいです。"
+                  }
+                ],
+                "meaningRu": "Этот мост построен сто лет назад. Он красив и вечером.",
+                "audioUrl": "/audio/marugoto/81d232d3ad62e1f1.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Коротко представьте известное место, указав историю и особенность.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.37.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        37
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.37.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.37",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте отзыв посетителя и определите его мнение.",
+              "canDoIds": [
+                37
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "庭がとても静かでした。雨の日でも楽しめました。また来たいです。",
+                  "kana": "にわがとてもしずかでした。あめのひでもたのしめました。またきたいです。",
+                  "segments": [
+                    {
+                      "surface": "庭",
+                      "reading": "にわ"
+                    },
+                    {
+                      "surface": "がとても"
+                    },
+                    {
+                      "surface": "静",
+                      "reading": "しず"
+                    },
+                    {
+                      "surface": "かでした。"
+                    },
+                    {
+                      "surface": "雨",
+                      "reading": "あめ"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "日",
+                      "reading": "ひ"
+                    },
+                    {
+                      "surface": "でも"
+                    },
+                    {
+                      "surface": "楽",
+                      "reading": "たの"
+                    },
+                    {
+                      "surface": "しめました。また"
+                    },
+                    {
+                      "surface": "来",
+                      "reading": "き"
+                    },
+                    {
+                      "surface": "たいです。"
+                    }
+                  ],
+                  "meaningRu": "В саду было очень тихо. Даже в дождливый день было приятно. Хочу приехать снова.",
+                  "audioUrl": "/audio/marugoto/76d1f9c045a3be69.m4a"
+                }
+              ],
+              "questionRu": "Как посетитель оценивает визит?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Положительно, несмотря на дождь"
+                },
+                {
+                  "id": "b",
+                  "text": "Отрицательно из-за дождя"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "В саду было очень тихо. Даже в дождливый день было приятно. Хочу приехать снова."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.38.goal",
+      "titleRu": "Письменный ответ",
+      "canDoIds": [
+        38
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.38.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.38",
+              "titleRu": "Письменный ответ",
+              "instructionRu": "Оставьте короткий отзыв о посещённом месте и желание на будущее.",
+              "canDoIds": [
+                38
+              ],
+              "kind": "production",
+              "response": "written",
+              "supports": [
+                "Оставьте короткий отзыв о посещённом месте и желание на будущее.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "景色がきれいでした。説明も分かりやすかったです。また来たいです。",
+                "kana": "けしきがきれいでした。せつめいもわかりやすかったです。またきたいです。",
+                "segments": [
+                  {
+                    "surface": "景色",
+                    "reading": "けしき"
+                  },
+                  {
+                    "surface": "がきれいでした。"
+                  },
+                  {
+                    "surface": "説明",
+                    "reading": "せつめい"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "分",
+                    "reading": "わ"
+                  },
+                  {
+                    "surface": "かりやすかったです。また"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "たいです。"
+                  }
+                ],
+                "meaningRu": "Виды были красивыми. Объяснение тоже было понятным. Хочу приехать снова.",
+                "audioUrl": "/audio/marugoto/7ad5922052dab75b.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Оставьте короткий отзыв о посещённом месте и желание на будущее.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

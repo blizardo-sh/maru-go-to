@@ -624,7 +624,7 @@
         ],
         "surface": "おみやげ",
         "kana": "おみやげ",
-        "meaningRu": "сувенир",
+        "meaningRu": "сувенир; гостинец",
         "segments": [
           {
             "surface": "おみやげ"
@@ -649,6 +649,13 @@
             "row": 10,
             "entry": "おみやげ（みやげ）",
             "label": "Словарь · урок 15"
+          },
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+            "entry": "おみやげ",
+            "label": "Словарь EN · урок 15 · уточнение русского перевода",
+            "page": 8
           }
         ],
         "audioUrl": "/audio/659213e7cee35ba87e30.m4a"

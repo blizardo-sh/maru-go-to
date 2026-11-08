@@ -97,11 +97,12 @@ suite('application HTTP integration with disposable PostgreSQL', () => {
     expect((await request('/api/admin/users', learners[1]!.cookie)).status).toBe(403);
   });
 
-  test('official course material covers both books and every lesson', async () => {
+  test('official course material covers every book and its units', async () => {
     const response = await request('/api/course', learners[0]!.cookie);
     expect(response.status).toBe(200);
     const delivered: Course = await response.json();
-    expect(delivered.lessons.map(lesson => lesson.number).sort((a,b) => a-b)).toEqual(Array.from({ length: 18 }, (_,index) => index+1));
+    expect(delivered.books).toHaveLength(4);
+    for(const book of delivered.books!)expect(delivered.lessons.filter(lesson=>(lesson.bookId??'marugoto.starter-a1')===book.id).map(lesson=>lesson.number).sort((a,b)=>a-b)).toEqual(Array.from({length:book.unitCount},(_,index)=>index+1));
     const sourceRows = new Set(delivered.words.flatMap(word => word.sourceRefs)
       .filter(source => source.url.endsWith('VocabularyIndex2_RU.pdf') && source.page && source.row)
       .map(source => `${source.part}:${source.page}:${source.row}`));
@@ -109,21 +110,21 @@ suite('application HTTP integration with disposable PostgreSQL', () => {
     for (const lesson of delivered.lessons) {
       const words = delivered.words.filter(word => word.lessonIds.includes(lesson.id));
       expect(words.length).toBeGreaterThan(0);
-      for (const part of ['katsudoo', 'rikai']) {
+      for (const part of lesson.bookId==='marugoto.pre-intermediate-a2b1'?['combined']:['katsudoo', 'rikai']) {
         expect(words.some(word => word.sourceRefs.some(source => source.part === part && source.page && source.entry))).toBe(true);
       }
     }
   });
 
   test('private lists cannot be read, edited or enabled by another learner', async () => {
-    const created = await request('/api/lists', learners[0]!.cookie, { name: 'Only learner A', text: '試験 — испытание\nテスト — тест' });
+    const created = await request('/api/lists', learners[0]!.cookie, { name: 'Only learner A', text: '試験機構 — испытательный механизм\n試験装置 — испытательное устройство' });
     expect(created.status).toBe(200);
     const list: WordList = await created.json();
     expect(list.words).toHaveLength(2);
     const personalOnly = { ...settings(), lessonStatuses: {}, enabledListIds: [list.id] };
     expect((await request('/api/settings', learners[0]!.cookie, personalOnly, 'PUT')).status).toBe(200);
     expect((await (await request('/api/training?listId='+list.id,learners[0]!.cookie)).json()).items).toHaveLength(0);
-    const confirmed = await request(`/api/lists/${list.id}/words/${list.words[0]!.id}`, learners[0]!.cookie, { kana: 'しけん' }, 'PATCH');
+    const confirmed = await request(`/api/lists/${list.id}/words/${list.words[0]!.id}`, learners[0]!.cookie, { kana: 'しけんきこう' }, 'PATCH');
     expect(confirmed.status).toBe(200);
     expect((await confirmed.json()).reviewStatus).toBe('reviewed');
     expect((await (await request('/api/training?listId='+list.id,learners[0]!.cookie)).json()).items.map((item:ReviewItem) => item.targetId)).toEqual([list.words[0]!.id]);
@@ -252,6 +253,14 @@ suite('application HTTP integration with disposable PostgreSQL', () => {
     expect(example).toBeDefined();
     expect(example.skillId).toBe(skillId);
     expect(personalized.exercises.some(exercise => exercise.id.startsWith(verb.id) || exercise.id.startsWith(draft.id))).toBe(false);
+    const compactFor=(learner:typeof owner)=>app.request(origin+'/api/course',{headers:{cookie:learner.cookie,'x-forwarded-for':learner.ip,'X-Learning-Learner-Id':learner.id,'X-Course-Representation':'learner-v1'}});
+    const compactOwner=await compactFor(owner), compactOther=await compactFor(other);
+    const ownerView:Course=await compactOwner.json(), otherView:Course=await compactOther.json();
+    expect(ownerView.exercises.find(item=>item.id===example.id)).toEqual(example);
+    expect(ownerView.words.some(word=>word.id===noun.id)).toBe(true);
+    expect(otherView.words.some(word=>word.id===noun.id)).toBe(false);
+    expect(compactOwner.headers.get('ETag')).not.toBe(compactOther.headers.get('ETag'));
+
     const forms = new Map(personalized.forms.map(form => [form.id,form]));
     expect(example.acceptedOrders[0]!.map(id => forms.get(example.tokens.find(token => token.id === id)!.formId)!.surface).join('')).toBe('これは傘です');
     const queueResponse = await request('/api/training?listId='+list.id, owner.cookie);

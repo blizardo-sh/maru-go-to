@@ -5,7 +5,7 @@ import { relative, resolve } from 'node:path';
 import { releaseSourceFile } from './delivery';
 const root = resolve(import.meta.dir, '..');
 assert.equal(Bun.version, JSON.parse(readFileSync(resolve(root, 'package.json'), 'utf8')).packageManager.split('@').at(-1), 'Use the pinned Bun runtime');
-const paths = ['src', 'assets/canvas', 'public', 'materials', 'db', 'dist', 'scripts/release-candidate.ts', 'scripts/delivery.ts', 'release-provenance.json', 'package.json', 'bun.lock', 'bunfig.toml', 'tsconfig.json', 'vite.config.ts', 'index.html', 'legacy.html', 'tokens.css', 'drizzle.config.ts', 'Dockerfile', '.dockerignore', 'deployment/Caddyfile', 'deployment/compose.yaml', 'deployment/init-db.sh', 'deployment/nginx-http.conf'];
+const paths = ['src', 'assets/canvas', 'public', 'materials', 'db', 'dist', 'scripts/release-candidate.ts', 'scripts/delivery.ts', 'scripts/content.ts', 'scripts/content-package.py', 'release-provenance.json', 'package.json', 'bun.lock', 'bunfig.toml', 'tsconfig.json', 'vite.config.ts', 'index.html', 'legacy.html', 'tokens.css', 'drizzle.config.ts', 'Dockerfile', '.dockerignore', 'deployment/Caddyfile', 'deployment/compose.yaml', 'deployment/init-db.sh', 'deployment/nginx-http.conf'];
 // Bind dist to the exact source tree being packaged; stale builds cannot become candidates.
 for (const command of ['typecheck', 'build']) {
   const result = Bun.spawnSync([process.execPath, 'run', command], { cwd: root, env: { ...process.env, PATH: resolve(process.execPath, '..') + ':' + process.env.PATH }, stdout: 'inherit', stderr: 'inherit' });

@@ -1,9 +1,10 @@
 import type { Course, Skill } from '../shared/types';
+import { starterBookId } from '../shared/books';
 
-export function equivalentCanDoGroups(course: Course, canDoIds: number[]) {
+export function equivalentCanDoGroups(course: Course, canDoIds: number[], bookId = starterBookId) {
   const groups = new Map<string, { ids: number[]; skills: Skill[]; exerciseCount: number }>();
   for (const id of canDoIds) {
-    const skills = course.skills.filter(skill => skill.canDoIds.includes(id));
+    const skills = course.skills.filter(skill => skill.canDoRefs ? skill.canDoRefs.some(ref => ref.bookId === bookId && ref.number === id) : bookId === starterBookId && skill.canDoIds.includes(id));
     const key = JSON.stringify(skills.map(skill => skill.id).sort());
     const existing = groups.get(key);
     if (existing) existing.ids.push(id);

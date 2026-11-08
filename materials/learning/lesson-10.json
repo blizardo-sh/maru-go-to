@@ -441,7 +441,7 @@
         ],
         "surface": "しごと",
         "kana": "しごと",
-        "meaningRu": "работа",
+        "meaningRu": "работа; профессия",
         "segments": [
           {
             "surface": "しごと"
@@ -466,6 +466,13 @@
             "row": 40,
             "entry": "しごと",
             "label": "Словарь · урок 9"
+          },
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+            "entry": "しごと",
+            "label": "Словарь EN · урок 9 · уточнение русского перевода",
+            "page": 5
           }
         ],
         "audioUrl": "/audio/3c87c66c6206dd09a81b.m4a"

@@ -1,3 +1,5 @@
+import { dictionaryMeanings, lexemeIds } from '@app/shared/meanings';
+import { bookForLesson, unitLabel } from '@app/shared/books';
 import { sectionCards } from './album-navigation';
 import { renderReading } from './album-reading';
 import { catalogFor } from '@app/shared/catalog';
@@ -14,6 +16,7 @@ export class AlbumReference {
   offset = 0;
   search = '';
   detail = '';
+  detailAudio: {meaning:string;url:string}[]=[];
   scroll = 0;
   private savedDraft: string | null = null;
   kanaGroup: 'basic'|'voiced'|'yoon'|'small' = 'basic';
@@ -74,7 +77,7 @@ export function renderReference(surface:StudySurface,reference:AlbumReference,op
     fields.forEach(([id,label],index)=>{const height=heights[index]!,columns=reference.form==='word'&&a.height<300?2:1;options.field(id!,{x:a.x+(index%columns)*(a.width+gap)/columns,y:columns===1?y:a.y+56+Math.floor(index/columns)*54,width:(a.width-gap*(columns-1))/columns,height:height-gap},reference.values[id!]??'',label!,value=>reference.draft(id!,value));y+=height;});
     surface.footer([{id:'personal-cancel',text:'Назад',fontSize:16,run:back},{id:'personal-save',text:reference.busy?'Сохраняем…':'Сохранить',fontSize:16,enabled:!reference.busy,run:()=>void reference.save()}].map(options.safe));return;
   }
-  if(reference.detail){renderReading(surface,reference.detail,reference,{back:{id:'reference-detail-back',text:'Назад',run:back},safe:options.safe,changed:options.changed});return;}
+  if(reference.detail){renderReading(surface,reference.detail,reference,{actions:reference.section==='words'?reference.detailAudio.map((audio,index)=>({id:'reference-meaning-audio:'+index,text:'▶ '+(index+1),accessibleLabel:'Послушать: '+audio.meaning,run:()=>options.play(audio.url)})):[],back:{id:'reference-detail-back',text:'Назад',run:back},safe:options.safe,changed:options.changed});return;}
   if(reference.section==='hiragana'||reference.section==='katakana'){
     const convert=reference.section==='katakana'?katakana:(value:string)=>value, rows=catalog.kana[reference.kanaGroup];
     surface.text(reference.section==='katakana'?'Катакана':'Хирагана',{...a,y:a.y+8,height:32},22);
@@ -86,8 +89,8 @@ export function renderReference(surface:StudySurface,reference:AlbumReference,op
   let title='Справочник',items:StudyAction[]=[];
   if(!reference.section)items=[['words','Изученные слова'],['skills','Изученные конструкции'],['particles','Частицы'],['hiragana','Хирагана'],['katakana','Катакана'],['lists','Личные списки']].map(([id,text])=>({id:'reference:'+id,text:text!,run:()=>{reference.section=id!;change();}}));
   else if(reference.section==='words'){
-    const ids=new Set(data.progress.introducedWordIds),words=[...new Map([...data.course.words,...data.lists.flatMap(list=>list.words)].map(word=>[word.id,word])).values()].filter(word=>ids.has(word.id));title='Изученные слова · '+words.length;
-    items=words.map(word=>({id:'reference-word:'+word.id,text:`${word.surface} · ${word.kana} — ${word.meaningRu}`,run:()=>{reference.detail=`${word.surface} · ${word.kana}\n${word.meaningRu}`;options.play(word.audioUrl);options.changed();}}));
+    const known=new Set(data.progress.introducedWordIds),ids=lexemeIds(data.course,known),words=[...new Map([...data.course.words,...data.lists.flatMap(list=>list.words)].map(word=>[word.id,word])).values()].filter(word=>ids.has(word.id));title='Изученные слова · '+words.length;
+    items=words.map(word=>({id:'reference-word:'+word.id,text:`${word.surface} · ${word.kana} — ${dictionaryMeanings(data.course,word,known).map(value=>value.meaningRu).join('; ')}`,run:()=>{reference.detail=`${word.surface} · ${word.kana}\n`+dictionaryMeanings(data.course,word,known).map(value=>`${value.meaningRu} · ${value.learned?'Изучено':'Новое значение'}${value.meaningContext?'\n'+value.meaningContext.surface+' · '+value.meaningContext.kana+'\n'+value.meaningContext.meaningRu:''}`).join('\n\n')+'\n\n'+word.lessonIds.map(id=>{const lesson=data.course.lessons.find(l=>l.id===id);if(!lesson)return '';const book=bookForLesson(data.course,lesson);return `${book.shortTitle} · ${unitLabel(book)} ${lesson.number}`;}).join('; ');reference.detailAudio=dictionaryMeanings(data.course,word,known).filter(value=>!!value.audioUrl).map(value=>({meaning:value.meaningRu,url:value.audioUrl!}));options.changed();}}));
   }else if(reference.section==='skills'){
     const skills=data.course.skills.filter(skill=>data.progress.introducedSkillIds.includes(skill.id));title='Изученные конструкции · '+skills.length;
     items=skills.map(skill=>({id:'reference-skill:'+skill.id,text:skill.title,run:()=>{reference.detail=[skill.title,skill.explanationRu,...examplesFor(data.course,skill.id).slice(0,2).map(exercise=>exampleValue(data.course,exercise).surface+'\n'+(exercise.translationRu??exercise.promptRu))].join('\n\n');options.changed();}}));

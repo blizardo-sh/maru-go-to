@@ -1,0 +1,1244 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.03",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Выбираем блюдо",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.03.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.03.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.63ec245e2ec2e4aa",
+              "explanationRu": "В этой ситуации: вегетарианец/вегетарианка",
+              "example": {
+                "surface": "ベジタリアンなので、肉は食べません。野菜の料理をお願いします。",
+                "kana": "ベジタリアンなので、にくはたべません。やさいのりょうりをおねがいします。",
+                "segments": [
+                  {
+                    "surface": "ベジタリアンなので、"
+                  },
+                  {
+                    "surface": "肉",
+                    "reading": "にく"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べません。"
+                  },
+                  {
+                    "surface": "野菜",
+                    "reading": "やさい"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "をお"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いします。"
+                  }
+                ],
+                "meaningRu": "Я вегетарианец, поэтому не ем мясо. Пожалуйста, овощное блюдо.",
+                "audioUrl": "/audio/marugoto/41076aa3d6ce996e.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.8d1de28e493c96d2",
+              "explanationRu": "В этой ситуации: свежий",
+              "example": {
+                "surface": "魚なら、この定食がいいですよ。新鮮なので、よく食べます。",
+                "kana": "さかななら、このていしょくがいいですよ。しんせんなので、よくたべます。",
+                "segments": [
+                  {
+                    "surface": "魚",
+                    "reading": "さかな"
+                  },
+                  {
+                    "surface": "なら、この"
+                  },
+                  {
+                    "surface": "定食",
+                    "reading": "ていしょく"
+                  },
+                  {
+                    "surface": "がいいですよ。"
+                  },
+                  {
+                    "surface": "新鮮",
+                    "reading": "しんせん"
+                  },
+                  {
+                    "surface": "なので、よく"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べます。"
+                  }
+                ],
+                "meaningRu": "Если хотите рыбу, советую этот комплексный обед. Рыба свежая, поэтому я часто его заказываю.",
+                "audioUrl": "/audio/marugoto/6002ef2da04c921d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.meaning.18c6976ab9c13e4f",
+              "explanationRu": "В этой ситуации: выбрать что-либо, остановиться на чем-либо",
+              "example": {
+                "surface": "私は水にします。",
+                "kana": "わたしはみずにします。",
+                "segments": [
+                  {
+                    "surface": "私は水にします。",
+                    "reading": "わたしはみずにします。"
+                  }
+                ],
+                "meaningRu": "Я выберу воду.",
+                "audioUrl": "/audio/marugoto/1982ea928264acd4.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.8ff12cdbdc29d626",
+              "explanationRu": "В этой ситуации: салат",
+              "example": {
+                "surface": "カレーを二つと、サラダを一つお願いします。水もください。",
+                "kana": "カレーをふたつと、サラダをひとつおねがいします。みずもください。",
+                "segments": [
+                  {
+                    "surface": "カレーを"
+                  },
+                  {
+                    "surface": "二",
+                    "reading": "ふた"
+                  },
+                  {
+                    "surface": "つと、サラダを"
+                  },
+                  {
+                    "surface": "一",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "つお"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いします。"
+                  },
+                  {
+                    "surface": "水",
+                    "reading": "みず"
+                  },
+                  {
+                    "surface": "もください。"
+                  }
+                ],
+                "meaningRu": "Два карри и один салат, пожалуйста. И воды.",
+                "audioUrl": "/audio/marugoto/357d23cab3874e63.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.8e679a31060665e0",
+              "explanationRu": "В этой ситуации: раз",
+              "example": {
+                "surface": "駅から近いのでよく来ます。",
+                "kana": "えきからちかいのでよくきます。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "から"
+                  },
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "いのでよく"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "ます。"
+                  }
+                ],
+                "meaningRu": "Я часто сюда прихожу, потому что близко к станции.",
+                "audioUrl": "/audio/marugoto/11d5679103ee140d.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.03.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.03.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.word.f0e39bac63383ca6",
+              "explanationRu": "В этой ситуации: место",
+              "example": {
+                "surface": "三人です。窓の近くの席はありますか。",
+                "kana": "さんにんです。まどのちかくのせきはありますか。",
+                "segments": [
+                  {
+                    "surface": "三人",
+                    "reading": "さんにん"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "窓",
+                    "reading": "まど"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "くの"
+                  },
+                  {
+                    "surface": "席",
+                    "reading": "せき"
+                  },
+                  {
+                    "surface": "はありますか。"
+                  }
+                ],
+                "meaningRu": "Нас трое. Есть место у окна?",
+                "audioUrl": "/audio/marugoto/ce13a9de86de2322.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.47d067e22049ceb5",
+              "explanationRu": "В этой ситуации: моллюск",
+              "example": {
+                "surface": "駅から近いのでよく来ます。",
+                "kana": "えきからちかいのでよくきます。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "から"
+                  },
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "いのでよく"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "ます。"
+                  }
+                ],
+                "meaningRu": "Я часто сюда прихожу, потому что близко к станции.",
+                "audioUrl": "/audio/marugoto/11d5679103ee140d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.a26707ecb864f89f",
+              "explanationRu": "В этой ситуации: прошу вас; пожалуйста",
+              "example": {
+                "surface": "ベジタリアンなので、肉は食べません。野菜の料理をお願いします。",
+                "kana": "ベジタリアンなので、にくはたべません。やさいのりょうりをおねがいします。",
+                "segments": [
+                  {
+                    "surface": "ベジタリアンなので、"
+                  },
+                  {
+                    "surface": "肉",
+                    "reading": "にく"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べません。"
+                  },
+                  {
+                    "surface": "野菜",
+                    "reading": "やさい"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "をお"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いします。"
+                  }
+                ],
+                "meaningRu": "Я вегетарианец, поэтому не ем мясо. Пожалуйста, овощное блюдо.",
+                "audioUrl": "/audio/marugoto/41076aa3d6ce996e.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.58c25037d1022b83",
+              "explanationRu": "В этой ситуации: находиться, быть (о неодушевлённых предметах); проводиться (о мероприятии)",
+              "example": {
+                "surface": "三人です。窓の近くの席はありますか。",
+                "kana": "さんにんです。まどのちかくのせきはありますか。",
+                "segments": [
+                  {
+                    "surface": "三人",
+                    "reading": "さんにん"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "窓",
+                    "reading": "まど"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "くの"
+                  },
+                  {
+                    "surface": "席",
+                    "reading": "せき"
+                  },
+                  {
+                    "surface": "はありますか。"
+                  }
+                ],
+                "meaningRu": "Нас трое. Есть место у окна?",
+                "audioUrl": "/audio/marugoto/ce13a9de86de2322.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.3c0f92c17efac2d9",
+              "explanationRu": "В этой ситуации: есть, кушать",
+              "example": {
+                "surface": "魚なら、この定食がいいですよ。新鮮なので、よく食べます。",
+                "kana": "さかななら、このていしょくがいいですよ。しんせんなので、よくたべます。",
+                "segments": [
+                  {
+                    "surface": "魚",
+                    "reading": "さかな"
+                  },
+                  {
+                    "surface": "なら、この"
+                  },
+                  {
+                    "surface": "定食",
+                    "reading": "ていしょく"
+                  },
+                  {
+                    "surface": "がいいですよ。"
+                  },
+                  {
+                    "surface": "新鮮",
+                    "reading": "しんせん"
+                  },
+                  {
+                    "surface": "なので、よく"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べます。"
+                  }
+                ],
+                "meaningRu": "Если хотите рыбу, советую этот комплексный обед. Рыба свежая, поэтому я часто его заказываю.",
+                "audioUrl": "/audio/marugoto/6002ef2da04c921d.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.03.words.3",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.03.part.words.3",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.c4497f9f1747667f",
+              "explanationRu": "В этой ситуации: еда, блюда; приготовление пищи; кухня",
+              "example": {
+                "surface": "魚ならこの料理がいいですよ。",
+                "kana": "さかなならこのりょうりがいいですよ。",
+                "segments": [
+                  {
+                    "surface": "魚",
+                    "reading": "さかな"
+                  },
+                  {
+                    "surface": "ならこの"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "がいいですよ。"
+                  }
+                ],
+                "meaningRu": "Если хотите рыбу, советую это блюдо.",
+                "audioUrl": "/audio/marugoto/8aaf3c765f37497f.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.584c20478d4e882e",
+              "explanationRu": "В этой ситуации: приходить; приезжать",
+              "example": {
+                "surface": "駅から近いのでよく来ます。",
+                "kana": "えきからちかいのでよくきます。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "から"
+                  },
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "いのでよく"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "ます。"
+                  }
+                ],
+                "meaningRu": "Я часто сюда прихожу, потому что близко к станции.",
+                "audioUrl": "/audio/marugoto/11d5679103ee140d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.d3bb981e73f63ffd",
+              "explanationRu": "В этой ситуации: рыба",
+              "example": {
+                "surface": "私が食べたいのは魚です。",
+                "kana": "わたしがたべたいのはさかなです。",
+                "segments": [
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べたいのは"
+                  },
+                  {
+                    "surface": "魚",
+                    "reading": "さかな"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Я хочу съесть именно рыбу.",
+                "audioUrl": "/audio/marugoto/258c841e337468d9.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.27aacadebc325d6c",
+              "explanationRu": "В этой ситуации: близкий",
+              "example": {
+                "surface": "駅から近いのでよく来ます。",
+                "kana": "えきからちかいのでよくきます。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "から"
+                  },
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "いのでよく"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "ます。"
+                  }
+                ],
+                "meaningRu": "Я часто сюда прихожу, потому что близко к станции.",
+                "audioUrl": "/audio/marugoto/11d5679103ee140d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.dab1b377ee04ec7e",
+              "explanationRu": "В этой ситуации: один",
+              "example": {
+                "surface": "りんごを一つずつ取ってください。",
+                "kana": "りんごをひとつずつとってください。",
+                "segments": [
+                  {
+                    "surface": "りんごを"
+                  },
+                  {
+                    "surface": "一",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "つずつ"
+                  },
+                  {
+                    "surface": "取",
+                    "reading": "と"
+                  },
+                  {
+                    "surface": "ってください。"
+                  }
+                ],
+                "meaningRu": "Возьмите по одному яблоку.",
+                "audioUrl": "/audio/marugoto/d397d6e707de7cdb.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.03.grammar.144",
+      "titleRu": "～ので",
+      "introductionRu": "ので даёт объяснение причины; после существительного и な-прилагательного нужно なので.",
+      "canDoIds": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.03.part.grammar.144",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.144",
+            "explanationRu": "ので даёт объяснение причины; после существительного и な-прилагательного нужно なので.",
+            "example": {
+              "surface": "駅から近いのでよく来ます。",
+              "kana": "えきからちかいのでよくきます。",
+              "segments": [
+                {
+                  "surface": "駅",
+                  "reading": "えき"
+                },
+                {
+                  "surface": "から"
+                },
+                {
+                  "surface": "近",
+                  "reading": "ちか"
+                },
+                {
+                  "surface": "いのでよく"
+                },
+                {
+                  "surface": "来",
+                  "reading": "き"
+                },
+                {
+                  "surface": "ます。"
+                }
+              ],
+              "meaningRu": "Я часто сюда прихожу, потому что близко к станции.",
+              "audioUrl": "/audio/marugoto/11d5679103ee140d.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "駅から",
+                "explanationRu": "Смысловой фрагмент: Я часто сюда прихожу, потому что близко к станции."
+              },
+              {
+                "text": "近いので",
+                "explanationRu": "Смысловой фрагмент: Я часто сюда прихожу, потому что близко к станции."
+              },
+              {
+                "text": "よく来ます",
+                "explanationRu": "ので даёт объяснение причины; после существительного и な-прилагательного нужно なので."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.03.grammar.145",
+      "titleRu": "～のは～だ",
+      "introductionRu": "のは…です выделяет важную часть сообщения.",
+      "canDoIds": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.03.part.grammar.145",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.145",
+            "explanationRu": "のは…です выделяет важную часть сообщения.",
+            "example": {
+              "surface": "私が食べたいのは魚です。",
+              "kana": "わたしがたべたいのはさかなです。",
+              "segments": [
+                {
+                  "surface": "私",
+                  "reading": "わたし"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "食",
+                  "reading": "た"
+                },
+                {
+                  "surface": "べたいのは"
+                },
+                {
+                  "surface": "魚",
+                  "reading": "さかな"
+                },
+                {
+                  "surface": "です。"
+                }
+              ],
+              "meaningRu": "Я хочу съесть именно рыбу.",
+              "audioUrl": "/audio/marugoto/258c841e337468d9.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "私が",
+                "explanationRu": "Смысловой фрагмент: Я хочу съесть именно рыбу."
+              },
+              {
+                "text": "食べたいのは",
+                "explanationRu": "Смысловой фрагмент: Я хочу съесть именно рыбу."
+              },
+              {
+                "text": "魚です",
+                "explanationRu": "のは…です выделяет важную часть сообщения."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.03.grammar.146",
+      "titleRu": "～なら～がいい",
+      "introductionRu": "なら подхватывает предложенную собеседником тему и даёт рекомендацию.",
+      "canDoIds": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.03.part.grammar.146",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.146",
+            "explanationRu": "なら подхватывает предложенную собеседником тему и даёт рекомендацию.",
+            "example": {
+              "surface": "魚ならこの料理がいいですよ。",
+              "kana": "さかなならこのりょうりがいいですよ。",
+              "segments": [
+                {
+                  "surface": "魚",
+                  "reading": "さかな"
+                },
+                {
+                  "surface": "ならこの"
+                },
+                {
+                  "surface": "料理",
+                  "reading": "りょうり"
+                },
+                {
+                  "surface": "がいいですよ。"
+                }
+              ],
+              "meaningRu": "Если хотите рыбу, советую это блюдо.",
+              "audioUrl": "/audio/marugoto/8aaf3c765f37497f.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "魚なら",
+                "explanationRu": "Смысловой фрагмент: Если хотите рыбу, советую это блюдо."
+              },
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Если хотите рыбу, советую это блюдо."
+              },
+              {
+                "text": "料理が",
+                "explanationRu": "Смысловой фрагмент: Если хотите рыбу, советую это блюдо."
+              },
+              {
+                "text": "いいですよ",
+                "explanationRu": "なら подхватывает предложенную собеседником тему и даёт рекомендацию."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.03.grammar.147",
+      "titleRu": "～ずつ",
+      "introductionRu": "ずつ после количества обозначает равномерное распределение.",
+      "canDoIds": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.03.part.grammar.147",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.147",
+            "explanationRu": "ずつ после количества обозначает равномерное распределение.",
+            "example": {
+              "surface": "りんごを一つずつ取ってください。",
+              "kana": "りんごをひとつずつとってください。",
+              "segments": [
+                {
+                  "surface": "りんごを"
+                },
+                {
+                  "surface": "一",
+                  "reading": "ひと"
+                },
+                {
+                  "surface": "つずつ"
+                },
+                {
+                  "surface": "取",
+                  "reading": "と"
+                },
+                {
+                  "surface": "ってください。"
+                }
+              ],
+              "meaningRu": "Возьмите по одному яблоку.",
+              "audioUrl": "/audio/marugoto/d397d6e707de7cdb.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "りんごを",
+                "explanationRu": "Смысловой фрагмент: Возьмите по одному яблоку."
+              },
+              {
+                "text": "一つずつ",
+                "explanationRu": "Смысловой фрагмент: Возьмите по одному яблоку."
+              },
+              {
+                "text": "取ってください",
+                "explanationRu": "ずつ после количества обозначает равномерное распределение."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.05.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        5
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.05.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.05",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "При входе в ресторан назовите число гостей и пожелание о месте.",
+              "canDoIds": [
+                5
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "При входе в ресторан назовите число гостей и пожелание о месте.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "三人です。窓の近くの席はありますか。",
+                "kana": "さんにんです。まどのちかくのせきはありますか。",
+                "segments": [
+                  {
+                    "surface": "三人",
+                    "reading": "さんにん"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "窓",
+                    "reading": "まど"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "くの"
+                  },
+                  {
+                    "surface": "席",
+                    "reading": "せき"
+                  },
+                  {
+                    "surface": "はありますか。"
+                  }
+                ],
+                "meaningRu": "Нас трое. Есть место у окна?",
+                "audioUrl": "/audio/marugoto/ce13a9de86de2322.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: При входе в ресторан назовите число гостей и пожелание о месте.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.06.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        6
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.06.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.06",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте краткое меню. Читайте сверху вниз, начиная с правого столбца.",
+              "canDoIds": [
+                6
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "焼き魚定食",
+                  "kana": "やきざかなていしょく",
+                  "segments": [
+                    {
+                      "surface": "焼",
+                      "reading": "や"
+                    },
+                    {
+                      "surface": "き"
+                    },
+                    {
+                      "surface": "魚",
+                      "reading": "ざかな"
+                    },
+                    {
+                      "surface": "定食",
+                      "reading": "ていしょく"
+                    }
+                  ],
+                  "meaningRu": "Комплексный обед с жареной рыбой",
+                  "audioUrl": "/audio/marugoto/fef44bc0e440c5d6.m4a"
+                },
+                {
+                  "surface": "野菜カレー",
+                  "kana": "やさいカレー",
+                  "segments": [
+                    {
+                      "surface": "野菜",
+                      "reading": "やさい"
+                    },
+                    {
+                      "surface": "カレー"
+                    }
+                  ],
+                  "meaningRu": "Овощное карри",
+                  "audioUrl": "/audio/marugoto/cd09fc760f3cca55.m4a"
+                },
+                {
+                  "surface": "温かいうどん",
+                  "kana": "あたたかいうどん",
+                  "segments": [
+                    {
+                      "surface": "温",
+                      "reading": "あたた"
+                    },
+                    {
+                      "surface": "かいうどん"
+                    }
+                  ],
+                  "meaningRu": "Горячий удон",
+                  "audioUrl": "/audio/marugoto/f86602e24b9b988a.m4a"
+                }
+              ],
+              "questionRu": "Какое блюдо содержит рыбу?",
+              "options": [
+                {
+                  "id": "b",
+                  "text": "Второе"
+                },
+                {
+                  "id": "a",
+                  "text": "Первое"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Комплексный обед с жареной рыбой. Овощное карри. Горячий удон.",
+              "layout": "vertical-menu"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.07.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.07.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.07",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Порекомендуйте другу блюдо в знакомом ресторане и назовите причину.",
+              "canDoIds": [
+                7
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Порекомендуйте другу блюдо в знакомом ресторане и назовите причину.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "魚なら、この定食がいいですよ。新鮮なので、よく食べます。",
+                "kana": "さかななら、このていしょくがいいですよ。しんせんなので、よくたべます。",
+                "segments": [
+                  {
+                    "surface": "魚",
+                    "reading": "さかな"
+                  },
+                  {
+                    "surface": "なら、この"
+                  },
+                  {
+                    "surface": "定食",
+                    "reading": "ていしょく"
+                  },
+                  {
+                    "surface": "がいいですよ。"
+                  },
+                  {
+                    "surface": "新鮮",
+                    "reading": "しんせん"
+                  },
+                  {
+                    "surface": "なので、よく"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べます。"
+                  }
+                ],
+                "meaningRu": "Если хотите рыбу, советую этот комплексный обед. Рыба свежая, поэтому я часто его заказываю.",
+                "audioUrl": "/audio/marugoto/6002ef2da04c921d.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Порекомендуйте другу блюдо в знакомом ресторане и назовите причину.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.08.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        8
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.08.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.08",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Объясните, какой продукт вы не едите и почему.",
+              "canDoIds": [
+                8
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Объясните, какой продукт вы не едите и почему.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "ベジタリアンなので、肉は食べません。野菜の料理をお願いします。",
+                "kana": "ベジタリアンなので、にくはたべません。やさいのりょうりをおねがいします。",
+                "segments": [
+                  {
+                    "surface": "ベジタリアンなので、"
+                  },
+                  {
+                    "surface": "肉",
+                    "reading": "にく"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べません。"
+                  },
+                  {
+                    "surface": "野菜",
+                    "reading": "やさい"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "をお"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いします。"
+                  }
+                ],
+                "meaningRu": "Я вегетарианец, поэтому не ем мясо. Пожалуйста, овощное блюдо.",
+                "audioUrl": "/audio/marugoto/41076aa3d6ce996e.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Объясните, какой продукт вы не едите и почему.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.09.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        9
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.09.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.09",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Закажите два разных блюда, указав количество каждого.",
+              "canDoIds": [
+                9
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Закажите два разных блюда, указав количество каждого.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "カレーを二つと、サラダを一つお願いします。水もください。",
+                "kana": "カレーをふたつと、サラダをひとつおねがいします。みずもください。",
+                "segments": [
+                  {
+                    "surface": "カレーを"
+                  },
+                  {
+                    "surface": "二",
+                    "reading": "ふた"
+                  },
+                  {
+                    "surface": "つと、サラダを"
+                  },
+                  {
+                    "surface": "一",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "つお"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いします。"
+                  },
+                  {
+                    "surface": "水",
+                    "reading": "みず"
+                  },
+                  {
+                    "surface": "もください。"
+                  }
+                ],
+                "meaningRu": "Два карри и один салат, пожалуйста. И воды.",
+                "audioUrl": "/audio/marugoto/357d23cab3874e63.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Закажите два разных блюда, указав количество каждого.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

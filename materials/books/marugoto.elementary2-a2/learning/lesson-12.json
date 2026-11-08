@@ -1,0 +1,608 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.12",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Сравниваем покупки",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.12.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        33,
+        34
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.12.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.6aa29a5bb5ef42a9",
+              "explanationRu": "В этой ситуации: легкий",
+              "example": {
+                "surface": "この二つはどちらが軽いですか。",
+                "kana": "このふたつはどちらがかるいですか。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "二",
+                    "reading": "ふた"
+                  },
+                  {
+                    "surface": "つはどちらが"
+                  },
+                  {
+                    "surface": "軽",
+                    "reading": "かる"
+                  },
+                  {
+                    "surface": "いですか。"
+                  }
+                ],
+                "meaningRu": "Какой из этих двух легче?",
+                "audioUrl": "/audio/marugoto/4518e96edcedea44.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.a74fac47145d4297",
+              "explanationRu": "В этой ситуации: сторона",
+              "example": {
+                "surface": "白いほうが軽いです。",
+                "kana": "しろいほうがかるいです。",
+                "segments": [
+                  {
+                    "surface": "白",
+                    "reading": "しろ"
+                  },
+                  {
+                    "surface": "いほうが"
+                  },
+                  {
+                    "surface": "軽",
+                    "reading": "かる"
+                  },
+                  {
+                    "surface": "いです。"
+                  }
+                ],
+                "meaningRu": "Белый легче.",
+                "audioUrl": "/audio/marugoto/bdb6ff92b965bad3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.19cbdaaacb7603a3",
+              "explanationRu": "В этой ситуации: О! (удивл.)",
+              "example": {
+                "surface": "白いほうが軽いです。",
+                "kana": "しろいほうがかるいです。",
+                "segments": [
+                  {
+                    "surface": "白",
+                    "reading": "しろ"
+                  },
+                  {
+                    "surface": "いほうが"
+                  },
+                  {
+                    "surface": "軽",
+                    "reading": "かる"
+                  },
+                  {
+                    "surface": "いです。"
+                  }
+                ],
+                "meaningRu": "Белый легче.",
+                "audioUrl": "/audio/marugoto/bdb6ff92b965bad3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.041f397dd31a3214",
+              "explanationRu": "В этой ситуации: где, куда; который из двух, какой",
+              "example": {
+                "surface": "この二つはどちらが軽いですか。",
+                "kana": "このふたつはどちらがかるいですか。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "二",
+                    "reading": "ふた"
+                  },
+                  {
+                    "surface": "つはどちらが"
+                  },
+                  {
+                    "surface": "軽",
+                    "reading": "かる"
+                  },
+                  {
+                    "surface": "いですか。"
+                  }
+                ],
+                "meaningRu": "Какой из этих двух легче?",
+                "audioUrl": "/audio/marugoto/4518e96edcedea44.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.80a62c3c54a84c73",
+              "explanationRu": "В этой ситуации: черный цвет",
+              "example": {
+                "surface": "白いほうが安いですが、黒いほうが軽いです。私は黒いのがいいです。",
+                "kana": "しろいほうがやすいですが、くろいほうがかるいです。わたしはくろいのがいいです。",
+                "segments": [
+                  {
+                    "surface": "白",
+                    "reading": "しろ"
+                  },
+                  {
+                    "surface": "いほうが"
+                  },
+                  {
+                    "surface": "安",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "いですが、"
+                  },
+                  {
+                    "surface": "黒",
+                    "reading": "くろ"
+                  },
+                  {
+                    "surface": "いほうが"
+                  },
+                  {
+                    "surface": "軽",
+                    "reading": "かる"
+                  },
+                  {
+                    "surface": "いです。"
+                  },
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "黒",
+                    "reading": "くろ"
+                  },
+                  {
+                    "surface": "いのがいいです。"
+                  }
+                ],
+                "meaningRu": "Белый дешевле, но чёрный легче. Я предпочту чёрный.",
+                "audioUrl": "/audio/marugoto/5a3ec2e2169a0efe.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.12.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        33,
+        34
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.12.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.26129fa1876bac69",
+              "explanationRu": "В этой ситуации: белый цвет",
+              "example": {
+                "surface": "白いほうが軽いです。",
+                "kana": "しろいほうがかるいです。",
+                "segments": [
+                  {
+                    "surface": "白",
+                    "reading": "しろ"
+                  },
+                  {
+                    "surface": "いほうが"
+                  },
+                  {
+                    "surface": "軽",
+                    "reading": "かる"
+                  },
+                  {
+                    "surface": "いです。"
+                  }
+                ],
+                "meaningRu": "Белый легче.",
+                "audioUrl": "/audio/marugoto/bdb6ff92b965bad3.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.12.grammar.181",
+      "titleRu": "～にくい",
+      "introductionRu": "Основа перед ます + にくい описывает неудобство выполнения действия.",
+      "canDoIds": [
+        33,
+        34
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.12.part.grammar.181",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.181",
+            "explanationRu": "Основа перед ます + にくい описывает неудобство выполнения действия.",
+            "example": {
+              "surface": "このボタンは押しにくいです。",
+              "kana": "このボタンはおしにくいです。",
+              "segments": [
+                {
+                  "surface": "このボタンは"
+                },
+                {
+                  "surface": "押",
+                  "reading": "お"
+                },
+                {
+                  "surface": "しにくいです。"
+                }
+              ],
+              "meaningRu": "Эту кнопку трудно нажимать.",
+              "audioUrl": "/audio/marugoto/0cd116539d90a02b.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Эту кнопку трудно нажимать."
+              },
+              {
+                "text": "ボタンは",
+                "explanationRu": "Смысловой фрагмент: Эту кнопку трудно нажимать."
+              },
+              {
+                "text": "押しにくいです",
+                "explanationRu": "Основа перед ます + にくい описывает неудобство выполнения действия."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.12.grammar.182",
+      "titleRu": "～やすい",
+      "introductionRu": "Основа перед ます + やすい описывает лёгкость действия.",
+      "canDoIds": [
+        33,
+        34
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.12.part.grammar.182",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.182",
+            "explanationRu": "Основа перед ます + やすい описывает лёгкость действия.",
+            "example": {
+              "surface": "この文字は読みやすいです。",
+              "kana": "このもじはよみやすいです。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "文字",
+                  "reading": "もじ"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "読",
+                  "reading": "よ"
+                },
+                {
+                  "surface": "みやすいです。"
+                }
+              ],
+              "meaningRu": "Эти буквы легко читать.",
+              "audioUrl": "/audio/marugoto/1334a5d5b9702c52.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Эти буквы легко читать."
+              },
+              {
+                "text": "文字は",
+                "explanationRu": "Смысловой фрагмент: Эти буквы легко читать."
+              },
+              {
+                "text": "読みやすいです",
+                "explanationRu": "Основа перед ます + やすい описывает лёгкость действия."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.12.grammar.183",
+      "titleRu": "どちら／どっちが～",
+      "introductionRu": "どちらが задаёт сравнение между двумя вариантами.",
+      "canDoIds": [
+        33,
+        34
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.12.part.grammar.183",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.183",
+            "explanationRu": "どちらが задаёт сравнение между двумя вариантами.",
+            "example": {
+              "surface": "この二つはどちらが軽いですか。",
+              "kana": "このふたつはどちらがかるいですか。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "二",
+                  "reading": "ふた"
+                },
+                {
+                  "surface": "つはどちらが"
+                },
+                {
+                  "surface": "軽",
+                  "reading": "かる"
+                },
+                {
+                  "surface": "いですか。"
+                }
+              ],
+              "meaningRu": "Какой из этих двух легче?",
+              "audioUrl": "/audio/marugoto/4518e96edcedea44.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Какой из этих двух легче?"
+              },
+              {
+                "text": "二つは",
+                "explanationRu": "Смысловой фрагмент: Какой из этих двух легче?"
+              },
+              {
+                "text": "どちらが",
+                "explanationRu": "Смысловой фрагмент: Какой из этих двух легче?"
+              },
+              {
+                "text": "軽いですか",
+                "explanationRu": "どちらが задаёт сравнение между двумя вариантами."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.12.grammar.184",
+      "titleRu": "～のほうが～",
+      "introductionRu": "ほう указывает выбранную сторону сравнения.",
+      "canDoIds": [
+        33,
+        34
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.12.part.grammar.184",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.184",
+            "explanationRu": "ほう указывает выбранную сторону сравнения.",
+            "example": {
+              "surface": "白いほうが軽いです。",
+              "kana": "しろいほうがかるいです。",
+              "segments": [
+                {
+                  "surface": "白",
+                  "reading": "しろ"
+                },
+                {
+                  "surface": "いほうが"
+                },
+                {
+                  "surface": "軽",
+                  "reading": "かる"
+                },
+                {
+                  "surface": "いです。"
+                }
+              ],
+              "meaningRu": "Белый легче.",
+              "audioUrl": "/audio/marugoto/bdb6ff92b965bad3.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "白いほうが",
+                "explanationRu": "Смысловой фрагмент: Белый легче."
+              },
+              {
+                "text": "軽いです",
+                "explanationRu": "ほう указывает выбранную сторону сравнения."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.33.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        33
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.33.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.33",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Оцените удобство прибора, назвав конкретную деталь.",
+              "canDoIds": [
+                33
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Оцените удобство прибора, назвав конкретную деталь.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "このカメラは軽くて、使いやすいです。でも、ボタンが小さくて押しにくいです。",
+                "kana": "このカメラはかるくて、つかいやすいです。でも、ボタンがちいさくておしにくいです。",
+                "segments": [
+                  {
+                    "surface": "このカメラは"
+                  },
+                  {
+                    "surface": "軽",
+                    "reading": "かる"
+                  },
+                  {
+                    "surface": "くて、"
+                  },
+                  {
+                    "surface": "使",
+                    "reading": "つか"
+                  },
+                  {
+                    "surface": "いやすいです。でも、ボタンが"
+                  },
+                  {
+                    "surface": "小",
+                    "reading": "ちい"
+                  },
+                  {
+                    "surface": "さくて"
+                  },
+                  {
+                    "surface": "押",
+                    "reading": "お"
+                  },
+                  {
+                    "surface": "しにくいです。"
+                  }
+                ],
+                "meaningRu": "Эта камера лёгкая и удобная. Но кнопку трудно нажимать: она маленькая.",
+                "audioUrl": "/audio/marugoto/ede1f588f96aa626.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Оцените удобство прибора, назвав конкретную деталь.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.34.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        34
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.34.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.34",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Сравните два товара и объясните предпочтение.",
+              "canDoIds": [
+                34
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Сравните два товара и объясните предпочтение.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "白いほうが安いですが、黒いほうが軽いです。私は黒いのがいいです。",
+                "kana": "しろいほうがやすいですが、くろいほうがかるいです。わたしはくろいのがいいです。",
+                "segments": [
+                  {
+                    "surface": "白",
+                    "reading": "しろ"
+                  },
+                  {
+                    "surface": "いほうが"
+                  },
+                  {
+                    "surface": "安",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "いですが、"
+                  },
+                  {
+                    "surface": "黒",
+                    "reading": "くろ"
+                  },
+                  {
+                    "surface": "いほうが"
+                  },
+                  {
+                    "surface": "軽",
+                    "reading": "かる"
+                  },
+                  {
+                    "surface": "いです。"
+                  },
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "黒",
+                    "reading": "くろ"
+                  },
+                  {
+                    "surface": "いのがいいです。"
+                  }
+                ],
+                "meaningRu": "Белый дешевле, но чёрный легче. Я предпочту чёрный.",
+                "audioUrl": "/audio/marugoto/5a3ec2e2169a0efe.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Сравните два товара и объясните предпочтение.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

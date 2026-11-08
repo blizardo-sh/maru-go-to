@@ -11,7 +11,7 @@ export type RepeatType = typeof repeatTypes[number];
 export type ConstructionMode = 'ja-ru' | 'listening' | 'grammar';
 
 export interface SourceRef {
-  part: "katsudoo" | "rikai";
+  part: "katsudoo" | "rikai" | "combined";
   url: string;
   label?: string;
   page?: number;
@@ -43,6 +43,8 @@ export interface LessonVideo {
 }
 
 export interface Lesson {
+  bookId?: string;
+  availability?: 'full' | 'vocabulary' | 'preparing';
   id: string;
   number: number;
   title: string;
@@ -59,6 +61,11 @@ export interface Lesson {
 }
 
 export interface Word {
+  /** Present only on a study projection; dictionary records keep their original ID. */
+  lexemeId?: string;
+  meaningContext?: import('./meanings').MeaningContext;
+  /** Default study target membership when the lexeme also has separately taught meanings. */
+  defaultLessonIds?: string[];
   trainingOnly?: boolean;
   id: string;
   lessonIds: string[];
@@ -86,6 +93,7 @@ export interface WordForm {
 }
 
 export interface Skill {
+  canDoRefs?: { bookId: string; number: number }[];
   id: string;
   lessonIds: string[];
   canDoIds: number[];
@@ -110,6 +118,8 @@ export interface Exercise {
 }
 
 export interface Course {
+  meanings?: import('./meanings').WordMeaning[];
+  books?: import('./books').Textbook[];
   media?: string[];
   publicationId?: string;
   catalog?: import("./catalog").CourseCatalog;
@@ -129,6 +139,7 @@ export interface LearnerSettings {
   lessonStatuses: Record<string, LessonStatus>;
   focusLessonIds: string[];
   focusCanDoIds: number[];
+  focusCanDoKeys?: string[];
   focusSkillIds: string[];
   enabledListIds: string[];
   freeLessonIds: string[];
@@ -146,6 +157,7 @@ export interface LearnerSettings {
 }
 
 interface ReviewBase {
+  schedule?: ReviewSchedule;
   preparation?: import('./training').StudyPreparation;
   publicationId?: string;
   id: string;
@@ -162,6 +174,7 @@ export type ReviewItem = ReviewBase & (
 );
 
 export interface ReviewQueue {
+  nextDue?: string;
   reference?: { title: string; text: string };
   items: ReviewItem[];
   remainingDue: number;
@@ -178,11 +191,14 @@ interface SubmissionBase {
 
 export type ReviewSubmission = SubmissionBase & (
   | { mode: "ja-ru" | "ru-ja" | "listening"; rating: Rating; choiceWordId?: string; helped?: boolean }
-  | { mode: "grammar"; tokenIds: string[]; tokenForms?: Record<string, string>; revealed: boolean; rating?: 1 | 3; exploring?: boolean }
-  | { mode: "counter"; rating: 1 | 3; choice?: string; helped: boolean }
+  | { mode: "grammar"; tokenIds: string[]; tokenForms?: Record<string, string>; revealed: boolean; rating?: Rating; exploring?: boolean }
+  | { mode: "counter"; rating: Rating; choice?: string; helped: boolean }
 );
 
+export type ReviewSchedule = { kind: 'review'; intervals: Record<Rating, number> } | { kind: 'learning' | 'practice' };
+
 export interface ReviewResult {
+  rating?: Rating;
   publicationId?: string;
   attemptId: string;
   status: "scheduled" | "additional-practice" | "learning";
@@ -193,7 +209,8 @@ export interface ReviewResult {
 }
 
 export interface Progress {
-  priorLearning?: import('./priorLearning').PriorLearningMark[];
+  priorLearning?: {kind:'word'|'grammar';itemId:string;canUndo:boolean}[];
+  introducedLexemeIds?: string[];
   repeatDue?: number;
   byType?: Record<RepeatType,{due:number;learned:number;reviewedToday:number}>;
   counters: import('./counters').CounterProgress[];

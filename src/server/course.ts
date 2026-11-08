@@ -1,3 +1,4 @@
+import { wordTarget } from '../shared/meanings';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { isDeepStrictEqual } from 'node:util';
 import { defaultCatalog } from '../shared/catalog';
@@ -5,6 +6,7 @@ import type { Course } from '../shared/types';
 import { validateLearning, type GuidedLesson } from '../shared/learning';
 import { validateCourse } from '../shared/course';
 import type { ThematicMaterial } from '../shared/training';
+import { marugotoBooks } from '../shared/books';
 export function withLearningMaterial(course:Course,lessons:GuidedLesson[]):Course {
  const result=structuredClone(course);
  const authored = new Map<string,unknown>();
@@ -23,15 +25,41 @@ export function withLearningMaterial(course:Course,lessons:GuidedLesson[]):Cours
  validateCourse(result);
  return result;
 }
-export function loadCourse():Course {
+export function loadCourse(options: { includeBooks?: boolean; checkMedia?: boolean } = {}):Course {
  let course=JSON.parse(readFileSync(new URL('../../materials/course.json',import.meta.url),'utf8')) as Course;
  validateCourse(course);
+ if (options.includeBooks !== false) {
+  const structurePath = new URL('../../materials/books/structure.json', import.meta.url);
+  if (existsSync(structurePath)) {
+   const structure = JSON.parse(readFileSync(structurePath,'utf8')) as Pick<Course,'books'|'lessons'>;
+   course.books = [structuredClone(marugotoBooks[0]!), ...structure.books!];
+   course.lessons.push(...structure.lessons);
+  }
+ }
  const learningDirectory=new URL('../../materials/learning/',import.meta.url);
  if(existsSync(learningDirectory)){
   const lessons=readdirSync(learningDirectory).filter(name=>/^lesson-\d{2}\.json$/.test(name)).sort().map(name=>JSON.parse(readFileSync(new URL(name,learningDirectory),'utf8')) as GuidedLesson);
   course=withLearningMaterial(course,lessons);
+  if(options.includeBooks!==false) for(const file of ['vocabulary','curriculum']){
+   const path=new URL(`../../materials/books/${file}.json`,import.meta.url);
+   if(!existsSync(path))continue;
+   const material=JSON.parse(readFileSync(path,'utf8')) as Partial<Course>;
+   for(const kind of ['words','forms','skills','exercises','meanings'] as const){
+    if(!material[kind])continue;
+    const values=new Map((course[kind]??[]).map(value=>[value.id,value]));
+    for(const value of material[kind]!) {const previous=values.get(value.id);if(previous&&'lessonIds' in previous&&previous.lessonIds.some(id=>!('lessonIds' in value)||!value.lessonIds.includes(id)))throw new Error(`Book material removes membership: ${value.id}`);values.set(value.id,value as any);}
+    (course as any)[kind]=[...values.values()];
+   }
+  }
+  if (options.includeBooks !== false) for (const book of course.books?.slice(1) ?? []) {
+   const directory = new URL(`../../materials/books/${book.id}/learning/`,import.meta.url);
+   if (existsSync(directory)) lessons.push(...readdirSync(directory).filter(name=>/^(lesson|topic)-\d{2}\.json$/.test(name)).sort().map(name=>JSON.parse(readFileSync(new URL(name,directory),'utf8')) as GuidedLesson));
+  }
+  course.learning=lessons;
+  validateCourse(course);
  }
  course.catalog=structuredClone(defaultCatalog);
+ if(options.includeBooks!==false){const path=new URL('../../materials/books/quiz.json',import.meta.url);if(existsSync(path))Object.assign(course.catalog.quiz.choices,JSON.parse(readFileSync(path,'utf8')));}
  const thematicPath=new URL('../../materials/thematic-training.json',import.meta.url);
  if(existsSync(thematicPath)){
   const thematic=JSON.parse(readFileSync(thematicPath,'utf8')) as ThematicMaterial;
@@ -50,8 +78,8 @@ export function loadCourse():Course {
  if(course.learning){
   validateLearning(course,course.learning,true);
   for(const lesson of course.learning)for(const goal of lesson.goals)for(const part of goal.parts){
-   const paths=[...part.words.flatMap(word=>[course.words.find(entry=>entry.id===word.wordId)!.audioUrl!,word.example.audioUrl]),...(part.construction?[part.construction.example.audioUrl]:[])];
-   for(const path of paths)if(!existsSync(new URL(`../../public${path}`,import.meta.url)))throw new Error(`Missing learning audio: ${path}`);
+   const paths=[...(part.tasks??[]).flatMap(task=>task.kind==='production'?[task.model.audioUrl]:task.passage.map(line=>line.audioUrl)),...part.words.flatMap(word=>[wordTarget(course,word.wordId)!.audioUrl!,word.example.audioUrl]),...(part.construction?[part.construction.example.audioUrl]:[])];
+   for(const path of options.checkMedia===false?[]:paths)if(!existsSync(new URL(`../../public${path}`,import.meta.url)))throw new Error(`Missing learning audio: ${path}`);
   }
  }
  return course;

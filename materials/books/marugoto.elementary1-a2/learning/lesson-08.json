@@ -1,0 +1,611 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.08",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Приглашаем на прогулку",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.08.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        18,
+        19
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.08.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.eaec8b939971fe08",
+              "explanationRu": "В этой ситуации: после, потом",
+              "example": {
+                "surface": "仕事の後で映画を見ます。",
+                "kana": "しごとのあとでえいがをみます。",
+                "segments": [
+                  {
+                    "surface": "仕事",
+                    "reading": "しごと"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "後",
+                    "reading": "あと"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "映画",
+                    "reading": "えいが"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "ます。"
+                  }
+                ],
+                "meaningRu": "После работы я посмотрю фильм.",
+                "audioUrl": "/audio/marugoto/b1dc30d375d17d04.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8565bd2bb82aa633",
+              "explanationRu": "В этой ситуации: ещё; ещё не (с отрицанием)",
+              "example": {
+                "surface": "いいえまだです。",
+                "kana": "いいえまだです。",
+                "segments": [
+                  {
+                    "surface": "いいえまだです。"
+                  }
+                ],
+                "meaningRu": "Нет, ещё нет.",
+                "audioUrl": "/audio/marugoto/0de74e5d3c833c63.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.6bc3e1321c799b1e",
+              "explanationRu": "В этой ситуации: уже; ещё, дополнительно (например, ещё раз)",
+              "example": {
+                "surface": "もう新しいカフェに行きましたか。",
+                "kana": "もうあたらしいカフェにいきましたか。",
+                "segments": [
+                  {
+                    "surface": "もう"
+                  },
+                  {
+                    "surface": "新",
+                    "reading": "あたら"
+                  },
+                  {
+                    "surface": "しいカフェに"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きましたか。"
+                  }
+                ],
+                "meaningRu": "Вы уже сходили в новое кафе?",
+                "audioUrl": "/audio/marugoto/03ce736586640829.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.08.grammar.91",
+      "titleRu": "もう（～た）",
+      "introductionRu": "もう с прошедшей формой спрашивает, произошло ли ожидаемое действие.",
+      "canDoIds": [
+        18,
+        19
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.08.part.grammar.91",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.91",
+            "explanationRu": "もう с прошедшей формой спрашивает, произошло ли ожидаемое действие.",
+            "example": {
+              "surface": "もう新しいカフェに行きましたか。",
+              "kana": "もうあたらしいカフェにいきましたか。",
+              "segments": [
+                {
+                  "surface": "もう"
+                },
+                {
+                  "surface": "新",
+                  "reading": "あたら"
+                },
+                {
+                  "surface": "しいカフェに"
+                },
+                {
+                  "surface": "行",
+                  "reading": "い"
+                },
+                {
+                  "surface": "きましたか。"
+                }
+              ],
+              "meaningRu": "Вы уже сходили в новое кафе?",
+              "audioUrl": "/audio/marugoto/03ce736586640829.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "もう",
+                "explanationRu": "Смысловой фрагмент: Вы уже сходили в новое кафе?"
+              },
+              {
+                "text": "新しいカフェに",
+                "explanationRu": "Смысловой фрагмент: Вы уже сходили в новое кафе?"
+              },
+              {
+                "text": "行きましたか",
+                "explanationRu": "もう с прошедшей формой спрашивает, произошло ли ожидаемое действие."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.08.grammar.92",
+      "titleRu": "まだ",
+      "introductionRu": "まだです — краткий ответ о ещё не выполненном действии.",
+      "canDoIds": [
+        18,
+        19
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.08.part.grammar.92",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.92",
+            "explanationRu": "まだです — краткий ответ о ещё не выполненном действии.",
+            "example": {
+              "surface": "いいえまだです。",
+              "kana": "いいえまだです。",
+              "segments": [
+                {
+                  "surface": "いいえまだです。"
+                }
+              ],
+              "meaningRu": "Нет, ещё нет.",
+              "audioUrl": "/audio/marugoto/0de74e5d3c833c63.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "いいえ",
+                "explanationRu": "Смысловой фрагмент: Нет, ещё нет."
+              },
+              {
+                "text": "まだです",
+                "explanationRu": "まだです — краткий ответ о ещё не выполненном действии."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.08.grammar.93",
+      "titleRu": "～のまえに",
+      "introductionRu": "Существительное + の前に указывает, до какого события происходит действие.",
+      "canDoIds": [
+        18,
+        19
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.08.part.grammar.93",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.93",
+            "explanationRu": "Существительное + の前に указывает, до какого события происходит действие.",
+            "example": {
+              "surface": "授業の前にお茶を飲みます。",
+              "kana": "じゅぎょうのまえにおちゃをのみます。",
+              "segments": [
+                {
+                  "surface": "授業",
+                  "reading": "じゅぎょう"
+                },
+                {
+                  "surface": "の"
+                },
+                {
+                  "surface": "前",
+                  "reading": "まえ"
+                },
+                {
+                  "surface": "にお"
+                },
+                {
+                  "surface": "茶",
+                  "reading": "ちゃ"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "飲",
+                  "reading": "の"
+                },
+                {
+                  "surface": "みます。"
+                }
+              ],
+              "meaningRu": "Перед занятием я пью чай.",
+              "audioUrl": "/audio/marugoto/46722068b650e81a.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "授業の前に",
+                "explanationRu": "Смысловой фрагмент: Перед занятием я пью чай."
+              },
+              {
+                "text": "お茶を",
+                "explanationRu": "Смысловой фрагмент: Перед занятием я пью чай."
+              },
+              {
+                "text": "飲みます",
+                "explanationRu": "Существительное + の前に указывает, до какого события происходит действие."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.08.grammar.94",
+      "titleRu": "～のあとで",
+      "introductionRu": "Существительное + の後で задаёт последовательность событий.",
+      "canDoIds": [
+        18,
+        19
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.08.part.grammar.94",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.94",
+            "explanationRu": "Существительное + の後で задаёт последовательность событий.",
+            "example": {
+              "surface": "仕事の後で映画を見ます。",
+              "kana": "しごとのあとでえいがをみます。",
+              "segments": [
+                {
+                  "surface": "仕事",
+                  "reading": "しごと"
+                },
+                {
+                  "surface": "の"
+                },
+                {
+                  "surface": "後",
+                  "reading": "あと"
+                },
+                {
+                  "surface": "で"
+                },
+                {
+                  "surface": "映画",
+                  "reading": "えいが"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "見",
+                  "reading": "み"
+                },
+                {
+                  "surface": "ます。"
+                }
+              ],
+              "meaningRu": "После работы я посмотрю фильм.",
+              "audioUrl": "/audio/marugoto/b1dc30d375d17d04.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "仕事の後で",
+                "explanationRu": "Смысловой фрагмент: После работы я посмотрю фильм."
+              },
+              {
+                "text": "映画を",
+                "explanationRu": "Смысловой фрагмент: После работы я посмотрю фильм."
+              },
+              {
+                "text": "見ます",
+                "explanationRu": "Существительное + の後で задаёт последовательность событий."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.08.grammar.95",
+      "titleRu": "～に行く",
+      "introductionRu": "Существительное, обозначающее занятие, + に行く выражает цель поездки или выхода.",
+      "canDoIds": [
+        18,
+        19
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.08.part.grammar.95",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.95",
+            "explanationRu": "Существительное, обозначающее занятие, + に行く выражает цель поездки или выхода.",
+            "example": {
+              "surface": "午後散歩に行きます。",
+              "kana": "ごごさんぽにいきます。",
+              "segments": [
+                {
+                  "surface": "午後",
+                  "reading": "ごご"
+                },
+                {
+                  "surface": "散歩",
+                  "reading": "さんぽ"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "行",
+                  "reading": "い"
+                },
+                {
+                  "surface": "きます。"
+                }
+              ],
+              "meaningRu": "Днём я пойду на прогулку.",
+              "audioUrl": "/audio/marugoto/61d3f4ba9d83451b.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "午後",
+                "explanationRu": "Смысловой фрагмент: Днём я пойду на прогулку."
+              },
+              {
+                "text": "散歩に",
+                "explanationRu": "Смысловой фрагмент: Днём я пойду на прогулку."
+              },
+              {
+                "text": "行きます",
+                "explanationRu": "Существительное, обозначающее занятие, + に行く выражает цель поездки или выхода."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.08.grammar.96",
+      "titleRu": "～に行く",
+      "introductionRu": "Основа глагола перед ます + に行く выражает цель движения.",
+      "canDoIds": [
+        18,
+        19
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.08.part.grammar.96",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.96",
+            "explanationRu": "Основа глагола перед ます + に行く выражает цель движения.",
+            "example": {
+              "surface": "海に泳ぎに行きます。",
+              "kana": "うみにおよぎにいきます。",
+              "segments": [
+                {
+                  "surface": "海",
+                  "reading": "うみ"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "泳",
+                  "reading": "およ"
+                },
+                {
+                  "surface": "ぎに"
+                },
+                {
+                  "surface": "行",
+                  "reading": "い"
+                },
+                {
+                  "surface": "きます。"
+                }
+              ],
+              "meaningRu": "Я поеду на море плавать.",
+              "audioUrl": "/audio/marugoto/6d54bcda5a2ef796.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "海に",
+                "explanationRu": "Смысловой фрагмент: Я поеду на море плавать."
+              },
+              {
+                "text": "泳ぎに",
+                "explanationRu": "Смысловой фрагмент: Я поеду на море плавать."
+              },
+              {
+                "text": "行きます",
+                "explanationRu": "Основа глагола перед ます + に行く выражает цель движения."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.18.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        18
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.18.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.18",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Пригласите друга в интересное место и произнесите возможный ответ на приглашение.",
+              "canDoIds": [
+                18
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Пригласите друга в интересное место и произнесите возможный ответ на приглашение.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "新しいカフェに行きませんか。いいですね。まだ行っていません。",
+                "kana": "あたらしいカフェにいきませんか。いいですね。まだいっていません。",
+                "segments": [
+                  {
+                    "surface": "新",
+                    "reading": "あたら"
+                  },
+                  {
+                    "surface": "しいカフェに"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きませんか。いいですね。まだ"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "っていません。"
+                  }
+                ],
+                "meaningRu": "Не сходить ли в новое кафе? Отличная идея. Я там ещё не был.",
+                "audioUrl": "/audio/marugoto/406b4a8e3203932c.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Пригласите друга в интересное место и произнесите возможный ответ на приглашение.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.19.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        19
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.19.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.19",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Предложите зайти в магазин по пути, до основного дела.",
+              "canDoIds": [
+                19
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Предложите зайти в магазин по пути, до основного дела.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "映画の前に、本屋に寄りたいです。少し待ってもらえますか。",
+                "kana": "えいがのまえに、ほんやによりたいです。すこしまってもらえますか。",
+                "segments": [
+                  {
+                    "surface": "映画",
+                    "reading": "えいが"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "前",
+                    "reading": "まえ"
+                  },
+                  {
+                    "surface": "に、"
+                  },
+                  {
+                    "surface": "本屋",
+                    "reading": "ほんや"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "寄",
+                    "reading": "よ"
+                  },
+                  {
+                    "surface": "りたいです。"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "待",
+                    "reading": "ま"
+                  },
+                  {
+                    "surface": "ってもらえますか。"
+                  }
+                ],
+                "meaningRu": "Перед фильмом я хочу зайти в книжный. Можете немного подождать?",
+                "audioUrl": "/audio/marugoto/efb7c1722421785d.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Предложите зайти в магазин по пути, до основного дела.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

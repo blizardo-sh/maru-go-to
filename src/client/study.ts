@@ -2,7 +2,7 @@ import type { ReviewItem, ReviewResult } from '../shared/types';
 
 export function advanceDeck(items: ReviewItem[], repeat: boolean, result?: ReviewResult): ReviewItem[] {
   const [current, ...rest] = items;
-  if (repeat && current && current.mode !== 'grammar') {
+  if (repeat && current && current.mode !== 'grammar' && result?.status !== 'scheduled') {
     rest.splice(Math.min(3, rest.length), 0, { ...current, ...(result ? { version: result.version, due: result.nextDue, isNew: false } : {}) });
   }
   return rest;

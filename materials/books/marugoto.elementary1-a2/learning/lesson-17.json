@@ -1,0 +1,687 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.17",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Подарки и поздравления",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.17.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        47,
+        48,
+        49
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.17.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.b229c31605dc6520",
+              "explanationRu": "В этой ситуации: день рождения",
+              "example": {
+                "surface": "この時計は去年、友達にもらったんです。誕生日のプレゼントです。",
+                "kana": "このとけいはきょねん、ともだちにもらったんです。たんじょうびのプレゼントです。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "時計",
+                    "reading": "とけい"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "去年",
+                    "reading": "きょねん"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "にもらったんです。"
+                  },
+                  {
+                    "surface": "誕生日",
+                    "reading": "たんじょうび"
+                  },
+                  {
+                    "surface": "のプレゼントです。"
+                  }
+                ],
+                "meaningRu": "Эти часы мне подарил друг в прошлом году. Это подарок на день рождения.",
+                "audioUrl": "/audio/marugoto/a62a1b89e038fe44.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.1cdc745f3d8d5c03",
+              "explanationRu": "В этой ситуации: подарок",
+              "example": {
+                "surface": "この時計は去年、友達にもらったんです。誕生日のプレゼントです。",
+                "kana": "このとけいはきょねん、ともだちにもらったんです。たんじょうびのプレゼントです。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "時計",
+                    "reading": "とけい"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "去年",
+                    "reading": "きょねん"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "にもらったんです。"
+                  },
+                  {
+                    "surface": "誕生日",
+                    "reading": "たんじょうび"
+                  },
+                  {
+                    "surface": "のプレゼントです。"
+                  }
+                ],
+                "meaningRu": "Эти часы мне подарил друг в прошлом году. Это подарок на день рождения.",
+                "audioUrl": "/audio/marugoto/a62a1b89e038fe44.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.08051cc0797ce038",
+              "explanationRu": "В этой ситуации: давать, дарить",
+              "example": {
+                "surface": "私の家族では、誕生日に本をよくあげます。一緒に選ぶこともあります。",
+                "kana": "わたしのかぞくでは、たんじょうびにほんをよくあげます。いっしょにえらぶこともあります。",
+                "segments": [
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "では、"
+                  },
+                  {
+                    "surface": "誕生日",
+                    "reading": "たんじょうび"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "本",
+                    "reading": "ほん"
+                  },
+                  {
+                    "surface": "をよくあげます。"
+                  },
+                  {
+                    "surface": "一緒",
+                    "reading": "いっしょ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "選",
+                    "reading": "えら"
+                  },
+                  {
+                    "surface": "ぶこともあります。"
+                  }
+                ],
+                "meaningRu": "В моей семье на день рождения часто дарят книги. Иногда выбирают вместе.",
+                "audioUrl": "/audio/marugoto/d02784e08462c36b.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.b7de0b625129941e",
+              "explanationRu": "В этой ситуации: великолепный",
+              "example": {
+                "surface": "すてきな時計ですね。どこで買ったんですか。",
+                "kana": "すてきなとけいですね。どこでかったんですか。",
+                "segments": [
+                  {
+                    "surface": "すてきな"
+                  },
+                  {
+                    "surface": "時計",
+                    "reading": "とけい"
+                  },
+                  {
+                    "surface": "ですね。どこで"
+                  },
+                  {
+                    "surface": "買",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "ったんですか。"
+                  }
+                ],
+                "meaningRu": "Какие красивые часы. Где вы их купили?",
+                "audioUrl": "/audio/marugoto/38bd362bae9c7ddd.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.193a58a8d7eee5bf",
+              "explanationRu": "В этой ситуации: часы",
+              "example": {
+                "surface": "この時計は友達にもらったんです。",
+                "kana": "このとけいはともだちにもらったんです。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "時計",
+                    "reading": "とけい"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "にもらったんです。"
+                  }
+                ],
+                "meaningRu": "Эти часы мне подарил друг.",
+                "audioUrl": "/audio/marugoto/7a7fee3ac29728cf.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.17.grammar.127",
+      "titleRu": "～んです",
+      "introductionRu": "んです вводит пояснение к ситуации или интересу собеседника.",
+      "canDoIds": [
+        47,
+        48,
+        49
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.17.part.grammar.127",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.127",
+            "explanationRu": "んです вводит пояснение к ситуации или интересу собеседника.",
+            "example": {
+              "surface": "この時計は友達にもらったんです。",
+              "kana": "このとけいはともだちにもらったんです。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "時計",
+                  "reading": "とけい"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "友達",
+                  "reading": "ともだち"
+                },
+                {
+                  "surface": "にもらったんです。"
+                }
+              ],
+              "meaningRu": "Эти часы мне подарил друг.",
+              "audioUrl": "/audio/marugoto/7a7fee3ac29728cf.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Эти часы мне подарил друг."
+              },
+              {
+                "text": "時計は",
+                "explanationRu": "Смысловой фрагмент: Эти часы мне подарил друг."
+              },
+              {
+                "text": "友達にもらったんです",
+                "explanationRu": "んです вводит пояснение к ситуации или интересу собеседника."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.17.grammar.128",
+      "titleRu": "あげる",
+      "introductionRu": "あげる описывает передачу от дарителя; получателя отмечаем に.",
+      "canDoIds": [
+        47,
+        48,
+        49
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.17.part.grammar.128",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.128",
+            "explanationRu": "あげる описывает передачу от дарителя; получателя отмечаем に.",
+            "example": {
+              "surface": "私は妹に本をあげました。",
+              "kana": "わたしはいもうとにほんをあげました。",
+              "segments": [
+                {
+                  "surface": "私",
+                  "reading": "わたし"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "妹",
+                  "reading": "いもうと"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "本",
+                  "reading": "ほん"
+                },
+                {
+                  "surface": "をあげました。"
+                }
+              ],
+              "meaningRu": "Я подарил младшей сестре книгу.",
+              "audioUrl": "/audio/marugoto/c1fd3e439af6de09.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "私は",
+                "explanationRu": "Смысловой фрагмент: Я подарил младшей сестре книгу."
+              },
+              {
+                "text": "妹に",
+                "explanationRu": "Смысловой фрагмент: Я подарил младшей сестре книгу."
+              },
+              {
+                "text": "本を",
+                "explanationRu": "Смысловой фрагмент: Я подарил младшей сестре книгу."
+              },
+              {
+                "text": "あげました",
+                "explanationRu": "あげる описывает передачу от дарителя; получателя отмечаем に."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.17.grammar.129",
+      "titleRu": "もらう",
+      "introductionRu": "もらう описывает получение; дарителя обозначаем に или から.",
+      "canDoIds": [
+        47,
+        48,
+        49
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.17.part.grammar.129",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.129",
+            "explanationRu": "もらう описывает получение; дарителя обозначаем に или から.",
+            "example": {
+              "surface": "私は兄からペンをもらいました。",
+              "kana": "わたしはあにからペンをもらいました。",
+              "segments": [
+                {
+                  "surface": "私",
+                  "reading": "わたし"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "兄",
+                  "reading": "あに"
+                },
+                {
+                  "surface": "からペンをもらいました。"
+                }
+              ],
+              "meaningRu": "Я получил ручку от старшего брата.",
+              "audioUrl": "/audio/marugoto/276280cba04ed64b.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "私は",
+                "explanationRu": "Смысловой фрагмент: Я получил ручку от старшего брата."
+              },
+              {
+                "text": "兄から",
+                "explanationRu": "Смысловой фрагмент: Я получил ручку от старшего брата."
+              },
+              {
+                "text": "ペンを",
+                "explanationRu": "Смысловой фрагмент: Я получил ручку от старшего брата."
+              },
+              {
+                "text": "もらいました",
+                "explanationRu": "もらう описывает получение; дарителя обозначаем に или から."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.17.grammar.130",
+      "titleRu": "文＋N　＜連体修飾節＞",
+      "introductionRu": "Простая глагольная фраза перед もの уточняет, какую вещь имеют в виду.",
+      "canDoIds": [
+        47,
+        48,
+        49
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.17.part.grammar.130",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.130",
+            "explanationRu": "Простая глагольная фраза перед もの уточняет, какую вещь имеют в виду.",
+            "example": {
+              "surface": "友達が使うものを選びます。",
+              "kana": "ともだちがつかうものをえらびます。",
+              "segments": [
+                {
+                  "surface": "友達",
+                  "reading": "ともだち"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "使",
+                  "reading": "つか"
+                },
+                {
+                  "surface": "うものを"
+                },
+                {
+                  "surface": "選",
+                  "reading": "えら"
+                },
+                {
+                  "surface": "びます。"
+                }
+              ],
+              "meaningRu": "Я выберу вещь, которой будет пользоваться друг.",
+              "audioUrl": "/audio/marugoto/c2edee015d151530.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "友達が",
+                "explanationRu": "Смысловой фрагмент: Я выберу вещь, которой будет пользоваться друг."
+              },
+              {
+                "text": "使うものを",
+                "explanationRu": "Смысловой фрагмент: Я выберу вещь, которой будет пользоваться друг."
+              },
+              {
+                "text": "選びます",
+                "explanationRu": "Простая глагольная фраза перед もの уточняет, какую вещь имеют в виду."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.47.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        47
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.47.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.47",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Сделайте комплимент вещи друга и задайте вопрос о ней.",
+              "canDoIds": [
+                47
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Сделайте комплимент вещи друга и задайте вопрос о ней.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "すてきな時計ですね。どこで買ったんですか。",
+                "kana": "すてきなとけいですね。どこでかったんですか。",
+                "segments": [
+                  {
+                    "surface": "すてきな"
+                  },
+                  {
+                    "surface": "時計",
+                    "reading": "とけい"
+                  },
+                  {
+                    "surface": "ですね。どこで"
+                  },
+                  {
+                    "surface": "買",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "ったんですか。"
+                  }
+                ],
+                "meaningRu": "Какие красивые часы. Где вы их купили?",
+                "audioUrl": "/audio/marugoto/38bd362bae9c7ddd.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Сделайте комплимент вещи друга и задайте вопрос о ней.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.48.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        48
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.48.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.48",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите, от кого и когда вы получили подарок.",
+              "canDoIds": [
+                48
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите, от кого и когда вы получили подарок.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "この時計は去年、友達にもらったんです。誕生日のプレゼントです。",
+                "kana": "このとけいはきょねん、ともだちにもらったんです。たんじょうびのプレゼントです。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "時計",
+                    "reading": "とけい"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "去年",
+                    "reading": "きょねん"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "にもらったんです。"
+                  },
+                  {
+                    "surface": "誕生日",
+                    "reading": "たんじょうび"
+                  },
+                  {
+                    "surface": "のプレゼントです。"
+                  }
+                ],
+                "meaningRu": "Эти часы мне подарил друг в прошлом году. Это подарок на день рождения.",
+                "audioUrl": "/audio/marugoto/a62a1b89e038fe44.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите, от кого и когда вы получили подарок.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.49.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        49
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.49.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.49",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Опишите обычай подарков в знакомой вам семье или стране, указав повод.",
+              "canDoIds": [
+                49
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Опишите обычай подарков в знакомой вам семье или стране, указав повод.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "私の家族では、誕生日に本をよくあげます。一緒に選ぶこともあります。",
+                "kana": "わたしのかぞくでは、たんじょうびにほんをよくあげます。いっしょにえらぶこともあります。",
+                "segments": [
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "では、"
+                  },
+                  {
+                    "surface": "誕生日",
+                    "reading": "たんじょうび"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "本",
+                    "reading": "ほん"
+                  },
+                  {
+                    "surface": "をよくあげます。"
+                  },
+                  {
+                    "surface": "一緒",
+                    "reading": "いっしょ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "選",
+                    "reading": "えら"
+                  },
+                  {
+                    "surface": "ぶこともあります。"
+                  }
+                ],
+                "meaningRu": "В моей семье на день рождения часто дарят книги. Иногда выбирают вместе.",
+                "audioUrl": "/audio/marugoto/d02784e08462c36b.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Опишите обычай подарков в знакомой вам семье или стране, указав повод.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

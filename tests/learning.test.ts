@@ -71,7 +71,7 @@ test('learning validation rejects scope gaps, unready content, unsafe audio and 
     expect(() => validateLearning(course, course.learning)).toThrow('Invalid learning');
   }
   const course = learningFixture();
-  expect(() => validateLearning(course, course.learning, true)).toThrow('all 18');
+  expect(() => validateLearning(course, course.learning, true)).toThrow('route availability');
   expect(() => advanceLearningState(course.learning[0]!, initialLearningState(course.learning[0]!), 'remember')).toThrow('Action');
 });
 

@@ -3,7 +3,7 @@ import { loadCourse } from '../src/server/course';
 import { evaluateTarget } from '../src/server/reviews';
 import { learningParts } from '../src/shared/learning';
 
-const course = loadCourse();
+const course = loadCourse({includeBooks:false});
 
 test('all 18 published routes cover their lesson goals and existing construction placements with complete audio-backed introductions', () => {
   expect(course.learning).toHaveLength(18);

@@ -39,11 +39,11 @@ async function fixture(width: number, reducedMotion: 'reduce' | 'no-preference')
     HTMLMediaElement.prototype.play = function () { this.addEventListener('playing', () => state.playing++, { once: true }); return play.call(this); };
   });
   await page.goto(base); await page.getByLabel('Email', { exact: true }).fill(email); await page.getByLabel('Пароль', { exact: true }).fill(password); await page.getByRole('button', { name: 'Войти', exact: true }).click();
-  await expect(page.getByRole('heading', { name: 'Учебник', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Уроки', exact: true })).toBeVisible();
   const words = ['ほん', 'かさ', 'たまご', 'シャツ', 'ひと', 'いす'].map(kana => course.words.find(word => word.kana === kana && !/суффикс/.test(word.meaningRu))!);
   for (const word of words) { const response = await context.request.post(base + '/api/reviews', { headers: { origin: base }, data: { attemptId: crypto.randomUUID(), reviewId: reviewId('ja-ru', word.id), version: 0, mode: 'ja-ru', rating: 3 } }); expect(response.status()).toBe(200); }
   const settings = await context.request.put(base + '/api/settings', { headers: { origin: base }, data: { ...defaultSettings, sceneSoundEnabled: false } }); expect(settings.status()).toBe(200);
-  await page.reload(); await expect(page.getByRole('heading', { name: 'Учебник', exact: true })).toBeVisible();
+  await page.reload(); await expect(page.getByRole('heading', { name: 'Уроки', exact: true })).toBeVisible();
   return { page, context, actor, words };
 }
 async function closeIntroduction(page: Page) { const intro = page.getByTestId('counter-introduction'); if (await intro.isVisible()) await intro.getByRole('button', { name: 'К карточке', exact: true }).click(); }
@@ -86,19 +86,21 @@ try {
   await expect(page.getByTestId('card-deck')).toHaveAttribute('data-remaining', '20'); expect(submissions).toHaveLength(1);
   await page.getByRole('button', { name: 'Повторить сохранение', exact: true }).click();
   await expect(page.getByTestId('review-gesture')).not.toHaveAttribute('data-review-id', first.id);
-  expect(submissions[0].attemptId).toBe(submissions[1].attemptId); await expect(page.getByTestId('card-deck')).toHaveAttribute('data-remaining', '20');
-  let completed = 0, turns = 0; const formats = new Set<string>(); let corrected = false;
+  expect(submissions[0].attemptId).toBe(submissions[1].attemptId); await expect(page.getByTestId('card-deck')).toHaveAttribute('data-remaining', '19');
+  const [retryState] = await database.sql`select (select count(*)::int from review_attempts where attempt_id=${submissions[0].attemptId}) as attempts, due > now() as waiting from review_states where user_id=${desktop.actor.id} and mode='counter' and item_id=${first.targetId}`;
+  expect(retryState).toEqual({ attempts: 1, waiting: true });
+  let completed = 1, turns = 0; const formats = new Set<string>([first.counter.kind]);
   while (completed < 20) {
     const id = await page.getByTestId('review-gesture').getAttribute('data-review-id');
     const item = queue!.items.find(item => item.id === id); if (!item || item.mode !== 'counter') throw new Error('Unknown counter card');
     formats.add(item.counter.kind); await reveal(page, item);
     if (item.counter.kind === 'recall') { if (turns === 2) { await page.getByTestId('review-gesture').focus(); await page.keyboard.press('ArrowRight'); } else await menuGrade(page, 3); } completed++; turns++;
-    if (id === first.id) corrected = true;
+    expect(id, 'Scheduled Again must wait until due').not.toBe(first.id);
     if (completed < 20) { await expect(page.getByTestId('card-deck')).toHaveAttribute('data-remaining', String(20 - completed)); await expect(page.getByTestId('review-gesture')).not.toHaveAttribute('data-review-id', id!); }
   }
-  await expect(page.getByTestId('portion-complete')).toBeVisible(); expect(corrected).toBe(true); expect(formats.size).toBe(5); expect(turns).toBe(20);
+  await expect(page.getByTestId('portion-complete')).toBeVisible(); expect(formats.size).toBe(5); expect(turns).toBe(19);
   expect(await page.evaluate(() => (window as any).__counterAudio.playing)).toBeGreaterThan(0);
-  await page.getByRole('button', { name: 'К тренировкам', exact: true }).click(); await page.getByRole('navigation', { name: 'Разделы', exact: true }).getByRole('button', { name: 'Учебник', exact: true }).click(); await page.locator('[data-lesson-id="marugoto.starter-a1.lesson.04"] > .lesson-material > summary').click(); await page.locator('article[data-lesson-id="marugoto.starter-a1.lesson.04"]').getByText('Все слова и конструкции', { exact: true }).click(); await page.locator('[data-testid="train-lesson"][data-lesson-id="marugoto.starter-a1.lesson.04"]').click();
+  await page.getByRole('button', { name: 'К тренировкам', exact: true }).click(); await page.getByRole('navigation', { name: 'Разделы', exact: true }).getByRole('button', { name: 'Учебник', exact: true }).click(); await page.locator('[data-lesson-id="marugoto.starter-a1.lesson.04"] > .lesson-material > summary').click(); await page.locator('article[data-lesson-id="marugoto.starter-a1.lesson.04"]').getByText('Дополнительный словарь и конструкции', { exact: true }).click(); await page.locator('[data-testid="train-lesson"][data-lesson-id="marugoto.starter-a1.lesson.04"]').click();
   const gesture = page.getByTestId('review-gesture'); await expect(page.getByTestId('card-face')).toBeVisible();
   const oldId = await gesture.getAttribute('data-review-id'); await page.getByTestId('card-face').click();
   if (await page.locator('.flip-card').getAttribute('data-revealed') !== 'true') { await page.waitForTimeout(500); await page.getByTestId('card-face').click(); }
@@ -107,8 +109,12 @@ try {
   const face = await page.getByTestId('card-face').boundingBox(); if (!face) throw new Error('Missing card bounds');
   await page.mouse.move(face.x + face.width / 2, face.y + face.height / 2); await page.mouse.down(); await page.mouse.move(face.x + face.width / 2 - 85, face.y + face.height / 2, { steps: 5 }); await page.mouse.up();
   await expect(gesture).not.toHaveAttribute('data-review-id', oldId!);
-  await expect(page.getByRole('progressbar', { name: 'Прогресс занятия' })).toHaveAttribute('value', '0');
+  await expect(page.getByRole('progressbar', { name: 'Прогресс занятия' })).toHaveAttribute('value', '1');
   await page.getByRole('button', { name: 'Завершить', exact: true }).click();
+  // Make one enrolled listening card due explicitly; new FSRS intervals are not immediate.
+  const listeningWord = desktop.words.find(word => word.audioUrl)!;
+  const listeningSeed = await context.request.post(base + '/api/reviews', { headers: { origin: base }, data: { attemptId: crypto.randomUUID(), reviewId: reviewId('listening', listeningWord.id), version: 0, mode: 'listening', rating: 3 } }); expect(listeningSeed.status()).toBe(200);
+  await database.sql`update review_states set due='2000-01-01' where user_id=${desktop.actor.id} and mode='listening' and item_id=${listeningWord.id}`;
   await page.getByRole('navigation', { name: 'Разделы', exact: true }).getByRole('button', { name: 'Повторение', exact: true }).click();
   await page.getByRole('button', { name: 'Начать повторение', exact: false }).click(); await expect(gesture).toBeVisible();
   for (let index = 0; index < 12 && await gesture.getAttribute('data-mode') !== 'listening'; index++) {
@@ -122,7 +128,7 @@ try {
   if (await page.locator('.flip-card').getAttribute('data-revealed') !== 'true') { await page.waitForTimeout(500); await page.getByTestId('card-face').click(); }
   await expect(page.locator('.flip-card')).toHaveAttribute('data-revealed', 'true'); await expect(page.getByTestId('card-face').locator('.jp')).toBeVisible();
   await gesture.focus(); await page.keyboard.press('ArrowRight'); await expect(gesture).not.toHaveAttribute('data-review-id', audioId!);
-  await noOverflow(page); results.push({ viewport: 1280, realTwentyCardDeck: true, fiveFormats: true, lostAckRetriedSameAttempt: true, failedCardReturned: true, navigationPreservesPendingChoice: true, keyboardGrade: true, ordinaryWordSwipeAgainDoesNotComplete: true, ordinaryAudioFlipHidesAnswer: true, realSpeechPlaying: await page.evaluate(() => (window as any).__counterAudio.playing) });
+  await noOverflow(page); results.push({ viewport: 1280, realTwentyCardDeck: true, fiveFormats: true, lostAckRetriedSameAttempt: true, scheduledAgainWaitsUntilDue: true, navigationPreservesPendingChoice: true, keyboardGrade: true, ordinaryWordSwipeAgainSchedulesNextReview: true, ordinaryAudioFlipHidesAnswer: true, realSpeechPlaying: await page.evaluate(() => (window as any).__counterAudio.playing) });
 
   const mobile = await fixture(390, 'reduce');
   const book = mobile.words.find(word => word.kana === 'ほん')!, person = mobile.words.find(word => word.kana === 'ひと')!;

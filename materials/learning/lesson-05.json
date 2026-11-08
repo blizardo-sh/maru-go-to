@@ -797,7 +797,7 @@
         ],
         "surface": "おちゃ",
         "kana": "おちゃ",
-        "meaningRu": "зеленый чай",
+        "meaningRu": "зелёный чай; чай",
         "segments": [
           {
             "surface": "おちゃ"
@@ -822,6 +822,13 @@
             "row": 7,
             "entry": "おちゃ（ちゃ）",
             "label": "Словарь · урок 1"
+          },
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+            "entry": "おちゃ",
+            "label": "Словарь EN · урок 5 · уточнение русского перевода",
+            "page": 3
           }
         ],
         "audioUrl": "/audio/3b9b0e38cfcbd0b4031e.m4a"
@@ -1152,7 +1159,7 @@
         ],
         "surface": "ごはん",
         "kana": "ごはん",
-        "meaningRu": "вареный рис",
+        "meaningRu": "варёный рис; еда; приём пищи",
         "segments": [
           {
             "surface": "ごはん"
@@ -1177,6 +1184,13 @@
             "row": 46,
             "entry": "ごはん",
             "label": "Словарь · урок 5"
+          },
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+            "entry": "ごはん",
+            "label": "Словарь EN · урок 5 · уточнение русского перевода",
+            "page": 3
           }
         ],
         "audioUrl": "/audio/77b25931318014d116f2.m4a"

@@ -19,7 +19,7 @@ export function studySpec(course:Course,item:ReviewItem):StudyPreparation {
  const challenge=JSON.parse(Buffer.from(item.id,'base64url').toString())[2] as string;
  const scope=challenge.startsWith('training:')?challenge.split('|')[0]!:base.scope;
  const entry=trainingEntry(course,item.word.id),prepared=entry??course.learning?.flatMap(route=>route.goals.flatMap(goal=>goal.parts.flatMap(part=>part.words))).find(value=>value.wordId===item.word.id);
- return {...base,key:'word:'+item.targetId,scope,required:wordPracticeFormats(item.word,scope.startsWith('training:')&&!!entry?.application),title:item.word.meaningRu,word:item.word,explanationRu:prepared?.explanationRu??'Проверьте написание, чтение и русский смысл. Для этой записи используются подтверждённые сведения.',...(prepared?.example?{example:prepared.example}:{})};
+ return {...base,key:'word:'+item.targetId,scope,required:wordPracticeFormats(item.word,scope.startsWith('training:')&&!!entry?.application),title:item.word.meaningRu,word:item.word,explanationRu:prepared?.explanationRu??'Проверьте написание, чтение и русский смысл. Для этой записи используются подтверждённые сведения.',...(prepared?.example?{example:prepared.example}:item.word.meaningContext?{example:{...item.word.meaningContext,audioUrl:item.word.meaningContext.audioUrl??''}}:{})};
 }
 export async function studyPreparations(sql:Database['sql'],userId:string,course:Course,items:ReviewItem[],states?:any[]):Promise<ReviewItem[]> {
  if(!stagedLearning(course))return items;
@@ -33,7 +33,7 @@ export async function studyPreparations(sql:Database['sql'],userId:string,course
   const ready=spec.required.every(format=>spec.passed.includes(format));
   spec.introduced=ready||!!row?.introductions.includes(spec.scope);
   spec.referenceSeen=ready||spec.introduced||!!row?.introductions.includes('reference:'+spec.scope);
-  return {...item,preparation:spec};
+  return {...item,preparation:spec,...(!ready?{schedule:{kind:'learning' as const}}:{})};
  });
 }
 export async function introduceStudy(sql:Database['sql'],userId:string,spec:StudyPreparation,stage:'reference'|'learning') {

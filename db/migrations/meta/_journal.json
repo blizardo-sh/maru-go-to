@@ -57,6 +57,20 @@
       "when": 1793913600000,
       "tag": "0007_email_access",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1794052800000,
+      "tag": "0008_marugoto_publications",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1794052801000,
+      "tag": "0009_prior_learning_commands",
+      "breakpoints": true
     }
   ]
 }

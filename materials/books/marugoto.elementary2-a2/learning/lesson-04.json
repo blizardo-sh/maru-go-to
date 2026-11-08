@@ -1,0 +1,997 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.04",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Как приготовить и съесть",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.04.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        10,
+        11,
+        12
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.04.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.49be438f3d7890c8",
+              "explanationRu": "В этой ситуации: сахар",
+              "example": {
+                "surface": "砂糖を入れないで飲みます。",
+                "kana": "さとうをいれないでのみます。",
+                "segments": [
+                  {
+                    "surface": "砂糖",
+                    "reading": "さとう"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "入",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "れないで"
+                  },
+                  {
+                    "surface": "飲",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "みます。"
+                  }
+                ],
+                "meaningRu": "Я пью без сахара.",
+                "audioUrl": "/audio/marugoto/a2563f1298b9d715.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.a27b53b66608f1e8",
+              "explanationRu": "В этой ситуации: сыр",
+              "example": {
+                "surface": "パンにチーズをのせて食べます。",
+                "kana": "パンにチーズをのせてたべます。",
+                "segments": [
+                  {
+                    "surface": "パンにチーズをのせて"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べます。"
+                  }
+                ],
+                "meaningRu": "Я кладу сыр на хлеб и ем.",
+                "audioUrl": "/audio/marugoto/fdd828f82d05c50a.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.8d52a83aefbe187a",
+              "explanationRu": "В этой ситуации: соль",
+              "example": {
+                "surface": "少し塩を入れるとおいしいです。",
+                "kana": "すこししおをいれるとおいしいです。",
+                "segments": [
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "塩",
+                    "reading": "しお"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "入",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "れるとおいしいです。"
+                  }
+                ],
+                "meaningRu": "Если добавить немного соли, будет вкусно.",
+                "audioUrl": "/audio/marugoto/0ba5b46919f5da33.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.1e7b1268d7e7d963",
+              "explanationRu": "В этой ситуации: за ваше здоровье!",
+              "example": {
+                "surface": "飲み物は乾杯してから飲みましょう。まだ飲んじゃだめですよ。",
+                "kana": "のみものはかんぱいしてからのみましょう。まだのんじゃだめですよ。",
+                "segments": [
+                  {
+                    "surface": "飲",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "み"
+                  },
+                  {
+                    "surface": "物",
+                    "reading": "もの"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "乾杯",
+                    "reading": "かんぱい"
+                  },
+                  {
+                    "surface": "してから"
+                  },
+                  {
+                    "surface": "飲",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "みましょう。まだ"
+                  },
+                  {
+                    "surface": "飲",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "んじゃだめですよ。"
+                  }
+                ],
+                "meaningRu": "Давайте выпьем после тоста. Пока пить нельзя.",
+                "audioUrl": "/audio/marugoto/782469cfc8a6add5.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.50ed8dc9f820e0f6",
+              "explanationRu": "В этой ситуации: напитки",
+              "example": {
+                "surface": "飲み物は乾杯してから飲みましょう。まだ飲んじゃだめですよ。",
+                "kana": "のみものはかんぱいしてからのみましょう。まだのんじゃだめですよ。",
+                "segments": [
+                  {
+                    "surface": "飲",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "み"
+                  },
+                  {
+                    "surface": "物",
+                    "reading": "もの"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "乾杯",
+                    "reading": "かんぱい"
+                  },
+                  {
+                    "surface": "してから"
+                  },
+                  {
+                    "surface": "飲",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "みましょう。まだ"
+                  },
+                  {
+                    "surface": "飲",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "んじゃだめですよ。"
+                  }
+                ],
+                "meaningRu": "Давайте выпьем после тоста. Пока пить нельзя.",
+                "audioUrl": "/audio/marugoto/782469cfc8a6add5.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.04.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        10,
+        11,
+        12
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.04.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.ec82a6a9bdbd0924",
+              "explanationRu": "В этой ситуации: немного",
+              "example": {
+                "surface": "少し塩を入れるとおいしいです。",
+                "kana": "すこししおをいれるとおいしいです。",
+                "segments": [
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "塩",
+                    "reading": "しお"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "入",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "れるとおいしいです。"
+                  }
+                ],
+                "meaningRu": "Если добавить немного соли, будет вкусно.",
+                "audioUrl": "/audio/marugoto/0ba5b46919f5da33.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.5c39a061ed2ba61c",
+              "explanationRu": "В этой ситуации: ничего",
+              "example": {
+                "surface": "まず何もつけないで食べてください。その後で、少しソースをつけてもいいです。",
+                "kana": "まずなにもつけないでたべてください。そのあとで、すこしソースをつけてもいいです。",
+                "segments": [
+                  {
+                    "surface": "まず"
+                  },
+                  {
+                    "surface": "何",
+                    "reading": "なに"
+                  },
+                  {
+                    "surface": "もつけないで"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べてください。その"
+                  },
+                  {
+                    "surface": "後",
+                    "reading": "あと"
+                  },
+                  {
+                    "surface": "で、"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "しソースをつけてもいいです。"
+                  }
+                ],
+                "meaningRu": "Сначала попробуйте без всего. Затем можно добавить немного соуса.",
+                "audioUrl": "/audio/marugoto/171dfdde8ca2a01b.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.3a2e2056efd95e55",
+              "explanationRu": "В этой ситуации: нельзя; негодный, неподходящий",
+              "example": {
+                "surface": "まだ食べちゃだめです。",
+                "kana": "まだたべちゃだめです。",
+                "segments": [
+                  {
+                    "surface": "まだ"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べちゃだめです。"
+                  }
+                ],
+                "meaningRu": "Пока нельзя есть.",
+                "audioUrl": "/audio/marugoto/4e9d90f00f9ebff7.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8565bd2bb82aa633",
+              "explanationRu": "В этой ситуации: ещё; ещё не (с отрицанием)",
+              "example": {
+                "surface": "まだ食べちゃだめです。",
+                "kana": "まだたべちゃだめです。",
+                "segments": [
+                  {
+                    "surface": "まだ"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べちゃだめです。"
+                  }
+                ],
+                "meaningRu": "Пока нельзя есть.",
+                "audioUrl": "/audio/marugoto/4e9d90f00f9ebff7.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.3a212fcb6cc5d10d",
+              "explanationRu": "В этой ситуации: хлеб",
+              "example": {
+                "surface": "パンにチーズをのせて食べます。",
+                "kana": "パンにチーズをのせてたべます。",
+                "segments": [
+                  {
+                    "surface": "パンにチーズをのせて"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べます。"
+                  }
+                ],
+                "meaningRu": "Я кладу сыр на хлеб и ем.",
+                "audioUrl": "/audio/marugoto/fdd828f82d05c50a.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.04.words.3",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        10,
+        11,
+        12
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.04.part.words.3",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.be724dc0b7cde7bc",
+              "explanationRu": "В этой ситуации: сначала",
+              "example": {
+                "surface": "まず何もつけないで食べてください。その後で、少しソースをつけてもいいです。",
+                "kana": "まずなにもつけないでたべてください。そのあとで、すこしソースをつけてもいいです。",
+                "segments": [
+                  {
+                    "surface": "まず"
+                  },
+                  {
+                    "surface": "何",
+                    "reading": "なに"
+                  },
+                  {
+                    "surface": "もつけないで"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べてください。その"
+                  },
+                  {
+                    "surface": "後",
+                    "reading": "あと"
+                  },
+                  {
+                    "surface": "で、"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "しソースをつけてもいいです。"
+                  }
+                ],
+                "meaningRu": "Сначала попробуйте без всего. Затем можно добавить немного соуса.",
+                "audioUrl": "/audio/marugoto/171dfdde8ca2a01b.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.04.grammar.148",
+      "titleRu": "～てはいけない／だめ",
+      "introductionRu": "てはいけません выражает запрет или правило.",
+      "canDoIds": [
+        10,
+        11,
+        12
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.04.part.grammar.148",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.148",
+            "explanationRu": "てはいけません выражает запрет или правило.",
+            "example": {
+              "surface": "ここで写真を撮ってはいけません。",
+              "kana": "ここでしゃしんをとってはいけません。",
+              "segments": [
+                {
+                  "surface": "ここで"
+                },
+                {
+                  "surface": "写真",
+                  "reading": "しゃしん"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "撮",
+                  "reading": "と"
+                },
+                {
+                  "surface": "ってはいけません。"
+                }
+              ],
+              "meaningRu": "Здесь нельзя фотографировать.",
+              "audioUrl": "/audio/marugoto/0a23ae1fe7f6211c.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "ここで",
+                "explanationRu": "Смысловой фрагмент: Здесь нельзя фотографировать."
+              },
+              {
+                "text": "写真を",
+                "explanationRu": "Смысловой фрагмент: Здесь нельзя фотографировать."
+              },
+              {
+                "text": "撮ってはいけません",
+                "explanationRu": "てはいけません выражает запрет или правило."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.04.grammar.149",
+      "titleRu": "～ちゃいけない／だめ",
+      "introductionRu": "ちゃだめ — разговорное сокращение てはだめ; после で используется じゃ.",
+      "canDoIds": [
+        10,
+        11,
+        12
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.04.part.grammar.149",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.149",
+            "explanationRu": "ちゃだめ — разговорное сокращение てはだめ; после で используется じゃ.",
+            "example": {
+              "surface": "まだ食べちゃだめです。",
+              "kana": "まだたべちゃだめです。",
+              "segments": [
+                {
+                  "surface": "まだ"
+                },
+                {
+                  "surface": "食",
+                  "reading": "た"
+                },
+                {
+                  "surface": "べちゃだめです。"
+                }
+              ],
+              "meaningRu": "Пока нельзя есть.",
+              "audioUrl": "/audio/marugoto/4e9d90f00f9ebff7.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "まだ",
+                "explanationRu": "Смысловой фрагмент: Пока нельзя есть."
+              },
+              {
+                "text": "食べちゃだめです",
+                "explanationRu": "ちゃだめ — разговорное сокращение てはだめ; после で используется じゃ."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.04.grammar.150",
+      "titleRu": "～てから",
+      "introductionRu": "てから подчёркивает, что первое действие должно предшествовать второму.",
+      "canDoIds": [
+        10,
+        11,
+        12
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.04.part.grammar.150",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.150",
+            "explanationRu": "てから подчёркивает, что первое действие должно предшествовать второму.",
+            "example": {
+              "surface": "手を洗ってから食べましょう。",
+              "kana": "てをあらってからたべましょう。",
+              "segments": [
+                {
+                  "surface": "手",
+                  "reading": "て"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "洗",
+                  "reading": "あら"
+                },
+                {
+                  "surface": "ってから"
+                },
+                {
+                  "surface": "食",
+                  "reading": "た"
+                },
+                {
+                  "surface": "べましょう。"
+                }
+              ],
+              "meaningRu": "Давайте поедим после того, как вымоем руки.",
+              "audioUrl": "/audio/marugoto/76d613217513855f.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "手を",
+                "explanationRu": "Смысловой фрагмент: Давайте поедим после того, как вымоем руки."
+              },
+              {
+                "text": "洗ってから",
+                "explanationRu": "Смысловой фрагмент: Давайте поедим после того, как вымоем руки."
+              },
+              {
+                "text": "食べましょう",
+                "explanationRu": "てから подчёркивает, что первое действие должно предшествовать второму."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.04.grammar.151",
+      "titleRu": "～て～",
+      "introductionRu": "て связывает способ подготовки с последующим действием.",
+      "canDoIds": [
+        10,
+        11,
+        12
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.04.part.grammar.151",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.151",
+            "explanationRu": "て связывает способ подготовки с последующим действием.",
+            "example": {
+              "surface": "パンにチーズをのせて食べます。",
+              "kana": "パンにチーズをのせてたべます。",
+              "segments": [
+                {
+                  "surface": "パンにチーズをのせて"
+                },
+                {
+                  "surface": "食",
+                  "reading": "た"
+                },
+                {
+                  "surface": "べます。"
+                }
+              ],
+              "meaningRu": "Я кладу сыр на хлеб и ем.",
+              "audioUrl": "/audio/marugoto/fdd828f82d05c50a.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "パンに",
+                "explanationRu": "Смысловой фрагмент: Я кладу сыр на хлеб и ем."
+              },
+              {
+                "text": "チーズを",
+                "explanationRu": "Смысловой фрагмент: Я кладу сыр на хлеб и ем."
+              },
+              {
+                "text": "のせて",
+                "explanationRu": "Смысловой фрагмент: Я кладу сыр на хлеб и ем."
+              },
+              {
+                "text": "食べます",
+                "explanationRu": "て связывает способ подготовки с последующим действием."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.04.grammar.152",
+      "titleRu": "～ないで",
+      "introductionRu": "ないで означает выполнение второго действия без первого.",
+      "canDoIds": [
+        10,
+        11,
+        12
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.04.part.grammar.152",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.152",
+            "explanationRu": "ないで означает выполнение второго действия без первого.",
+            "example": {
+              "surface": "砂糖を入れないで飲みます。",
+              "kana": "さとうをいれないでのみます。",
+              "segments": [
+                {
+                  "surface": "砂糖",
+                  "reading": "さとう"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "入",
+                  "reading": "い"
+                },
+                {
+                  "surface": "れないで"
+                },
+                {
+                  "surface": "飲",
+                  "reading": "の"
+                },
+                {
+                  "surface": "みます。"
+                }
+              ],
+              "meaningRu": "Я пью без сахара.",
+              "audioUrl": "/audio/marugoto/a2563f1298b9d715.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "砂糖を",
+                "explanationRu": "Смысловой фрагмент: Я пью без сахара."
+              },
+              {
+                "text": "入れないで",
+                "explanationRu": "Смысловой фрагмент: Я пью без сахара."
+              },
+              {
+                "text": "飲みます",
+                "explanationRu": "ないで означает выполнение второго действия без первого."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.04.grammar.153",
+      "titleRu": "～と",
+      "introductionRu": "と связывает условие с обычным или ожидаемым результатом.",
+      "canDoIds": [
+        10,
+        11,
+        12
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.04.part.grammar.153",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.153",
+            "explanationRu": "と связывает условие с обычным или ожидаемым результатом.",
+            "example": {
+              "surface": "少し塩を入れるとおいしいです。",
+              "kana": "すこししおをいれるとおいしいです。",
+              "segments": [
+                {
+                  "surface": "少",
+                  "reading": "すこ"
+                },
+                {
+                  "surface": "し"
+                },
+                {
+                  "surface": "塩",
+                  "reading": "しお"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "入",
+                  "reading": "い"
+                },
+                {
+                  "surface": "れるとおいしいです。"
+                }
+              ],
+              "meaningRu": "Если добавить немного соли, будет вкусно.",
+              "audioUrl": "/audio/marugoto/0ba5b46919f5da33.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "少し",
+                "explanationRu": "Смысловой фрагмент: Если добавить немного соли, будет вкусно."
+              },
+              {
+                "text": "塩を",
+                "explanationRu": "Смысловой фрагмент: Если добавить немного соли, будет вкусно."
+              },
+              {
+                "text": "入れると",
+                "explanationRu": "Смысловой фрагмент: Если добавить немного соли, будет вкусно."
+              },
+              {
+                "text": "おいしいです",
+                "explanationRu": "と связывает условие с обычным или ожидаемым результатом."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.10.goal",
+      "titleRu": "Слушаем и понимаем",
+      "canDoIds": [
+        10
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.10.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.10",
+              "titleRu": "Слушаем и понимаем",
+              "instructionRu": "Послушайте последовательность действий за столом.",
+              "canDoIds": [
+                10
+              ],
+              "kind": "listening",
+              "passage": [
+                {
+                  "surface": "飲み物は乾杯してから飲みましょう。まだ飲んじゃだめですよ。",
+                  "kana": "のみものはかんぱいしてからのみましょう。まだのんじゃだめですよ。",
+                  "segments": [
+                    {
+                      "surface": "飲",
+                      "reading": "の"
+                    },
+                    {
+                      "surface": "み"
+                    },
+                    {
+                      "surface": "物",
+                      "reading": "もの"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "乾杯",
+                      "reading": "かんぱい"
+                    },
+                    {
+                      "surface": "してから"
+                    },
+                    {
+                      "surface": "飲",
+                      "reading": "の"
+                    },
+                    {
+                      "surface": "みましょう。まだ"
+                    },
+                    {
+                      "surface": "飲",
+                      "reading": "の"
+                    },
+                    {
+                      "surface": "んじゃだめですよ。"
+                    }
+                  ],
+                  "meaningRu": "Давайте выпьем после тоста. Пока пить нельзя.",
+                  "audioUrl": "/audio/marugoto/782469cfc8a6add5.m4a"
+                }
+              ],
+              "questionRu": "Когда предлагают пить?",
+              "options": [
+                {
+                  "id": "b",
+                  "text": "До тоста"
+                },
+                {
+                  "id": "a",
+                  "text": "После тоста"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Давайте выпьем после тоста. Пока пить нельзя."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.11.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.11.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.11",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Объясните простой способ есть блюдо с соусом и без него.",
+              "canDoIds": [
+                11
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Объясните простой способ есть блюдо с соусом и без него.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "まず何もつけないで食べてください。その後で、少しソースをつけてもいいです。",
+                "kana": "まずなにもつけないでたべてください。そのあとで、すこしソースをつけてもいいです。",
+                "segments": [
+                  {
+                    "surface": "まず"
+                  },
+                  {
+                    "surface": "何",
+                    "reading": "なに"
+                  },
+                  {
+                    "surface": "もつけないで"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べてください。その"
+                  },
+                  {
+                    "surface": "後",
+                    "reading": "あと"
+                  },
+                  {
+                    "surface": "で、"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "しソースをつけてもいいです。"
+                  }
+                ],
+                "meaningRu": "Сначала попробуйте без всего. Затем можно добавить немного соуса.",
+                "audioUrl": "/audio/marugoto/171dfdde8ca2a01b.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Объясните простой способ есть блюдо с соусом и без него.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.12.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        12
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.12.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.12",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "По плану «блюдо → подготовка → подача» объясните способ есть знакомое вам блюдо.",
+              "canDoIds": [
+                12
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "По плану «блюдо → подготовка → подача» объясните способ есть знакомое вам блюдо.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "パンにチーズをのせて食べます。温めると、おいしいです。",
+                "kana": "パンにチーズをのせてたべます。あたためると、おいしいです。",
+                "segments": [
+                  {
+                    "surface": "パンにチーズをのせて"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べます。"
+                  },
+                  {
+                    "surface": "温",
+                    "reading": "あたた"
+                  },
+                  {
+                    "surface": "めると、おいしいです。"
+                  }
+                ],
+                "meaningRu": "На хлеб кладут сыр и едят. Если подогреть, вкусно.",
+                "audioUrl": "/audio/marugoto/7ce7c9cdb60801a4.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: По плану «блюдо → подготовка → подача» объясните способ есть знакомое вам блюдо.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

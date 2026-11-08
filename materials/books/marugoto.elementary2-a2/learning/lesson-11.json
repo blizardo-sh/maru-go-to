@@ -1,0 +1,509 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.11",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Объясняем поломку",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.11.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        31,
+        32
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.11.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.6f977ff732def2a3",
+              "explanationRu": "В этой ситуации: занимать (о времени)",
+              "example": {
+                "surface": "荷物が届くまで三日かかります。",
+                "kana": "にもつがとどくまでみっかかかります。",
+                "segments": [
+                  {
+                    "surface": "荷物",
+                    "reading": "にもつ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "届",
+                    "reading": "とど"
+                  },
+                  {
+                    "surface": "くまで"
+                  },
+                  {
+                    "surface": "三日",
+                    "reading": "みっか"
+                  },
+                  {
+                    "surface": "かかります。"
+                  }
+                ],
+                "meaningRu": "До доставки посылки пройдёт три дня.",
+                "audioUrl": "/audio/marugoto/2fdef443bcc860b9.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.bb5d894377c33f7c",
+              "explanationRu": "В этой ситуации: время",
+              "example": {
+                "surface": "店に行かないで買えるので、便利です。でも、届くまで時間がかかります。",
+                "kana": "みせにいかないでかえるので、べんりです。でも、とどくまでじかんがかかります。",
+                "segments": [
+                  {
+                    "surface": "店",
+                    "reading": "みせ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "かないで"
+                  },
+                  {
+                    "surface": "買",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "えるので、"
+                  },
+                  {
+                    "surface": "便利",
+                    "reading": "べんり"
+                  },
+                  {
+                    "surface": "です。でも、"
+                  },
+                  {
+                    "surface": "届",
+                    "reading": "とど"
+                  },
+                  {
+                    "surface": "くまで"
+                  },
+                  {
+                    "surface": "時間",
+                    "reading": "じかん"
+                  },
+                  {
+                    "surface": "がかかります。"
+                  }
+                ],
+                "meaningRu": "Удобно покупать без похода в магазин. Но доставка занимает время.",
+                "audioUrl": "/audio/marugoto/e1da464ff1c4214b.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.11.grammar.177",
+      "titleRu": "～なくなる",
+      "introductionRu": "ない-форма → なくなる обозначает прекращение действия или состояния.",
+      "canDoIds": [
+        31,
+        32
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.11.part.grammar.177",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.177",
+            "explanationRu": "ない-форма → なくなる обозначает прекращение действия или состояния.",
+            "example": {
+              "surface": "時計が動かなくなりました。",
+              "kana": "とけいがうごかなくなりました。",
+              "segments": [
+                {
+                  "surface": "時計",
+                  "reading": "とけい"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "動",
+                  "reading": "うご"
+                },
+                {
+                  "surface": "かなくなりました。"
+                }
+              ],
+              "meaningRu": "Часы перестали работать.",
+              "audioUrl": "/audio/marugoto/a968508ceb55a4da.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "時計が",
+                "explanationRu": "Смысловой фрагмент: Часы перестали работать."
+              },
+              {
+                "text": "動かなく",
+                "explanationRu": "Смысловой фрагмент: Часы перестали работать."
+              },
+              {
+                "text": "なりました",
+                "explanationRu": "ない-форма → なくなる обозначает прекращение действия или состояния."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.11.grammar.178",
+      "titleRu": "～てしまう",
+      "introductionRu": "てしまう здесь выражает сожаление о завершившемся событии.",
+      "canDoIds": [
+        31,
+        32
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.11.part.grammar.178",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.178",
+            "explanationRu": "てしまう здесь выражает сожаление о завершившемся событии.",
+            "example": {
+              "surface": "大切な時計が壊れてしまいました。",
+              "kana": "たいせつなとけいがこわれてしまいました。",
+              "segments": [
+                {
+                  "surface": "大切",
+                  "reading": "たいせつ"
+                },
+                {
+                  "surface": "な"
+                },
+                {
+                  "surface": "時計",
+                  "reading": "とけい"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "壊",
+                  "reading": "こわ"
+                },
+                {
+                  "surface": "れてしまいました。"
+                }
+              ],
+              "meaningRu": "Мои дорогие часы, к сожалению, сломались.",
+              "audioUrl": "/audio/marugoto/00aab6233693616b.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "大切な",
+                "explanationRu": "Смысловой фрагмент: Мои дорогие часы, к сожалению, сломались."
+              },
+              {
+                "text": "時計が",
+                "explanationRu": "Смысловой фрагмент: Мои дорогие часы, к сожалению, сломались."
+              },
+              {
+                "text": "壊れてしまいました",
+                "explanationRu": "てしまう здесь выражает сожаление о завершившемся событии."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.11.grammar.179",
+      "titleRu": "～ないで",
+      "introductionRu": "ないで показывает отсутствие сопутствующего действия.",
+      "canDoIds": [
+        31,
+        32
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.11.part.grammar.179",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.179",
+            "explanationRu": "ないで показывает отсутствие сопутствующего действия.",
+            "example": {
+              "surface": "店に行かないで注文できます。",
+              "kana": "みせにいかないでちゅうもんできます。",
+              "segments": [
+                {
+                  "surface": "店",
+                  "reading": "みせ"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "行",
+                  "reading": "い"
+                },
+                {
+                  "surface": "かないで"
+                },
+                {
+                  "surface": "注文",
+                  "reading": "ちゅうもん"
+                },
+                {
+                  "surface": "できます。"
+                }
+              ],
+              "meaningRu": "Можно сделать заказ, не ходя в магазин.",
+              "audioUrl": "/audio/marugoto/9b8af4875ae627f4.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "店に",
+                "explanationRu": "Смысловой фрагмент: Можно сделать заказ, не ходя в магазин."
+              },
+              {
+                "text": "行かないで",
+                "explanationRu": "Смысловой фрагмент: Можно сделать заказ, не ходя в магазин."
+              },
+              {
+                "text": "注文できます",
+                "explanationRu": "ないで показывает отсутствие сопутствующего действия."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.11.grammar.180",
+      "titleRu": "～まで",
+      "introductionRu": "まで после глагола задаёт временную границу ожидания.",
+      "canDoIds": [
+        31,
+        32
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.11.part.grammar.180",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.180",
+            "explanationRu": "まで после глагола задаёт временную границу ожидания.",
+            "example": {
+              "surface": "荷物が届くまで三日かかります。",
+              "kana": "にもつがとどくまでみっかかかります。",
+              "segments": [
+                {
+                  "surface": "荷物",
+                  "reading": "にもつ"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "届",
+                  "reading": "とど"
+                },
+                {
+                  "surface": "くまで"
+                },
+                {
+                  "surface": "三日",
+                  "reading": "みっか"
+                },
+                {
+                  "surface": "かかります。"
+                }
+              ],
+              "meaningRu": "До доставки посылки пройдёт три дня.",
+              "audioUrl": "/audio/marugoto/2fdef443bcc860b9.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "荷物が",
+                "explanationRu": "Смысловой фрагмент: До доставки посылки пройдёт три дня."
+              },
+              {
+                "text": "届くまで",
+                "explanationRu": "Смысловой фрагмент: До доставки посылки пройдёт три дня."
+              },
+              {
+                "text": "三日",
+                "explanationRu": "Смысловой фрагмент: До доставки посылки пройдёт три дня."
+              },
+              {
+                "text": "かかります",
+                "explanationRu": "まで после глагола задаёт временную границу ожидания."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.31.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        31
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.31.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.31",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Объясните, какую вещь нужно купить и почему.",
+              "canDoIds": [
+                31
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Объясните, какую вещь нужно купить и почему.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "時計が動かなくなってしまいました。新しいのを買いたいです。",
+                "kana": "とけいがうごかなくなってしまいました。あたらしいのをかいたいです。",
+                "segments": [
+                  {
+                    "surface": "時計",
+                    "reading": "とけい"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "動",
+                    "reading": "うご"
+                  },
+                  {
+                    "surface": "かなくなってしまいました。"
+                  },
+                  {
+                    "surface": "新",
+                    "reading": "あたら"
+                  },
+                  {
+                    "surface": "しいのを"
+                  },
+                  {
+                    "surface": "買",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "いたいです。"
+                  }
+                ],
+                "meaningRu": "Часы, к сожалению, перестали работать. Я хочу купить новые.",
+                "audioUrl": "/audio/marugoto/2f2e9b433759885e.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Объясните, какую вещь нужно купить и почему.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.32.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        32
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.32.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.32",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Назовите достоинство и ограничение интернет-покупок.",
+              "canDoIds": [
+                32
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Назовите достоинство и ограничение интернет-покупок.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "店に行かないで買えるので、便利です。でも、届くまで時間がかかります。",
+                "kana": "みせにいかないでかえるので、べんりです。でも、とどくまでじかんがかかります。",
+                "segments": [
+                  {
+                    "surface": "店",
+                    "reading": "みせ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "かないで"
+                  },
+                  {
+                    "surface": "買",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "えるので、"
+                  },
+                  {
+                    "surface": "便利",
+                    "reading": "べんり"
+                  },
+                  {
+                    "surface": "です。でも、"
+                  },
+                  {
+                    "surface": "届",
+                    "reading": "とど"
+                  },
+                  {
+                    "surface": "くまで"
+                  },
+                  {
+                    "surface": "時間",
+                    "reading": "じかん"
+                  },
+                  {
+                    "surface": "がかかります。"
+                  }
+                ],
+                "meaningRu": "Удобно покупать без похода в магазин. Но доставка занимает время.",
+                "audioUrl": "/audio/marugoto/e1da464ff1c4214b.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Назовите достоинство и ограничение интернет-покупок.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

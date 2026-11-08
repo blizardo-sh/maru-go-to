@@ -989,7 +989,7 @@
         ],
         "surface": "ぜんぜん",
         "kana": "ぜんぜん",
-        "meaningRu": "совсем",
+        "meaningRu": "совсем; совсем не, нисколько (с отрицанием)",
         "segments": [
           {
             "surface": "ぜんぜん"
@@ -1014,6 +1014,13 @@
             "row": 2,
             "entry": "ぜんぜん",
             "label": "Словарь · урок 11"
+          },
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+            "entry": "ぜんぜん (~ない)",
+            "label": "Словарь EN · урок 11 · уточнение русского перевода",
+            "page": 6
           }
         ],
         "audioUrl": "/audio/5167edc7adc10bf0405d.m4a"

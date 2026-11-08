@@ -1,0 +1,1169 @@
+{
+  "lessonId": "marugoto.pre-intermediate-a2b1.topic.04",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Принимаем гостей",
+  "goals": [
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.04.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.04.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.a1677e0c45058e69",
+              "explanationRu": "В этой ситуации: эй!",
+              "example": {
+                "surface": "こちらが居間です。隣は台所です。ここに荷物を置いてもいいですよ。",
+                "kana": "こちらがいまです。となりはだいどころです。ここににもつをおいてもいいですよ。",
+                "segments": [
+                  {
+                    "surface": "こちらが"
+                  },
+                  {
+                    "surface": "居間",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "隣",
+                    "reading": "となり"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "台所",
+                    "reading": "だいどころ"
+                  },
+                  {
+                    "surface": "です。ここに"
+                  },
+                  {
+                    "surface": "荷物",
+                    "reading": "にもつ"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "置",
+                    "reading": "お"
+                  },
+                  {
+                    "surface": "いてもいいですよ。"
+                  }
+                ],
+                "meaningRu": "Это гостиная. Рядом кухня. Здесь можно оставить багаж.",
+                "audioUrl": "/audio/marugoto/1ddb97431f23c454.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.32f91f95f187231c",
+              "explanationRu": "В этой ситуации: музыка",
+              "example": {
+                "surface": "こちらは兄です。音楽が好きです。妹は大学で日本語を勉強しています。",
+                "kana": "こちらはあにです。おんがくがすきです。いもうとはだいがくでにほんごをべんきょうしています。",
+                "segments": [
+                  {
+                    "surface": "こちらは"
+                  },
+                  {
+                    "surface": "兄",
+                    "reading": "あに"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "音楽",
+                    "reading": "おんがく"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  },
+                  {
+                    "surface": "妹",
+                    "reading": "いもうと"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "大学",
+                    "reading": "だいがく"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "勉強",
+                    "reading": "べんきょう"
+                  },
+                  {
+                    "surface": "しています。"
+                  }
+                ],
+                "meaningRu": "Это мой старший брат. Он любит музыку. Младшая сестра изучает японский в университете.",
+                "audioUrl": "/audio/marugoto/bb567d6658e640ce.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8217225960a91885",
+              "explanationRu": "В этой ситуации: японский язык",
+              "example": {
+                "surface": "こちらは兄です。音楽が好きです。妹は大学で日本語を勉強しています。",
+                "kana": "こちらはあにです。おんがくがすきです。いもうとはだいがくでにほんごをべんきょうしています。",
+                "segments": [
+                  {
+                    "surface": "こちらは"
+                  },
+                  {
+                    "surface": "兄",
+                    "reading": "あに"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "音楽",
+                    "reading": "おんがく"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  },
+                  {
+                    "surface": "妹",
+                    "reading": "いもうと"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "大学",
+                    "reading": "だいがく"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "勉強",
+                    "reading": "べんきょう"
+                  },
+                  {
+                    "surface": "しています。"
+                  }
+                ],
+                "meaningRu": "Это мой старший брат. Он любит музыку. Младшая сестра изучает японский в университете.",
+                "audioUrl": "/audio/marugoto/bb567d6658e640ce.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.c9197b98feb6f387",
+              "explanationRu": "В этой ситуации: впервые",
+              "example": {
+                "surface": "友達の家に初めて行ったので、少し緊張しました。家族がゆっくり話してくれて、だんだん楽しくなりました。最後は帰りたくないぐらいでした。",
+                "kana": "ともだちのいえにはじめていったので、すこしきんちょうしました。かぞくがゆっくりはなしてくれて、だんだんたのしくなりました。さいごはかえりたくないぐらいでした。",
+                "segments": [
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "家",
+                    "reading": "いえ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "初",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "めて"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "ったので、"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "緊張",
+                    "reading": "きんちょう"
+                  },
+                  {
+                    "surface": "しました。"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "がゆっくり"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "してくれて、だんだん"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しくなりました。"
+                  },
+                  {
+                    "surface": "最後",
+                    "reading": "さいご"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "帰",
+                    "reading": "かえ"
+                  },
+                  {
+                    "surface": "りたくないぐらいでした。"
+                  }
+                ],
+                "meaningRu": "Я впервые пошёл в гости к другу и немного нервничал. Семья говорила медленно, и постепенно стало весело. Под конец даже не хотелось уходить.",
+                "audioUrl": "/audio/marugoto/8d727f51993a8228.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.31985c6eb9f4dc4a",
+              "explanationRu": "В этой ситуации: не спеша, медленно",
+              "example": {
+                "surface": "友達の家に初めて行ったので、少し緊張しました。家族がゆっくり話してくれて、だんだん楽しくなりました。最後は帰りたくないぐらいでした。",
+                "kana": "ともだちのいえにはじめていったので、すこしきんちょうしました。かぞくがゆっくりはなしてくれて、だんだんたのしくなりました。さいごはかえりたくないぐらいでした。",
+                "segments": [
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "家",
+                    "reading": "いえ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "初",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "めて"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "ったので、"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "緊張",
+                    "reading": "きんちょう"
+                  },
+                  {
+                    "surface": "しました。"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "がゆっくり"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "してくれて、だんだん"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しくなりました。"
+                  },
+                  {
+                    "surface": "最後",
+                    "reading": "さいご"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "帰",
+                    "reading": "かえ"
+                  },
+                  {
+                    "surface": "りたくないぐらいでした。"
+                  }
+                ],
+                "meaningRu": "Я впервые пошёл в гости к другу и немного нервничал. Семья говорила медленно, и постепенно стало весело. Под конец даже не хотелось уходить.",
+                "audioUrl": "/audio/marugoto/8d727f51993a8228.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.04.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.04.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.ee97d4a0eb7337aa",
+              "explanationRu": "В этой ситуации: здесь, вот",
+              "example": {
+                "surface": "こちらが居間です。隣は台所です。ここに荷物を置いてもいいですよ。",
+                "kana": "こちらがいまです。となりはだいどころです。ここににもつをおいてもいいですよ。",
+                "segments": [
+                  {
+                    "surface": "こちらが"
+                  },
+                  {
+                    "surface": "居間",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "隣",
+                    "reading": "となり"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "台所",
+                    "reading": "だいどころ"
+                  },
+                  {
+                    "surface": "です。ここに"
+                  },
+                  {
+                    "surface": "荷物",
+                    "reading": "にもつ"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "置",
+                    "reading": "お"
+                  },
+                  {
+                    "surface": "いてもいいですよ。"
+                  }
+                ],
+                "meaningRu": "Это гостиная. Рядом кухня. Здесь можно оставить багаж.",
+                "audioUrl": "/audio/marugoto/1ddb97431f23c454.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.04.grammar.229",
+      "titleRu": "普通体・丁寧体使い分け",
+      "introductionRu": "С незнакомым гостем используйте вежливую форму. Дружеский вариант той же реплики: お茶、飲まない？",
+      "canDoIds": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.04.part.grammar.229",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.229",
+            "explanationRu": "С незнакомым гостем используйте вежливую форму. Дружеский вариант той же реплики: お茶、飲まない？",
+            "example": {
+              "surface": "お茶を飲みませんか。",
+              "kana": "おちゃをのみませんか。",
+              "segments": [
+                {
+                  "surface": "お"
+                },
+                {
+                  "surface": "茶",
+                  "reading": "ちゃ"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "飲",
+                  "reading": "の"
+                },
+                {
+                  "surface": "みませんか。"
+                }
+              ],
+              "meaningRu": "Не хотите выпить чаю?",
+              "audioUrl": "/audio/marugoto/cdfd737783512113.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "お茶を",
+                "explanationRu": "Смысловой фрагмент: Не хотите выпить чаю?"
+              },
+              {
+                "text": "飲みませんか",
+                "explanationRu": "С незнакомым гостем используйте вежливую форму. Дружеский вариант той же реплики: お茶、飲まない？"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.04.grammar.230",
+      "titleRu": "～てくれる",
+      "introductionRu": "てくれる показывает действие другого человека в пользу говорящего.",
+      "canDoIds": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.04.part.grammar.230",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.230",
+            "explanationRu": "てくれる показывает действие другого человека в пользу говорящего.",
+            "example": {
+              "surface": "友達が駅まで迎えに来てくれました。",
+              "kana": "ともだちがえきまでむかえにきてくれました。",
+              "segments": [
+                {
+                  "surface": "友達",
+                  "reading": "ともだち"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "駅",
+                  "reading": "えき"
+                },
+                {
+                  "surface": "まで"
+                },
+                {
+                  "surface": "迎",
+                  "reading": "むか"
+                },
+                {
+                  "surface": "えに"
+                },
+                {
+                  "surface": "来",
+                  "reading": "き"
+                },
+                {
+                  "surface": "てくれました。"
+                }
+              ],
+              "meaningRu": "Друг приехал встретить меня на станции.",
+              "audioUrl": "/audio/marugoto/0a9aebac2402e457.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "友達が",
+                "explanationRu": "Смысловой фрагмент: Друг приехал встретить меня на станции."
+              },
+              {
+                "text": "駅まで",
+                "explanationRu": "Смысловой фрагмент: Друг приехал встретить меня на станции."
+              },
+              {
+                "text": "迎えに来てくれました",
+                "explanationRu": "てくれる показывает действие другого человека в пользу говорящего."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.04.grammar.231",
+      "titleRu": "～てもらう",
+      "introductionRu": "てもらう описывает получение помощи; помощника отмечаем に.",
+      "canDoIds": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.04.part.grammar.231",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.231",
+            "explanationRu": "てもらう описывает получение помощи; помощника отмечаем に.",
+            "example": {
+              "surface": "友達に道を教えてもらいました。",
+              "kana": "ともだちにみちをおしえてもらいました。",
+              "segments": [
+                {
+                  "surface": "友達",
+                  "reading": "ともだち"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "道",
+                  "reading": "みち"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "教",
+                  "reading": "おし"
+                },
+                {
+                  "surface": "えてもらいました。"
+                }
+              ],
+              "meaningRu": "Друг объяснил мне дорогу.",
+              "audioUrl": "/audio/marugoto/4ae6c92161d8c468.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "友達に",
+                "explanationRu": "Смысловой фрагмент: Друг объяснил мне дорогу."
+              },
+              {
+                "text": "道を",
+                "explanationRu": "Смысловой фрагмент: Друг объяснил мне дорогу."
+              },
+              {
+                "text": "教えてもらいました",
+                "explanationRu": "てもらう описывает получение помощи; помощника отмечаем に."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.16.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        16
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.16.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.16",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Покажите гостю дом: две комнаты и разрешённое действие.",
+              "canDoIds": [
+                16
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Покажите гостю дом: две комнаты и разрешённое действие.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "こちらが居間です。隣は台所です。ここに荷物を置いてもいいですよ。",
+                "kana": "こちらがいまです。となりはだいどころです。ここににもつをおいてもいいですよ。",
+                "segments": [
+                  {
+                    "surface": "こちらが"
+                  },
+                  {
+                    "surface": "居間",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "隣",
+                    "reading": "となり"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "台所",
+                    "reading": "だいどころ"
+                  },
+                  {
+                    "surface": "です。ここに"
+                  },
+                  {
+                    "surface": "荷物",
+                    "reading": "にもつ"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "置",
+                    "reading": "お"
+                  },
+                  {
+                    "surface": "いてもいいですよ。"
+                  }
+                ],
+                "meaningRu": "Это гостиная. Рядом кухня. Здесь можно оставить багаж.",
+                "audioUrl": "/audio/marugoto/1ddb97431f23c454.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Покажите гостю дом: две комнаты и разрешённое действие.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.17.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        17
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.17.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.17",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Представьте гостю двух членов семьи и добавьте по одной детали.",
+              "canDoIds": [
+                17
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Представьте гостю двух членов семьи и добавьте по одной детали.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "こちらは兄です。音楽が好きです。妹は大学で日本語を勉強しています。",
+                "kana": "こちらはあにです。おんがくがすきです。いもうとはだいがくでにほんごをべんきょうしています。",
+                "segments": [
+                  {
+                    "surface": "こちらは"
+                  },
+                  {
+                    "surface": "兄",
+                    "reading": "あに"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "音楽",
+                    "reading": "おんがく"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きです。"
+                  },
+                  {
+                    "surface": "妹",
+                    "reading": "いもうと"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "大学",
+                    "reading": "だいがく"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "勉強",
+                    "reading": "べんきょう"
+                  },
+                  {
+                    "surface": "しています。"
+                  }
+                ],
+                "meaningRu": "Это мой старший брат. Он любит музыку. Младшая сестра изучает японский в университете.",
+                "audioUrl": "/audio/marugoto/bb567d6658e640ce.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Представьте гостю двух членов семьи и добавьте по одной детали.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.18.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        18
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.18.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.18",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите о проживании в другой стране: трудность, полученная помощь и впечатление.",
+              "canDoIds": [
+                18
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите о проживании в другой стране: трудность, полученная помощь и впечатление.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "初めは道が分からなくて困りました。友達が町を案内してくれました。助けてもらって、安心しました。",
+                "kana": "はじめはみちがわからなくてこまりました。ともだちがまちをあんないしてくれました。たすけてもらって、あんしんしました。",
+                "segments": [
+                  {
+                    "surface": "初",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "めは"
+                  },
+                  {
+                    "surface": "道",
+                    "reading": "みち"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "分",
+                    "reading": "わ"
+                  },
+                  {
+                    "surface": "からなくて"
+                  },
+                  {
+                    "surface": "困",
+                    "reading": "こま"
+                  },
+                  {
+                    "surface": "りました。"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "町",
+                    "reading": "まち"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "案内",
+                    "reading": "あんない"
+                  },
+                  {
+                    "surface": "してくれました。"
+                  },
+                  {
+                    "surface": "助",
+                    "reading": "たす"
+                  },
+                  {
+                    "surface": "けてもらって、"
+                  },
+                  {
+                    "surface": "安心",
+                    "reading": "あんしん"
+                  },
+                  {
+                    "surface": "しました。"
+                  }
+                ],
+                "meaningRu": "Сначала я не знал дороги и испытывал трудности. Друг показал мне город. Благодаря помощи я успокоился.",
+                "audioUrl": "/audio/marugoto/93780fe3f407cf54.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите о проживании в другой стране: трудность, полученная помощь и впечатление.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.19.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        19
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.19.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.19",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте впечатления от визита и определите, что помогло гостю.",
+              "canDoIds": [
+                19
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "友達の家に初めて行ったので、少し緊張しました。家族がゆっくり話してくれて、だんだん楽しくなりました。最後は帰りたくないぐらいでした。",
+                  "kana": "ともだちのいえにはじめていったので、すこしきんちょうしました。かぞくがゆっくりはなしてくれて、だんだんたのしくなりました。さいごはかえりたくないぐらいでした。",
+                  "segments": [
+                    {
+                      "surface": "友達",
+                      "reading": "ともだち"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "家",
+                      "reading": "いえ"
+                    },
+                    {
+                      "surface": "に"
+                    },
+                    {
+                      "surface": "初",
+                      "reading": "はじ"
+                    },
+                    {
+                      "surface": "めて"
+                    },
+                    {
+                      "surface": "行",
+                      "reading": "い"
+                    },
+                    {
+                      "surface": "ったので、"
+                    },
+                    {
+                      "surface": "少",
+                      "reading": "すこ"
+                    },
+                    {
+                      "surface": "し"
+                    },
+                    {
+                      "surface": "緊張",
+                      "reading": "きんちょう"
+                    },
+                    {
+                      "surface": "しました。"
+                    },
+                    {
+                      "surface": "家族",
+                      "reading": "かぞく"
+                    },
+                    {
+                      "surface": "がゆっくり"
+                    },
+                    {
+                      "surface": "話",
+                      "reading": "はな"
+                    },
+                    {
+                      "surface": "してくれて、だんだん"
+                    },
+                    {
+                      "surface": "楽",
+                      "reading": "たの"
+                    },
+                    {
+                      "surface": "しくなりました。"
+                    },
+                    {
+                      "surface": "最後",
+                      "reading": "さいご"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "帰",
+                      "reading": "かえ"
+                    },
+                    {
+                      "surface": "りたくないぐらいでした。"
+                    }
+                  ],
+                  "meaningRu": "Я впервые пошёл в гости к другу и немного нервничал. Семья говорила медленно, и постепенно стало весело. Под конец даже не хотелось уходить.",
+                  "audioUrl": "/audio/marugoto/8d727f51993a8228.m4a"
+                }
+              ],
+              "questionRu": "Что изменило настроение гостя?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Внимательное общение семьи"
+                },
+                {
+                  "id": "b",
+                  "text": "Ранний уход домой"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Я впервые пошёл в гости к другу и немного нервничал. Семья говорила медленно, и постепенно стало весело. Под конец даже не хотелось уходить."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.20.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        20
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.20.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.20",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте письмо хозяина после визита и определите его чувства.",
+              "canDoIds": [
+                20
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "昨日は来てくれてありがとう。子どもたちも、一緒に遊んでもらって喜んでいました。次は私たちが遊びに行きたいです。",
+                  "kana": "きのうはきてくれてありがとう。こどもたちも、いっしょにあそんでもらってよろこんでいました。つぎはわたしたちがあそびにいきたいです。",
+                  "segments": [
+                    {
+                      "surface": "昨日",
+                      "reading": "きのう"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "来",
+                      "reading": "き"
+                    },
+                    {
+                      "surface": "てくれてありがとう。"
+                    },
+                    {
+                      "surface": "子",
+                      "reading": "こ"
+                    },
+                    {
+                      "surface": "どもたちも、"
+                    },
+                    {
+                      "surface": "一緒",
+                      "reading": "いっしょ"
+                    },
+                    {
+                      "surface": "に"
+                    },
+                    {
+                      "surface": "遊",
+                      "reading": "あそ"
+                    },
+                    {
+                      "surface": "んでもらって"
+                    },
+                    {
+                      "surface": "喜",
+                      "reading": "よろこ"
+                    },
+                    {
+                      "surface": "んでいました。"
+                    },
+                    {
+                      "surface": "次",
+                      "reading": "つぎ"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "私",
+                      "reading": "わたし"
+                    },
+                    {
+                      "surface": "たちが"
+                    },
+                    {
+                      "surface": "遊",
+                      "reading": "あそ"
+                    },
+                    {
+                      "surface": "びに"
+                    },
+                    {
+                      "surface": "行",
+                      "reading": "い"
+                    },
+                    {
+                      "surface": "きたいです。"
+                    }
+                  ],
+                  "meaningRu": "Спасибо, что пришли вчера. Дети тоже радовались, что вы с ними поиграли. В следующий раз мы хотели бы прийти к вам.",
+                  "audioUrl": "/audio/marugoto/e2e1395c63710604.m4a"
+                }
+              ],
+              "questionRu": "Что выражает письмо?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Благодарность и желание продолжить общение"
+                },
+                {
+                  "id": "b",
+                  "text": "Просьбу больше не приходить"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Спасибо, что пришли вчера. Дети тоже радовались, что вы с ними поиграли. В следующий раз мы хотели бы прийти к вам."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

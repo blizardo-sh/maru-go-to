@@ -60,7 +60,9 @@ for state in mascot["states"]:
     assert depth == 8 and color in (4, 6), "Expected a PNG alpha channel."
 
 for file in ROOT.rglob("*.md"):
-    if any(part in {"node_modules", ".git", "dist"} for part in file.relative_to(ROOT).parts):
+    # Release copies intentionally omit authoring examples. Check current docs,
+    # not ignored snapshots and generated verification artifacts.
+    if any(part in {"node_modules", ".git", "dist", ".local", "work", "test-results"} for part in file.relative_to(ROOT).parts):
         continue
     text = file.read_text()
     headings = re.findall(r"^## (.+)$", text, re.M)

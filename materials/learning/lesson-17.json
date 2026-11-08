@@ -687,7 +687,7 @@
         ],
         "surface": "たのしい",
         "kana": "たのしい",
-        "meaningRu": "веселый",
+        "meaningRu": "весёлый; приятный; доставляющий удовольствие",
         "segments": [
           {
             "surface": "たのしい"
@@ -712,6 +712,13 @@
             "row": 25,
             "entry": "たのしい",
             "label": "Словарь · урок 17"
+          },
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+            "entry": "たのしい",
+            "label": "Словарь EN · урок 17 · уточнение русского перевода",
+            "page": 10
           }
         ],
         "audioUrl": "/audio/8d52bbe4dba54f5fae3e.m4a"
@@ -1092,7 +1099,7 @@
         ],
         "surface": "たいへん",
         "kana": "たいへん",
-        "meaningRu": "тяжелый, утомительный",
+        "meaningRu": "тяжёлый, утомительный; ужасный",
         "segments": [
           {
             "surface": "たいへん"
@@ -1109,6 +1116,13 @@
             "row": 7,
             "entry": "たいへん（な）",
             "label": "Словарь · урок 17"
+          },
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+            "entry": "たいへん(な)",
+            "label": "Словарь EN · урок 17 · уточнение русского перевода",
+            "page": 10
           }
         ],
         "audioUrl": "/audio/fe6e9366d27819e678d6.m4a"
@@ -1150,7 +1164,7 @@
         ],
         "surface": "おもしろい",
         "kana": "おもしろい",
-        "meaningRu": "интересный",
+        "meaningRu": "интересный; забавный",
         "segments": [
           {
             "surface": "おもしろい"
@@ -1175,6 +1189,13 @@
             "row": 21,
             "entry": "おもしろい",
             "label": "Словарь · урок 17"
+          },
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+            "entry": "おもしろい",
+            "label": "Словарь EN · урок 15 · уточнение русского перевода",
+            "page": 8
           }
         ],
         "audioUrl": "/audio/18977c5f552a678e6821.m4a"

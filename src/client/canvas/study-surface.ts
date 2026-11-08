@@ -25,7 +25,7 @@ export function surfaceLayout(width: number, height: number) {
 
 export class StudySurface {
   readonly root = new Container();
-  readonly controls: { id: string; text: string; rect: Rect; enabled: boolean }[] = [];
+  readonly controls: { id: string; text: string; accessibleLabel?: string; rect: Rect; enabled: boolean }[] = [];
   readonly texts: { value: string; rect: Rect; size: number }[] = [];
   readonly problems: string[] = [];
   body: Rect;
@@ -96,8 +96,9 @@ export class StudySurface {
       if (action.wrong) outline.moveTo(7, rect.height - 7).lineTo(rect.width - 7, rect.height - 7).stroke({ color: '#8b3d2e', width: 2 });
     };
     draw();
-    const text = label(node, caption, rect.width / 2 + (playIcon && caption ? 10 : 0), 0, size, { width: rect.width - actionInset - (playIcon && caption ? 28 : 0), center: true, color: enabled ? ink : '#665b48', fontFamily: japanese ? jp : book });
-    if (japanese) text.style.lineHeight = size * 1.25;
+    const text = label(node, caption, rect.width / 2 + (playIcon && caption ? 10 : 0), 0, size, { width: rect.width - (action.id.startsWith('grade-') ? 8 : actionInset) - (playIcon && caption ? 28 : 0), center: true, color: enabled ? ink : '#665b48', fontFamily: japanese ? jp : book });
+    if (action.id.startsWith('grade-')) text.style.lineHeight = size * 1.15;
+    else if (japanese) text.style.lineHeight = size * 1.25;
     while (size > (japanese ? 18 : 14) && text.height > rect.height - 8) { size--; text.style.fontSize = size; text.style.lineHeight = size * (japanese ? 1.25 : 1.45); }
     const pictureHeight = action.picture ? 60 : 0;
     text.y = pictureHeight + (rect.height - pictureHeight - text.height) / 2;
@@ -118,7 +119,7 @@ export class StudySurface {
     node.on('pointertap', () => { if (enabled) action.run(); });
     node.on('mouseover', () => { draw(true); this.paint(); }); node.on('mouseout', () => { draw(); this.paint(); });
     this.root.addChild(node);
-    this.controls.push({ id: action.id, text: action.text, enabled, rect: { ...rect, x: rect.x + this.layout.paper.x, y: rect.y + this.layout.paper.y } });
+    this.controls.push({ id: action.id, text: action.text, accessibleLabel: action.accessibleLabel??action.text, enabled, rect: { ...rect, x: rect.x + this.layout.paper.x, y: rect.y + this.layout.paper.y } });
     return node;
   }
   // Catalog rows open the complete entry; retain its full name for assistive technology.
@@ -130,7 +131,7 @@ export class StudySurface {
   }
   row(actions: StudyAction[], rect: Rect) {
     const icon = (action: StudyAction) => actions.length > 2 && /^[←→↑↓▶−+]$/.test(action.text);
-    const gap = 10, icons = actions.filter(icon).length;
+    const gap = actions.every(action=>action.id.startsWith('grade-')) ? 6 : 10, icons = actions.filter(icon).length;
     const width = (rect.width - gap * (actions.length - 1) - icons * 44) / Math.max(1, actions.length - icons);
     let x = rect.x;
     actions.forEach(action => { const w = icon(action) ? 44 : width; this.action(action, { x, y: rect.y, width: w, height: rect.height }); x += w + gap; });

@@ -2,7 +2,7 @@ import { expect, test } from 'bun:test';
 import { loadCourse } from '../src/server/course';
 
 test('five family kanji aliases have verified readings/provenance while the original kana words and forms stay primary', () => {
-  const course = loadCourse();
+  const course = loadCourse({includeBooks:false});
   const source = 'https://marugoto.jpf.go.jp/assets/docs/download/intermediate2/MarugotoIntermediate2KanjiList.pdf';
   for (const [kana, kanji, page, entry] of [
     ['かぞく', '家族', 3, 236], ['ちち', '父', 1, 67], ['はは', '母', 1, 68], ['あに', '兄', 3, 230], ['あね', '姉', 3, 232],

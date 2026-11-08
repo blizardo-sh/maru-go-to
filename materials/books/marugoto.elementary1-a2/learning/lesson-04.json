@@ -1,0 +1,826 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.04",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Разговор о погоде",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.04.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        8,
+        9
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.04.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.4e833eb3697ad3eb",
+              "explanationRu": "В этой ситуации: доброе утро, привет",
+              "example": {
+                "surface": "おはようございます。今日は暖かいですね。昨日は寒かったですね。",
+                "kana": "おはようございます。きょうはあたたかいですね。きのうはさむかったですね。",
+                "segments": [
+                  {
+                    "surface": "おはようございます。"
+                  },
+                  {
+                    "surface": "今日",
+                    "reading": "きょう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "暖",
+                    "reading": "あたた"
+                  },
+                  {
+                    "surface": "かいですね。"
+                  },
+                  {
+                    "surface": "昨日",
+                    "reading": "きのう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "寒",
+                    "reading": "さむ"
+                  },
+                  {
+                    "surface": "かったですね。"
+                  }
+                ],
+                "meaningRu": "Доброе утро. Сегодня тепло. Вчера было холодно.",
+                "audioUrl": "/audio/marugoto/456bc7ae77ba2ec4.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.01ffb084e45f2d06",
+              "explanationRu": "В этой ситуации: облачность, пасмурная погода",
+              "example": {
+                "surface": "昨日は曇りでした。",
+                "kana": "きのうはくもりでした。",
+                "segments": [
+                  {
+                    "surface": "昨日",
+                    "reading": "きのう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "曇",
+                    "reading": "くも"
+                  },
+                  {
+                    "surface": "りでした。"
+                  }
+                ],
+                "meaningRu": "Вчера было облачно.",
+                "audioUrl": "/audio/marugoto/ee40434079fb8034.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.9bcc41793f9ddc96",
+              "explanationRu": "В этой ситуации: ясно, солнечно",
+              "example": {
+                "surface": "午後晴れました。",
+                "kana": "ごごはれました。",
+                "segments": [
+                  {
+                    "surface": "午後",
+                    "reading": "ごご"
+                  },
+                  {
+                    "surface": "晴",
+                    "reading": "は"
+                  },
+                  {
+                    "surface": "れました。"
+                  }
+                ],
+                "meaningRu": "Во второй половине дня прояснилось.",
+                "audioUrl": "/audio/marugoto/e925f438b8399f94.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.47ecca79c2b9286a",
+              "explanationRu": "В этой ситуации: дождь",
+              "example": {
+                "surface": "外で雨が降っています。",
+                "kana": "そとであめがふっています。",
+                "segments": [
+                  {
+                    "surface": "外",
+                    "reading": "そと"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "雨",
+                    "reading": "あめ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "降",
+                    "reading": "ふ"
+                  },
+                  {
+                    "surface": "っています。"
+                  }
+                ],
+                "meaningRu": "На улице идёт дождь.",
+                "audioUrl": "/audio/marugoto/4628aebc251cf9a5.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.e8ea32110c3e6a02",
+              "explanationRu": "В этой ситуации: облако",
+              "example": {
+                "surface": "昨日は曇りでした。",
+                "kana": "きのうはくもりでした。",
+                "segments": [
+                  {
+                    "surface": "昨日",
+                    "reading": "きのう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "曇",
+                    "reading": "くも"
+                  },
+                  {
+                    "surface": "りでした。"
+                  }
+                ],
+                "meaningRu": "Вчера было облачно.",
+                "audioUrl": "/audio/marugoto/ee40434079fb8034.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.04.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        8,
+        9
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.04.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.6a9820f7163efe6a",
+              "explanationRu": "В этой ситуации: алло",
+              "example": {
+                "surface": "もしもし。こちらは今、雪が降っています。そちらはどうですか。",
+                "kana": "もしもし。こちらはいま、ゆきがふっています。そちらはどうですか。",
+                "segments": [
+                  {
+                    "surface": "もしもし。こちらは"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "雪",
+                    "reading": "ゆき"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "降",
+                    "reading": "ふ"
+                  },
+                  {
+                    "surface": "っています。そちらはどうですか。"
+                  }
+                ],
+                "meaningRu": "Алло. У нас сейчас идёт снег. А у вас как?",
+                "audioUrl": "/audio/marugoto/cc49f777250cacc3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.ab1ac226c8935f03",
+              "explanationRu": "В этой ситуации: вчера",
+              "example": {
+                "surface": "昨日は曇りでした。",
+                "kana": "きのうはくもりでした。",
+                "segments": [
+                  {
+                    "surface": "昨日",
+                    "reading": "きのう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "曇",
+                    "reading": "くも"
+                  },
+                  {
+                    "surface": "りでした。"
+                  }
+                ],
+                "meaningRu": "Вчера было облачно.",
+                "audioUrl": "/audio/marugoto/ee40434079fb8034.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.631d36f4d12065ba",
+              "explanationRu": "В этой ситуации: сегодня",
+              "example": {
+                "surface": "おはようございます。今日は暖かいですね。昨日は寒かったですね。",
+                "kana": "おはようございます。きょうはあたたかいですね。きのうはさむかったですね。",
+                "segments": [
+                  {
+                    "surface": "おはようございます。"
+                  },
+                  {
+                    "surface": "今日",
+                    "reading": "きょう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "暖",
+                    "reading": "あたた"
+                  },
+                  {
+                    "surface": "かいですね。"
+                  },
+                  {
+                    "surface": "昨日",
+                    "reading": "きのう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "寒",
+                    "reading": "さむ"
+                  },
+                  {
+                    "surface": "かったですね。"
+                  }
+                ],
+                "meaningRu": "Доброе утро. Сегодня тепло. Вчера было холодно.",
+                "audioUrl": "/audio/marugoto/456bc7ae77ba2ec4.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.0f980d8a7fbcaf59",
+              "explanationRu": "В этой ситуации: вторая половина дня",
+              "example": {
+                "surface": "午後晴れました。",
+                "kana": "ごごはれました。",
+                "segments": [
+                  {
+                    "surface": "午後",
+                    "reading": "ごご"
+                  },
+                  {
+                    "surface": "晴",
+                    "reading": "は"
+                  },
+                  {
+                    "surface": "れました。"
+                  }
+                ],
+                "meaningRu": "Во второй половине дня прояснилось.",
+                "audioUrl": "/audio/marugoto/e925f438b8399f94.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.d04c1cf4283fcc0a",
+              "explanationRu": "В этой ситуации: как",
+              "example": {
+                "surface": "もしもし。こちらは今、雪が降っています。そちらはどうですか。",
+                "kana": "もしもし。こちらはいま、ゆきがふっています。そちらはどうですか。",
+                "segments": [
+                  {
+                    "surface": "もしもし。こちらは"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "雪",
+                    "reading": "ゆき"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "降",
+                    "reading": "ふ"
+                  },
+                  {
+                    "surface": "っています。そちらはどうですか。"
+                  }
+                ],
+                "meaningRu": "Алло. У нас сейчас идёт снег. А у вас как?",
+                "audioUrl": "/audio/marugoto/cc49f777250cacc3.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.04.words.3",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        8,
+        9
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.04.part.words.3",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.4f733d04aae2556e",
+              "explanationRu": "В этой ситуации: да",
+              "example": {
+                "surface": "もしもし。こちらは今、雪が降っています。そちらはどうですか。",
+                "kana": "もしもし。こちらはいま、ゆきがふっています。そちらはどうですか。",
+                "segments": [
+                  {
+                    "surface": "もしもし。こちらは"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "雪",
+                    "reading": "ゆき"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "降",
+                    "reading": "ふ"
+                  },
+                  {
+                    "surface": "っています。そちらはどうですか。"
+                  }
+                ],
+                "meaningRu": "Алло. У нас сейчас идёт снег. А у вас как?",
+                "audioUrl": "/audio/marugoto/cc49f777250cacc3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.5a8a9d6db49317ec",
+              "explanationRu": "В этой ситуации: снег",
+              "example": {
+                "surface": "もしもし。こちらは今、雪が降っています。そちらはどうですか。",
+                "kana": "もしもし。こちらはいま、ゆきがふっています。そちらはどうですか。",
+                "segments": [
+                  {
+                    "surface": "もしもし。こちらは"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "雪",
+                    "reading": "ゆき"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "降",
+                    "reading": "ふ"
+                  },
+                  {
+                    "surface": "っています。そちらはどうですか。"
+                  }
+                ],
+                "meaningRu": "Алло. У нас сейчас идёт снег. А у вас как?",
+                "audioUrl": "/audio/marugoto/cc49f777250cacc3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.aa74603de587df7d",
+              "explanationRu": "В этой ситуации: день",
+              "example": {
+                "surface": "昨日は曇りでした。",
+                "kana": "きのうはくもりでした。",
+                "segments": [
+                  {
+                    "surface": "昨日",
+                    "reading": "きのう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "曇",
+                    "reading": "くも"
+                  },
+                  {
+                    "surface": "りでした。"
+                  }
+                ],
+                "meaningRu": "Вчера было облачно.",
+                "audioUrl": "/audio/marugoto/ee40434079fb8034.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.04.grammar.72",
+      "titleRu": "～です／でした",
+      "introductionRu": "У именного сказуемого прошедшее вежливое окончание — でした.",
+      "canDoIds": [
+        8,
+        9
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.04.part.grammar.72",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.72",
+            "explanationRu": "У именного сказуемого прошедшее вежливое окончание — でした.",
+            "example": {
+              "surface": "昨日は曇りでした。",
+              "kana": "きのうはくもりでした。",
+              "segments": [
+                {
+                  "surface": "昨日",
+                  "reading": "きのう"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "曇",
+                  "reading": "くも"
+                },
+                {
+                  "surface": "りでした。"
+                }
+              ],
+              "meaningRu": "Вчера было облачно.",
+              "audioUrl": "/audio/marugoto/ee40434079fb8034.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "昨日は",
+                "explanationRu": "Смысловой фрагмент: Вчера было облачно."
+              },
+              {
+                "text": "曇りでした",
+                "explanationRu": "У именного сказуемого прошедшее вежливое окончание — でした."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.04.grammar.73",
+      "titleRu": "～です／かったです",
+      "introductionRu": "Прошедшая форма い-прилагательного: убрать い, добавить かったです.",
+      "canDoIds": [
+        8,
+        9
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.04.part.grammar.73",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.73",
+            "explanationRu": "Прошедшая форма い-прилагательного: убрать い, добавить かったです.",
+            "example": {
+              "surface": "今朝は暑かったです。",
+              "kana": "けさはあつかったです。",
+              "segments": [
+                {
+                  "surface": "今朝",
+                  "reading": "けさ"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "暑",
+                  "reading": "あつ"
+                },
+                {
+                  "surface": "かったです。"
+                }
+              ],
+              "meaningRu": "Сегодня утром было жарко.",
+              "audioUrl": "/audio/marugoto/f06fca893dd957e6.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "今朝は",
+                "explanationRu": "Смысловой фрагмент: Сегодня утром было жарко."
+              },
+              {
+                "text": "暑かったです",
+                "explanationRu": "Прошедшая форма い-прилагательного: убрать い, добавить かったです."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.04.grammar.74",
+      "titleRu": "～ます／ました",
+      "introductionRu": "ました обозначает завершившееся событие.",
+      "canDoIds": [
+        8,
+        9
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.04.part.grammar.74",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.74",
+            "explanationRu": "ました обозначает завершившееся событие.",
+            "example": {
+              "surface": "午後晴れました。",
+              "kana": "ごごはれました。",
+              "segments": [
+                {
+                  "surface": "午後",
+                  "reading": "ごご"
+                },
+                {
+                  "surface": "晴",
+                  "reading": "は"
+                },
+                {
+                  "surface": "れました。"
+                }
+              ],
+              "meaningRu": "Во второй половине дня прояснилось.",
+              "audioUrl": "/audio/marugoto/e925f438b8399f94.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "午後",
+                "explanationRu": "Смысловой фрагмент: Во второй половине дня прояснилось."
+              },
+              {
+                "text": "晴れました",
+                "explanationRu": "ました обозначает завершившееся событие."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.04.grammar.75",
+      "titleRu": "～ている",
+      "introductionRu": "ている здесь означает действие, происходящее сейчас.",
+      "canDoIds": [
+        8,
+        9
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.04.part.grammar.75",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.75",
+            "explanationRu": "ている здесь означает действие, происходящее сейчас.",
+            "example": {
+              "surface": "外で雨が降っています。",
+              "kana": "そとであめがふっています。",
+              "segments": [
+                {
+                  "surface": "外",
+                  "reading": "そと"
+                },
+                {
+                  "surface": "で"
+                },
+                {
+                  "surface": "雨",
+                  "reading": "あめ"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "降",
+                  "reading": "ふ"
+                },
+                {
+                  "surface": "っています。"
+                }
+              ],
+              "meaningRu": "На улице идёт дождь.",
+              "audioUrl": "/audio/marugoto/4628aebc251cf9a5.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "外で",
+                "explanationRu": "Смысловой фрагмент: На улице идёт дождь."
+              },
+              {
+                "text": "雨が",
+                "explanationRu": "Смысловой фрагмент: На улице идёт дождь."
+              },
+              {
+                "text": "降っています",
+                "explanationRu": "ている здесь означает действие, происходящее сейчас."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.08.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        8
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.08.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.08",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Поприветствуйте соседа и начните разговор о сегодняшней и вчерашней погоде.",
+              "canDoIds": [
+                8
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Поприветствуйте соседа и начните разговор о сегодняшней и вчерашней погоде.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "おはようございます。今日は暖かいですね。昨日は寒かったですね。",
+                "kana": "おはようございます。きょうはあたたかいですね。きのうはさむかったですね。",
+                "segments": [
+                  {
+                    "surface": "おはようございます。"
+                  },
+                  {
+                    "surface": "今日",
+                    "reading": "きょう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "暖",
+                    "reading": "あたた"
+                  },
+                  {
+                    "surface": "かいですね。"
+                  },
+                  {
+                    "surface": "昨日",
+                    "reading": "きのう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "寒",
+                    "reading": "さむ"
+                  },
+                  {
+                    "surface": "かったですね。"
+                  }
+                ],
+                "meaningRu": "Доброе утро. Сегодня тепло. Вчера было холодно.",
+                "audioUrl": "/audio/marugoto/456bc7ae77ba2ec4.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Поприветствуйте соседа и начните разговор о сегодняшней и вчерашней погоде.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.09.goal",
+      "titleRu": "Слушаем и понимаем",
+      "canDoIds": [
+        9
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.09.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.09",
+              "titleRu": "Слушаем и понимаем",
+              "instructionRu": "Послушайте начало телефонного разговора и определите погоду у собеседника.",
+              "canDoIds": [
+                9
+              ],
+              "kind": "listening",
+              "passage": [
+                {
+                  "surface": "もしもし。こちらは今、雪が降っています。そちらはどうですか。",
+                  "kana": "もしもし。こちらはいま、ゆきがふっています。そちらはどうですか。",
+                  "segments": [
+                    {
+                      "surface": "もしもし。こちらは"
+                    },
+                    {
+                      "surface": "今",
+                      "reading": "いま"
+                    },
+                    {
+                      "surface": "、"
+                    },
+                    {
+                      "surface": "雪",
+                      "reading": "ゆき"
+                    },
+                    {
+                      "surface": "が"
+                    },
+                    {
+                      "surface": "降",
+                      "reading": "ふ"
+                    },
+                    {
+                      "surface": "っています。そちらはどうですか。"
+                    }
+                  ],
+                  "meaningRu": "Алло. У нас сейчас идёт снег. А у вас как?",
+                  "audioUrl": "/audio/marugoto/cc49f777250cacc3.m4a"
+                }
+              ],
+              "questionRu": "Какая погода у звонящего?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Идёт снег"
+                },
+                {
+                  "id": "b",
+                  "text": "Ясно и жарко"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Алло. У нас сейчас идёт снег. А у вас как?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

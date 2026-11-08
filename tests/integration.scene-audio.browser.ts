@@ -1,3 +1,4 @@
+import { workspaceNext } from './helpers/workspace-next';
 import { chromium, expect, type BrowserContext, type Page } from '@playwright/test';
 import { createApp } from '../src/server/app';
 import { createLink, consumeLink } from '../src/server/auth';
@@ -265,14 +266,14 @@ try {
     const jpBefore = (await sound(page)).jpPlaying;
     expect((await savedSettings(context)).speechVolume).toBe(.64); await toggle.click(); await expect.poll(async () => (await savedSettings(context)).sceneSoundEnabled).toBe(true);
     await expect.poll(async () => (await sound(page)).sources.some(source => source.loop && Math.abs((source.gain[0] ?? 0) - .31) < .02)).toBe(true); await expect(toggle).toBeEnabled();
-    await expect(page.locator('.workspace-next')).toBeEnabled(); await page.locator('.workspace-next').click(); await expect(gesture).toHaveAttribute('data-review-id', f.issued[3]!.id);
+    await expect(workspaceNext(page)).toBeEnabled(); await workspaceNext(page).click(); await expect(gesture).toHaveAttribute('data-review-id', f.issued[3]!.id);
     await page.getByLabel('Действия карточки', { exact: true }).click(); await page.getByRole('button', { name: 'Ввести фразу', exact: true }).click();
     const manual = page.getByRole('dialog', { name: 'Ввести фразу', exact: true }); await manual.getByRole('textbox', { name: 'Ваша фраза', exact: true }).fill('わたしはがっこうをです。'); await manual.getByRole('button', { name: 'Закрыть редактор', exact: true }).click();
     await expect(page.locator('[data-outcome="exploration"]')).toBeVisible(); await expect(page.getByRole('heading', { name: 'Свободный разбор недоступен', exact: true })).toBeVisible();
     const resultsBeforeNeutral = { good: await starts(page, cues.good!), again: await starts(page, cues.again!) };
-    await expect(page.locator('.workspace-next')).toBeEnabled(); await page.locator('.workspace-next').click(); await expect(gesture).toHaveAttribute('data-review-id', f.issued[4]!.id); await bank.locator('[data-token-id]').first().click(); await expect(page.locator('[data-outcome="incomplete"]')).toBeVisible();
+    await expect(workspaceNext(page)).toBeEnabled(); await workspaceNext(page).click(); await expect(gesture).toHaveAttribute('data-review-id', f.issued[4]!.id); await bank.locator('[data-token-id]').first().click(); await expect(page.locator('[data-outcome="incomplete"]')).toBeVisible();
     expect({ good: await starts(page, cues.good!), again: await starts(page, cues.again!) }).toEqual(resultsBeforeNeutral); const completeBefore = await starts(page, cues.complete!);
-    await expect(page.locator('.workspace-next')).toBeEnabled(); await page.locator('.workspace-next').click(); await expect(page.getByRole('heading', { name: 'Повторение завершено', exact: true })).toBeVisible();
+    await expect(workspaceNext(page)).toBeEnabled(); await workspaceNext(page).click(); await expect(page.getByRole('heading', { name: /^(Повторение завершено|Ближайшее повторение)$/ })).toBeVisible();
     await expect.poll(() => starts(page, cues.complete!)).toBe(completeBefore + 1); expect(f.submissions).toHaveLength(4); expect((await progress(context)).byMode.grammar.reviewedToday).toBe(1);
     await page.getByRole('button', { name: 'Завершить', exact: true }).click(); await scenePaused(page);
     const accents: object[] = [];

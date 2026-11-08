@@ -5704,7 +5704,7 @@
       ],
       "surface": "いいえ",
       "kana": "いいえ",
-      "meaningRu": "нет",
+      "meaningRu": "нет; не за что; ничего страшного",
       "segments": [
         {
           "surface": "いいえ"
@@ -5729,6 +5729,13 @@
           "row": 2,
           "entry": "いいえ",
           "label": "Словарь · урок 1"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "いいえ",
+          "label": "Словарь EN · урок 1 · уточнение русского перевода",
+          "page": 1
         }
       ]
     },
@@ -5802,7 +5809,7 @@
       ],
       "surface": "ご",
       "kana": "ご",
-      "meaningRu": "… язык (счетный суффикс)",
+      "meaningRu": "суффикс названия языка: …ский язык",
       "segments": [
         {
           "surface": "ご"
@@ -5819,6 +5826,13 @@
           "row": 5,
           "entry": "ご／～ご",
           "label": "Словарь · урок 1"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "ご/~ご",
+          "label": "Словарь EN · урок 1 · уточнение русского перевода",
+          "page": 1
         }
       ]
     },
@@ -5938,7 +5952,7 @@
       ],
       "surface": "すうじ",
       "kana": "すうじ",
-      "meaningRu": "числительные",
+      "meaningRu": "цифры; числа",
       "segments": [
         {
           "surface": "すうじ"
@@ -5955,13 +5969,21 @@
           "row": 9,
           "entry": "すうじ",
           "label": "Словарь · урок 1"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "すうじ",
+          "label": "Словарь EN · урок 1 · уточнение русского перевода",
+          "page": 1
         }
       ]
     },
     {
       "id": "marugoto.starter-a1.word.1b1df523dcbfc0ab",
       "lessonIds": [
-        "marugoto.starter-a1.lesson.01"
+        "marugoto.starter-a1.lesson.01",
+        "marugoto.starter-a1.lesson.05"
       ],
       "surface": "卵",
       "kana": "たまご",
@@ -6334,7 +6356,7 @@
       ],
       "surface": "おくれます",
       "kana": "おくれます",
-      "meaningRu": "опаздывать",
+      "meaningRu": "опаздывать; задерживаться",
       "segments": [
         {
           "surface": "おくれます"
@@ -6351,6 +6373,13 @@
           "row": 21,
           "entry": "おくれます",
           "label": "Словарь · урок 2"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "おくれます",
+          "label": "Словарь EN · урок 2 · уточнение русского перевода",
+          "page": 1
         }
       ]
     },
@@ -6361,7 +6390,7 @@
       ],
       "surface": "おわります",
       "kana": "おわります",
-      "meaningRu": "заканчивать",
+      "meaningRu": "заканчивать; заканчиваться",
       "segments": [
         {
           "surface": "おわります"
@@ -6378,6 +6407,13 @@
           "row": 22,
           "entry": "おわります",
           "label": "Словарь · урок 2"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "おわります",
+          "label": "Словарь EN · урок 2 · уточнение русского перевода",
+          "page": 1
         }
       ]
     },
@@ -6648,7 +6684,7 @@
       ],
       "surface": "ちょっと",
       "kana": "ちょっと",
-      "meaningRu": "на минуточку, ненадолго, немного",
+      "meaningRu": "на минуточку, ненадолго, немного; немного затруднительно (уклончивый отказ)",
       "segments": [
         {
           "surface": "ちょっと"
@@ -6673,6 +6709,13 @@
           "row": 39,
           "entry": "ちょっと",
           "label": "Словарь · урок 12"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "ちょっと",
+          "label": "Словарь EN · урок 2 · уточнение русского перевода",
+          "page": 1
         }
       ]
     },
@@ -6807,7 +6850,7 @@
       ],
       "surface": "まだ",
       "kana": "まだ",
-      "meaningRu": "еще",
+      "meaningRu": "ещё; ещё не (с отрицанием)",
       "segments": [
         {
           "surface": "まだ"
@@ -6824,6 +6867,13 @@
           "row": 36,
           "entry": "まだ",
           "label": "Словарь · урок 2"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "まだ",
+          "label": "Словарь EN · урок 2 · уточнение русского перевода",
+          "page": 1
         }
       ]
     },
@@ -6835,7 +6885,7 @@
       ],
       "surface": "もう",
       "kana": "もう",
-      "meaningRu": "уже",
+      "meaningRu": "уже; ещё, дополнительно (например, ещё раз)",
       "segments": [
         {
           "surface": "もう"
@@ -6860,6 +6910,13 @@
           "row": 34,
           "entry": "もう",
           "label": "Словарь · урок 17 · только аудиоскрипт"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "もう",
+          "label": "Словарь EN · урок 2 · уточнение русского перевода",
+          "page": 1
         }
       ]
     },
@@ -6906,7 +6963,8 @@
     {
       "id": "marugoto.starter-a1.word.31985c6eb9f4dc4a",
       "lessonIds": [
-        "marugoto.starter-a1.lesson.02"
+        "marugoto.starter-a1.lesson.02",
+        "marugoto.starter-a1.lesson.05"
       ],
       "surface": "ゆっくり",
       "kana": "ゆっくり",
@@ -8396,7 +8454,7 @@
       ],
       "surface": "きれい",
       "kana": "きれい",
-      "meaningRu": "красивый",
+      "meaningRu": "красивый; чистый; опрятный",
       "segments": [
         {
           "surface": "きれい"
@@ -8421,6 +8479,13 @@
           "row": 3,
           "entry": "きれい（な）",
           "label": "Словарь · урок 8"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "きれい(な)",
+          "label": "Словарь EN · урок 4 · уточнение русского перевода",
+          "page": 2
         }
       ]
     },
@@ -9500,7 +9565,7 @@
       ],
       "surface": "おちゃ",
       "kana": "おちゃ",
-      "meaningRu": "зеленый чай",
+      "meaningRu": "зелёный чай; чай",
       "segments": [
         {
           "surface": "おちゃ"
@@ -9525,6 +9590,13 @@
           "row": 7,
           "entry": "おちゃ（ちゃ）",
           "label": "Словарь · урок 1"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "おちゃ",
+          "label": "Словарь EN · урок 5 · уточнение русского перевода",
+          "page": 3
         }
       ]
     },
@@ -9678,7 +9750,7 @@
       ],
       "surface": "ごはん",
       "kana": "ごはん",
-      "meaningRu": "вареный рис",
+      "meaningRu": "варёный рис; еда; приём пищи",
       "segments": [
         {
           "surface": "ごはん"
@@ -9703,6 +9775,13 @@
           "row": 46,
           "entry": "ごはん",
           "label": "Словарь · урок 5"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "ごはん",
+          "label": "Словарь EN · урок 5 · уточнение русского перевода",
+          "page": 3
         }
       ]
     },
@@ -10057,7 +10136,7 @@
       ],
       "surface": "はあ",
       "kana": "はあ",
-      "meaningRu": "вздох \"а-а\"",
+      "meaningRu": "а-а…; да…; э-э… (неуверенная реакция)",
       "segments": [
         {
           "surface": "はあ"
@@ -10082,6 +10161,13 @@
           "row": 52,
           "entry": "はあ",
           "label": "Словарь · урок 9 · только аудиоскрипт"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "はあ",
+          "label": "Словарь EN · урок 5 · уточнение русского перевода",
+          "page": 3
         }
       ]
     },
@@ -10262,7 +10348,7 @@
       ],
       "surface": "アイス",
       "kana": "アイス",
-      "meaningRu": "лёд",
+      "meaningRu": "лёд; холодный, со льдом (о кофе или чае)",
       "segments": [
         {
           "surface": "アイス"
@@ -10279,6 +10365,13 @@
           "row": 29,
           "entry": "アイス",
           "label": "Словарь · урок 6"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "アイス",
+          "label": "Словарь EN · урок 6 · уточнение русского перевода",
+          "page": 3
         }
       ]
     },
@@ -10326,7 +10419,7 @@
       ],
       "surface": "いちばん",
       "kana": "いちばん",
-      "meaningRu": "самый",
+      "meaningRu": "самый; больше всего; номер один",
       "segments": [
         {
           "surface": "いちばん"
@@ -10351,6 +10444,13 @@
           "row": 18,
           "entry": "いちばん",
           "label": "Словарь · урок 17"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "いちばん",
+          "label": "Словарь EN · урок 6 · уточнение русского перевода",
+          "page": 3
         }
       ]
     },
@@ -10396,7 +10496,7 @@
       ],
       "surface": "えー",
       "kana": "えー",
-      "meaningRu": "междометие \"ого\", выражает удивление",
+      "meaningRu": "ого (удивление); э-э…, посмотрим… (раздумье)",
       "segments": [
         {
           "surface": "えー"
@@ -10413,6 +10513,13 @@
           "row": 33,
           "entry": "えー",
           "label": "Словарь · урок 6 · только аудиоскрипт"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "えー",
+          "label": "Словарь EN · урок 6 · уточнение русского перевода",
+          "page": 3
         }
       ]
     },
@@ -10682,7 +10789,7 @@
       ],
       "surface": "どうも",
       "kana": "どうも",
-      "meaningRu": "спасибо",
+      "meaningRu": "спасибо; очень, большое (усиление благодарности или извинения)",
       "segments": [
         {
           "surface": "どうも"
@@ -10707,6 +10814,13 @@
           "row": 12,
           "entry": "どうも",
           "label": "Словарь · урок 8"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "どうも",
+          "label": "Словарь EN · урок 6 · уточнение русского перевода",
+          "page": 3
         }
       ]
     },
@@ -11194,7 +11308,7 @@
       ],
       "surface": "りょうり",
       "kana": "りょうり",
-      "meaningRu": "еда, блюда",
+      "meaningRu": "еда, блюда; приготовление пищи; кухня",
       "segments": [
         {
           "surface": "りょうり"
@@ -11219,6 +11333,13 @@
           "row": 26,
           "entry": "りょうり",
           "label": "Словарь · урок 6"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "りょうり",
+          "label": "Словарь EN · урок 6 · уточнение русского перевода",
+          "page": 3
         }
       ]
     },
@@ -11341,7 +11462,7 @@
       ],
       "surface": "あります",
       "kana": "あります",
-      "meaningRu": "находиться, быть (о неодушевленных предметах)",
+      "meaningRu": "находиться, быть (о неодушевлённых предметах); проводиться (о мероприятии)",
       "segments": [
         {
           "surface": "あります"
@@ -11366,6 +11487,13 @@
           "row": 58,
           "entry": "あります",
           "label": "Словарь · урок 6"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "あります",
+          "label": "Словарь EN · урок 7 · уточнение русского перевода",
+          "page": 4
         }
       ]
     },
@@ -11947,7 +12075,7 @@
       ],
       "surface": "テレビ",
       "kana": "テレビ",
-      "meaningRu": "телевизор",
+      "meaningRu": "телевизор; телевидение",
       "segments": [
         {
           "surface": "テレビ"
@@ -11972,6 +12100,13 @@
           "row": 1,
           "entry": "テレビ",
           "label": "Словарь · урок 2"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "テレビ",
+          "label": "Словарь EN · урок 7 · уточнение русского перевода",
+          "page": 4
         }
       ]
     },
@@ -12357,7 +12492,7 @@
       ],
       "surface": "あ",
       "kana": "あ",
-      "meaningRu": "да? (удивл.)",
+      "meaningRu": "а!; ой! (внезапная реакция)",
       "segments": [
         {
           "surface": "あ"
@@ -12382,6 +12517,13 @@
           "row": 56,
           "entry": "あ",
           "label": "Словарь · урок 8"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "あ/あっ",
+          "label": "Словарь EN · урок 8 · уточнение русского перевода",
+          "page": 4
         }
       ]
     },
@@ -12464,7 +12606,7 @@
       ],
       "surface": "おふろ",
       "kana": "おふろ",
-      "meaningRu": "ванная",
+      "meaningRu": "ванная; ванна; купание",
       "segments": [
         {
           "surface": "おふろ"
@@ -12489,6 +12631,13 @@
           "row": 1,
           "entry": "おふろ（ふろ）",
           "label": "Словарь · урок 8"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "おふろ",
+          "label": "Словарь EN · урок 8 · уточнение русского перевода",
+          "page": 4
         }
       ]
     },
@@ -13206,7 +13355,7 @@
       ],
       "surface": "行きます",
       "kana": "いきます",
-      "meaningRu": "идти",
+      "meaningRu": "идти; ехать",
       "segments": [
         {
           "surface": "行",
@@ -13235,6 +13384,13 @@
           "row": 59,
           "entry": "いきます／行きます",
           "label": "Словарь · урок 6"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "いきます",
+          "label": "Словарь EN · урок 9 · уточнение русского перевода",
+          "page": 4
         }
       ]
     },
@@ -13353,7 +13509,7 @@
       ],
       "surface": "おきます",
       "kana": "おきます",
-      "meaningRu": "просыпаться",
+      "meaningRu": "просыпаться; вставать",
       "segments": [
         {
           "surface": "おきます"
@@ -13378,6 +13534,13 @@
           "row": 26,
           "entry": "おきます",
           "label": "Словарь · урок 9"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "おきます",
+          "label": "Словарь EN · урок 9 · уточнение русского перевода",
+          "page": 5
         }
       ]
     },
@@ -13389,7 +13552,7 @@
       ],
       "surface": "おそい",
       "kana": "おそい",
-      "meaningRu": "медленный",
+      "meaningRu": "медленный; поздний, поздно",
       "segments": [
         {
           "surface": "おそい"
@@ -13414,6 +13577,13 @@
           "row": 5,
           "entry": "おそい",
           "label": "Словарь · урок 6"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "おそい",
+          "label": "Словарь EN · урок 9 · уточнение русского перевода",
+          "page": 5
         }
       ]
     },
@@ -13782,7 +13952,7 @@
       ],
       "surface": "しごと",
       "kana": "しごと",
-      "meaningRu": "работа",
+      "meaningRu": "работа; профессия",
       "segments": [
         {
           "surface": "しごと"
@@ -13807,6 +13977,13 @@
           "row": 40,
           "entry": "しごと",
           "label": "Словарь · урок 9"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "しごと",
+          "label": "Словарь EN · урок 9 · уточнение русского перевода",
+          "page": 5
         }
       ]
     },
@@ -14264,7 +14441,7 @@
       ],
       "surface": "ひる",
       "kana": "ひる",
-      "meaningRu": "день",
+      "meaningRu": "день; полдень",
       "segments": [
         {
           "surface": "ひる"
@@ -14289,6 +14466,13 @@
           "row": 22,
           "entry": "ひる",
           "label": "Словарь · урок 1"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "ひる",
+          "label": "Словарь EN · урок 9 · уточнение русского перевода",
+          "page": 5
         }
       ]
     },
@@ -14437,7 +14621,7 @@
       ],
       "surface": "よる",
       "kana": "よる",
-      "meaningRu": "ночь",
+      "meaningRu": "ночь; вечер",
       "segments": [
         {
           "surface": "よる"
@@ -14462,6 +14646,13 @@
           "row": 27,
           "entry": "よる",
           "label": "Словарь · урок 1"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "よる",
+          "label": "Словарь EN · урок 9 · уточнение русского перевода",
+          "page": 5
         }
       ]
     },
@@ -14721,7 +14912,7 @@
       ],
       "surface": "来ます",
       "kana": "きます",
-      "meaningRu": "приходить",
+      "meaningRu": "приходить; приезжать",
       "segments": [
         {
           "surface": "来",
@@ -14750,6 +14941,13 @@
           "row": 10,
           "entry": "きます／来ます",
           "label": "Словарь · урок 10"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "きます",
+          "label": "Словарь EN · урок 10 · уточнение русского перевода",
+          "page": 5
         }
       ]
     },
@@ -16379,7 +16577,7 @@
       ],
       "surface": "ぜんぜん",
       "kana": "ぜんぜん",
-      "meaningRu": "совсем",
+      "meaningRu": "совсем; совсем не, нисколько (с отрицанием)",
       "segments": [
         {
           "surface": "ぜんぜん"
@@ -16404,6 +16602,13 @@
           "row": 2,
           "entry": "ぜんぜん",
           "label": "Словарь · урок 11"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "ぜんぜん (~ない)",
+          "label": "Словарь EN · урок 11 · уточнение русского перевода",
+          "page": 6
         }
       ]
     },
@@ -16880,7 +17085,7 @@
       ],
       "surface": "ふうん",
       "kana": "ふうん",
-      "meaningRu": "уф",
+      "meaningRu": "хм; понятно; вот как (реакция слушателя)",
       "segments": [
         {
           "surface": "ふうん"
@@ -16897,6 +17102,13 @@
           "row": 49,
           "entry": "ふうん／ふーん",
           "label": "Словарь · урок 11 · только аудиоскрипт"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "ふうん/ふーん",
+          "label": "Словарь EN · урок 11 · уточнение русского перевода",
+          "page": 6
         }
       ]
     },
@@ -17161,7 +17373,7 @@
       ],
       "surface": "見ます",
       "kana": "みます",
-      "meaningRu": "смотреть",
+      "meaningRu": "смотреть; видеть",
       "segments": [
         {
           "surface": "見",
@@ -17190,6 +17402,13 @@
           "row": 2,
           "entry": "みます／見ます",
           "label": "Словарь · урок 9"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "みます",
+          "label": "Словарь EN · урок 11 · уточнение русского перевода",
+          "page": 6
         }
       ]
     },
@@ -17987,7 +18206,7 @@
       ],
       "surface": "ファッション",
       "kana": "ファッション",
-      "meaningRu": "модный",
+      "meaningRu": "мода",
       "segments": [
         {
           "surface": "ファッション"
@@ -18004,6 +18223,13 @@
           "row": 25,
           "entry": "ファッション",
           "label": "Словарь · урок 12"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "ファッション",
+          "label": "Словарь EN · урок 12 · уточнение русского перевода",
+          "page": 7
         }
       ]
     },
@@ -18041,7 +18267,7 @@
       ],
       "surface": "二日",
       "kana": "ふつか",
-      "meaningRu": "второе число",
+      "meaningRu": "второе число; два дня",
       "segments": [
         {
           "surface": "二日",
@@ -18067,6 +18293,13 @@
           "row": 49,
           "entry": "ふつか(二日)",
           "label": "Словарь · урок 12"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "ふつか",
+          "label": "Словарь EN · урок 12 · уточнение русского перевода",
+          "page": 7
         }
       ]
     },
@@ -18278,7 +18511,7 @@
       ],
       "surface": "ううん",
       "kana": "ううん",
-      "meaningRu": "нет",
+      "meaningRu": "нет (ううん); м-м…, ну… (うーん, раздумье)",
       "segments": [
         {
           "surface": "ううん"
@@ -18295,6 +18528,13 @@
           "row": 34,
           "entry": "ううん／うーん",
           "label": "Словарь · урок 13"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "ううん/うーん",
+          "label": "Словарь EN · урок 13 · уточнение русского перевода",
+          "page": 7
         }
       ]
     },
@@ -18369,7 +18609,7 @@
       ],
       "surface": "おきゃくさん",
       "kana": "おきゃくさん",
-      "meaningRu": "гость, клиент",
+      "meaningRu": "гость, клиент; покупатель; уважаемый пассажир (обращение)",
       "segments": [
         {
           "surface": "おきゃくさん"
@@ -18386,6 +18626,13 @@
           "row": 37,
           "entry": "おきゃくさん",
           "label": "Словарь · урок 13"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "おきゃくさん",
+          "label": "Словарь EN · урок 13 · уточнение русского перевода",
+          "page": 7
         }
       ]
     },
@@ -18431,7 +18678,7 @@
       ],
       "surface": "カード",
       "kana": "カード",
-      "meaningRu": "карточки",
+      "meaningRu": "карточки; банковская, кредитная карта",
       "segments": [
         {
           "surface": "カード"
@@ -18448,6 +18695,13 @@
           "row": 39,
           "entry": "カード",
           "label": "Словарь · урок 13"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "カード",
+          "label": "Словарь EN · урок 13 · уточнение русского перевода",
+          "page": 7
         }
       ]
     },
@@ -18861,7 +19115,7 @@
       ],
       "surface": "どちら",
       "kana": "どちら",
-      "meaningRu": "где, куда",
+      "meaningRu": "где, куда; который из двух, какой",
       "segments": [
         {
           "surface": "どちら"
@@ -18878,6 +19132,13 @@
           "row": 52,
           "entry": "どちら",
           "label": "Словарь · урок 13"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "どちら",
+          "label": "Словарь EN · урок 13 · уточнение русского перевода",
+          "page": 7
         }
       ]
     },
@@ -18923,7 +19184,7 @@
       ],
       "surface": "のります",
       "kana": "のります",
-      "meaningRu": "садиться в транспорт",
+      "meaningRu": "садиться в транспорт; ехать на транспорте",
       "segments": [
         {
           "surface": "のります"
@@ -18948,6 +19209,13 @@
           "row": 30,
           "entry": "のります",
           "label": "Словарь · урок 13"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "のります",
+          "label": "Словарь EN · урок 13 · уточнение русского перевода",
+          "page": 7
         }
       ]
     },
@@ -19512,7 +19780,7 @@
       ],
       "surface": "すぐ",
       "kana": "すぐ",
-      "meaningRu": "сразу",
+      "meaningRu": "сразу; скоро; совсем рядом (о месте)",
       "segments": [
         {
           "surface": "すぐ"
@@ -19529,6 +19797,13 @@
           "row": 14,
           "entry": "すぐ",
           "label": "Словарь · урок 14 · только аудиоскрипт"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "すぐ",
+          "label": "Словарь EN · урок 14 · уточнение русского перевода",
+          "page": 8
         }
       ]
     },
@@ -20244,7 +20519,7 @@
       ],
       "surface": "おみやげ",
       "kana": "おみやげ",
-      "meaningRu": "сувенир",
+      "meaningRu": "сувенир; гостинец",
       "segments": [
         {
           "surface": "おみやげ"
@@ -20269,6 +20544,13 @@
           "row": 10,
           "entry": "おみやげ（みやげ）",
           "label": "Словарь · урок 15"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "おみやげ",
+          "label": "Словарь EN · урок 15 · уточнение русского перевода",
+          "page": 8
         }
       ]
     },
@@ -20281,7 +20563,7 @@
       ],
       "surface": "おもしろい",
       "kana": "おもしろい",
-      "meaningRu": "интересный",
+      "meaningRu": "интересный; забавный",
       "segments": [
         {
           "surface": "おもしろい"
@@ -20306,6 +20588,13 @@
           "row": 21,
           "entry": "おもしろい",
           "label": "Словарь · урок 17"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "おもしろい",
+          "label": "Словарь EN · урок 15 · уточнение русского перевода",
+          "page": 8
         }
       ]
     },
@@ -20446,7 +20735,7 @@
       ],
       "surface": "こ",
       "kana": "こ",
-      "meaningRu": "счетный суффикс для небольших круглых предметов",
+      "meaningRu": "счётный суффикс для небольших предметов, например круглых или кубических",
       "segments": [
         {
           "surface": "こ"
@@ -20471,6 +20760,13 @@
           "row": 14,
           "entry": "こ／～こ",
           "label": "Словарь · урок 15"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "こ/~こ",
+          "label": "Словарь EN · урок 15 · уточнение русского перевода",
+          "page": 8
         }
       ]
     },
@@ -21010,7 +21306,7 @@
       ],
       "surface": "ほん",
       "kana": "ほん",
-      "meaningRu": "счетный суффикс для цилиндрических предметов",
+      "meaningRu": "счётный суффикс для длинных тонких предметов, в том числе цилиндрических",
       "segments": [
         {
           "surface": "ほん"
@@ -21035,6 +21331,13 @@
           "row": 33,
           "entry": "ほん／～ほん／ぼん／ぽん",
           "label": "Словарь · урок 15"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "ほん/~ほん/ぼん/ぼん",
+          "label": "Словарь EN · урок 15 · уточнение русского перевода",
+          "page": 9
         }
       ]
     },
@@ -21701,7 +22004,7 @@
       ],
       "surface": "ジャケット",
       "kana": "ジャケット",
-      "meaningRu": "жакет",
+      "meaningRu": "жакет; пиджак; куртка",
       "segments": [
         {
           "surface": "ジャケット"
@@ -21726,6 +22029,13 @@
           "row": 51,
           "entry": "ジャケット",
           "label": "Словарь · урок 16"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "ジャケット",
+          "label": "Словарь EN · урок 16 · уточнение русского перевода",
+          "page": 9
         }
       ]
     },
@@ -22459,7 +22769,7 @@
       ],
       "surface": "アルバイト",
       "kana": "アルバイト",
-      "meaningRu": "подработка",
+      "meaningRu": "подработка; работник с неполной занятостью",
       "segments": [
         {
           "surface": "アルバイト"
@@ -22476,6 +22786,13 @@
           "row": 51,
           "entry": "アルバイト",
           "label": "Словарь · урок 17"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "アルバイト",
+          "label": "Словарь EN · урок 17 · уточнение русского перевода",
+          "page": 9
         }
       ]
     },
@@ -22629,7 +22946,7 @@
       ],
       "surface": "おさけ",
       "kana": "おさけ",
-      "meaningRu": "алкогольный напиток",
+      "meaningRu": "алкогольный напиток; сакэ",
       "segments": [
         {
           "surface": "おさけ"
@@ -22646,6 +22963,13 @@
           "row": 57,
           "entry": "おさけ（さけ）",
           "label": "Словарь · урок 17"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "おさけ",
+          "label": "Словарь EN · урок 17 · уточнение русского перевода",
+          "page": 9
         }
       ]
     },
@@ -22844,7 +23168,7 @@
       ],
       "surface": "たいへん",
       "kana": "たいへん",
-      "meaningRu": "тяжелый, утомительный",
+      "meaningRu": "тяжёлый, утомительный; ужасный",
       "segments": [
         {
           "surface": "たいへん"
@@ -22861,6 +23185,13 @@
           "row": 7,
           "entry": "たいへん（な）",
           "label": "Словарь · урок 17"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "たいへん(な)",
+          "label": "Словарь EN · урок 17 · уточнение русского перевода",
+          "page": 10
         }
       ]
     },
@@ -22871,7 +23202,7 @@
       ],
       "surface": "たのしい",
       "kana": "たのしい",
-      "meaningRu": "веселый",
+      "meaningRu": "весёлый; приятный; доставляющий удовольствие",
       "segments": [
         {
           "surface": "たのしい"
@@ -22896,6 +23227,13 @@
           "row": 25,
           "entry": "たのしい",
           "label": "Словарь · урок 17"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "たのしい",
+          "label": "Словарь EN · урок 17 · уточнение русского перевода",
+          "page": 10
         }
       ]
     },
@@ -23533,7 +23871,8 @@
       "id": "marugoto.starter-a1.word.70dd1555ba2b0d17",
       "lessonIds": [
         "marugoto.starter-a1.lesson.18",
-        "marugoto.starter-a1.lesson.01"
+        "marugoto.starter-a1.lesson.01",
+        "marugoto.starter-a1.lesson.05"
       ],
       "surface": "てんぷら",
       "kana": "てんぷら",
@@ -23572,7 +23911,7 @@
       ],
       "surface": "とまります",
       "kana": "とまります",
-      "meaningRu": "останавливаться",
+      "meaningRu": "останавливаться; ночевать в гостинице",
       "segments": [
         {
           "surface": "とまります"
@@ -23589,6 +23928,13 @@
           "row": 30,
           "entry": "とまります",
           "label": "Словарь · урок 18"
+        },
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+          "entry": "とまります",
+          "label": "Словарь EN · урок 18 · уточнение русского перевода",
+          "page": 10
         }
       ]
     },
@@ -31918,7 +32264,8 @@
       "id": "marugoto.starter-a1.form.1fc2e473555cfa70",
       "wordId": "marugoto.starter-a1.word.1b1df523dcbfc0ab",
       "lessonIds": [
-        "marugoto.starter-a1.lesson.01"
+        "marugoto.starter-a1.lesson.01",
+        "marugoto.starter-a1.lesson.05"
       ],
       "surface": "たまご",
       "kana": "たまご",
@@ -32670,7 +33017,8 @@
       "id": "marugoto.starter-a1.form.8291470793165f3c",
       "wordId": "marugoto.starter-a1.word.31985c6eb9f4dc4a",
       "lessonIds": [
-        "marugoto.starter-a1.lesson.02"
+        "marugoto.starter-a1.lesson.02",
+        "marugoto.starter-a1.lesson.05"
       ],
       "surface": "ゆっくり",
       "kana": "ゆっくり",
@@ -45608,7 +45956,8 @@
       "wordId": "marugoto.starter-a1.word.70dd1555ba2b0d17",
       "lessonIds": [
         "marugoto.starter-a1.lesson.18",
-        "marugoto.starter-a1.lesson.01"
+        "marugoto.starter-a1.lesson.01",
+        "marugoto.starter-a1.lesson.05"
       ],
       "surface": "てんぷら",
       "kana": "てんぷら",
@@ -46036,7 +46385,8 @@
       "id": "marugoto.starter-a1.form.c82a10c2f284f030",
       "wordId": "marugoto.starter-a1.word.1b1df523dcbfc0ab",
       "lessonIds": [
-        "marugoto.starter-a1.lesson.01"
+        "marugoto.starter-a1.lesson.01",
+        "marugoto.starter-a1.lesson.05"
       ],
       "surface": "卵",
       "kana": "たまご",

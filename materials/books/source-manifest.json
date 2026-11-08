@@ -1,0 +1,117 @@
+{
+  "checkedAt": "2026-11-06",
+  "policy": "Original Japanese examples, Russian explanations and locally generated audio only. Official files used for verification; linked, not redistributed.",
+  "sources": [
+    {
+      "file": "a2-1-a-vocabulary.pdf",
+      "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesVocabularyIndex2_RU.pdf",
+      "bytes": 310178,
+      "sha256": "0328903a735db86e8882b537d4f28aaf1c348d3dfd063b5dff81295a4004fc92",
+      "retrieved": "2026-11-06",
+      "use": "Source verification only; no source PDF/audio redistributed"
+    },
+    {
+      "file": "a2-1-a-contents.pdf",
+      "url": "https://marugoto.jpf.go.jp/en/assets/docs/about/elementary1_activities_contents_en.pdf",
+      "bytes": 158572,
+      "sha256": "cd65b96bae86e9f64e1055d51f8029471bc175dba1f9523a9a92cbc99e5b5ad0",
+      "retrieved": "2026-11-06",
+      "use": "Source verification only; no source PDF/audio redistributed"
+    },
+    {
+      "file": "a2-1-c-vocabulary.pdf",
+      "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_c/MarugotoElementary1CompetencesVocabularyIndex2_RU.pdf",
+      "bytes": 348329,
+      "sha256": "78a4e0b5ee15404e8a5adad086afe28673a1e0b3fa00b42ea81952326fde4708",
+      "retrieved": "2026-11-06",
+      "use": "Source verification only; no source PDF/audio redistributed"
+    },
+    {
+      "file": "a2-1-c-contents.pdf",
+      "url": "https://marugoto.jpf.go.jp/en/assets/docs/about/elementary1_competences_contents_en.pdf",
+      "bytes": 261388,
+      "sha256": "7366cb17f563104491d2c5cf5c15a60a9627649370de65bb7660acff56221c1b",
+      "retrieved": "2026-11-06",
+      "use": "Source verification only; no source PDF/audio redistributed"
+    },
+    {
+      "file": "a2-1-cando.pdf",
+      "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+      "bytes": 520424,
+      "sha256": "75acbfd5103b096757c0cddd09dd2e6a6217a56a7453fa381e57e076e16943c5",
+      "retrieved": "2026-11-06",
+      "use": "Source verification only; no source PDF/audio redistributed"
+    },
+    {
+      "file": "a2-2-a-vocabulary.pdf",
+      "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesVocabularyIndex2_RU.pdf",
+      "bytes": 383597,
+      "sha256": "f8a7e2f09b239e4453e8784eda87719f352c624cd275f1bf43e765f632362f63",
+      "retrieved": "2026-11-06",
+      "use": "Source verification only; no source PDF/audio redistributed"
+    },
+    {
+      "file": "a2-2-a-contents.pdf",
+      "url": "https://marugoto.jpf.go.jp/en/assets/docs/about/elementary2_activities_contents_en.pdf",
+      "bytes": 183859,
+      "sha256": "6931214f0c0b17eef0847ca0175410ed4fdddaa28ea8d09d520d8a73ea2afb9f",
+      "retrieved": "2026-11-06",
+      "use": "Source verification only; no source PDF/audio redistributed"
+    },
+    {
+      "file": "a2-2-c-vocabulary.pdf",
+      "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_c/MarugotoElementary2CompetencesVocabularyIndex2_RU.pdf",
+      "bytes": 414577,
+      "sha256": "105f3ea0cf2ca0ad1f6982b5ac9feb416e5b63951ae5970e9388fcee47225ab0",
+      "retrieved": "2026-11-06",
+      "use": "Source verification only; no source PDF/audio redistributed"
+    },
+    {
+      "file": "a2-2-c-contents.pdf",
+      "url": "https://marugoto.jpf.go.jp/en/assets/docs/about/elementary2_competences_contents_en.pdf",
+      "bytes": 283731,
+      "sha256": "afd766015d0870cc7a4abb22252dcc4cf8ce1ac8347ad566a9c2c08458d2d6d2",
+      "retrieved": "2026-11-06",
+      "use": "Source verification only; no source PDF/audio redistributed"
+    },
+    {
+      "file": "a2-2-cando.pdf",
+      "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+      "bytes": 591499,
+      "sha256": "1b13f539ddded9e00ebdf7c5bc748ad8e75e330f35ee635e2638c877017d7e08",
+      "retrieved": "2026-11-06",
+      "use": "Source verification only; no source PDF/audio redistributed"
+    },
+    {
+      "file": "a2b1-vocabulary.pdf",
+      "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateVocabularyIndex2_RU.pdf",
+      "bytes": 641659,
+      "sha256": "8e5944d58ea5b8ff4e81591c89e1cbfb6a433d69fabe47e6477ecb42b46531ea",
+      "retrieved": "2026-11-06",
+      "use": "Source verification only; no source PDF/audio redistributed"
+    },
+    {
+      "file": "a2b1-cando.pdf",
+      "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+      "bytes": 228992,
+      "sha256": "a8c51a54f23551985c1fc3d90d5c919963bab478c59259fd94c90771d27edc94",
+      "retrieved": "2026-11-06",
+      "use": "Source verification only; no source PDF/audio redistributed"
+    },
+    {
+      "file": "a2b1-contents.pdf",
+      "url": "https://marugoto.jpf.go.jp/en/assets/docs/about/pre_intermediate_contents_en.pdf",
+      "bytes": 214944,
+      "sha256": "9ae34fec388dce1820929871bec8d2752c137b90deddbc7ca3b2c6b4303fa81b",
+      "retrieved": "2026-11-06",
+      "use": "Source verification only; no source PDF/audio redistributed"
+    },
+    {
+      "file": "grammar.xlsx",
+      "url": "https://marugoto.jpf.go.jp/assets/docs/teacher/resource/starter_a/list_of_grammar_and_sentence_patterns.xlsx",
+      "sha256": "0c581120e7b59cdde91583d1534bac929fde100234e8ae36dd14e304a553c5ca",
+      "bytes": 91537,
+      "use": "Structure and grammar references only"
+    }
+  ]
+}

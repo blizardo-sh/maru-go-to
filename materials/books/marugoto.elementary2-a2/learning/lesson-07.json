@@ -1,0 +1,680 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.07",
+  "version": "marugoto-a2-v1",
+  "titleRu": "План на случай дождя",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.07.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        19,
+        20,
+        21
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.07.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.d805e509c841807a",
+              "explanationRu": "В этой ситуации: приемная, ресепшн",
+              "example": {
+                "surface": "受付を手伝ってもらえますか。はい、英語も話せます。",
+                "kana": "うけつけをてつだってもらえますか。はい、えいごもはなせます。",
+                "segments": [
+                  {
+                    "surface": "受付",
+                    "reading": "うけつけ"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "手伝",
+                    "reading": "てつだ"
+                  },
+                  {
+                    "surface": "ってもらえますか。はい、"
+                  },
+                  {
+                    "surface": "英語",
+                    "reading": "えいご"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "せます。"
+                  }
+                ],
+                "meaningRu": "Можешь помочь на регистрации? Да, я также говорю по-английски.",
+                "audioUrl": "/audio/marugoto/4f5ad9e3b79cbce5.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.47ecca79c2b9286a",
+              "explanationRu": "В этой ситуации: дождь",
+              "example": {
+                "surface": "雨が降ったら中で待ってください。",
+                "kana": "あめがふったらなかでまってください。",
+                "segments": [
+                  {
+                    "surface": "雨",
+                    "reading": "あめ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "降",
+                    "reading": "ふ"
+                  },
+                  {
+                    "surface": "ったら"
+                  },
+                  {
+                    "surface": "中",
+                    "reading": "なか"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "待",
+                    "reading": "ま"
+                  },
+                  {
+                    "surface": "ってください。"
+                  }
+                ],
+                "meaningRu": "Если пойдёт дождь, ждите внутри.",
+                "audioUrl": "/audio/marugoto/da460f354136e8a9.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.9d9b9a953567fc8b",
+              "explanationRu": "В этой ситуации: зал (для мероприятий)",
+              "example": {
+                "surface": "雨が降ったら、どこで待てばいいですか。ホールの中ですか。",
+                "kana": "あめがふったら、どこでまてばいいですか。ホールのなかですか。",
+                "segments": [
+                  {
+                    "surface": "雨",
+                    "reading": "あめ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "降",
+                    "reading": "ふ"
+                  },
+                  {
+                    "surface": "ったら、どこで"
+                  },
+                  {
+                    "surface": "待",
+                    "reading": "ま"
+                  },
+                  {
+                    "surface": "てばいいですか。ホールの"
+                  },
+                  {
+                    "surface": "中",
+                    "reading": "なか"
+                  },
+                  {
+                    "surface": "ですか。"
+                  }
+                ],
+                "meaningRu": "Если пойдёт дождь, где ждать? Внутри зала?",
+                "audioUrl": "/audio/marugoto/1032020923d6f30d.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.a882862ce00928c7",
+              "explanationRu": "В этой ситуации: первая половина дня",
+              "example": {
+                "surface": "名前はアキです。土曜日の午前に手伝えます。英語が話せます。",
+                "kana": "なまえはアキです。どようびのごぜんにてつだえます。えいごがはなせます。",
+                "segments": [
+                  {
+                    "surface": "名前",
+                    "reading": "なまえ"
+                  },
+                  {
+                    "surface": "はアキです。"
+                  },
+                  {
+                    "surface": "土曜日",
+                    "reading": "どようび"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "午前",
+                    "reading": "ごぜん"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "手伝",
+                    "reading": "てつだ"
+                  },
+                  {
+                    "surface": "えます。"
+                  },
+                  {
+                    "surface": "英語",
+                    "reading": "えいご"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "せます。"
+                  }
+                ],
+                "meaningRu": "Меня зовут Аки. Могу помочь в субботу утром. Говорю по-английски.",
+                "audioUrl": "/audio/marugoto/b56b2ed9bf32a1dc.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.bbe0ecab21ce5807",
+              "explanationRu": "В этой ситуации: сейчас",
+              "example": {
+                "surface": "英語が話せる人を探しています。",
+                "kana": "えいごがはなせるひとをさがしています。",
+                "segments": [
+                  {
+                    "surface": "英語",
+                    "reading": "えいご"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "せる"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "探",
+                    "reading": "さが"
+                  },
+                  {
+                    "surface": "しています。"
+                  }
+                ],
+                "meaningRu": "Мы ищем человека, который говорит по-английски.",
+                "audioUrl": "/audio/marugoto/91957d045f8efa51.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.07.grammar.159",
+      "titleRu": "～（られ）る　＜可能＞",
+      "introductionRu": "Потенциальная форма 話す — 話せる; способность вежливо выражаем 話せます.",
+      "canDoIds": [
+        19,
+        20,
+        21
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.07.part.grammar.159",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.159",
+            "explanationRu": "Потенциальная форма 話す — 話せる; способность вежливо выражаем 話せます.",
+            "example": {
+              "surface": "私は少し中国語が話せます。",
+              "kana": "わたしはすこしちゅうごくごがはなせます。",
+              "segments": [
+                {
+                  "surface": "私",
+                  "reading": "わたし"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "少",
+                  "reading": "すこ"
+                },
+                {
+                  "surface": "し"
+                },
+                {
+                  "surface": "中国語",
+                  "reading": "ちゅうごくご"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "話",
+                  "reading": "はな"
+                },
+                {
+                  "surface": "せます。"
+                }
+              ],
+              "meaningRu": "Я немного говорю по-китайски.",
+              "audioUrl": "/audio/marugoto/91a8ce8a87c8a13e.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "私は",
+                "explanationRu": "Смысловой фрагмент: Я немного говорю по-китайски."
+              },
+              {
+                "text": "少し",
+                "explanationRu": "Смысловой фрагмент: Я немного говорю по-китайски."
+              },
+              {
+                "text": "中国語が",
+                "explanationRu": "Смысловой фрагмент: Я немного говорю по-китайски."
+              },
+              {
+                "text": "話せます",
+                "explanationRu": "Потенциальная форма 話す — 話せる; способность вежливо выражаем 話せます."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.07.grammar.160",
+      "titleRu": "文＋人　＜連体修飾節＞",
+      "introductionRu": "Потенциальная простая форма перед 人 описывает нужное умение.",
+      "canDoIds": [
+        19,
+        20,
+        21
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.07.part.grammar.160",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.160",
+            "explanationRu": "Потенциальная простая форма перед 人 описывает нужное умение.",
+            "example": {
+              "surface": "英語が話せる人を探しています。",
+              "kana": "えいごがはなせるひとをさがしています。",
+              "segments": [
+                {
+                  "surface": "英語",
+                  "reading": "えいご"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "話",
+                  "reading": "はな"
+                },
+                {
+                  "surface": "せる"
+                },
+                {
+                  "surface": "人",
+                  "reading": "ひと"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "探",
+                  "reading": "さが"
+                },
+                {
+                  "surface": "しています。"
+                }
+              ],
+              "meaningRu": "Мы ищем человека, который говорит по-английски.",
+              "audioUrl": "/audio/marugoto/91957d045f8efa51.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "英語が",
+                "explanationRu": "Смысловой фрагмент: Мы ищем человека, который говорит по-английски."
+              },
+              {
+                "text": "話せる人を",
+                "explanationRu": "Смысловой фрагмент: Мы ищем человека, который говорит по-английски."
+              },
+              {
+                "text": "探しています",
+                "explanationRu": "Потенциальная простая форма перед 人 описывает нужное умение."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.07.grammar.161",
+      "titleRu": "～たら",
+      "introductionRu": "たら вводит условие; в главной части может быть просьба.",
+      "canDoIds": [
+        19,
+        20,
+        21
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.07.part.grammar.161",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.161",
+            "explanationRu": "たら вводит условие; в главной части может быть просьба.",
+            "example": {
+              "surface": "雨が降ったら中で待ってください。",
+              "kana": "あめがふったらなかでまってください。",
+              "segments": [
+                {
+                  "surface": "雨",
+                  "reading": "あめ"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "降",
+                  "reading": "ふ"
+                },
+                {
+                  "surface": "ったら"
+                },
+                {
+                  "surface": "中",
+                  "reading": "なか"
+                },
+                {
+                  "surface": "で"
+                },
+                {
+                  "surface": "待",
+                  "reading": "ま"
+                },
+                {
+                  "surface": "ってください。"
+                }
+              ],
+              "meaningRu": "Если пойдёт дождь, ждите внутри.",
+              "audioUrl": "/audio/marugoto/da460f354136e8a9.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "雨が",
+                "explanationRu": "Смысловой фрагмент: Если пойдёт дождь, ждите внутри."
+              },
+              {
+                "text": "降ったら",
+                "explanationRu": "Смысловой фрагмент: Если пойдёт дождь, ждите внутри."
+              },
+              {
+                "text": "中で",
+                "explanationRu": "Смысловой фрагмент: Если пойдёт дождь, ждите внутри."
+              },
+              {
+                "text": "待ってください",
+                "explanationRu": "たら вводит условие; в главной части может быть просьба."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.19.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        19
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.19.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.19",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Попросите друга помочь на событии и ответьте с указанием своего умения.",
+              "canDoIds": [
+                19
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Попросите друга помочь на событии и ответьте с указанием своего умения.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "受付を手伝ってもらえますか。はい、英語も話せます。",
+                "kana": "うけつけをてつだってもらえますか。はい、えいごもはなせます。",
+                "segments": [
+                  {
+                    "surface": "受付",
+                    "reading": "うけつけ"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "手伝",
+                    "reading": "てつだ"
+                  },
+                  {
+                    "surface": "ってもらえますか。はい、"
+                  },
+                  {
+                    "surface": "英語",
+                    "reading": "えいご"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "せます。"
+                  }
+                ],
+                "meaningRu": "Можешь помочь на регистрации? Да, я также говорю по-английски.",
+                "audioUrl": "/audio/marugoto/4f5ad9e3b79cbce5.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Попросите друга помочь на событии и ответьте с указанием своего умения.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.20.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        20
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.20.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.20",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "На встрече волонтёров уточните, что делать при дожде.",
+              "canDoIds": [
+                20
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "На встрече волонтёров уточните, что делать при дожде.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "雨が降ったら、どこで待てばいいですか。ホールの中ですか。",
+                "kana": "あめがふったら、どこでまてばいいですか。ホールのなかですか。",
+                "segments": [
+                  {
+                    "surface": "雨",
+                    "reading": "あめ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "降",
+                    "reading": "ふ"
+                  },
+                  {
+                    "surface": "ったら、どこで"
+                  },
+                  {
+                    "surface": "待",
+                    "reading": "ま"
+                  },
+                  {
+                    "surface": "てばいいですか。ホールの"
+                  },
+                  {
+                    "surface": "中",
+                    "reading": "なか"
+                  },
+                  {
+                    "surface": "ですか。"
+                  }
+                ],
+                "meaningRu": "Если пойдёт дождь, где ждать? Внутри зала?",
+                "audioUrl": "/audio/marugoto/1032020923d6f30d.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: На встрече волонтёров уточните, что делать при дожде.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.21.goal",
+      "titleRu": "Письменный ответ",
+      "canDoIds": [
+        21
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.21.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.21",
+              "titleRu": "Письменный ответ",
+              "instructionRu": "Напишите регистрационную запись волонтёра: имя, доступное время, умение.",
+              "canDoIds": [
+                21
+              ],
+              "kind": "production",
+              "response": "written",
+              "supports": [
+                "Напишите регистрационную запись волонтёра: имя, доступное время, умение.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "名前はアキです。土曜日の午前に手伝えます。英語が話せます。",
+                "kana": "なまえはアキです。どようびのごぜんにてつだえます。えいごがはなせます。",
+                "segments": [
+                  {
+                    "surface": "名前",
+                    "reading": "なまえ"
+                  },
+                  {
+                    "surface": "はアキです。"
+                  },
+                  {
+                    "surface": "土曜日",
+                    "reading": "どようび"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "午前",
+                    "reading": "ごぜん"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "手伝",
+                    "reading": "てつだ"
+                  },
+                  {
+                    "surface": "えます。"
+                  },
+                  {
+                    "surface": "英語",
+                    "reading": "えいご"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "せます。"
+                  }
+                ],
+                "meaningRu": "Меня зовут Аки. Могу помочь в субботу утром. Говорю по-английски.",
+                "audioUrl": "/audio/marugoto/b56b2ed9bf32a1dc.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Напишите регистрационную запись волонтёра: имя, доступное время, умение.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

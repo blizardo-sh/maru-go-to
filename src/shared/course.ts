@@ -1,5 +1,7 @@
+import { validateMeanings } from './meanings';
 import data from "../../materials/course.json";
 import type { Course } from "./types";
+import { booksFor, lessonBookId, marugotoBooks, starterBookId, canDoKey } from './books';
 
 export function validateCourse(value: Course): void {
   const ensure = (ok: unknown, message: string): void => {
@@ -15,10 +17,23 @@ export function validateCourse(value: Course): void {
   const forms = unique(value.forms, "form");
   const skills = unique(value.skills, "skill");
   unique(value.exercises, "exercise");
-  ensure(value.lessons.length === 18, "expected all 18 Starter A1 lessons");
-  ensure(new Set(value.lessons.map((lesson) => lesson.number)).size === 18, "lesson numbers");
-  const canDos = new Set(value.lessons.flatMap((lesson) => lesson.canDoIds));
-  ensure(canDos.size === 50 && Array.from({ length: 50 }, (_, i) => i + 1).every((id) => canDos.has(id)), "Can-do 1–50");
+  validateMeanings(value);
+  const books = booksFor(value), bookIds = unique(books, 'book');
+  ensure(books.length > 0 && bookIds.has(starterBookId), 'Starter A1 compatibility');
+  const canDos = new Set<string>();
+  for (const book of books) {
+    const expected = marugotoBooks.find(entry => entry.id === book.id);
+    ensure(expected && book.unit === expected.unit && book.unitCount === expected.unitCount && book.canDoCount === expected.canDoCount && book.level === expected.level && book.order === expected.order && book.title?.trim() && book.shortTitle?.trim(), `book structure ${book.id}`);
+    const units = value.lessons.filter(lesson => lessonBookId(lesson) === book.id);
+    ensure(units.length === book.unitCount && new Set(units.map(unit => unit.number)).size === book.unitCount && units.every(unit => Number.isInteger(unit.number) && unit.number >= 1 && unit.number <= book.unitCount), `expected all ${book.unitCount} units ${book.id}`);
+    const goals = units.flatMap(unit => unit.canDoIds);
+    ensure(goals.length === book.canDoCount && new Set(goals).size === book.canDoCount && Array.from({length:book.canDoCount},(_,i)=>i+1).every(id => goals.includes(id)), `Can-do 1–${book.canDoCount} ${book.id}`);
+    goals.forEach(id => canDos.add(canDoKey(book.id,id)));
+  }
+  for (const lesson of value.lessons) {
+    ensure(bookIds.has(lessonBookId(lesson)), `lesson book ${lesson.id}`);
+    ensure(lesson.availability === undefined || ['full','vocabulary','preparing'].includes(lesson.availability), `lesson availability ${lesson.id}`);
+  }
   for (const entry of [...value.words, ...value.forms]) {
     ensure(entry.lessonIds.length && entry.lessonIds.every((id) => lessons.has(id)), `lesson reference ${entry.id}`);
     ensure(entry.surface.length && entry.kana.length, `missing spelling ${entry.id}`);
@@ -35,7 +50,8 @@ export function validateCourse(value: Course): void {
   }
   for (const skill of value.skills) {
     ensure(skill.lessonIds.length && skill.lessonIds.every((id) => lessons.has(id)), `skill lessons ${skill.id}`);
-    ensure(skill.canDoIds.every((id) => canDos.has(id)), `skill Can-do ${skill.id}`);
+    const refs = skill.canDoRefs ?? skill.canDoIds.map(number => ({ bookId: starterBookId, number }));
+    ensure(refs.every(ref => canDos.has(canDoKey(ref.bookId,ref.number)) && skill.lessonIds.some(id => {const lesson=value.lessons.find(l=>l.id===id)!;return lessonBookId(lesson)===ref.bookId&&lesson.canDoIds.includes(ref.number);})), `skill Can-do ${skill.id}`);
   }
   for (const exercise of value.exercises) {
     ensure(lessons.has(exercise.lessonId) && skills.has(exercise.skillId), `exercise references ${exercise.id}`);
@@ -79,6 +95,7 @@ export function validateCourse(value: Course): void {
         ensure(caption.text === null || typeof caption.text === "string" && caption.text.trim().length > 0 && caption.text.length <= 1000, `video caption text lesson ${lesson.number}`);
       }
     }
+    if (lessonBookId(lesson) !== starterBookId) continue;
     for (const part of ["katsudoo", "rikai"]) {
       ensure(value.words.some((word) => word.lessonIds.includes(lesson.id) && word.sourceRefs.some((ref) => ref.part === part && ref.url.includes("VocabularyIndex"))), `missing ${part} vocabulary lesson ${lesson.number}`);
     }

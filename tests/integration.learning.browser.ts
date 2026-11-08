@@ -1,3 +1,4 @@
+import { workspaceNext } from './helpers/workspace-next';
 import { chromium, expect, type BrowserContext, type Page } from '@playwright/test';
 import { createApp } from '../src/server/app';
 import { connectDatabase } from '../src/server/db';
@@ -48,7 +49,7 @@ async function legacySettings(context: BrowserContext, closed = false) {
   const response = await context.request.put(`${api}/api/settings`, { headers: { origin: base }, data: { ...structuredClone(defaultSettings), lessonStatuses: Object.fromEntries(course.lessons.map(lesson => [lesson.id, closed ? 'closed' : 'studying'])), focusLessonIds: [course.lessons[0]!.id], focusSkillIds: ['marugoto.starter-a1.skill.frequency'], focusCanDoIds: [1], newWordsPerDay: 0, newSkillsPerDay: 0 } }); expect(response.status()).toBe(200);
 }
 async function next(page: Page, previous: string, action = 'ArrowRight') {
-  const gesture = page.getByTestId('review-gesture'); if (await gesture.getAttribute('data-mode') === 'grammar') await page.locator('.workspace-next').click(); else { await gesture.focus(); await page.keyboard.press(action); }
+  const gesture = page.getByTestId('review-gesture'); if (await gesture.getAttribute('data-mode') === 'grammar') await workspaceNext(page).click(); else { await gesture.focus(); await page.keyboard.press(action); }
   await expect.poll(async () => await page.getByRole('heading', { name: 'Порция пройдена', exact: true }).isVisible() || (await gesture.getAttribute('data-review-id')) !== previous).toBe(true);
 }
 async function reference(f: Awaited<ReturnType<typeof fixture>>, known: Progress) {

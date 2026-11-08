@@ -1,0 +1,859 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.11",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Планируем пикник",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.11.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        27,
+        28,
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.11.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.f676894d935b9cf5",
+              "explanationRu": "В этой ситуации: уносить",
+              "example": {
+                "surface": "アキさんは飲み物を持っていきます。私はおにぎりを作っていきます。",
+                "kana": "アキさんはのみものをもっていきます。わたしはおにぎりをつくっていきます。",
+                "segments": [
+                  {
+                    "surface": "アキさんは"
+                  },
+                  {
+                    "surface": "飲",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "み"
+                  },
+                  {
+                    "surface": "物",
+                    "reading": "もの"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "持",
+                    "reading": "も"
+                  },
+                  {
+                    "surface": "っていきます。"
+                  },
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "はおにぎりを"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "っていきます。"
+                  }
+                ],
+                "meaningRu": "Аки принесёт напитки. Я приготовлю и принесу онигири.",
+                "audioUrl": "/audio/marugoto/88468d5cd8d29285.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.03ee246f618e4e19",
+              "explanationRu": "В этой ситуации: онигири (шарики, слепленные из риса с добавлением начинки из рыбы и т.д.)",
+              "example": {
+                "surface": "おにぎりを作って来ました。",
+                "kana": "おにぎりをつくってきました。",
+                "segments": [
+                  {
+                    "surface": "おにぎりを"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "って"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "ました。"
+                  }
+                ],
+                "meaningRu": "Я приготовил онигири и принёс их сюда.",
+                "audioUrl": "/audio/marugoto/ec1ab53a3d75ac83.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.df4327d53a5d8bc1",
+              "explanationRu": "В этой ситуации: вещь",
+              "example": {
+                "surface": "飲み物は何でもいいです。",
+                "kana": "のみものはなんでもいいです。",
+                "segments": [
+                  {
+                    "surface": "飲",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "み"
+                  },
+                  {
+                    "surface": "物",
+                    "reading": "もの"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "何",
+                    "reading": "なん"
+                  },
+                  {
+                    "surface": "でもいいです。"
+                  }
+                ],
+                "meaningRu": "Из напитков мне подойдёт что угодно.",
+                "audioUrl": "/audio/marugoto/5a6d7332c9675588.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.4c62f2cbd1db491f",
+              "explanationRu": "В этой ситуации: сандвич, бутерброд",
+              "example": {
+                "surface": "サンドイッチを作って行きます。",
+                "kana": "サンドイッチをつくっていきます。",
+                "segments": [
+                  {
+                    "surface": "サンドイッチを"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "って"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きます。"
+                  }
+                ],
+                "meaningRu": "Я приготовлю сэндвичи и принесу их туда.",
+                "audioUrl": "/audio/marugoto/60539a7e0c518421.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.70da620652ef233e",
+              "explanationRu": "В этой ситуации: сок",
+              "example": {
+                "surface": "水とジュースとどちらがいいですか。",
+                "kana": "みずとジュースとどちらがいいですか。",
+                "segments": [
+                  {
+                    "surface": "水",
+                    "reading": "みず"
+                  },
+                  {
+                    "surface": "とジュースとどちらがいいですか。"
+                  }
+                ],
+                "meaningRu": "Что предпочитаете: воду или сок?",
+                "audioUrl": "/audio/marugoto/ed0ce509593276e9.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.11.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        27,
+        28,
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.11.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.50ed8dc9f820e0f6",
+              "explanationRu": "В этой ситуации: напитки",
+              "example": {
+                "surface": "飲み物は何でもいいです。",
+                "kana": "のみものはなんでもいいです。",
+                "segments": [
+                  {
+                    "surface": "飲",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "み"
+                  },
+                  {
+                    "surface": "物",
+                    "reading": "もの"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "何",
+                    "reading": "なん"
+                  },
+                  {
+                    "surface": "でもいいです。"
+                  }
+                ],
+                "meaningRu": "Из напитков мне подойдёт что угодно.",
+                "audioUrl": "/audio/marugoto/5a6d7332c9675588.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.4e928f19a0c80be0",
+              "explanationRu": "В этой ситуации: зелёный чай; чай",
+              "example": {
+                "surface": "お茶と水とどちらがいいですか。私は冷たい水がいいです。",
+                "kana": "おちゃとみずとどちらがいいですか。わたしはつめたいみずがいいです。",
+                "segments": [
+                  {
+                    "surface": "お"
+                  },
+                  {
+                    "surface": "茶",
+                    "reading": "ちゃ"
+                  },
+                  {
+                    "surface": "と"
+                  },
+                  {
+                    "surface": "水",
+                    "reading": "みず"
+                  },
+                  {
+                    "surface": "とどちらがいいですか。"
+                  },
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "冷",
+                    "reading": "つめ"
+                  },
+                  {
+                    "surface": "たい"
+                  },
+                  {
+                    "surface": "水",
+                    "reading": "みず"
+                  },
+                  {
+                    "surface": "がいいです。"
+                  }
+                ],
+                "meaningRu": "Что предпочитаете: чай или воду? Я предпочту холодную воду.",
+                "audioUrl": "/audio/marugoto/201bc2892d8d0b82.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.041f397dd31a3214",
+              "explanationRu": "В этой ситуации: где, куда; который из двух, какой",
+              "example": {
+                "surface": "水とジュースとどちらがいいですか。",
+                "kana": "みずとジュースとどちらがいいですか。",
+                "segments": [
+                  {
+                    "surface": "水",
+                    "reading": "みず"
+                  },
+                  {
+                    "surface": "とジュースとどちらがいいですか。"
+                  }
+                ],
+                "meaningRu": "Что предпочитаете: воду или сок?",
+                "audioUrl": "/audio/marugoto/ed0ce509593276e9.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.5c23767c56d85027",
+              "explanationRu": "В этой ситуации: под, внизу",
+              "example": {
+                "surface": "おにぎりを作って来ました。",
+                "kana": "おにぎりをつくってきました。",
+                "segments": [
+                  {
+                    "surface": "おにぎりを"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "って"
+                  },
+                  {
+                    "surface": "来",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "ました。"
+                  }
+                ],
+                "meaningRu": "Я приготовил онигири и принёс их сюда.",
+                "audioUrl": "/audio/marugoto/ec1ab53a3d75ac83.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.11.grammar.105",
+      "titleRu": "～ていく／くる ",
+      "introductionRu": "ていく описывает подготовку и движение от текущего места к событию.",
+      "canDoIds": [
+        27,
+        28,
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.11.part.grammar.105",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.105",
+            "explanationRu": "ていく описывает подготовку и движение от текущего места к событию.",
+            "example": {
+              "surface": "サンドイッチを作って行きます。",
+              "kana": "サンドイッチをつくっていきます。",
+              "segments": [
+                {
+                  "surface": "サンドイッチを"
+                },
+                {
+                  "surface": "作",
+                  "reading": "つく"
+                },
+                {
+                  "surface": "って"
+                },
+                {
+                  "surface": "行",
+                  "reading": "い"
+                },
+                {
+                  "surface": "きます。"
+                }
+              ],
+              "meaningRu": "Я приготовлю сэндвичи и принесу их туда.",
+              "audioUrl": "/audio/marugoto/60539a7e0c518421.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "サンドイッチを",
+                "explanationRu": "Смысловой фрагмент: Я приготовлю сэндвичи и принесу их туда."
+              },
+              {
+                "text": "作って",
+                "explanationRu": "Смысловой фрагмент: Я приготовлю сэндвичи и принесу их туда."
+              },
+              {
+                "text": "行きます",
+                "explanationRu": "ていく описывает подготовку и движение от текущего места к событию."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.11.grammar.106",
+      "titleRu": "～てくる",
+      "introductionRu": "てくる описывает действие перед приходом к говорящему или месту встречи.",
+      "canDoIds": [
+        27,
+        28,
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.11.part.grammar.106",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.106",
+            "explanationRu": "てくる описывает действие перед приходом к говорящему или месту встречи.",
+            "example": {
+              "surface": "おにぎりを作って来ました。",
+              "kana": "おにぎりをつくってきました。",
+              "segments": [
+                {
+                  "surface": "おにぎりを"
+                },
+                {
+                  "surface": "作",
+                  "reading": "つく"
+                },
+                {
+                  "surface": "って"
+                },
+                {
+                  "surface": "来",
+                  "reading": "き"
+                },
+                {
+                  "surface": "ました。"
+                }
+              ],
+              "meaningRu": "Я приготовил онигири и принёс их сюда.",
+              "audioUrl": "/audio/marugoto/ec1ab53a3d75ac83.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "おにぎりを",
+                "explanationRu": "Смысловой фрагмент: Я приготовил онигири и принёс их сюда."
+              },
+              {
+                "text": "作って",
+                "explanationRu": "Смысловой фрагмент: Я приготовил онигири и принёс их сюда."
+              },
+              {
+                "text": "来ました",
+                "explanationRu": "てくる описывает действие перед приходом к говорящему или месту встречи."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.11.grammar.107",
+      "titleRu": "【疑問詞】＋でも",
+      "introductionRu": "Вопросительное слово + でも обозначает свободный выбор.",
+      "canDoIds": [
+        27,
+        28,
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.11.part.grammar.107",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.107",
+            "explanationRu": "Вопросительное слово + でも обозначает свободный выбор.",
+            "example": {
+              "surface": "飲み物は何でもいいです。",
+              "kana": "のみものはなんでもいいです。",
+              "segments": [
+                {
+                  "surface": "飲",
+                  "reading": "の"
+                },
+                {
+                  "surface": "み"
+                },
+                {
+                  "surface": "物",
+                  "reading": "もの"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "何",
+                  "reading": "なん"
+                },
+                {
+                  "surface": "でもいいです。"
+                }
+              ],
+              "meaningRu": "Из напитков мне подойдёт что угодно.",
+              "audioUrl": "/audio/marugoto/5a6d7332c9675588.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "飲み物は",
+                "explanationRu": "Смысловой фрагмент: Из напитков мне подойдёт что угодно."
+              },
+              {
+                "text": "何でも",
+                "explanationRu": "Смысловой фрагмент: Из напитков мне подойдёт что угодно."
+              },
+              {
+                "text": "いいです",
+                "explanationRu": "Вопросительное слово + でも обозначает свободный выбор."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.11.grammar.108",
+      "titleRu": "～と～（と）どちらが～",
+      "introductionRu": "どちら выбирает один из двух названных вариантов.",
+      "canDoIds": [
+        27,
+        28,
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.11.part.grammar.108",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.108",
+            "explanationRu": "どちら выбирает один из двух названных вариантов.",
+            "example": {
+              "surface": "水とジュースとどちらがいいですか。",
+              "kana": "みずとジュースとどちらがいいですか。",
+              "segments": [
+                {
+                  "surface": "水",
+                  "reading": "みず"
+                },
+                {
+                  "surface": "とジュースとどちらがいいですか。"
+                }
+              ],
+              "meaningRu": "Что предпочитаете: воду или сок?",
+              "audioUrl": "/audio/marugoto/ed0ce509593276e9.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "水と",
+                "explanationRu": "Смысловой фрагмент: Что предпочитаете: воду или сок?"
+              },
+              {
+                "text": "ジュースと",
+                "explanationRu": "Смысловой фрагмент: Что предпочитаете: воду или сок?"
+              },
+              {
+                "text": "どちらが",
+                "explanationRu": "Смысловой фрагмент: Что предпочитаете: воду или сок?"
+              },
+              {
+                "text": "いいですか",
+                "explanationRu": "どちら выбирает один из двух названных вариантов."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.11.grammar.109",
+      "titleRu": "～がいい",
+      "introductionRu": "がいい выражает выбор или пожелание.",
+      "canDoIds": [
+        27,
+        28,
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.11.part.grammar.109",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.109",
+            "explanationRu": "がいい выражает выбор или пожелание.",
+            "example": {
+              "surface": "冷たい水がいいです。",
+              "kana": "つめたいみずがいいです。",
+              "segments": [
+                {
+                  "surface": "冷",
+                  "reading": "つめ"
+                },
+                {
+                  "surface": "たい"
+                },
+                {
+                  "surface": "水",
+                  "reading": "みず"
+                },
+                {
+                  "surface": "がいいです。"
+                }
+              ],
+              "meaningRu": "Я предпочту холодную воду.",
+              "audioUrl": "/audio/marugoto/06c6541a8ace5ecc.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "冷たい",
+                "explanationRu": "Смысловой фрагмент: Я предпочту холодную воду."
+              },
+              {
+                "text": "水が",
+                "explanationRu": "Смысловой фрагмент: Я предпочту холодную воду."
+              },
+              {
+                "text": "いいです",
+                "explanationRu": "がいい выражает выбор или пожелание."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.27.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        27
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.27.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.27",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Обсудите, кто что принесёт на пикник.",
+              "canDoIds": [
+                27
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Обсудите, кто что принесёт на пикник.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "私はサンドイッチを作っていきます。飲み物をお願いできますか。",
+                "kana": "わたしはサンドイッチをつくっていきます。のみものをおねがいできますか。",
+                "segments": [
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "はサンドイッチを"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "っていきます。"
+                  },
+                  {
+                    "surface": "飲",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "み"
+                  },
+                  {
+                    "surface": "物",
+                    "reading": "もの"
+                  },
+                  {
+                    "surface": "をお"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いできますか。"
+                  }
+                ],
+                "meaningRu": "Я приготовлю и принесу сэндвичи. Можете взять напитки?",
+                "audioUrl": "/audio/marugoto/1760274d6ced653b.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Обсудите, кто что принесёт на пикник.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.28.goal",
+      "titleRu": "Письменный ответ",
+      "canDoIds": [
+        28
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.28.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.28",
+              "titleRu": "Письменный ответ",
+              "instructionRu": "Запишите распределение вещей для пикника: два человека и их обязанности.",
+              "canDoIds": [
+                28
+              ],
+              "kind": "production",
+              "response": "written",
+              "supports": [
+                "Запишите распределение вещей для пикника: два человека и их обязанности.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "アキさんは飲み物を持っていきます。私はおにぎりを作っていきます。",
+                "kana": "アキさんはのみものをもっていきます。わたしはおにぎりをつくっていきます。",
+                "segments": [
+                  {
+                    "surface": "アキさんは"
+                  },
+                  {
+                    "surface": "飲",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "み"
+                  },
+                  {
+                    "surface": "物",
+                    "reading": "もの"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "持",
+                    "reading": "も"
+                  },
+                  {
+                    "surface": "っていきます。"
+                  },
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "はおにぎりを"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "っていきます。"
+                  }
+                ],
+                "meaningRu": "Аки принесёт напитки. Я приготовлю и принесу онигири.",
+                "audioUrl": "/audio/marugoto/88468d5cd8d29285.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Запишите распределение вещей для пикника: два человека и их обязанности.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.29.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.29.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.29",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Уточните предпочтение между двумя напитками и назовите свой выбор.",
+              "canDoIds": [
+                29
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Уточните предпочтение между двумя напитками и назовите свой выбор.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "お茶と水とどちらがいいですか。私は冷たい水がいいです。",
+                "kana": "おちゃとみずとどちらがいいですか。わたしはつめたいみずがいいです。",
+                "segments": [
+                  {
+                    "surface": "お"
+                  },
+                  {
+                    "surface": "茶",
+                    "reading": "ちゃ"
+                  },
+                  {
+                    "surface": "と"
+                  },
+                  {
+                    "surface": "水",
+                    "reading": "みず"
+                  },
+                  {
+                    "surface": "とどちらがいいですか。"
+                  },
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "冷",
+                    "reading": "つめ"
+                  },
+                  {
+                    "surface": "たい"
+                  },
+                  {
+                    "surface": "水",
+                    "reading": "みず"
+                  },
+                  {
+                    "surface": "がいいです。"
+                  }
+                ],
+                "meaningRu": "Что предпочитаете: чай или воду? Я предпочту холодную воду.",
+                "audioUrl": "/audio/marugoto/201bc2892d8d0b82.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Уточните предпочтение между двумя напитками и назовите свой выбор.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2053 @@
+{
+  "lessonId": "marugoto.pre-intermediate-a2b1.topic.01",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Спортивный матч",
+  "goals": [
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.01.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.01.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.3812525ede6f488d",
+              "explanationRu": "В этой ситуации: Извините, пожалуйста. / Извини.",
+              "example": {
+                "surface": "アキ：急に仕事が入って、行けなくなりました。本当にごめんなさい。ユウ：大丈夫ですよ。次の試合は一緒に行きましょう。",
+                "kana": "アキ：きゅうにしごとがはいって、いけなくなりました。ほんとうにごめんなさい。ユウ：だいじょうぶですよ。つぎのしあいはいっしょにいきましょう。",
+                "segments": [
+                  {
+                    "surface": "アキ："
+                  },
+                  {
+                    "surface": "急",
+                    "reading": "きゅう"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "仕事",
+                    "reading": "しごと"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "入",
+                    "reading": "はい"
+                  },
+                  {
+                    "surface": "って、"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "けなくなりました。"
+                  },
+                  {
+                    "surface": "本当",
+                    "reading": "ほんとう"
+                  },
+                  {
+                    "surface": "にごめんなさい。ユウ："
+                  },
+                  {
+                    "surface": "大丈夫",
+                    "reading": "だいじょうぶ"
+                  },
+                  {
+                    "surface": "ですよ。"
+                  },
+                  {
+                    "surface": "次",
+                    "reading": "つぎ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "試合",
+                    "reading": "しあい"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "一緒",
+                    "reading": "いっしょ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きましょう。"
+                  }
+                ],
+                "meaningRu": "Аки: внезапно появилась работа, не смогу пойти. Очень извини. Ю: ничего страшного. На следующий матч пойдём вместе.",
+                "audioUrl": "/audio/marugoto/d024f471cf909683.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.9485aa1746cfa7a6",
+              "explanationRu": "В этой ситуации: спасибо",
+              "example": {
+                "surface": "誘ってくれてありがとう。でも、日曜日は仕事があるんです。また今度、お願いします。",
+                "kana": "さそってくれてありがとう。でも、にちようびはしごとがあるんです。またこんど、おねがいします。",
+                "segments": [
+                  {
+                    "surface": "誘",
+                    "reading": "さそ"
+                  },
+                  {
+                    "surface": "ってくれてありがとう。でも、"
+                  },
+                  {
+                    "surface": "日曜日",
+                    "reading": "にちようび"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "仕事",
+                    "reading": "しごと"
+                  },
+                  {
+                    "surface": "があるんです。また"
+                  },
+                  {
+                    "surface": "今度",
+                    "reading": "こんど"
+                  },
+                  {
+                    "surface": "、お"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いします。"
+                  }
+                ],
+                "meaningRu": "Спасибо за приглашение. Но в воскресенье у меня работа. Давайте в другой раз.",
+                "audioUrl": "/audio/marugoto/bfca946d188b1029.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.d1af84983bd361e1",
+              "explanationRu": "В этой ситуации: действительно",
+              "example": {
+                "surface": "実は、明日、家族を迎えに行かなければならないんです。試合に行けなくなりました。本当にすみません。",
+                "kana": "じつは、あした、かぞくをむかえにいかなければならないんです。しあいにいけなくなりました。ほんとうにすみません。",
+                "segments": [
+                  {
+                    "surface": "実",
+                    "reading": "じつ"
+                  },
+                  {
+                    "surface": "は、"
+                  },
+                  {
+                    "surface": "明日",
+                    "reading": "あした"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "迎",
+                    "reading": "むか"
+                  },
+                  {
+                    "surface": "えに"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "かなければならないんです。"
+                  },
+                  {
+                    "surface": "試合",
+                    "reading": "しあい"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "けなくなりました。"
+                  },
+                  {
+                    "surface": "本当",
+                    "reading": "ほんとう"
+                  },
+                  {
+                    "surface": "にすみません。"
+                  }
+                ],
+                "meaningRu": "Дело в том, что завтра я должен встретить семью. На матч пойти не получится. Очень извиняюсь.",
+                "audioUrl": "/audio/marugoto/fa2925541905fca6.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.064b944e05df35d2",
+              "explanationRu": "В этой ситуации: вместе",
+              "example": {
+                "surface": "土曜日なら一緒に行けます。",
+                "kana": "どようびならいっしょにいけます。",
+                "segments": [
+                  {
+                    "surface": "土曜日",
+                    "reading": "どようび"
+                  },
+                  {
+                    "surface": "なら"
+                  },
+                  {
+                    "surface": "一緒",
+                    "reading": "いっしょ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "けます。"
+                  }
+                ],
+                "meaningRu": "Если в субботу, я смогу пойти вместе.",
+                "audioUrl": "/audio/marugoto/6a65a01f999163c3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.2c9f0d985db485e7",
+              "explanationRu": "В этой ситуации: поддержка (поддерживать, болеть за)",
+              "example": {
+                "surface": "昨日は遠い会場まで行きました。帰りは疲れましたが、友達と大きな声で応援できて楽しかったです。また行きたいです。",
+                "kana": "きのうはとおいかいじょうまでいきました。かえりはつかれましたが、ともだちとおおきなこえでおうえんできてたのしかったです。またいきたいです。",
+                "segments": [
+                  {
+                    "surface": "昨日",
+                    "reading": "きのう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "遠",
+                    "reading": "とお"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "会場",
+                    "reading": "かいじょう"
+                  },
+                  {
+                    "surface": "まで"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きました。"
+                  },
+                  {
+                    "surface": "帰",
+                    "reading": "かえ"
+                  },
+                  {
+                    "surface": "りは"
+                  },
+                  {
+                    "surface": "疲",
+                    "reading": "つか"
+                  },
+                  {
+                    "surface": "れましたが、"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "と"
+                  },
+                  {
+                    "surface": "大",
+                    "reading": "おお"
+                  },
+                  {
+                    "surface": "きな"
+                  },
+                  {
+                    "surface": "声",
+                    "reading": "こえ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "応援",
+                    "reading": "おうえん"
+                  },
+                  {
+                    "surface": "できて"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しかったです。また"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きたいです。"
+                  }
+                ],
+                "meaningRu": "Вчера я ездил на далёкий стадион. На обратном пути устал, но было здорово громко болеть с друзьями. Хочу поехать ещё.",
+                "audioUrl": "/audio/marugoto/e668d2ec2da9a7a0.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.01.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.01.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.word.1647d679d9ca747c",
+              "explanationRu": "В этой ситуации: спортсмен, атлет",
+              "example": {
+                "surface": "昨日の試合は最後まで分かりませんでした。選手の速さに驚きました。負けたけど、また見たいです。",
+                "kana": "きのうのしあいはさいごまでわかりませんでした。せんしゅのはやさにおどろきました。まけたけど、またみたいです。",
+                "segments": [
+                  {
+                    "surface": "昨日",
+                    "reading": "きのう"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "試合",
+                    "reading": "しあい"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "最後",
+                    "reading": "さいご"
+                  },
+                  {
+                    "surface": "まで"
+                  },
+                  {
+                    "surface": "分",
+                    "reading": "わ"
+                  },
+                  {
+                    "surface": "かりませんでした。"
+                  },
+                  {
+                    "surface": "選手",
+                    "reading": "せんしゅ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "速",
+                    "reading": "はや"
+                  },
+                  {
+                    "surface": "さに"
+                  },
+                  {
+                    "surface": "驚",
+                    "reading": "おどろ"
+                  },
+                  {
+                    "surface": "きました。"
+                  },
+                  {
+                    "surface": "負",
+                    "reading": "ま"
+                  },
+                  {
+                    "surface": "けたけど、また"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "たいです。"
+                  }
+                ],
+                "meaningRu": "До конца вчерашнего матча исход был неясен. Меня удивила скорость игроков. Наша команда проиграла, но я хочу посмотреть снова.",
+                "audioUrl": "/audio/marugoto/5d06de4c6d3b95de.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.f0559690319392b2",
+              "explanationRu": "В этой ситуации: обещание, уговор, договоренность",
+              "example": {
+                "surface": "友達との約束を忘れました。",
+                "kana": "ともだちとのやくそくをわすれました。",
+                "segments": [
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "との"
+                  },
+                  {
+                    "surface": "約束",
+                    "reading": "やくそく"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "忘",
+                    "reading": "わす"
+                  },
+                  {
+                    "surface": "れました。"
+                  }
+                ],
+                "meaningRu": "Я забыл о договорённости с другом.",
+                "audioUrl": "/audio/marugoto/2a99deae201420ee.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.5426fea05ce36ac3",
+              "explanationRu": "В этой ситуации: на этот раз, теперь",
+              "example": {
+                "surface": "誘ってくれてありがとう。でも、日曜日は仕事があるんです。また今度、お願いします。",
+                "kana": "さそってくれてありがとう。でも、にちようびはしごとがあるんです。またこんど、おねがいします。",
+                "segments": [
+                  {
+                    "surface": "誘",
+                    "reading": "さそ"
+                  },
+                  {
+                    "surface": "ってくれてありがとう。でも、"
+                  },
+                  {
+                    "surface": "日曜日",
+                    "reading": "にちようび"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "仕事",
+                    "reading": "しごと"
+                  },
+                  {
+                    "surface": "があるんです。また"
+                  },
+                  {
+                    "surface": "今度",
+                    "reading": "こんど"
+                  },
+                  {
+                    "surface": "、お"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いします。"
+                  }
+                ],
+                "meaningRu": "Спасибо за приглашение. Но в воскресенье у меня работа. Давайте в другой раз.",
+                "audioUrl": "/audio/marugoto/bfca946d188b1029.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.1ab10a982de336e2",
+              "explanationRu": "В этой ситуации: самый конец",
+              "example": {
+                "surface": "がんばれ。最後まであきらめるな。いいぞ。",
+                "kana": "がんばれ。さいごまであきらめるな。いいぞ。",
+                "segments": [
+                  {
+                    "surface": "がんばれ。"
+                  },
+                  {
+                    "surface": "最後",
+                    "reading": "さいご"
+                  },
+                  {
+                    "surface": "まであきらめるな。いいぞ。"
+                  }
+                ],
+                "meaningRu": "Вперёд! Не сдавайтесь до конца! Отлично!",
+                "audioUrl": "/audio/marugoto/9eb4eb2e3d925404.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.20fbf329217a977b",
+              "explanationRu": "В этой ситуации: на самом деле, по правде говоря",
+              "example": {
+                "surface": "実は仕事が入ったんです。",
+                "kana": "じつはしごとがはいったんです。",
+                "segments": [
+                  {
+                    "surface": "実",
+                    "reading": "じつ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "仕事",
+                    "reading": "しごと"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "入",
+                    "reading": "はい"
+                  },
+                  {
+                    "surface": "ったんです。"
+                  }
+                ],
+                "meaningRu": "Дело в том, что появилась работа.",
+                "audioUrl": "/audio/marugoto/3dd05e841b8b87d1.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.01.words.3",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.01.part.words.3",
+          "words": [
+            {
+              "wordId": "marugoto.word.71980942676a9e66",
+              "explanationRu": "В этой ситуации: команда",
+              "example": {
+                "surface": "友達が強いチームだって言っていました。",
+                "kana": "ともだちがつよいチームだっていっていました。",
+                "segments": [
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "強",
+                    "reading": "つよ"
+                  },
+                  {
+                    "surface": "いチームだって"
+                  },
+                  {
+                    "surface": "言",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "っていました。"
+                  }
+                ],
+                "meaningRu": "Друг сказал, что это сильная команда.",
+                "audioUrl": "/audio/marugoto/8d727817b89f39dd.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.173f1b7f4a6e2446",
+              "explanationRu": "В этой ситуации: усталость",
+              "example": {
+                "surface": "昨日は遠い会場まで行きました。帰りは疲れましたが、友達と大きな声で応援できて楽しかったです。また行きたいです。",
+                "kana": "きのうはとおいかいじょうまでいきました。かえりはつかれましたが、ともだちとおおきなこえでおうえんできてたのしかったです。またいきたいです。",
+                "segments": [
+                  {
+                    "surface": "昨日",
+                    "reading": "きのう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "遠",
+                    "reading": "とお"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "会場",
+                    "reading": "かいじょう"
+                  },
+                  {
+                    "surface": "まで"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きました。"
+                  },
+                  {
+                    "surface": "帰",
+                    "reading": "かえ"
+                  },
+                  {
+                    "surface": "りは"
+                  },
+                  {
+                    "surface": "疲",
+                    "reading": "つか"
+                  },
+                  {
+                    "surface": "れましたが、"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "と"
+                  },
+                  {
+                    "surface": "大",
+                    "reading": "おお"
+                  },
+                  {
+                    "surface": "きな"
+                  },
+                  {
+                    "surface": "声",
+                    "reading": "こえ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "応援",
+                    "reading": "おうえん"
+                  },
+                  {
+                    "surface": "できて"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しかったです。また"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きたいです。"
+                  }
+                ],
+                "meaningRu": "Вчера я ездил на далёкий стадион. На обратном пути устал, но было здорово громко болеть с друзьями. Хочу поехать ещё.",
+                "audioUrl": "/audio/marugoto/e668d2ec2da9a7a0.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.1af0adcd27ea6ebf",
+              "explanationRu": "В этой ситуации: сильный",
+              "example": {
+                "surface": "友達が強いチームだって言っていました。",
+                "kana": "ともだちがつよいチームだっていっていました。",
+                "segments": [
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "強",
+                    "reading": "つよ"
+                  },
+                  {
+                    "surface": "いチームだって"
+                  },
+                  {
+                    "surface": "言",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "っていました。"
+                  }
+                ],
+                "meaningRu": "Друг сказал, что это сильная команда.",
+                "audioUrl": "/audio/marugoto/8d727817b89f39dd.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.8e679a31060665e0",
+              "explanationRu": "В этой ситуации: раз",
+              "example": {
+                "surface": "昨日は遠い会場まで行きました。帰りは疲れましたが、友達と大きな声で応援できて楽しかったです。また行きたいです。",
+                "kana": "きのうはとおいかいじょうまでいきました。かえりはつかれましたが、ともだちとおおきなこえでおうえんできてたのしかったです。またいきたいです。",
+                "segments": [
+                  {
+                    "surface": "昨日",
+                    "reading": "きのう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "遠",
+                    "reading": "とお"
+                  },
+                  {
+                    "surface": "い"
+                  },
+                  {
+                    "surface": "会場",
+                    "reading": "かいじょう"
+                  },
+                  {
+                    "surface": "まで"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きました。"
+                  },
+                  {
+                    "surface": "帰",
+                    "reading": "かえ"
+                  },
+                  {
+                    "surface": "りは"
+                  },
+                  {
+                    "surface": "疲",
+                    "reading": "つか"
+                  },
+                  {
+                    "surface": "れましたが、"
+                  },
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "と"
+                  },
+                  {
+                    "surface": "大",
+                    "reading": "おお"
+                  },
+                  {
+                    "surface": "きな"
+                  },
+                  {
+                    "surface": "声",
+                    "reading": "こえ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "応援",
+                    "reading": "おうえん"
+                  },
+                  {
+                    "surface": "できて"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しかったです。また"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きたいです。"
+                  }
+                ],
+                "meaningRu": "Вчера я ездил на далёкий стадион. На обратном пути устал, но было здорово громко болеть с друзьями. Хочу поехать ещё.",
+                "audioUrl": "/audio/marugoto/e668d2ec2da9a7a0.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.b814a046206dfd45",
+              "explanationRu": "В этой ситуации: против (при объявлении счета)",
+              "example": {
+                "surface": "昨日の試合は最後まで分かりませんでした。選手の速さに驚きました。負けたけど、また見たいです。",
+                "kana": "きのうのしあいはさいごまでわかりませんでした。せんしゅのはやさにおどろきました。まけたけど、またみたいです。",
+                "segments": [
+                  {
+                    "surface": "昨日",
+                    "reading": "きのう"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "試合",
+                    "reading": "しあい"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "最後",
+                    "reading": "さいご"
+                  },
+                  {
+                    "surface": "まで"
+                  },
+                  {
+                    "surface": "分",
+                    "reading": "わ"
+                  },
+                  {
+                    "surface": "かりませんでした。"
+                  },
+                  {
+                    "surface": "選手",
+                    "reading": "せんしゅ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "速",
+                    "reading": "はや"
+                  },
+                  {
+                    "surface": "さに"
+                  },
+                  {
+                    "surface": "驚",
+                    "reading": "おどろ"
+                  },
+                  {
+                    "surface": "きました。"
+                  },
+                  {
+                    "surface": "負",
+                    "reading": "ま"
+                  },
+                  {
+                    "surface": "けたけど、また"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "たいです。"
+                  }
+                ],
+                "meaningRu": "До конца вчерашнего матча исход был неясен. Меня удивила скорость игроков. Наша команда проиграла, но я хочу посмотреть снова.",
+                "audioUrl": "/audio/marugoto/5d06de4c6d3b95de.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.01.grammar.211",
+      "titleRu": "～なら",
+      "introductionRu": "なら подхватывает условие, названное собеседником, и сообщает, подходит ли оно.",
+      "canDoIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.01.part.grammar.211",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.211",
+            "explanationRu": "なら подхватывает условие, названное собеседником, и сообщает, подходит ли оно.",
+            "example": {
+              "surface": "土曜日なら一緒に行けます。",
+              "kana": "どようびならいっしょにいけます。",
+              "segments": [
+                {
+                  "surface": "土曜日",
+                  "reading": "どようび"
+                },
+                {
+                  "surface": "なら"
+                },
+                {
+                  "surface": "一緒",
+                  "reading": "いっしょ"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "行",
+                  "reading": "い"
+                },
+                {
+                  "surface": "けます。"
+                }
+              ],
+              "meaningRu": "Если в субботу, я смогу пойти вместе.",
+              "audioUrl": "/audio/marugoto/6a65a01f999163c3.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "土曜日なら",
+                "explanationRu": "Смысловой фрагмент: Если в субботу, я смогу пойти вместе."
+              },
+              {
+                "text": "一緒に",
+                "explanationRu": "Смысловой фрагмент: Если в субботу, я смогу пойти вместе."
+              },
+              {
+                "text": "行けます",
+                "explanationRu": "なら подхватывает условие, названное собеседником, и сообщает, подходит ли оно."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.01.grammar.212",
+      "titleRu": "～って言って（い）ました",
+      "introductionRu": "って — разговорная форма цитирования вместо と; 言っていました передаёт чужие слова.",
+      "canDoIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.01.part.grammar.212",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.212",
+            "explanationRu": "って — разговорная форма цитирования вместо と; 言っていました передаёт чужие слова.",
+            "example": {
+              "surface": "友達が強いチームだって言っていました。",
+              "kana": "ともだちがつよいチームだっていっていました。",
+              "segments": [
+                {
+                  "surface": "友達",
+                  "reading": "ともだち"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "強",
+                  "reading": "つよ"
+                },
+                {
+                  "surface": "いチームだって"
+                },
+                {
+                  "surface": "言",
+                  "reading": "い"
+                },
+                {
+                  "surface": "っていました。"
+                }
+              ],
+              "meaningRu": "Друг сказал, что это сильная команда.",
+              "audioUrl": "/audio/marugoto/8d727817b89f39dd.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "友達が",
+                "explanationRu": "Смысловой фрагмент: Друг сказал, что это сильная команда."
+              },
+              {
+                "text": "強いチームだって",
+                "explanationRu": "Смысловой фрагмент: Друг сказал, что это сильная команда."
+              },
+              {
+                "text": "言っていました",
+                "explanationRu": "って — разговорная форма цитирования вместо と; 言っていました передаёт чужие слова."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.01.grammar.213",
+      "titleRu": "実は、～んです",
+      "introductionRu": "実は мягко вводит неожиданную причину, んです даёт объяснение.",
+      "canDoIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.01.part.grammar.213",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.213",
+            "explanationRu": "実は мягко вводит неожиданную причину, んです даёт объяснение.",
+            "example": {
+              "surface": "実は仕事が入ったんです。",
+              "kana": "じつはしごとがはいったんです。",
+              "segments": [
+                {
+                  "surface": "実",
+                  "reading": "じつ"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "仕事",
+                  "reading": "しごと"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "入",
+                  "reading": "はい"
+                },
+                {
+                  "surface": "ったんです。"
+                }
+              ],
+              "meaningRu": "Дело в том, что появилась работа.",
+              "audioUrl": "/audio/marugoto/3dd05e841b8b87d1.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "実は",
+                "explanationRu": "Смысловой фрагмент: Дело в том, что появилась работа."
+              },
+              {
+                "text": "仕事が",
+                "explanationRu": "Смысловой фрагмент: Дело в том, что появилась работа."
+              },
+              {
+                "text": "入ったんです",
+                "explanationRu": "実は мягко вводит неожиданную причину, んです даёт объяснение."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.01.grammar.214",
+      "titleRu": "応援の表現",
+      "introductionRu": "Короткие команды уместны для поддержки на матче; словарная форма + な выражает запрет.",
+      "canDoIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.01.part.grammar.214",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.214",
+            "explanationRu": "Короткие команды уместны для поддержки на матче; словарная форма + な выражает запрет.",
+            "example": {
+              "surface": "がんばれあきらめるな。",
+              "kana": "がんばれあきらめるな。",
+              "segments": [
+                {
+                  "surface": "がんばれあきらめるな。"
+                }
+              ],
+              "meaningRu": "Давай! Не сдавайся!",
+              "audioUrl": "/audio/marugoto/d90c33ba8dd0debc.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "がんばれ",
+                "explanationRu": "Смысловой фрагмент: Давай! Не сдавайся!"
+              },
+              {
+                "text": "あきらめるな",
+                "explanationRu": "Короткие команды уместны для поддержки на матче; словарная форма + な выражает запрет."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.01.grammar.215",
+      "titleRu": "～なければならない",
+      "introductionRu": "ない-форма без い + ければならない выражает необходимость.",
+      "canDoIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.01.part.grammar.215",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.215",
+            "explanationRu": "ない-форма без い + ければならない выражает необходимость.",
+            "example": {
+              "surface": "明日早く起きなければなりません。",
+              "kana": "あしたはやくおきなければなりません。",
+              "segments": [
+                {
+                  "surface": "明日",
+                  "reading": "あした"
+                },
+                {
+                  "surface": "早",
+                  "reading": "はや"
+                },
+                {
+                  "surface": "く"
+                },
+                {
+                  "surface": "起",
+                  "reading": "お"
+                },
+                {
+                  "surface": "きなければなりません。"
+                }
+              ],
+              "meaningRu": "Завтра я должен рано встать.",
+              "audioUrl": "/audio/marugoto/b8fe54c224f3b4aa.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "明日",
+                "explanationRu": "Смысловой фрагмент: Завтра я должен рано встать."
+              },
+              {
+                "text": "早く",
+                "explanationRu": "Смысловой фрагмент: Завтра я должен рано встать."
+              },
+              {
+                "text": "起きなければなりません",
+                "explanationRu": "ない-форма без い + ければならない выражает необходимость."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.01.grammar.216",
+      "titleRu": "～さ",
+      "introductionRu": "Основа прилагательного + さ превращает признак в существительное.",
+      "canDoIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.01.part.grammar.216",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.216",
+            "explanationRu": "Основа прилагательного + さ превращает признак в существительное.",
+            "example": {
+              "surface": "チームの強さに驚きました。",
+              "kana": "チームのつよさにおどろきました。",
+              "segments": [
+                {
+                  "surface": "チームの"
+                },
+                {
+                  "surface": "強",
+                  "reading": "つよ"
+                },
+                {
+                  "surface": "さに"
+                },
+                {
+                  "surface": "驚",
+                  "reading": "おどろ"
+                },
+                {
+                  "surface": "きました。"
+                }
+              ],
+              "meaningRu": "Я удивился силе команды.",
+              "audioUrl": "/audio/marugoto/23559523290505d6.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "チームの",
+                "explanationRu": "Смысловой фрагмент: Я удивился силе команды."
+              },
+              {
+                "text": "強さに",
+                "explanationRu": "Смысловой фрагмент: Я удивился силе команды."
+              },
+              {
+                "text": "驚きました",
+                "explanationRu": "Основа прилагательного + さ превращает признак в существительное."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.01.grammar.217",
+      "titleRu": "【助詞】のN",
+      "introductionRu": "Сочетание частицы с の делает связь определением существительного: と + の.",
+      "canDoIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.01.part.grammar.217",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.217",
+            "explanationRu": "Сочетание частицы с の делает связь определением существительного: と + の.",
+            "example": {
+              "surface": "友達との約束を忘れました。",
+              "kana": "ともだちとのやくそくをわすれました。",
+              "segments": [
+                {
+                  "surface": "友達",
+                  "reading": "ともだち"
+                },
+                {
+                  "surface": "との"
+                },
+                {
+                  "surface": "約束",
+                  "reading": "やくそく"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "忘",
+                  "reading": "わす"
+                },
+                {
+                  "surface": "れました。"
+                }
+              ],
+              "meaningRu": "Я забыл о договорённости с другом.",
+              "audioUrl": "/audio/marugoto/2a99deae201420ee.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "友達との",
+                "explanationRu": "Смысловой фрагмент: Я забыл о договорённости с другом."
+              },
+              {
+                "text": "約束を",
+                "explanationRu": "Смысловой фрагмент: Я забыл о договорённости с другом."
+              },
+              {
+                "text": "忘れました",
+                "explanationRu": "Сочетание частицы с の делает связь определением существительного: と + の."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.01.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        1
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.01.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.01",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Пригласите друга на матч, укажите день и уточните, подходит ли время.",
+              "canDoIds": [
+                1
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Пригласите друга на матч, укажите день и уточните, подходит ли время.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "土曜日の試合、一緒に行きませんか。午後なら大丈夫ですか。",
+                "kana": "どようびのしあい、いっしょにいきませんか。ごごならだいじょうぶですか。",
+                "segments": [
+                  {
+                    "surface": "土曜日",
+                    "reading": "どようび"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "試合",
+                    "reading": "しあい"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "一緒",
+                    "reading": "いっしょ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きませんか。"
+                  },
+                  {
+                    "surface": "午後",
+                    "reading": "ごご"
+                  },
+                  {
+                    "surface": "なら"
+                  },
+                  {
+                    "surface": "大丈夫",
+                    "reading": "だいじょうぶ"
+                  },
+                  {
+                    "surface": "ですか。"
+                  }
+                ],
+                "meaningRu": "Не пойти ли вместе на матч в субботу? После обеда вам удобно?",
+                "audioUrl": "/audio/marugoto/dea8cab4748c4669.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Пригласите друга на матч, укажите день и уточните, подходит ли время.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.02.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        2
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.02.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.02",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Откажитесь от приглашения, объясните причину и предложите другой случай.",
+              "canDoIds": [
+                2
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Откажитесь от приглашения, объясните причину и предложите другой случай.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "誘ってくれてありがとう。でも、日曜日は仕事があるんです。また今度、お願いします。",
+                "kana": "さそってくれてありがとう。でも、にちようびはしごとがあるんです。またこんど、おねがいします。",
+                "segments": [
+                  {
+                    "surface": "誘",
+                    "reading": "さそ"
+                  },
+                  {
+                    "surface": "ってくれてありがとう。でも、"
+                  },
+                  {
+                    "surface": "日曜日",
+                    "reading": "にちようび"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "仕事",
+                    "reading": "しごと"
+                  },
+                  {
+                    "surface": "があるんです。また"
+                  },
+                  {
+                    "surface": "今度",
+                    "reading": "こんど"
+                  },
+                  {
+                    "surface": "、お"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いします。"
+                  }
+                ],
+                "meaningRu": "Спасибо за приглашение. Но в воскресенье у меня работа. Давайте в другой раз.",
+                "audioUrl": "/audio/marugoto/bfca946d188b1029.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Откажитесь от приглашения, объясните причину и предложите другой случай.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.03.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        3
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.03.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.03",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Отмените уже согласованный поход на матч: извинитесь и объясните новую причину.",
+              "canDoIds": [
+                3
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Отмените уже согласованный поход на матч: извинитесь и объясните новую причину.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "実は、明日、家族を迎えに行かなければならないんです。試合に行けなくなりました。本当にすみません。",
+                "kana": "じつは、あした、かぞくをむかえにいかなければならないんです。しあいにいけなくなりました。ほんとうにすみません。",
+                "segments": [
+                  {
+                    "surface": "実",
+                    "reading": "じつ"
+                  },
+                  {
+                    "surface": "は、"
+                  },
+                  {
+                    "surface": "明日",
+                    "reading": "あした"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "迎",
+                    "reading": "むか"
+                  },
+                  {
+                    "surface": "えに"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "かなければならないんです。"
+                  },
+                  {
+                    "surface": "試合",
+                    "reading": "しあい"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "けなくなりました。"
+                  },
+                  {
+                    "surface": "本当",
+                    "reading": "ほんとう"
+                  },
+                  {
+                    "surface": "にすみません。"
+                  }
+                ],
+                "meaningRu": "Дело в том, что завтра я должен встретить семью. На матч пойти не получится. Очень извиняюсь.",
+                "audioUrl": "/audio/marugoto/fa2925541905fca6.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Отмените уже согласованный поход на матч: извинитесь и объясните новую причину.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.04.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        4
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.04.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.04",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Произнесите две короткие реплики поддержки команды во время матча.",
+              "canDoIds": [
+                4
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Произнесите две короткие реплики поддержки команды во время матча.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "がんばれ。最後まであきらめるな。いいぞ。",
+                "kana": "がんばれ。さいごまであきらめるな。いいぞ。",
+                "segments": [
+                  {
+                    "surface": "がんばれ。"
+                  },
+                  {
+                    "surface": "最後",
+                    "reading": "さいご"
+                  },
+                  {
+                    "surface": "まであきらめるな。いいぞ。"
+                  }
+                ],
+                "meaningRu": "Вперёд! Не сдавайтесь до конца! Отлично!",
+                "audioUrl": "/audio/marugoto/9eb4eb2e3d925404.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Произнесите две короткие реплики поддержки команды во время матча.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.05.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        5
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.05.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.05",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите о матче: что произошло, что вас впечатлило и как вы себя чувствовали.",
+              "canDoIds": [
+                5
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите о матче: что произошло, что вас впечатлило и как вы себя чувствовали.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "昨日の試合は最後まで分かりませんでした。選手の速さに驚きました。負けたけど、また見たいです。",
+                "kana": "きのうのしあいはさいごまでわかりませんでした。せんしゅのはやさにおどろきました。まけたけど、またみたいです。",
+                "segments": [
+                  {
+                    "surface": "昨日",
+                    "reading": "きのう"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "試合",
+                    "reading": "しあい"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "最後",
+                    "reading": "さいご"
+                  },
+                  {
+                    "surface": "まで"
+                  },
+                  {
+                    "surface": "分",
+                    "reading": "わ"
+                  },
+                  {
+                    "surface": "かりませんでした。"
+                  },
+                  {
+                    "surface": "選手",
+                    "reading": "せんしゅ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "速",
+                    "reading": "はや"
+                  },
+                  {
+                    "surface": "さに"
+                  },
+                  {
+                    "surface": "驚",
+                    "reading": "おどろ"
+                  },
+                  {
+                    "surface": "きました。"
+                  },
+                  {
+                    "surface": "負",
+                    "reading": "ま"
+                  },
+                  {
+                    "surface": "けたけど、また"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "たいです。"
+                  }
+                ],
+                "meaningRu": "До конца вчерашнего матча исход был неясен. Меня удивила скорость игроков. Наша команда проиграла, но я хочу посмотреть снова.",
+                "audioUrl": "/audio/marugoto/5d06de4c6d3b95de.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите о матче: что произошло, что вас впечатлило и как вы себя чувствовали.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.06.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        6
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.06.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.06",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте переписку после отмены встречи. Определите отношение друга.",
+              "canDoIds": [
+                6
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "アキ：急に仕事が入って、行けなくなりました。本当にごめんなさい。ユウ：大丈夫ですよ。次の試合は一緒に行きましょう。",
+                  "kana": "アキ：きゅうにしごとがはいって、いけなくなりました。ほんとうにごめんなさい。ユウ：だいじょうぶですよ。つぎのしあいはいっしょにいきましょう。",
+                  "segments": [
+                    {
+                      "surface": "アキ："
+                    },
+                    {
+                      "surface": "急",
+                      "reading": "きゅう"
+                    },
+                    {
+                      "surface": "に"
+                    },
+                    {
+                      "surface": "仕事",
+                      "reading": "しごと"
+                    },
+                    {
+                      "surface": "が"
+                    },
+                    {
+                      "surface": "入",
+                      "reading": "はい"
+                    },
+                    {
+                      "surface": "って、"
+                    },
+                    {
+                      "surface": "行",
+                      "reading": "い"
+                    },
+                    {
+                      "surface": "けなくなりました。"
+                    },
+                    {
+                      "surface": "本当",
+                      "reading": "ほんとう"
+                    },
+                    {
+                      "surface": "にごめんなさい。ユウ："
+                    },
+                    {
+                      "surface": "大丈夫",
+                      "reading": "だいじょうぶ"
+                    },
+                    {
+                      "surface": "ですよ。"
+                    },
+                    {
+                      "surface": "次",
+                      "reading": "つぎ"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "試合",
+                      "reading": "しあい"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "一緒",
+                      "reading": "いっしょ"
+                    },
+                    {
+                      "surface": "に"
+                    },
+                    {
+                      "surface": "行",
+                      "reading": "い"
+                    },
+                    {
+                      "surface": "きましょう。"
+                    }
+                  ],
+                  "meaningRu": "Аки: внезапно появилась работа, не смогу пойти. Очень извини. Ю: ничего страшного. На следующий матч пойдём вместе.",
+                  "audioUrl": "/audio/marugoto/d024f471cf909683.m4a"
+                }
+              ],
+              "questionRu": "Как Ю относится к отмене?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "Принимает извинение и хочет встретиться позже"
+                },
+                {
+                  "id": "b",
+                  "text": "Сердится и прекращает общение"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Аки: внезапно появилась работа, не смогу пойти. Очень извини. Ю: ничего страшного. На следующий матч пойдём вместе."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.07.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        7
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.07.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.07",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте письмо после поездки на матч. Найдите сочетание впечатлений.",
+              "canDoIds": [
+                7
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "昨日は遠い会場まで行きました。帰りは疲れましたが、友達と大きな声で応援できて楽しかったです。また行きたいです。",
+                  "kana": "きのうはとおいかいじょうまでいきました。かえりはつかれましたが、ともだちとおおきなこえでおうえんできてたのしかったです。またいきたいです。",
+                  "segments": [
+                    {
+                      "surface": "昨日",
+                      "reading": "きのう"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "遠",
+                      "reading": "とお"
+                    },
+                    {
+                      "surface": "い"
+                    },
+                    {
+                      "surface": "会場",
+                      "reading": "かいじょう"
+                    },
+                    {
+                      "surface": "まで"
+                    },
+                    {
+                      "surface": "行",
+                      "reading": "い"
+                    },
+                    {
+                      "surface": "きました。"
+                    },
+                    {
+                      "surface": "帰",
+                      "reading": "かえ"
+                    },
+                    {
+                      "surface": "りは"
+                    },
+                    {
+                      "surface": "疲",
+                      "reading": "つか"
+                    },
+                    {
+                      "surface": "れましたが、"
+                    },
+                    {
+                      "surface": "友達",
+                      "reading": "ともだち"
+                    },
+                    {
+                      "surface": "と"
+                    },
+                    {
+                      "surface": "大",
+                      "reading": "おお"
+                    },
+                    {
+                      "surface": "きな"
+                    },
+                    {
+                      "surface": "声",
+                      "reading": "こえ"
+                    },
+                    {
+                      "surface": "で"
+                    },
+                    {
+                      "surface": "応援",
+                      "reading": "おうえん"
+                    },
+                    {
+                      "surface": "できて"
+                    },
+                    {
+                      "surface": "楽",
+                      "reading": "たの"
+                    },
+                    {
+                      "surface": "しかったです。また"
+                    },
+                    {
+                      "surface": "行",
+                      "reading": "い"
+                    },
+                    {
+                      "surface": "きたいです。"
+                    }
+                  ],
+                  "meaningRu": "Вчера я ездил на далёкий стадион. На обратном пути устал, но было здорово громко болеть с друзьями. Хочу поехать ещё.",
+                  "audioUrl": "/audio/marugoto/e668d2ec2da9a7a0.m4a"
+                }
+              ],
+              "questionRu": "Что чувствует автор?",
+              "options": [
+                {
+                  "id": "b",
+                  "text": "Только разочарование поездкой"
+                },
+                {
+                  "id": "a",
+                  "text": "Усталость и радость от совместной поддержки"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Вчера я ездил на далёкий стадион. На обратном пути устал, но было здорово громко болеть с друзьями. Хочу поехать ещё."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

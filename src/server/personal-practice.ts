@@ -4,7 +4,7 @@ import { validSegments } from './material';
 
 export function withPersonalPractice(course:Course,words:Word[]):Course {
  const preparedIds=new Set(course.words.map(word=>word.id));
- const nouns=words.filter(word=>!preparedIds.has(word.id)&&word.reviewStatus==='reviewed'&&word.kind==='word'&&word.pos==='noun'&&validSegments(word)).sort((a,b)=>a.id.localeCompare(b.id));
+ const nouns=words.filter(word=>!word.lexemeId&&!preparedIds.has(word.id)&&word.reviewStatus==='reviewed'&&word.kind==='word'&&word.pos==='noun'&&validSegments(word)).sort((a,b)=>a.id.localeCompare(b.id));
  const template=catalogFor(course).personalPractice;
  const skill=course.skills.find(item=>item.id===template.skillId);
  const thisForm=course.forms.find(form=>form.id===template.thisFormId);

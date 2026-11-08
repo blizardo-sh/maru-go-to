@@ -1,0 +1,500 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.14",
+  "version": "marugoto-a2-v1",
+  "titleRu": "В гостях в офисе",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.14.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        37,
+        38,
+        39,
+        40
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.14.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.e081d7b6bb9f53b8",
+              "explanationRu": "В этой ситуации: компьютер",
+              "example": {
+                "surface": "このパソコンを使ってもいいですか。メールを送りたいんです。",
+                "kana": "このパソコンをつかってもいいですか。メールをおくりたいんです。",
+                "segments": [
+                  {
+                    "surface": "このパソコンを"
+                  },
+                  {
+                    "surface": "使",
+                    "reading": "つか"
+                  },
+                  {
+                    "surface": "ってもいいですか。メールを"
+                  },
+                  {
+                    "surface": "送",
+                    "reading": "おく"
+                  },
+                  {
+                    "surface": "りたいんです。"
+                  }
+                ],
+                "meaningRu": "Можно воспользоваться этим компьютером? Я хочу отправить письмо.",
+                "audioUrl": "/audio/marugoto/fbd2d024bbfd2087.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.ee97d4a0eb7337aa",
+              "explanationRu": "В этой ситуации: здесь, вот",
+              "example": {
+                "surface": "こちらは田中さんです。この会社に入って五年になります。",
+                "kana": "こちらはたなかさんです。このかいしゃにはいってごねんになります。",
+                "segments": [
+                  {
+                    "surface": "こちらは"
+                  },
+                  {
+                    "surface": "田中",
+                    "reading": "たなか"
+                  },
+                  {
+                    "surface": "さんです。この"
+                  },
+                  {
+                    "surface": "会社",
+                    "reading": "かいしゃ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "入",
+                    "reading": "はい"
+                  },
+                  {
+                    "surface": "って"
+                  },
+                  {
+                    "surface": "五年",
+                    "reading": "ごねん"
+                  },
+                  {
+                    "surface": "になります。"
+                  }
+                ],
+                "meaningRu": "Это господин Танака. Он работает в этой компании уже пять лет.",
+                "audioUrl": "/audio/marugoto/7fbcf16a436a33ce.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.14.grammar.119",
+      "titleRu": "～て【期間】になる",
+      "introductionRu": "て + период + になる отсчитывает время с момента события.",
+      "canDoIds": [
+        37,
+        38,
+        39,
+        40
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.14.part.grammar.119",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.119",
+            "explanationRu": "て + период + になる отсчитывает время с момента события.",
+            "example": {
+              "surface": "この町に来て三年になります。",
+              "kana": "このまちにきてさんねんになります。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "町",
+                  "reading": "まち"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "来",
+                  "reading": "き"
+                },
+                {
+                  "surface": "て"
+                },
+                {
+                  "surface": "三年",
+                  "reading": "さんねん"
+                },
+                {
+                  "surface": "になります。"
+                }
+              ],
+              "meaningRu": "Я живу в этом городе уже три года.",
+              "audioUrl": "/audio/marugoto/922a14580e53676f.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Я живу в этом городе уже три года."
+              },
+              {
+                "text": "町に",
+                "explanationRu": "Смысловой фрагмент: Я живу в этом городе уже три года."
+              },
+              {
+                "text": "来て",
+                "explanationRu": "Смысловой фрагмент: Я живу в этом городе уже три года."
+              },
+              {
+                "text": "三年になります",
+                "explanationRu": "て + период + になる отсчитывает время с момента события."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.14.grammar.120",
+      "titleRu": "～てもいい",
+      "introductionRu": "てもいいですか запрашивает разрешение на действие.",
+      "canDoIds": [
+        37,
+        38,
+        39,
+        40
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.14.part.grammar.120",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.120",
+            "explanationRu": "てもいいですか запрашивает разрешение на действие.",
+            "example": {
+              "surface": "この椅子に座ってもいいですか。",
+              "kana": "このいすにすわってもいいですか。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "椅子",
+                  "reading": "いす"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "座",
+                  "reading": "すわ"
+                },
+                {
+                  "surface": "ってもいいですか。"
+                }
+              ],
+              "meaningRu": "Можно сесть на этот стул?",
+              "audioUrl": "/audio/marugoto/569476ffe2c44192.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Можно сесть на этот стул?"
+              },
+              {
+                "text": "椅子に",
+                "explanationRu": "Смысловой фрагмент: Можно сесть на этот стул?"
+              },
+              {
+                "text": "座ってもいいですか",
+                "explanationRu": "てもいいですか запрашивает разрешение на действие."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.37.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        37
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.37.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.37",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Представьте коллеге сотрудника и назовите его стаж.",
+              "canDoIds": [
+                37
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Представьте коллеге сотрудника и назовите его стаж.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "こちらは田中さんです。この会社に入って五年になります。",
+                "kana": "こちらはたなかさんです。このかいしゃにはいってごねんになります。",
+                "segments": [
+                  {
+                    "surface": "こちらは"
+                  },
+                  {
+                    "surface": "田中",
+                    "reading": "たなか"
+                  },
+                  {
+                    "surface": "さんです。この"
+                  },
+                  {
+                    "surface": "会社",
+                    "reading": "かいしゃ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "入",
+                    "reading": "はい"
+                  },
+                  {
+                    "surface": "って"
+                  },
+                  {
+                    "surface": "五年",
+                    "reading": "ごねん"
+                  },
+                  {
+                    "surface": "になります。"
+                  }
+                ],
+                "meaningRu": "Это господин Танака. Он работает в этой компании уже пять лет.",
+                "audioUrl": "/audio/marugoto/7fbcf16a436a33ce.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Представьте коллеге сотрудника и назовите его стаж.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.38.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        38
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.38.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.38",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Попросите разрешения воспользоваться предметом в офисе.",
+              "canDoIds": [
+                38
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Попросите разрешения воспользоваться предметом в офисе.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "このパソコンを使ってもいいですか。メールを送りたいんです。",
+                "kana": "このパソコンをつかってもいいですか。メールをおくりたいんです。",
+                "segments": [
+                  {
+                    "surface": "このパソコンを"
+                  },
+                  {
+                    "surface": "使",
+                    "reading": "つか"
+                  },
+                  {
+                    "surface": "ってもいいですか。メールを"
+                  },
+                  {
+                    "surface": "送",
+                    "reading": "おく"
+                  },
+                  {
+                    "surface": "りたいんです。"
+                  }
+                ],
+                "meaningRu": "Можно воспользоваться этим компьютером? Я хочу отправить письмо.",
+                "audioUrl": "/audio/marugoto/fbd2d024bbfd2087.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Попросите разрешения воспользоваться предметом в офисе.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.39.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        39
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.39.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.39",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Попрощайтесь с гостем и пожелайте хорошей дороги.",
+              "canDoIds": [
+                39
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Попрощайтесь с гостем и пожелайте хорошей дороги.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "今回はありがとうございました。気をつけてお帰りください。また会いましょう。",
+                "kana": "こんかいはありがとうございました。きをつけておかえりください。またあいましょう。",
+                "segments": [
+                  {
+                    "surface": "今回",
+                    "reading": "こんかい"
+                  },
+                  {
+                    "surface": "はありがとうございました。"
+                  },
+                  {
+                    "surface": "気",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "をつけてお"
+                  },
+                  {
+                    "surface": "帰",
+                    "reading": "かえ"
+                  },
+                  {
+                    "surface": "りください。また"
+                  },
+                  {
+                    "surface": "会",
+                    "reading": "あ"
+                  },
+                  {
+                    "surface": "いましょう。"
+                  }
+                ],
+                "meaningRu": "Спасибо за этот визит. Счастливого пути. До новой встречи.",
+                "audioUrl": "/audio/marugoto/00d05a6d1def58b3.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Попрощайтесь с гостем и пожелайте хорошей дороги.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.40.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        40
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.40.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.40",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте прощальную записку коллеги и определите её намерение.",
+              "canDoIds": [
+                40
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "一緒に仕事ができて、うれしかったです。また来てください。",
+                  "kana": "いっしょにしごとができて、うれしかったです。またきてください。",
+                  "segments": [
+                    {
+                      "surface": "一緒",
+                      "reading": "いっしょ"
+                    },
+                    {
+                      "surface": "に"
+                    },
+                    {
+                      "surface": "仕事",
+                      "reading": "しごと"
+                    },
+                    {
+                      "surface": "ができて、うれしかったです。また"
+                    },
+                    {
+                      "surface": "来",
+                      "reading": "き"
+                    },
+                    {
+                      "surface": "てください。"
+                    }
+                  ],
+                  "meaningRu": "Я был рад поработать вместе. Приезжайте снова.",
+                  "audioUrl": "/audio/marugoto/213608d9d989345d.m4a"
+                }
+              ],
+              "questionRu": "Что хочет сказать коллега?",
+              "options": [
+                {
+                  "id": "b",
+                  "text": "Он просит отменить будущую поездку"
+                },
+                {
+                  "id": "a",
+                  "text": "Он рад сотрудничеству и приглашает снова"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Я был рад поработать вместе. Приезжайте снова."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import { createHash } from 'node:crypto';
 import { existsSync, lstatSync, readFileSync, readdirSync, realpathSync } from 'node:fs';
 import { join, resolve, sep } from 'node:path';
 import type { Course } from '../shared/types';
+import { canonical, expandSources, poolSources, rejectPooledSources, type SourcePool } from './content-sources';
 import { validateCourse } from '../shared/course';
 import { learningParts, validateLearning } from '../shared/learning';
 import { validateCatalog } from '../shared/catalog';
@@ -11,8 +12,9 @@ import { ReviewError } from './reviews';
 import { counterTarget, makeCounterCard } from '../shared/counters';
 
 export interface ContentAsset { path: string; sha256: string; bytes: number }
-export interface ContentBundle { formatVersion: 1; course: Course; assets: ContentAsset[] }
-const canonical = (value: unknown): string => Array.isArray(value) ? '[' + value.map(canonical).join(',') + ']' : value && typeof value === 'object' ? '{' + Object.entries(value).filter(([,entry]) => entry !== undefined).sort(([a],[b]) => a < b ? -1 : a > b ? 1 : 0).map(([key,entry]) => JSON.stringify(key) + ':' + canonical(entry)).join(',') + '}' : JSON.stringify(value);
+export type ContentBundle = { formatVersion: 1 | 2; course: Course; assets: ContentAsset[] } | ({ formatVersion: 3; assets: ContentAsset[] } & SourcePool);
+/** Decode only after hashing the original stored bundle; never rewrite old snapshots. */
+export const publicationCourse = (bundle: ContentBundle): Course => bundle.formatVersion === 3 ? expandSources(bundle) : bundle.course;
 export const contentId = (bundle: ContentBundle) => createHash('sha256').update(canonical(bundle)).digest('hex');
 export const defaultMediaRoot = () => process.env.CONTENT_MEDIA_ROOT ?? new URL('../../public', import.meta.url).pathname;
 const publicRoot = new URL('../../public', import.meta.url).pathname;
@@ -22,11 +24,14 @@ const idPattern = /^[a-f0-9]{64}$/;
 const safePath = (path: string) => /^\/(audio|word-illustrations|counters)\/[a-zA-Z0-9/_.-]+\.(m4a|mp3|ogg|wav|png|webp|jpg|jpeg|svg|avif)$/.test(path) && path.slice(1).split('/').every(part => part && part !== '.' && part !== '..');
 export function validateContentBundle(value: unknown, mediaRoot?: string): asserts value is ContentBundle {
  const bundle = value as ContentBundle;
- if (!bundle || bundle.formatVersion !== 1 || !bundle.course || !Array.isArray(bundle.assets) || bundle.assets.length > 20000 || bundle.course.publicationId !== undefined || !Array.isArray(bundle.course.words) || bundle.course.words.some(word => !word.lessonIds.length)) throw new Error('Invalid content bundle.');
- validateCourse(bundle.course); validateLearning(bundle.course, bundle.course.learning ?? [], true); validateCatalog(bundle.course);
- for (const route of bundle.course.learning ?? []) for (const step of learningParts(route).flat()) {
-  if (step.kind === 'word-practice') learningWordChoices(bundle.course, route, step);
-  if (step.kind === 'counter-practice' && !makeCounterCard(counterTarget(step.counterId,'reading-choice',step.quantity),step.wordId,bundle.course.words,'publication-validation',false,bundle.course.catalog)) throw new Error(`Invalid counter practice: ${step.id}`);
+ if (!bundle || ![1,2,3].includes(bundle.formatVersion) || !bundle.course || !Array.isArray(bundle.assets) || bundle.assets.length > 20000 || bundle.course.publicationId !== undefined || !Array.isArray(bundle.course.words) || bundle.course.words.some(word => !word.lessonIds.length)) throw new Error('Invalid content bundle.');
+ if (bundle.formatVersion !== 3) { if ('sourceRefs' in bundle) throw new Error('Unexpected content source dictionary.'); rejectPooledSources(bundle.course); }
+ const course = publicationCourse(bundle);
+ if (bundle.formatVersion === 1 && course.books) throw new Error('Multibook content requires format 2.');
+ validateCourse(course); validateLearning(course, course.learning ?? [], true); validateCatalog(course);
+ for (const route of course.learning ?? []) for (const step of learningParts(route).flat()) {
+  if (step.kind === 'word-practice') learningWordChoices(course, route, step);
+  if (step.kind === 'counter-practice' && !makeCounterCard(counterTarget(step.counterId,'reading-choice',step.quantity),step.wordId,course.words,'publication-validation',false,course.catalog)) throw new Error(`Invalid counter practice: ${step.id}`);
  }
  const paths = new Set<string>(); let total = 0;
  for (const asset of bundle.assets) {
@@ -48,7 +53,7 @@ export function validateContentBundle(value: unknown, mediaRoot?: string): asser
    referenced(entry);
   }
  };
- referenced(bundle.course);
+ referenced(course);
 }
 export function packContent(course: Course, mediaRoot = publicRoot): ContentBundle {
  const assets: ContentAsset[] = [];
@@ -62,7 +67,7 @@ export function packContent(course: Course, mediaRoot = publicRoot): ContentBund
  };
  for (const prefix of ['audio', 'word-illustrations', 'counters']) scan(join(resolve(mediaRoot), prefix));
  const copied = structuredClone(course); delete copied.publicationId; delete copied.media;
- const bundle: ContentBundle = { formatVersion: 1, course: copied, assets: assets.sort((a,b) => a.path.localeCompare(b.path)) };
+ const bundle: ContentBundle = { formatVersion: 3, ...poolSources(copied), assets: assets.sort((a,b) => a.path.localeCompare(b.path)) };
  validateContentBundle(bundle, mediaRoot); return bundle;
 }
 const caches = new WeakMap<Database, Map<string, Course>>();
@@ -72,9 +77,10 @@ export async function getPublication(database: Database, id: string): Promise<Co
  const cached = cache.get(id); if (cached) return cached;
  const [row] = await database.sql`select bundle from content_publications where id=${id}`;
  if (!row) throw new ReviewError('PUBLICATION_NOT_FOUND', 'Версия учебника недоступна. Обновите страницу.', 409);
- const bundle = row.bundle as ContentBundle; validateContentBundle(bundle);
+ const bundle = row.bundle as ContentBundle;
  if (contentId(bundle) !== id) throw new Error('Stored content digest does not match its ID.');
- const course = { ...bundle.course, publicationId: id, media: bundle.assets.map(asset => asset.path) };
+ validateContentBundle(bundle);
+ const course = { ...publicationCourse(bundle), publicationId: id, media: bundle.assets.map(asset => asset.path) };
  cache.set(id, course); if (cache.size > 8) cache.delete(cache.keys().next().value!); return course;
 }
 export async function currentPublication(database: Database): Promise<Course> {
@@ -91,7 +97,7 @@ export async function publishContent(database: Database, bundle: ContentBundle, 
  await database.sql.begin(async tx => {
   await tx`select pg_advisory_xact_lock(hashtext('content-publication'))`;
   await validatePublicationMedia(tx, bundle);
-  await tx`insert into content_publications(id,format_version,bundle) values(${id},1,${bundle}) on conflict(id) do nothing`;
+  await tx`insert into content_publications(id,format_version,bundle) values(${id},${bundle.formatVersion},${bundle}) on conflict(id) do nothing`;
   if (options.activate !== false) await tx`insert into content_active(singleton,publication_id) values(1,${id}) on conflict(singleton) do update set publication_id=excluded.publication_id,updated_at=now()`;
  }); return { id };
 }
@@ -120,8 +126,8 @@ export async function ensureInitialPublications(database: Database, initial: Con
  await database.sql.begin(async tx => {
   await tx`select pg_advisory_xact_lock(hashtext('content-publication'))`;
   const [existing] = await tx`select id from content_publications where legacy=true`;
-  if (!existing) await tx`insert into content_publications(id,format_version,bundle,legacy,bundled) values(${legacyId},1,${legacy},true,true) on conflict(id) do update set legacy=true,bundled=true`;
-  await tx`insert into content_publications(id,format_version,bundle,bundled) values(${initialId},1,${initial},true) on conflict(id) do update set bundled=true`;
+  if (!existing) await tx`insert into content_publications(id,format_version,bundle,legacy,bundled) values(${legacyId},${legacy.formatVersion},${legacy},true,true) on conflict(id) do update set legacy=true,bundled=true`;
+  await tx`insert into content_publications(id,format_version,bundle,bundled) values(${initialId},${initial.formatVersion},${initial},true) on conflict(id) do update set bundled=true`;
   await tx`insert into content_active(singleton,publication_id) values(1,${initialId}) on conflict(singleton) do nothing`;
  });
 }

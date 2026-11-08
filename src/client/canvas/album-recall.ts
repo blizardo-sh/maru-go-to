@@ -1,9 +1,11 @@
+import { meaningDisplay, type MeaningContext } from '@app/shared/meanings';
 import type { JapaneseValue, Rect } from './canvas';
 import type { PrototypeLayout } from './prototype-layouts';
 import { StudySurface, type StudyAction, type StudyChoice } from './study-surface';
 
 // One presentation for guided recall and ordinary review; controllers own all grading rules.
-export function renderAlbumRecall(surface: StudySurface, view: PrototypeLayout, value: JapaneseValue & { meaningRu: string }, mode: 'ja-ru' | 'ru-ja' | 'listening', revealed: boolean, audio: StudyAction | null, actions: StudyAction[], choices?: StudyChoice[], choose?: (id: string) => void, note?: string) {
+export function renderAlbumRecall(surface: StudySurface, view: PrototypeLayout, value: JapaneseValue & { meaningRu: string; meaningContext?: MeaningContext }, mode: 'ja-ru' | 'ru-ja' | 'listening', revealed: boolean, audio: StudyAction | null, actions: StudyAction[], choices?: StudyChoice[], choose?: (id: string) => void, note?: string) {
+  value = meaningDisplay(value);
   const a = surface.body, f = surface.layout.font, split = view.prompt;
   let title = note ?? (mode === 'ja-ru' ? 'Вспомните перевод' : mode === 'ru-ja' ? 'Вспомните по-японски' : 'Вспомните смысл услышанного');
   if (!split && !(choices?.length && !revealed)) {

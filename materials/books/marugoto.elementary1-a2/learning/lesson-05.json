@@ -1,0 +1,1196 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.05",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Места в моём городе",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.05.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.05.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.cc70e5aef62ca0fe",
+              "explanationRu": "В этой ситуации: парк",
+              "example": {
+                "surface": "この公園は広くて明るいです。",
+                "kana": "このこうえんはひろくてあかるいです。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "公園",
+                    "reading": "こうえん"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "広",
+                    "reading": "ひろ"
+                  },
+                  {
+                    "surface": "くて"
+                  },
+                  {
+                    "surface": "明",
+                    "reading": "あか"
+                  },
+                  {
+                    "surface": "るいです。"
+                  }
+                ],
+                "meaningRu": "Этот парк просторный и светлый.",
+                "audioUrl": "/audio/marugoto/6c51eefa93a00a3a.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.6e01ec7fffcdd8f3",
+              "explanationRu": "В этой ситуации: шумный, оживлённый",
+              "example": {
+                "surface": "駅の近くは便利でにぎやかです。",
+                "kana": "えきのちかくはべんりでにぎやかです。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "くは"
+                  },
+                  {
+                    "surface": "便利",
+                    "reading": "べんり"
+                  },
+                  {
+                    "surface": "でにぎやかです。"
+                  }
+                ],
+                "meaningRu": "Рядом со станцией удобно и оживлённо.",
+                "audioUrl": "/audio/marugoto/70fa9b9c8aa8fbfc.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.6dfae2e872ae29f1",
+              "explanationRu": "В этой ситуации: светлый",
+              "example": {
+                "surface": "この公園は広くて明るいです。",
+                "kana": "このこうえんはひろくてあかるいです。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "公園",
+                    "reading": "こうえん"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "広",
+                    "reading": "ひろ"
+                  },
+                  {
+                    "surface": "くて"
+                  },
+                  {
+                    "surface": "明",
+                    "reading": "あか"
+                  },
+                  {
+                    "surface": "るいです。"
+                  }
+                ],
+                "meaningRu": "Этот парк просторный и светлый.",
+                "audioUrl": "/audio/marugoto/6c51eefa93a00a3a.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.78a467265c9a061b",
+              "explanationRu": "В этой ситуации: маленький",
+              "example": {
+                "surface": "ここは小さい町だけど店が多いです。",
+                "kana": "ここはちいさいまちだけどみせがおおいです。",
+                "segments": [
+                  {
+                    "surface": "ここは"
+                  },
+                  {
+                    "surface": "小",
+                    "reading": "ちい"
+                  },
+                  {
+                    "surface": "さい"
+                  },
+                  {
+                    "surface": "町",
+                    "reading": "まち"
+                  },
+                  {
+                    "surface": "だけど"
+                  },
+                  {
+                    "surface": "店",
+                    "reading": "みせ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "多",
+                    "reading": "おお"
+                  },
+                  {
+                    "surface": "いです。"
+                  }
+                ],
+                "meaningRu": "Это маленький город, но магазинов много.",
+                "audioUrl": "/audio/marugoto/d5fa0e89ff07d006.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.1b28fb013a689e9f",
+              "explanationRu": "В этой ситуации: многочисленный",
+              "example": {
+                "surface": "ここは小さい町だけど店が多いです。",
+                "kana": "ここはちいさいまちだけどみせがおおいです。",
+                "segments": [
+                  {
+                    "surface": "ここは"
+                  },
+                  {
+                    "surface": "小",
+                    "reading": "ちい"
+                  },
+                  {
+                    "surface": "さい"
+                  },
+                  {
+                    "surface": "町",
+                    "reading": "まち"
+                  },
+                  {
+                    "surface": "だけど"
+                  },
+                  {
+                    "surface": "店",
+                    "reading": "みせ"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "多",
+                    "reading": "おお"
+                  },
+                  {
+                    "surface": "いです。"
+                  }
+                ],
+                "meaningRu": "Это маленький город, но магазинов много.",
+                "audioUrl": "/audio/marugoto/d5fa0e89ff07d006.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.05.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.05.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.ca1bca12d3bd4f9f",
+              "explanationRu": "В этой ситуации: тихий",
+              "example": {
+                "surface": "ここは住宅地で静かです。",
+                "kana": "ここはじゅうたくちでしずかです。",
+                "segments": [
+                  {
+                    "surface": "ここは"
+                  },
+                  {
+                    "surface": "住宅地",
+                    "reading": "じゅうたくち"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "静",
+                    "reading": "しず"
+                  },
+                  {
+                    "surface": "かです。"
+                  }
+                ],
+                "meaningRu": "Это жилой район, и здесь тихо.",
+                "audioUrl": "/audio/marugoto/3513098ce28ecb30.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8c2ef79881372ad2",
+              "explanationRu": "В этой ситуации: около, поблизости",
+              "example": {
+                "surface": "駅の近くは便利でにぎやかです。",
+                "kana": "えきのちかくはべんりでにぎやかです。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "くは"
+                  },
+                  {
+                    "surface": "便利",
+                    "reading": "べんり"
+                  },
+                  {
+                    "surface": "でにぎやかです。"
+                  }
+                ],
+                "meaningRu": "Рядом со станцией удобно и оживлённо.",
+                "audioUrl": "/audio/marugoto/70fa9b9c8aa8fbfc.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.0cb83eb998ccf45d",
+              "explanationRu": "В этой ситуации: далекий",
+              "example": {
+                "surface": "この店は安いけど遠いです。",
+                "kana": "このみせはやすいけどとおいです。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "店",
+                    "reading": "みせ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "安",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "いけど"
+                  },
+                  {
+                    "surface": "遠",
+                    "reading": "とお"
+                  },
+                  {
+                    "surface": "いです。"
+                  }
+                ],
+                "meaningRu": "Этот магазин дешёвый, но далеко.",
+                "audioUrl": "/audio/marugoto/a042af7f9c1228e2.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.4332fcbf78cc8bee",
+              "explanationRu": "В этой ситуации: удобный",
+              "example": {
+                "surface": "駅の近くは便利でにぎやかです。",
+                "kana": "えきのちかくはべんりでにぎやかです。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "くは"
+                  },
+                  {
+                    "surface": "便利",
+                    "reading": "べんり"
+                  },
+                  {
+                    "surface": "でにぎやかです。"
+                  }
+                ],
+                "meaningRu": "Рядом со станцией удобно и оживлённо.",
+                "audioUrl": "/audio/marugoto/70fa9b9c8aa8fbfc.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.1d5588c067e5d530",
+              "explanationRu": "В этой ситуации: дешевый",
+              "example": {
+                "surface": "この店は安いけど遠いです。",
+                "kana": "このみせはやすいけどとおいです。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "店",
+                    "reading": "みせ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "安",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "いけど"
+                  },
+                  {
+                    "surface": "遠",
+                    "reading": "とお"
+                  },
+                  {
+                    "surface": "いです。"
+                  }
+                ],
+                "meaningRu": "Этот магазин дешёвый, но далеко.",
+                "audioUrl": "/audio/marugoto/a042af7f9c1228e2.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.05.words.3",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.05.part.words.3",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.771306a760edcf9e",
+              "explanationRu": "В этой ситуации: станция, вокзал",
+              "example": {
+                "surface": "駅の近くは便利でにぎやかです。",
+                "kana": "えきのちかくはべんりでにぎやかです。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "近",
+                    "reading": "ちか"
+                  },
+                  {
+                    "surface": "くは"
+                  },
+                  {
+                    "surface": "便利",
+                    "reading": "べんり"
+                  },
+                  {
+                    "surface": "でにぎやかです。"
+                  }
+                ],
+                "meaningRu": "Рядом со станцией удобно и оживлённо.",
+                "audioUrl": "/audio/marugoto/70fa9b9c8aa8fbfc.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8505f761b2760b88",
+              "explanationRu": "В этой ситуации: здесь",
+              "example": {
+                "surface": "ここは住宅地で静かです。",
+                "kana": "ここはじゅうたくちでしずかです。",
+                "segments": [
+                  {
+                    "surface": "ここは"
+                  },
+                  {
+                    "surface": "住宅地",
+                    "reading": "じゅうたくち"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "静",
+                    "reading": "しず"
+                  },
+                  {
+                    "surface": "かです。"
+                  }
+                ],
+                "meaningRu": "Это жилой район, и здесь тихо.",
+                "audioUrl": "/audio/marugoto/3513098ce28ecb30.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.712e62ba4142b3c5",
+              "explanationRu": "В этой ситуации: этот",
+              "example": {
+                "surface": "この公園は広くて明るいです。",
+                "kana": "このこうえんはひろくてあかるいです。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "公園",
+                    "reading": "こうえん"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "広",
+                    "reading": "ひろ"
+                  },
+                  {
+                    "surface": "くて"
+                  },
+                  {
+                    "surface": "明",
+                    "reading": "あか"
+                  },
+                  {
+                    "surface": "るいです。"
+                  }
+                ],
+                "meaningRu": "Этот парк просторный и светлый.",
+                "audioUrl": "/audio/marugoto/6c51eefa93a00a3a.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.1818945b1c2d9aaa",
+              "explanationRu": "В этой ситуации: город",
+              "example": {
+                "surface": "この町は静かだけど便利です。",
+                "kana": "このまちはしずかだけどべんりです。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "町",
+                    "reading": "まち"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "静",
+                    "reading": "しず"
+                  },
+                  {
+                    "surface": "かだけど"
+                  },
+                  {
+                    "surface": "便利",
+                    "reading": "べんり"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "Этот город тихий, но удобный.",
+                "audioUrl": "/audio/marugoto/061965ad31e1bb12.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.56fbeb32dadec92f",
+              "explanationRu": "В этой ситуации: ресторан, лавка, магазин",
+              "example": {
+                "surface": "この店は安いけど遠いです。",
+                "kana": "このみせはやすいけどとおいです。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "店",
+                    "reading": "みせ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "安",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "いけど"
+                  },
+                  {
+                    "surface": "遠",
+                    "reading": "とお"
+                  },
+                  {
+                    "surface": "いです。"
+                  }
+                ],
+                "meaningRu": "Этот магазин дешёвый, но далеко.",
+                "audioUrl": "/audio/marugoto/a042af7f9c1228e2.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.05.grammar.76",
+      "titleRu": "～くて",
+      "introductionRu": "い-прилагательное соединяем со следующим описанием формой くて.",
+      "canDoIds": [
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.05.part.grammar.76",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.76",
+            "explanationRu": "い-прилагательное соединяем со следующим описанием формой くて.",
+            "example": {
+              "surface": "この公園は広くて明るいです。",
+              "kana": "このこうえんはひろくてあかるいです。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "公園",
+                  "reading": "こうえん"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "広",
+                  "reading": "ひろ"
+                },
+                {
+                  "surface": "くて"
+                },
+                {
+                  "surface": "明",
+                  "reading": "あか"
+                },
+                {
+                  "surface": "るいです。"
+                }
+              ],
+              "meaningRu": "Этот парк просторный и светлый.",
+              "audioUrl": "/audio/marugoto/6c51eefa93a00a3a.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Этот парк просторный и светлый."
+              },
+              {
+                "text": "公園は",
+                "explanationRu": "Смысловой фрагмент: Этот парк просторный и светлый."
+              },
+              {
+                "text": "広くて",
+                "explanationRu": "Смысловой фрагмент: Этот парк просторный и светлый."
+              },
+              {
+                "text": "明るいです",
+                "explanationRu": "い-прилагательное соединяем со следующим описанием формой くて."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.05.grammar.77",
+      "titleRu": "～で",
+      "introductionRu": "После な-прилагательного соединительная форма — で.",
+      "canDoIds": [
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.05.part.grammar.77",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.77",
+            "explanationRu": "После な-прилагательного соединительная форма — で.",
+            "example": {
+              "surface": "駅の近くは便利でにぎやかです。",
+              "kana": "えきのちかくはべんりでにぎやかです。",
+              "segments": [
+                {
+                  "surface": "駅",
+                  "reading": "えき"
+                },
+                {
+                  "surface": "の"
+                },
+                {
+                  "surface": "近",
+                  "reading": "ちか"
+                },
+                {
+                  "surface": "くは"
+                },
+                {
+                  "surface": "便利",
+                  "reading": "べんり"
+                },
+                {
+                  "surface": "でにぎやかです。"
+                }
+              ],
+              "meaningRu": "Рядом со станцией удобно и оживлённо.",
+              "audioUrl": "/audio/marugoto/70fa9b9c8aa8fbfc.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "駅の",
+                "explanationRu": "Смысловой фрагмент: Рядом со станцией удобно и оживлённо."
+              },
+              {
+                "text": "近くは",
+                "explanationRu": "Смысловой фрагмент: Рядом со станцией удобно и оживлённо."
+              },
+              {
+                "text": "便利で",
+                "explanationRu": "Смысловой фрагмент: Рядом со станцией удобно и оживлённо."
+              },
+              {
+                "text": "にぎやかです",
+                "explanationRu": "После な-прилагательного соединительная форма — で."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.05.grammar.78",
+      "titleRu": "～で",
+      "introductionRu": "После существительного で связывает два описания одного места.",
+      "canDoIds": [
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.05.part.grammar.78",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.78",
+            "explanationRu": "После существительного で связывает два описания одного места.",
+            "example": {
+              "surface": "ここは住宅地で静かです。",
+              "kana": "ここはじゅうたくちでしずかです。",
+              "segments": [
+                {
+                  "surface": "ここは"
+                },
+                {
+                  "surface": "住宅地",
+                  "reading": "じゅうたくち"
+                },
+                {
+                  "surface": "で"
+                },
+                {
+                  "surface": "静",
+                  "reading": "しず"
+                },
+                {
+                  "surface": "かです。"
+                }
+              ],
+              "meaningRu": "Это жилой район, и здесь тихо.",
+              "audioUrl": "/audio/marugoto/3513098ce28ecb30.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "ここは",
+                "explanationRu": "Смысловой фрагмент: Это жилой район, и здесь тихо."
+              },
+              {
+                "text": "住宅地で",
+                "explanationRu": "Смысловой фрагмент: Это жилой район, и здесь тихо."
+              },
+              {
+                "text": "静かです",
+                "explanationRu": "После существительного で связывает два описания одного места."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.05.grammar.79",
+      "titleRu": "～けど",
+      "introductionRu": "けど соединяет противопоставленные признаки; после い-прилагательного だ не нужно.",
+      "canDoIds": [
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.05.part.grammar.79",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.79",
+            "explanationRu": "けど соединяет противопоставленные признаки; после い-прилагательного だ не нужно.",
+            "example": {
+              "surface": "この店は安いけど遠いです。",
+              "kana": "このみせはやすいけどとおいです。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "店",
+                  "reading": "みせ"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "安",
+                  "reading": "やす"
+                },
+                {
+                  "surface": "いけど"
+                },
+                {
+                  "surface": "遠",
+                  "reading": "とお"
+                },
+                {
+                  "surface": "いです。"
+                }
+              ],
+              "meaningRu": "Этот магазин дешёвый, но далеко.",
+              "audioUrl": "/audio/marugoto/a042af7f9c1228e2.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Этот магазин дешёвый, но далеко."
+              },
+              {
+                "text": "店は",
+                "explanationRu": "Смысловой фрагмент: Этот магазин дешёвый, но далеко."
+              },
+              {
+                "text": "安いけど",
+                "explanationRu": "Смысловой фрагмент: Этот магазин дешёвый, но далеко."
+              },
+              {
+                "text": "遠いです",
+                "explanationRu": "けど соединяет противопоставленные признаки; после い-прилагательного だ не нужно."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.05.grammar.80",
+      "titleRu": "～けど",
+      "introductionRu": "После な-прилагательного перед けど используется だ.",
+      "canDoIds": [
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.05.part.grammar.80",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.80",
+            "explanationRu": "После な-прилагательного перед けど используется だ.",
+            "example": {
+              "surface": "この町は静かだけど便利です。",
+              "kana": "このまちはしずかだけどべんりです。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "町",
+                  "reading": "まち"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "静",
+                  "reading": "しず"
+                },
+                {
+                  "surface": "かだけど"
+                },
+                {
+                  "surface": "便利",
+                  "reading": "べんり"
+                },
+                {
+                  "surface": "です。"
+                }
+              ],
+              "meaningRu": "Этот город тихий, но удобный.",
+              "audioUrl": "/audio/marugoto/061965ad31e1bb12.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Этот город тихий, но удобный."
+              },
+              {
+                "text": "町は",
+                "explanationRu": "Смысловой фрагмент: Этот город тихий, но удобный."
+              },
+              {
+                "text": "静かだけど",
+                "explanationRu": "Смысловой фрагмент: Этот город тихий, но удобный."
+              },
+              {
+                "text": "便利です",
+                "explanationRu": "После な-прилагательного перед けど используется だ."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.05.grammar.81",
+      "titleRu": "～けど",
+      "introductionRu": "Существительное + だけど вводит противопоставление.",
+      "canDoIds": [
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.05.part.grammar.81",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.81",
+            "explanationRu": "Существительное + だけど вводит противопоставление.",
+            "example": {
+              "surface": "ここは小さい町だけど店が多いです。",
+              "kana": "ここはちいさいまちだけどみせがおおいです。",
+              "segments": [
+                {
+                  "surface": "ここは"
+                },
+                {
+                  "surface": "小",
+                  "reading": "ちい"
+                },
+                {
+                  "surface": "さい"
+                },
+                {
+                  "surface": "町",
+                  "reading": "まち"
+                },
+                {
+                  "surface": "だけど"
+                },
+                {
+                  "surface": "店",
+                  "reading": "みせ"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "多",
+                  "reading": "おお"
+                },
+                {
+                  "surface": "いです。"
+                }
+              ],
+              "meaningRu": "Это маленький город, но магазинов много.",
+              "audioUrl": "/audio/marugoto/d5fa0e89ff07d006.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "ここは",
+                "explanationRu": "Смысловой фрагмент: Это маленький город, но магазинов много."
+              },
+              {
+                "text": "小さい町だけど",
+                "explanationRu": "Смысловой фрагмент: Это маленький город, но магазинов много."
+              },
+              {
+                "text": "店が",
+                "explanationRu": "Смысловой фрагмент: Это маленький город, но магазинов много."
+              },
+              {
+                "text": "多いです",
+                "explanationRu": "Существительное + だけど вводит противопоставление."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.05.grammar.82",
+      "titleRu": "～や～（など）",
+      "introductionRu": "や перечисляет примеры, не утверждая, что список полный.",
+      "canDoIds": [
+        10,
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.05.part.grammar.82",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.82",
+            "explanationRu": "や перечисляет примеры, не утверждая, что список полный.",
+            "example": {
+              "surface": "近くに本屋やカフェがあります。",
+              "kana": "ちかくにほんややカフェがあります。",
+              "segments": [
+                {
+                  "surface": "近",
+                  "reading": "ちか"
+                },
+                {
+                  "surface": "くに"
+                },
+                {
+                  "surface": "本屋",
+                  "reading": "ほんや"
+                },
+                {
+                  "surface": "やカフェがあります。"
+                }
+              ],
+              "meaningRu": "Поблизости есть книжный магазин, кафе и другие заведения.",
+              "audioUrl": "/audio/marugoto/becdfb5486da2c77.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "近くに",
+                "explanationRu": "Смысловой фрагмент: Поблизости есть книжный магазин, кафе и другие заведения."
+              },
+              {
+                "text": "本屋や",
+                "explanationRu": "Смысловой фрагмент: Поблизости есть книжный магазин, кафе и другие заведения."
+              },
+              {
+                "text": "カフェが",
+                "explanationRu": "Смысловой фрагмент: Поблизости есть книжный магазин, кафе и другие заведения."
+              },
+              {
+                "text": "あります",
+                "explanationRu": "や перечисляет примеры, не утверждая, что список полный."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.10.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        10
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.10.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.10",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "На условной карте станция в центре, парк справа от неё. Посоветуйте другу парк и объясните расположение.",
+              "canDoIds": [
+                10
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "На условной карте станция в центре, парк справа от неё. Посоветуйте другу парк и объясните расположение.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "駅の右に公園があります。広くて、きれいですよ。",
+                "kana": "えきのみぎにこうえんがあります。ひろくて、きれいですよ。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "右",
+                    "reading": "みぎ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "公園",
+                    "reading": "こうえん"
+                  },
+                  {
+                    "surface": "があります。"
+                  },
+                  {
+                    "surface": "広",
+                    "reading": "ひろ"
+                  },
+                  {
+                    "surface": "くて、きれいですよ。"
+                  }
+                ],
+                "meaningRu": "Справа от станции есть парк. Он просторный и красивый.",
+                "audioUrl": "/audio/marugoto/64099e33e168b001.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: На условной карте станция в центре, парк справа от неё. Посоветуйте другу парк и объясните расположение.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.11.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        11
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.11.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.11",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Друг спрашивает про кафе слева от станции. Опишите достоинство и то, что нужно учесть.",
+              "canDoIds": [
+                11
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Друг спрашивает про кафе слева от станции. Опишите достоинство и то, что нужно учесть.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "駅の左のカフェは静かです。でも、日曜日は休みです。",
+                "kana": "えきのひだりのカフェはしずかです。でも、にちようびはやすみです。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "左",
+                    "reading": "ひだり"
+                  },
+                  {
+                    "surface": "のカフェは"
+                  },
+                  {
+                    "surface": "静",
+                    "reading": "しず"
+                  },
+                  {
+                    "surface": "かです。でも、"
+                  },
+                  {
+                    "surface": "日曜日",
+                    "reading": "にちようび"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "休",
+                    "reading": "やす"
+                  },
+                  {
+                    "surface": "みです。"
+                  }
+                ],
+                "meaningRu": "Кафе слева от станции тихое. Но в воскресенье оно закрыто.",
+                "audioUrl": "/audio/marugoto/b662dc4af2fcd1db.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Друг спрашивает про кафе слева от станции. Опишите достоинство и то, что нужно учесть.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

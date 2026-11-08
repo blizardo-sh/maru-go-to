@@ -1,3 +1,4 @@
+import { wordTarget } from './meanings';
 import type { Course, Word } from './types';
 import type { GuidedLesson, LearningStep, LearningRouteState } from './learning';
 import { catalogFor, defaultCatalog, type CourseCatalog } from './catalog';
@@ -22,14 +23,14 @@ export function confusableLearningWords(left: Word, right: Word, catalog = defau
 
 // Stable across GET/reload and independent of the learner's SRS state.
 export function learningWordChoices(course: Course, route: GuidedLesson, step: Extract<LearningStep, { kind: 'word-practice' }>): string[] {
-  const target = course.words.find(word => word.id === step.wordId);
+  const target = wordTarget(course, step.wordId);
   if (!target || !target.lessonIds.includes(route.lessonId) || target.reviewStatus === 'draft') throw new Error('Missing quiz target.');
   const catalog = catalogFor(course);
   const wrongIds = catalog.quiz.choices[target.id];
   if (wrongIds?.length !== 3) throw new Error(`Missing prepared quiz choices: ${route.lessonId}/${step.wordId}`);
   const selected = [target];
   for (const id of wrongIds) {
-    const candidate = course.words.find(word => word.id === id);
+    const candidate = wordTarget(course, id);
     if (!candidate || candidate.reviewStatus === 'draft' || candidate.kind !== target.kind || selected.some(word => confusableLearningWords(word, candidate, catalog))) throw new Error(`Invalid prepared quiz choice: ${step.wordId}/${id}`);
     selected.push(candidate);
   }
@@ -42,12 +43,12 @@ export function learningWordChoices(course: Course, route: GuidedLesson, step: E
 
 // B uses only introduced words from this route; no future distractor is substituted in the browser.
 export function recallWordChoices(course: Course, route: GuidedLesson, step: Extract<LearningStep, { kind: 'word-practice' }>, state: LearningRouteState): string[] {
-  const target = course.words.find(word => word.id === step.wordId)!;
+  const target = wordTarget(course, step.wordId)!;
   const known = new Set(route.goals.flatMap(goal => goal.parts.flatMap(part => part.words.filter(word => state.completedStepIds.includes(`${part.id}:intro:${word.wordId}`)).map(word => word.wordId))));
   const catalog = catalogFor(course), selected = [target];
   const candidates = [...(catalog.quiz.choices[target.id] ?? []), ...known];
   for (const id of candidates) {
-    const word = course.words.find(word => word.id === id);
+    const word = wordTarget(course, id);
     if (known.has(id) && word && word.reviewStatus !== 'draft' && word.kind === target.kind && !selected.some(other => confusableLearningWords(other, word, catalog))) selected.push(word);
     if (selected.length === 4) break;
   }

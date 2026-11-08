@@ -1,0 +1,74 @@
+[
+  {
+    "kana": "すずき",
+    "replacementRu": "Судзуки (японская фамилия)",
+    "reason": "Surname in the lesson self-introduction; not an adjective.",
+    "originalRows": [],
+    "status": "editorial-correction-awaiting-human-review"
+  },
+  {
+    "kana": "つれていきます",
+    "replacementRu": "брать кого-либо с собой",
+    "reason": "連れて行きます denotes taking someone along, not fatigue.",
+    "originalRows": [],
+    "status": "editorial-correction-awaiting-human-review"
+  },
+  {
+    "kana": "どれ",
+    "replacementRu": "который (из трёх и более)",
+    "reason": "Interrogative selection among three or more; two-way choice uses どちら.",
+    "originalRows": [
+      {
+        "entry": "どれ",
+        "meaningRu": "который (из 2-х)",
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesVocabularyIndex2_RU.pdf",
+        "page": 8,
+        "row": 21
+      },
+      {
+        "entry": "どれ",
+        "meaningRu": "который из 3-х и более",
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_c/MarugotoElementary1CompetencesVocabularyIndex2_RU.pdf",
+        "page": 12,
+        "row": 17
+      },
+      {
+        "entry": "どれ",
+        "meaningRu": "который (из множества)",
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateVocabularyIndex2_RU.pdf",
+        "page": 8,
+        "row": 9
+      }
+    ],
+    "status": "editorial-correction-awaiting-human-review"
+  },
+  {
+    "kana": "にじょうじょう",
+    "replacementRu": "замок Нидзё",
+    "reason": "二条城 is the castle name.",
+    "originalRows": [
+      {
+        "entry": "にじょうじょう",
+        "meaningRu": "замок Нидзё",
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesVocabularyIndex2_RU.pdf",
+        "page": 16,
+        "row": 14
+      },
+      {
+        "entry": "にじょうじょう",
+        "meaningRu": "Храм Нидзё",
+        "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_c/MarugotoElementary2CompetencesVocabularyIndex2_RU.pdf",
+        "page": 20,
+        "row": 5
+      }
+    ],
+    "status": "editorial-correction-awaiting-human-review"
+  },
+  {
+    "kana": "まこと",
+    "replacementRu": "Макото (японское личное имя)",
+    "reason": "Personal name in the source context.",
+    "originalRows": [],
+    "status": "editorial-correction-awaiting-human-review"
+  }
+]

@@ -1,0 +1,635 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.14",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Искусство и впечатления",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.14.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        39,
+        40
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.14.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.6b76b4253aac23aa",
+              "explanationRu": "В этой ситуации: знакомство(знакомить, рекомендовать, представлять)",
+              "example": {
+                "surface": "町を紹介するために地図を作りました。",
+                "kana": "まちをしょうかいするためにちずをつくりました。",
+                "segments": [
+                  {
+                    "surface": "町",
+                    "reading": "まち"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "紹介",
+                    "reading": "しょうかい"
+                  },
+                  {
+                    "surface": "するために"
+                  },
+                  {
+                    "surface": "地図",
+                    "reading": "ちず"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "りました。"
+                  }
+                ],
+                "meaningRu": "Я сделал карту, чтобы представить город.",
+                "audioUrl": "/audio/marugoto/390c377d383dbbdf.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.90ddd288b16c56aa",
+              "explanationRu": "В этой ситуации: книга, свиток",
+              "example": {
+                "surface": "町を紹介するために地図を作りました。",
+                "kana": "まちをしょうかいするためにちずをつくりました。",
+                "segments": [
+                  {
+                    "surface": "町",
+                    "reading": "まち"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "紹介",
+                    "reading": "しょうかい"
+                  },
+                  {
+                    "surface": "するために"
+                  },
+                  {
+                    "surface": "地図",
+                    "reading": "ちず"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "りました。"
+                  }
+                ],
+                "meaningRu": "Я сделал карту, чтобы представить город.",
+                "audioUrl": "/audio/marugoto/390c377d383dbbdf.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.200f0d9e6061befd",
+              "explanationRu": "В этой ситуации: этаж",
+              "example": {
+                "surface": "町を紹介するために地図を作りました。",
+                "kana": "まちをしょうかいするためにちずをつくりました。",
+                "segments": [
+                  {
+                    "surface": "町",
+                    "reading": "まち"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "紹介",
+                    "reading": "しょうかい"
+                  },
+                  {
+                    "surface": "するために"
+                  },
+                  {
+                    "surface": "地図",
+                    "reading": "ちず"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "りました。"
+                  }
+                ],
+                "meaningRu": "Я сделал карту, чтобы представить город.",
+                "audioUrl": "/audio/marugoto/390c377d383dbbdf.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.6daee40f69ee475d",
+              "explanationRu": "В этой ситуации: итак",
+              "example": {
+                "surface": "入口では写真を撮ってもいいです。でも、この部屋では撮影してはいけません。",
+                "kana": "いりぐちではしゃしんをとってもいいです。でも、このへやではさつえいしてはいけません。",
+                "segments": [
+                  {
+                    "surface": "入口",
+                    "reading": "いりぐち"
+                  },
+                  {
+                    "surface": "では"
+                  },
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "撮",
+                    "reading": "と"
+                  },
+                  {
+                    "surface": "ってもいいです。でも、この"
+                  },
+                  {
+                    "surface": "部屋",
+                    "reading": "へや"
+                  },
+                  {
+                    "surface": "では"
+                  },
+                  {
+                    "surface": "撮影",
+                    "reading": "さつえい"
+                  },
+                  {
+                    "surface": "してはいけません。"
+                  }
+                ],
+                "meaningRu": "У входа фотографировать можно. Но в этой комнате съёмка запрещена.",
+                "audioUrl": "/audio/marugoto/68d14672b9b6e2ef.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.d11df0d6e4fe534e",
+              "explanationRu": "В этой ситуации: сад, двор",
+              "example": {
+                "surface": "この庭は有名だそうです。",
+                "kana": "このにわはゆうめいだそうです。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "庭",
+                    "reading": "にわ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "有名",
+                    "reading": "ゆうめい"
+                  },
+                  {
+                    "surface": "だそうです。"
+                  }
+                ],
+                "meaningRu": "Говорят, этот сад знаменит.",
+                "audioUrl": "/audio/marugoto/b2d7e0496eb811b5.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.14.grammar.188",
+      "titleRu": "～そうだ",
+      "introductionRu": "Простая форма + そうです передаёт полученную информацию; после существительного сохраняем だ.",
+      "canDoIds": [
+        39,
+        40
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.14.part.grammar.188",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.188",
+            "explanationRu": "Простая форма + そうです передаёт полученную информацию; после существительного сохраняем だ.",
+            "example": {
+              "surface": "この庭は有名だそうです。",
+              "kana": "このにわはゆうめいだそうです。",
+              "segments": [
+                {
+                  "surface": "この"
+                },
+                {
+                  "surface": "庭",
+                  "reading": "にわ"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "有名",
+                  "reading": "ゆうめい"
+                },
+                {
+                  "surface": "だそうです。"
+                }
+              ],
+              "meaningRu": "Говорят, этот сад знаменит.",
+              "audioUrl": "/audio/marugoto/b2d7e0496eb811b5.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "この",
+                "explanationRu": "Смысловой фрагмент: Говорят, этот сад знаменит."
+              },
+              {
+                "text": "庭は",
+                "explanationRu": "Смысловой фрагмент: Говорят, этот сад знаменит."
+              },
+              {
+                "text": "有名だそうです",
+                "explanationRu": "Простая форма + そうです передаёт полученную информацию; после существительного сохраняем だ."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.14.grammar.189",
+      "titleRu": "～ために",
+      "introductionRu": "Словарная форма + ために выражает осознанную цель действия.",
+      "canDoIds": [
+        39,
+        40
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.14.part.grammar.189",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.189",
+            "explanationRu": "Словарная форма + ために выражает осознанную цель действия.",
+            "example": {
+              "surface": "町を紹介するために地図を作りました。",
+              "kana": "まちをしょうかいするためにちずをつくりました。",
+              "segments": [
+                {
+                  "surface": "町",
+                  "reading": "まち"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "紹介",
+                  "reading": "しょうかい"
+                },
+                {
+                  "surface": "するために"
+                },
+                {
+                  "surface": "地図",
+                  "reading": "ちず"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "作",
+                  "reading": "つく"
+                },
+                {
+                  "surface": "りました。"
+                }
+              ],
+              "meaningRu": "Я сделал карту, чтобы представить город.",
+              "audioUrl": "/audio/marugoto/390c377d383dbbdf.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "町を",
+                "explanationRu": "Смысловой фрагмент: Я сделал карту, чтобы представить город."
+              },
+              {
+                "text": "紹介するために",
+                "explanationRu": "Смысловой фрагмент: Я сделал карту, чтобы представить город."
+              },
+              {
+                "text": "地図を",
+                "explanationRu": "Смысловой фрагмент: Я сделал карту, чтобы представить город."
+              },
+              {
+                "text": "作りました",
+                "explanationRu": "Словарная форма + ために выражает осознанную цель действия."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.14.grammar.190",
+      "titleRu": "～のために",
+      "introductionRu": "Существительное + のために обозначает того, для чьей пользы что-то сделано.",
+      "canDoIds": [
+        39,
+        40
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.14.part.grammar.190",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.190",
+            "explanationRu": "Существительное + のために обозначает того, для чьей пользы что-то сделано.",
+            "example": {
+              "surface": "旅行者のために案内があります。",
+              "kana": "りょこうしゃのためにあんないがあります。",
+              "segments": [
+                {
+                  "surface": "旅行者",
+                  "reading": "りょこうしゃ"
+                },
+                {
+                  "surface": "のために"
+                },
+                {
+                  "surface": "案内",
+                  "reading": "あんない"
+                },
+                {
+                  "surface": "があります。"
+                }
+              ],
+              "meaningRu": "Для путешественников есть справочная информация.",
+              "audioUrl": "/audio/marugoto/4f83a6b66bff25fe.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "旅行者のために",
+                "explanationRu": "Смысловой фрагмент: Для путешественников есть справочная информация."
+              },
+              {
+                "text": "案内が",
+                "explanationRu": "Смысловой фрагмент: Для путешественников есть справочная информация."
+              },
+              {
+                "text": "あります",
+                "explanationRu": "Существительное + のために обозначает того, для чьей пользы что-то сделано."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.14.grammar.191",
+      "titleRu": "～てある",
+      "introductionRu": "てある описывает результат намеренного действия, полезный сейчас.",
+      "canDoIds": [
+        39,
+        40
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.14.part.grammar.191",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.191",
+            "explanationRu": "てある описывает результат намеренного действия, полезный сейчас.",
+            "example": {
+              "surface": "入口に地図が貼ってあります。",
+              "kana": "いりぐちにちずがはってあります。",
+              "segments": [
+                {
+                  "surface": "入口",
+                  "reading": "いりぐち"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "地図",
+                  "reading": "ちず"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "貼",
+                  "reading": "は"
+                },
+                {
+                  "surface": "ってあります。"
+                }
+              ],
+              "meaningRu": "У входа вывешена карта.",
+              "audioUrl": "/audio/marugoto/fcacd5c7d0a3cc94.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "入口に",
+                "explanationRu": "Смысловой фрагмент: У входа вывешена карта."
+              },
+              {
+                "text": "地図が",
+                "explanationRu": "Смысловой фрагмент: У входа вывешена карта."
+              },
+              {
+                "text": "貼ってあります",
+                "explanationRu": "てある описывает результат намеренного действия, полезный сейчас."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.39.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        39
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.39.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.39",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Передайте другу краткую информацию из музейной подписи: эта карта самая старая в городе.",
+              "canDoIds": [
+                39
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Передайте другу краткую информацию из музейной подписи: эта карта самая старая в городе.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "この地図は町で一番古いそうです。旅行する人のために作られました。",
+                "kana": "このちずはまちでいちばんふるいそうです。りょこうするひとのためにつくられました。",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "地図",
+                    "reading": "ちず"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "町",
+                    "reading": "まち"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "一番",
+                    "reading": "いちばん"
+                  },
+                  {
+                    "surface": "古",
+                    "reading": "ふる"
+                  },
+                  {
+                    "surface": "いそうです。"
+                  },
+                  {
+                    "surface": "旅行",
+                    "reading": "りょこう"
+                  },
+                  {
+                    "surface": "する"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "のために"
+                  },
+                  {
+                    "surface": "作",
+                    "reading": "つく"
+                  },
+                  {
+                    "surface": "られました。"
+                  }
+                ],
+                "meaningRu": "Говорят, это самая старая карта города. Её сделали для путешественников.",
+                "audioUrl": "/audio/marugoto/82d1db59f3e4a773.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Передайте другу краткую информацию из музейной подписи: эта карта самая старая в городе.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.40.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        40
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.40.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.40",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Обсудите музейные правила: где можно фотографировать, где нельзя.",
+              "canDoIds": [
+                40
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Обсудите музейные правила: где можно фотографировать, где нельзя.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "入口では写真を撮ってもいいです。でも、この部屋では撮影してはいけません。",
+                "kana": "いりぐちではしゃしんをとってもいいです。でも、このへやではさつえいしてはいけません。",
+                "segments": [
+                  {
+                    "surface": "入口",
+                    "reading": "いりぐち"
+                  },
+                  {
+                    "surface": "では"
+                  },
+                  {
+                    "surface": "写真",
+                    "reading": "しゃしん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "撮",
+                    "reading": "と"
+                  },
+                  {
+                    "surface": "ってもいいです。でも、この"
+                  },
+                  {
+                    "surface": "部屋",
+                    "reading": "へや"
+                  },
+                  {
+                    "surface": "では"
+                  },
+                  {
+                    "surface": "撮影",
+                    "reading": "さつえい"
+                  },
+                  {
+                    "surface": "してはいけません。"
+                  }
+                ],
+                "meaningRu": "У входа фотографировать можно. Но в этой комнате съёмка запрещена.",
+                "audioUrl": "/audio/marugoto/68d14672b9b6e2ef.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Обсудите музейные правила: где можно фотографировать, где нельзя.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

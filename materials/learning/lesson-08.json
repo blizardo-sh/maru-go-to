@@ -1193,7 +1193,7 @@
         ],
         "surface": "おふろ",
         "kana": "おふろ",
-        "meaningRu": "ванная",
+        "meaningRu": "ванная; ванна; купание",
         "segments": [
           {
             "surface": "おふろ"
@@ -1218,6 +1218,13 @@
             "row": 1,
             "entry": "おふろ（ふろ）",
             "label": "Словарь · урок 8"
+          },
+          {
+            "part": "katsudoo",
+            "url": "https://marugoto.jpf.go.jp/assets/docs/download/starter_a/MarugotoStarterActivitiesVocabularyIndex2_EN.pdf",
+            "entry": "おふろ",
+            "label": "Словарь EN · урок 8 · уточнение русского перевода",
+            "page": 4
           }
         ],
         "audioUrl": "/audio/ebd1ddec2c74aab86017.m4a"

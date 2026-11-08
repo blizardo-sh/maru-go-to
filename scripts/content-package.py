@@ -33,7 +33,7 @@ def asset_path(value):
 
 
 def manifest(bundle):
-    if not isinstance(bundle, dict) or bundle.get('formatVersion') != 1 or not isinstance(bundle.get('assets'), list):
+    if not isinstance(bundle, dict) or bundle.get('formatVersion') not in (1, 2, 3) or not isinstance(bundle.get('assets'), list):
         raise ValueError('Invalid content bundle')
     if len(bundle['assets']) > MAX_FILES:
         raise ValueError('Too many media files')

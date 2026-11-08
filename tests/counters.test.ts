@@ -87,14 +87,16 @@ test('qualifying samples reach millions gradually and stop at the final tier', (
   }
 });
 
-test('returning a failed card preserves the deck size and updates its acknowledged version', () => {
+test('learning retries preserve the deck; scheduled cards wait until their due time', () => {
   const word = course.words[0]!;
   const cards: ReviewItem[] = Array.from({ length: 5 }, (_, i) => ({ id: String(i), targetId: word.id, mode: 'ja-ru', word, version: 0, due: '2026-10-22T00:00:00Z', isNew: true }));
-  const result = { attemptId: 'attempt', status: 'scheduled' as const, version: 1, nextDue: '2026-10-23T00:00:00Z' };
+  const result = { attemptId: 'attempt', status: 'learning' as const, version: 1, nextDue: '2026-10-23T00:00:00Z' };
   const failed = advanceDeck(cards, true, result);
   expect(failed.map(card => card.id)).toEqual(['1', '2', '3', '0', '4']);
   expect(failed[3]).toMatchObject({ version: 1, due: result.nextDue, isNew: false });
   expect(advanceDeck(cards, false)).toHaveLength(4); expect(cards).toHaveLength(5);
   expect(advanceDeck([cards[0]!], true, result)).toHaveLength(1);
   expect(advanceDeck([], true)).toEqual([]);
+  expect(advanceDeck(cards, true, {...result,status:'scheduled'}).map(card=>card.id)).toEqual(['1','2','3','4']);
+  expect(advanceDeck([cards[0]!], true, {...result,status:'scheduled'})).toEqual([]);
 });

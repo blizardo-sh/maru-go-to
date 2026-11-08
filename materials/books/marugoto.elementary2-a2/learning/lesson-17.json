@@ -1,0 +1,731 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.17",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Человек, которым восхищаюсь",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.17.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        45,
+        46,
+        47
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.17.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.1ec2a90c9deb266e",
+              "explanationRu": "В этой ситуации: университет",
+              "example": {
+                "surface": "大学を出てから歌手になりました。",
+                "kana": "だいがくをでてからかしゅになりました。",
+                "segments": [
+                  {
+                    "surface": "大学",
+                    "reading": "だいがく"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "出",
+                    "reading": "で"
+                  },
+                  {
+                    "surface": "てから"
+                  },
+                  {
+                    "surface": "歌手",
+                    "reading": "かしゅ"
+                  },
+                  {
+                    "surface": "になりました。"
+                  }
+                ],
+                "meaningRu": "После университета он стал певцом.",
+                "audioUrl": "/audio/marugoto/f0d7825ac0c4a87a.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.b3f1605aad98c3c4",
+              "explanationRu": "В этой ситуации: актер, актриса",
+              "example": {
+                "surface": "あの俳優は新しい映画に出るそうです。",
+                "kana": "あのはいゆうはあたらしいえいがにでるそうです。",
+                "segments": [
+                  {
+                    "surface": "あの"
+                  },
+                  {
+                    "surface": "俳優",
+                    "reading": "はいゆう"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "新",
+                    "reading": "あたら"
+                  },
+                  {
+                    "surface": "しい"
+                  },
+                  {
+                    "surface": "映画",
+                    "reading": "えいが"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "出",
+                    "reading": "で"
+                  },
+                  {
+                    "surface": "るそうです。"
+                  }
+                ],
+                "meaningRu": "Говорят, тот актёр снимется в новом фильме.",
+                "audioUrl": "/audio/marugoto/d777b8076db38dd2.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.32c8a54063fa4510",
+              "explanationRu": "В этой ситуации: певец",
+              "example": {
+                "surface": "大学を出てから歌手になりました。",
+                "kana": "だいがくをでてからかしゅになりました。",
+                "segments": [
+                  {
+                    "surface": "大学",
+                    "reading": "だいがく"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "出",
+                    "reading": "で"
+                  },
+                  {
+                    "surface": "てから"
+                  },
+                  {
+                    "surface": "歌手",
+                    "reading": "かしゅ"
+                  },
+                  {
+                    "surface": "になりました。"
+                  }
+                ],
+                "meaningRu": "После университета он стал певцом.",
+                "audioUrl": "/audio/marugoto/f0d7825ac0c4a87a.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.17.grammar.200",
+      "titleRu": "～そうだ",
+      "introductionRu": "Простая форма + そうです передаёт услышанную новость.",
+      "canDoIds": [
+        45,
+        46,
+        47
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.17.part.grammar.200",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.200",
+            "explanationRu": "Простая форма + そうです передаёт услышанную новость.",
+            "example": {
+              "surface": "あの俳優は新しい映画に出るそうです。",
+              "kana": "あのはいゆうはあたらしいえいがにでるそうです。",
+              "segments": [
+                {
+                  "surface": "あの"
+                },
+                {
+                  "surface": "俳優",
+                  "reading": "はいゆう"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "新",
+                  "reading": "あたら"
+                },
+                {
+                  "surface": "しい"
+                },
+                {
+                  "surface": "映画",
+                  "reading": "えいが"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "出",
+                  "reading": "で"
+                },
+                {
+                  "surface": "るそうです。"
+                }
+              ],
+              "meaningRu": "Говорят, тот актёр снимется в новом фильме.",
+              "audioUrl": "/audio/marugoto/d777b8076db38dd2.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "あの",
+                "explanationRu": "Смысловой фрагмент: Говорят, тот актёр снимется в новом фильме."
+              },
+              {
+                "text": "俳優は",
+                "explanationRu": "Смысловой фрагмент: Говорят, тот актёр снимется в новом фильме."
+              },
+              {
+                "text": "新しい映画に",
+                "explanationRu": "Смысловой фрагмент: Говорят, тот актёр снимется в новом фильме."
+              },
+              {
+                "text": "出るそうです",
+                "explanationRu": "Простая форма + そうです передаёт услышанную новость."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.17.grammar.201",
+      "titleRu": "～てから",
+      "introductionRu": "てから подчёркивает начало следующего этапа после предыдущего события.",
+      "canDoIds": [
+        45,
+        46,
+        47
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.17.part.grammar.201",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.201",
+            "explanationRu": "てから подчёркивает начало следующего этапа после предыдущего события.",
+            "example": {
+              "surface": "大学を出てから歌手になりました。",
+              "kana": "だいがくをでてからかしゅになりました。",
+              "segments": [
+                {
+                  "surface": "大学",
+                  "reading": "だいがく"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "出",
+                  "reading": "で"
+                },
+                {
+                  "surface": "てから"
+                },
+                {
+                  "surface": "歌手",
+                  "reading": "かしゅ"
+                },
+                {
+                  "surface": "になりました。"
+                }
+              ],
+              "meaningRu": "После университета он стал певцом.",
+              "audioUrl": "/audio/marugoto/f0d7825ac0c4a87a.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "大学を",
+                "explanationRu": "Смысловой фрагмент: После университета он стал певцом."
+              },
+              {
+                "text": "出てから",
+                "explanationRu": "Смысловой фрагмент: После университета он стал певцом."
+              },
+              {
+                "text": "歌手に",
+                "explanationRu": "Смысловой фрагмент: После университета он стал певцом."
+              },
+              {
+                "text": "なりました",
+                "explanationRu": "てから подчёркивает начало следующего этапа после предыдущего события."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.17.grammar.202",
+      "titleRu": "～てから",
+      "introductionRu": "てから вместе с ずっと задаёт начало продолжающегося периода.",
+      "canDoIds": [
+        45,
+        46,
+        47
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.17.part.grammar.202",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.202",
+            "explanationRu": "てから вместе с ずっと задаёт начало продолжающегося периода.",
+            "example": {
+              "surface": "歌手になってからずっと忙しいです。",
+              "kana": "かしゅになってからずっといそがしいです。",
+              "segments": [
+                {
+                  "surface": "歌手",
+                  "reading": "かしゅ"
+                },
+                {
+                  "surface": "になってからずっと"
+                },
+                {
+                  "surface": "忙",
+                  "reading": "いそが"
+                },
+                {
+                  "surface": "しいです。"
+                }
+              ],
+              "meaningRu": "С тех пор как он стал певцом, он всё время занят.",
+              "audioUrl": "/audio/marugoto/6276d722a626353b.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "歌手に",
+                "explanationRu": "Смысловой фрагмент: С тех пор как он стал певцом, он всё время занят."
+              },
+              {
+                "text": "なってから",
+                "explanationRu": "Смысловой фрагмент: С тех пор как он стал певцом, он всё время занят."
+              },
+              {
+                "text": "ずっと",
+                "explanationRu": "Смысловой фрагмент: С тех пор как он стал певцом, он всё время занят."
+              },
+              {
+                "text": "忙しいです",
+                "explanationRu": "てから вместе с ずっと задаёт начало продолжающегося периода."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.17.grammar.203",
+      "titleRu": "～まで",
+      "introductionRu": "まで после глагола определяет конечную временную границу.",
+      "canDoIds": [
+        45,
+        46,
+        47
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.17.part.grammar.203",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.203",
+            "explanationRu": "まで после глагола определяет конечную временную границу.",
+            "example": {
+              "surface": "引退するまで歌い続けました。",
+              "kana": "いんたいするまでうたいつづけました。",
+              "segments": [
+                {
+                  "surface": "引退",
+                  "reading": "いんたい"
+                },
+                {
+                  "surface": "するまで"
+                },
+                {
+                  "surface": "歌",
+                  "reading": "うた"
+                },
+                {
+                  "surface": "い"
+                },
+                {
+                  "surface": "続",
+                  "reading": "つづ"
+                },
+                {
+                  "surface": "けました。"
+                }
+              ],
+              "meaningRu": "Он продолжал петь до выхода на пенсию.",
+              "audioUrl": "/audio/marugoto/5594ffbbbc826383.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "引退するまで",
+                "explanationRu": "Смысловой фрагмент: Он продолжал петь до выхода на пенсию."
+              },
+              {
+                "text": "歌い続けました",
+                "explanationRu": "まで после глагола определяет конечную временную границу."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.17.grammar.204",
+      "titleRu": "～かもしれない",
+      "introductionRu": "かもしれない выражает предположение; после существительного だ не ставится.",
+      "canDoIds": [
+        45,
+        46,
+        47
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.17.part.grammar.204",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.204",
+            "explanationRu": "かもしれない выражает предположение; после существительного だ не ставится.",
+            "example": {
+              "surface": "あの人は作家かもしれません。",
+              "kana": "あのひとはさっかかもしれません。",
+              "segments": [
+                {
+                  "surface": "あの"
+                },
+                {
+                  "surface": "人",
+                  "reading": "ひと"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "作家",
+                  "reading": "さっか"
+                },
+                {
+                  "surface": "かもしれません。"
+                }
+              ],
+              "meaningRu": "Возможно, тот человек — писатель.",
+              "audioUrl": "/audio/marugoto/97de62a87088dd7f.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "あの人は",
+                "explanationRu": "Смысловой фрагмент: Возможно, тот человек — писатель."
+              },
+              {
+                "text": "作家かも",
+                "explanationRu": "Смысловой фрагмент: Возможно, тот человек — писатель."
+              },
+              {
+                "text": "しれません",
+                "explanationRu": "かもしれない выражает предположение; после существительного だ не ставится."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.45.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        45
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.45.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.45",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Сообщите новость об известном человеке, отметив, что вы её услышали.",
+              "canDoIds": [
+                45
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Сообщите новость об известном человеке, отметив, что вы её услышали.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "あの歌手は来月、新しい歌を出すそうです。とても楽しみです。",
+                "kana": "あのかしゅはらいげつ、あたらしいうたをだすそうです。とてもたのしみです。",
+                "segments": [
+                  {
+                    "surface": "あの"
+                  },
+                  {
+                    "surface": "歌手",
+                    "reading": "かしゅ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "来月",
+                    "reading": "らいげつ"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "新",
+                    "reading": "あたら"
+                  },
+                  {
+                    "surface": "しい"
+                  },
+                  {
+                    "surface": "歌",
+                    "reading": "うた"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "出",
+                    "reading": "だ"
+                  },
+                  {
+                    "surface": "すそうです。とても"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しみです。"
+                  }
+                ],
+                "meaningRu": "Говорят, тот певец выпустит новую песню в следующем месяце. Я очень жду.",
+                "audioUrl": "/audio/marugoto/b728dc271d37690c.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Сообщите новость об известном человеке, отметив, что вы её услышали.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.46.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        46
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.46.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.46",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите, как вы заинтересовались творчеством известного человека.",
+              "canDoIds": [
+                46
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите, как вы заинтересовались творчеством известного человека.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "友達に歌を教えてもらってから、好きになりました。今もよく聞きます。",
+                "kana": "ともだちにうたをおしえてもらってから、すきになりました。いまもよくききます。",
+                "segments": [
+                  {
+                    "surface": "友達",
+                    "reading": "ともだち"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "歌",
+                    "reading": "うた"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "教",
+                    "reading": "おし"
+                  },
+                  {
+                    "surface": "えてもらってから、"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きになりました。"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "もよく"
+                  },
+                  {
+                    "surface": "聞",
+                    "reading": "き"
+                  },
+                  {
+                    "surface": "きます。"
+                  }
+                ],
+                "meaningRu": "После того как друг познакомил меня с песней, мне понравилось. Я и сейчас часто слушаю.",
+                "audioUrl": "/audio/marugoto/34077527882dbed4.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите, как вы заинтересовались творчеством известного человека.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.47.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        47
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.47.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.47",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "По плану «кто → чем известен → почему интересен» представьте известного человека своей страны.",
+              "canDoIds": [
+                47
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "По плану «кто → чем известен → почему интересен» представьте известного человека своей страны.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "私の国で有名な作家です。子どものために本を書きました。今も人気があります。",
+                "kana": "わたしのくにでゆうめいなさっかです。こどものためにほんをかきました。いまもにんきがあります。",
+                "segments": [
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "国",
+                    "reading": "くに"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "有名",
+                    "reading": "ゆうめい"
+                  },
+                  {
+                    "surface": "な"
+                  },
+                  {
+                    "surface": "作家",
+                    "reading": "さっか"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "子",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "どものために"
+                  },
+                  {
+                    "surface": "本",
+                    "reading": "ほん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "書",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "きました。"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "人気",
+                    "reading": "にんき"
+                  },
+                  {
+                    "surface": "があります。"
+                  }
+                ],
+                "meaningRu": "Это известный писатель моей страны. Он писал книги для детей. Он и сейчас популярен.",
+                "audioUrl": "/audio/marugoto/092f2408cfad8f29.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: По плану «кто → чем известен → почему интересен» представьте известного человека своей страны.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -72,6 +72,21 @@ if 'verify-publication' in args and os.environ.get('FAIL_VERIFY')=='1':sys.exit(
         self.assertLess(verify, publish)
         self.assertIn('CONTENT_MEDIA_ROOT=/package/media', commands[verify])
         self.assertIn('/package/bundle.json', commands[publish])
+        # A second Bun process inside the live API exceeds its shared 384 MiB limit.
+        for command in [commands[verify], commands[publish]]:
+            self.assertIn('run', command)
+            self.assertIn('--no-deps', command)
+            self.assertNotIn('exec', command)
+
+    def test_rollback_uses_a_separate_container(self):
+        result = subprocess.run(['bash', str(self.script), 'rollback', 'a' * 64],
+                                env=self.env, capture_output=True, timeout=10)
+        self.assertEqual(result.returncode, 0, result.stderr.decode())
+        commands = [json.loads(line) for line in self.log.read_text().splitlines()]
+        command = next(command for command in commands if 'rollback' in command)
+        self.assertIn('run', command)
+        self.assertIn('--no-deps', command)
+        self.assertNotIn('exec', command)
 
     def test_failed_validation_never_installs_or_activates(self):
         self.env['FAIL_VERIFY'] = '1'

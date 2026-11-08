@@ -1,0 +1,637 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.10",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Пожелания и праздники",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.10.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        29,
+        30
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.10.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.aab7f6fff76bb21e",
+              "explanationRu": "В этой ситуации: желать",
+              "example": {
+                "surface": "家族が元気でいるように願います。",
+                "kana": "かぞくがげんきでいるようにねがいます。",
+                "segments": [
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "元気",
+                    "reading": "げんき"
+                  },
+                  {
+                    "surface": "でいるように"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "います。"
+                  }
+                ],
+                "meaningRu": "Я желаю, чтобы семья была здорова.",
+                "audioUrl": "/audio/marugoto/7d3ec4dcbb070ff9.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.b1e1350ea59ec006",
+              "explanationRu": "В этой ситуации: просьба, желание",
+              "example": {
+                "surface": "家族が元気でいるように願います。",
+                "kana": "かぞくがげんきでいるようにねがいます。",
+                "segments": [
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "元気",
+                    "reading": "げんき"
+                  },
+                  {
+                    "surface": "でいるように"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "います。"
+                  }
+                ],
+                "meaningRu": "Я желаю, чтобы семья была здорова.",
+                "audioUrl": "/audio/marugoto/7d3ec4dcbb070ff9.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.a3670a1104231202",
+              "explanationRu": "В этой ситуации: эма (небольшие деревянные дощечки, на которых записывают свои пожелания)",
+              "example": {
+                "surface": "子どもも参加できるように時間を変えました。",
+                "kana": "こどももさんかできるようにじかんをかえました。",
+                "segments": [
+                  {
+                    "surface": "子",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "どもも"
+                  },
+                  {
+                    "surface": "参加",
+                    "reading": "さんか"
+                  },
+                  {
+                    "surface": "できるように"
+                  },
+                  {
+                    "surface": "時間",
+                    "reading": "じかん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "変",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "えました。"
+                  }
+                ],
+                "meaningRu": "Мы изменили время, чтобы дети тоже могли участвовать.",
+                "audioUrl": "/audio/marugoto/44adb995d0f3d284.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.16ac8b83084e9549",
+              "explanationRu": "В этой ситуации: фестиваль",
+              "example": {
+                "surface": "祭りでは歌ったりして楽しみます。",
+                "kana": "まつりではうたったりしてたのしみます。",
+                "segments": [
+                  {
+                    "surface": "祭",
+                    "reading": "まつ"
+                  },
+                  {
+                    "surface": "りでは"
+                  },
+                  {
+                    "surface": "歌",
+                    "reading": "うた"
+                  },
+                  {
+                    "surface": "ったりして"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しみます。"
+                  }
+                ],
+                "meaningRu": "На празднике мы, например, поём и веселимся.",
+                "audioUrl": "/audio/marugoto/b6e4502118826c51.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.10.grammar.172",
+      "titleRu": "～ように",
+      "introductionRu": "ように выражает цель, связанную с возможностью или состоянием.",
+      "canDoIds": [
+        29,
+        30
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.10.part.grammar.172",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.172",
+            "explanationRu": "ように выражает цель, связанную с возможностью или состоянием.",
+            "example": {
+              "surface": "子どもも参加できるように時間を変えました。",
+              "kana": "こどももさんかできるようにじかんをかえました。",
+              "segments": [
+                {
+                  "surface": "子",
+                  "reading": "こ"
+                },
+                {
+                  "surface": "どもも"
+                },
+                {
+                  "surface": "参加",
+                  "reading": "さんか"
+                },
+                {
+                  "surface": "できるように"
+                },
+                {
+                  "surface": "時間",
+                  "reading": "じかん"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "変",
+                  "reading": "か"
+                },
+                {
+                  "surface": "えました。"
+                }
+              ],
+              "meaningRu": "Мы изменили время, чтобы дети тоже могли участвовать.",
+              "audioUrl": "/audio/marugoto/44adb995d0f3d284.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "子どもも",
+                "explanationRu": "Смысловой фрагмент: Мы изменили время, чтобы дети тоже могли участвовать."
+              },
+              {
+                "text": "参加できるように",
+                "explanationRu": "Смысловой фрагмент: Мы изменили время, чтобы дети тоже могли участвовать."
+              },
+              {
+                "text": "時間を",
+                "explanationRu": "Смысловой фрагмент: Мы изменили время, чтобы дети тоже могли участвовать."
+              },
+              {
+                "text": "変えました",
+                "explanationRu": "ように выражает цель, связанную с возможностью или состоянием."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.10.grammar.173",
+      "titleRu": "～ように",
+      "introductionRu": "ないように обозначает желаемое предотвращение события.",
+      "canDoIds": [
+        29,
+        30
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.10.part.grammar.173",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.173",
+            "explanationRu": "ないように обозначает желаемое предотвращение события.",
+            "example": {
+              "surface": "忘れないようにメモを書きました。",
+              "kana": "わすれないようにメモをかきました。",
+              "segments": [
+                {
+                  "surface": "忘",
+                  "reading": "わす"
+                },
+                {
+                  "surface": "れないようにメモを"
+                },
+                {
+                  "surface": "書",
+                  "reading": "か"
+                },
+                {
+                  "surface": "きました。"
+                }
+              ],
+              "meaningRu": "Я написал заметку, чтобы не забыть.",
+              "audioUrl": "/audio/marugoto/75a9013caf51856d.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "忘れないように",
+                "explanationRu": "Смысловой фрагмент: Я написал заметку, чтобы не забыть."
+              },
+              {
+                "text": "メモを",
+                "explanationRu": "Смысловой фрагмент: Я написал заметку, чтобы не забыть."
+              },
+              {
+                "text": "書きました",
+                "explanationRu": "ないように обозначает желаемое предотвращение события."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.10.grammar.174",
+      "titleRu": "～たり",
+      "introductionRu": "Одно たり тоже может приводить пример среди других действий.",
+      "canDoIds": [
+        29,
+        30
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.10.part.grammar.174",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.174",
+            "explanationRu": "Одно たり тоже может приводить пример среди других действий.",
+            "example": {
+              "surface": "祭りでは歌ったりして楽しみます。",
+              "kana": "まつりではうたったりしてたのしみます。",
+              "segments": [
+                {
+                  "surface": "祭",
+                  "reading": "まつ"
+                },
+                {
+                  "surface": "りでは"
+                },
+                {
+                  "surface": "歌",
+                  "reading": "うた"
+                },
+                {
+                  "surface": "ったりして"
+                },
+                {
+                  "surface": "楽",
+                  "reading": "たの"
+                },
+                {
+                  "surface": "しみます。"
+                }
+              ],
+              "meaningRu": "На празднике мы, например, поём и веселимся.",
+              "audioUrl": "/audio/marugoto/b6e4502118826c51.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "祭りでは",
+                "explanationRu": "Смысловой фрагмент: На празднике мы, например, поём и веселимся."
+              },
+              {
+                "text": "歌ったりして",
+                "explanationRu": "Смысловой фрагмент: На празднике мы, например, поём и веселимся."
+              },
+              {
+                "text": "楽しみます",
+                "explanationRu": "Одно たり тоже может приводить пример среди других действий."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.10.grammar.175",
+      "titleRu": "～ように願う",
+      "introductionRu": "ように願う выражает пожелание о желаемом положении дел.",
+      "canDoIds": [
+        29,
+        30
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.10.part.grammar.175",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.175",
+            "explanationRu": "ように願う выражает пожелание о желаемом положении дел.",
+            "example": {
+              "surface": "家族が元気でいるように願います。",
+              "kana": "かぞくがげんきでいるようにねがいます。",
+              "segments": [
+                {
+                  "surface": "家族",
+                  "reading": "かぞく"
+                },
+                {
+                  "surface": "が"
+                },
+                {
+                  "surface": "元気",
+                  "reading": "げんき"
+                },
+                {
+                  "surface": "でいるように"
+                },
+                {
+                  "surface": "願",
+                  "reading": "ねが"
+                },
+                {
+                  "surface": "います。"
+                }
+              ],
+              "meaningRu": "Я желаю, чтобы семья была здорова.",
+              "audioUrl": "/audio/marugoto/7d3ec4dcbb070ff9.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "家族が",
+                "explanationRu": "Смысловой фрагмент: Я желаю, чтобы семья была здорова."
+              },
+              {
+                "text": "元気でいるように",
+                "explanationRu": "Смысловой фрагмент: Я желаю, чтобы семья была здорова."
+              },
+              {
+                "text": "願います",
+                "explanationRu": "ように願う выражает пожелание о желаемом положении дел."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.10.grammar.176",
+      "titleRu": "～ように祈る",
+      "introductionRu": "ように祈る передаёт надежду или молитву о результате.",
+      "canDoIds": [
+        29,
+        30
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.10.part.grammar.176",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.176",
+            "explanationRu": "ように祈る передаёт надежду или молитву о результате.",
+            "example": {
+              "surface": "試験に受かるように祈りました。",
+              "kana": "しけんにうかるようにいのりました。",
+              "segments": [
+                {
+                  "surface": "試験",
+                  "reading": "しけん"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "受",
+                  "reading": "う"
+                },
+                {
+                  "surface": "かるように"
+                },
+                {
+                  "surface": "祈",
+                  "reading": "いの"
+                },
+                {
+                  "surface": "りました。"
+                }
+              ],
+              "meaningRu": "Я молился об успешной сдаче экзамена.",
+              "audioUrl": "/audio/marugoto/615b275478b8cfd6.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "試験に",
+                "explanationRu": "Смысловой фрагмент: Я молился об успешной сдаче экзамена."
+              },
+              {
+                "text": "受かるように",
+                "explanationRu": "Смысловой фрагмент: Я молился об успешной сдаче экзамена."
+              },
+              {
+                "text": "祈りました",
+                "explanationRu": "ように祈る передаёт надежду или молитву о результате."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.29.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        29
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.29.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.29",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Объясните, что делают на сезонном празднике и ради чего.",
+              "canDoIds": [
+                29
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Объясните, что делают на сезонном празднике и ради чего.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "祭りでは、家族が元気でいるように願います。みんなで歌ったりします。",
+                "kana": "まつりでは、かぞくがげんきでいるようにねがいます。みんなでうたったりします。",
+                "segments": [
+                  {
+                    "surface": "祭",
+                    "reading": "まつ"
+                  },
+                  {
+                    "surface": "りでは、"
+                  },
+                  {
+                    "surface": "家族",
+                    "reading": "かぞく"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "元気",
+                    "reading": "げんき"
+                  },
+                  {
+                    "surface": "でいるように"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "います。みんなで"
+                  },
+                  {
+                    "surface": "歌",
+                    "reading": "うた"
+                  },
+                  {
+                    "surface": "ったりします。"
+                  }
+                ],
+                "meaningRu": "На празднике желают здоровья семье. Все вместе поют и делают другие вещи.",
+                "audioUrl": "/audio/marugoto/ae4adfd69dd3a913.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Объясните, что делают на сезонном празднике и ради чего.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.30.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        30
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.30.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.30",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "По плану «когда → что делают → цель» представьте праздник своего города.",
+              "canDoIds": [
+                30
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "По плану «когда → что делают → цель» представьте праздник своего города.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "秋に町の祭りがあります。子どもも楽しめるように、昼にゲームをします。",
+                "kana": "あきにまちのまつりがあります。こどももたのしめるように、ひるにゲームをします。",
+                "segments": [
+                  {
+                    "surface": "秋",
+                    "reading": "あき"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "町",
+                    "reading": "まち"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "祭",
+                    "reading": "まつ"
+                  },
+                  {
+                    "surface": "りがあります。"
+                  },
+                  {
+                    "surface": "子",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "どもも"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しめるように、"
+                  },
+                  {
+                    "surface": "昼",
+                    "reading": "ひる"
+                  },
+                  {
+                    "surface": "にゲームをします。"
+                  }
+                ],
+                "meaningRu": "Осенью проходит городской праздник. Днём проводят игры, чтобы дети тоже могли поучаствовать.",
+                "audioUrl": "/audio/marugoto/64132332d75eedd2.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: По плану «когда → что делают → цель» представьте праздник своего города.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

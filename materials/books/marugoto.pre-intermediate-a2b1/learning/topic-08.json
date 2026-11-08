@@ -1,0 +1,1342 @@
+{
+  "lessonId": "marugoto.pre-intermediate-a2b1.topic.08",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Трудности в путешествии",
+  "goals": [
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.08.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.08.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.962b05bcc3bc818a",
+              "explanationRu": "В этой ситуации: объявление",
+              "example": {
+                "surface": "すみません。今のアナウンスは何ですか。飛行機が遅れるそうです。搭乗口は変わらないそうですよ。",
+                "kana": "すみません。いまのアナウンスはなんですか。ひこうきがおくれるそうです。とうじょうぐちはかわらないそうですよ。",
+                "segments": [
+                  {
+                    "surface": "すみません。"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "のアナウンスは"
+                  },
+                  {
+                    "surface": "何",
+                    "reading": "なん"
+                  },
+                  {
+                    "surface": "ですか。"
+                  },
+                  {
+                    "surface": "飛行機",
+                    "reading": "ひこうき"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "遅",
+                    "reading": "おく"
+                  },
+                  {
+                    "surface": "れるそうです。"
+                  },
+                  {
+                    "surface": "搭乗口",
+                    "reading": "とうじょうぐち"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "変",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "わらないそうですよ。"
+                  }
+                ],
+                "meaningRu": "Извините, что сказали? Говорят, самолёт задержится. Выход на посадку, говорят, остаётся прежним.",
+                "audioUrl": "/audio/marugoto/71967e2f95ada4a3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.3322e473b808914f",
+              "explanationRu": "В этой ситуации: посадка",
+              "example": {
+                "surface": "すみません。今のアナウンスは何ですか。飛行機が遅れるそうです。搭乗口は変わらないそうですよ。",
+                "kana": "すみません。いまのアナウンスはなんですか。ひこうきがおくれるそうです。とうじょうぐちはかわらないそうですよ。",
+                "segments": [
+                  {
+                    "surface": "すみません。"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "のアナウンスは"
+                  },
+                  {
+                    "surface": "何",
+                    "reading": "なん"
+                  },
+                  {
+                    "surface": "ですか。"
+                  },
+                  {
+                    "surface": "飛行機",
+                    "reading": "ひこうき"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "遅",
+                    "reading": "おく"
+                  },
+                  {
+                    "surface": "れるそうです。"
+                  },
+                  {
+                    "surface": "搭乗口",
+                    "reading": "とうじょうぐち"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "変",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "わらないそうですよ。"
+                  }
+                ],
+                "meaningRu": "Извините, что сказали? Говорят, самолёт задержится. Выход на посадку, говорят, остаётся прежним.",
+                "audioUrl": "/audio/marugoto/71967e2f95ada4a3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.e5adbd0feb265dac",
+              "explanationRu": "В этой ситуации: сумка, портфель",
+              "example": {
+                "surface": "かばんが見つかりました。",
+                "kana": "かばんがみつかりました。",
+                "segments": [
+                  {
+                    "surface": "かばんが"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "つかりました。"
+                  }
+                ],
+                "meaningRu": "Сумка нашлась.",
+                "audioUrl": "/audio/marugoto/3c1446a516b030c3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.74f05aef6097b5bb",
+              "explanationRu": "В этой ситуации: электричество",
+              "example": {
+                "surface": "すみません。部屋の電気がつかないんです。見てもらえませんか。",
+                "kana": "すみません。へやのでんきがつかないんです。みてもらえませんか。",
+                "segments": [
+                  {
+                    "surface": "すみません。"
+                  },
+                  {
+                    "surface": "部屋",
+                    "reading": "へや"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "電気",
+                    "reading": "でんき"
+                  },
+                  {
+                    "surface": "がつかないんです。"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "てもらえませんか。"
+                  }
+                ],
+                "meaningRu": "Извините, в комнате не включается свет. Не могли бы вы посмотреть?",
+                "audioUrl": "/audio/marugoto/6322c39c36d09d97.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.7da0e8cdb1d918fc",
+              "explanationRu": "В этой ситуации: дверь",
+              "example": {
+                "surface": "係の人がドアを開けました。",
+                "kana": "かかりのひとがドアをあけました。",
+                "segments": [
+                  {
+                    "surface": "係",
+                    "reading": "かかり"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "がドアを"
+                  },
+                  {
+                    "surface": "開",
+                    "reading": "あ"
+                  },
+                  {
+                    "surface": "けました。"
+                  }
+                ],
+                "meaningRu": "Сотрудник открыл дверь.",
+                "audioUrl": "/audio/marugoto/0407a80f719a6a59.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.08.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.08.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.word.d06a25a9ef1416c6",
+              "explanationRu": "В этой ситуации: номер",
+              "example": {
+                "surface": "かばんが見つかりました。",
+                "kana": "かばんがみつかりました。",
+                "segments": [
+                  {
+                    "surface": "かばんが"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "つかりました。"
+                  }
+                ],
+                "meaningRu": "Сумка нашлась.",
+                "audioUrl": "/audio/marugoto/3c1446a516b030c3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.7aa6241385b98f7f",
+              "explanationRu": "В этой ситуации: тяжёлый, утомительный; ужасный",
+              "example": {
+                "surface": "財布は次の日に見つかりました。あのときは大変でしたが、助けてくれた人の親切さを今も覚えています。次は私が困っている人を手伝いたいです。",
+                "kana": "さいふはつぎのひにみつかりました。あのときはたいへんでしたが、たすけてくれたひとのしんせつさをいまもおぼえています。つぎはわたしがこまっているひとをてつだいたいです。",
+                "segments": [
+                  {
+                    "surface": "財布",
+                    "reading": "さいふ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "次",
+                    "reading": "つぎ"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "日",
+                    "reading": "ひ"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "つかりました。あのときは"
+                  },
+                  {
+                    "surface": "大変",
+                    "reading": "たいへん"
+                  },
+                  {
+                    "surface": "でしたが、"
+                  },
+                  {
+                    "surface": "助",
+                    "reading": "たす"
+                  },
+                  {
+                    "surface": "けてくれた"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "親切",
+                    "reading": "しんせつ"
+                  },
+                  {
+                    "surface": "さを"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "覚",
+                    "reading": "おぼ"
+                  },
+                  {
+                    "surface": "えています。"
+                  },
+                  {
+                    "surface": "次",
+                    "reading": "つぎ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "困",
+                    "reading": "こま"
+                  },
+                  {
+                    "surface": "っている"
+                  },
+                  {
+                    "surface": "人",
+                    "reading": "ひと"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "手伝",
+                    "reading": "てつだ"
+                  },
+                  {
+                    "surface": "いたいです。"
+                  }
+                ],
+                "meaningRu": "Кошелёк нашли на следующий день. Тогда было тяжело, но я до сих пор помню доброту помогавших. В следующий раз я хочу сам помочь человеку в трудности.",
+                "audioUrl": "/audio/marugoto/42c0ead4705880fe.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.e1020c3c24385d44",
+              "explanationRu": "В этой ситуации: самолет",
+              "example": {
+                "surface": "すみません。今のアナウンスは何ですか。飛行機が遅れるそうです。搭乗口は変わらないそうですよ。",
+                "kana": "すみません。いまのアナウンスはなんですか。ひこうきがおくれるそうです。とうじょうぐちはかわらないそうですよ。",
+                "segments": [
+                  {
+                    "surface": "すみません。"
+                  },
+                  {
+                    "surface": "今",
+                    "reading": "いま"
+                  },
+                  {
+                    "surface": "のアナウンスは"
+                  },
+                  {
+                    "surface": "何",
+                    "reading": "なん"
+                  },
+                  {
+                    "surface": "ですか。"
+                  },
+                  {
+                    "surface": "飛行機",
+                    "reading": "ひこうき"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "遅",
+                    "reading": "おく"
+                  },
+                  {
+                    "surface": "れるそうです。"
+                  },
+                  {
+                    "surface": "搭乗口",
+                    "reading": "とうじょうぐち"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "変",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "わらないそうですよ。"
+                  }
+                ],
+                "meaningRu": "Извините, что сказали? Говорят, самолёт задержится. Выход на посадку, говорят, остаётся прежним.",
+                "audioUrl": "/audio/marugoto/71967e2f95ada4a3.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.b8ad50d44836b7a9",
+              "explanationRu": "В этой ситуации: отель",
+              "example": {
+                "surface": "地図を見ながらホテルを探しました。",
+                "kana": "ちずをみながらホテルをさがしました。",
+                "segments": [
+                  {
+                    "surface": "地図",
+                    "reading": "ちず"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "ながらホテルを"
+                  },
+                  {
+                    "surface": "探",
+                    "reading": "さが"
+                  },
+                  {
+                    "surface": "しました。"
+                  }
+                ],
+                "meaningRu": "Я искал отель, глядя на карту.",
+                "audioUrl": "/audio/marugoto/24376248666a7eb2.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.08.grammar.247",
+      "titleRu": "～そうだ",
+      "introductionRu": "そうです передаёт полученное сообщение; это не собственное наблюдение.",
+      "canDoIds": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.08.part.grammar.247",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.247",
+            "explanationRu": "そうです передаёт полученное сообщение; это не собственное наблюдение.",
+            "example": {
+              "surface": "次のバスは遅れるそうです。",
+              "kana": "つぎのバスはおくれるそうです。",
+              "segments": [
+                {
+                  "surface": "次",
+                  "reading": "つぎ"
+                },
+                {
+                  "surface": "のバスは"
+                },
+                {
+                  "surface": "遅",
+                  "reading": "おく"
+                },
+                {
+                  "surface": "れるそうです。"
+                }
+              ],
+              "meaningRu": "Говорят, следующий автобус задержится.",
+              "audioUrl": "/audio/marugoto/7daf75d779beb5cf.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "次の",
+                "explanationRu": "Смысловой фрагмент: Говорят, следующий автобус задержится."
+              },
+              {
+                "text": "バスは",
+                "explanationRu": "Смысловой фрагмент: Говорят, следующий автобус задержится."
+              },
+              {
+                "text": "遅れるそうです",
+                "explanationRu": "そうです передаёт полученное сообщение; это не собственное наблюдение."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.08.grammar.248",
+      "titleRu": "普通体・丁寧体使い分け",
+      "introductionRu": "С сотрудником используйте вежливую форму. Реакция другу: かばん、見つかった！",
+      "canDoIds": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.08.part.grammar.248",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.248",
+            "explanationRu": "С сотрудником используйте вежливую форму. Реакция другу: かばん、見つかった！",
+            "example": {
+              "surface": "かばんが見つかりました。",
+              "kana": "かばんがみつかりました。",
+              "segments": [
+                {
+                  "surface": "かばんが"
+                },
+                {
+                  "surface": "見",
+                  "reading": "み"
+                },
+                {
+                  "surface": "つかりました。"
+                }
+              ],
+              "meaningRu": "Сумка нашлась.",
+              "audioUrl": "/audio/marugoto/3c1446a516b030c3.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "かばんが",
+                "explanationRu": "Смысловой фрагмент: Сумка нашлась."
+              },
+              {
+                "text": "見つかりました",
+                "explanationRu": "С сотрудником используйте вежливую форму. Реакция другу: かばん、見つかった！"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.08.grammar.249",
+      "titleRu": "自動詞・他動詞",
+      "introductionRu": "開ける — переходный глагол с を; соответствующее изменение состояния: ドアが開きました.",
+      "canDoIds": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.08.part.grammar.249",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.249",
+            "explanationRu": "開ける — переходный глагол с を; соответствующее изменение состояния: ドアが開きました.",
+            "example": {
+              "surface": "係の人がドアを開けました。",
+              "kana": "かかりのひとがドアをあけました。",
+              "segments": [
+                {
+                  "surface": "係",
+                  "reading": "かかり"
+                },
+                {
+                  "surface": "の"
+                },
+                {
+                  "surface": "人",
+                  "reading": "ひと"
+                },
+                {
+                  "surface": "がドアを"
+                },
+                {
+                  "surface": "開",
+                  "reading": "あ"
+                },
+                {
+                  "surface": "けました。"
+                }
+              ],
+              "meaningRu": "Сотрудник открыл дверь.",
+              "audioUrl": "/audio/marugoto/0407a80f719a6a59.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "係の人が",
+                "explanationRu": "Смысловой фрагмент: Сотрудник открыл дверь."
+              },
+              {
+                "text": "ドアを",
+                "explanationRu": "Смысловой фрагмент: Сотрудник открыл дверь."
+              },
+              {
+                "text": "開けました",
+                "explanationRu": "開ける — переходный глагол с を; соответствующее изменение состояния: ドアが開きました."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.08.grammar.250",
+      "titleRu": "～ながら",
+      "introductionRu": "Основа перед ます + ながら связывает одновременные действия одного человека; главное действие стоит в конце.",
+      "canDoIds": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.topic.08.part.grammar.250",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.pre-intermediate-a2b1.example.grammar.250",
+            "explanationRu": "Основа перед ます + ながら связывает одновременные действия одного человека; главное действие стоит в конце.",
+            "example": {
+              "surface": "地図を見ながらホテルを探しました。",
+              "kana": "ちずをみながらホテルをさがしました。",
+              "segments": [
+                {
+                  "surface": "地図",
+                  "reading": "ちず"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "見",
+                  "reading": "み"
+                },
+                {
+                  "surface": "ながらホテルを"
+                },
+                {
+                  "surface": "探",
+                  "reading": "さが"
+                },
+                {
+                  "surface": "しました。"
+                }
+              ],
+              "meaningRu": "Я искал отель, глядя на карту.",
+              "audioUrl": "/audio/marugoto/24376248666a7eb2.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "地図を",
+                "explanationRu": "Смысловой фрагмент: Я искал отель, глядя на карту."
+              },
+              {
+                "text": "見ながら",
+                "explanationRu": "Смысловой фрагмент: Я искал отель, глядя на карту."
+              },
+              {
+                "text": "ホテルを",
+                "explanationRu": "Смысловой фрагмент: Я искал отель, глядя на карту."
+              },
+              {
+                "text": "探しました",
+                "explanationRu": "Основа перед ます + ながら связывает одновременные действия одного человека; главное действие стоит в конце."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.35.goal",
+      "titleRu": "Слушаем и понимаем",
+      "canDoIds": [
+        35
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.35.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.35",
+              "titleRu": "Слушаем и понимаем",
+              "instructionRu": "Вы не поняли объявление в аэропорту. Послушайте пояснение другого пассажира.",
+              "canDoIds": [
+                35
+              ],
+              "kind": "listening",
+              "passage": [
+                {
+                  "surface": "すみません。今のアナウンスは何ですか。飛行機が遅れるそうです。搭乗口は変わらないそうですよ。",
+                  "kana": "すみません。いまのアナウンスはなんですか。ひこうきがおくれるそうです。とうじょうぐちはかわらないそうですよ。",
+                  "segments": [
+                    {
+                      "surface": "すみません。"
+                    },
+                    {
+                      "surface": "今",
+                      "reading": "いま"
+                    },
+                    {
+                      "surface": "のアナウンスは"
+                    },
+                    {
+                      "surface": "何",
+                      "reading": "なん"
+                    },
+                    {
+                      "surface": "ですか。"
+                    },
+                    {
+                      "surface": "飛行機",
+                      "reading": "ひこうき"
+                    },
+                    {
+                      "surface": "が"
+                    },
+                    {
+                      "surface": "遅",
+                      "reading": "おく"
+                    },
+                    {
+                      "surface": "れるそうです。"
+                    },
+                    {
+                      "surface": "搭乗口",
+                      "reading": "とうじょうぐち"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "変",
+                      "reading": "か"
+                    },
+                    {
+                      "surface": "わらないそうですよ。"
+                    }
+                  ],
+                  "meaningRu": "Извините, что сказали? Говорят, самолёт задержится. Выход на посадку, говорят, остаётся прежним.",
+                  "audioUrl": "/audio/marugoto/71967e2f95ada4a3.m4a"
+                }
+              ],
+              "questionRu": "Что изменилось?",
+              "options": [
+                {
+                  "id": "b",
+                  "text": "Выход на посадку"
+                },
+                {
+                  "id": "a",
+                  "text": "Время вылета"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Извините, что сказали? Говорят, самолёт задержится. Выход на посадку, говорят, остаётся прежним."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.36.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        36
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.36.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.36",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Восстановите свои действия перед потерей сумки: два места и порядок.",
+              "canDoIds": [
+                36
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Восстановите свои действия перед потерей сумки: два места и порядок.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "駅で切符を買ってから、カフェで待っていました。そのときは、まだかばんがありました。",
+                "kana": "えきできっぷをかってから、カフェでまっていました。そのときは、まだかばんがありました。",
+                "segments": [
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "切符",
+                    "reading": "きっぷ"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "買",
+                    "reading": "か"
+                  },
+                  {
+                    "surface": "ってから、カフェで"
+                  },
+                  {
+                    "surface": "待",
+                    "reading": "ま"
+                  },
+                  {
+                    "surface": "っていました。そのときは、まだかばんがありました。"
+                  }
+                ],
+                "meaningRu": "После покупки билета на станции я ждал в кафе. Тогда сумка ещё была со мной.",
+                "audioUrl": "/audio/marugoto/33a73af5edc4d427.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Восстановите свои действия перед потерей сумки: два места и порядок.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.37.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        37
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.37.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.37",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Помогите другу, забывшему вещь: уточните место и предложите действие.",
+              "canDoIds": [
+                37
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Помогите другу, забывшему вещь: уточните место и предложите действие.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "最後にかばんを見たのはどこですか。カフェに電話してみましょう。私も手伝います。",
+                "kana": "さいごにかばんをみたのはどこですか。カフェにでんわしてみましょう。わたしもてつだいます。",
+                "segments": [
+                  {
+                    "surface": "最後",
+                    "reading": "さいご"
+                  },
+                  {
+                    "surface": "にかばんを"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "たのはどこですか。カフェに"
+                  },
+                  {
+                    "surface": "電話",
+                    "reading": "でんわ"
+                  },
+                  {
+                    "surface": "してみましょう。"
+                  },
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "手伝",
+                    "reading": "てつだ"
+                  },
+                  {
+                    "surface": "います。"
+                  }
+                ],
+                "meaningRu": "Где ты видел сумку в последний раз? Давайте позвоним в кафе. Я тоже помогу.",
+                "audioUrl": "/audio/marugoto/f19d7c743fb0de9a.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Помогите другу, забывшему вещь: уточните место и предложите действие.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.38.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        38
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.38.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.38",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Попросите сотрудника помочь с проблемой в гостиничном номере.",
+              "canDoIds": [
+                38
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Попросите сотрудника помочь с проблемой в гостиничном номере.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "すみません。部屋の電気がつかないんです。見てもらえませんか。",
+                "kana": "すみません。へやのでんきがつかないんです。みてもらえませんか。",
+                "segments": [
+                  {
+                    "surface": "すみません。"
+                  },
+                  {
+                    "surface": "部屋",
+                    "reading": "へや"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "電気",
+                    "reading": "でんき"
+                  },
+                  {
+                    "surface": "がつかないんです。"
+                  },
+                  {
+                    "surface": "見",
+                    "reading": "み"
+                  },
+                  {
+                    "surface": "てもらえませんか。"
+                  }
+                ],
+                "meaningRu": "Извините, в комнате не включается свет. Не могли бы вы посмотреть?",
+                "audioUrl": "/audio/marugoto/6322c39c36d09d97.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Попросите сотрудника помочь с проблемой в гостиничном номере.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.39.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        39
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.39.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.39",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте рассказ о неприятности в дороге и определите чувства в момент события.",
+              "canDoIds": [
+                39
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "旅行の初日に、駅で財布がないことに気づきました。言葉もよく分からなくて、何をすればいいか分かりませんでした。駅の人が話を聞いてくれたとき、少し安心しました。",
+                  "kana": "りょこうのしょにちに、えきでさいふがないことにきづきました。ことばもよくわからなくて、なにをすればいいかわかりませんでした。えきのひとがはなしをきいてくれたとき、すこしあんしんしました。",
+                  "segments": [
+                    {
+                      "surface": "旅行",
+                      "reading": "りょこう"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "初日",
+                      "reading": "しょにち"
+                    },
+                    {
+                      "surface": "に、"
+                    },
+                    {
+                      "surface": "駅",
+                      "reading": "えき"
+                    },
+                    {
+                      "surface": "で"
+                    },
+                    {
+                      "surface": "財布",
+                      "reading": "さいふ"
+                    },
+                    {
+                      "surface": "がないことに"
+                    },
+                    {
+                      "surface": "気",
+                      "reading": "き"
+                    },
+                    {
+                      "surface": "づきました。"
+                    },
+                    {
+                      "surface": "言葉",
+                      "reading": "ことば"
+                    },
+                    {
+                      "surface": "もよく"
+                    },
+                    {
+                      "surface": "分",
+                      "reading": "わ"
+                    },
+                    {
+                      "surface": "からなくて、"
+                    },
+                    {
+                      "surface": "何",
+                      "reading": "なに"
+                    },
+                    {
+                      "surface": "をすればいいか"
+                    },
+                    {
+                      "surface": "分",
+                      "reading": "わ"
+                    },
+                    {
+                      "surface": "かりませんでした。"
+                    },
+                    {
+                      "surface": "駅",
+                      "reading": "えき"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "人",
+                      "reading": "ひと"
+                    },
+                    {
+                      "surface": "が"
+                    },
+                    {
+                      "surface": "話",
+                      "reading": "はなし"
+                    },
+                    {
+                      "surface": "を"
+                    },
+                    {
+                      "surface": "聞",
+                      "reading": "き"
+                    },
+                    {
+                      "surface": "いてくれたとき、"
+                    },
+                    {
+                      "surface": "少",
+                      "reading": "すこ"
+                    },
+                    {
+                      "surface": "し"
+                    },
+                    {
+                      "surface": "安心",
+                      "reading": "あんしん"
+                    },
+                    {
+                      "surface": "しました。"
+                    }
+                  ],
+                  "meaningRu": "В первый день поездки на станции я заметил пропажу кошелька. Я плохо знал язык и не понимал, что делать. Когда сотрудник станции выслушал меня, стало немного спокойнее.",
+                  "audioUrl": "/audio/marugoto/edf96cc0ae5096bf.m4a"
+                }
+              ],
+              "questionRu": "Как менялось состояние автора?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "От растерянности к небольшому облегчению"
+                },
+                {
+                  "id": "b",
+                  "text": "От радости к злости на сотрудника"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "В первый день поездки на станции я заметил пропажу кошелька. Я плохо знал язык и не понимал, что делать. Когда сотрудник станции выслушал меня, стало немного спокойнее."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.cando.40.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        40
+      ],
+      "parts": [
+        {
+          "id": "marugoto.pre-intermediate-a2b1.cando.40.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.pre-intermediate-a2b1.cando.40",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте продолжение рассказа и определите нынешнее отношение автора.",
+              "canDoIds": [
+                40
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "財布は次の日に見つかりました。あのときは大変でしたが、助けてくれた人の親切さを今も覚えています。次は私が困っている人を手伝いたいです。",
+                  "kana": "さいふはつぎのひにみつかりました。あのときはたいへんでしたが、たすけてくれたひとのしんせつさをいまもおぼえています。つぎはわたしがこまっているひとをてつだいたいです。",
+                  "segments": [
+                    {
+                      "surface": "財布",
+                      "reading": "さいふ"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "次",
+                      "reading": "つぎ"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "日",
+                      "reading": "ひ"
+                    },
+                    {
+                      "surface": "に"
+                    },
+                    {
+                      "surface": "見",
+                      "reading": "み"
+                    },
+                    {
+                      "surface": "つかりました。あのときは"
+                    },
+                    {
+                      "surface": "大変",
+                      "reading": "たいへん"
+                    },
+                    {
+                      "surface": "でしたが、"
+                    },
+                    {
+                      "surface": "助",
+                      "reading": "たす"
+                    },
+                    {
+                      "surface": "けてくれた"
+                    },
+                    {
+                      "surface": "人",
+                      "reading": "ひと"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "親切",
+                      "reading": "しんせつ"
+                    },
+                    {
+                      "surface": "さを"
+                    },
+                    {
+                      "surface": "今",
+                      "reading": "いま"
+                    },
+                    {
+                      "surface": "も"
+                    },
+                    {
+                      "surface": "覚",
+                      "reading": "おぼ"
+                    },
+                    {
+                      "surface": "えています。"
+                    },
+                    {
+                      "surface": "次",
+                      "reading": "つぎ"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "私",
+                      "reading": "わたし"
+                    },
+                    {
+                      "surface": "が"
+                    },
+                    {
+                      "surface": "困",
+                      "reading": "こま"
+                    },
+                    {
+                      "surface": "っている"
+                    },
+                    {
+                      "surface": "人",
+                      "reading": "ひと"
+                    },
+                    {
+                      "surface": "を"
+                    },
+                    {
+                      "surface": "手伝",
+                      "reading": "てつだ"
+                    },
+                    {
+                      "surface": "いたいです。"
+                    }
+                  ],
+                  "meaningRu": "Кошелёк нашли на следующий день. Тогда было тяжело, но я до сих пор помню доброту помогавших. В следующий раз я хочу сам помочь человеку в трудности.",
+                  "audioUrl": "/audio/marugoto/42c0ead4705880fe.m4a"
+                }
+              ],
+              "questionRu": "Что осталось главным для автора?",
+              "options": [
+                {
+                  "id": "b",
+                  "text": "Уверенность, что путешествовать больше нельзя"
+                },
+                {
+                  "id": "a",
+                  "text": "Благодарность и желание помогать другим"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Кошелёк нашли на следующий день. Тогда было тяжело, но я до сих пор помню доброту помогавших. В следующий раз я хочу сам помочь человеку в трудности."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

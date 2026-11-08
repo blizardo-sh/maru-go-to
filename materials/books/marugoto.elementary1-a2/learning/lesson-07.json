@@ -1,0 +1,538 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.07",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Договариваемся о встрече",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.07.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        15,
+        16,
+        17
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.07.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.f364bce670a07088",
+              "explanationRu": "В этой ситуации: происшествие, авария",
+              "example": {
+                "surface": "事故で少し遅れます。",
+                "kana": "じこですこしおくれます。",
+                "segments": [
+                  {
+                    "surface": "事故",
+                    "reading": "じこ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "遅",
+                    "reading": "おく"
+                  },
+                  {
+                    "surface": "れます。"
+                  }
+                ],
+                "meaningRu": "Из-за аварии я немного опоздаю.",
+                "audioUrl": "/audio/marugoto/7f13e5dba3056811.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.662ff353a46a7ff0",
+              "explanationRu": "В этой ситуации: опаздывать; задерживаться",
+              "example": {
+                "surface": "事故で少し遅れます。",
+                "kana": "じこですこしおくれます。",
+                "segments": [
+                  {
+                    "surface": "事故",
+                    "reading": "じこ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "遅",
+                    "reading": "おく"
+                  },
+                  {
+                    "surface": "れます。"
+                  }
+                ],
+                "meaningRu": "Из-за аварии я немного опоздаю.",
+                "audioUrl": "/audio/marugoto/7f13e5dba3056811.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.2eabfab66df7124d",
+              "explanationRu": "В этой ситуации: перед",
+              "example": {
+                "surface": "明日、十一時でもいいですか。駅の前で会いましょう。",
+                "kana": "あした、じゅういちじでもいいですか。えきのまえであいましょう。",
+                "segments": [
+                  {
+                    "surface": "明日",
+                    "reading": "あした"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "十一時",
+                    "reading": "じゅういちじ"
+                  },
+                  {
+                    "surface": "でもいいですか。"
+                  },
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "前",
+                    "reading": "まえ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "会",
+                    "reading": "あ"
+                  },
+                  {
+                    "surface": "いましょう。"
+                  }
+                ],
+                "meaningRu": "Завтра в одиннадцать подойдёт? Давайте встретимся перед станцией.",
+                "audioUrl": "/audio/marugoto/aa928465554074f4.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.07.grammar.88",
+      "titleRu": "～でもいい",
+      "introductionRu": "でもいい спрашивает, допустим ли предложенный вариант.",
+      "canDoIds": [
+        15,
+        16,
+        17
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.07.part.grammar.88",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.88",
+            "explanationRu": "でもいい спрашивает, допустим ли предложенный вариант.",
+            "example": {
+              "surface": "十一時でもいいですか。",
+              "kana": "じゅういちじでもいいですか。",
+              "segments": [
+                {
+                  "surface": "十一時",
+                  "reading": "じゅういちじ"
+                },
+                {
+                  "surface": "でもいいですか。"
+                }
+              ],
+              "meaningRu": "В одиннадцать тоже подойдёт?",
+              "audioUrl": "/audio/marugoto/5f76dcaf2cd72cfe.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "十一時でも",
+                "explanationRu": "Смысловой фрагмент: В одиннадцать тоже подойдёт?"
+              },
+              {
+                "text": "いいですか",
+                "explanationRu": "でもいい спрашивает, допустим ли предложенный вариант."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.07.grammar.89",
+      "titleRu": "～で",
+      "introductionRu": "で после существительного может указывать причину события.",
+      "canDoIds": [
+        15,
+        16,
+        17
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.07.part.grammar.89",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.89",
+            "explanationRu": "で после существительного может указывать причину события.",
+            "example": {
+              "surface": "事故で少し遅れます。",
+              "kana": "じこですこしおくれます。",
+              "segments": [
+                {
+                  "surface": "事故",
+                  "reading": "じこ"
+                },
+                {
+                  "surface": "で"
+                },
+                {
+                  "surface": "少",
+                  "reading": "すこ"
+                },
+                {
+                  "surface": "し"
+                },
+                {
+                  "surface": "遅",
+                  "reading": "おく"
+                },
+                {
+                  "surface": "れます。"
+                }
+              ],
+              "meaningRu": "Из-за аварии я немного опоздаю.",
+              "audioUrl": "/audio/marugoto/7f13e5dba3056811.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "事故で",
+                "explanationRu": "Смысловой фрагмент: Из-за аварии я немного опоздаю."
+              },
+              {
+                "text": "少し",
+                "explanationRu": "Смысловой фрагмент: Из-за аварии я немного опоздаю."
+              },
+              {
+                "text": "遅れます",
+                "explanationRu": "で после существительного может указывать причину события."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.07.grammar.90",
+      "titleRu": "～て",
+      "introductionRu": "なくて связывает отрицательное событие с его следствием.",
+      "canDoIds": [
+        15,
+        16,
+        17
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.07.part.grammar.90",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.90",
+            "explanationRu": "なくて связывает отрицательное событие с его следствием.",
+            "example": {
+              "surface": "バスが来なくて遅れました。",
+              "kana": "バスがこなくておくれました。",
+              "segments": [
+                {
+                  "surface": "バスが"
+                },
+                {
+                  "surface": "来",
+                  "reading": "こ"
+                },
+                {
+                  "surface": "なくて"
+                },
+                {
+                  "surface": "遅",
+                  "reading": "おく"
+                },
+                {
+                  "surface": "れました。"
+                }
+              ],
+              "meaningRu": "Я опоздал, потому что автобус не пришёл.",
+              "audioUrl": "/audio/marugoto/43e837edd1acd440.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "バスが",
+                "explanationRu": "Смысловой фрагмент: Я опоздал, потому что автобус не пришёл."
+              },
+              {
+                "text": "来なくて",
+                "explanationRu": "Смысловой фрагмент: Я опоздал, потому что автобус не пришёл."
+              },
+              {
+                "text": "遅れました",
+                "explanationRu": "なくて связывает отрицательное событие с его следствием."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.15.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        15
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.15.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.15",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Договоритесь о встрече: предложите время и место, проверьте, удобно ли это.",
+              "canDoIds": [
+                15
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Договоритесь о встрече: предложите время и место, проверьте, удобно ли это.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "明日、十一時でもいいですか。駅の前で会いましょう。",
+                "kana": "あした、じゅういちじでもいいですか。えきのまえであいましょう。",
+                "segments": [
+                  {
+                    "surface": "明日",
+                    "reading": "あした"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "十一時",
+                    "reading": "じゅういちじ"
+                  },
+                  {
+                    "surface": "でもいいですか。"
+                  },
+                  {
+                    "surface": "駅",
+                    "reading": "えき"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "前",
+                    "reading": "まえ"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "会",
+                    "reading": "あ"
+                  },
+                  {
+                    "surface": "いましょう。"
+                  }
+                ],
+                "meaningRu": "Завтра в одиннадцать подойдёт? Давайте встретимся перед станцией.",
+                "audioUrl": "/audio/marugoto/aa928465554074f4.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Договоритесь о встрече: предложите время и место, проверьте, удобно ли это.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.16.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        16
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.16.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.16",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте сообщение об опоздании и определите причину.",
+              "canDoIds": [
+                16
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "すみません。バスが来なくて、少し遅れます。駅の中で待っていてください。",
+                  "kana": "すみません。バスがこなくて、すこしおくれます。えきのなかでまっていてください。",
+                  "segments": [
+                    {
+                      "surface": "すみません。バスが"
+                    },
+                    {
+                      "surface": "来",
+                      "reading": "こ"
+                    },
+                    {
+                      "surface": "なくて、"
+                    },
+                    {
+                      "surface": "少",
+                      "reading": "すこ"
+                    },
+                    {
+                      "surface": "し"
+                    },
+                    {
+                      "surface": "遅",
+                      "reading": "おく"
+                    },
+                    {
+                      "surface": "れます。"
+                    },
+                    {
+                      "surface": "駅",
+                      "reading": "えき"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "中",
+                      "reading": "なか"
+                    },
+                    {
+                      "surface": "で"
+                    },
+                    {
+                      "surface": "待",
+                      "reading": "ま"
+                    },
+                    {
+                      "surface": "っていてください。"
+                    }
+                  ],
+                  "meaningRu": "Извините. Автобус не приходит, поэтому я немного опоздаю. Подождите внутри станции.",
+                  "audioUrl": "/audio/marugoto/48c0eb69782706de.m4a"
+                }
+              ],
+              "questionRu": "Почему человек опаздывает?",
+              "options": [
+                {
+                  "id": "b",
+                  "text": "Он перепутал станцию"
+                },
+                {
+                  "id": "a",
+                  "text": "Не приходит автобус"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "Извините. Автобус не приходит, поэтому я немного опоздаю. Подождите внутри станции."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.17.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        17
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.17.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.17",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Извинитесь за опоздание и коротко объясните причину.",
+              "canDoIds": [
+                17
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Извинитесь за опоздание и коротко объясните причину.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "遅れてすみません。道に迷いました。",
+                "kana": "おくれてすみません。みちにまよいました。",
+                "segments": [
+                  {
+                    "surface": "遅",
+                    "reading": "おく"
+                  },
+                  {
+                    "surface": "れてすみません。"
+                  },
+                  {
+                    "surface": "道",
+                    "reading": "みち"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "迷",
+                    "reading": "まよ"
+                  },
+                  {
+                    "surface": "いました。"
+                  }
+                ],
+                "meaningRu": "Простите за опоздание. Я заблудился.",
+                "audioUrl": "/audio/marugoto/0ed773b212e21966.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Извинитесь за опоздание и коротко объясните причину.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

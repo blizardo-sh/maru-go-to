@@ -1,0 +1,815 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.05",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Собираемся в поездку",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.05.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        13,
+        14,
+        15
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.05.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.51ef7856f0887003",
+              "explanationRu": "В этой ситуации: думать",
+              "example": {
+                "surface": "夏は暑すぎました。春に行ったほうがいいと思います。",
+                "kana": "なつはあつすぎました。はるにいったほうがいいとおもいます。",
+                "segments": [
+                  {
+                    "surface": "夏",
+                    "reading": "なつ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "暑",
+                    "reading": "あつ"
+                  },
+                  {
+                    "surface": "すぎました。"
+                  },
+                  {
+                    "surface": "春",
+                    "reading": "はる"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "ったほうがいいと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "います。"
+                  }
+                ],
+                "meaningRu": "Летом было слишком жарко. Думаю, лучше поехать весной.",
+                "audioUrl": "/audio/marugoto/702d670e9db1ba6f.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.596b43741691abb6",
+              "explanationRu": "В этой ситуации: остров",
+              "example": {
+                "surface": "島に行くとき船に乗りました。",
+                "kana": "しまにいくときふねにのりました。",
+                "segments": [
+                  {
+                    "surface": "島",
+                    "reading": "しま"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "くとき"
+                  },
+                  {
+                    "surface": "船",
+                    "reading": "ふね"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "乗",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "りました。"
+                  }
+                ],
+                "meaningRu": "Когда я ехал на остров, я сел на корабль.",
+                "audioUrl": "/audio/marugoto/84ae9a2801651ba6.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.07f99a3517baea9c",
+              "explanationRu": "В этой ситуации: время",
+              "example": {
+                "surface": "島に行くとき船に乗りました。",
+                "kana": "しまにいくときふねにのりました。",
+                "segments": [
+                  {
+                    "surface": "島",
+                    "reading": "しま"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "くとき"
+                  },
+                  {
+                    "surface": "船",
+                    "reading": "ふね"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "乗",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "りました。"
+                  }
+                ],
+                "meaningRu": "Когда я ехал на остров, я сел на корабль.",
+                "audioUrl": "/audio/marugoto/84ae9a2801651ba6.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.9904243f8f51cddc",
+              "explanationRu": "В этой ситуации: лето",
+              "example": {
+                "surface": "夏は暑すぎました。春に行ったほうがいいと思います。",
+                "kana": "なつはあつすぎました。はるにいったほうがいいとおもいます。",
+                "segments": [
+                  {
+                    "surface": "夏",
+                    "reading": "なつ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "暑",
+                    "reading": "あつ"
+                  },
+                  {
+                    "surface": "すぎました。"
+                  },
+                  {
+                    "surface": "春",
+                    "reading": "はる"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "ったほうがいいと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "います。"
+                  }
+                ],
+                "meaningRu": "Летом было слишком жарко. Думаю, лучше поехать весной.",
+                "audioUrl": "/audio/marugoto/702d670e9db1ba6f.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.bb5d894377c33f7c",
+              "explanationRu": "В этой ситуации: время",
+              "example": {
+                "surface": "島に行くとき、船に乗りました。少し時間がかかりましたが、楽しかったです。",
+                "kana": "しまにいくとき、ふねにのりました。すこしじかんがかかりましたが、たのしかったです。",
+                "segments": [
+                  {
+                    "surface": "島",
+                    "reading": "しま"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "くとき、"
+                  },
+                  {
+                    "surface": "船",
+                    "reading": "ふね"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "乗",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "りました。"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "時間",
+                    "reading": "じかん"
+                  },
+                  {
+                    "surface": "がかかりましたが、"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しかったです。"
+                  }
+                ],
+                "meaningRu": "Когда ехал на остров, я сел на корабль. Это заняло некоторое время, но было интересно.",
+                "audioUrl": "/audio/marugoto/1ae996ecf2165298.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.05.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        13,
+        14,
+        15
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.05.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.757d82c1eb28e135",
+              "explanationRu": "В этой ситуации: море",
+              "example": {
+                "surface": "その島はどんなところですか。海がきれいで、静かなところです。",
+                "kana": "そのしまはどんなところですか。うみがきれいで、しずかなところです。",
+                "segments": [
+                  {
+                    "surface": "その"
+                  },
+                  {
+                    "surface": "島",
+                    "reading": "しま"
+                  },
+                  {
+                    "surface": "はどんなところですか。"
+                  },
+                  {
+                    "surface": "海",
+                    "reading": "うみ"
+                  },
+                  {
+                    "surface": "がきれいで、"
+                  },
+                  {
+                    "surface": "静",
+                    "reading": "しず"
+                  },
+                  {
+                    "surface": "かなところです。"
+                  }
+                ],
+                "meaningRu": "Что это за остров? Там красивое море и тихо.",
+                "audioUrl": "/audio/marugoto/54e951620230b73b.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.097fcfd1544a8fd0",
+              "explanationRu": "В этой ситуации: корабль, лодка",
+              "example": {
+                "surface": "島に行くとき船に乗りました。",
+                "kana": "しまにいくときふねにのりました。",
+                "segments": [
+                  {
+                    "surface": "島",
+                    "reading": "しま"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "くとき"
+                  },
+                  {
+                    "surface": "船",
+                    "reading": "ふね"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "乗",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "りました。"
+                  }
+                ],
+                "meaningRu": "Когда я ехал на остров, я сел на корабль.",
+                "audioUrl": "/audio/marugoto/84ae9a2801651ba6.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8b9e7b30b9f17cbb",
+              "explanationRu": "В этой ситуации: ночь; вечер",
+              "example": {
+                "surface": "夜は一人で行かないほうがいいです。",
+                "kana": "よるはひとりでいかないほうがいいです。",
+                "segments": [
+                  {
+                    "surface": "夜",
+                    "reading": "よる"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "一人",
+                    "reading": "ひとり"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "かないほうがいいです。"
+                  }
+                ],
+                "meaningRu": "Вечером лучше не ходить одному.",
+                "audioUrl": "/audio/marugoto/fb17f6bcb639f94e.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.05.grammar.154",
+      "titleRu": "～たほうがいい",
+      "introductionRu": "たほうがいい даёт совет в пользу действия.",
+      "canDoIds": [
+        13,
+        14,
+        15
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.05.part.grammar.154",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.154",
+            "explanationRu": "たほうがいい даёт совет в пользу действия.",
+            "example": {
+              "surface": "水を持って行ったほうがいいです。",
+              "kana": "みずをもっていったほうがいいです。",
+              "segments": [
+                {
+                  "surface": "水",
+                  "reading": "みず"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "持",
+                  "reading": "も"
+                },
+                {
+                  "surface": "って"
+                },
+                {
+                  "surface": "行",
+                  "reading": "い"
+                },
+                {
+                  "surface": "ったほうがいいです。"
+                }
+              ],
+              "meaningRu": "Лучше взять с собой воду.",
+              "audioUrl": "/audio/marugoto/a46757e11369c5c3.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "水を",
+                "explanationRu": "Смысловой фрагмент: Лучше взять с собой воду."
+              },
+              {
+                "text": "持って行ったほうがいいです",
+                "explanationRu": "たほうがいい даёт совет в пользу действия."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.05.grammar.155",
+      "titleRu": "～ないほうがいい",
+      "introductionRu": "ないほうがいい рекомендует воздержаться от действия.",
+      "canDoIds": [
+        13,
+        14,
+        15
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.05.part.grammar.155",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.155",
+            "explanationRu": "ないほうがいい рекомендует воздержаться от действия.",
+            "example": {
+              "surface": "夜は一人で行かないほうがいいです。",
+              "kana": "よるはひとりでいかないほうがいいです。",
+              "segments": [
+                {
+                  "surface": "夜",
+                  "reading": "よる"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "一人",
+                  "reading": "ひとり"
+                },
+                {
+                  "surface": "で"
+                },
+                {
+                  "surface": "行",
+                  "reading": "い"
+                },
+                {
+                  "surface": "かないほうがいいです。"
+                }
+              ],
+              "meaningRu": "Вечером лучше не ходить одному.",
+              "audioUrl": "/audio/marugoto/fb17f6bcb639f94e.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "夜は",
+                "explanationRu": "Смысловой фрагмент: Вечером лучше не ходить одному."
+              },
+              {
+                "text": "一人で",
+                "explanationRu": "Смысловой фрагмент: Вечером лучше не ходить одному."
+              },
+              {
+                "text": "行かないほうがいいです",
+                "explanationRu": "ないほうがいい рекомендует воздержаться от действия."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.05.grammar.156",
+      "titleRu": "～とき",
+      "introductionRu": "Словарная форма перед とき показывает действие, которое ещё предстояло в тот момент.",
+      "canDoIds": [
+        13,
+        14,
+        15
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.05.part.grammar.156",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.156",
+            "explanationRu": "Словарная форма перед とき показывает действие, которое ещё предстояло в тот момент.",
+            "example": {
+              "surface": "島に行くとき船に乗りました。",
+              "kana": "しまにいくときふねにのりました。",
+              "segments": [
+                {
+                  "surface": "島",
+                  "reading": "しま"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "行",
+                  "reading": "い"
+                },
+                {
+                  "surface": "くとき"
+                },
+                {
+                  "surface": "船",
+                  "reading": "ふね"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "乗",
+                  "reading": "の"
+                },
+                {
+                  "surface": "りました。"
+                }
+              ],
+              "meaningRu": "Когда я ехал на остров, я сел на корабль.",
+              "audioUrl": "/audio/marugoto/84ae9a2801651ba6.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "島に",
+                "explanationRu": "Смысловой фрагмент: Когда я ехал на остров, я сел на корабль."
+              },
+              {
+                "text": "行くとき",
+                "explanationRu": "Смысловой фрагмент: Когда я ехал на остров, я сел на корабль."
+              },
+              {
+                "text": "船に",
+                "explanationRu": "Смысловой фрагмент: Когда я ехал на остров, я сел на корабль."
+              },
+              {
+                "text": "乗りました",
+                "explanationRu": "Словарная форма перед とき показывает действие, которое ещё предстояло в тот момент."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.13.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        13
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.13.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.13",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Спросите о месте для поездки и дайте краткое описание в ответе.",
+              "canDoIds": [
+                13
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Спросите о месте для поездки и дайте краткое описание в ответе.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "その島はどんなところですか。海がきれいで、静かなところです。",
+                "kana": "そのしまはどんなところですか。うみがきれいで、しずかなところです。",
+                "segments": [
+                  {
+                    "surface": "その"
+                  },
+                  {
+                    "surface": "島",
+                    "reading": "しま"
+                  },
+                  {
+                    "surface": "はどんなところですか。"
+                  },
+                  {
+                    "surface": "海",
+                    "reading": "うみ"
+                  },
+                  {
+                    "surface": "がきれいで、"
+                  },
+                  {
+                    "surface": "静",
+                    "reading": "しず"
+                  },
+                  {
+                    "surface": "かなところです。"
+                  }
+                ],
+                "meaningRu": "Что это за остров? Там красивое море и тихо.",
+                "audioUrl": "/audio/marugoto/54e951620230b73b.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Спросите о месте для поездки и дайте краткое описание в ответе.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.14.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        14
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.14.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.14",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Посоветуйте сезон для поездки, опираясь на собственный опыт.",
+              "canDoIds": [
+                14
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Посоветуйте сезон для поездки, опираясь на собственный опыт.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "夏は暑すぎました。春に行ったほうがいいと思います。",
+                "kana": "なつはあつすぎました。はるにいったほうがいいとおもいます。",
+                "segments": [
+                  {
+                    "surface": "夏",
+                    "reading": "なつ"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "暑",
+                    "reading": "あつ"
+                  },
+                  {
+                    "surface": "すぎました。"
+                  },
+                  {
+                    "surface": "春",
+                    "reading": "はる"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "ったほうがいいと"
+                  },
+                  {
+                    "surface": "思",
+                    "reading": "おも"
+                  },
+                  {
+                    "surface": "います。"
+                  }
+                ],
+                "meaningRu": "Летом было слишком жарко. Думаю, лучше поехать весной.",
+                "audioUrl": "/audio/marugoto/702d670e9db1ba6f.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Посоветуйте сезон для поездки, опираясь на собственный опыт.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.15.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        15
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.15.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.15",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите о транспорте во время прошлой поездки.",
+              "canDoIds": [
+                15
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите о транспорте во время прошлой поездки.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "島に行くとき、船に乗りました。少し時間がかかりましたが、楽しかったです。",
+                "kana": "しまにいくとき、ふねにのりました。すこしじかんがかかりましたが、たのしかったです。",
+                "segments": [
+                  {
+                    "surface": "島",
+                    "reading": "しま"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "くとき、"
+                  },
+                  {
+                    "surface": "船",
+                    "reading": "ふね"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "乗",
+                    "reading": "の"
+                  },
+                  {
+                    "surface": "りました。"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "時間",
+                    "reading": "じかん"
+                  },
+                  {
+                    "surface": "がかかりましたが、"
+                  },
+                  {
+                    "surface": "楽",
+                    "reading": "たの"
+                  },
+                  {
+                    "surface": "しかったです。"
+                  }
+                ],
+                "meaningRu": "Когда ехал на остров, я сел на корабль. Это заняло некоторое время, но было интересно.",
+                "audioUrl": "/audio/marugoto/1ae996ecf2165298.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите о транспорте во время прошлой поездки.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

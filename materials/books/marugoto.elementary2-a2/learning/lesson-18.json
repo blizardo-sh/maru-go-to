@@ -1,0 +1,704 @@
+{
+  "lessonId": "marugoto.elementary2-a2.lesson.18",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Воспоминания о детстве",
+  "goals": [
+    {
+      "id": "marugoto.elementary2-a2.lesson.18.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        48,
+        49
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.18.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.479e843e3e1543c4",
+              "explanationRu": "В этой ситуации: сочинение",
+              "example": {
+                "surface": "私は先生に作文を褒められました。",
+                "kana": "わたしはせんせいにさくぶんをほめられました。",
+                "segments": [
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "先生",
+                    "reading": "せんせい"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "作文",
+                    "reading": "さくぶん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "褒",
+                    "reading": "ほ"
+                  },
+                  {
+                    "surface": "められました。"
+                  }
+                ],
+                "meaningRu": "Преподаватель похвалил моё сочинение.",
+                "audioUrl": "/audio/marugoto/308251ab6326eae9.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.5bed5f85e91e0ad3",
+              "explanationRu": "В этой ситуации: учёба",
+              "example": {
+                "surface": "日本語を始めてから、毎朝勉強するようになりました。少し話せるようになりました。",
+                "kana": "にほんごをはじめてから、まいあさべんきょうするようになりました。すこしはなせるようになりました。",
+                "segments": [
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "始",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "めてから、"
+                  },
+                  {
+                    "surface": "毎朝",
+                    "reading": "まいあさ"
+                  },
+                  {
+                    "surface": "勉強",
+                    "reading": "べんきょう"
+                  },
+                  {
+                    "surface": "するようになりました。"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "せるようになりました。"
+                  }
+                ],
+                "meaningRu": "С тех пор как я начал японский, стал заниматься каждое утро. Научился немного говорить.",
+                "audioUrl": "/audio/marugoto/9d1605fab0d7ec43.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.2d31dd8d68a3ada0",
+              "explanationRu": "В этой ситуации: (мой) отец",
+              "example": {
+                "surface": "私は父に叱られました。",
+                "kana": "わたしはちちにしかられました。",
+                "segments": [
+                  {
+                    "surface": "私",
+                    "reading": "わたし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "父",
+                    "reading": "ちち"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "叱",
+                    "reading": "しか"
+                  },
+                  {
+                    "surface": "られました。"
+                  }
+                ],
+                "meaningRu": "Меня отругал отец.",
+                "audioUrl": "/audio/marugoto/5f232bccba354579.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.8b9e7b30b9f17cbb",
+              "explanationRu": "В этой ситуации: ночь; вечер",
+              "example": {
+                "surface": "夜はお菓子を食べなくなりました。",
+                "kana": "よるはおかしをたべなくなりました。",
+                "segments": [
+                  {
+                    "surface": "夜",
+                    "reading": "よる"
+                  },
+                  {
+                    "surface": "はお"
+                  },
+                  {
+                    "surface": "菓子",
+                    "reading": "かし"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "食",
+                    "reading": "た"
+                  },
+                  {
+                    "surface": "べなくなりました。"
+                  }
+                ],
+                "meaningRu": "Я перестал есть сладости по вечерам.",
+                "audioUrl": "/audio/marugoto/de6702f483f988a8.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.18.grammar.205",
+      "titleRu": "～（ら）れる　＜受身＞",
+      "introductionRu": "В пассиве человек, на которого направлено действие, становится темой; деятеля отмечаем に.",
+      "canDoIds": [
+        48,
+        49
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.18.part.grammar.205",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.205",
+            "explanationRu": "В пассиве человек, на которого направлено действие, становится темой; деятеля отмечаем に.",
+            "example": {
+              "surface": "私は父に叱られました。",
+              "kana": "わたしはちちにしかられました。",
+              "segments": [
+                {
+                  "surface": "私",
+                  "reading": "わたし"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "父",
+                  "reading": "ちち"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "叱",
+                  "reading": "しか"
+                },
+                {
+                  "surface": "られました。"
+                }
+              ],
+              "meaningRu": "Меня отругал отец.",
+              "audioUrl": "/audio/marugoto/5f232bccba354579.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "私は",
+                "explanationRu": "Смысловой фрагмент: Меня отругал отец."
+              },
+              {
+                "text": "父に",
+                "explanationRu": "Смысловой фрагмент: Меня отругал отец."
+              },
+              {
+                "text": "叱られました",
+                "explanationRu": "В пассиве человек, на которого направлено действие, становится темой; деятеля отмечаем に."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.18.grammar.206",
+      "titleRu": "～（ら）れる　＜受身＞",
+      "introductionRu": "Пассив может описывать и приятное действие, направленное на говорящего.",
+      "canDoIds": [
+        48,
+        49
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.18.part.grammar.206",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.206",
+            "explanationRu": "Пассив может описывать и приятное действие, направленное на говорящего.",
+            "example": {
+              "surface": "私は先生に作文を褒められました。",
+              "kana": "わたしはせんせいにさくぶんをほめられました。",
+              "segments": [
+                {
+                  "surface": "私",
+                  "reading": "わたし"
+                },
+                {
+                  "surface": "は"
+                },
+                {
+                  "surface": "先生",
+                  "reading": "せんせい"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "作文",
+                  "reading": "さくぶん"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "褒",
+                  "reading": "ほ"
+                },
+                {
+                  "surface": "められました。"
+                }
+              ],
+              "meaningRu": "Преподаватель похвалил моё сочинение.",
+              "audioUrl": "/audio/marugoto/308251ab6326eae9.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "私は",
+                "explanationRu": "Смысловой фрагмент: Преподаватель похвалил моё сочинение."
+              },
+              {
+                "text": "先生に",
+                "explanationRu": "Смысловой фрагмент: Преподаватель похвалил моё сочинение."
+              },
+              {
+                "text": "作文を",
+                "explanationRu": "Смысловой фрагмент: Преподаватель похвалил моё сочинение."
+              },
+              {
+                "text": "褒められました",
+                "explanationRu": "Пассив может описывать и приятное действие, направленное на говорящего."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.18.grammar.207",
+      "titleRu": "～ようになる",
+      "introductionRu": "ようになる сообщает о появившейся привычке или изменении поведения.",
+      "canDoIds": [
+        48,
+        49
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.18.part.grammar.207",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.207",
+            "explanationRu": "ようになる сообщает о появившейся привычке или изменении поведения.",
+            "example": {
+              "surface": "毎朝歩くようになりました。",
+              "kana": "まいあさあるくようになりました。",
+              "segments": [
+                {
+                  "surface": "毎朝",
+                  "reading": "まいあさ"
+                },
+                {
+                  "surface": "歩",
+                  "reading": "ある"
+                },
+                {
+                  "surface": "くようになりました。"
+                }
+              ],
+              "meaningRu": "Я стал гулять каждое утро.",
+              "audioUrl": "/audio/marugoto/e96d0f72bd4e2ca6.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "毎朝",
+                "explanationRu": "Смысловой фрагмент: Я стал гулять каждое утро."
+              },
+              {
+                "text": "歩くように",
+                "explanationRu": "Смысловой фрагмент: Я стал гулять каждое утро."
+              },
+              {
+                "text": "なりました",
+                "explanationRu": "ようになる сообщает о появившейся привычке или изменении поведения."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.18.grammar.208",
+      "titleRu": "～なくなる",
+      "introductionRu": "なくなる описывает исчезновение прежней привычки.",
+      "canDoIds": [
+        48,
+        49
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.18.part.grammar.208",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.208",
+            "explanationRu": "なくなる описывает исчезновение прежней привычки.",
+            "example": {
+              "surface": "夜はお菓子を食べなくなりました。",
+              "kana": "よるはおかしをたべなくなりました。",
+              "segments": [
+                {
+                  "surface": "夜",
+                  "reading": "よる"
+                },
+                {
+                  "surface": "はお"
+                },
+                {
+                  "surface": "菓子",
+                  "reading": "かし"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "食",
+                  "reading": "た"
+                },
+                {
+                  "surface": "べなくなりました。"
+                }
+              ],
+              "meaningRu": "Я перестал есть сладости по вечерам.",
+              "audioUrl": "/audio/marugoto/de6702f483f988a8.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "夜は",
+                "explanationRu": "Смысловой фрагмент: Я перестал есть сладости по вечерам."
+              },
+              {
+                "text": "お菓子を",
+                "explanationRu": "Смысловой фрагмент: Я перестал есть сладости по вечерам."
+              },
+              {
+                "text": "食べなくなりました",
+                "explanationRu": "なくなる описывает исчезновение прежней привычки."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.18.grammar.209",
+      "titleRu": "～（られ）るようになる",
+      "introductionRu": "Потенциальная форма + ようになる обозначает приобретённую возможность.",
+      "canDoIds": [
+        48,
+        49
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.18.part.grammar.209",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.209",
+            "explanationRu": "Потенциальная форма + ようになる обозначает приобретённую возможность.",
+            "example": {
+              "surface": "日本語で電話できるようになりました。",
+              "kana": "にほんごででんわできるようになりました。",
+              "segments": [
+                {
+                  "surface": "日本語",
+                  "reading": "にほんご"
+                },
+                {
+                  "surface": "で"
+                },
+                {
+                  "surface": "電話",
+                  "reading": "でんわ"
+                },
+                {
+                  "surface": "できるようになりました。"
+                }
+              ],
+              "meaningRu": "Я научился разговаривать по телефону на японском.",
+              "audioUrl": "/audio/marugoto/9de4009a385fb60e.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "日本語で",
+                "explanationRu": "Смысловой фрагмент: Я научился разговаривать по телефону на японском."
+              },
+              {
+                "text": "電話できるように",
+                "explanationRu": "Смысловой фрагмент: Я научился разговаривать по телефону на японском."
+              },
+              {
+                "text": "なりました",
+                "explanationRu": "Потенциальная форма + ようになる обозначает приобретённую возможность."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.18.grammar.210",
+      "titleRu": "～（られ）なくなる",
+      "introductionRu": "Отрицательная потенциальная форма + なる означает, что возможность исчезла.",
+      "canDoIds": [
+        48,
+        49
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.lesson.18.part.grammar.210",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary2-a2.example.grammar.210",
+            "explanationRu": "Отрицательная потенциальная форма + なる означает, что возможность исчезла.",
+            "example": {
+              "surface": "忙しくなって旅行できなくなりました。",
+              "kana": "いそがしくなってりょこうできなくなりました。",
+              "segments": [
+                {
+                  "surface": "忙",
+                  "reading": "いそが"
+                },
+                {
+                  "surface": "しくなって"
+                },
+                {
+                  "surface": "旅行",
+                  "reading": "りょこう"
+                },
+                {
+                  "surface": "できなくなりました。"
+                }
+              ],
+              "meaningRu": "Я стал занят и больше не могу путешествовать.",
+              "audioUrl": "/audio/marugoto/b78964d04ba8661f.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "忙しくなって",
+                "explanationRu": "Смысловой фрагмент: Я стал занят и больше не могу путешествовать."
+              },
+              {
+                "text": "旅行できなく",
+                "explanationRu": "Смысловой фрагмент: Я стал занят и больше не могу путешествовать."
+              },
+              {
+                "text": "なりました",
+                "explanationRu": "Отрицательная потенциальная форма + なる означает, что возможность исчезла."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.48.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        48
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.48.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.48",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите о детском воспоминании и реакции взрослого.",
+              "canDoIds": [
+                48
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите о детском воспоминании и реакции взрослого.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "子どものとき、絵が好きでした。先生に絵を褒められて、うれしかったです。",
+                "kana": "こどものとき、えがすきでした。せんせいにえをほめられて、うれしかったです。",
+                "segments": [
+                  {
+                    "surface": "子",
+                    "reading": "こ"
+                  },
+                  {
+                    "surface": "どものとき、"
+                  },
+                  {
+                    "surface": "絵",
+                    "reading": "え"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "好",
+                    "reading": "す"
+                  },
+                  {
+                    "surface": "きでした。"
+                  },
+                  {
+                    "surface": "先生",
+                    "reading": "せんせい"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "絵",
+                    "reading": "え"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "褒",
+                    "reading": "ほ"
+                  },
+                  {
+                    "surface": "められて、うれしかったです。"
+                  }
+                ],
+                "meaningRu": "В детстве я любил рисовать. Преподаватель похвалил рисунок, и я обрадовался.",
+                "audioUrl": "/audio/marugoto/b7f91dced74647e2.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите о детском воспоминании и реакции взрослого.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary2-a2.cando.49.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        49
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary2-a2.cando.49.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary2-a2.cando.49",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите, что вы начали делать и как изменилась жизнь.",
+              "canDoIds": [
+                49
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите, что вы начали делать и как изменилась жизнь.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "日本語を始めてから、毎朝勉強するようになりました。少し話せるようになりました。",
+                "kana": "にほんごをはじめてから、まいあさべんきょうするようになりました。すこしはなせるようになりました。",
+                "segments": [
+                  {
+                    "surface": "日本語",
+                    "reading": "にほんご"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "始",
+                    "reading": "はじ"
+                  },
+                  {
+                    "surface": "めてから、"
+                  },
+                  {
+                    "surface": "毎朝",
+                    "reading": "まいあさ"
+                  },
+                  {
+                    "surface": "勉強",
+                    "reading": "べんきょう"
+                  },
+                  {
+                    "surface": "するようになりました。"
+                  },
+                  {
+                    "surface": "少",
+                    "reading": "すこ"
+                  },
+                  {
+                    "surface": "し"
+                  },
+                  {
+                    "surface": "話",
+                    "reading": "はな"
+                  },
+                  {
+                    "surface": "せるようになりました。"
+                  }
+                ],
+                "meaningRu": "С тех пор как я начал японский, стал заниматься каждое утро. Научился немного говорить.",
+                "audioUrl": "/audio/marugoto/9d1605fab0d7ec43.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите, что вы начали делать и как изменилась жизнь.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

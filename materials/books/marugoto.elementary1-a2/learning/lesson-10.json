@@ -1,0 +1,831 @@
+{
+  "lessonId": "marugoto.elementary1-a2.lesson.10",
+  "version": "marugoto-a2-v1",
+  "titleRu": "Знакомство с другой культурой",
+  "goals": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.10.words.1",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        24,
+        25,
+        26
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.10.part.words.1",
+          "words": [
+            {
+              "wordId": "marugoto.word.8e679a31060665e0",
+              "explanationRu": "В этой ситуации: раз",
+              "example": {
+                "surface": "月に二回料理を習っています。",
+                "kana": "つきににかいりょうりをならっています。",
+                "segments": [
+                  {
+                    "surface": "月",
+                    "reading": "つき"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "二回",
+                    "reading": "にかい"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "習",
+                    "reading": "なら"
+                  },
+                  {
+                    "surface": "っています。"
+                  }
+                ],
+                "meaningRu": "Я учусь готовить дважды в месяц.",
+                "audioUrl": "/audio/marugoto/541d4b9fb462d2ae.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.word.a0f84b849e1e54c9",
+              "explanationRu": "В этой ситуации: луна, месяц",
+              "example": {
+                "surface": "月に二回料理を習っています。",
+                "kana": "つきににかいりょうりをならっています。",
+                "segments": [
+                  {
+                    "surface": "月",
+                    "reading": "つき"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "二回",
+                    "reading": "にかい"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "習",
+                    "reading": "なら"
+                  },
+                  {
+                    "surface": "っています。"
+                  }
+                ],
+                "meaningRu": "Я учусь готовить дважды в месяц.",
+                "audioUrl": "/audio/marugoto/541d4b9fb462d2ae.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.870190aabd2ca4bf",
+              "explanationRu": "В этой ситуации: учитель",
+              "example": {
+                "surface": "十時から料理の教室です。午後は音楽の時間です。",
+                "kana": "じゅうじからりょうりのきょうしつです。ごごはおんがくのじかんです。",
+                "segments": [
+                  {
+                    "surface": "十時",
+                    "reading": "じゅうじ"
+                  },
+                  {
+                    "surface": "から"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "教室",
+                    "reading": "きょうしつ"
+                  },
+                  {
+                    "surface": "です。"
+                  },
+                  {
+                    "surface": "午後",
+                    "reading": "ごご"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "音楽",
+                    "reading": "おんがく"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "時間",
+                    "reading": "じかん"
+                  },
+                  {
+                    "surface": "です。"
+                  }
+                ],
+                "meaningRu": "С десяти — кулинарное занятие. Во второй половине дня — музыка.",
+                "audioUrl": "/audio/marugoto/e284db6887d47abe.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.19e7bb501190f7b5",
+              "explanationRu": "В этой ситуации: Южная Корея",
+              "example": {
+                "surface": "来年韓国に行きたいです。",
+                "kana": "らいねんかんこくにいきたいです。",
+                "segments": [
+                  {
+                    "surface": "来年",
+                    "reading": "らいねん"
+                  },
+                  {
+                    "surface": "韓国",
+                    "reading": "かんこく"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きたいです。"
+                  }
+                ],
+                "meaningRu": "В следующем году я хочу поехать в Корею.",
+                "audioUrl": "/audio/marugoto/66c88f3a0f00a115.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.9692b9ba75abfe51",
+              "explanationRu": "В этой ситуации: пятое число",
+              "example": {
+                "surface": "月に一回、日本の料理を習っています。いつか日本に行きたいです。",
+                "kana": "つきにいっかい、にほんのりょうりをならっています。いつかにほんにいきたいです。",
+                "segments": [
+                  {
+                    "surface": "月",
+                    "reading": "つき"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "一回",
+                    "reading": "いっかい"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "日本",
+                    "reading": "にほん"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "習",
+                    "reading": "なら"
+                  },
+                  {
+                    "surface": "っています。いつか"
+                  },
+                  {
+                    "surface": "日本",
+                    "reading": "にほん"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きたいです。"
+                  }
+                ],
+                "meaningRu": "Раз в месяц я учусь готовить японские блюда. Когда-нибудь хочу поехать в Японию.",
+                "audioUrl": "/audio/marugoto/9f1627f07308fc48.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.10.words.2",
+      "titleRu": "Слова в ситуации",
+      "introductionRu": "Послушайте слова, прочитайте пример и свяжите значение с ситуацией.",
+      "canDoIds": [
+        24,
+        25,
+        26
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.10.part.words.2",
+          "words": [
+            {
+              "wordId": "marugoto.starter-a1.word.f07e2c9caacb6b93",
+              "explanationRu": "В этой ситуации: год",
+              "example": {
+                "surface": "来年韓国に行きたいです。",
+                "kana": "らいねんかんこくにいきたいです。",
+                "segments": [
+                  {
+                    "surface": "来年",
+                    "reading": "らいねん"
+                  },
+                  {
+                    "surface": "韓国",
+                    "reading": "かんこく"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きたいです。"
+                  }
+                ],
+                "meaningRu": "В следующем году я хочу поехать в Корею.",
+                "audioUrl": "/audio/marugoto/66c88f3a0f00a115.m4a"
+              }
+            },
+            {
+              "wordId": "marugoto.starter-a1.word.e08d579635c5469e",
+              "explanationRu": "В этой ситуации: книга",
+              "example": {
+                "surface": "月に一回、日本の料理を習っています。いつか日本に行きたいです。",
+                "kana": "つきにいっかい、にほんのりょうりをならっています。いつかにほんにいきたいです。",
+                "segments": [
+                  {
+                    "surface": "月",
+                    "reading": "つき"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "一回",
+                    "reading": "いっかい"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "日本",
+                    "reading": "にほん"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "習",
+                    "reading": "なら"
+                  },
+                  {
+                    "surface": "っています。いつか"
+                  },
+                  {
+                    "surface": "日本",
+                    "reading": "にほん"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きたいです。"
+                  }
+                ],
+                "meaningRu": "Раз в месяц я учусь готовить японские блюда. Когда-нибудь хочу поехать в Японию.",
+                "audioUrl": "/audio/marugoto/9f1627f07308fc48.m4a"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.10.grammar.101",
+      "titleRu": "～たい／たくない",
+      "introductionRu": "Основа перед ます + たい выражает своё желание; отрицание — たくない.",
+      "canDoIds": [
+        24,
+        25,
+        26
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.10.part.grammar.101",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.101",
+            "explanationRu": "Основа перед ます + たい выражает своё желание; отрицание — たくない.",
+            "example": {
+              "surface": "来年韓国に行きたいです。",
+              "kana": "らいねんかんこくにいきたいです。",
+              "segments": [
+                {
+                  "surface": "来年",
+                  "reading": "らいねん"
+                },
+                {
+                  "surface": "韓国",
+                  "reading": "かんこく"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "行",
+                  "reading": "い"
+                },
+                {
+                  "surface": "きたいです。"
+                }
+              ],
+              "meaningRu": "В следующем году я хочу поехать в Корею.",
+              "audioUrl": "/audio/marugoto/66c88f3a0f00a115.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "来年",
+                "explanationRu": "Смысловой фрагмент: В следующем году я хочу поехать в Корею."
+              },
+              {
+                "text": "韓国に",
+                "explanationRu": "Смысловой фрагмент: В следующем году я хочу поехать в Корею."
+              },
+              {
+                "text": "行きたいです",
+                "explanationRu": "Основа перед ます + たい выражает своё желание; отрицание — たくない."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.10.grammar.102",
+      "titleRu": "～に～回（ぐらい）",
+      "introductionRu": "Период + に + число раз выражает частоту.",
+      "canDoIds": [
+        24,
+        25,
+        26
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.10.part.grammar.102",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.102",
+            "explanationRu": "Период + に + число раз выражает частоту.",
+            "example": {
+              "surface": "月に二回料理を習っています。",
+              "kana": "つきににかいりょうりをならっています。",
+              "segments": [
+                {
+                  "surface": "月",
+                  "reading": "つき"
+                },
+                {
+                  "surface": "に"
+                },
+                {
+                  "surface": "二回",
+                  "reading": "にかい"
+                },
+                {
+                  "surface": "料理",
+                  "reading": "りょうり"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "習",
+                  "reading": "なら"
+                },
+                {
+                  "surface": "っています。"
+                }
+              ],
+              "meaningRu": "Я учусь готовить дважды в месяц.",
+              "audioUrl": "/audio/marugoto/541d4b9fb462d2ae.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "月に",
+                "explanationRu": "Смысловой фрагмент: Я учусь готовить дважды в месяц."
+              },
+              {
+                "text": "二回",
+                "explanationRu": "Смысловой фрагмент: Я учусь готовить дважды в месяц."
+              },
+              {
+                "text": "料理を",
+                "explanationRu": "Смысловой фрагмент: Я учусь готовить дважды в месяц."
+              },
+              {
+                "text": "習っています",
+                "explanationRu": "Период + に + число раз выражает частоту."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.10.grammar.103",
+      "titleRu": "～てみる",
+      "introductionRu": "てみる означает попробовать действие, чтобы получить опыт или результат.",
+      "canDoIds": [
+        24,
+        25,
+        26
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.10.part.grammar.103",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.103",
+            "explanationRu": "てみる означает попробовать действие, чтобы получить опыт или результат.",
+            "example": {
+              "surface": "韓国語で注文してみます。",
+              "kana": "かんこくごでちゅうもんしてみます。",
+              "segments": [
+                {
+                  "surface": "韓国語",
+                  "reading": "かんこくご"
+                },
+                {
+                  "surface": "で"
+                },
+                {
+                  "surface": "注文",
+                  "reading": "ちゅうもん"
+                },
+                {
+                  "surface": "してみます。"
+                }
+              ],
+              "meaningRu": "Я попробую сделать заказ по-корейски.",
+              "audioUrl": "/audio/marugoto/1395124555dced5b.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "韓国語で",
+                "explanationRu": "Смысловой фрагмент: Я попробую сделать заказ по-корейски."
+              },
+              {
+                "text": "注文してみます",
+                "explanationRu": "てみる означает попробовать действие, чтобы получить опыт или результат."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.10.grammar.104",
+      "titleRu": "～ましょうか",
+      "introductionRu": "ましょうか предлагает помощь собеседнику.",
+      "canDoIds": [
+        24,
+        25,
+        26
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.lesson.10.part.grammar.104",
+          "words": [],
+          "construction": {
+            "exerciseId": "marugoto.elementary1-a2.example.grammar.104",
+            "explanationRu": "ましょうか предлагает помощь собеседнику.",
+            "example": {
+              "surface": "荷物を持ちましょうか。",
+              "kana": "にもつをもちましょうか。",
+              "segments": [
+                {
+                  "surface": "荷物",
+                  "reading": "にもつ"
+                },
+                {
+                  "surface": "を"
+                },
+                {
+                  "surface": "持",
+                  "reading": "も"
+                },
+                {
+                  "surface": "ちましょうか。"
+                }
+              ],
+              "meaningRu": "Давайте я понесу багаж?",
+              "audioUrl": "/audio/marugoto/d4f417fd90b6a8f0.m4a"
+            },
+            "breakdown": [
+              {
+                "text": "荷物を",
+                "explanationRu": "Смысловой фрагмент: Давайте я понесу багаж?"
+              },
+              {
+                "text": "持ちましょうか",
+                "explanationRu": "ましょうか предлагает помощь собеседнику."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.24.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        24
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.24.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.24",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Расскажите, как вы знакомитесь с культурой другой страны.",
+              "canDoIds": [
+                24
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Расскажите, как вы знакомитесь с культурой другой страны.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "月に一回、日本の料理を習っています。いつか日本に行きたいです。",
+                "kana": "つきにいっかい、にほんのりょうりをならっています。いつかにほんにいきたいです。",
+                "segments": [
+                  {
+                    "surface": "月",
+                    "reading": "つき"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "一回",
+                    "reading": "いっかい"
+                  },
+                  {
+                    "surface": "、"
+                  },
+                  {
+                    "surface": "日本",
+                    "reading": "にほん"
+                  },
+                  {
+                    "surface": "の"
+                  },
+                  {
+                    "surface": "料理",
+                    "reading": "りょうり"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "習",
+                    "reading": "なら"
+                  },
+                  {
+                    "surface": "っています。いつか"
+                  },
+                  {
+                    "surface": "日本",
+                    "reading": "にほん"
+                  },
+                  {
+                    "surface": "に"
+                  },
+                  {
+                    "surface": "行",
+                    "reading": "い"
+                  },
+                  {
+                    "surface": "きたいです。"
+                  }
+                ],
+                "meaningRu": "Раз в месяц я учусь готовить японские блюда. Когда-нибудь хочу поехать в Японию.",
+                "audioUrl": "/audio/marugoto/9f1627f07308fc48.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Расскажите, как вы знакомитесь с культурой другой страны.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.25.goal",
+      "titleRu": "Собственный устный ответ",
+      "canDoIds": [
+        25
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.25.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.25",
+              "titleRu": "Собственный устный ответ",
+              "instructionRu": "Предложите помощь человеку с тяжёлой сумкой и примите такую помощь.",
+              "canDoIds": [
+                25
+              ],
+              "kind": "production",
+              "response": "spoken",
+              "supports": [
+                "Предложите помощь человеку с тяжёлой сумкой и примите такую помощь.",
+                "Сначала подготовьте свой вариант. Затем откройте образец и сравните смысл."
+              ],
+              "model": {
+                "surface": "荷物を持ちましょうか。ありがとうございます。お願いします。",
+                "kana": "にもつをもちましょうか。ありがとうございます。おねがいします。",
+                "segments": [
+                  {
+                    "surface": "荷物",
+                    "reading": "にもつ"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "持",
+                    "reading": "も"
+                  },
+                  {
+                    "surface": "ちましょうか。ありがとうございます。お"
+                  },
+                  {
+                    "surface": "願",
+                    "reading": "ねが"
+                  },
+                  {
+                    "surface": "いします。"
+                  }
+                ],
+                "meaningRu": "Давайте я понесу багаж? Спасибо, пожалуйста.",
+                "audioUrl": "/audio/marugoto/2d1767e16a854dd3.m4a"
+              },
+              "rubric": [
+                "Задача выполнена: Предложите помощь человеку с тяжёлой сумкой и примите такую помощь.",
+                "Смысл понятен собеседнику; имена, время и причины не противоречат друг другу.",
+                "Формы и вежливость подходят ситуации. Отличия от образца допустимы."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "marugoto.elementary1-a2.cando.26.goal",
+      "titleRu": "Читаем и понимаем",
+      "canDoIds": [
+        26
+      ],
+      "parts": [
+        {
+          "id": "marugoto.elementary1-a2.cando.26.part",
+          "words": [],
+          "tasks": [
+            {
+              "id": "marugoto.elementary1-a2.cando.26",
+              "titleRu": "Читаем и понимаем",
+              "instructionRu": "Прочитайте программу и найдите нужное занятие.",
+              "canDoIds": [
+                26
+              ],
+              "kind": "reading",
+              "passage": [
+                {
+                  "surface": "十時から料理の教室です。午後は音楽の時間です。",
+                  "kana": "じゅうじからりょうりのきょうしつです。ごごはおんがくのじかんです。",
+                  "segments": [
+                    {
+                      "surface": "十時",
+                      "reading": "じゅうじ"
+                    },
+                    {
+                      "surface": "から"
+                    },
+                    {
+                      "surface": "料理",
+                      "reading": "りょうり"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "教室",
+                      "reading": "きょうしつ"
+                    },
+                    {
+                      "surface": "です。"
+                    },
+                    {
+                      "surface": "午後",
+                      "reading": "ごご"
+                    },
+                    {
+                      "surface": "は"
+                    },
+                    {
+                      "surface": "音楽",
+                      "reading": "おんがく"
+                    },
+                    {
+                      "surface": "の"
+                    },
+                    {
+                      "surface": "時間",
+                      "reading": "じかん"
+                    },
+                    {
+                      "surface": "です。"
+                    }
+                  ],
+                  "meaningRu": "С десяти — кулинарное занятие. Во второй половине дня — музыка.",
+                  "audioUrl": "/audio/marugoto/e284db6887d47abe.m4a"
+                }
+              ],
+              "questionRu": "Когда проходит кулинарное занятие?",
+              "options": [
+                {
+                  "id": "a",
+                  "text": "С десяти утра"
+                },
+                {
+                  "id": "b",
+                  "text": "Во второй половине дня"
+                }
+              ],
+              "acceptedAnswers": [
+                "a"
+              ],
+              "explanationRu": "С десяти — кулинарное занятие. Во второй половине дня — музыка."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

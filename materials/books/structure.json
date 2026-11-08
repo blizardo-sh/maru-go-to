@@ -1,0 +1,1217 @@
+{
+  "books": [
+    {
+      "id": "marugoto.elementary1-a2",
+      "title": "Marugoto Elementary 1 · A2-1",
+      "shortTitle": "A2-1",
+      "level": "A2",
+      "order": 1,
+      "unit": "lesson",
+      "unitCount": 18,
+      "canDoCount": 53
+    },
+    {
+      "id": "marugoto.elementary2-a2",
+      "title": "Marugoto Elementary 2 · A2-2",
+      "shortTitle": "A2-2",
+      "level": "A2",
+      "order": 2,
+      "unit": "lesson",
+      "unitCount": 18,
+      "canDoCount": 49
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1",
+      "title": "Marugoto Pre-Intermediate · A2/B1",
+      "shortTitle": "A2/B1",
+      "level": "A2/B1",
+      "order": 3,
+      "unit": "topic",
+      "unitCount": 9,
+      "canDoCount": 44
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto.elementary1-a2.lesson.01",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 1,
+      "title": "Жизнь и работа моей семьи",
+      "topic": "Тема 1",
+      "canDoIds": [
+        1,
+        2
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.02",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 2,
+      "title": "Рассказываем об увлечениях",
+      "topic": "Тема 1",
+      "canDoIds": [
+        3,
+        4,
+        5
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.03",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 3,
+      "title": "Времена года",
+      "topic": "Тема 2",
+      "canDoIds": [
+        6,
+        7
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.04",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 4,
+      "title": "Разговор о погоде",
+      "topic": "Тема 2",
+      "canDoIds": [
+        8,
+        9
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.05",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 5,
+      "title": "Места в моём городе",
+      "topic": "Тема 3",
+      "canDoIds": [
+        10,
+        11
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.06",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 6,
+      "title": "Объясняем дорогу",
+      "topic": "Тема 3",
+      "canDoIds": [
+        12,
+        13,
+        14
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.07",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 7,
+      "title": "Договариваемся о встрече",
+      "topic": "Тема 4",
+      "canDoIds": [
+        15,
+        16,
+        17
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.08",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 8,
+      "title": "Приглашаем на прогулку",
+      "topic": "Тема 4",
+      "canDoIds": [
+        18,
+        19
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.09",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 9,
+      "title": "Опыт изучения языков",
+      "topic": "Тема 5",
+      "canDoIds": [
+        20,
+        21,
+        22,
+        23
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.10",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 10,
+      "title": "Знакомство с другой культурой",
+      "topic": "Тема 5",
+      "canDoIds": [
+        24,
+        25,
+        26
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.11",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 11,
+      "title": "Планируем пикник",
+      "topic": "Тема 6",
+      "canDoIds": [
+        27,
+        28,
+        29
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.12",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 12,
+      "title": "Угощаем и обсуждаем еду",
+      "topic": "Тема 6",
+      "canDoIds": [
+        30,
+        31,
+        32
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.13",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 13,
+      "title": "Встречаем коллегу",
+      "topic": "Тема 7",
+      "canDoIds": [
+        33,
+        34,
+        35,
+        36
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.14",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 14,
+      "title": "В гостях в офисе",
+      "topic": "Тема 7",
+      "canDoIds": [
+        37,
+        38,
+        39,
+        40
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.15",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 15,
+      "title": "Советы о самочувствии",
+      "topic": "Тема 8",
+      "canDoIds": [
+        41,
+        42,
+        43
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.16",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 16,
+      "title": "Привычки для здоровья",
+      "topic": "Тема 8",
+      "canDoIds": [
+        44,
+        45,
+        46
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.17",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 17,
+      "title": "Подарки и поздравления",
+      "topic": "Тема 9",
+      "canDoIds": [
+        47,
+        48,
+        49
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary1-a2.lesson.18",
+      "bookId": "marugoto.elementary1-a2",
+      "number": 18,
+      "title": "Планируем праздник",
+      "topic": "Тема 9",
+      "canDoIds": [
+        50,
+        51,
+        52,
+        53
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary1_a/MarugotoElementary1ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.01",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 1,
+      "title": "Знакомство и имена",
+      "topic": "Тема 1",
+      "canDoIds": [
+        1,
+        2
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.02",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 2,
+      "title": "Описываем человека",
+      "topic": "Тема 1",
+      "canDoIds": [
+        3,
+        4
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.03",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 3,
+      "title": "Выбираем блюдо",
+      "topic": "Тема 2",
+      "canDoIds": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.04",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 4,
+      "title": "Как приготовить и съесть",
+      "topic": "Тема 2",
+      "canDoIds": [
+        10,
+        11,
+        12
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.05",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 5,
+      "title": "Собираемся в поездку",
+      "topic": "Тема 3",
+      "canDoIds": [
+        13,
+        14,
+        15
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.06",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 6,
+      "title": "Возможности на отдыхе",
+      "topic": "Тема 3",
+      "canDoIds": [
+        16,
+        17,
+        18
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.07",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 7,
+      "title": "План на случай дождя",
+      "topic": "Тема 4",
+      "canDoIds": [
+        19,
+        20,
+        21
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.08",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 8,
+      "title": "Встречаемся на мероприятии",
+      "topic": "Тема 4",
+      "canDoIds": [
+        22,
+        23,
+        24
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.09",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 9,
+      "title": "Новогодние впечатления",
+      "topic": "Тема 5",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.10",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 10,
+      "title": "Пожелания и праздники",
+      "topic": "Тема 5",
+      "canDoIds": [
+        29,
+        30
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.11",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 11,
+      "title": "Объясняем поломку",
+      "topic": "Тема 6",
+      "canDoIds": [
+        31,
+        32
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.12",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 12,
+      "title": "Сравниваем покупки",
+      "topic": "Тема 6",
+      "canDoIds": [
+        33,
+        34
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.13",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 13,
+      "title": "Знакомимся с историей места",
+      "topic": "Тема 7",
+      "canDoIds": [
+        35,
+        36,
+        37,
+        38
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.14",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 14,
+      "title": "Искусство и впечатления",
+      "topic": "Тема 7",
+      "canDoIds": [
+        39,
+        40
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.15",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 15,
+      "title": "Экономим ресурсы",
+      "topic": "Тема 8",
+      "canDoIds": [
+        41,
+        42
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.16",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 16,
+      "title": "Вторая жизнь вещей",
+      "topic": "Тема 8",
+      "canDoIds": [
+        43,
+        44
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.17",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 17,
+      "title": "Человек, которым восхищаюсь",
+      "topic": "Тема 9",
+      "canDoIds": [
+        45,
+        46,
+        47
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.elementary2-a2.lesson.18",
+      "bookId": "marugoto.elementary2-a2",
+      "number": 18,
+      "title": "Воспоминания о детстве",
+      "topic": "Тема 9",
+      "canDoIds": [
+        48,
+        49
+      ],
+      "sourceRefs": [
+        {
+          "part": "katsudoo",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/elementary2_a/MarugotoElementary2ActivitiesCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.01",
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "number": 1,
+      "title": "Спортивный матч",
+      "topic": "Тема 1",
+      "canDoIds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "sourceRefs": [
+        {
+          "part": "combined",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.02",
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "number": 2,
+      "title": "Ищем жильё",
+      "topic": "Тема 2",
+      "canDoIds": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "sourceRefs": [
+        {
+          "part": "combined",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.03",
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "number": 3,
+      "title": "Привычная еда",
+      "topic": "Тема 3",
+      "canDoIds": [
+        12,
+        13,
+        14,
+        15
+      ],
+      "sourceRefs": [
+        {
+          "part": "combined",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.04",
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "number": 4,
+      "title": "Принимаем гостей",
+      "topic": "Тема 4",
+      "canDoIds": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "sourceRefs": [
+        {
+          "part": "combined",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.05",
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "number": 5,
+      "title": "Радость изучения языка",
+      "topic": "Тема 5",
+      "canDoIds": [
+        21,
+        22,
+        23,
+        24
+      ],
+      "sourceRefs": [
+        {
+          "part": "combined",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+          "page": 1
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.06",
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "number": 6,
+      "title": "Свадьба",
+      "topic": "Тема 6",
+      "canDoIds": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "sourceRefs": [
+        {
+          "part": "combined",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.07",
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "number": 7,
+      "title": "Обсуждаем проблемы",
+      "topic": "Тема 7",
+      "canDoIds": [
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "sourceRefs": [
+        {
+          "part": "combined",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.08",
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "number": 8,
+      "title": "Трудности в путешествии",
+      "topic": "Тема 8",
+      "canDoIds": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "sourceRefs": [
+        {
+          "part": "combined",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    },
+    {
+      "id": "marugoto.pre-intermediate-a2b1.topic.09",
+      "bookId": "marugoto.pre-intermediate-a2b1",
+      "number": 9,
+      "title": "Ищем работу",
+      "topic": "Тема 9",
+      "canDoIds": [
+        41,
+        42,
+        43,
+        44
+      ],
+      "sourceRefs": [
+        {
+          "part": "combined",
+          "url": "https://marugoto.jpf.go.jp/assets/docs/download/pre_intermediate/MarugotoPre-IntermediateCan-doCheck_RU.pdf",
+          "page": 2
+        }
+      ],
+      "availability": "full",
+      "readiness": {
+        "vocabulary": "source-checked",
+        "grammar": "source-checked",
+        "exercises": "source-checked",
+        "audio": "source-checked"
+      }
+    }
+  ]
+}

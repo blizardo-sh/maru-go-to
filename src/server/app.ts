@@ -1,7 +1,10 @@
+import { learnerCourse } from './client-course';
+import { courseRepresentationHeader, learnerCourseRepresentation } from '../shared/course-representation';
+import { markPriorLearning } from './prior-learning-legacy';
+import { recognizePriorLearning } from './prior-learning';
+import { priorCommandSchema, priorLearningSchema } from './validation';
 import { createHash, createHmac } from 'node:crypto';
 import { settingsKey } from '../shared/settings';
-import { markPriorLearning } from './prior-learning';
-import { priorLearningSchema } from './validation';
 import { advanceLearning, learningOverview, learningState } from './learning';
 import { publicationIdSchema } from './validation';
 import { learningAdvanceSchema } from './validation';
@@ -86,15 +89,21 @@ export function createApp({database,config,course,publications,sendMail}:{databa
   const legacy=!requested&&c.req.method==='POST'&&['/api/reviews','/api/reviews/evaluate','/api/analyze'].some(path=>c.req.path===path)||!requested&&c.req.method==='POST'&&c.req.path.endsWith('/advance');
   c.set('course',publications?await publications(requested,legacy):course);await next();
  });
+ const responseCourse = (c: import('hono').Context<AppEnv>, value: Course): Course => {
+  const compact = c.req.header(courseRepresentationHeader) === learnerCourseRepresentation;
+  c.header('Vary', courseRepresentationHeader, { append: true });
+  c.header(courseRepresentationHeader, compact ? learnerCourseRepresentation : 'full');
+  return compact ? learnerCourse(value) : value;
+ };
  const routes=app
- .get('/api/bootstrap',async c=>{const course=c.get('course'),id=c.get('actor').id;const [words,settings,progress,lists,learning]=await Promise.all([allWords(database,id,course),settingsFor(database,id),progressFor(database,id,course),listsFor(database,id),learningOverview(database,id,course)]);return c.json({course:withPersonalPractice(course,words),settings,progress,lists,learning:learning.lessons});})
+ .get('/api/bootstrap',async c=>{const course=c.get('course'),id=c.get('actor').id;const [words,settings,progress,lists,learning]=await Promise.all([allWords(database,id,course),settingsFor(database,id),progressFor(database,id,course),listsFor(database,id),learningOverview(database,id,course)]);return c.json({course:responseCourse(c,withPersonalPractice(course,words)),settings,progress,lists,learning:learning.lessons});})
  .get('/api/me',c=>c.json(c.get('actor')))
- .get('/api/course',async c=>{const course=c.get('course');const words=await allWords(database,c.get('actor').id,course);const body=JSON.stringify(withPersonalPractice(course,words));const etag='W/"'+createHash('sha256').update(body).digest('hex')+'"';c.header('ETag',etag);c.header('Cache-Control','private, no-cache');if(c.req.header('If-None-Match')===etag)return c.body(null,304);return c.body(body,200,{'Content-Type':'application/json; charset=UTF-8'});})
+ .get('/api/course',async c=>{const course=c.get('course');const words=await allWords(database,c.get('actor').id,course);const body=JSON.stringify(responseCourse(c,withPersonalPractice(course,words)));const etag='W/"'+createHash('sha256').update(body).digest('hex')+'"';c.header('ETag',etag);c.header('Cache-Control','private, no-cache');if(c.req.header('If-None-Match')===etag)return c.body(null,304);return c.body(body,200,{'Content-Type':'application/json; charset=UTF-8'});})
  .get('/api/settings',async c=>c.json(await settingsFor(database,c.get('actor').id)))
  .put('/api/settings',async c=>{const body=settingsSchema.parse(await c.req.json());const listRows=await database.sql`select id from word_lists where user_id=${c.get('actor').id}`;if(body.enabledListIds.some(id=>!listRows.some((r:any)=>r.id===id)))return fail(c,'UNKNOWN_LIST','Личный список недоступен.',403);const expected=c.req.header('If-Match');if(expected!==undefined&&!/^[a-f0-9]{64}$/.test(expected))return fail(c,'VALIDATION','Неверная версия настроек.',400);const owner=c.get('actor').id;await database.sql.begin(async tx=>{await tx`select pg_advisory_xact_lock(hashtext(${'settings:'+owner}))`;const current=await settingsFor({sql:tx} as unknown as Database,owner),digest=(value:typeof body)=>createHash('sha256').update(settingsKey(value)).digest('hex');if(expected&&digest(current)!==expected&&settingsKey(current)!==settingsKey(body))throw new ReviewError('SETTINGS_CONFLICT','Настройки изменены в другой вкладке. Загрузите их перед изменением.',409);await tx`insert into preferences(user_id,settings) values(${owner},${body}) on conflict(user_id) do update set settings=excluded.settings,updated_at=now()`;});return c.json(body);})
  .get('/api/progress',async c=>{const course=c.get('course');return c.json(await progressFor(database,c.get('actor').id,course));})
- .post('/api/prior-learning',async c=>c.json(await markPriorLearning(database,c.get('actor').id,c.get('course'),priorLearningSchema.parse(await c.req.json()))))
  .get('/api/reviews',async c=>{const course=c.get('course');const mode=z.enum(['ja-ru','ru-ja','listening','grammar','counter','mixed']).parse(c.req.query('mode')??'ja-ru') as ReviewMode|'mixed';return c.json(await reviewQueue(database,c.get('actor').id,course,mode));})
+ .post('/api/prior-learning',async c=>{const input=z.union([priorCommandSchema,priorLearningSchema]).parse(await c.req.json());return c.json('action' in input ? await markPriorLearning(database,c.get('actor').id,c.get('course'),input) : await recognizePriorLearning(database,c.get('actor').id,c.get('course'),input));})
  .get('/api/learning',async c=>{const course=c.get('course');return c.json(await learningOverview(database,c.get('actor').id,course));})
  .get('/api/learning/:lessonId',async c=>{const course=c.get('course');return c.json(await learningState(database,c.get('actor').id,course,c.req.param('lessonId')));})
  .post('/api/learning/:lessonId/advance',async c=>{const course=c.get('course');return c.json(await advanceLearning(database,c.get('actor').id,course,c.req.param('lessonId'),learningAdvanceSchema.parse(await c.req.json()),publications?await publications():course));})
@@ -107,7 +116,7 @@ export function createApp({database,config,course,publications,sendMail}:{databa
  .patch('/api/lists/:listId',async c=>{const body=z.object({name:z.string().trim().min(1).max(100),expectedName:z.string().max(100)}).strict().parse(await c.req.json());return c.json(await renameList(database,c.get('actor').id,c.req.param('listId'),body.name,body.expectedName));})
  .post('/api/lists/:listId/words',async c=>{const body=z.object({text:z.string().trim().min(1).max(50000),requestId:z.uuid()}).strict().parse(await c.req.json());return c.json(await appendList(database,c.get('actor').id,c.req.param('listId'),body.text,c.get('course'),body.requestId));})
  .patch('/api/lists/:listId/words/:wordId',async c=>{const {expected,...raw}=z.object({expected:z.object({surface:z.string(),kana:z.string(),meaningRu:z.string(),pos:z.string()}).strict().optional()}).passthrough().parse(await c.req.json());const body=wordUpdateSchema.parse(raw);try{const word=await updateWord(database,c.get('actor').id,c.req.param('listId'),c.req.param('wordId'),body,expected);return word?c.json(word):fail(c,'NOT_FOUND','Слово не найдено.',404);}catch(error){if(error instanceof Error&&error.message.startsWith('Подтвердите'))return fail(c,'INVALID_READING',error.message);throw error;}})
- .post('/api/analyze',async c=>{const course=c.get('course');const input=analysisSchema.parse(await c.req.json());const userId=c.get('actor').id;const words=await allWords(database,userId,course);const extended=withPersonalPractice(course,words);const access=await introducedMaterial(database,userId);
+ .post('/api/analyze',async c=>{const course=c.get('course');const input=analysisSchema.parse(await c.req.json());const userId=c.get('actor').id;const words=await allWords(database,userId,course);const extended=withPersonalPractice(course,words);const access=await introducedMaterial(database,userId,course);
   if(input.lessonId){if(!course.lessons.some(lesson=>lesson.id===input.lessonId))return fail(c,'NOT_FOUND','Урок не найден.',404);for(const word of words)if(word.lessonIds.includes(input.lessonId))access.wordIds.add(word.id);for(const skill of course.skills)if(skill.lessonIds.includes(input.lessonId))access.skillIds.add(skill.id);}
   if(input.listId){const [list]=await database.sql`select id from word_lists where id=${input.listId} and user_id=${userId}`;if(!list)return fail(c,'NOT_FOUND','Личный список не найден.',404);const rows=await database.sql`select id from personal_words where list_id=${input.listId} and user_id=${userId}`;for(const row of rows)access.wordIds.add(row.id);for(const exercise of extended.exercises)if(exercise.tokens.some(token=>extended.forms.some(form=>form.id===token.formId&&rows.some((row:any)=>row.id===form.wordId))))access.skillIds.add(exercise.skillId);}
   if(input.exerciseId){const exercise=extended.exercises.find(item=>item.id===input.exerciseId);if(!exercise)return fail(c,'NOT_FOUND','Упражнение не найдено.',404);let allowed=false;

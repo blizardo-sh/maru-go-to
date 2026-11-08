@@ -1,3 +1,4 @@
+import { workspaceNext } from './helpers/workspace-next';
 import { createServer } from 'vite';
 import react from '@vitejs/plugin-react';
 import { chromium, expect, type Page } from '@playwright/test';
@@ -47,17 +48,17 @@ try {
       const submission = route.request().postDataJSON() as ReviewSubmission; submissions.push(submission);
       if (name === 'lost-ack' && submissions.length === 1) { await route.fulfill({ status: 503, json: { error: { message: 'Synthetic lost ACK' } } }); return; }
       if (held && submissions.length === 1) await new Promise<void>(resolve => { release = resolve; });
-      await route.fulfill({ json: { attemptId: submission.attemptId, status: 'scheduled', version: 1, nextDue: '2026-10-24T00:00:00Z', correct: name !== 'authoritative-wrong' && submission.rating === 3 } });
+      await route.fulfill({ json: { attemptId: submission.attemptId, status: name.startsWith('word-recall') ? 'scheduled' : 'learning', version: 1, nextDue: new Date(Date.now()+86400000).toISOString(), correct: name !== 'authoritative-wrong' && submission.rating === 3 } });
     });
     await context.route('**/api/analyze', route => { const request = route.request().postDataJSON(); return route.fulfill({ json: { text: request.text, revision: request.revision, status: 'unavailable', reason: 'Isolated fixture' } }); });
     try {
       await page.goto(`http://127.0.0.1:${address.port}/interaction${name.startsWith('word-recall') ? '?source=review' : ''}`);
       const paper = page.getByTestId('review-gesture'); await expect(paper).toHaveAttribute('data-review-id', first.id);
       if (name.startsWith('builder')) {
-        if (first.mode !== 'grammar') throw new Error('Grammar fixture'); await expect(paper).toHaveAttribute('data-card-phase', 'workspace'); await expect(page.locator('.workspace-next')).toBeDisabled();
+        if (first.mode !== 'grammar') throw new Error('Grammar fixture'); await expect(paper).toHaveAttribute('data-card-phase', 'workspace'); await expect(workspaceNext(page)).toBeDisabled();
         if (name === 'builder') { for (const id of first.exercise.acceptedOrders[0]!) await page.locator(`.bank [data-token-id=${JSON.stringify(id)}]`).click(); await expect(page.locator('[data-outcome=correct]').first()).toBeVisible(); }
         else { await page.getByLabel('Действия карточки', { exact: true }).click(); await page.getByRole('button', { name: 'Ввести фразу', exact: true }).click(); await page.getByRole('textbox', { name: 'Ваша фраза', exact: true }).fill('こんにちは。'); await page.getByLabel('Закрыть редактор', { exact: true }).click(); await expect(page.locator('[data-outcome=exploration]').first()).toBeVisible(); }
-        await expect(page.locator('.workspace-next')).toBeEnabled(); await paper.press('ArrowRight'); await swipe(page, 1); expect(submissions).toHaveLength(0); await page.locator('.workspace-next').click(); await expect(page.getByTestId('portion-complete')).toBeVisible(); expect(submissions).toHaveLength(name === 'builder' ? 1 : 0); expect(errors).toEqual([]); checks.push(name); continue;
+        await expect(workspaceNext(page)).toBeEnabled(); await paper.press('ArrowRight'); await swipe(page, 1); expect(submissions).toHaveLength(0); await workspaceNext(page).click(); await expect(page.getByTestId('portion-complete')).toBeVisible(); expect(submissions).toHaveLength(name === 'builder' ? 1 : 0); expect(errors).toEqual([]); checks.push(name); continue;
       }
       if (name.startsWith('recall') || name.startsWith('word-recall')) {
         await expect(paper).toHaveAttribute('data-card-phase', 'question');
@@ -184,7 +185,7 @@ try {
       await request.fulfill({ json: path === '/api/bootstrap' ? { course, settings: { ...defaultSettings, sceneSoundEnabled: false }, progress, lists: [], learning: [] } : path === '/api/me' ? user : path === '/api/course' ? course : path === '/api/settings' ? { ...defaultSettings, sceneSoundEnabled: false } : path === '/api/progress' ? { counters: [], introducedWordIds: [], introducedSkillIds: [], completedLessons: 0, totalLessons: 18, wordsIntroducedToday: 0, skillsIntroducedToday: 0, byMode: { 'ja-ru': counts, 'ru-ja': counts, listening: counts, grammar: counts, counter: counts } } : path === '/api/lists' ? { lists: [] } : { lessons: [] } });
     });
     try {
-      await page.goto(`http://127.0.0.1:${address.port}/interaction?app`); await expect(page.getByRole('heading', { name: 'Учебник', exact: true })).toBeVisible(); const before = courseGets;
+      await page.goto(`http://127.0.0.1:${address.port}/interaction?app`); await expect(page.getByRole('heading', { name: /^(Учебник|Уроки)$/ })).toBeVisible(); const before = courseGets;
       await page.evaluate(({ key, otherKey, pending, event }) => { localStorage.setItem(key, JSON.stringify(pending)); localStorage.setItem(otherKey, JSON.stringify([pending[1]])); window.dispatchEvent(new Event(event)); }, { key, otherKey, pending: [stale, remaining], event });
       await expect.poll(() => submissions.length, { timeout: 3000 }).toBe(2); expect(submissions).toEqual([stale.submission, remaining.submission]); await expect.poll(() => courseGets).toBeGreaterThan(before);
       expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key) ?? '[]'), key)).toEqual([]); expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key) ?? '[]'), otherKey)).toEqual([remaining]); await expect(page.getByText('На этом устройстве ждут сохранения ответы:', { exact: false })).toHaveCount(0); expect(errors).toEqual([]); checks.push(`app-replay-${event}`); console.info(`PASS app-replay-${event}`);

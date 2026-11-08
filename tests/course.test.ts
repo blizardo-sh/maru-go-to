@@ -3,10 +3,10 @@ import { course, validateCourse } from "../src/shared/course";
 
 describe("published full-course material", () => {
   test("retains every source vocabulary row, both parts, and all 52 grammar notes", () => {
-    const rows = new Set(course.words.flatMap((word) => word.sourceRefs.filter((ref) => ref.url.includes("/starter_") && ref.url.includes("VocabularyIndex")).map((ref) => `${ref.url}:${ref.page}:${ref.row}`)));
+    const rows = new Set(course.words.flatMap((word) => word.sourceRefs.filter((ref) => ref.url.includes("/starter_") && ref.url.includes("VocabularyIndex") && ref.url.endsWith("_RU.pdf")).map((ref) => `${ref.url}:${ref.page}:${ref.row}`)));
     expect(rows.size).toBe(1113);
     for (const part of ["katsudoo", "rikai"]) {
-      const refs = new Set(course.words.flatMap((word) => word.sourceRefs.filter((ref) => ref.part === part && ref.url.includes("/starter_") && ref.url.includes("VocabularyIndex")).map((ref) => `${ref.url}:${ref.page}:${ref.row}`)));
+      const refs = new Set(course.words.flatMap((word) => word.sourceRefs.filter((ref) => ref.part === part && ref.url.includes("/starter_") && ref.url.includes("VocabularyIndex") && ref.url.endsWith("_RU.pdf")).map((ref) => `${ref.url}:${ref.page}:${ref.row}`)));
       expect(refs.size).toBe(part === "katsudoo" ? 546 : 567);
       for (let n = 1; n <= 18; n++) {
         expect(course.words.some((word) => word.sourceRefs.some((ref) => ref.part === part && ref.url.includes("VocabularyIndex") && ref.label === `Словарь · урок ${n}`))).toBe(true);
@@ -28,8 +28,9 @@ describe("published full-course material", () => {
   });
 
   test("past and polite forms keep one word sense; repeated functions keep one skill", () => {
-    const go = course.words.find((word) => word.kana === "いきます" && word.meaningRu === "идти");
+    const go = course.words.find((word) => word.id === "marugoto.starter-a1.word.10d2007bc30b98ad");
     expect(go).toBeDefined();
+    expect(go?.meaningRu).toBe("идти; ехать");
     const kana = course.forms.filter((form) => form.wordId === go?.id).map((form) => form.kana);
     expect(kana).toContain("いきました");
     expect(kana).toContain("いきませんでした");
