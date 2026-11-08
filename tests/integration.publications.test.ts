@@ -133,4 +133,6 @@ const url=process.env.JAPANESE_INTEGRATION_DATABASE_URL;
     for(const id of created)await db.sql`delete from content_publications where id=${id}`;
     await db.sql.close();rmSync(empty,{recursive:true,force:true});
   }
-},20000);
+// Three full publication formats, media hashes and rollback share this scenario.
+// This is the total integration-test budget, not an API response-time allowance.
+},60000);
