@@ -89,6 +89,7 @@ jobs:
           docker run --rm --read-only --cap-drop ALL --security-opt no-new-privileges:true --tmpfs /tmp japanese-api:check sh -c 'bun scripts/content.ts pack /tmp/content.json && bun scripts/content.ts verify-media /tmp/content.json'
           docker run --rm --user 1000:1000 --read-only --cap-drop ALL --security-opt no-new-privileges:true --tmpfs /tmp --tmpfs /config --tmpfs /data japanese-web:check caddy validate --config /etc/caddy/Caddyfile --adapter caddyfile
           bash deployment/check-media.sh japanese-web:check
+          bash deployment/check-cache.sh japanese-web:check
   publish:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     needs: check

@@ -30,6 +30,9 @@
   }
   handle {
     root * /srv
+    # HTML selects the current hashed assets; saved Safari launches must re-fetch it.
+    @html path / /*.html /invite /recover /register /forgot-password /verify-email /confirm-email /login /admin
+    header @html Cache-Control "no-store"
     @entry path / /index.html /album.html /invite /recover /register /forgot-password /verify-email /confirm-email /login /admin
     rewrite @entry /{$CLIENT_ENTRY:index.html}
     try_files {path} =404
