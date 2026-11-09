@@ -10,6 +10,14 @@ ALLOWED="default-src 'self'; media-src 'self' blob: https://a1.marugotoweb.jp; o
 BLOCKED="default-src 'self'; media-src 'self' blob:; object-src 'none'"
 
 class VideoPolicyTests(unittest.TestCase):
+    def test_html_requires_no_store_not_only_revalidation(self):
+        for value in ['', 'max-age=3600', 'no-cache', 'private, must-revalidate']:
+            headers=Message()
+            if value:headers.add_header('Cache-Control',value)
+            with self.subTest(value=value),self.assertRaises(AssertionError):verify.assert_html_cache_policy(headers)
+        headers=Message();headers.add_header('Cache-Control','private, NO-STORE')
+        verify.assert_html_cache_policy(headers)
+
     def test_reviewed_nginx_template_meets_the_same_public_contract(self):
         template=Path(__file__).with_name('nginx-http.conf').read_text()
         policy=re.search(r'add_header Content-Security-Policy "([^"]+)" always;',template)
@@ -37,6 +45,7 @@ class VideoPolicyTests(unittest.TestCase):
 
     def test_headers_only_makes_exactly_one_head_and_preserves_all_policies(self):
         headers=Message()
+        headers.add_header('Cache-Control','no-store')
         for name,value in [('Strict-Transport-Security','max-age=31536000'),('Content-Security-Policy',ALLOWED),('X-Content-Type-Options','nosniff'),('Referrer-Policy','no-referrer'),('X-Frame-Options','DENY')]:headers.add_header(name,value)
         with patch.object(verify,'request',return_value=(200,headers,b'')) as request,contextlib.redirect_stdout(io.StringIO()) as output:
             verify.main(['https://example.test','--headers-only'])

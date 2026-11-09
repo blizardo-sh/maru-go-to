@@ -5,6 +5,10 @@ from urllib.parse import urlsplit
 
 VIDEO_MEDIA_SOURCES={"'self'",'blob:','https://a1.marugotoweb.jp'}
 
+def assert_html_cache_policy(headers):
+    directives={part.strip().lower() for value in headers.get_all('Cache-Control',[]) for part in value.split(',')}
+    assert 'no-store' in directives, 'HTML must use Cache-Control: no-store so saved browser launches load the current release'
+
 def assert_video_media_policy(headers):
     """Every enforced policy must permit only the reviewed media sources."""
     assert headers, 'Missing Content-Security-Policy'
@@ -33,13 +37,20 @@ def main(argv=None):
     status,raw_headers,body=request(site,'/',method=method)
     assert status==200 and (args.headers_only or b'<html' in body.lower())
     assert_video_media_policy(raw_headers.get_all('Content-Security-Policy'))
+    assert_html_cache_policy(raw_headers)
     headers={k.lower():v for k,v in raw_headers.items()}
-    required=['strict-transport-security','content-security-policy','x-content-type-options','referrer-policy','x-frame-options']
+    required=['strict-transport-security','content-security-policy','x-content-type-options','referrer-policy','x-frame-options','cache-control']
     for key in required:assert headers.get(key),key
     assert headers['x-frame-options']=='DENY'
     results={'site':site,'checked_at_utc':time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()),'mode':'headers-only' if args.headers_only else 'release','https':status,'headers':{k:headers[k] for k in required},'video_media_policy':'exact official host allowed'}
     if args.headers_only:
         print(json.dumps(results,ensure_ascii=False,indent=2));return
+    results['html_cache_policy']='no-store'
+    for path in ['/index.html','/album.html','/legacy.html','/login','/register','/forgot-password','/recover','/invite','/verify-email','/confirm-email','/admin']:
+        status,entry_headers,entry_body=request(site,path)
+        assert status==200 and b'<html' in entry_body.lower(),(path,status)
+        assert_html_cache_policy(entry_headers)
+    results['html_entry_routes_checked']=12
     for path,expected in [('/health',200),('/ready',403),('/api/me',401),('/api/course',401),('/api/admin/users',401),('/api/openapi.json',401)]:
         actual,_,_=request(site,path);assert actual==expected,(path,actual,expected)
         results[path]=actual
