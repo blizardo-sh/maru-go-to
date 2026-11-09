@@ -85,6 +85,28 @@ editor.element.addEventListener('input', () => { flow.revise(); workspaceInput?.
 email.element.setAttribute('aria-label', 'Электронная почта'); password.element.setAttribute('aria-label', 'Пароль'); password.element.autocomplete = 'current-password'; email.element.name = 'email'; password.element.name = 'password'; email.element.autocapitalize = 'none'; email.element.setAttribute('autocorrect', 'off');
 const accessName = new EditorBridge(false, schedule); accessName.element.lang = 'ru'; accessName.element.setAttribute('autocomplete', 'nickname'); accessName.element.setAttribute('aria-label', 'Имя в приложении'); accessName.element.maxLength = 100; accessName.element.addEventListener('input', () => { access.name = accessName.element.value; }); email.element.addEventListener('input', () => { if (access.mode) access.email = email.element.value; });
 const placedFields = new Set<EditorBridge>();
+let keyboardOffset = 0, keyboardFrame = 0;
+function keepEditorsVisible() {
+  const viewport = window.visualViewport, active = document.activeElement;
+  let offset = 0;
+  if (ready && !suspended && viewport && Math.abs(viewport.scale - 1) < .01 && viewport.height < innerHeight - 1 && active instanceof HTMLElement && active.matches('.native-editor:not([hidden])') && host.contains(active)) {
+    const focused = active.getBoundingClientRect(), fields = [...placedFields].map(field => field.element.getBoundingClientRect());
+    let top = Math.min(focused.top, ...fields.map(rect => rect.top)), bottom = Math.max(focused.bottom, ...fields.map(rect => rect.bottom));
+    if (bottom - top > viewport.height - 32) { top = focused.top; bottom = focused.bottom; }
+    // Undo our previous translation before accounting for Safari's own viewport pan.
+    top -= keyboardOffset; bottom -= keyboardOffset;
+    offset = Math.round(Math.max(viewport.offsetTop + 16 - top, Math.min(0, viewport.offsetTop + viewport.height - 16 - bottom)));
+  }
+  const moved = keyboardOffset !== offset;
+  keyboardOffset = offset;
+  host.style.translate = offset ? `0 ${offset}px` : '';
+  if (moved && ready && !contextLost && !suspended) app.render();
+}
+function queueKeyboardPosition() {
+  if (!keyboardFrame) keyboardFrame = requestAnimationFrame(() => { keyboardFrame = 0; keepEditorsVisible(); });
+}
+host.addEventListener('focusin', queueKeyboardPosition); host.addEventListener('focusout', queueKeyboardPosition);
+window.visualViewport?.addEventListener('resize', queueKeyboardPosition); window.visualViewport?.addEventListener('scroll', queueKeyboardPosition);
 const transcript = document.createElement('p'); transcript.className = 'semantic-copy'; transcript.setAttribute('aria-live', 'polite'); host.append(transcript);
 let desktopMenu: 'practice' | 'album' = 'practice';
 let reviewStarted = false;
@@ -605,6 +627,7 @@ function draw() {
   else if (page === 'library-video') renderLibraryVideo();
   else renderSettings();
   for (const field of [email, password, accessName, editor, ...referenceFields.values()]) if (!placedFields.has(field)) field.place(null);
+  keepEditorsVisible();
   if (flow.user) topNavigation();
   if (mediaError || busy()) {
     const text = mediaError || 'Сохраняем…', a = surface.body;

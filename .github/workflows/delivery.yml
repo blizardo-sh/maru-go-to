@@ -66,6 +66,8 @@ jobs:
         run: bun tests/helpers/run-guided-browser.ts tests/integration.email-access.browser.ts
       - name: Browser open registration and recovery (Canvas)
         run: CANVAS_BROWSER=true bun tests/helpers/run-guided-browser.ts tests/integration.email-access.browser.ts
+      - name: Browser Canvas fields above the mobile keyboard
+        run: bun tests/integration.keyboard.browser.ts
       - name: Browser eight-character passwords
         run: bun tests/helpers/run-guided-browser.ts tests/integration.password.browser.ts
       - name: Browser registration link administration and signup
