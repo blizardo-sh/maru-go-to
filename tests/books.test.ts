@@ -10,7 +10,7 @@ test('old course defaults to A1 and local numbers retain a book identity',()=>{
  expect(unitCountLabel(marugotoBooks[3]!)).toBe('9 тем');
 });
 test('book places are owner scoped; stale lessons and malformed navigation are ignored',()=>{
- const storage=new Map<string,string>(),original=globalThis.localStorage;
+ const storage=new Map<string,string>(),original=Object.getOwnPropertyDescriptor(globalThis,'localStorage');
  Object.defineProperty(globalThis,'localStorage',{configurable:true,value:{getItem:(key:string)=>storage.get(key)??null,setItem:(key:string,value:string)=>storage.set(key,value)}});
  try {
   const library={...course,books:marugotoBooks};
@@ -19,7 +19,7 @@ test('book places are owner scoped; stale lessons and malformed navigation are i
   expect(readBookNavigation('one',library).places[starterBookId]).toEqual({page:2,lessonId:course.lessons[0]!.id});
   expect(readBookNavigation('one',library).places[marugotoBooks[1]!.id]).toEqual({page:1});
   storage.set('japanese-books-v1:one','broken');expect(readBookNavigation('one',library).bookId).toBe(starterBookId);
- } finally {Object.defineProperty(globalThis,'localStorage',{configurable:true,value:original});}
+ } finally {if(original)Object.defineProperty(globalThis,'localStorage',original);else Reflect.deleteProperty(globalThis,'localStorage');}
 });
 
 import { loadCourse } from '../src/server/course';

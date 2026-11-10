@@ -1,3 +1,5 @@
+import { isVisualWordMode, wordCardFor } from '@app/shared/word-cards';
+import { renderVisualWord, visualWordImageReady } from './album-word-visual';
 import { ratingOptions, intervalLabel } from '@app/client/review-ratings';
 import { meaningDisplay } from '@app/shared/meanings';
 import { TaskView, renderTask } from './album-task';
@@ -60,6 +62,7 @@ let app = new Application();
 const world = new Container(), ui = new Container();
 const flow = new ConnectedFlow(schedule), review = new ReviewFlow<ReviewItem>(schedule);
 const access = new AccessFlow(schedule), admin = new AdminAccess(schedule), settingsView = { offset: 0, volume: null as keyof typeof import('./album-settings').volumeLabels | null, level: 0 };
+let counterStarted = false;
 const kana = new KanaFlow(schedule), kanaView = { offset: 0 };
 const library = new AlbumLibrary(schedule), reference = new AlbumReference(library, schedule);
 const referenceFields = new Map<string, EditorBridge>(), referenceCallbacks = new Map<string, (value: string) => void>();
@@ -145,11 +148,16 @@ const busy = () => flow.busy || review.busy || grammar.busy || counters.busy || 
 const reviewWord = () => { const item = review.item; return item && 'word' in item ? item : undefined; };
 const reviewCounter = () => review.item?.mode === 'counter' ? review.item : undefined;
 const activeCounter = () => page === 'review' ? reviewCounter() : counters.item;
-const listening = () => page === 'counters' || page === 'review' && reviewStarted ? activeCounter()?.counter.kind === 'listening-image' || page === 'review' && reviewWord()?.mode === 'listening' : page === 'lesson' && (flow.step && 'mode' in flow.step && flow.step.mode === 'listening' || flow.counter?.kind === 'listening-image');
-const counterRecall = () => ((page === 'counters' || page === 'review' && reviewStarted) && activeCounter()?.counter.kind === 'recall' && activeCounter()?.preparation?.introduced !== false && !!(page === 'review' ? review.course : counters.course) && counterArt.ready(catalogFor((page === 'review' ? review.course : counters.course)!)) || page === 'lesson' && flow.counter?.kind === 'recall' && !!flow.course && counterArt.ready(catalogFor(flow.course))) && !counterDraft.rule && !(page === 'lesson' && flow.counterNeedsIntro);
+const listening = () => page === 'counters' && counterStarted || page === 'review' && reviewStarted ? activeCounter()?.counter.kind === 'listening-image' || page === 'review' && reviewWord()?.mode === 'listening' : page === 'lesson' && (flow.step && 'mode' in flow.step && flow.step.mode === 'listening' || flow.counter?.kind === 'listening-image');
+const counterRecall = () => ((page === 'counters' && counterStarted || page === 'review' && reviewStarted) && activeCounter()?.counter.kind === 'recall' && activeCounter()?.preparation?.introduced !== false && !!(page === 'review' ? review.course : counters.course) && counterArt.ready(catalogFor((page === 'review' ? review.course : counters.course)!)) || page === 'lesson' && flow.counter?.kind === 'recall' && !!flow.course && counterArt.ready(catalogFor(flow.course))) && !counterDraft.rule && !(page === 'lesson' && flow.counterNeedsIntro);
 const isRecall = () => counterRecall() || page === 'review' && reviewStarted && !!reviewWord() && !reviewWord()?.choices?.length || page === 'lesson' && (flow.recall && flow.step?.kind !== 'construction-practice' || flow.step?.kind === 'construction-practice' && flow.step.mode !== 'grammar');
 const isRevealed = () => counterRecall() ? counterDraft.revealed : page === 'lesson' && flow.recall ? flow.draft.revealed : revealed;
-const allowed = (rating: Rating) => ready && !contextLost && !suspended && !menuOpen && !busy() && !flow.error && !(page === 'review' && (review.saveError || review.pending)) && !(page === 'counters' && (counters.saveError || counters.pending)) && isRevealed() && (!listening() || heard && !mediaError);
+function currentVisualCard() {
+  const mode=page==='review'?reviewWord()?.mode:page==='lesson'&&flow.step?.kind==='word-practice'?flow.step.mode:undefined;
+  const word=page==='review'?reviewWord()?.word:page==='lesson'?flow.word:undefined;
+  return mode&&isVisualWordMode(mode)&&word&&'id' in word?wordCardFor(word.id,(page==='review'?review.course:flow.course)?.catalog):undefined;
+}
+const allowed = (rating: Rating) => ready && !contextLost && !suspended && !menuOpen && !busy() && !flow.error && !(page === 'review' && (review.saveError || review.pending)) && !(page === 'counters' && (counters.saveError || counters.pending)) && (!currentVisualCard() || visualWordImageReady(currentVisualCard()!)) && !(page==='review'&&reviewWord()?.preparation?.introduced===false) && isRevealed() && (!listening() || heard && !mediaError);
 function feedbackForPage() { return page === 'review' ? review.last : page === 'counters' ? counters.last : page === 'grammar' ? grammar.last : page === 'kana' ? kana.last : page === 'lesson' ? flow.feedback : null; }
 function presentationPlan() {
   const done = page === 'lesson' ? flow.state?.completed : page === 'review' ? review.total > 0 && review.completed >= review.total && !review.item : page === 'grammar' ? grammar.total > 0 && grammar.completed >= grammar.total && !grammar.item : page === 'counters' ? counters.total > 0 && counters.completed >= counters.total && !counters.item : page === 'kana' ? kana.total > 0 && kana.completed >= kana.total && !kana.item : false;
@@ -201,6 +209,7 @@ video.addEventListener('play', () => { if (!document.hidden && !video.hidden) { 
 for (const name of ['pause', 'ended']) video.addEventListener(name, () => { if (mediaOwner === 'video' && (video.paused || video.ended)) { mediaOwner = null; mediaPriority(false); } });
 function savedFeedback(value: { attemptId: string; kind: 'good' | 'again' }) { if (companion.saved(value) && !document.hidden && !contextLost && !suspended) sound.cue(value.kind, value.attemptId); }
 function reveal() {
+  if (currentVisualCard() && (page==='review'?reviewWord()?.mode:flow.step&&'mode' in flow.step?flow.step.mode:undefined)==='picture-word' && !visualWordImageReady(currentVisualCard()!)) return;
   if (!ready || contextLost || suspended || busy() || document.hidden || listening() && (!heard || mediaError)) return;
   if (counterRecall()) { counterDraft.revealed = true; persistCounterDraft(); } else if (page === 'lesson' && flow.recall) flow.reveal(); else revealed = true;
   sound.cue('reveal', key); companion.update(`${key}:reveal`, 'revealed'); schedule();
@@ -262,7 +271,7 @@ async function openLesson(id: string) { notice = ''; rememberLesson(id);
 function home() { if(page==='book')requestedFocus=bookReturnFocus; notice = ''; shelfOpen = false; menuOpen = false; stopMedia(); flow.active = false; review.hide(); grammar.hide(); counters.hide(); kana.hide(); page = 'lessons'; history.replaceState(null, '', location.pathname); schedule(); }
 async function logout() { stopMedia(); sound.configure(settings ?? defaultSoundSettings, chosenScene, false, false); companion.quiet(); review.clear(); grammar.clear(); counters.clear(); page = 'lessons'; settings = null; await flow.logout(); schedule(); }
 function openGrammar(context?: TrainingContext) { notice = ''; stopMedia(); review.hide(); counters.hide(); flow.active = false; menuOpen = false; page = 'grammar'; if (JSON.stringify(context) !== JSON.stringify(grammarContext)) grammar.clear(); grammarContext = context; grammar.active = true; if (!grammar.item && !grammar.pending) void grammar.open(flow.user!.id, 'grammar', context); schedule(); }
-function openCounters() { notice = ''; stopMedia(); review.hide(); grammar.hide(); flow.active = false; menuOpen = false; page = 'counters'; counters.active = true; if (!counters.item && !counters.pending) void counters.open(flow.user!.id, 'counter', {counters:true}); schedule(); }
+function openCounters() { notice = ''; stopMedia(); kana.hide(); counterStarted=false; review.hide(); grammar.hide(); flow.active = false; menuOpen = false; page = 'counters'; counters.active = true; if(counters.pending)counterStarted=true;else{counters.clear();void counters.open(flow.user!.id,'counter');} schedule(); }
 function openAdmin() { notice = ''; stopMedia(); review.hide(); grammar.hide(); counters.hide(); flow.active = false; menuOpen = false; page = 'admin'; if (flow.user?.isAdmin) void admin.load(flow.user.id); schedule(); }
 function openKana() { notice = ''; stopMedia(); review.hide(); grammar.hide(); counters.hide(); flow.active = false; menuOpen = false; page = 'kana'; void kana.boot(flow.user!.id, catalogFor(flow.course!)); schedule(); }
 function referenceField(id: string, rect: Rect, value: string, placeholder: string, changed: (value: string) => void, readOnly = false) {
@@ -330,7 +339,7 @@ function topNavigation() {
   const a = surface.layout.content, compactLandscape = view.low && view.width < 700, y = view.low ? -5 : !view.wide && view.height < 650 ? -12 : -72;
   const actions: StudyAction[] = [
     { id: 'home', text: 'Разделы', run: () => { menuOpen = !menuOpen; schedule(); } },
-    { id: 'reviews', text: 'Повторение', run: openReviewMenu },
+    { id: 'reviews', text: view.low?'Повторы':'Повторение', accessibleLabel:'Повторение', run: openReviewMenu },
       { id: 'settings', text: 'Настройки', run: () => { notice = ''; menuOpen = false; stopMedia(); page = 'settings'; schedule(); } },
     { id: 'logout', text: 'Выход', run: () => void logout() },
   ];
@@ -390,8 +399,8 @@ function renderPracticeMenu() {
 }
 function renderTrainers() {
   sectionCards(surface, 'Тренажёры', 'Выберите навык для самостоятельного занятия', [
-    { id: 'kana', text: 'Хирагана и катакана', description: 'Знаки, чтение и повтор ошибок', run: openKana },
-    { id: 'counters', text: 'Счётные суффиксы', description: 'Учимся считать знакомые предметы', run: openCounters },
+    { id: 'kana', text: 'Хирагана и катакана', description: 'Карточки, ряды азбук, мнемоники и повторение по расписанию', run: openKana },
+    { id: 'counters', text: 'Счётные суффиксы', description: 'Правила, карточки с предметами и интервальное повторение', run: openCounters },
   ], safe);
 }
 function openReviewMenu() {
@@ -420,26 +429,37 @@ function renderLessons() {
 function renderIntro() {
   const part = flow.part!, word = flow.word!, isWord = flow.step?.kind === 'word-intro';
   const explanation = isWord ? flow.introduction!.explanationRu : flow.construction!.explanationRu, example = isWord ? flow.introduction!.example : flow.construction!.example;
-  renderAlbumIntro(surface, word, explanation, example, {
+  const visual = isWord ? wordCardFor(flow.word as import('@app/shared/types').Word, flow.course?.catalog) : undefined;
+  if (visual && introTab === 0) {
+    renderVisualWord(surface, view, visual, 'picture-word', true, [
+      safe({ id: 'intro-back', text: '←', enabled: flow.session!.introIndex > 0, run: () => { flow.introduce(flow.ticket(), -1); schedule(); } }),
+      safe({ id: 'intro-example', text: 'Пример', run: () => { introTab = 1; schedule(); } }),
+      safe({ id: 'intro-next', text: flow.session!.introIndex < part.words.length - 1 ? 'Дальше →' : 'К практике', run: () => { if (flow.session!.introIndex < part.words.length - 1) { flow.introduce(flow.ticket(), 1); schedule(); } else void advance('start-practice'); } }),
+    ], safe({id:'intro-audio',text:'▶ Слово',run:()=>void play('audioUrl' in word?word.audioUrl:undefined)}), schedule);
+    return;
+  }
+  renderAlbumIntro(surface, visual ?? word, explanation, example, {
     prompt: view.prompt, page: introTab, changed: page => { introTab = page; schedule(); },
     wordAudio: safe({ id: 'intro-audio', text: '▶ Слово', accessibleLabel: isWord ? 'Прослушать слово' : 'Прослушать конструкцию', run: () => void play('audioUrl' in word ? word.audioUrl : example.audioUrl) }),
     exampleAudio: safe({ id: 'example-audio', text: '▶ Пример', accessibleLabel: 'Прослушать пример', run: () => void play(example.audioUrl) }),
   });
   footer(isWord ? [
+    ...(visual ? [{id:'intro-picture',text:'Картинка',run:()=>{introTab=0;schedule();}}] : []),
     { id: 'intro-back', text: '←', enabled: flow.session!.introIndex > 0, run: () => { flow.introduce(flow.ticket(), -1); schedule(); } },
-    { id: 'intro-next', text: flow.session!.introIndex < part.words.length - 1 ? 'Дальше →' : 'К практике →', run: () => { if (flow.session!.introIndex < part.words.length - 1) { flow.introduce(flow.ticket(), 1); schedule(); } else void advance('start-practice'); } },
+    { id: 'intro-next', text: flow.session!.introIndex < part.words.length - 1 ? 'Дальше →' : 'К практике →', run: () => { if (flow.session!.introIndex < part.words.length - 1) { flow.introduce(flow.ticket(), 1); introTab=0; schedule(); } else void advance('start-practice'); } },
   ] : [{ id: 'intro-next', text: 'К практике →', run: () => void advance('continue') }]);
 }
 let introTab = 0;
 const taskView = new TaskView();
 function renderWordRecall() {
-  const item = page === 'review' ? reviewWord()! : null, word = item?.word ?? flow.word!, mode = item?.mode ?? (flow.step as { mode: 'ja-ru' | 'ru-ja' | 'listening' }).mode;
+  const item = page === 'review' ? reviewWord()! : null, word = item?.word ?? flow.word!, mode = item?.mode ?? (flow.step as { mode: import('@app/shared/types').WordMode }).mode;
   const shown = isRevealed(), draft = flow.recall && page === 'lesson' ? flow.draft : null;
   const choices = draft?.helped && !shown && flow.step?.kind === 'word-practice' ? flow.choices.map(value => ({ id: value.id, text: mode === 'ru-ja' ? value.surface : value.meaningRu, japanese: mode === 'ru-ja', wrong: wrong.includes(value.id), enabled: !busy() && (!listening() || heard && !mediaError), run: () => {} })) : undefined;
   const actions: StudyAction[] = shown ? gradeActions() : [
     { id: 'show-answer', text: 'Раскрыть', enabled: !listening() || heard && !mediaError, run: reveal },
-    ...(flow.recall && page === 'lesson' && flow.step?.kind === 'word-practice' && !draft?.helped && flow.choices.length > 1 ? [{ id: 'hint', text: 'Подсказка', enabled: !listening() || heard && !mediaError, run: () => flow.hint() }] : []),
+    ...(!isVisualWordMode(mode) && flow.recall && page === 'lesson' && flow.step?.kind === 'word-practice' && !draft?.helped && flow.choices.length > 1 ? [{ id: 'hint', text: 'Подсказка', enabled: !listening() || heard && !mediaError, run: () => flow.hint() }] : []),
   ];
+  if(isVisualWordMode(mode)){const card=wordCardFor(word,(page==='review'?review.course:flow.course)?.catalog);if(card)renderVisualWord(surface,view,card,mode,shown,actions.map(safe),shown?{id:'audio',text:'▶ Прослушать',run:()=>void play(word.audioUrl)}:null,schedule);else message('Карточка недоступна','Обновите материал занятия.',[{id:'word-visual-home',text:'К урокам',run:home}]);return;}
   renderAlbumRecall(surface, view, word, mode, shown, mode === 'ru-ja' && !shown ? null : { id: 'audio', text: view.prompt ? '▶ Прослушать' : '▶', accessibleLabel: 'Прослушать задание', run: () => void play('audioUrl' in word ? word.audioUrl : flow.construction?.example.audioUrl), bare: !view.prompt }, actions.map(safe), choices, id => { const result = flow.chooseRecall(id); selected = id; if (result === false && !wrong.includes(id)) wrong.push(id); schedule(); }, shown && draft?.helped ? 'Карточка вернётся на повтор' : undefined);
 }
 function renderOldWord() {
@@ -477,6 +497,10 @@ function renderBuilder() {
 }
 function persistCounterDraft() { if (page === 'lesson' && flow.user && flow.state) { try { writeRecallDraft(recallDraftKey(flow.user.id, flow.state), { helped: counterDraft.helped, revealed: counterDraft.revealed }); } catch { notice = 'Не удалось сохранить черновик на устройстве.'; } } schedule(); }
 function renderCounter() {
+  if(page==='counters'&&!counterStarted){
+    sectionCards(surface,'Счётные суффиксы','Карточки с предметами, чтение количества и повторение',[{id:'counter-due',text:`Повторить · ${counters.remainingDue}`,description:'Изученные карточки по расписанию FSRS',enabled:counters.queue.length>0,run:()=>{counterStarted=true;schedule();}},{id:'counter-study',text:'Учёба и практика',description:'Правило, примеры и пять форматов карточек',run:()=>{counterStarted=true;counters.clear();void counters.open(flow.user!.id,'counter',{counters:true});}},{id:'counter-reference',text:'Справочник счёта',description:'Суффиксы, числительные и исключения',run:()=>{openReference();reference.section='counters';schedule();}}],safe);
+    return;
+  }
   if (page === 'counters' && counters.loading && !counters.item) { message('Загружаем счётные задания', 'Подождите немного.', []); return; }
   const guided = page === 'lesson', session = page === 'review' ? review : counters, item = activeCounter(), card = guided ? flow.counter : item?.counter;
   if (!card) { message('Счётные суффиксы', counters.total ? 'Занятие завершено. Результаты сохранены.' : 'Сначала познакомьтесь со словами уроков. Здесь появятся задания со знакомыми предметами.', [{ id: 'counter-home', text: 'К урокам', run: home }]); return; }
@@ -503,7 +527,7 @@ function renderLesson() {
   const step = flow.step;
   if (!step) { message('Урок пройден', flow.state?.completionBasis==='recognized'?'Ранее проходил. Отметка сохранена отдельно от выполненных ответов.':flow.state?.completionBasis==='self-assessed'?'Задания выполнены. Собственный ответ отмечен по самооценке. Повторения продолжаются по расписанию.':'Все обязательные шаги выполнены. Повторения продолжаются по расписанию.', [{ id: 'lesson-done', text: 'К урокам', run: home }]); return; }
   if (step.kind.endsWith('intro')) renderIntro();
-  else if (step.kind === 'word-practice') flow.recall ? renderWordRecall() : renderOldWord();
+  else if (step.kind === 'word-practice') flow.recall || isVisualWordMode(step.mode) ? renderWordRecall() : renderOldWord();
   else if (step.kind === 'construction-practice') step.mode === 'grammar' ? renderBuilder() : renderWordRecall();
   else if (step.kind === 'counter-practice') renderCounter();
   else if (step.kind === 'learning-task') { const task=flow.part?.tasks?.find(task=>task.id===step.taskId); if(task){taskView.bind(flow.user!.id,flow.state!);renderTask(surface,task,flow.state!,taskView,{orthography:settings?.orthography??'furigana',safe,changed:schedule,play:url=>void play(url),field:(rect,value,changed)=>{libraryInput=changed;if(!editor.composing)editor.element.value=value;nativeField(editor,rect,'Ваш ответ по-японски');},advance:(action,details)=>void advance(action,details)});} }
@@ -520,11 +544,12 @@ function renderReviews() {
   if (review.item?.mode === 'grammar') { renderBuilder(); return; }
   if (review.item?.mode === 'counter') { renderCounter(); return; }
   const item = reviewWord();
-  if (item?.preparation && !item.preparation.introduced) { const word = item.word; message('Знакомство', `${word.surface} · ${word.kana}\n${word.meaningRu}`, [{ id: 'training-intro', text: 'К практике', run: () => void review.introduce() }]); return; }
+  if (item?.preparation && !item.preparation.introduced) { const visual=wordCardFor(item.word,review.course?.catalog);if(isVisualWordMode(item.mode)&&visual){renderVisualWord(surface,view,visual,item.mode,true,[safe({id:'training-intro',text:'К практике',run:()=>void review.introduce()})],safe({id:'intro-audio',text:'▶ Прослушать',run:()=>void play(item.word.audioUrl)}),schedule);return;} const word = item.word; message('Знакомство', `${word.surface} · ${word.kana}\n${word.meaningRu}`, [{ id: 'training-intro', text: 'К практике', run: () => void review.introduce() }]); return; }
   if (!review.course) { sectionCards(surface, 'Практика словаря', 'Выберите направление для слов этого раздела', [
     { id: 'review-ja', text: 'Японский → русский', description: 'Узнаём слово и вспоминаем значение', run: () => void review.open(flow.user!.id, 'ja-ru', trainingContext) },
     { id: 'review-ru', text: 'Русский → японский', description: 'Вспоминаем японское слово по смыслу', run: () => void review.open(flow.user!.id, 'ru-ja', trainingContext) },
     { id: 'review-audio', text: 'На слух', description: 'Слушаем и узнаём знакомые слова', run: () => void review.open(flow.user!.id, 'listening', trainingContext) },
+    ...(trainingContext?.lessonId?.startsWith('marugoto.starter-a1.lesson.') ? [{id:'review-visual',text:'Картинки и слова',description:'Два направления · кандзи с фуриганой',run:()=>void review.open(flow.user!.id,'picture-word',trainingContext)}] : []),
   ], safe); return; }
   if (!review.item) { message(review.nextDue && !trainingContext ? 'Ближайшее повторение' : review.total ? 'Занятие завершено' : 'На сейчас всё повторено', review.nextDue && !trainingContext ? `Карточки вернутся через ${intervalLabel((Date.parse(review.nextDue)-Date.now())/1000)}. Можно продолжить урок; расписание сохранено.` : review.total ? 'Ответы сохранены. Следующее повторение назначено по вашим ответам.' : 'Новые карточки появятся после изучения материала в уроках.', [
     { id: 'review-done', text: 'К урокам', run: home },
@@ -597,7 +622,7 @@ function draw() {
   if (owner !== displayedOwner) {
     bookNavigation = owner && flow.course ? readBookNavigation(owner, flow.course) : { bookId: starterBookId, places: {} };
     lessonPages.page = bookNavigation.places[bookNavigation.bookId]?.page ?? 0; shelfOpen = false;
-    const previous = displayedOwner; displayedOwner = owner; if (previous || !owner) { sound.dispose(); sound = newSound(); } settingsBusy = false; settingsView.volume = null; settingsView.offset = 0; kanaView.offset = 0; review.clear(); reviewStarted = false; grammar.clear(); counters.clear(); library.clear(); reference.clear(); kana.clear(); admin.clear(); for (const field of referenceFields.values()) field.element.value = ''; workspace = null; workspaceInput = null; lastGuided = null; lastAttempt = ''; companion.quiet(); key = ''; autoPlayedKey = ''; stopMedia(); mediaError = ''; notice = ''; menuOpen = false; revealed = false; heard = false; selected = null; order = []; wrong = []; bad = []; correct = null; manual = false; editor.element.value = '';
+    const previous = displayedOwner; displayedOwner = owner; if (previous || !owner) { sound.dispose(); sound = newSound(); } settingsBusy = false; settingsView.volume = null; settingsView.offset = 0; kanaView.offset = 0; review.clear(); reviewStarted = false; grammar.clear(); counters.clear(); counterStarted=false; library.clear(); reference.clear(); kana.clear(); admin.clear(); for (const field of referenceFields.values()) field.element.value = ''; workspace = null; workspaceInput = null; lastGuided = null; lastAttempt = ''; companion.quiet(); key = ''; autoPlayedKey = ''; stopMedia(); mediaError = ''; notice = ''; menuOpen = false; revealed = false; heard = false; selected = null; order = []; wrong = []; bad = []; correct = null; manual = false; editor.element.value = '';
     if (previous) { page = 'lessons'; settings = null; if (owner) void loadSettings(); }
   }
   const focus = requestedFocus ?? (app.renderer.accessibility.div.contains(document.activeElement) ? document.activeElement?.getAttribute('aria-label') : null); requestedFocus = null;
@@ -622,7 +647,7 @@ function draw() {
   else if (page === 'grammar') renderBuilder();
   else if (page === 'book') { if (library.error) message('Материалы недоступны', library.error, [{id:'book-retry',text:'Повторить',run:()=>void library.load(flow.user!.id)}]); else if (!library.data || library.busy) message('Загружаем урок', 'Подождите немного.', []); else renderBook(surface, library, {safe,changed:schedule,home,learn:id=>void openLesson(id),train:id=>beginTraining({lessonId:id}),trainGrammar:id=>openGrammar({lessonId:id}),field:libraryField,video:openLibraryVideo,play:url=>void play(url)}); }
   else if (page === 'admin') { if (!flow.user.isAdmin) message('Доступ закрыт', 'Требуются права администратора.', [{id:'admin-home',text:'К урокам',run:home}]); else renderAdminAccess(surface,admin,{safe,changed:schedule,home,prompt:view.prompt,field:referenceField}); }
-  else if (page === 'kana') renderKana(surface, kana, catalogFor(flow.course!), kanaView, { safe, changed: schedule, home: openPracticeMenu, prompt: view.prompt });
+  else if (page === 'kana') renderKana(surface, kana, catalogFor(flow.course!), kanaView, { safe, changed: schedule, home: openPracticeMenu, prompt: view.prompt, play: url=>void play(url) });
   else if (page === 'reference') { if (library.error) message('Справочник недоступен', library.error, [{id:'reference-retry',text:'Повторить',run:()=>void library.load(flow.user!.id)}]); else if (reference.error && !library.data) message('Личные данные недоступны',reference.error,[{id:'personal-home',text:'К урокам',run:home}]); else if (reference.error) renderReference(surface,reference,{safe,changed:schedule,home,field:referenceField,train:id=>beginTraining({listId:id}),trainGrammar:id=>openGrammar({listId:id}),play:url=>{if(url)void play(url);}}); else if (!library.data || library.busy) message('Загружаем справочник', 'Подождите немного.', []); else renderReference(surface,reference,{safe,changed:schedule,home,field:referenceField,train:id=>beginTraining({listId:id}),trainGrammar:id=>openGrammar({listId:id}),play:url=>{if(url)void play(url);}}); }
   else if (page === 'library-video') renderLibraryVideo();
   else renderSettings();
@@ -704,7 +729,7 @@ const releasePointer = (event: PointerEvent) => { if (heldPointers.delete(event.
 window.addEventListener('pointerup', releasePointer, { capture: true }); window.addEventListener('pointercancel', releasePointer, { capture: true });
 window.addEventListener('resize', resize);
 window.addEventListener('hashchange', () => { access.locationChanged(); accessName.element.value = ''; password.element.value = ''; if (access.mode) void access.load(); schedule(); });
-const resume = () => { if (flow.user && !busy() && !document.hidden) { if (page === 'lesson' && !flow.snapshot().confirmedNext) void flow.refresh(); else if (page === 'review' && !trainingContext && review.active) void review.refreshDue(); else void flow.boot().then(() => { if (page === 'settings' && flow.user) void loadSettings(); schedule(); }); } };
+const resume = () => { if (flow.user && !busy() && !document.hidden) { if (page === 'lesson' && !flow.snapshot().confirmedNext) void flow.refresh(); else if (page === 'review' && !trainingContext && review.active) void review.refreshDue(); else if(page==='kana')void kana.retry(); else void flow.boot().then(() => { if (page === 'settings' && flow.user) void loadSettings(); schedule(); }); } };
 window.addEventListener('online', resume); window.addEventListener('focus', resume);
 window.addEventListener('storage', event => { if (event.key?.startsWith('japanese-recall-draft:')) schedule(); });
 document.addEventListener('visibilitychange', () => { if (document.hidden) { stopDecor(); stopMedia(); leaf?.cancel(); companion?.setActive(false); sound.configure(settings ?? defaultSoundSettings, chosenScene, false, false); } else schedule(); });
@@ -733,7 +758,7 @@ window.addEventListener('pageshow', event => { if (event.persisted) { suspended 
 function snapshot() {
   const texts: { text: string; size: number; bounds: Rect }[] = [];
   const collect = (node: Container) => { if (node instanceof Text) texts.push({ text: node.text, size: Number(node.style.fontSize), bounds: node.label === 'scrolling-copy' && node.mask instanceof Container ? node.mask.getBounds().rectangle : node.getBounds().rectangle }); node.children.forEach(collect); }; collect(ui);
-  return { ready, page, renderCount, renderedKey: key, authenticated: !!flow.user, guided: flow.snapshot(), review: { active: review.active, mode: review.item?.mode, remaining: review.queue.length, completed: review.completed, total: review.total, pending: review.pending, error: review.saveError, turn: review.turn }, settings: settings ? { orthography: settings.orthography, animations: settings.animations, sceneSoundEnabled: settings.sceneSoundEnabled, musicVolume: settings.musicVolume, ambienceVolume: settings.ambienceVolume, sfxVolume: settings.sfxVolume, speechVolume: settings.speechVolume } : null, access: { mode: access.mode, busy: access.busy, error: access.error, complete: !!access.complete, invitation: access.invitation?.kind }, admin: { screen: admin.screen, busy: admin.busy, error: admin.error, links: admin.links.length }, kana: { sessionId: kana.sessionId, prompt: kana.item?.prompt, script: kana.script, direction: kana.direction, group: kana.group, rows: kana.rows, remaining: kana.queue.length, total: kana.total, completed: kana.completed, turn: kana.turn, active: kana.active, busy: kana.busy, error: kana.error, stats: kana.stats.map(({glyph,direction,attempts,errors,script})=>({glyph,direction,attempts,errors,script})) }, reference: { section: reference.section, form: reference.form, error: reference.error, busy: reference.busy, lists: library.data?.lists.length }, book: { lessons: library.data?.course.lessons.length, videos: library.data?.course.lessons.flatMap(l => l.videos ?? []).length, lessonId: library.lessonId, tab: library.tab, loading: library.busy, error: library.error }, workspace: workspace ? { tokens: workspace.tokens, text: workspace.text, exploring: workspace.exploring, editing: workspace.editing, checking: workspace.checking, verdict: workspace.verdict, result: workspace.result, revision: workspace.revision, error: workspace.error } : null, counter: { draft: counterDraft, kind: counters.item?.counter.kind, remaining: counters.queue.length, completed: counters.completed }, revealed: isRevealed(), heard, mediaError, media: { owner: mediaOwner, speechTime: audio.currentTime, speechPaused: audio.paused, videoTime: video.currentTime, videoPaused: video.paused }, order, wrong, correct: workspace ? workspace.verdict === 'correct' ? true : workspace.verdict === 'incorrect' ? false : null : correct, controls: surface?.controls, problems: surface?.problems, texts, leaf: leaf?.snapshot(), contextLost, companion: companion?.snapshot(), m6: { scene: environment?.snapshot(), sound: { state: soundState, ...sound.snapshot() }, decorFrame: !!decorFrame, decorTicks, timing: { samples: renderSubmit.length, frameIntervalP95Ms: percentile95(decorDeltas), renderSubmitP95Ms: percentile95(renderSubmit) }, reduced: motionReduced || settings?.animations === false }, fixed: { field: view?.layout.paper, prop: scene && !scene.prop.destroyed ? scene.prop.getBounds().rectangle : null } };
+  return { ready, page, renderCount, renderedKey: key, authenticated: !!flow.user, guided: flow.snapshot(), review: { active: review.active, mode: review.item?.mode, remaining: review.queue.length, completed: review.completed, total: review.total, pending: review.pending, error: review.saveError, turn: review.turn }, settings: settings ? { orthography: settings.orthography, animations: settings.animations, sceneSoundEnabled: settings.sceneSoundEnabled, musicVolume: settings.musicVolume, ambienceVolume: settings.ambienceVolume, sfxVolume: settings.sfxVolume, speechVolume: settings.speechVolume } : null, access: { mode: access.mode, busy: access.busy, error: access.error, complete: !!access.complete, invitation: access.invitation?.kind }, admin: { screen: admin.screen, busy: admin.busy, error: admin.error, links: admin.links.length }, kana: { sessionId: kana.sessionId, prompt: kana.item ? kana.item.direction==='sign-reading'?kana.item.glyph:kana.item.reading : undefined, script: kana.script, direction: kana.direction, group: kana.group, rows: kana.rows, revealed: kana.revealed, introducing: kana.introducing, dueCount: kana.dueCount, remaining: kana.queue.length, total: kana.total, completed: kana.completed, turn: kana.turn, active: kana.active, busy: kana.busy, error: kana.error, stats: kana.stats.map(({glyph,direction,attempts,errors,script,due,version})=>({glyph,direction,attempts,errors,script,due,version})) }, reference: { section: reference.section, form: reference.form, error: reference.error, busy: reference.busy, lists: library.data?.lists.length }, book: { lessons: library.data?.course.lessons.length, videos: library.data?.course.lessons.flatMap(l => l.videos ?? []).length, lessonId: library.lessonId, tab: library.tab, loading: library.busy, error: library.error }, workspace: workspace ? { tokens: workspace.tokens, text: workspace.text, exploring: workspace.exploring, editing: workspace.editing, checking: workspace.checking, verdict: workspace.verdict, result: workspace.result, revision: workspace.revision, error: workspace.error } : null, counter: { draft: counterDraft, kind: counters.item?.counter.kind, remaining: counters.queue.length, completed: counters.completed }, revealed: isRevealed(), heard, mediaError, media: { owner: mediaOwner, speechTime: audio.currentTime, speechPaused: audio.paused, videoTime: video.currentTime, videoPaused: video.paused }, order, wrong, correct: workspace ? workspace.verdict === 'correct' ? true : workspace.verdict === 'incorrect' ? false : null : correct, controls: surface?.controls, problems: surface?.problems, texts, leaf: leaf?.snapshot(), contextLost, companion: companion?.snapshot(), m6: { scene: environment?.snapshot(), sound: { state: soundState, ...sound.snapshot() }, decorFrame: !!decorFrame, decorTicks, timing: { samples: renderSubmit.length, frameIntervalP95Ms: percentile95(decorDeltas), renderSubmitP95Ms: percentile95(renderSubmit) }, reduced: motionReduced || settings?.animations === false }, fixed: { field: view?.layout.paper, prop: scene && !scene.prop.destroyed ? scene.prop.getBounds().rectangle : null } };
 }
 Object.assign(window, { __ALBUM__: { snapshot, dispose: disposePresentation, preview: (size: typeof preview) => { preview = size; resize(); } } });
 try { await start(); } catch (error) { recovery.hidden = false; console.error(error instanceof Error ? error.message : 'Не удалось открыть альбом.'); }

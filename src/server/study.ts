@@ -1,3 +1,4 @@
+import { isVisualWordMode, visualWordModes, wordCardFor } from '../shared/word-cards';
 import type { Course, ReviewItem, ReviewSubmission } from '../shared/types';
 import { stagedLearning, trainingEntry, wordPracticeFormats, type StudyPreparation } from '../shared/training';
 import type { Database } from './db';
@@ -17,9 +18,9 @@ export function studySpec(course:Course,item:ReviewItem):StudyPreparation {
   return {...base,key:'counter:'+targetId,kind:'counter',targetId,required,title:definition.title,explanationRu:definition.explanation,word:card.word,examples:card.examples.map(value=>({...value,meaningRu:definition.title,audioUrl:value.audioUrl??''}))};
  }
  const challenge=JSON.parse(Buffer.from(item.id,'base64url').toString())[2] as string;
- const scope=challenge.startsWith('training:')?challenge.split('|')[0]!:base.scope;
+ const scope=isVisualWordMode(item.mode)?'visual':challenge.startsWith('training:')?challenge.split('|')[0]!:base.scope;
  const entry=trainingEntry(course,item.word.id),prepared=entry??course.learning?.flatMap(route=>route.goals.flatMap(goal=>goal.parts.flatMap(part=>part.words))).find(value=>value.wordId===item.word.id);
- return {...base,key:'word:'+item.targetId,scope,required:wordPracticeFormats(item.word,scope.startsWith('training:')&&!!entry?.application),title:item.word.meaningRu,word:item.word,explanationRu:prepared?.explanationRu??'Проверьте написание, чтение и русский смысл. Для этой записи используются подтверждённые сведения.',...(prepared?.example?{example:prepared.example}:item.word.meaningContext?{example:{...item.word.meaningContext,audioUrl:item.word.meaningContext.audioUrl??''}}:{})};
+ return {...base,key:'word:'+item.targetId+(isVisualWordMode(item.mode)?':visual':''),scope,required:isVisualWordMode(item.mode)?[...visualWordModes]:wordPracticeFormats(item.word,scope.startsWith('training:')&&!!entry?.application),title:item.word.meaningRu,word:isVisualWordMode(item.mode)?{...item.word,...wordCardFor(item.word,course.catalog)}:item.word,explanationRu:(isVisualWordMode(item.mode)?wordCardFor(item.word,course.catalog)?.captionRu:undefined)??prepared?.explanationRu??'Проверьте написание, чтение и русский смысл. Для этой записи используются подтверждённые сведения.',...(prepared?.example?{example:prepared.example}:item.word.meaningContext?{example:{...item.word.meaningContext,audioUrl:item.word.meaningContext.audioUrl??''}}:{})};
 }
 export async function studyPreparations(sql:Database['sql'],userId:string,course:Course,items:ReviewItem[],states?:any[]):Promise<ReviewItem[]> {
  if(!stagedLearning(course))return items;
@@ -28,8 +29,8 @@ export async function studyPreparations(sql:Database['sql'],userId:string,course
  return items.map(item=>{
   const spec=studySpec(course,item),row=progress.find((row:any)=>row.kind===spec.kind&&row.item_id===spec.targetId);
   // Accepted historical schedules must never force the learner to restart the course.
-  const known=existing.some((state:any)=>spec.kind==='word'?state.mode!=='grammar'&&state.mode!=='counter'&&state.item_id===spec.targetId:spec.kind==='grammar'?state.mode==='grammar'&&state.item_id===spec.targetId:state.mode==='counter'&&(()=>{const parsed=parseCounterTarget(state.item_id,course.catalog);return parsed&&parsed.definition.id+'/'+(parsed.quantity??'type')===spec.targetId;})());
-  spec.passed=[...new Set<string>([...(row?.passed??[]),...(known?spec.required.filter(format=>format!=='application'):[])])];
+  const known=existing.some((state:any)=>spec.kind==='word'?state.mode!=='grammar'&&state.mode!=='counter'&&!isVisualWordMode(state.mode)&&state.item_id===spec.targetId:spec.kind==='grammar'?state.mode==='grammar'&&state.item_id===spec.targetId:state.mode==='counter'&&(()=>{const parsed=parseCounterTarget(state.item_id,course.catalog);return parsed&&parsed.definition.id+'/'+(parsed.quantity??'type')===spec.targetId;})());
+  spec.passed=[...new Set<string>([...(row?.passed??[]),...(known?spec.required.filter(format=>format!=='application'&&!isVisualWordMode(format)):[])])];
   const ready=spec.required.every(format=>spec.passed.includes(format));
   spec.introduced=ready||!!row?.introductions.includes(spec.scope);
   spec.referenceSeen=ready||spec.introduced||!!row?.introductions.includes('reference:'+spec.scope);
@@ -50,7 +51,7 @@ export async function passStudy(sql:Database['sql'],userId:string,spec:StudyPrep
  return spec.required.every(value=>passed.includes(value));
 }
 export function enrollmentTargets(spec:StudyPreparation):{id:string;mode:ReviewItem['mode']}[] {
- if(spec.kind==='word')return spec.required.filter(format=>format!=='application').map(mode=>({id:spec.targetId,mode:mode as 'ja-ru'|'ru-ja'|'listening'}));
+ if(spec.kind==='word')return spec.required.filter(format=>format!=='application').map(mode=>({id:spec.targetId,mode:mode as import('../shared/types').WordMode}));
  if(spec.kind==='grammar')return [{id:spec.targetId,mode:'grammar'}];
  const [id,quantity]=spec.targetId.split('/');
  return spec.required.map(kind=>({id:counterTarget(id as import('../shared/counters').CounterId,kind as import('../shared/counters').CounterKind,quantity==='type'?null:Number(quantity)),mode:'counter'}));

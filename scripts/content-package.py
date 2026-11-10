@@ -14,7 +14,7 @@ MAX_PACKAGE_BYTES = 512 * 1024 * 1024
 MAX_MEDIA_BYTES = 500 * 1024 * 1024
 MAX_BUNDLE_BYTES = 12 * 1024 * 1024
 MAX_FILES = 20000
-PREFIXES = ('/audio/', '/word-illustrations/', '/counters/')
+PREFIXES = ('/audio/', '/word-illustrations/', '/counters/', '/assets/a1-words/')
 
 
 def stream_digest(stream):

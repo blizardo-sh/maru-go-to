@@ -1,3 +1,4 @@
+import { isVisualWordMode } from '@app/shared/word-cards';
 import { api, pendingReviews, submitReview } from '@app/client/api';
 import { ReviewSave } from '@app/client/useReviewSave';
 import { learningHeaders } from '@app/client/guidedApi';
@@ -5,7 +6,7 @@ import { advanceDeck } from '@app/client/study';
 import type { Course, Progress, Rating, ReviewItem, ReviewMode, ReviewQueue, ReviewResult, ReviewSubmission, TrainingContext } from '@app/shared/types';
 import { reviewWakeDelay } from '@app/client/review-ratings';
 
-type WordItem = Extract<ReviewItem, { mode: 'ja-ru' | 'ru-ja' | 'listening' }>;
+type WordItem = Extract<ReviewItem, { mode: import('@app/shared/types').WordMode }>;
 export class ReviewFlow<T extends ReviewItem = WordItem> {
   queue: T[] = [];
   course: Course | null = null;
@@ -34,6 +35,7 @@ export class ReviewFlow<T extends ReviewItem = WordItem> {
   async open(owner: string, mode: ReviewMode | 'mixed', context?: TrainingContext) {
     if (this.busy || this.pending) return;
     clearTimeout(this.wake);
+    if(context && isVisualWordMode(mode))context={...context,visualWords:true};
     this.owner = owner; this.mode = mode; this.context = context;
     const epoch = ++this.epoch; this.saving && (this.saving.active = false); this.loading = true; this.active = true; this.error = ''; this.changed();
     try {
@@ -43,7 +45,7 @@ export class ReviewFlow<T extends ReviewItem = WordItem> {
       const headers = learningHeaders(owner, course.publicationId);
       const [queue, progress] = await Promise.all([api<ReviewQueue>(query, { headers }), mode === 'mixed' && !context ? api<Progress>('/api/progress', { headers }) : null]);
       if (epoch !== this.epoch) return;
-      this.course = course; this.queue = queue.items.filter(item => mode === 'mixed' || item.mode === mode) as T[]; this.nextDue = queue.nextDue ?? null; this.remainingDue = queue.remainingDue; this.progress = progress; this.total = this.queue.length; this.completed = 0; this.turn++; this.last = null;
+      this.course = course; this.queue = queue.items.filter(item => mode === 'mixed' || item.mode === mode || !!context && isVisualWordMode(mode) && isVisualWordMode(item.mode)) as T[]; this.nextDue = queue.nextDue ?? null; this.remainingDue = queue.remainingDue; this.progress = progress; this.total = this.queue.length; this.completed = 0; this.turn++; this.last = null;
       this.saving = new ReviewSave(owner, (submission, result) => this.next(submission.rating === 1 || 'helped' in submission && !!submission.helped || result.correct === false, result), this.changed);
     } catch (error) { if (epoch === this.epoch) this.error = error instanceof Error ? error.message : 'Не удалось загрузить повторение.'; }
     finally { if (epoch === this.epoch) { this.loading = false; this.planWake(); this.changed(); } }
@@ -95,7 +97,7 @@ export class ReviewFlow<T extends ReviewItem = WordItem> {
   }
   grade(owner: string, rating: Rating) {
     const item = this.item; if (owner !== this.owner || !item || ('choices' in item && item.choices?.length) || !this.active || this.busy || this.pending) return;
-    if (!['ja-ru', 'ru-ja', 'listening'].includes(item.mode)) return;
+    if (!['ja-ru', 'ru-ja', 'listening', 'picture-word', 'word-meaning'].includes(item.mode)) return;
     return this.saving?.save({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, mode: item.mode as WordItem['mode'], rating, ...(item.publicationId ? { publicationId: item.publicationId } : {}) });
   }
   choose(id: string) {
@@ -103,7 +105,7 @@ export class ReviewFlow<T extends ReviewItem = WordItem> {
     return this.saving?.save({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, mode: item.mode as WordItem['mode'], rating: 3, choiceWordId: id, helped: false, ...(item.publicationId ? { publicationId: item.publicationId } : {}) });
   }
   save(value: ReviewSubmission) { if (this.active && !this.busy && !this.pending && value.reviewId === this.item?.id) return this.saving?.save(value); }
-  async introduce() { const item = this.item, owner = this.owner, epoch = this.epoch; if (!item || this.busy) return; this.loading = true; this.changed(); try { await api('/api/training/introduce', { method: 'POST', headers: { ...learningHeaders(owner, item.publicationId), 'Content-Type': 'application/json' }, body: JSON.stringify({ reviewIds: [item.id], stage: 'learning', publicationId: item.publicationId }) }); if (epoch === this.epoch) { if (item.preparation) item.preparation.introduced = true; else if (item.mode === 'counter') item.counter.introduction = false; } } catch (e) { if (epoch === this.epoch) this.error = e instanceof Error ? e.message : 'Не удалось сохранить знакомство.'; } finally { if (epoch === this.epoch) { this.loading = false; this.changed(); } } }
+  async introduce() { const item = this.item, owner = this.owner, epoch = this.epoch; if (!item || this.busy) return; this.loading = true; this.changed(); try { await api('/api/training/introduce', { method: 'POST', headers: { ...learningHeaders(owner, item.publicationId), 'Content-Type': 'application/json' }, body: JSON.stringify({ reviewIds: [item.id], stage: 'learning', publicationId: item.publicationId }) }); if (epoch === this.epoch) { if (item.preparation) { for(const sibling of this.queue)if(sibling.preparation?.key===item.preparation.key&&sibling.preparation.scope===item.preparation.scope)sibling.preparation.introduced=true; } else if (item.mode === 'counter') item.counter.introduction = false; } } catch (e) { if (epoch === this.epoch) this.error = e instanceof Error ? e.message : 'Не удалось сохранить знакомство.'; } finally { if (epoch === this.epoch) { this.loading = false; this.changed(); } } }
   retry() { return this.pending ? this.saving?.retry() : this.open(this.owner, this.mode, this.context); }
   hide() { clearTimeout(this.wake); this.active = false; this.changed(); }
   clear() { clearTimeout(this.wake); ++this.epoch; if (this.saving) this.saving.active = false; this.saving = undefined; this.queue = []; this.course = null; this.progress = null; this.total = 0; this.remainingDue = 0; this.nextDue = null; this.completed = 0; this.active = false; this.loading = false; this.last = null; this.error = ''; this.changed(); }

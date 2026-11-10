@@ -15,7 +15,7 @@ export function staticHandler(dist = new URL('../../dist', import.meta.url).path
     if (path.includes('\0') || path.includes('\\') || path.split('/').some(part => part === '..' || part.startsWith('.'))) return new Response(null, { status: 400, headers });
     const entryRoute = ['/', '/index.html', '/album.html', '/invite', '/recover', '/register', '/forgot-password', '/verify-email', '/confirm-email', '/login', '/admin'].includes(path);
     if (entryRoute) path = '/' + entry;
-    const roots = mediaRoot && /^\/(audio|word-illustrations|counters)\//.test(path) ? [mediaRoot, dist] : [dist];
+    const roots = mediaRoot && /^\/(audio|word-illustrations|counters|assets\/a1-words)\//.test(path) ? [mediaRoot, dist] : [dist];
     for (const root of roots) {
       const file = resolve(root, '.' + path);
       if (!file.startsWith(resolve(root) + sep)) continue;

@@ -1,0 +1,144 @@
+{
+  "tool": "image_gen",
+  "date": "2026-11-09",
+  "style": "Charcoal kana, watercolor sage and terracotta, ivory paper. User-supplied chart used as conceptual reference, not copied.",
+  "captionSource": "src/shared/kana-mnemonics.ts",
+  "images": [
+    {
+      "atlas": "hiragana-1",
+      "source": "/Users/ivsh/.codex/generated_images/01a1c1b3-b708-7fd0-a3f7-21bc08c02286/exec-29e6c3cf-e45c-406c-b7ad-a9ce322aa569.png",
+      "prompt": "Use case: scientific-educational. Create ONE production mnemonic sprite atlas for a Japanese kana learning app. Exactly 6 columns by 4 rows (24 equal square cells), landscape 3:2 image, ivory #fff8e9 background. Every cell contains a single simple mnemonic illustration, large bold charcoal lines, tiny muted sage and terracotta watercolor accents, antique Japanese illustrated workbook style. Consistent line weight. No grid lines, no borders, no captions, no Latin or Cyrillic text, no watermarks, no extra items. Within each cell integrate the EXACT Japanese glyph below as the primary bold silhouette with a few thin illustrative strokes around it to suggest the described object. Do not deform the glyph or add bold strokes to it. Keep objects at center of each equal tile with 15% safe padding; nothing crosses cell boundaries. Render these 24 cells in STRICT ROW-MAJOR ORDER left-to-right then down:\n1. あ — Акробат: Петля — обруч, перекладина — руки акробата.\n2. い — Иглы: Две изогнутые иглы стоят рядом.\n3. う — Улитка: Круглая улитка, над ней короткий усик.\n4. え — Эму: Длинная шея и ноги бегущего эму.\n5. お — Обруч: Акробат держит обруч; справа летит мяч.\n6. か — Калитка: Стойка и створка калитки, справа ручка.\n7. き — Ключ: Две бородки ключа над круглой ручкой.\n8. く — Клюв: Открытый клюв смотрит вправо.\n9. け — Кегли: Две кегли, на правой поперечная лента.\n10. こ — Кольцо: Две дуги незамкнутого кольца.\n11. さ — Сабля: Рукоять над изогнутым лезвием сабли.\n12. し — Шнур: Свисающий шнур загнулся на конце.\n13. す — Сучок: Ветка пересекает ствол с маленьким сучком.\n14. せ — Сетка: Две стойки держат провисшую сетку.\n15. そ — Соты: Ломаный край сот переходит в нижнюю дугу.\n16. た — Тачка: Слева ручки, справа кузов маленькой тачки.\n17. ち — Чайник: Ручка и крышка над округлым чайником.\n18. つ — Цунами: Одна большая волна закручивается вправо.\n19. て — Тент: Крыша тента переходит в загнутый край.\n20. と — Тропинка: Короткая ветка у круглого поворота тропинки.\n21. な — Навес: Перекладина навеса и свёрнутая верёвка справа.\n22. に — Нитки: Слева игла, справа два коротких отрезка нити.\n23. ぬ — Нудлы: Петли лапши; маленький узелок справа.\n24. ね — Невод: Стойка и петля рыболовного невода.\nEducational goal: the learner sees the shape of the kana transformed into a memorable object, not a standalone unrelated icon.",
+      "grid": {
+        "columns": 6,
+        "rows": 4
+      },
+      "glyphs": [
+        "あ",
+        "い",
+        "う",
+        "え",
+        "お",
+        "か",
+        "き",
+        "く",
+        "け",
+        "こ",
+        "さ",
+        "し",
+        "す",
+        "せ",
+        "そ",
+        "た",
+        "ち",
+        "つ",
+        "て",
+        "と",
+        "な",
+        "に",
+        "ぬ",
+        "ね"
+      ]
+    },
+    {
+      "atlas": "hiragana-2",
+      "source": "/Users/ivsh/.codex/generated_images/01a1c1b3-b708-7fd0-a3f7-21bc08c02286/exec-4c0fb7ca-63c1-493c-8aa9-8a8c5337e23d.png",
+      "prompt": "Use case: scientific-educational. Create ONE production mnemonic sprite atlas for a Japanese kana learning app. Exactly 6 columns by 4 rows (24 equal square cells), landscape 3:2 image, ivory #fff8e9 background. Every cell contains one mnemonic illustration, large bold charcoal Japanese glyph as central silhouette, tiny muted sage-green and terracotta watercolor accents, warm antique Japanese illustrated workbook. Fine dark brown pencil outlines around objects, consistent simple design. No grid lines, borders, captions, Latin or Cyrillic text, watermarks. Integrate the EXACT kana below as the primary dark silhouette with thin illustrative strokes around it that suggest the described object. Do not deform the glyph or add bold strokes to it. Keep every image centered within its own cell with 15% safe margins. Nothing crosses cell boundaries. Strict ROW-MAJOR order left-to-right then down:\n1. の — Нора: Круглый вход в нору с уходящей внутрь дорожкой.\n2. は — Хатка: Слева столб, справа перекладины и круглый вход.\n3. ひ — Хитрая улыбка: Два поднятых уголка и широкая дуга улыбки.\n4. ふ — Фонтан: Верхняя капля и три струи фонтана.\n5. へ — Хребет: Один горный хребет с пологим правым склоном.\n6. ほ — Хор: Стойка рядом с двумя нотными линиями и нотой.\n7. ま — Мачта: Две реи над петлёй каната у мачты.\n8. み — Мишка: Круглая лапа слева и вытянутая справа.\n9. む — Муравей: Голова с петлёй, длинное брюшко и усик справа.\n10. め — Медаль: Лента пересекает большую овальную медаль.\n11. も — Молоток: Крюк ручки под двумя перекладинами молотка.\n12. や — Якорь: Наклонная рукоять, поперечина и крюк якоря.\n13. ゆ — Юла: Круглая юла со стержнем посередине.\n14. よ — Йог: Руки в сторону, внизу скрещённые ноги.\n15. ら — Ракушка: Короткая отметина над изогнутой раковиной.\n16. り — Рис: Два длинных изогнутых ростка риса.\n17. る — Руль: Изгиб дороги заканчивается маленьким рулём.\n18. れ — Рельсы: Стойка слева и поворот рельса вправо.\n19. ろ — Рог: Верхний угол и большой плавный изгиб рога.\n20. わ — Волна: Стойка слева, справа круглая волна без узелка.\n21. を — Обход: Две перекладины, затем круглая обходная дорожка.\n22. ん — Нить: Нить спускается, поднимается и снова изгибается.\n23. Blank ivory cell, no marks.\n24. Blank ivory cell, no marks.\nThe learner must see the shape of the kana transformed into a memorable object, not an unrelated icon.",
+      "grid": {
+        "columns": 6,
+        "rows": 4
+      },
+      "glyphs": [
+        "の",
+        "は",
+        "ひ",
+        "ふ",
+        "へ",
+        "ほ",
+        "ま",
+        "み",
+        "む",
+        "め",
+        "も",
+        "や",
+        "ゆ",
+        "よ",
+        "ら",
+        "り",
+        "る",
+        "れ",
+        "ろ",
+        "わ",
+        "を",
+        "ん"
+      ]
+    },
+    {
+      "atlas": "katakana-1",
+      "source": "/Users/ivsh/.codex/generated_images/01a1c1b3-b708-7fd0-a3f7-21bc08c02286/exec-a3b0f10c-abc7-4c52-9e94-c7bf6838e4cf.png",
+      "prompt": "Use case: scientific-educational. Create ONE production mnemonic sprite atlas for a Japanese kana learning app. Exactly 6 columns by 4 rows (24 equal square cells), landscape 3:2 image, ivory #fff8e9 background. Every cell contains one mnemonic illustration, large bold charcoal Japanese glyph as central silhouette, tiny muted sage-green and terracotta watercolor accents, warm antique Japanese illustrated workbook. Fine dark brown pencil outlines around objects, consistent simple design. No grid lines, borders, captions, Latin or Cyrillic text, watermarks. Integrate the EXACT kana below as the primary dark silhouette with thin illustrative strokes around it that suggest the described object. Do not deform the glyph or add bold strokes to it. Keep every image centered within its own cell with 15% safe margins. Nothing crosses cell boundaries. Strict ROW-MAJOR order left-to-right then down:\n1. ア — Антенна: Верх — крыша, длинный штрих — наклонная антенна.\n2. イ — Ива: Ствол и косая ветка ивы.\n3. ウ — Укрытие: Крыша и стены маленького укрытия.\n4. エ — Этажерка: Две полки соединены стойкой.\n5. オ — Ось: Косая ось и две перекладины механизма.\n6. カ — Качели: Перекладина и две опоры качелей.\n7. キ — Киль: Мачта с двумя реями и длинным килем.\n8. ク — Клюв: Угловатая голова птицы с длинным клювом.\n9. ケ — Кедр: Две ветви на наклонном стволе кедра.\n10. コ — Коробка: Три стороны открытой коробки.\n11. サ — Сани: Полозья и поперечная планка саней.\n12. シ — Шины: Два следа сверху и длинная дуга шины.\n13. ス — Сугроб: Склон и два расходящихся следа в снегу.\n14. セ — Сейф: Крышка открытого сейфа и его нижний угол.\n15. ソ — Сосулька: Короткая капля слева и длинная сосулька справа.\n16. タ — Танк: Угловатый корпус танка с короткой пушкой.\n17. チ — Чайка: Крылья чайки пересекают её длинное тело.\n18. ツ — Цунами: Две капли над длинным склоном волны.\n19. テ — Телевизор: Антенна над верхом и стойкой телевизора.\n20. ト — Топор: Длинная ручка с лезвием справа.\n21. ナ — Навес: Одна стойка поддерживает наклонную крышу.\n22. ニ — Нити: Две натянутые нити одна над другой.\n23. ヌ — Нудлы: Палочки перекрещиваются над изгибом лапши.\n24. ネ — Невод: Древко, поперечина и расходящиеся верёвки.\nThe learner must see the shape of the kana transformed into a memorable object, not an unrelated icon.",
+      "grid": {
+        "columns": 6,
+        "rows": 4
+      },
+      "glyphs": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ",
+        "カ",
+        "キ",
+        "ク",
+        "ケ",
+        "コ",
+        "サ",
+        "シ",
+        "ス",
+        "セ",
+        "ソ",
+        "タ",
+        "チ",
+        "ツ",
+        "テ",
+        "ト",
+        "ナ",
+        "ニ",
+        "ヌ",
+        "ネ"
+      ]
+    },
+    {
+      "atlas": "katakana-2",
+      "source": "/Users/ivsh/.codex/generated_images/01a1c1b3-b708-7fd0-a3f7-21bc08c02286/exec-6da0f7c5-8c7c-423d-9985-f18e428a1a9a.png",
+      "prompt": "Use case: scientific-educational. Create ONE production mnemonic sprite atlas for a Japanese kana learning app. Exactly 6 columns by 4 rows (24 equal square cells), landscape 3:2 image, ivory #fff8e9 background. Every cell contains one mnemonic illustration, large bold charcoal Japanese glyph as central silhouette, tiny muted sage-green and terracotta watercolor accents, warm antique Japanese illustrated workbook. Fine dark brown pencil outlines around objects, consistent simple design. No grid lines, borders, captions, Latin or Cyrillic text, watermarks. Integrate the EXACT kana below as the primary dark silhouette with thin illustrative strokes around it that suggest the described object. Do not deform the glyph or add bold strokes to it. Keep every image centered within its own cell with 15% safe margins. Nothing crosses cell boundaries. Strict ROW-MAJOR order left-to-right then down:\n1. ノ — Нож: Один длинный наклонный нож.\n2. ハ — Холмы: Два склона расходятся в стороны.\n3. ヒ — Хитрый стул: Спинка и изогнутое сиденье стула.\n4. フ — Флаг: Верх флага и его длинный изогнутый край.\n5. ヘ — Хребет: Одна вершина и два склона горы.\n6. ホ — Хоккей: Стойка и две клюшки расходятся под перекладиной.\n7. マ — Маска: Угловатый край маски и косая завязка.\n8. ミ — Мишени: Три косые черты на мишени.\n9. ム — Муравейник: Треугольный муравейник с открытой верхушкой.\n10. メ — Мечи: Два скрещённых меча.\n11. モ — Мост: Две перекладины и загнутый опорный столб.\n12. ヤ — Якорь: Угловатая перекладина и длинный стержень якоря.\n13. ユ — Юрта: Три стороны входа в юрту.\n14. ヨ — Йог: Три горизонтальные ступени для занятий.\n15. ラ — Ракета: Короткий верх и сужающийся след ракеты.\n16. リ — Рис: Два ростка риса, правый длиннее.\n17. ル — Ручей: Два потока расходятся, правый загибается.\n18. レ — Рельс: Один рельс загибается вправо внизу.\n19. ロ — Ромб: Замкнутая угловатая рамка.\n20. ワ — Ваза: Верхняя кромка и два края открытой вазы.\n21. ヲ — Обод: Две планки над изогнутым ободом.\n22. ン — Нырок: Короткая капля сверху и длинный след нырка.\n23. Blank ivory cell, no marks.\n24. Blank ivory cell, no marks.\nThe learner must see the shape of the kana transformed into a memorable object, not an unrelated icon.",
+      "grid": {
+        "columns": 6,
+        "rows": 4
+      },
+      "glyphs": [
+        "ノ",
+        "ハ",
+        "ヒ",
+        "フ",
+        "ヘ",
+        "ホ",
+        "マ",
+        "ミ",
+        "ム",
+        "メ",
+        "モ",
+        "ヤ",
+        "ユ",
+        "ヨ",
+        "ラ",
+        "リ",
+        "ル",
+        "レ",
+        "ロ",
+        "ワ",
+        "ヲ",
+        "ン"
+      ]
+    }
+  ]
+}

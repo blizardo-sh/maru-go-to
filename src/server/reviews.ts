@@ -1,3 +1,4 @@
+import { isVisualWordMode, wordCardFor } from '../shared/word-cards';
 import { recognizeRoute } from '../shared/prior-learning';
 import { initialLearningState } from '../shared/learning';
 import { wordTargets, lexemeIds } from '../shared/meanings';
@@ -25,7 +26,7 @@ export function reviewSchedule(data:any,now=new Date()):ReviewSchedule {
 }
 export const reviewId=(mode:ReviewMode,targetId:string,exerciseId='')=>Buffer.from(JSON.stringify([mode,targetId,exerciseId])).toString('base64url');
 export function decodeReview(id:string):[ReviewMode,string,string]{
- try {const data=JSON.parse(Buffer.from(id,'base64url').toString('utf8'));if(!Array.isArray(data)||data.length!==3||data.some(v=>typeof v!=='string')||!['ja-ru','ru-ja','listening','grammar','counter'].includes(data[0])||!data[1])throw 0;return data as [ReviewMode,string,string];}catch{throw new ReviewError('INVALID_REVIEW','Неверная карточка.',400);}
+ try {const data=JSON.parse(Buffer.from(id,'base64url').toString('utf8'));if(!Array.isArray(data)||data.length!==3||data.some(v=>typeof v!=='string')||!['ja-ru','ru-ja','listening','picture-word','word-meaning','grammar','counter'].includes(data[0])||!data[1])throw 0;return data as [ReviewMode,string,string];}catch{throw new ReviewError('INVALID_REVIEW','Неверная карточка.',400);}
 }
 export class ReviewError extends Error {constructor(public code:string,message:string,public status:400|403|404|409|503=400){super(message);}}
 export function gradeGrammar(course:Course,submission:Extract<ReviewSubmission,{mode:'grammar'}>,exerciseId:string){
@@ -41,8 +42,8 @@ async function snapshot(database:Pick<Database,'sql'>,userId:string,course:Cours
  const studies=stagedLearning(course)?await database.sql`select kind,item_id,introductions,passed from study_progress where user_id=${userId}`:[];
  return {words,lexicalWords:course.words,meanings:course.meanings,states,counters,studies,catalog:catalogFor(course),media:course.media,publicationId:course.publicationId,wordsToday:words_today as number,skillsToday:skills_today as number};
 }
-const modes=['ja-ru','ru-ja','listening','grammar','counter'] as const;
-const wordModes=['ja-ru','ru-ja','listening'] as const;
+const modes=['ja-ru','ru-ja','listening','picture-word','word-meaning','grammar','counter'] as const;
+const wordModes=['ja-ru','ru-ja','listening','picture-word','word-meaning'] as const;
 type Snapshot=Awaited<ReturnType<typeof snapshot>>;
 function introduced(snap:Snapshot,grammar=false){return new Set<string>(snap.states.filter((state:any)=>state.mode!=='counter'&&(state.mode==='grammar')===grammar).map((state:any)=>state.item_id));}
 function availableCounterWords(snap:Snapshot){return counterWords(snap.lexicalWords,lexemeIds({words:snap.lexicalWords,meanings:snap.meanings},introduced(snap)),snap.catalog);}
@@ -107,7 +108,7 @@ function dueItems(course:Course,snap:Snapshot,mode:ReviewMode,now:Date,includeFu
  if(mode==='counter')return snap.states.filter((state:any)=>state.mode==='counter'&&(includeFuture||new Date(state.due)<=now)).map((state:any)=>counterItemFor(snap,state.item_id,now)).filter((item:ReviewItem|undefined):item is ReviewItem=>!!item).sort((a:ReviewItem,b:ReviewItem)=>new Date(a.due).getTime()-new Date(b.due).getTime());
  const learned=introduced(snap,mode==='grammar');const exercises=exercisesFor(withPersonalPractice(course,snap.words),snap.words,introduced(snap));
  const ids=mode==='grammar'?[...new Set(exercises.map(exercise=>exercise.skillId))]:snap.words.filter(word=>word.reviewStatus!=='draft'&&validSegments(word)&&(mode!=='listening'||!!word.audioUrl)).map(word=>word.id);
- const items=ids.filter(id=>learned.has(id)).map(id=>itemFor(course,snap,mode,id,now,exercises)).filter(item=>includeFuture||new Date(item.due)<=now);
+ const items=ids.filter(id=>learned.has(id)&&(mode==='grammar'||(isVisualWordMode(mode)?!!wordCardFor(id,snap.catalog)&&snap.states.some((state:any)=>state.item_id===id&&state.mode===mode):snap.states.some((state:any)=>state.item_id===id&&state.mode!=='grammar'&&state.mode!=='counter'&&!isVisualWordMode(state.mode))))).map(id=>itemFor(course,snap,mode,id,now,exercises)).filter(item=>includeFuture||new Date(item.due)<=now);
  const priority=(item:ReviewItem)=>{const state=snap.states.find((candidate:any)=>candidate.item_id===item.targetId&&candidate.mode===mode)??snap.states.find((candidate:any)=>candidate.item_id===item.targetId);return reviewPriority({...state,due:item.due},now);};
  return items.map(item=>({item,key:reviewDrawKey(priority(item))})).sort((a,b)=>a.key-b.key).map(entry=>entry.item);
 }
@@ -158,7 +159,7 @@ export async function introduceTraining(database:Database,userId:string,course:C
     if(!exercise)throw new ReviewError('MATERIAL_UNAVAILABLE','Материал обучения недоступен.',403);
     return {...itemFor(extended,snap,mode,target,new Date(),[exercise]),id};
    }
-   if(!snap.words.some(word=>word.id===target&&word.reviewStatus!=='draft'&&validSegments(word)))throw new ReviewError('MATERIAL_UNAVAILABLE','Слово недоступно.',403);
+   if(!snap.words.some(word=>word.id===target&&word.reviewStatus!=='draft'&&validSegments(word)&&(!isVisualWordMode(mode)||!!wordCardFor(word,course.catalog))))throw new ReviewError('MATERIAL_UNAVAILABLE','Слово недоступно.',403);
    if(challenge.startsWith('training:')){const topic=challenge.split('|')[0]!.slice(9);if(!trainingSections(course,topic).some(section=>section.wordIds.includes(target)))throw new ReviewError('MATERIAL_UNAVAILABLE','Слово не относится к теме.',403);}
    return {...itemFor(course,snap,mode,target,new Date()),id};
   });
@@ -174,7 +175,7 @@ async function rawTrainingQueue(database:Database,userId:string,course:Course,co
   const complete=(word:Word)=>{const row=snap.studies.find((row:any)=>row.kind==='word'&&row.item_id===word.id);return !!row&&['ja-ru','ru-ja',...(word.audioUrl?['listening']:[]),...(trainingEntry(course,word.id)?.application?['application']:[])].every(format=>row.passed.includes(format));};
   const incomplete=targets.filter(word=>!complete(word));const pool=incomplete.length?incomplete:targets;
   const selected=pool.map(word=>({word,key:Math.random(),started:!!snap.studies.find((row:any)=>row.kind==='word'&&row.item_id===word.id)?.introductions.length})).sort((a,b)=>Number(b.started)-Number(a.started)||(sections.some(section=>section.variable)?a.key-b.key:0)).slice(0,5).map(entry=>entry.word);
-  const items=selected.flatMap(word=>[...wordModes.filter(mode=>mode!=='listening'||word.audioUrl).map(mode=>topicWordItem(course,snap,mode,word.id,context.topicId!,now)),...(trainingEntry(course,word.id)?.application?[topicWordItem(course,snap,'ru-ja',word.id,context.topicId!,now,true)]:[])]);
+  const items=selected.flatMap(word=>[...(['ja-ru','ru-ja','listening'] as const).filter(mode=>mode!=='listening'||word.audioUrl).map(mode=>topicWordItem(course,snap,mode,word.id,context.topicId!,now)),...(trainingEntry(course,word.id)?.application?[topicWordItem(course,snap,'ru-ja',word.id,context.topicId!,now,true)]:[])]);
   const mixed=interleaveReviews(wordModes.map(mode=>items.filter(item=>item.mode===mode&&!('application'in item&&item.application))));mixed.push(...items.filter(item=>'application'in item&&item.application));
   return {items:mixed,remainingNew:incomplete.length,remainingDue:0,reference:{title:sections.map(section=>section.title).join(' · '),text:sections.map(section=>section.referenceRu).join('\n\n')}};
  }
@@ -182,13 +183,14 @@ async function rawTrainingQueue(database:Database,userId:string,course:Course,co
  if(context.counters)return counterTrainingQueue(snap,now);
  if(context.lessonId){if(!course.lessons.some(lesson=>lesson.id===context.lessonId))throw new ReviewError('NOT_FOUND','Урок не найден.',404);words=snap.words.filter(word=>!word.trainingOnly&&word.lessonIds.includes(context.lessonId!));}
  else {const [list]=await database.sql`select id from word_lists where id=${context.listId!} and user_id=${userId}`;if(!list)throw new ReviewError('NOT_FOUND','Личный список не найден.',404);const rows=await database.sql`select id from personal_words where list_id=${context.listId!} and user_id=${userId}`;const ids=new Set(rows.map((row:any)=>row.id));words=snap.words.filter(word=>ids.has(word.id));}
- words=words.filter(word=>word.reviewStatus!=='draft'&&validSegments(word));const wordIds=introduced(snap);const skillIds=introduced(snap,true);const freshWords=words.filter(word=>!wordIds.has(word.id));
+ if(context.visualWords&&!context.lessonId?.startsWith('marugoto.starter-a1.lesson.'))throw new ReviewError('MATERIAL_UNAVAILABLE','Картинки доступны для A1.',403);
+ words=words.filter(word=>word.reviewStatus!=='draft'&&validSegments(word)&&(!context.visualWords||!!wordCardFor(word,course.catalog)));const wordIds=introduced(snap);const skillIds=introduced(snap,true);const freshWords=words.filter(word=>context.visualWords ? !['picture-word','word-meaning'].every(mode=>snap.states.some((state:any)=>state.item_id===word.id&&state.mode===mode)) : !wordIds.has(word.id));
  const priority=(id:string,grammar=false)=>Math.max(0,...snap.states.filter((state:any)=>state.item_id===id&&(state.mode==='grammar')===grammar).map((state:any)=>reviewPriority(state,now)));
  const selected=(freshWords.length?freshWords:words.map(word=>({word,key:reviewDrawKey(priority(word.id))})).sort((a,b)=>a.key-b.key).map(entry=>entry.word)).slice(0,stagedLearning(course)?5:10);
- const wordItems=selected.flatMap((word,index)=>{const available=wordModes.filter(mode=>mode!=='listening'||word.audioUrl);const count=snap.states.filter((state:any)=>state.item_id===word.id&&state.mode!=='grammar').reduce((sum:number,state:any)=>sum+state.version,0);const mode=available[(count||(wordIds.size+index))%available.length]!;return stagedLearning(course)?available.map(mode=>itemFor(course,snap,mode,word.id,now)):[itemFor(course,snap,mode,word.id,now)];});
+ const wordItems=selected.flatMap((word,index)=>{const available=wordModes.filter(mode=>(!context.visualWords||isVisualWordMode(mode))&&(mode!=='listening'||word.audioUrl)&&(!isVisualWordMode(mode)||(stagedLearning(course)||context.visualWords)&&!!context.lessonId?.startsWith('marugoto.starter-a1.lesson.')&&!!wordCardFor(word,course.catalog)));const count=snap.states.filter((state:any)=>state.item_id===word.id&&state.mode!=='grammar').reduce((sum:number,state:any)=>sum+state.version,0);const mode=available[(count||(wordIds.size+index))%available.length]!;return stagedLearning(course)?available.map(mode=>itemFor(course,snap,mode,word.id,now)):[itemFor(course,snap,mode,word.id,now)];});
  const extended=withPersonalPractice(course,snap.words);const exercises=exercisesFor(extended,snap.words,context.listId?new Set(words.map(word=>word.id)):wordIds).filter(exercise=>context.lessonId?exercise.lessonId===context.lessonId:exercise.tokens.some(token=>extended.forms.some(form=>form.id===token.formId&&words.some(word=>word.id===form.wordId))));
  const skills=[...new Set(exercises.map(exercise=>exercise.skillId))].map(id=>({id,key:reviewDrawKey(priority(id,true))})).sort((a,b)=>Number(skillIds.has(a.id))-Number(skillIds.has(b.id))||a.key-b.key).map(entry=>entry.id);
- const grammar=skills.slice(0,stagedLearning(course)?1:2).flatMap(id=>{const item=itemFor(course,snap,'grammar',id,now,exercises);if(!stagedLearning(course)||item.mode!=='grammar')return [item];const original=course.learning?.flatMap(route=>route.goals.flatMap(goal=>goal.parts.flatMap(part=>part.construction?[part.construction]:[]))).find(value=>value.exerciseId===item.exercise.id);const example=original?.example??{surface:sentenceFor(extended,item.exercise,item.exercise.acceptedOrders[0]!),kana:item.exercise.acceptedOrders[0]!.map(tokenId=>extended.forms.find(form=>form.id===item.exercise.tokens.find(token=>token.id===tokenId)!.formId)!.kana).join('')+item.exercise.sentenceEnd,segments:item.exercise.acceptedOrders[0]!.flatMap(tokenId=>extended.forms.find(form=>form.id===item.exercise.tokens.find(token=>token.id===tokenId)!.formId)!.segments).concat(item.exercise.sentenceEnd?[{surface:item.exercise.sentenceEnd}]:[]),meaningRu:item.exercise.translationRu??item.exercise.promptRu,audioUrl:''};return (['ja-ru',...(example.audioUrl?['listening' as const]:[]),'grammar'] as const).map(mode=>({...item,construction:{...(original??{exerciseId:item.exercise.id,explanationRu:item.skill.explanationRu,breakdown:[],example}),mode}}));});
+ const grammar=skills.slice(0,context.visualWords?0:stagedLearning(course)?1:2).flatMap(id=>{const item=itemFor(course,snap,'grammar',id,now,exercises);if(!stagedLearning(course)||item.mode!=='grammar')return [item];const original=course.learning?.flatMap(route=>route.goals.flatMap(goal=>goal.parts.flatMap(part=>part.construction?[part.construction]:[]))).find(value=>value.exerciseId===item.exercise.id);const example=original?.example??{surface:sentenceFor(extended,item.exercise,item.exercise.acceptedOrders[0]!),kana:item.exercise.acceptedOrders[0]!.map(tokenId=>extended.forms.find(form=>form.id===item.exercise.tokens.find(token=>token.id===tokenId)!.formId)!.kana).join('')+item.exercise.sentenceEnd,segments:item.exercise.acceptedOrders[0]!.flatMap(tokenId=>extended.forms.find(form=>form.id===item.exercise.tokens.find(token=>token.id===tokenId)!.formId)!.segments).concat(item.exercise.sentenceEnd?[{surface:item.exercise.sentenceEnd}]:[]),meaningRu:item.exercise.translationRu??item.exercise.promptRu,audioUrl:''};return (['ja-ru',...(example.audioUrl?['listening' as const]:[]),'grammar'] as const).map(mode=>({...item,construction:{...(original??{exerciseId:item.exercise.id,explanationRu:item.skill.explanationRu,breakdown:[],example}),mode}}));});
  return {items:stagedLearning(course)?[...interleaveReviews(wordModes.map(mode=>wordItems.filter(item=>item.mode===mode))),...grammar]:interleaveReviews([wordItems,grammar]),remainingNew:freshWords.length+skills.filter(id=>!skillIds.has(id)).length,remainingDue:modes.flatMap(mode=>dueItems(course,snap,mode,now)).filter(item=>item.mode==='grammar'?skills.includes(item.targetId):words.some(word=>word.id===item.targetId)).length};
 }
 function constructionTrainingQueue(course:Course,snap:Snapshot,context:TrainingContext,now:Date):ReviewQueue{
@@ -257,7 +259,7 @@ export async function submitReviewLocked(tx:Database['sql'],userId:string,course
   const [prior]=await tx`select user_id,payload,result from review_attempts where attempt_id=${input.attemptId}`;
   if(prior){if(prior.user_id!==userId||!isDeepStrictEqual(prior.payload,JSON.parse(payload)))throw new ReviewError('ATTEMPT_CONFLICT','Идентификатор попытки уже использован.',409);return prior.result as ReviewResult;}
   const counter=mode==='counter'?submittedCounter(snap,targetId,exerciseId):null;
-  if(mode==='grammar'?!exercise:mode==='counter'?!counter:!word||(mode==='listening'&&!word.audioUrl))throw new ReviewError('MATERIAL_UNAVAILABLE','Материал недоступен.',403);
+  if(mode==='grammar'?!exercise:mode==='counter'?!counter:!word||(mode==='listening'&&!word.audioUrl)||(isVisualWordMode(mode)&&!wordCardFor(word!,course.catalog)))throw new ReviewError('MATERIAL_UNAVAILABLE','Материал недоступен.',403);
   if(input.mode==='grammar'){
    const evaluation=evaluateTarget(exerciseCourse,exerciseId,{...input,revision:0});
    if(evaluation.outcome==='exploration')throw new ReviewError('EXPLORATION_NOT_SCHEDULED','Исследование другой фразы не оценивает исходный навык.',409);

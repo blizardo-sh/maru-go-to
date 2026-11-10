@@ -15,5 +15,5 @@ export function getWordIllustration(wordId: string, catalog = defaultCatalog): W
     for (const asset of catalog.illustrations.assets) for (const cell of asset.cells) for (const id of cell.wordIds) illustrations.set(id, { src: asset.src, width: asset.width, height: asset.height, viewBox: cell.bounds.join(' ') });
     indexes.set(catalog, illustrations);
   }
-  return illustrations.get(wordId);
+  return illustrations.get(wordId) ?? catalog.wordCards?.entries[wordId]?.image;
 }

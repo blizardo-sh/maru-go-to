@@ -43,7 +43,11 @@ jobs:
       - run: bun test tests --timeout 20000
       - run: bun run build
       - run: python3 scripts/verify_preparation.py
-      - run: bunx playwright install --with-deps chrome
+      - run: bunx playwright install --with-deps chrome chromium
+      - name: Browser kana FSRS and mnemonic cards
+        run: bun tests/integration.kana-fsrs.browser.ts
+      - name: Browser A1 visual word cards
+        run: bun tests/integration.visual-word-cards.browser.ts
       - name: Browser prior learning in Canvas and React
         run: bun tests/integration.prior-learning.browser.ts
       - name: Browser learner feedback interactions

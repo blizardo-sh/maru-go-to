@@ -1,6 +1,6 @@
 {
   "format": 1,
-  "scope": "Marugoto, compact publications, FSRS and current production email access integration; candidate only",
+  "scope": "Kana FSRS and illustrated A1 word cards integrated with the current production release",
   "baseHead": "0f0b4ac",
   "tools": {
     "vite": "8.3.4",
@@ -75,7 +75,7 @@
     "Japanese pedagogical review of authored tasks, grammar, meaning mappings and dictionary corrections",
     "Human listening/accent review of macOS Kyoko recordings"
   ],
-  "publicationPolicy": "Review candidate only. Content rollback retains learner history; UI rollback does not restore database.",
+  "publicationPolicy": "Production publication authorized by the user on 2026-11-10; learner history retained.",
   "contentRepresentation": {
     "publicationFormat": 3,
     "learnerApi": "learner-v1",
@@ -100,5 +100,23 @@
     "runtimeGraceSeconds": 160,
     "productionContentId": "b86dc95a7152800573eb9f79c035d2216e64b0270f17c3eb0c8829289fb8577d"
   },
-  "phoneAcceptance": "User confirmed phone operation before production integration; new merged build needs focused acceptance"
+  "phoneAcceptance": "User confirmed phone operation before production integration; new merged build needs focused acceptance",
+  "kanaAndA1Cards": {
+    "baseCommit": "9e70764be549a338a3ec217796fb79e3c3f2da2f",
+    "contentId": "e903402024756a2d324ac1d3edb01267ece399b9dabec24a0dc40aa90c85b429",
+    "kanaMnemonics": 92,
+    "a1Words": 874,
+    "newA1Illustrations": 675,
+    "reusedA1Illustrations": 199,
+    "wordDirections": [
+      "picture-word",
+      "word-meaning"
+    ],
+    "migration": "0010_kana_fsrs; additive tables only",
+    "preservedProductionFixes": [
+      "HTML no-store policy",
+      "iPhone keyboard viewport handling",
+      "reference reading action layout"
+    ]
+  }
 }

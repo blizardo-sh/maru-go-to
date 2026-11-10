@@ -21,7 +21,7 @@ const publicRoot = new URL('../../public', import.meta.url).pathname;
 const digest = (bytes: Uint8Array) => createHash('sha256').update(bytes).digest('hex');
 const idPattern = /^[a-f0-9]{64}$/;
 // The leading slash is an URL path, never an absolute filesystem argument.
-const safePath = (path: string) => /^\/(audio|word-illustrations|counters)\/[a-zA-Z0-9/_.-]+\.(m4a|mp3|ogg|wav|png|webp|jpg|jpeg|svg|avif)$/.test(path) && path.slice(1).split('/').every(part => part && part !== '.' && part !== '..');
+const safePath = (path: string) => /^\/(audio|word-illustrations|counters|assets\/a1-words)\/[a-zA-Z0-9/_.-]+\.(m4a|mp3|ogg|wav|png|webp|jpg|jpeg|svg|avif)$/.test(path) && path.slice(1).split('/').every(part => part && part !== '.' && part !== '..');
 export function validateContentBundle(value: unknown, mediaRoot?: string): asserts value is ContentBundle {
  const bundle = value as ContentBundle;
  if (!bundle || ![1,2,3].includes(bundle.formatVersion) || !bundle.course || !Array.isArray(bundle.assets) || bundle.assets.length > 20000 || bundle.course.publicationId !== undefined || !Array.isArray(bundle.course.words) || bundle.course.words.some(word => !word.lessonIds.length)) throw new Error('Invalid content bundle.');
@@ -46,7 +46,7 @@ export function validateContentBundle(value: unknown, mediaRoot?: string): asser
   }
  }
  const referenced = (value: unknown): void => {
-  if (typeof value === 'string' && /^\/(audio|word-illustrations|counters)\//.test(value) && (!safePath(value) || !paths.has(value))) throw new Error(`Unlisted content asset: ${value}`);
+  if (typeof value === 'string' && /^\/(audio|word-illustrations|counters|assets\/a1-words)\//.test(value) && (!safePath(value) || !paths.has(value))) throw new Error(`Unlisted content asset: ${value}`);
   if (Array.isArray(value)) value.forEach(referenced);
   else if (value && typeof value === 'object') for (const [key,entry] of Object.entries(value)) {
    if ((key === 'audioUrl' || key === 'src') && typeof entry === 'string' && (!safePath(entry) || !paths.has(entry))) throw new Error(`Unlisted content asset: ${entry}`);
@@ -65,7 +65,7 @@ export function packContent(course: Course, mediaRoot = publicRoot): ContentBund
    else if (entry.isFile()) { const path = '/' + file.slice(resolve(mediaRoot).length + 1).split(sep).join('/'); if (safePath(path)) { const bytes = readFileSync(file); assets.push({ path, bytes: bytes.length, sha256: digest(bytes) }); } }
   }
  };
- for (const prefix of ['audio', 'word-illustrations', 'counters']) scan(join(resolve(mediaRoot), prefix));
+ for (const prefix of ['audio', 'word-illustrations', 'counters', 'assets/a1-words']) scan(join(resolve(mediaRoot), prefix));
  const copied = structuredClone(course); delete copied.publicationId; delete copied.media;
  const bundle: ContentBundle = { formatVersion: 3, ...poolSources(copied), assets: assets.sort((a,b) => a.path.localeCompare(b.path)) };
  validateContentBundle(bundle, mediaRoot); return bundle;
