@@ -9,7 +9,9 @@ import type { SceneSound } from './sceneSound';
 
 export function KanaTrainer({ owner, script, catalog, sound, volume, onClose }: { owner: string; script: 'hiragana' | 'katakana'; catalog: CourseCatalog; sound: SceneSound; volume: number; onClose: () => void }) {
  const [,redraw]=useReducer(value=>value+1,0),[flow]=useState(()=>new KanaFlow(redraw));
- useEffect(()=>{void flow.boot(owner,catalog,script);return()=>flow.clear();},[owner,catalog,script,flow]);
+ useEffect(()=>{void flow.boot(owner,catalog,script);},[owner,catalog,script,flow]);
+ // A refreshed catalog must not discard an open card. boot resets on owner changes.
+ useEffect(()=>()=>flow.clear(),[flow]);
  useEffect(()=>{if(flow.last)sound.cue(flow.last.kind,flow.last.attemptId);},[flow.last,sound]);
  const item=flow.item,selected=flow.entries(catalog),audio=item?catalog.kanaAudio?.entries[item.glyph]:undefined;
  const speech=useCardSpeech(audio&&'audioUrl' in audio?audio.audioUrl:undefined,false,flow.active,volume,sound);
