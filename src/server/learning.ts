@@ -1,3 +1,4 @@
+import { isVisualWordMode } from '../shared/word-cards';
 import { checkTaskAnswer } from '../shared/learning-tasks';
 import { recognizedState } from './prior-learning';
 import { matchesPreparedAnswer } from '../shared/answers';
@@ -21,6 +22,11 @@ function routeFor(course: Course, lessonId: string): GuidedLesson {
   return route;
 }
 function storedState(route: GuidedLesson, row?: { route_version: string; state: LearningRouteState }): LearningRouteState {
+  if (row && row.route_version === route.version.replace('-visual-v1', '') && route.version.includes('-visual-v1')) {
+    const previous = structuredClone(route); previous.version = row.route_version;
+    for (const goal of previous.goals) for (const part of goal.parts) for (const word of part.words) delete word.visualCards;
+    return reconcileLearningRoute(previous, route, row.state);
+  }
   if (row && row.route_version !== route.version) throw new ReviewError('ROUTE_CHANGED', 'Учебный маршрут обновился. Обратитесь к преподавателю для переноса прогресса.', 409);
   return row ? reconcileOptionalVideos(route, row.state) : { ...initialLearningState(route), recallPolicy: 'recall-v1' };
 }
@@ -31,7 +37,7 @@ async function stateFor(sql: Database['sql'], userId: string, course: Course, ro
   const result: LearningState = { ...(state.taskEvidence?{taskEvidence:state.taskEvidence}:{}), ...(state.recallPolicy ? { recallPolicy: state.recallPolicy } : {}), ...(course.publicationId ? { publicationId: course.publicationId } : {}), lessonId: route.lessonId, routeVersion: route.version, version, partIndex: state.partIndex, totalParts: parts.length, partProgress: learningPartProgress(parts, {completedStepIds:[...state.completedStepIds,...(state.recognizedStepIds??[])]}), recognizedSteps:state.recognizedStepIds?.length??0, completionBasis:state.recognizedWhole ? 'recognized' : Object.values(state.taskEvidence??{}).some(value=>value.basis==='self-assessed') ? 'self-assessed' : 'performed', completedSteps: state.completedStepIds.length, totalSteps: parts.flat().length, completed: state.partIndex >= parts.length, step };
   if (hydrate && step?.kind === 'word-practice') {
     result.reviewItem = await learningReviewItem(sql, userId, course, step.mode, step.wordId);
-    result.wordChoices = state.recallPolicy ? recallWordChoices(course, route, step, state) : learningWordChoices(course, route, step);
+    if (!isVisualWordMode(step.mode)) result.wordChoices = state.recallPolicy ? recallWordChoices(course, route, step, state) : learningWordChoices(course, route, step);
   }
   if (hydrate && step?.kind === 'construction-practice') {
     const exercise = course.exercises.find(item => item.id === step.exerciseId)!;
@@ -76,7 +82,7 @@ function validateAction(step: LearningStep, input: LearningAdvance): void {
   const practice = step.kind === 'word-practice' || step.kind === 'construction-practice' || step.kind === 'counter-practice';
   if (step.kind !== 'learning-task' && (input.taskAnswer !== undefined || input.selfAssessment !== undefined || input.attempted !== undefined)) throw new ReviewError('INVALID_ACTION','Ответ относится к другому заданию.');
   if(input.rating!==undefined&&(!practice||!['remember','again'].includes(input.action)||(input.rating===1)!==(input.action==='again')))throw new ReviewError('INVALID_ACTION','Оценка не соответствует учебному ответу.');
-  const allowed = step.kind === 'learning-task' ? [step.phase === 'question' ? 'answer' : step.phase === 'feedback' ? 'continue' : step.phase === 'attempt' ? 'attempt' : 'assess'] : step.kind === 'counter-practice' ? step.format === 'recall' ? ['remember','again'] : ['choose'] : step.kind === 'word-practice' ? ['remember', 'again', 'choose'] : practice ? ['remember', 'again'] : step.kind === 'word-intro' ? ['continue', 'start-practice'] : step.kind === 'video' ? ['continue', 'skip'] : ['continue'];
+  const allowed = step.kind === 'learning-task' ? [step.phase === 'question' ? 'answer' : step.phase === 'feedback' ? 'continue' : step.phase === 'attempt' ? 'attempt' : 'assess'] : step.kind === 'counter-practice' ? step.format === 'recall' ? ['remember','again'] : ['choose'] : step.kind === 'word-practice' ? isVisualWordMode(step.mode) ? ['remember', 'again'] : ['remember', 'again', 'choose'] : practice ? ['remember', 'again'] : step.kind === 'word-intro' ? ['continue', 'start-practice'] : step.kind === 'video' ? ['continue', 'skip'] : ['continue'];
   if (!allowed.includes(input.action)) throw new ReviewError('INVALID_ACTION', 'Действие не соответствует текущему шагу.');
   if (step.kind !== 'counter-practice' && (input.action === 'choose' ? !input.choiceWordId : input.choiceWordId !== undefined)) throw new ReviewError('INVALID_ACTION', 'Выбор ответа не относится к текущему шагу.');
   if(step.kind==='counter-practice'?(step.format!=='recall'&&!input.counterChoice)||input.choiceWordId!==undefined:input.counterChoice!==undefined||input.helped!==undefined)throw new ReviewError('INVALID_ACTION','Выбор не относится к счётному заданию.');
@@ -109,7 +115,7 @@ export async function advanceLearning(database: Database, userId: string, course
     const recall = !!state.recallPolicy && (step.kind === 'word-practice' || step.kind === 'construction-practice');
     if (recall !== !!input.recall) throw new ReviewError('INVALID_ACTION', 'Правила ответа не совпадают с выданной частью.');
     if (recall && !['remember', 'again'].includes(input.action)) throw new ReviewError('INVALID_ACTION', 'После раскрытия нужна самооценка.');
-    if (step.kind === 'word-practice' && state.wordQuiz && !recall && input.action !== 'choose') throw new ReviewError('INVALID_ACTION', 'Выберите один из четырёх ответов.');
+    if (step.kind === 'word-practice' && !isVisualWordMode(step.mode) && state.wordQuiz && !recall && input.action !== 'choose') throw new ReviewError('INVALID_ACTION', 'Выберите один из четырёх ответов.');
     let action = input.action;
     if (step.kind === 'learning-task') {
       const task=route.goals.flatMap(goal=>goal.parts.flatMap(part=>part.tasks??[])).find(task=>task.id===step.taskId)!;
@@ -134,7 +140,7 @@ export async function advanceLearning(database: Database, userId: string, course
       const first = input.recall.firstChoiceWordId;
       const tokens = input.recall.firstTokenIds;
       if (step.kind === 'word-practice') {
-        if (tokens || first && !recallWordChoices(course, route, step, state).includes(first)) throw new ReviewError('INVALID_CHOICE', 'Первая попытка не относится к вопросу.');
+        if (isVisualWordMode(step.mode) && first || tokens || first && !recallWordChoices(course, route, step, state).includes(first)) throw new ReviewError('INVALID_CHOICE', 'Первая попытка не относится к вопросу.');
         if (first && !input.recall.helped) throw new ReviewError('INVALID_ACTION', 'Выбор вариантов является подсказкой.');
         if (input.recall.helped || first && first !== step.wordId) action = 'again';
       } else if (step.kind === 'construction-practice') {

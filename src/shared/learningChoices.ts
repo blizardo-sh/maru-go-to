@@ -1,3 +1,4 @@
+import { isVisualWordMode } from './word-cards';
 import { wordTarget } from './meanings';
 import type { Course, Word } from './types';
 import type { GuidedLesson, LearningStep, LearningRouteState } from './learning';
@@ -23,6 +24,7 @@ export function confusableLearningWords(left: Word, right: Word, catalog = defau
 
 // Stable across GET/reload and independent of the learner's SRS state.
 export function learningWordChoices(course: Course, route: GuidedLesson, step: Extract<LearningStep, { kind: 'word-practice' }>): string[] {
+  if (isVisualWordMode(step.mode)) return [];
   const target = wordTarget(course, step.wordId);
   if (!target || !target.lessonIds.includes(route.lessonId) || target.reviewStatus === 'draft') throw new Error('Missing quiz target.');
   const catalog = catalogFor(course);
@@ -43,6 +45,7 @@ export function learningWordChoices(course: Course, route: GuidedLesson, step: E
 
 // B uses only introduced words from this route; no future distractor is substituted in the browser.
 export function recallWordChoices(course: Course, route: GuidedLesson, step: Extract<LearningStep, { kind: 'word-practice' }>, state: LearningRouteState): string[] {
+  if (isVisualWordMode(step.mode)) return [];
   const target = wordTarget(course, step.wordId)!;
   const known = new Set(route.goals.flatMap(goal => goal.parts.flatMap(part => part.words.filter(word => state.completedStepIds.includes(`${part.id}:intro:${word.wordId}`)).map(word => word.wordId))));
   const catalog = catalogFor(course), selected = [target];

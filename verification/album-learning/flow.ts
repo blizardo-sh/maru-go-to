@@ -28,7 +28,15 @@ async function actor(){const email=`album-flow-${crypto.randomUUID()}@example.te
 async function login(value:typeof actors[number],c:BrowserContext=context){const response=await c.request.post(base+'/api/auth/sign-in/email',{headers:{origin:base},data:{email:value.email,password:value.password}});expect(response.status()).toBe(200);owner=value.id;}
 async function state(lessonId=lesson):Promise<LearningState>{const response=await context.request.get(`${base}/api/learning/${lessonId}`,{headers:{'X-Learning-Learner-Id':owner}});expect(response.status()).toBe(200);return response.json();}
 async function open(lessonId=lesson,p:Page=page){await p.goto(base);await expect(p.getByTestId('learn-lesson')).toHaveCount(18);await p.locator(`[data-testid=learn-lesson][data-lesson-id="${lessonId}"]`).click();const skip=p.getByRole('button',{name:/Перейти к занятию/});if(await skip.isVisible())await skip.click();await expect(p.getByTestId('guided-learning')).toHaveAttribute('data-step-kind',/./);}
-async function readyChoice(){const quiz=page.getByTestId('learning-word-quiz');await expect(quiz).toBeVisible();await expect(page.locator('[data-choice-word-id]')).toHaveCount(4);if(await quiz.getAttribute('data-mode')==='listening'&&!await page.locator('[data-choice-word-id]').first().isEnabled()){const listen=page.getByRole('button',{name:'Прослушать слово',exact:true});await expect(listen).toBeEnabled({timeout:15000});await listen.click();}await expect(page.locator('[data-choice-word-id]').first()).toBeEnabled({timeout:15000});}
+async function readyChoice(){
+  await expect(page.locator('[data-testid="learning-word-quiz"], [data-testid="review-gesture"]')).toBeVisible();
+  for(let index=0;await page.getByTestId('review-gesture').count();index++){
+    expect(index).toBeLessThan(2);
+    const gesture=page.getByTestId('review-gesture'),mode=await gesture.getAttribute('data-mode');expect(['picture-word','word-meaning']).toContain(mode);
+    const stepId=await session().getAttribute('data-step-id');await expect(gesture.getByText('Загружаем картинку…',{exact:true})).toHaveCount(0);
+    await page.getByTestId('card-face').click();await expect(gesture.locator('.visual-word-caption')).toBeVisible();await gesture.focus();await gesture.press('ArrowRight');await changed(stepId!);
+  }
+  const quiz=page.getByTestId('learning-word-quiz');await expect(quiz).toBeVisible();await expect(page.locator('[data-choice-word-id]')).toHaveCount(4);if(await quiz.getAttribute('data-mode')==='listening'&&!await page.locator('[data-choice-word-id]').first().isEnabled()){const listen=page.getByRole('button',{name:'Прослушать слово',exact:true});await expect(listen).toBeEnabled({timeout:15000});await listen.click();}await expect(page.locator('[data-choice-word-id]').first()).toBeEnabled({timeout:15000});}
 async function changed(id:string){await expect(session()).not.toHaveAttribute('data-step-id',id);}
 const nativeSfx=()=>page.evaluate(()=>(window as AudioMetricsWindow).__albumNativeSfx.length as number);
 const hidden=(value:boolean)=>page.evaluate(value=>{if(value)Object.defineProperty(document,'hidden',{configurable:true,get:()=>true});else Reflect.deleteProperty(document,'hidden');document.dispatchEvent(new Event('visibilitychange'));},value);

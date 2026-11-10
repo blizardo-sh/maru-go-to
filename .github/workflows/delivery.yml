@@ -17,7 +17,7 @@ concurrency:
 jobs:
   check:
     runs-on: ubuntu-24.04
-    timeout-minutes: 20
+    timeout-minutes: 30
     services:
       postgres:
         image: postgres:18.6-bookworm@sha256:bbf83594798e144bff365a9c191c5d779f181fb3135902064ab8ff11918020fc
@@ -43,7 +43,11 @@ jobs:
       - run: bun test tests --timeout 20000
       - run: bun run build
       - run: python3 scripts/verify_preparation.py
-      - run: bunx playwright install --with-deps chrome
+      - run: bunx playwright install --with-deps chrome chromium
+      - name: Browser kana FSRS and mnemonic cards
+        run: bun tests/integration.kana-fsrs.browser.ts
+      - name: Browser A1 visual word cards
+        run: bun tests/integration.visual-word-cards.browser.ts
       - name: Browser prior learning in Canvas and React
         run: bun tests/integration.prior-learning.browser.ts
       - name: Browser learner feedback interactions

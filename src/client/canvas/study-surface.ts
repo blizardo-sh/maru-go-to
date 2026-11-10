@@ -65,20 +65,20 @@ export class StudySurface {
     const view = new Text({ text: value, style: { fontFamily: japanese ? jp : book, fontSize: size, wordWrap: true, wordWrapWidth: width, breakWords: true, lineHeight: size * (japanese ? 1.25 : 1.45) } });
     const height = view.height; view.destroy(); return height;
   }
-  japanese(value: JapaneseValue, rect: Rect, maximum = 72, align: 'center' | 'top' = 'center') {
+  japanese(value: JapaneseValue, rect: Rect, maximum = 72, align: 'center' | 'top' = 'center', orthography: Script = this.script) {
     let size = Math.max(18, Math.min(maximum, Math.floor(rect.height / 1.6)));
     const widthAt = (size: number) => value.segments.reduce((width, segment) => width + Math.max(textWidth(segment.surface, size, jp), segment.reading ? textWidth(segment.reading, Math.max(12, Math.round(size * .4)), jp) : 0), 0);
     while (size > 18 && widthAt(size) > rect.width) size = Math.max(18, size - 2);
-    let group = new Container(), result = japanese(group, value, this.script, { ...rect, x: 0, y: 0 }, size, jp);
+    let group = new Container(), result = japanese(group, value, orthography, { ...rect, x: 0, y: 0 }, size, jp);
     let bounds = group.getLocalBounds();
     // Ruby and font ascenders can exceed the estimate; fit actual bounds, retaining 18px/12px minima.
     while (size > 18 && (result.overflow || bounds.height > rect.height + 2)) {
       group.destroy({ children: true }); size = Math.max(18, size - 2);
-      group = new Container(); result = japanese(group, value, this.script, { ...rect, x: 0, y: 0 }, size, jp);
+      group = new Container(); result = japanese(group, value, orthography, { ...rect, x: 0, y: 0 }, size, jp);
       bounds = group.getLocalBounds();
     }
     group.position.set(rect.x + (rect.width - bounds.width) / 2 - bounds.x, rect.y + (align === 'top' ? 0 : (rect.height - bounds.height) / 2) - bounds.y); this.root.addChild(group);
-    this.texts.push({ value: this.script === 'kana' ? value.kana : this.script === 'furigana' && value.surface !== value.kana ? `${value.surface} (${value.kana})` : value.surface, rect: { x: group.x + bounds.x, y: group.y + bounds.y, width: bounds.width, height: bounds.height }, size });
+    this.texts.push({ value: orthography === 'kana' ? value.kana : orthography === 'furigana' && value.surface !== value.kana ? `${value.surface} (${value.kana})` : value.surface, rect: { x: group.x + bounds.x, y: group.y + bounds.y, width: bounds.width, height: bounds.height }, size });
     if (result.overflow || bounds.height > rect.height + 2) this.problems.push('Japanese text exceeds its area');
     return { ...result, height: bounds.height };
   }
@@ -99,7 +99,7 @@ export class StudySurface {
     const text = label(node, caption, rect.width / 2 + (playIcon && caption ? 10 : 0), 0, size, { width: rect.width - (action.id.startsWith('grade-') ? 8 : actionInset) - (playIcon && caption ? 28 : 0), center: true, color: enabled ? ink : '#665b48', fontFamily: japanese ? jp : book });
     if (action.id.startsWith('grade-')) text.style.lineHeight = size * 1.15;
     else if (japanese) text.style.lineHeight = size * 1.25;
-    while (size > (japanese ? 18 : 14) && text.height > rect.height - 8) { size--; text.style.fontSize = size; text.style.lineHeight = size * (japanese ? 1.25 : 1.45); }
+    while (size > (japanese ? 18 : 14) && text.height > rect.height - 8) { size--; text.style.fontSize = size; text.style.lineHeight = size * (action.id.startsWith('grade-') ? 1.15 : japanese ? 1.25 : 1.45); }
     const pictureHeight = action.picture ? 60 : 0;
     text.y = pictureHeight + (rect.height - pictureHeight - text.height) / 2;
     if (playIcon) {

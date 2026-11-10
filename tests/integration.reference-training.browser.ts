@@ -60,30 +60,25 @@ try {
   expect((await (await context.request.get(base + '/api/reviews?mode=mixed')).json()).items).toEqual([]); report.repeatSaveFailureAndPersistence = true;
 
   await navigate('Справочник'); await page.getByRole('button', { name: 'Хирагана', exact: true }).click(); await expect(page.locator('.kana-reference')).toBeVisible(); await expect(page.getByTestId('train-kana')).toHaveCount(0); await navigate('Тренировки'); await page.getByRole('button', { name: 'Тренировать хирагану', exact: true }).click();
-  const trainer = page.getByTestId('kana-trainer'); await trainer.getByRole('checkbox', { name: 'Вся азбука', exact: true }).uncheck();
-  await trainer.locator('.kana-row-picker label').filter({ hasText: 'あ行' }).getByRole('checkbox').check();
+  const trainer = page.getByTestId('kana-trainer');
   const beforeKana = await cards(), beforePosts = submissions.length;
-  const manifest: KanaAudioManifest = await (await context.request.get(base + '/audio/kana-manifest.json')).json();
-  await trainer.getByRole('button', { name: /Начать колоду/ }).click();
-  await trainer.getByRole('button', { name: 'Начать практику', exact: true }).click();
-  const formats = new Set<string>(); let solved = 0;
-  while (solved < 10) {
-    const question = trainer.getByTestId('kana-question'); await expect(question).toBeVisible(); const format = (await question.getAttribute('data-format'))!; formats.add(format);
-    const options = question.getByRole('group', { name: 'Варианты ответа' }).getByRole('button'); let answer;
-    if (format === 'reading') {
-      const kana = (await question.locator('.kana-glyph').innerText()).trim(), reading = basicKana[0]!.cells.find(cell => cell?.kana === kana)!.reading;
-      answer = options.filter({ hasText: new RegExp('^' + reading + '$') });
-    } else {
-      await expect(options.first()).toBeEnabled();
-      const played: string = await page.evaluate(() => (window as any).__referencePlayed.at(-1)); expect(played).toContain('/audio/');
-      const candidates = await options.allTextContents(); const correct = candidates.find(kana => { const entry = manifest.entries[kana.trim()]; return entry && 'audioUrl' in entry && new URL(entry.audioUrl, base).pathname === new URL(played).pathname; }); expect(correct).toBeDefined();
-      const keys = candidates.map(kana => manifest.entries[kana.trim()]!.soundKey); expect(new Set(keys).size).toBe(keys.length);
-      answer = options.filter({ hasText: correct!.trim() });
-    }
-    await answer.click(); solved++; await expect(trainer.getByRole('progressbar')).toHaveAttribute('value', String(solved));
+  await trainer.getByRole('button', { name: /Учить выбранные/ }).click();
+  await expect(trainer.locator('figcaption')).toBeVisible();
+  await trainer.getByRole('button', { name: '▶ Прослушать', exact: true }).click();
+  await expect.poll(async()=>page.evaluate(()=>(window as any).__referencePlayed.at(-1))).toContain('/audio/');
+  for(let i=0;i<4;i++)await trainer.getByRole('button',{name:'Следующий знак',exact:true}).click();
+  await trainer.getByRole('button',{name:'Проверить себя',exact:true}).click();
+  for(let i=0;i<5;i++){
+    await expect(trainer.locator('figcaption')).toHaveCount(0);
+    await trainer.getByRole('button',{name:'Раскрыть карточку',exact:true}).click();
+    await expect(trainer.locator('figcaption')).toBeVisible();
+    await trainer.getByRole('button',{name:/^Хорошо/}).click();
+    await expect.poll(async()=>Number((await database.sql`select count(*)::int as count from kana_attempts where user_id=${userId}`)[0].count)).toBe(i+1);
   }
-  await expect(trainer.getByRole('heading', { name: 'Колода пройдена' })).toBeVisible(); expect([...formats].sort()).toEqual(['listening', 'reading']); expect(submissions.length).toBe(beforePosts); expect(await cards()).toEqual(beforeKana);
-  report.kana = { formats: [...formats], selectedRow: 'あ行', solved, srsPosts: 0, realPlayback: true };
+  await expect(trainer.getByRole('heading',{name:'Карточки пройдены'})).toBeVisible();
+  expect(submissions.length).toBe(beforePosts);expect(await cards()).toEqual(beforeKana);
+  expect(await database.sql`select 1 from kana_states where user_id=${userId}`).toHaveLength(5);
+  report.kana={selectedRow:'あ行',solved:5,separateFsrsCards:5,realPlayback:true,introductionAndAnswerCaptions:true};
   await trainer.getByRole('button', { name: 'Закрыть', exact: true }).click();
   await page.getByLabel('Выберите конструкцию', { exact: true }).selectOption(exercise.skillId);
   const skillVersionBefore = Number((await database.sql`select version from review_states where user_id=${userId} and item_id=${exercise.skillId} and mode='grammar'`)[0]!.version);

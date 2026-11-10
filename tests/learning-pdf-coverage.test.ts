@@ -1,3 +1,4 @@
+import { isVisualWordMode } from '../src/shared/word-cards';
 import { expect, test } from 'bun:test';
 import { createHash } from 'node:crypto';
 import { readFileSync, statSync } from 'node:fs';
@@ -25,7 +26,7 @@ test('all 103 supplied PDF positions are explicit guided targets, not substring 
   expect(coverage.sources.map(source => source.sha256)).toEqual(audit.sources.filter(source => source.path.startsWith('user-provided/')).map(source => source.sha256));
   for (const [lessonNumber, count] of [[3, 46], [4, 57]] as const) {
     const route = course.learning!.find(route => route.lessonId === prefix + `lesson.0${lessonNumber}`)!;
-    expect(route.version).toBe(coverage.version+'-staged');
+    expect(route.version).toBe(coverage.version+'-visual-v1-staged');
     expect(coverage.positions.filter(row => row.lessonNumber === lessonNumber).map(row => row.position).sort((a, b) => a - b)).toEqual(Array.from({ length: count }, (_, i) => i + 1));
     for (const goal of route.goals) for (const part of goal.parts) expect(part.words.length).toBeLessThanOrEqual(5);
   }
@@ -48,7 +49,7 @@ test('all 103 supplied PDF positions are explicit guided targets, not substring 
       expect(introduction.example.meaningRu.trim().length).toBeGreaterThan(2);
       audioFile(word.audioUrl!); audioFile(introduction.example.audioUrl);
       const steps = learningParts(route).flat().filter(step => step.kind === 'word-practice' && step.wordId === wordId);
-      expect(steps.map(step => step.kind === 'word-practice' && step.mode).sort()).toEqual(['ja-ru', 'listening', 'ru-ja']);
+      expect(steps.map(step => step.kind === 'word-practice' && step.mode).sort()).toEqual(['ja-ru', 'listening', 'picture-word', 'ru-ja', 'word-meaning']);
     }
     for (const formId of covered.formIds ?? []) expect(course.forms.some(form => form.id === formId && [covered.wordId!, ...(covered.variantWordIds ?? [])].includes(form.wordId) && form.reviewStatus !== 'draft')).toBe(true);
   }
@@ -57,7 +58,7 @@ test('all 103 supplied PDF positions are explicit guided targets, not substring 
 test('each PDF word has four prepared, distinct, comparable choices in all three formats', () => {
   for (const lessonNumber of [3, 4]) {
     const route = course.learning!.find(route => route.lessonId === prefix + `lesson.0${lessonNumber}`)!;
-    for (const step of learningParts(route).flat()) if (step.kind === 'word-practice') {
+    for (const step of learningParts(route).flat()) if (step.kind === 'word-practice' && !isVisualWordMode(step.mode)) {
       const ids = learningWordChoices(course, route, step);
       expect(ids).toHaveLength(4); expect(new Set(ids).size).toBe(4); expect(ids).toContain(step.wordId);
       const choices = ids.map(id => course.words.find(word => word.id === id)!);

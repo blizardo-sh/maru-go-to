@@ -71,6 +71,13 @@
       "when": 1794052801000,
       "tag": "0009_prior_learning_commands",
       "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1794240000000,
+      "tag": "0010_kana_fsrs",
+      "breakpoints": true
     }
   ]
 }

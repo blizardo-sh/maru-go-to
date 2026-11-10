@@ -17,7 +17,7 @@ test('all 18 published routes cover their lesson goals and existing construction
       expect(exerciseIds.some(id => course.exercises.find(exercise => exercise.id === id)?.skillId === skill.id)).toBe(true);
     }
     expect(parts.every(part => part.words.length <= 5)).toBe(true);
-    expect(learningParts(route).flat().filter(step => step.kind === 'word-practice')).toHaveLength(parts.reduce((count, part) => count + part.words.length * 3, 0));
+    expect(learningParts(route).flat().filter(step => step.kind === 'word-practice')).toHaveLength(parts.reduce((count, part) => count + part.words.reduce((n,word)=>n+(word.visualCards?5:3),0), 0));
     if (lesson.number <= 2) expect(exerciseIds).toHaveLength(0);
   }
 });

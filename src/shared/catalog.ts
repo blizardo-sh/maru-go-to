@@ -9,6 +9,7 @@ import type { Course } from './types';
 export interface CourseCatalog {
   learningPolicy?: 'master-before-repeat';
   thematic?: Omit<import('./training').ThematicMaterial,'words'|'forms'>;
+  wordCards?: import('./word-cards').WordCardCatalog;
   schemaVersion: 1;
   quiz: { choices: Record<string, string[]>; equivalent: string[][]; courtesyMarkers: string[] };
   counters: { definitions: CounterDefinition[]; objects: CounterObject[] };
@@ -62,5 +63,15 @@ export function validateCatalog(course: Course): void {
   ensure(c.illustrations && Array.isArray(c.illustrations.assets), 'illustrations');
   for (const asset of c.illustrations.assets) { ensure(asset && local(asset.src) && Number.isFinite(asset.width) && asset.width > 0 && Number.isFinite(asset.height) && asset.height > 0 && Array.isArray(asset.cells), 'illustration asset'); for (const cell of asset.cells) ensure(Array.isArray(cell.wordIds) && cell.wordIds.every(id => words.has(id)) && Array.isArray(cell.bounds) && cell.bounds.length === 4 && cell.bounds.every(Number.isFinite) && cell.bounds[0]! >= 0 && cell.bounds[1]! >= 0 && cell.bounds[2]! > 0 && cell.bounds[3]! > 0 && cell.bounds[0]!+cell.bounds[2]! <= asset.width && cell.bounds[1]!+cell.bounds[3]! <= asset.height, 'illustration cell'); }
   ensure(Array.isArray(c.illustrations.notIllustrated) && c.illustrations.notIllustrated.every(entry => entry && words.has(entry.wordId) && text(entry.surface) && text(entry.reason)), 'unillustrated references');
+  if (c.wordCards) {
+    ensure(c.wordCards.version === 1 && text(c.wordCards.scope) && record(c.wordCards.entries), 'word cards');
+    for (const [id, card] of Object.entries(c.wordCards.entries)) {
+      ensure(words.has(id) && words.get(id)!.lessonIds.some(id => id.startsWith('marugoto.starter-a1.lesson.')), `word card scope ${id}`);
+      ensure([card.surface, card.kana, card.meaningRu, card.captionRu].every(text), `word card text ${id}`);
+      ensure(Array.isArray(card.segments) && card.segments.map(s => s.surface).join('') === card.surface && card.segments.map(s => s.reading ?? s.surface).join('') === card.kana, `word card reading ${id}`);
+      const image = card.image, bounds = image?.viewBox?.split(/\s+/).map(Number);
+      ensure(image && local(image.src) && Number.isSafeInteger(image.width) && image.width > 0 && Number.isSafeInteger(image.height) && image.height > 0 && bounds?.length === 4 && bounds.every(Number.isFinite) && bounds[0]! >= 0 && bounds[1]! >= 0 && bounds[2]! > 0 && bounds[3]! > 0 && bounds[0]! + bounds[2]! <= image.width && bounds[1]! + bounds[3]! <= image.height, `word card image ${id}`);
+    }
+  }
   ensure(record(c.pronunciationOverrides) && Object.entries(c.pronunciationOverrides).every(([key,value]) => text(key) && text(value)), 'pronunciations');
 }

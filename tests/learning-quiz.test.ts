@@ -1,3 +1,4 @@
+import { isVisualWordMode } from '../src/shared/word-cards';
 import { expect, test } from 'bun:test';
 import {wordTarget} from '../src/shared/meanings';
 import {catalogFor} from '../src/shared/catalog';
@@ -18,15 +19,15 @@ test('group start acknowledges only remaining intros, mixes every word/format on
   expect(next.completedStepIds).toEqual(definitions.filter(step => step.kind === 'word-intro').map(step => step.id));
   expect(next.wordQuiz).toBe(true);
   const practice = next.pendingStepIds.map(id => definitions.find(step => step.id === id)!).filter(step => step.kind === 'word-practice');
-  expect(practice).toHaveLength(15);
-  expect(new Set(practice.map(step => step.id)).size).toBe(15);
+  expect(practice).toHaveLength(25);
+  expect(new Set(practice.map(step => step.id)).size).toBe(25);
   for (let i = 1; i < practice.length; i++) expect(practice[i]!.wordId).not.toBe(practice[i - 1]!.wordId);
-  for (const word of route.goals[0]!.parts[0]!.words) expect(practice.filter(step => step.wordId === word.wordId).map(step => step.mode).sort()).toEqual(['ja-ru', 'listening', 'ru-ja']);
+  for (const word of route.goals[0]!.parts[0]!.words) expect(practice.filter(step => step.wordId === word.wordId).map(step => step.mode).sort()).toEqual(['ja-ru', 'listening', 'picture-word', 'ru-ja', 'word-meaning']);
   expect(next.pendingStepIds.filter(id => !practice.some(step => step.id === id))).toEqual(saved.pendingStepIds.filter(id => definitions.find(step => step.id === id)?.kind !== 'word-intro' && !practice.some(step => step.id === id)));
   expect(startLearningPractice(route, saved)).toEqual(next);
   expect(() => startLearningPractice(route, next)).toThrow('introduction');
   expect(currentLearningStep(route, saved)?.id).toBe(saved.pendingStepIds[0]!);
-  expect(route.version).toBe('2026-10-21.1-staged');
+  expect(route.version).toBe('2026-10-21.1-visual-v1-staged');
 });
 
 test('legacy single-intro continue and already started retry queue remain unchanged; new quiz state uses the existing retry rule', () => {
@@ -57,7 +58,7 @@ test('legacy single-intro continue and already started retry queue remain unchan
 
 test('all authored word placements have four stable, distinct prepared choices in each format', () => {
   const course = loadCourse(); const reloaded = loadCourse(); let questions = 0; const targets = new Set<string>();
-  for (const route of course.learning!) for (const step of learningParts(route).flat()) if (step.kind === 'word-practice') {
+  for (const route of course.learning!) for (const step of learningParts(route).flat()) if (step.kind === 'word-practice' && !isVisualWordMode(step.mode)) {
     const ids = learningWordChoices(course, route, step);
     expect(ids).toHaveLength(4); expect(new Set(ids).size).toBe(4); expect(ids).toContain(step.wordId);
     expect(learningWordChoices(reloaded, reloaded.learning!.find(item => item.lessonId === route.lessonId)!, structuredClone(step))).toEqual(ids);
@@ -124,7 +125,7 @@ test('prepared choices distinguish people, age, clock time, writing systems and 
   ];
   for (const example of examples) {
     const route = course.learning!.find(route => course.lessons.find(lesson => lesson.id === route.lessonId)!.number === example.lesson)!;
-    const steps = learningParts(route).flat().filter(step => step.kind === 'word-practice' && wordTarget(course,step.wordId)!.kana === example.target);
+    const steps = learningParts(route).flat().filter(step => step.kind === 'word-practice' && !isVisualWordMode(step.mode) && wordTarget(course,step.wordId)!.kana === example.target);
     expect(steps).toHaveLength(3);
     for (const step of steps) if (step.kind === 'word-practice') {
       const words = learningWordChoices(course, route, step).map(id => course.words.find(word => word.id === id)!);

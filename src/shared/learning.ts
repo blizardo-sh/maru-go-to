@@ -1,4 +1,5 @@
 import type { LearningTask, TaskEvidence } from './learning-tasks';
+import { isVisualWordMode } from './word-cards';
 import { wordTarget } from './meanings';
 import type { Course, Exercise, ReviewItem, ReviewResult, Segment, Skill, Word, WordForm } from './types';
 
@@ -13,6 +14,7 @@ export interface LearningExample {
 }
 export const learningAudioTextPattern = /^[\u3041-\u30ffー\s・、。？！!?…]+$/u;
 export interface LearningWord {
+  visualCards?: boolean;
   wordId: string;
   explanationRu: string;
   example: LearningExample;
@@ -48,7 +50,7 @@ export interface GuidedLesson {
 interface StepBase { id: string; partId: string; goalId: string }
 export type LearningStep = StepBase & (
   | { kind: 'word-intro'; wordId: string }
-  | { kind: 'word-practice'; wordId: string; mode: 'ja-ru' | 'listening' | 'ru-ja' }
+  | { kind: 'word-practice'; wordId: string; mode: import('./types').WordMode }
   | { kind: 'construction-intro'; exerciseId: string }
   | { kind: 'construction-practice'; exerciseId: string; mode: 'ja-ru' | 'listening' | 'grammar' }
   | { kind: 'counter-practice'; counterId: import('./counters').CounterId; quantity: number; wordId: string; format?: 'reading-choice'|'listening-image'|'recall' }
@@ -126,7 +128,7 @@ export function learningParts(lesson: GuidedLesson): LearningStep[][] {
     const base = { partId: part.id, goalId: goal.id };
     const steps: LearningStep[] = part.words.map(word => ({ ...base, id: `${part.id}:intro:${word.wordId}`, kind: 'word-intro', wordId: word.wordId }));
     for (const word of part.words) {
-      for (const mode of ['ja-ru', 'listening', 'ru-ja'] as const) steps.push({ ...base, id: `${part.id}:${mode}:${word.wordId}`, kind: 'word-practice', wordId: word.wordId, mode });
+      for (const mode of ['ja-ru', 'listening', 'ru-ja', ...(word.visualCards ? ['picture-word','word-meaning'] as const : [])] as const) steps.push({ ...base, id: `${part.id}:${mode}:${word.wordId}`, kind: 'word-practice', wordId: word.wordId, mode });
     }
     if (part.construction) {
       const exerciseId = part.construction.exerciseId;
@@ -151,8 +153,9 @@ export function initialLearningState(lesson: GuidedLesson): LearningRouteState {
 export function mixedWordPractice(steps: LearningStep[]): LearningStep[] {
   const words = [...new Set(steps.filter(step => step.kind === 'word-practice').map(step => step.wordId))];
   const result: LearningStep[] = [];
-  for (let round = 0; round < 3; round++) for (const [index, wordId] of words.entries()) {
-    const mode = (['ja-ru', 'listening', 'ru-ja'] as const)[(index + round) % 3]!;
+  const modes: import('./types').WordMode[] = steps.some(step => step.kind === 'word-practice' && step.mode === 'picture-word') ? ['ja-ru','listening','ru-ja','picture-word','word-meaning'] : ['ja-ru','listening','ru-ja'];
+  for (let round = 0; round < modes.length; round++) for (const [index, wordId] of words.entries()) {
+    const mode = modes[(index + round) % modes.length]!;
     const step = steps.find(item => item.kind === 'word-practice' && item.wordId === wordId && item.mode === mode);
     if (step) result.push(step);
   }
@@ -265,6 +268,7 @@ export function validateLearning(course: Course, lessons: GuidedLesson[], comple
           ensure(course.words.some(word => word.id === training.wordId && word.lessonIds.includes(route.lessonId) && word.reviewStatus !== 'draft'), `counter word ${part.id}`);
         }
         for (const introduction of part.words) {
+          ensure(introduction.visualCards === undefined || typeof introduction.visualCards === 'boolean' && (!introduction.visualCards || !!course.catalog?.wordCards?.entries[introduction.wordId]), `visual word material ${introduction.wordId}`);
           const word = wordTarget(course, introduction.wordId);
           ensure(word && word.lessonIds.includes(route.lessonId) && word.reviewStatus !== 'draft' && officialSource(word), `word scope or readiness ${introduction.wordId}`);
           ensure(!words.has(introduction.wordId), `duplicate core word ${introduction.wordId}`); words.add(introduction.wordId);
@@ -306,15 +310,19 @@ export function reconcileLearningRoute(previous: GuidedLesson, current: GuidedLe
   const key = (step: LearningStep): string => step.kind === 'word-intro' || step.kind === 'word-practice' ? `${step.kind}:${step.wordId}:${'mode' in step ? step.mode : ''}` : step.kind === 'construction-intro' || step.kind === 'construction-practice' ? `${step.kind}:${step.exerciseId}:${'mode' in step ? step.mode : ''}` : step.kind === 'counter-practice' ? `${step.kind}:${step.counterId}:${step.quantity}:${step.wordId}:${step.format ?? 'reading-choice'}` : step.kind === 'learning-task' ? `task:${step.taskId}:${step.phase}` : step.kind === 'video' ? `video:${step.videoId}` : `complete:${step.partId}`;
   const done = new Set([...(state.completedKeys??[]),...state.completedStepIds.filter(id=>!state.skippedStepIds?.includes(id)).flatMap(id => { const step = before.find(item => item.id === id); return step ? [key(step)] : []; })]);
   const completed = new Set(parts.flat().filter(step => step.kind !== 'part-complete' && done.has(key(step))).map(step => step.id));
+  // New picture exercises never reopen an already completed group or imply FSRS evidence.
+  const historicalWords = new Set(before.filter(step => step.kind === 'word-practice' && done.has(key(step)) && done.has(`complete:${step.partId}`)).map(step => (step as Extract<LearningStep,{kind:'word-practice'}>).wordId));
+  const skipped = parts.flat().filter(step => step.kind === 'word-practice' && isVisualWordMode(step.mode) && !done.has(key(step)) && (done.has(`complete:${step.partId}`) || historicalWords.has(step.wordId))).map(step => step.id);
+  for (const id of skipped) completed.add(id);
   for (const part of parts) {
     const summary = part.find(step => step.kind === 'part-complete')!;
     if (part.every(step => step.kind === 'part-complete' || completed.has(step.id)) && (done.has(key(summary)) || !before.some(step => step.partId === summary.partId))) completed.add(summary.id);
   }
   const partIndex = parts.findIndex(part => part.some(step => !completed.has(step.id)));
-  if (partIndex < 0) return { taskEvidence:state.taskEvidence, partIndex: parts.length, pendingStepIds: [], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}), ...(state.recallPolicy ? { recallPolicy: state.recallPolicy } : {}) };
+  if (partIndex < 0) return { skippedStepIds: skipped, taskEvidence:state.taskEvidence, partIndex: parts.length, pendingStepIds: [], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}), ...(state.recallPolicy ? { recallPolicy: state.recallPolicy } : {}) };
   const remaining = parts[partIndex]!.filter(step => !completed.has(step.id));
   const oldOrder = state.pendingStepIds.flatMap(id => { const step = before.find(item => item.id === id); const next = step && remaining.find(item => key(item) === key(step)); return next ? [next.id] : []; });
   const extras = remaining.filter(step => !oldOrder.includes(step.id));
   const boundary=(step:LearningStep)=>step.kind==='video'||step.kind==='part-complete';
-  return { taskEvidence:state.taskEvidence, partIndex, pendingStepIds: [...extras.filter(step=>step.kind==='word-intro').map(step=>step.id),...oldOrder.filter(id=>!remaining.some(step=>step.id===id&&boundary(step))),...extras.filter(step=>step.kind!=='word-intro'&&!boundary(step)).map(step=>step.id),...remaining.filter(boundary).map(step=>step.id)], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}), ...(state.recallPolicy ? { recallPolicy: state.recallPolicy } : {}) };
+  return { skippedStepIds: skipped, taskEvidence:state.taskEvidence, partIndex, pendingStepIds: [...extras.filter(step=>step.kind==='word-intro').map(step=>step.id),...oldOrder.filter(id=>!remaining.some(step=>step.id===id&&boundary(step))),...extras.filter(step=>step.kind!=='word-intro'&&!boundary(step)).map(step=>step.id),...remaining.filter(boundary).map(step=>step.id)], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}), ...(state.recallPolicy ? { recallPolicy: state.recallPolicy } : {}) };
 }

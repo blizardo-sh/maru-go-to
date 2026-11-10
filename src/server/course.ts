@@ -1,3 +1,4 @@
+import wordCardData from '../../materials/a1-word-cards.json';
 import { wordTarget } from '../shared/meanings';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { isDeepStrictEqual } from 'node:util';
@@ -59,6 +60,8 @@ export function loadCourse(options: { includeBooks?: boolean; checkMedia?: boole
   validateCourse(course);
  }
  course.catalog=structuredClone(defaultCatalog);
+ course.catalog.wordCards=structuredClone(wordCardData);
+ for(const route of course.learning??[])if(route.lessonId.startsWith("marugoto.starter-a1.lesson.")){route.version+="-visual-v1";for(const goal of route.goals)for(const part of goal.parts)for(const word of part.words)if(wordCardData.entries[word.wordId as keyof typeof wordCardData.entries])word.visualCards=true;}
  if(options.includeBooks!==false){const path=new URL('../../materials/books/quiz.json',import.meta.url);if(existsSync(path))Object.assign(course.catalog.quiz.choices,JSON.parse(readFileSync(path,'utf8')));}
  const thematicPath=new URL('../../materials/thematic-training.json',import.meta.url);
  if(existsSync(thematicPath)){

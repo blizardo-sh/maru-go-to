@@ -4,7 +4,8 @@ export type ReviewStatus = Exclude<ContentStatus, "missing">;
 export type Orthography = "kana" | "furigana" | "kanji";
 export type LessonStatus = "closed" | "studying" | "completed";
 export type MaterialScope = "studied" | "selected" | "all";
-export type ReviewMode = "ja-ru" | "ru-ja" | "listening" | "grammar" | "counter";
+export type WordMode = "ja-ru" | "ru-ja" | "listening" | "picture-word" | "word-meaning";
+export type ReviewMode = WordMode | "grammar" | "counter";
 export type Rating = 1 | 2 | 3 | 4;
 export const repeatTypes = ['words', 'counters', 'constructions', 'questions', 'time'] as const;
 export type RepeatType = typeof repeatTypes[number];
@@ -168,7 +169,7 @@ interface ReviewBase {
 }
 
 export type ReviewItem = ReviewBase & (
-  | { mode: "ja-ru" | "ru-ja" | "listening"; word: Word; choices?: string[]; application?: import('./training').TrainingEntry['application']; visual?: import('./training').TrainingEntry['visual'] }
+  | { [Mode in WordMode]: { mode: Mode; word: Word; choices?: string[]; application?: import('./training').TrainingEntry['application']; visual?: import('./training').TrainingEntry['visual'] } }[WordMode]
   | { mode: "grammar"; exercise: Exercise; skill: Skill; construction?: LearningConstruction & { mode: ConstructionMode } }
   | { mode: "counter"; counter: import('./counters').CounterCard }
 );
@@ -190,7 +191,7 @@ interface SubmissionBase {
 }
 
 export type ReviewSubmission = SubmissionBase & (
-  | { mode: "ja-ru" | "ru-ja" | "listening"; rating: Rating; choiceWordId?: string; helped?: boolean }
+  | { mode: WordMode; rating: Rating; choiceWordId?: string; helped?: boolean }
   | { mode: "grammar"; tokenIds: string[]; tokenForms?: Record<string, string>; revealed: boolean; rating?: Rating; exploring?: boolean }
   | { mode: "counter"; rating: Rating; choice?: string; helped: boolean }
 );
@@ -220,7 +221,7 @@ export interface Progress {
   totalLessons: number;
   wordsIntroducedToday: number;
   skillsIntroducedToday: number;
-  byMode: Record<ReviewMode, { due: number; learned: number; reviewedToday: number }>;
+  byMode: Record<Exclude<ReviewMode, "picture-word" | "word-meaning">, { due: number; learned: number; reviewedToday: number }> & Partial<Record<"picture-word" | "word-meaning", { due: number; learned: number; reviewedToday: number }>>;
 }
 
 export interface WordList {
@@ -238,6 +239,7 @@ export interface WordUpdate {
 }
 
 export interface TrainingContext {
+  visualWords?: boolean;
   topicId?: 'questions' | 'time';
   sectionId?: string;
   lessonId?: string;

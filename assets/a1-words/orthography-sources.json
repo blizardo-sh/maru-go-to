@@ -1,0 +1,1387 @@
+{
+  "source": "https://www.edrdg.org/pub/Nihongo/JMdict_e.gz",
+  "license": "https://www.edrdg.org/edrdg/licence.html",
+  "checked": [
+    {
+      "wordId": "marugoto.starter-a1.word.8585fc0dd820bcb4",
+      "surface": "雑誌",
+      "kana": "ざっし",
+      "entry": "1299400"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.8217225960a91885",
+      "surface": "日本語",
+      "kana": "にほんご",
+      "entry": "1464530"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.a21b200861a67992",
+      "surface": "ローマ字",
+      "kana": "ローマじ",
+      "entry": "1146810"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ad26604516060e1e",
+      "surface": "一度",
+      "kana": "いちど",
+      "entry": "1576250"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.0375e09aad13f1e2",
+      "surface": "英語",
+      "kana": "えいご",
+      "entry": "1174420"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.662ff353a46a7ff0",
+      "surface": "遅れます",
+      "kana": "おくれます",
+      "entry": "1589040"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.3b42e0edc7b1ed4f",
+      "surface": "教室",
+      "kana": "きょうしつ",
+      "entry": "1237150"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.5a892d947dc6fe6c",
+      "surface": "授業",
+      "kana": "じゅぎょう",
+      "entry": "1330290"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ec82a6a9bdbd0924",
+      "surface": "少し",
+      "kana": "すこし",
+      "entry": "1348870"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.1df755ae0451c875",
+      "surface": "名前",
+      "kana": "なまえ",
+      "entry": "1531710"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.d70ea59351ea1108",
+      "surface": "始めます",
+      "kana": "はじめます",
+      "entry": "1307550"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c4ae772a6dc8e374",
+      "surface": "お名前",
+      "kana": "おなまえ",
+      "entry": "2853328"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.a149298ff8f2e16e",
+      "surface": "会社員",
+      "kana": "かいしゃいん",
+      "entry": "1198560"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.a1df5e9d56ff2067",
+      "surface": "韓国語",
+      "kana": "かんこくご",
+      "entry": "1216180"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.5b4d218b977e5d59",
+      "surface": "公務員",
+      "kana": "こうむいん",
+      "entry": "1274820"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.71674c6edf020ea9",
+      "surface": "主婦",
+      "kana": "しゅふ",
+      "entry": "1326160"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.b4b9d057c5b0f68d",
+      "surface": "中国",
+      "kana": "ちゅうごく",
+      "entry": "1424270"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.9b6634b9ac78cb0c",
+      "surface": "中国語",
+      "kana": "ちゅうごくご",
+      "entry": "1424290"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ab5204b44a31c701",
+      "surface": "ドイツ語",
+      "kana": "ドイツご",
+      "entry": "1087980"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.409d9076811276ee",
+      "surface": "難しい",
+      "kana": "むずかしい",
+      "entry": "1460850"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.d4d63d4653ee4566",
+      "surface": "大阪",
+      "kana": "おおさか",
+      "entry": "2078800"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.8b3d3b511e59fff3",
+      "surface": "夫",
+      "kana": "おっと",
+      "entry": "1496480"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.fa352771e8199249",
+      "surface": "お父さん",
+      "kana": "おとうさん",
+      "entry": "1002590"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.a5e32b90deb17e6c",
+      "surface": "誰",
+      "kana": "だれ",
+      "entry": "1416830"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.b46d8ae7ed1a2508",
+      "surface": "二人",
+      "kana": "ふたり",
+      "entry": "1582670"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.f15790a46a9479bf",
+      "surface": "北海道",
+      "kana": "ほっかいどう",
+      "entry": "1520810"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.4e928f19a0c80be0",
+      "surface": "お茶",
+      "kana": "おちゃ",
+      "entry": "1002430"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.aad470db41c5baea",
+      "surface": "牛乳",
+      "kana": "ぎゅうにゅう",
+      "entry": "1231590"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.7082518c85391bb7",
+      "surface": "果物",
+      "kana": "くだもの",
+      "entry": "1193060"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.45c42fc21aec6261",
+      "surface": "紅茶",
+      "kana": "こうちゃ",
+      "entry": "1280770"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.23f4af490e18bd63",
+      "surface": "何",
+      "kana": "なに",
+      "entry": "1577100"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c2a7107fc9dd36ba",
+      "surface": "水",
+      "kana": "みず",
+      "entry": "1371260"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.4a97308a59b04d7f",
+      "surface": "味噌汁",
+      "kana": "みそしる",
+      "entry": "1527050"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.424fbc85b0e0108c",
+      "surface": "野菜",
+      "kana": "やさい",
+      "entry": "1537370"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.6a85560ed5220010",
+      "surface": "一番",
+      "kana": "いちばん",
+      "entry": "1165970"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.5343e984cfbec64d",
+      "surface": "寿司",
+      "kana": "すし",
+      "entry": "1595650"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.56fbeb32dadec92f",
+      "surface": "店",
+      "kana": "みせ",
+      "entry": "1582120"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.1d5588c067e5d530",
+      "surface": "安い",
+      "kana": "やすい",
+      "entry": "1153670"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c4497f9f1747667f",
+      "surface": "料理",
+      "kana": "りょうり",
+      "entry": "1554310"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.6dfae2e872ae29f1",
+      "surface": "明るい",
+      "kana": "あかるい",
+      "entry": "1532350"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.312f86dfe9da479c",
+      "surface": "家",
+      "kana": "いえ",
+      "entry": "1191730"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.99828615afa07b85",
+      "surface": "椅子",
+      "kana": "いす",
+      "entry": "1157070"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.771a6b79b0d8eaab",
+      "surface": "一戸建て",
+      "kana": "いっこだて",
+      "entry": "1162320"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.1116048bea10982c",
+      "surface": "五つ",
+      "kana": "いつつ",
+      "entry": "1268070"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.04978338498ae0d7",
+      "surface": "沖縄",
+      "kana": "おきなわ",
+      "entry": "1182580"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.cd7c3904f02c70d4",
+      "surface": "狭い",
+      "kana": "せまい",
+      "entry": "1237680"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.4523d64bdb8f0705",
+      "surface": "広い",
+      "kana": "ひろい",
+      "entry": "1278410"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.b569ab0369d576c6",
+      "surface": "部屋",
+      "kana": "へや",
+      "entry": "1499320"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.dc7785c3f2fdf91b",
+      "surface": "六つ",
+      "kana": "むっつ",
+      "entry": "1585315"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.71566e10b4d200c4",
+      "surface": "有名",
+      "kana": "ゆうめい",
+      "entry": "1541620"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.deddc12d5dc89783",
+      "surface": "四つ",
+      "kana": "よっつ",
+      "entry": "1307040"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.da2a4cce03d19ace",
+      "surface": "お風呂",
+      "kana": "おふろ",
+      "entry": "2220600"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.7b31ce54648399ba",
+      "surface": "写真",
+      "kana": "しゃしん",
+      "entry": "1321900"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.2ae30fe4f5fc7d13",
+      "surface": "台所",
+      "kana": "だいどころ",
+      "entry": "1412640"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.d8ffafd344cd225a",
+      "surface": "棚",
+      "kana": "たな",
+      "entry": "1416700"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.193a58a8d7eee5bf",
+      "surface": "時計",
+      "kana": "とけい",
+      "entry": "1316140"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.d11df0d6e4fe534e",
+      "surface": "庭",
+      "kana": "にわ",
+      "entry": "1436130"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.4c9284e901dc771e",
+      "surface": "人形",
+      "kana": "にんぎょう",
+      "entry": "1367120"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.e90975f1dd71bf8d",
+      "surface": "箱",
+      "kana": "はこ",
+      "entry": "1585650"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.e08d579635c5469e",
+      "surface": "本",
+      "kana": "ほん",
+      "entry": "1522150"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.02140c01ffb2a44c",
+      "surface": "横",
+      "kana": "よこ",
+      "entry": "1180570"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.d9993c10b3f10cd0",
+      "surface": "浴びます",
+      "kana": "あびます",
+      "entry": "1547450"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.9f691d62515e5689",
+      "surface": "忙しい",
+      "kana": "いそがしい",
+      "entry": "1519290"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.00a1a0b25cedb0d6",
+      "surface": "運動",
+      "kana": "うんどう",
+      "entry": "1172910"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ac943016b5f6d029",
+      "surface": "遅い",
+      "kana": "おそい",
+      "entry": "1421970"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.1eec125ba175f767",
+      "surface": "会社",
+      "kana": "かいしゃ",
+      "entry": "1198550"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.f8dee7a590bd6b14",
+      "surface": "学校",
+      "kana": "がっこう",
+      "entry": "1206730"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.0f980d8a7fbcaf59",
+      "surface": "午後",
+      "kana": "ごご",
+      "entry": "1268990"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.a882862ce00928c7",
+      "surface": "午前",
+      "kana": "ごぜん",
+      "entry": "1269060"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.e31c09b8c9a8be31",
+      "surface": "仕事",
+      "kana": "しごと",
+      "entry": "1304970"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.b1ae6039b49cbdfa",
+      "surface": "生活",
+      "kana": "せいかつ",
+      "entry": "1378860"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ec28efe8272901c9",
+      "surface": "日記",
+      "kana": "にっき",
+      "entry": "1463930"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c19de51f7969d419",
+      "surface": "眠い",
+      "kana": "ねむい",
+      "entry": "1529330"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.75d4b30fe277278b",
+      "surface": "毎日",
+      "kana": "まいにち",
+      "entry": "1524720"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.90a2f4a7c12860d3",
+      "surface": "明日",
+      "kana": "あした",
+      "entry": "1584660"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ddcc833caf1ce0f7",
+      "surface": "お誕生日",
+      "kana": "おたんじょうび",
+      "entry": "2852392"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.65adb8036dc81b17",
+      "surface": "食事",
+      "kana": "しょくじ",
+      "entry": "1358490"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.8a2f3aca86b3f833",
+      "surface": "大丈夫",
+      "kana": "だいじょうぶ",
+      "entry": "1414150"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.3e710d35d78a7a42",
+      "surface": "博物館",
+      "kana": "はくぶつかん",
+      "entry": "1474720"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.2de8b0f48240421d",
+      "surface": "美術館",
+      "kana": "びじゅつかん",
+      "entry": "1486460"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.32f91f95f187231c",
+      "surface": "音楽",
+      "kana": "おんがく",
+      "entry": "1183720"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c830ce3ecc36eca7",
+      "surface": "外国語",
+      "kana": "がいこくご",
+      "entry": "1203640"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.2c8798f0df18640a",
+      "surface": "気持ち",
+      "kana": "きもち",
+      "entry": "1591430"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.659b8f2709c0ede5",
+      "surface": "散歩",
+      "kana": "さんぽ",
+      "entry": "1303620"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.b987a4186acabc5f",
+      "surface": "柔道",
+      "kana": "じゅうどう",
+      "entry": "1335440"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.3f346ec8618fc3b8",
+      "surface": "趣味",
+      "kana": "しゅみ",
+      "entry": "1329000"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ca3b337b83e05c9c",
+      "surface": "小説",
+      "kana": "しょうせつ",
+      "entry": "1348430"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.8b39f8835ae96172",
+      "surface": "全然",
+      "kana": "ぜんぜん",
+      "entry": "1395620"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.06e16d0ef0e25ab9",
+      "surface": "外",
+      "kana": "そと",
+      "entry": "1203250"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.bf0d54e830884bb6",
+      "surface": "大好き",
+      "kana": "だいすき",
+      "entry": "1413660"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.969daa7d4e04a4dc",
+      "surface": "時々",
+      "kana": "ときどき",
+      "entry": "1598680"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.24fe5b7c145a963e",
+      "surface": "俳句",
+      "kana": "はいく",
+      "entry": "1471900"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.1b5bb4b5fadba7c7",
+      "surface": "文学",
+      "kana": "ぶんがく",
+      "entry": "1505190"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c7bc15daeee20df5",
+      "surface": "僕",
+      "kana": "ぼく",
+      "entry": "1521400"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.18bc7f53bb985336",
+      "surface": "見せます",
+      "kana": "みせます",
+      "entry": "1259210"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.4788682852b38118",
+      "surface": "野球",
+      "kana": "やきゅう",
+      "entry": "1537300"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.5042757fd6945925",
+      "surface": "恋愛",
+      "kana": "れんあい",
+      "entry": "1558800"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.b0dae9a896a2ab8b",
+      "surface": "一緒に",
+      "kana": "いっしょに",
+      "entry": "1163420"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.bb8d5c70669f319c",
+      "surface": "歌舞伎",
+      "kana": "かぶき",
+      "entry": "1193420"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.3b4c77ad85d628ad",
+      "surface": "着物",
+      "kana": "きもの",
+      "entry": "1423240"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c28da1d758237561",
+      "surface": "残念",
+      "kana": "ざんねん",
+      "entry": "1304680"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.2f43b27b36079191",
+      "surface": "相撲",
+      "kana": "すもう",
+      "entry": "1401360"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.fa9b5fd5f4dc94c9",
+      "surface": "多分",
+      "kana": "たぶん",
+      "entry": "1407980"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.82b0d6d0f69f6fd0",
+      "surface": "花火",
+      "kana": "はなび",
+      "entry": "1194580"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.bdc5995ec1bca453",
+      "surface": "花火大会",
+      "kana": "はなびたいかい",
+      "entry": "1931280"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.1abd85b7989277d4",
+      "surface": "空港",
+      "kana": "くうこう",
+      "entry": "1245570"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.e1ad1fdb4dc9c1c9",
+      "surface": "空車",
+      "kana": "くうしゃ",
+      "entry": "1245610"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.70e282b0cec0e2f3",
+      "surface": "自転車",
+      "kana": "じてんしゃ",
+      "entry": "1318290"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.0161b7a89868ff12",
+      "surface": "地下鉄",
+      "kana": "ちかてつ",
+      "entry": "1420900"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.7fcfa571a8e518a5",
+      "surface": "電車",
+      "kana": "でんしゃ",
+      "entry": "1443530"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.0cb83eb998ccf45d",
+      "surface": "遠い",
+      "kana": "とおい",
+      "entry": "1177800"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.62ed2c1e02c05bef",
+      "surface": "荷物",
+      "kana": "にもつ",
+      "entry": "1195430"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.8527d4e0fdbacd7c",
+      "surface": "乗り物",
+      "kana": "のりもの",
+      "entry": "1600530"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.0907f22fcc27dc90",
+      "surface": "分",
+      "kana": "ふん",
+      "entry": "1502840"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.4332fcbf78cc8bee",
+      "surface": "便利",
+      "kana": "べんり",
+      "entry": "1512610"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ec7dffc88012b1df",
+      "surface": "楽",
+      "kana": "らく",
+      "entry": "1207230"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ed439c60736a989a",
+      "surface": "後ろ",
+      "kana": "うしろ",
+      "entry": "1269410"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.4e527366e16b068f",
+      "surface": "営業時間",
+      "kana": "えいぎょうじかん",
+      "entry": "1173450"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.a6239508c5cf0e21",
+      "surface": "喫茶店",
+      "kana": "きっさてん",
+      "entry": "1226440"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.6e9ec02e939b2a69",
+      "surface": "銀行",
+      "kana": "ぎんこう",
+      "entry": "1243490"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.3b9f74446d704f24",
+      "surface": "祝日",
+      "kana": "しゅくじつ",
+      "entry": "1337500"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.30ae0366d14591f7",
+      "surface": "神社",
+      "kana": "じんじゃ",
+      "entry": "1364670"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.6b63da587ec482ef",
+      "surface": "定休日",
+      "kana": "ていきゅうび",
+      "entry": "1435540"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.7e39e2170caf06bd",
+      "surface": "通り",
+      "kana": "とおり",
+      "entry": "1432920"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.441e163e64772424",
+      "surface": "隣",
+      "kana": "となり",
+      "entry": "1555830"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.6e01ec7fffcdd8f3",
+      "surface": "賑やか",
+      "kana": "にぎやか",
+      "entry": "1463480"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.e5e293418afabe00",
+      "surface": "年中無休",
+      "kana": "ねんじゅうむきゅう",
+      "entry": "1731000"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.1348fdc7ea12c682",
+      "surface": "左",
+      "kana": "ひだり",
+      "entry": "1290800"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.d51527ce9dcc07e3",
+      "surface": "平日",
+      "kana": "へいじつ",
+      "entry": "1507720"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.2eabfab66df7124d",
+      "surface": "前",
+      "kana": "まえ",
+      "entry": "1392580"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.fbc9b9c8522e11a7",
+      "surface": "右",
+      "kana": "みぎ",
+      "entry": "1171010"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.93fda2bc90cf6464",
+      "surface": "お土産",
+      "kana": "おみやげ",
+      "entry": "1002500"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.022843aea8256893",
+      "surface": "面白い",
+      "kana": "おもしろい",
+      "entry": "1533580"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.24645cfc616e7f39",
+      "surface": "銀座",
+      "kana": "ぎんざ",
+      "entry": "1243530"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.42eaf398726d823c",
+      "surface": "渋谷",
+      "kana": "しぶや",
+      "entry": "2850709"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.0772a90579e8ba0e",
+      "surface": "使います",
+      "kana": "つかいます",
+      "entry": "1305990"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.9baef41b013b3044",
+      "surface": "忍者",
+      "kana": "にんじゃ",
+      "entry": "1467470"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.159b0029d2ce64ed",
+      "surface": "本",
+      "kana": "ほん",
+      "entry": "1522150"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.bb8a419e0de4402d",
+      "surface": "耳",
+      "kana": "みみ",
+      "entry": "1317170"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.4f1483b8dc598d11",
+      "surface": "青",
+      "kana": "あお",
+      "entry": "1381380"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.317180b83a7c70dd",
+      "surface": "色",
+      "kana": "いろ",
+      "entry": "1357600"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.99aa21efc9c36c0c",
+      "surface": "黄色",
+      "kana": "きいろ",
+      "entry": "1576760"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.10f02fb3ede1ec9b",
+      "surface": "靴",
+      "kana": "くつ",
+      "entry": "1246700"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.3d592322b9c9c2aa",
+      "surface": "靴下",
+      "kana": "くつした",
+      "entry": "1246740"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.80a62c3c54a84c73",
+      "surface": "黒",
+      "kana": "くろ",
+      "entry": "1287410"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.b7de0b625129941e",
+      "surface": "素敵",
+      "kana": "すてき",
+      "entry": "1397350"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.512a988de388a739",
+      "surface": "茶色",
+      "kana": "ちゃいろ",
+      "entry": "1422720"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.69b62ec3ec19997a",
+      "surface": "似合います",
+      "kana": "にあいます",
+      "entry": "1314680"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ad96d4767a4262aa",
+      "surface": "緑",
+      "kana": "みどり",
+      "entry": "1555300"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.83ab2d15044a36ad",
+      "surface": "遊びます",
+      "kana": "あそびます",
+      "entry": "1542160"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.1a9055df421c85e1",
+      "surface": "歌います",
+      "kana": "うたいます",
+      "entry": "1588120"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.b2e15e6291303e34",
+      "surface": "嬉しい",
+      "kana": "うれしい",
+      "entry": "1219510"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.204b971b41523380",
+      "surface": "勝ちます",
+      "kana": "かちます",
+      "entry": "1346150"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c222de65ca0c3f33",
+      "surface": "素晴らしい",
+      "kana": "すばらしい",
+      "entry": "1397300"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.7aa6241385b98f7f",
+      "surface": "大変",
+      "kana": "たいへん",
+      "entry": "1415000"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.34252b85ea08c483",
+      "surface": "楽しい",
+      "kana": "たのしい",
+      "entry": "1207240"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.9450e19f83958ce3",
+      "surface": "疲れます",
+      "kana": "つかれます",
+      "entry": "1483740"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.aa6ae4accadeb7f1",
+      "surface": "毎年",
+      "kana": "まいとし",
+      "entry": "1584360"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c9c5336534a241e1",
+      "surface": "去年",
+      "kana": "きょねん",
+      "entry": "1231690"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.1e08aa29c5f92158",
+      "surface": "車",
+      "kana": "くるま",
+      "entry": "1323080"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.0946ce3f0a2bf77e",
+      "surface": "今年",
+      "kana": "ことし",
+      "entry": "1579130"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.70dd1555ba2b0d17",
+      "surface": "天ぷら",
+      "kana": "てんぷら",
+      "entry": "1440590"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.e1020c3c24385d44",
+      "surface": "飛行機",
+      "kana": "ひこうき",
+      "entry": "1485470"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.22d18d5b7c33ad75",
+      "surface": "広島",
+      "kana": "ひろしま",
+      "entry": "2164670"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.097fcfd1544a8fd0",
+      "surface": "船",
+      "kana": "ふね",
+      "entry": "1602800"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.60793e83c11d23f4",
+      "surface": "空",
+      "kana": "そら",
+      "entry": "1245290"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.b67505040495b091",
+      "surface": "机",
+      "kana": "つくえ",
+      "entry": "1220210"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.b7ae744d56261150",
+      "surface": "猫",
+      "kana": "ねこ",
+      "entry": "1467640"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.dcc8e3070c351487",
+      "surface": "富士山",
+      "kana": "ふじさん",
+      "entry": "1496800"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.fc158ebcfa55e13e",
+      "surface": "山",
+      "kana": "やま",
+      "entry": "1302680"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.4ebd099ea8478bd7",
+      "surface": "自己紹介",
+      "kana": "じこしょうかい",
+      "entry": "1317650"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.4639bca7886015ec",
+      "surface": "中国人",
+      "kana": "ちゅうごくじん",
+      "entry": "1424300"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.3c235a881cc674db",
+      "surface": "日本人",
+      "kana": "にほんじん",
+      "entry": "1464700"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.fd108aa9a25d41ef",
+      "surface": "フランス語",
+      "kana": "フランスご",
+      "entry": "1111590"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.24948b79aebe026a",
+      "surface": "お母さん",
+      "kana": "おかあさん",
+      "entry": "1002650"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.e466ab0e50508b66",
+      "surface": "奥さん",
+      "kana": "おくさん",
+      "entry": "1179330"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.91eba862978ea458",
+      "surface": "男の子",
+      "kana": "おとこのこ",
+      "entry": "1420010"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.bccad138b115fee4",
+      "surface": "男の人",
+      "kana": "おとこのひと",
+      "entry": "1420020"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.2e1687c1c11fe383",
+      "surface": "お兄さん",
+      "kana": "おにいさん",
+      "entry": "1001830"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.3133e45120ff9f46",
+      "surface": "お姉さん",
+      "kana": "おねえさん",
+      "entry": "1001990"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.231aa76065182f08",
+      "surface": "女の子",
+      "kana": "おんなのこ",
+      "entry": "1344970"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.0395fedc3b783941",
+      "surface": "女の人",
+      "kana": "おんなのひと",
+      "entry": "1344980"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.7c84bcd7743a6785",
+      "surface": "ご主人",
+      "kana": "ごしゅじん",
+      "entry": "1270390"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.93b1f9e7fc222764",
+      "surface": "何歳",
+      "kana": "なんさい",
+      "entry": "1188730"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.8b06574d40c677ba",
+      "surface": "何人",
+      "kana": "なんにん",
+      "entry": "1189100"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.cdba4d6f7e72fefc",
+      "surface": "男",
+      "kana": "おとこ",
+      "entry": "1419990"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.cff93023f5821587",
+      "surface": "女",
+      "kana": "おんな",
+      "entry": "1344930"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.6300e74df05c6cf2",
+      "surface": "気持ち",
+      "kana": "きもち",
+      "entry": "1591430"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.b91f34e8488b529f",
+      "surface": "残業",
+      "kana": "ざんぎょう",
+      "entry": "1304560"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.42a4fb49e10c3f52",
+      "surface": "何時間",
+      "kana": "なんじかん",
+      "entry": "1188950"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.799f1e3b714a6037",
+      "surface": "予定",
+      "kana": "よてい",
+      "entry": "1543240"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.b7ed9c4377375401",
+      "surface": "スペイン語",
+      "kana": "スペインご",
+      "entry": "1072980"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.b8093f3c786fdd0b",
+      "surface": "今月",
+      "kana": "こんげつ",
+      "entry": "1289100"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.a7a4507c13c79492",
+      "surface": "試合",
+      "kana": "しあい",
+      "entry": "1312420"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.2b2d59bf202f3379",
+      "surface": "先月",
+      "kana": "せんげつ",
+      "entry": "1387500"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.8a7726985d9cc589",
+      "surface": "盆栽",
+      "kana": "ぼんさい",
+      "entry": "1523730"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.e92ebbe6760f82a9",
+      "surface": "運転手",
+      "kana": "うんてんしゅ",
+      "entry": "1172870"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.d9d0df6de9eb4763",
+      "surface": "客",
+      "kana": "きゃく",
+      "entry": "1226630"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.f79a2ab29c9d85ae",
+      "surface": "バス停",
+      "kana": "バスてい",
+      "entry": "1098580"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.11bc9aab352a7b63",
+      "surface": "不便",
+      "kana": "ふべん",
+      "entry": "1494860"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.b47176a5780c4f4a",
+      "surface": "楽",
+      "kana": "らく",
+      "entry": "1207230"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.9349ea818838883e",
+      "surface": "埼玉",
+      "kana": "さいたま",
+      "entry": "2164700"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.ca1bca12d3bd4f9f",
+      "surface": "静か",
+      "kana": "しずか",
+      "entry": "1381820"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.a0f7fd5a70cae6a3",
+      "surface": "低い",
+      "kana": "ひくい",
+      "entry": "1434180"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.6c9429cb61a3e0a3",
+      "surface": "財布",
+      "kana": "さいふ",
+      "entry": "1296970"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.f1e4cc996bf0b0b3",
+      "surface": "店員",
+      "kana": "てんいん",
+      "entry": "1440670"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.b8b4e4ac6a54b0a5",
+      "surface": "大変",
+      "kana": "たいへん",
+      "entry": "1415000"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.5c39a061ed2ba61c",
+      "surface": "何も",
+      "kana": "なにも",
+      "entry": "1188490"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.3f85f2793e6429d6",
+      "surface": "孫",
+      "kana": "まご",
+      "entry": "1406230"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.4380b3f9a0984b8c",
+      "surface": "質問",
+      "kana": "しつもん",
+      "entry": "1320760"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.8acf18a91f1f21d2",
+      "surface": "新幹線",
+      "kana": "しんかんせん",
+      "entry": "1361590"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.6d13e067f9965785",
+      "surface": "長崎",
+      "kana": "ながさき",
+      "entry": "2770680"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.0b274cdb8cd25ccc",
+      "surface": "横浜",
+      "kana": "よこはま",
+      "entry": "2164610"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.524ae9140ffa7c6c",
+      "surface": "旅行",
+      "kana": "りょこう",
+      "entry": "1553170"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.c64b0f48f16dd137",
+      "surface": "お邪魔します",
+      "kana": "おじゃまします",
+      "entry": "1002050"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.a26707ecb864f89f",
+      "surface": "お願いします",
+      "kana": "おねがいします",
+      "entry": "1001720"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.2e19a1c3a04d0a1a",
+      "surface": "失礼します",
+      "kana": "しつれいします",
+      "entry": "2276200"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.6c1513d2349d25fd",
+      "surface": "勉強中",
+      "kana": "べんきょうちゅう",
+      "entry": "1512690"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.bfb9d86d0111dd9e",
+      "surface": "もう一度",
+      "kana": "もういちど",
+      "entry": "2005860"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.8406cd7889c581b7",
+      "surface": "よろしくお願いします",
+      "kana": "よろしくおねがいします",
+      "entry": "2133750"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.5bed5f85e91e0ad3",
+      "surface": "勉強",
+      "kana": "べんきょう",
+      "entry": "1512670"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.3c2a23fa6dbf95e5",
+      "surface": "三人",
+      "kana": "さんにん",
+      "entry": "1301000"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.pronoun-kare",
+      "surface": "彼",
+      "kana": "かれ",
+      "entry": "1483070"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.supplement-shape",
+      "surface": "形",
+      "kana": "かたち",
+      "entry": "1250220"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.supplement-price",
+      "surface": "値段",
+      "kana": "ねだん",
+      "entry": "1600160"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.supplement-evening",
+      "surface": "夕方",
+      "kana": "ゆうがた",
+      "entry": "1542790"
+    },
+    {
+      "wordId": "marugoto.starter-a1.word.learning.l03.kotoba",
+      "surface": "言葉",
+      "kana": "ことば",
+      "entry": "1264540"
+    },
+    {
+      "wordId": "training.questions.what-minute",
+      "surface": "何分",
+      "kana": "なんぷん",
+      "entry": "1189320"
+    },
+    {
+      "wordId": "training.questions.date",
+      "surface": "何日",
+      "kana": "なんにち",
+      "entry": "1189240"
+    },
+    {
+      "wordId": "training.questions.year",
+      "surface": "何年",
+      "kana": "なんねん",
+      "entry": "1189250"
+    }
+  ],
+  "note": "Candidate lookup is followed by semantic spelling overrides. This is not a human Japanese editorial certification."
+}
