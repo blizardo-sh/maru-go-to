@@ -19,17 +19,18 @@ const browser=await chromium.launch({headless:true,args:['--use-angle=swiftshade
 const snap=(page:Page)=>page.evaluate(()=>(window as any).__ALBUM__.snapshot());
 async function click(page:Page,id:string){try{await page.waitForFunction(id=>(window as any).__ALBUM__?.snapshot().controls?.some((c:any)=>c.id===id&&c.enabled),id);}catch(error){console.error('Unavailable control',id,JSON.stringify(await snap(page)));throw error;}const before=await snap(page),c=before.controls.find((c:any)=>c.id===id);await page.mouse.click(c.rect.x+c.rect.width/2,c.rect.y+c.rect.height/2);await page.waitForFunction(count=>(window as any).__ALBUM__.snapshot().renderCount>count,before.renderCount);}
 async function trainers(page:Page){await page.waitForFunction(()=>{const s=(window as any).__ALBUM__?.snapshot();return s?.ready&&s.controls.some((c:any)=>['nav-menu','practice-menu','home'].includes(c.id)&&c.enabled);});const s=await snap(page);if(s.controls.some((c:any)=>c.id==='nav-menu'))await click(page,'nav-menu');else if(!s.controls.some((c:any)=>c.id==='practice-menu'))await click(page,'home');await click(page,'practice-menu');}
+async function resizeViewport(page:Page,width:number,height:number){await page.setViewportSize({width,height});await page.waitForFunction(({width,height})=>{const canvas=document.querySelector<HTMLCanvasElement>('#stage > canvas');return canvas?.style.width===`${width}px`&&canvas.style.height===`${height}px`;},{width,height});}
 const viewports=[[1280,720],[390,844],[320,568],[844,390]] as const;
 async function geometry(page:Page,label:string){
  const kind=label.slice(label.indexOf('-')+1);
  for(const [width,height] of viewports){
-  await page.setViewportSize({width,height});await page.waitForTimeout(100);
+  await resizeViewport(page,width,height);
   const state=await snap(page);console.log('Checking',width,kind);
   if(kind!=='question')await page.screenshot({path:resolve(output,`${width}-${kind}.png`),animations:'disabled',timeout:60000});
   expect(state.problems,`${width}-${kind}`).toEqual([]);
   for(const c of state.controls){expect(c.rect.x,c.id).toBeGreaterThanOrEqual(-1);expect(c.rect.y,c.id).toBeGreaterThanOrEqual(-1);expect(c.rect.x+c.rect.width,c.id).toBeLessThanOrEqual(width+1);expect(c.rect.y+c.rect.height,c.id).toBeLessThanOrEqual(height+1);}
  }
- await page.setViewportSize({width:1280,height:720});await page.waitForTimeout(100);
+ await resizeViewport(page,1280,720);
 }
 
 
