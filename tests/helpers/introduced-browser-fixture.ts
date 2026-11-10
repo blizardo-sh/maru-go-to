@@ -9,7 +9,12 @@ export async function seedLegacyLearning(database: Database, course: Course, ema
   if (!/-[0-9a-f-]{36}@example\.test$/.test(email)) throw new Error('Legacy routes require an isolated UUID fixture.');
   const [learner] = await database.sql`select id from users where email=${email}`;
   if (!learner) throw new Error('Fixture learner missing.');
-  for (const route of course.learning ?? []) await database.sql`insert into learning_states(user_id,lesson_id,route_version,version,state) values(${learner.id},${route.lessonId},${route.version},0,${initialLearningState(route)})`;
+  for (const current of course.learning ?? []) {
+    const route = structuredClone(current);
+    route.version = route.version.replace('-visual-v1', '');
+    for (const goal of route.goals) for (const part of goal.parts) for (const word of part.words) delete word.visualCards;
+    await database.sql`insert into learning_states(user_id,lesson_id,route_version,version,state) values(${learner.id},${route.lessonId},${route.version},0,${initialLearningState(route)})`;
+  }
 }
 
 // Historical fixtures are isolated UUID accounts; manual lesson flags are not learning evidence.

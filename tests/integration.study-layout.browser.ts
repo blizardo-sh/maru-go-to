@@ -1,3 +1,5 @@
+import { japaneseBases, japaneseReadings } from '../verification/album-learning/checks';
+import { wordCardFor } from '../src/shared/word-cards';
 import { workspaceNext } from './helpers/workspace-next';
 import { seedAcceptedHistory } from './helpers/introduced-browser-fixture';
 import { chromium, expect } from '@playwright/test';
@@ -51,7 +53,7 @@ async function capture(label: string) {
   const group=page.getByTestId('learning-word-group');
   if(await group.count()){
     const tiles=group.locator('.word-introduction');expect(await tiles.count()).toBeGreaterThan(0);expect(await tiles.count()).toBeLessThanOrEqual(5);
-    for(const tile of await tiles.all()){const id=await tile.getAttribute('data-word-id');const word=course.words.find(word=>word.id===id)!;await expect(tile.locator('h3.jp')).toHaveText(word.kana);await expect(tile.locator('.word-meaning')).toHaveText(word.meaningRu);}
+    for(const tile of await tiles.all()){const id=await tile.getAttribute('data-word-id');const word=course.words.find(word=>word.id===id)!;expect(await tile.locator('h3.jp').evaluateAll(japaneseReadings)).toEqual([word.kana]);await expect(tile.locator('.word-meaning')).toHaveText(word.meaningRu);}
   }
   const usefulHeight = await page.locator('.session-scroll').evaluate(element => element.clientHeight);
   expect(usefulHeight, `${label}: study content has too little usable height`).toBeGreaterThanOrEqual(112);
@@ -120,7 +122,7 @@ try {
     for (let mode = 0; mode < 3; mode++) { await capture('word-practice-hidden'); await recall(); }
     const core2 = new Set(course.learning!.find(route => route.lessonId.endsWith('02'))!.goals.flatMap(goal => goal.parts.flatMap(part => part.words.map(word => word.wordId))));
     const distinct = course.words.find(word => core2.has(word.id) && word.surface !== word.kana)!;
-    await seed(2, step => step.kind === 'word-intro' && step.wordId === distinct.id); const tile=page.locator(`.word-introduction[data-word-id="${distinct.id}"]`); await expect(tile.locator('h3.jp')).toHaveText(distinct.kana); if(/\p{Script=Han}/u.test(distinct.surface)){expect(await tile.locator('.word-kanji').evaluate(element=>{const copy=element.cloneNode(true) as Element;copy.querySelectorAll('rt').forEach(reading=>reading.remove());return copy.textContent;})).toBe(distinct.surface);expect(await tile.locator('.word-kanji rt').evaluateAll(elements=>elements.map(element=>element.textContent).join(''))).toBe(distinct.kana);} await capture('verified-kana-and-kanji-preserved');
+    await seed(2, step => step.kind === 'word-intro' && step.wordId === distinct.id); const tile=page.locator(`.word-introduction[data-word-id="${distinct.id}"]`); expect(await tile.locator('h3.jp').evaluateAll(japaneseReadings)).toEqual([distinct.kana]);expect(await tile.locator('h3.jp').evaluateAll(japaneseBases)).toEqual([wordCardFor(distinct,course.catalog)!.surface]);await expect(tile.locator('.word-note').first()).toHaveText(wordCardFor(distinct,course.catalog)!.captionRu); await capture('verified-kana-and-kanji-preserved');
     await seed(1, step => step.goalId === 'l01-scripts' && step.kind === 'word-intro'); await capture('goal-with-context'); await page.screenshot({ path: `${output}/study-layout-hiragana-${viewport.width}x${viewport.height}.png`, fullPage: true }); await page.screenshot({ path: `${output}/study-layout-context-${viewport.width}.png`, fullPage: true });
     while (await guided().getAttribute('data-step-kind') === 'word-intro') await next(); await capture('goal-without-context');
     await seed(4, step => step.goalId === 'l04-family-photo' && step.kind === 'word-intro'); await capture('longest-goal'); await page.screenshot({ path: `${output}/study-layout-long-goal-${viewport.width}.png`, fullPage: true });

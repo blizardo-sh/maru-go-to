@@ -1,6 +1,9 @@
 import { expect, type Page } from '@playwright/test';
 import propsManifest from '../../public/scenes/props/manifest.json';
+import { wordCardFor } from '../../src/shared/word-cards';
 import type { Course } from '../../src/shared/types';
+
+export function japaneseReadings(elements: Element[]) { return elements.map(element => { const copy=element.cloneNode(true) as Element;copy.querySelectorAll('ruby').forEach(ruby=>ruby.replaceWith(ruby.querySelector('rt')?.textContent??ruby.textContent??''));return copy.textContent; }); }
 
 // Native ruby adds reading text to textContent; verify its base independently.
 export function japaneseBases(elements: Element[]) { return elements.map(element => { const copy=element.cloneNode(true) as Element;copy.querySelectorAll('rt').forEach(reading=>reading.remove());return copy.textContent; }); }
@@ -24,16 +27,16 @@ export async function checkTextbookDocument(page:Page,base:string,output:string)
 /** Actual lesson-four DOM, native input and painted sprite bounds; no test-only app state bridge. */
 export async function checkAlbumOverview(page:Page,course:Course,output:string,propsOnly=false){
   const tiles = page.locator('.word-introduction[data-word-id]'); expect(await tiles.count()).toBeGreaterThan(0);
-  const measurements: unknown[] = []; let exampleAudioChecked=false; if(!propsOnly)expect(await page.locator('.word-introduction .word-kanji').evaluateAll(japaneseBases)).toEqual(['家族','父','母','兄','姉']);
+  const measurements: unknown[] = []; let exampleAudioChecked=false; if(!propsOnly)expect(await page.locator('.word-introduction h3.jp').evaluateAll(japaneseBases)).toEqual(['家族','父','母','兄','姉']);
   if (!propsOnly) for (const viewport of [{ width: 1280, height: 900 }, { width: 1280, height: 720 }, { width: 390, height: 844 }, { width: 320, height: 740 }]) {
     await page.setViewportSize(viewport); await page.waitForTimeout(100);
     for (const tile of await tiles.all()) {
       const wordId = await tile.getAttribute('data-word-id'); const word = course.words.find(word => word.id === wordId)!;
-      await expect(tile.locator('h3.jp')).toHaveText(word.kana);
+      expect(await tile.locator('h3.jp').evaluateAll(japaneseReadings)).toEqual([word.kana]);
       await expect(tile.locator('.word-meaning')).toHaveText(word.meaningRu);
       const image=tile.locator(':scope > .word-illustration');if(await image.count()){const illustration=await image.boundingBox(),kana=await tile.locator('h3.jp').boundingBox();expect(illustration!.x+illustration!.width).toBeLessThanOrEqual(kana!.x);}
 
-      const kanji=/\p{Script=Han}/u.test(word.surface)?word.surface:course.forms.find(form=>form.wordId===word.id&&form.kana===word.kana&&form.reviewStatus!=='draft'&&/\p{Script=Han}/u.test(form.surface))?.surface;await expect(tile.locator('.word-kanji')).toHaveCount(kanji?1:0);if(kanji){expect(await tile.locator('.word-kanji').evaluateAll(japaneseBases)).toEqual([kanji]);expect(await tile.locator('.word-kanji rt').evaluateAll(elements=>elements.map(element=>element.textContent).join(''))).toBe(word.kana);}
+      const visual=wordCardFor(word,course.catalog);expect(visual).toBeDefined();expect(await tile.locator('h3.jp').evaluateAll(japaneseBases)).toEqual([visual!.surface]);await expect(tile.locator('.word-kanji')).toHaveCount(0);await expect(tile.locator('.word-note').first()).toHaveText(visual!.captionRu);
       const example = tile.locator('.example-phrase'); await example.scrollIntoViewIfNeeded();
       await expect(example).toHaveAttribute('aria-pressed', 'false');
       const geometry = () => tile.evaluate(element => { const r = element.getBoundingClientRect(); const scroller = element.closest('.session-scroll')!; const grid = element.closest('.word-group-grid')!; return { width:r.width, height:r.height, gridHeight:grid.getBoundingClientRect().height, scrollHeight:scroller.scrollHeight, documentWidth:document.documentElement.scrollWidth }; });
@@ -42,7 +45,7 @@ export async function checkAlbumOverview(page:Page,course:Course,output:string,p
       expect(translated).toEqual(before); expect(restored).toEqual(before);
       await expect(tile.locator('.example-play')).toHaveText('▶');
       const play=tile.locator('.example-play');const phraseBox=await example.boundingBox(),playBox=await play.boundingBox();expect(playBox!.x).toBeGreaterThanOrEqual(phraseBox!.x+phraseBox!.width-1);expect(playBox!.height).toBeGreaterThanOrEqual(44);
-      for(const selector of ['.word-meaning','.word-note'])expect(await tile.locator(selector).evaluate(element=>parseFloat(getComputedStyle(element).fontSize))).toBeGreaterThanOrEqual(16);
+      for(const selector of ['.word-meaning','.word-note'])for(const size of await tile.locator(selector).evaluateAll(elements=>elements.map(element=>parseFloat(getComputedStyle(element).fontSize))))expect(size).toBeGreaterThanOrEqual(16);
       if(!exampleAudioChecked){const introduction=course.learning!.find(route=>route.lessonId.endsWith('.04'))!.goals[0]!.parts[0]!.words.find(value=>value.wordId===word.id)!;await play.click();const audio=page.getByTestId('learning-word-group').locator('audio');await expect.poll(()=>audio.evaluate((audio:HTMLAudioElement)=>audio.currentTime),{timeout:10000}).toBeGreaterThan(.03);expect(await audio.evaluate((audio:HTMLAudioElement)=>audio.currentSrc)).toBe(new URL(introduction.example.audioUrl!,page.url()).href);await audio.evaluate((audio:HTMLAudioElement)=>audio.pause());exampleAudioChecked=true;}
 
       expect(await tile.locator('summary').count()).toBe(0);
