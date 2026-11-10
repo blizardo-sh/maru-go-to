@@ -17,7 +17,7 @@ const counterItem = (index: number, kind: 'image-counter' | 'recall' = 'image-co
   return { id: `counter:${targetId}:fixture${index}`, targetId, mode: 'counter', version: 0, due: '2026-10-22T00:00:00Z', isNew: true, counter: makeCounterCard(targetId, word.id, words, `fixture-${index}`)! };
 };
 const items = [counterItem(0), counterItem(1)];
-const server = await createServer({ root: new URL('..', import.meta.url).pathname, configFile: false, plugins: [react(), { name: 'isolated-interaction-fixture', configureServer(server) { server.middlewares.use(async (request, response, next) => {
+const server = await createServer({ root: new URL('..', import.meta.url).pathname, configFile: false, resolve: { alias: { '@app': new URL('../src', import.meta.url).pathname } }, plugins: [react(), { name: 'isolated-interaction-fixture', configureServer(server) { server.middlewares.use(async (request, response, next) => {
   if (request.url?.startsWith('/__interaction-data')) { response.setHeader('Content-Type', 'application/json'); response.end(JSON.stringify({ course, settings: { ...defaultSettings, animations: false, sceneSoundEnabled: false }, lists: [], progress: { counters: [], introducedWordIds: words.map(word => word.id), introducedSkillIds: [], byMode: {} } })); }
   else if (request.url?.split('?')[0] === '/interaction') { response.setHeader('Content-Type', 'text/html'); response.end(await server.transformIndexHtml('/interaction', '<!doctype html><html lang="ru"><div id="root"></div><script type="module" src="/tests/helpers/learner-interaction-fixture.tsx"></script></html>')); }
   else next();
