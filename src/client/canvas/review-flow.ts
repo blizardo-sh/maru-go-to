@@ -22,6 +22,7 @@ export class ReviewFlow<T extends ReviewItem = WordItem> {
   private refreshing = false;
   progress: Progress | null = null;
   last: { attemptId: string; kind: 'good' | 'again' } | null = null;
+  choiceResult: { choice: string; correct: boolean; repeat: boolean; result: ReviewResult } | null = null;
   private epoch = 0;
   private owner = '';
   private context?: TrainingContext;
@@ -46,18 +47,26 @@ export class ReviewFlow<T extends ReviewItem = WordItem> {
       const [queue, progress] = await Promise.all([api<ReviewQueue>(query, { headers }), mode === 'mixed' && !context ? api<Progress>('/api/progress', { headers }) : null]);
       if (epoch !== this.epoch) return;
       this.course = course; this.queue = queue.items.filter(item => mode === 'mixed' || item.mode === mode || !!context && isVisualWordMode(mode) && isVisualWordMode(item.mode)) as T[]; this.nextDue = queue.nextDue ?? null; this.remainingDue = queue.remainingDue; this.progress = progress; this.total = this.queue.length; this.completed = 0; this.turn++; this.last = null;
-      this.saving = new ReviewSave(owner, (submission, result) => this.next(submission.rating === 1 || 'helped' in submission && !!submission.helped || result.correct === false, result), this.changed);
+      this.choiceResult = null;
+      this.saving = new ReviewSave(owner, (submission, result) => {
+        const repeat = submission.rating === 1 || 'helped' in submission && !!submission.helped || result.correct === false;
+        if (submission.mode === 'counter' && submission.choice) {
+          // The answer is already saved; Next only releases the visible feedback.
+          this.choiceResult = { choice: submission.choice, correct: result.correct === true, repeat, result };
+          this.last = { attemptId: result.attemptId, kind: repeat ? 'again' : 'good' };
+        } else this.next(repeat, result);
+      }, this.changed);
     } catch (error) { if (epoch === this.epoch) this.error = error instanceof Error ? error.message : 'Не удалось загрузить повторение.'; }
     finally { if (epoch === this.epoch) { this.loading = false; this.planWake(); this.changed(); } }
   }
   private planWake(delay?: number) {
     clearTimeout(this.wake);
-    if (!this.active || this.context || !this.nextDue || typeof document !== 'undefined' && document.hidden) return;
+    if (!this.active || this.choiceResult || this.context || !this.nextDue || typeof document !== 'undefined' && document.hidden) return;
     this.wake = setTimeout(() => void this.refreshDue(), delay ?? reviewWakeDelay(this.nextDue));
     this.wake.unref?.();
   }
   async refreshDue() {
-    if (!this.active || this.context || !this.course || this.refreshing || typeof document !== 'undefined' && document.hidden) return;
+    if (!this.active || this.choiceResult || this.context || !this.course || this.refreshing || typeof document !== 'undefined' && document.hidden) return;
     if (this.busy || this.pending) { this.planWake(1000); return; }
     const epoch = this.epoch, owner = this.owner;
     this.refreshing = true;
@@ -95,6 +104,11 @@ export class ReviewFlow<T extends ReviewItem = WordItem> {
     this.turn++; this.last = { attemptId: result.attemptId, kind: repeat ? 'again' : 'good' };
     this.planWake(!this.queue.length && this.remainingDue > 0 ? 0 : undefined);
   }
+  continueChoice() {
+    if (!this.active || this.busy || !this.choiceResult) return;
+    const { repeat, result } = this.choiceResult;
+    this.choiceResult = null; this.next(repeat, result); this.changed();
+  }
   grade(owner: string, rating: Rating) {
     const item = this.item; if (owner !== this.owner || !item || ('choices' in item && item.choices?.length) || !this.active || this.busy || this.pending) return;
     if (!['ja-ru', 'ru-ja', 'listening', 'picture-word', 'word-meaning'].includes(item.mode)) return;
@@ -104,9 +118,9 @@ export class ReviewFlow<T extends ReviewItem = WordItem> {
     const item = this.item; if (!item || !('choices' in item) || !item.choices?.includes(id) || !this.active || this.busy || this.pending) return;
     return this.saving?.save({ attemptId: crypto.randomUUID(), reviewId: item.id, version: item.version, mode: item.mode as WordItem['mode'], rating: 3, choiceWordId: id, helped: false, ...(item.publicationId ? { publicationId: item.publicationId } : {}) });
   }
-  save(value: ReviewSubmission) { if (this.active && !this.busy && !this.pending && value.reviewId === this.item?.id) return this.saving?.save(value); }
+  save(value: ReviewSubmission) { if (this.active && !this.busy && !this.pending && !this.choiceResult && value.reviewId === this.item?.id) return this.saving?.save(value); }
   async introduce() { const item = this.item, owner = this.owner, epoch = this.epoch; if (!item || this.busy) return; this.loading = true; this.changed(); try { await api('/api/training/introduce', { method: 'POST', headers: { ...learningHeaders(owner, item.publicationId), 'Content-Type': 'application/json' }, body: JSON.stringify({ reviewIds: [item.id], stage: 'learning', publicationId: item.publicationId }) }); if (epoch === this.epoch) { if (item.preparation) { for(const sibling of this.queue)if(sibling.preparation?.key===item.preparation.key&&sibling.preparation.scope===item.preparation.scope)sibling.preparation.introduced=true; } else if (item.mode === 'counter') item.counter.introduction = false; } } catch (e) { if (epoch === this.epoch) this.error = e instanceof Error ? e.message : 'Не удалось сохранить знакомство.'; } finally { if (epoch === this.epoch) { this.loading = false; this.changed(); } } }
   retry() { return this.pending ? this.saving?.retry() : this.open(this.owner, this.mode, this.context); }
   hide() { clearTimeout(this.wake); this.active = false; this.changed(); }
-  clear() { clearTimeout(this.wake); ++this.epoch; if (this.saving) this.saving.active = false; this.saving = undefined; this.queue = []; this.course = null; this.progress = null; this.total = 0; this.remainingDue = 0; this.nextDue = null; this.completed = 0; this.active = false; this.loading = false; this.last = null; this.error = ''; this.changed(); }
+  clear() { clearTimeout(this.wake); ++this.epoch; if (this.saving) this.saving.active = false; this.saving = undefined; this.queue = []; this.course = null; this.progress = null; this.total = 0; this.remainingDue = 0; this.nextDue = null; this.completed = 0; this.active = false; this.loading = false; this.last = null; this.choiceResult = null; this.error = ''; this.changed(); }
 }

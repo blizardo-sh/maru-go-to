@@ -180,6 +180,7 @@ export class StudySurface {
     } else this.text(value, { x: question.x + 12, y: valueTop + (available - valueHeight) / 2, width: valueWidth, height: valueHeight }, valueSize, true, true);
     if (illustration) {
       const view = new Sprite(illustration), size = Math.min(available, this.layout.narrow ? 58 : 88);
+      view.label = 'question-illustration';
       view.scale.set(Math.min(size / illustration.width, size / illustration.height));
       view.position.set(question.x + question.width - view.width - 12, question.y + titleHeight + 10 + (available - view.height) / 2); this.root.addChild(view);
     }
@@ -212,35 +213,38 @@ export class StudySurface {
     this.choices(tokens.map(token => ({ ...token, japanese: true })), rect, id => tokens.find(token => token.id === id)!.run(), this.tokenGrid(tokens, rect.width).columns, this.layout.font + 2);
   }
   tokenFlow(tokens: StudyChoice[], width: number) {
-    const gap = 6, size = this.layout.font + 2;
-    let x = 0, y = 0;
+    const gap = 6, size = Math.max(24, this.layout.font + 4);
+    let x = 0, y = 0, rowHeight = 48;
     const items = tokens.map(token => {
       const tokenWidth = Math.min(width, Math.max(44, textWidth(token.text, size, jp) + actionInset + 4));
-      if (x && x + tokenWidth > width) { x = 0; y += 44 + gap; }
-      const rect = { x, y, width: tokenWidth, height: 44 }; x += tokenWidth + gap;
+      if (x && x + tokenWidth > width) { x = 0; y += rowHeight + gap; rowHeight = 48; }
+      const height = Math.max(48, this.measure(token.text, tokenWidth - actionInset, size, true) + 10);
+      const rect = { x, y, width: tokenWidth, height }; x += tokenWidth + gap; rowHeight = Math.max(rowHeight, height);
       return { token, rect };
     });
-    return { items, height: y + 44 };
+    return { items, height: y + rowHeight, size };
   }
   builderHeight(tokens: StudyChoice[], width: number) {
-    const widest = Math.max(...this.tokenFlow(tokens, width).items.map(item => item.rect.width));
+    const slots = this.tokenFlow(tokens, width).items;
+    const widest = Math.max(44, ...slots.map(item => item.rect.width)), height = Math.max(48, ...slots.map(item => item.rect.height));
     const perRow = Math.max(1, Math.floor((width + 6) / (widest + 6))), rows = Math.ceil(tokens.length / perRow) + 1;
     // Both areas stay reserved, including an empty row; any chosen order fits this bound.
-    return 48 + rows * 44 + Math.max(0, rows - 2) * 6 + 6;
+    return 48 + rows * height + Math.max(0, rows - 2) * 6 + 6;
   }
   sentenceBuilder(bank: StudyChoice[], assembled: StudyChoice[], rect: Rect, externalSentence?: Rect, message?: string, labelColor = ink) {
     const sentence = externalSentence ?? rect;
     const chosen = this.tokenFlow(assembled, sentence.width), available = this.tokenFlow(bank, rect.width);
     const sentenceColor = externalSentence ? ink : labelColor;
     const sentenceTitle = message ?? `Предложение · ${assembled.length} / ${assembled.length + bank.length}`;
-    this.text(sentenceTitle, { x: sentence.x, y: sentence.y, width: sentence.width, height: 24 }, 16).style.fill = sentenceColor;
-    for (const { token, rect: slot } of chosen.items) this.action({ ...token, contrast: true }, { ...slot, x: sentence.x + slot.x, y: sentence.y + 24 + slot.y }, true, this.layout.font + 2);
+    const titleHeight = Math.max(24, this.measure(sentenceTitle, sentence.width, 18));
+    this.text(sentenceTitle, { x: sentence.x, y: sentence.y, width: sentence.width, height: titleHeight }, 18).style.fill = sentenceColor;
+    for (const { token, rect: slot } of chosen.items) this.action({ ...token, contrast: true }, { ...slot, x: sentence.x + slot.x, y: sentence.y + titleHeight + slot.y }, true, chosen.size);
     if (!assembled.length) this.text(externalSentence ? 'Выберите фрагменты справа' : 'Добавьте фрагменты снизу', { x: sentence.x, y: sentence.y + 28, width: sentence.width, height: 40 }, 16).style.fill = sentenceColor;
     const bankTop = externalSentence ? rect.y + 24 : rect.y + rect.height - available.height;
     this.text(bank.length ? 'Фрагменты' : 'Все фрагменты добавлены', { x: rect.x, y: bankTop - 24, width: rect.width, height: 24 }, 16).style.fill = labelColor;
-    for (const { token, rect: slot } of available.items) this.action({ ...token, contrast: true }, { ...slot, x: rect.x + slot.x, y: bankTop + slot.y }, true, this.layout.font + 2);
-    if (!externalSentence && sentence.y + 24 + chosen.height + 6 > bankTop - 24) this.problems.push('Sentence and token bank overlap');
-    if (externalSentence && 24 + chosen.height > sentence.height + 1) this.problems.push('Sentence exceeds its area');
+    for (const { token, rect: slot } of available.items) this.action({ ...token, contrast: true }, { ...slot, x: rect.x + slot.x, y: bankTop + slot.y }, true, available.size);
+    if (!externalSentence && sentence.y + titleHeight + chosen.height + 6 > bankTop - 24) this.problems.push('Sentence and token bank overlap');
+    if (externalSentence && titleHeight + chosen.height > sentence.height + 1) this.problems.push('Sentence exceeds its area');
     if (externalSentence && 24 + available.height > rect.height + 1) this.problems.push('Token bank exceeds its area');
   }
 }
