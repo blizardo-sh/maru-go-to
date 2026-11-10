@@ -59,11 +59,17 @@ try {
   await expect(page.getByText('Выберите хотя бы один тип материала.', { exact: true })).toBeVisible(); expect((await settings()).repeatTypes).toEqual([]);
   expect((await (await context.request.get(base + '/api/reviews?mode=mixed')).json()).items).toEqual([]); report.repeatSaveFailureAndPersistence = true;
 
-  await navigate('Справочник'); await page.getByRole('button', { name: 'Хирагана', exact: true }).click(); await expect(page.locator('.kana-reference')).toBeVisible(); await expect(page.getByTestId('train-kana')).toHaveCount(0); await navigate('Тренировки'); await page.getByRole('button', { name: 'Тренировать хирагану', exact: true }).click();
+  await navigate('Справочник'); await page.getByRole('button', { name: 'Хирагана', exact: true }).click(); await expect(page.locator('.kana-reference')).toBeVisible(); await expect(page.getByTestId('train-kana')).toHaveCount(0);
+  // Navigation refreshes the catalog in the background, sometimes after a learner has already started.
+  let resumeRefresh!: () => void; const refreshGate = new Promise<void>(resolve => { resumeRefresh = resolve; });
+  await context.route('**/api/bootstrap', async route => { const response = await route.fetch(); await refreshGate; await route.fulfill({ response }); }, { times: 1 });
+  await navigate('Тренировки'); await page.getByRole('button', { name: 'Тренировать хирагану', exact: true }).click();
   const trainer = page.getByTestId('kana-trainer');
   const beforeKana = await cards(), beforePosts = submissions.length;
   await trainer.getByRole('button', { name: /Учить выбранные/ }).click();
   await expect(trainer.locator('figcaption')).toBeVisible();
+  const refreshed = page.waitForResponse(response => new URL(response.url()).pathname === '/api/kana');
+  resumeRefresh(); await refreshed; await expect(trainer.locator('figcaption')).toBeVisible();
   await trainer.getByRole('button', { name: '▶ Прослушать', exact: true }).click();
   await expect.poll(async()=>page.evaluate(()=>(window as any).__referencePlayed.at(-1))).toContain('/audio/');
   for(let i=0;i<4;i++)await trainer.getByRole('button',{name:'Следующий знак',exact:true}).click();

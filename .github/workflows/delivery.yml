@@ -80,6 +80,8 @@ jobs:
         run: bun tests/helpers/run-guided-browser.ts tests/auth-onboarding.browser.ts
       - name: Browser counter flashcard decks
         run: bun tests/integration.counters.browser.ts
+      - name: Browser mobile practice layout and saved feedback
+        run: bun tests/integration.mobile-practice.browser.ts
       - name: Browser reference drills and saved repeat types
         run: bun tests/helpers/run-guided-browser.ts tests/integration.reference-training.browser.ts
       - name: Browser illustrated controls and cat transitions

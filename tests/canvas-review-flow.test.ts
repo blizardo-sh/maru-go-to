@@ -28,9 +28,37 @@ test('mixed review preserves every type and order, retries the same durable answ
     await flow.retry();expect(posted[1]).toEqual(posted[0]);expect(flow.item?.mode).toBe('grammar');expect(pendingReviews(owner)).toHaveLength(0);
     await flow.grade(owner,3);expect(posted).toHaveLength(2);
     await flow.save({attemptId:crypto.randomUUID(),reviewId:'1',version:4,publicationId,mode:'grammar',tokenIds:['a','b'],revealed:false,rating:3});expect(flow.item?.mode).toBe('counter');
-    await flow.save({attemptId:crypto.randomUUID(),reviewId:'2',version:4,publicationId,mode:'counter',helped:false,rating:3,choice:'hon'});expect(flow.item?.mode).toBe('listening');
+    await flow.save({attemptId:crypto.randomUUID(),reviewId:'2',version:4,publicationId,mode:'counter',helped:false,rating:3,choice:'hon'});expect(flow.item?.mode).toBe('counter');expect(flow.choiceResult?.correct).toBe(true);
+    flow.continueChoice();expect(flow.item?.mode).toBe('listening');
     await flow.grade('another-learner',3);expect(posted).toHaveLength(4);
     flow.clear();expect(flow.progress).toBeNull();expect(flow.remainingDue).toBe(0);expect(flow.total).toBe(0);
+  } finally {globalThis.fetch=fetch;globalThis.localStorage=storage;}
+});
+
+test('counter feedback waits for acknowledgement and Next without another grade, including a lost acknowledgement', async () => {
+  const fetch=globalThis.fetch,storage=globalThis.localStorage,values=new Map<string,string>();
+  globalThis.localStorage={getItem:(key:string)=>values.get(key)??null,setItem:(key:string,value:string)=>values.set(key,value),removeItem:(key:string)=>values.delete(key)} as unknown as Storage;
+  try {
+    for(const correct of [false,true]) {
+      const owner=crypto.randomUUID(),posted:ReviewSubmission[]=[],committed=new Set<string>();let lose=true;
+      const items=['one','two'].map(id=>({id,targetId:id,mode:'counter',version:0,isNew:true,counter:{kind:'image-counter'}})) as ReviewItem[];
+      globalThis.fetch=(async(url:unknown,init:RequestInit)=>{
+        if(String(url)==='/api/course')return Response.json({});
+        if(String(url).startsWith('/api/training?'))return Response.json({items,remainingDue:0});
+        const input=JSON.parse(String(init.body));posted.push(input);committed.add(input.attemptId);
+        if(lose){lose=false;throw new TypeError('Lost acknowledgement');}
+        return Response.json({attemptId:input.attemptId,correct,version:1,status:correct?'scheduled':'learning',nextDue:new Date(Date.now()+86400000).toISOString()});
+      }) as typeof fetch;
+      const flow=new ReviewFlow<ReviewItem>(()=>{});await flow.open(owner,'counter',{counters:true});
+      const answer:ReviewSubmission={attemptId:crypto.randomUUID(),reviewId:'one',version:0,mode:'counter',choice:'tsu',helped:false,rating:3};
+      await flow.save(answer);expect(flow.pending).toBe(true);expect(flow.choiceResult).toBeNull();expect(flow.item?.id).toBe('one');
+      flow.continueChoice();expect(flow.item?.id).toBe('one');
+      await flow.retry();expect(flow.choiceResult?.correct).toBe(correct);expect(flow.pending).toBe(false);expect(flow.item?.id).toBe('one');expect(flow.turn).toBe(1);
+      await flow.save({...answer,attemptId:crypto.randomUUID()});expect(posted).toHaveLength(2);expect(posted[0]).toEqual(posted[1]);expect(committed.size).toBe(1);
+      flow.hide();flow.continueChoice();expect(flow.item?.id).toBe('one');flow.active=true;
+      flow.continueChoice();expect(flow.item?.id).toBe('two');expect(flow.queue).toHaveLength(correct?1:2);expect(flow.turn).toBe(2);expect(flow.choiceResult).toBeNull();
+      flow.continueChoice();expect(flow.turn).toBe(2);expect(posted).toHaveLength(2);expect(pendingReviews(owner)).toEqual([]);flow.clear();
+    }
   } finally {globalThis.fetch=fetch;globalThis.localStorage=storage;}
 });
 

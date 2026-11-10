@@ -18,6 +18,7 @@ export function counterPicture(surface: StudySurface, picture: Texture | undefin
 }
 export function renderCounterCard(surface: StudySurface, card: CounterCard, course: Course, draft: CounterDraft, options: {
   schedule?: ReviewSchedule; prompt?: Rect; pictures: Map<number, Texture>; intro: boolean; busy: boolean; heard: boolean; mediaError: string;
+  result?: { choice: string; correct: boolean };
   changed: () => void; play: (url?: string) => void; introduce: () => void; choose: (id: string, helped: boolean) => void;
   grade: (rating: Rating, helped: boolean) => void; next?: () => void; safe: (action: StudyAction) => StudyAction;
 }) {
@@ -53,26 +54,28 @@ export function renderCounterCard(surface: StudySurface, card: CounterCard, cour
     ]); return;
   }
   const heard = card.kind !== 'listening-image' || options.heard && !options.mediaError;
+  const result = options.result;
   const choices: StudyChoice[] = card.options.map(option => ({ id: option.key,
-    text: option.object ? `${option.label}${card.kind === 'listening-image' ? ` · ${option.age ? 'возраст' : '×'} ${option.quantity?.toLocaleString('ru-RU')}` : ''}` : option.label,
+    text: (result && card.acceptedKeys.includes(option.key) ? '✓ ' : result && result.choice === option.key ? '✗ ' : '') + (option.object ? `${option.label}${card.kind === 'listening-image' ? ` · ${option.age ? 'возраст' : '×'} ${option.quantity?.toLocaleString('ru-RU')}` : ''}` : option.label),
     picture: option.object ? options.pictures.get(option.object.tile) : undefined,
-    japanese: !option.object, wrong: draft.wrong.includes(option.key), selected: draft.correct === true && card.acceptedKeys.includes(option.key),
-    accessibleLabel: option.label + (draft.wrong.includes(option.key) ? ' — первый ответ неверен' : ''),
-    enabled: !options.busy && heard && draft.correct !== true, run: () => {} }));
+    japanese: !option.object, wrong: result ? !result.correct && result.choice === option.key : draft.wrong.includes(option.key), selected: (!!result || draft.correct === true) && card.acceptedKeys.includes(option.key),
+    accessibleLabel: option.label + (result && result.choice === option.key ? ' — ваш ответ' : '') + (result && card.acceptedKeys.includes(option.key) ? ' — правильный ответ' : draft.wrong.includes(option.key) ? ' — первый ответ неверен' : ''),
+    enabled: !options.busy && heard && !result && draft.correct !== true, run: () => {} }));
   // The listening face never discloses the target picture or quantity before a choice.
-  const failure='Ответ не подошёл. Выберите другой.',assisted='Правило просмотрено. Задание вернётся.',titleHeight=Math.max(surface.measure(titles[card.kind],(options.prompt?.width??surface.body.width)-24,16),surface.measure(failure,(options.prompt?.width??surface.body.width)-24,16),surface.measure(assisted,(options.prompt?.width??surface.body.width)-24,16));
-  const plan = surface.quiz(draft.correct===false?failure:draft.correct===true&&draft.helped?assisted:titles[card.kind], card.kind === 'listening-image' ? '♪' : card.kind === 'image-counter' ? card.word.kana : card.answer.surface, choices, undefined, { question: options.prompt, paper: false, titleSize: 16, titleHeight });
-  if (card.kind === 'image-counter' || card.kind === 'reading-choice') {
-    const r = plan.question;
-    // Use the same object/quantity representation as CounterPicture in the compatible client.
-    counterPicture(surface, options.pictures.get(card.object.tile), { x: r.x + r.width * .55, y: r.y + 40, width: r.width * .43, height: Math.max(74, r.height - 50) }, card.quantity, age, card.word.meaningRu);
-  }
+  const correctAnswer = card.options.filter(option => card.acceptedKeys.includes(option.key)).map(option => option.label).join(' / ');
+  const failure = 'Неверно. Выберите другой вариант.', correction = 'Неверно. Правильный ответ: ' + correctAnswer;
+  const success = draft.helped || draft.wrong.length ? 'Верно. Повторим ещё раз.' : 'Верно!';
+  const titleHeight = Math.max(...[titles[card.kind],failure,correction,success].map(text=>surface.measure(text,(options.prompt?.width??surface.body.width)-24,16)));
+  const title = result ? result.correct ? success : correction : draft.correct === false ? failure : draft.correct === true ? success : titles[card.kind];
+  // quiz reserves a separate image slot instead of painting over the prompt.
+  const picture = card.kind === 'image-counter' || card.kind === 'reading-choice' ? options.pictures.get(card.object.tile) : undefined;
+  const plan = surface.quiz(title, card.kind === 'listening-image' ? '♪' : card.kind === 'image-counter' ? card.word.kana : card.answer.surface, choices, picture, { question: options.prompt, paper: false, titleSize: 16, titleHeight });
   surface.choices(choices, plan.choices, id => options.choose(id, draft.helped), plan.columns, plan.size);
   const alternatives = card.quantity === null ? [] : readingVariants(card.definition.id, card.quantity, course.catalog).slice(1);
   footer([
     { id: 'counter-rule', text: 'Правило', run: openRule },
-    ...(card.kind === 'listening-image' || draft.correct === true ? [{ id: 'audio', text: '▶', accessibleLabel: 'Прослушать количество', run: () => options.play(card.audioUrl) }] : []),
-    ...(options.next ? [{ id: 'counter-next', text: 'Дальше →', enabled: draft.correct === true, run: options.next }] : []),
+    ...(card.kind === 'listening-image' || draft.correct === true || result ? [{ id: 'audio', text: '▶', accessibleLabel: 'Прослушать количество', run: () => options.play(card.audioUrl) }] : []),
+    ...(options.next ? [{ id: 'counter-next', text: 'Дальше →', enabled: !!result || draft.correct === true, run: options.next }] : []),
   ]);
   if (draft.correct === true && alternatives.length) {
     const r = plan.question; surface.text('Также: ' + alternatives.join(' · '), { x: r.x, y: r.y + r.height - 32, width: r.width, height: 32 }, 15, true, true);
