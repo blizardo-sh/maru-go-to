@@ -94,7 +94,8 @@ try {
  await click(page,'book-train');await click(page,'review-visual');await page.waitForFunction(()=>(window as any).__ALBUM__.snapshot().review.total===10);
  const trained=new Set<string>();
  for(let n=0;n<10;n++){
-  let state=await snap(page);if(state.controls.some((c:any)=>c.id==='training-intro'))await click(page,'training-intro');
+  await page.waitForFunction(()=>(window as any).__ALBUM__.snapshot().controls.some((c:any)=>['training-intro','show-answer'].includes(c.id)&&c.enabled));
+  const state=await snap(page);if(state.controls.some((c:any)=>c.id==='training-intro'))await click(page,'training-intro');
   await page.waitForFunction(()=>(window as any).__ALBUM__.snapshot().controls.some((c:any)=>c.id==='show-answer'&&c.enabled));trained.add((await snap(page)).review.mode);await click(page,'show-answer');const before=(await snap(page)).review.completed;await click(page,'grade-remember');await page.waitForFunction(n=>(window as any).__ALBUM__.snapshot().review.completed>n,before);
  }
  expect([...trained].sort()).toEqual(['picture-word','word-meaning']);

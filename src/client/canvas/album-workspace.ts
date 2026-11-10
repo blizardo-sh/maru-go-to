@@ -10,6 +10,8 @@ import type { Course, Exercise, Word } from '@app/shared/types';
 import type { Rect } from './canvas';
 import { StudySurface, type StudyAction } from './study-surface';
 
+const hiragana = (value: string) => value.replace(/[ァ-ヶ]/g, char => String.fromCharCode(char.charCodeAt(0) - 0x60));
+
 export class AlbumWorkspace {
   tokens: WorkspaceToken[] = [];
   manualText: string | null = null;
@@ -88,7 +90,7 @@ export function renderWorkspace(surface: StudySurface, model: AlbumWorkspace, op
   changed: () => void; composing: boolean; busy: boolean; revealed: boolean; check: () => void; analyze: () => void; grade: (rating: Rating) => void;
 }) {
   const a = surface.body, safe = options.safe, footer = (actions: StudyAction[]) => surface.footer(actions.map(action => safe({ ...action, fontSize: action.id.startsWith('grade-') ? 14 : 16 })));
-  const label = (token: WorkspaceToken) => model.value(token).kana;
+  const label = (token: WorkspaceToken) => hiragana(model.value(token).kana);
   if (model.error) {
     surface.text(model.error, a, 18); footer([{ id: 'workspace-reload', text: 'Загрузить черновик', run: () => { try { model.restore(); } catch (error) { model.error = error instanceof Error ? error.message : 'Черновик недоступен.'; } options.changed(); } }]); return;
   }
@@ -108,9 +110,10 @@ export function renderWorkspace(surface: StudySurface, model: AlbumWorkspace, op
     ] : [];
     if (controls.length) surface.row(controls.map(safe), { ...a, height: 44 });
     options.drawField({ ...a, y: a.y + 54, height: 44 }, model.search, token ? 'Найти замену' : 'Найти слово', value => { model.search = value; model.page = 0; options.changed(); });
+    const query = hiragana(model.search.toLowerCase());
     const actions: StudyAction[] = [
-      ...forms.filter(form => !model.search || `${form.surface} ${form.kana}`.includes(model.search)).map(form => ({ id: 'form:' + form.id, text: form.kana, run: () => model.form(token!.id, form.id) })),
-      ...model.words.filter(word => !model.search || `${word.surface} ${word.kana} ${word.meaningRu}`.toLowerCase().includes(model.search.toLowerCase())).map(word => ({ id: 'replace:' + word.id, text: `${word.kana} · ${word.meaningRu}`, run: () => model.choose(word) })),
+      ...forms.filter(form => hiragana(`${form.surface} ${form.kana}`).includes(query)).map(form => ({ id: 'form:' + form.id, text: hiragana(form.kana), run: () => model.form(token!.id, form.id) })),
+      ...model.words.filter(word => hiragana(`${word.surface} ${word.kana} ${word.meaningRu}`.toLowerCase()).includes(query)).map(word => ({ id: 'replace:' + word.id, text: `${hiragana(word.kana)} · ${word.meaningRu}`, run: () => model.choose(word) })),
     ];
     const available = a.height - 108, count = Math.max(1, Math.floor(available / 58)), max = Math.max(0, Math.ceil(actions.length / count) - 1); model.page = Math.min(model.page, max);
     actions.slice(model.page * count, (model.page + 1) * count).forEach((action, index) => surface.listAction(safe(action), { x: a.x, y: a.y + 108 + index * 58, width: a.width, height: 52 }, true, 22));

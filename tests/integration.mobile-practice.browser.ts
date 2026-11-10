@@ -71,6 +71,8 @@ try {
  await page.waitForFunction(()=>(window as any).__ALBUM__.snapshot().controls.some((c:any)=>c.id.startsWith('token:')));
  const question=await snap(page);const tokens=question.controls.filter((c:any)=>c.id.startsWith('token:'));expect(tokens.length).toBe(exercise.tokens.length);
  for(const token of tokens){expect(token.text).not.toMatch(/\p{Script=Han}/u);expect(question.texts.find((t:any)=>t.text===token.text).size).toBeGreaterThanOrEqual(24);}
+ await click(page,'workspace-add');await page.getByLabel('Найти слово',{exact:true}).fill('てーぶる');
+ await page.waitForFunction(()=>(window as any).__ALBUM__.snapshot().controls.some((c:any)=>c.id.startsWith('replace:')&&c.text.startsWith('てーぶる ·')));await click(page,'workspace-close');
  await geometry(page,'builder-question');
  for(const id of exercise.acceptedOrders[0]!)await click(page,'token:'+exercise.tokens.findIndex(t=>t.id===id));
  await click(page,'builder-check');await page.waitForFunction(()=>(window as any).__ALBUM__.snapshot().workspace?.verdict==='correct');await geometry(page,'builder-correct');
