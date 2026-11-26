@@ -1,4 +1,3 @@
-import { workspaceNext } from './helpers/workspace-next';
 import { chromium, expect, type Page } from '@playwright/test';
 import { seedAcceptedHistory } from './helpers/introduced-browser-fixture';
 import { createLink, consumeLink } from '../src/server/auth';
@@ -114,7 +113,12 @@ try {
         await expect(page.locator('.bank')).toBeVisible();
         for (const id of item.exercise.acceptedOrders[0]!) await page.locator(`.bank [data-token-id="${id}"]`).click();
         await expect(page.locator('[data-outcome="correct"]').first()).toBeVisible();
-        await workspaceNext(page).click();
+        // A correct verdict appears before optional analysis finishes. The
+        // generic Next helper can bind to Again while all ratings are disabled.
+        // This scenario deliberately answers correctly, so wait for Good itself.
+        await page.locator('.review-ratings button[data-rating="3"]').click();
+        await expect.poll(()=>submissions.at(-1)?.reviewId).toBe(item.id);
+        expect(submissions.at(-1)?.rating).toBe(3);
       } else {
         await expect(drill).toHaveAttribute('data-format', mode);
         if (mode === 'ja-ru') await expect(drill.getByTestId('card-face')).toContainText(item.construction.example.surface);
