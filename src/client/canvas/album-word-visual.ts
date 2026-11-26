@@ -1,5 +1,5 @@
 import { Assets, Rectangle, Sprite, Texture } from 'pixi.js';
-import { visualWordTitle, type VisualWordCard, type VisualWordMode } from '@app/shared/word-cards';
+import { visualWordTitle, visualWordCue, type VisualWordCard, type VisualWordMode } from '@app/shared/word-cards';
 import type { StudyAction, StudySurface } from './study-surface';
 import type { PrototypeLayout } from './prototype-layouts';
 
@@ -26,8 +26,8 @@ export function renderVisualWord(surface:StudySurface,view:PrototypeLayout,card:
  if(audio&&!pair)surface.action({...audio,text:'▶',accessibleLabel:'Прослушать слово'},{x:prompt.x+prompt.width-44,y:prompt.y,width:44,height:44});
  if(mode==='word-meaning'||revealed)surface.japanese(card,{...prompt,y:prompt.y+heading,height:prompt.height-heading-4},60,'center','furigana');
  if(showImage){
-  const width=pictureArea.width-20,textSize=pictureArea.height<280?14:16;
-  const caption=revealed?card.captionRu:'Назовите изученное слово по-японски.';
+  const width=pictureArea.width-20,textSize=revealed?(pictureArea.height<280?14:16):(pictureArea.height<280?18:24);
+  const caption=revealed?card.captionRu:visualWordCue(card);
   const captionHeight=surface.measure(caption,width,textSize);
   const separateMeaning=revealed&&!caption.includes(card.meaningRu);
   const meaningHeight=separateMeaning?surface.measure(card.meaningRu,width,textSize)+8:0;

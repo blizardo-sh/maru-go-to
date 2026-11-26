@@ -108,10 +108,10 @@ try {
     } finally { release?.(); await context.close(); }
     console.info(`PASS ${name}`);
   }
-  for (const name of ['guided-invalid-choice', 'guided-hidden-ack', 'guided-recall'].filter(selected)) {
+  for (const name of ['guided-invalid-choice', 'guided-hidden-ack', 'guided-recall', 'guided-listening-no-audio'].filter(selected)) {
     const context = await browser.newContext({ viewport: { width: 1280, height: 900 } }), page = await context.newPage(), submissions: LearningAdvance[] = [];
     const route = course.learning[0]!, wordIds = course.words.filter(word => word.lessonIds.includes(route.lessonId)).slice(0, 4).map(word => word.id), goal = route.goals[0]!, part = goal.parts[0]!;
-    const initial: LearningState = { lessonId: route.lessonId, routeVersion: route.version, version: 0, completedSteps: 0, totalSteps: 12, partIndex: 0, totalParts: 2, completed: false, step: { kind: 'word-practice', id: 'guided-first', goalId: goal.id, partId: part.id, wordId: wordIds[0]!, mode: 'ja-ru' }, ...(name === 'guided-recall' ? {} : { wordChoices: wordIds }) };
+    const initial: LearningState = { lessonId: route.lessonId, routeVersion: route.version, version: 0, completedSteps: 0, totalSteps: 12, partIndex: 0, totalParts: 2, completed: false, step: { kind: 'word-practice', id: 'guided-first', goalId: goal.id, partId: part.id, wordId: wordIds[0]!, mode: name === 'guided-listening-no-audio' ? 'listening' : 'ja-ru' }, ...(name === 'guided-recall' || name === 'guided-listening-no-audio' ? {} : { wordChoices: wordIds }) };
     let state = initial, gets = 0, release: (() => void) | undefined;
     await context.route('**/api/learning/**', async route => {
       if (route.request().method() === 'GET') { gets++; await route.fulfill({ json: state }); return; }
@@ -123,6 +123,16 @@ try {
     });
     try {
       await page.goto(`http://127.0.0.1:${address.port}/interaction?guided`); const session = page.getByTestId('guided-learning'); await expect(session).toHaveAttribute('data-step-id', 'guided-first');
+      if (name === 'guided-recall' || name === 'guided-listening-no-audio') {
+        // The synthetic fixture intentionally has no audio file. Wait for the failure
+        // instead of racing a fast key press against the browser's error event.
+        await expect(session.locator('.notice').filter({hasText:/Запись не загрузилась|Нажмите «Прослушать»/})).toBeVisible();
+      }
+      if (name === 'guided-listening-no-audio') {
+        const paper=page.getByTestId('review-gesture');await paper.press('Enter');await paper.press('ArrowRight');
+        await expect(paper).toHaveAttribute('data-card-phase','question');expect(submissions).toHaveLength(0);
+        checks.push(name);console.info(`PASS ${name}`);continue;
+      }
       if (name === 'guided-recall') { const paper = page.getByTestId('review-gesture'); await expect(paper).toHaveAttribute('data-card-phase', 'question'); await paper.press('ArrowRight'); expect(submissions).toHaveLength(0); await paper.press('Enter'); await expect(paper).toHaveAttribute('data-card-phase', 'answer'); expect(submissions).toHaveLength(0); await paper.press('ArrowRight'); }
       else await page.locator(`[data-choice-word-id=${JSON.stringify(wordIds[0])}]`).click();
       if (name === 'guided-invalid-choice') { await expect.poll(() => gets).toBe(2); await expect(page.getByRole('button', { name: 'Повторить сохранение', exact: true })).toHaveCount(0); expect(await page.evaluate(() => JSON.parse(localStorage.getItem('japanese-pending-learning:00000000-0000-4000-8000-000000000001') ?? '[]'))).toEqual([]); await expect(page.getByTestId('saved-count')).toHaveText('0'); await page.locator(`[data-choice-word-id=${JSON.stringify(wordIds[0])}]`).click(); }

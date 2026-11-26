@@ -32,10 +32,11 @@ describe('A1 illustrated word cards',()=>{
    const broken=structuredClone(course);mutate(Object.values(broken.catalog!.wordCards!.entries)[0]);expect(()=>validateCatalog(broken)).toThrow();
   }
  });
- test('question hides gloss and caption; written direction retains ruby even in kana preferences',()=>{
+ test('picture question specifies the meaning without Japanese; written direction still hides the meaning',()=>{
   const card=Object.values(cards.entries).find(card=>card.surface==='日本語')!;
   const picture=renderToStaticMarkup(<VisualWordFace card={card} mode="picture-word" revealed={false}/>);
   expect(picture).not.toContain(card.surface);expect(picture).not.toContain(card.captionRu);expect(picture).not.toContain('<rt>');
+  expect(picture).toContain(card.meaningRu);
   const written=renderToStaticMarkup(<VisualWordFace card={card} mode="word-meaning" revealed={false}/>);
   expect(written).toContain('<rt>');expect(written).not.toContain(card.image.src);expect(written).not.toContain(card.meaningRu);
   const answer=renderToStaticMarkup(<VisualWordFace card={card} mode="word-meaning" revealed/>);

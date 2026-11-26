@@ -4,7 +4,7 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { isDeepStrictEqual } from 'node:util';
 import { defaultCatalog } from '../shared/catalog';
 import type { Course } from '../shared/types';
-import { validateLearning, type GuidedLesson } from '../shared/learning';
+import { learningConstructions, validateLearning, type GuidedLesson } from '../shared/learning';
 import { validateCourse } from '../shared/course';
 import type { ThematicMaterial } from '../shared/training';
 import { marugotoBooks } from '../shared/books';
@@ -81,7 +81,7 @@ export function loadCourse(options: { includeBooks?: boolean; checkMedia?: boole
  if(course.learning){
   validateLearning(course,course.learning,true);
   for(const lesson of course.learning)for(const goal of lesson.goals)for(const part of goal.parts){
-   const paths=[...(part.tasks??[]).flatMap(task=>task.kind==='production'?[task.model.audioUrl]:task.passage.map(line=>line.audioUrl)),...part.words.flatMap(word=>[wordTarget(course,word.wordId)!.audioUrl!,word.example.audioUrl]),...(part.construction?[part.construction.example.audioUrl]:[])];
+   const paths=[...(part.tasks??[]).flatMap(task=>task.kind==='production'?[task.model.audioUrl]:task.passage.map(line=>line.audioUrl)),...part.words.flatMap(word=>[wordTarget(course,word.wordId)!.audioUrl!,word.example.audioUrl]),...learningConstructions(part).map(construction=>construction.example.audioUrl)];
    for(const path of options.checkMedia===false?[]:paths)if(!existsSync(new URL(`../../public${path}`,import.meta.url)))throw new Error(`Missing learning audio: ${path}`);
   }
  }

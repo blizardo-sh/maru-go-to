@@ -1,3 +1,4 @@
+import { learningConstructions } from '../shared/learning';
 import { isVisualWordMode, visualWordModes, wordCardFor } from '../shared/word-cards';
 import type { Course, ReviewItem, ReviewSubmission } from '../shared/types';
 import { stagedLearning, trainingEntry, wordPracticeFormats, type StudyPreparation } from '../shared/training';
@@ -8,7 +9,7 @@ import { counterAudio } from './counter-audio';
 export function studySpec(course:Course,item:ReviewItem):StudyPreparation {
  const base={key:'',kind:'word' as StudyPreparation['kind'],targetId:item.targetId,scope:'default',required:[] as string[],passed:[] as string[],introduced:false,referenceSeen:false,title:'',explanationRu:''};
  if(item.mode==='grammar'){
-  const prepared=item.construction??course.learning?.flatMap(route=>route.goals.flatMap(goal=>goal.parts.flatMap(part=>part.construction?[part.construction]:[]))).find(value=>value.exerciseId===item.exercise.id);
+  const prepared=item.construction??course.learning?.flatMap(route=>route.goals.flatMap(goal=>goal.parts.flatMap(part=>learningConstructions(part)))).find(value=>value.exerciseId===item.exercise.id);
   return {...base,key:'grammar:'+item.targetId,kind:'grammar',required:['ja-ru',...(prepared?.example.audioUrl?['listening']:[]),'grammar'],title:item.skill.title,explanationRu:prepared?.explanationRu??item.skill.explanationRu,...(prepared?.example?{example:prepared.example}:{})};
  }
  if(item.mode==='counter'){

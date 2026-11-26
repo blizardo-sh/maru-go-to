@@ -13,4 +13,6 @@ export function wordCardFor(word: Pick<Word,'id'|'lexemeId'> | string, catalog?:
  const id=typeof word==='string'?word:word.id;
  return catalog?.wordCards?.entries[id];
 }
-export const visualWordTitle = (mode: VisualWordMode) => mode === 'picture-word' ? 'Картинка → слово' : 'Слово → значение';
+export const visualWordTitle = (mode: VisualWordMode) => mode === 'picture-word' ? 'Вспомните по-японски' : 'Слово → значение';
+// The image supports recall; the cue specifies which of its possible meanings is intended.
+export const visualWordCue = (card: VisualWordCard) => card.kana === 'できます' ? 'Мочь, уметь; быть в состоянии сделать' : card.meaningRu;

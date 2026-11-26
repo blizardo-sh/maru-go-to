@@ -1,0 +1,11 @@
+{
+  "source": "macOS speech synthesis",
+  "voice": "Kyoko",
+  "rate": 150,
+  "words": 493,
+  "audioWords": 493,
+  "distinctReadings": 493,
+  "missingWordIds": [],
+  "errors": [],
+  "pronunciationReview": "not-human-reviewed"
+}

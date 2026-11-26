@@ -5,6 +5,7 @@ import { meaningDisplay, wordTarget } from '../shared/meanings';
 import { catalogFor } from '../shared/catalog';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { LearnerSettings, Rating, ReviewSchedule, ReviewResult, ReviewSubmission } from '../shared/types';
+import { learningConstructions } from '../shared/learning';
 import type { LearningAdvance, LearningAdvanceResult, LearningExample, LearningState, LearningPart } from '../shared/learning';
 import type { Snapshot, User } from './types';
 import { api, json, publicationHeaders } from './api';
@@ -57,6 +58,8 @@ export function useStepSpeech(active: boolean, volume: number, sound: SceneSound
 
 function Intro({ value, explanation, example, breakdown, active, busy, sound, onActivity, stepId, data, onContinue }: { value: LearningExample; explanation: string; example?: LearningExample; breakdown?: { text: string; explanationRu: string }[]; active: boolean; busy: boolean; sound: SceneSound; onActivity: (value: CardActivity) => void; stepId: string; data: Snapshot; onContinue: () => void }) {
   const speech = useStepSpeech(active, data.settings.speechVolume, sound, onActivity, stepId);
+  const introducedAudio = useRef('');
+  useEffect(() => { if (active && !busy && introducedAudio.current !== value.audioUrl) { introducedAudio.current = value.audioUrl; void speech.play(value.audioUrl); } }, [active, busy, value.audioUrl]);
   return <article className="guided-intro work-board stack" data-testid="learning-intro">
     <audio ref={speech.audio} preload="none" hidden />
     <div className="illustrated-card"><div className="card-art"><div className="inline-pronunciation guided-headword"><h2><Japanese value={value} forms={data.course.forms} mode={data.settings.orthography} /></h2><button className="quiet audio-icon" aria-label="Прослушать фразу" disabled={!active || busy || speech.playing} onClick={() => { void speech.play(value.audioUrl); }}>▶</button></div></div><div className="card-information"><small>{breakdown ? 'Как устроена фраза' : 'Знакомимся со словом или фразой'}</small><h2>{value.meaningRu}</h2><p className="guided-explanation"><JapaneseText text={explanation} course={data.course} mode={data.settings.orthography} /></p>
@@ -102,11 +105,12 @@ export function Recall({ value, wordId, mode, active, busy, sound, onActivity, s
   const speech = useStepSpeech(active, data.settings.speechVolume, sound, onActivity, stepId);
   const attemptedAudio = useRef(false);
   useEffect(() => { if (active && mode === 'listening' && !attemptedAudio.current) { attemptedAudio.current = true; void speech.play(value.audioUrl); } }, [active, mode, value.audioUrl]);
+  useEffect(() => { if (active && !busy && (revealed || mode === 'ja-ru' || mode === 'word-meaning') && !attemptedAudio.current) { attemptedAudio.current = true; void speech.play(value.audioUrl); } }, [active, busy, revealed, mode, value.audioUrl]);
   const played = speech.played === value.audioUrl;
   useEffect(() => { onActivity({ reviewId: stepId, activity: speech.playing ? 'listening' : revealed ? 'revealed' : 'idle', key: `${stepId}:${speech.playing ? 'listening' : revealed ? 'revealed' : 'idle'}` }); }, [speech.playing, revealed, stepId, onActivity]);
   const label = mode === 'listening' ? 'Вспомните смысл услышанного' : mode === 'ja-ru' ? 'Вспомните русский смысл' : 'Вспомните по-японски';
   function reveal() { if (!active || document.hidden || busy || !imageState.ready) return; if (mode === 'listening' && (!played || speech.error)) { void speech.play(value.audioUrl); return; } if (!revealed) sound.cue('reveal', stepId); if (draftKey) writeRecallDraft(draftKey, { revealed: true }); setRevealed(true); }
-  return <GestureCard schedule={schedule} againOnly={againOnly || !!draftKey && readRecallDraft(draftKey).helped} active={active} phase={revealed ? 'answer' : 'question'} enabled={imageState.ready && revealed && !busy && !speech.error && (mode !== 'listening' || played)} mode={mode} reviewId={stepId} onAdvance={rating => { speech.stop(); return grade(rating); }}>
+  return <GestureCard schedule={schedule} againOnly={againOnly || !!draftKey && readRecallDraft(draftKey).helped} active={active} phase={revealed ? 'answer' : 'question'} enabled={imageState.ready && revealed && !busy && (mode !== 'listening' || played && !speech.error)} mode={mode} reviewId={stepId} onAdvance={rating => { speech.stop(); return grade(rating); }}>
     <audio ref={speech.audio} preload="none" hidden />
     <FlipCard revealed={revealed} front={<button className="study-card word-card" data-card-face data-testid={!revealed ? "card-face" : undefined} disabled={!active || busy} onClick={reveal}>
       {visual&&isVisualWordMode(mode)?<VisualWordFace card={visual} mode={mode} revealed={false}/>:<><small>{label}</small><span className="prompt">{mode === 'listening' ? speech.playing ? 'Слушаем…' : played ? 'Что прозвучало?' : 'Прослушайте фразу' : mode === 'ru-ja' ? value.meaningRu : <Japanese value={value} forms={data.course.forms} mode={data.settings.orthography} />}</span></>}
@@ -224,7 +228,7 @@ export function GuidedLearning({ lessonId, user, data: incomingData, active, sou
   const viewState = quiz?.state ?? state;
   const step = viewState?.step; const goal = route?.goals.find(goal => goal.id === step?.goalId); const part = goal?.parts.find(part => part.id === step?.partId);
   const word = step && 'wordId' in step ? wordTarget(data.course, step.wordId) : undefined;
-  const construction = part?.construction;
+  const construction = part && step && learningConstructions(part).find(value => 'exerciseId' in step && value.exerciseId === step.exerciseId);
   const blocked = !active || busy || hasPending || loading || !!error;
   const percent = state && state.totalSteps > 0 ? Math.min(100, Math.floor(state.completedSteps / state.totalSteps * 100)) : 0;
   const companion = companionState({ reviewId: step?.id, activity, feedback, completed: state?.completedSteps ?? 0, total: state?.totalSteps ?? 0 });

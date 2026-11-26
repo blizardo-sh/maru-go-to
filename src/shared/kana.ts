@@ -5,4 +5,5 @@ export type KanaRow = { label: string; cells: (KanaEntry | null)[] };
 export type KanaAudioEntry = { soundKey: string; audioUrl: string } | { soundKey: null; unavailableReason: string };
 export interface KanaAudioManifest { voice: string; rate: number; pronunciationReview: 'not-human-reviewed'; entries: Record<string, KanaAudioEntry> }
 export const { basic: basicKana, voiced: voicedKana, yoon: yoonKana, small: smallKana } = defaultCatalog.kana;
+export const kanaReadingNote = (glyph: string) => glyph === 'ヲ' ? 'ヲ — отдельный знак, не オ. Обычно читается «о»; для ввода на клавиатуре — wo.' : glyph === 'を' ? 'を — отдельный знак, не お. Частица читается «о»; для ввода на клавиатуре — wo.' : '';
 export const katakana = (value: string): string => [...value].map(character => { const code = character.codePointAt(0)!; return code >= 0x3041 && code <= 0x3096 ? String.fromCodePoint(code + 0x60) : character; }).join('');

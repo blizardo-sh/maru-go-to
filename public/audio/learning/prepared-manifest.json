@@ -148,6 +148,28 @@
     },
     {
       "lessonId": "marugoto.starter-a1.lesson.03",
+      "partId": "l03-introduce-01",
+      "targetId": "marugoto.starter-a1.example.wa_identity.l03.1.variant-1",
+      "pointer": "/goals/0/parts/0/constructionVariants/0/example/audioUrl",
+      "surface": "わたしはエンジニアです。",
+      "kana": "わたしはエンジニアです。",
+      "spokenText": "わたしわエンジニアです。",
+      "previousAudioUrl": "/audio/learning/ff77f7f690c4adbc9c22.m4a",
+      "audioUrl": "/audio/learning/ff77f7f690c4adbc9c22.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.03",
+      "partId": "l03-introduce-01",
+      "targetId": "marugoto.starter-a1.example.wa_identity.l03.1.variant-2",
+      "pointer": "/goals/0/parts/0/constructionVariants/1/example/audioUrl",
+      "surface": "わたしはかいしゃいんです。",
+      "kana": "わたしはかいしゃいんです。",
+      "spokenText": "わたしわかいしゃいんです。",
+      "previousAudioUrl": "/audio/learning/92e541016cdc132fbdf8.m4a",
+      "audioUrl": "/audio/learning/92e541016cdc132fbdf8.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.03",
       "partId": "l03-introduce-02",
       "targetId": "marugoto.starter-a1.word.abf51c53069fc220",
       "pointer": "/goals/0/parts/1/words/2/example/audioUrl",
@@ -170,6 +192,28 @@
     },
     {
       "lessonId": "marugoto.starter-a1.lesson.03",
+      "partId": "l03-introduce-02",
+      "targetId": "marugoto.starter-a1.example.ga_ability.l03.1.variant-1",
+      "pointer": "/goals/0/parts/1/constructionVariants/0/example/audioUrl",
+      "surface": "わたしはえいごができます。",
+      "kana": "わたしはえいごができます。",
+      "spokenText": "わたしわえいごができます。",
+      "previousAudioUrl": "/audio/learning/d950bfab1db112510d52.m4a",
+      "audioUrl": "/audio/learning/d950bfab1db112510d52.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.03",
+      "partId": "l03-introduce-02",
+      "targetId": "marugoto.starter-a1.example.ga_ability.l03.1.variant-2",
+      "pointer": "/goals/0/parts/1/constructionVariants/1/example/audioUrl",
+      "surface": "わたしはちゅうごくごができます。",
+      "kana": "わたしはちゅうごくごができます。",
+      "spokenText": "わたしわちゅうごくごができます。",
+      "previousAudioUrl": "/audio/learning/410c2783c85b9274ebef.m4a",
+      "audioUrl": "/audio/learning/410c2783c85b9274ebef.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.03",
       "partId": "l03-introduce-03",
       "targetId": "marugoto.starter-a1.word.a149298ff8f2e16e",
       "pointer": "/goals/0/parts/2/words/0/example/audioUrl",
@@ -178,6 +222,28 @@
       "spokenText": "わたしわかいしゃいんです。",
       "previousAudioUrl": "/audio/learning/92e541016cdc132fbdf8.m4a",
       "audioUrl": "/audio/learning/92e541016cdc132fbdf8.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.03",
+      "partId": "l03-introduce-03",
+      "targetId": "marugoto.starter-a1.example.mo_addition.l03.1.variant-1",
+      "pointer": "/goals/0/parts/2/constructionVariants/0/example/audioUrl",
+      "surface": "わたしもエンジニアです。",
+      "kana": "わたしもエンジニアです。",
+      "spokenText": "わたしもエンジニアです。",
+      "previousAudioUrl": "/audio/learning/fc799cbac7ffaa755c91.m4a",
+      "audioUrl": "/audio/learning/fc799cbac7ffaa755c91.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.03",
+      "partId": "l03-introduce-03",
+      "targetId": "marugoto.starter-a1.example.mo_addition.l03.1.variant-2",
+      "pointer": "/goals/0/parts/2/constructionVariants/1/example/audioUrl",
+      "surface": "わたしもかいしゃいんです。",
+      "kana": "わたしもかいしゃいんです。",
+      "spokenText": "わたしもかいしゃいんです。",
+      "previousAudioUrl": "/audio/learning/aaf7965897802185464c.m4a",
+      "audioUrl": "/audio/learning/aaf7965897802185464c.m4a"
     },
     {
       "lessonId": "marugoto.starter-a1.lesson.03",
@@ -1314,6 +1380,28 @@
     },
     {
       "lessonId": "marugoto.starter-a1.lesson.05",
+      "partId": "l05-food-likes-01",
+      "targetId": "marugoto.starter-a1.example.ga_liking.l05.1.variant-1",
+      "pointer": "/goals/0/parts/0/constructionVariants/0/example/audioUrl",
+      "surface": "やさいがすきです。",
+      "kana": "やさいがすきです。",
+      "spokenText": "やさいがすきです。",
+      "previousAudioUrl": "/audio/learning/020fbd306019533b0247.m4a",
+      "audioUrl": "/audio/learning/020fbd306019533b0247.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.05",
+      "partId": "l05-food-likes-01",
+      "targetId": "marugoto.starter-a1.example.ga_liking.l05.1.variant-2",
+      "pointer": "/goals/0/parts/0/constructionVariants/1/example/audioUrl",
+      "surface": "にくがすきです。",
+      "kana": "にくがすきです。",
+      "spokenText": "にくがすきです。",
+      "previousAudioUrl": "/audio/learning/23e6dcd477ae04ddc0a3.m4a",
+      "audioUrl": "/audio/learning/23e6dcd477ae04ddc0a3.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.05",
       "partId": "l05-offer-drink-01",
       "targetId": "marugoto.starter-a1.word.4e928f19a0c80be0",
       "pointer": "/goals/1/parts/0/words/0/example/audioUrl",
@@ -1366,6 +1454,28 @@
       "spokenText": "おちゃおのみます。",
       "previousAudioUrl": "/audio/learning/5473290941c0c0bd10da.m4a",
       "audioUrl": "/audio/learning/5473290941c0c0bd10da.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.05",
+      "partId": "l05-offer-drink-01",
+      "targetId": "marugoto.starter-a1.example.o_object.l05.2.variant-1",
+      "pointer": "/goals/1/parts/0/constructionVariants/0/example/audioUrl",
+      "surface": "コーヒーをのみます。",
+      "kana": "コーヒーをのみます。",
+      "spokenText": "コーヒーおのみます。",
+      "previousAudioUrl": "/audio/learning/20f17b81f51e6d3ceb73.m4a",
+      "audioUrl": "/audio/learning/20f17b81f51e6d3ceb73.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.05",
+      "partId": "l05-offer-drink-01",
+      "targetId": "marugoto.starter-a1.example.o_object.l05.2.variant-2",
+      "pointer": "/goals/1/parts/0/constructionVariants/1/example/audioUrl",
+      "surface": "みずをのみます。",
+      "kana": "みずをのみます。",
+      "spokenText": "みずおのみます。",
+      "previousAudioUrl": "/audio/learning/4f40fef99cf9fe568804.m4a",
+      "audioUrl": "/audio/learning/4f40fef99cf9fe568804.m4a"
     },
     {
       "lessonId": "marugoto.starter-a1.lesson.05",
@@ -1432,6 +1542,28 @@
       "spokenText": "コーヒーおよくのみます。",
       "previousAudioUrl": "/audio/learning/d2103c71b849b647c3b1.m4a",
       "audioUrl": "/audio/learning/d2103c71b849b647c3b1.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.05",
+      "partId": "l05-breakfast-01",
+      "targetId": "marugoto.starter-a1.example.frequency.l05.1.variant-1",
+      "pointer": "/goals/2/parts/0/constructionVariants/0/example/audioUrl",
+      "surface": "おちゃをよくのみます。",
+      "kana": "おちゃをよくのみます。",
+      "spokenText": "おちゃおよくのみます。",
+      "previousAudioUrl": "/audio/learning/2fab819bf316c5d2b177.m4a",
+      "audioUrl": "/audio/learning/2fab819bf316c5d2b177.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.05",
+      "partId": "l05-breakfast-01",
+      "targetId": "marugoto.starter-a1.example.frequency.l05.1.variant-2",
+      "pointer": "/goals/2/parts/0/constructionVariants/1/example/audioUrl",
+      "surface": "ぎゅうにゅうをよくのみます。",
+      "kana": "ぎゅうにゅうをよくのみます。",
+      "spokenText": "ぎゅうにゅうおよくのみます。",
+      "previousAudioUrl": "/audio/learning/beaba1fa0d34b2982082.m4a",
+      "audioUrl": "/audio/learning/beaba1fa0d34b2982082.m4a"
     },
     {
       "lessonId": "marugoto.starter-a1.lesson.05",
@@ -1523,6 +1655,28 @@
     },
     {
       "lessonId": "marugoto.starter-a1.lesson.06",
+      "partId": "l06-favourite-dish-01",
+      "targetId": "marugoto.starter-a1.example.favourite_category.l06.1.variant-1",
+      "pointer": "/goals/0/parts/0/constructionVariants/0/example/audioUrl",
+      "surface": "すきなりょうりはカレーです。",
+      "kana": "すきなりょうりはカレーです。",
+      "spokenText": "すきなりょうりわカレーです。",
+      "previousAudioUrl": "/audio/learning/0c8027f935e56d8f0a35.m4a",
+      "audioUrl": "/audio/learning/0c8027f935e56d8f0a35.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.06",
+      "partId": "l06-favourite-dish-01",
+      "targetId": "marugoto.starter-a1.example.favourite_category.l06.1.variant-2",
+      "pointer": "/goals/0/parts/0/constructionVariants/1/example/audioUrl",
+      "surface": "すきなりょうりはラーメンです。",
+      "kana": "すきなりょうりはラーメンです。",
+      "spokenText": "すきなりょうりわラーメンです。",
+      "previousAudioUrl": "/audio/learning/98fe8fa245ec3bee1571.m4a",
+      "audioUrl": "/audio/learning/98fe8fa245ec3bee1571.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.06",
       "partId": "l06-choose-place-01",
       "targetId": "marugoto.starter-a1.word.01d367a193e3f9ce",
       "pointer": "/goals/1/parts/0/words/0/example/audioUrl",
@@ -1578,6 +1732,28 @@
     },
     {
       "lessonId": "marugoto.starter-a1.lesson.06",
+      "partId": "l06-choose-place-01",
+      "targetId": "marugoto.starter-a1.example.de_activity_place.l06.1.variant-1",
+      "pointer": "/goals/1/parts/0/constructionVariants/0/example/audioUrl",
+      "surface": "レストランでカレーをたべます。",
+      "kana": "レストランでカレーをたべます。",
+      "spokenText": "レストランでカレーおたべます。",
+      "previousAudioUrl": "/audio/learning/bd14e3eb3fb5f984d69c.m4a",
+      "audioUrl": "/audio/learning/bd14e3eb3fb5f984d69c.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.06",
+      "partId": "l06-choose-place-01",
+      "targetId": "marugoto.starter-a1.example.de_activity_place.l06.1.variant-2",
+      "pointer": "/goals/1/parts/0/constructionVariants/1/example/audioUrl",
+      "surface": "レストランでうどんをたべます。",
+      "kana": "レストランでうどんをたべます。",
+      "spokenText": "レストランでうどんおたべます。",
+      "previousAudioUrl": "/audio/learning/b28b5aa49d73bd599e81.m4a",
+      "audioUrl": "/audio/learning/b28b5aa49d73bd599e81.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.06",
       "partId": "l06-choose-place-02",
       "targetId": "marugoto.starter-a1.word.712e62ba4142b3c5",
       "pointer": "/goals/1/parts/1/words/0/example/audioUrl",
@@ -1619,6 +1795,28 @@
       "spokenText": "このレストランわやすいです。",
       "previousAudioUrl": "/audio/learning/e7eaae430dd651ea2405.m4a",
       "audioUrl": "/audio/learning/e7eaae430dd651ea2405.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.06",
+      "partId": "l06-choose-place-02",
+      "targetId": "marugoto.starter-a1.example.adjective_predicate.l06.1.variant-1",
+      "pointer": "/goals/1/parts/1/constructionVariants/0/example/audioUrl",
+      "surface": "このレストランはたかいです。",
+      "kana": "このレストランはたかいです。",
+      "spokenText": "このレストランわたかいです。",
+      "previousAudioUrl": "/audio/learning/294cbd5c47c9fe00e9a9.m4a",
+      "audioUrl": "/audio/learning/294cbd5c47c9fe00e9a9.m4a"
+    },
+    {
+      "lessonId": "marugoto.starter-a1.lesson.06",
+      "partId": "l06-choose-place-02",
+      "targetId": "marugoto.starter-a1.example.adjective_predicate.l06.1.variant-2",
+      "pointer": "/goals/1/parts/1/constructionVariants/1/example/audioUrl",
+      "surface": "あのレストランはやすいです。",
+      "kana": "あのレストランはやすいです。",
+      "spokenText": "あのレストランわやすいです。",
+      "previousAudioUrl": "/audio/learning/b39797665f43a2996ce1.m4a",
+      "audioUrl": "/audio/learning/b39797665f43a2996ce1.m4a"
     },
     {
       "lessonId": "marugoto.starter-a1.lesson.06",

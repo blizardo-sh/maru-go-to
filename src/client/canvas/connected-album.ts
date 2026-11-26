@@ -44,6 +44,7 @@ import { AlbumReference, renderReference } from './album-reference';
 import { personalCommands } from './personal-commands';
 import { AlbumLibrary, renderBook } from './album-book';
 import type { TrainingContext, LessonVideo } from '@app/shared/types';
+import { fragmentAudio } from '../fragment-audio';
 import { AlbumWorkspace, renderWorkspace } from './album-workspace';
 import { CounterPictures } from './counter-pictures';
 import { renderCounterCard, newCounterDraft } from './album-counter';
@@ -177,7 +178,7 @@ function schedule() {
 function mediaPriority(active: boolean) { sound.setSpeechPlaying(active); companion?.setSpeech(active); }
 function stopMedia() { ++mediaEpoch; mediaOwner = null; speechActive = false; mediaError = ''; audio.pause(); video.pause(); mediaPriority(false); }
 function changedCard() {
-  const next = page === 'grammar' ? `grammar:${grammar.turn}:${grammar.item?.id}` : page === 'kana' ? `kana:${kana.sessionId}:${kana.turn}` : page === 'counters' ? `counters:${counters.turn}:${counters.item?.id}` : page === 'review' ? `review:${review.turn}:${review.item?.id}` : page === 'lesson' ? `lesson:${flow.snapshot().version}:${flow.step?.id}` : key;
+  const next = page === 'grammar' ? `grammar:${grammar.turn}:${grammar.item?.id}` : page === 'kana' ? `kana:${kana.sessionId}:${kana.turn}` : page === 'counters' ? `counters:${counters.turn}:${counters.item?.id}` : page === 'review' ? `review:${review.turn}:${review.item?.id}` : page === 'lesson' ? `lesson:${flow.snapshot().version}:${flow.step?.id}:${flow.step?.kind === "word-intro" ? flow.session?.introIndex : ""}` : key;
   if (next === key) return;
   key = next; workspace = null; workspaceInput = null; counterDraft = newCounterDraft(); if (page === 'lesson' && flow.counter && flow.user && flow.state) { const stored = readRecallDraft(recallDraftKey(flow.user.id, flow.state)); counterDraft.helped = stored.helped; counterDraft.revealed = stored.revealed; } stopMedia(); heard = false; mediaError = ''; revealed = false; selected = null; wrong = []; bad = []; order = []; correct = null; manual = false; editor.element.value = ''; notice = '';
   if (page === 'lesson' && flow.recall && flow.draft.tokenIds) order = flow.draft.tokenIds.map(id => flow.construction!.tokens.findIndex(token => token.id === id)).filter(i => i >= 0);
@@ -197,7 +198,10 @@ function prepareCurrentAudio() {
   prepareCardAudio(audio, url);
   const next = page === 'lesson' ? flow.part?.words.slice((flow.session?.introIndex ?? 0) + 1, (flow.session?.introIndex ?? 0) + 3).map(intro => liveCatalog.words.find(value => value.id === intro.wordId)?.audioUrl) ?? [] : review.queue.slice(1, 3).map(item => 'word' in item ? item.word.audioUrl : undefined);
   warmCardAudio([page === 'lesson' ? flow.introduction?.example.audioUrl : undefined, ...next]);
-  if (listening() && autoPlayedKey !== key) { autoPlayedKey = key; void play(url, true); }
+  const mode = page === 'review' ? reviewWord()?.mode : flow.step && 'mode' in flow.step ? flow.step.mode : undefined;
+  const introduction = page === 'lesson' && (flow.step?.kind === 'word-intro' || flow.step?.kind === 'construction-intro');
+  const answerVisible = (page === 'lesson' || page === 'review') && (mode === 'ja-ru' || mode === 'word-meaning' || isRevealed());
+  if ((listening() || introduction || answerVisible) && autoPlayedKey !== key) { autoPlayedKey = key; void play(url, true); }
 }
 for (const name of ['ended', 'pause']) audio.addEventListener(name, () => { if (mediaOwner === 'speech' && (audio.paused || audio.ended)) { mediaOwner = null; speechActive = false; mediaPriority(false); } });
 audio.addEventListener('error', () => { if (speechActive && mediaOwner === 'speech' && audio.error) { heard = false; mediaError = 'Запись не загрузилась. Повторите прослушивание.'; mediaOwner = null; speechActive = false; mediaPriority(false); schedule(); } });
@@ -236,7 +240,7 @@ function acceptGrade(rating: Rating) {
 }
 function gradeActions(): StudyAction[] {
   const item = page === 'lesson' ? flow.state?.reviewItem : review.item;
-  return ratingOptions(item?.schedule).map(option => ({...option, fontSize: 14, accessibleLabel: `${option.label}, ${option.interval}`, enabled: allowed(option.rating) && (option.rating === 1 || page !== 'lesson' || !flow.draft.helped), run: () => { acceptGrade(option.rating); }}));
+  return ratingOptions(item?.schedule).map(option => ({...option, fontSize: 14, accessibleLabel: [option.label, option.interval].filter(Boolean).join(', '), enabled: allowed(option.rating) && (option.rating === 1 || page !== 'lesson' || !flow.draft.helped), run: () => { acceptGrade(option.rating); }}));
 }
 function safe(action: StudyAction): StudyAction { const ticket = flow.ticket(), turn = review.turn, counterTurn = counters.turn, grammarTurn = grammar.turn, kanaTurn = kana.turn, currentPage = page; return { ...action, enabled: action.enabled !== false && !busy(), run: () => { if (ready && !contextLost && !suspended && !busy() && !document.hidden && page === currentPage && counters.turn === counterTurn && grammar.turn === grammarTurn && kana.turn === kanaTurn && ticket.stepId === flow.ticket().stepId && ticket.revision === flow.ticket().revision && turn === review.turn) { sound.unlock(flow.user ? chosenScene : undefined); action.run(); } } }; }
 function footer(actions: StudyAction[]) { surface.footer(actions.map(safe)); }
@@ -479,7 +483,7 @@ function renderBuilder() {
   const draftKey = guided ? recallDraftKey(owner, flow.state!) + ':workspace' : `japanese-workspace:${owner}:${item.publicationId ?? ''}:${item.id}:${item.version}`;
   if (!workspace || workspace.key !== draftKey) {
     const originalIds = new Set(item.exercise.tokens.map(token => course.forms.find(form => form.id === token.formId)!.wordId));
-    workspace = new AlbumWorkspace(draftKey, course, item.exercise, course.words.filter(word => word.lessonIds.includes(item.exercise.lessonId) || originalIds.has(word.id) || flow.introducedWordIds.has(word.id) || !!context?.listId && !!library.data?.lists.find(list=>list.id===context!.listId)?.words.some(value=>value.id===word.id)), () => { flow.revise(); schedule(); });
+    workspace = new AlbumWorkspace(draftKey, course, item.exercise, course.words.filter(word => word.lessonIds.includes(item.exercise.lessonId) || originalIds.has(word.id) || flow.introducedWordIds.has(word.id) || !!context?.listId && !!library.data?.lists.find(list=>list.id===context!.listId)?.words.some(value=>value.id===word.id)), () => { flow.revise(); schedule(); }, token => { const url = fragmentAudio(course, token); if (url) void play(url); });
     if (guided && !localStorage.getItem(draftKey) && flow.draft.tokenIds) workspace.tokens = flow.draft.tokenIds.map(id => workspace!.original.find(token => token.id === id)!).filter(Boolean);
   }
   const model = workspace, currentPage = page, current = () => workspace === model && flow.user?.id === owner && page === currentPage && (guided || session.item === item);
@@ -666,6 +670,16 @@ function draw() {
     const current = () => page === bindPage && counters.turn === counterTurn && ticket.stepId === flow.ticket().stepId && ticket.revision === flow.ticket().revision && turn === review.turn;
     const bounds = albumPages(view).right, layers = liftAlbumPage(surface.root, ui, bounds, textures.paper);
     leaf.bind({ ...layers, bounds, revealBounds: view.prompt ? albumPages(view).spread : bounds, viewportWidth: view.width, canReveal: () => current() && !isRevealed() && !busy() && (!listening() || heard && !mediaError), canGrade: rating => current() && allowed(rating), reveal, grade: () => {}, accept: acceptGrade, controls: () => surface.controls.map(c => c.rect) });
+  }
+  if (page === 'lesson' && flow.step?.kind === 'word-intro' && !error && !menuOpen) {
+    const ticket = flow.ticket(), index = flow.session!.introIndex;
+    const current = () => page === 'lesson' && flow.step?.kind === 'word-intro' && flow.ticket().revision === ticket.revision && !busy() && !document.hidden;
+    const bounds = albumPages(view).right, layers = liftAlbumPage(surface.root, ui, bounds, textures.paper);
+    leaf.bind({ ...layers, bounds, viewportWidth: view.width, canReveal: () => false, canGrade: direction => current() && (direction === 1 || index > 0), reveal: () => {}, grade: direction => {
+      if (!current()) return;
+      if (direction === 1 && index === flow.part!.words.length - 1) void advance('start-practice');
+      else { flow.introduce(ticket, direction === 1 ? 1 : -1); introTab = 0; schedule(); }
+    }, controls: () => surface.controls.map(control => control.rect) });
   }
   prepareCurrentAudio();
   sound.configure(settings ?? defaultSoundSettings, chosenScene, !!flow.user && !!settings, !document.hidden);

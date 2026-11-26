@@ -30,7 +30,7 @@ export class AlbumWorkspace {
   readonly original: WorkspaceToken[];
   readonly bankOrder: string[];
   private saved: string | null;
-  constructor(readonly key: string, readonly course: Course, readonly exercise: Exercise, readonly words: Word[], private changed: () => void) {
+  constructor(readonly key: string, readonly course: Course, readonly exercise: Exercise, readonly words: Word[], private changed: () => void, private added?: (token: WorkspaceToken) => void) {
     this.original = exercise.tokens.map(token => ({ ...token, wordId: course.forms.find(form => form.id === token.formId)!.wordId }));
     this.bankOrder = shuffledTokens(this.original.map(token => token.id));
     this.saved = null;
@@ -68,7 +68,9 @@ export class AlbumWorkspace {
       if (localStorage.getItem(this.key) !== this.saved) throw new Error('Черновик изменён в другой вкладке. Загрузите его перед редактированием.');
       const exploring = manualText !== null || (research || this.exploring) && !preparedWorkspace(this.exercise, this.course, tokens);
       const next = JSON.stringify({ tokens, manualText, exploring }); localStorage.setItem(this.key, next);
+      const added = tokens.filter(token => !this.tokens.some(previous => previous.id === token.id));
       this.revision++; this.saved = next; this.tokens = tokens; this.manualText = manualText; this.exploring = exploring; this.result = ''; this.failure = ''; this.verdict = null; this.error = ''; this.changed();
+      for (const token of added) this.added?.(token);
     } catch (error) { this.error = error instanceof Error ? error.message : 'Не удалось сохранить черновик на устройстве.'; this.changed(); }
   }
   reset() { this.exploring = false; this.update([]); }

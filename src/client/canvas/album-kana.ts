@@ -1,5 +1,5 @@
 import { Assets, Rectangle, Sprite, Texture } from 'pixi.js';
-import { katakana } from '@app/shared/kana';
+import { katakana, kanaReadingNote } from '@app/shared/kana';
 import { kanaMnemonic, kanaMnemonicFrame } from '@app/shared/kana-mnemonics';
 import { ratingOptions } from '@app/client/review-ratings';
 import type { CourseCatalog } from '@app/shared/catalog';
@@ -30,7 +30,7 @@ export function renderKana(surface:StudySurface,flow:KanaFlow,catalog:CourseCata
   if(flow.revealed){
    const mnemonic=kanaMnemonic(item.glyph),answer=`${item.glyph} — ${item.reading}`;
    surface.text(answer,{...right,height:40},28,true,true);
-   const hint=mnemonic?`${mnemonic.title}. ${mnemonic.hint}`:'Составной звук: прочитайте оба знака слитно.';
+   const hint=[kanaReadingNote(item.glyph),mnemonic?`${mnemonic.title}. ${mnemonic.hint}`:'Составной звук: прочитайте оба знака слитно.'].filter(Boolean).join('\n');
    const textSize=right.height<250?14:16,hintHeight=surface.measure(hint,right.width-16,textSize);
    const art={x:right.x+8,y:right.y+46,width:right.width-16,height:Math.max(0,right.height-hintHeight-58)};
    if(art.height>=40)mnemonicPicture(surface,item.glyph,art,options.changed);

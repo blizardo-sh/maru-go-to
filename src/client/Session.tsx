@@ -124,7 +124,7 @@ function WordCard({ item, data, userId, onNext, onSaved, saveSettings, settingsB
   const visual=isVisualWordMode(item.mode)?wordCardFor(item.word,data.course.catalog):undefined;
   const imageState=useVisualWordImage(visual || undefined);
   const [revealed, setRevealed] = useState(false);
-  const speech = useCardSpeech(item.word.audioUrl, item.mode === 'listening', active, data.settings.speechVolume, sound);
+  const speech = useCardSpeech(item.word.audioUrl, item.mode === 'listening' || item.mode === 'ja-ru' || item.mode === 'word-meaning' || revealed, active, data.settings.speechVolume, sound);
   const saving = useReviewSave(userId, onSaved, (submission, result) => { const kind = result.correct === false || submission.rating === 1 ? 'again' : 'good'; sound.cue(kind, result.attemptId); onNext({ attemptId: result.attemptId, kind }, result); });
   const unavailable = !imageState.ready || item.mode === 'listening' && (!item.word.audioUrl || !speech.played || !!speech.error);
   const enabled = active && !saving.busy && !saving.pending;

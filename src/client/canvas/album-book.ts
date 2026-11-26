@@ -11,7 +11,7 @@ import type { Snapshot } from '@app/client/types';
 import type { LessonVideo } from '@app/shared/types';
 import type { Rect } from './canvas';
 import type { StudyAction, StudySurface } from './study-surface';
-import { bookResources, bookForLesson, lessonAvailability, unitLabel } from '@app/shared/books';
+import { sourceTitle, bookResources, bookForLesson, lessonAvailability, unitLabel } from '@app/shared/books';
 
 export class AlbumLibrary {
   data: Snapshot | null = null;
@@ -119,7 +119,7 @@ export function renderBook(surface: StudySurface, library: AlbumLibrary, options
       return {id:'book-part:'+part.id,text:`${goal.titleRu} · ${part.words.length} слов · ${progress?.completedSteps??0}/${progress?.totalSteps??learningParts({...route,goals:[{...goal,parts:[part]}]})[0]?.length??0}`,run:()=>{library.detail=[goal.titleRu,goal.introductionRu??'',...part.words.map(word=>{const value=wordTarget(data.course,word.wordId)!;return `${value.surface} · ${value.kana} — ${value.meaningRu}`;}),part.construction?.explanationRu??''].filter(Boolean).join('\n');options.changed();}};
     }))??[];
     else if(library.tab==='videos') items=[...(lesson.videos??[]).map(material=>({id:'book-video:'+material.id,text:material.title,run:()=>options.video(material)})),
-      ...[...bookResources(book.id),...Array.from(new Map(lesson.sourceRefs.map(source=>[source.url,{title:source.label??'Официальный источник',url:source.url}])).values())].map((source,index)=>({id:'book-source:'+index,text:source.title+' ↗',run:()=>{window.open(source.url,'_blank','noopener,noreferrer');}}))];
+      ...[...bookResources(book.id),...Array.from(new Map(lesson.sourceRefs.map(source=>[source.url,{title:sourceTitle(source),url:source.url}])).values())].map((source,index)=>({id:'book-source:'+index,text:source.title+' ↗',run:()=>{window.open(source.url,'_blank','noopener,noreferrer');}}))];
     else {
       const words=wordTargets(data.course).filter(word=>studyWord(word)&&word.lessonIds.includes(lesson.id)&&!word.trainingOnly&&(library.tab==='words'?mainIds.has(word.id):true));
       items=[...words.map(word=>({id:'book-word:'+word.id,text:`${word.surface} · ${word.kana} — ${word.meaningRu}`,run:()=>{library.detailTarget={kind:'word',id:word.id};library.detail=`${word.surface} · ${word.kana}\n${word.meaningRu}`+(word.meaningContext?`\n\n${word.meaningContext.surface}\n${word.meaningContext.kana}\n${word.meaningContext.meaningRu}`:'');options.changed();}})),...(library.tab==='extra'?data.course.skills.filter(skill=>data.course.exercises.some(exercise=>exercise.lessonId===lesson.id&&exercise.skillId===skill.id)).map(skill=>({id:'book-skill:'+skill.id,text:skill.title,run:()=>{library.detailTarget={kind:'grammar',id:skill.id};library.detail=skill.title+'\n'+skill.explanationRu;options.changed();}})):[])];
