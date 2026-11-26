@@ -319,8 +319,8 @@ export function reconcileLearningRoute(previous: GuidedLesson, current: GuidedLe
   const addedVariants = new Set(current.goals.flatMap(goal => goal.parts.flatMap(part => (part.constructionVariants ?? []).map(value => value.exerciseId))));
   const previouslySkipped = new Set((state.skippedStepIds ?? []).flatMap(id => { const step = before.find(value => value.id === id); return step ? [key(step)] : []; }));
   const skipped = parts.flat().filter(step => {
-    if (previouslySkipped.has(key(step)) && !done.has(key(step))) return true;
-    if ((step.kind === 'construction-intro' || step.kind === 'construction-practice') && addedVariants.has(step.exerciseId)) return !before.some(old => key(old) === key(step)) && done.has(`complete:${step.partId}`);
+    // Only content additions inherit skips; legacy "already known" marks remain reversible.
+    if ((step.kind === 'construction-intro' || step.kind === 'construction-practice') && addedVariants.has(step.exerciseId)) return !done.has(key(step)) && done.has(`complete:${step.partId}`) && (previouslySkipped.has(key(step)) || !before.some(old => key(old) === key(step)));
     return step.kind === 'word-practice' && isVisualWordMode(step.mode) && !done.has(key(step)) && (done.has(`complete:${step.partId}`) || historicalWords.has(step.wordId));
   }).map(step => step.id);
   for (const id of skipped) completed.add(id);
