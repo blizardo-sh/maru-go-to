@@ -1,6 +1,6 @@
 {
   "lessonId": "marugoto.starter-a1.lesson.05",
-  "version": "2026-10-21.1",
+  "version": "2026-11-26.1",
   "titleRu": "Еда и предпочтения",
   "goals": [
     {
@@ -136,7 +136,101 @@
                 "explanationRu": "Вежливое завершение именной фразы."
               }
             ]
-          }
+          },
+          "constructionVariants": [
+            {
+              "exerciseId": "marugoto.starter-a1.example.ga_liking.l05.1.variant-1",
+              "explanationRu": "Предмет симпатии в утвердительной фразе обычно отмечается が: N が すきです. すき значит «нравится», это не глагол действия. Отрицание — すきじゃないです; в противопоставлении часто используется は.",
+              "example": {
+                "surface": "やさいがすきです。",
+                "kana": "やさいがすきです。",
+                "meaningRu": "Мне нравятся овощи.",
+                "segments": [
+                  {
+                    "surface": "やさい"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "すき"
+                  },
+                  {
+                    "surface": "です"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "やさいがすきです。",
+                "audioUrl": "/audio/learning/020fbd306019533b0247.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "やさい",
+                  "explanationRu": "овощи"
+                },
+                {
+                  "text": "が",
+                  "explanationRu": "Отмечает предмет умения, симпатии или то, что существует, в зависимости от модели."
+                },
+                {
+                  "text": "すき",
+                  "explanationRu": "Нравится, любимый."
+                },
+                {
+                  "text": "です",
+                  "explanationRu": "Вежливое завершение именной фразы."
+                }
+              ]
+            },
+            {
+              "exerciseId": "marugoto.starter-a1.example.ga_liking.l05.1.variant-2",
+              "explanationRu": "Предмет симпатии в утвердительной фразе обычно отмечается が: N が すきです. すき значит «нравится», это не глагол действия. Отрицание — すきじゃないです; в противопоставлении часто используется は.",
+              "example": {
+                "surface": "にくがすきです。",
+                "kana": "にくがすきです。",
+                "meaningRu": "Мне нравится мясо.",
+                "segments": [
+                  {
+                    "surface": "にく"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "すき"
+                  },
+                  {
+                    "surface": "です"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "にくがすきです。",
+                "audioUrl": "/audio/learning/23e6dcd477ae04ddc0a3.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "にく",
+                  "explanationRu": "мясо"
+                },
+                {
+                  "text": "が",
+                  "explanationRu": "Отмечает предмет умения, симпатии или то, что существует, в зависимости от модели."
+                },
+                {
+                  "text": "すき",
+                  "explanationRu": "Нравится, любимый."
+                },
+                {
+                  "text": "です",
+                  "explanationRu": "Вежливое завершение именной фразы."
+                }
+              ]
+            }
+          ]
         }
       ],
       "videoIds": [
@@ -272,7 +366,87 @@
                 "explanationRu": "пить"
               }
             ]
-          }
+          },
+          "constructionVariants": [
+            {
+              "exerciseId": "marugoto.starter-a1.example.o_object.l05.2.variant-1",
+              "explanationRu": "Частица を отмечает то, что едят или пьют; читается «о». За ней следует вежливый глагол: たべます или のみます. Отрицание образуется заменой ます на ません.",
+              "example": {
+                "surface": "コーヒーをのみます。",
+                "kana": "コーヒーをのみます。",
+                "meaningRu": "Я пью кофе.",
+                "segments": [
+                  {
+                    "surface": "コーヒー"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "のみます"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "コーヒーおのみます。",
+                "audioUrl": "/audio/learning/20f17b81f51e6d3ceb73.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "コーヒー",
+                  "explanationRu": "кофе"
+                },
+                {
+                  "text": "を",
+                  "explanationRu": "Объект действия; произносится «о»."
+                },
+                {
+                  "text": "のみます",
+                  "explanationRu": "пить"
+                }
+              ]
+            },
+            {
+              "exerciseId": "marugoto.starter-a1.example.o_object.l05.2.variant-2",
+              "explanationRu": "Частица を отмечает то, что едят или пьют; читается «о». За ней следует вежливый глагол: たべます или のみます. Отрицание образуется заменой ます на ません.",
+              "example": {
+                "surface": "みずをのみます。",
+                "kana": "みずをのみます。",
+                "meaningRu": "Я пью воду.",
+                "segments": [
+                  {
+                    "surface": "みず"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "のみます"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "みずおのみます。",
+                "audioUrl": "/audio/learning/4f40fef99cf9fe568804.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "みず",
+                  "explanationRu": "вода (холодная)"
+                },
+                {
+                  "text": "を",
+                  "explanationRu": "Объект действия; произносится «о»."
+                },
+                {
+                  "text": "のみます",
+                  "explanationRu": "пить"
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "l05-offer-drink-02",
@@ -453,7 +627,101 @@
                 "explanationRu": "пить"
               }
             ]
-          }
+          },
+          "constructionVariants": [
+            {
+              "exerciseId": "marugoto.starter-a1.example.frequency.l05.1.variant-1",
+              "explanationRu": "よく означает «часто» и сочетается с утвердительным глаголом. あまり с отрицанием выражает «не очень часто». Не путайте あまりのみません с полным «никогда не пью».",
+              "example": {
+                "surface": "おちゃをよくのみます。",
+                "kana": "おちゃをよくのみます。",
+                "meaningRu": "Я часто пью чай.",
+                "segments": [
+                  {
+                    "surface": "おちゃ"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "よく"
+                  },
+                  {
+                    "surface": "のみます"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "おちゃおよくのみます。",
+                "audioUrl": "/audio/learning/2fab819bf316c5d2b177.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "おちゃ",
+                  "explanationRu": "зелёный чай; чай"
+                },
+                {
+                  "text": "を",
+                  "explanationRu": "Объект действия; произносится «о»."
+                },
+                {
+                  "text": "よく",
+                  "explanationRu": "Часто."
+                },
+                {
+                  "text": "のみます",
+                  "explanationRu": "пить"
+                }
+              ]
+            },
+            {
+              "exerciseId": "marugoto.starter-a1.example.frequency.l05.1.variant-2",
+              "explanationRu": "よく означает «часто» и сочетается с утвердительным глаголом. あまり с отрицанием выражает «не очень часто». Не путайте あまりのみません с полным «никогда не пью».",
+              "example": {
+                "surface": "ぎゅうにゅうをよくのみます。",
+                "kana": "ぎゅうにゅうをよくのみます。",
+                "meaningRu": "Я часто пью молоко.",
+                "segments": [
+                  {
+                    "surface": "ぎゅうにゅう"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "よく"
+                  },
+                  {
+                    "surface": "のみます"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "ぎゅうにゅうおよくのみます。",
+                "audioUrl": "/audio/learning/beaba1fa0d34b2982082.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "ぎゅうにゅう",
+                  "explanationRu": "молоко"
+                },
+                {
+                  "text": "を",
+                  "explanationRu": "Объект действия; произносится «о»."
+                },
+                {
+                  "text": "よく",
+                  "explanationRu": "Часто."
+                },
+                {
+                  "text": "のみます",
+                  "explanationRu": "пить"
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "l05-breakfast-02",
@@ -1844,6 +2112,218 @@
         "sentenceEnd": "。",
         "reviewStatus": "source-checked",
         "translationRu": "Я часто пью кофе."
+      },
+      {
+        "id": "marugoto.starter-a1.example.ga_liking.l05.1.variant-1",
+        "lessonId": "marugoto.starter-a1.lesson.05",
+        "skillId": "marugoto.starter-a1.skill.ga_liking",
+        "promptRu": "Мне нравятся овощи.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.b62a3eaa33d9f916"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.a0bd4b52e58a66fe"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.7ab1176298c4abbf"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Мне нравятся овощи."
+      },
+      {
+        "id": "marugoto.starter-a1.example.ga_liking.l05.1.variant-2",
+        "lessonId": "marugoto.starter-a1.lesson.05",
+        "skillId": "marugoto.starter-a1.skill.ga_liking",
+        "promptRu": "Мне нравится мясо.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.d29b94dfa9993793"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.a0bd4b52e58a66fe"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.7ab1176298c4abbf"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Мне нравится мясо."
+      },
+      {
+        "id": "marugoto.starter-a1.example.o_object.l05.2.variant-1",
+        "lessonId": "marugoto.starter-a1.lesson.05",
+        "skillId": "marugoto.starter-a1.skill.o_object",
+        "promptRu": "Я пью кофе.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.56ef094cc2479760"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.47dc4888725c4031"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.ce1d595040423b11"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я пью кофе."
+      },
+      {
+        "id": "marugoto.starter-a1.example.o_object.l05.2.variant-2",
+        "lessonId": "marugoto.starter-a1.lesson.05",
+        "skillId": "marugoto.starter-a1.skill.o_object",
+        "promptRu": "Я пью воду.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.d50d57de857fae5a"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.47dc4888725c4031"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.ce1d595040423b11"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я пью воду."
+      },
+      {
+        "id": "marugoto.starter-a1.example.frequency.l05.1.variant-1",
+        "lessonId": "marugoto.starter-a1.lesson.05",
+        "skillId": "marugoto.starter-a1.skill.frequency",
+        "promptRu": "Я часто пью чай.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.37fe889e2d0369b6"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.47dc4888725c4031"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.a96dbe8783fff584"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.ce1d595040423b11"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4"
+          ],
+          [
+            "t3",
+            "t1",
+            "t2",
+            "t4"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я часто пью чай."
+      },
+      {
+        "id": "marugoto.starter-a1.example.frequency.l05.1.variant-2",
+        "lessonId": "marugoto.starter-a1.lesson.05",
+        "skillId": "marugoto.starter-a1.skill.frequency",
+        "promptRu": "Я часто пью молоко.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.6d3535a883bea544"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.47dc4888725c4031"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.a96dbe8783fff584"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.ce1d595040423b11"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4"
+          ],
+          [
+            "t3",
+            "t1",
+            "t2",
+            "t4"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я часто пью молоко."
       }
     ]
   }

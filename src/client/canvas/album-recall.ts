@@ -15,7 +15,7 @@ export function renderAlbumRecall(surface: StudySurface, view: PrototypeLayout, 
     const audioY = a.y + Math.max(titleHeight + 12, listen ? (a.height - 300) / 2 : 0);
     if (audio) surface.action({ ...audio, text: listen ? '▶' : '▶ Прослушать', bare: false, fontSize: 16 }, { x: a.x + (a.width - buttonWidth) / 2, y: audioY, width: buttonWidth, height: buttonHeight });
     const top = audioY + buttonHeight + 18, available = a.y + a.height - top - 8;
-    let size = Math.min(f, 22), glossHeight = surface.measure(value.meaningRu, width, size);
+    let size = mode === 'ru-ja' && !revealed ? 30 : Math.max(f, 22), glossHeight = surface.measure(value.meaningRu, width, size);
     while (size > 14 && glossHeight > available * .5) glossHeight = surface.measure(value.meaningRu, width, --size);
     const hint = 'Коснитесь карточки, чтобы раскрыть ответ';
     const hintHeight = surface.measure(hint, width, 15), gap = 18;

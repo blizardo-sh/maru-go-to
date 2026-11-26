@@ -31,6 +31,7 @@ export interface LearningPart {
   id: string;
   words: LearningWord[];
   construction?: LearningConstruction;
+  constructionVariants?: LearningConstruction[];
 }
 export interface LearningGoal {
   id: string;
@@ -123,6 +124,8 @@ export interface LearningAdvanceResult {
 }
 export type LearningCourse = Course & { learning: GuidedLesson[] };
 
+export const learningConstructions = (part: LearningPart): LearningConstruction[] => part.construction ? [part.construction, ...(part.constructionVariants ?? [])] : [];
+
 export function learningParts(lesson: GuidedLesson): LearningStep[][] {
   return lesson.goals.flatMap(goal => goal.parts.map((part, index) => {
     const base = { partId: part.id, goalId: goal.id };
@@ -130,8 +133,8 @@ export function learningParts(lesson: GuidedLesson): LearningStep[][] {
     for (const word of part.words) {
       for (const mode of ['ja-ru', 'listening', 'ru-ja', ...(word.visualCards ? ['picture-word','word-meaning'] as const : [])] as const) steps.push({ ...base, id: `${part.id}:${mode}:${word.wordId}`, kind: 'word-practice', wordId: word.wordId, mode });
     }
-    if (part.construction) {
-      const exerciseId = part.construction.exerciseId;
+    for (const construction of learningConstructions(part)) {
+      const exerciseId = construction.exerciseId;
       steps.push({ ...base, id: `${part.id}:intro:${exerciseId}`, kind: 'construction-intro', exerciseId });
       for (const mode of ['ja-ru', 'listening', 'grammar'] as const) steps.push({ ...base, id: `${part.id}:${mode}:${exerciseId}`, kind: 'construction-practice', exerciseId, mode });
     }
@@ -275,10 +278,11 @@ export function validateLearning(course: Course, lessons: GuidedLesson[], comple
           ensure(audio(word!.audioUrl ?? '') && text(introduction.explanationRu), `word introduction ${introduction.wordId}`);
           example(introduction.example, introduction.wordId);
         }
-        if (part.construction) {
-          const construction = part.construction;
+        ensure(!part.constructionVariants || !!part.construction && Array.isArray(part.constructionVariants) && part.constructionVariants.length <= 5, `construction variants ${part.id}`);
+        for (const construction of learningConstructions(part)) {
           const exercise = course.exercises.find(item => item.id === construction.exerciseId);
           const skill = course.skills.find(item => item.id === exercise?.skillId);
+          ensure(exercise?.skillId === course.exercises.find(item => item.id === part.construction!.exerciseId)?.skillId, `variant skill ${construction.exerciseId}`);
           ensure(exercise?.lessonId === route.lessonId && exercise.reviewStatus !== 'draft' && skill && skill.reviewStatus !== 'draft' && skill.lessonIds.includes(route.lessonId) && officialSource(skill), `construction scope or readiness ${construction.exerciseId}`);
           ensure(text(construction.explanationRu) && construction.breakdown.length && construction.breakdown.every(piece => text(piece.text) && text(piece.explanationRu)), `construction explanation ${construction.exerciseId}`);
           example(construction.example, construction.exerciseId);
@@ -312,7 +316,13 @@ export function reconcileLearningRoute(previous: GuidedLesson, current: GuidedLe
   const completed = new Set(parts.flat().filter(step => step.kind !== 'part-complete' && done.has(key(step))).map(step => step.id));
   // New picture exercises never reopen an already completed group or imply FSRS evidence.
   const historicalWords = new Set(before.filter(step => step.kind === 'word-practice' && done.has(key(step)) && done.has(`complete:${step.partId}`)).map(step => (step as Extract<LearningStep,{kind:'word-practice'}>).wordId));
-  const skipped = parts.flat().filter(step => step.kind === 'word-practice' && isVisualWordMode(step.mode) && !done.has(key(step)) && (done.has(`complete:${step.partId}`) || historicalWords.has(step.wordId))).map(step => step.id);
+  const addedVariants = new Set(current.goals.flatMap(goal => goal.parts.flatMap(part => (part.constructionVariants ?? []).map(value => value.exerciseId))));
+  const previouslySkipped = new Set((state.skippedStepIds ?? []).flatMap(id => { const step = before.find(value => value.id === id); return step ? [key(step)] : []; }));
+  const skipped = parts.flat().filter(step => {
+    if (previouslySkipped.has(key(step)) && !done.has(key(step))) return true;
+    if ((step.kind === 'construction-intro' || step.kind === 'construction-practice') && addedVariants.has(step.exerciseId)) return !before.some(old => key(old) === key(step)) && done.has(`complete:${step.partId}`);
+    return step.kind === 'word-practice' && isVisualWordMode(step.mode) && !done.has(key(step)) && (done.has(`complete:${step.partId}`) || historicalWords.has(step.wordId));
+  }).map(step => step.id);
   for (const id of skipped) completed.add(id);
   for (const part of parts) {
     const summary = part.find(step => step.kind === 'part-complete')!;

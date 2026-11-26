@@ -12,8 +12,8 @@ export function intervalLabel(seconds: number): string {
 export function ratingOptions(schedule?: ReviewSchedule) {
   return ([['again', 'Снова'], ['hard', 'Трудно'], ['remember', 'Хорошо'], ['easy', 'Легко']] as const).map(([id, label], index) => {
     const rating = (index + 1) as Rating;
-    const interval = schedule?.kind === 'review' ? intervalLabel(schedule.intervals[rating]) : schedule?.kind === 'practice' ? 'Практика' : 'Учёба';
-    return { id: `grade-${id}`, rating, label, interval, text: `${label}\n${interval}` };
+    const interval = schedule?.kind === 'review' ? intervalLabel(schedule.intervals[rating]) : schedule?.kind === 'practice' ? 'Практика' : '';
+    return { id: `grade-${id}`, rating, label, interval, text: interval ? `${label}\n${interval}` : label };
   });
 }
 

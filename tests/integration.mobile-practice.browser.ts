@@ -26,9 +26,13 @@ const browser=await chromium.launch({headless:true,args:['--use-angle=swiftshade
 let owner='';const errors:string[]=[],checks:unknown[]=[];
 const snap=(page:Page)=>page.evaluate(()=>(window as any).__ALBUM__.snapshot());
 async function click(page:Page,id:string){
- await page.waitForFunction(id=>{const s=(window as any).__ALBUM__?.snapshot();return s?.ready&&s.controls.some((c:any)=>c.id===id&&c.enabled);},id);
- const s=await snap(page),c=s.controls.find((c:any)=>c.id===id);await page.mouse.click(c.rect.x+c.rect.width/2,c.rect.y+c.rect.height/2,{delay:60});
+ // Speech can schedule a frame between a pointer action and the next assertion.
+ // Let that frame publish controls for the new workspace revision first.
+ await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
+ const handle=await page.waitForFunction(id=>{const s=(window as any).__ALBUM__?.snapshot(),c=s?.controls.find((c:any)=>c.id===id&&c.enabled);return s?.ready&&c?{renderCount:s.renderCount,control:c}:null;},id);
+ const s=await handle.jsonValue();await handle.dispose();if(!s)throw new Error(`Unavailable control: ${id}`);const c=s.control;await page.mouse.click(c.rect.x+c.rect.width/2,c.rect.y+c.rect.height/2,{delay:60});
  await page.waitForFunction(n=>(window as any).__ALBUM__.snapshot().renderCount>n,s.renderCount);
+ await page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
 }
 const overlaps=(a:any,b:any)=>Math.min(a.x+a.width,b.x+b.width)>Math.max(a.x,b.x)+1&&Math.min(a.y+a.height,b.y+b.height)>Math.max(a.y,b.y)+1;
 async function geometry(page:Page,label:string){
@@ -47,6 +51,10 @@ try {
  const context=await browser.newContext({viewport:{width:390,height:844},reducedMotion:'reduce',extraHTTPHeaders:{'x-forwarded-for':nextFixtureIp()}});
  expect((await context.request.post(base+'/api/auth/sign-in/email',{headers:{origin:base},data:{email,password}})).status()).toBe(200);
  expect((await context.request.put(base+'/api/settings',{headers:{origin:base,'X-Learning-Learner-Id':owner},data:{...defaultSettings,orthography:'furigana',animations:false,sceneSoundEnabled:false}})).status()).toBe(200);
+ await context.addInitScript(()=>{
+  (window as any).__speechRequests=[];const original=HTMLMediaElement.prototype.play;
+  HTMLMediaElement.prototype.play=function(){(window as any).__speechRequests.push(this.getAttribute('src'));return original.call(this);};
+ });
  const page=await context.newPage();page.setDefaultTimeout(20000);page.on('pageerror',e=>errors.push(e.message));
  let card:Extract<ReviewItem,{mode:'counter'}>|undefined;
  await context.route('**/api/training?counters=true',async route=>{const response=await route.fetch(),queue:ReviewQueue=await response.json();card=queue.items.find(item=>item.mode==='counter'&&item.counter.kind==='image-counter'&&item.counter.word.id===table.id) as typeof card;expect(card).toBeDefined();await route.fulfill({response,json:{...queue,items:[card],remainingDue:1}});});
@@ -69,13 +77,22 @@ try {
  await context.route('**/api/reviews?mode=mixed',route=>route.fulfill({json:{items:[grammar],remainingDue:1,remainingNew:0}}));
  await page.reload();await page.waitForFunction(()=>{const s=(window as any).__ALBUM__?.snapshot();return s?.ready&&s.authenticated&&s.settings&&!s.guided.busy;});await click(page,'nav-menu');await click(page,'reviews');await click(page,'review-start');
  await page.waitForFunction(()=>(window as any).__ALBUM__.snapshot().controls.some((c:any)=>c.id.startsWith('token:')));
+ const speechBefore=await page.evaluate(()=>(window as any).__speechRequests.length);
+ await click(page,'token:0');
+ const firstForm=course.forms.find(f=>f.id===exercise.tokens[0]!.formId)!,firstWord=course.words.find(w=>w.id===firstForm.wordId)!;
+ await expect.poll(()=>page.evaluate(()=>(window as any).__speechRequests.length)).toBeGreaterThan(speechBefore);
+ const {fragmentAudio}=await import('../src/client/fragment-audio');
+ expect(await page.evaluate(()=>(window as any).__speechRequests.at(-1))).toBe(fragmentAudio(course,{id:'t',wordId:firstWord.id,formId:firstForm.id}));
+ await page.waitForFunction(()=>{const s=(window as any).__ALBUM__.snapshot();return !s.media.speechPaused&&!s.mediaError;});
+ await click(page,'workspace-reset');
+ await page.waitForFunction(()=>(window as any).__ALBUM__.snapshot().workspace?.tokens.length===0);
  const question=await snap(page);const tokens=question.controls.filter((c:any)=>c.id.startsWith('token:'));expect(tokens.length).toBe(exercise.tokens.length);
  for(const token of tokens){expect(token.text).not.toMatch(/\p{Script=Han}/u);expect(question.texts.find((t:any)=>t.text===token.text).size).toBeGreaterThanOrEqual(24);}
  await click(page,'workspace-add');await page.getByLabel('Найти слово',{exact:true}).fill('てーぶる');
  await page.waitForFunction(()=>(window as any).__ALBUM__.snapshot().controls.some((c:any)=>c.id.startsWith('replace:')&&c.text.startsWith('てーぶる ·')));await click(page,'workspace-close');
  await geometry(page,'builder-question');
- for(const id of exercise.acceptedOrders[0]!)await click(page,'token:'+exercise.tokens.findIndex(t=>t.id===id));
- await click(page,'builder-check');await page.waitForFunction(()=>(window as any).__ALBUM__.snapshot().workspace?.verdict==='correct');await geometry(page,'builder-correct');
+ for(const id of exercise.acceptedOrders[0]!){await click(page,'token:'+exercise.tokens.findIndex(t=>t.id===id));await page.waitForFunction(id=>(window as any).__ALBUM__.snapshot().workspace?.tokens.some((token:any)=>token.id===id),id);}
+ await click(page,'builder-check');try { await page.waitForFunction(()=>(window as any).__ALBUM__.snapshot().workspace?.verdict==='correct'); } catch(error) { console.error('Builder failure',JSON.stringify((await snap(page)).workspace),JSON.stringify(exercise));throw error; }await geometry(page,'builder-correct');
  expect((await snap(page)).texts.some((t:any)=>t.text.startsWith('✓ Верно.'))).toBe(true);expect(errors).toEqual([]);
  await Bun.write(`${output}/mobile-practice-green.json`,JSON.stringify({checks,errors,lostAckOneWrite:true,bothCounterOutcomes:true,kanaFragments:true,largeType:true},null,2));console.log(JSON.stringify({passed:true,checks:checks.length,errors}));await context.close();
 }finally{await browser.close();server.stop(true);if(owner)await db.sql`delete from users where id=${owner}`;await db.sql`delete from access_links where email=${email}`;await db.sql.close();}

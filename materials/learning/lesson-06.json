@@ -1,6 +1,6 @@
 {
   "lessonId": "marugoto.starter-a1.lesson.06",
-  "version": "2026-10-21.1",
+  "version": "2026-11-26.1",
   "titleRu": "Обед и заказ",
   "goals": [
     {
@@ -145,7 +145,115 @@
                 "explanationRu": "Вежливое завершение именной фразы."
               }
             ]
-          }
+          },
+          "constructionVariants": [
+            {
+              "exerciseId": "marugoto.starter-a1.example.favourite_category.l06.1.variant-1",
+              "explanationRu": "Чтобы назвать любимое блюдо внутри категории, используйте すきな + категория + は + конкретный предмет + です. な связывает すき с существительным: すきなりょうり — «любимое блюдо».",
+              "example": {
+                "surface": "すきなりょうりはカレーです。",
+                "kana": "すきなりょうりはカレーです。",
+                "meaningRu": "Моё любимое блюдо — карри.",
+                "segments": [
+                  {
+                    "surface": "すきな"
+                  },
+                  {
+                    "surface": "りょうり"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "カレー"
+                  },
+                  {
+                    "surface": "です"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "すきなりょうりわカレーです。",
+                "audioUrl": "/audio/learning/0c8027f935e56d8f0a35.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "すきな",
+                  "explanationRu": "«Любимый» перед названием категории; な связывает слова."
+                },
+                {
+                  "text": "りょうり",
+                  "explanationRu": "еда, блюда"
+                },
+                {
+                  "text": "は",
+                  "explanationRu": "Тема высказывания; здесь произносится «ва»."
+                },
+                {
+                  "text": "カレー",
+                  "explanationRu": "карри"
+                },
+                {
+                  "text": "です",
+                  "explanationRu": "Вежливое завершение именной фразы."
+                }
+              ]
+            },
+            {
+              "exerciseId": "marugoto.starter-a1.example.favourite_category.l06.1.variant-2",
+              "explanationRu": "Чтобы назвать любимое блюдо внутри категории, используйте すきな + категория + は + конкретный предмет + です. な связывает すき с существительным: すきなりょうり — «любимое блюдо».",
+              "example": {
+                "surface": "すきなりょうりはラーメンです。",
+                "kana": "すきなりょうりはラーメンです。",
+                "meaningRu": "Моё любимое блюдо — рамэн.",
+                "segments": [
+                  {
+                    "surface": "すきな"
+                  },
+                  {
+                    "surface": "りょうり"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "ラーメン"
+                  },
+                  {
+                    "surface": "です"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "すきなりょうりわラーメンです。",
+                "audioUrl": "/audio/learning/98fe8fa245ec3bee1571.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "すきな",
+                  "explanationRu": "«Любимый» перед названием категории; な связывает слова."
+                },
+                {
+                  "text": "りょうり",
+                  "explanationRu": "еда, блюда"
+                },
+                {
+                  "text": "は",
+                  "explanationRu": "Тема высказывания; здесь произносится «ва»."
+                },
+                {
+                  "text": "ラーメン",
+                  "explanationRu": "лапша рамэн (из пшеничной муки)"
+                },
+                {
+                  "text": "です",
+                  "explanationRu": "Вежливое завершение именной фразы."
+                }
+              ]
+            }
+          ]
         }
       ],
       "videoIds": [
@@ -295,7 +403,115 @@
                 "explanationRu": "есть, кушать"
               }
             ]
-          }
+          },
+          "constructionVariants": [
+            {
+              "exerciseId": "marugoto.starter-a1.example.de_activity_place.l06.1.variant-1",
+              "explanationRu": "Место, где происходит действие, отмечается で. В レストランですしをたべます ресторан — место действия, а суши — его объект с を. Для нахождения предмета без действия позже используется другая модель с に.",
+              "example": {
+                "surface": "レストランでカレーをたべます。",
+                "kana": "レストランでカレーをたべます。",
+                "meaningRu": "Я ем карри в ресторане.",
+                "segments": [
+                  {
+                    "surface": "レストラン"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "カレー"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "たべます"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "レストランでカレーおたべます。",
+                "audioUrl": "/audio/learning/bd14e3eb3fb5f984d69c.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "レストラン",
+                  "explanationRu": "ресторан"
+                },
+                {
+                  "text": "で",
+                  "explanationRu": "Место действия; в ひとりで — «в одиночестве»."
+                },
+                {
+                  "text": "カレー",
+                  "explanationRu": "карри"
+                },
+                {
+                  "text": "を",
+                  "explanationRu": "Объект действия; произносится «о»."
+                },
+                {
+                  "text": "たべます",
+                  "explanationRu": "есть, кушать"
+                }
+              ]
+            },
+            {
+              "exerciseId": "marugoto.starter-a1.example.de_activity_place.l06.1.variant-2",
+              "explanationRu": "Место, где происходит действие, отмечается で. В レストランですしをたべます ресторан — место действия, а суши — его объект с を. Для нахождения предмета без действия позже используется другая модель с に.",
+              "example": {
+                "surface": "レストランでうどんをたべます。",
+                "kana": "レストランでうどんをたべます。",
+                "meaningRu": "Я ем удон в ресторане.",
+                "segments": [
+                  {
+                    "surface": "レストラン"
+                  },
+                  {
+                    "surface": "で"
+                  },
+                  {
+                    "surface": "うどん"
+                  },
+                  {
+                    "surface": "を"
+                  },
+                  {
+                    "surface": "たべます"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "レストランでうどんおたべます。",
+                "audioUrl": "/audio/learning/b28b5aa49d73bd599e81.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "レストラン",
+                  "explanationRu": "ресторан"
+                },
+                {
+                  "text": "で",
+                  "explanationRu": "Место действия; в ひとりで — «в одиночестве»."
+                },
+                {
+                  "text": "うどん",
+                  "explanationRu": "лапша удон (из пшеничной муки)"
+                },
+                {
+                  "text": "を",
+                  "explanationRu": "Объект действия; произносится «о»."
+                },
+                {
+                  "text": "たべます",
+                  "explanationRu": "есть, кушать"
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "l06-choose-place-02",
@@ -401,7 +617,115 @@
                 "explanationRu": "Делает высказывание вежливым."
               }
             ]
-          }
+          },
+          "constructionVariants": [
+            {
+              "exerciseId": "marugoto.starter-a1.example.adjective_predicate.l06.1.variant-1",
+              "explanationRu": "У い-прилагательного сохраняется окончание い перед です: やすいです, ちいさいです. Оно описывает свойство предмета, отмеченного は. Отрицание: окончание い заменяется на くないです.",
+              "example": {
+                "surface": "このレストランはたかいです。",
+                "kana": "このレストランはたかいです。",
+                "meaningRu": "Этот ресторан дорогой.",
+                "segments": [
+                  {
+                    "surface": "この"
+                  },
+                  {
+                    "surface": "レストラン"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "たかい"
+                  },
+                  {
+                    "surface": "です"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "このレストランわたかいです。",
+                "audioUrl": "/audio/learning/294cbd5c47c9fe00e9a9.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "この",
+                  "explanationRu": "этот"
+                },
+                {
+                  "text": "レストラン",
+                  "explanationRu": "ресторан"
+                },
+                {
+                  "text": "は",
+                  "explanationRu": "Тема высказывания; здесь произносится «ва»."
+                },
+                {
+                  "text": "たかい",
+                  "explanationRu": "дорогой"
+                },
+                {
+                  "text": "です",
+                  "explanationRu": "Делает высказывание вежливым."
+                }
+              ]
+            },
+            {
+              "exerciseId": "marugoto.starter-a1.example.adjective_predicate.l06.1.variant-2",
+              "explanationRu": "У い-прилагательного сохраняется окончание い перед です: やすいです, ちいさいです. Оно описывает свойство предмета, отмеченного は. Отрицание: окончание い заменяется на くないです.",
+              "example": {
+                "surface": "あのレストランはやすいです。",
+                "kana": "あのレストランはやすいです。",
+                "meaningRu": "Тот ресторан дешёвый.",
+                "segments": [
+                  {
+                    "surface": "あの"
+                  },
+                  {
+                    "surface": "レストラン"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "やすい"
+                  },
+                  {
+                    "surface": "です"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "あのレストランわやすいです。",
+                "audioUrl": "/audio/learning/b39797665f43a2996ce1.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "あの",
+                  "explanationRu": "тот"
+                },
+                {
+                  "text": "レストラン",
+                  "explanationRu": "ресторан"
+                },
+                {
+                  "text": "は",
+                  "explanationRu": "Тема высказывания; здесь произносится «ва»."
+                },
+                {
+                  "text": "やすい",
+                  "explanationRu": "дешевый"
+                },
+                {
+                  "text": "です",
+                  "explanationRu": "Делает высказывание вежливым."
+                }
+              ]
+            }
+          ]
         }
       ],
       "introductionRu": "Вы с другом выбираете место для обеда. Сравните: やすい — недорого, おいしい — вкусно, はやい — быстро. Указание この/あの относится к месту, на которое вы смотрите; «быстро» здесь описывает обслуживание, а не скорость еды.",
@@ -2010,6 +2334,260 @@
         "sentenceEnd": "。",
         "reviewStatus": "source-checked",
         "translationRu": "Этот ресторан дешёвый."
+      },
+      {
+        "id": "marugoto.starter-a1.example.favourite_category.l06.1.variant-1",
+        "lessonId": "marugoto.starter-a1.lesson.06",
+        "skillId": "marugoto.starter-a1.skill.favourite_category",
+        "promptRu": "Моё любимое блюдо — карри.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.2c8a1db4e55746cb"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.3a1f55622f0deb8f"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.c2865e10c7987133"
+          },
+          {
+            "id": "t5",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Моё любимое блюдо — карри."
+      },
+      {
+        "id": "marugoto.starter-a1.example.favourite_category.l06.1.variant-2",
+        "lessonId": "marugoto.starter-a1.lesson.06",
+        "skillId": "marugoto.starter-a1.skill.favourite_category",
+        "promptRu": "Моё любимое блюдо — рамэн.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.2c8a1db4e55746cb"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.3a1f55622f0deb8f"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.aaa147542740f033"
+          },
+          {
+            "id": "t5",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Моё любимое блюдо — рамэн."
+      },
+      {
+        "id": "marugoto.starter-a1.example.de_activity_place.l06.1.variant-1",
+        "lessonId": "marugoto.starter-a1.lesson.06",
+        "skillId": "marugoto.starter-a1.skill.de_activity_place",
+        "promptRu": "Я ем карри в ресторане.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.c09b04139ff47658"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.fa84ecb3584df956"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.c2865e10c7987133"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.47dc4888725c4031"
+          },
+          {
+            "id": "t5",
+            "formId": "marugoto.starter-a1.form.44a15745d48235c1"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5"
+          ],
+          [
+            "t3",
+            "t4",
+            "t1",
+            "t2",
+            "t5"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я ем карри в ресторане."
+      },
+      {
+        "id": "marugoto.starter-a1.example.de_activity_place.l06.1.variant-2",
+        "lessonId": "marugoto.starter-a1.lesson.06",
+        "skillId": "marugoto.starter-a1.skill.de_activity_place",
+        "promptRu": "Я ем удон в ресторане.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.c09b04139ff47658"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.fa84ecb3584df956"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.720c9de5f78e70b3"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.47dc4888725c4031"
+          },
+          {
+            "id": "t5",
+            "formId": "marugoto.starter-a1.form.44a15745d48235c1"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5"
+          ],
+          [
+            "t3",
+            "t4",
+            "t1",
+            "t2",
+            "t5"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я ем удон в ресторане."
+      },
+      {
+        "id": "marugoto.starter-a1.example.adjective_predicate.l06.1.variant-1",
+        "lessonId": "marugoto.starter-a1.lesson.06",
+        "skillId": "marugoto.starter-a1.skill.adjective_predicate",
+        "promptRu": "Этот ресторан дорогой.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.dc13767a7bc0c227"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.c09b04139ff47658"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.9ba053a230f91d08"
+          },
+          {
+            "id": "t5",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Этот ресторан дорогой."
+      },
+      {
+        "id": "marugoto.starter-a1.example.adjective_predicate.l06.1.variant-2",
+        "lessonId": "marugoto.starter-a1.lesson.06",
+        "skillId": "marugoto.starter-a1.skill.adjective_predicate",
+        "promptRu": "Тот ресторан дешёвый.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.53088e5dcea4ae08"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.c09b04139ff47658"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.0ae7b47c062cab10"
+          },
+          {
+            "id": "t5",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Тот ресторан дешёвый."
       }
     ]
   }

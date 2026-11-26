@@ -36,6 +36,11 @@ async function geometry(page:Page,label:string){
 
 try {
  const context=await browser.newContext({viewport:{width:1280,height:720},reducedMotion:'reduce',extraHTTPHeaders:{'x-forwarded-for':nextFixtureIp()}});
+ await context.addInitScript(() => {
+  (window as any).__speechRequests=[];
+  const original=HTMLMediaElement.prototype.play;
+  HTMLMediaElement.prototype.play=function(){(window as any).__speechRequests.push(this.getAttribute('src'));return original.call(this);};
+ });
  const email=`visual-browser-${crypto.randomUUID()}@example.test`,password='Visual-browser-local-only!';emails.push(email);
  const link=await createLink(db,'invite',email,null);await consumeLink(db,'invite',link.token,password,'Visual browser');const [user]=await db.sql`select id from users where email=${email}`;users.push(user.id);
  expect((await context.request.post(base+'/api/auth/sign-in/email',{headers:{origin:base},data:{email,password}})).status()).toBe(200);
@@ -44,11 +49,24 @@ try {
  async function openLesson(){await page.goto(base);await page.waitForFunction(()=>(window as any).__ALBUM__?.snapshot().authenticated);await click(page,'lesson:'+lessonId);await click(page,'book-learn');}
  await openLesson();await page.waitForFunction(()=>(window as any).__ALBUM__.snapshot().controls.some((c:any)=>c.id==='intro-next'&&c.enabled));await geometry(page,'1280-introduction');
  expect((await snap(page)).texts.some((t:any)=>t.text===course.catalog!.wordCards!.entries[(course.learning![0]!.goals[0]!.parts[0]!.words[0]!.wordId)]!.captionRu)).toBe(true);
+ // Introduction swipe changes the displayed word without recording a recall grade.
+ const introduction=(await snap(page)).guided, initialKey=(await snap(page)).renderedKey;
+ await expect.poll(()=>page.evaluate(()=>(window as any).__speechRequests.filter((src:string)=>src?.startsWith('/audio/')&&!src.startsWith('/audio/game/')).length)).toBeGreaterThan(0);
+ const bounds=(await snap(page)).leaf.bounds;
+ await page.mouse.move(bounds.x+bounds.width*.7,bounds.y+bounds.height*.45);await page.mouse.down();await page.mouse.move(bounds.x+bounds.width*.3,bounds.y+bounds.height*.45,{steps:8});await page.mouse.up();
+ await page.waitForFunction(key=>(window as any).__ALBUM__.snapshot().renderedKey!==key,initialKey);
+ expect((await snap(page)).guided.version).toBe(introduction.version);
+ const secondKey=(await snap(page)).renderedKey;await click(page,'intro-back');await page.waitForFunction(key=>(window as any).__ALBUM__.snapshot().renderedKey!==key,secondKey);
+ checks.push({introSwipe:true,introductionAudio:true,noRecallGradeOnSwipe:true});
  async function advanceTo(mode:string){for(let i=0;i<100;i++){const state=await learningState(db,user.id,course,lessonId);if(state.step?.kind==='word-practice'&&state.step.mode===mode)return state;
  if(!state.step)throw new Error('Expected visual step');await advanceLearning(db,user.id,course,lessonId,{attemptId:crypto.randomUUID(),routeVersion:state.routeVersion,stateVersion:state.version,stepId:state.step.id,action:state.step.kind==='word-intro'?'continue':state.step.kind.endsWith('practice')?'remember':'continue',...(state.step.kind==='word-practice'?{rating:3,recall:{helped:false}}:{})});}throw new Error('Visual step not reached');}
  for(const mode of ['picture-word','word-meaning']){
   const state=await advanceTo(mode),step=state.step!;await openLesson();await page.waitForFunction(()=>(window as any).__ALBUM__.snapshot().controls.some((c:any)=>c.id==='show-answer'&&c.enabled));
   const card=course.catalog!.wordCards!.entries[(step as any).wordId]!;expect((await snap(page)).texts.some((t:any)=>t.text===card.captionRu)).toBe(false);
+  if(mode==='picture-word'){
+   expect((await snap(page)).texts.some((t:any)=>t.text===card.meaningRu)).toBe(true);
+   expect(await page.evaluate(()=>(window as any).__speechRequests.filter((src:string)=>src?.startsWith('/audio/')&&!src.startsWith('/audio/game/')))).toEqual([]);
+  }
   await geometry(page,'1280-'+mode+'-question');await click(page,'show-answer');await geometry(page,'1280-'+mode+'-answer');expect((await snap(page)).texts.some((t:any)=>t.text===card.captionRu)).toBe(true);expect((await snap(page)).texts.some((t:any)=>t.text.includes(card.meaningRu))).toBe(true);
   if(mode==='picture-word'){let lose=true;await context.route('**/api/learning/**/advance',async route=>{if(lose){lose=false;await route.fetch();await route.abort('failed');}else await route.continue();});}
   const previous=await snap(page);await click(page,'grade-hard');

@@ -39,7 +39,7 @@ test('Hard and Easy are successful grammar grades, while a hint or wrong answer 
 
 test('interval labels distinguish learning and extra practice; long waits cannot overflow timers', () => {
   expect(ratingOptions({kind:'review',intervals:{1:60,2:360,3:600,4:691200}}).map(value=>value.interval)).toEqual(['1 мин','6 мин','10 мин','8 дн.']);
-  expect(ratingOptions({kind:'learning'}).every(value=>value.interval==='Учёба')).toBe(true);
+  expect(ratingOptions({kind:'learning'}).map(value=>value.text)).toEqual(['Снова','Трудно','Хорошо','Легко']);
   expect(ratingOptions({kind:'practice'}).every(value=>value.interval==='Практика')).toBe(true);
   expect(intervalLabel(36*86400)).toBe('1,2 мес.');
   expect(reviewWakeDelay('2100-01-01T00:00:00Z',0)).toBe(2_147_483_647);

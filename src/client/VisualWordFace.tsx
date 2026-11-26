@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { VisualWordCard, VisualWordMode } from '../shared/word-cards';
-import { visualWordTitle } from '../shared/word-cards';
+import { visualWordTitle, visualWordCue } from '../shared/word-cards';
 import { Japanese } from './Japanese';
 
 export function VisualWordFace({card,mode,revealed}:{card:VisualWordCard;mode:VisualWordMode;revealed:boolean}) {
@@ -8,6 +8,7 @@ export function VisualWordFace({card,mode,revealed}:{card:VisualWordCard;mode:Vi
  const showImage=revealed||mode==='picture-word';
  return <div className="visual-word-face" data-visual-word-mode={mode} data-revealed={revealed}>
   <small>{visualWordTitle(mode)}</small>
+  {!revealed&&mode==='picture-word'&&<strong className="visual-word-cue">{visualWordCue(card)}</strong>}
   {showImage&&<div className="visual-word-art" role="img" aria-label={revealed?card.captionRu:'Иллюстрация: вспомните изученное слово'} style={{backgroundImage:`url(${card.image.src})`,backgroundSize:`${card.image.width/width*100}% ${card.image.height/height*100}%`,backgroundPosition:`${card.image.width===width?0:x/(card.image.width-width)*100}% ${card.image.height===height?0:y/(card.image.height-height)*100}%`,aspectRatio:`${width}/${height}`}}/>}
   {(revealed||mode==='word-meaning')&&<div className="visual-word-spelling"><Japanese value={card} mode="furigana"/></div>}
   {revealed?<><strong>{card.meaningRu}</strong><p className="visual-word-caption">{card.captionRu}</p></>:<p>{mode==='picture-word'?'Назовите изученное слово по-японски.':'Вспомните значение слова.'}</p>}

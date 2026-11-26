@@ -1,7 +1,7 @@
 import { wordTargets } from '@app/shared/meanings';
 import { api, ApiRequestError, json, pendingReviews, submitReview } from '@app/client/api';
 import { recallDraftKey, readRecallDraft, writeRecallDraft, learningConflict, invalidLearningChoice, learningHeaders, pendingLearning, submitLearning } from '@app/client/guidedApi';
-import { learningParts, type LearningAdvance, type LearningState } from '@app/shared/learning';
+import { learningConstructions, learningParts, type LearningAdvance, type LearningState } from '@app/shared/learning';
 import type { AnalysisResult, Course, Progress } from '@app/shared/types';
 import { matchesPreparedAnswer } from '@app/shared/answers';
 import { confirmedStages } from './lesson-overview';
@@ -13,9 +13,8 @@ export function presentation(course: Course) {
   return {
     lessons: (course.learning ?? []).map(route => ({ ...course.lessons.find(lesson => lesson.id === route.lessonId)!, route })),
     words: wordTargets(course),
-    constructions: (course.learning ?? []).flatMap(route => route.goals.flatMap(goal => goal.parts.flatMap(part => {
-      if (!part.construction) return [];
-      const intro = part.construction, exercise = course.exercises.find(value => value.id === intro.exerciseId);
+    constructions: (course.learning ?? []).flatMap(route => route.goals.flatMap(goal => goal.parts.flatMap(learningConstructions).flatMap(intro => {
+      const exercise = course.exercises.find(value => value.id === intro.exerciseId);
       if (!exercise) throw new Error('В опубликованном уроке нет конструкции.');
       const tokens = exercise.tokens.map(token => {
         const form = forms.get(token.formId);

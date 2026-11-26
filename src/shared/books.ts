@@ -27,6 +27,8 @@ export function lessonAvailability(course: Pick<Course, 'learning'>, lesson: Les
   return lesson.availability ?? (course.learning?.some(route => route.lessonId === lesson.id) ? 'full' : lesson.readiness.vocabulary === 'missing' ? 'preparing' : 'vocabulary');
 }
 
+export const sourceTitle = (source: Lesson['sourceRefs'][number]) => [source.label ?? 'Официальный источник', source.part === 'katsudoo' ? 'Katsudoo · практика общения' : source.part === 'rikai' ? 'Rikai · язык и грамматика' : ''].filter(Boolean).join(' · ');
+
 export function bookResources(bookId: string): {title: string; url: string}[] {
   if(bookId==='marugoto.elementary1-a2')return [
     {title:'Официальные видеодиалоги A2-1',url:'https://a2.marugotoweb.jp/en/conversation/'},

@@ -1,3 +1,5 @@
+import { fragmentAudio } from './fragment-audio';
+import { useCardSpeech } from './useCardSpeech';
 import { ReviewRatings } from './ReviewRatings';
 import { useEffect, useRef, useState } from 'react';
 import type { AnalysisResult, LearnerSettings, Rating, ReviewItem, ReviewResult, TargetEvaluationRequest, TargetEvaluationResult, Word } from '../shared/types';
@@ -33,6 +35,7 @@ export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved,
   const revision = useRef(0); const dialog = useRef<HTMLDialogElement>(null); const analysisDetails = useRef<HTMLDetailsElement>(null);
   const saving = useReviewSave(userId, onSaved, (submission, result) => { const kind = result.correct && submission.mode === 'grammar' && submission.rating !== 1 && !submission.revealed ? 'good' : 'again'; sound.cue(kind, result.attemptId); onNext({ attemptId: result.attemptId, kind }, result); }, sendReview);
   const locked = !active || saving.busy || saving.pending;
+  const fragmentSpeech = useCardSpeech(undefined, false, active, data.settings.speechVolume, sound);
   function valueFor(token: Token) { return token.formId ? formMap.get(token.formId)! : wordMap.get(token.wordId)!; }
   const text = manualText ?? tokens.map(token => valueFor(token).surface).join('') + (tokens.length ? exercise.sentenceEnd : '');
   const wordIds = tokens.map(token => token.formId ?? token.wordId);
@@ -48,6 +51,8 @@ export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved,
     if (locked) return;
     const forms = Object.fromEntries(next.filter(token => token.formId).map(token => [token.id, token.formId!]));
     const prepared = preparedWorkspace(exercise, data.course, next);
+    const added = next.filter(token => !tokens.some(previous => previous.id === token.id));
+    for (const token of added) { const url = fragmentAudio(data.course, token); if (url) void fragmentSpeech.play(url); }
     invalidate(); setTokens(next); setManualText(null); setExploring(current => (research || current) && !prepared);
   }
   function closeEditor() { setEditor(null); setSearch(''); setComposing(false); }
@@ -123,6 +128,7 @@ export function SentenceWorkspace({ item, data, source, userId, onNext, onSaved,
     {analysis?.status === 'unavailable' && <div className="notice" role="status"><h3>Свободный разбор недоступен</h3><p>{analysis.reason}</p><small>Проверка исходного задания продолжает работать.</small></div>}
     {evaluation && evaluation.outcome !== 'incomplete' && analysis?.status !== 'ok' && <p>{skill.explanationRu}</p>}
     </details>}
+    {fragmentSpeech.error && <p role="status">{fragmentSpeech.error} <button onClick={()=>void fragmentSpeech.play()} disabled={locked}>Прослушать фрагмент ещё раз</button></p>}
     {error && <div className="notice error" role="alert"><p>{error}</p><button onClick={() => setRetryRevision(value => value + 1)}>Повторить разбор</button></div>}
     {saving.error && <div className="notice error" role="alert"><p>{saving.error}</p><button onClick={saving.retry}>Повторить сохранение</button></div>}
     {targetVerdict ? <ReviewRatings schedule={item.schedule} disabled={loading || locked || !!editor || composing} againOnly={targetVerdict.outcome === 'incorrect'} grade={advance} /> : <button className="primary workspace-next" disabled={loading || !evaluation || requiredPractice || locked || !!editor || composing} onClick={() => { void advance(3); }}>Дальше</button>}

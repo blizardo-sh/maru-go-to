@@ -20,6 +20,7 @@ export function learningAudioPlan(routes: GuidedLesson[]) {
     const base = `/goals/${goalIndex}/parts/${partIndex}`;
     part.words.forEach((word, index) => add(word.example, word.wordId, `${base}/words/${index}/example/audioUrl`));
     if (part.construction) add(part.construction.example, part.construction.exerciseId, `${base}/construction/example/audioUrl`);
+    part.constructionVariants?.forEach((construction,index)=>add(construction.example,construction.exerciseId,`${base}/constructionVariants/${index}/example/audioUrl`));
   }));
   return entries;
 }

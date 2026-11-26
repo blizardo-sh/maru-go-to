@@ -1,6 +1,6 @@
 {
   "lessonId": "marugoto.starter-a1.lesson.03",
-  "version": "2026-10-24.1",
+  "version": "2026-11-26.1",
   "titleRu": "О себе",
   "goals": [
     {
@@ -136,7 +136,101 @@
                 "explanationRu": "Вежливое завершение именной фразы."
               }
             ]
-          }
+          },
+          "constructionVariants": [
+            {
+              "exerciseId": "marugoto.starter-a1.example.wa_identity.l03.1.variant-1",
+              "explanationRu": "Чтобы назвать себя, профессию или национальность, используйте N1 は N2 です. は здесь читается «ва» и выделяет тему, です делает высказывание вежливым. Если тема уже ясна, её можно опустить.",
+              "example": {
+                "surface": "わたしはエンジニアです。",
+                "kana": "わたしはエンジニアです。",
+                "meaningRu": "Я инженер.",
+                "segments": [
+                  {
+                    "surface": "わたし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "エンジニア"
+                  },
+                  {
+                    "surface": "です"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "わたしわエンジニアです。",
+                "audioUrl": "/audio/learning/ff77f7f690c4adbc9c22.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "わたし",
+                  "explanationRu": "я"
+                },
+                {
+                  "text": "は",
+                  "explanationRu": "Тема высказывания; здесь произносится «ва»."
+                },
+                {
+                  "text": "エンジニア",
+                  "explanationRu": "инженер"
+                },
+                {
+                  "text": "です",
+                  "explanationRu": "Вежливое завершение именной фразы."
+                }
+              ]
+            },
+            {
+              "exerciseId": "marugoto.starter-a1.example.wa_identity.l03.1.variant-2",
+              "explanationRu": "Чтобы назвать себя, профессию или национальность, используйте N1 は N2 です. は здесь читается «ва» и выделяет тему, です делает высказывание вежливым. Если тема уже ясна, её можно опустить.",
+              "example": {
+                "surface": "わたしはかいしゃいんです。",
+                "kana": "わたしはかいしゃいんです。",
+                "meaningRu": "Я сотрудник компании.",
+                "segments": [
+                  {
+                    "surface": "わたし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "かいしゃいん"
+                  },
+                  {
+                    "surface": "です"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "わたしわかいしゃいんです。",
+                "audioUrl": "/audio/learning/92e541016cdc132fbdf8.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "わたし",
+                  "explanationRu": "я"
+                },
+                {
+                  "text": "は",
+                  "explanationRu": "Тема высказывания; здесь произносится «ва»."
+                },
+                {
+                  "text": "かいしゃいん",
+                  "explanationRu": "работник фирмы"
+                },
+                {
+                  "text": "です",
+                  "explanationRu": "Вежливое завершение именной фразы."
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "l03-introduce-02",
@@ -270,7 +364,115 @@
                 "explanationRu": "мочь"
               }
             ]
-          }
+          },
+          "constructionVariants": [
+            {
+              "exerciseId": "marugoto.starter-a1.example.ga_ability.l03.1.variant-1",
+              "explanationRu": "Чтобы сказать, на каком языке вы говорите, используйте название языка с が и できます. Эта форма обозначает умение; для отрицания — できません. Тему わたしは можно опустить, когда ясно, что речь о вас.",
+              "example": {
+                "surface": "わたしはえいごができます。",
+                "kana": "わたしはえいごができます。",
+                "meaningRu": "Я могу говорить по-английски.",
+                "segments": [
+                  {
+                    "surface": "わたし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "えいご"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "できます"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "わたしわえいごができます。",
+                "audioUrl": "/audio/learning/d950bfab1db112510d52.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "わたし",
+                  "explanationRu": "я"
+                },
+                {
+                  "text": "は",
+                  "explanationRu": "Тема высказывания; здесь произносится «ва»."
+                },
+                {
+                  "text": "えいご",
+                  "explanationRu": "английский язык"
+                },
+                {
+                  "text": "が",
+                  "explanationRu": "Отмечает предмет умения, симпатии или то, что существует, в зависимости от модели."
+                },
+                {
+                  "text": "できます",
+                  "explanationRu": "мочь"
+                }
+              ]
+            },
+            {
+              "exerciseId": "marugoto.starter-a1.example.ga_ability.l03.1.variant-2",
+              "explanationRu": "Чтобы сказать, на каком языке вы говорите, используйте название языка с が и できます. Эта форма обозначает умение; для отрицания — できません. Тему わたしは можно опустить, когда ясно, что речь о вас.",
+              "example": {
+                "surface": "わたしはちゅうごくごができます。",
+                "kana": "わたしはちゅうごくごができます。",
+                "meaningRu": "Я могу говорить по-китайски.",
+                "segments": [
+                  {
+                    "surface": "わたし"
+                  },
+                  {
+                    "surface": "は"
+                  },
+                  {
+                    "surface": "ちゅうごくご"
+                  },
+                  {
+                    "surface": "が"
+                  },
+                  {
+                    "surface": "できます"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "わたしわちゅうごくごができます。",
+                "audioUrl": "/audio/learning/410c2783c85b9274ebef.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "わたし",
+                  "explanationRu": "я"
+                },
+                {
+                  "text": "は",
+                  "explanationRu": "Тема высказывания; здесь произносится «ва»."
+                },
+                {
+                  "text": "ちゅうごくご",
+                  "explanationRu": "китайский язык"
+                },
+                {
+                  "text": "が",
+                  "explanationRu": "Отмечает предмет умения, симпатии или то, что существует, в зависимости от модели."
+                },
+                {
+                  "text": "できます",
+                  "explanationRu": "мочь"
+                }
+              ]
+            }
+          ]
         },
         {
           "id": "l03-introduce-03",
@@ -336,7 +538,101 @@
                 "explanationRu": "Вежливое завершение именной фразы."
               }
             ]
-          }
+          },
+          "constructionVariants": [
+            {
+              "exerciseId": "marugoto.starter-a1.example.mo_addition.l03.1.variant-1",
+              "explanationRu": "も означает «тоже»: когда профессия или другое свойство совпадает с уже названным, も занимает место は или が. Нужен контекст сравнения: собеседник уже сообщил то же о себе.",
+              "example": {
+                "surface": "わたしもエンジニアです。",
+                "kana": "わたしもエンジニアです。",
+                "meaningRu": "Я тоже инженер.",
+                "segments": [
+                  {
+                    "surface": "わたし"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "エンジニア"
+                  },
+                  {
+                    "surface": "です"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "わたしもエンジニアです。",
+                "audioUrl": "/audio/learning/fc799cbac7ffaa755c91.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "わたし",
+                  "explanationRu": "я"
+                },
+                {
+                  "text": "も",
+                  "explanationRu": "Тоже: добавляет совпадение с уже известным."
+                },
+                {
+                  "text": "エンジニア",
+                  "explanationRu": "инженер"
+                },
+                {
+                  "text": "です",
+                  "explanationRu": "Вежливое завершение именной фразы."
+                }
+              ]
+            },
+            {
+              "exerciseId": "marugoto.starter-a1.example.mo_addition.l03.1.variant-2",
+              "explanationRu": "も означает «тоже»: когда профессия или другое свойство совпадает с уже названным, も занимает место は или が. Нужен контекст сравнения: собеседник уже сообщил то же о себе.",
+              "example": {
+                "surface": "わたしもかいしゃいんです。",
+                "kana": "わたしもかいしゃいんです。",
+                "meaningRu": "Я тоже сотрудник компании.",
+                "segments": [
+                  {
+                    "surface": "わたし"
+                  },
+                  {
+                    "surface": "も"
+                  },
+                  {
+                    "surface": "かいしゃいん"
+                  },
+                  {
+                    "surface": "です"
+                  },
+                  {
+                    "surface": "。"
+                  }
+                ],
+                "audioText": "わたしもかいしゃいんです。",
+                "audioUrl": "/audio/learning/aaf7965897802185464c.m4a"
+              },
+              "breakdown": [
+                {
+                  "text": "わたし",
+                  "explanationRu": "я"
+                },
+                {
+                  "text": "も",
+                  "explanationRu": "Тоже: добавляет совпадение с уже известным."
+                },
+                {
+                  "text": "かいしゃいん",
+                  "explanationRu": "работник фирмы"
+                },
+                {
+                  "text": "です",
+                  "explanationRu": "Вежливое завершение именной фразы."
+                }
+              ]
+            }
+          ]
         }
       ],
       "videoIds": [
@@ -2839,6 +3135,240 @@
         "sentenceEnd": "。",
         "reviewStatus": "source-checked",
         "translationRu": "Я тоже студент."
+      },
+      {
+        "id": "marugoto.starter-a1.example.wa_identity.l03.1.variant-1",
+        "lessonId": "marugoto.starter-a1.lesson.03",
+        "skillId": "marugoto.starter-a1.skill.wa_identity",
+        "promptRu": "Я инженер.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.8f4403a1ef1a7014"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.2686e079e313b97b"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я инженер."
+      },
+      {
+        "id": "marugoto.starter-a1.example.wa_identity.l03.1.variant-2",
+        "lessonId": "marugoto.starter-a1.lesson.03",
+        "skillId": "marugoto.starter-a1.skill.wa_identity",
+        "promptRu": "Я сотрудник компании.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.8f4403a1ef1a7014"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.157e7c7e1903cb6f"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я сотрудник компании."
+      },
+      {
+        "id": "marugoto.starter-a1.example.ga_ability.l03.1.variant-1",
+        "lessonId": "marugoto.starter-a1.lesson.03",
+        "skillId": "marugoto.starter-a1.skill.ga_ability",
+        "promptRu": "Я могу говорить по-английски.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.8f4403a1ef1a7014"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.4f2d94200c1eb0e1"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.a0bd4b52e58a66fe"
+          },
+          {
+            "id": "t5",
+            "formId": "marugoto.starter-a1.form.8f463561a7e1f247"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5"
+          ],
+          [
+            "t3",
+            "t4",
+            "t5"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я могу говорить по-английски.",
+        "contextRu": "Вы рассказываете о себе; собеседник уже знает, что речь о вас. Тему «わたしは» можно назвать или целиком опустить. Остальной смысл и целевая конструкция должны сохраниться."
+      },
+      {
+        "id": "marugoto.starter-a1.example.ga_ability.l03.1.variant-2",
+        "lessonId": "marugoto.starter-a1.lesson.03",
+        "skillId": "marugoto.starter-a1.skill.ga_ability",
+        "promptRu": "Я могу говорить по-китайски.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.8f4403a1ef1a7014"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.ff44f890fca56e70"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.5583d5eb7da3733d"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.a0bd4b52e58a66fe"
+          },
+          {
+            "id": "t5",
+            "formId": "marugoto.starter-a1.form.8f463561a7e1f247"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4",
+            "t5"
+          ],
+          [
+            "t3",
+            "t4",
+            "t5"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я могу говорить по-китайски.",
+        "contextRu": "Вы рассказываете о себе; собеседник уже знает, что речь о вас. Тему «わたしは» можно назвать или целиком опустить. Остальной смысл и целевая конструкция должны сохраниться."
+      },
+      {
+        "id": "marugoto.starter-a1.example.mo_addition.l03.1.variant-1",
+        "lessonId": "marugoto.starter-a1.lesson.03",
+        "skillId": "marugoto.starter-a1.skill.mo_addition",
+        "promptRu": "Я тоже инженер.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.8f4403a1ef1a7014"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.fa44ea83fc996c89"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.2686e079e313b97b"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я тоже инженер.",
+        "contextRu": "Собеседник уже назвал ту же профессию. Сообщите, что вы тоже работаете по этой профессии."
+      },
+      {
+        "id": "marugoto.starter-a1.example.mo_addition.l03.1.variant-2",
+        "lessonId": "marugoto.starter-a1.lesson.03",
+        "skillId": "marugoto.starter-a1.skill.mo_addition",
+        "promptRu": "Я тоже сотрудник компании.",
+        "tokens": [
+          {
+            "id": "t1",
+            "formId": "marugoto.starter-a1.form.8f4403a1ef1a7014"
+          },
+          {
+            "id": "t2",
+            "formId": "marugoto.starter-a1.form.fa44ea83fc996c89"
+          },
+          {
+            "id": "t3",
+            "formId": "marugoto.starter-a1.form.157e7c7e1903cb6f"
+          },
+          {
+            "id": "t4",
+            "formId": "marugoto.starter-a1.form.dfb1a0ad90bfab45"
+          }
+        ],
+        "acceptedOrders": [
+          [
+            "t1",
+            "t2",
+            "t3",
+            "t4"
+          ]
+        ],
+        "sentenceEnd": "。",
+        "reviewStatus": "source-checked",
+        "translationRu": "Я тоже сотрудник компании.",
+        "contextRu": "Собеседник уже назвал ту же профессию. Сообщите, что вы тоже работаете по этой профессии."
       }
     ]
   }
