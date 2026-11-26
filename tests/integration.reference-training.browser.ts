@@ -7,7 +7,7 @@ import { loadCourse } from '../src/server/course';
 import { defaultSettings } from '../src/server/material';
 import { reviewId } from '../src/server/reviews';
 import { basicKana, type KanaAudioManifest } from '../src/shared/kana';
-import type { LearnerSettings, ReviewSubmission } from '../src/shared/types';
+import type { LearnerSettings, ReviewSubmission, ReviewQueue } from '../src/shared/types';
 import { nextFixtureIp } from './helpers/fixture-ip';
 import { output } from './helpers/artifact-output';
 
@@ -98,19 +98,40 @@ try {
   await expect(drill.getByRole('button', { name: 'Повторить сохранение', exact: true })).toBeVisible(); await expect(drill).toHaveAttribute('data-format', 'ja-ru');
   const attemptsBefore = await database.sql`select attempt_id from review_attempts where user_id=${userId}`;
   await drill.getByRole('button', { name: 'Повторить сохранение', exact: true }).click();
-  await expect(drill).toHaveAttribute('data-format', 'listening'); expect(submissions.at(-1)).toEqual(submissions.at(-2)); expect(await database.sql`select attempt_id from review_attempts where user_id=${userId}`).toEqual(attemptsBefore);
-  await expect.poll(async () => drill.locator('audio').evaluate((audio: HTMLAudioElement) => audio.currentTime)).toBeGreaterThan(.03);
-  await drill.getByTestId('card-face').click(); await expect(drill.locator('.answer')).toBeVisible(); await drill.getByTestId('review-gesture').press('ArrowRight');
-  await expect(page.locator('.bank')).toBeVisible();
-  for (const id of exercise.acceptedOrders[0]!) await page.locator(`.bank [data-token-id="${id}"]`).click();
-  await expect(page.locator('[data-outcome="correct"]').first()).toBeVisible();
-  await workspaceNext(page).click();
+  await expect.poll(() => submissions.length).toBe(beforePosts + 2);
+  expect(submissions.at(-1)).toEqual(submissions.at(-2)); expect(await database.sql`select attempt_id from review_attempts where user_id=${userId}`).toEqual(attemptsBefore);
+  const formats: Record<string, number> = {};
+  for (const mode of ['ja-ru', 'listening', 'grammar'] as const) {
+    const response = await context.request.get(base + `/api/training?skillId=${encodeURIComponent(exercise.skillId)}&constructionMode=${mode}`);
+    expect(response.status()).toBe(200);
+    const queue = await response.json() as ReviewQueue;
+    expect(queue.items.length).toBeGreaterThan(1); // Includes authored phrase variations.
+    formats[mode] = queue.items.length;
+    for (const item of queue.items.slice(mode === 'ja-ru' ? 1 : 0)) {
+      if (item.mode !== 'grammar' || !item.construction) throw new Error('Expected construction variation');
+      if (mode === 'grammar') {
+        await expect(page.locator('.workspace-heading h2')).toHaveText(item.exercise.promptRu);
+        await expect(page.locator('.bank')).toBeVisible();
+        for (const id of item.exercise.acceptedOrders[0]!) await page.locator(`.bank [data-token-id="${id}"]`).click();
+        await expect(page.locator('[data-outcome="correct"]').first()).toBeVisible();
+        await workspaceNext(page).click();
+      } else {
+        await expect(drill).toHaveAttribute('data-format', mode);
+        if (mode === 'ja-ru') await expect(drill.getByTestId('card-face')).toContainText(item.construction.example.surface);
+        else {
+          await expect(drill.locator('audio')).toHaveAttribute('src', item.construction.example.audioUrl);
+          await expect.poll(async () => page.evaluate(() => (window as any).__referencePlayed.at(-1))).toBe(base + item.construction.example.audioUrl);
+        }
+        await drill.getByTestId('card-face').click(); await expect(drill.locator('.answer')).toBeVisible(); await drill.getByTestId('review-gesture').press('ArrowRight');
+      }
+    }
+  }
   await expect(page.getByRole('heading', { name: /Порция пройдена|Колода пройдена/ })).toBeVisible();
   expect(await database.sql`select * from learning_states where user_id=${userId}`).toEqual(lessonBefore);
   expect([...await database.sql`select mode,version from review_states where user_id=${userId} and item_id=${exercise.skillId}`]).toEqual([{ mode: 'grammar', version: skillVersionBefore + 1 }]);
-  report.construction = { formats: ['ja-ru', 'listening', 'grammar'], ambiguousAckReplay: true, oneSharedSchedule: true, lessonStateUnchanged: true };
+  report.construction = { formats, ambiguousAckReplay: true, oneSharedSchedule: true, lessonStateUnchanged: true };
   for (const viewport of [{ width: 1280, height: 720 }, { width: 390, height: 844 }, { width: 320, height: 568 }]) { await page.setViewportSize(viewport); await reachable(page); }
   expect(errors).toEqual([]); report.green = true; report.errors = errors;
   await page.screenshot({ path: `${output}/reference-training-final.png`, fullPage: true }); await Bun.write(`${output}/reference-training-green.json`, JSON.stringify(report, null, 2)); console.info(JSON.stringify(report));
-} catch (error) { await page.screenshot({ path: `${output}/reference-training-red.png`, fullPage: true }).catch(() => {}); throw error; }
+} catch (error) { console.error('reference-diagnostic',await page.evaluate(()=>({visibility:document.visibilityState,audio:[...document.querySelectorAll('audio')].map(a=>({src:a.src,paused:a.paused,time:a.currentTime,error:a.error?.message,ready:a.readyState})),played:(window as any).__referencePlayed,notice:[...document.querySelectorAll('.notice')].map(n=>n.textContent)}))); await page.screenshot({ path: `${output}/reference-training-red.png`, fullPage: true }).catch(() => {}); throw error; }
 finally { await context.close(); await browser.close(); if (userId) await database.sql`delete from users where id=${userId}`; await database.sql`delete from access_links where email=${email}`; await database.sql.close(); }
