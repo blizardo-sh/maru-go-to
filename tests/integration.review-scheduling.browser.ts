@@ -29,10 +29,26 @@ app=createApp({database:db,course,config:{DATABASE_URL:url,BETTER_AUTH_SECRET:cr
 const browser=await chromium.launch({channel:'chrome',headless:true}), users:string[]=[],emails:string[]=[],errors:string[]=[];
 const snap=(page:Page)=>page.evaluate(()=> (window as any).__ALBUM__.snapshot());
 async function click(page:Page,id:string) {
-  await page.waitForFunction(id=>(window as any).__ALBUM__?.snapshot().controls?.some((c:any)=>c.id===id&&c.enabled),id);
-  const before=await snap(page),control=before.controls.find((c:any)=>c.id===id);
-  await page.mouse.click(control.rect.x+control.rect.width/2,control.rect.y+control.rect.height/2);
+  // Audio can publish an unrelated frame while a click is in flight. Wait for
+  // that frame before reading targets and for the click's frame before returning.
+  const settled=()=>page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
+  await settled();
+  let before:any;
+  try {
+    const handle=await page.waitForFunction(id=>{
+      const state=(window as any).__ALBUM__?.snapshot(),control=state?.controls?.find((c:any)=>c.id===id&&c.enabled);
+      return control?{renderCount:state.renderCount,control}:null;
+    },id);
+    before=await handle.jsonValue();await handle.dispose();
+  } catch(error) {
+    const state=await snap(page);
+    console.error('Unavailable review control',id,JSON.stringify({page:state.page,controls:state.controls,review:state.review}));
+    throw error;
+  }
+  const control=before.control;
+  await page.mouse.click(control.rect.x+control.rect.width/2,control.rect.y+control.rect.height/2,{delay:60});
   await page.waitForFunction(renderCount=>(window as any).__ALBUM__.snapshot().renderCount>renderCount,before.renderCount);
+  await settled();
 }
 try {
   for(const width of [390,320,1280]) {
