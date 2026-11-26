@@ -26,7 +26,8 @@ export function priorTargets(course: Course, selection: PriorScope): PriorTarget
 export function recognizeRoute(course: Course, route: GuidedLesson, state: LearningRouteState, targets: Set<string>, whole: boolean): LearningRouteState {
   const core=priorTargets(course,{lessonId:route.lessonId,scope:'main'});
   if(!whole && !route.goals.some(goal=>goal.parts.some(part=>part.tasks?.length)) && core.length && core.every(target=>targets.has(target.kind+':'+target.id)))whole=true;
-  const parts = learningParts(route), done = new Set(state.completedStepIds.filter(id=>!state.skippedStepIds?.includes(id))), recognized = new Set<string>();
+  const contentSkipped = new Set(state.contentSkippedStepIds ?? []);
+  const parts = learningParts(route), done = new Set(state.completedStepIds.filter(id=>!state.skippedStepIds?.includes(id) || contentSkipped.has(id))), recognized = new Set<string>();
   const known = (step: LearningStep) => whole || ('wordId' in step && ['word-intro','word-practice'].includes(step.kind) && targets.has('word:'+step.wordId)) ||
     ('exerciseId' in step && targets.has('grammar:'+course.exercises.find(exercise => exercise.id === step.exerciseId)?.skillId));
   for (const part of parts) {
@@ -38,5 +39,5 @@ export function recognizeRoute(course: Course, route: GuidedLesson, state: Learn
   const remaining = index < 0 ? [] : parts[index]!.filter(step => !done.has(step.id) && !recognized.has(step.id)).map(step => step.id);
   const reopened = remaining.some(id => (state.recognizedStepIds ?? state.skippedStepIds ?? []).includes(id));
   const oldOrder = !reopened && index === state.partIndex ? state.pendingStepIds.filter(id => remaining.includes(id)) : [];
-  return {...state, completedStepIds:[...done], skippedStepIds:[], partIndex:index < 0 ? parts.length : index, pendingStepIds:[...oldOrder,...remaining.filter(id => !oldOrder.includes(id))], recognizedStepIds:[...recognized], ...(whole ? { recognizedWhole:true } : { recognizedWhole:false })};
+  return {...state, completedStepIds:[...done], skippedStepIds:[...contentSkipped].filter(id=>done.has(id)), partIndex:index < 0 ? parts.length : index, pendingStepIds:[...oldOrder,...remaining.filter(id => !oldOrder.includes(id))], recognizedStepIds:[...recognized], ...(whole ? { recognizedWhole:true } : { recognizedWhole:false })};
 }

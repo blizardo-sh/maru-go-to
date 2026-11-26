@@ -63,6 +63,7 @@ export interface LearningRouteState {
   taskEvidence?: Record<string,TaskEvidence>;
   recognizedStepIds?: string[];
   skippedStepIds?: string[]; // Persisted by the previously released prior-learning implementation.
+  contentSkippedStepIds?: string[]; // Added material in completed groups, independent of reversible recognition.
   recognizedWhole?: boolean;
   partIndex: number;
   pendingStepIds: string[];
@@ -317,7 +318,7 @@ export function reconcileLearningRoute(previous: GuidedLesson, current: GuidedLe
   // New picture exercises never reopen an already completed group or imply FSRS evidence.
   const historicalWords = new Set(before.filter(step => step.kind === 'word-practice' && done.has(key(step)) && done.has(`complete:${step.partId}`)).map(step => (step as Extract<LearningStep,{kind:'word-practice'}>).wordId));
   const addedVariants = new Set(current.goals.flatMap(goal => goal.parts.flatMap(part => (part.constructionVariants ?? []).map(value => value.exerciseId))));
-  const previouslySkipped = new Set((state.skippedStepIds ?? []).flatMap(id => { const step = before.find(value => value.id === id); return step ? [key(step)] : []; }));
+  const previouslySkipped = new Set((state.contentSkippedStepIds ?? []).flatMap(id => { const step = before.find(value => value.id === id); return step ? [key(step)] : []; }));
   const skipped = parts.flat().filter(step => {
     // Only content additions inherit skips; legacy "already known" marks remain reversible.
     if ((step.kind === 'construction-intro' || step.kind === 'construction-practice') && addedVariants.has(step.exerciseId)) return !done.has(key(step)) && done.has(`complete:${step.partId}`) && (previouslySkipped.has(key(step)) || !before.some(old => key(old) === key(step)));
@@ -329,10 +330,10 @@ export function reconcileLearningRoute(previous: GuidedLesson, current: GuidedLe
     if (part.every(step => step.kind === 'part-complete' || completed.has(step.id)) && (done.has(key(summary)) || !before.some(step => step.partId === summary.partId))) completed.add(summary.id);
   }
   const partIndex = parts.findIndex(part => part.some(step => !completed.has(step.id)));
-  if (partIndex < 0) return { skippedStepIds: skipped, taskEvidence:state.taskEvidence, partIndex: parts.length, pendingStepIds: [], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}), ...(state.recallPolicy ? { recallPolicy: state.recallPolicy } : {}) };
+  if (partIndex < 0) return { skippedStepIds: skipped, contentSkippedStepIds: skipped, taskEvidence:state.taskEvidence, partIndex: parts.length, pendingStepIds: [], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}), ...(state.recallPolicy ? { recallPolicy: state.recallPolicy } : {}) };
   const remaining = parts[partIndex]!.filter(step => !completed.has(step.id));
   const oldOrder = state.pendingStepIds.flatMap(id => { const step = before.find(item => item.id === id); const next = step && remaining.find(item => key(item) === key(step)); return next ? [next.id] : []; });
   const extras = remaining.filter(step => !oldOrder.includes(step.id));
   const boundary=(step:LearningStep)=>step.kind==='video'||step.kind==='part-complete';
-  return { skippedStepIds: skipped, taskEvidence:state.taskEvidence, partIndex, pendingStepIds: [...extras.filter(step=>step.kind==='word-intro').map(step=>step.id),...oldOrder.filter(id=>!remaining.some(step=>step.id===id&&boundary(step))),...extras.filter(step=>step.kind!=='word-intro'&&!boundary(step)).map(step=>step.id),...remaining.filter(boundary).map(step=>step.id)], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}), ...(state.recallPolicy ? { recallPolicy: state.recallPolicy } : {}) };
+  return { skippedStepIds: skipped, contentSkippedStepIds: skipped, taskEvidence:state.taskEvidence, partIndex, pendingStepIds: [...extras.filter(step=>step.kind==='word-intro').map(step=>step.id),...oldOrder.filter(id=>!remaining.some(step=>step.id===id&&boundary(step))),...extras.filter(step=>step.kind!=='word-intro'&&!boundary(step)).map(step=>step.id),...remaining.filter(boundary).map(step=>step.id)], completedStepIds: [...completed], completedKeys:[...done], ...(state.wordQuiz ? { wordQuiz: true } : {}), ...(state.recallPolicy ? { recallPolicy: state.recallPolicy } : {}) };
 }

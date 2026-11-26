@@ -5,6 +5,7 @@ import { evaluateTarget } from '../src/server/reviews';
 import { learningConstructions, learningParts, reconcileLearningRoute } from '../src/shared/learning';
 import { fragmentAudio } from '../src/client/fragment-audio';
 import { sourceTitle } from '../src/shared/books';
+import { recognizeRoute } from '../src/shared/prior-learning';
 const course=loadCourse();
 
 test('all eighteen variations have distinct prompts, matching audio and authoritative accepted answers',()=>{
@@ -31,6 +32,11 @@ test('adding variants preserves completed groups and the current in-flight answe
   const complete=reconcileLearningRoute(previous,current,{partIndex:old.length,completedStepIds:before,pendingStepIds:[],recallPolicy:'recall-v1'});
   expect(complete.partIndex).toBe(old.length);expect(complete.pendingStepIds).toEqual([]);expect(complete.skippedStepIds).toHaveLength(24);
   const again=reconcileLearningRoute(current,current,complete);expect(again.pendingStepIds).toEqual([]);expect(again.skippedStepIds).toEqual(complete.skippedStepIds);
+  // The server always projects recognition after reconciling a publication.
+  const recognized=recognizeRoute(course,current,again,new Set(),false);
+  expect(recognized.partIndex).toBe(old.length);expect(recognized.pendingStepIds).toEqual([]);
+  expect(recognized.skippedStepIds).toEqual(complete.skippedStepIds);
+  expect(reconcileLearningRoute(current,current,recognized).pendingStepIds).toEqual([]);
   const partIndex=old.findIndex(part=>part.some(step=>step.kind==='construction-practice'));
   const part=old[partIndex]!, position=part.findIndex(step=>step.kind==='construction-practice');
   const active=reconcileLearningRoute(previous,current,{partIndex,completedStepIds:old.slice(0,partIndex).flat().concat(part.slice(0,position)).map(step=>step.id),pendingStepIds:part.slice(position).map(step=>step.id)});
