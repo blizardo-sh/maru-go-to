@@ -29,6 +29,9 @@ app=createApp({database:db,course,config:{DATABASE_URL:url,BETTER_AUTH_SECRET:cr
 const browser=await chromium.launch({channel:'chrome',headless:true}), users:string[]=[],emails:string[]=[],errors:string[]=[];
 const snap=(page:Page)=>page.evaluate(()=> (window as any).__ALBUM__.snapshot());
 async function click(page:Page,id:string) {
+  // Canvas controls exist before account settings finish loading, while the
+  // startup overlay still intercepts real pointer input.
+  await page.locator('#startup').waitFor({state:'hidden'});
   // Audio can publish an unrelated frame while a click is in flight. Wait for
   // that frame before reading targets and for the click's frame before returning.
   const settled=()=>page.evaluate(()=>new Promise<void>(resolve=>requestAnimationFrame(()=>requestAnimationFrame(()=>resolve()))));
@@ -53,6 +56,7 @@ async function click(page:Page,id:string) {
 try {
   for(const width of [390,320,1280]) {
     const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce',extraHTTPHeaders:{'x-forwarded-for':nextFixtureIp()}});
+    if(width===1280)await context.route('**/api/settings',async route=>{await new Promise(resolve=>setTimeout(resolve,750));await route.continue();});
     const email=`fsrs-browser-${crypto.randomUUID()}@example.test`,password='FSRS-local-test-only!';emails.push(email);
     const link=await createLink(db,'invite',email,null);await consumeLink(db,'invite',link.token,password,'FSRS browser');
     const [user]=await db.sql`select id from users where email=${email}`;users.push(user.id);
